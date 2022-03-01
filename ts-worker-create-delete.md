@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -194,7 +194,7 @@ Consider the following example scenario to understand how clusters might become 
 
 
 
-Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+Before you begin: Log in to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 {: tsResolve}
 
 1. Check which infrastructure account the region that your cluster is in currently uses to provision clusters. Replace `<region>` with the {{site.data.keyword.cloud_notm}} region that the cluster is in.
@@ -232,7 +232,7 @@ Before you begin: Log in to the [{{site.data.keyword.openshiftshort}} clusters c
 ## Unable to create or delete worker nodes due to endpoints error
 {: #vpe-ts}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC {{site.data.keyword.openshiftshort}} version 4.6 or later
+**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later
 
 
 You can't manage worker nodes for your cluster, and you receive an error message similar to one of the following.
@@ -249,7 +249,7 @@ Pending endpoint gateway creation
 {: screen}
 
 
-In clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, worker nodes can communicate with the Kubernetes master through the cluster's virtual private endpoint (VPE).
+In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, worker nodes can communicate with the Kubernetes master through the cluster's virtual private endpoint (VPE).
 {: tsCauses}
 
 One VPE gateway resource is created per cluster in your VPC. If the VPE gateway for your cluster is not correctly created in your VPC, the VPE gateway is deleted from your VPC, or the IP address that is reserved for the VPE is deleted from your VPC subnet, worker nodes lose connectivity with the Kubernetes master.

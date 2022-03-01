@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, route, router
 
@@ -19,12 +19,12 @@ subcollection: openshift
 Deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an [{{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-get-started).
 {: shortdesc}
 
-![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.cloud_notm}} HPCS Router support is for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 and later only. To set up routes for {{site.data.keyword.openshiftshort}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.openshiftshort}} 3.11](/docs/openshift?topic=openshift-routes-311).
+![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.cloud_notm}} HPCS Router support is for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later only. To set up routes for {{site.data.keyword.redhat_openshift_notm}} version 3.11, see [Exposing apps with routes in {{site.data.keyword.redhat_openshift_notm}} 3.11](/docs/openshift?topic=openshift-routes-311).
 {: important}
 
-{{site.data.keyword.hscrypto}} allows you to securely create, store, and manage encryption keys in {{site.data.keyword.cloud_notm}}. A private key that is stored in an {{site.data.keyword.hscrypto}} instance can be used by an {{site.data.keyword.openshiftshort}} router in [TLS session establishment](/docs/hs-crypto?topic=hs-crypto-use-cases#ssl-offloading) and in Certificate Signing Request (CSR) signing. To access {{site.data.keyword.hscrypto}}, an {{site.data.keyword.openshiftshort}} router must use the [OpenSSL Engine](https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/README.ENGINE){: external} `grep11` to make calls to the [Enterprise PKCS #11 over gRPC (GREP11) API](/docs/hs-crypto?topic=hs-crypto-introduce-cloud-hsm#access-cloud-hsm-grep11). However, the default router in {{site.data.keyword.openshiftlong_notm}} version 4 clusters can't be configured to use an alternative OpenSSL Engine integration.
+{{site.data.keyword.hscrypto}} allows you to securely create, store, and manage encryption keys in {{site.data.keyword.cloud_notm}}. A private key that is stored in an {{site.data.keyword.hscrypto}} instance can be used by an {{site.data.keyword.redhat_openshift_notm}} router in [TLS session establishment](/docs/hs-crypto?topic=hs-crypto-use-cases#ssl-offloading) and in Certificate Signing Request (CSR) signing. To access {{site.data.keyword.hscrypto}}, an {{site.data.keyword.redhat_openshift_notm}} router must use the [OpenSSL Engine](https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/README.ENGINE){: external} `grep11` to make calls to the [Enterprise PKCS #11 over gRPC (GREP11) API](/docs/hs-crypto?topic=hs-crypto-introduce-cloud-hsm#access-cloud-hsm-grep11). However, the default router in {{site.data.keyword.openshiftlong_notm}} version 4 clusters can't be configured to use an alternative OpenSSL Engine integration.
 
-Instead, you can deploy the custom {{site.data.keyword.cloud_notm}} HPCS Router, which uses the `grep11` OpenSSL Engine to access private keys that are stored in an {{site.data.keyword.hscrypto}} instance to encrypt routes. The {{site.data.keyword.cloud_notm}} HPCS Router is managed by an {{site.data.keyword.openshiftshort}} operator, and provides the same route management system as the default router.
+Instead, you can deploy the custom {{site.data.keyword.cloud_notm}} HPCS Router, which uses the `grep11` OpenSSL Engine to access private keys that are stored in an {{site.data.keyword.hscrypto}} instance to encrypt routes. The {{site.data.keyword.cloud_notm}} HPCS Router is managed by an {{site.data.keyword.redhat_openshift_notm}} operator, and provides the same route management system as the default router.
 
 In the following steps, you:
 1. Set up router sharding to ensure the default router does not process routes that are encrypted with a key from {{site.data.keyword.hscrypto}}.
@@ -43,7 +43,7 @@ Before you begin, complete the following {{site.data.keyword.hscrypto}} and {{si
 2. [Initialize the {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-initialize-hsm)
 3. [Create a Key in your {{site.data.keyword.hscrypto}} instance](/docs/hs-crypto?topic=hs-crypto-create-root-keys).
 4. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users) for {{site.data.keyword.containershort_notm}} for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users) {{site.data.keyword.containershort_notm}} for the cluster in all namespaces (projects).
-5. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that the {{site.data.keyword.cloud_notm}} HPCS Router is supported only for {{site.data.keyword.openshiftshort}} version 4.5 and later.
+5. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that the {{site.data.keyword.cloud_notm}} HPCS Router is supported only for {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
 
 ## Step 1: Set up default router sharding
 {: #sharding}
@@ -120,7 +120,7 @@ The default router now only processes routes that have the `router: default` lab
 Enable the {{site.data.keyword.cloud_notm}} HPCS Router operator in OperatorHub and install the operator in your cluster.
 {: shortdesc}
 
-1. In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to enable the router.
+1. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to enable the router.
 2. In the **Add-ons** pane, click **Install** on the **{{site.data.keyword.cloud_notm}} HPCS Router Operator** card, and **Install** again to confirm the installation.
 3. Click the **OpenShift web console** button.
 4. From the side navigation menu in the **Administrator** perspective, click **Operators > OperatorHub**.

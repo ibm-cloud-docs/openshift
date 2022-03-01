@@ -36,7 +36,7 @@ The following operating systems are available for worker nodes: **RHEL 7**. Your
 {: shortdesc}
 
 To optimize your worker nodes, consider the following information.
-* **Image and version updates**: Worker node updates, such as security patches to the image or {{site.data.keyword.openshiftshort}} versions, are provided by IBM for you. However, you choose when to apply the updates to the worker nodes. For more information, see [Updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update).
+* **Image and version updates**: Worker node updates, such as security patches to the image or {{site.data.keyword.redhat_openshift_notm}} versions, are provided by IBM for you. However, you choose when to apply the updates to the worker nodes. For more information, see [Updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update).
 * **Temporary modifications**: If you log in to a pod or use some other process to modify a worker node setting, the modifications are temporary. Worker node lifecycle operations, such as autorecovery, reloading, updating, or replacing a worker node, change any modifications back to the default settings.
 * **Persistent modifications**: For modifications to persist across worker node lifecycle operations, create a daemon set that uses an init container. For more information, see [Modifying default worker node settings to optimize performance](#worker).
 
@@ -61,11 +61,11 @@ Worker nodes are automatically provisioned with optimized kernel performance, bu
 You must have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for all namespaces to run the sample privileged `initContainer`. After the containers for the deployments are initialized, the privileges are dropped.
 {: note}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Save the following daemon set in a file named `worker-node-kernel-settings.yaml`. In the `spec.template.spec.initContainers` section, add the fields and values for the `sysctl` parameters that you want to tune. This example daemon set changes the default maximum number of connections that are allowed in the environment via the `net.core.somaxconn` setting and the ephemeral port range via the `net.ipv4.ip_local_port_range` setting.
 
-    Depending on the `systctl` settings that you try to change, you might want to configure the security context. For more information, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/nodes/containers/nodes-containers-sysctls.html){: external}.
+    Depending on the `systctl` settings that you try to change, you might want to configure the security context. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.8/nodes/containers/nodes-containers-sysctls.html){: external}.
     {: note}
 
     
@@ -223,13 +223,13 @@ spec:
 
 
 
-To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
+To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
 {: important}
 
 ### Changing the Calico MTU for version 4 clusters
 {: #calico-mtu-43}
 
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an {{site.data.keyword.openshiftshort}} version 4 cluster.
+Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
@@ -259,7 +259,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     ```
     {: screen}
 
-    To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
+    To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
     {: important}
 
 3. Save and close the file.
@@ -269,7 +269,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 ### Changing the Calico MTU for 3.11 clusters
 {: #calico-mtu-311}
 
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an {{site.data.keyword.openshiftshort}} version 3.11 cluster.
+Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
 {: shortdesc}
 
 
@@ -334,7 +334,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
     ```
     {: codeblock}
 
-    To run your {{site.data.keyword.openshiftshort}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
+    To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
     {: important} 
 
 3. Apply the MTU changes to your cluster master by refreshing the master API server. It might take several minutes for the master to refresh.
@@ -392,7 +392,7 @@ If you must use `hostPorts`, don't disable the port map plug-in.
 ### Disabling the port map plug-in for version 4 clusters
 {: #calico-portmap-43}
 
-Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.data.keyword.openshiftshort}} version 4 cluster.
+Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
@@ -428,7 +428,7 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 ### Disabling the port map plug-in for 3.11 clusters
 {: #calico-portmap-311}
 
-Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.data.keyword.openshiftshort}} version 3.11 cluster.
+Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
 {: shortdesc}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-03-01"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -31,14 +31,14 @@ Level of application
 Default behavior
 :   VPC security groups filter traffic at the hypervisor level. Security group rules are not applied in a particular order. However, requests to your worker nodes are only permitted if the request matches one of the rules that you specify. When you allow traffic in one direction by creating an inbound or outbound rule, responses are also permitted in the opposite direction. Security groups are additive, meaning that if your worker nodes are attached to more than one security group, all rules included in the security groups are applied to the worker nodes.
 
-{{site.data.keyword.openshiftshort}} version 4.5 or later
+{{site.data.keyword.redhat_openshift_notm}} version 4.5 or later
 :   The default security group for the VPC is applied to your worker nodes. This security group allows incoming ICMP packets (pings) and incoming traffic from other worker nodes in your cluster.
 :   Additionally, a unique security group that is named in the format `kube-<cluster_ID>` is automatically created and applied to the worker nodes for that cluster. This security group allows incoming traffic requests to the 30000 - 32767 port range on your worker nodes, and ensures that all inbound and outbound traffic to the pod subnet is permitted so that worker nodes can communicate with each other across subnets.
 
 Use case
 :   Add rules to a security group to manage the inbound and outbound traffic to your VPC cluster. 
 
-{{site.data.keyword.openshiftshort}} version 4.5 or later:
+{{site.data.keyword.redhat_openshift_notm}} version 4.5 or later:
 :   Modify the default security group that is applied to the entire VPC (not unique to your cluster).
 :   Do **not** modify or delete the unique `kube-<cluster_ID>` security group that is automatically created for the cluster.
 
@@ -180,9 +180,9 @@ Keep in mind that in addition to any rules you create, you must also create the 
 | Rule purpose | Protocol | Port or Value | Type |
 | --- | --- | --- | --- |
 | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `<SG_name>` |
-| {{site.data.keyword.openshiftshort}} version < 4.5: Allow incoming traffic requests to apps that run on your worker nodes. | TCP | `30000` - `32767` | Any |
-| {{site.data.keyword.openshiftshort}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `30000` - `32767` | Any |
-| `*` For Classic clusters, allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. For VPC clusters, if you use your own security group to the LBaaS for Ingress, set port 80 to allow access from the {{site.data.keyword.openshiftshort}} control plane IP addresses. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} version < 4.5: Allow incoming traffic requests to apps that run on your worker nodes. | TCP | `30000` - `32767` | Any |
+| {{site.data.keyword.redhat_openshift_notm}} version < 4.5: If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `30000` - `32767` | Any |
+| `*` For Classic clusters, allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. For VPC clusters, if you use your own security group to the LBaaS for Ingress, set port 80 to allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
 {: caption="Table 2. Required inbound rules" caption-side="top"}
 {: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 

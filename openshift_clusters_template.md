@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, clusters
 
@@ -57,13 +57,13 @@ The following resources are provisioned by default, but you can customize some r
 With the secure cluster template, you can create a cluster from the UI with {{site.data.keyword.bpfull_notm}} that already includes certain security integrations such as encryption, logging, and monitoring enabled by default.
 {: shortdesc}
 
-1. Log in to the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} and click **Create cluster +**.
+1. Log in to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} and click **Create cluster +**.
 2. From the **Create** tab in the **Select your template** section, click **Secure**.
 3. Review the pre-configured details for the secure template, including the following sections. To change these values, click **Edit**. When you are finished, click **Done editing** to apply your changes.
     - **Location**: Review the resource group and {{site.data.keyword.cloud_notm}} multizone location where the cluster is created.
     - **Orchestration service**: Review the container platform, version, and entitlement details.
 
-        For the **OCP entitlement**, you can select an entitlement for a worker pool, if you have one. Usually, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.openshiftshort}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
+        For the **OCP entitlement**, you can select an entitlement for a worker pool, if you have one. Usually, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with an {{site.data.keyword.redhat_openshift_notm}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
         {: note}
 
     - **VPC**: Review the subnet IP range for your location. 
@@ -82,7 +82,7 @@ With the secure cluster template, you can create a cluster from the CLI with {{s
 **Before you begin**:
 1. [Install the {{site.data.keyword.terraform-provider_full_notm}} CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli).
 2. [Configure the {{site.data.keyword.terraform-provider_full_notm}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-reference).
-3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+3. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **Creating a secure cluster from an {{site.data.keyword.terraform-provider_full_notm}} template in the CLI**:
 

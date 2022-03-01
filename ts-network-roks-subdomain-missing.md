@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -26,7 +26,7 @@ content-type: troubleshoot
 When you expose an app through a Ingress controller subdomain, you get a local subdomain instead of a public route, in the format: `<service_name>-<project_name>.router.default.svc.cluster.local`.
 {: tsSymptoms}
 
-When you try to open the {{site.data.keyword.openshiftshort}} web console or another app route in your browser, you might see an error similar to the following.
+When you try to open the {{site.data.keyword.redhat_openshift_notm}} web console or another app route in your browser, you might see an error similar to the following.
 
 ```
 Application is not available

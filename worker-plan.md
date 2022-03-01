@@ -75,7 +75,7 @@ Want to be sure that you always have enough worker nodes to cover your workload?
 
 **Why do my worker nodes have the `master` role?**
 
-When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.openshiftshort}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4).
+When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4).
 
 
 
@@ -252,7 +252,7 @@ Worker node flavors vary by cluster type, the zone where you want to create the 
 
 Bare metal machines are optimized for different use cases such as data-, GPU-, or RAM-intensive workloads.
 
-![Version 4 icon.](images/icon-version-43.png) After you create GPU bare metal worker nodes in your {{site.data.keyword.openshiftshort}} version 4 cluster, [install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
+![Version 4 icon.](images/icon-version-43.png) After you create GPU bare metal worker nodes in your {{site.data.keyword.redhat_openshift_notm}} version 4 cluster, [install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
 {: note}
 
 Choose a flavor, or machine type, with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
@@ -330,7 +330,7 @@ If less PIDs, CPU or memory is available than the worker node reserves, Kubernet
 
 The resources that are reserved on your worker node depend on the amount of PIDs, CPU and memory that your worker node comes with. {{site.data.keyword.openshiftlong_notm}} defines PIDs, CPU and memory tiers as shown in the following tables. If your worker node comes with compute resources in multiple tiers, a percentage of your PIDs, CPU and memory resources is reserved for each tier.
 
-![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.openshiftshort}} version 4** : Clusters also have process ID (PID) reservations and limits, to prevent a pod from using too many PIDs or ensure that enough PIDs exist for the `kubelet` and other {{site.data.keyword.openshiftlong_notm}} system components. If the PID reservations or limits are reached, Kubernetes does not create or assign new PIDs until enough processes are removed to free up existing PIDs. The total amount of PIDs on a worker node approximately corresponds to 8,000 PIDs per GB of memory on the worker node. For example, a worker node with 16 GB of memory has approximately 128,000 PIDs (`16 × 8,000 = 128,000`).
+![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.redhat_openshift_notm}} version 4** : Clusters also have process ID (PID) reservations and limits, to prevent a pod from using too many PIDs or ensure that enough PIDs exist for the `kubelet` and other {{site.data.keyword.openshiftlong_notm}} system components. If the PID reservations or limits are reached, Kubernetes does not create or assign new PIDs until enough processes are removed to free up existing PIDs. The total amount of PIDs on a worker node approximately corresponds to 8,000 PIDs per GB of memory on the worker node. For example, a worker node with 16 GB of memory has approximately 128,000 PIDs (`16 × 8,000 = 128,000`).
 
 To review how much compute resources are currently used on your worker node, run [`oc top node`](https://kubernetes.io/docs/reference/kubectl/overview/#top){: external}.
 {: tip}
@@ -378,15 +378,15 @@ To review how much compute resources are currently used on your worker node, run
 
 | Infrastructure provider | Versions | Disk | % of disk reserved |
 |:------------------------|:---------|:-----|:-------------------|
-| Classic | {{site.data.keyword.openshiftshort}} 4.3+ | Secondary disk | 10% |
-| VPC | {{site.data.keyword.openshiftshort}} 4.3+ | Boot disk | 10% |
+| Classic | {{site.data.keyword.redhat_openshift_notm}} 4.3+ | Secondary disk | 10% |
+| VPC | {{site.data.keyword.redhat_openshift_notm}} 4.3+ | Boot disk | 10% |
 {: class="simple-tab-table"}
 {: caption="Worker node disk ephemeral storage reserves" caption-side="top"}
 {: #worker-memory-reserves-infra}
 {: tab-title="Worker node disk reserves"}
 {: tab-group="Worker Node"}
 
-Worker node PID reserves are for {{site.data.keyword.openshiftshort}} version 4. Sample worker node values are provided for example only. Your actual usage might vary slightly.
+Worker node PID reserves are for {{site.data.keyword.redhat_openshift_notm}} version 4. Sample worker node values are provided for example only. Your actual usage might vary slightly.
 {: note}
 
 

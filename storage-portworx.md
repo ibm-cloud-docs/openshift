@@ -553,7 +553,7 @@ Before you begin:
 
 - If you attached a separate devices for the Portworx KVDB, make sure that you retrieve the device path by running `lsblk` while logged into your worker node.
 
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To install Portworx:
 
@@ -1007,7 +1007,7 @@ If you are installing PX-Backup in a newly-provisioned cluster, [you must log in
 5. In the **Tag** field, enter the name of the cluster where you want to install PX-Backup. After you complete the installation, you can't see the name of the cluster where you installed PX-Backup. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
 6. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you don't have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey#create_user_key) to create one.
 7. In the **Kubernetes or OpenShift cluster name** field, select the cluster where you want to install PX-Backup.
-8. Enter the name of the {{site.data.keyword.openshiftshort}} project where you want to install your PX-Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.openshiftshort}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
+8. Enter the name of the {{site.data.keyword.redhat_openshift_notm}} project where you want to install your PX-Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.redhat_openshift_notm}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
 9. Select an existing storage class in your cluster to provision persistent volumes for the PX-Backup service. The service uses this storage to store service metadata and is not used to back up your apps and data. [Your apps and data are backed up to an {{site.data.keyword.cos_full_notm}} service instance](#px-backup-storage).
 10. Click **Create** to begin the PX-Backup installation. The installation may take a few minutes to complete.
 11. [Verify that your PX-Backup service is installed corrrectly](#px-backup-verify).
@@ -1026,7 +1026,7 @@ From the console
 2. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
 3. If the status changes to **Active**, verify that the PX-Backup pods, services and jobs are running in your cluster.
     1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
-    2. Open the {{site.data.keyword.openshiftshort}} web console.
+    2. Open the {{site.data.keyword.redhat_openshift_notm}} web console.
     10. Click on **Projects**.
     11. Select the namespace where you installed the PX-Backup service components.
     12. In the **Inventory** section, select the option to display your pods.
@@ -1041,7 +1041,7 @@ From the CLI
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, find the PX-Backup service you created.
 2. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
 3. If the status changes to **Active**, verify that the PX-Backup pods are running in your cluster.
-    1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
     2. Run the command to verify that the installation has completed.
         ```sh
         oc get po -n <px_backup_namespace> -ljob-name=pxcentral-post-install-hook  -o wide | awk '{print $1   $3}' | grep -iv error
@@ -1065,7 +1065,7 @@ Access the PX-Backup console through the URL supplied in the {{site.data.keyword
 For VPC clusters
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
-2. Open the {{site.data.keyword.openshiftshort}} web console .
+2. Open the {{site.data.keyword.redhat_openshift_notm}} web console .
 5. Click on **Networking>Routes**.
 6. Find the **px-backup-ui** route and click on the URL that is listed in the **Location** column to open the PX-Backup console.
 7. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
@@ -1074,7 +1074,7 @@ For VPC clusters
 For public classic clusters
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
-2. Open the {{site.data.keyword.openshiftshort}} web console .
+2. Open the {{site.data.keyword.redhat_openshift_notm}} web console .
 6. Click on **Networking>Routes**.
 7. Find the **px-backup-ui** route and note the IP address and node port listed in the **Locations** column.
 8. Copy and paste the IP address and node port into your web browser to open the PX-Backup console.
@@ -1220,17 +1220,17 @@ Follow the Portworx documentation to [upgrade PX-backup](https://1.2.backup.docs
 ## Setting up disaster recovery with Portworx
 {: #px-dr}
 
-You can configure disaster recovery for your data that you store in your {{site.data.keyword.openshiftshort}} clusters by using Portworx. When one of your clusters becomes unavailable, Portworx automatically fails over to another cluster so that you can still access your data.  
+You can configure disaster recovery for your data that you store in your {{site.data.keyword.redhat_openshift_notm}} clusters by using Portworx. When one of your clusters becomes unavailable, Portworx automatically fails over to another cluster so that you can still access your data.  
 {: shortdesc}
 
-Disaster recovery with Portworx requires at least two {{site.data.keyword.openshiftshort}} clusters where Portworx is installed and configured for disaster recovery. One of the two clusters is considered the active cluster where your data is primarily stored. All data is then replicated to the standby cluster. If your active cluster becomes unavailable, Portworx automatically fails over to the standby cluster and makes the standby cluster the new active cluster so that data can continue to be accessed.
+Disaster recovery with Portworx requires at least two {{site.data.keyword.redhat_openshift_notm}} clusters where Portworx is installed and configured for disaster recovery. One of the two clusters is considered the active cluster where your data is primarily stored. All data is then replicated to the standby cluster. If your active cluster becomes unavailable, Portworx automatically fails over to the standby cluster and makes the standby cluster the new active cluster so that data can continue to be accessed.
 
 If you installed Portworx in one of your clusters without the Portworx disaster recovery plan, you must re-install Portworx with the disaster recovery plan so that you can include this cluster in your disaster recovery configuration.
 {: important}
 
 Depending on your cluster setup, Portworx offers the following two disaster recovery configurations:
-- [**Metro DR**](https://docs.portworx.com/portworx-install-with-kubernetes/disaster-recovery/#1-metro-dr-nodes-are-in-the-metro-area-network-man): Your {{site.data.keyword.openshiftshort}} clusters are in the same metro location, such as both clusters are deployed in one or multiple zones of the `us-south` region. All clusters are configured to use the same Portworx cluster and share the same Portworx key-value store. Data is automatically replicated between the clusters because the Portworx storage layer is shared. RPO (Recovery Point Objective) and RTO (Recovery Time Objective) for this configuration is less than 60 seconds.
-- [**Asynchronous DR**](https://docs.portworx.com/portworx-install-with-kubernetes/disaster-recovery/#2-asynchronous-dr-nodes-are-across-different-regions-datacenters): Your {{site.data.keyword.openshiftshort}} clusters are deployed in different regions, such as `us-south` and `us-east`. Each cluster has its own Portworx installation and uses a separate Portworx key-value store that is not shared. To replicate data between clusters, you must set up scheduled replication between these clusters. Because of the higher latency and scheduled replication times, the RPO for this scenario might be up to 15 minutes.
+- [**Metro DR**](https://docs.portworx.com/portworx-install-with-kubernetes/disaster-recovery/#1-metro-dr-nodes-are-in-the-metro-area-network-man): Your {{site.data.keyword.redhat_openshift_notm}} clusters are in the same metro location, such as both clusters are deployed in one or multiple zones of the `us-south` region. All clusters are configured to use the same Portworx cluster and share the same Portworx key-value store. Data is automatically replicated between the clusters because the Portworx storage layer is shared. RPO (Recovery Point Objective) and RTO (Recovery Time Objective) for this configuration is less than 60 seconds.
+- [**Asynchronous DR**](https://docs.portworx.com/portworx-install-with-kubernetes/disaster-recovery/#2-asynchronous-dr-nodes-are-across-different-regions-datacenters): Your {{site.data.keyword.redhat_openshift_notm}} clusters are deployed in different regions, such as `us-south` and `us-east`. Each cluster has its own Portworx installation and uses a separate Portworx key-value store that is not shared. To replicate data between clusters, you must set up scheduled replication between these clusters. Because of the higher latency and scheduled replication times, the RPO for this scenario might be up to 15 minutes.
 
 To include your cluster in a Portworx disaster recovery configuration:
 
@@ -1238,15 +1238,15 @@ To include your cluster in a Portworx disaster recovery configuration:
 2. Review the prerequisites for the [**Metro DR**](https://docs.portworx.com/portworx-install-with-kubernetes/disaster-recovery/px-metro/1-install-px/#prerequisites){: external} and [**Asynchronous DR**](https://docs.portworx.com/portworx-install-with-kubernetes/disaster-recovery/async-dr/#pre-requisites){: external} configuration.
 3. Configure disaster recovery for your cluster. 
     **Metro DR**:
-    1. Choose at least two {{site.data.keyword.openshiftshort}} clusters that are located in the same metro location. If you have one cluster only, you can still configure this cluster for metro disaster recovery, but Portworx can't do a proper failover until a second cluster is configured.
+    1. Choose at least two {{site.data.keyword.redhat_openshift_notm}} clusters that are located in the same metro location. If you have one cluster only, you can still configure this cluster for metro disaster recovery, but Portworx can't do a proper failover until a second cluster is configured.
     2. Make sure that all your clusters have sufficient [raw and unformatted block storage](#create_block_storage) so that you can build your Portworx storage layer.
-    3. Set up a [Databases for etcd service instance](#databases-for-etcd) for your Portworx key-value store. Because both {{site.data.keyword.openshiftshort}} clusters must share the key-value store, you can't use the internal Portworx KVDB.
+    3. Set up a [Databases for etcd service instance](#databases-for-etcd) for your Portworx key-value store. Because both {{site.data.keyword.redhat_openshift_notm}} clusters must share the key-value store, you can't use the internal Portworx KVDB.
     4. Optional: Decide if you want to set up [encryption for your Portworx volumes](#encrypt_volumes).
     5. Follow the instructions to [install Portworx](#install_portworx) with the disaster recovery plan in both of your clusters. If you installed Portworx without the disaster recovery plan in one of your clusters already, you must re-install Portworx in that cluster with the disaster recovery plan. Make sure that you select **Databases for etcd** from the **Portworx metadata key-value store** drop-down and that you enter the same Databases for etcd API endpoint and Kubernetes secret name in both of your clusters.
     6. Continue following the [Portworx documentation](https://docs.portworx.com/portworx-install-with-kubernetes/disaster-recovery/px-metro/2-pair-clusters/){: external} to pair your clusters, sync data between them, and try out a failover of an application.
 
     **Asynchronous DR**:
-    1. Choose at least two {{site.data.keyword.openshiftshort}} clusters that are located in different regions. If you have one cluster only, you can still configure this cluster for asynchronous disaster recovery, but Portworx can't do a proper failover until a second cluster is configured.
+    1. Choose at least two {{site.data.keyword.redhat_openshift_notm}} clusters that are located in different regions. If you have one cluster only, you can still configure this cluster for asynchronous disaster recovery, but Portworx can't do a proper failover until a second cluster is configured.
     2. Make sure that all your clusters have sufficient [raw and unformatted block storage](#create_block_storage) so that you can build your Portworx storage layer.
     3. Review your [options to configure a Portworx key-value store](#portworx_database). Because both clusters are in different regions, each cluster must use its own key-value store. You can use the internal Portworx KVDB or set up a Databases for etcd instance.
     4. Enable Portworx [volume encryption](#setup_encryption) for both of your clusters. The {{site.data.keyword.keymanagementservicelong_notm}} credentials are later used by Portworx to encrypt data traffic between the clusters.
@@ -1396,7 +1396,7 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 When you remove the Portworx DaemonSet, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx DaemonSet and containers by using the same configuration files.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Clone the `ibmcloud-storage-utilities` repo.
     ```sh
@@ -1505,7 +1505,7 @@ You can use the following script to collect log information from your Portworx c
 
 The following script collects Portworx logs from your cluster and saves them on your local machine in the `/tmp/pxlogs` directory.
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Clone the `ibmcloud-storage-utilities` repo.
     ```sh

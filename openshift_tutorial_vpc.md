@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-03-01"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -18,7 +18,7 @@ completion-time: 45m
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Creating an {{site.data.keyword.openshiftshort}} cluster in your Virtual Private Cloud (VPC)
+# Creating an {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
 {: #vpc_rh_tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="openshift, vpc"}
@@ -29,16 +29,16 @@ Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cl
 
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC**, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
 
-- {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.openshiftshort}} tooling and catalog](https://docs.openshift.com/container-platform/4.8/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
+- {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.8/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 - VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers), with a select group of v2 API, CLI, and console functionality.
 
-{{site.data.keyword.openshiftshort}} worker nodes are available for paid accounts and standard clusters only. You can create {{site.data.keyword.openshiftshort}} clusters that run version 4 only. The operating system is Red Hat Enterprise Linux 7.
+{{site.data.keyword.redhat_openshift_notm}} worker nodes are available for paid accounts and standard clusters only. You can create {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4 only. The operating system is Red Hat Enterprise Linux 7.
 {: note}
 
 ## Objectives
 {: #vpc_rh_objectives}
 
-In the tutorial lessons, you create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC). Then, you access built-in {{site.data.keyword.openshiftshort}} components, deploy an app in an {{site.data.keyword.openshiftshort}} project, and expose the app on with a VPC load balancer so that external users can access the service.
+In the tutorial lessons, you create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC). Then, you access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in an {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on with a VPC load balancer so that external users can access the service.
 
 ## Audience
 {: #vpc_rh_audience}
@@ -56,7 +56,7 @@ Complete the following prerequisite steps to set up permissions and the command-
 
 **Command-line tools**: For quick access to your resources from the command line, try the [{{site.data.keyword.cloud-shell_notm}}](https://cloud.ibm.com/shell){: external}. Otherwise, set up your local command-line environment by completing the following steps.
 1. [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps).
-2. [Install the {{site.data.keyword.openshiftshort}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+2. [Install the {{site.data.keyword.redhat_openshift_notm}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 3. To work with VPC, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
     ibmcloud plugin install infrastructure-service
@@ -91,7 +91,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         ```
         {: pre}
 
-    2. Create a public gateway and note the **ID** in the output. In the next step, you attach the public gateway to a VPC subnet, so that your worker nodes can communicate on the public network. Default {{site.data.keyword.openshiftshort}} components, such as the web console and OperatorHub, require public network access. If you skip this step, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.openshiftshort}} web console or access your cluster with `kubectl` commands.
+    2. Create a public gateway and note the **ID** in the output. In the next step, you attach the public gateway to a VPC subnet, so that your worker nodes can communicate on the public network. Default {{site.data.keyword.redhat_openshift_notm}} components, such as the web console and OperatorHub, require public network access. If you skip this step, you must instead be connected to your VPC private network, such as through a VPN connection, to access the {{site.data.keyword.redhat_openshift_notm}} web console or access your cluster with `kubectl` commands.
         ```sh
         ibmcloud is public-gateway-create gateway-us-south-1 <vpc_ID> us-south-1
         ```
@@ -114,7 +114,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     {: pre}
 
 4. Create a cluster in your VPC in the same zone as the subnet.
-    * The following command creates a version 4.9 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.openshiftshort}} components can deploy.
+    * The following command creates a version 4.9 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
     * By default, your cluster is created with a public and a private cloud service endpoint. You can use the public cloud service endpoint to access the Kubernetes master, such as to run `oc` commands, from your local machine. Your worker nodes communicate with the master on the private cloud service endpoint. For the purposes of this tutorial, do **not** specify the `--disable-public-service-endpoint` flag.
     * For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
     ```sh
@@ -123,7 +123,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     {: pre}
 
 5. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.
-    Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and Ingress components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.openshiftshort}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.
+    Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and Ingress components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.redhat_openshift_notm}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.
     {: note}
     
     ```sh
@@ -131,23 +131,23 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     ```
     {: pre}
 
-6. Add yourself as a user to the {{site.data.keyword.openshiftshort}} cluster by setting the cluster context.
+6. Add yourself as a user to the {{site.data.keyword.redhat_openshift_notm}} cluster by setting the cluster context.
     ```sh
     ibmcloud oc cluster config --cluster myvpc-cluster --admin
     ```
     {: pre}
 
-7. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. If time permits, you can explore the different areas of the {{site.data.keyword.openshiftshort}} web console.
+7. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. If time permits, you can explore the different areas of the {{site.data.keyword.redhat_openshift_notm}} web console.
 
     | Area | Location in console | Description |
     | -------- | -------- | -------------- |
-    | Administrator perspective | Side navigation menu perspective switcher. | From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.8/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.openshiftshort}} documentation. |
-    | Developer perspective | Side navigation menu perspective switcher. | From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.8/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.openshiftshort}} documentation. |
+    | Administrator perspective | Side navigation menu perspective switcher. | From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.8/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. |
+    | Developer perspective | Side navigation menu perspective switcher. | From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.8/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. |
     {: caption="Table 1. OpenShift console overview" caption-side="bottom"}
     
-8. From the {{site.data.keyword.openshiftshort}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
+8. From the {{site.data.keyword.redhat_openshift_notm}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
     
-    Save your cluster master URL to access the {{site.data.keyword.openshiftshort}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.
+    Save your cluster master URL to access the {{site.data.keyword.redhat_openshift_notm}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.
     {: tip}
     
 9. Verify that the `oc` commands run properly with your cluster by checking the version.
@@ -180,13 +180,13 @@ The components that you deploy by completing this lesson are shown in the follow
 
 ![Deployment setup](images/cs_app_tutorial_mz-components1.png)
 
-1. Create an {{site.data.keyword.openshiftshort}} project for your Hello World app.
+1. Create an {{site.data.keyword.redhat_openshift_notm}} project for your Hello World app.
     ```sh
     oc new-project hello-world
     ```
     {: pre}
 
-2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.openshiftshort}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.openshiftshort}} docs](https://docs.openshift.com/container-platform/4.8/applications/creating_applications/){: external}.
+2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.redhat_openshift_notm}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.8/applications/creating_applications/){: external}.
     ```sh
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```
@@ -235,7 +235,7 @@ When you create a Kubernetes `LoadBalancer` service in your cluster, a VPC load 
 
 ![VPC load balancing for an OpenShift cluster.](images/vpc_roks_tutorial_lesson4_lb.png "Title text that shows on hover here"){: caption="Figure 1. VPC load balancing for an OpenShift cluster" caption-side="bottom"}
 
-Interested in using an {{site.data.keyword.openshiftshort}} route to expose your app instead? Check out [How does a request via route get to my app in a VPC cluster?](/docs/openshift?topic=openshift-openshift_routes#route_vpc) and [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup).
+Interested in using an {{site.data.keyword.redhat_openshift_notm}} route to expose your app instead? Check out [How does a request via route get to my app in a VPC cluster?](/docs/openshift?topic=openshift-openshift_routes#route_vpc) and [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup).
 {: tip}
 
 

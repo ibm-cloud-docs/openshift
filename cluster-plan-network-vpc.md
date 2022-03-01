@@ -34,9 +34,9 @@ When you create a cluster, you specify an existing VPC subnet for each zone. Eac
 
 Subnets provide a channel for connectivity among the worker nodes within the cluster. Additionally, any system that is connected to any of the private subnets in the same VPC can communicate with workers. For example, all subnets in one VPC can communicate through private layer 3 routing with a built-in VPC router. If you have multiple clusters that must communicate with each other, you can create the clusters in the same VPC. However, if your clusters don't need to communicate, you can achieve better network segmentation by creating the clusters in separate VPCs. You can also create [access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) for your VPC subnets to mediate traffic on the private network. ACLs consist of inbound and outbound rules that define which ingress and egress is permitted for each VPC subnet.
 
-When you create a VPC cluster and enable both the public and private cloud service endpoints during cluster creation, the public cloud service endpoint is used by default for access to components such as the {{site.data.keyword.openshiftshort}} web console for your cluster. In order for console pods to establish a secure, public connection over the internet through the public service endpoint, you must enable a public gateway on each VPC subnet that your worker nodes are deployed to.
+When you create a VPC cluster and enable both the public and private cloud service endpoints during cluster creation, the public cloud service endpoint is used by default for access to components such as the {{site.data.keyword.redhat_openshift_notm}} web console for your cluster. In order for console pods to establish a secure, public connection over the internet through the public service endpoint, you must enable a public gateway on each VPC subnet that your worker nodes are deployed to.
 
-When you create a VPC cluster and enable only the private cloud service endpoint during cluster creation, the private cloud service endpoint is used by default to access {{site.data.keyword.openshiftshort}} components such as the {{site.data.keyword.openshiftshort}} web console or OperatorHub. You must be connected to the private VPC network, such as through a VPN connection, to access these components or run `kubectl` commands on your cluster.
+When you create a VPC cluster and enable only the private cloud service endpoint during cluster creation, the private cloud service endpoint is used by default to access {{site.data.keyword.redhat_openshift_notm}} components such as the {{site.data.keyword.redhat_openshift_notm}} web console or OperatorHub. You must be connected to the private VPC network, such as through a VPN connection, to access these components or run `kubectl` commands on your cluster.
 
 The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For a list of IP address ranges per VPC zone, see the [VPC default address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes).
 
@@ -79,8 +79,8 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 
 Worker node communication to the Kubernetes master is established differently based on your cluster version.
 
-* {{site.data.keyword.openshiftshort}} version 4.6 or later: Worker node communication to the Kubernetes master is established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe). If the public cloud service endpoint is also enabled, worker-to-master traffic is established half over the public endpoint and half over the VPE for protection from potential outages of the public or private network.
-* {{site.data.keyword.openshiftshort}} version 4.5 or earlier: Worker node communication to the Kubernetes master is established over the private cloud service endpoint. If the public cloud service endpoint is also enabled, worker-to-master traffic is established half over the public endpoint and half over the private endpoint for protection from potential outages of the public or private network.
+* {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later: Worker node communication to the Kubernetes master is established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe). If the public cloud service endpoint is also enabled, worker-to-master traffic is established half over the public endpoint and half over the VPE for protection from potential outages of the public or private network.
+* {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier: Worker node communication to the Kubernetes master is established over the private cloud service endpoint. If the public cloud service endpoint is also enabled, worker-to-master traffic is established half over the public endpoint and half over the private endpoint for protection from potential outages of the public or private network.
 
 To secure communication over public and private cloud service endpoints or VPEs, {{site.data.keyword.openshiftlong_notm}} automatically sets up an OpenVPN connection between the Kubernetes master and worker nodes when the cluster is created. Worker nodes securely talk to the master through TLS certificates, and the master talks to workers through the OpenVPN connection.
 
@@ -186,7 +186,7 @@ You can use public Kubernetes networking services, such as creating [`LoadBalanc
 ### Worker-to-worker communication
 {: #vpc-no-pgw-worker}
 
-To achieve this setup, you create VPC subnets in each zone where you want to deploy worker nodes. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, public gateways are required for these subnets. Then, you create a VPC cluster that uses these VPC subnets.
+To achieve this setup, you create VPC subnets in each zone where you want to deploy worker nodes. To run default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub, public gateways are required for these subnets. Then, you create a VPC cluster that uses these VPC subnets.
 
 ### Worker-to-master and user-to-master communication
 {: #vpc-no-pgw-master}
@@ -221,7 +221,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 ### Worker-to-worker communication
 {: #vpc-vpn-worker}
 
-To achieve this setup, you create VPC subnets in each zone where you want to deploy worker nodes. To run default {{site.data.keyword.openshiftshort}} components such as the web console or OperatorHub, public gateways are required for these subnets. Then, you create a VPC cluster that uses these VPC subnets.
+To achieve this setup, you create VPC subnets in each zone where you want to deploy worker nodes. To run default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub, public gateways are required for these subnets. Then, you create a VPC cluster that uses these VPC subnets.
 
 Note that you might have subnet conflicts between the default ranges for workers nodes, pods, and services, and the subnets in your on-premises networks. When you create your VPC subnets, you can choose [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes) and then create your cluster by using these subnets. Additionally, you can specify a custom subnet CIDR for pods and services by using the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` command when you create your cluster.
 

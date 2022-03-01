@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: kubernetes, openshift
 
@@ -30,12 +30,12 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 * The IAM **Operator** platform access role for the cluster in {{site.data.keyword.containershort_notm}}.
 * The IAM **Manager** service access role in all namespaces (`cluster-admin` RBAC) for the cluster in {{site.data.keyword.containershort_notm}}.
 
-![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_notm}} Marketplace is available for clusters that run {{site.data.keyword.openshiftshort}} version 4 only.
+![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_notm}} Marketplace is available for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 {: note}
 
 **Before you begin**:
 *   Register for a [{{site.data.keyword.redhat_notm}} Marketplace account](https://marketplace.redhat.com/en-us/registration/redhat-marketplace){: external}.
-*   [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+*   [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *   Make sure that the Operator Lifecycle Manager (OLM) pods in the `openshift-operator-lifecycle-manager` project and marketplace pods in the `openshift-marketplace` project are ready and running. You might have to restart a pod to return the pod to a healthy state.
     ```sh
     oc get pods -n openshift-operator-lifecycle-manager

@@ -92,16 +92,16 @@ For more, see the following tutorials.
 ## Common app modification scenarios
 {: #openshift_move_apps_scenarios}
 
-{{site.data.keyword.openshiftshort}} has different default settings than community Kubernetes, such as stricter security context constraints. Review the following common scenarios where you might need to modify your apps so that you can deploy them on {{site.data.keyword.openshiftshort}} clusters.
+{{site.data.keyword.redhat_openshift_notm}} has different default settings than community Kubernetes, such as stricter security context constraints. Review the following common scenarios where you might need to modify your apps so that you can deploy them on {{site.data.keyword.redhat_openshift_notm}} clusters.
 {: shortdesc}
 
 |Scenario|Steps you can take|
 |--------|------------------|
-| Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status | The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the {{site.data.keyword.openshiftshort}} documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}. |
-| Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories. | In {{site.data.keyword.openshiftshort}}, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}. |
+| Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status | The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the {{site.data.keyword.redhat_openshift_notm}} documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}. |
+| Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories. | In {{site.data.keyword.redhat_openshift_notm}}, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}. |
 | Your app uses persistent file storage with a non-root user ID that can't write to the mounted storage device. | [Adjust the security context](/docs/openshift?topic=openshift-debug_storage_file) for the app deployment so that `runAsUser` is set to `0`. |
 | Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions: \n - Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port. \n - Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc). \n - Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.8/nodes/containers/nodes-containers-port-forwarding.html){: external}. |
-| Other use cases and scenarios | Review the {{site.data.keyword.openshiftshort}} documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 3 to version 4](https://cloud.redhat.com/learn/topics/migration){: external}. |
+| Other use cases and scenarios | Review the {{site.data.keyword.redhat_openshift_notm}} documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 3 to version 4](https://cloud.redhat.com/learn/topics/migration){: external}. |
 {: summary="The rows are read from left to right. The first column is the scenario that might require changes. The second column is the description of the steps that you can take to modify your app."}
 {: caption="Common scenarios that require app modifications" caption-side="top"}
 {: summary="The first column describes an app scenario. The second column explains the steps that you can take to address the app scenario."}
@@ -109,10 +109,10 @@ For more, see the following tutorials.
 ### Example steps for giving a deployment privileged access
 {: #openshift_move_apps_example_scc}
 
-If you have an app that runs with root permissions, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your {{site.data.keyword.openshiftshort}} cluster. For example, you might set up your project with a service account to control privileged access, and then modify your deployment to use this service account.
+If you have an app that runs with root permissions, you must modify your deployment to work with the [security context constraints](/docs/openshift?topic=openshift-openshift_scc) that are set for your {{site.data.keyword.redhat_openshift_notm}} cluster. For example, you might set up your project with a service account to control privileged access, and then modify your deployment to use this service account.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. As a cluster administrator, create a project.
     ```sh
@@ -132,7 +132,7 @@ Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/do
     ```
     {: pre}
 
-4. Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}.</p>
+4. Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html){: external}.</p>
     ```sh
     oc adm policy add-scc-to-user privileged -n <project_name> -z <sa_name>
     ```
@@ -460,7 +460,7 @@ Are you looking to create YAML file templates? Some people use Helm to do just t
 ## Setting up service discovery
 {: #service_discovery}
 
-Each of your pods in your {{site.data.keyword.openshiftshort}} cluster has an IP address. But when you deploy an app to your cluster, you don't want to rely on the pod IP address for service discovery and networking. Pods are removed and replaced frequently and dynamically. Instead, use a Kubernetes service, which represents a group of pods and provides a stable entry point through the service's virtual IP address, called its `cluster IP`. For more information, see the Kubernetes documentation on [Services](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services){: external}.
+Each of your pods in your {{site.data.keyword.redhat_openshift_notm}} cluster has an IP address. But when you deploy an app to your cluster, you don't want to rely on the pod IP address for service discovery and networking. Pods are removed and replaced frequently and dynamically. Instead, use a Kubernetes service, which represents a group of pods and provides a stable entry point through the service's virtual IP address, called its `cluster IP`. For more information, see the Kubernetes documentation on [Services](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services){: external}.
 {: shortdesc}
 
 ### How can I make sure that my services are connected to the right deployments and ready to go?
@@ -515,7 +515,7 @@ After you deploy your app, you can control who can access the app, and monitor t
 ### How can I control who has access to my app deployments?
 {: #app_plan_logmet_access}
 
-The account and cluster administrators can control access on many different levels: the cluster, {{site.data.keyword.openshiftshort}} project, pod, and container.
+The account and cluster administrators can control access on many different levels: the cluster, {{site.data.keyword.redhat_openshift_notm}} project, pod, and container.
 {: shortdesc}
 
 With {{site.data.keyword.cloud_notm}} IAM, you can assign permissions to individual users, groups, or service accounts at the cluster-instance level. You can scope cluster access down further by restricting users to particular namespaces within the cluster. For more information, see [Assigning cluster access](/docs/openshift?topic=openshift-users#users).

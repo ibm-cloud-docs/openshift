@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 
@@ -28,12 +28,12 @@ Backing stores are NooBaa resources for managing your s3 compatible services and
 
 After you deploy ODF, you can configure more backing stores in your storage cluster. You can create a backing store by using any s3 compatible object store such as AWS or {{site.data.keyword.cos_full_notm}}.
 
-You can also create and manage your backing stores in the {{site.data.keyword.openshiftshort}} web console.
+You can also create and manage your backing stores in the {{site.data.keyword.redhat_openshift_notm}} web console.
 {: tip}
 
 To add a backing store to your storage cluster by using the NooBaa CLI:
 
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Install the [NooBaa Operator CLI](https://github.com/noobaa/noobaa-operator){: external}.
 1. Run the `noobaa backingstore create` command to see a list of supported backing store types.

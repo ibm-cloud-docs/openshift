@@ -30,7 +30,7 @@ The following image and description outline default and optional data encryption
 
 ![Overview of cluster encryption, as described in the following sections.](images/cs_encrypt_ov_kms-vpc.png "Overview of cluster encryption"){: caption="Figure 1. Overview of cluster encryption" caption-side="bottom"}
 
-1. **{{site.data.keyword.openshiftshort}} master control plane startup**: Components in the {{site.data.keyword.openshiftshort}} master, such as etcd, boot up on a LUKS-encrypted drive by using an IBM-managed key. Data in etcd is stored on the local disk of the {{site.data.keyword.openshiftshort}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.openshiftshort}} master by bringing your own key to encrypt the cluster.
+1. **{{site.data.keyword.redhat_openshift_notm}} master control plane startup**: Components in the {{site.data.keyword.redhat_openshift_notm}} master, such as etcd, boot up on a LUKS-encrypted drive by using an IBM-managed key. Data in etcd is stored on the local disk of the {{site.data.keyword.redhat_openshift_notm}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.redhat_openshift_notm}} master by bringing your own key to encrypt the cluster.
 2. **Bring your own key (BYOK), for VPC and classic only**: When you [enable a key management service (KMS) provider](#keyprotect)`*` in your cluster, you can bring your own root key to create data encryption keys (DEKs) that encrypt the secrets in your cluster. The root key is stored in the KMS instance that you control. For example, if you use {{site.data.keyword.keymanagementservicelong_notm}}, the root key is stored in a FIPS 120-3 Level 3 hardware security module (HSM).
 3. **etcd data**: The etcd component of the master stores the configuration files of your Kubernetes resources, such as deployments and secrets. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. When you enable a KMS provider`*`, a wrapped data encryption key (DEK) is stored in etcd. The DEK encrypts the secrets in your cluster that store service credentials and the LUKS key. Because the root key is in your KMS instance, you control access to your encrypted secrets. To unwrap the DEK, the cluster uses the root key from your KMS instance. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect/concepts?topic=key-protect-envelope-encryption#envelope-encryption).
 4. **Worker node disks**: Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
@@ -39,7 +39,7 @@ The following image and description outline default and optional data encryption
     * ![Satellite infrastructure provider icon.](images/icon-satellite.svg) **{{site.data.keyword.satelliteshort}}**: See [{{site.data.keyword.satelliteshort}} worker nodes](#worker-encryption-satellite).
 5. **Cluster secrets**: When you deploy your app, don't store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, which are base64 encoded by default. To manage encryption of the Kubernetes secrets in your cluster, you can enable a KMS provider in VPC or classic clusters. The secrets are encrypted by KMS-provided encryption until their information is used. For example, if you update a Kubernetes pod that mounts a secret, the pod requests the secret values from the master API server. The master API server asks the KMS provider to use the root key to unwrap the DEK and encode its values to base64. Then, the master API server uses the KMS provider DEK that is stored in etcd to read the secret, and sends the secret to the pod by using TLS.
 
-    In clusters that run {{site.data.keyword.openshiftshort}} 4 or later, you can [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
+    In clusters that run {{site.data.keyword.redhat_openshift_notm}} 4 or later, you can [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
     {: tip}
 
 6. **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
@@ -139,7 +139,7 @@ Before you enable a key management service (KMS) provider in your cluster, creat
     * Ensure that the API key owner of the [API key](/docs/openshift?topic=openshift-access-creds#api_key_about) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider. For more information on granting access in IAM to the KMS provider, see the [{{site.data.keyword.keymanagementserviceshort}} user access documentation](/docs/key-protect?topic=key-protect-manage-access) or [{{site.data.keyword.hscrypto}} user access documentation](/docs/hs-crypto?topic=hs-crypto-manage-access#platform-mgmt-roles).
         * For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service access roles for your KMS provider.
         * If you plan to use an existing KMS instance and root key, you need at least the **Viewer** platform and **Reader** service access roles for your KMS provider.
-    * **For clusters that run {{site.data.keyword.openshiftshort}} 4.4.16_1513_openshift or later**: An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster can't use all the [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
+    * **For clusters that run {{site.data.keyword.redhat_openshift_notm}} 4.4.16_1513_openshift or later**: An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster can't use all the [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
     {: note}
 
 4. Consider [updating your cluster](/docs/openshift?topic=openshift-update) to at least version `4.5.18_1521_openshift` to get the latest features.
@@ -222,7 +222,7 @@ You can enable a KMS provider or update the instance or root key that encrypts s
 {: shortdesc}
 
 1. Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key.
-2. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you want to enable encryption for.
+2. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you want to enable encryption for.
 3. From the **Overview** tab, in the **Summary > Key management service** section, click **Enable**. If you already enabled the KMS provider, click **Update**.
 4. Select the **Key management service instance** and **Root key** that you want to use for the encryption.
 
@@ -274,7 +274,7 @@ After you enable a KMS provider in your {{site.data.keyword.openshiftlong_notm}}
 {: shortdesc}
 
 Before you begin
-- Consider [updating your cluster](/docs/containers?topic=containers-update) to at least {{site.data.keyword.openshiftshort}} version `4.5`. If you don't update your cluster to this version, changes to the root key are not reported in the cluster health status and take longer to take effect in your cluster.
+- Consider [updating your cluster](/docs/containers?topic=containers-update) to at least {{site.data.keyword.redhat_openshift_notm}} version `4.5`. If you don't update your cluster to this version, changes to the root key are not reported in the cluster health status and take longer to take effect in your cluster.
 - Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform and **Manager** service access role for the cluster.
 
 To verify secret encryption by disabling a root key
@@ -285,7 +285,7 @@ To verify secret encryption by disabling a root key
     ```
     {: pre}
 
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 3. Verify that you can list the secrets in your cluster.
     ```sh
     oc get secrets --all-namespaces
@@ -311,7 +311,7 @@ To verify secret encryption by disabling a root key
     ```
     {: screen}
 
-7. For clusters that run {{site.data.keyword.openshiftshort}} version `4.5` or later, check that your cluster is in a **warning** state. Your cluster remains in this state and is unusable until you enable your root key again.
+7. For clusters that run {{site.data.keyword.redhat_openshift_notm}} version `4.5` or later, check that your cluster is in a **warning** state. Your cluster remains in this state and is unusable until you enable your root key again.
     ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
@@ -368,7 +368,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
             {: codeblock}
 
     - **Creating a worker pool**: For more information, see [Creating VPC worker pools](/docs/openshift?topic=openshift-add_workers#vpc_add_pool) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
-        - **UI**: After selecting your cluster from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools > Add**. Then,  make sure to include the **KMS instance** and **Root key** fields.
+        - **UI**: After selecting your cluster from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools > Add**. Then,  make sure to include the **KMS instance** and **Root key** fields.
         - **CLI**: Make sure to include the `--kms-instance-id` and `--crk` fields, such as in the  following VPC example.
             ```sh
             ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster  <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone>  [--vpc-id <VPC ID> --kms-instance-id <kms_instance_ID> --crk <kms_root_key_ID>
@@ -376,7 +376,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
             {: codeblock}
 
 4. Verify that your worker pool is encrypted by reviewing the worker pool details.
-    - **UI**: After selecting your cluster from the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools**. Then, click your worker pool.
+    - **UI**: After selecting your cluster from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools**. Then, click your worker pool.
     - **CLI**: Review the **KMS** and **CRK** fields in the output of the following command.
         ```sh
         ibmcloud oc worker-pool get --name <worker_pool_name> --cluster <cluster_name_or_ID>

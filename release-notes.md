@@ -49,7 +49,7 @@ Cloud Image Key Synchronizer add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.openshiftshort}} [4.9.22_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#4922_1529), [4.8.32_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog#4832_1547), [4.7.42_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1553), [4.6.53_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1572), and [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1621).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.22_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#4922_1529), [4.8.32_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog#4832_1547), [4.7.42_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1553), [4.6.53_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1572), and [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1621).
 
 
 ### 24 February 2022
@@ -111,7 +111,7 @@ HPCS Router add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.openshiftshort}} [4.9.19_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog#4919_1526), [4.8.29_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog#4829_1544), [4.7.42_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1549), [4.6.53_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1572), and [3.11.570_1621_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1621).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.19_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog#4919_1526), [4.8.29_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog#4829_1544), [4.7.42_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1549), [4.6.53_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1572), and [3.11.570_1621_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1621).
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
@@ -164,7 +164,7 @@ Version changelog
 :   Fix pack update.
 
 
-:   {{site.data.keyword.openshiftshort}} [4.8.28_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#4828_1543), [4.7.41_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog#4741_1548), [4.6.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1571), [3.11.570_1620_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1620).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.8.28_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#4828_1543), [4.7.41_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog#4741_1548), [4.6.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1571), [3.11.570_1620_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1620).
 
 **New!** Worker node flavor reference
 :   View a list of all available worker node flavors by zone. For more information, see [VPC Gen 2 flavors](/docs/containers?topic=containers-classic-flavors) or [Classic flavors](/docs/containers?topic=containers-vpc-gen2-flavors).
@@ -175,9 +175,9 @@ Version changelog
 {: #28jan2022}
 {: release-note}
 
-**New!** Troubleshooting the {{site.data.keyword.openshiftshort}} console.
-:   If you receive a 500 error when trying to log in to your {{site.data.keyword.openshiftshort}} cluster via `oc login` or the console, you can resolve this issue by running the `cluster config` command. For more information, see [500 error when trying to log in to an {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
-:   You must synchronize the IAM user information initially to fix this error. See [500 error when trying to log in to an {{site.data.keyword.openshiftshort}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
+**New!** Troubleshooting the {{site.data.keyword.redhat_openshift_notm}} console.
+:   If you receive a 500 error when trying to log in to your {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` or the console, you can resolve this issue by running the `cluster config` command. For more information, see [500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
+:   You must synchronize the IAM user information initially to fix this error. See [500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
 
 
 
@@ -251,7 +251,7 @@ Version changelog
 :   Worker node fix pack update.
 
 
-:   {{site.data.keyword.openshiftshort}} [4.8.26_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog#4826_1541), [4.7.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#4740_1546), [4.6.53_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1569), [3.11.570_1618_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1618).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.8.26_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog#4826_1541), [4.7.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#4740_1546), [4.6.53_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1569), [3.11.570_1618_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1618).
 
 ### 17 January 2022
 {: #17jan2022}
@@ -310,7 +310,7 @@ Review the release notes for December 2021.
 
 
 Worker node fix pack update
-:   Changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.8.24_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4824_1539_openshift), [`4.7.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4740_1544_openshift), [`4.6.52_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4652_1567_openshift), and [`3.11.570_1616_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311570_1616_openshift).
+:   Changelog documentation is available for {{site.data.keyword.redhat_openshift_notm}} version [`4.8.24_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4824_1539_openshift), [`4.7.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4740_1544_openshift), [`4.6.52_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4652_1567_openshift), and [`3.11.570_1616_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311570_1616_openshift).
 
 
 
@@ -368,11 +368,11 @@ Container service CLI
 
 
 
-{{site.data.keyword.openshiftshort}} Ingress controller
-:   Updated the {{site.data.keyword.openshiftshort}} 4.x Router documentation to use the Ingress controller.
+{{site.data.keyword.redhat_openshift_notm}} Ingress controller
+:   Updated the {{site.data.keyword.redhat_openshift_notm}} 4.x Router documentation to use the Ingress controller.
 
-{{site.data.keyword.openshiftshort}} Data Foundation
-:   Updated the deployment parameters for {{site.data.keyword.openshiftshort}} Data Foundation on {{site.data.keyword.satelliteshort}} clusters. The `containerPrivateEndpoint` parameter is no longer required.
+{{site.data.keyword.redhat_openshift_notm}} Data Foundation
+:   Updated the deployment parameters for {{site.data.keyword.redhat_openshift_notm}} Data Foundation on {{site.data.keyword.satelliteshort}} clusters. The `containerPrivateEndpoint` parameter is no longer required.
 
 
 
@@ -555,8 +555,8 @@ CLI changelog
 
 
 
-Unsupported {{site.data.keyword.openshiftshort}} version 4.5
-:   {{site.data.keyword.openshiftshort}} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
+Unsupported {{site.data.keyword.redhat_openshift_notm}} version 4.5
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions#version_types) immediately.
 
 
 
@@ -1031,11 +1031,11 @@ New! Private VPC NLB
 
 
 
-New! {{site.data.keyword.openshiftshort}} 4.7
-:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions#ocp47) your cluster to {{site.data.keyword.openshiftshort}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.openshiftshort}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/containers?topic=containers-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+New! {{site.data.keyword.redhat_openshift_notm}} 4.7
+:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions#ocp47) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.redhat_openshift_notm}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/containers?topic=containers-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
-Deprecated {{site.data.keyword.openshiftshort}} 4.5
-:   With the release of {{site.data.keyword.openshiftshort}} 4.7, clusters that run version 4.5 are deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
+Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.5
+:   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.7, clusters that run version 4.5 are deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46) as soon as possible.
 
 
 
@@ -1045,7 +1045,7 @@ Expanded Troubleshooting
     - [{{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-debug_storage_block)
     - [{{site.data.keyword.cos_short}}](/docs/openshift?topic=openshift-debug_storage_cos)
     - [Portworx](/docs/openshift?topic=openshift-debug_storage_px)
-    - [{{site.data.keyword.openshiftshort}} Container Storage](/docs/openshift?topic=openshift-debug_storage_ocs)
+    - [{{site.data.keyword.redhat_openshift_notm}} Container Storage](/docs/openshift?topic=openshift-debug_storage_ocs)
 
 ### 07 June 2021
 {: #07june2021}
@@ -1080,7 +1080,7 @@ Image key synchronizer
 {: release-note}
 
 Unsupported version
-:   {{site.data.keyword.openshiftshort}} version 4.4 is unsupported. Update your cluster to [version 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.4 is unsupported. Update your cluster to [version 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
 
 
 
@@ -1164,7 +1164,7 @@ Master versions
 {: release-note}
 
 CIS Kubernetes Benchmark
-:   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark) for clusters that run {{site.data.keyword.openshiftshort}} version 4.6.
+:   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6.
 
 
 
@@ -1194,7 +1194,7 @@ CLI changelog
 
 
 
-{{site.data.keyword.openshiftshort}} Container Storage
+{{site.data.keyword.redhat_openshift_notm}} Container Storage
 :   Adds a troubleshooting topic for [device set creation failure due to PVC names exceeding the Kubernetes character limit](/docs/openshift?topic=openshift-ts-ocs-roks-debug).
 
 
@@ -1251,7 +1251,7 @@ New fields and events for {{site.data.keyword.at_short}}
 
 
 
-New! {{site.data.keyword.openshiftshort}} Container Storage add-on
+New! {{site.data.keyword.redhat_openshift_notm}} Container Storage add-on
 :   The managed add-on is now available as a technology preview. For more information, see [Preparing your cluster](/docs/openshift?topic=openshift-deploy-odf-vpc).
 
 Supported add-ons
@@ -1299,7 +1299,7 @@ Deprecated data centers for classic clusters
 
   
 Master versions
-:   Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} version [`4.6.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4622_1538).
+:   Master fix pack update changelog documentation is available for {{site.data.keyword.redhat_openshift_notm}} version [`4.6.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4622_1538).
 
 
 
@@ -1358,7 +1358,7 @@ Worker node versions
 
 
 CIS Kubernetes Benchmark
-:   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark) for clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later.
+:   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later.
 
 CRI-O container runtime
 :   Added [information about the CRI-O container runtime interface](/docs/openshift?topic=openshift-security#container-runtime) for worker nodes.
@@ -1462,7 +1462,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 Unsupported version
-:   {{site.data.keyword.openshiftshort}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
 
 
 
@@ -1526,7 +1526,7 @@ CLI changelog
 {: release-note}
 
 VPE
-:   In VPC clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later, worker node communication to the Kubernetes master is now established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe).
+:   In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, worker node communication to the Kubernetes master is now established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe).
 
 ### 22 February 2021
 {: #22feb2021}
@@ -1548,11 +1548,11 @@ Certified Kubernetes
 
 
  
-New! {{site.data.keyword.openshiftshort}} 4.6
-:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions#ocp46) your cluster to {{site.data.keyword.openshiftshort}} version 4.6, which includes Kubernetes 1.19. With {{site.data.keyword.openshiftshort}} 4.6, you get the latest stable enhancements from the community. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-46-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+New! {{site.data.keyword.redhat_openshift_notm}} 4.6
+:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions#ocp46) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.6, which includes Kubernetes 1.19. With {{site.data.keyword.redhat_openshift_notm}} 4.6, you get the latest stable enhancements from the community. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-46-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
-Deprecated {{site.data.keyword.openshiftshort}} 4.4
-:   With the release of {{site.data.keyword.openshiftshort}} 4.6, clusters that run version 4.4 are deprecated, with an unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
+Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.4
+:   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.6, clusters that run version 4.4 are deprecated, with an unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](/docs/openshift?topic=openshift-openshift_versions#ocp45) as soon as possible.
 
 
 
@@ -1629,8 +1629,8 @@ Block Storage for VPC add-on
 
 
 
-New! {{site.data.keyword.openshiftshort}} Do (`odo`) CLI tutorial
-:   Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.openshiftshort}} Do CLI](/docs/containers?topic=containers-odo-tutorial) tutorial for a quick guide on using `odo` to package and push your apps to your cluster.
+New! {{site.data.keyword.redhat_openshift_notm}} Do (`odo`) CLI tutorial
+:   Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.redhat_openshift_notm}} Do CLI](/docs/containers?topic=containers-odo-tutorial) tutorial for a quick guide on using `odo` to package and push your apps to your cluster.
 
 New! Private service endpoint allowlists
 :   You can now control access to your private cloud service endpoint by [creating a subnet allowlist](/docs/containers?topic=containers-access_cluster#private-se-allowlist). Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.
@@ -1740,7 +1740,7 @@ Cluster autoscaler
 
 
 Encrypted images
-:   In clusters that run {{site.data.keyword.openshiftshort}} version 4.4 or later, you can now [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images) by enabling the Image Key Synchronizer cluster add-on.
+:   In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.4 or later, you can now [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images) by enabling the Image Key Synchronizer cluster add-on.
 
 
 
@@ -1787,7 +1787,7 @@ Helm version 2 unsupported
 
 Worker node versions
 :   Worker node fix pack update changelog documentation is available.
-:   {{site.data.keyword.openshiftshort}} [`4.5.21_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4521_1522), [`4.4.31_1526_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1526), [`4.3.40_1547_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1547), and [`3.11.318_1574_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1574)..
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.21_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4521_1522), [`4.4.31_1526_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4431_1526), [`4.3.40_1547_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1547), and [`3.11.318_1574_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1574)..
 
 ### 3 December 2020
 {: #03dec2020}
@@ -1803,7 +1803,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 Default version
-:   {{site.data.keyword.openshiftshort}} 4.5 is now the default version for {{site.data.keyword.openshiftlong_notm}} clusters.
+:   {{site.data.keyword.redhat_openshift_notm}} 4.5 is now the default version for {{site.data.keyword.openshiftlong_notm}} clusters.
 
 
 
@@ -1817,7 +1817,7 @@ Default version
 {: release-note}
 
 New! {{site.data.keyword.cloud_notm}} HPCS Router
-:   In clusters that run {{site.data.keyword.openshiftshort}} version 4.5, you can now deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an {{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance. This key can be used by the router in TLS session establishment and in Certificate Signing Request (CSR) signing. To get started, see [Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router).
+:   In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5, you can now deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an {{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance. This key can be used by the router in TLS session establishment and in Certificate Signing Request (CSR) signing. To get started, see [Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router).
 
 
 
@@ -1834,7 +1834,7 @@ New! {{site.data.keyword.cloud_notm}} HPCS Router
 
 Worker node versions
 :   Worker node fix pack update changelog documentation is available.
-:   {{site.data.keyword.openshiftshort}} [`4.5.19_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4519_1521), [`4.4.30_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4430_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1546_worker), and [`3.11.313.318_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1573).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.19_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4519_1521), [`4.4.30_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4430_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1546_worker), and [`3.11.313.318_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311318_1573).
 
 ### 20 November 2020
 {: #20nov2020}
@@ -1868,7 +1868,7 @@ New! {{site.data.keyword.block_storage_is_short}} changelog
 
 
 
-New! GPU support in {{site.data.keyword.openshiftshort}} 4
+New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
 :   Now, you can create GPU bare metal worker nodes in your {{site.data.keyword.openshiftlong_notm}} version 4 clusters in select zones. GPU machines are suited for high-performance computing, machine learning, or 3D applications that you might have, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}. 
 :   To get started with GPU-accelerated workloads.
     - Create a [cluster](/docs/openshift?topic=openshift-clusters#clusters_standard) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. 
@@ -1878,7 +1878,7 @@ New! GPU support in {{site.data.keyword.openshiftshort}} 4
 
   
 Master versions
-:   Master fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.5.18_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4518_1521), [`4.4.29_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4429_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1546), and [`3.11.306_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311306_1573_master).
+:   Master fix pack update changelog documentation is available for {{site.data.keyword.redhat_openshift_notm}} [`4.5.18_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4518_1521), [`4.4.29_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4429_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1546), and [`3.11.306_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311306_1573_master).
 
 ### 13 November 2020
 {: #13nov2020}
@@ -1900,7 +1900,7 @@ New! Reduced and hourly billing is available for OCP licenses
 
 Worker node versions
 :   Worker node fix pack update changelog documentation is available.
-:   {{site.data.keyword.openshiftshort}} [`4.5.17_1519_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4517_1519), [`4.4.29_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4429_1524), [`4.3.40_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1545), and [`3.11.306_1572_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311306_1572).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.17_1519_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4517_1519), [`4.4.29_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4429_1524), [`4.3.40_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1545), and [`3.11.306_1572_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311306_1572).
 
 ### 5 November 2020
 {: #05nov2020}
@@ -1953,12 +1953,12 @@ Version 4 Ingress
 Master versions
 :   Master fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4515_1518), [`4.4.27_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4427_1523), [`4.3.38_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1544), and [`3.11.286_1571_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1571).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4515_1518), [`4.4.27_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4427_1523), [`4.3.38_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1544), and [`3.11.286_1571_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1571).
 
 Worker node versions
 :   Worker node fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4515_1518_worker), [`4.4.27_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4427_1523_worker), [`4.3.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1544), and [`3.11.306_1571_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311306_1571).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4515_1518_worker), [`4.4.27_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4427_1523_worker), [`4.3.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4340_1544), and [`3.11.306_1571_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311306_1571).
 
 ### 22 October 2020
 {: #22oct2020}
@@ -1989,10 +1989,10 @@ Gateway firewalls and Calico policies
 
 
 
-New! Certified {{site.data.keyword.openshiftshort}} version 4.5
-:   You can now create clusters that run {{site.data.keyword.openshiftshort}} version 4.5. To update an existing cluster, see the [Version 4.5 preparation actions](/docs/openshift?topic=openshift-openshift_versions#ocp45). The {{site.data.keyword.openshiftshort}} 4.5 release is also certified for Kubernetes 1.18.
+New! Certified {{site.data.keyword.redhat_openshift_notm}} version 4.5
+:   You can now create clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5. To update an existing cluster, see the [Version 4.5 preparation actions](/docs/openshift?topic=openshift-openshift_versions#ocp45). The {{site.data.keyword.redhat_openshift_notm}} 4.5 release is also certified for Kubernetes 1.18.
 
-Deprecated: {{site.data.keyword.openshiftshort}} version 4.3
+Deprecated: {{site.data.keyword.redhat_openshift_notm}} version 4.3
 :   With the release of version 4.5, clusters that run version 4.3 are deprecated. Update your clusters to at least [version 4.4](/docs/openshift?topic=openshift-openshift_versions#ocp44) today.
 
 
@@ -2001,7 +2001,7 @@ Version changelogs
 :   Changelog documentation is available for [4.5.13_1515](/docs/openshift?topic=openshift-openshift_changelog#4513_1515).
 
 VPC load balancer
-:   Added support for setting the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` and `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnet` annotations when you create new VPC load balancers in clusters that run {{site.data.keyword.openshiftshort}} version 4.5.
+:   Added support for setting the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` and `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnet` annotations when you create new VPC load balancers in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5.
 
 VPC security groups
 :   Expanded the list of required rules based on the cluster version for default VPC security groups.
@@ -2016,7 +2016,7 @@ VPC security groups
 Versions
 :   Worker node fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.4.26_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4426_1521), [`4.3.38_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1542), and [`3.11.286_1570_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1570).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.26_1521_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4426_1521), [`4.3.38_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1542), and [`3.11.286_1570_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1570).
 
 ### 8 October 2020
 {: #08oct2020}
@@ -2037,7 +2037,7 @@ Ingress secret expiration synchronization
 
 
 
-Internal {{site.data.keyword.openshiftshort}} container image registry
+Internal {{site.data.keyword.redhat_openshift_notm}} container image registry
 :   Added a troubleshooting topic for when you [can't push images to the internal registry from outside the VPC network](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push).
 
 
@@ -2062,7 +2062,7 @@ Ingress ALB changelog
 {: release-note}
 
 Versions
-:   Worker node fix pack update changelog documentation is available for {{site.data.keyword.openshiftshort}} [`4.4.23_1520_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4423_1520), [`4.3.38_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1541), and [`3.11.286_1569_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1569).
+:   Worker node fix pack update changelog documentation is available for {{site.data.keyword.redhat_openshift_notm}} [`4.4.23_1520_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4423_1520), [`4.3.38_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1541), and [`3.11.286_1569_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1569).
 
 
 
@@ -2080,7 +2080,7 @@ For classic clusters in London or Dallas, updated the required IP addresses and 
 Versions
 :   Worker node fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.4.23_1519_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4423_1519), [`4.3.38_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1540), and [`3.11.286_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1568).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.23_1519_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4423_1519), [`4.3.38_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4338_1540), and [`3.11.286_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311286_1568).
 
 ### 24 September 2020
 {: #24sept2020}
@@ -2099,7 +2099,7 @@ Ingress ALB changelog
 
 
 New! Reservations and limits for PIDs
-:   Worker nodes that run {{site.data.keyword.openshiftshort}} 4.3 or later or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.
+:   Worker nodes that run {{site.data.keyword.redhat_openshift_notm}} 4.3 or later or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.
 
 
 
@@ -2117,14 +2117,14 @@ Unsupported: Kubernetes version 1.15
 Versions
 :   Master fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.4.20_1518_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4420_1518), [`4.3.35_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4335_1539), and [`3.11.272_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1567).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.20_1518_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4420_1518), [`4.3.35_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4335_1539), and [`3.11.272_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1567).
 
 
 
 Versions
 :   Worker node fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.4.20_1517_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4420_1517), [`4.3.35_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4335_1538), and [`3.11.272_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1566).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.20_1517_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4420_1517), [`4.3.35_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4335_1538), and [`3.11.272_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1566).
 
 
 
@@ -2148,7 +2148,7 @@ CA certificate rotation
 Versions
 :   Worker node fix pack update changelog documentation is available. 
 
-:   {{site.data.keyword.openshiftshort}} [`4.4.18_1516_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4418_1516), [`4.3.33_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4333_1537), and [`3.11.272_1565_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1565).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.18_1516_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4418_1516), [`4.3.33_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4333_1537), and [`3.11.272_1565_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311272_1565).
 
 ### 27 August 2020
 {: #27aug2020}
@@ -2199,7 +2199,7 @@ Versions
 Versions
 :   Master fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4416_1513_master), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4331_1534_master), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1564_master).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4416_1513_master), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4331_1534_master), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1564_master).
 
 ### 17 August 2020
 {: #17aug2020}
@@ -2211,7 +2211,7 @@ Locations
 Versions
 :   Worker node fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4416_1513), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4331_1534), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1564)..
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4416_1513), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4331_1534), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1564)..
 
 
 
@@ -2241,7 +2241,7 @@ Gateway appliance firewalls
 Versions
 :   Worker node fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.4.14_1512_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4414_1512), [`4.3.29_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4329_1533), and [`3.11.248_1561_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1561).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.14_1512_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4414_1512), [`4.3.29_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4329_1533), and [`3.11.248_1561_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311248_1561).
 
 ## July 2020
 {: #july20}
@@ -2250,8 +2250,8 @@ Versions
 {: #31july2020}
 {: release-note}
 
-{{site.data.keyword.openshiftshort}} version 4.4
-:   The [{{site.data.keyword.openshiftshort}} version 4.4 release](/docs/containers?topic=containers-cs_versions#cs_v118) is certified for Kubernetes version 1.17.
+{{site.data.keyword.redhat_openshift_notm}} version 4.4
+:   The [{{site.data.keyword.redhat_openshift_notm}} version 4.4 release](/docs/containers?topic=containers-cs_versions#cs_v118) is certified for Kubernetes version 1.17.
 
 ### 28 July 2020
 {: #28july2020}
@@ -2261,7 +2261,7 @@ Ingress ALB versions
 :   Added the `ibmcloud oc ingress alb versions` CLI command to show the available versions for the ALBs in your cluster and the `ibmcloud oc ingress alb update` CLI command to update or rollback ALBs to a specific version.
 
 UI for creating clusters
-:   Updated getting started and task topics for the updated process for the [{{site.data.keyword.openshiftshort}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}.
+:   Updated getting started and task topics for the updated process for the [{{site.data.keyword.redhat_openshift_notm}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}.
 
 ### 24 July 2020
 {: #24july2020}
@@ -2273,7 +2273,7 @@ Minimum cluster size
 Versions
 :   Master fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`3.11.232_1560_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1560).
+:   {{site.data.keyword.redhat_openshift_notm}} [`3.11.232_1560_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1560).
 
 
 
@@ -2286,8 +2286,8 @@ Worker node replacement
 {: #21july2020}
 {: release-note}
 
-New! {{site.data.keyword.openshiftshort}} version 4.4 clusters
-:   You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_versions#ocp44) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-openshift_changelog#version-44). With {{site.data.keyword.openshiftshort}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: exterrnal}.
+New! {{site.data.keyword.redhat_openshift_notm}} version 4.4 clusters
+:   You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_versions#ocp44) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-openshift_changelog#version-44). With {{site.data.keyword.redhat_openshift_notm}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: exterrnal}.
 
 
 
@@ -2298,12 +2298,12 @@ New! {{site.data.keyword.openshiftshort}} version 4.4 clusters
 Master versions
 :   Master fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.3.28_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4328_1532) and [`3.11.232_1559_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1559).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.28_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4328_1532) and [`3.11.232_1559_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1559).
 
 Worker node versions
 :   Worker node fix pack update changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.3.29_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4329_1532) and [`3.11.232_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1558).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.29_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4329_1532) and [`3.11.232_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1558).
 
 
 
@@ -2335,7 +2335,7 @@ CLI changelog
 Version changelogs
 :   Worker node fix pack update changelog documentation is available.
 
-:    {{site.data.keyword.openshiftshort}} [`4.3.27_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4327_1528) and [`3.11.232_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1555).
+:    {{site.data.keyword.redhat_openshift_notm}} [`4.3.27_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4327_1528) and [`3.11.232_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311232_1555).
 
 ### 2 July 2020
 {: #02july2020}
@@ -2388,7 +2388,7 @@ New! {{site.data.keyword.openshiftlong_notm}} observability plug-in
 Version changelogs
 :   Changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.3.13_1522_openshift` master and `4.3.25_1527_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master) and [`3.11.219_1554_openshift` master and `3.11.232_1554_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master) fix pack patch updates.
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1522_openshift` master and `4.3.25_1527_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#4323_1527_master) and [`3.11.219_1554_openshift` master and `3.11.232_1554_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog#311219_1554_master) fix pack patch updates.
 
 ### 18 June 2020
 {: #18june2020}
@@ -2404,7 +2404,7 @@ Ingress ALB changelog
 
 
 New! Virtual Private Cloud Generation 2
-:   You can now create {{site.data.keyword.openshiftshort}} clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC Gen 2 clusters are available for version 4 clusters only.
+:   You can now create {{site.data.keyword.redhat_openshift_notm}} clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC Gen 2 clusters are available for version 4 clusters only.
 :   For more information, check out the following links.
     - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
     - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
@@ -2439,7 +2439,7 @@ New! Static routes add-on
 Version changelogs
 :   Worker node changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.3.23_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1524) and [`3.11.219_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311219_1552).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.23_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1524) and [`3.11.219_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311219_1552).
 
 ### 4 June 2020
 {: #04june2020}
@@ -2461,7 +2461,7 @@ VPC network security
 
   
 Version 3.11 is deprecated
-:   Clusters that run {{site.data.keyword.openshiftshort}} version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history).
+:   Clusters that run {{site.data.keyword.redhat_openshift_notm}} version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history).
 
 VPC ACLs
 :   Added required rules for using VPC load balancers to steps for [Creating access control lists (ACLs) to control traffic to and from your VPC cluster](/docs/openshift?topic=openshift-vpc-acls).
@@ -2476,7 +2476,7 @@ VPC ACLs
 {: #27may2020}
 {: release-note}
 
-The minimum number of worker nodes per zone is increased from one to two so that default {{site.data.keyword.openshiftshort}} components can be deployed and spread across worker nodes in a zone.
+The minimum number of worker nodes per zone is increased from one to two so that default {{site.data.keyword.redhat_openshift_notm}} components can be deployed and spread across worker nodes in a zone.
 
 
 
@@ -2488,7 +2488,7 @@ CLI changelog
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.84](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Image pull secrets
-:   Now, the `default-icr-io` and `default-<region>-icr-io` image pull secrets in the `default` project are replaced by a single `all-icr-io` image pull secret that has credentials to all the public and private regional registry domains. Clusters that run {{site.data.keyword.openshiftshort}} 3.11 still have the previous `default-<region>-icr-io` image pull secrets for backwards compatibility.
+:   Now, the `default-icr-io` and `default-<region>-icr-io` image pull secrets in the `default` project are replaced by a single `all-icr-io` image pull secret that has credentials to all the public and private regional registry domains. Clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11 still have the previous `default-<region>-icr-io` image pull secrets for backwards compatibility.
 
 Ingress status
 :   Added information about [health reporting for your Ingress components](/docs/containers?topic=containers-ingress-status).
@@ -2503,7 +2503,7 @@ Tuning Calico
 Version changelogs
 :   Master and worker node changelog documentation is available.
 
-:   {{site.data.keyword.openshiftshort}} [`4.3.21_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4321_1523) for worker nodes, [`4.3.19_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4319_1523) for masters, and [`3.11.216_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1551).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.21_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4321_1523) for worker nodes, [`4.3.19_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4319_1523) for masters, and [`3.11.216_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1551).
 
 
 
@@ -2554,7 +2554,7 @@ Cloud Paks entitlements
 {: release-note}
 
 Registry
-:   Added the following topics about using {{site.data.keyword.registrylong_notm}} with the internal {{site.data.keyword.openshiftshort}} container registry. For more information, see [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options). 
+:   Added the following topics about using {{site.data.keyword.registrylong_notm}} with the internal {{site.data.keyword.redhat_openshift_notm}} container registry. For more information, see [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options). 
     - [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry). 
     - [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy). 
     - [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry).
@@ -2564,7 +2564,7 @@ Registry
 {: release-note}
 
 Version changelogs
-:   Master patch update is available for {{site.data.keyword.openshiftshort}} [`4.3.18_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4318_1522).
+:   Master patch update is available for {{site.data.keyword.redhat_openshift_notm}} [`4.3.18_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4318_1522).
 
 
 
@@ -2575,7 +2575,7 @@ Version changelogs
 
 
 Version changelogs
-:   {{site.data.keyword.openshiftshort}} [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1550).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311216_1550).
 
 
 
@@ -2606,7 +2606,7 @@ Ingress troubleshooting
 {: release-note}
 
 Cluster and worker node quotas
-:   Now, each region in your {{site.data.keyword.cloud_notm}} account has quotas for {{site.data.keyword.openshiftshort}} clusters and workers. You can have **100 clusters** and **500 worker nodes** across clusters per region and per [infrastructure provider](/docs/containers?topic=containers-infrastructure_providers). With quotas in place, your account is better protected from accidental requests or billing surprises. Need more clusters? No problem, just [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new cluster or worker node quota limit for the region and infrastructure provider that you want. For more information, see the [Service limitations](/docs/containers?topic=containers-limitations).
+:   Now, each region in your {{site.data.keyword.cloud_notm}} account has quotas for {{site.data.keyword.redhat_openshift_notm}} clusters and workers. You can have **100 clusters** and **500 worker nodes** across clusters per region and per [infrastructure provider](/docs/containers?topic=containers-infrastructure_providers). With quotas in place, your account is better protected from accidental requests or billing surprises. Need more clusters? No problem, just [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new cluster or worker node quota limit for the region and infrastructure provider that you want. For more information, see the [Service limitations](/docs/containers?topic=containers-limitations).
 
 ### 29 April 2020
 {: #29april2020}
@@ -2626,7 +2626,7 @@ Ingress ALB changelog
 
 Version changelogs
 
-:   {{site.data.keyword.openshiftshort}} [`4.3.13_1521_openshift`(/docs/openshift?topic=openshift-openshift_changelog#4313_1521) and [`3.11.200_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311200_1549).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1521_openshift`(/docs/openshift?topic=openshift-openshift_changelog#4313_1521) and [`3.11.200_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog#311200_1549).
 
 ### 24 April 2020
 {: #24april2020}
@@ -2635,8 +2635,8 @@ Version changelogs
 Global pull secret
 :   Added how to [update the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).
 
-{{site.data.keyword.openshiftshort}} 4.3
-:   [{{site.data.keyword.openshiftshort}} version 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43) is now the default version.
+{{site.data.keyword.redhat_openshift_notm}} 4.3
+:   [{{site.data.keyword.redhat_openshift_notm}} version 4.3](/docs/openshift?topic=openshift-openshift_versions#ocp43) is now the default version.
 
 
 
@@ -2646,7 +2646,7 @@ Global pull secret
 
 Version changelogs
 
-:   {{site.data.keyword.openshiftshort}} [3.11.200_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog#311200_1548).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.200_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog#311200_1548).
 
 ### 22 April 2020
 {: #22april2020}
@@ -2672,7 +2672,7 @@ General availability
 :   {{site.data.keyword.openshiftlong_notm}} version 4.3 is generally available as of 20 April 2020 at 12:00 UTC. Any beta clusters that you created remain for only 30 days. You can [create a GA cluster](/docs/openshift?topic=openshift-openshift_tutorial) and then redeploy any apps that you used in any expired beta clusters.
 
 Debugging guide
-:   Added a [Debugging guide](/docs/openshift?topic=openshift-ocp-debug) for default {{site.data.keyword.openshiftshort}} components such as the console, internal registry, or OperatorHub.
+:   Added a [Debugging guide](/docs/openshift?topic=openshift-ocp-debug) for default {{site.data.keyword.redhat_openshift_notm}} components such as the console, internal registry, or OperatorHub.
 
 Version changelog
 :   [Patch updates](/docs/openshift?topic=openshift-openshift_changelog#4312_1520_master) are available for master fix pack `4.3.12_1520_openshift` and worker node fix pack `4.3.10_1518_openshift`.
@@ -2703,7 +2703,7 @@ New! Private Ingress and routes
 Version changelogs
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.200_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#311200_1546_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.200_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#311200_1546_worker).
 
 ### 6 April 2020
 {: #06april2020}
@@ -2724,7 +2724,7 @@ CLI changelog
 Version changelogs
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.188_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog#311188_1545_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.188_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog#311188_1545_worker).
 
 File storage classes
 :   Added `gid` file storage classes to specify a supplemental group ID that you can assign to a non-root user ID so that the non-root user can read and write to the file storage instance. For more information, see the storage class [reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference). 
@@ -2782,7 +2782,7 @@ New! CLI 1.0
 
 
 Default service settings
-:   Added a page to describe the [default service settings for {{site.data.keyword.openshiftshort}} components](/docs/openshift?topic=openshift-service-settings).
+:   Added a page to describe the [default service settings for {{site.data.keyword.redhat_openshift_notm}} components](/docs/openshift?topic=openshift-service-settings).
 
 Image build errors
 :   Added a troubleshooting topic for [build errors due to image pull authentication](/docs/openshift?topic=openshift-ts-app-build-img-pull).
@@ -2799,7 +2799,7 @@ Sizing workloads
 
 
 
-Enabling TLS for Ingress, {{site.data.keyword.openshiftshort}} version 4.3 only
+Enabling TLS for Ingress, {{site.data.keyword.redhat_openshift_notm}} version 4.3 only
 :   If you use a custom domain and want to enable TLS for Ingress, you must [add a TLS section to each Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3) instead of specifying the certificate in the configuration file for the custom Ingress controller.
 
 
@@ -2807,7 +2807,7 @@ Enabling TLS for Ingress, {{site.data.keyword.openshiftshort}} version 4.3 only
 Version changelogs
 :   Master and worker node patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.170_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1544).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.170_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1544).
 
 ### 12 March 2020
 {: #12mar2020}
@@ -2816,7 +2816,7 @@ Version changelogs
 
 
 Feature gates
-:   Added the [feature gates for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-settings#feature-gates) that differ from community {{site.data.keyword.openshiftshort}} distributions.
+:   Added the [feature gates for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-settings#feature-gates) that differ from community {{site.data.keyword.redhat_openshift_notm}} distributions.
 
 
 
@@ -2848,7 +2848,7 @@ Ingress ALB changelog
 Version changelogs
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.170_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1543_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.170_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog#311170_1543_worker).
 
 ## February 2020
 {: #feb20}
@@ -2895,7 +2895,7 @@ Firewall subnets
 {: release-note}
 
 Version changelogs
-:   {{site.data.keyword.openshiftshort}} master fix pack for [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_master).
+:   {{site.data.keyword.redhat_openshift_notm}} master fix pack for [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_master).
 
 
 
@@ -2908,7 +2908,7 @@ Version changelogs
 Version changelogs
 :   Master and worker node patch updates.
 
-:   {{site.data.keyword.openshiftshort}} worker fix pack [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} worker fix pack [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1542_worker).
 
 
 
@@ -2918,8 +2918,8 @@ Version changelogs
 
 
 
-New! {{site.data.keyword.openshiftshort}} 4.3
-:   {{site.data.keyword.openshiftshort}} 4.3 is now available as a beta. During the beta, the {{site.data.keyword.openshiftshort}} license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you can't update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions#ocp43).
+New! {{site.data.keyword.redhat_openshift_notm}} 4.3
+:   {{site.data.keyword.redhat_openshift_notm}} 4.3 is now available as a beta. During the beta, the {{site.data.keyword.redhat_openshift_notm}} license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you can't update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions#ocp43).
 
 
 
@@ -2933,7 +2933,7 @@ Cluster autoscaler
 
 
 Expanded troubleshooting
-:   You can now find troubleshooting steps for {{site.data.keyword.openshiftshort}} clusters in the following pages.
+:   You can now find troubleshooting steps for {{site.data.keyword.redhat_openshift_notm}} clusters in the following pages.
     - [Clusters and masters](/docs/openshift?topic=openshift-debug_clusters)
     - [Worker nodes](/docs/openshift?topic=openshift-debug_clusters)
     - [Cluster networking](/docs/openshift?topic=openshift-roks_ts_subdomain)
@@ -2955,7 +2955,7 @@ VPC security groups
 
 Version changelog
 
-:   {{site.data.keyword.openshiftshort}} master fix pack [3.11.161_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1539) and worker fix pack [3.11.161_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1540).
+:   {{site.data.keyword.redhat_openshift_notm}} master fix pack [3.11.161_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1539) and worker fix pack [3.11.161_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1540).
 
 
 
@@ -2988,7 +2988,7 @@ Changing VLANs
 :   After you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), you can now [move router services across VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic).
 
 Storage utilities
-:   [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities) are now available for {{site.data.keyword.openshiftshort}} clusters.
+:   [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities) are now available for {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 
 
@@ -3005,7 +3005,7 @@ Ingress ALB changelog
 Version changelog
 :   Patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1538).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog#311161_1538).
 
 
 
@@ -3023,7 +3023,7 @@ Ingress ALB changelog
 Version changelog
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).
 
 ## December 2019
 {: #dec19}
@@ -3042,7 +3042,7 @@ Ingress ALB changelog
 Version changelog
 :   Master patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1536).
 
 
 
@@ -3077,7 +3077,7 @@ Configuring VPC subnets
 Version changelog
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.154_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1534_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1534_worker).
 
 ### 4 December 2019
 {: #04dec2019}
@@ -3088,10 +3088,10 @@ Exposing apps with load balancers or Ingress ALBs
 
 
 
-{{site.data.keyword.openshiftshort}} charges
-:   Now when you create {{site.data.keyword.openshiftshort}} clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use {{site.data.keyword.openshiftshort}} clusters?](/docs/openshift?topic=openshift-faqs#charges).
+{{site.data.keyword.redhat_openshift_notm}} charges
+:   Now when you create {{site.data.keyword.redhat_openshift_notm}} clusters, you are not charged for the Red Hat Enterprise Linux operating system that is installed on the worker nodes. For more information, see [What am I charged for when I use {{site.data.keyword.redhat_openshift_notm}} clusters?](/docs/openshift?topic=openshift-faqs#charges).
 
-{{site.data.keyword.openshiftshort}} routes
+{{site.data.keyword.redhat_openshift_notm}} routes
 :   Added steps for [bringing your own hostname](/docs/openshift?topic=openshift-openshift_routes#routes-setup) for public routes and steps for [setting up private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43).
 
 
@@ -3109,8 +3109,8 @@ Use the internal KVDB in Portworx
 CLI changelog
 :   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/containers?topic=containers-cs_cli_changelog).
 
-Diagnostics and Debug Tool add-on for {{site.data.keyword.openshiftshort}} clusters
-:   The [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) add-on is now available for {{site.data.keyword.openshiftshort}} clusters.
+Diagnostics and Debug Tool add-on for {{site.data.keyword.redhat_openshift_notm}} clusters
+:   The [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) add-on is now available for {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 Cluster autoscaling for VPC clusters
 :   You can [set up the cluster autoscaler](/docs/openshift?topic=openshift-ca#ca_helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
@@ -3121,7 +3121,7 @@ New! Reservations and limits for PIDs
 Version changelog
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.openshiftshort}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533_worker).
 
 ### 22 November 2019
 {: #22nov2019}
@@ -3147,7 +3147,7 @@ Ingress ALB changelog
 Version changelog
 :   Master patch updates are available.
 
-:    {{site.data.keyword.openshiftshort}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533).
+:    {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog#311154_1533).
 
 
 ### 19 November 2019
@@ -3164,7 +3164,7 @@ Fluentd component changes
 {: #15nov2019}
 {: release-note}
 
-New! Single zone location for {{site.data.keyword.openshiftshort}} clusters
+New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   You can create single zone {{site.data.keyword.openshiftlong_notm}} clusters in São Paulo, Brazil (`sao01`).
 
 
@@ -3178,8 +3178,8 @@ Exposing apps that are external to your cluster by using Ingress
 
 
 
-{{site.data.keyword.openshiftshort}} overview
-:   Added an [{{site.data.keyword.openshiftshort}} overview page](/docs/openshift?topic=openshift-roks-overview).
+{{site.data.keyword.redhat_openshift_notm}} overview
+:   Added an [{{site.data.keyword.redhat_openshift_notm}} overview page](/docs/openshift?topic=openshift-roks-overview).
 
 Setting pod priority
 :   Added a [pod priority page](/docs/openshift?topic=openshift-pod_priority).
@@ -3196,7 +3196,7 @@ Using {{site.data.keyword.registrylong_notm}}
 Version changelog
 :   Worker node patch updates are available.
 :   
-:    {{site.data.keyword.openshiftshort}} [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).
+:    {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1530).
 
 
 ### 7 November 2019
@@ -3229,7 +3229,7 @@ New! Keep your own key (KYOK) support (beta)
 Refreshed {{site.data.keyword.openshiftlong_notm}} docs
 :   Includes the following new content.
     - [Setting up VPN connectivity](/docs/openshift?topic=openshift-vpn)
-    - [Changing service endpoints or VLAN connections for {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster)
+    - [Changing service endpoints or VLAN connections for {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-access_cluster)
     - [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes)
     - [Exposing apps with network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
     - [Exposing apps with Ingress application load balancers (ALBs)](/docs/openshift?topic=openshift-ingress-about-roks4)
@@ -3241,7 +3241,7 @@ Refreshed {{site.data.keyword.openshiftlong_notm}} docs
 {: release-note}
 
 Version changelogs
-:   Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-115_changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-114_changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-113_changelog#11312_1540), [1.12.10_1570](/docs/containers?topic=containers-112_changelog#11210_1570), and {{site.data.keyword.openshiftshort}} [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1529).
+:   Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-115_changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-114_changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-113_changelog#11312_1540), [1.12.10_1570](/docs/containers?topic=containers-112_changelog#11210_1570), and {{site.data.keyword.redhat_openshift_notm}} [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog#311153_1529).
 
 
 
@@ -3273,7 +3273,7 @@ Ingress annotations
 {: release-note}
 
 Version changelogs
-:   Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-115_changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-114_changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-113_changelog#11312_1539), and {{site.data.keyword.openshiftshort}} [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1528).
+:   Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-115_changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-114_changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-113_changelog#11312_1539), and {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1528).
 
 
 
@@ -3287,10 +3287,10 @@ CLI changelog
 
 
 Cloud Paks
-:   By using the {{site.data.keyword.cloud_notm}} catalog, you can [add Cloud Paks to your {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-openshift_cloud_paks).
+:   By using the {{site.data.keyword.cloud_notm}} catalog, you can [add Cloud Paks to your {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-openshift_cloud_paks).
 
 Cluster autoscaler
-:   You can [install the cluster autoscaler](/docs/openshift?topic=openshift-ca) Helm chart on {{site.data.keyword.openshiftshort}} clusters with Helm Tiller version 2.12 or later.
+:   You can [install the cluster autoscaler](/docs/openshift?topic=openshift-ca) Helm chart on {{site.data.keyword.redhat_openshift_notm}} clusters with Helm Tiller version 2.12 or later.
 
 
 
@@ -3298,7 +3298,7 @@ Let's Encrypt rate limits for Ingress
 :   Added troubleshooting steps for when no subdomain or secret is generated for the Ingress ALB when you create or delete clusters of the same name.
 
 Version changelogs
-:   Worker node patch updates are available for Kubernetes [1.15.4_1519](/docs/containers?topic=containers-115_changelog#1154_1519_worker), [1.14.7_1535](/docs/containers?topic=containers-114_changelog#1147_1535_worker), [1.13.11_1538](/docs/containers?topic=containers-113_changelog#11311_1538_worker), [1.12.10_1569](/docs/containers?topic=containers-112_changelog#11210_1569_worker), and {{site.data.keyword.openshiftshort}} [3.11.146_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1527).
+:   Worker node patch updates are available for Kubernetes [1.15.4_1519](/docs/containers?topic=containers-115_changelog#1154_1519_worker), [1.14.7_1535](/docs/containers?topic=containers-114_changelog#1147_1535_worker), [1.13.11_1538](/docs/containers?topic=containers-113_changelog#11311_1538_worker), [1.12.10_1569](/docs/containers?topic=containers-112_changelog#11210_1569_worker), and {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1527).
 
 
 
@@ -3307,10 +3307,10 @@ Version changelogs
 {: release-note}
     
 Version changelog
-:   Master fix pack updates are available for {{site.data.keyword.openshiftshort}} [3.11.146_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1526).
+:   Master fix pack updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1526).
 
 Software-defined storage with Portworx
-:   You can now install Portworx on your {{site.data.keyword.openshiftshort}} cluster as a highly available data management platform for your containerized apps. For more information, see [Storing data software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
+:   You can now install Portworx on your {{site.data.keyword.redhat_openshift_notm}} cluster as a highly available data management platform for your containerized apps. For more information, see [Storing data software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
 
 
 
@@ -3327,7 +3327,7 @@ DevOps toolchain
 
 
 Version changelog
-:   Patch updates are available for {{site.data.keyword.openshiftshort}} [3.11.146_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1525).
+:   Patch updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog#311146_1525).
 
 
     
@@ -3342,13 +3342,13 @@ End of service of {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon
 
 
   
-{{site.data.keyword.openshiftshort}} options
-:   To help you decide whether to use built-in {{site.data.keyword.openshiftshort}} capabilities or integration with {{site.data.keyword.cloud_notm}} services, the following topics are added.
+{{site.data.keyword.redhat_openshift_notm}} options
+:   To help you decide whether to use built-in {{site.data.keyword.redhat_openshift_notm}} capabilities or integration with {{site.data.keyword.cloud_notm}} services, the following topics are added.
     - [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
     - [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#load-balancing-comparison) like router or Ingress
     - [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
-New! Single zone location for {{site.data.keyword.openshiftshort}} clusters
+New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   The following locations are now supported. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
     - Oslo, Norway
     - San Jose, California, US
@@ -3384,7 +3384,7 @@ Sending custom Ingress certificates to legacy clients
 {: #17sept2019}
 {: release-note}
 
-New! Single zone location for {{site.data.keyword.openshiftshort}} clusters
+New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   The following locations are now supported. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
     - Amsterdam, the Netherlands
     - Hong Kong SAR of the PRC, China
@@ -3405,13 +3405,13 @@ CLI changelog
 
 
 
-New! Melbourne, Australia `mel01` single zone location for {{site.data.keyword.openshiftshort}} clusters
+New! Melbourne, Australia `mel01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
 
 
 
 Version changelog
-:   Master fix pack updates are available for {{site.data.keyword.openshiftshort}} [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog#311141_1524).
+:   Master fix pack updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog#311141_1524).
 
 
     
@@ -3424,14 +3424,14 @@ Version changelog
 
 Refreshed {{site.data.keyword.openshiftlong_notm}} docs
 :   Includes the following new content.
-    - [Security information for {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-security).
+    - [Security information for {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-security).
     - [Accessing clusters](/docs/openshift?topic=openshift-access_cluster).
     - [App networking options](/docs/openshift?topic=openshift-cs_network_planning) with comparisons of routes, NodePort, load balancers, and Ingress.
-    - [Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for moving apps from community Kubernetes to {{site.data.keyword.openshiftshort}}.
+    - [Common app modification scenarios](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for moving apps from community Kubernetes to {{site.data.keyword.redhat_openshift_notm}}.
     - Updated [pricing FAQ](/docs/openshift?topic=openshift-faqs#charges) to explain the monthly license in more detail.
     - [Resizing and externally exposing the internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry).
     - Tutorial overview with links to tutorials.
-    - [Using the internal registry in {{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-registry#openshift_internal_registry).
+    - [Using the internal registry in {{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-registry#openshift_internal_registry).
     
 
 
@@ -3455,7 +3455,7 @@ Ingress ALB changelog
 {: #06sept2019}
 {: release-note}
 
-New! Chennai, India `che01` single zone location for {{site.data.keyword.openshiftshort}} clusters
+New! Chennai, India `che01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
 
 
@@ -3479,7 +3479,7 @@ IAM allowlists
 
 
 
-New! Montreal, Canada `mon01` single zone location for {{site.data.keyword.openshiftshort}} clusters
+New! Montreal, Canada `mon01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
 
 
@@ -3492,7 +3492,7 @@ New! {{site.data.keyword.openshiftlong_notm}} plug-in version `0.4`
 :   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for multiple changes in the [release of version 0.4.1](/docs/containers?topic=containers-cs_cli_changelog).
 
 Version changelog
-:   Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-115_changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-114_changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-113_changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-112_changelog#11210_1566_worker), and {{site.data.keyword.openshiftshort}} [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog#311135_1523_worker).
+:   Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-115_changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-114_changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-113_changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-112_changelog#11210_1566_worker), and {{site.data.keyword.redhat_openshift_notm}} [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog#311135_1523_worker).
 
 ## August 2019
 {: #aug19}
@@ -3503,7 +3503,7 @@ Version changelog
 {: #30aug2019}
 {: release-note}
 
-New! Paris, France `par01` single zone location for {{site.data.keyword.openshiftshort}} clusters
+New! Paris, France `par01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
 
 
@@ -3542,7 +3542,7 @@ Ingress ALB changelog
 
 
 
-New! Seoul, Korea `seo01` single zone location for {{site.data.keyword.openshiftshort}} clusters
+New! Seoul, Korea `seo01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
 
 
@@ -3554,8 +3554,8 @@ New! Seoul, Korea `seo01` single zone location for {{site.data.keyword.openshift
 
 
 
-New! Single zone locations for {{site.data.keyword.openshiftshort}} clusters
-:   You can create {{site.data.keyword.openshiftshort}} clusters in Toronto, Canada `tor01` and Singapore `sng01` single zone locations. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
+New! Single zone locations for {{site.data.keyword.redhat_openshift_notm}} clusters
+:   You can create {{site.data.keyword.redhat_openshift_notm}} clusters in Toronto, Canada `tor01` and Singapore `sng01` single zone locations. For more locations, see [Single and multizone locations in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones).
 
 
 
@@ -3675,7 +3675,7 @@ Fluentd changelog
 {: release-note}
 
 {{site.data.keyword.openshiftlong_notm}}
-:   Added the [{{site.data.keyword.openshiftlong_notm}} documentation to a separate repository](/docs/openshift?topic=openshift-getting-started). Because the {{site.data.keyword.containerlong_notm}} logic and underlying cloud infrastructure is the same, many topics are reused across the documentation for community Kubernetes and {{site.data.keyword.openshiftshort}} cluster documentation.
+:   Added the [{{site.data.keyword.openshiftlong_notm}} documentation to a separate repository](/docs/openshift?topic=openshift-getting-started). Because the {{site.data.keyword.containerlong_notm}} logic and underlying cloud infrastructure is the same, many topics are reused across the documentation for community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} cluster documentation.
     
 
 
@@ -3717,8 +3717,8 @@ Infrastructure permissions
 
 
 
-{{site.data.keyword.openshiftshort}} FAQs
-:   Expanded the [FAQs](/docs/openshift?topic=openshift-faqs#container_platforms) to include information about {{site.data.keyword.openshiftshort}} clusters.
+{{site.data.keyword.redhat_openshift_notm}} FAQs
+:   Expanded the [FAQs](/docs/openshift?topic=openshift-faqs#container_platforms) to include information about {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 
 
@@ -3749,9 +3749,9 @@ Ingress ALB changelog
 
 
 Accessing clusters
-:   Added steps for [automating access to a cluster by using an {{site.data.keyword.openshiftshort}} login token](/docs/openshift?topic=openshift-access_cluster#access_oc_console).
+:   Added steps for [automating access to a cluster by using an {{site.data.keyword.redhat_openshift_notm}} login token](/docs/openshift?topic=openshift-access_cluster#access_oc_console).
 
-Troubleshooting {{site.data.keyword.openshiftshort}} clusters
+Troubleshooting {{site.data.keyword.redhat_openshift_notm}} clusters
 :   Added a [troubleshooting section](/docs/openshift?topic=openshift-debug_clusters) to the Creating a {{site.data.keyword.openshiftlong_notm}} cluster tutorial.
     
 
@@ -3777,7 +3777,7 @@ Service bindings with private endpoint
 {: release-note}
 
 `kubectl` troubleshooting
-:   Added a [troubleshooting topic](/docs/openshift?topic=openshift-ts_clis#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the {{site.data.keyword.openshiftshort}} version of `kubectl`, which does not work with community Kubernetes clusters.
+:   Added a [troubleshooting topic](/docs/openshift?topic=openshift-ts_clis#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the {{site.data.keyword.redhat_openshift_notm}} version of `kubectl`, which does not work with community Kubernetes clusters.
 
 Tutorials landing page
 :   Replaced the related links page with a new tutorials landing page for all tutorials that are specific to {{site.data.keyword.containershort_notm}}.
@@ -3806,7 +3806,7 @@ Access to the Kubernetes master through the private cloud service endpoint
 Ingress ALB changelog
 :   Updated the [ALB `ingress-auth` image to build 330](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
 
-{{site.data.keyword.openshiftshort}} beta
+{{site.data.keyword.redhat_openshift_notm}} beta
 :   [Added a lesson](/docs/containers?topic=containers-cluster-add-ons-changelog#fluentd_changelog) about how to modify app deployments for privileged security context constraints for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} add-ons.
     
 
@@ -3829,6 +3829,6 @@ CLI reference
 :   Updated the [CLI reference page](/docs/containers?topic=containers-kubernetes-service-cli) to reflect multiple changes for the release of version [0.3.34](/docs/containers?topic=containers-cs_cli_changelog) of the {{site.data.keyword.containerlong_notm}} CLI plug-in.
 
 New! {{site.data.keyword.openshiftlong_notm}} clusters
-:   With the {{site.data.keyword.openshiftlong_notm}} beta, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the {{site.data.keyword.openshiftshort}} container orchestration platform software. You get all the advantages of managed {{site.data.keyword.containerlong_notm}} for your cluster infrastructure environment, along with the [{{site.data.keyword.openshiftshort}} tooling and catalog](https://docs.openshift.com/container-platform/3.11/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments. To get started, see [Tutorial: Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial).
+:   With the {{site.data.keyword.openshiftlong_notm}} beta, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the {{site.data.keyword.redhat_openshift_notm}} container orchestration platform software. You get all the advantages of managed {{site.data.keyword.containerlong_notm}} for your cluster infrastructure environment, along with the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/3.11/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments. To get started, see [Tutorial: Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial).
 
 

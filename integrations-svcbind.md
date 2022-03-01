@@ -17,7 +17,7 @@ subcollection: openshift
 # Adding services by using IBM Cloud service binding
 {: #service-binding}
 
-Add {{site.data.keyword.cloud_notm}} services to enhance your {{site.data.keyword.openshiftshort}} cluster with extra capabilities in areas such as {{site.data.keyword.watson}} AI, data, security, and Internet of Things (IoT).
+Add {{site.data.keyword.cloud_notm}} services to enhance your {{site.data.keyword.redhat_openshift_notm}} cluster with extra capabilities in areas such as {{site.data.keyword.watson}} AI, data, security, and Internet of Things (IoT).
 {: shortdesc}
 
 ## About service binding
@@ -84,9 +84,9 @@ Use {{site.data.keyword.cloud_notm}} service binding to automatically create ser
 Before you begin:
 - Ensure you have the following roles:
     - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster where you want to bind a service
-    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the {{site.data.keyword.openshiftshort}} project where you want to bind the service
+    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the {{site.data.keyword.redhat_openshift_notm}} project where you want to bind the service
     - For Cloud Foundry services: [**Developer** Cloud Foundry role](/docs/account?topic=account-mngcf#mngcf) for the space where you want to provision the service
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To add an {{site.data.keyword.cloud_notm}} service to your cluster:
 
@@ -213,7 +213,7 @@ The credentials of a service instance are base64 encoded and stored inside your 
 
 Before you begin:
 -  Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `kube-system` project.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Add an {{site.data.keyword.cloud_notm}} service to your cluster](#bind-services).
 
 ### Mounting the secret as a volume to your pod

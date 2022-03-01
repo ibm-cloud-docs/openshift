@@ -25,7 +25,7 @@ content-type: troubleshoot
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
 
-![Version 3.11 icon.](images/icon-version-311.png) This troubleshooting topic applies only to {{site.data.keyword.openshiftshort}} clusters that run version 3.11.
+![Version 3.11 icon.](images/icon-version-311.png) This troubleshooting topic applies only to {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
 {: note}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog
 {: #image-key-synchronizer-changelog}
 
-View information for version updates to the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on](/docs/openshift?topic=openshift-images#encrypted-images) in clusters that run {{site.data.keyword.openshiftshort}} version 4.5 and later.
+View information for version updates to the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on](/docs/openshift?topic=openshift-images#encrypted-images) in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
 {: shortdesc}
 
 * **Patch updates**: {{site.data.keyword.cloud_notm}} keeps all your add-on components up-to-date by automatically rolling out patch updates to the most recent version of the Image Key Synchronizer that is offered by {{site.data.keyword.openshiftlong_notm}}.
@@ -25,10 +25,10 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} Im
 
 Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for each add-on version. In the CLI, you can run `ibmcloud oc cluster addon ls -c <cluster_name_or_ID>` to check the current version of your add-on, and `ibmcloud oc cluster get -c <cluster_name_or_ID>` to check the current version of your cluster.
 
-| Image Key Synchronizer add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| Image Key Synchronizer add-on version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support |
 | -------------------------- | -----------|----------------------------------------------------- |
 | 1.0.0 | Yes | 4.6, 4.7, 4.8 |
-{: summary="The rows are read from left to right. The first column is the Image Key Synchronizer add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the add-on version is supported for."}
+{: summary="The rows are read from left to right. The first column is the Image Key Synchronizer add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.redhat_openshift_notm}} version of your cluster that the add-on version is supported for."}
 {: caption="Supported Image Key Synchronizer add-on versions" caption-side="top"}
 
 ## Version 1.0.0

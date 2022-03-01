@@ -154,11 +154,11 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 
 1. [Install the required CLI and plug-ins](/docs/cli?topic=cli-getting-started):
     *  {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
-    *  {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc` alias for {{site.data.keyword.openshiftshort}} clusters)
+    *  {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc` alias for {{site.data.keyword.redhat_openshift_notm}} clusters)
     *  {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
     *  Kubernetes (`kubectl`)
 2. [Create a standard cluster](/docs/containers?topic=containers-clusters).
-3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+3. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 4. Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/containers?topic=containers-missing_permissions).
     ```sh
     oc get secrets -n kube-system | grep storage-secret-store
@@ -384,7 +384,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
 
 **Before you begin**:
 *  Install the [cluster autoscaler add-on](#ca_addon) or the [Helm chart](#ca_helm).
-*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+*  [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To update the cluster autoscaler configmap and values**:
 
@@ -472,7 +472,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 {: shortdesc}
 
 **Before you begin**:
-*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+*  [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *  [Install the `ibm-iks-cluster-autoscaler` add-on](#ca_addon).
 
 ### Customizing the cluster autoscaler add-on configmap
@@ -597,7 +597,7 @@ For more information, see the following Kubernetes docs:
 
 **Before you begin**:
 *  [Install the `ibm-iks-cluster-autoscaler` plug-in](#ca_helm).
-*  [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+*  [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 **To limit pods to run on certain autoscaled worker pools**:
 
@@ -794,7 +794,7 @@ Before you begin to upgrade your cluster autoscaler release, complete the follow
 This topic applies only to the cluster autoscaler Helm chart.
 {: important}
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. To review the changelog of chart versions, [download the source code `tar` file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
 
 ### Upgrading the cluster autoscaler release version
@@ -875,7 +875,7 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 If you don't want to automatically scale your worker pools, you can uninstall the cluster autoscaler Helm chart. After the removal, you must [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools manually.
 {: shortdesc}
 
-Before you begin: [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Optional: To refer to your autoscaling settings later, make a backup of your configmap.
 

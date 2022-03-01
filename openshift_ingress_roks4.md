@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, nginx, ingress controller
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by creating Ingress resources that are managed by the Ingress controller.
 {: shortdesc}
 
-![Version 4 icon.](images/icon-version-43.png) This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only.
+![Version 4 icon.](images/icon-version-43.png) This information is for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 {: note}
 
 ## Prerequisites
@@ -32,7 +32,7 @@ Before you get started with Ingress, review the following prerequisites.
 
 - Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users):
     - **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-    - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.openshiftshort}} projects)
+    - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.redhat_openshift_notm}} projects)
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller in that zone.
 - To ensure high availability, at least two worker nodes per zone are recommended.
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-network-policy#security_groups).
@@ -108,7 +108,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
 
 **Before you begin**:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Step 1: Deploy apps and create app services
 {: #ingress-roks4-public-1}
@@ -172,7 +172,7 @@ For more information about TLS certificates, see [Managing TLS certificates and 
 **To use a custom domain and TLS secret:**
 
 1. Prepare your custom domain.
-    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.6 or later.
+    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
     2. Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
@@ -214,7 +214,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.redhat_openshift_notm}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -315,7 +315,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 
 **Before you begin**:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Step 1: Deploy apps and create app services
 {: #priv-se-pub-controller-1}
@@ -348,7 +348,7 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 **Custom domain and TLS secret**:
 
-1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.6 or later. 
+1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later. 
     If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
     {: tip}
 
@@ -469,7 +469,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.redhat_openshift_notm}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -573,7 +573,7 @@ Expose apps that are outside your cluster to the public by including them in pub
 **Before you begin**:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
 * Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To expose apps that are outside of your cluster to the public:
 1. Define a Kubernetes service configuration file for the app that the Ingress controller will expose. This service that forwards incoming requests to an external endpoint that you create in subsequent steps.
@@ -637,7 +637,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
 
 **Before you begin**:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Step 1: Deploy apps and create app services
 {: #ingress-roks4-private-1}
@@ -672,7 +672,7 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 **Custom domain and TLS secret, classic or VPC clusters**:
 
-1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.6 or later. 
+1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later. 
     If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
     {: tip}
 
@@ -801,7 +801,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.redhat_openshift_notm}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -906,7 +906,7 @@ If your cluster is created on ![VPC infrastructure provider icon.](images/icon-v
 
 **Before you begin**:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Step 1: Deploy apps and create app services
 {: #priv-se-priv-controller-1}
@@ -971,7 +971,7 @@ For more information about TLS certificates, see [Managing TLS certificates and 
 **To use a custom domain and TLS secret:**
 
 1. Prepare your custom domain.
-    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.openshiftshort}} version 4.6 or later.
+    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
     2. Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
@@ -1013,7 +1013,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.openshiftshort}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.redhat_openshift_notm}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -1201,7 +1201,7 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
 
 If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} in the Ingress resources that you define.
 
-These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.openshiftshort}} version 4.
+These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
 {: important}
 
 

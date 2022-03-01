@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-03-01"
 
 keywords: openshift, version, update, upgrade
 
@@ -19,15 +19,15 @@ subcollection: openshift
 # Version information and update actions
 {: #openshift_versions}
 
-Review information about the supported {{site.data.keyword.openshiftshort}} versions for {{site.data.keyword.openshiftlong}} clusters.
+Review information about the supported {{site.data.keyword.redhat_openshift_notm}} versions for {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-For more information about the {{site.data.keyword.openshiftshort}} and Kubernetes project versions, review the following information.
-* [{{site.data.keyword.openshiftshort}} 4.9 release notes overview](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html){: external}
-* [{{site.data.keyword.openshiftshort}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
-* [{{site.data.keyword.openshiftshort}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
-* [{{site.data.keyword.openshiftshort}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
-* Deprecated: [{{site.data.keyword.openshiftshort}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
+For more information about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the following information.
+* [{{site.data.keyword.redhat_openshift_notm}} 4.9 release notes overview](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html){: external}
+* [{{site.data.keyword.redhat_openshift_notm}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
+* [{{site.data.keyword.redhat_openshift_notm}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
+* [{{site.data.keyword.redhat_openshift_notm}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
+* Deprecated: [{{site.data.keyword.redhat_openshift_notm}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
 * [Kubernetes changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
 ## Update types
@@ -36,20 +36,20 @@ For more information about the {{site.data.keyword.openshiftshort}} and Kubernet
 Your {{site.data.keyword.openshiftlong_notm}} cluster has three types of updates: major, minor, and patch. As updates become available, you are notified when you view information about the cluster master or worker nodes, such as with the `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get` commands.
 {: shortdesc}
 
-You must [update your cluster](/docs/openshift?topic=openshift-update) by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.openshiftshort}} web console.
+You must [update your cluster](/docs/openshift?topic=openshift-update) by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.redhat_openshift_notm}} web console.
 {: note}
 
 |Update type|Examples of version labels|Updated by|Impact
 |-----|-----|-----|-----|
 |Major|4.x.x|You|Operation changes for clusters, including scripts or deployments.|
 |Minor|x.6.x|You|Operation changes for clusters, including scripts or deployments.|
-|Patch|x.x.18_1533|IBM and you|{{site.data.keyword.openshiftshort}} patches, as well as other {{site.data.keyword.cloud_notm}} Provider component updates such as security and operating system patches. IBM updates masters automatically, but you apply patches to worker nodes. See more about patches in the following section.|
-{: caption="Impacts of {{site.data.keyword.openshiftshort}} updates" caption-side="top"}
+|Patch|x.x.18_1533|IBM and you|{{site.data.keyword.redhat_openshift_notm}} patches, as well as other {{site.data.keyword.cloud_notm}} Provider component updates such as security and operating system patches. IBM updates masters automatically, but you apply patches to worker nodes. See more about patches in the following section.|
+{: caption="Impacts of {{site.data.keyword.redhat_openshift_notm}} updates" caption-side="top"}
 
 ### Major and minor updates (4.8)
 {: #major_minor_updates}
 
-First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes can't run an {{site.data.keyword.openshiftshort}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).
+First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes can't run an {{site.data.keyword.redhat_openshift_notm}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).
 {: shortdesc}
 
 If you use an `oc` or `oc` CLI version that does match at least the `major.minor` version of your clusters, you might experience unexpected results. Make sure to keep your cluster and [CLI versions](/docs/openshift?topic=openshift-openshift-cli#cli_oc) up-to-date.
@@ -73,10 +73,10 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 
 
 
-## {{site.data.keyword.openshiftshort}} versions
+## {{site.data.keyword.redhat_openshift_notm}} versions
 {: #version_types}
 
-{{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.openshiftshort}}. The worker node operating system is Red Hat Enterprise Linux 7.
+{{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
 * Latest: 4.9 (Kubernetes 1.22)
@@ -119,12 +119,12 @@ In general, the last minor version of a major version is supported longer than o
 
 **What is different for deprecated versions?**
 
-Your apps still run, and you can log in to the cluster to manage your {{site.data.keyword.openshiftshort}} resources. You can still manage your cluster lifecycle, such as by adding and reloading worker nodes. However, security patch updates might not be provided. To continue receiving important security updates and the latest functionality, create a cluster at a supported version. You receive a notification in the console and CLI to update your cluster to a supported version about 45 days before the deprecated version becomes unsupported.
+Your apps still run, and you can log in to the cluster to manage your {{site.data.keyword.redhat_openshift_notm}} resources. You can still manage your cluster lifecycle, such as by adding and reloading worker nodes. However, security patch updates might not be provided. To continue receiving important security updates and the latest functionality, create a cluster at a supported version. You receive a notification in the console and CLI to update your cluster to a supported version about 45 days before the deprecated version becomes unsupported.
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}
 
-| Supported? | {{site.data.keyword.openshiftshort}} / Kubernetes version | Release date | Unsupported date |
+| Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
 | Supported | 4.9 / 1.22 | 09 Feb 2022 | May 2023`†` |
 | Supported | 4.8 / 1.21 | 29 Sep 2021 | Feb 2023`†` |
@@ -137,10 +137,10 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
-## {{site.data.keyword.openshiftshort}} 4.9
+## {{site.data.keyword.redhat_openshift_notm}} 4.9
 {: #ocp49}
 
-Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.8 to {{site.data.keyword.openshiftshort}} 4.9.
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.redhat_openshift_notm}} 4.8 to {{site.data.keyword.redhat_openshift_notm}} 4.9.
 {: shortdesc}
 
 
@@ -159,15 +159,15 @@ The following table shows the actions that you must take before you [update the 
 | ---- | ----------- |
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.9 deprecated and removed features](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-deprecated-removed-features){: external}. |
 | **Unsupported:**  Beta versions of numerous Kubernetes APIs | For more information, review [Preparing to upgrade to OpenShift Container Platform 4.9](https://access.redhat.com/articles/6329921){: external}, [Kubernetes API and Feature Removals In 1.22: Here’s What You Need To Know](https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/){: external} and [Deprecated API Migration Guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-22){: external}. See [Deprecation Warnings](https://kubernetes.io/blog/2020/09/03/warnings/#deprecation-warnings){: external} for methods to identify use of deprecated APIs. Warnings for components provided by the Red Hat OpenShift on IBM Cloud cluster install can be ignored since they will be handled during the update. |
-{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.9" caption-side="top"}
+{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.9" caption-side="top"}
 
-## {{site.data.keyword.openshiftshort}} 4.8
+## {{site.data.keyword.redhat_openshift_notm}} 4.8
 {: #ocp48}
 
 ![This badge indicates Kubernetes version 1.21 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x21.svg)
 {{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.21 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
-Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8.
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.redhat_openshift_notm}} 4.7 to {{site.data.keyword.redhat_openshift_notm}} 4.8.
 {: shortdesc}
 
 ### Update before master
@@ -180,15 +180,15 @@ The following table shows the actions that you must take before you [update the 
 | ---- | ----------- |
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.8 deprecated and removed features](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-deprecated-removed-features){: external}. |
 | Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. If these changes are not made, your microservices might fail to start and you might see a `permission denied` error. Applications developed for OCP already have the necessary changes.  |
-| Strongswan users | If you are using Strongswan in your cluster, then update at least version 2.7.11 of Strongswan before you update your cluster master to {{site.data.keyword.openshiftshort}} 4.8. In versions of Strongswan earlier than 2.7.11, certain [Strongswan configuration options](/docs/openshift?topic=openshift-vpn#vpn-setup) do not work with the {{site.data.keyword.openshiftshort}} 4.8 master. |
-{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.8" caption-side="top"}
-## {{site.data.keyword.openshiftshort}} 4.7
+| Strongswan users | If you are using Strongswan in your cluster, then update at least version 2.7.11 of Strongswan before you update your cluster master to {{site.data.keyword.redhat_openshift_notm}} 4.8. In versions of Strongswan earlier than 2.7.11, certain [Strongswan configuration options](/docs/openshift?topic=openshift-vpn#vpn-setup) do not work with the {{site.data.keyword.redhat_openshift_notm}} 4.8 master. |
+{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.8" caption-side="top"}
+## {{site.data.keyword.redhat_openshift_notm}} 4.7
 {: #ocp47}
 
 ![This badge indicates Kubernetes version 1.20 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x20.svg)
 {{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.20 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
-Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.6 to {{site.data.keyword.openshiftshort}} 4.7.
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.redhat_openshift_notm}} 4.6 to {{site.data.keyword.redhat_openshift_notm}} 4.7.
 {: shortdesc}
 
 ### Update before master
@@ -200,19 +200,19 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | ---- | ----------- |
 | Kubernetes snapshot CRDs | {{site.data.keyword.containerlong_notm}} installs Kubernetes snapshot custom resource definition (CRD) version `v1beta1`. If you use other Kubernetes snapshot CRD versions `v1` or `v1alpha1`, you must change the version to `v1beta1`. To check the currently installed version of your snapshot CRDs, run `grep snapshot.storage.k8s.io <<(kubectl get apiservices)`. Follow the Kubernetes documentation to [Upgrade from v1alpha1 to v1beta1](https://github.com/kubernetes-csi/external-snapshotter#upgrade-from-v1alpha1-to-v1beta1){: external} to make sure that your snapshot CRDs are at the correct `v1beta1` version. The steps to downgrade from version `v1` to `v1beta1` are the same as those to upgrade from `v1alpha1`. Do not follow the instructions to upgrade from version `v1beta1` to version `v1`. |
-| **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [{{site.data.keyword.openshiftshort}} version 4.7 deprecated and removed features](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-deprecated-removed-features){: external}. |
-{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.7" caption-side="top"}
+| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.7 deprecated and removed features](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-deprecated-removed-features){: external}. |
+{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.7" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
 
 
-## {{site.data.keyword.openshiftshort}} 4.6
+## {{site.data.keyword.redhat_openshift_notm}} 4.6
 {: #ocp46}
 
 ![This badge indicates Kubernetes version 1.19 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x19.svg)
 {{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.19 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
-Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.openshiftshort}} 4.5 to {{site.data.keyword.openshiftshort}} 4.6.
+Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) that runs {{site.data.keyword.redhat_openshift_notm}} 4.5 to {{site.data.keyword.redhat_openshift_notm}} 4.6.
 {: shortdesc}
 
 ### Update before master
@@ -224,9 +224,9 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | ---- | ----------- |
 | Kubernetes snapshot CRDs | {{site.data.keyword.containerlong_notm}} installs Kubernetes snapshot custom resource definition (CRD) version `v1beta1`. If you use other Kubernetes snapshot CRD versions `v1` or `v1alpha1`, you must change the version to `v1beta1`. To check the currently installed version of your snapshot CRDs, run `grep snapshot.storage.k8s.io <<(kubectl get apiservices)`. Follow the Kubernetes documentation to [Upgrade from v1alpha1 to v1beta1](https://github.com/kubernetes-csi/external-snapshotter#upgrade-from-v1alpha1-to-v1beta1){: external} to make sure that your snapshot CRDs are at the correct `v1beta1` version. The steps to downgrade from version `v1` to `v1beta1` are the same as those to upgrade from `v1alpha1`. Do not follow the instructions to upgrade from version `v1beta1` to version `v1`. |
-| VPC clusters: App URL character length | DNS resolution is managed by the cluster's [virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe), which can resolve URLs up to 130 characters. If you expose apps in your cluster with URLs, such as the Ingress subdomain or {{site.data.keyword.openshiftshort}} routes, ensure that the URLs are 130 characters or fewer. For example, if you use an auto-generated route name in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud` that exceeds 130 characters, you might need to [create a route that uses a shorter, custom subdomain](/docs/openshift?topic=openshift-openshift_routes#routes-setup) instead. |
-| **Unsupported:** Deprecated and removed {{site.data.keyword.openshiftshort}} features | For more information, review the [OpenShift version 4.6 deprecated and removed features](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-deprecated-removed-features){: external}. |
-{: caption="Changes to make before you update the master to {{site.data.keyword.openshiftshort}} 4.6" caption-side="top"}
+| VPC clusters: App URL character length | DNS resolution is managed by the cluster's [virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe), which can resolve URLs up to 130 characters. If you expose apps in your cluster with URLs, such as the Ingress subdomain or {{site.data.keyword.redhat_openshift_notm}} routes, ensure that the URLs are 130 characters or fewer. For example, if you use an auto-generated route name in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud` that exceeds 130 characters, you might need to [create a route that uses a shorter, custom subdomain](/docs/openshift?topic=openshift-openshift_routes#routes-setup) instead. |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [OpenShift version 4.6 deprecated and removed features](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-deprecated-removed-features){: external}. |
+{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.6" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
 
 ## Archive
@@ -235,7 +235,7 @@ The following table shows the actions that you must take before you [update the 
 Review unsupported versions of {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
-### {{site.data.keyword.openshiftshort}} 4.5 (Unsupported)
+### {{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)
 {: #ocp45}
 
 As of 10 October 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.5](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
@@ -243,7 +243,7 @@ As of 10 October 2021, {{site.data.keyword.openshiftlong_notm}} clusters that ru
 
 Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/containers?topic=containers-update#update) to continue receiving important security updates and support.
 
-### {{site.data.keyword.openshiftshort}} 4.4 (Unsupported)
+### {{site.data.keyword.redhat_openshift_notm}} 4.4 (Unsupported)
 {: #ocp44}
 
 As of 31 May 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.4](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
@@ -251,7 +251,7 @@ As of 31 May 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [v
 
 Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.
 
-### {{site.data.keyword.openshiftshort}} 4.3 (Unsupported)
+### {{site.data.keyword.redhat_openshift_notm}} 4.3 (Unsupported)
 {: #ocp43}
 
 As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.3](/docs/openshift?topic=openshift-changelog_archive) are unsupported.

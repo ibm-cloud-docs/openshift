@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, api
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Setting up the API
 {: #cs_api_install}
 
-{{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or {{site.data.keyword.openshiftshort}} clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-openshift-cli).
+{{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-openshift-cli).
 {: shortdesc}
 
 ## About the API
@@ -43,12 +43,12 @@ API architectural style
 :    v2 API: Remote procedure calls (RPC) that focus on actions through only `GET` and `POST` HTTP methods.
 
 Supported container platforms
-:    v1 API: Use the {{site.data.keyword.openshiftlong_notm}} API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for **both community Kubernetes and {{site.data.keyword.openshiftshort}} clusters**.
-:    v2 API: Use the {{site.data.keyword.openshiftlong_notm}} `v2` API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for **both community Kubernetes and {{site.data.keyword.openshiftshort}} VPC clusters**.
+:    v1 API: Use the {{site.data.keyword.openshiftlong_notm}} API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for **both community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters**.
+:    v2 API: Use the {{site.data.keyword.openshiftlong_notm}} `v2` API to manage your {{site.data.keyword.cloud_notm}} infrastructure resources, such as worker nodes, for **both community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} VPC clusters**.
 
   
-{{site.data.keyword.openshiftshort}} API
-:    v1 API: To use the {{site.data.keyword.openshiftshort}} API to manage {{site.data.keyword.openshiftshort}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for an {{site.data.keyword.openshiftshort}} access token. See [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+{{site.data.keyword.redhat_openshift_notm}} API
+:    v1 API: To use the {{site.data.keyword.redhat_openshift_notm}} API to manage {{site.data.keyword.redhat_openshift_notm}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for an {{site.data.keyword.redhat_openshift_notm}} access token. See [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 :    v2 API: Same as `v1`; see [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 
 Supported infrastructure providers
@@ -70,7 +70,7 @@ Cluster, worker node, and worker-pool responses
 ## Automating cluster deployments with the API
 {: #cs_api}
 
-You can use the {{site.data.keyword.openshiftlong_notm}} API to automate the creation, deployment, and management of your {{site.data.keyword.openshiftshort}} clusters.
+You can use the {{site.data.keyword.openshiftlong_notm}} API to automate the creation, deployment, and management of your {{site.data.keyword.redhat_openshift_notm}} clusters.
 {: shortdesc}
 
 The {{site.data.keyword.openshiftlong_notm}} API requires header information that you must provide in your API request and that can vary depending on the API that you want to use. To determine what header information is needed for your API, see the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
@@ -336,7 +336,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 ## Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI
 {: #cs_cli_refresh}
 
-You can use the command line to [set the cluster context](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure), download the `kubeconfig` file for your {{site.data.keyword.openshiftshort}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
+You can use the command line to [set the cluster context](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure), download the `kubeconfig` file for your {{site.data.keyword.redhat_openshift_notm}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
 {: shortdesc}
 
 You can use [{{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/overview){: external} to change the default expiration times for your tokens and sessions.

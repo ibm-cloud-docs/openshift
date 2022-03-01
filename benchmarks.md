@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/){: external} as a framework of specific steps to configure Kubernetes more securely and with standards that are commensurate to various industry regulations.
 {: shortdesc}
 
-When a new Kubernetes version is released as part of a [supported {{site.data.keyword.openshiftshort}} version](/docs/openshift?topic=openshift-openshift_versions#version_types), IBM engineers compare the default configuration of a cluster that runs that Kubernetes version against the benchmark and publishes the results in this documentation. You can review how specific versions of your {{site.data.keyword.openshiftlong}} clusters meet the CIS Kubernetes Benchmark.
+When a new Kubernetes version is released as part of a [supported {{site.data.keyword.redhat_openshift_notm}} version](/docs/openshift?topic=openshift-openshift_versions#version_types), IBM engineers compare the default configuration of a cluster that runs that Kubernetes version against the benchmark and publishes the results in this documentation. You can review how specific versions of your {{site.data.keyword.openshiftlong}} clusters meet the CIS Kubernetes Benchmark.
 
 ## Using the benchmark
 {: #cis-benchmark-use}
@@ -73,7 +73,7 @@ See [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?top
 To review the results of the CIS Kubernetes benchmark for [Section 4: Worker node security configuration](#cis-benchmark-15-4), you can run the test yourself. Because you own the worker nodes and are partially [responsible](/docs/containers?topic=containers-responsibilities_iks) for their compliance, you might make configuration changes that you want to validate on your own.
 {: shortdesc}
 
-These steps apply to clusters that run {{site.data.keyword.openshiftshort}} version 4.5 or later only.
+These steps apply to clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later only.
 {: note}
 
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
@@ -139,10 +139,10 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 
 
 
-## Benchmark 1.5 results for {{site.data.keyword.openshiftshort}} versions 4.6 - 4.9
+## Benchmark 1.5 results for {{site.data.keyword.redhat_openshift_notm}} versions 4.6 - 4.9
 {: #cis-benchmark-15}
 
-Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftshort}} versions 4.6 - 4.9. For help understanding the benchmark, see [Using the benchmark](#cis-benchmark-use).
+Review how {{site.data.keyword.openshiftlong_notm}} complies with the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.redhat_openshift_notm}} versions 4.6 - 4.9. For help understanding the benchmark, see [Using the benchmark](#cis-benchmark-use).
 {: shortdesc}
 
 

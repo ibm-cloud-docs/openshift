@@ -28,7 +28,7 @@ When you run `oc get pods`, you can see pods that remain in a **Pending** state.
 {: tsSymptoms}
 
 
-If you just created the {{site.data.keyword.openshiftshort}} cluster, the worker nodes might still be configuring.
+If you just created the {{site.data.keyword.redhat_openshift_notm}} cluster, the worker nodes might still be configuring.
 {: tsCauses}
 
 If this cluster is an existing one:
@@ -39,7 +39,7 @@ If this cluster is an existing one:
 This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users#checking-perms) for all namespaces.
 {: tsResolve}
 
-If you just created the {{site.data.keyword.openshiftshort}} cluster, run the following command and wait for the worker nodes to initialize.
+If you just created the {{site.data.keyword.redhat_openshift_notm}} cluster, run the following command and wait for the worker nodes to initialize.
 
 ```sh
 oc get nodes
@@ -50,8 +50,8 @@ If this cluster is an existing one, check your cluster capacity.
 
 
 
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
-2. Click **{{site.data.keyword.openshiftshort}} web console**.
+1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+2. Click **{{site.data.keyword.redhat_openshift_notm}} web console**.
 
 3. Check if you have enough capacity in your cluster to deploy your pod.
 

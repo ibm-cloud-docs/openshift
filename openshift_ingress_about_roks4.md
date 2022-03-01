@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
 
@@ -17,24 +17,24 @@ subcollection: openshift
 # About Ingress
 {: #ingress-about-roks4}
 
-![Version 4 icon.](images/icon-version-43.png) This information is for clusters that run {{site.data.keyword.openshiftshort}} version 4 only.
+![Version 4 icon.](images/icon-version-43.png) This information is for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 {: note}
 
 Ingress is a service that balances network traffic workloads in your cluster by forwarding public or private requests to your apps. You can use Ingress to expose multiple app services to the public or to a private network by using a unique public or private domain.
 {: shortdesc}
 
-In your cluster, the {{site.data.keyword.openshiftshort}} Ingress controller is a layer 7 load balancer which implements an HAProxy Ingress controller. A layer 4 `LoadBalancer` service exposes the Ingress controller so that the Ingress controller can receive external requests that come into your cluster. The Ingress controller then forwards requests to app pods in your cluster based on distinguishing layer 7 protocol characteristics, such as headers.
+In your cluster, the {{site.data.keyword.redhat_openshift_notm}} Ingress controller is a layer 7 load balancer which implements an HAProxy Ingress controller. A layer 4 `LoadBalancer` service exposes the Ingress controller so that the Ingress controller can receive external requests that come into your cluster. The Ingress controller then forwards requests to app pods in your cluster based on distinguishing layer 7 protocol characteristics, such as headers.
 
 ## What are the components of Ingress?
 {: #ingress_roks4_components}
 
-In clusters that run {{site.data.keyword.openshiftshort}} version 4, Ingress consists of three components: an Ingress operator, an Ingress controller, and Route resources. 
+In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4, Ingress consists of three components: an Ingress operator, an Ingress controller, and Route resources. 
 {: shortdesc}
 
 ### Ingress operator
 {: #ingress-operator}
 
-The [{{site.data.keyword.openshiftshort}} Ingress operator](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html){: external} implements routing rules that are applied to all incoming traffic for the apps in your cluster.
+The [{{site.data.keyword.redhat_openshift_notm}} Ingress operator](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html){: external} implements routing rules that are applied to all incoming traffic for the apps in your cluster.
 {: shortdesc}
 
 Ingress controllers are managed by the Ingress operator. During cluster creation, the default Ingress controller is registered with the default Ingress subdomain for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. When you register your app with this subdomain by creating an Route resource, the Ingress controller ensures that requests to your app through this subdomain are properly proxied to your app pods. To see the default Ingress controller in your cluster, run `oc describe ingresscontroller/default -n openshift-ingress-operator`.
@@ -44,7 +44,7 @@ If you want to register your app with a different domain, you can [create a cust
 ### Ingress controller
 {: #ingress-controller}
 
-One HAProxy-based {{site.data.keyword.openshiftshort}} Ingress controller is created for each IngressController, and one Ingress controller service is created in each zone where you have worker nodes.
+One HAProxy-based {{site.data.keyword.redhat_openshift_notm}} Ingress controller is created for each IngressController, and one Ingress controller service is created in each zone where you have worker nodes.
 {: shortdesc}
 
 The Ingress operator configures the Ingress controller with the same domain that is specified in the IngressController. The Ingress controller listens for incoming HTTP, HTTPS, or TCP service requests through that domain. The Ingress controller's load balancer service component then forwards requests to the pods for that app only according to the rules defined in the Route resource and implemented by the Ingress controller.
@@ -72,7 +72,7 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 ### Route resource
 {: #route-resource-about}
 
-To expose an app by using Route, you must create a Kubernetes service for your app and register this service with the Ingress controller by defining an Route resource. The Ingress resource is a {{site.data.keyword.openshiftshort}} resource that defines the rules for how to route incoming requests for apps.
+To expose an app by using Route, you must create a Kubernetes service for your app and register this service with the Ingress controller by defining an Route resource. The Ingress resource is a {{site.data.keyword.redhat_openshift_notm}} resource that defines the rules for how to route incoming requests for apps.
 {: shortdesc}
 
 The Route resource also specifies the path to your app services. The paths to your app services are appended to your cluster's Ingress subdomain to form a unique app URL such as `mycluster-a1b2cdef345678g9hi012j3kl4567890-0000.us-south.containers.appdomain.cloud/myapp1`.
@@ -83,7 +83,7 @@ One Route resource is required for each project where you have apps that you wan
 
 For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects).
 
-If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Route resource in {{site.data.keyword.openshiftshort}} version 4.
+If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Route resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
 {: important}
 
 
@@ -180,7 +180,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 
-{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the Ingress controller, or the Route resource in {{site.data.keyword.openshiftshort}} version 4.
+{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the Ingress controller, or the Route resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
 
 To get started, see [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4).
 

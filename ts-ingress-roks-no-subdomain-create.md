@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -54,7 +54,7 @@ Creating a cluster after deleting a cluster the same or similar name? See [No In
 Typically, after the cluster is ready, the Ingress subdomain and secret are created after 15 minutes. If the Ingress subdomain and secret are still unavailable after your cluster is in a `normal` state for more than 15 minutes, you can check the progress of the creation process by following these steps:
 {: tsResolve}
 
-1. [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Because the subdomain is not available, the {{site.data.keyword.openshiftshort}} console can't open. Instead, you can set the cluster context with the `--admin` flag through the CLI.
+1. [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Because the subdomain is not available, the {{site.data.keyword.redhat_openshift_notm}} console can't open. Instead, you can set the cluster context with the `--admin` flag through the CLI.
     ```sh
     ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
     ```

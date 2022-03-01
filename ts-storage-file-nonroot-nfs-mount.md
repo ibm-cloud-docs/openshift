@@ -65,7 +65,7 @@ The init container starts before your app container starts. The init container c
 
 
 
-* [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 * Pick a [security context constraint (SCC)](/docs/openshift?topic=openshift-openshift_scc) that lets your deployment perform `chown` operations.
 
 **To use an init container to give a non-root user write permissions to the volume mount path**:
@@ -180,7 +180,7 @@ The init container starts before your app container starts. The init container c
     ```
     {: pre}
 
-    Is the init container failing? Because {{site.data.keyword.openshiftshort}} sets restricted security context constraints, you might see an error such as `chown: /opt/ibm-ucd/server/ext_lib: Operation not permitted`. For your deployment, [use an SCC](/docs/openshift?topic=openshift-openshift_scc) that allows `chown` operations and try again.
+    Is the init container failing? Because {{site.data.keyword.redhat_openshift_notm}} sets restricted security context constraints, you might see an error such as `chown: /opt/ibm-ucd/server/ext_lib: Operation not permitted`. For your deployment, [use an SCC](/docs/openshift?topic=openshift-openshift_scc) that allows `chown` operations and try again.
     {: note}
 
 6. Verify that the volume is successfully mounted to your pod. Note the pod name and **Containers/Mounts** path.

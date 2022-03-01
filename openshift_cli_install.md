@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-01"
 
 keywords: openshift, oc
 
@@ -17,18 +17,18 @@ subcollection: openshift
 # Installing the OpenShift CLI
 {: #openshift-cli}
 
-You can use the {{site.data.keyword.openshiftlong}} command line interface (CLI) plug-in (`ibmcloud oc`) to create and manage your {{site.data.keyword.openshiftshort}} cluster infrastructure, such as creating clusters and worker nodes. Then, you can use the {{site.data.keyword.openshiftshort}} CLI (`oc`) to manage the resources within your {{site.data.keyword.openshiftshort}} cluster, such as projects, pods, and deployments. To use the API, see [Setting up the API](/docs/openshift?topic=openshift-cs_api_install).
+You can use the {{site.data.keyword.openshiftlong}} command line interface (CLI) plug-in (`ibmcloud oc`) to create and manage your {{site.data.keyword.redhat_openshift_notm}} cluster infrastructure, such as creating clusters and worker nodes. Then, you can use the {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) to manage the resources within your {{site.data.keyword.redhat_openshift_notm}} cluster, such as projects, pods, and deployments. To use the API, see [Setting up the API](/docs/openshift?topic=openshift-cs_api_install).
 
 ## Installing the IBM Cloud CLI and plug-ins
 {: #cs_cli_install_steps}
 
-Install the required CLIs to create and manage your {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.openshiftlong_notm}}, and to deploy containerized apps to your cluster.
+Install the required CLIs to create and manage your {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.openshiftlong_notm}}, and to deploy containerized apps to your cluster.
 {: shortdesc}
 
 This task includes the information for installing these CLIs and plug-ins:
 
 * {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
-* {{site.data.keyword.openshiftlong_notm}} plug-in (`ibmcloud oc` alias for {{site.data.keyword.openshiftshort}} clusters)
+* {{site.data.keyword.openshiftlong_notm}} plug-in (`ibmcloud oc` alias for {{site.data.keyword.redhat_openshift_notm}} clusters)
 * {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
 * {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`)
 
@@ -103,20 +103,20 @@ For reference information about these CLIs, see the documentation for those tool
 {: support}
 {: help}
 
-To view a local version of the {{site.data.keyword.openshiftshort}} dashboard and to deploy apps into your {{site.data.keyword.openshiftlong_notm}} clusters, install the {{site.data.keyword.openshiftshort}} CLI (`oc`) and Kubernetes CLI (`kubectl`).
+To view a local version of the {{site.data.keyword.redhat_openshift_notm}} dashboard and to deploy apps into your {{site.data.keyword.openshiftlong_notm}} clusters, install the {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) and Kubernetes CLI (`kubectl`).
 {: shortdesc}
 
-Using both community Kubernetes and {{site.data.keyword.openshiftshort}} clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on {{site.data.keyword.openshiftshort}} and 1.22.7 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external} for your cluster `major.minor` {{site.data.keyword.openshiftshort}} and Kubernetes versions. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
+Using both community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on {{site.data.keyword.redhat_openshift_notm}} and 1.22.7 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external} for your cluster `major.minor` {{site.data.keyword.redhat_openshift_notm}} and Kubernetes versions. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
 {: note}
 
 Looking for a simple installation? You can try installing the plug-in with a package manager such as Homebrew. Keep in mind that the version skew might not match your cluster. For example, in Homebrew, you can update Homebrew by running `brew update` and check what version of the plug-in is installed by running `brew info openshift-cli`. Then, install the plug-in by running `brew install openshift-cli`.
 {: tip}
 
-1. Download the latest {{site.data.keyword.openshiftshort}} CLI (`oc`) for your local operating system and {{site.data.keyword.openshiftshort}} version. The current default {{site.data.keyword.openshiftshort}} version is 4.8. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. You can get the download link for `oc` from the {{site.data.keyword.openshiftshort}} web console, or manually from the `mirror.openshift.com` website.
+1. Download the latest {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) for your local operating system and {{site.data.keyword.redhat_openshift_notm}} version. The current default {{site.data.keyword.redhat_openshift_notm}} version is 4.8. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. You can get the download link for `oc` from the {{site.data.keyword.redhat_openshift_notm}} web console, or manually from the `mirror.openshift.com` website.
 
     **![Version 4 icon.](images/icon-version-43.png) Version 4 clusters only: Download the `oc` CLI from your cluster.**
-    1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
-    2. Click **{{site.data.keyword.openshiftshort}} web console**.
+    1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+    2. Click **{{site.data.keyword.redhat_openshift_notm}} web console**.
     3. From the menu bar, click the information (question mark) icon.
     4. Click **Command Line Tools**.
     5. Click the download link for your operating system.
@@ -125,13 +125,13 @@ Looking for a simple installation? You can try installing the plug-in with a pac
     * [OpenShift Container Platform version 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
     * [OpenShift Container Platform version 4 `oc` download links](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/){: external}.
 
-2. Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.openshiftshort}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.23.3.
+2. Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.redhat_openshift_notm}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.23.3.
 
-    * ![Version 3.11 icon.](images/icon-version-311.png) For clusters that run {{site.data.keyword.openshiftshort}} 3.11: Download at least version 1.15. Because earlier `kubectl` versions are no longer supported, the `kubectl` version that you use for your {{site.data.keyword.openshiftshort}} 3.11, Kubernetes 1.11 cluster can't meet the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external}. Instead, use at least `kubectl` version 1.15 to protect your cluster from Common Vulnerability and Exposures (CVEs) that might arise in unsupported versions.
+    * ![Version 3.11 icon.](images/icon-version-311.png) For clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11: Download at least version 1.15. Because earlier `kubectl` versions are no longer supported, the `kubectl` version that you use for your {{site.data.keyword.redhat_openshift_notm}} 3.11, Kubernetes 1.11 cluster can't meet the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external}. Instead, use at least `kubectl` version 1.15 to protect your cluster from Common Vulnerability and Exposures (CVEs) that might arise in unsupported versions.
         - **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl){: external}
         - **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl){: external}
         - **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe){: external}
-    * ![Version 4 icon.](images/icon-version-43.png) For clusters that run {{site.data.keyword.openshiftshort}} 4: Download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.openshiftshort}} cluster. For supported versions, see [{{site.data.keyword.openshiftshort}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
+    * ![Version 4 icon.](images/icon-version-43.png) For clusters that run {{site.data.keyword.redhat_openshift_notm}} 4: Download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.redhat_openshift_notm}} cluster. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
         - **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/darwin/amd64/kubectl){: external}
         - **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/linux/amd64/kubectl){: external}
         - **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/windows/amd64/kubectl.exe){: external}
@@ -202,7 +202,7 @@ Looking for a simple installation? You can try installing the plug-in with a pac
 
 Next, start [Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial).
 
-For more information about the `oc` CLI, see the [{{site.data.keyword.openshiftshort}} documentation](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html){: external}.
+For more information about the `oc` CLI, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html){: external}.
 {: note}
 
 
@@ -218,7 +218,7 @@ Update the CLIs regularly to use new features.
 This task includes the information for updating the following CLIs:
 - {{site.data.keyword.cloud_notm}} CLI version 0.8.0 or later
 - {{site.data.keyword.openshiftlong_notm}} plug-in
-- {{site.data.keyword.openshiftshort}} CLI
+- {{site.data.keyword.redhat_openshift_notm}} CLI
 - {{site.data.keyword.registrylong_notm}} plug-in
 
 
@@ -259,7 +259,7 @@ To update the CLIs:
     ```
     {: pre}
 
-6. [Update the {{site.data.keyword.openshiftshort}} CLI](#cli_oc).
+6. [Update the {{site.data.keyword.redhat_openshift_notm}} CLI](#cli_oc).
 
 7. Update the `container-registry` plugin from the {{site.data.keyword.cloud_notm}} plug-in repository.
 
@@ -282,7 +282,7 @@ To update the CLIs:
 ## Installing the `odo` CLI for developers
 {: #cli-odo-install}
 
-Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.openshiftshort}} Do CLI](/docs/containers?topic=containers-odo-tutorial) tutorial.
+Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.redhat_openshift_notm}} Do CLI](/docs/containers?topic=containers-odo-tutorial) tutorial.
 {: shortdesc}
 
 
@@ -340,7 +340,7 @@ To uninstall the CLIs:
 [{{site.data.keyword.cloud-shell_full}}](https://cloud.ibm.com/shell){: external} allows you to use the {{site.data.keyword.cloud_notm}} CLI and various CLI plug-ins to manage your cluster directly from your web browser.
 {: shortdesc}
 
-The {{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`), and the {{site.data.keyword.openshiftshort}} CLI (`oc`).
+The {{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), the {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`), the {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`), and the {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`).
 
 While you use the {{site.data.keyword.cloud-shell_short}}, keep in mind the following limitations:
 * You can open up to five concurrent sessions, which operate independently so you can work with different resources, regions, and accounts at once.
@@ -353,11 +353,11 @@ To launch and use the {{site.data.keyword.cloud-shell_notm}}:
 2. A session starts and automatically logs you in to the {{site.data.keyword.cloud_notm}} CLI with your current account credentials.
 3. Access your cluster by getting the `oc login` token.
 
-    3. In the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
+    3. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
     4. In the **Actions...** drop-down list, select **Connect via CLI**.
     5. Follow the instructions.
 
-If you can't or don't want to open the {{site.data.keyword.openshiftshort}} console, you can set the cluster context with the `--admin` flag through the CLI with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin` command.
+If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm}} console, you can set the cluster context with the `--admin` flag through the CLI with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin` command.
 {: note}
 
 

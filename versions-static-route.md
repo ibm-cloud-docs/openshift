@@ -24,10 +24,10 @@ For steps on updating the static route add-on, see [Updating managed add-ons](/d
 
 Review the supported versions of the static route add-on. In the CLI, you can run `ibmcloud oc cluster addon versions --addon static-route`.
 
-| Static route add-on version | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| Static route add-on version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support |
 | --- | --- | --- |
 | 1.00 | Yes | 4.5, 4.6, 4.7 |
-{: summary="The rows are read from left to right. The first column is the static route add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.openshiftshort}} version of your cluster that the static route add-on version is supported for."}
+{: summary="The rows are read from left to right. The first column is the static route add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.redhat_openshift_notm}} version of your cluster that the static route add-on version is supported for."}
 {: caption="Supported static route add-on versions" caption-side="top"}
 
 ## Version 1.0.0

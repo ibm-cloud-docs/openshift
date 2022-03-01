@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -32,7 +32,7 @@ r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6
 
 
 
-When you create an {{site.data.keyword.openshiftshort}} cluster on VPC infrastructure in the CLI, the cluster is initially created with worker nodes in one zone only.
+When you create an {{site.data.keyword.redhat_openshift_notm}} cluster on VPC infrastructure in the CLI, the cluster is initially created with worker nodes in one zone only.
 {: tsCauses} 
 
 You then make the cluster multizone by manually adding zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command. Currently, when you add zones to your cluster, the Ingress controller is not updated with the VPC subnets for the new zones, and does not route requests to apps in the new zones.

@@ -30,7 +30,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
 
 
 
-1. Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) so that you can deploy them on {{site.data.keyword.openshiftshort}} clusters.
+1. Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) so that you can deploy them on {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 1. Look for abnormalities in the service or deployment resources by running the `describe` command.
     ```sh

@@ -29,7 +29,7 @@ Review frequently asked questions and key technologies that {{site.data.keyword.
 
 **What is {{site.data.keyword.openshiftlong_notm}} and how does it work?**
 
-{{site.data.keyword.openshiftlong_notm}} is a managed offering to create your own {{site.data.keyword.openshiftshort}} cluster of compute hosts to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. {{site.data.keyword.openshiftlong_notm}} provides intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management for your apps. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
+{{site.data.keyword.openshiftlong_notm}} is a managed offering to create your own {{site.data.keyword.redhat_openshift_notm}} cluster of compute hosts to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. {{site.data.keyword.openshiftlong_notm}} provides intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management for your apps. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
 
 **What is Kubernetes?**
 
@@ -39,9 +39,9 @@ Kubernetes is an open source platform for managing containerized workloads and s
 
 Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app in Kubernetes on {{site.data.keyword.openshiftlong_notm}}, you must first containerize your app by creating a container image that you store in a container registry. For an overview of key Docker concepts and benefits, see [Docker containers](#docker_containers). To dive deeper into Docker, see the [Docker documentation](https://docs.docker.com/).
 
-**What is {{site.data.keyword.openshiftshort}}?**
+**What is {{site.data.keyword.redhat_openshift_notm}}?**
 
-{{site.data.keyword.openshiftshort}} is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With {{site.data.keyword.openshiftshort}}, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and {{site.data.keyword.openshiftshort}} cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
+{{site.data.keyword.redhat_openshift_notm}} is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With {{site.data.keyword.redhat_openshift_notm}}, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
 **What compute host infrastructure does the service offer?**
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -21,7 +21,7 @@ Your {{site.data.keyword.openshiftlong}} clusters have default settings in place
 
 For example, you might have a user or namespace that runs your critical apps in prod. You can create a flow schema and priority so that your critical apps have a higher priority for the API server to fulfill their requests than other apps in the cluster.
 
-The Kubernetes API priority and feature gate is enabled in clusters that run {{site.data.keyword.openshiftshort}} version 4.6 or later.
+The Kubernetes API priority and feature gate is enabled in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
 {: note}
 
 ## Reviewing default flow schema and priority levels
@@ -34,7 +34,7 @@ The Kubernetes API priority and feature gate is enabled in clusters that run {{s
 | ----------- | --------- | -------------- |
 | `apiserver-health` | Kubernetes API server health resources | [Custom priority level](#kube-api-prioritylevelconfig) for these resources. |
 | `calico-system-service-accounts` | Resources in the `calico-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
-| `ibm-admin` | Resources from IBM cluster administrators | Exempts requests by cluster administrators from priority restrictions. This schema is available for {{site.data.keyword.openshiftshort}} version 4.9 and later. |
+| `ibm-admin` | Resources from IBM cluster administrators | Exempts requests by cluster administrators from priority restrictions. This schema is available for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. |
 | `ibm-system-service-accounts` | Resources in the `ibm-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
 | `tigera-operator-service-accounts` | Resources in the `tigera-operator` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
 {: caption="Default flow schema and priority levels" caption-side="top"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift
 
@@ -20,10 +20,10 @@ content-type: troubleshoot
 
 **Infrastructure provider and applicable versions**:
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
-* {{site.data.keyword.openshiftshort}} 4.4 or later
+* {{site.data.keyword.redhat_openshift_notm}} 4.4 or later
 
 
-When you try to push container images to the internal {{site.data.keyword.openshiftshort}} container image registry, the push fails with a message similar to the following.
+When you try to push container images to the internal {{site.data.keyword.redhat_openshift_notm}} container image registry, the push fails with a message similar to the following.
 {: tsSymptoms} 
 
 ```

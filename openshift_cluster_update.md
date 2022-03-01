@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: openshift, version, upgrade, update
 
@@ -20,13 +20,13 @@ subcollection: openshift
 You can install updates to keep your {{site.data.keyword.openshiftlong}} clusters up-to-date.
 {: shortdesc}
 
-You must update your cluster by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.openshiftshort}} web console.
+You must update your cluster by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.redhat_openshift_notm}} web console.
 {: note}
 
 ## Updating the master
 {: #master}
 
-Periodically, {{site.data.keyword.openshiftshort}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
+Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
 {: shortdesc}
 
 ### About updating the master
@@ -69,9 +69,9 @@ The following diagram shows the process that you can take to update your master.
 
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
 
-To update the {{site.data.keyword.openshiftshort}} master _major_ or _minor_ version:
+To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _minor_ version:
 
-1. Review the [{{site.data.keyword.openshiftshort}} changes](/docs/openshift?topic=openshift-openshift_versions) and make any updates marked _Update before master_.
+1. Review the [{{site.data.keyword.redhat_openshift_notm}} changes](/docs/openshift?topic=openshift-openshift_versions) and make any updates marked _Update before master_.
 2. Review any [Kubernetes helpful warnings](https://kubernetes.io/blog/2020/09/03/warnings/){: external}, such as deprecation notices.
 3. Check the add-ons and plug-ins that are installed in your cluster for any impact that might be caused by updating the cluster version.
 
@@ -82,20 +82,20 @@ To update the {{site.data.keyword.openshiftshort}} master _major_ or _minor_ ver
             ```
             {: pre}
 
-        2. Check the supported {{site.data.keyword.openshiftshort}} version for each add-on that is installed.
+        2. Check the supported {{site.data.keyword.redhat_openshift_notm}} version for each add-on that is installed.
             ```sh
             ibmcloud oc addon-versions
             ```
             {: pre}
 
-        3. If the add-on must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, [update the add-on](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
+        3. If the add-on must be updated to run in the {{site.data.keyword.redhat_openshift_notm}} version that you want to update your cluster to, [update the add-on](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
 
     * **Checking plug-ins**
         1. In the [Helm catalog](https://cloud.ibm.com/kubernetes/helm){: external}, find the plug-ins that you installed in your cluster.
         2. From the side menu, expand the **SOURCES & TAR FILE** section.
         3. Download and open the source code.
         4. Check the `README.md` or `RELEASENOTES.md` files for supported versions.
-        5. If the plug-in must be updated to run in the {{site.data.keyword.openshiftshort}} version that you want to update your cluster to, update the plug-in by following the plug-in instructions.
+        5. If the plug-in must be updated to run in the {{site.data.keyword.redhat_openshift_notm}} version that you want to update your cluster to, update the plug-in by following the plug-in instructions.
 
 4. Update your API server and associated master components by using the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/login) or running the CLI `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update).
 5. Wait a few minutes, then confirm that the update is complete. Review the API server version on the {{site.data.keyword.cloud_notm}} clusters dashboard or run `ibmcloud oc cluster ls`.
@@ -151,10 +151,10 @@ Before you update your classic infrastructure worker nodes, review the prerequis
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
-- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.openshiftshort}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
-- If you want to apply a patch update, review the [{{site.data.keyword.openshiftshort}} version changelog](/docs/openshift?topic=openshift-openshift_changelog).
+- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
+- If you want to apply a patch update, review the [{{site.data.keyword.redhat_openshift_notm}} version changelog](/docs/openshift?topic=openshift-openshift_changelog).
 - Consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) so that your cluster has enough capacity to rescheduling your workloads during the update.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
 
@@ -305,7 +305,7 @@ After you set up the config map for the first time, you can then update worker n
 
 To update worker nodes from the console:
 1. Complete the [prerequisite steps](#worker-up-prereqs) and [set up a config map](#worker_node) to control how your worker nodes are updated.
-2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **{{site.data.keyword.openshiftshort}}**.
+2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **{{site.data.keyword.redhat_openshift_notm}}**.
 3. From the **Clusters** page, click your cluster.
 4. From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
 5. From the action bar, click **Update**.
@@ -362,9 +362,9 @@ Before you update your VPC infrastructure worker nodes, review the prerequisite 
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is removed, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 {: important}
 
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
-- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.openshiftshort}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
+- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
 - If you want to apply a patch update, review the [Kubernetes clusters](/docs/openshift?topic=openshift-openshift_changelog) version changelog.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
 
@@ -408,7 +408,7 @@ You can update your VPC worker nodes in the console. Before you begin, consider 
 {: shortdesc}
 
 1. Complete the [prerequisite steps](#vpc_worker_prereqs).
-2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **{{site.data.keyword.openshiftshort}}**.
+2. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **{{site.data.keyword.redhat_openshift_notm}}**.
 3. From the **Clusters** page, click your cluster.
 4. From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
 5. From the action bar, click **Update**.
@@ -422,7 +422,7 @@ You can update the flavors, or machine types, of your worker nodes by adding new
 {: shortdesc}
 
 Before you begin:
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - If you store data on your worker node, the data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
 

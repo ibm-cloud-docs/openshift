@@ -37,13 +37,13 @@ Tekton pipelines
 ## Deploying containers from an existing image stream in the internal registry
 {: #oc_imagestream_deploy}
 
-You can deploy an app from an existing [image stream](https://docs.openshift.com/container-platform/4.8/openshift_images/image-streams-manage.html){: external} that your cluster administrator set up in the internal registry of your {{site.data.keyword.openshiftshort}} cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
+You can deploy an app from an existing [image stream](https://docs.openshift.com/container-platform/4.8/openshift_images/image-streams-manage.html){: external} that your cluster administrator set up in the internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
 ### Using an image stream with the CLI
 {: #oc_imagestream_deploy_cli}
 
-1. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. List the available image streams in a project. If you know the project, name, and tag of the image stream, you can use local image streams in other projects without setting up image pull stream credentials.
 
     ```sh
@@ -58,10 +58,10 @@ You can deploy an app from an existing [image stream](https://docs.openshift.com
     ```
     {: pre}
 
-### Using an image stream from the {{site.data.keyword.openshiftshort}} web console
+### Using an image stream from the {{site.data.keyword.redhat_openshift_notm}} web console
 {: #oc_imagestream_deploy-ui}
 
-1. From the [{{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui), switch to the **Developer** perspective and click **+Add**.
+1. From the [{{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui), switch to the **Developer** perspective and click **+Add**.
 2. In the **Add** pane menu bar, select a **Project** that is not `default` to create your app in, and click **Container Image**.
 3. In the **Image** section, select **Image name from internal registry**.
 4. Select `default` **Project**, `<image>` **ImageStreams**, and `<tag>` **Tag** of the image stream that you previously created.
@@ -71,7 +71,7 @@ You can deploy an app from an existing [image stream](https://docs.openshift.com
 
 
 
-## Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.openshiftshort}} project
+## Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.redhat_openshift_notm}} project
 {: #namespace}
 
 You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registrylong_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
@@ -79,8 +79,8 @@ You can deploy containers to your cluster from an IBM-provided public image or a
 
 Before you begin:
 1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-2. [Create an {{site.data.keyword.openshiftshort}} cluster](/docs/containers?topic=containers-clusters).
-3. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+2. [Create an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/containers?topic=containers-clusters).
+3. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To deploy a container into the **default** project of your cluster:
 
@@ -143,7 +143,7 @@ To deploy a container into the **default** project of your cluster:
 Deploy containers from an encrypted image to your cluster by using the Image Key Synchronizer cluster add-on.
 {: shortdesc}
 
-In clusters that run {{site.data.keyword.openshiftshort}} 4.5 or later, [the CRI-O container runtime supports using encrypted container images](https://github.com/cri-o/cri-o/blob/main/tutorials/decryption.md){: external}. Encrypted container images are Open Container Initiative (OCI) images that contain encrypted layer contents. Instead of securing an image for individual developers, such as a developer using image pull secrets to pull images from a registry, you can enable image encryption for a specific cluster. In this way, you can ensure that encrypted images are run only in those specific clusters that have the image decryption key.
+In clusters that run {{site.data.keyword.redhat_openshift_notm}} 4.5 or later, [the CRI-O container runtime supports using encrypted container images](https://github.com/cri-o/cri-o/blob/main/tutorials/decryption.md){: external}. Encrypted container images are Open Container Initiative (OCI) images that contain encrypted layer contents. Instead of securing an image for individual developers, such as a developer using image pull secrets to pull images from a registry, you can enable image encryption for a specific cluster. In this way, you can ensure that encrypted images are run only in those specific clusters that have the image decryption key.
 
 To run an app by using an encrypted image, you must share the key for decrypting the image with the container runtime on the worker nodes in the cluster. When you enable the Image Key Synchronizer add-on in your cluster, the synchronizer daemon set is deployed in the `image-key-synchronizer` project. You can then create Kubernetes secrets that contain the image decryption keys in that project. The add-on adds the keys to a specific directory on the worker nodes where the container runtime can access and use the keys to decrypt container images. Note that the Image Key Synchronizer add-on also supports private keys that are first [wrapped by a root key that is stored in an {{site.data.keyword.keymanagementservicelong}} instance](/docs/key-protect?topic=key-protect-envelope-encryption).
 
@@ -154,7 +154,7 @@ Before you begin
     - [Docker Engine CLI](https://www.docker.com/products/container-runtime#/download){: external}, to locally pull images from an image registry.
     - [Skopeo](https://github.com/containers/skopeo/blob/main/install.md){: external}, to encrypt OCI container images.
 
-2. [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that encrypted images are supported only for {{site.data.keyword.openshiftshort}} version 4.5 and later.
+2. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that encrypted images are supported only for {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
 
 3. Optional: When you create a public and private key pair for the image encryption, you can provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key. To prepare to wrap the private key:
     1. [Install the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in](/docs/key-protect?topic=key-protect-set-up-cli).
@@ -282,7 +282,7 @@ To deploy containers that use encrypted images:
 
 8. Optional: [Push the encrypted image to {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#gs_registry_images_pushing), which supports encrypted OCI images.
 
-9. Specify the encrypted image in your app deployment. For example, if you pushed the encrypted image to {{site.data.keyword.registrylong_notm}}, you can follow the example in [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.openshiftshort}} project](/docs/openshift?topic=openshift-images#namespace). When you create the deployment in your cluster, the container runtime uses the private decryption key in the `/etc/crio/keys/synced` directory to decrypt the image before running it.
+9. Specify the encrypted image in your app deployment. For example, if you pushed the encrypted image to {{site.data.keyword.registrylong_notm}}, you can follow the example in [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.redhat_openshift_notm}} project](/docs/openshift?topic=openshift-images#namespace). When you create the deployment in your cluster, the container runtime uses the private decryption key in the `/etc/crio/keys/synced` directory to decrypt the image before running it.
 
 10. For any subsequent images that you want to encrypt, you can either use the same public key to encrypt the images with Skopeo, or repeat these steps to use a different public and private key pair.
 
@@ -299,12 +299,12 @@ For the list of changes for each Image Key Synchronizer add-on version, see the 
 ## Referring to the image pull secret in your pod deployment
 {: #pod_imagePullSecret}
 
-If the cluster administrator did not [store the image pull secret in the Kubernetes service account](/docs/openshift?topic=openshift-registry#use_imagePullSecret), all deployments that don't specify a service account can't use the image pull secret to deploy containers. Instead, you can define an image pull secret in your pod deployment. When you refer to the image pull secret in a pod deployment, the image pull secret is valid for this pod only and can't be shared across pods in the {{site.data.keyword.openshiftshort}} project.
+If the cluster administrator did not [store the image pull secret in the Kubernetes service account](/docs/openshift?topic=openshift-registry#use_imagePullSecret), all deployments that don't specify a service account can't use the image pull secret to deploy containers. Instead, you can define an image pull secret in your pod deployment. When you refer to the image pull secret in a pod deployment, the image pull secret is valid for this pod only and can't be shared across pods in the {{site.data.keyword.redhat_openshift_notm}} project.
 {: shortdesc}
 
 Before you begin
-- [Create an image pull secret](/docs/openshift?topic=openshift-registry#other) to access images in other registries or {{site.data.keyword.openshiftshort}} projects other than `default`.
-- [Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Create an image pull secret](/docs/openshift?topic=openshift-registry#other) to access images in other registries or {{site.data.keyword.redhat_openshift_notm}} projects other than `default`.
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To refer to the image pull secret in your pod deployment,
 
@@ -405,7 +405,7 @@ When you enable image security enforcement in your cluster, you install the open
 
 For more information, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
 
-There is a [known issue](https://github.com/IBM/portieris/issues/350){: external} when updating a cluster from {{site.data.keyword.openshiftshort}} 4.7 to {{site.data.keyword.openshiftshort}} 4.8. Do not upgrade your cluster to from version 4.7 to version 4.8 if it has image security enforcement enabled. 
+There is a [known issue](https://github.com/IBM/portieris/issues/350){: external} when updating a cluster from {{site.data.keyword.redhat_openshift_notm}} 4.7 to {{site.data.keyword.redhat_openshift_notm}} 4.8. Do not upgrade your cluster to from version 4.7 to version 4.8 if it has image security enforcement enabled. 
 {: important}
 
 **Mutated images**: By default, Portieris uses the `MutatingAdmissionWebhook` admission controller to mutate your image to refer to the image by a digest instead of a tag. However, you might have some deployment technology that rejects a mutated image. If so, you can use the [image mutation option](https://github.com/IBM/portieris/blob/master/README.md#image-mutation-option){: external} and [policy](https://github.com/IBM/portieris/blob/master/POLICIES.md#image-mutation-option){: external} to change the default behavior.
@@ -414,7 +414,7 @@ There is a [known issue](https://github.com/IBM/portieris/issues/350){: external
 ### Enabling or disabling image security enforcement
 {: #portieris-enable}
 
-**{{site.data.keyword.openshiftshort}} version 4.5 or later**: You can enable or disable image security enforcement for your cluster from the CLI or console. For earlier versions, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
+**{{site.data.keyword.redhat_openshift_notm}} version 4.5 or later**: You can enable or disable image security enforcement for your cluster from the CLI or console. For earlier versions, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
 {: shortdesc}
 
 #### Enabling or disabling image security enforcement with the CLI
@@ -427,7 +427,7 @@ See the following commands.
 #### Enabling or disabling image security enforcement from the console
 {: #portieris-enable-ui}
 
-1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
 2. From the **Overview** tab, in the **Summary** pane, find the **Image security enforcement** field and click **Enable** or **Disable**.
 
 ### Default image policies
@@ -443,7 +443,7 @@ To review the image policies in your cluster,
 
 Before you begin
 
-[Access your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. List the image policies that apply globally to the cluster. For an example configuration, see the [Portieris policy documentation](https://github.com/IBM/portieris/blob/master/helm/portieris/templates/policies.yaml#L66){: external}.
 
