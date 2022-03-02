@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: openshift
 
@@ -39,7 +39,6 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
     * [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_rotate)
     * [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_status)
 * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config)
-* [`ibmcloud oc cluster cos rotate`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_cos_rotate)
 * **`cluster create`**: Create a classic or VPC cluster.
     * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
     * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)

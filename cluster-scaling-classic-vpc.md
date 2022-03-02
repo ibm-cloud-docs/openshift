@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -60,7 +60,7 @@ Can I change how scale-up and scale-down work?
 :   You can customize settings or use other Kubernetes resources to affect how scaling up and down work.
 
 Scale-up
-:   [Customize the cluster autoscaler configmap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
+:   [Customize the cluster autoscaler configmap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
 
 Scale-down
 :   [Customize the cluster autoscaler configmap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
@@ -80,7 +80,7 @@ How is this behavior different from worker pools that are not managed by the clu
 Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}.
 {: shortdesc}
 
-[Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), what [custom values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values) you might want to configure, and any other aspects that you might want, like [overprovisioning](/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps). Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
+[Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), what [custom values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values) you might want to configure, and any other aspects that you might want, like [overprovisioning](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps). Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
 
 ### Can I autoscale multiple worker pools at once?
 {: #scalable-practices-multiple}

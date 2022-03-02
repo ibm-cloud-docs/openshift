@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: openshift
 
@@ -66,7 +66,7 @@ Explore [{{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satelli
 
 If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, you might wonder how you can make your deployment strategy work across these environments.
 
-You can use the open source [Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#getting-started) tool to automate the provisioning of {{site.data.keyword.cloud_notm}} infrastructure, including Kubernetes clusters. Follow along with this tutorial to [plan, create, and update deployment environments](/docs/solution-tutorials?topic=solution-tutorials-plan-create-update-deployments#plan-create-update-deployments). After you create a cluster, you can also set up the [{{site.data.keyword.openshiftlong_notm}} cluster autoscaler](/docs/containers?topic=containers-ca) so that your worker pool scales up and down worker nodes in response to your workload's resource requests.</dd>
+You can use the open source [Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#getting-started) tool to automate the provisioning of {{site.data.keyword.cloud_notm}} infrastructure, including Kubernetes clusters. Follow along with this tutorial to [plan, create, and update deployment environments](/docs/solution-tutorials?topic=solution-tutorials-plan-create-update-deployments#plan-create-update-deployments). After you create a cluster, you can also set up the [{{site.data.keyword.openshiftlong_notm}} cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc) so that your worker pool scales up and down worker nodes in response to your workload's resource requests.</dd>
 
 ### What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?
 {: #app_kinds}
@@ -198,7 +198,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
     4. Repeat the previous step for each pod in your cluster.
     5. Add up the resource requests and limits of the apps that you deployed by default.
 6. Subtract the sum of your workload resource limits that you estimated in Step 5 from the available compute resources of your worker nodes that you estimated in Step 2. The remaining amount is the extra compute resources that you have to run new workloads or to scale your existing workloads.
-7. For workloads that need to scale up and down in response to resource requests, set up the [horizontal pod autoscaler](/docs/openshift?topic=openshift-update_app#app_scaling) and [cluster worker pool autoscaler](/docs/containers?topic=containers-ca#ca).
+7. For workloads that need to scale up and down in response to resource requests, set up the [horizontal pod autoscaler](/docs/openshift?topic=openshift-update_app#app_scaling) and [cluster worker pool autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc).
 8. [Set up monitoring tools](/docs/containers?topic=containers-health-monitor#view_metrics) to continue reviewing CPU and memory usage across worker nodes in your cluster.
 9. Run performance tests to continue refining the number of worker nodes you need in your cluster, with representative latency, scalability, data set, and workload requirements.
 
