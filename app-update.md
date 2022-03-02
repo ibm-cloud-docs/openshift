@@ -41,7 +41,7 @@ Canary or A/B deployment
 With Kubernetes, you can enable [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external} to automatically increase or decrease the number of instances of your apps based on CPU.
 {: shortdesc}
 
-Want to scale your worker nodes instead of your pods? Check out the [cluster autoscaler](/containers?topic=containers-cluster-scaling-classic-vpc).
+Want to scale your worker nodes instead of your pods? Check out the [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc).
 {: tip}
 
 Before you begin
