@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: openshift
 subcollection: openshift
@@ -1762,19 +1762,19 @@ subcollection: openshift
 
 [Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
 
-* [Creating security group rules from the console](/docs/openshift?topic=openshift-vpc-security-group#security_groups_ui)
-
-    * [Creating inbound rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
-
-    * [Creating security group rules with the CLI](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
-
-    * [Creating inbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-cli)
-
-    * [Creating outbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-cli-outbound)
-
 * [Required inbound rules](/docs/openshift?topic=openshift-vpc-security-group#required-group-inbound-rules)
 
 * [Required outbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-outbound-rules)
+
+* [Creating inbound and outbound rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
+
+* [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
+
+    * [Creating outbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-cli-outbound)
+
+* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
+
+* [Allow worker nodes to connect to the public LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
 
 [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 
