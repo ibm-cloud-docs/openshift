@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: openshift
 
@@ -2175,7 +2175,7 @@ CLI changelog
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.157](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Cluster autoscaler
-:   The [cluster autoscaler](/docs/containers?topic=containers-ca) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
+:   The [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
 
 New! Community Kubernetes Ingress support
 :   The Ingress ALBs in your version 3.11 cluster can now run the Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller. To use the Kubernetes Ingress image, you create your Ingress resources and configmaps according to the Kubernetes Ingress format, including community Kubernetes Ingress annotations instead of custom {{site.data.keyword.openshiftlong_notm}} annotations. For more information about the differences between the {{site.data.keyword.openshiftlong_notm}} Ingress image and the Kubernetes Ingress image, see the [Comparison of the ALB image types](/docs/containers?topic=containers-ingress-types#about-alb-images). To get started, see [Creating ALBs that run the Kubernetes Ingress image](/docs/containers?topic=containers-ingress-types#alb-comm-create) or [Changing existing ALBs to run Kubernetes Ingress](/docs/containers?topic=containers-ingress-types#alb-type-migration).
@@ -3115,7 +3115,7 @@ Diagnostics and Debug Tool add-on for {{site.data.keyword.redhat_openshift_notm}
 :   The [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) add-on is now available for {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 Cluster autoscaling for VPC clusters
-:   You can [set up the cluster autoscaler](/docs/containers?topic=containers-ca#ca_helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
+:   You can [set up the cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
 
 New! Reservations and limits for PIDs
 :   Worker nodes that run Kubernetes version 1.14 or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.
@@ -3537,7 +3537,7 @@ Version changelog
 {: release-note}
 
 Cluster autoscaler
-:   With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/containers?topic=containers-ca#ca_helm) instead of modifying the config map after installation.
+:   With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/containers?topic=containers-cluster-scaling-helm) instead of modifying the config map after installation.
 
 Ingress ALB changelog
 :   Updated the ALB [`nginx-ingress` image to build 524 and `ingress-auth` image to build 337](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
