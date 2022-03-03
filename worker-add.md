@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-03"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -86,6 +86,8 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) You can add worker nodes to your VPC cluster by creating a new worker pool.
 {: shortdesc}
 
+
+
 Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users).
 
 1. Retrieve the **VPC ID** and **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. You can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls --provider vpc-gen2`.
@@ -131,8 +133,9 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
         {: pre}
 
 5. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. Include the `--vpc-id` option if the worker pool is the first in the cluster.Optionally include the `--kms-instance` and `--crk` flags with the values you previously retrieved. For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2). Note that the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
+    
     ```sh
-    ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes_min_2> [--label <key>=<value>] [--vpc-id] [--kms-instance <KMS_instance_ID> --crk <root_key_ID>]
+    ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_worker_nodes_min_2> [--label <key>=<value>] [--vpc-id] [--kms-instance <KMS_instance_ID> --crk <root_key_ID>] 
     ```
     {: pre}
 
@@ -162,6 +165,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     kube-<ID_string>-<cluster_name>-<pool_name>-00000003   10.xxx.xx.xxx   c2.2x4   normal   Ready   us-south-1   1.22.7_1511   
     ```
     {: screen}
+
 
 ### Adding a zone to a worker pool
 {: #vpc_add_zone}
