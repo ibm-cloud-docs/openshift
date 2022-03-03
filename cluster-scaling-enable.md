@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-03"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -116,7 +116,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 *  [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *  [Install the `ibm-iks-cluster-autoscaler` add-on](/docs/containers?topic=containers-cluster-scaling-install-addon).
 
-# Customizing the cluster autoscaler add-on configmap
+### Customizing the cluster autoscaler add-on configmap
 {: #cluster-scaling-customize}
 
 When you modify a configmap parameter other than the worker pool `minSize`, `maxSize`, or if you enable or disable a worker pool, the cluster autoscaler pods are restarted.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-03"
 
 keywords: openshift
 subcollection: openshift
@@ -1342,7 +1342,7 @@ subcollection: openshift
 
 * [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-cluster-scaling-enable#ca_customize)
 
-[Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
+    * [Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
 
 [Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#cluster-scaling-deploy-apps)
 
