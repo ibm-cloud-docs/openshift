@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-03"
 
 keywords: kubernetes, openshift
 
@@ -626,7 +626,7 @@ spec:
 As part of a [twelve-factor](https://12factor.net/){: external}, cloud-native app, you want to maintain `dev-to-prod` parity by setting up a continuous development and delivery pipeline that uses a common, version-controlled codebase source. In your codebase repositories, you store your Kubernetes resource configuration manifest files, often in YAML format. You can use the Kubernetes project [Kustomize](https://kustomize.io/){: external} both to standardize and customize your deployments across multiple environments.
 {: shortdesc}
 
-For example, you can set up a base `kustomization` YAML to declare Kubernetes objects such as deployments and PVCs that are shared in your development, testing, and production environments. Next, you can set up separate `kustomization` YAMLs that have customized configurations for each environment, such as more replicas in production than testing. These customized YAMLs can then overlay, or build on, the shared base YAML so that you can manage environments that are mostly identical except for a few overlay configuration differences that you source-control. For more information about Kustomize such as a glossary and FAQs, check out the [Kustomize docs](https://github.com/kubernetes-sigs/kustomize/tree/master/docs){: external}.
+For example, you can set up a base `kustomization` YAML to declare Kubernetes objects such as deployments and PVCs that are shared in your development, testing, and production environments. Next, you can set up separate `kustomization` YAMLs that have customized configurations for each environment, such as more replicas in production than testing. These customized YAMLs can then overlay, or build on, the shared base YAML so that you can manage environments that are mostly identical except for a few overlay configuration differences that you source-control. For more information about Kustomize such as a glossary and FAQs, check out the [Kustomize docs](https://kubectl.docs.kubernetes.io/references/kustomize/){: external}.
 
 ![Version 3.11 icon.](images/icon-version-311.png) Kustomize is not supported for {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
 {: note}
@@ -634,7 +634,7 @@ For example, you can set up a base `kustomization` YAML to declare Kubernetes ob
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To set up configuration files with Kustomize:
-1. [Install the `kustomize` tool](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/INSTALL.md){: external}.
+1. [Install the `kustomize` tool](https://kubectl.docs.kubernetes.io/installation/kustomize/){: external}.
     - For macOS, you can use the `brew` package manager.
         ```sh
         brew install kustomize
@@ -653,7 +653,7 @@ To set up configuration files with Kustomize:
     ```
     {: pre}
 
-3. Create your repo structure for your `kustomize` [`base`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#base){: external} directory, [`overlay`](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/glossary.md#overlay){: external} directory, and environment directories such as staging and production. In the subsequent steps, you set up these repos for use with `kustomize`.
+3. Create your repo structure for your `kustomize` [`base`](https://kubectl.docs.kubernetes.io/references/kustomize/glossary/#base){: external} directory, [`overlay`](https://kubectl.docs.kubernetes.io/references/kustomize/glossary/#overlay){: external} directory, and environment directories such as staging and production. In the subsequent steps, you set up these repos for use with `kustomize`.
     ```sh
     mkdir -p ~/<my_app>/base &&
     mkdir -p ~/<my_app>/overlay &&

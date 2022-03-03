@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-03"
 
 keywords: openshift, app protocol, application protocol
 
@@ -690,8 +690,6 @@ To enable your app to receive public or private requests,
 
 Do not delete the subnets that you attached to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 {: important}
-
-
 
 ### Registering a DNS record and TLS certificate
 {: #vpc_lb_dns}

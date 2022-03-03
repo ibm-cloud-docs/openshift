@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-03"
 
 keywords: openshift
 
@@ -22,6 +22,10 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: note}
+
+## March 2022
+{: #release-mar-2022}
+
 
 
 ## February 2022
