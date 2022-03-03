@@ -26,14 +26,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2022
 {: #release-mar-2022}
 
-### 3 March 2022
-{: #3mar2022}
-{: release-note}
 
-
-
-Maintenance Windows for {{site.data.keyword.containershort}} ALBs
-:    You can now further control and manage your ALB updates by [creating a customized configmap](/docs/containers?topic=containers-ingress-types#alb_scheduled_updates) that specifies the time you want the updates to occur and the percentage of ALBs you want to update.
 
 ## February 2022
 {: #release-feb-2022}
