@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-03"
 
 keywords: openshift
 
@@ -23,6 +23,15 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: note}
 
+## March 2022
+{: #release-mar-2022}
+
+### 3 March 2022
+{: #3mar2022}
+{: release-note}
+
+Maintenance Windows for {{site.data.keyword.containershort}} ALBs
+:    You can now further control and manage your ALB updates by [creating a customized configmap](/docs/containers?topic=containers-ingress-types#alb_scheduled_updates) that specifies the time you want the updates to occur and the percentage of ALBs you want to update.
 
 ## February 2022
 {: #release-feb-2022}
