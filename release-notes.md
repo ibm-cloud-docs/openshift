@@ -26,8 +26,11 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2022
 {: #release-mar-2022}
 
-Worker node fix pack update.
+### 8 March 2022
+{: #8mar2022}
+{: release-note}
 
+Worker node fix pack update.
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.9.21_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog#4921_1527), [4.8.29_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog#4829_1545), [4.7.42_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1550), [4.6.48_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog#4648_1573), [3.11.570_1623_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1623).
 
