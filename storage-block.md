@@ -1576,7 +1576,7 @@ To make your data even more highly available and protect your app from a zone fa
 ### Copying data to and from pods and containers
 {: #block-cp}
 
-You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} to copy files and directories to and from pods or specific containers in your cluster.
+You can use the `oc cp` [command](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} to copy files and directories to and from pods or specific containers in your cluster.
 {: shortdesc}
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster). 

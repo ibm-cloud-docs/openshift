@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-08"
 
 keywords: openshift, clusters
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-08"
 
 keywords: openshift
 

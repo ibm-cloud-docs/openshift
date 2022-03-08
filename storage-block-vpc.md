@@ -1238,7 +1238,7 @@ You can only expand volumes that are mounted by an app pod.
 Data on {{site.data.keyword.block_storage_is_short}} is secured across redundant fault zones in your region. To manually back up your data, use the Kubernetes `oc cp` command.
 {: shortdesc}
 
-You can use the `oc cp` [command](https://kubernetes.io/docs/reference/kubectl/overview/#cp){: external} to copy files and directories to and from pods or specific containers in your cluster
+You can use the `oc cp` [command](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} to copy files and directories to and from pods or specific containers in your cluster
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
