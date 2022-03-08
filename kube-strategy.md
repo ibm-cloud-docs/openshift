@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-08"
 
 keywords: openshift
 
@@ -215,7 +215,9 @@ Your {{site.data.keyword.openshiftlong_notm}} is linked to one IBM Cloud infrast
 
 **Types of clusters**: Decide whether you want a [single zone, multizone, or multiple cluster setup](/docs/openshift?topic=openshift-ha_clusters#ha_clusters). Multizone clusters are available in worldwide worldwide {{site.data.keyword.cloud_notm}} [multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz). Also keep in mind that worker nodes vary by zone.
 
-**Types of worker nodes**: In general, your intensive workloads are more suited to run on bare metal physical machines, whereas for cost-effective testing and development work, you might choose virtual machines on shared or dedicated hardware. With bare metal worker nodes, your cluster has a network speed of 10 Gbps and hyper-threaded cores that offer higher throughput. Virtual machines come with a network speed of 1 Gbps and regular cores that don't offer hyper-threading. [Check out the machine isolation and flavors that are available](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
+**Types of worker nodes**: In general, your intensive workloads are more suited to run on bare metal physical machines, whereas for cost-effective testing and development work, you might choose virtual machines on shared or dedicated hardware. [Check out the machine isolation and flavors that are available](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes). For a list of available flavors, see [VPC Gen 2 flavors](/docs/containers?topic=containers-vpc-gen2-flavors) or [Classic flavors](https://cloud.ibm.com/docs/containers?topic=containers-classic-flavors).
+
+
 
 ### Do I use multiple clusters, or just add more workers to an existing cluster?
 {: #env_multicluster}

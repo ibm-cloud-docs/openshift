@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-08"
 
 keywords: openshift
 
@@ -25,6 +25,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2022
 {: #release-mar-2022}
+
+### 8 March 2022
+{: #8mar2022}
+{: release-note}
+
+Worker node fix pack update.
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.21_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog#4921_1527), [4.8.29_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog#4829_1545), [4.7.42_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog#4742_1550), [4.6.48_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog#4648_1573), [3.11.570_1623_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1623).
+
+
 
 
 
@@ -253,8 +263,7 @@ Review the release notes for January 2022.
 {{site.data.keyword.containershort}} 1.19, 1.20, 1.21, and 1.22 unsupported date change
 :   The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#release-history) page has been updated with the new unsupported dates. 
 
-Version changelog
-:   Worker node fix pack update.
+Worker node fix pack update.
 
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.8.26_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog#4826_1541), [4.7.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog#4740_1546), [4.6.53_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog#4653_1569), [3.11.570_1618_openshift](/docs/openshift?topic=openshift-openshift_changelog#311570_1618).
