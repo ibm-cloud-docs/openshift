@@ -1,8 +1,9 @@
+
 ---
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-08"
 
 keywords: openshift, version, update, upgrade
 
@@ -182,6 +183,7 @@ The following table shows the actions that you must take before you [update the 
 | Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. If these changes are not made, your microservices might fail to start and you might see a `permission denied` error. Applications developed for OCP already have the necessary changes.  |
 | Strongswan users | If you are using Strongswan in your cluster, then update at least version 2.7.11 of Strongswan before you update your cluster master to {{site.data.keyword.redhat_openshift_notm}} 4.8. In versions of Strongswan earlier than 2.7.11, certain [Strongswan configuration options](/docs/openshift?topic=openshift-vpn#vpn-setup) do not work with the {{site.data.keyword.redhat_openshift_notm}} 4.8 master. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.8" caption-side="top"}
+
 ## {{site.data.keyword.redhat_openshift_notm}} 4.7
 {: #ocp47}
 
@@ -203,8 +205,6 @@ The following table shows the actions that you must take before you [update the 
 | **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.7 deprecated and removed features](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-deprecated-removed-features){: external}. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.7" caption-side="top"}
 {: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
-
-
 
 ## {{site.data.keyword.redhat_openshift_notm}} 4.6
 {: #ocp46}
