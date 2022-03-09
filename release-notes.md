@@ -26,6 +26,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2022
 {: #release-mar-2022}
 
+
+
+### 9 March 2022
+{: #9mar2022}
+{: release-note}
+
+OpenShift Data Foundation
+:   [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-vpc-update-worker).
+
+
+
 ### 8 March 2022
 {: #8mar2022}
 {: release-note}

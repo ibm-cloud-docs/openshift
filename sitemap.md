@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
 
+    * [9 March 2022](/docs/openshift?topic=openshift-iks-release#9mar2022)
+
     * [8 March 2022](/docs/openshift?topic=openshift-iks-release#8mar2022)
 
 * [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
@@ -2998,6 +3000,8 @@ subcollection: openshift
 [Managing your OpenShift Data Foundation deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
 * [Updating the add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update)
+
+* [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-vpc-update-worker)
 
 * [Removing the OpenShift Data Foundation add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm)
 
