@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -36,11 +36,13 @@ Default behavior
 Limitations
 :   Because the worker nodes of your VPC cluster exist in a service account and aren't listed in the VPC infrastructure dashboard, you can't create a security group and apply it to your worker node instances. You can only modify the existing security group.
 
-For more information, see the [VPC documentation](/docs/vpc?topic=vpc-using-security-groups){: external}.
+If you modfiy the default VPC security group, you must, at minumum, include the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules so that your cluster works properly.
+{: important}
+
+For more information about security groups, see the [VPC documentation](/docs/vpc?topic=vpc-using-security-groups){: external}.
 {: tip}
 
-Keep in mind that in addition to any rules you create, you must also create the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules.
-{: note}
+
 
 
 ## Required inbound rules
@@ -51,7 +53,6 @@ Keep in mind that in addition to any rules you create, you must also create the 
 | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `<SG_name>` |
 | Allow incoming traffic requests to apps that run on your worker nodes. | TCP | `30000` - `32767` | Any |
 | If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `30000` - `32767` | Any |
-| If you use your own security group to the LBaaS for Ingress, set port 80 to allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses. Alternatively, to allow the inbound traffic for router health checks, you can create a single rule to allow all incoming traffic on port 80. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. |
 {: caption="Table 2. Required inbound rules" caption-side="top"}
 {: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 
@@ -126,56 +127,49 @@ Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules t
     ```
     {: pre}
 
-1. Review the default rules for the security group.
+1. Review the default rules for the security group. Keep in mind that in addition to any rules you create, you must also create the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules.
     ```sh
     ibmcloud is sg $sg
     ```
     {: pre}
 
-1. To create new rules to control inbound traffic to your worker nodes, use the [`ibmcloud is security-group-rule-add` command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
-    ```sh
-    ibmcloud is security-group-rule-add $sg inbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
-    ```
-    {: pre}
-    
-Keep in mind that in addition to any rules you create, you must also create the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules.
-{: note}
+    * To create inbound traffic rules, use the [`ibmcloud is security-group-rule-add <sg> inbound` command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
+        ```sh
+        ibmcloud is security-group-rule-add $sg inbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
+        ```
+        {: pre}
+        
+        
+    * To create outbound traffic rules, use the [`ibmcloud is security-group-rule-add <sg> outbound` command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
 
-### Creating outbound rules by using the command line
-{: #security-group-cli-outbound}
+        ```sh
+        ibmcloud is security-group-rule-add $sg outbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
+        ```
+        {: pre}
+        
+        1. After you create custom outbound rules, get the ID of the default rule that allows all outbound traffic.
 
-1. To create rules to control outbound traffic to your worker nodes, get the ID of the default rule that allows all outbound traffic.
+            ```sh
+            ibmcloud is sg $sg
+            ```
+            {: pre}
 
-    ```sh
-    ibmcloud is sg $sg
-    ```
-    {: pre}
+            Example output
+            ```sh
+            Rules
+            ID                                          Direction   IP version   Protocol                        Remote
+            r010-e3a34cbb-d5e8-4713-a57e-3e35a7458272   inbound     ipv4         all                             freeload-flavored-surging-repaying
+            r010-036c3a13-1c16-4425-9667-a4ec34b1702b   inbound     ipv4         icmp Type=8                     0.0.0.0/0
+            r010-15591636-6976-493f-a94f-70721702860a   inbound     ipv4         tcp Ports:Min=22,Max=22         0.0.0.0/0
+            ```
+            {: screen}
 
-    Example output
-    ```sh
-    Rules
-    ID                                          Direction   IP version   Protocol                        Remote
-    r010-e3a34cbb-d5e8-4713-a57e-3e35a7458272   inbound     ipv4         all                             freeload-flavored-surging-repaying
-    r010-036c3a13-1c16-4425-9667-a4ec34b1702b   inbound     ipv4         icmp Type=8                     0.0.0.0/0
-    r010-15591636-6976-493f-a94f-70721702860a   inbound     ipv4         tcp Ports:Min=22,Max=22         0.0.0.0/0
-    r010-5547cb84-4829-475c-8bdf-be1a39d7936d   inbound     ipv4         tcp Ports:Min=30000,Max=32767   0.0.0.0/0
-    ```
-    {: screen}
-    
-    
-1. Create new rules to control outbound traffic from your worker nodes.
+        1. Delete the default rule that allows all outbound traffic.
 
-    ```sh
-    ibmcloud is security-group-rule-add $sg outbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
-    ```
-    {: pre}
-
-1. Delete the default rule that allows all outbound traffic.
-
-    ```sh
-    ibmcloud is security-group-rule-delete $sg <rule_ID>
-    ```
-    {: pre}
+            ```sh
+            ibmcloud is security-group-rule-delete $sg <rule_ID>
+            ```
+            {: pre}
     
 Keep in mind that in addition to any rules you create, you must also create the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules.
 {: note}
@@ -268,7 +262,7 @@ Required for VPC clusters with a public service endpoint.
     ```
     {: pre}
     
-If the {{site.data.keyword.redhat_openshift_notm}} Ingress or console operators fail their health checks, you can repeat these steps to see if the LoadBalancer IPs changed. While it is rare, note that these IPs might change after updating your cluster master.
+If the {{site.data.keyword.redhat_openshift_notm}} Ingress or console operators fail their health checks, you can repeat these steps to see if the LoadBalancer IPs changed. Note that these IPs might change after updating your cluster master. While rare, if the amount of traffic to your LoadBalancers varies widely, these IPs might change to handle the increased or decreased load.
 {: tip}
 
 

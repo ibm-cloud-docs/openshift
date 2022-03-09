@@ -1774,8 +1774,6 @@ subcollection: openshift
 
 * [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
 
-    * [Creating outbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-cli-outbound)
-
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
 * [Allow worker nodes to connect to the public LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
