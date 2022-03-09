@@ -3730,6 +3730,8 @@ subcollection: openshift
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
 
+* [Version change logs](/docs/openshift?topic=openshift-openshift_changelog#change-logs-by-version)
+
 * [Version 4.9 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-49)
 
     * [Changelog for master fix pack 4.9.21_1527_openshift, released 3 March 2022](/docs/openshift?topic=openshift-openshift_changelog#4921_1527)

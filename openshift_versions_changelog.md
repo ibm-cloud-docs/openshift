@@ -2,13 +2,14 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
 subcollection: openshift
 
----
+--- 
+
 
 
 {{site.data.keyword.attribute-definition-list}}
@@ -25,6 +26,23 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+## Version change logs
+{: #change-logs-by-version}
+
+Review the change logs in the following list. 
+
+**Supported Kubernetes versions**:
+- [4.9 change log](/docs/openshift?topic=openshift-openshift_changelog_49)
+- [4.8 change log](/docs/openshift?topic=openshift-openshift_changelog_48)
+- [4.7 change log](/docs/openshift?topic=openshift-openshift_changelog_47)
+- [4.6 change log](/docs/openshift?topic=openshift-openshift_changelog_46)
+
+**Deprecated Kubernetes versions**:
+- [3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311) 
+
+**Unsupported Kubernetes versions**: 
+- [Archived change logs](/docs/openshift?topic=openshift-changelog_archive)
 
 ## Version 4.9 changelog
 {: #version-49}
@@ -3036,3 +3054,5 @@ The following table shows the changes that are in the patch `3.11.129_1517_opens
 | Cluster router configuration| N/A | N/A | Fixed bugs that might cause cluster master operations, such as `refresh` or `update`, to fail when the router configuration is updated. These fixes also improve master availability during such operations. |
 {: caption="Changes since version 3.11.129_1515" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
