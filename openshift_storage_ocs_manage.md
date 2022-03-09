@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-09"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
 
@@ -66,6 +66,132 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
     ibmcloud koc cluster addon enable openshift-container-storage --cluster <version> --version <version>
     ```
     {: pre}
+    
+    
+## Updating VPC worker nodes that use OpenShift Data Foundation
+{: #odf-vpc-update-worker}
+
+To update your VPC worker nodes that use OpenShift Data Foundation, you must cordon, drain, and replace each worker node individually. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
+{: shortdesc}
+
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+Before updating your worker nodes, make sure to back up your app data. Also, plan to complete the following steps for one worker node at a time. Repeat the steps for each worker node that you want to update.
+{: important}
+
+1. List your worker nodes by using `oc get nodes` and determine which worker nodes you want to update.
+
+    ```sh
+    oc get nodes
+    ```
+    {: pre}
+    
+    Example output
+        
+    ```sh
+    NAME           STATUS   ROLES           AGE    VERSION
+    10.241.0.4     Ready    master,worker   106s   v1.21.6+4b61f94
+    10.241.128.4   Ready    master,worker   22d    v1.21.6+bb8d50a
+    10.241.64.4    Ready    master,worker   22d    v1.21.6+bb8d50a
+    ```
+    {: screen}
+
+1.  Cordon the node. Cordoning the node prevents any pods from being scheduled on this node.
+    ```sh
+    oc adm cordon NODE_NAME
+    ```
+    {: pre}
+    
+    Example output
+    
+    ```sh
+    node/10.241.0.4 cordoned
+    ```
+    {: screen}
+    
+1. Drain the node to remove all the pods. When you drain the worker node, the pods move to the other worker nodes ensuring there is no downtime. Draining also ensures that there is no disruption of the pod disruption budget. 
+    ```sh
+    oc adm drain NODE_NAME --force --delete-local-data --ignore-daemonsets
+    ```
+    {: pre}
+    
+    Example output
+    ```sh
+    evicting pod "managed-storage-validation-webhooks-7fd79bc9f7-pdpv6"
+    evicting pod "calico-kube-controllers-647dbbd685-fmrp9"
+    evicting pod "certified-operators-2v852"
+    evicting pod "csi-snapshot-controller-77fbf474df-47ddt"
+    evicting pod "calico-typha-8574d89b8c-7f2cc"
+    evicting pod "dns-operator-6d48cbff67-vrrsw"
+    evicting pod "router-default-6fc798b98b-9m6kh"
+    evicting pod "prometheus-adapter-5b77ffdd5f-hzqrp"
+    evicting pod "alertmanager-main-1"
+    evicting pod "prometheus-k8s-0"
+    evicting pod "network-check-source-66c7fbb86-2r78z"
+    ```
+    {: screen}
+    
+1. Wait until draining finishes, then complete the following steps to replace the worker node. When you replace a worker node in VPC Gen 2 you get a new worker node with the latest patch updates. For more information, see [Updating VPC Gen 2 worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
+
+1. List your worker nodes by using `ibmcloud oc worker ls` and determine which worker node you want to update.
+    ```sh
+    ibmcloud oc worker ls -c CLUSTER
+    ```
+    {: pre}
+    
+    Example output
+    ```sh
+    ID                                                 Primary IP     Flavor     State    Status   Zone        Version   
+    kube-c85ra07w091uv4nid9ug-vpcoc-default-000001c1   10.241.128.4   bx2.4x16   normal   Ready    us-east-3   4.8.29_1544_openshift*   
+    kube-c85ra07w091uv4nid9ug-vpcoc-default-00000288   10.241.0.4     bx2.4x16   normal   Ready    us-east-1   4.8.29_1544_openshift*   
+    kube-c85ra07w091uv4nid9ug-vpcoc-default-00000352   10.241.64.4    bx2.4x16   normal   Ready    us-east-2   4.8.29_1544_openshift*
+    ```
+    {: pre}
+    
+1. Replace one worker node at a time by using the `worker replace` [command](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). For more information, see [Updating VPC Gen 2 worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
+    ```sh
+    ibmcloud oc worker replace -c CLUSTER --worker kube-***
+    ```
+    {: pre}
+    
+    Example output
+    ```sh
+    The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
+    Replace worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288? [y/N]> y
+    Deleting worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288 and creating a new worker node in cluster
+    ```
+    {: screen}
+    
+1. Wait for the replacement node to get provisioned, then list your worker nodes. Note that this process might take 20 minutes or more.
+    ```sh
+    oc get nodes
+    ```
+    {: pre}
+    
+    Example output
+    
+    ```sh
+    NAME           STATUS   ROLES           AGE   VERSION
+    10.241.0.4     Ready    master,worker   22d   v1.21.6+bb8d50a
+    10.241.128.4   Ready    master,worker   22d   v1.21.6+bb8d50a
+    10.241.64.4    Ready    master,worker   22d   v1.21.6+bb8d50a
+    ```
+    {: screen}
+
+1. If you specified worker nodes in your OpenShift Data Foundation configuration, update the `ocscluster` CRD to include the new name. If you did not limit your configuration to only certain worker nodes, you do not need to update `ocscluster`.
+    ```sh
+    oc edit ocscluster 
+    ```
+    {: pre}
+
+1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify the OSD persistent volumes get created and that all pods are `Running`.
+    ```sh
+    oc get pv
+    oc get ocscluster
+    oc get pods -n openshift-storage
+    ```
+    {: pre}
+    
 
 
 

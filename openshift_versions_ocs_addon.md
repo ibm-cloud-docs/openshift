@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-08"
 
 keywords: odf, openshift data foundation add-on, changelog
 
@@ -22,7 +22,7 @@ View information for updates to the OpenShift Data Foundation add-on in your {{s
 Note that the add-on supports`n+1` cluster versions.
 {: note}
 
-To view a list of add-ons and the supported {{site.data.keyword.openshiftshort}} versions, run the following command.
+To view a list of add-ons and the supported {{site.data.keyword.redhat_openshift_notm}} versions, run the following command.
 
 ```sh
 ibmcloud oc cluster addon versions --addon openshift-data-foundation
@@ -33,7 +33,7 @@ Refer to the following table for a summary of changes for each version of the [O
 
 Refer to the following tables for a summary of changes for each version of the [OpenShift Data Foundation add-on.
 
-| Add-on version | Is default? | Supported? | {{site.data.keyword.openshiftshort}} version support |
+| Add-on version | Is default? | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support |
 | --- | --- | --- | --- |
 | 4.7.0 | Yes | Yes | 4.7 |
 {: caption="Add-on versions" caption-side="top"}

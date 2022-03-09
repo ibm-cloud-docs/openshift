@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
+
+    * [9 March 2022](/docs/openshift?topic=openshift-iks-release#9mar2022)
 
     * [8 March 2022](/docs/openshift?topic=openshift-iks-release#8mar2022)
 
@@ -1774,8 +1776,6 @@ subcollection: openshift
 
 * [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
 
-    * [Creating outbound rules by using the command line](/docs/openshift?topic=openshift-vpc-security-group#security-group-cli-outbound)
-
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
 * [Allow worker nodes to connect to the public LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
@@ -3001,6 +3001,8 @@ subcollection: openshift
 
 * [Updating the add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update)
 
+* [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-vpc-update-worker)
+
 * [Removing the OpenShift Data Foundation add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm)
 
     * [Uninstalling the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-console)
@@ -3727,6 +3729,8 @@ subcollection: openshift
     * [{{site.data.keyword.redhat_openshift_notm}} 4.3 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
+
+* [Version change logs](/docs/openshift?topic=openshift-openshift_changelog#change-logs-by-version)
 
 * [Version 4.9 changelog](/docs/openshift?topic=openshift-openshift_changelog#version-49)
 

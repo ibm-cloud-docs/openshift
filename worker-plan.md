@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -351,7 +351,7 @@ The resources that are reserved on your worker node depend on the amount of PIDs
 
 ![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.redhat_openshift_notm}} version 4** : Clusters also have process ID (PID) reservations and limits, to prevent a pod from using too many PIDs or ensure that enough PIDs exist for the `kubelet` and other {{site.data.keyword.openshiftlong_notm}} system components. If the PID reservations or limits are reached, Kubernetes does not create or assign new PIDs until enough processes are removed to free up existing PIDs. The total amount of PIDs on a worker node approximately corresponds to 8,000 PIDs per GB of memory on the worker node. For example, a worker node with 16 GB of memory has approximately 128,000 PIDs (`16 × 8,000 = 128,000`).
 
-To review how much compute resources are currently used on your worker node, run [`oc top node`](https://kubernetes.io/docs/reference/kubectl/overview/#top){: external}.
+To review how much compute resources are currently used on your worker node, run [`oc top node`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#top){: external}.
 {: tip}
 
 | Memory tier | % or amount reserved | `b3c.4x16` worker node (16 GB) example | `mg1c.28x256` worker node (256 GB) example|
