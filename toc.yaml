@@ -89,6 +89,7 @@ toc:
               label: Autoscaling clusters
               topics:
               - cluster-scaling-classic-vpc.md
+              - cluster-scaling-sat.md
               - cluster-scaling-install-addon.md
               - cluster-scaling-enable.md
               - cluster-scaling-deploy-apps.md
@@ -209,8 +210,10 @@ toc:
               label: Storing data on IBM Cloud Object Storage
               topics:
               - storage-cos-understand.md
-              - storage-cos-install.md 
+              - storage-cos-install.md
+              - storage-sat-cos.md
               - storage-cos-apps.md
+             
               - storage-cos-vpc-ip.md
               - storage-cos-reference.md
           - storage-portworx.md

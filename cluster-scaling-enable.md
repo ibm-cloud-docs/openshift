@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-10"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -14,7 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Enabling autoscaling
+# Setting up autoscaling for your worker pools
 {: #cluster-scaling-enable}
 
 Update the cluster autoscaler configmap to enable automatically scaling worker nodes in your worker pools based on the minimum and maximum values that you set.

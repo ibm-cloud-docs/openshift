@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-10"
 
 keywords: openshift
 subcollection: openshift
@@ -183,6 +183,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
+
+    * [10 March 2022](/docs/openshift?topic=openshift-iks-release#10mar2022)
 
     * [9 March 2022](/docs/openshift?topic=openshift-iks-release#9mar2022)
 
@@ -1316,7 +1318,7 @@ subcollection: openshift
 {: #sitemap_autoscaling_clusters}
 
 
-[Preparing to autoscale classic and VPC Gen 2 clusters](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
+[Preparing classic and VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
 
 * [Understanding scale-up and scale-down](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about)
 
@@ -1336,6 +1338,10 @@ subcollection: openshift
 
 * [Preparing classic or VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#prepare-autoscale-classic-vpc)
 
+[Preparing to autoscale {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat#cluster-scaling-sat)
+
+* [Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-sat#prepare-autoscale-sat)
+
 [Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
 
 * [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon)
@@ -1344,13 +1350,13 @@ subcollection: openshift
 
 * [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca_addon_ref)
 
-[Enabling autoscaling](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-enable)
+[Setting up autoscaling for your worker pools](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-enable)
 
 * [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-cluster-scaling-enable#ca_customize)
 
     * [Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
 
-[Deploying apps to your autoscaled worker pools](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#cluster-scaling-deploy-apps)
+[Deploying apps to worker pools where autoscaling is enabled](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#cluster-scaling-deploy-apps)
 
 * [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup)
 
@@ -2774,7 +2780,7 @@ subcollection: openshift
 
 * [Limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations)
 
-[Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
+[Installing the {{site.data.keyword.cos_full_notm}} plug-in on VPC and classic clusters](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
 
 * [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin)
 
@@ -2783,6 +2789,24 @@ subcollection: openshift
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos)
 
 * [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin)
+
+[Installing the {{site.data.keyword.cos_full_notm}} plug-in on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos#storage-sat-cos)
+
+* [Setting up your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-pre)
+
+* [Retrieving the configuration parameters](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-params)
+
+* [Installing Helm and adding the `ibm-helm` Helm repo](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-helm-deploy)
+
+    * [Installing the plug-in from the console](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-console)
+
+* [Creating a secret that uses your s3 credentials](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-secret)
+
+* [Deploying an app that uses object storage](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-app)
+
+    * [Upgrading the Object Storage plug-in](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-upgrade)
+
+* [Uninstalling the plug-in and Helm chart](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-rm)
 
 [Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
 

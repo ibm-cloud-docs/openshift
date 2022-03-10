@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-10"
 
 keywords: red hat openshift, openshift container platform, red hat, red hat cluster, openshift, containers, clusters
 

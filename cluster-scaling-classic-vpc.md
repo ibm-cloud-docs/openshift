@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-10"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -14,7 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Preparing to autoscale classic and VPC Gen 2 clusters
+# Preparing classic and VPC Gen 2 clusters for autoscaling
 {: #cluster-scaling-classic-vpc}
 
 With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} classic or VPC cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `cluster-autoscaler` add-on is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler){: external}.
