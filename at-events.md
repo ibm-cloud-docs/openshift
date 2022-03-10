@@ -45,7 +45,7 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 | `containers-kubernetes.cluster-audit-webhook.update` | A cluster audit webhook for forwarding master API server audit logs is updated. |
 | `containers-kubernetes.cluster-ca-certificate.create` | A certificate authority (CA) for a cluster is created. |
 | `containers-kubernetes.cluster-ca-certificate.rotate` | The certificate authority (CA) for a cluster is rotated. |
-| `containers-kubernetes.cluster-key-state.update` | The root key in the key management service (KMS) provider that the cluster uses is updated, such as a root key being enabled, disabled, or rotated in {{site.data.keyword.keymanagementserviceshort}}.|
+| `containers-kubernetes.cluster-key-state.update` | The root key in the key management service (KMS) provider that the cluster uses is updated, such as a root key being enabled, disabled, or rotated in a key management service (KMS) provider.|
 | `containers-kubernetes.cluster-kms.enable` | A key management service (KMS) provider is enabled for a cluster. |
 | `containers-kubernetes.cluster-master.refresh` | A cluster master refresh is requested. |
 | `containers-kubernetes.cluster-master.update` | A cluster master update is requested. |
