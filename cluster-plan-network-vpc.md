@@ -55,7 +55,7 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 * VPC subnets are bound to a single zone and can't span multiple zones or regions.
 * After you create a subnet, you can't move it to a different zone, region, or VPC.
 * If you have worker nodes that are attached to an existing subnet in a zone, you can't change the subnet for that zone in the cluster.
-* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited if you are using Red Hat OpenShift 4.7 or earlier..
+* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 
 
