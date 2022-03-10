@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-10"
 
 keywords: openshift
 
@@ -24,6 +24,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2022
 {: #release-mar-2022}
+
+
+
+### 10 March 2022
+{: #10mar2022}
+{: release-note}
+
+Cluster autoscaler
+:   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat).
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   **Beta**: Install the {{site.data.keyword.cos_full_notm}} plug-in on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos).
+
+
 
 ### 9 March 2022
 {: #9mar2022}

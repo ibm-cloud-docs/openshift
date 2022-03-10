@@ -89,6 +89,7 @@ toc:
               label: Autoscaling clusters
               topics:
               - cluster-scaling-classic-vpc.md
+              - cluster-scaling-sat.md
               - cluster-scaling-install-addon.md
               - cluster-scaling-enable.md
               - cluster-scaling-deploy-apps.md
@@ -209,8 +210,10 @@ toc:
               label: Storing data on IBM Cloud Object Storage
               topics:
               - storage-cos-understand.md
-              - storage-cos-install.md 
+              - storage-cos-install.md
+              - storage-sat-cos.md
               - storage-cos-apps.md
+             
               - storage-cos-vpc-ip.md
               - storage-cos-reference.md
           - storage-portworx.md
@@ -266,18 +269,53 @@ toc:
       - topicgroup:
           label: Version history
           topics:
-          - openshift_versions.md
-          - openshift_versions_changelog.md
-          - benchmarks.md
-          - versions-autoscaler.md
-          - versions-vpc-block-addon.md
-          - versions-object.md
-          - versions-static-route.md
-          - openshift_versions_ocs_addon.md
-          - versions-backup-restore.md
-          - openshift_versions_hpcs_router.md
-          - openshift_versions_image_key_synchronizer.md
-          - openshift_versions_archive.md
+            - openshift_versions_overview.md
+            - openshift_versions_changelog.md
+            - benchmarks_overview.md
+            - topicgroup:
+                label: Version 4.9 
+                topics:
+                - openshift_versions_49.md
+                - openshift_versions_changelog_49.md
+                - benchmarks_49.md
+            - topicgroup:
+                label: Version 4.8 (Default)
+                topics:
+                - openshift_versions_48.md
+                - openshift_versions_changelog_48.md
+                - benchmarks_48.md
+            - topicgroup:
+                label: Version 4.7
+                topics:
+                - openshift_versions_47.md
+                - openshift_versions_changelog_47.md
+                - benchmarks_47.md
+            - topicgroup:
+                label: Version 4.6 
+                topics:
+                - openshift_versions_46.md
+                - openshift_versions_changelog_46.md
+                - benchmarks_46.md
+            - topicgroup:
+                label: Version 3.11
+                topics:
+                - openshift_versions_311.md
+                - openshift_versions_changelog_311.md 
+            - openshift_versions_archive.md
+            - topicgroup:
+                label: Add-on version history
+                topics:
+                - openshift_versions.md
+                - openshift_versions_changelog.md
+                - benchmarks.md
+                - versions-autoscaler.md
+                - versions-vpc-block-addon.md
+                - versions-object.md
+                - versions-static-route.md
+                - openshift_versions_ocs_addon.md
+                - versions-backup-restore.md
+                - openshift_versions_hpcs_router.md
+                - openshift_versions_image_key_synchronizer.md
       - topicgroup:
           label: IAM and Activity Tracker events
           topics:
