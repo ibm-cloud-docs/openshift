@@ -184,6 +184,8 @@ subcollection: openshift
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
 
+    * [11 March 2022](/docs/openshift?topic=openshift-iks-release#11mar2022)
+
     * [10 March 2022](/docs/openshift?topic=openshift-iks-release#10mar2022)
 
     * [9 March 2022](/docs/openshift?topic=openshift-iks-release#9mar2022)
@@ -4795,6 +4797,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.1.12, released 11 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02112_object_plugin)
 
 * [Change log for version 2.1.11, released 1 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02111_object_plugin)
 
