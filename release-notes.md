@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-11"
 
 keywords: openshift
 
@@ -56,7 +56,7 @@ OpenShift Data Foundation
 
 Master fix pack update.
 
-
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.21_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4921_1527), [4.8.29_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4829_1545), [4.7.42_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4742_1550), [4.6.48_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4648_1573), [3.11.570_1623_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1623).
 
 
 
