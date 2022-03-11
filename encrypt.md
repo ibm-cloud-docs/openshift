@@ -64,7 +64,7 @@ By default, {{site.data.keyword.openshiftlong_notm}} supports the following KMS 
 
 Because adding a different KMS provider requires updating the managed master default configuration, you can't add other KMS providers to the cluster.
 
-You can have one KMS provider enabled in the cluster. You can switch the KMS provider, but you can't disable KMS provider encryption after it is enabled. For example, if you enabled {{site.data.keyword.keymanagementserviceshort}} in your cluster, but want to use {{site.data.keyword.hscrypto}} instead, you can [enable](#keyprotect) {{site.data.keyword.hscrypto}} as the KMS provider.
+You can have one KMS provider enabled in the cluster. You can switch the KMS provider, but you can't disable KMS provider encryption after it is enabled. For example, if you enabled a key management service (KMS) provider in your cluster, but want to use {{site.data.keyword.hscrypto}} instead, you can [enable](#keyprotect) {{site.data.keyword.hscrypto}} as the KMS provider.
 
 You can't disable KMS provider encryption. Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and can't be recovered. Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.
 {: important}
@@ -78,7 +78,7 @@ When you enable a KMS provider in your cluster, your own KMS root key is used to
 {: #kms-keyprotect-features}
 
 Review the following known limitations:
-* Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementserviceshort}} instance is not supported.
+* Customizing the IP addresses that are allowed to connect to your key management service, such as a {{site.data.keyword.keymanagementserviceshort}} instance, is not supported.
 
 Additionally, your cluster version impacts the functionality of the KMS provider. To see what KMS features are available for different cluster versions of {{site.data.keyword.openshiftlong_notm}}, review the following table.
 

@@ -103,7 +103,7 @@ Review the following cluster API methods, their corresponding actions in {{site.
 | `PATCH​/v1​/clusters​/{idOrName}​/addons` | Enable, disable, or update add-ons for a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.cluster.update`  |
 | `PATCH​/v1​/clusters​/{idOrName}​/subnets​/{subnetId}` | Detach a public or private portable subnet from a cluster. | `containers-kubernetes.cluster.operate` | | `containers-kubernetes.subnet.update` |  |
 | `POST​/v1​/clusters` | Create a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.cluster.create` |
-| `POST​/v1​/clusters​/{idOrName}​/kms` | Create a {{site.data.keyword.keymanagementserviceshort}} configuration for a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.account.update` |
+| `POST​/v1​/clusters​/{idOrName}​/kms` | Create a key management service (KMS) provider configuration for a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.account.update` |
 | `POST​/v1​/clusters​/{idOrName}​/services` | Bind an {{site.data.keyword.cloud_notm}} service to a cluster. | `containers-kubernetes.cluster.update` | `containers-kubernetes.service.create` |
 | `POST​/v1​/clusters​/{idOrName}​/usersubnets`   | Add an existing user-managed subnet to a cluster. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.subnet.create`  |
 | `POST​/v1​/clusters​/{idOrName}​/vlans​/{vlanId}` | Create an {{site.data.keyword.cloud_notm}} infrastructure subnet and add it to an existing cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.vlan.create`  |

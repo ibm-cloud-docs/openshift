@@ -156,7 +156,7 @@ Before you begin
 
 2. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that encrypted images are supported only for {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
 
-3. Optional: When you create a public and private key pair for the image encryption, you can provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key. To prepare to wrap the private key:
+3. Optional: When you create a public and private key pair for the image encryption, you can provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key or a key management service (KMS). To prepare to wrap the private key:
     1. [Install the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in](/docs/key-protect?topic=key-protect-set-up-cli).
     2. [Create a {{site.data.keyword.keymanagementserviceshort}} service instance](/docs/key-protect?topic=key-protect-provision#provision).
     3. [Create a {{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys).
@@ -207,7 +207,7 @@ To deploy containers that use encrypted images:
     ```
     {: pre}
 
-4. Provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key. After you create the secret in the `image-key-synchronizer` project, the Image Key Synchronizer add-on automatically copies the private key to the `/etc/crio/keys/synced` directory on your worker nodes.
+4. Provide the private key directly in a secret, or first wrap the private key by using a root key from a key management service (KMS), such as {{site.data.keyword.keymanagementserviceshort}}. After you create the secret in the `image-key-synchronizer` project, the Image Key Synchronizer add-on automatically copies the private key to the `/etc/crio/keys/synced` directory on your worker nodes.
     - **To provide the private key directly**: Save the private key as a Kubernetes secret in the `image-key-synchronizer` project.
         ```sh
         oc create -n image-key-synchronizer secret generic --type=key --from-file=myprivatekey.pem <secret_name>
