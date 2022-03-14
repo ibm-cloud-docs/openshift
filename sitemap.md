@@ -4197,7 +4197,7 @@ subcollection: openshift
 
 * [Deprecated: Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#version-311)
 
-    * [Change log for worker node pack 3.11.570_1624_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1624)
+    * [Change log for worker node pack 3.11.570_1624_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1624-1)
 
     * [Change log for master fix pack 3.11.570_1623_openshift, released 3 March 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1623)
 
