@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: openshift
 
@@ -71,7 +71,7 @@ To fix IP address issues, release individual and blocks of IP addresses that wer
 * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
 
-Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_versions#version_types). If you cluster runs a deprecated or unsupported version, first [update your cluster](/docs/containers?topic=containers-update).
+Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_changelog). If you cluster runs a deprecated or unsupported version, first [update your cluster](/docs/containers?topic=containers-update).
 
 
 ### Step 1: Releasing individual IP addresses

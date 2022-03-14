@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: back up, restore, changelog, openshift
 
@@ -29,7 +29,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: summary="The rows are read from left to right. The first column is the back up and restore Helm chart version. The second column is the version's supported state. The third column is the cluster version of your cluster that the back up and restore Helm chart version is supported for."}
 
 
-## Changelog for 1.0.5, released 17 December 2020
+## Change log for 1.0.5, released 17 December 2020
 {: #0105_br_chart}
 
 The following table shows the changes that are in version `1.0.5` of the `ibmcloud-backup-restore` Helm chart.

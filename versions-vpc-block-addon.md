@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: block, add-on, changelog
 
@@ -50,6 +50,8 @@ Refer to the following tables for a summary of changes for each version of the {
 ## Version 4.2
 {: #042_is_block}
 
+
+
 ### Change log for version 4.2.0_890, released 28 February 2022
 {: #420_890_is_block_relnote}
 
@@ -88,14 +90,14 @@ Review the changes in version `4.1.3_846` of the {{site.data.keyword.block_stora
 
     
 
-### Changelog for version 4.1.2_834, released 27 January 2022
+### Change log for version 4.1.2_834, released 27 January 2022
 {: #412_834_is_block_relnote}
 
 - Fixes an issue where the persistent volume watcher was unable to handle non-{{site.data.keyword.cloud_notm}} VPC CSI driver PV updates which caused the controller pod to crash.
 
 
 
-### Changelog for version 4.1.1_827, released 20 January 2022
+### Change log for version 4.1.1_827, released 20 January 2022
 {: #0411837_is_block_relnote}
 
 Review the changes in version `4.1.1_827` of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -109,7 +111,7 @@ Review the changes in version `4.1.1_827` of the {{site.data.keyword.block_stora
 
 
 
-### Changelog for version 4.1.0_807, released 06 January 2022
+### Change log for version 4.1.0_807, released 06 January 2022
 {: #41_is_block_relnote}
 
 Review the changes in version `4.1.0_807` of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -128,7 +130,7 @@ Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_
 {: shortdesc}
 
 
-### Changelog for version 4.0.3_793, released 22 November 2021
+### Change log for version 4.0.3_793, released 22 November 2021
 {: #403793_is_block_relnote}
 
 Review the changes in version `4.0.3_793` of the {{site.data.keyword.block_storage_is_short}} add-on. 
@@ -153,7 +155,7 @@ Review the changes in version `4.0.3_793` of the {{site.data.keyword.block_stora
 - Increases the timeout interval for receiving API keys.
 
 
-### Changelog for version 4.0.1_780, released 06 October 2021
+### Change log for version 4.0.1_780, released 06 October 2021
 {: #0400780_is_block_relnote}
 
 Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -176,7 +178,7 @@ Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_stora
 
 
 
-### Changelog for version 4.0.0_769, released 16 September 2021
+### Change log for version 4.0.0_769, released 16 September 2021
 {: #0400769_is_block_relnote}
 
 Review the changes in version `4.0.0_769` of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -197,7 +199,7 @@ Review the changes in version `4.0.0_769` of the {{site.data.keyword.block_stora
 
 
 
-### Changelog for version 4.0, released 1 September 2021
+### Change log for version 4.0, released 1 September 2021
 {: #0400_is_block_relnote}
 
 Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -227,7 +229,7 @@ Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_stora
 Review the changes in version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-### Changelog for version 3.0.1, released 15 July 2021
+### Change log for version 3.0.1, released 15 July 2021
 {: #301_init}
 
 Review the changelog for version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -246,7 +248,7 @@ Volume expansion in version `3.0.1` is available in beta for allowlisted account
 Review the changes in version 3.0.0 of the {{site.data.keyword.block_storage_is_short}} add-on.
 {: shortdesc}
 
-### Changelog for patch update 3.0.0_521, released 01 April 2021
+### Change log for patch update 3.0.0_521, released 01 April 2021
 {: #3.0.0_521}
 
 Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -256,7 +258,7 @@ Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage
 - Updates the Golang version from `1.15.5` to `1.15.9`.  
 
 
-### Changelog for version 3.0.0, released 26 February 2021
+### Change log for version 3.0.0, released 26 February 2021
 {: #0300_is_block_relnote}
 
 Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -280,7 +282,7 @@ Review the changes in version 2.0.3 of the {{site.data.keyword.block_storage_is_
 Version 2.0.3 is unsupported.
 {: important}
 
-#### Changelog for patch update 2.0.3_471, released 26 January 2021
+#### Change log for patch update 2.0.3_471, released 26 January 2021
 {: #0203471_is_block}
 
 Review the changes in version 2.0.3_471 of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -290,7 +292,7 @@ Review the changes in version 2.0.3_471 of the {{site.data.keyword.block_storage
 - Supported cluster versions: 4.3 - 4.6  
 - Updated he `openssl`, `openssl-libs`, `gnutls` packages to fix [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external} and [CVE-2020-24659](https://nvd.nist.gov/vuln/detail/CVE-2020-24659){: external}.  
 
-#### Changelog for patch update 2.0.3_464, released 10 December 2020
+#### Change log for patch update 2.0.3_464, released 10 December 2020
 {: #0203464_is_block}
 
 Review the changes in version 2.0.3_464 of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -302,7 +304,7 @@ Review the changes in version 2.0.3_464 of the {{site.data.keyword.block_storage
 - The `v2.0.8` image is signed.  
 - Updates the Go version from `1.15.2` to `1.15.5`.  
 
-#### Changelog for patch update 2.0.3_404, released 25 November 2020
+#### Change log for patch update 2.0.3_404, released 25 November 2020
 {: #0203404_is_block}
 
 Review the changes in version 2.0.3_404 of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -313,7 +315,7 @@ Review the changes in version 2.0.3_404 of the {{site.data.keyword.block_storage
 - Updates the base image from `alpine` to `UBI`.  
 - Pods and containers now run as `non-root` except for the `node-server` pod's containers.  
 
-#### Changelog for patch update 2.0.3_375, released 17 September 2020
+#### Change log for patch update 2.0.3_375, released 17 September 2020
 {: #0203375_is_block}
 
 Review the changes in version 2.0.3_375 of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -322,7 +324,7 @@ Review the changes in version 2.0.3_375 of the {{site.data.keyword.block_storage
 - Image tags: `v2.0.6`   
 - Fixes an issue with volume attachment when replacing workers.  
 
-#### Changelog for patch update 2.0.3_374+, released 29 August 2020
+#### Change log for patch update 2.0.3_374+, released 29 August 2020
 {: #0203374_is_block}
 
 Review the changes in version 2.0.3_374+ of the {{site.data.keyword.block_storage_is_short}} add-on.
@@ -331,7 +333,7 @@ Review the changes in version 2.0.3_374+ of the {{site.data.keyword.block_storag
 - Image tags: `v2.0.5`   
 - Adds the `/var/lib/kubelet` path for CSI driver calls on OCP 4.4.  
 
-#### Changelog for patch update 2.0.3_365, released 05 August 2020
+#### Change log for patch update 2.0.3_365, released 05 August 2020
 {: #203365_is_block}
 
 Review the changes in version 2.0.3_365 of the {{site.data.keyword.block_storage_is_short}} add-on.

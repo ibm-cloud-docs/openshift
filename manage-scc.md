@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: openshift
 
@@ -50,7 +50,7 @@ Review the following goals for {{site.data.keyword.openshiftlong_notm}}.
 - **Check whether {{site.data.keyword.redhat_openshift_notm}} clusters are enabled with {{site.data.keyword.monitoringlong_notm}}.** For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.monitoringlong_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring).
 - **Check whether {{site.data.keyword.redhat_openshift_notm}} clusters are enabled with {{site.data.keyword.la_full_notm}}.** For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging).
 - **Check whether {{site.data.keyword.redhat_openshift_notm}} Ingress is configured only with TLS v1.2 for all inbound traffic.** For more information, see [About Ingress](/docs/openshift?topic=openshift-ingress-about-roks4).
-- **Check whether the {{site.data.keyword.redhat_openshift_notm}} version is up-to-date.** You can review the cluster version by selecting your cluster in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or in the command line by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. For more information, see the [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).
+- **Check whether the {{site.data.keyword.redhat_openshift_notm}} version is up-to-date.** You can review the cluster version by selecting your cluster in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or in the command line by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. For more information, see the [Version information and update actions](/docs/openshift?topic=openshift-openshift_changelog).
 
 
 

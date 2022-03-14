@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-14"
 
 keywords: openshift, oc
 
@@ -106,7 +106,7 @@ For reference information about these CLIs, see the documentation for those tool
 To view a local version of the {{site.data.keyword.redhat_openshift_notm}} dashboard and to deploy apps into your {{site.data.keyword.openshiftlong_notm}} clusters, install the {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) and Kubernetes CLI (`kubectl`).
 {: shortdesc}
 
-Using both community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on {{site.data.keyword.redhat_openshift_notm}} and 1.22.7 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external} for your cluster `major.minor` {{site.data.keyword.redhat_openshift_notm}} and Kubernetes versions. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
+Using both community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters? Your clusters might run different versions of Kubernetes, such as 1.11 on {{site.data.keyword.redhat_openshift_notm}} and 1.22.7 on Ubuntu. Make sure to use the `kubectl` binary file that matches the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external} for your cluster `major.minor` {{site.data.keyword.redhat_openshift_notm}} and Kubernetes versions. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_changelog).
 {: note}
 
 Looking for a simple installation? You can try installing the plug-in with a package manager such as Homebrew. Keep in mind that the version skew might not match your cluster. For example, in Homebrew, you can update Homebrew by running `brew update` and check what version of the plug-in is installed by running `brew info openshift-cli`. Then, install the plug-in by running `brew install openshift-cli`.
@@ -131,7 +131,7 @@ Looking for a simple installation? You can try installing the plug-in with a pac
         - **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl){: external}
         - **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl){: external}
         - **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe){: external}
-    * ![Version 4 icon.](images/icon-version-43.png) For clusters that run {{site.data.keyword.redhat_openshift_notm}} 4: Download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.redhat_openshift_notm}} cluster. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types).
+    * ![Version 4 icon.](images/icon-version-43.png) For clusters that run {{site.data.keyword.redhat_openshift_notm}} 4: Download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.redhat_openshift_notm}} cluster. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_changelog).
         - **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/darwin/amd64/kubectl){: external}
         - **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/linux/amd64/kubectl){: external}
         - **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.22.7/bin/windows/amd64/kubectl.exe){: external}

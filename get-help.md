@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: red hat openshift, openshift container platform, red hat, red hat cluster, openshift, containers, clusters
 
@@ -26,7 +26,7 @@ Still having issues with your cluster? Review different ways to get help and sup
 
 1. Keep your cluster environment up to date.
     * Check monthly for available security and operating system patches to [update your worker nodes](/docs/containers?topic=containers-update#worker_node).
-    * [Update your cluster](/docs/containers?topic=containers-update#master) to the latest default version for [{{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-openshift_versions).
+    * [Update your cluster](/docs/containers?topic=containers-update#master) to the latest default version for [{{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
 2. Make sure that your command line tools are up to date.
     * In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
     * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: openshift
 
@@ -31,7 +31,7 @@ Why {{site.data.keyword.cloud_notm}}: {{site.data.keyword.openshiftlong_notm}} p
 
 {{site.data.keyword.openshiftlong_notm}} and key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [{{site.data.keyword.cos_full}} to persist and sync data across apps](/docs/solution-tutorials?topic=solution-tutorials-pub-sub-object-storage#pub-sub-object-storage)
+* [{{site.data.keyword.cos_full}} to persist and sync data across apps](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
 
 **Context: Retailer shares data, by using APIs with global business partners to drive omnichannel sales**

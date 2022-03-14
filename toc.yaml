@@ -1,6 +1,7 @@
 toc:
   properties:
     subcollection: openshift
+    service-name: openshift
     category: containers
     audience: service
     href: /docs/openshift
