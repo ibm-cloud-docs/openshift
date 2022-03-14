@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-14"
 
 keywords: openshift, version, upgrade, update
 
@@ -26,7 +26,7 @@ You must update your cluster by using the {{site.data.keyword.openshiftlong_notm
 ## Updating the master
 {: #master}
 
-Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
+Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_changelog). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
 {: shortdesc}
 
 ### About updating the master
@@ -34,7 +34,7 @@ Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor
 
 **How do I know when to update the master?**
 
-You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_versions) page.
+You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_changelog) page.
 
 **Can my worker nodes run a later version than the master?**
 
@@ -71,7 +71,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _minor_ version:
 
-1. Review the [{{site.data.keyword.redhat_openshift_notm}} changes](/docs/openshift?topic=openshift-openshift_versions) and make any updates marked _Update before master_.
+1. Review the [{{site.data.keyword.redhat_openshift_notm}} changes](/docs/openshift?topic=openshift-openshift_changelog) and make any updates marked _Update before master_.
 2. Review any [Kubernetes helpful warnings](https://kubernetes.io/blog/2020/09/03/warnings/){: external}, such as deprecation notices.
 3. Check the add-ons and plug-ins that are installed in your cluster for any impact that might be caused by updating the cluster version.
 
@@ -153,7 +153,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
-- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
+- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_changelog).
 - If you want to apply a patch update, review the [{{site.data.keyword.redhat_openshift_notm}} version changelog](/docs/openshift?topic=openshift-openshift_changelog).
 - Consider [adding more worker nodes](/docs/openshift?topic=openshift-add_workers) so that your cluster has enough capacity to rescheduling your workloads during the update.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
@@ -364,7 +364,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
-- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
+- Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_changelog).
 - If you want to apply a patch update, review the [Kubernetes clusters](/docs/openshift?topic=openshift-openshift_changelog) version changelog.
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
 

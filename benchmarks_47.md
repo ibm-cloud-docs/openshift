@@ -316,8 +316,8 @@ Review information from IBM on the CIS Benchmark results.
 | 1.2.23 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.24 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.25 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
-| 1.2.33 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption#kms). |
-| 1.2.34 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption#kms). |
+| 1.2.33 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
+| 1.2.34 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 3.2.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 3.2.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 4.2.6 | {{site.data.keyword.openshiftlong_notm}} does not protect kernel defaults in order to allow customers to tune kernel parameters. |
@@ -335,10 +335,10 @@ Review information from IBM on the CIS Benchmark results.
 | 5.2.7 | {{site.data.keyword.openshiftlong_notm}} can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
 | 5.2.8 | {{site.data.keyword.openshiftlong_notm}} can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
 | 5.2.9 | {{site.data.keyword.openshiftlong_notm}} can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
-| 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of [default Calico network policies defined](https://cloud.ibm.com/docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](https://cloud.ibm.com/docs/openshift?topic=openshift-network_policies#adding_network_policies).  |
+| 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of [default Calico network policies defined](https://cloud.ibm.com/docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](/docs/openshift?topic=openshift-network_policies#adding_network_policies).  |
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
-| 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](https://cloud.ibm.com/docs/openshift?topic=openshift-encryption#kms). |
-| 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](https://cloud.ibm.com/docs/openshift?topic=openshift-images#portieris-image-sec). |
+| 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
+| 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
 | 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp). |
 | 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/). |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column contains details on the remediation actions."}

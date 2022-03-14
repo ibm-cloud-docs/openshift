@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: openshift, version, update, upgrade
 
@@ -23,7 +23,7 @@ Review information about version 3.11 of {{site.data.keyword.openshiftlong_notm}
 Version 3.11 is deprecated, with a tentative unsupported date of June 2022. This is the last minor version of major version 3. Note that you [cannot update a cluster from one major version to another](#311_deprecated). 
 {: deprecated}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat OpenShift on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions).
+Looking for general information about updating clusters, or information on a different version? See [Red Hat OpenShift on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_changelog).
 {: tip}
 
 

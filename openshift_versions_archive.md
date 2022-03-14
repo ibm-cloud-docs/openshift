@@ -1559,7 +1559,7 @@ The following table shows the changes that are in the worker node fix pack updat
 ### Change log for master fix pack 4.3.23_1527_openshift and worker node fix pack 4.3.25_1527_openshift, released 22 June 2020
 {: #4323_1527_master}
 
-The following table shows the changes that are in the master fix pack update `4.3.23_1527_openshift` and in worker node fix pack update `4.3.25_1527_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.23_1527_openshift` and in worker node fix pack update `4.3.25_1527_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_changelog).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |
@@ -1578,7 +1578,7 @@ The following table shows the changes that are in the master fix pack update `4.
 ### Change log for master fix pack 4.3.23_1525_openshift, released 16 June 2020
 {: #4323_1525}
 
-The following table shows the changes that are in the master fix pack update `4.3.23_1525_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.23_1525_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_changelog).
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1621,7 +1621,7 @@ The following table shows the changes that are in the worker node fix pack updat
 ### Change log for master fix pack 4.3.19_1523_openshift, released 26 May 2020
 {: #4319_1523}
 
-The following table shows the changes that are in the master fix pack update `4.3.19_1523_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.19_1523_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_changelog).
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1639,7 +1639,7 @@ The following table shows the changes that are in the master fix pack update `4.
 ### Change log for master fix pack 4.3.18_1522_openshift, released 12 May 2020
 {: #4318_1522}
 
-The following table shows the changes that are in the master fix pack update `4.3.18_1522_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.18_1522_openshift`. Master patch updates are applied automatically. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_changelog).
 {: shortdesc}
 
 | Component | Previous | Current | Description |
@@ -1686,7 +1686,7 @@ The following table shows the changes that are in the worker node fix pack updat
 ### Change log for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020
 {: #4312_1520_master}
 
-The following table shows the changes that are in the master fix pack update `4.3.12_1520_openshift` and in worker node fix pack update `4.3.10_1518_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types).
+The following table shows the changes that are in the master fix pack update `4.3.12_1520_openshift` and in worker node fix pack update `4.3.10_1518_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. For more information, see [Update types](/docs/openshift?topic=openshift-openshift_changelog).
 {: shortdesc}
 
 | Component | Location | Previous | Current | Description |

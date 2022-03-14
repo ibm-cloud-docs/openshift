@@ -1,9 +1,8 @@
-
 ---
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: openshift, version, update, upgrade
 
@@ -60,7 +59,7 @@ If you use an `oc` or `oc` CLI version that does match at least the `major.minor
 ### Patch updates (4.7.36_xxxx_openshift)
 {: #patch_updates_oc}
 
-Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_versions). Master patches are applied automatically, but you initiate worker node patches updates.
+Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog). Master patches are applied automatically, but you initiate worker node patches updates.
 {: shortdesc}
 
 Worker nodes can also run patch versions that are greater than the masters. As updates become available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the following commands: `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get`. Patches can be for worker nodes, masters, or both.
