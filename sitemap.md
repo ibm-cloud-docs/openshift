@@ -2749,7 +2749,7 @@ subcollection: openshift
 
 * [Setting up volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand)
 
-    * [Expanding existing volumes](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
+    * [Manually expanding volumes prior to add-on version 4.2](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
 
 * [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
 

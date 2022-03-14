@@ -1101,6 +1101,20 @@ You can only expand volumes that are mounted by an app pod.
     oc edit pvc <pvc-name>
     ```
     {: pre}
+    
+    Example
+    
+    ```yaml
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+    ```
+    {: codeblock}
+    
+1. Save and close the PVC.
 
 1. **Optional:** Verify that your volume is expanded. Get the details of your PVC and make a note of the PV name.
     
@@ -1123,10 +1137,10 @@ You can only expand volumes that are mounted by an app pod.
     ```
     {: pre}
 
-### Expanding existing volumes
+### Manually expanding volumes prior to add-on version 4.2
 {: #expanding-existing-volumes}
 
-Complete the following steps to expand your existing {{site.data.keyword.block_storage_is_short}} volumes.
+Complete the following steps to manually expand your existing {{site.data.keyword.block_storage_is_short}} volumes that were created prior to version 4.2 of the add-on.
 {: shortdesc}
 
 You can only expand volumes that are mounted by an app pod.
