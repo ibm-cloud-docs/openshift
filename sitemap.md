@@ -3724,7 +3724,7 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-* [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#checking-a-cluster's-kubernetes-server-version)
+* [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
 * [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
 

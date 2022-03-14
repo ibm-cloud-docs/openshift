@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: openshift, version, update, upgrade
 
@@ -61,7 +61,7 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
      
 
 ## Checking a cluster's Kubernetes server version
-{: openshift_server_version}
+{: #openshift_server_version}
 
 To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
 {: shortdesc}
