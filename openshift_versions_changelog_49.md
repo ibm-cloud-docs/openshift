@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-14"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -35,7 +35,19 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the version 4.9 changelog.
 {: shortdesc}
 
-### Changelog for master fix pack 4.9.21_1527_openshift, released 3 March 2022
+### Change log for worker node pack 4.9.23_1530, released 14 March 2022
+{: #4923_1530}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | NA | NA | NA |
+| OpenShift | 4.7.42 | 4.7.44 | See the [change log](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-9-release-notes.html#ocp-4-7-44){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.9.22_1529_openshift" caption-side="top"}
+
+
+
+### Change log for master fix pack 4.9.21_1527_openshift, released 3 March 2022
 {: #4921_1527}
 
 | Component | Previous | Current | Description |

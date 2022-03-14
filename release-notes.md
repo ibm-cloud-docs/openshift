@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-14"
 
 keywords: openshift
 
@@ -24,6 +24,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2022
 {: #release-mar-2022}
+
+### 14 March 2022
+{: #14mar2022}
+{: release-note}
+
+
+Worker node fix pack update.
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.23_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.32_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.44_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.55_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 ### 11 March 2022
 {: #11mar2022}
@@ -2456,7 +2465,7 @@ New! Virtual Private Cloud Generation 2
     - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
 :   New VPC Gen 2 commands for the CLI
     - [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
-    - [Changelog for master fix pack `4.3.23_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)
+    - [Change log for master fix pack `4.3.23_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog#4323_1525)
     
 :   Ready to get started? Try out the [Creating a cluster in your VPC on generation 2 compute tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial).
 

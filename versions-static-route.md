@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: openshift, static route, add-on
 
@@ -33,7 +33,7 @@ Review the supported versions of the static route add-on. In the CLI, you can ru
 ## Version 1.0.0
 {: #v100}
 
-### Changelog for 1.0.0_649, released 8 September 2021
+### Change log for 1.0.0_649, released 8 September 2021
 {: #100_649}
 
 **Previous version:** 1.0.0_572 **Current version:** 1.0.0_649

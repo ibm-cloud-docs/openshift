@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-14"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,7 +39,17 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the version 4.7 changelog.
 {: shortdesc}
 
-### Changelog for master fix pack 4.7.42_1550_openshift, released 3 March 2022
+### Change log for worker node pack 4.7.44_1554_openshift, released 14 March 2022
+{: #4744_1554}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | NA | NA | NA |
+| OpenShift | 4.7.42 | 4.7.44 | See the [change log](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-44){: external}. | 
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.42_1553_openshift" caption-side="top"}
+
+### Change log for master fix pack 4.7.42_1550_openshift, released 3 March 2022
 {: #4742_1550}
 
 | Component | Previous | Current | Description |
@@ -85,7 +95,7 @@ Review the version 4.7 changelog.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.41_1548_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.41_1548_openshift, released 31 January 2022
+### Change log for worker node fix pack 4.7.41_1548_openshift, released 31 January 2022
 {: #4741_1548}
 
 The following table shows the changes that are in the worker node fix pack `4.7.41_1548_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -98,7 +108,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.40_1546_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.40_1547_openshift, released 26 January 2022
+### Change log for master fix pack 4.7.40_1547_openshift, released 26 January 2022
 {: #4740_1547}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.40_1547_openshift`. Master patch updates are applied automatically.
@@ -125,7 +135,7 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.37_1546_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.40_1546_openshift, released 18 January 2022
+### Change log for worker node fix pack 4.7.40_1546_openshift, released 18 January 2022
 {: #4740_1546}
 
 The following table shows the changes that are in the worker node fix pack `4.7.40_1546_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -137,7 +147,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.40_1545_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.40_1545_openshift, released 4 January 2022
+### Change log for worker node fix pack 4.7.40_1545_openshift, released 4 January 2022
 {: #4740_1545}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.40_1545_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -149,7 +159,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.40_1544_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.40_1544_openshift, released 20 December 2021
+### Change log for worker node fix pack 4.7.40_1544_openshift, released 20 December 2021
 {: #4740_1544_openshift}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.40_1544_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -161,7 +171,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.38_1543_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.37_1542_openshift, released 7 December 2021
+### Change log for master fix pack 4.7.37_1542_openshift, released 7 December 2021
 {: #4737_1542}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.37_1542_openshift`. Master patch updates are applied automatically.
@@ -187,7 +197,7 @@ The following table shows the changes that are in the master fix pack patch upda
 {: caption="Changes since version 4.7.36_1539_openshift" caption-side="top"}
 
 
-### Changelog for worker node fix pack 4.7.38_1543_openshift, released 6 December 2021
+### Change log for worker node fix pack 4.7.38_1543_openshift, released 6 December 2021
 {: #4738_1543}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.38_1543_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -200,7 +210,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.37_1540_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.37_1540_openshift, released 22 November 2021
+### Change log for worker node fix pack 4.7.37_1540_openshift, released 22 November 2021
 {: #4737_1540}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.37_1540_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -214,7 +224,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.36_1538_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.36_1539_openshift, released 17 November 2021
+### Change log for master fix pack 4.7.36_1539_openshift, released 17 November 2021
 {: #4736_1539}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.36_1539_openshift`. Master patch updates are applied automatically. 
@@ -240,7 +250,7 @@ The following table shows the changes that are in the master fix pack patch upda
 {: caption="Changes since version 4.7.33_1536_openshift" caption-side="top"}
 
 
-### Changelog for worker node fix pack 4.7.36_1538_openshift, released 10 November 2021
+### Change log for worker node fix pack 4.7.36_1538_openshift, released 10 November 2021
 {: #4736_1538}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.36_1538_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -253,7 +263,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.32_1534_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.33_1536_openshift, released 29 October 2021
+### Change log for master fix pack 4.7.33_1536_openshift, released 29 October 2021
 {: #4733_1536}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.33_1536_openshift`. Master patch updates are applied automatically. 
@@ -276,7 +286,7 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.30_1532_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.34_1537_openshift, released 25 October 2021
+### Change log for worker node fix pack 4.7.34_1537_openshift, released 25 October 2021
 {: #4734_1537}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.34_1537_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -290,7 +300,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.32_1534_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.32_1534_openshift, released 11 October 2021
+### Change log for worker node fix pack 4.7.32_1534_openshift, released 11 October 2021
 {: #4732_1534_openshift}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.32_1534_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -303,7 +313,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.31_1533_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.31_1533_openshift, released 27 September 2021
+### Change log for worker node fix pack 4.7.31_1533_openshift, released 27 September 2021
 {: #4731_1533}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.31_1533_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -317,7 +327,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.29_1531_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.30_1532_openshift, released 28 September 2021
+### Change log for master fix pack 4.7.30_1532_openshift, released 28 September 2021
 {: #4730_1532}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.30_1532_openshift`. Master patch updates are applied automatically. 
@@ -343,7 +353,7 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
-### Changelog for worker node fix pack 4.7.29_1531_openshift, released 13 September 2021
+### Change log for worker node fix pack 4.7.29_1531_openshift, released 13 September 2021
 {: #4729_1531}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.29_1531_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -356,7 +366,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.24_1530_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.24_1530_openshift, released 30 August 2021
+### Change log for worker node fix pack 4.7.24_1530_openshift, released 30 August 2021
 {: #4724_1530}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.24_1530_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -368,7 +378,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.23_1528_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.23_1529_openshift, released 25 August 2021
+### Change log for master fix pack 4.7.23_1529_openshift, released 25 August 2021
 {: #4723_1529}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.23_1529_openshift`. Master patch updates are applied automatically. 
@@ -394,7 +404,7 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.19_1526_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.23_1528_openshift, released 16 August 2021
+### Change log for worker node fix pack 4.7.23_1528_openshift, released 16 August 2021
 {: #4723_1528}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.23_1528_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -408,7 +418,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.23_1527_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.21_1527_openshift, released 02 August 2021
+### Change log for worker node fix pack 4.7.21_1527_openshift, released 02 August 2021
 {: #4721_1527}
 
 The following table shows the changes that are in the worker node fix pack patch update `4.7.21_1527_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -424,7 +434,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.19_1525_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.19_1526_openshift, released 27 July 2021
+### Change log for master fix pack 4.7.19_1526_openshift, released 27 July 2021
 {: #4719_1526}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.19_1526_openshift`. Master patch updates are applied automatically. 
@@ -448,7 +458,7 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.16_1523_openshift" caption-side="top"}
 
-###Changelog for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021
+###Change log for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021
 {: #4719_1525}
 
 The following table shows the changes that are in the worker node fix pack `4.7.19_1525_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -461,7 +471,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.18_1524_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.18_1524_openshift, released 6 July 2021
+### Change log for worker node fix pack 4.7.18_1524_openshift, released 6 July 2021
 {: #4718_1524}
 
 The following table shows the changes that are in the worker node fix pack `4.7.18_1524_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -475,7 +485,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: caption="Changes since version 4.7.16_1522_openshift" caption-side="top"}
 
 
-### Changelog for master fix pack 4.7.16_1523_openshift, released 28 June 2021
+### Change log for master fix pack 4.7.16_1523_openshift, released 28 June 2021
 {: #4716_1523}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.16_1523_openshift`. Master patch updates are applied automatically. 
@@ -499,7 +509,7 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.12_1520_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.16_1522_openshift, released 22 June 2021
+### Change log for worker node fix pack 4.7.16_1522_openshift, released 22 June 2021
 {: #4716_1522}
 
 The following table shows the changes that are in the worker node fix pack `4.7.16_1522_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -514,7 +524,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.13_1521_openshift" caption-side="top"}
 
-### Changelog for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021
+### Change log for worker node fix pack 4.7.13_1521_openshift, released 9 June 2021
 {: #4713_1521}
 
 The following table shows the changes that are in the worker node fix pack `4.7.13_1521_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -529,7 +539,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.31_1545_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.7.12_1520_openshift, released 9 June 2021
+### Change log for master fix pack 4.7.12_1520_openshift, released 9 June 2021
 {: #4712_1520}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.12_1520_openshift`. Master patch updates are applied automatically. 
