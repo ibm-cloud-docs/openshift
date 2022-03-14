@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-14"
 
 keywords: openshift, route, router
 
@@ -36,6 +36,11 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 ## Version 4.9.0
 {: #4.9.0}
 
+### Version 4.9.0_1364, released on 14 March 2022
+{: #4_9_1364}
+
+Resolves [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external}.
+
 ### Version 4.9.0_1349, released on 28 February 2022
 {: #4_9_0_1349}
 
@@ -50,6 +55,11 @@ Initial release of 4.9.0.
 
 ## Version 4.8.0
 {: #4_8_0}
+
+### Version 4.8.0_1363, released on 14 March 2022
+{: #4_8_1363}
+
+Resolves [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external}.
 
 ### Version 4.8.0_1310, released on 28 February 2022
 {: #4_8_0_1310}
@@ -76,6 +86,11 @@ Initial release of 4.8.0.
 
 ## Version 4.7.0
 {: #4_7_0}
+
+### Version 4.7.0_1362, released on 14 March 2022
+{: #4_7_1362}
+
+Resolves [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external}.
 
 ### Version 4.7.0_1309, released on 28 February 2022
 {: #4_7_0_1309}
@@ -119,6 +134,11 @@ Resolves [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: exter
 
 ## Version 4.6.0
 {: #4_6_0}
+
+### Version 4.6.0_1360, released on 14 March 2022
+{: #4_6_1360}
+
+Resolves [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external}.
 
 ### Version 4.6.0_1308, released on 28 February 2022
 {: #4_6_0_1308}

@@ -36,6 +36,11 @@ Worker node fix pack update.
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.9.23_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.32_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.44_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.55_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
+
+HPCS Router add-on
+:   Versions 4.6.0_1360, 4.7.0_1362, 4.8.0_1363, and 4.9.0_1364 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+
+
 ### 11 March 2022
 {: #11mar2022}
 {: release-note}
