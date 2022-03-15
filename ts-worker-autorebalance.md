@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-15"
 
 keywords: openshift
 
@@ -19,7 +19,9 @@ content-type: troubleshoot
 {: #auto-rebalance-off}
 {: support}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+**Infrastructure provider**: 
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
 
 
 When you [replace a worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [update a VPC worker node](/docs/containers?topic=containers-update#vpc_worker_node), a worker node is not automatically added back to your cluster.
