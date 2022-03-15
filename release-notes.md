@@ -1142,7 +1142,7 @@ Image key synchronizer
 {: release-note}
 
 Unsupported version
-:   {{site.data.keyword.redhat_openshift_notm}} version 4.4 is unsupported. Update your cluster to [version 4.5](/docs/openshift?topic=openshift-openshift_changelog#ocp45) as soon as possible.
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.4 is unsupported. Update your cluster to [version 4.5](/docs/openshift?topic=openshift-openshift_changelog as soon as possible.
 
 
 
@@ -1524,7 +1524,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 Unsupported version
-:   {{site.data.keyword.redhat_openshift_notm}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_changelog#ocp44), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-openshift_changelog#ocp45) as soon as possible.
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_changelog), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-openshift_changelog#ocp45) as soon as possible.
 
 
 
@@ -2055,7 +2055,7 @@ New! Certified {{site.data.keyword.redhat_openshift_notm}} version 4.5
 :   You can now create clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5. To update an existing cluster, see the [Version 4.5 preparation actions](/docs/openshift?topic=openshift-openshift_changelog#ocp45). The {{site.data.keyword.redhat_openshift_notm}} 4.5 release is also certified for Kubernetes 1.18.
 
 Deprecated: {{site.data.keyword.redhat_openshift_notm}} version 4.3
-:   With the release of version 4.5, clusters that run version 4.3 are deprecated. Update your clusters to at least [version 4.4](/docs/openshift?topic=openshift-openshift_changelog#ocp44) today.
+:   With the release of version 4.5, clusters that run version 4.3 are deprecated. Update your clusters to at least [version 4.4](/docs/openshift?topic=openshift-openshift_changelog) today.
 
 
 
@@ -2349,7 +2349,7 @@ Worker node replacement
 {: release-note}
 
 New! {{site.data.keyword.redhat_openshift_notm}} version 4.4 clusters
-:   You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_changelog#ocp44) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-openshift_changelog#version-44). With {{site.data.keyword.redhat_openshift_notm}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: exterrnal}.
+:   You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_changelog) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-openshift_changelog#version-44). With {{site.data.keyword.redhat_openshift_notm}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: exterrnal}.
 
 
 
@@ -2698,7 +2698,7 @@ Global pull secret
 :   Added how to [update the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).
 
 {{site.data.keyword.redhat_openshift_notm}} 4.3
-:   [{{site.data.keyword.redhat_openshift_notm}} version 4.3](/docs/openshift?topic=openshift-openshift_changelog#ocp43) is now the default version.
+:   [{{site.data.keyword.redhat_openshift_notm}} version 4.3](/docs/openshift?topic=openshift-openshift_changelog) is now the default version.
 
 
 
@@ -2981,7 +2981,7 @@ Version changelogs
 
 
 New! {{site.data.keyword.redhat_openshift_notm}} 4.3
-:   {{site.data.keyword.redhat_openshift_notm}} 4.3 is now available as a beta. During the beta, the {{site.data.keyword.redhat_openshift_notm}} license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you can't update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_changelog#ocp43).
+:   {{site.data.keyword.redhat_openshift_notm}} 4.3 is now available as a beta. During the beta, the {{site.data.keyword.redhat_openshift_notm}} license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you can't update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_changelog).
 
 
 
