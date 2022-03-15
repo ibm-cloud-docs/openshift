@@ -4740,6 +4740,10 @@ subcollection: openshift
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
+* [Version 1.1.0](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
+
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
 
     * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-ca_changelog#104415_ca)
