@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-15"
 
 keywords: openshift
 subcollection: openshift
@@ -102,31 +102,51 @@ subcollection: openshift
 
 * [Mortgage company trims costs and accelerates regulatory compliance](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage)
 
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage_ibmcloud)
+
 * [Payment tech company streamlines developer productivity, deploying AI-enabled tools to their partners 4 times faster](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech)
+
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech_ibmcloud)
 
 [Healthcare use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_health#cs_uc_health)
 
 * [Healthcare provider migrates workloads from inefficient VMs to Ops-friendly containers for reporting and patient systems](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate)
 
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate_ibmcloud)
+
 * [Research nonprofit securely hosts sensitive data while it grows research with partners](/docs/openshift?topic=openshift-cs_uc_health#uc_research)
+
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_health#uc_research_ibmcloud)
 
 [Retail use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#cs_uc_retail)
 
 * [Brick-and-mortar retailer shares data, by using APIs with global business partners to drive omnichannel sales](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share)
 
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share_ibmcloud)
+
 * [Traditional grocer increases customer traffic and sales with digital insights](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer)
+
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer_ibmcloud)
 
 [Transportation use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_transport#cs_uc_transport)
 
 * [Shipping company increases availability of worldwide systems for business partner ecosystem](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping)
 
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping_ibmcloud)
+
 * [Airline delivers innovative Human Resources (HR) benefits site in under 3 weeks](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline)
+
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline_ibmcloud)
 
 [Government use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_gov#cs_uc_gov)
 
 * [Regional government improves collaboration and velocity with community Developers who combine public-private data](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup)
 
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_ibmcloud)
+
 * [Large public port secures exchange of port data and shipping manifests that connect public and private organizations](/docs/openshift?topic=openshift-cs_uc_gov#uc_port)
+
+    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_ibmcloud)
 
 
 ## Learning paths
