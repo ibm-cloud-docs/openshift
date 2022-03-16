@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-16"
 
 keywords: openshift
 subcollection: openshift
@@ -1686,7 +1686,7 @@ subcollection: openshift
 
     * [Features and limitations of KMS providers](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features)
 
-* [Encrypting the Kubernetes master's local disk and secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
+* [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
 
     * [Prerequisites](/docs/openshift?topic=openshift-encryption#kms_prereqs)
 
@@ -4739,6 +4739,10 @@ subcollection: openshift
     * [{{site.data.keyword.IBM_notm}} Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#ibm-remediations-and-explanations)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 1.1.0](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
 
