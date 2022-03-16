@@ -1686,7 +1686,7 @@ subcollection: openshift
 
     * [Features and limitations of KMS providers](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features)
 
-* [Encrypting the Kubernetes master's local disk and secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
+* [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
 
     * [Prerequisites](/docs/openshift?topic=openshift-encryption#kms_prereqs)
 
