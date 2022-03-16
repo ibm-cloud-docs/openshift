@@ -4666,23 +4666,23 @@ subcollection: openshift
 
 * [{{site.data.keyword.redhat_openshift_notm}} 4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49)
 
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#49_before)
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#49_before_master)
 
 * [{{site.data.keyword.redhat_openshift_notm}} 4.8](/docs/openshift?topic=openshift-openshift_versions#ocp48)
 
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#48_before)
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#48_before_8)
 
 * [{{site.data.keyword.redhat_openshift_notm}} 4.7](/docs/openshift?topic=openshift-openshift_versions#ocp47)
 
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#47_before)
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#47_before_master)
 
 * [{{site.data.keyword.redhat_openshift_notm}} 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46)
 
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#46_before)
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#46_before_master)
 
 * [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
 
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp45)
+    * [{{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#-45-unsupported)
 
     * [{{site.data.keyword.redhat_openshift_notm}} 4.4 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp44)
 

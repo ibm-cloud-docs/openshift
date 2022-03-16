@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-16"
 
 keywords: openshift, version, update, upgrade
 
@@ -150,7 +150,7 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 
 
 ### Update before master
-{: #49_before}
+{: #49_before_master}
 
 The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
 {: shortdesc}
@@ -171,7 +171,7 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 {: shortdesc}
 
 ### Update before master
-{: #48_before}
+{: #48_before_8}
 
 The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
 {: shortdesc}
@@ -193,7 +193,7 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 {: shortdesc}
 
 ### Update before master
-{: #47_before}
+{: #47_before_master}
 
 The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
 {: shortdesc}
@@ -215,7 +215,7 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 {: shortdesc}
 
 ### Update before master
-{: #46_before}
+{: #46_before_master}
 
 The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
 {: shortdesc}
@@ -235,7 +235,7 @@ Review unsupported versions of {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
 ### {{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)
-{: #ocp45}
+{: _#ocp45_unsupported}
 
 As of 10 October 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 4.5](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
 {: shortdesc}
