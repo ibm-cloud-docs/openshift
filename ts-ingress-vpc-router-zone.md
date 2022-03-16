@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-16"
 
 keywords: openshift
 
@@ -60,7 +60,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     ```
     {: pre}
     
-    After running the `delete svc` command to delete the service, you might need to remove the finalizers to fully remove the service. Run the following command to delete the finalizers on the service. `oc get svc-n openshift-ingress router-default -o=json | jq '.metadata.finalizers = null' | kubectl apply -f -`
+    After running the `delete svc` command to delete the service, you might need to remove the finalizers to fully remove the service. Run the following command to delete the finalizers on the service. `oc get svc -n openshift-ingress router-default -o=json | jq '.metadata.finalizers = null' | kubectl apply -f -`
     {: note}
 
 3. Verify that the new VPC load balancer that exposes the Ingress controller has **Provision status** of `active` and an **Operating status** of `online`. Also, verify that the **Subnets** list now includes subnets for each zone of your cluster.
