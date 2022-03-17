@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-17"
 
 keywords: openshift
 subcollection: openshift
@@ -203,6 +203,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
+
+    * [17 March 2022](/docs/openshift?topic=openshift-iks-release#17mar2022)
 
     * [14 March 2022](/docs/openshift?topic=openshift-iks-release#14mar2022)
 
@@ -4795,6 +4797,8 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog#042_is_block)
+
+    * [Change log for version 4.2.1_895, released 17 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#421_895_is_block_relnote)
 
     * [Change log for version 4.2.0_890, released 28 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#420_890_is_block_relnote)
 
