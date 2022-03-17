@@ -40,7 +40,7 @@ MetalLB has two components:
 * A **controller** that watches `LoadBalancer` services and assigns external IPs to them from an AddressPool.
 * And the **speaker** pods that hold, reply to ARP requests and handles failover of the external IPs.
 
-**Limitations**: `externalTrafficPolicy: local` only sends traffic to the pods on the same node as the speaker that holds the external IP.
+**Limitations**: `externalTrafficPolicy: local` only sends traffic to the pods on the same node as the speaker that holds the external IP. This is due to the usual and well-known kube-proxy behaviour.
 
 1. Verify that the MetalLB Operator is available in the {{site.data.keyword.redhat_openshift_notm}} Marketplace:
    ```sh
@@ -157,9 +157,25 @@ MetalLB has two components:
     spec:
       loadBalancerClass: metallb.io
     ```
-    under the `LoadBalancer` service.
+    under the `LoadBalancer` service, so the whole definition will look like this:
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+        namespace: default
+        name: with-loadBalancerClass
+    spec:
+        loadBalancerClass: metal-lb.io
+        selector:
+            app: hello-node
+        ports:
+            - port: 8080
+              targetPort: 8080
+              protocol: TCP
+        type: LoadBalancer
+    ```
 
-
+For further information please visit the official documentation at: https://docs.openshift.com/container-platform/4.9/networking/metallb/about-metallb.html
 
 ## Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes
 {: #sat-expose-routes}
