@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-17"
 
 keywords: openshift
 
@@ -24,6 +24,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2022
 {: #release-mar-2022}
+
+
+
+### 17 March 2022
+{: #17mar2022}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.2.1_895](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
 
 
@@ -1524,7 +1533,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 Unsupported version
-:   {{site.data.keyword.redhat_openshift_notm}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_changelog), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-openshift_changelog#ocp45) as soon as possible.
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_changelog), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-changelog_archive) as soon as possible.
 
 
 
@@ -1614,7 +1623,7 @@ New! {{site.data.keyword.redhat_openshift_notm}} 4.6
 :   You can create or [update](/docs/openshift?topic=openshift-openshift_changelog) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.6, which includes Kubernetes 1.19. With {{site.data.keyword.redhat_openshift_notm}} 4.6, you get the latest stable enhancements from the community. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-46-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
 Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.4
-:   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.6, clusters that run version 4.4 are deprecated, with an unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](/docs/openshift?topic=openshift-openshift_changelog#ocp45) as soon as possible.
+:   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.6, clusters that run version 4.4 are deprecated, with an unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](/docs/openshift?topic=openshift-changelog_archive) as soon as possible.
 
 
 
@@ -2052,7 +2061,7 @@ Gateway firewalls and Calico policies
 
 
 New! Certified {{site.data.keyword.redhat_openshift_notm}} version 4.5
-:   You can now create clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5. To update an existing cluster, see the [Version 4.5 preparation actions](/docs/openshift?topic=openshift-openshift_changelog#ocp45). The {{site.data.keyword.redhat_openshift_notm}} 4.5 release is also certified for Kubernetes 1.18.
+:   You can now create clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5. To update an existing cluster, see the [Version 4.5 preparation actions](/docs/openshift?topic=openshift-changelog_archive). The {{site.data.keyword.redhat_openshift_notm}} 4.5 release is also certified for Kubernetes 1.18.
 
 Deprecated: {{site.data.keyword.redhat_openshift_notm}} version 4.3
 :   With the release of version 4.5, clusters that run version 4.3 are deprecated. Update your clusters to at least [version 4.4](/docs/openshift?topic=openshift-openshift_changelog) today.

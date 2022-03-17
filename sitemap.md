@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-17"
 
 keywords: openshift
 subcollection: openshift
@@ -203,6 +203,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
+
+    * [17 March 2022](/docs/openshift?topic=openshift-iks-release#17mar2022)
 
     * [14 March 2022](/docs/openshift?topic=openshift-iks-release#14mar2022)
 
@@ -3777,7 +3779,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
-* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#change-logs)
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#47_changelog)
 
     * [Change log for worker node pack 4.9.23_1530, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4923_1530)
 
@@ -3848,7 +3850,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
-* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#change-logs)
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#47_changelog)
 
     * [Change log for worker node pack 4.8.32_1548_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4832_1548)
 
@@ -3945,7 +3947,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
-* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#change-logs)
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
 
     * [Change log for worker node pack 4.7.44_1554_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4744_1554)
 
@@ -4066,7 +4068,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
-* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#change-logs)
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#47_changelog)
 
     * [Change log for worker node pack 4.6.55_1575_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4655_1575)
 
@@ -4213,7 +4215,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_overview_311)
 
-* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_311#change-logs)
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_311#311_changelog)
 
 * [Deprecated: Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#version-311)
 
@@ -4253,7 +4255,7 @@ subcollection: openshift
 
     * [Change log for worker node fix pack 3.11.521_1605_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog_311#311521_1605)
 
-    * [Change log for master fix pack 3.11.521_1604_openshift, released 28 September 2021](/docs/openshift?topic=openshift-openshift_changelog_311#change-log-for-master-fix-pack-311521_1604_openshift,-released-28-september-2021)
+    * [Change log for master fix pack 3.11.521_1604_openshift, released 28 September 2021](/docs/openshift?topic=openshift-openshift_changelog_311#311521_1604)
 
     * [Change log for worker node fix pack 3.11.501_1603_openshift, released 13 September 2021](/docs/openshift?topic=openshift-openshift_changelog_311#311501_1603)
 
@@ -4666,23 +4668,23 @@ subcollection: openshift
 
 * [{{site.data.keyword.redhat_openshift_notm}} 4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49)
 
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#49_before)
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#49_before_master)
 
 * [{{site.data.keyword.redhat_openshift_notm}} 4.8](/docs/openshift?topic=openshift-openshift_versions#ocp48)
 
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#48_before)
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#48_before_8)
 
 * [{{site.data.keyword.redhat_openshift_notm}} 4.7](/docs/openshift?topic=openshift-openshift_versions#ocp47)
 
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#47_before)
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#47_before_master)
 
 * [{{site.data.keyword.redhat_openshift_notm}} 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46)
 
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#46_before)
+    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#46_before_master)
 
 * [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
 
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp45)
+    * [{{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#-45-unsupported)
 
     * [{{site.data.keyword.redhat_openshift_notm}} 4.4 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp44)
 
@@ -4795,6 +4797,8 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog#042_is_block)
+
+    * [Change log for version 4.2.1_895, released 17 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#421_895_is_block_relnote)
 
     * [Change log for version 4.2.0_890, released 28 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#420_890_is_block_relnote)
 

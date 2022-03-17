@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-17"
 
 keywords: openshift
 
@@ -64,7 +64,7 @@ The actual HPC grid is hard to program against. The API is too complex for new D
 And major app upgrades take 6 - 9 months to complete.
 
 #### Solution model
-{: #uc_mortgage_solution}
+{: #uc_mortgage_solution_model}
 
 On-demand compute, storage, and I/O services that run in public cloud with secure access to on-premises enterprise assets as needed**
 

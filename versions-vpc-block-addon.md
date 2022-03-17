@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-17"
 
 keywords: block, add-on, changelog
 
@@ -49,6 +49,14 @@ Refer to the following tables for a summary of changes for each version of the {
 
 ## Version 4.2
 {: #042_is_block}
+
+
+
+### Change log for version 4.2.1_895, released 17 March 2022
+{: #421_895_is_block_relnote}
+
+- Resolves [CVE-2022-24407](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24407){: external}.
+- Updates the `armada-storage-secret` to v1.1.6.
 
 
 

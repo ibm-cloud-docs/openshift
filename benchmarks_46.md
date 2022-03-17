@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-16"
 
 keywords: openshift
 
@@ -335,7 +335,7 @@ Review information from IBM on the CIS Benchmark results.
 | 5.2.7 | {{site.data.keyword.openshiftlong_notm}} can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
 | 5.2.8 | {{site.data.keyword.openshiftlong_notm}} can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
 | 5.2.9 | {{site.data.keyword.openshiftlong_notm}} can optionally [configure security context constraints](/docs/openshift?topic=openshift-openshift_scc). |
-| 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of [default Calico network policies defined](https://cloud.ibm.com/docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](/docs/openshift?topic=openshift-network_policies#adding_network_policies).  |
+| 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of [default Calico network policies defined]( /docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](/docs/openshift?topic=openshift-network_policies#adding_network_policies).  |
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
 | 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |

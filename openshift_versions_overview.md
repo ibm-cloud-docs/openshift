@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-16"
 
 keywords: openshift, version, update, upgrade
 
@@ -34,26 +34,26 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 
 **Supported versions**
 :    **Latest**: 4.9 (Kubernetes 1.22)
-     - [Version information and update actions]()
-     - [Change log]()
+     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
+     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
 
 :    **Default**: 4.8 (Kubernetes 1.21)
-     - [Version information and update actions]()
-     - [Change log]()
+     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
+     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
 
 :    4.7 (Kubernetes 1.20)
-     - [Version information and update actions]()
-     - [Change log]()
+     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
+     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
 
 :    4.6 (Kubernetes 1.19)
-     - [Version information and update actions]()
-     - [Change log]()
+     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_46)
+     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_46)
 
 
 **Deprecated versions**:
 :    3.11 (Kubernetes 1.15)
-     - [Version information and update actions]()
-     - [Change log]()
+     - [Version information and update actions](/docs/openshift?topic=openshift-openshift_changelog_311)
+     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_311)
 
 **Unsupported versions**:
 :    4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
