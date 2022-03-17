@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-17"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -30,7 +30,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 ## Change logs
-{: 49_changelog}
+{: #47_changelog}
 
 Review the version 4.9 changelog.
 {: shortdesc}
@@ -114,4 +114,5 @@ The following table shows the changes that are in the master fix pack `4.9.17_15
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20220107 | 4.9.0+20220201 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20220201){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.8.26_1542_openshift master and 4.8.28_1543_openshift worker node." caption-side="top"}
+
 

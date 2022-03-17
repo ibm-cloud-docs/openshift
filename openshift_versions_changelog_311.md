@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-17"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -30,7 +30,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 ## Change logs
-{: 311_changelog}
+{: #311_changelog}
 
 Review the version 3.11 changelog.
 {: shortdesc}
@@ -282,7 +282,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 3.11.501_1603_openshift" caption-side="top"}
 
 ### Change log for master fix pack 3.11.521_1604_openshift, released 28 September 2021
-{: 311521_1604}
+{: #311521_1604}
 
 The following table shows the changes that are in the worker node fix pack patch update `3.11.521_1604_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
