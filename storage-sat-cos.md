@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-18"
 
 keywords: COS, cloud object storage, satellite storage, object storage, satellite, satellite configurations,
 
@@ -32,7 +32,7 @@ Before you deploy the {{site.data.keyword.cos_full_notm}} drivers on your {{site
 {: shortdesc}
 
 1. Before you can deploy the {{site.data.keyword.cos_full_notm}}, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) and create a cluster.
-2. **Optional**: If you want use {{site.data.keyword.cos_full_notm}}, [create an instance](#sat-storage-create-cos).
+2. **Optional**: If you want use {{site.data.keyword.cos_full_notm}}, [create an instance](/docs/openshift?topic=openshift-storage-cos-understand).
 
 
 ## Retrieving the configuration parameters

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-18"
 
 keywords: openshift
 subcollection: openshift
@@ -4653,42 +4653,6 @@ subcollection: openshift
 ### Add-on version history
 {: #sitemap_add-on_version_history}
 
-
-[Version information and update actions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions)
-
-* [Update types](/docs/openshift?topic=openshift-openshift_versions#openshift_update_types)
-
-    * [Major and minor updates (4.8)](/docs/openshift?topic=openshift-openshift_versions#major_minor_updates)
-
-    * [Patch updates (4.7.36_xxxx_openshift)](/docs/openshift?topic=openshift-openshift_versions#patch_updates_oc)
-
-* [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#version_types)
-
-* [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
-
-* [{{site.data.keyword.redhat_openshift_notm}} 4.9](/docs/openshift?topic=openshift-openshift_versions#ocp49)
-
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#49_before_master)
-
-* [{{site.data.keyword.redhat_openshift_notm}} 4.8](/docs/openshift?topic=openshift-openshift_versions#ocp48)
-
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#48_before_8)
-
-* [{{site.data.keyword.redhat_openshift_notm}} 4.7](/docs/openshift?topic=openshift-openshift_versions#ocp47)
-
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#47_before_master)
-
-* [{{site.data.keyword.redhat_openshift_notm}} 4.6](/docs/openshift?topic=openshift-openshift_versions#ocp46)
-
-    * [Update before master](/docs/openshift?topic=openshift-openshift_versions#46_before_master)
-
-* [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#-45-unsupported)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.4 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp44)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.3 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
 
