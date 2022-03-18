@@ -706,7 +706,7 @@ Master fix pack update
 
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4645_1557_openshift), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4731_1533_openshift), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311521_1605_openshift).
+:   Change log documentation is available for version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4645_1557), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4731_1533), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311521_1605).
 
 ### 23 September 2021
 {: #23sep2021}
@@ -2358,7 +2358,7 @@ Worker node replacement
 {: release-note}
 
 New! {{site.data.keyword.redhat_openshift_notm}} version 4.4 clusters
-:   You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_changelog) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-openshift_changelog#version-44). With {{site.data.keyword.redhat_openshift_notm}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: exterrnal}.
+:   You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_changelog) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-changelog_archive). With {{site.data.keyword.redhat_openshift_notm}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: exterrnal}.
 
 
 

@@ -61,7 +61,7 @@ Secure patient data leads to happier patients.
 * Capital expense budgets are under tight control, and IT feels they don't have the budget or staff to create the needed testing and staging landscapes with their in-house systems.
 
 #### Solution model
-{: #uc_migrate_solution}
+{: #uc_migrate_solution_model}
 
 On-demand compute, storage, and I/O services run in the public cloud with secure access to on-premises enterprise assets. Implement a CI/CD process and other parts of the IBM Garage Method to dramatically shorten delivery cycles.
 
