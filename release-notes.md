@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-21"
 
 keywords: openshift
 
@@ -25,7 +25,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2022
 {: #release-mar-2022}
 
+### 21 March 2022
+{: #21mar2022}
+{: release-note}
 
+CLI changelog update
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.384.
 
 ### 17 March 2022
 {: #17mar2022}
@@ -492,7 +497,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 Worker node fix pack update
-:   Changelog documentation is available for version [`4.8.18_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4820_1535), [`4.7.36_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4736_1539), [`4.6.47_1563_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4647_1563), and [`3.11.542_1611_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1611).
+:   Changelog documentation is available for version [`4.8.18_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4818_1535), [`4.7.36_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4736_1539), [`4.6.47_1563_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4647_1563), and [`3.11.542_1611_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1611).
 
 
   
@@ -627,12 +632,12 @@ CLI changelog
 
 
 Unsupported {{site.data.keyword.redhat_openshift_notm}} version 4.5
-:   {{site.data.keyword.redhat_openshift_notm}} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_changelog#openshift_versions_available) immediately.
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_changelog) immediately.
 
 
 
 Worker node fix pack update
-:   Changelog documentation is available for version [`4.8.13_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4813_1528_openshift),[`4.7.32_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4732_1534_openshift), [`4.6.46_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4646_1558_openshift), and [`3.11.524_1606_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311524_1606_openshift).
+:   Changelog documentation is available for version [`4.8.13_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#48131528_openshift),[`4.7.32_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4732_1534_openshift), [`4.6.46_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4646_1558_openshift), and [`3.11.524_1606_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311524_1606_openshift).
 
 ### 7 October 2021
 {: #7oct2021}
@@ -2532,7 +2537,7 @@ VPC network security
 
   
 Version 3.11 is deprecated
-:   Clusters that run {{site.data.keyword.redhat_openshift_notm}} version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_changelog#openshift_release_history).
+:   Clusters that run {{site.data.keyword.redhat_openshift_notm}} version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_changelog).
 
 VPC ACLs
 :   Added required rules for using VPC load balancers to steps for [Creating access control lists (ACLs) to control traffic to and from your VPC cluster](/docs/openshift?topic=openshift-vpc-acls).

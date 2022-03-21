@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-21"
 
 keywords: openshift
 subcollection: openshift
@@ -203,6 +203,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
+
+    * [21 March 2022](/docs/openshift?topic=openshift-iks-release#21mar2022)
 
     * [17 March 2022](/docs/openshift?topic=openshift-iks-release#17mar2022)
 
@@ -3631,6 +3633,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.384](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10384)
+
 * [Version 1.0.374](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10374)
 
 * [Version 1.0.372](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10372)
@@ -4205,11 +4209,11 @@ subcollection: openshift
 {: #sitemap_version_311}
 
 
-[(Deprecated) 3.11 version](/docs/openshift?topic=openshift-cs_versions_46#cs_versions_46)
+[(Deprecated) 3.11 version](/docs/openshift?topic=openshift-cs_versions_311#cs_versions_311)
 
-* [Release timeline](/docs/openshift?topic=openshift-cs_versions_46#release_timeline_46)
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_311#release_timeline_46)
 
-    * [Why is the deprecated version 3.11 supported longer than more recent versions like 4.6?](/docs/openshift?topic=openshift-cs_versions_46#311_deprecated)
+    * [Why is the deprecated version 3.11 supported longer than more recent versions like 4.6?](/docs/openshift?topic=openshift-cs_versions_311#311_deprecated)
 
 [{{site.data.keyword.redhat_openshift_notm}} version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_311)
 
