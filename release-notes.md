@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-21"
 
 keywords: openshift
 
@@ -25,7 +25,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2022
 {: #release-mar-2022}
 
+### 21 March 2022
+{: #21mar2022}
+{: release-note}
 
+CLI changelog update
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.384.
 
 ### 17 March 2022
 {: #17mar2022}

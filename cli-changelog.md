@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-21"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -30,10 +30,16 @@ Refer to the following changelogs for a summary of changes for each version of t
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version 1.0.384
+{: #cli-10384}
+
+Version 1.0.384 of the CLI was released on 21 March 2022.
+:   Adds the `--output` option to the `ibmcloud oc storage assignment ls` and `ibmcloud oc storage config ls` commands.
+
 ## Version 1.0.374
 {: #cli-10374}
 
-Version 1.0.372 of the CLI was released on 24 Feb 2022.
+Version 1.0.374 of the CLI was released on 24 Feb 2022.
 :   Removes the default zone in the `ibmcloud oc cluster create satellite` command.
 
 ## Version 1.0.372

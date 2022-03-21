@@ -204,6 +204,8 @@ subcollection: openshift
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
 
+    * [21 March 2022](/docs/openshift?topic=openshift-iks-release#21mar2022)
+
     * [17 March 2022](/docs/openshift?topic=openshift-iks-release#17mar2022)
 
     * [14 March 2022](/docs/openshift?topic=openshift-iks-release#14mar2022)
@@ -3630,6 +3632,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.384](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10384)
 
 * [Version 1.0.374](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10374)
 
