@@ -4209,11 +4209,11 @@ subcollection: openshift
 {: #sitemap_version_311}
 
 
-[(Deprecated) 3.11 version](/docs/openshift?topic=openshift-cs_versions_46#cs_versions_46)
+[(Deprecated) 3.11 version](/docs/openshift?topic=openshift-cs_versions_311#cs_versions_311)
 
-* [Release timeline](/docs/openshift?topic=openshift-cs_versions_46#release_timeline_46)
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_311#release_timeline_46)
 
-    * [Why is the deprecated version 3.11 supported longer than more recent versions like 4.6?](/docs/openshift?topic=openshift-cs_versions_46#311_deprecated)
+    * [Why is the deprecated version 3.11 supported longer than more recent versions like 4.6?](/docs/openshift?topic=openshift-cs_versions_311#311_deprecated)
 
 [{{site.data.keyword.redhat_openshift_notm}} version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_311)
 
