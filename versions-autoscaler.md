@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-21"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -39,12 +39,12 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 
 | Cluster autoscaler add-on version | Supported? | Cluster version support |
 | -------------------- | -----------|--------------------------- |
-| 1.1.0 | Yes | >=4.6 |
-| 1.0.5 | Yes | >=4.3 |
-| 1.0.4 | Yes | >=4.3 |
-| 1.0.3 | Yes | >=4.3 |
-| 1.0.2 | Yes | 4.3 - 4.6 |
-| 1.0.1 | No | 4.3 - 4.6 |
+| 1.1.0 | Yes |  >=4.6 |
+| 1.0.5 | Yes |  >=4.3 |
+| 1.0.4 | Yes |  >=4.3 |
+| 1.0.3 | Yes |  >=4.3 |
+| 1.0.2 | Yes |  4.3 - 4.6 |
+| 1.0.1 | No |  4.3 - 4.6 |
 {: summary="The rows are read from left to right. The first column is the cluster autoscaler add-on version. The second column is the version's supported state. The third column is the cluster version of your cluster that the cluster autoscaler version is supported for."}
 
 ## Version 1.1.0
