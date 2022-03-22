@@ -27,8 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ### 22 March 2022
 {: #22mar2022}
+{: release-note}
 
 Hong Kong (`HKG01`) and Seoul (`SEO01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](https://cloud.ibm.com/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG01`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](https://cloud.ibm.com/docs/get-support?topic=get-support-dc-closure).
+
+Ingress ALB changelog updates
+:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
+
 
 ### 21 March 2022
 {: #21mar2022}
