@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-22"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -80,6 +80,8 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic single zone**: If you create a classic cluster in a single zone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
 {: shortdesc}
+
+Hong Kong (`HKG01`) and Seoul (`SEO01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](https://cloud.ibm.com/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG01`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](https://cloud.ibm.com/docs/get-support?topic=get-support-dc-closure).
 
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
