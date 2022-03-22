@@ -105,7 +105,7 @@ OpenShift Data Foundation
 
 Master fix pack update.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.21_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4921_1527), [4.8.29_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4829_1545), [4.7.42_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4742_1550), [4.6.48_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4648_1573), [3.11.570_1623_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1623).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.21_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4921_1528), [4.8.31_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4831_1546), [4.7.43_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4743_1552), [4.6.48_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4648_1573), [3.11.570_1623_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1623).
 
 
 
