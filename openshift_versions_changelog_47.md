@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-22"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -49,8 +49,8 @@ Review the version 4.7 changelog.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.7.42_1553_openshift" caption-side="top"}
 
-### Change log for master fix pack 4.7.42_1550_openshift, released 3 March 2022
-{: #4742_1550}
+### Change log for master fix pack 4.7.43_1552_openshift, released 3 March 2022
+{: #4743_1552}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -63,7 +63,7 @@ Review the version 4.7 changelog.
 | IBM Cloud Controller Manager | v1.20.15-1 | v1.20.15-4 | Adds changes to the renovate rules. |
 | IBM Cloud File Storage plug-in and monitor | 404 | 405 | Adds fix for [CVE-2021-3538](https://www.whitesourcesoftware.com/vulnerability-database/CVE-2021-3538){: external} and adds dependency updates. |
 | Key Management Service provider | v2.3.13 | v2.4.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://www.whitesourcesoftware.com/vulnerability-database/CVE-2021-43565){: external}. Adds Golang dependency updates. |
-| Red Hat OpenShift | 4.7.40 | 4.7.42 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-42){: external}. |
+| Red Hat OpenShift | 4.7.40 | 4.7.43 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-43){: external}. |
 | Red Hat OpenShift Control Plane Operator | v4.7.0-20220107 | v4.7.0-20220222 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220222){: external}. |
 | Red Hat OpenShift on IBM Cloud Metrics Server | v4.7.0-20220107 | v4.7.0-20220222 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220222){: external}. |
 | Red Hat OpenShift on IBM Cloud toolkit | 4.7.0+20220107 | 4.7.0+20220222 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220222){: external}. |

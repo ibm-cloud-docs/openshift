@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-22"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -47,8 +47,8 @@ Review the version 4.9 changelog.
 
 
 
-### Change log for master fix pack 4.9.21_1527_openshift, released 3 March 2022
-{: #4921_1527}
+### Change log for master fix pack 4.9.21_1528_openshift, released 3 March 2022
+{: #4921_1528}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
