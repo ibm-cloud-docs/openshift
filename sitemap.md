@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
 keywords: openshift
 subcollection: openshift
@@ -3767,6 +3767,14 @@ subcollection: openshift
 [Version changelog](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
 
 * [Version change logs](/docs/openshift?topic=openshift-openshift_changelog#change-logs-by-version)
+
+[CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark)
+
+* [Available benchmark versions](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-versions)
+
+* [Using the benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-use)
+
+* [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
 
 ### Version 4.9
