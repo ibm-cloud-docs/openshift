@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
 keywords: kubernetes, openshift
 
@@ -38,7 +38,7 @@ To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc c
 
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
-- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
+- [Cluster Autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc)
 - [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
