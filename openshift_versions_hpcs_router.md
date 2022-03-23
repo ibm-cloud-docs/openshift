@@ -36,6 +36,18 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 ## Version 4.9.0
 {: #4.9.0}
 
+### Version 4.9.0_1384, released on 24 March 2022
+{: #4_9_0_1384}
+
+- [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}.
+- [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}.
+- [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}.
+- [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}.
+- [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}.
+- [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}.
+- [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}.
+- [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921){: external}.
+
 ### Version 4.9.0_1364, released on 14 March 2022
 {: #4_9_1364}
 
@@ -55,6 +67,18 @@ Initial release of 4.9.0.
 
 ## Version 4.8.0
 {: #4_8_0}
+
+### Version 4.8.0_1385, released on 24 March 2022
+{: #4_8_0_1385}
+
+- [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}.
+- [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}.
+- [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}.
+- [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}.
+- [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}.
+- [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}.
+- [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}.
+- [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921){: external}.
 
 ### Version 4.8.0_1363, released on 14 March 2022
 {: #4_8_1363}
@@ -86,6 +110,18 @@ Initial release of 4.8.0.
 
 ## Version 4.7.0
 {: #4_7_0}
+
+### Version 4.7.0_1386, released on 24 March 2022
+{: #4_7_0_1386}
+
+- [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}.
+- [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}.
+- [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}.
+- [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}.
+- [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}.
+- [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}.
+- [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}.
+- [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921){: external}.
 
 ### Version 4.7.0_1362, released on 14 March 2022
 {: #4_7_1362}
@@ -134,6 +170,18 @@ Resolves [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: exter
 
 ## Version 4.6.0
 {: #4_6_0}
+
+### Version 4.6.0_1383, released on 24 March 2022
+{: #4_6_0_1383}
+
+- [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}.
+- [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}.
+- [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}.
+- [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}.
+- [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}.
+- [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}.
+- [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}.
+- [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921){: external}.
 
 ### Version 4.6.0_1360, released on 14 March 2022
 {: #4_6_1360}
