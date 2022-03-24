@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: object storage, plug-in, changelog
 
@@ -25,8 +25,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
-| 2.1.12 | Yes | Greater than or equal to 4.3 | x86 |
-| 2.1.11 | Yes | Greater than or equal to 4.3 | x86 |
+| 2.1.12 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.12 | Deprecated | Greater than or equal to 4.3 | x86 |
+| 2.1.11 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.10 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.9 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.8 | Deprecated | Greater than or equal to 4.3 | x86 |
@@ -45,6 +46,15 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+## Change log for version 2.1.13, release 24 March 2022
+{: #02113_object_plugin}
+
+- Updates the UBI to `8.5-240`
+- Updates Golang to `v1.16.15 `
+- Resolves [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921){: external}
+- s3fs fuse updated to `v1.91`
+- Added support for additional mount options `Ex: ibm.io/add-mount-param: "del_cache,retries=6"`
 
 
 ## Change log for version 2.1.12, released 11 March 2022
