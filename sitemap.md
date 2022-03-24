@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: openshift
 subcollection: openshift
@@ -203,6 +203,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
 
 * [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
+
+    * [24 March 2022](/docs/openshift?topic=openshift-iks-release#24mar2022)
 
     * [22 March 2022](/docs/openshift?topic=openshift-iks-release#22mar2022)
 
@@ -4672,52 +4674,6 @@ subcollection: openshift
 
 * [Version change logs](/docs/openshift?topic=openshift-openshift_changelog#change-logs-by-version)
 
-[CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark)
-
-* [Using the benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-use)
-
-* [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
-
-* [Benchmark 1.5 results for {{site.data.keyword.redhat_openshift_notm}} versions 4.6 - 4.9](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15)
-
-    * [1.1 Master Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-1)
-
-    * [1.2 API Server](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-2)
-
-    * [1.3 Controller Manager](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-3)
-
-    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-1-4)
-
-* [2 `etcd` Node Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-2)
-
-* [3 Control Plane Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3)
-
-    * [3.1 Authentication and Authorization](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3-1)
-
-    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-3-2)
-
-* [4 Worker Node Security Configuration](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4)
-
-    * [4.1 Worker Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4-1)
-
-    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-4-2)
-
-* [5 Kubernetes Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5)
-
-    * [5.1 RBAC and Service Accounts](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-1)
-
-    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-2)
-
-    * [5.3 Network Policies and CNI](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-3)
-
-    * [5.4 Secrets Management](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-4)
-
-    * [5.5 Extensible Admission Control](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-5)
-
-    * [5.6 General Policies](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-15-5-6)
-
-    * [{{site.data.keyword.IBM_notm}} Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark#ibm-remediations-and-explanations)
-
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.1.0](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
@@ -4776,6 +4732,8 @@ subcollection: openshift
 
 * [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog#042_is_block)
 
+    * [Change log for version 4.2.2_900, released 24 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#422_900_is_block_relnote)
+
     * [Change log for version 4.2.1_895, released 17 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#421_895_is_block_relnote)
 
     * [Change log for version 4.2.0_890, released 28 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#420_890_is_block_relnote)
@@ -4815,6 +4773,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.1.13, release 24 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02113_object_plugin)
 
 * [Change log for version 2.1.12, released 11 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02112_object_plugin)
 
@@ -4868,6 +4828,8 @@ subcollection: openshift
 
 * [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
 
+    * [Version 4.9.0_1384, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1384)
+
     * [Version 4.9.0_1364, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_1364)
 
     * [Version 4.9.0_1349, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1349)
@@ -4875,6 +4837,8 @@ subcollection: openshift
     * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
 
 * [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_1385, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1385)
 
     * [Version 4.8.0_1363, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1363)
 
@@ -4887,6 +4851,8 @@ subcollection: openshift
     * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_1386, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1386)
 
     * [Version 4.7.0_1362, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1362)
 
@@ -4903,6 +4869,8 @@ subcollection: openshift
     * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_1383, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1383)
 
     * [Version 4.6.0_1360, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1360)
 
@@ -4957,6 +4925,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0906)
 
     * [Version 1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0883)
 

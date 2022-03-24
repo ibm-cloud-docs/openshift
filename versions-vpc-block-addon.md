@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-24"
 
 keywords: block, add-on, changelog
 
@@ -50,6 +50,12 @@ Refer to the following tables for a summary of changes for each version of the {
 ## Version 4.2
 {: #042_is_block}
 
+### Change log for version 4.2.2_900, released 24 March 2022
+{: #422_900_is_block_relnote}
+
+- Updates armada-storage-secret to `v1.1.7`
+- Resolves [CVE-2022-24921](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24921){: external}.
+- Update Golang to `1.16.15`
 
 
 ### Change log for version 4.2.1_895, released 17 March 2022

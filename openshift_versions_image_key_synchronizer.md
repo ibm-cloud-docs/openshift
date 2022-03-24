@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-23"
 
 keywords: openshift
 
@@ -36,6 +36,17 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 
 Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
 {: shortdesc}
+
+### Version 1.0.0_906, released on 24 March 2022
+{: #1_0_0906}
+
+- [CVE-2021-3999](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3999){: external}.
+- [CVE-2022-23218](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23218){: external}.
+- [CVE-2022-23219](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23219){: external}.
+- [CVE-2022-23308](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23308){: external}.
+- [CVE-2021-23177](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23177){: external}.
+- [CVE-2021-31566](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31566){: external}.
+- [CVE-2022-24921](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24921){: external}.
 
 ### Version 1.0.0_883, released on 28 February 2022
 {: #1_0_0883}

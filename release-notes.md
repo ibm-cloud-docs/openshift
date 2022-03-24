@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: openshift
 
@@ -24,6 +24,25 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2022
 {: #release-mar-2022}
+
+
+### 24 March 2022
+{: #24mar2022}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.13` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.2.2_900](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+
+
+HPCS Router add-on
+:   Versions 4.6.0_1383, 4.7.0_1386, 4.8.0_1385, and 4.9.0_1384 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_906 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+
+
 
 ### 22 March 2022
 {: #22mar2022}
