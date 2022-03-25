@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-25"
 
 keywords: openshift
 subcollection: openshift
@@ -200,705 +200,1837 @@ subcollection: openshift
 {: #sitemap_release_notes}
 
 
-[Release notes](/docs/openshift?topic=openshift-iks-release#iks-release)
+[Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
-* [March 2022](/docs/openshift?topic=openshift-iks-release#release-mar-2022)
+* [March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar22)
 
-    * [24 March 2022](/docs/openshift?topic=openshift-iks-release#24mar2022)
+    * [24 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2422)
 
-    * [22 March 2022](/docs/openshift?topic=openshift-iks-release#22mar2022)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [21 March 2022](/docs/openshift?topic=openshift-iks-release#21mar2022)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [17 March 2022](/docs/openshift?topic=openshift-iks-release#17mar2022)
+        * HPCS Router add-on
 
-    * [14 March 2022](/docs/openshift?topic=openshift-iks-release#14mar2022)
+        * Cloud Image Key Synchronizer add-on
 
-    * [11 March 2022](/docs/openshift?topic=openshift-iks-release#11mar2022)
+    * [22 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2222)
 
-    * [10 March 2022](/docs/openshift?topic=openshift-iks-release#10mar2022)
+        * Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
-    * [9 March 2022](/docs/openshift?topic=openshift-iks-release#9mar2022)
+        * Ingress ALB changelog updates
 
-    * [8 March 2022](/docs/openshift?topic=openshift-iks-release#8mar2022)
+    * [21 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2122)
 
-* [February 2022](/docs/openshift?topic=openshift-iks-release#release-feb-2022)
+        * CLI changelog update
 
-    * [28 February 2022](/docs/openshift?topic=openshift-iks-release#28feb2022)
+    * [17 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1722)
 
-    * [24 February 2022](/docs/openshift?topic=openshift-iks-release#24feb2022)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [23 February 2022](/docs/openshift?topic=openshift-iks-release#23feb2022)
+    * [14 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1422)
 
-    * [18 February 2022](/docs/openshift?topic=openshift-iks-release#18feb2022)
+        * Worker node fix pack update.
 
-    * [17 February 2022](/docs/openshift?topic=openshift-iks-release#17feb2022)
+        * HPCS Router add-on
 
-    * [16 February 2022](/docs/openshift?topic=openshift-iks-release#16feb2022)
+    * [11 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1122)
 
-    * [14 February 2022](/docs/openshift?topic=openshift-iks-release#14feb2022)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [10 February 2022](/docs/openshift?topic=openshift-iks-release#10feb2022)
+    * [10 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1022)
 
-    * [9 February 2022](/docs/openshift?topic=openshift-iks-release#9feb2022)
+        * Cluster autoscaler
 
-* [January 2022](/docs/openshift?topic=openshift-iks-release#release-jan-2022)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [31 January 2022](/docs/openshift?topic=openshift-iks-release#31jan2022)
+    * [9 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar922)
 
-    * [28 January 2022](/docs/openshift?topic=openshift-iks-release#28jan2022)
+        * OpenShift Data Foundation
 
-    * [27 January 2022](/docs/openshift?topic=openshift-iks-release#27jan2022)
+    * [8 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar822)
 
-    * [25 January 2022](/docs/openshift?topic=openshift-iks-release#25jan2022)
+        * Master fix pack update.
 
-    * [24 January 2022](/docs/openshift?topic=openshift-iks-release#24jan2022)
+* [February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb22)
 
-    * [20 January 2022](/docs/openshift?topic=openshift-iks-release#20jan2022)
+    * [28 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2822)
 
-    * [18 January 2022](/docs/openshift?topic=openshift-iks-release#18jan2022)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [17 January 2022](/docs/openshift?topic=openshift-iks-release#17jan2022)
+        * Cluster autoscaler
 
-    * [11 January 2022](/docs/openshift?topic=openshift-iks-release#11jan2021)
+        * HPCS Router add-on
 
-    * [06 January 2022](/docs/openshift?topic=openshift-iks-release#jan0622)
+        * Cloud Image Key Synchronizer add-on
 
-    * [4 January 2022](/docs/openshift?topic=openshift-iks-release#4jan2022)
+        * Worker node fix pack
 
-* [December 2021](/docs/openshift?topic=openshift-iks-release#release-dec-2021)
+    * [24 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2422)
 
-    * [20 December 2021](/docs/openshift?topic=openshift-iks-release#20dec2021)
+        * Container service CLI 
 
-    * [7 December 2021](/docs/openshift?topic=openshift-iks-release#7dec2021)
+    * [23 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2322)
 
-    * [6 December 2021](/docs/openshift?topic=openshift-iks-release#6dec2021)
+        * Cluster autoscaler
 
-    * [2 December 2021](/docs/openshift?topic=openshift-iks-release#2dec2021)
+    * [18 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1822)
 
-* [November 2021](/docs/openshift?topic=openshift-iks-release#release-nov-2021)
+        * Container service CLI 
 
-    * [29 November 2021](/docs/openshift?topic=openshift-iks-release#29nov2021)
+    * [17 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1722)
 
-    * [22 November 2021](/docs/openshift?topic=openshift-iks-release#22nov2021)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [19 November 2021](/docs/openshift?topic=openshift-iks-release#19nov2021)
+    * [16 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1622)
 
-    * [18 November 2021](/docs/openshift?topic=openshift-iks-release#18nov2021)
+        * HPCS Router add-on
 
-    * [17 November 2021](/docs/openshift?topic=openshift-iks-release#17nov2021)
+    * [14 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1422)
 
-    * [16 November 2021](/docs/openshift?topic=openshift-iks-release#16nov2021)
+        * Worker node fix pack
 
-    * [15 November 2021](/docs/openshift?topic=openshift-iks-release#15nov2021)
+        * {{site.data.keyword.cos_full_notm}} doc restructuring. 
 
-    * [12 November 2021](/docs/openshift?topic=openshift-iks-release#12nov2021)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [10 November 2021](/docs/openshift?topic=openshift-iks-release#10nov2021)
+    * [10 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1022)
 
-    * [8 November 2021](/docs/openshift?topic=openshift-iks-release#8nov2021)
+        * Certified Kubernetes
 
-    * [4 November 2021](/docs/openshift?topic=openshift-iks-release#4nov2021)
+    * [9 February 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb922)
 
-    * [2 November 2021](/docs/openshift?topic=openshift-iks-release#2nov2021)
+        * New! OpenShift 4.9
 
-* [October 2021](/docs/openshift?topic=openshift-iks-release#release-oct-2021)
+        * Master fix pack and worker node fix pack update
 
-    * [28 October 2021](/docs/openshift?topic=openshift-iks-release#28oct2021)
+* [January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan22)
 
-    * [26 October 2021](/docs/openshift?topic=openshift-iks-release#26oct2021)
+    * [31 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3122)
 
-    * [25 October 2021](/docs/openshift?topic=openshift-iks-release#25oct2021)
+        * Version changelog
 
-    * [22 October 2021](/docs/openshift?topic=openshift-iks-release#22oct2021)
+        * **New!** Worker node flavor reference
 
-    * [19 October 2021](/docs/openshift?topic=openshift-iks-release#19oct2021)
+    * [28 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2822)
 
-    * [18 October 2021](/docs/openshift?topic=openshift-iks-release#18oct2021)
+        * **New!** Troubleshooting the {{site.data.keyword.redhat_openshift_notm}} console.
 
-    * [13 October 2021](/docs/openshift?topic=openshift-iks-release#13oct2021)
+    * [27 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2722)
 
-    * [11 October 2021](/docs/openshift?topic=openshift-iks-release#11oct2021)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [7 October 2021](/docs/openshift?topic=openshift-iks-release#7oct2021)
+        * **New!** Gathering Ingress logs
 
-    * [6 October 2021](/docs/openshift?topic=openshift-iks-release#6oct2021)
+    * [25 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2522)
 
-    * [5 October 2021](/docs/openshift?topic=openshift-iks-release#5oct2021)
+        * HPCS Router add-on
 
-* [September 2021](/docs/openshift?topic=openshift-iks-release#release-sep-2021)
+        * Cloud Image Key Synchronizer add-on
 
-    * [29 September 2021](/docs/openshift?topic=openshift-iks-release#29sep2021)
+    * [24 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2422)
 
-    * [27 September 2021](/docs/openshift?topic=openshift-iks-release#27sep2021)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [23 September 2021](/docs/openshift?topic=openshift-iks-release#23sep2021)
+    * [20 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2022)
 
-    * [22 September 2021](/docs/openshift?topic=openshift-iks-release#22sep2021)
+        * Cluster autoscaler add-on.
 
-    * [21 September 2021](/docs/openshift?topic=openshift-iks-release#21sep2021)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [16 September 2021](/docs/openshift?topic=openshift-iks-release#16sep2021)
+        * OpenShift Data Foundation
 
-    * [15 September 2021](/docs/openshift?topic=openshift-iks-release#15sep2021)
+    * [18 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1822)
 
-    * [14 September 2021](/docs/openshift?topic=openshift-iks-release#14sep2021)
+        * Review the release notes for January 2022.
 
-    * [13 September 2021](/docs/openshift?topic=openshift-iks-release#13sep2021)
+        * **New!** {{site.data.keyword.openshiftlong_notm}} CLI Map
 
-    * [9 September 2021](/docs/openshift?topic=openshift-iks-release#9sep2021)
+        * {{site.data.keyword.containershort}} 1.19, 1.20, 1.21, and 1.22 unsupported date change
 
-    * [8 September 2021](/docs/openshift?topic=openshift-iks-release#8sep2021)
+        * Worker node fix pack update.
 
-    * [1 September 2021](/docs/openshift?topic=openshift-iks-release#1sep2021)
+    * [17 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1722)
 
-* [August 2021](/docs/openshift?topic=openshift-iks-release#aug21)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [31 August 2021](/docs/openshift?topic=openshift-iks-release#31aug2021)
+    * [11 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1121)
 
-    * [30 August 2021](/docs/openshift?topic=openshift-iks-release#30aug2021)
+        * HPCS Router add-on
 
-    * [25 August 2021](/docs/openshift?topic=openshift-iks-release#26aug2021)
+        * Cloud Image Key Synchronizer add-on
 
-    * [23 August 2021](/docs/openshift?topic=openshift-iks-release#23aug2021)
+    * [06 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#jan0622)
 
-    * [16 August 2021](/docs/openshift?topic=openshift-iks-release#16aug2021)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [10 August 2021](/docs/openshift?topic=openshift-iks-release#10aug2021)
+        * {{site.data.keyword.containershort}} 1.20 end of support date change
 
-    * [9 August 2021](/docs/openshift?topic=openshift-iks-release#09aug2021)
+    * [4 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan422)
 
-    * [2 August 2021](/docs/openshift?topic=openshift-iks-release#02aug2021)
+        * Worker node fix pack update
 
-* [July 2021](/docs/openshift?topic=openshift-iks-release#jul21)
+* [December 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec21)
 
-    * [27 July 2021](/docs/openshift?topic=openshift-iks-release#27july2021)
+    * Review the release notes for December 2021.
 
-    * [26 July 2021](/docs/openshift?topic=openshift-iks-release#26july2021)
+    * [20 December 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec2021)
 
-    * [23 July 2021](/docs/openshift?topic=openshift-iks-release#23july2021)
+        * Worker node fix pack update
 
-    * [19 July 2021](/docs/openshift?topic=openshift-iks-release#19july2021)
+    * [7 December 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec721)
 
-    * [12 July 2021](/docs/openshift?topic=openshift-iks-release#12july2021)
+        * Master fix pack update
 
-    * [07 July 2021](/docs/openshift?topic=openshift-iks-release#07july2021)
+    * [6 December 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec621)
 
-    * [6 July 2021](/docs/openshift?topic=openshift-iks-release#06july2021)
+        * Worker node fix pack update
 
-    * [2 July 2021](/docs/openshift?topic=openshift-iks-release#02july2021)
+    * [2 December 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec221)
 
-* [June 2021](/docs/openshift?topic=openshift-iks-release#jun21)
+        * {{site.data.keyword.openshiftlong_notm}} default version update.
 
-    * [28 June 2021](/docs/openshift?topic=openshift-iks-release#28june2021)
+* [November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov21)
 
-    * [24 June 2021](/docs/openshift?topic=openshift-iks-release#24june2021)
+    * Review the release notes for November 2021.
 
-    * [23 June 2021](/docs/openshift?topic=openshift-iks-release#23june2021)
+    * [29 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2921)
 
-    * [22 June 2021](/docs/openshift?topic=openshift-iks-release#22june2021)
+        * Container service CLI 
 
-    * [21 June 2021](/docs/openshift?topic=openshift-iks-release#21june2021)
+        * {{site.data.keyword.redhat_openshift_notm}} Ingress controller
 
-    * [17 June 2021](/docs/openshift?topic=openshift-iks-release#17june2021)
+        * {{site.data.keyword.redhat_openshift_notm}} Data Foundation
 
-    * [15 June 2021](/docs/openshift?topic=openshift-iks-release#15june2021)
+    * [22 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2221)
 
-    * [9 June 2021](/docs/openshift?topic=openshift-iks-release#09june2021)
+        * Worker node fix pack update
 
-    * [07 June 2021](/docs/openshift?topic=openshift-iks-release#07june2021)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [3 June 2021](/docs/openshift?topic=openshift-iks-release#03june2021)
+        * Cluster autoscaler add-on.
 
-    * [2 June 2021](/docs/openshift?topic=openshift-iks-release#02june2021)
+    * [19 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1921)
 
-    * [1 June 2021](/docs/openshift?topic=openshift-iks-release#01june2021)
+        * HPCS Router add-on
 
-* [May 2021](/docs/openshift?topic=openshift-iks-release#may21)
+        * Cloud Image Key Synchronizer add-on
 
-    * [26 May 2021](/docs/openshift?topic=openshift-iks-release#26may2021)
+    * [18 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1821)
 
-    * [24 May 2021](/docs/openshift?topic=openshift-iks-release#24may2021)
+        * {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.at_full_notm}}
 
-    * [17 May 2021](/docs/openshift?topic=openshift-iks-release#17may2021)
+        * {{site.data.keyword.cos_full_notm}}
 
-    * [11 May 2021](/docs/openshift?topic=openshift-iks-release#11may2021)
+    * [17 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1721)
 
-    * [10 May 2021](/docs/openshift?topic=openshift-iks-release#10may2021)
+        * Worker node fix pack update
 
-    * [4 May 2021](/docs/openshift?topic=openshift-iks-release#04may2021)
+    * [16 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1621)
 
-* [April 2021](/docs/openshift?topic=openshift-iks-release#apr21)
+        * HPCS Router add-on
 
-    * [30 April 2021](/docs/openshift?topic=openshift-iks-release#30april2021)
+    * [15 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1521)
 
-    * [28 April 2021](/docs/openshift?topic=openshift-iks-release#28april2021)
+        * CLI changelog
 
-    * [27 April 2021](/docs/openshift?topic=openshift-iks-release#27april2021)
+    * [12 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1221)
 
-    * [26 April 2021](/docs/openshift?topic=openshift-iks-release#26april2021)
+        * Master fix pack updates
 
-    * [22 April 2021](/docs/openshift?topic=openshift-iks-release#22april2021)
+    * [10 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1021)
 
-    * [20 April 2021](/docs/openshift?topic=openshift-iks-release#20april2021)
+        * Worker node fix pack update
 
-    * [19 April 2021](/docs/openshift?topic=openshift-iks-release#19april2021)
+    * [8 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov821)
 
-    * [16 April 2021](/docs/openshift?topic=openshift-iks-release#16april2021)
+        * Update commands to use `docker build`
 
-    * [15 April 2021](/docs/openshift?topic=openshift-iks-release#15april2021)
+    * [4 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov421)
 
-    * [14 April 2021](/docs/openshift?topic=openshift-iks-release#14april2021)
+        * IAM trusted profiles for pod authorization
 
-    * [12 April 2021](/docs/openshift?topic=openshift-iks-release#12april2021)
+    * [2 November 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov221)
 
-    * [5 April 2021](/docs/openshift?topic=openshift-iks-release#05april2021)
+        * Istio add-on change log
 
-    * [2 April 2021](/docs/openshift?topic=openshift-iks-release#02april2021)
+* [October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct21)
 
-    * [1 April 2021](/docs/openshift?topic=openshift-iks-release#01april2021)
+    * Review the release notes for October 2021.
 
-* [March 2021](/docs/openshift?topic=openshift-iks-release#mar21)
+    * [28 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2821)
 
-    * [31 March 2021](/docs/openshift?topic=openshift-iks-release#31march2021)
+        * Istio add-on change log
 
-    * [30 March 2021](/docs/openshift?topic=openshift-iks-release#30march2021)
+    * [26 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2621)
 
-    * [29 March 2021](/docs/openshift?topic=openshift-iks-release#29march2021)
+        * CLI changelog
 
-    * [25 March 2021](/docs/openshift?topic=openshift-iks-release#25march2021)
+    * [25 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2521)
 
-    * [22 March 2021](/docs/openshift?topic=openshift-iks-release#22march2021)
+        * Worker node fix pack update
 
-    * [17 March 2021](/docs/openshift?topic=openshift-iks-release#deprecated-at-events)
+    * [22 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2221)
 
-    * [16 March 2021](/docs/openshift?topic=openshift-iks-release#16march2021)
+        * {{site.data.keyword.cos_full_notm}} plug-in.
 
-    * [12 March 2021](/docs/openshift?topic=openshift-iks-release#12march2021)
+    * [19 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1921)
 
-    * [9 March 2021](/docs/openshift?topic=openshift-iks-release#09march2021)
+        * Ingress ALB changelog updates
 
-    * [7 March 2021](/docs/openshift?topic=openshift-iks-release#07march2021)
+    * [18 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1821)
 
-    * [5 March 2021](/docs/openshift?topic=openshift-iks-release#05march2021)
+        * New troubleshooting topic
 
-    * [1 March 2021](/docs/openshift?topic=openshift-iks-release#01march2021)
+        * {{site.data.keyword.cloud_notm}} HPCS Router add-on
 
-* [February 2021](/docs/openshift?topic=openshift-iks-release#feb21)
+        * OpenShift Data Foundation
 
-    * [27 February 2021](/docs/openshift?topic=openshift-iks-release#27feb2021)
+    * [13 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1321)
 
-    * [26 February 2021](/docs/openshift?topic=openshift-iks-release#26feb2021)
+        * CLI changelog
 
-    * [25 February 2021](/docs/openshift?topic=openshift-iks-release#25feb2021)
+    * [11 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1121)
 
-    * [23 February 2021](/docs/openshift?topic=openshift-iks-release#23feb2021)
+        * Unsupported {{site.data.keyword.redhat_openshift_notm}} version 4.5
 
-    * [22 February 2021](/docs/openshift?topic=openshift-iks-release#22feb2021)
+        * Worker node fix pack update
 
-    * [20 February 2021](/docs/openshift?topic=openshift-iks-release#20feb2021)
+    * [7 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct721)
 
-    * [17 February 2021](/docs/openshift?topic=openshift-iks-release#17feb2021)
+        * Istio add-on change log
 
-    * [15 February 2021](/docs/openshift?topic=openshift-iks-release#15feb2021)
+        * Cluster autoscaler add-on.
 
-    * [12 February 2021](/docs/openshift?topic=openshift-iks-release#12feb2021)
+    * [6 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct621)
 
-    * [10 February 2021](/docs/openshift?topic=openshift-iks-release#10feb2021)
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
-    * [8 February 2021](/docs/openshift?topic=openshift-iks-release#08feb2021)
+    * [5 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct521)
 
-    * [4 February 2021](/docs/openshift?topic=openshift-iks-release#04feb2021)
+        * Updated supported, deprecated, and unsupported versions for strongSwan Helm chart.
 
-    * [1 February 2021](/docs/openshift?topic=openshift-iks-release#01feb2021)
+        * {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog.
 
-* [January 2021](/docs/openshift?topic=openshift-iks-release#jan21)
+        * {{site.data.keyword.cos_full_notm}} plug-in.
 
-    * [27 January 2021](/docs/openshift?topic=openshift-iks-release#27jan2021)
+* [September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep21)
 
-    * [25 January 2021](/docs/openshift?topic=openshift-iks-release#25jan2021)
+    * Review the release notes for September 2021.
 
-    * [19 January 2021](/docs/openshift?topic=openshift-iks-release#19jan2021)
+    * [29 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2921)
 
-    * [18 January 2021](/docs/openshift?topic=openshift-iks-release#18jan2021)
+        * New! OpenShift 4.8
 
-    * [14 January 2021](/docs/openshift?topic=openshift-iks-release#14jan2021)
+        * Deprecated and unsupported OpenShift versions
 
-    * [12 January 2021](/docs/openshift?topic=openshift-iks-release#12jan2021)
+        * Master fix pack and worker node fix pack update
 
-    * [6 January 2021](/docs/openshift?topic=openshift-iks-release#06jan2021)
+    * [27 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2721)
 
-* [December 2020](/docs/openshift?topic=openshift-iks-release#dec20)
+        * Master fix pack update
 
-    * [21 December 2020](/docs/openshift?topic=openshift-iks-release#21dec2020)
+        * Worker node fix pack update
 
-    * [18 December 2020](/docs/openshift?topic=openshift-iks-release#18dec2020)
+    * [23 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2321)
 
-    * [17 December 2020](/docs/openshift?topic=openshift-iks-release#17dec2020)
+        * Review the release notes for 23 September 2021.
 
-    * [15 December 2020](/docs/openshift?topic=openshift-iks-release#15dec2020)
+        * Istio add-on change log
 
-    * [14 December 2020](/docs/openshift?topic=openshift-iks-release#14dec2020)
+    * [22 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2221)
 
-    * [11 December 2020](/docs/openshift?topic=openshift-iks-release#11dec2020)
+        * Review the release notes for 22 September 2021.
 
-    * [9 December 2020](/docs/openshift?topic=openshift-iks-release#09dec2020)
+        * Ingress ALB version change log
 
-    * [7 December 2020](/docs/openshift?topic=openshift-iks-release#07dec2020)
+    * [21 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2121)
 
-    * [3 December 2020](/docs/openshift?topic=openshift-iks-release#03dec2020)
+        * Review the release notes for 21 September 2021.
 
-    * [2 December 2020](/docs/openshift?topic=openshift-iks-release#02dec2020)
+        * HPCS Router add-on
 
-* [November 2020](/docs/openshift?topic=openshift-iks-release#nov20)
+    * [16 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1621)
 
-    * [25 November 2020](/docs/openshift?topic=openshift-iks-release#25nov2020)
+        * {{site.data.keyword.block_storage_is_short}} add-on  
 
-    * [24 November 2020](/docs/openshift?topic=openshift-iks-release#24nov2020)
+    * [15 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1521)
 
-    * [23 November 2020](/docs/openshift?topic=openshift-iks-release#23nov2020)
+        * Review the release notes for 16 September 2021.
 
-    * [20 November 2020](/docs/openshift?topic=openshift-iks-release#20nov2020)
+        * OpenShift Data Foundation  
 
-    * [19 November 2020](/docs/openshift?topic=openshift-iks-release#19nov2020)
+    * [14 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1421)
 
-    * [18 November 2020](/docs/openshift?topic=openshift-iks-release#18nov2020)
+        * Review the release notes for 14 September 2021.
 
-    * [16 November 2020](/docs/openshift?topic=openshift-iks-release#16nov2020)
+        * Ingress ALB version change log
 
-    * [13 November 2020](/docs/openshift?topic=openshift-iks-release#13nov2020)
+        * Istio add-on change log
 
-    * [9 November 2020](/docs/openshift?topic=openshift-iks-release#09nov2020)
+    * [13 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1321)
 
-    * [5 November 2020](/docs/openshift?topic=openshift-iks-release#05nov2020)
+        * Worker node fix pack update
 
-    * [2 November 2020](/docs/openshift?topic=openshift-iks-release#02nov2020)
+    * [9 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep921)
 
-* [October 2020](/docs/openshift?topic=openshift-iks-release#oct20)
+        * Ingress ALB changelog
 
-    * [26 October 2020](/docs/openshift?topic=openshift-iks-release#26oct2020)
+    * [8 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep821)
 
-    * [22 October 2020](/docs/openshift?topic=openshift-iks-release#22oct2020)
+        * Review the release notes for 8 September 2021.
 
-    * [16 October 2020](/docs/openshift?topic=openshift-iks-release#16oct2020)
+        * HPCS Router add-on
 
-    * [13 October 2020](/docs/openshift?topic=openshift-iks-release#13oct2020)
+    * [1 September 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep121)
 
-    * [12 October 2020](/docs/openshift?topic=openshift-iks-release#12oct2020)
+        * Review the release notes for 1 September 2021.
 
-    * [8 October 2020](/docs/openshift?topic=openshift-iks-release#08oct2020)
+        * {{site.data.keyword.block_storage_is_short}} add-on
 
-    * [6 October 2020](/docs/openshift?topic=openshift-iks-release#06oct2020)
+        * {{site.data.keyword.cos_full_notm}} plug-in 
 
-    * [1 October 2020](/docs/openshift?topic=openshift-iks-release#01oct2020)
+* [August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug21)
 
-* [September 2020](/docs/openshift?topic=openshift-iks-release#sep20)
+    * Review the release notes for August 2021.
 
-    * [30 September 2020](/docs/openshift?topic=openshift-iks-release#30sept2020)
+    * [31 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3121)
 
-    * [29 September 2020](/docs/openshift?topic=openshift-iks-release#29sept2020)
+        * Review the release notes for 31 August 2021.
 
-    * [26 September 2020](/docs/openshift?topic=openshift-iks-release#26sept2020)
+        * Istio add-on changelog
 
-    * [24 September 2020](/docs/openshift?topic=openshift-iks-release#24sept2020)
+        * New! Sao Paulo multizone region
 
-    * [23 September 2020](/docs/openshift?topic=openshift-iks-release#23sept2020)
+    * [30 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3021)
 
-    * [22 September 2020](/docs/openshift?topic=openshift-iks-release#22sept2020)
+        * Review the release notes for 30 August 2021.
 
-    * [21 September 2020](/docs/openshift?topic=openshift-iks-release#21sept2020)
+        * Worker node fix pack update
 
-    * [3 September 2020](/docs/openshift?topic=openshift-iks-release#03sept2020)
+    * [25 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2621)
 
-* [August 2020](/docs/openshift?topic=openshift-iks-release#aug20)
+        * New! Create a cluster with a template
 
-    * [31 August 2020](/docs/openshift?topic=openshift-iks-release#31aug2020)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [27 August 2020](/docs/openshift?topic=openshift-iks-release#27aug2020)
+        * Master fix pack update changelog documentation
 
-    * [24 August 2020](/docs/openshift?topic=openshift-iks-release#24aug2020)
+    * [23 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2321)
 
-    * [21 August 2020](/docs/openshift?topic=openshift-iks-release#21aug2020)
+        * Registry token update
 
-    * [18 August 2020](/docs/openshift?topic=openshift-iks-release#18aug2020)
+        * Ingress changelogs
 
-    * [17 August 2020](/docs/openshift?topic=openshift-iks-release#17aug2020)
+        * HPCS Router
 
-    * [6 August 2020](/docs/openshift?topic=openshift-iks-release#06aug2020)
+        * Image key synchronizer
 
-    * [5 August 2020](/docs/openshift?topic=openshift-iks-release#05aug2020)
+    * [16 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1621)
 
-    * [3 August 2020](/docs/openshift?topic=openshift-iks-release#03aug2020)
+        * Worker node versions
 
-* [July 2020](/docs/openshift?topic=openshift-iks-release#july20)
+    * [10 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1021)
 
-    * [31 July 2020](/docs/openshift?topic=openshift-iks-release#31july2020)
+        * Ingress changelogs
 
-    * [28 July 2020](/docs/openshift?topic=openshift-iks-release#28july2020)
+        * HPCS Router
 
-    * [24 July 2020](/docs/openshift?topic=openshift-iks-release#24july2020)
+        * Image key synchronizer
 
-    * [21 July 2020](/docs/openshift?topic=openshift-iks-release#21july2020)
+    * [9 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0921)
 
-    * [20 July 2020](/docs/openshift?topic=openshift-iks-release#20july2020)
+        * CLI changelog
 
-    * [16 July 2020](/docs/openshift?topic=openshift-iks-release#16july2020)
+    * [2 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0221)
 
-    * [7 July 2020](/docs/openshift?topic=openshift-iks-release#07july2020)
+        * Ingress changelogs
 
-    * [6 July 2020](/docs/openshift?topic=openshift-iks-release#06july2020)
+        * Worker node versions
 
-    * [2 July 2020](/docs/openshift?topic=openshift-iks-release#02july2020)
+* [July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul21)
 
-* [June 2020](/docs/openshift?topic=openshift-iks-release#june20)
+    * [27 July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2721)
 
-    * [24 June 2020](/docs/openshift?topic=openshift-iks-release#24june2020)
+        * New! IAM trusted profile support
 
-    * [23 June 2020](/docs/openshift?topic=openshift-iks-release#23june2020)
+        * Master versions
 
-    * [22 June 2020](/docs/openshift?topic=openshift-iks-release#22june2020)
+    * [26 July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2621)
 
-    * [18 June 2020](/docs/openshift?topic=openshift-iks-release#18june2020)
+        * HPCS Router
 
-    * [16 June 2020](/docs/openshift?topic=openshift-iks-release#16june2020)
+        * {{site.data.keyword.block_storage_is_short}} add-on
 
-    * [9 June 2020](/docs/openshift?topic=openshift-iks-release#09june2020)
+    * [23 July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2321)
 
-    * [8 June 2020](/docs/openshift?topic=openshift-iks-release#08june2020)
+        * Image key synchronizer
 
-    * [4 June 2020](/docs/openshift?topic=openshift-iks-release#04june2020)
+    * [19 July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1921)
 
-    * [1 June 2020](/docs/openshift?topic=openshift-iks-release#01june2020)
+        * Worker node versions
 
-* [May 2020](/docs/openshift?topic=openshift-iks-release#may20)
+    * [12 July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1221)
 
-    * [27 May 2020](/docs/openshift?topic=openshift-iks-release#27may2020)
+        * OpenShift Data Foundation doc restructuring.
 
-    * [26 May 2020](/docs/openshift?topic=openshift-iks-release#26may2020)
+    * [07 July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0721)
 
-    * [20 May 2020](/docs/openshift?topic=openshift-iks-release#20may2020)
+        * OpenShift Data Foundation
 
-    * [19 May 2020](/docs/openshift?topic=openshift-iks-release#19may2020)
+    * [6 July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0621)
 
-    * [18 May 2020](/docs/openshift?topic=openshift-iks-release#18may2020)
+        * Ingress changelogs
 
-    * [15 May 2020](/docs/openshift?topic=openshift-iks-release#15may2020)
+        * Worker node versions
 
-    * [13 May 2020](/docs/openshift?topic=openshift-iks-release#13may2020)
+    * [2 July 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0221)
 
-    * [12 May 2020](/docs/openshift?topic=openshift-iks-release#12may2020)
+        * Unsupported Kubernetes version 1.17
 
-    * [11 May 2020](/docs/openshift?topic=openshift-iks-release#11may2020)
+* [June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun21)
 
-    * [8 May 2020](/docs/openshift?topic=openshift-iks-release#08may2020)
+    * From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains for all clusters in {{site.data.keyword.openshiftlong_notm}}. Review the following actions that you must make to your Ingress setup.
 
-    * [4 May 2020](/docs/openshift?topic=openshift-iks-release#04may2020)
+    * - If you currently allow inbound traffic to your classic cluster from the Cloudflare source IP addresses, you must also allow inbound traffic from the [Akamai source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} before 07 July. After the migration completes on 31 July, you can remove the Cloudflare IP address rules.
 
-* [April 2020](/docs/openshift?topic=openshift-iks-release#apr20)
+    * - The Akamai health check does not support verification of the body of the health check response. Update any custom health check rules that you configured for Cloudflare that use verification of the body of the health check responses.
 
-    * [30 April 2020](/docs/openshift?topic=openshift-iks-release#30april2020)
+    * - Cluster subdomains that were health checked in Cloudflare are now registered in the Akamai DNS as CNAME records. These CNAME records point to an Akamai Global Traffic Management domain that health checks the subdomains. When a client runs a DNS query for a health checked subdomain, a CNAME record is returned to the client, as opposed to Cloudflare, in which an A record was returned. If your client expects an A record for a subdomain that was health checked in Cloudflare, update your logic to accept a CNAME record.
 
-    * [29 April 2020](/docs/openshift?topic=openshift-iks-release#29april2020)
+    * - During the migration, an Akamai Global Traffic Management (GTM) health check was automatically created for any subdomains that had a Cloudflare health check. If you previously created a Cloudflare health check for a subdomain, and you create an Akamai health check for the subdomain after the migration, the two Akamai health checks might conflict. Note that Akamai GTM configurations don't support nested subdomains. In these cases, you can use the `ibmcloud oc nlb-dns monitor disable` command to disable the Akamai health check that the migration automatically configured for your subdomain.
 
-    * [27 April 2020](/docs/openshift?topic=openshift-iks-release#27april2020)
+    * [28 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2821)
 
-    * [24 April 2020](/docs/openshift?topic=openshift-iks-release#24april2020)
+        * Master versions
 
-    * [23 April 2020](/docs/openshift?topic=openshift-iks-release#23april2020)
+    * [24 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2421)
 
-    * [22 April 2020](/docs/openshift?topic=openshift-iks-release#22april2020)
+        * CLI changelog
 
-    * [20 April 2020](/docs/openshift?topic=openshift-iks-release#20april2020)
+    * [23 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2321)
 
-    * [16 April 2020](/docs/openshift?topic=openshift-iks-release#16april2020)
+        * Cluster autoscaler add-on
 
-    * [13 April 2020](/docs/openshift?topic=openshift-iks-release#13april2020)
+    * [22 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2221)
 
-    * [6 April 2020](/docs/openshift?topic=openshift-iks-release#06april2020)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-* [March 2020](/docs/openshift?topic=openshift-iks-release#mar20)
+        * Worker node versions
 
-    * [30 March 2020](/docs/openshift?topic=openshift-iks-release#30mar2020)
+    * [21 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2121)
 
-    * [27 March 2020](/docs/openshift?topic=openshift-iks-release#27mar2020)
+        * Ingress changelogs
 
-    * [25 March 2020](/docs/openshift?topic=openshift-iks-release#25mar2020)
+        * New! The `addon options` command is now available
 
-    * [24 March 2020](/docs/openshift?topic=openshift-iks-release#24mar2020)
+        * New! Deploy OpenShift Data Foundation on VPC clusters with a single command
 
-    * [18 March 2020](/docs/openshift?topic=openshift-iks-release#18mar2020)
+        * New! OpenShift Container Storage is now OpenShift Data Foundation. 
 
-    * [16 March 2020](/docs/openshift?topic=openshift-iks-release#16mar2020)
+    * [17 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1721)
 
-    * [12 March 2020](/docs/openshift?topic=openshift-iks-release#12mar2020)
+        * Image key synchronizer
 
-    * [9 March 2020](/docs/openshift?topic=openshift-iks-release#09mar2020)
+    * [15 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1521)
 
-    * [4 March 2020](/docs/openshift?topic=openshift-iks-release#04mar2020)
+        * New! Private VPC NLB
 
-    * [2 March 2020](/docs/openshift?topic=openshift-iks-release#02mar2020)
+    * [9 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0921)
 
-* [February 2020](/docs/openshift?topic=openshift-iks-release#feb20)
+        * New! {{site.data.keyword.redhat_openshift_notm}} 4.7
 
-    * [19 February 2020](/docs/openshift?topic=openshift-iks-release#19feb2020)
+        * Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.5
 
-    * [18 February 2020](/docs/openshift?topic=openshift-iks-release#18feb2020)
+        * Expanded Troubleshooting
 
-    * [17 February 2020](/docs/openshift?topic=openshift-iks-release#17feb2020)
+    * [07 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0721)
 
-    * [10 February 2020](/docs/openshift?topic=openshift-iks-release#10feb2020)
+        * Worker node versions
 
-    * [6 February 2020](/docs/openshift?topic=openshift-iks-release#06feb2020)
+    * [3 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0321)
 
-    * [3 February 2020](/docs/openshift?topic=openshift-iks-release#03feb2020)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-* [January 2020](/docs/openshift?topic=openshift-iks-release#jan20)
+    * [2 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0221)
 
-    * [30 January 2020](/docs/openshift?topic=openshift-iks-release#30jan2020)
+        * HPCS Router
 
-    * [27 January 2020](/docs/openshift?topic=openshift-iks-release#27jan2020)
+        * Image key synchronizer
 
-    * [22 January 2020](/docs/openshift?topic=openshift-iks-release#22jan2020)
+    * [1 June 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0121)
 
-    * [20 January 2020](/docs/openshift?topic=openshift-iks-release#20jan2020)
+        * Unsupported version
 
-    * [6 January 2020](/docs/openshift?topic=openshift-iks-release#06jan2020)
+* [May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may21)
 
-    * [3 January 2020](/docs/openshift?topic=openshift-iks-release#03jan2020)
+    * [26 May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2621)
 
-* [December 2019](/docs/openshift?topic=openshift-iks-release#dec19)
+        * CLI changelog
 
-    * [18 December 2019](/docs/openshift?topic=openshift-iks-release#18dec2019)
+        * Version 0.45.0 of the Kubernetes Ingress image
 
-    * [17 December 2019](/docs/openshift?topic=openshift-iks-release#17dec2019)
+    * [24 May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2421)
 
-    * [11 December 2019](/docs/openshift?topic=openshift-iks-release#11dec2019)
+        * Master versions
 
-    * [9 December 2019](/docs/openshift?topic=openshift-iks-release#09dec2019)
+        * Worker node versions
 
-    * [4 December 2019](/docs/openshift?topic=openshift-iks-release#04dec2019)
+    * [17 May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1721)
 
-* [November 2019](/docs/openshift?topic=openshift-iks-release#nov19)
+        * Deprecated: Kubernetes web terminal.
 
-    * [26 November 2019](/docs/openshift?topic=openshift-iks-release#26nov2019)
+    * [11 May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1121)
 
-    * [22 November 2019](/docs/openshift?topic=openshift-iks-release#22nov2019)
+        * VPC cluster healthchecks
 
-    * [21 November 2019](/docs/openshift?topic=openshift-iks-release#21nov2019)
+    * [10 May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1021)
 
-    * [19 November 2019](/docs/openshift?topic=openshift-iks-release#19nov2019)
+        * New! PX-Backup is now available
 
-    * [15 November 2019](/docs/openshift?topic=openshift-iks-release#15nov2019)
+        * Cluster autoscaler add-on
 
-    * [11 November 2019](/docs/openshift?topic=openshift-iks-release#11nov2019)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [7 November 2019](/docs/openshift?topic=openshift-iks-release#07nov2019)
+        * Worker node versions
 
-    * [1 November 2019](/docs/openshift?topic=openshift-iks-release#01nov2019)
+    * [4 May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0421)
 
-* [October 2019](/docs/openshift?topic=openshift-iks-release#oct19)
+        * Master versions
 
-    * [31 October 2019](/docs/openshift?topic=openshift-iks-release#31oct2019)
+* [April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr21)
 
-    * [28 October 2019](/docs/openshift?topic=openshift-iks-release#28oct2019)
+    * [30 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april3021)
 
-    * [24 October 2019](/docs/openshift?topic=openshift-iks-release#24oct2019)
+        * CIS Kubernetes Benchmark
 
-    * [23 October 2019](/docs/openshift?topic=openshift-iks-release#23oct2019)
+    * [28 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2821)
 
-    * [22 October 2019](/docs/openshift?topic=openshift-iks-release#22oct2019)
+        * Default version
 
-    * [14 October 2019](/docs/openshift?topic=openshift-iks-release#14oct2019)
+        * Image key synchronizer
 
-    * [4 October 2019](/docs/openshift?topic=openshift-iks-release#04oct2019)
+    * [27 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2721)
 
-    * [3 October 2019](/docs/openshift?topic=openshift-iks-release#03oct2019)
+        * Master versions
 
-    * [1 October 2019](/docs/openshift?topic=openshift-iks-release#01oct2019)
+    * [26 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2621)
 
-* [September 2019](/docs/openshift?topic=openshift-iks-release#sept19)
+        * CLI changelog
 
-    * [24 September 2019](/docs/openshift?topic=openshift-iks-release#24sept2019)
+        * {{site.data.keyword.redhat_openshift_notm}} Container Storage
 
-    * [19 September 2019](/docs/openshift?topic=openshift-iks-release#19sept2019)
+        * VPC NLB
 
-    * [17 September 2019](/docs/openshift?topic=openshift-iks-release#17sept2019)
+        * Worker node versions
 
-    * [16 September 2019](/docs/openshift?topic=openshift-iks-release#16sept2019)
+    * [22 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2221)
 
-    * [13 September 2019](/docs/openshift?topic=openshift-iks-release#13sept2019)
+        * HPCS Router
 
-    * [12 September 2019](/docs/openshift?topic=openshift-iks-release#12sept2019)
+    * [20 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2021)
 
-    * [6 September 2019](/docs/openshift?topic=openshift-iks-release#06sept2019)
+        * New! Toronto multizone region for VPC
 
-    * [5 September 2019](/docs/openshift?topic=openshift-iks-release#05sept2019)
+    * [19 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april1921)
 
-    * [4 September 2019](/docs/openshift?topic=openshift-iks-release#04sept2019)
+        * Add-on changelogs
 
-    * [3 September 2019](/docs/openshift?topic=openshift-iks-release#03sept2019)
+        * Cluster autoscaler add-on
 
-* [August 2019](/docs/openshift?topic=openshift-iks-release#aug19)
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
-    * [30 August 2019](/docs/openshift?topic=openshift-iks-release#30aug2019)
+    * [16 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april1621)
 
-    * [29 August 2019](/docs/openshift?topic=openshift-iks-release#29aug2019)
+        * New fields and events for {{site.data.keyword.at_short}}
 
-    * [28 August 2019](/docs/openshift?topic=openshift-iks-release#28aug2019)
+    * [15 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april1521)
 
-    * [26 August 2019](/docs/openshift?topic=openshift-iks-release#26aug2019)
+        * New! {{site.data.keyword.redhat_openshift_notm}} Container Storage add-on
 
-    * [23 August 2019](/docs/openshift?topic=openshift-iks-release#23aug2019)
+        * Supported add-ons
 
-    * [20 August 2019](/docs/openshift?topic=openshift-iks-release#20aug2019)
+        * Accessing VPC clusters
 
-    * [17 August 2019](/docs/openshift?topic=openshift-iks-release#17aug2019)
+    * [14 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april1421)
 
-    * [15 August 2019](/docs/openshift?topic=openshift-iks-release#15aug2019)
+        * {{site.data.keyword.cloud_notm}} HPCS Router add-on
 
-    * [12 August 2019](/docs/openshift?topic=openshift-iks-release#12aug2019)
+        * {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on
 
-    * [5 August 2019](/docs/openshift?topic=openshift-iks-release#05aug2019)
+    * [12 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april1221)
 
-    * [2 August 2019](/docs/openshift?topic=openshift-iks-release#02aug2019)
+        * Worker node versions
 
-    * [1 August 2019](/docs/openshift?topic=openshift-iks-release#01aug2019)
+    * [5 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april0521)
 
-* [July 2019](/docs/openshift?topic=openshift-iks-release#jul19)
+        * Deprecated data centers for classic clusters
 
-    * [30 July 2019](/docs/openshift?topic=openshift-iks-release#30july2019)
+    * [2 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april0221)
 
-    * [26 July 2019](/docs/openshift?topic=openshift-iks-release#26july2019)
+        * Master versions
 
-    * [23 July 2019](/docs/openshift?topic=openshift-iks-release#23july2019)
+    * [1 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april0121)
 
-    * [19 July 2019](/docs/openshift?topic=openshift-iks-release#19july2019)
+        * Cluster autoscaler add-on
 
-    * [17 July 2019](/docs/openshift?topic=openshift-iks-release#17july2019)
+        * {{site.data.keyword.block_storage_is_short}} add-on
 
-    * [15 July 2019](/docs/openshift?topic=openshift-iks-release#15july2019)
+        * {{site.data.keyword.block_storage_is_short}} driver
 
-    * [2 July 2019](/docs/openshift?topic=openshift-iks-release#02july2019)
+        * New! image security add-on
 
-    * [1 July 2019](/docs/openshift?topic=openshift-iks-release#01july2019)
+* [March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar21)
 
-* [June 2019](/docs/openshift?topic=openshift-iks-release#jun19)
+    * [31 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march3121)
 
-    * [24 June 2019](/docs/openshift?topic=openshift-iks-release#24june2019)
+        * Compliance operator
 
-    * [21 June 2019](/docs/openshift?topic=openshift-iks-release#21june2019)
+    * [30 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march3021)
 
-    * [18 June 2019](/docs/openshift?topic=openshift-iks-release#18june2019)
+        * Add-on changelogs
 
-    * [14 June 2019](/docs/openshift?topic=openshift-iks-release#14june2019)
+        * Master versions
 
-    * [12 June 2019](/docs/openshift?topic=openshift-iks-release#12june2019)
+    * [29 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march2921)
 
-    * [7 June 2019](/docs/openshift?topic=openshift-iks-release#07june2019)
+        * Worker node versions
 
-    * [6 June 2019](/docs/openshift?topic=openshift-iks-release#06june2019)
+    * [25 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march2521)
 
-    * [5 June 2019](/docs/openshift?topic=openshift-iks-release#05june2019)
+        * CIS Kubernetes Benchmark
+
+        * CRI-O container runtime
+
+        * {{site.data.keyword.cloudcerts_short}} instances
+
+    * [22 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march2221)
+
+    * [17 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#deprecated-at-events)
+
+        * Deprecated events to be replaced for {{site.data.keyword.at_short}}
+
+        * Deprecated fields across events
+
+    * [16 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march1621)
+
+        * Ingress ALB changelog
+
+    * [12 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march1221)
+
+        * Worker node versions
+
+    * [9 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march0921)
+
+        * Cluster autoscaler add-on
+
+    * [7 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march0721)
+
+        * Unsupported version
+
+    * [5 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march0521)
+
+        * Trusted images
+
+    * [1 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march0121)
+
+        * CLI changelog
+
+        * New! General availability of {{site.data.keyword.satellitelong}}
+
+        * Exposing apps in {{site.data.keyword.satelliteshort}} clusters
+
+        * Worker node versions
+
+* [February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb21)
+
+    * [27 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2721)
+
+        * Master versions
+
+    * [26 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2621)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on
+
+    * [25 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2521)
+
+        * CLI changelog
+
+    * [23 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2321)
+
+        * VPE
+
+    * [22 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2221)
+
+        * Master versions
+
+    * [20 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2021)
+
+        * Certified Kubernetes
+
+    * [17 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1721)
+
+        * New! {{site.data.keyword.redhat_openshift_notm}} 4.6
+
+        * Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.4
+
+    * [15 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1521)
+
+        * New! Osaka multizone region
+
+        * Worker node versions
+
+    * [12 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1221)
+
+        * Gateway firewalls and Calico policies
+
+    * [10 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1021)
+
+        * Ingress ALB changelog
+
+        * Gateway firewalls and Calico policies
+
+    * [8 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0821)
+
+        * CLI changelog
+
+    * [4 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0421)
+
+        * Worker node modifications
+
+    * [1 February 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0121)
+
+        * Unsupported: Kubernetes version 1.16
+
+        * Worker node versions
+
+* [January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan21)
+
+    * [27 January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2721)
+
+        * Block Storage for VPC add-on
+
+    * [25 January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2521)
+
+        * New! {{site.data.keyword.redhat_openshift_notm}} Do (`odo`) CLI tutorial
+
+        * New! Private service endpoint allowlists
+
+        * Private Kubernetes Ingress
+
+    * [19 January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1921)
+
+        * Ingress ALB changelog
+
+        * Master versions
+
+    * [18 January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1821)
+
+        * Knative add-on is unsupported
+
+        * Worker node versions
+
+    * [14 January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1421)
+
+        * Cluster autoscaler
+
+    * [12 January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1221)
+
+        * Ingress resources
+
+        * Kubernetes benchmarks
+
+        * Removal of data center support
+
+    * [6 January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0621)
+
+        * Master versions
+
+* [December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec20)
+
+    * [21 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec2120)
+
+        * Gateway firewalls and Calico policies
+
+        * Worker node versions
+
+    * [18 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1820)
+
+        * CLI changelog
+
+        * {{site.data.keyword.cos_full_notm}} plug-in
+
+    * [17 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1720)
+
+        * Audit documentation
+
+        * Back up and restore
+
+    * [15 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1520)
+
+        * Cluster autoscaler
+
+    * [14 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1420)
+
+        * Encrypted images
+
+        * Master versions
+
+    * [11 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1120)
+
+        * Storage add-ons
+
+        * strongSwan versions
+
+    * [9 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0920)
+
+        * Accessing clusters
+
+        * CLI changelog
+
+        * Proxy protocol for Ingress
+
+        * Helm version 2 unsupported
+
+    * [7 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0720)
+
+        * {{site.data.keyword.keymanagementserviceshort}} enhancements
+
+        * Worker node versions
+
+    * [3 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0320)
+
+        * Cluster autoscaler add-on
+
+    * [2 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0220)
+
+        * Default version
+
+* [November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov20)
+
+    * [25 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2520)
+
+        * New! {{site.data.keyword.cloud_notm}} HPCS Router
+
+    * [24 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2420)
+
+        * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) New! Reservations to reduce classic worker node costs
+
+    * [23 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2320)
+
+        * Worker node versions
+
+    * [20 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2020)
+
+        * New! Portieris for image security enforcement
+
+    * [19 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1920)
+
+        * Ingress ALB changelog
+
+    * [18 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1820)
+
+        * CLI changelog
+
+        * New! {{site.data.keyword.block_storage_is_short}} changelog
+
+    * [16 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1620)
+
+        * New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
+
+        * Master versions
+
+    * [13 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1320)
+
+        * {{site.data.keyword.at_full_notm}} and IAM events
+
+    * [9 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0920)
+
+        * New! Reduced and hourly billing is available for OCP licenses
+
+        * Worker node versions
+
+    * [5 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0520)
+
+        * {{site.data.keyword.block_storage_is_short}}
+
+        * Classic-enabled VPCs
+
+        * Disabling remote health reporting
+
+        * Gateway firewalls and Calico policies
+
+    * [2 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0220)
+
+        * Persistent storage
+
+        * Version 4 Ingress
+
+* [October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct20)
+
+    * [26 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2620)
+
+        * Master versions
+
+        * Worker node versions
+
+    * [22 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2220)
+
+        * API key
+
+    * [16 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1620)
+
+        * Gateway firewalls and Calico policies
+
+        * {{site.data.keyword.cos_short}}
+
+    * [13 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1320)
+
+        * New! Certified {{site.data.keyword.redhat_openshift_notm}} version 4.5
+
+        * Deprecated: {{site.data.keyword.redhat_openshift_notm}} version 4.3
+
+        * Version changelogs
+
+        * VPC load balancer
+
+        * VPC security groups
+
+        * {{site.data.keyword.cos_short}} in VPC Gen 2
+
+    * [12 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1220)
+
+        * Versions
+
+    * [8 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0820)
+
+        * Ingress ALB changelog
+
+    * [6 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0620)
+
+        * CLI changelog
+
+        * Ingress secret expiration synchronization
+
+        * Internal {{site.data.keyword.redhat_openshift_notm}} container image registry
+
+    * [1 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0120)
+
+        * Default version
+
+        * Ingress ALB changelog
+
+* [September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep20)
+
+    * [30 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept3020)
+
+        * Versions
+
+    * [29 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2920)
+
+        * For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+
+    * [26 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2620)
+
+        * Versions
+
+    * [24 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2420)
+
+        * CLI changelog
+
+    * [23 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2320)
+
+        * Ingress ALB changelog
+
+        * New! Reservations and limits for PIDs
+
+    * [22 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2220)
+
+        * Unsupported: Kubernetes version 1.15
+
+    * [21 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2120)
+
+        * Versions
+
+        * Versions
+
+    * [3 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept0320)
+
+        * CA certificate rotation
+
+* [August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug20)
+
+    * [31 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3120)
+
+        * Versions
+
+    * [27 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2720)
+
+        * Observability CLI plug-in
+
+        * New! Worker node flavors
+
+    * [24 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2420)
+
+        * CLI changelog
+
+        * Cluster autoscaler
+
+        * New! Community Kubernetes Ingress support
+
+        * New! Default {{site.data.keyword.cloudcerts_long}} instances
+
+    * [21 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2120)
+
+        * Versions
+
+    * [18 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1820)
+
+        * Versions
+
+    * [17 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1720)
+
+        * Locations
+
+        * Versions
+
+    * [6 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0620)
+
+        * CLI changelog
+
+    * [5 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0520)
+
+        * Ingress ALB changelog
+
+    * [3 August 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0320)
+
+        * Gateway appliance firewalls
+
+        * Versions
+
+* [July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july20)
+
+    * [31 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july3120)
+
+        * {{site.data.keyword.redhat_openshift_notm}} version 4.4
+
+    * [28 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2820)
+
+        * Ingress ALB versions
+
+        * UI for creating clusters
+
+    * [24 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2420)
+
+        * Minimum cluster size
+
+        * Versions
+
+        * Worker node replacement
+
+    * [21 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2120)
+
+        * New! {{site.data.keyword.redhat_openshift_notm}} version 4.4 clusters
+
+    * [20 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2020)
+
+        * Master versions
+
+        * Worker node versions
+
+    * [16 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1620)
+
+        * Ingress ALB changelog
+
+        * Pod and service subnets
+
+    * [7 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0720)
+
+        * CLI changelog
+
+    * [6 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0620)
+
+        * Version changelogs
+
+    * [2 July 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0220)
+
+        * Comparison between {{site.data.keyword.cloud_notm}} and OCP clusters
+
+        * Global settings
+
+        * Private-only VPC clusters
+
+        * VPC load balancer
+
+* [June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june20)
+
+    * [24 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2420)
+
+        * Gateway appliance firewalls
+
+        * Ingress ALB changelog
+
+    * [23 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2320)
+
+        * New! {{site.data.keyword.openshiftlong_notm}} observability plug-in
+
+    * [22 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2220)
+
+        * Version changelogs
+
+    * [18 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1820)
+
+        * Ingress ALB changelog
+
+    * [16 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1620)
+
+        * New! Virtual Private Cloud Generation 2
+
+        * CLI changelog
+
+    * [9 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0920)
+
+        * CLI changelog
+
+        * Permissions
+
+        * New! Static routes add-on
+
+    * [8 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0820)
+
+        * Version changelogs
+
+    * [4 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0420)
+
+        * Ingress ALB changelog
+
+        * VPC network security
+
+    * [1 June 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0120)
+
+        * Version 3.11 is deprecated
+
+        * VPC ACLs
+
+* [May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may20)
+
+    * [27 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2720)
+
+        * The minimum number of worker nodes per zone is increased from one to two so that default {{site.data.keyword.redhat_openshift_notm}} components can be deployed and spread across worker nodes in a zone.
+
+    * [26 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2620)
+
+        * CLI changelog
+
+        * Image pull secrets
+
+        * Ingress status
+
+        * Tuning Calico
+
+        * Version changelogs
+
+    * [20 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2020)
+
+        * New! Virtual Private Cloud Generation 2
+
+    * [19 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1920)
+
+    * [18 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1820)
+
+        * Ingress ALB changelog
+
+    * [15 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1520)
+
+        * Cloud Paks entitlements
+
+    * [13 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1320)
+
+        * Registry
+
+    * [12 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1220)
+
+        * Version changelogs
+
+    * [11 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1120)
+
+        * Version changelogs
+
+    * [8 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0820)
+
+        * CLI changelog
+
+    * [4 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0420)
+
+        * Gateway appliance firewalls
+
+        * Ingress troubleshooting
+
+* [April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr20)
+
+    * [30 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april3020)
+
+        * Cluster and worker node quotas
+
+    * [29 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2920)
+
+        * ALB pod scaling
+
+    * [27 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2720)
+
+        * Ingress ALB changelog
+
+        * Version changelogs
+
+    * [24 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2420)
+
+        * Global pull secret
+
+        * {{site.data.keyword.redhat_openshift_notm}} 4.3
+
+    * [23 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2320)
+
+        * Version changelogs
+
+    * [22 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2220)
+
+        * Image pull secrets
+
+        * Private network connection to registry
+
+    * [20 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april2020)
+
+        * General availability
+
+        * Debugging guide
+
+        * Version changelog
+
+    * [16 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april1620)
+
+        * Ingress ALB changelog
+
+    * [13 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april1320)
+
+        * Gateway appliance firewalls
+
+        * New! Private Ingress and routes
+
+        * Version changelogs
+
+    * [6 April 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april0620)
+
+        * CLI changelog
+
+* [March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar20)
+
+    * [30 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar3020)
+
+        * Version changelogs
+
+        * File storage classes
+
+    * [27 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2720)
+
+        * Tech overview
+
+    * [25 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2520)
+
+        * Gateway appliance firewalls
+
+        * Ingress ALB changelog
+
+    * [24 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2420)
+
+        * CLI changelog
+
+    * [18 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1820)
+
+        * Gateway appliance firewalls
+
+        * IAM issuer details
+
+    * [16 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1620)
+
+        * New! CLI 1.0
+
+        * Default service settings
+
+        * Image build errors
+
+        * Installing SGX drivers
+
+        * Sizing workloads
+
+        * Enabling TLS for Ingress, {{site.data.keyword.redhat_openshift_notm}} version 4.3 only
+
+        * Version changelogs
+
+    * [12 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1220)
+
+        * Feature gates
+
+    * [9 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0920)
+
+        * Managing Ingress ALBs
+
+    * [4 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0420)
+
+        * CLI changelog
+
+        * Ingress ALB changelog
+
+    * [2 March 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0220)
+
+        * Version changelogs
+
+* [February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb20)
+
+    * [19 February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1920)
+
+        * CLI changelog
+
+        * Troubleshooting Ingress
+
+        * Developing and deploying apps
+
+        * Learning paths
+
+        * Setting up image build pipelines
+
+        * Firewall subnets
+
+    * [18 February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1820)
+
+        * Version changelogs
+
+    * [17 February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1720)
+
+        * Version changelogs
+
+    * [10 February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1020)
+
+        * New! {{site.data.keyword.redhat_openshift_notm}} 4.3
+
+    * [6 February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0620)
+
+        * Cluster autoscaler
+
+        * Expanded troubleshooting
+
+        * Tags
+
+        * VPC security groups
+
+    * [3 February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0320)
+
+        * Version changelog
+
+* [January 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan20)
+
+    * [30 January 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3020)
+
+        * Ingress ALB changelog
+
+    * [27 January 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2720)
+
+        * Back up and restore File and Block storage
+
+    * [22 January 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2220)
+
+        * Changing VLANs
+
+        * Storage utilities
+
+    * [20 January 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2020)
+
+        * Helm version 3
+
+        * Ingress ALB changelog
+
+        * Version changelog
+
+    * [6 January 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0620)
+
+        * Ingress ALB changelog
+
+    * [3 January 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0320)
+
+        * Version changelog
+
+* [December 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec19)
+
+    * [18 December 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1819)
+
+        * Ingress ALB changelog
+
+    * [17 December 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1719)
+
+        * Version changelog
+
+        * Assigning access
+
+    * [11 December 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1119)
+
+        * CLI changelog
+
+        * CLI installation
+
+        * Configuring VPC subnets
+
+    * [9 December 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0919)
+
+        * Version changelog
+
+    * [4 December 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0419)
+
+        * Exposing apps with load balancers or Ingress ALBs
+
+        * {{site.data.keyword.redhat_openshift_notm}} charges
+
+        * {{site.data.keyword.redhat_openshift_notm}} routes
+
+        * Use the internal KVDB in Portworx
+
+* [November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov19)
+
+    * [26 November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2619)
+
+        * CLI changelog
+
+        * Diagnostics and Debug Tool add-on for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+        * Cluster autoscaling for VPC clusters
+
+        * New! Reservations and limits for PIDs
+
+        * Version changelog
+
+    * [22 November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2219)
+
+        * Bring your own DNS for load balancers
+
+        * Gateway appliance firewalls
+
+        * Ingress ALB subdomain format
+
+    * [21 November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2119)
+
+        * Ingress ALB changelog
+
+        * Version changelog
+
+    * [19 November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1919)
+
+        * Fluentd component changes
+
+    * [15 November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1519)
+
+        * New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+    * [11 November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1119)
+
+        * Exposing apps that are external to your cluster by using Ingress
+
+        * {{site.data.keyword.redhat_openshift_notm}} overview
+
+        * Setting pod priority
+
+        * Using {{site.data.keyword.registrylong_notm}}
+
+        * Version changelog
+
+    * [7 November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0719)
+
+        * CLI changelog
+
+    * [1 November 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0119)
+
+        * New! Keep your own key (KYOK) support (beta)
+
+* [October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct19)
+
+    * [31 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3119)
+
+        * Refreshed {{site.data.keyword.openshiftlong_notm}} docs
+
+    * [28 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2819)
+
+        * Version changelogs
+
+    * [24 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2419)
+
+        * CLI changelog
+
+        * Ingress subdomain troubleshooting
+
+    * [23 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2319)
+
+        * Ingress ALB changelog
+
+        * Ingress annotations
+
+    * [22 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2219)
+
+        * Version changelogs
+
+    * [14 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1419)
+
+        * CLI changelog
+
+        * Cloud Paks
+
+        * Cluster autoscaler
+
+        * Let's Encrypt rate limits for Ingress
+
+        * Version changelogs
+
+    * [4 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0419)
+
+        * Version changelog
+
+        * Software-defined storage with Portworx
+
+    * [3 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0319)
+
+        * Ingress ALB changelog
+
+        * DevOps toolchain
+
+        * Version changelog
+
+    * [1 October 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0119)
+
+        * End of service of {{site.data.keyword.la_full_notm}} and {{site.data.keyword.monitoringlong_notm}}
+
+        * {{site.data.keyword.redhat_openshift_notm}} options
+
+        * New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+* [September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept19)
+
+    * [24 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2419)
+
+        * CLI changelog
+
+        * Ingress ALB changelog
+
+    * [19 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept1919)
+
+        * Sending custom Ingress certificates to legacy clients
+
+    * [17 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept1719)
+
+        * New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+    * [16 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept1619)
+
+        * CLI changelog
+
+        * {{site.data.keyword.at_full_notm}} events
+
+        * New! Melbourne, Australia `mel01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+        * Version changelog
+
+    * [13 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept1319)
+
+        * Refreshed {{site.data.keyword.openshiftlong_notm}} docs
+
+        * Entitled software
+
+        * `script update` command
+
+    * [12 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept1219)
+
+        * Ingress ALB changelog
+
+    * [6 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept0619)
+
+        * New! Chennai, India `che01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+    * [5 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept0519)
+
+        * Ingress ALB changelog
+
+    * [4 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept0419)
+
+        * CLI changelog
+
+        * IAM allowlists
+
+        * New! Montreal, Canada `mon01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+    * [3 September 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept0319)
+
+        * New! {{site.data.keyword.openshiftlong_notm}} plug-in version `0.4`
+
+        * Version changelog
+
+* [August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug19)
+
+    * [30 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3019)
+
+        * New! Paris, France `par01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+    * [29 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2919)
+
+        * Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}
+
+    * [28 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2819)
+
+        * CLI changelog
+
+        * Version changelog
+
+    * [26 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2619)
+
+        * Cluster autoscaler
+
+        * Ingress ALB changelog
+
+        * New! Seoul, Korea `seo01` single zone location for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+    * [23 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2319)
+
+        * New! Single zone locations for {{site.data.keyword.redhat_openshift_notm}} clusters
+
+    * [20 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2019)
+
+        * Ingress ALB changelog
+
+    * [17 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1719)
+
+        * {{site.data.keyword.at_full}}
+
+        * Version changelog
+
+    * [15 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1519)
+
+        * Version changelog
+
+    * [12 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1219)
+
+        * CLI changelog
+
+        * Ingress ALB changelog
+
+    * [5 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0519)
+
+        * CLI changelog
+
+        * Version changelog
+
+    * [2 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0219)
+
+        * Version changelog
+
+    * [1 August 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0119)
+
+        * {{site.data.keyword.openshiftlong_notm}}
+
+* [July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul19)
+
+    * [30 July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july3019)
+
+        * CLI changelog
+
+        * Ingress ALB changelog
+
+        * Removing subnets from a cluster
+
+    * [26 July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2619)
+
+        * {{site.data.keyword.openshiftlong_notm}}
+
+    * [23 July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2319)
+
+        * Fluentd changelog
+
+    * [19 July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1919)
+
+        * {{site.data.keyword.openshiftlong_notm}}
+
+    * [17 July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1719)
+
+        * Ingress ALB changelog
+
+    * [15 July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1519)
+
+        * Ingress ALB changelog
+
+        * Troubleshooting clusters
+
+    * [2 July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0219)
+
+        * CLI changelog
+
+    * [1 July 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0119)
+
+        * Infrastructure permissions
+
+        * {{site.data.keyword.redhat_openshift_notm}} FAQs
+
+        * strongSwan VPN service
+
+* [June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun19)
+
+    * [24 June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2419)
+
+        * Calico network policies
+
+        * Ingress ALB changelog
+
+    * [21 June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2119)
+
+        * Accessing clusters
+
+        * Troubleshooting {{site.data.keyword.redhat_openshift_notm}} clusters
+
+    * [18 June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1819)
+
+        * CLI changelog
+
+        * Ingress ALB changelog
+
+        * Removing persistent storage
+
+        * Service bindings with private endpoint
+
+    * [14 June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1419)
+
+        * `kubectl` troubleshooting
+
+        * Tutorials landing page
+
+        * Using existing subnets to create a cluster
+
+    * [12 June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1219)
+
+        * Aggregating cluster roles
+
+    * [7 June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0719)
+
+        * Access to the Kubernetes master through the private cloud service endpoint
+
+        * {{site.data.keyword.BluDirectLink}}
+
+        * Ingress ALB changelog
+
+        * {{site.data.keyword.redhat_openshift_notm}} beta
+
+    * [6 June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0619)
+
+        * Fluentd changelog
+
+        * Ingress ALB changelog
+
+    * [5 June 2019](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0519)
+
+        * CLI reference
+
+        * New! {{site.data.keyword.openshiftlong_notm}} clusters
 
 
 ## Tutorials library for OpenShift
