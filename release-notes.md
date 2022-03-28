@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-28"
 
 keywords: openshift
 
@@ -630,7 +630,7 @@ Worker node fix pack update
 {: release-note}
 
 Ingress ALB changelog updates
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-iks-release) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
+:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
 
 ### 18 October 2021
 {: #openshift-oct1821}
