@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-28"
 
 keywords: openshift
 
@@ -26,6 +26,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2022
 {: #openshift-mar22}
 
+
+### 28 March 2022
+{: #openshift-mar22}
+{: release-note}
+
+Worker node fix pack update.
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.25_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.35_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.45_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1577_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1627_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 ### 24 March 2022
 {: #openshift-mar2422}
@@ -630,7 +638,7 @@ Worker node fix pack update
 {: release-note}
 
 Ingress ALB changelog updates
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-iks-release) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
+:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
 
 ### 18 October 2021
 {: #openshift-oct1821}

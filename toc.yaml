@@ -306,7 +306,6 @@ toc:
             - topicgroup:
                 label: Add-on version history
                 topics:
-                - openshift_versions_changelog.md
                 - benchmarks.md
                 - versions-autoscaler.md
                 - versions-vpc-block-addon.md
