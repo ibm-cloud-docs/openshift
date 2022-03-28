@@ -204,6 +204,10 @@ subcollection: openshift
 
 * [March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar22)
 
+    * [28 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar22)
+
+        * Worker node fix pack update.
+
     * [24 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2422)
 
         * {{site.data.keyword.cos_full_notm}} plug-in
