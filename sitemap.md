@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-28"
 
 keywords: openshift
 subcollection: openshift
@@ -5801,10 +5801,6 @@ subcollection: openshift
 ### Add-on version history
 {: #sitemap_add-on_version_history}
 
-
-[Version changelog](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
-
-* [Version change logs](/docs/openshift?topic=openshift-openshift_changelog#change-logs-by-version)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
