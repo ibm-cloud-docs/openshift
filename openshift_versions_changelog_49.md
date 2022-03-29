@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-28"
+lastupdated: "2022-03-29"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -21,7 +21,7 @@ View information of version changes for major, minor, and patch updates that are
 ## Overview
 {: #openshift_changelog_overview_49}
 
-Unless otherwise noted in the changelogs, the {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.redhat_openshift_notm}} APIs and features that are at beta. {{site.data.keyword.redhat_openshift_notm}} alpha features, which are subject to change, are disabled.
+Unless otherwise noted in the change logs, the {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.redhat_openshift_notm}} APIs and features that are at beta. {{site.data.keyword.redhat_openshift_notm}} alpha features, which are subject to change, are disabled.
 {: shortdesc}
 
 Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security) for security vulnerabilities that affect {{site.data.keyword.openshiftlong_notm}}. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to {{site.data.keyword.openshiftlong_notm}}. Changelog entries that address other security vulnerabilities but don't also refer to an {{site.data.keyword.IBM_notm}} security bulletin are for vulnerabilities that are not known to affect {{site.data.keyword.openshiftlong_notm}} in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
@@ -32,10 +32,10 @@ Master patch updates are applied automatically. Worker node patch updates can be
 ## Change logs
 {: #47_changelog}
 
-Review the version 4.9 changelog.
+Review the version 4.9 change log.
 {: shortdesc}
 
-### Change log for worker node pack 4.9.25_1532_openshift, released 22 March 2022
+### Change log for worker node pack 4.9.25_1532_openshift, released 28 March 2022
 {: #4925_1532}
 
 | Component | Previous | Current | Description |

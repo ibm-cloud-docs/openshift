@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-28"
+lastupdated: "2022-03-29"
 
 keywords: openshift
 subcollection: openshift
@@ -4933,7 +4933,7 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#47_changelog)
 
-    * [Change log for worker node pack 4.9.25_1532_openshift, released 22 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4925_1532)
+    * [Change log for worker node pack 4.9.25_1532_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4925_1532)
 
     * [Change log for worker node pack 4.9.23_1530_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4923_1530)
 
