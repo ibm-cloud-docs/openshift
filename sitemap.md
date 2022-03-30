@@ -204,7 +204,7 @@ subcollection: openshift
 
 * [March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar22)
 
-    * [28 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar22)
+    * [28 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2822)
 
         * Worker node fix pack update.
 

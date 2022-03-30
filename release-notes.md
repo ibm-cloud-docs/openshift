@@ -29,7 +29,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 ### 28 March 2022
-{: #openshift-mar22}
+{: #openshift-mar2822}
 {: release-note}
 
 Worker node fix pack update.
