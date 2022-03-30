@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-03-30"
 
 keywords: openshift
 subcollection: openshift
@@ -204,7 +204,7 @@ subcollection: openshift
 
 * [March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar22)
 
-    * [28 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar22)
+    * [28 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2822)
 
         * Worker node fix pack update.
 
@@ -5819,6 +5819,8 @@ subcollection: openshift
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.1.0](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-ca_changelog#110475_ca)
 
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
