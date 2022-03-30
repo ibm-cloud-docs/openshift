@@ -449,22 +449,14 @@ To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
     * `--size-per-zone`: Specify the number of worker nodes that you want to have in each zone that the worker pool spans. You can change this value later by resizing the worker pool.
     * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
     * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You can't update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
-    <hyper>
-    * `--operating-system`: Optional: Specify the operating system of the hosts that you want to use to create your worker pool such as `RHEL7` or `RHCOS`. Note that you must create a Red Hat CoreOS enabled location to use your RHCOS hosts in your clusters. Support for Red Hat CoreOS hosts is available for {{site.data.keyword.satelliteshort}} locations in Dallas or Frankfurt and for cluster version `4.9.23_1122_openshift` and later. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.</hyper>
+    
     
     Example `worker-pool create` command
 
     ```sh
-    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] <hyper>[--operating-system RHEL7|RHCOS]</hyper>
+    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] 
     ```
-    {: pre}<hyper>
-    
-    Example `worker-pool create` command for creating a worker pool that uses Red Hat CoreOS hosts.
-    
-    ```sh
-    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> --operating-system RHCOS
-    ```
-    {: pre}</hyper>
+    {: pre}
     
 
 Your worker pool is created!

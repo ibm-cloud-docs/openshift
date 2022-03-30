@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-30"
 
 keywords: openshift
 
@@ -6027,7 +6027,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...]  [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
+ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...] [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
 ```
 {: pre}
 
@@ -6086,9 +6086,10 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 
 
-**Example:**
+**Example to create a {{site.data.keyword.satelliteshort}} cluster**
+
 ```sh
-ibmcloud sat cluster create satellite --name mysatcluster --location mylocation --pull-secret <secret>   --version 4.8_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
+ibmcloud sat cluster create satellite --name mysatcluster --location Dallas --pull-secret <secret>  --version 4.8_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
 ```
 {: pre}
 
@@ -6100,7 +6101,7 @@ Create a worker pool for your {{site.data.keyword.redhat_openshift_notm}} cluste
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [--host-label LABEL ...] --name NAME  --size-per-zone WORKERS_PER_ZONE --zone ZONE [--label LABEL ...] [--output OUTPUT] [-q]
+ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [--host-label LABEL ...] --name NAME --size-per-zone WORKERS_PER_ZONE --zone ZONE [--label LABEL ...] [--output OUTPUT] [-q]
 ```
 {: pre}
 
