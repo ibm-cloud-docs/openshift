@@ -3718,6 +3718,8 @@ subcollection: openshift
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
+* [Setting up MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb)
+
 * [Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-routes)
 
 * [Setting up a third-party load balancer in front of the {{site.data.keyword.redhat_openshift_notm}} Ingress controller](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-byolb)
