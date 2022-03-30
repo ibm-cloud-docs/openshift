@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-03-30"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -99,10 +99,11 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
 
     * To ensure that hosts are automatically assigned as worker nodes in the default worker pool of your cluster, specify those hosts' labels in the `--host-label` flags, and specify the number of worker nodes per zone in the `--workers` flag. 
     * To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
-    * For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
+    * For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).<hyper>
+    * To specify the operating system of the hosts that you have attached to your location that you want to use to create your cluster, enter `RHEL` or `RHCOS` with the `--operating-system` option. Note that you must create a CoreOS enabled location to use RHCOS hosts in your clusters and worker pools. The default value is `RHEL`.</hyper>
 
     ```sh
-    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.8_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
+    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.8_openshift [--enable-admin-agent] [--host-label LABEL ...] <hyper>[--operating-system RHEL|RHCOS]</hyper> [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
     ```
     {: pre}
 
@@ -226,9 +227,11 @@ To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
     * `--size-per-zone`: Specify the number of worker nodes that you want to have in each zone that the worker pool spans. You can change this value later by resizing the worker pool.
     * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
     * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You can't update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
+    <hyper>
+    * `--operating-system`: Specify the operating system of the hosts that you have attached to your location that you want to use to create your worker pool, enter `RHEL` or `RHCOS`. Note that you must create a CoreOS enabled location to use RHCOS hosts in your clusters and worker pools. The default value is `RHEL`.</hyper>
 
     ```sh
-    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>]
+    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] <hyper>[--operating-system RHEL|RHCOS]</hyper>
     ```
     {: pre}
 
@@ -320,7 +323,7 @@ When you remove {{site.data.keyword.redhat_openshift_notm}} clusters or worker n
     {: pre}
 
 2. Get the **Worker ID** of each host in your cluster.
-    ```
+    ```sh
     ibmcloud sat host ls --location <satellite_location_name_or_ID>
     ```
     {: pre}
