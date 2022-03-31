@@ -6089,7 +6089,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 **Example to create a {{site.data.keyword.satelliteshort}} cluster**
 
 ```sh
-ibmcloud sat cluster create satellite --name mysatcluster --location Dallas --pull-secret <secret>  --version 4.8_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
+ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret>  --version 4.8_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
 ```
 {: pre}
 
