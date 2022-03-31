@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: openshift
 subcollection: openshift
@@ -364,7 +364,7 @@ subcollection: openshift
 
         * Cloud Image Key Synchronizer add-on
 
-    * [06 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#jan0622)
+    * [06 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0622)
 
         * {{site.data.keyword.block_storage_is_short}} add-on.
 
@@ -910,7 +910,7 @@ subcollection: openshift
 
     * [22 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march2221)
 
-    * [17 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#deprecated-at-events)
+    * [17 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1721)
 
         * Deprecated events to be replaced for {{site.data.keyword.at_short}}
 
