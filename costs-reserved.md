@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-31"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -20,10 +20,7 @@ subcollection: openshift
 When you have consistent computing needs over time of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual worker node instances in a contract for a fixed, predictable, and lower price than on-demand instances.
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Reservations are available for classic infrastructure worker nodes only.
-{: note}
-
-You can't enable the cluster autoscaler on worker pools that use reservations.
+Reservations are available only for classic infrastructure worker nodes in multizone regions (MZRs). Also note that you can't enable the cluster autoscaler add-on on worker pools that use reservations.
 {: important}
 
 ## Understanding reservations

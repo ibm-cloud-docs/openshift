@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: openshift
 subcollection: openshift
@@ -364,7 +364,7 @@ subcollection: openshift
 
         * Cloud Image Key Synchronizer add-on
 
-    * [06 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#jan0622)
+    * [06 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0622)
 
         * {{site.data.keyword.block_storage_is_short}} add-on.
 
@@ -910,7 +910,7 @@ subcollection: openshift
 
     * [22 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march2221)
 
-    * [17 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#deprecated-at-events)
+    * [17 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1721)
 
         * Deprecated events to be replaced for {{site.data.keyword.at_short}}
 
@@ -3186,6 +3186,8 @@ subcollection: openshift
 
     * [Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-mon-tools)
 
+    * [Monitoring {{site.data.keyword.openshiftlong}} Storage Metrics](/docs/openshift?topic=openshift-health-monitor#monitor-metrics)
+
 * [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
 
 * [Viewing cluster states](/docs/openshift?topic=openshift-health-monitor#states)
@@ -3717,6 +3719,8 @@ subcollection: openshift
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
+
+* [Setting up MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb)
 
 * [Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-routes)
 

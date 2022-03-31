@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-30"
 
 keywords: openshift, route, Ingress controller
 
@@ -20,10 +20,167 @@ Securely expose apps that run in your {{site.data.keyword.satelliteshort}} clust
 {: shortdesc}
 
 You have several options for exposing apps in {{site.data.keyword.satelliteshort}} clusters:
+* [MetalLB](#sat-expose-metallb): A `LoadBalancer` implementation suitable for on-premises {{site.data.keyword.satelliteshort}} clusters.
 * [{{site.data.keyword.redhat_openshift_notm}} routes](#sat-expose-routes): Quickly expose apps to requests from the public or a private network with a hostname. The {{site.data.keyword.redhat_openshift_notm}} Ingress controller provides DNS registration and optional certificates for your routes.
 * [Third-party load balancer and {{site.data.keyword.redhat_openshift_notm}} routes](#sat-expose-byolb): Expose apps with a hostname, and add health checking for the host IP addresses that are registered in the Ingress controller's DNS records.
 * [NodePorts](#sat-expose-np): Expose non-HTTP(S) apps, such as UDP or TCP apps, with a NodePort in the 30000 - 32767 range.
 * [{{site.data.keyword.redhat_openshift_notm}} routes and {{site.data.keyword.satelliteshort}} Link endpoints](#sat-expose-cloud): Expose your app with a private route, and create a Link endpoint of type `location` for the route. Only a resource that is connected to the {{site.data.keyword.cloud_notm}} private network can access your app.
+
+
+
+## Setting up MetalLB
+{: #sat-expose-metallb}
+
+MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
+{: shortdesc}
+
+**Prerequisites**: A dedicated subnet (AddressPool) for the external IP of the `LoadBalancer` services.
+
+MetalLB has two components:
+* A **controller** that watches `LoadBalancer` services and assigns external IPs to them from an AddressPool.
+* And the **speaker** pods that hold, reply to ARP requests and handles failover of the external IPs.
+
+1. Verify that the MetalLB Operator is available in the {{site.data.keyword.redhat_openshift_notm}} Marketplace.
+   ```sh
+   oc get packagemanifests -n openshift-marketplace metallb-operator
+   ```
+   {: pre}
+
+2. Create a dedicated namespace.
+   ```sh
+   cat << EOF | oc apply -f -
+   apiVersion: v1
+   kind: Namespace
+   metadata:
+     name: metallb-system
+   EOF
+   ```
+   {: pre}
+   
+   
+3. Add the operator to the cluster.
+   ```sh
+   cat << EOF | oc apply -f -
+   apiVersion: operators.coreos.com/v1
+   kind: OperatorGroup
+   metadata:
+     name: metallb-operator
+     namespace: metallb-system
+   spec:
+     targetNamespaces:
+     - metallb-system
+   EOF
+   ```
+   {: pre}
+   
+   
+4. Verify the installation.
+   ```sh
+   oc get operatorgroup -n metallb-system
+   ```
+   {: pre}
+   
+   
+5. Subscribe to automatic updates of the operator.
+   ```sh
+   OC_VERSION=$(oc version -o yaml | grep openshiftVersion | grep -o '[0-9]*[.][0-9]*' | head -1)
+   cat << EOF| oc apply -f -
+   apiVersion: operators.coreos.com/v1alpha1
+   kind: Subscription
+   metadata:
+     name: metallb-operator-sub
+     namespace: metallb-system
+   spec:
+     channel: "${OC_VERSION}"
+     name: metallb-operator
+     source: redhat-operators
+     sourceNamespace: openshift-marketplace
+   EOF
+   oc get installplan -n metallb-system
+   ```
+   {: pre}
+   
+   
+6. Verify the subscription and operator version.
+   ```sh
+   oc get clusterserviceversion -n metallb-system -o custom-columns=Name:.metadata.name,Phase:.status.phase
+   ```
+   {: pre}
+   
+   
+7. Enable MetalLB. You can optionally limit the scope of nodes on which MetalLB speakers will be deployed by using a nodeSelector. For example, you might want to deploy MetalLB only to a worker pool where the dedicated subnet for the external IPs are available.
+   ```sh
+   cat << EOF | oc apply -f -
+   apiVersion: metallb.io/v1beta1
+   kind: MetalLB
+   metadata:
+     name: metallb
+     namespace: metallb-system
+   spec:
+     spec:
+     nodeSelector:
+       ibm-cloud.kubernetes.io/worker-pool-name: edge
+   EOF
+   ```
+   {: pre}
+   
+   
+8. Verify the controller and speakers pods are running.
+   ```sh
+   oc -n metallb-system get pods -o wide
+   ```
+   {: pre}
+   
+   
+9. Configure a dedicated subnet, or AddressPool, for the external IP of the LoadBalancer services managed by MetalLB:
+    ```sh
+    cat << EOF | oc apply -f -
+    apiVersion: metallb.io/v1alpha1
+    kind: AddressPool
+    metadata:
+        name: doc-example-ap
+        namespace: metallb-system
+    spec:
+        protocol: layer2
+        addresses:
+        - 192.0.2.0/26
+        - 192.0.2.100-192.0.2.110
+        - 192.0.2.200/32
+    ```
+    {: pre}
+    
+    
+10. Optional: To disable auto-assignment from an AddressPool specify `autoAssign: false` in the `spec` section. If you disable auto-assignment, an AddressPool with `metallb.universe.tf/address-pool` must be defined.
+    ```yaml
+    metadata:
+      annotations:
+        metallb.universe.tf/address-pool: doc-example-ap
+    ```
+    {: codeblock} 
+
+
+11. To prevent {{site.data.keyword.cloud_notm}} Controller Manager from interacting with a MetalLB LoadBalancer set the `loadBalancerClass: metallb.io` in your Service definition.
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+        namespace: default
+        name: with-loadBalancerClass
+    spec:
+        loadBalancerClass: metal-lb.io
+        selector:
+            app: hello-node
+        ports:
+            - port: 8080
+              targetPort: 8080
+              protocol: TCP
+        type: LoadBalancer
+    ```
+    {: codeblock}
+
+
+For more information, see the [MetalLB documentation](https://docs.openshift.com/container-platform/4.9/networking/metallb/about-metallb.html){: external}.
+
 
 ## Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes
 {: #sat-expose-routes}
@@ -199,9 +356,6 @@ If you want to access an app in your {{site.data.keyword.satelliteshort}} cluste
 2. Follow the steps in [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-cloud-create#link-location) to create a {{site.data.keyword.satelliteshort}} Link endpoint for your app's private route.
 
 3. Optional: To allow access to the endpoint from only the specific resource in {{site.data.keyword.cloud_notm}}, [add the resource to your endpoint's source list](/docs/satellite?topic=satellite-link-cloud-create#link-sources).
-
-
-
 
 
 

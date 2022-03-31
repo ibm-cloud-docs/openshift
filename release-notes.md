@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: openshift
 
@@ -22,6 +22,8 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: note}
+
+
 
 ## March 2022
 {: #openshift-mar22}
@@ -395,7 +397,7 @@ Cloud Image Key Synchronizer add-on
 
 
 ### 06 January 2022
-{: #jan0622}
+{: #openshift-jan0622}
 {: release-note}
 
 
@@ -1500,7 +1502,7 @@ CRI-O container runtime
 
 
 ### 17 March 2021
-{: #deprecated-at-events}
+{: #openshift-mar1721}
 {: release-note}
 
 Deprecated events to be replaced for {{site.data.keyword.at_short}}

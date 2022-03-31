@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-31"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -53,6 +53,42 @@ Review the following details about built-in monitoring tools for your cluster.
 - The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.
 
 For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external}.
+
+### Monitoring {{site.data.keyword.openshiftlong}} Storage Metrics
+{: #monitor-metrics}
+
+{{site.data.keyword.openshiftlong}} clusters include built-in tools to help cluster administrators to get information about the availability and capacity of storage volumes.
+{: shortdesc}
+
+The following metrics can be monitored for {{site.data.keyword.openshiftlong}} clusters.
+- `kubelet_volume_stats_available_bytes`
+- `kubelet_volume_stats_capacity_bytes`
+- `kubelet_volume_stats_inodes`
+- `kubelet_volume_stats_inodes_free`
+- `kubelet_volume_stats_inodes_used`
+
+Before monitoring metrics for {{site.data.keyword.block_storage_is_short}} you must have a cluster with the {{site.data.keyword.block_storage_is_short}} add-on enabled and you must have a {{site.data.keyword.block_storage_is_short}} volume attached to a worker node. 
+{: note}
+
+1. Navigate to the {{site.data.keyword.redhat_openshift_notm}} web console and select **Monitoring** and then **Metrics**. 
+
+1. Input the metric you wish to monitor in the dialog box and select **Run queries**. 
+    ```sh
+    kubelet_volume_stats_used_bytes{persistentvolumeclaim="NAME OF PVC"} / kubelet_volume_stats_capacity_bytes{persistentvolumeclaim="NAME OF PVC"}
+    ```
+    {: pre}
+
+    Example output
+  
+    | endpoint | instance | job | metrics_path | namespace | node | persistentvolumeclaim | prometheus | service | Value |
+    | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+    | https-metrics | 11.111.1.1:10250 | kubelet | /metrics | default | 11.111.1.1 | PVC-NAME | openshift-monitoring/k8s | kubelet | 0.003596851526321722 | 
+    {: caption="Table 1. Example output for monitoring metrics " caption-side="bottom"}
+
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external}.
+
+If your volume is reaching capacity, try setting up [volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand).
+{: tip}
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_monitoring}
@@ -231,9 +267,5 @@ You might want to disable this remote health reporting to comply with privacy la
     oc get pods -n openshift-monitoring
     ```
     {: pre}
-
-
-
-
 
 
