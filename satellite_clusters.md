@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -216,13 +216,13 @@ To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
     ```
     {: pre}
 
-2. Get the details of the cluster that you want to create the worker pool in. Note the **Worker Zones**.
+1. Get the details of the cluster that you want to create the worker pool in. Note the **Worker Zones**.
     ```sh
     ibmcloud oc cluster get -c <cluster_name_or_ID>
     ```
     {: pre}
 
-3. Create the worker pool in your {{site.data.keyword.satelliteshort}} cluster, with the following parameters.
+1. Create the worker pool in your {{site.data.keyword.satelliteshort}} cluster, with the following parameters.
 
     * `--cluster`: Enter the name or ID of your cluster.
     * `--name`: Give a name for your worker pool.
