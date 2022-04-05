@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-05"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -54,11 +54,14 @@ Review the following details about built-in monitoring tools for your cluster.
 
 For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external}.
 
-### Monitoring {{site.data.keyword.openshiftlong}} Storage Metrics
+### Monitoring {{site.data.keyword.openshiftlong}} storage metrics
 {: #monitor-metrics}
 
-{{site.data.keyword.openshiftlong}} clusters include built-in tools to help cluster administrators to get information about the availability and capacity of storage volumes.
+{{site.data.keyword.openshiftlong}} clusters include built-in tools to help cluster administrators get information about the availability and capacity of storage volumes.
 {: shortdesc}
+
+To manually view storage metrics in the CLI, see [Manually viewing {{site.data.keyword.openshiftlong}} Storage Metrics in the CLI](#manual-monitor-metrics).
+{: tip}
 
 The following metrics can be monitored for {{site.data.keyword.openshiftlong}} clusters.
 - `kubelet_volume_stats_available_bytes`
@@ -89,6 +92,7 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 
 If your volume is reaching capacity, try setting up [volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand).
 {: tip}
+
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_monitoring}
@@ -267,5 +271,3 @@ You might want to disable this remote health reporting to comply with privacy la
     oc get pods -n openshift-monitoring
     ```
     {: pre}
-
-
