@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-05"
 
-keywords: openshift network, vpc
+keywords: openshift network
 
 subcollection: openshift
 
