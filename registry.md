@@ -65,7 +65,7 @@ Public registry
     - Pushing and pulling images on the public network.
     - Quick testing of a container across cloud providers.
     - Don't need enterprise-grade features such as vulnerability scanning or access management.
-    For more information, see the public registry's documentation, such as [Quay](https://quay.io/){: external} or [Docker Hub](https://hub.docker.com/).
+    For more information, see the public registry's documentation, such as [Quay](https://quay.io/){: external} or [Docker Hub](https://hub.docker.com/){: external}.
 
 
 ## Storing images in the internal registrys

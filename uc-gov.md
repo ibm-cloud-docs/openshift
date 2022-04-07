@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -33,9 +33,9 @@ With {{site.data.keyword.openshiftlong_notm}}, the Exec delivers the transformat
 
 Key technologies  
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [Provide access to public data with {{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
-* [Plug-and-play IBM Cloud Analytics services](https://www.ibm.com/cloud/analytics)
+* [Plug-and-play IBM Cloud Analytics services](https://www.ibm.com/cloud/analytics){: external}
 
 #### Context
 {: #uc_data_mashup_context}
@@ -128,7 +128,7 @@ IT Execs for a private shipping company and the government-operated port need to
 Key technologies:    
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/openshift?topic=openshift-security#security)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
 
 #### Context: Port secures exchange of port data and shipping manifests that connects public and private organizations.

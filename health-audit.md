@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -33,7 +33,7 @@ To monitor user-initiated, Kubernetes administrative activity made within your c
 Before you set up a Kubernetes API audit configuration, review the following information.
 {: shortdesc}
 
-* To see how the audit webhook collects logs, check out the {{site.data.keyword.openshiftlong_notm}} [`openshift-audit` policy](https://github.com/IBM-Cloud/kube-samples/blob/master/kube-audit/openshift-audit-policy.yaml){: external}.
+* To see how the audit webhook collects logs, check out the {{site.data.keyword.openshiftlong_notm}} [`openshift-audit` policy](https://github.com/IBM-Cloud/kube-samples/blob/master/kube-audit/openshift-audit-policy.yaml){: external}{: external}.
     You can't modify the default policy or apply your own custom policy.
     {: note}
 

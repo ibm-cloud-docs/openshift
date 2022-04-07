@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -39,7 +39,7 @@ Single zone clusters can be created in one of the supported [single zone locatio
 
 ![High availability for clusters in a single zone.](images/cluster_singlezone.png){: caption="Figure 1. High availability for clusters in a single zone" caption-side="bottom"}
 
-You can add more worker nodes to your cluster by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) or by [adding a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool). When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. {{site.data.keyword.redhat_openshift_notm}} automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).
+You can add more worker nodes to your cluster by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) or by [adding a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool). When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. {{site.data.keyword.redhat_openshift_notm}} automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
 
 **Is my master highly available in a single zone cluster?**
 
@@ -57,7 +57,7 @@ Create a multizone cluster to distribute your workloads across multiple worker n
 
 ![High availability for multizone clusters.](images/cluster_multizone-ha.png){: caption="Figure 1. High availability for multizone clusters" caption-side="bottom"}
 
-In a multizone cluster, the worker nodes in your worker pools are replicated across multiple zones within one region. Multizone clusters are designed to evenly schedule pods across worker nodes and zones to assure availability and failure recovery. If worker nodes are not spread evenly across the zones or capacity is insufficient in one of the zones, the Kubernetes scheduler or {{site.data.keyword.redhat_openshift_notm}} controller might fail to schedule all requested pods. As a result, pods might go into a **Pending** state until enough capacity is available. If you want to change the default behavior to make Kubernetes scheduler or {{site.data.keyword.redhat_openshift_notm}} controller distribute pods across zones in a best effort distribution, use the `preferredDuringSchedulingIgnoredDuringExecution` [pod affinity policy](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).
+In a multizone cluster, the worker nodes in your worker pools are replicated across multiple zones within one region. Multizone clusters are designed to evenly schedule pods across worker nodes and zones to assure availability and failure recovery. If worker nodes are not spread evenly across the zones or capacity is insufficient in one of the zones, the Kubernetes scheduler or {{site.data.keyword.redhat_openshift_notm}} controller might fail to schedule all requested pods. As a result, pods might go into a **Pending** state until enough capacity is available. If you want to change the default behavior to make Kubernetes scheduler or {{site.data.keyword.redhat_openshift_notm}} controller distribute pods across zones in a best effort distribution, use the `preferredDuringSchedulingIgnoredDuringExecution` [pod affinity policy](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
 
 You can create a multizone cluster in one of the supported [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone locations only.
 {: note}

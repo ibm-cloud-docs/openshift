@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-04-07"
 
 keywords: red hat openshift, openshift container platform, red hat, red hat cluster, openshift, containers, clusters
 
@@ -47,7 +47,7 @@ Still having issues with your cluster? Review different ways to get help and sup
 {: #feedback-qs}
 
 1. Post in the {{site.data.keyword.containershort}} Slack.
-    * If you are an external user, post in the [#openshift](https://ibm-cloud-success.slack.com/messages/CKCJLJCH4){: external} channel. 
+    * If you are an external user, post in the [#openshift](https://ibm-cloud-success.slack.com/messages/CKCJLJCH4){: external}{: external} channel. 
 2. Review forums such as {{site.data.keyword.redhat_openshift_notm}} help or Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
     * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftlong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`,  and `containers`.
     * See [Getting help](/docs/get-support?topic=get-support-using-avatar) for more details about using the forums.

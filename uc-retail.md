@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -35,7 +35,7 @@ A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail s
 {{site.data.keyword.openshiftlong_notm}} and key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [{{site.data.keyword.cos_full}} to persist and sync data across apps](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 
 #### Context: Retailer shares data, by using APIs with global business partners to drive omnichannel sales
 {: #uc_data-share_context}
@@ -140,8 +140,8 @@ A Chief Marketing Officer (CMO) needs to increase customer traffic by 20% in sto
 Key technologies:    
 * [Horizontal scaling to accelerate development](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [Insights to market trends with {{site.data.keyword.watson}} Discovery](https://www.ibm.com/cloud/watson-discovery)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/)
+* [Insights to market trends with {{site.data.keyword.watson}} Discovery](https://www.ibm.com/cloud/watson-discovery){: external}
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [Inventory management with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-about#about)
 
 #### Context: Traditional grocer increases customer traffic and sales with digital insights

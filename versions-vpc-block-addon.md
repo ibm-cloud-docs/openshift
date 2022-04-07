@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: block, add-on, changelog
 
@@ -73,7 +73,7 @@ Updates in this version:
 - Volume expansion support is now generally available.
 - Removes unused variables `sizeRange` and `sizeIOPSRange` from storage classes.
 - Makes `ibmc-vpc-block-10iops-tier` the default storage class via the new `addon-vpc-block-csi-driver-configmap` in the `kube-system` namespace.
-- Resolves the following CVEs: [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712) and [CVE-2021-3521](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3521){: external}, [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}, [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}, and [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}.
+- Resolves the following CVEs: [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712){: external} and [CVE-2021-3521](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3521){: external}, [CVE-2022-23772](https://nvd.nist.gov/vuln/detail/CVE-2022-23772){: external}, [CVE-2022-23773](https://nvd.nist.gov/vuln/detail/CVE-2022-23773){: external}, and [CVE-2022-23806](https://nvd.nist.gov/vuln/detail/CVE-2022-23806){: external}.
 - Updates Golang to version 1.16.14.
 - All the storage classes that are installed with the add-on now have `allowVolumeExpansion=true`.
 
@@ -220,8 +220,8 @@ Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_stora
 {: shortdesc}
 
 - Image tags: `v4.0.0`
-- Resolves [CVE-2021-27218](https://nvd.nist.gov/vuln/detail/CVE-2021-27218).
-- Updates CSI sidecar images to fix [DLA-2542-1](https://www.debian.org/lts/security/2021/dla-2542), [DLA-2509-1](https://www.debian.org/lts/security/2020/dla-2509), and [DLA-2424-1](https://www.debian.org/lts/security/2020/dla-2424).
+- Resolves [CVE-2021-27218](https://nvd.nist.gov/vuln/detail/CVE-2021-27218){: external}.
+- Updates CSI sidecar images to fix [DLA-2542-1](https://www.debian.org/lts/security/2021/dla-2542){: external}, [DLA-2509-1](https://www.debian.org/lts/security/2020/dla-2509){: external}, and [DLA-2424-1](https://www.debian.org/lts/security/2020/dla-2424){: external}.
 - Updates the sidecar images to the following versions.      
     - `csi-provisioner`: `icr.io/ext/sig-storage/csi-provisioner:v2.2.2`
     - `csi-resizer`: `icr.io/ext/sig-storage/csi-resizer:v1.2.0`

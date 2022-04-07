@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}}](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption) provides hypervisor-mounted, high-performance data storage for your virtual server instances that you can provision within a VPC.
 {: shortdesc}
 
-You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://www.ibm.com/cloud/vpc/pricing).
+You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://www.ibm.com/cloud/vpc/pricing){: external}.
 
 The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. Later, you can disable or reenable the add-on by using the [`addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) or [`addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) command in the CLI. PVC creation and app deployment are not disrupted when the add-on is disabled. Existing volumes and data are not impacted.
 {: note}
@@ -1284,7 +1284,7 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 ## Storage class reference
 {: #vpc-block-reference}
 
-For more information about pricing, see [Pricing information](https://www.ibm.com/cloud/vpc/pricing).
+For more information about pricing, see [Pricing information](https://www.ibm.com/cloud/vpc/pricing){: external}.
 {: shortdesc}
 
 Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that don't have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.

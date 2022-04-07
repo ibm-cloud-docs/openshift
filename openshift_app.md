@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-04-07"
 
 keywords: kubernetes, openshift
 
@@ -359,7 +359,7 @@ Secrets provide sensitive configuration information such as passwords for your d
 
 The following example shows how you can reference values from your secret as environment variables in the container spec section of your deployment YAML. You can also mount the secret as a volume. By referencing values from your secret, you can decouple this configuration information from your deployment to keep your containerized app portable.
 * [Help me decide whether to use a Kubernetes `ConfigMap` or `Secret` object for variables](/docs/openshift?topic=openshift-plan_deploy#variables).
-* To create a secret, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/secret/).
+* To create a secret, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/secret/){: external}.
 
 For centralized management of all your secrets across clusters and injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets).
 {: tip}
@@ -680,7 +680,7 @@ To set up configuration files with Kustomize:
         {: pre}
 
     2. Create an initial set of Kubernetes configuration YAML files for your app deployment. You might use the `wasliberty` [YAML example](#yaml-example) to create a deployment, service, config map, and persistent volume claim.
-    3. Create a [`kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file) that specifies the base configuration to be applied across environments. The `kustomization` file must include the list of Kubernetes resource configuration YAMLs that are stored in the same `base` repo. In the `kustomization` file, you can also add configurations that apply to all the resource YAMLs in the base repo, such as a prefix or suffix that is appended to all the resource names, a label, the existing namespace all the resources are created in, secrets, configmaps, and more.
+    3. Create a [`kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file){: external} that specifies the base configuration to be applied across environments. The `kustomization` file must include the list of Kubernetes resource configuration YAMLs that are stored in the same `base` repo. In the `kustomization` file, you can also add configurations that apply to all the resource YAMLs in the base repo, such as a prefix or suffix that is appended to all the resource names, a label, the existing namespace all the resources are created in, secrets, configmaps, and more.
         ```yaml
         apiVersion: kustomize.config.k8s.io/v1beta1
         kind: Kustomization

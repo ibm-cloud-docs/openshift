@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -37,7 +37,7 @@ EPERM: operation not permitted
 IAM has introduced a `refresh_token_expiration` key which causes an issue with the IAM credential response parser, where the parser was not able to differentiate between `expiration` and `refresh_token_expiration`.
 {: tsCauses}
 
-This issue is resolved in the [community repo](https://github.com/s3fs-fuse/s3fs-fuse/pull/1421) and in the {{site.data.keyword.cos_full_notm}} plug-in.
+This issue is resolved in the [community repo](https://github.com/s3fs-fuse/s3fs-fuse/pull/1421){: external} and in the {{site.data.keyword.cos_full_notm}} plug-in.
 
 
 Complete the steps to [update your {{site.data.keyword.cos_full_notm}} plug-in to the latest version](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).

@@ -880,7 +880,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 {: important}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP] [--version 4.9_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] --kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR  [--version 4.9_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] --kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
 ```
 {: pre}
 
@@ -914,9 +914,6 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 `--flavor FLAVOR`
 :    Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.
-
-`--cluster-security-group GROUP`
-:    Optional. Specify up to five security group IDs to apply to all workers on the cluster. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, the `kube-clusterID` and VPC security groups are applied by default. Note that the VPC security group is only applied if no other security groups are specified.
 
 
 `--cos-instance COS_CRN`
@@ -3857,7 +3854,7 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 :    Optional: Specify the project that your Ingress resource is deployed to. If your ALB runs the Kubernetes Ingress image, this value is required, because the ALB can identify secrets only in the same project as your Ingress resource. If your ALB runs the {{site.data.keyword.openshiftlong_notm}} Ingress image, and you don't specify a project, the certificate secret is created in a project called `ibm-cert-store`. A reference to this secret is then created in the `default` project, which any Ingress resource in any project can access. While processing requests, the ALB follows the reference to pick up and use the certificate secret from the `ibm-cert-store` project.
 
 `--persist`
-:    Optional: Persist the secret data in your cluster. If the secret is later deleted from the CLI or {{site.data.keyword.redhat_openshift_notm}} web console, the secret is automatically re-created in your cluster. To permanently delete the secret, you must use the [`/ingress/v2/secret/deleteSecret` API](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/DeleteIngressSecret).
+:    Optional: Persist the secret data in your cluster. If the secret is later deleted from the CLI or {{site.data.keyword.redhat_openshift_notm}} web console, the secret is automatically re-created in your cluster. To permanently delete the secret, you must use the [`/ingress/v2/secret/deleteSecret` API](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/DeleteIngressSecret){: external}.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
