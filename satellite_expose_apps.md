@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift, route, Ingress controller
 
@@ -236,13 +236,13 @@ To create routes for your apps:
         Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
         {: tip}
         
-    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.openshift.com/container-platform/4.9/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
-    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.8/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.9/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
@@ -254,7 +254,7 @@ To create routes for your apps:
     ```
     {: pre}
 
-8. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
+8. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.9/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.9/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
 
 
 

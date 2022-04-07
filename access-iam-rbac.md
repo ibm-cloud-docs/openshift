@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -195,7 +195,7 @@ Users must run the `ibmcloud ks cluster config` command for their role changes t
 {: #add_users_cli_service}
 
 
-You can't scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.8/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still manage individual users and service accounts with IAM service access roles. You can also still scope IAM platform access roles to IAM access groups to control actions like ordering worker nodes, because platform access roles are never synced to RBAC roles.
+You can't scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.9/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still manage individual users and service accounts with IAM service access roles. You can also still scope IAM platform access roles to IAM access groups to control actions like ordering worker nodes, because platform access roles are never synced to RBAC roles.
 {: note}
 
 
@@ -319,7 +319,7 @@ Making your own custom RBAC policies? Be sure not to edit the existing IBM role 
 
 **Can I assign custom RBAC roles to groups of users?**
 
-You can [manually assign users to groups](https://docs.openshift.com/container-platform/4.8/authentication/understanding-authentication.html){: external} in your cluster, and then assign roles to the group. However, a known issue is that you can't use {{site.data.keyword.cloud_notm}} IAM access groups.
+You can [manually assign users to groups](https://docs.openshift.com/container-platform/4.9/authentication/understanding-authentication.html){: external} in your cluster, and then assign roles to the group. However, a known issue is that you can't use {{site.data.keyword.cloud_notm}} IAM access groups.
 
 
 **When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**

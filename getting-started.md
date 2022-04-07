@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-07"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # Getting started with {{site.data.keyword.openshiftlong_notm}}
 {: #getting-started}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can deploy apps on highly available {{site.data.keyword.redhat_openshift_notm}} clusters that run the [{{site.data.keyword.openshiftlong_notm}} Container Platform](https://docs.openshift.com/container-platform/4.8/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
+With {{site.data.keyword.openshiftlong_notm}}, you can deploy apps on highly available {{site.data.keyword.redhat_openshift_notm}} clusters that run the [{{site.data.keyword.openshiftlong_notm}} Container Platform](https://docs.openshift.com/container-platform/4.9/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
 {: shortdesc}
 
 First, create a classic {{site.data.keyword.openshiftlong}} cluster or a cluster on the second generation of compute infrastructure in a Virtual Private Cloud (VPC). Then, deploy and expose a sample app in your cluster.
@@ -31,7 +31,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
 ## Creating a classic {{site.data.keyword.redhat_openshift_notm}} cluster
 {: #clusters_gs}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Create a {{site.data.keyword.openshiftlong_notm}} cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.8. The operating system is Red Hat Enterprise Linux 7.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) Create a {{site.data.keyword.openshiftlong_notm}} cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.9. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
@@ -66,7 +66,7 @@ Now that your cluster is ready, [deploying your first app](#deploy-app)!
 ## Creating a VPC cluster
 {: #vpc-gen2-gs}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) Create a VPC cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.redhat_openshift_notm}} clusters run version 4.8, which includes Kubernetes version 1.21. The operating system is Red Hat Enterprise Linux 7.
+![VPC infrastructure provider icon.](images/icon-vpc-2.svg) Create a VPC cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.redhat_openshift_notm}} clusters run version 4.9, which includes Kubernetes version 1.21. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2).
@@ -138,7 +138,7 @@ From the {{site.data.keyword.redhat_openshift_notm}} console, you can deploy one
 - Complete the [{{site.data.keyword.openshiftlong_notm}} classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or the [{{site.data.keyword.openshiftlong_notm}} VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial) to:
     - Set up your {{site.data.keyword.cloud_notm}} and {{site.data.keyword.redhat_openshift_notm}} CLI.
     - Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
-- For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.8/welcome/index.html#developer-activities){: external} documentation.
+- For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.9/welcome/index.html#developer-activities){: external} documentation.
 
 Looking for an overview of all your options in {{site.data.keyword.openshiftlong_notm}}? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 {: tip}

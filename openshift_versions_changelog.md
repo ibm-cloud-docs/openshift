@@ -30,16 +30,16 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the change logs in the following list. 
 
-**Supported Kubernetes versions**:
+**Supported versions**:
 - [4.9 change log](/docs/openshift?topic=openshift-openshift_changelog_49)
 - [4.8 change log](/docs/openshift?topic=openshift-openshift_changelog_48)
 - [4.7 change log](/docs/openshift?topic=openshift-openshift_changelog_47)
 - [4.6 change log](/docs/openshift?topic=openshift-openshift_changelog_46)
 
-**Deprecated Kubernetes versions**:
+**Deprecated versions**:
 - [3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311) 
 
-**Unsupported Kubernetes versions**: 
+**Unsupported versions**: 
 - [Archived change logs](/docs/openshift?topic=openshift-changelog_archive)
 
 

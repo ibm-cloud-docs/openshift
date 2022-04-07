@@ -208,9 +208,19 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
-        * Ingress ALB changelog updates
+        * {{site.data.keyword.openshiftlong_notm}} default version update.
+
+        * CLI changelog update
+
+    * [6 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#{[subcollection]-apr0622)
+
+        * Master fix pack update
 
 * [March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar22)
+
+    * [30 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar3022)
+
+        * Cluster autoscaler add-on
 
     * [28 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2822)
 
@@ -4438,7 +4448,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.8/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.9/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -4785,6 +4795,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.394](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10394)
+
 * [Version 1.0.384](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10384)
 
 * [Version 1.0.374](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10374)
@@ -4927,8 +4939,8 @@ subcollection: openshift
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
 
-### Version 4.9
-{: #sitemap_version_49}
+### Version 4.9 (Default)
+{: #sitemap_version_49_default}
 
 
 [4.9 version information and update actions](/docs/openshift?topic=openshift-cs_versions_49#cs_versions_49)
@@ -5000,8 +5012,8 @@ subcollection: openshift
 * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-remediations-49)
 
 
-### Version 4.8 (Default)
-{: #sitemap_version_48_default}
+### Version 4.8
+{: #sitemap_version_48}
 
 
 [4.8 version information and update actions](/docs/openshift?topic=openshift-cs_versions_48#cs_versions_48)
@@ -5116,6 +5128,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Changelog for master fix pack 4.7.45_1559_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4745_1559)
 
     * [Change log for worker node pack 4.7.45_1557_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4745_1557)
 
@@ -5239,6 +5253,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#47_changelog)
+
+    * [Change log for master fix pack 4.6.56_1578_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4658_1578)
 
     * [Change log for worker node pack 4.6.56_1577_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4656_1577)
 
@@ -5390,6 +5406,8 @@ subcollection: openshift
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_311#311_changelog)
 
 * [Deprecated: Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#version-311)
+
+    * [Change log for master fix pack 3.11.634_1626_openshift, released 30 March 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311634_1626)
 
     * [Change log for worker node pack 3.11.634_1627_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311634_1627-1)
 

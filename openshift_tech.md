@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-07"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -25,7 +25,7 @@ In {{site.data.keyword.openshiftlong_notm}}, your clusters comprise an IBM-manag
 ## Classic {{site.data.keyword.redhat_openshift_notm}} version 4 architecture
 {: #service-architecture-4}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) ![Version 4 icon.](images/icon-version-43.png) Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.8/architecture/architecture.html){: external}.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) ![Version 4 icon.](images/icon-version-43.png) Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/architecture/architecture.html){: external}.
 {: shortdesc}
 
 When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
@@ -140,7 +140,7 @@ CRI-O container runtime
 :   Your worker nodes are installed with [CRI-O](https://cri-o.io/){: external} as the container runtime interface. For more information, see [Container runtime](/docs/openshift?topic=openshift-security#container-runtime).
 
 Projects
-:   {{site.data.keyword.redhat_openshift_notm}} organizes your resources into projects, which are Kubernetes namespaces with annotations, and includes many more components than community Kubernetes clusters to run {{site.data.keyword.redhat_openshift_notm}} features such as the catalog. Select components of projects are described in the following rows. For more information, see [Working with projects](http://docs.openshift.com/container-platform/4.8/applications/projects/working-with-projects.html){: external}.
+:   {{site.data.keyword.redhat_openshift_notm}} organizes your resources into projects, which are Kubernetes namespaces with annotations, and includes many more components than community Kubernetes clusters to run {{site.data.keyword.redhat_openshift_notm}} features such as the catalog. Select components of projects are described in the following rows. For more information, see [Working with projects](http://docs.openshift.com/container-platform/4.9/applications/projects/working-with-projects.html){: external}.
 
 `calico-system`, `tigera-operator`
 :   Calico manages network policies for your cluster, and includes a few components to manage container network connectivity, IP address assignment, and network traffic control. The Tigera operator installs and manages the lifecycle of Calico components.
@@ -162,10 +162,10 @@ Projects
 :   The cloud credential operator manages a controller for {{site.data.keyword.redhat_openshift_notm}} components that request cloud provider credentials. The controller ensures that only the credentials that are required for the operation are used, and not any elevated permissions like `admin`. For more information, see the [GitHub project](https://github.com/openshift/cloud-credential-operator){: external}.
 
 `openshift-cluster-node-tuning-operator`
-:   IBM manages the [node tuning operator](https://docs.openshift.com/container-platform/4.8/scalability_and_performance/using-node-tuning-operator.html){: external}, which runs a daemon set on each worker node in the cluster to tune the default worker node settings. You can't edit the default worker node settings.
+:   IBM manages the [node tuning operator](https://docs.openshift.com/container-platform/4.9/scalability_and_performance/using-node-tuning-operator.html){: external}, which runs a daemon set on each worker node in the cluster to tune the default worker node settings. You can't edit the default worker node settings.
 
 `openshift-cluster-samples-operator`
-:   The [samples operator](https://docs.openshift.com/container-platform/4.8/openshift_images/configuring-samples-operator.html){: external} manages select image streams and templates that come with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. You can deploy these templates from the [**Developer** perspective in the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console).
+:   The [samples operator](https://docs.openshift.com/container-platform/4.9/openshift_images/configuring-samples-operator.html){: external} manages select image streams and templates that come with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. You can deploy these templates from the [**Developer** perspective in the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console).
 
 `openshift-cluster-storage-operator`
 :   The cluster storage operator makes sure that a default storage class is set. To review or change the default {{site.data.keyword.cloud_notm}} storage class, see [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).
@@ -177,25 +177,25 @@ Projects
 :   The DNS project includes the components to validate incoming network traffic against the `iptables` rules that are set up on the worker node, and proxies requests that are allowed to enter or leave the cluster.
 
 `openshift-image-registry`
-:   {{site.data.keyword.redhat_openshift_notm}} provides an internal [container image registry](https://docs.openshift.com/container-platform/4.8/registry/index.html){: external} that you can use to locally manage and view images through the console. Alternatively, you can [set up the private {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) or [import images from {{site.data.keyword.registrylong_notm}} to the internal registry](/docs/openshift?topic=openshift-registry#imagestream_registry). The internal registry comes with a classic {{site.data.keyword.cloud_notm}} File Storage volume in your IBM Cloud infrastructure account to [store the registry images](/docs/openshift?topic=openshift-registry#openshift_internal_registry). The file storage volume is provisioned through the `image-registry-storage` persistent volume claim (PVC).
+:   {{site.data.keyword.redhat_openshift_notm}} provides an internal [container image registry](https://docs.openshift.com/container-platform/4.9/registry/index.html){: external} that you can use to locally manage and view images through the console. Alternatively, you can [set up the private {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) or [import images from {{site.data.keyword.registrylong_notm}} to the internal registry](/docs/openshift?topic=openshift-registry#imagestream_registry). The internal registry comes with a classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} volume in your IBM Cloud infrastructure account to [store the registry images](/docs/openshift?topic=openshift-registry#openshift_internal_registry). The file storage volume is provisioned through the `image-registry-storage` persistent volume claim (PVC).
 
 `openshift-ingress`, `openshift-ingress-operator`
-:   {{site.data.keyword.redhat_openshift_notm}} uses [routes](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html){: external} to directly expose an app's service on a hostname so that external clients can reach the service. To create routes, the cluster uses the Ingress operator. You can also use [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4) to expose apps externally and customize routing. Ingress consists of three components: the Ingress operator, Ingress controller, and Route resources. The Ingress controller maps the service to the hostname. By default, the Ingress controller includes two replicas. Make sure that your cluster has at least two worker nodes so that the Ingress controller can run on separate compute hosts for higher availability.
+:   {{site.data.keyword.redhat_openshift_notm}} uses [routes](https://docs.openshift.com/container-platform/4.9/networking/routes/route-configuration.html){: external} to directly expose an app's service on a hostname so that external clients can reach the service. To create routes, the cluster uses the Ingress operator. You can also use [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4) to expose apps externally and customize routing. Ingress consists of three components: the Ingress operator, Ingress controller, and Route resources. The Ingress controller maps the service to the hostname. By default, the Ingress controller includes two replicas. Make sure that your cluster has at least two worker nodes so that the Ingress controller can run on separate compute hosts for higher availability.
 
 `openshift-marketplace`
-:   The marketplace includes the [OperatorHub](https://docs.openshift.com/container-platform/4.8/operators/understanding/olm-understanding-operatorhub.html){: external} that comes with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. The OperatorHub includes operators from Red Hat and 3rd-party providers. Keep in mind that these operators are provided by the community, might not integrate with your cluster, and are not supported by IBM. You can [enable operators](/docs/openshift?topic=openshift-operators) from the OperatorHub in {{site.data.keyword.redhat_openshift_notm}} web console.
+:   The marketplace includes the [OperatorHub](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm-understanding-operatorhub.html){: external} that comes with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. The OperatorHub includes operators from Red Hat and 3rd-party providers. Keep in mind that these operators are provided by the community, might not integrate with your cluster, and are not supported by IBM. You can [enable operators](/docs/openshift?topic=openshift-operators) from the OperatorHub in {{site.data.keyword.redhat_openshift_notm}} web console.
 
 `openshift-monitoring`
-:   OpenShift Container Platform includes a [built-in monitoring stack](http://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external} for your cluster, that includes metrics and alert managing capabilities. For a comparison of the built-in monitoring stack and other options such as {{site.data.keyword.mon_full_notm}}, see [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health).
+:   OpenShift Container Platform includes a [built-in monitoring stack](http://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html){: external} for your cluster, that includes metrics and alert managing capabilities. For a comparison of the built-in monitoring stack and other options such as {{site.data.keyword.mon_full_notm}}, see [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health).
 
 `openshift-multus`
-:   OpenShift Container Platform uses the Multus container network interface (CNI) plug-in to allow [multiple pod networks](https://docs.openshift.com/container-platform/4.8/networking/multiple_networks/understanding-multiple-networks.html){: external}. However, you can't configure the cluster to use multiple pod networks. {{site.data.keyword.openshiftlong_notm}} clusters support only Calico, which is set up for your cluster by default. If enabled, [Service Mesh](https://docs.openshift.com/container-platform/4.8/service_mesh/v1x/servicemesh-release-notes.html){: external} uses the Multus plug-in.
+:   OpenShift Container Platform uses the Multus container network interface (CNI) plug-in to allow [multiple pod networks](https://docs.openshift.com/container-platform/4.9/networking/multiple_networks/understanding-multiple-networks.html){: external}. However, you can't configure the cluster to use multiple pod networks. {{site.data.keyword.openshiftlong_notm}} clusters support only Calico, which is set up for your cluster by default. If enabled, [Service Mesh](https://docs.openshift.com/container-platform/4.9/service_mesh/v1x/servicemesh-release-notes.html){: external} uses the Multus plug-in.
 
 `openshift-network-operator`
-:   The [cluster network operator (CNO)](https://docs.openshift.com/container-platform/4.8/networking/cluster-network-operator.html){: external} manages the cluster network components that are set up by default, such as the CNI pod network provider plug-in and DNS operator.
+:   The [cluster network operator (CNO)](https://docs.openshift.com/container-platform/4.9/networking/cluster-network-operator.html){: external} manages the cluster network components that are set up by default, such as the CNI pod network provider plug-in and DNS operator.
 
 `openshift-operator-lifecycle-manager`
-:   The [operator lifecycle manager (OLM)](https://docs.openshift.com/container-platform/4.8/operators/understanding/olm/olm-understanding-olm.html){: external} manages the lifecycle of all operators and the catalog that run in the cluster, including the operators for the default components and any custom operators that you add.
+:   The [operator lifecycle manager (OLM)](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm/olm-understanding-olm.html){: external} manages the lifecycle of all operators and the catalog that run in the cluster, including the operators for the default components and any custom operators that you add.
 
 `openshift-service-ca`, `openshift-service-ca-operator`
 :   The certificate authority (CA) operator runs certificate signing and injects certificates into API server resources and configmaps in the cluster. For more information, see the [GitHub project](https://github.com/openshift/service-ca-operator){: external}.
@@ -276,7 +276,7 @@ Operating System
 :   {{site.data.keyword.openshiftlong_notm}} worker nodes run on the Red Hat Enterprise Linux 7 operating system.
 
 Projects
-:   {{site.data.keyword.redhat_openshift_notm}} organizes your resources into projects, which are Kubernetes namespaces with annotations, and includes many more components than community Kubernetes clusters to run {{site.data.keyword.redhat_openshift_notm}} features such as the catalog. Select components of projects are described in the following rows. For more information, see [Working with projects](http://docs.openshift.com/container-platform/4.8/applications/projects/working-with-projects.html){: external}.
+:   {{site.data.keyword.redhat_openshift_notm}} organizes your resources into projects, which are Kubernetes namespaces with annotations, and includes many more components than community Kubernetes clusters to run {{site.data.keyword.redhat_openshift_notm}} features such as the catalog. Select components of projects are described in the following rows. For more information, see [Working with projects](http://docs.openshift.com/container-platform/4.9/applications/projects/working-with-projects.html){: external}.
 
 `kube-system`
 :   This namespace includes many components that are used to run Kubernetes on the worker node.
@@ -295,7 +295,7 @@ Projects
 `default`
 :   This namespace is used if you don't specify a namespace or create a project for your Kubernetes resources. In addition, the default namespace includes the following components to support your {{site.data.keyword.redhat_openshift_notm}} clusters.
     - `router`: {{site.data.keyword.redhat_openshift_notm}} uses [routes](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html) to expose an app's service on a hostname so that external clients can reach the service. The router maps the service to the hostname. By default, the router includes two replicas. Make sure that your cluster has at least two worker nodes so that the router can run on separate compute hosts for higher availability.
-    - `docker-registry` and `registry-console`.: {{site.data.keyword.redhat_openshift_notm}} provides an internal [container image registry](https://docs.openshift.com/container-platform/3.11/install_config/registry/index.html) that you can use to locally manage and view images through the console. Alternatively, you can set up the private {{site.data.keyword.registrylong_notm}}. The internal registry comes with a classic {{site.data.keyword.cloud_notm}} File Storage volume in your IBM Cloud infrastructure account to [store the registry images](/docs/openshift?topic=openshift-registry#openshift_internal_registry) by using the `registry-backing` persistent volume claim (PVC).|
+    - `docker-registry` and `registry-console`.: {{site.data.keyword.redhat_openshift_notm}} provides an internal [container image registry](https://docs.openshift.com/container-platform/3.11/install_config/registry/index.html) that you can use to locally manage and view images through the console. Alternatively, you can set up the private {{site.data.keyword.registrylong_notm}}. The internal registry comes with a classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} volume in your IBM Cloud infrastructure account to [store the registry images](/docs/openshift?topic=openshift-registry#openshift_internal_registry) by using the `registry-backing` persistent volume claim (PVC).|
 
 Other projects
 :   Other components are installed in various namespaces by default to enable functionality such as logging, monitoring, and the {{site.data.keyword.redhat_openshift_notm}} console.
@@ -341,7 +341,7 @@ The following diagram shows the components of your cluster and how they interact
 ### VPC version 4 master and worker node components
 {: #service-arch-vpc-4}
 
-[Masters](#service-architecture-4-master) and [worker nodes](#service-architecture-4-workers) include the same components as described in the Classic cluster architecture for version 4 clusters. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.8/architecture/architecture.html){: external}.
+[Masters](#service-architecture-4-master) and [worker nodes](#service-architecture-4-workers) include the same components as described in the Classic cluster architecture for version 4 clusters. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/architecture/architecture.html){: external}.
 
 
 Master
@@ -417,7 +417,7 @@ To remove that data that IBM stores, choose between the following options. Note 
 ### Does Red Hat collect information about my cluster?
 {: #pi-rh-telemetry}
 
-Yes. To improve the OpenShift Container Platform service, a telemetry component is installed in your cluster by default that collects anonymized health reports about your cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.8/support/remote_health_monitoring/about-remote-health-monitoring.html){: external}.
+Yes. To improve the OpenShift Container Platform service, a telemetry component is installed in your cluster by default that collects anonymized health reports about your cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.9/support/remote_health_monitoring/about-remote-health-monitoring.html){: external}.
 
 To remove the telemetry component, see [Disabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports).
 

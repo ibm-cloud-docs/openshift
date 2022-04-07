@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -125,7 +125,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 ![Persistent storage options for single zone cluster](images/cs_storage_single_zone.png)
 
 
-| Characteristics | Classic File Storage | Classic Block Storage / VPC Block Storage
+| Characteristics | Classic {{site.data.keyword.filestorage_short}} | Classic Block Storage / VPC Block Storage
 | --- | --- | --- |
 | Multizone-capable | No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. |No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. | 
 | Supported in VPC clusters | No | Yes |

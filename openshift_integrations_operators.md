@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-07"
 
 keywords: kubernetes, openshift
 
@@ -26,18 +26,18 @@ Operators are a convenient way to add services to your cluster from community, t
 ## Using Operators in version 4 clusters
 {: #operators_4}
 
-In {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4, operators are available in your cluster by default. Use [Operators](https://docs.openshift.com/container-platform/4.8/operators/understanding/olm-what-operators-are.html){: external} to package, deploy, and update the apps in your {{site.data.keyword.openshiftlong_notm}} clusters.
+In {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4, operators are available in your cluster by default. Use [Operators](https://docs.openshift.com/container-platform/4.9/operators/understanding/olm-what-operators-are.html){: external} to package, deploy, and update the apps in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 1. To use operators, follow the {{site.data.keyword.redhat_openshift_notm}} documentation.
-    - [Adding Operators to a cluster](https://docs.openshift.com/container-platform/4.8/operators/admin/olm-adding-operators-to-cluster.html){: external}
-    - [Deleting Operators from a cluster](https://docs.openshift.com/container-platform/4.8/operators/admin/olm-deleting-operators-from-cluster.html){: external}
-    - [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.8/operators/user/olm-creating-apps-from-installed-operators.html){: external}
+    - [Adding Operators to a cluster](https://docs.openshift.com/container-platform/4.9/operators/admin/olm-adding-operators-to-cluster.html){: external}
+    - [Deleting Operators from a cluster](https://docs.openshift.com/container-platform/4.9/operators/admin/olm-deleting-operators-from-cluster.html){: external}
+    - [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.9/operators/user/olm-creating-apps-from-installed-operators.html){: external}
     - [Making your own custom Operator](https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md#testing-operator-deployment-on-openshift){: external}.
-        - For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.8/operators/operator_sdk/osdk-about.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/){: external}.
-        - To manage your custom Operator, see the [Operator Lifecycle Manager](http://docs.openshift.com/container-platform/4.8/operators/understanding/olm/olm-understanding-olm.html){: external} documentation.
+        - For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.9/operators/operator_sdk/osdk-about.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/){: external}.
+        - To manage your custom Operator, see the [Operator Lifecycle Manager](http://docs.openshift.com/container-platform/4.9/operators/understanding/olm/olm-understanding-olm.html){: external} documentation.
 2. Review any custom steps to install an operator in your cluster.
-    - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.8/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
+    - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.9/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
 3. If the operator uses a template with a build component that must pull an image from a private registry, the build might fail with an authentication error. To resolve this error, see [Build error due to image pull authentication](/docs/openshift?topic=openshift-ts-app-build-img-pull).
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Setting pod priority
 {: #pod_priority}
 
-With pod priority and preemption, you can configure priority classes to indicate the relative priority of the pods that make up your {{site.data.keyword.redhat_openshift_notm}} cluster's workload. The {{site.data.keyword.redhat_openshift_notm}} controller takes into consideration the priority of a pod and can even preempt (remove) pods with lower priority to make room on a worker node for higher priority pods. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.8/nodes/pods/nodes-pods-priority.html){: external}.
+With pod priority and preemption, you can configure priority classes to indicate the relative priority of the pods that make up your {{site.data.keyword.redhat_openshift_notm}} cluster's workload. The {{site.data.keyword.redhat_openshift_notm}} controller takes into consideration the priority of a pod and can even preempt (remove) pods with lower priority to make room on a worker node for higher priority pods. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.9/nodes/pods/nodes-pods-priority.html){: external}.
 {: shortdesc}
 
 **Why do I set pod priority?**

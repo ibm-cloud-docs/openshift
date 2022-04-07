@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-07"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -39,7 +39,7 @@ Review the following details about {{site.data.keyword.mon_full_notm}}.
 - Free trial to try out the capabilities.
 - To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_monitoring).
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html){: external}.
 
 ### Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools
 {: #built-in-mon-tools}
@@ -52,7 +52,7 @@ Review the following details about built-in monitoring tools for your cluster.
 - Monitoring is on a per-cluster basis.
 - The `openshift-monitoring` project stack is set up in a single zone only. No persistant storage is available to back up or view metric history.
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html){: external}.
 
 ### Monitoring {{site.data.keyword.openshiftlong}} storage metrics
 {: #monitor-metrics}
@@ -88,7 +88,7 @@ Before monitoring metrics for {{site.data.keyword.block_storage_is_short}} you m
     | https-metrics | 11.111.1.1:10250 | kubelet | /metrics | default | 11.111.1.1 | PVC-NAME | openshift-monitoring/k8s | kubelet | 0.003596851526321722 | 
     {: caption="Table 1. Example output for monitoring metrics " caption-side="bottom"}
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.8/monitoring/monitoring-overview.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html){: external}.
 
 If your volume is reaching capacity, try setting up [volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand).
 {: tip}
@@ -232,7 +232,7 @@ The **Master Status** provides details of what operation from the master state i
 ## Disabling remote health reporting
 {: #oc_disable_telemetry_reports}
 
-OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.8/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster.
+OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.9/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
 You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all the worker nodes.
@@ -252,7 +252,7 @@ You might want to disable this remote health reporting to comply with privacy la
     ```
     {: screen}
 
-2. Follow the {{site.data.keyword.redhat_openshift_notm}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.8/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
+2. Follow the {{site.data.keyword.redhat_openshift_notm}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.9/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
 3. To pick up the global configuration changes, reload all the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
         ```sh
