@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-04-07"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -29,7 +29,7 @@ Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cl
 
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC**, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
 
-- {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.8/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
+- {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.9/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 - VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers), with a select group of v2 API, CLI, and console functionality.
 
 {{site.data.keyword.redhat_openshift_notm}} worker nodes are available for paid accounts and standard clusters only. You can create {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4 only. The operating system is Red Hat Enterprise Linux 7.
@@ -141,8 +141,8 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
     | Area | Location in console | Description |
     | -------- | -------- | -------------- |
-    | Administrator perspective | Side navigation menu perspective switcher. | From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.8/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. |
-    | Developer perspective | Side navigation menu perspective switcher. | From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.8/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. |
+    | Administrator perspective | Side navigation menu perspective switcher. | From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.9/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. |
+    | Developer perspective | Side navigation menu perspective switcher. | From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.9/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. |
     {: caption="Table 1. OpenShift console overview" caption-side="bottom"}
     
 8. From the {{site.data.keyword.redhat_openshift_notm}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
@@ -186,7 +186,7 @@ The components that you deploy by completing this lesson are shown in the follow
     ```
     {: pre}
 
-2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.redhat_openshift_notm}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.8/applications/creating_applications/){: external}.
+2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.redhat_openshift_notm}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/applications/creating_applications/){: external}.
     ```sh
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```

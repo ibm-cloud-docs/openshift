@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-04-07"
 
 keywords: openshift, oc
 
@@ -112,7 +112,7 @@ Using both community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} 
 Looking for a simple installation? You can try installing the plug-in with a package manager such as Homebrew. Keep in mind that the version skew might not match your cluster. For example, in Homebrew, you can update Homebrew by running `brew update` and check what version of the plug-in is installed by running `brew info openshift-cli`. Then, install the plug-in by running `brew install openshift-cli`.
 {: tip}
 
-1. Download the latest {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) for your local operating system and {{site.data.keyword.redhat_openshift_notm}} version. The current default {{site.data.keyword.redhat_openshift_notm}} version is 4.8. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. You can get the download link for `oc` from the {{site.data.keyword.redhat_openshift_notm}} web console, or manually from the `mirror.openshift.com` website.
+1. Download the latest {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) for your local operating system and {{site.data.keyword.redhat_openshift_notm}} version. The current default {{site.data.keyword.redhat_openshift_notm}} version is 4.9. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. You can get the download link for `oc` from the {{site.data.keyword.redhat_openshift_notm}} web console, or manually from the `mirror.openshift.com` website.
 
     **![Version 4 icon.](images/icon-version-43.png) Version 4 clusters only: Download the `oc` CLI from your cluster.**
     1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
@@ -202,7 +202,7 @@ Looking for a simple installation? You can try installing the plug-in with a pac
 
 Next, start [Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial).
 
-For more information about the `oc` CLI, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html){: external}.
+For more information about the `oc` CLI, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.9/cli_reference/openshift_cli/getting-started-cli.html){: external}.
 {: note}
 
 

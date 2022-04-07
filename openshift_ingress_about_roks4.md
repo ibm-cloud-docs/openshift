@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-04-07"
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
 
@@ -34,7 +34,7 @@ In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4, Ingr
 ### Ingress operator
 {: #ingress-operator}
 
-The [{{site.data.keyword.redhat_openshift_notm}} Ingress operator](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html){: external} implements routing rules that are applied to all incoming traffic for the apps in your cluster.
+The [{{site.data.keyword.redhat_openshift_notm}} Ingress operator](https://docs.openshift.com/container-platform/4.9/networking/ingress-operator.html){: external} implements routing rules that are applied to all incoming traffic for the apps in your cluster.
 {: shortdesc}
 
 Ingress controllers are managed by the Ingress operator. During cluster creation, the default Ingress controller is registered with the default Ingress subdomain for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. When you register your app with this subdomain by creating an Route resource, the Ingress controller ensures that requests to your app through this subdomain are properly proxied to your app pods. To see the default Ingress controller in your cluster, run `oc describe ingresscontroller/default -n openshift-ingress-operator`.
@@ -176,7 +176,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 ## How can I customize routing?
 {: #custom-routing}
 
-If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.8/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
+If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.9/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external} that manages traffic for your app.
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-04-07"
 
 keywords: openshift, version, update, upgrade
 
@@ -46,7 +46,7 @@ You must [update your cluster](/docs/openshift?topic=openshift-update) by using 
 |Patch|x.x.18_1533|IBM and you|{{site.data.keyword.redhat_openshift_notm}} patches, as well as other {{site.data.keyword.cloud_notm}} Provider component updates such as security and operating system patches. IBM updates masters automatically, but you apply patches to worker nodes. See more about patches in the following section.|
 {: caption="Impacts of {{site.data.keyword.redhat_openshift_notm}} updates" caption-side="top"}
 
-### Major and minor updates (4.8)
+### Major and minor updates (4.9)
 {: #major_minor_updates}
 
 First, [update your master node](/docs/openshift?topic=openshift-update#master) and then [update the worker nodes](/docs/openshift?topic=openshift-update#worker_node). Worker nodes can't run an {{site.data.keyword.redhat_openshift_notm}} major or minor version that is greater than the masters. Additionally, your worker nodes can be only one version behind the master version (`n-1`).
@@ -80,7 +80,7 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 
 **Supported versions**:
 * Latest: 4.9 (Kubernetes 1.22)
-* Default: 4.8 (Kubernetes 1.21)
+* Default: 4.9 (Kubernetes 1.21)
 * 4.7 (Kubernetes 1.20)
 * 4.6 (Kubernetes 1.19)
 
@@ -97,8 +97,8 @@ oc version
 
 Example output
 ```sh
-Client Version: 4.8.3
-Server Version: 4.8.12
+Client Version: 4.9.3
+Server Version: 4.9.12
 Kubernetes Version: v1.21.2
 ```
 {: screen}
