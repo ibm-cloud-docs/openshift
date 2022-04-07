@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -880,7 +880,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 {: important}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR  [--version 4.8_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] --kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP] [--version 4.8_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] --kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
 ```
 {: pre}
 
@@ -914,6 +914,9 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 `--flavor FLAVOR`
 :    Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.
+
+`--cluster-security-group GROUP`
+:    Optional. Specify up to five security group IDs to apply to all workers on the cluster. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, the `kube-clusterID` and VPC security groups are applied by default. Note that the VPC security group is only applied if no other security groups are specified.
 
 
 `--cos-instance COS_CRN`
