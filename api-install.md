@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-07"
 
 keywords: openshift, api
 
@@ -35,8 +35,8 @@ API endpoint prefix
 :    v2 API: `https://containers.cloud.ibm.com/global/v2`
 
 API reference docs
-:    v1 API: [`https://containers.cloud.ibm.com/global/swagger-global-api/`](https://containers.cloud.ibm.com/global/swagger-global-api/#/)
-:    v2 API: [`https://containers.cloud.ibm.com/global/swagger-global-api/`](https://containers.cloud.ibm.com/global/swagger-global-api/#/).
+:    v1 API: [`https://containers.cloud.ibm.com/global/swagger-global-api/`](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}
+:    v2 API: [`https://containers.cloud.ibm.com/global/swagger-global-api/`](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
 
 API architectural style
 :    v1 API: Representational state transfer (REST) that focuses on resources that you interact with through HTTP methods such as `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`.

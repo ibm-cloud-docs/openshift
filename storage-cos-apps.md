@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-07"
 
 keywords: openshift
 
@@ -391,7 +391,7 @@ To deploy a stateful set that uses object storage:
 :   In the spec metadata labels section, enter the same labels that you added to the `spec.selector.matchLabels` section of your stateful set YAML.
 
 `terminationGracePeriodSeconds`
-:   Enter the number of seconds to give the `kubelet` to gracefully terminate the pod that runs your stateful set replica. For more information, see [Delete Pods](https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/#delete-pods).
+:   Enter the number of seconds to give the `kubelet` to gracefully terminate the pod that runs your stateful set replica. For more information, see [Delete Pods](https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/#delete-pods){: external}.
 
 `VolumeClaimTemplates.name`
 :   In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the `spec.containers.volumeMount.name` section. The name that you enter here is used to create the name for your PVC in the format: `<volume_name>-<statefulset_name>-<replica_number>`.
