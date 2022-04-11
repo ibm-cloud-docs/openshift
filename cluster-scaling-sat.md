@@ -76,7 +76,7 @@ To get started, see [Setting up your location and cluster for autoscaling](#setu
 1. Attach more hosts to your location that you want to use in your autoscaled worker pool. As a best practice, don't set up autoscaling on the default worker pool. When you attach the hosts that you want to use in the autoscaled worker pool, be sure specify host labels such as the host `cpu=16` and `memory=64`. Host labels are used by the cluster autoscaler add-on to find hosts that are available for scaling.
     Example command to attach hosts while specifying host labels for CPU and memory.
     ```sh
-    ibmcloud sat host attach --location LOCATION --host-label "cpu=16" --host-label "memory=64" [--operating-system SYSTEM] 
+    ibmcloud sat host attach --location LOCATION --host-label "cpu=16" --host-label "memory=64"  
     ```
     {: pre}
     

@@ -33,9 +33,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-New! Create clusters that use Red Hat CoreOS hosts in {{site.data.keyword.satelliteshort}}
-:   You can now create [Red Hat CoreOS](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) enabled locations in {{site.data.keyword.satelliteshort}}. Before you can attach your RHCOS hosts to your location, your must create a Red Hat CoreOS enabled location. Note that Red Hat CoreOS enabled locations are currently available only in new locations that are managed from Dallas (`us-south`) or Frankfurt (`eu-de`). You can't migrate existing locations. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations).
-
 New! {{site.data.keyword.secrets-manager_full}}
 :    With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4##manage_certs_secrets_mgr)
 
