@@ -208,6 +208,8 @@ subcollection: openshift
 
         * **New! Create clusters that use Red Hat CoreOS hosts in {{site.date.keyword.satelliteshort}}**
 
+        * **New! {{site.data.keyword.secrets-manager_full}}**
+
         * HPCS Router add-on
 
         * Cloud Image Key Synchronizer add-on
