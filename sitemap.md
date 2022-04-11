@@ -206,9 +206,9 @@ subcollection: openshift
 
     * [11 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1122)
 
-        * **New! Create clusters that use Red Hat CoreOS hosts in {{site.date.keyword.satelliteshort}}**
+        * New! Create clusters that use Red Hat CoreOS hosts in {{site.data.keyword.satelliteshort}}
 
-        * **New! {{site.data.keyword.secrets-manager_full}}**
+        * New! {{site.data.keyword.secrets-manager_full}}
 
         * HPCS Router add-on
 
