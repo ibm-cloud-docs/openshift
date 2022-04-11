@@ -3693,6 +3693,236 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
+### `ibmcloud oc instance default set`
+{: #cs_ingress_instance_default_set}
+
+Set a registered an IBM Cloud {{site.data.keyword.secrets-manager_short}} instance to default. If an existing default instance exists, it will be unset from default.
+{: shortdesc}
+
+When you set a new default {{site.data.keyword.secrets-manager_short}} instance, any existing secrets that are not managed by IBM Cloud must have their certificate CRN manually updated to match the CRN of the new default instance. To update the CRN, use the `ibmcloud oc ingress secret update` command. If you do not update the CRN, these secrets do not update at the next scheduled certificate renewal. 
+{: important}
+
+```sh
+ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--crn`
+:    Required. The CRN of the IBM Cloud Secret Manager instance.
+
+`--name NAME`
+:    Required. The name of the Secret Manager instance.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc ingress instance default set --cluster --cluster a111aaa11a1aaaaaaa1 --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 --name my-secret-manager --namespace default
+```
+{: pre}
+
+### `ibmcloud oc instance default unset`
+{: #cs_ingress_instance_default_unset}
+
+Remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance.
+{: shortdesc}
+
+If no default instance is set, your secrets are only written directly to the cluster and are not written to any {{site.data.keyword.secrets-manager_short}} instance. 
+{: important}
+
+```sh
+ibmcloud oc ingress instance default unset --cluster CLUSTER --crn CRN --name NAME [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--crn`
+:    Required. The CRN of the IBM Cloud Secret Manager instance.
+
+`--name NAME`
+:    Required. The name of the Secret Manager instance.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc ingress instance default unset --cluster --cluster a111aaa11a1aaaaaaa1 --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 --name my-secret-manager --namespace default
+```
+{: pre}
+
+### `ibmcloud oc ingress instance get`
+{: #cs_ingress_instance_get}
+
+View the details of a {{site.data.keyword.secrets-manager_short}} instance.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--name NAME`
+:    Required. The name of the Secret Manager instance.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc ingress instance get --cluster my-cluster --name my-secrets-manager 
+```
+{: pre}
+
+### `ibmcloud oc ingress instance ls`
+{: #cs_ingress_instance_ls}
+
+List all {{site.data.keyword.secrets-manager_short}} instances registered to a cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-deleted]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+`--show-deleted`
+:   Optional. Add this option to include instances that were unregistered from the cluster.
+
+**Example**:
+
+```sh
+ibmcloud oc ingress instance ls --cluster my-cluster --show-deleted
+```
+{: pre}
+
+### `ibmcloud oc ingress instance register`
+{: #cs_ingress_instance_register}
+
+Register a {{site.data.keyword.secrets-manager_short}} instance to a cluster. 
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--crn`
+:    Required. The CRN of the IBM Cloud Secret Manager instance.
+
+`--is-default`
+:    Optional. Include this option to also set the registered instance as the default {{site.data.keyword.secrets-manager_short}} instance where all Ingress subdomain certificates are stored. If another instance is already set as default, it is removed. Note that you must manually update any certificates or secrets to upload them to the new default instance. Otherwise, they are uploaded at the next scheduled update time for the secret.  
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc ingress instance register --cluster my-cluster --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11
+```
+{: pre}
+
+### `ibmcloud oc ingress instance unregister`
+{: #cs_ingress_instance_unregister}
+
+Remove a {{site.data.keyword.secrets-manager_short}} instance from a cluster. 
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--name`
+:    Required. The name of the {{site.data.keyword.secrets-manager_short}} instance to remove. 
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc ingress instance unregister --cluster my-cluster --name my-secrets-manager-instance
+```
+{: pre}
 
 ### `ibmcloud oc ingress lb get`
 {: #cs_ingress_lb_proxy-protocol_get}
@@ -3794,7 +4024,6 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...]
 **Command options**:
 
 
-
 `-c, --cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
@@ -3828,7 +4057,7 @@ The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is d
 {: note}
 
 ```sh
-ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME [--namespace NAMESPACE] [--persist] [-q]
+ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME [--namespace NAMESPACE] [--persist] [--type] [-q] 
 ```
 {: pre}
 
@@ -3854,7 +4083,10 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 :    Optional: Specify the project that your Ingress resource is deployed to. If your ALB runs the Kubernetes Ingress image, this value is required, because the ALB can identify secrets only in the same project as your Ingress resource. If your ALB runs the {{site.data.keyword.openshiftlong_notm}} Ingress image, and you don't specify a project, the certificate secret is created in a project called `ibm-cert-store`. A reference to this secret is then created in the `default` project, which any Ingress resource in any project can access. While processing requests, the ALB follows the reference to pick up and use the certificate secret from the `ibm-cert-store` project.
 
 `--persist`
-:    Optional: Persist the secret data in your cluster. If the secret is later deleted from the CLI or {{site.data.keyword.redhat_openshift_notm}} web console, the secret is automatically re-created in your cluster. To permanently delete the secret, you must use the [`/ingress/v2/secret/deleteSecret` API](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/DeleteIngressSecret){: external}.
+:    Optional: Persist the secret data in your cluster. If the secret is later deleted from the CLI or {{site.data.keyword.redhat_openshift_notm}} web console, the secret is automatically re-created in your cluster. To permanently delete the secret, you must use the [`/ingress/v2/secret/deleteSecret` API](https://containers.cloud.ibm.com/global/swagger-global-api/#/beta/DeleteIngressSecret).
+
+`--type`
+: Optional. The type of secret. Choose from `tls` for certificate CRNs or `opaque` for non-certificate CRNs. For `tls`, specify up to one CRN. For`opaque`, you can specify multiple CRNs. If no secret type is specified, `tls` is applied by default.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -3862,10 +4094,124 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 
 **Example**:
 ```sh
-ibmcloud oc ingress secret create --cert-crn crn:v1:staging:public:cloudcerts:us-south:a/06580c923e40314421d3b6cb40c01c68:0db4351b-0ee1-479d-af37-56a4da9ef30f:certificate:4bc35b7e0badb304e60aef00947ae7ff --cluster my_cluster --name my_alb_secret --namespace demo_ns
+ibmcloud oc ingress secret create --cert-crn crn:v1:staging:public:cloudcerts:us-south:a/06580c923e40314421d3b6cb40c01c68:0db4351b-0ee1-479d-af37-56a4da9ef30f:certificate:4bc35b7e0badb304e60aef00947ae7ff --cluster my_cluster --type tls --name my_alb_secret --namespace demo_ns
 ```
 {: pre}
 
+### `ibmcloud oc ingress secret field add`
+{: #cs_ingress_secret_field_add}
+
+Add a non-certificate CRN field to an Opaque secret. 
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress secret field add --cluster CLUSTER --name SECRET_NAME --field CRN --namespace NAMESPACE [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--name NAME`
+:    Required. The name of the secret to add the field to.
+
+`--field CRN`
+:    Required. The secret CRN to add to the secret. To pull in the secret without specifying the name, use `--field <crn>`. To specify the field name, use `--field name=<crn>`. To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use `--field prefix=<crn>`. You can specify more than one field at a time.
+
+`--namespace NAMESPACE`
+:    Required. The namespace that the secret is deployed to.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+```sh
+ibmcloud ks ingress secret field add --cluster a111aaa11a1aaaaaaa1 --name my-secret --namespace default --field prefix=crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 
+```
+{: pre}
+
+### `ibmcloud oc ingress secret field ls`
+{: #cs_ingress_secret_field_ls}
+
+View the CRN fields of an Ingress secret. This command applies only to Opaque secrets. 
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress secret field ls --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--name NAME`
+:    Required. The name of the secret to add the field to.
+
+`--namespace NAMESPACE`
+:    Required. The namespace that the secret is deployed to.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+```sh
+ibmcloud oc ingress secret field ls --cluster a11a11a11a111a1a111a --name my-secret --namespace default
+```
+{: pre}
+
+### `ibmcloud oc ingress secret field rm`
+{: #cs_ingress_secret_field_rm}
+
+
+```sh
+ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NAMESPACE [--field-name NAME]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--name NAME`
+:    Required. The name of the secret to remove the field from.
+
+`--namespace NAMESPACE`
+:    Required. The namespace that the secret is deployed to.
+
+`--field-name NAME`
+:    The name of the field to remove. To see a list of fields, run [`ibmcloud oc ingress secret field ls`](#cs_ingress_secret_field_ls).
+
+**Example**:
+```sh
+ibmcloud oc ingress secret field rm --cluster a11a11a11a111a1a111a --name my-secret --namespace default --field-name test-field-name
+```
+{: pre}
 
 ### `ibmcloud oc ingress secret get`
 {: #cs_ingress_secret_get}
@@ -3888,7 +4234,6 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name SECRET_NAME --namespace 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
-
 
 `-c, --cluster CLUSTER`
 :    Required: The name or ID of the cluster.
@@ -4020,7 +4365,6 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespa
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
-
 
 `-c, --cluster CLUSTER`
 :    Required: The name or ID of the cluster.
@@ -4650,8 +4994,6 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [ --
 ibmcloud oc nlb-dns rm vpc-gen2 --cluster mycluster --nlb-subdomain mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
 ```
 {: pre}
-
-
 
 ### Experimental: `ibmcloud oc nlb-dns secret regenerate`
 {: #cs_nlb-dns-secret-regenerate}

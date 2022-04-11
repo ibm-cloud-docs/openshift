@@ -3746,6 +3746,16 @@ subcollection: openshift
 
     * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_custom)
 
+* [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
+
+    * [Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/openshift?topic=openshift-ingress-roks4#register-secrets-mgr)
+
+    * [Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance](/docs/openshift?topic=openshift-ingress-roks4#default-secrets-mgr)
+
+* [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
+
+    * [Using the {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}} migration script](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr-script)
+
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
@@ -4673,6 +4683,18 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
 
+    * [`ibmcloud oc instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
+
+    * [`ibmcloud oc instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_unset)
+
+    * [`ibmcloud oc ingress instance get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_get)
+
+    * [`ibmcloud oc ingress instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_ls)
+
+    * [`ibmcloud oc ingress instance register`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_register)
+
+    * [`ibmcloud oc ingress instance unregister`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_unregister)
+
     * [`ibmcloud oc ingress lb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_get)
 
     * [`ibmcloud oc ingress lb proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_disable)
@@ -4680,6 +4702,12 @@ subcollection: openshift
     * [`ibmcloud oc ingress lb proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable)
 
     * [`ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create)
+
+    * [`ibmcloud oc ingress secret field add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_add)
+
+    * [`ibmcloud oc ingress secret field ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_ls)
+
+    * [`ibmcloud oc ingress secret field rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_rm)
 
     * [`ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_get)
 

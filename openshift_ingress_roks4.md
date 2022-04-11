@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-11"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1107,13 +1107,14 @@ http://<subdomain2>.<domain>/<app1_path>
 Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-status).
 {: tip}
 
-
-
 ## Managing TLS certificates and secrets
 {: #manage_certs}
 
 As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance is automatically created for each cluster that you can use to manage the cluster's Ingress TLS certificates.
 {: shortdesc}
+
+{{site.data.keyword.cloudcerts_short}} is deprecated. Support for the service in Kubernetes clusters is set to end in late 2022. Any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022 and any secrets within them to be written directly to the cluster. Migrate your certificates to IBM Cloud {{site.data.keyword.secrets-manager_short}} as soon as possible.
+{: deprecated} 
 
 For a {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, ensure that the API key for the region and resource group that the cluster is created in has the correct permissions. You can check who set the API key for the cluster by running `ibmcloud oc api-key info -c <cluster_name_or_ID>`.
     * If the account owner set the API key, then your cluster is assigned a {{site.data.keyword.cloudcerts_short}} instance.
@@ -1194,6 +1195,114 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
     ```
     {: pre}
 
+## Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}
+{: #manage_certs_secrets_mgr}
+
+As of 11 April 2022, you can integrate your own {{site.data.keyword.secrets-manager_full_notm}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. You can use {{site.data.keyword.secrets-manager_short}} instances across multiple clusters, and a single cluster can have more than one instance. For each cluster, you set one instance as a default where all Ingress subdomain certificates are uploaded. With the [`ibmcloud oc ingress secret` commands](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_create), you can also utilize {{site.data.keyword.secrets-manager_short}} to easily create and manage TLS or Opaque secrets that are stored in your {{site.data.keyword.redhat_openshift_notm}} cluster. 
+{: shortdesc}
+
+**What secret types are supported with {{site.data.keyword.secrets-manager_short}}?**
+:    {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
+:    For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and Opaque secret types. For TLS secrets, you can specify one certificate CRN. For Opaque secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type, TLS is applied by default.  
+
+**Is a {{site.data.keyword.secrets-manager_short}} instance automatically generated in my cluster?**
+:    No. You must [create a {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) and then [register your instance to your cluster](#register-secrets-mgr). 
+
+### Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster
+{: #register-secrets-mgr}
+
+After you have created a {{site.data.keyword.secrets-manager_short}} instance, you must register the instance to a cluster. After you have registered the instance to a cluster, an update to secret values in the instance also updates any secrets with a corresponding CRN. 
+
+```sh
+ibmcloud oc register --cluster <cluster_name_or_id> --crn <instance_crn>
+```
+{: pre}
+
+If you want to register an instance to a cluster and also [set it as the default instance](#default-secrets-mgr), include the `--is-default` option. Otherwise, you can set a default instance with the `ibmcloud oc ingress instance set` command. 
+{: tip}
+
+### Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance
+{: #default-secrets-mgr}
+
+If you are setting a default {{site.data.keyword.secrets-manager_short}} instance for the first time as part of your migration from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}} and you have secrets that are not managed by IBM Cloud, use the [`certificate-manager-to-secrets-manager` migration script](https://github.com/ibm-cloud-security/certificate-manager-to-secrets-manager){: external}. See [Using the {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}} migration script](#migrate-secrets-mgr-script) for more details.
+{: note}
+
+When you set a default {{site.data.keyword.secrets-manager_short}} instance, all new Ingress subdomain certificates are stored in that instance. If a previous default instance had already been set, it is removed as the default.
+{: shortdesc}
+
+When you set a new default {{site.data.keyword.secrets-manager_short}} instance, any existing secrets that are not managed by IBM Cloud must have their certificate CRN manually updated to match the CRN of the new default instance. To update the CRN, use the `ibmcloud oc ingress secret update` command. If you do not update the CRN, these user-managed secrets do not update at the next scheduled certificate renewal. 
+{: important}
+
+1. Run the command to set the new default. 
+
+    ```sh
+    ibmcloud oc ingress instance default set --cluster <cluster_name_or_id> --crn <instance_crn> --name <instance_name>
+    ```
+    {: pre}
+
+2. For secrets that are not manged by IBM Cloud, update the secret CRN to match the CRN of the new default instance. 
+
+    To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
+
+    1. Get the CRN of the new default {{site.data.keyword.secrets-manager_short}} instance. 
+
+        ```sh
+        ibmcloud oc ingress instance get --cluster <cluster_name_or_id> --name <secret_name>
+        ```
+        {: pre}
+    
+    2. Update the secret CRN to match the CRN of the new default instance.
+
+        ```sh
+        ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <default_instance_crn>
+        ```
+        {: pre}
+
+
+2. Update your secrets to upload them to the new default instance. 
+    ```sh
+    ibmcloud oc nlb-dns secret regenerate --cluster <cluster_name_or_id> --nlb-subdomain <nlb_subdomain>
+    ```
+    {: pre}
+
+To remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance of a cluster, run the following command. Note that if no default instance is set, your secrets are only written directly to the cluster and are not uploaded to any {{site.data.keyword.secrets-manager_short}} instance.
+
+```sh
+ibmcloud oc ingress instance default unset --cluster <cluster_name_or_id> --crn <instance_crn> --name <instance_name>
+```
+{: pre}
+
+## Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}
+{: #migrate-secrets-mgr}
+
+With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates with {{site.data.keyword.secrets-manager_short}}. For a comparison between the two services and details on migrating your resources, see [Migrating certificates from Certificate Manager](/docs/secrets-manager?topic=secrets-manager-migrate-from-certificate-manager#migrate-process). For migration instructions, see [Migration guidelines](/docs/secrets-manager?topic=secrets-manager-migrate-from-certificate-manager#migrate-guidelines).
+
+Support for the {{site.data.keyword.cloudcerts_short}} in Kubernetes clusters is set to end in late 2022, and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. Secrets in deleted {{site.data.keyword.cloudcerts_short}} are written directly to the cluster. If you do not migrate your secrets and set a default {{site.data.keyword.secrets-manager_short}}, your secrets are only written to the cluster and not to any manager instance.
+{: note}
+
+To learn how you can use {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.redhat_openshift_notm}} cluster, see [Managing TLS and Opaque certificates and secrets with Secrets Manager](#manage_certs_secrets_mgr).
+
+When migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}, keep the following points in mind:
+
+**Secrets created in different namespaces**:
+:    If you used your default {{site.data.keyword.cloudcerts_short}} instance to create secrets with Ingress CRNs in other namespaces, those CRNs become invalid once you register a {{site.data.keyword.secrets-manager_short}} default instance. Once you have set a {{site.data.keyword.secrets-manager_short}} instance as default, you must manually change those CRNs to match the new {{site.data.keyword.secrets-manager_short}} CRNs. 
+
+**Callback functionality to update secrets**:
+:    Previously, {{site.data.keyword.cloudcerts_short}} provided a callback functionality to automatically update any Ingress secret created with a specific CRN if that secret CRN is updated in the default manager instance. This functionality is **not** available in {{site.data.keyword.secrets-manager_short}}. If you update a secret, you must run the `ibmcloud oc ingress secret update` command to apply the update to a Ingress secret with the CRN in the cluster. Otherwise, IBM Cloud periodically polls secrets for updates apply to the cluster, which may take up to 24 hours. 
+
+**Service-to-service enablement**:
+:    If you want to enable service-to-service communication, you must [set up IAM credentials for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-configure-iam-engine&interface=ui) and [create a service-to-service authorization](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+
+### Using the {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}} migration script
+{: #migrate-secrets-mgr-script}
+
+You can run the [`certificate-manager-to-secrets-manager` migration script](https://github.com/ibm-cloud-security/certificate-manager-to-secrets-manager){: external} to easily migrate your secrets to your new Secrets Manager instance. Before you run the script, make sure you have followed the steps in the [Migration guidelines](/docs/secrets-manager?topic=secrets-manager-migrate-from-certificate-manager#migrate-guidelines). 
+
+Using the migration script to migrate a non-Ingress secret creates a duplicate copy of the secret in the new {{site.data.keyword.secrets-manager_short}} instance. For example, using the script to migrate non-Ingress secret `my-secret`, creates the duplicate `my-secret-1` in your {{site.data.keyword.secrets-manager_short}} instance. After you run `ibmcloud ks ingress secret update --cert-crn` to update the secret in the API, the new `my-secret-1` secret updates at every new certificate renewal, but the original `my-secret` does not. You can choose to delete the original secret. Otherwise, it does not get updated and eventually expires. 
+{: note}
+
+
+
 
 
 ## Customizing Ingress routing with annotations
@@ -1203,7 +1312,6 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
 {: important}
-
 
 
 
