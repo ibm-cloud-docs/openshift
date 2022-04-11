@@ -71,7 +71,7 @@ CLI changelog update
 :   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.394.
 
 ### 6 April 2022
-{: #{[subcollection]-apr0622}}
+{: #openshift-apr0622}}
 
 Master fix pack update
 

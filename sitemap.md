@@ -226,7 +226,7 @@ subcollection: openshift
 
         * CLI changelog update
 
-    * [6 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#{[subcollection]-apr0622)
+    * [6 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0622)
 
         * Master fix pack update
 
