@@ -24,14 +24,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: note}
 
 
-
-
 ## April 2022
 {: #openshift-apr22}
 
   
 ### 11 April 2022
 {: #openshift-apr1122}
+
+
+
+**New! Create clusters that use Red Hat CoreOS hosts in {{site.date.keyword.satelliteshort}}**
+:   You can now create [Red Hat CoreOS](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) enabled locations in {{site.date.keyword.satelliteshort}}. Before you can attach your RHCOS hosts to your location, your must create a Red Hat CoreOS enabled location. Note that Red Hat CoreOS enabled locations are currently available only in new locations that are managed from Dallas (`us-south`) or Frankfurt (`eu-de`). You can't migrate existing locations. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations).
 
 
 

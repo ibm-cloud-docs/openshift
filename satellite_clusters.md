@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-11"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -27,6 +27,8 @@ Before you can create clusters in {{site.data.keyword.satellitelong_notm}}, you 
 
 1. [Review the {{site.data.keyword.satellitelong_notm}} components](/docs/satellite?topic=satellite-about) and the [location planning guide](/docs/satellite?topic=satellite-infrastructure-plan).
 1. Prepare to create your {{site.data.keyword.satellitelong_notm}} location. Choose from one of the following options.
+    Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-locations#location-create-console). Note that Red Hat CoreOS is available only in new locations that are managed from Dallas (`us-south`) or Frankfurt (`eu-de`). You can't migrate existing locations.
+    {: note}
     
     * You can automatically provision the hosts for your location. With this option, you create a custom role, or service ID, with your cloud provider credentials. This service ID is used to automatically provision virtual machines in your cloud provider. Once the VMs are provisioned and attached to your location, you can assign them to {{site.data.keyword.satellitelong_notm}} control plane or to the cloud services you want to use. To get started, see the [Automating your location set up with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
     * You can manually provision hosts either in your on-premises data center or in a public cloud. If you choose to manually provision the hosts for your location, make sure that your hosts meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and that you allow the [required outbound network access](/docs/satellite?topic=satellite-reqs-host-network). 
@@ -47,6 +49,9 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 1. In the **Infrastructure** section, select **{{site.data.keyword.satelliteshort}}**.
 1. In the **OCP entitlement** section, specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret](https://console.redhat.com/openshift/install/pull-secret){: external} as a file or in raw JSON format. The cluster also uses this pull secret to download {{site.data.keyword.redhat_openshift_notm}} images from your own {{site.data.keyword.redhat_notm}} account.
 1. In the **Location** section, select the {{site.data.keyword.satelliteshort}} location where you want to create the cluster. Make sure that the location that you select is in a **Normal** state.
+1. In the **Operating System** section, select the operating system of the hosts that you want to use in the default worker pool of your cluster. In locations that are Red Hat CoreOS enabled, you can use either your RHCOS or RHEL hosts.
+    In RHCOS enabled locations, when you want to add worker pools to your cluster, you can use RHCOS or RHEL hosts. Make sure to attach hosts with the operating system that you want to use to your location before assigning them to a worker pool.
+    {: tip}
 1. In the **Worker pools** section, configure the details for your default worker pool.
     1. Select the **Satellite zones** that {{site.data.keyword.satelliteshort}} uses to evenly assign hosts across zones that represent zones in your underlying infrastructure provider. Generally, create your worker pool across 3 zones for high availability.
     1. Request the **vCPU**, **Memory (GB)**, and number of **Worker nodes per zone** that you want to create the worker pool with. {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool to fulfill your request. Generally, select at least 1 worker node per zone for a total of 3 worker nodes in your cluster.
@@ -101,11 +106,18 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     * To ensure that hosts are automatically assigned as worker nodes in the default worker pool of your cluster, specify those hosts' labels in the `--host-label` flags, and specify the number of worker nodes per zone in the `--workers` flag. 
     * To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
     * For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
+    * Optional: Specify the operating system of the hosts that you want to use to create your cluster. You can use `RHEL7` or `RHCOS` hosts. Note that you must create a Red Hat CoreOS enabled location to use your RHCOS hosts in your clusters. Support for Red Hat CoreOS hosts is available for {{site.data.keyword.satelliteshort}} locations in Dallas or Frankfurt and for cluster version 4.9 and later. To see if your location is CoreOS enabled, run `ibmcloud sat location get --location LOCATION`. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
     
     Example `cluster create` command.
 
     ```sh
-    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.9_openshift [--enable-admin-agent] [--host-label LABEL ...]  [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
+    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.9_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system RHEL7|RHCOS] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
+    ```
+    {: pre}
+    
+    Example `cluster create` command using `RHCOS` hosts and cluster version `4.9.23_1122`.
+    ```sh
+    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.9.23_1122_openshift --enable-admin-agent --operating-system RHCOS 
     ```
     {: pre}
 
@@ -230,11 +242,19 @@ To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
     * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
     * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You can't update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
     
+    * `--operating-system`: Optional: Specify the operating system of the hosts that you want to use to create your worker pool such as `RHEL7` or `RHCOS`. Note that you must create a Red Hat CoreOS enabled location to use your RHCOS hosts in your clusters. Support for Red Hat CoreOS hosts is available only in new locations that are managed from Dallas (`us-south`) or Frankfurt (`eu-de`). For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
     
     Example `worker-pool create` command
 
     ```sh
-    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] 
+    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] [--operating-system RHEL7|RHCOS]
+    ```
+    {: pre}
+    
+    Example `worker-pool create` command for creating a worker pool that uses Red Hat CoreOS hosts.
+    
+    ```sh
+    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> --operating-system RHCOS
     ```
     {: pre}
     

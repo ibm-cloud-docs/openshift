@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-11"
 
 keywords: openshift
 
@@ -6027,7 +6027,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...] [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
+ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...][--operating-system SYSTEM] [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
 ```
 {: pre}
 
@@ -6049,6 +6049,9 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 `--host-label, -hl LABEL`
 :    Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
+
+`--operating-system SYSTEM`
+:    Optional. The operating system of the hosts that you want to use to create your cluster. You can use `RHEL7` or `RHCOS` hosts. Note that you must create a Red Hat CoreOS enabled location to use your `RHCOS` hosts in your clusters. Support for Red Hat CoreOS hosts is available only in locations that are managed from Dallas (`us-south`) or Frankfurt (`eu-de`) with cluster version 4.9 and later. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
 
 `--pod-subnet SUBNET`
 :    Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
@@ -6086,10 +6089,18 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 
 
-**Example to create a {{site.data.keyword.satelliteshort}} cluster**
+**Example to create a {{site.data.keyword.satelliteshort}} cluster with the RHEL7 operating system****
 
 ```sh
-ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret>  --version 4.9_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
+ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system RHEL7 --version 4.9_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
+```
+{: pre}
+
+
+**Example to create a {{site.data.keyword.satelliteshort}} cluster running {{site.data.keyword.openshiftshort}} version 4.9.23_openshift and RHCOS hosts**
+
+```sh
+ibmcloud sat cluster create satellite --name mysatcluster-coreos --location my-location --version 4.9.23_openshift --operating-system RHCOS --workers 6
 ```
 {: pre}
 
@@ -6101,7 +6112,7 @@ Create a worker pool for your {{site.data.keyword.redhat_openshift_notm}} cluste
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [--host-label LABEL ...] --name NAME --size-per-zone WORKERS_PER_ZONE --zone ZONE [--label LABEL ...] [--output OUTPUT] [-q]
+ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [--host-label LABEL ...] --name NAME [--operating-system SYSTEM] --size-per-zone WORKERS_PER_ZONE --zone ZONE [--label LABEL ...] [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6117,6 +6128,9 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 
 `--name POOL_NAME`
 :    Required. The name that you want to give your worker pool.
+
+`--operating-system SYSTEM`
+:    Specify the operating system you want to use. Choose from `RHCOS` or `RHEL7`. For clusters on default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, the `RHEL7` operating system is applied by default.
 
 `--size-per-zone WORKERS_PER_ZONE`
 :    Required. The number of worker nodes to request in each zone. Ensure that you [attach enough hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to be used as worker nodes. For example, if you enter `2` and then [add 2 more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) to this worker pool after you create it, ensure that at least 6 unassigned hosts are attached to your location so that they can be assigned as 2 worker nodes in each of the 3 zones in your worker pool.
@@ -6136,7 +6150,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 
 **Example**:
 ```sh
-ibmcloud oc worker-pool create satellite --cluster mycluster --host-label use=clusterworker --host-label cpu=4 --host-label memory=16260936 --name mypool  --size-per-zone 2 --zone myzone1
+ibmcloud oc worker-pool create satellite --cluster mycluster --host-label use=clusterworker --host-label cpu=4 --host-label memory=16260936 --name mypool --operating-system RHEL7 --size-per-zone 2 --zone myzone1
 ```
 {: pre}
 
