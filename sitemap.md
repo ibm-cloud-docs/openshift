@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-11"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,20 @@ subcollection: openshift
 
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
 
+    * [11 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1122)
+
+        * New! Create clusters that use Red Hat CoreOS hosts in {{site.data.keyword.satelliteshort}}
+
+        * New! {{site.data.keyword.secrets-manager_full}}
+
+        * HPCS Router add-on
+
+        * Cloud Image Key Synchronizer add-on
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
+
+        * Worker node fix pack
+
     * [7 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0722)
 
         * {{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
@@ -212,7 +226,7 @@ subcollection: openshift
 
         * CLI changelog update
 
-    * [6 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#{[subcollection]-apr0622)
+    * [6 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0622)
 
         * Master fix pack update
 
@@ -2524,9 +2538,11 @@ subcollection: openshift
 
 * [Preparing classic or VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#prepare-autoscale-classic-vpc)
 
-[Preparing to autoscale {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat#cluster-scaling-sat)
+[Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#prepare-autoscale-sat)
 
-* [Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-sat#prepare-autoscale-sat)
+* [Setting up your location and cluster for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#setup-location-cluster-scale-sat)
+
+* [Understanding autoscaling in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat#cluster-scaling-sat)
 
 [Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
 
@@ -3734,6 +3750,16 @@ subcollection: openshift
 
     * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_custom)
 
+* [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
+
+    * [Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/openshift?topic=openshift-ingress-roks4#register-secrets-mgr)
+
+    * [Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance](/docs/openshift?topic=openshift-ingress-roks4#default-secrets-mgr)
+
+* [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
+
+    * [Using the {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}} migration script](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr-script)
+
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
@@ -4661,6 +4687,18 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
 
+    * [`ibmcloud oc instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
+
+    * [`ibmcloud oc instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_unset)
+
+    * [`ibmcloud oc ingress instance get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_get)
+
+    * [`ibmcloud oc ingress instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_ls)
+
+    * [`ibmcloud oc ingress instance register`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_register)
+
+    * [`ibmcloud oc ingress instance unregister`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_unregister)
+
     * [`ibmcloud oc ingress lb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_get)
 
     * [`ibmcloud oc ingress lb proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_disable)
@@ -4668,6 +4706,12 @@ subcollection: openshift
     * [`ibmcloud oc ingress lb proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable)
 
     * [`ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create)
+
+    * [`ibmcloud oc ingress secret field add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_add)
+
+    * [`ibmcloud oc ingress secret field ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_ls)
+
+    * [`ibmcloud oc ingress secret field rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_rm)
 
     * [`ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_get)
 
@@ -4957,6 +5001,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#47_changelog)
 
+    * [Change log for worker node fix pack 4.9.26_1535_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4926_1535_openshift)
+
     * [Changelog for master fix pack 4.9.25_1534_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4.9.25_1534)
 
     * [Change log for worker node pack 4.9.25_1532_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4925_1532)
@@ -5031,6 +5077,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#47_changelog)
+
+    * [Change log for worker node fix pack 4.8.35_1553_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1553_openshift)
 
     * [Changelog for master fix pack 4.8.35_1552_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1552)
 
@@ -5132,6 +5180,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for worker node fix pack 4.7.46_1560_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4746_1560_openshift)
 
     * [Changelog for master fix pack 4.7.45_1559_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4745_1559)
 
@@ -5257,6 +5307,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#47_changelog)
+
+    * [Change log for worker node fix pack 4.6.56_1579_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4656_1579_openshift)
 
     * [Change log for master fix pack 4.6.56_1578_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4658_1578)
 
@@ -5408,6 +5460,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_overview_311)
 
 * [Deprecated: Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#version-311)
+
+    * [Change log for worker node fix pack 3.11.664_1628_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311664_1628_openshift)
 
     * [Change log for master fix pack 3.11.634_1626_openshift, released 30 March 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311634_1626)
 
@@ -5908,6 +5962,8 @@ subcollection: openshift
 
 * [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog#042_is_block)
 
+    * [Change log for version 4.2.3_983, released 11 April 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#423_983_is_block_relnote)
+
     * [Change log for version 4.2.2_900, released 24 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#422_900_is_block_relnote)
 
     * [Change log for version 4.2.1_895, released 17 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#421_895_is_block_relnote)
@@ -6004,6 +6060,8 @@ subcollection: openshift
 
 * [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
 
+    * [Version 4.9.0_1471, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1471)
+
     * [Version 4.9.0_1384, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1384)
 
     * [Version 4.9.0_1364, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_1364)
@@ -6013,6 +6071,8 @@ subcollection: openshift
     * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
 
 * [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_1470, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1470)
 
     * [Version 4.8.0_1385, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1385)
 
@@ -6027,6 +6087,8 @@ subcollection: openshift
     * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_1469, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1469)
 
     * [Version 4.7.0_1386, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1386)
 
@@ -6045,6 +6107,8 @@ subcollection: openshift
     * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_1468, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1468)
 
     * [Version 4.6.0_1383, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1383)
 
@@ -6101,6 +6165,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0927)
 
     * [Version 1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0906)
 

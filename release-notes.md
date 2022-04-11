@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-11"
 
 keywords: openshift
 
@@ -24,10 +24,35 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: note}
 
 
-
-
 ## April 2022
 {: #openshift-apr22}
+
+  
+### 11 April 2022
+{: #openshift-apr1122}
+
+
+
+New! {{site.data.keyword.secrets-manager_full}}
+:    With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4##manage_certs_secrets_mgr)
+
+
+HPCS Router add-on
+:   Versions 4.6.0_1468, 4.7.0_1469, 4.8.0_1470, and 4.9.0_1471 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_927 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+
+
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.2.3_983](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.26_1535_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.35_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.46_1560_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1579_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.664_1628_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+
+
+
 
 ### 7 April 2022
 {: #openshift-apr0722}
@@ -43,12 +68,14 @@ CLI changelog update
 :   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.394.
 
 ### 6 April 2022
-{: #{[subcollection]-apr0622}}
+{: #openshift-apr0622}}
 
 Master fix pack update
 
 
 :   {{site.data.keyword.openshiftlong_notm}} [ 4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_48)
+
+
 
 
 
@@ -1396,7 +1423,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 New fields and events for {{site.data.keyword.at_short}}
-:   To align with event auditing standards across {{site.data.keyword.cloud_notm}}, the [previously deprecated cluster fields and events](#deprecated-at-events) are now replaced by new fields and events. For an updated list of events, see [{{site.data.keyword.at_full_notm}} events](/docs/containers?topic=containers-at_events).
+:   To align with event auditing standards across {{site.data.keyword.cloud_notm}}, the previously deprecated cluster fields and events are now replaced by new fields and events. For an updated list of events, see [{{site.data.keyword.at_full_notm}} events](/docs/containers?topic=containers-at_events).
 
 ### 15 April 2021
 {: #openshift-april1521}

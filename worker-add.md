@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-11"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
