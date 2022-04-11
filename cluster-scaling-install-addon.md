@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-11"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -27,7 +27,6 @@ You can enable the add-on from the console or the command the line.
 * To enable from the the CLI, complete the following steps.
     
     1. Enable the `cluster-autoscaler` add-on.
-    
         ```sh
         ibmcloud oc cluster addon enable cluster-autoscaler —-cluster <cluster_name>
         ```
@@ -43,7 +42,6 @@ You can enable the add-on from the console or the command the line.
         {: screen}
 
     1. Verify that the add-on is installed and `Ready`.
-    
         ```sh
         ibmcloud oc cluster addon ls --cluster <cluster_name>
         ```
@@ -222,7 +220,8 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 `scaleDownUtilizationThreshold`
 :   Set the worker node utilization threshold. If the worker node utilization goes below the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity. The default value is `0.5`.
 
-`scanInterval`|  Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down. The default value is `1m`.
+`scanInterval`
+:  Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down. The default value is `1m`.
 
 `skipNodesWithLocalStorage`
 :   When set to `true`, worker nodes that have pods that are saving data to local storage are not scaled down. The default value is`true`.

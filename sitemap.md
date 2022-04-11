@@ -2528,9 +2528,11 @@ subcollection: openshift
 
 * [Preparing classic or VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#prepare-autoscale-classic-vpc)
 
-[Preparing to autoscale {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat#cluster-scaling-sat)
+[Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#prepare-autoscale-sat)
 
-* [Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-sat#prepare-autoscale-sat)
+* [Setting up your location and cluster for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#setup-location-cluster-scale-sat)
+
+* [Understanding autoscaling in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat#cluster-scaling-sat)
 
 [Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
 
