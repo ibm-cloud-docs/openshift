@@ -48,6 +48,12 @@ Cloud Image Key Synchronizer add-on
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.2.3_983](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.26_1535_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.35_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.46_1560_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1579_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.664_1628_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+
+
+
 
 ### 7 April 2022
 {: #openshift-apr0722}
@@ -69,6 +75,8 @@ Master fix pack update
 
 
 :   {{site.data.keyword.openshiftlong_notm}} [ 4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_48)
+
+
 
 
 
