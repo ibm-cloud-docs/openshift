@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-12"
 
 keywords: openshift
 
@@ -163,6 +163,9 @@ Looking to connect your cluster to an on-prem database instead? See [Setting up 
 {: tip}
 
 The following image shows the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a multizone cluster and make your data highly available. You can use these options in a single zone cluster, but you might not get the high availability benefits that your app requires.
+
+The {{site.data.keyword.cos_full_notm}} plug-in uses s3fs to manage your Object Storage buckets and objects. Object Storage, and the plug-in, works best with read-intensive workloads. If your workload is read/write intensive, you might want to try Block or File storage instead.
+{: note}
 
 ![High availability options for persistent storage in a multizone cluster](images/cs_storage_options_multizone.png)
 
