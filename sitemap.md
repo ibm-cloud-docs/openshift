@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: openshift
 subcollection: openshift
@@ -204,9 +204,13 @@ subcollection: openshift
 
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
 
-    * [11 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1122)
+    * [12 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1222)
 
         * New! Create clusters that use Red Hat CoreOS hosts in {{site.data.keyword.satelliteshort}}
+
+        * Create and manage dedicated hosts in VPC Gen 2.
+
+    * [11 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1122)
 
         * New! {{site.data.keyword.secrets-manager_full}}
 
@@ -2392,6 +2396,8 @@ subcollection: openshift
 
     * [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 
+* [Creating a cluster on dedicated host infrastructure](/docs/openshift?topic=openshift-clusters#cluster_dedicated_host_cli)
+
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
 [Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates#templates)
@@ -2512,6 +2518,16 @@ subcollection: openshift
     * [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-add_workers#adding-tags-to-clusters-with-the-cli)
 
 * [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
+
+[Creating and managing dedicated hosts on VPC Gen 2 infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
+
+* [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli)
+
+* [Removing worker nodes from a dedicated host in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-worker-nodes-cli)
+
+* [Removing dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-hosts-cli)
+
+* [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
 
 
 ### Autoscaling clusters
@@ -6696,6 +6712,8 @@ subcollection: openshift
 * [Unable to create or delete worker nodes due to endpoints error](/docs/openshift?topic=openshift-worker_infra_errors#vpe-ts)
 
 * [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-worker_infra_errors#cs_totp)
+
+[VPC: Why can't I create worker nodes on dedicated hosts?](/docs/openshift?topic=openshift-ts-worker-dedicated#ts-worker-dedicated)
 
 [VPC: Why doesn't replacing a worker node create a worker node?](/docs/openshift?topic=openshift-auto-rebalance-off#auto-rebalance-off)
 
