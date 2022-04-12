@@ -86,6 +86,7 @@ toc:
           label: Managing the cluster and worker node lifecycle
           topics:
           - worker-add.md
+          - dedicated-hosts.md
           - topicgroup: 
               label: Autoscaling clusters
               topics:
@@ -370,6 +371,7 @@ toc:
                 - states-workers.md
                 - ts-worker-common-issues.md
                 - ts-worker-create-delete.md
+                - ts-worker-dedicated.md
                 - ts-worker-autorebalance.md
                 - ts-worker-bm-instance-id.md
                 - ts-worker-delete-pods-fail.md

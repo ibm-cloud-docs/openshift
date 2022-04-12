@@ -45,6 +45,10 @@ VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) wo
 
 
 
+VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts. Free VPC clusters are not supported.
+
+
+
 
 
 .
@@ -140,6 +144,10 @@ With VMs, you get greater flexibility, quicker provisioning times, and more auto
 
 
 When you create a standard classic cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy). VPC standard clusters can be provisioned on shared infrastructure (multi tenancy) only.
+
+
+
+When you create a standard cluster, you must choose whether you want the underlying hardware to be shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or to be dedicated to you only (single tenancy).
 
 
 
