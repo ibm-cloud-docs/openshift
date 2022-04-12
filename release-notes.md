@@ -100,7 +100,7 @@ Master fix pack update
 Cluster autoscaler add-on
 :   Version [1.1.0_475](/docs/containers?topic=containers-ca_changelog) is available.
 
-:   {{site.data.keyword.openshiftlong_notm}} [4.7.45_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1626_openshift](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.openshiftlong_notm}} [4.7.45_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1626_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 ### 28 March 2022
 {: #openshift-mar2822}
@@ -184,7 +184,7 @@ HPCS Router add-on
 {: release-note}
 
 Cluster autoscaler
-:   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat).
+:   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat).
 
 {{site.data.keyword.cos_full_notm}} plug-in
 :   **Beta**: Install the {{site.data.keyword.cos_full_notm}} plug-in on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos).
@@ -226,7 +226,7 @@ Master fix pack update.
 
 Cluster autoscaler
 :   Version [1.0.5_415](/docs/containers?topic=containers-ca_changelog) is available.
-:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon), and[Enabling autoscaling](/docs/containers?topic=containers-cluster-scaling-enable).
+:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon), and [Enabling autoscaling](/docs/containers?topic=containers-cluster-scaling-enable).
 :   New troubleshooting pages for [resizing worker pools](/docs/containers?topic=containers-ts-ca-resize) and updating [unbalanced worker pools](/docs/containers?topic=containers-ts-ca-unbalanced) in autoscaled clusters. 
 
 

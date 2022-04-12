@@ -19,7 +19,7 @@ subcollection: openshift
 
 Dedicated hosts are single-tenant managed hypervisors that can only be used to deploy {{site.data.keyword.openshiftlong_notm}} clusters. 
 
-Dedicated hosts are available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information on how to get added to the allowlist.
+Dedicated hosts are available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist.
 {: important}
 
 
@@ -45,7 +45,7 @@ To order dedicated hosts, you must first create a host pool. Then, you can creat
     {: pre}
 
     `--flavor-class CLASS`
-    :    The flavor-class of the dedicated host pool. To see available options run the `ibmcloud oc dedicated flavors` command. Example: `bx2`.
+    :    The flavor-class of the dedicated host pool. To see available options, run the `ibmcloud oc dedicated flavors` command. Example: `bx2`.
 
     `--metro METRO`
     :    The metro to create the dedicated host pool in, such as `dal` or `wdc`.
@@ -64,7 +64,7 @@ To order dedicated hosts, you must first create a host pool. Then, you can creat
     {: pre}
 
     `-- flavor FLAVOR`
-    :    The flavor of the dedicated host. To see available options, review [list]() or run `ibmcloud oc dedicated flavors`.
+    :    The flavor of the dedicated host. To see available options, run `ibmcloud oc dedicated flavors`.
 
     `-- pool POOL`
     :    The name of the dedicated host pool where the dedicated host is added.
@@ -102,7 +102,7 @@ To remove worker nodes from a dedicated host, you must disable dedicated host pl
     `--pool POOL`
     :    The ID of the dedicated host pool that the dedicated host is located in. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
 
-1. [Replace](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [remove](https://test.cloud.ibm.com/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_rm){: external} each worker node on the dedicated host. 
+1. [Replace](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [remove](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm){: external} each worker node on the dedicated host. 
     * Replace the worker nodes if you want to keep the same cluster capacity, but move the worker nodes off the dedicated host. During replacement, when new worker nodes are created, they are only created on hosts with placement enabled.
     * Remove the worker nodes if you are deleting your cluster or reducing capacity.
 

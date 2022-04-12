@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -88,7 +88,7 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 
 
 
-Want to create a new worker pool on dedicated hosts? See [Creating a worker pool on dedicated hosts](#vpc_add_pool_dedicated).
+Want to create a new worker pool on dedicated hosts? See [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli).
 {: tip}
 
 

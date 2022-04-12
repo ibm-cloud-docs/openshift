@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1202,7 +1202,7 @@ As of 11 April 2022, you can integrate your own {{site.data.keyword.secrets-mana
 {: shortdesc}
 
 **What secret types are supported with {{site.data.keyword.secrets-manager_short}}?**
-:    {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
+:    {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
 :    For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and Opaque secret types. For TLS secrets, you can specify one certificate CRN. For Opaque secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type, TLS is applied by default.  
 
 **Is a {{site.data.keyword.secrets-manager_short}} instance automatically generated in my cluster?**
