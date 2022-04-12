@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: openshift
 subcollection: openshift
@@ -205,8 +205,6 @@ subcollection: openshift
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
 
     * [11 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1122)
-
-        * New! Create clusters that use Red Hat CoreOS hosts in {{site.data.keyword.satelliteshort}}
 
         * New! {{site.data.keyword.secrets-manager_full}}
 
