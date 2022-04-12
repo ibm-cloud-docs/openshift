@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-12"
 
 keywords: openshift
 
@@ -172,7 +172,22 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
 {: important}
 
 1. Choose an existing or create a new public SSH key.
-
+    ```sh
+    ssh-keygen -t rsa -b 4096
+    ls ~/.ssh
+    ```
+    {: pre}
+    
+    ```
+    id_rsa id_rsa.pub
+    ```
+    {: screen}
+    
+    ```sh
+    cat ~/.ssh/id_rsa.pub
+    ```
+    {: pre}
+    
 2. Get the name of the worker node that you want to access. The worker node name is its private IP address.
 
     ```sh
@@ -303,10 +318,9 @@ Debug classic clusters that are connected to a public VLAN by logging in to your
     ```
     {: pre}
 
-4. Use the SSH private key from step 1 to SSH into the worker node via its public IP address.
-
+4. SSH into the worker node via its public IP address.
     ```sh
-    ssh -i ~/.ssh/id_rsa_worker_private root@<WORKER_PUBLIC_IP>
+    ssh root@<WORKER_PUBLIC_IP>
     ```
     {: pre}
 
