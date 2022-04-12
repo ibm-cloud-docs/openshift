@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: openshift
 
@@ -462,10 +462,9 @@ By default, {{site.data.keyword.openshiftlong_notm}} provides many features for 
 
 3. **Image Vulnerability Scanner**: By default, Vulnerability Advisor scans images that are stored in {{site.data.keyword.registrylong_notm}} to find potential security vulnerabilities. For more information, see [Managing image security with Vulnerability Advisor](/docs/Registry?topic=va-va_index).
 
-4. **Network Insights with Security Insights**: With {{site.data.keyword.cloud_notm}} Security Insights, you can centralize security insights from {{site.data.keyword.cloud_notm}} services such as Vulnerability Advisor and {{site.data.keyword.cloudcerts_short}}. When you enable Security Insights in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [What is Security Insights?](/docs/security-compliance?topic=security-compliance-insights) and [Enabling Network Insights](/docs/security-compliance?topic=security-compliance-setup-network).
+4. **Network Insights with Security Insights**: With {{site.data.keyword.cloud_notm}} Security Insights, you can centralize security insights from {{site.data.keyword.cloud_notm}} services such as Vulnerability Advisor. When you enable Security Insights in your cluster, you can view reports about suspicious incoming and outgoing network traffic. For more information, see [What is Security Insights?](/docs/security-compliance?topic=security-compliance-insights) and [Enabling Network Insights](/docs/security-compliance?topic=security-compliance-setup-network).
 
-5. **{{site.data.keyword.cloudcerts_long_notm}}**: If you want to [expose your app by using a custom domain with TLS](/docs/containers?topic=containers-ingress-types#alb-comm-create), you can store your TLS certificate in {{site.data.keyword.cloudcerts_short}}. Expired or about-to-expire certificates can also be reported in your {{site.data.keyword.security-advisor_short}} dashboard. For more information, see [Getting started with {{site.data.keyword.cloudcerts_short}}](/docs/certificate-manager?topic=certificate-manager-getting-started#getting-started).
-
+5. **{{site.data.keyword.secrets-manager_full}}**: You can store your Ingress and Kubernetes secrets in {{site.data.keyword.secrets-manager_full}}. When you integrate {{site.data.keyword.secrets-manager_short}} into your cluster, you set a default {{site.data.keyword.secrets-manager_short}} instance where all Ingress subdomain secrets are uploaded. For more information, see [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}](/docs/containers?topic=containers-ingress-types#manage_certs_secrets_mgr).
 
 
 

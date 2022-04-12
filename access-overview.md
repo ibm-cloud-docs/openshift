@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-12"
 
 keywords: openshift
 
@@ -195,7 +195,7 @@ In {{site.data.keyword.cloud_notm}} IAM, you can assign user access roles to res
 When you create your {{site.data.keyword.cloud_notm}} account, the default resource group is created automatically. If you don't specify a resource group when you create the resource, resource instances (clusters) automatically belong to the default resource group. In {{site.data.keyword.cloud_notm}} IAM, a Kubernetes namespace is a resource type of a resource instance (cluster). If you want to add a resource group in your account, see [Best practices for setting up your account](/docs/account?topic=account-account_setup) and [Setting up your resource groups](/docs/account?topic=account-rgs).
 
 Resource instance
-:   Each {{site.data.keyword.cloud_notm}} service in your account is a resource that has instances. The instance differs by service. For example, in {{site.data.keyword.openshiftlong_notm}}, the instance is a cluster, but in {{site.data.keyword.cloudcerts_long_notm}}, the instance is a certificate. By default, resources belong to the default resource group in your account. You can assign users an access role to a resource instance to grant permissions as described in the following scenarios.
+:   Each {{site.data.keyword.cloud_notm}} service in your account is a resource that has instances. The instance differs by service. For example, in {{site.data.keyword.openshiftlong_notm}}, the instance is a cluster. By default, resources belong to the default resource group in your account. You can assign users an access role to a resource instance to grant permissions as described in the following scenarios.
     - All {{site.data.keyword.cloud_notm}} IAM services in your account, including all clusters in {{site.data.keyword.openshiftlong_notm}} and images in {{site.data.keyword.registrylong_notm}}.
     - All instances within a service, such as all the clusters in {{site.data.keyword.openshiftlong_notm}}.
     - All instances within a region of a service, such as all the clusters in the **US South** region of {{site.data.keyword.openshiftlong_notm}}.
