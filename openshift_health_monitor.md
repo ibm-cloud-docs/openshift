@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -61,9 +61,6 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 {: shortdesc}
 {: note}
 
-To manually view storage metrics in the CLI, see [Manually viewing {{site.data.keyword.openshiftlong}} Storage Metrics in the CLI](#manual-monitor-metrics).
-{: tip}
-
 The following metrics can be monitored for {{site.data.keyword.openshiftlong}} clusters.
 - `kubelet_volume_stats_available_bytes`
 - `kubelet_volume_stats_capacity_bytes`
@@ -93,114 +90,6 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 
 If your volume is reaching capacity, try setting up [volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand).
 {: tip}
-
-### Manually viewing {{site.data.keyword.openshiftlong}} storage metrics in the CLI
-{: #manual-monitor-metrics}
-
-You can manually view storage metrics for verification, automation, or trouble shooting purposes. 
-{: shortdesc}
-
-To view the storage metrics in the UI, see [Monitoring {{site.data.keyword.openshiftlong}} Storage Metrics in the UI](#monitor-metrics).
-{: tip}
-
-1. Create and deploy a yaml file for a custom `clusterRole` configuration. In this example, the `clusterRole` is named `test-metrics-reader`.
-
-    ```yaml
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRole
-    metadata:
-    name: test-metrics-reader
-    rules:
-    - nonResourceURLs:
-        - "/metrics"
-        verbs:
-        - get
-    - apiGroups:
-        - ""
-        resources:
-        - nodes/metrics
-        verbs:
-        - get
-    ```
-    {: pre}
-
-    ```sh
-    oc apply -f <file_name>
-    ```
-    {: pre}
-
-1. Create a service account. In this example, the service account is named `test-sa`.
-
-    ```sh
-    oc create sa test-sa
-    ```
-    {: pre}
-
-1. Add a `clusterRoleBinding` to the `clusterRole`.
-
-    ```sh
-    oc create clusterrolebinding test-metrics-reader --clusterrole test-metrics-reader --serviceaccount=default:test-sa
-    ```
-    {: pre}
-
-1. List your nodes and note the name and IP of the node for which you want to gather metrics. 
-
-    ```sh
-    oc get nodes
-    ```
-    {: pre}
-
-    Example output.
-
-    ```sh
-    NAME          STATUS    ROLES    AGE     VERSION              
-    10.111.1.11   Ready     <none>   1d      v1.22.7+IKS            
-    ```
-    {: screen}
-
-1. Create a yaml file to deploy a pod onto the node. Make sure to specify the service account you created and the node IP address.
-
-    ```yaml
-    apiVersion: v1
-    kind: Pod
-    metadata:
-    name: testpod
-    spec:
-    nodeName: 10.111.1.111
-    containers:
-    - image: nginx
-        name: nginx
-    serviceAccountName: test-sa
-    ```
-    {: pre}
-
-    ```sh
-    oc apply -f <file_name>
-    ```
-    {: pre}
-
-1. Retrieve the service account token from within the pod. 
-
-    1. Log in to the pod.
-
-        ```sh
-        kubectl exec testpod -it -- bash
-        ```
-        {: pre}
-
-    1. Run the following command to get the token. Note that there is no output. 
-
-        ```sh
-        token=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
-        ```
-        {: pre}
-
-1. While you are still logged in to the pod, run the command to view the storage metrics. Make sure to specify the node IP address. 
-
-    ```sh
-    curl -k -H "authorization: bearer <token> https://<node_IP>:10250/metrics | grep kubelet_volume_stats
-    ```
-    {: pre}
 
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}

@@ -3242,8 +3242,6 @@ subcollection: openshift
 
     * [Monitoring {{site.data.keyword.openshiftlong}} storage metrics](/docs/openshift?topic=openshift-health-monitor#monitor-metrics)
 
-    * [Manually viewing {{site.data.keyword.openshiftlong}} storage metrics in the CLI](/docs/openshift?topic=openshift-health-monitor#manual-monitor-metrics)
-
 * [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
 
 * [Viewing cluster states](/docs/openshift?topic=openshift-health-monitor#states)
