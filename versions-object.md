@@ -49,7 +49,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
 
 ## Change log for version 2.1.14, released 13 April 2022
-{: #02113_object_plugin}
+{: #02114_object_plugin}
 
 - Updates the UBI to `8.5-240.1648458092` 
 - Resolves [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}

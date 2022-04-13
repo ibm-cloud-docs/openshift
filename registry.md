@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-04-13"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -429,7 +429,7 @@ By default, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to p
 If you update your image in {{site.data.keyword.registrylong_notm}}, the image is not pulled automatically into the internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster. Instead, [configure periodic importing](https://docs.openshift.com/container-platform/4.9/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}, or repeat these steps to tag the image. Depending on the image pull policy that you use in your deployment, you might also need to restart your deployment.
 {: note}
 
-Want to learn more about how builds, image streams, and the internal registry work together? Read the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/registry/index.html){: external}, or check out [this blog on managing container images](https://cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external}.
+Want to learn more about how builds, image streams, and the internal registry work together? Read the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/registry/index.html){: external}, or check out [this blog on managing container images](https://blog.cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes){: external}.
 {: tip}
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
