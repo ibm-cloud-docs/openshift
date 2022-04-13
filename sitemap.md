@@ -4707,9 +4707,9 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
 
-    * [`ibmcloud oc instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
+    * [`ibmcloud oc ingress instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
 
-    * [`ibmcloud oc instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_unset)
+    * [`ibmcloud oc ingress instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_unset)
 
     * [`ibmcloud oc ingress instance get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_get)
 
