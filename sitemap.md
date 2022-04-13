@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
 
+    * [13 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1322)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in
+
     * [12 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1222)
 
         * New! Create clusters that use Red Hat CoreOS hosts in {{site.data.keyword.satelliteshort}}
@@ -224,7 +228,7 @@ subcollection: openshift
 
     * [7 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0722)
 
-        * {{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+        * {{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. 
 
         * {{site.data.keyword.openshiftlong_notm}} default version update.
 
@@ -256,7 +260,7 @@ subcollection: openshift
 
     * [22 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2222)
 
-        * Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+        * Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year.
 
         * Ingress ALB changelog updates
 
@@ -4703,9 +4707,9 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
 
-    * [`ibmcloud oc instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
+    * [`ibmcloud oc ingress instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
 
-    * [`ibmcloud oc instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_unset)
+    * [`ibmcloud oc ingress instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_unset)
 
     * [`ibmcloud oc ingress instance get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_get)
 
@@ -5073,7 +5077,7 @@ subcollection: openshift
 
     * [5.6 General Policies](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-56-49)
 
-* [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-remediations-49)
+* [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark-49#ibm-remediations-and-explanations-49)
 
 
 ### Version 4.8
@@ -6022,7 +6026,9 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
-* [Change log for version 2.1.13, release 24 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02113_object_plugin)
+* [Change log for version 2.1.14, released 13 April 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02114_object_plugin)
+
+* [Change log for version 2.1.13, released 24 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02113_object_plugin)
 
 * [Change log for version 2.1.12, released 11 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02112_object_plugin)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: openshift
 
@@ -27,6 +27,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## April 2022
 {: #openshift-apr22}
 
+### 13 April 2022
+{: #openshift-apr1322}
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.14` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+
 ### 12 April 2022
 {: #openshift-apr1222}
 
@@ -45,7 +51,7 @@ Create and manage dedicated hosts in VPC Gen 2.
 
 
 New! {{site.data.keyword.secrets-manager_full}}
-:    With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4##manage_certs_secrets_mgr)
+:    With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
 
 
 HPCS Router add-on
@@ -68,7 +74,8 @@ Worker node fix pack
 ### 7 April 2022
 {: #openshift-apr0722}
 
-{{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+{{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. 
+:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 
 
@@ -100,7 +107,7 @@ Master fix pack update
 Cluster autoscaler add-on
 :   Version [1.1.0_475](/docs/containers?topic=containers-ca_changelog) is available.
 
-:   {{site.data.keyword.openshiftlong_notm}} [4.7.45_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1626_openshift](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.openshiftlong_notm}} [4.7.45_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1626_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 ### 28 March 2022
 {: #openshift-mar2822}
@@ -132,7 +139,8 @@ Cloud Image Key Synchronizer add-on
 {: #openshift-mar2222}
 {: release-note}
 
-Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year.
+:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 Ingress ALB changelog updates
 :   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
@@ -184,7 +192,7 @@ HPCS Router add-on
 {: release-note}
 
 Cluster autoscaler
-:   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat).
+:   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat).
 
 {{site.data.keyword.cos_full_notm}} plug-in
 :   **Beta**: Install the {{site.data.keyword.cos_full_notm}} plug-in on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos).
@@ -226,7 +234,7 @@ Master fix pack update.
 
 Cluster autoscaler
 :   Version [1.0.5_415](/docs/containers?topic=containers-ca_changelog) is available.
-:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon), and[Enabling autoscaling](/docs/containers?topic=containers-cluster-scaling-enable).
+:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon), and [Enabling autoscaling](/docs/containers?topic=containers-cluster-scaling-enable).
 :   New troubleshooting pages for [resizing worker pools](/docs/containers?topic=containers-ts-ca-resize) and updating [unbalanced worker pools](/docs/containers?topic=containers-ts-ca-unbalanced) in autoscaled clusters. 
 
 

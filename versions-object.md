@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-13"
 
 keywords: object storage, plug-in, changelog
 
@@ -25,6 +25,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.14 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.13 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.12 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.11 | Deprecated | Greater than or equal to 4.3 | x86 |
@@ -47,7 +48,16 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
 
-## Change log for version 2.1.13, release 24 March 2022
+## Change log for version 2.1.14, released 13 April 2022
+{: #02114_object_plugin}
+
+- Updates the UBI to `8.5-240.1648458092` 
+- Resolves [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}
+- Added support for two stable versions of s3fs fuse in one chart release
+- Added support for quota-limit option for COS buckets via s3fs plugin
+- Includes the `ibmc` plug-in version `2.0.8`
+
+## Change log for version 2.1.13, released 24 March 2022
 {: #02113_object_plugin}
 
 - Updates the UBI to `8.5-240`

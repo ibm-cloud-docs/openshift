@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-12"
 
 keywords: openshift
 
@@ -31,7 +31,7 @@ IAM Services
      - **Writer** or **Manager** service access role for **Kubernetes Service** in the console (**containers-kubernetes** in the API or CLI) in **All resource groups**.   
      - Administrator platform access role for **Container Registry** in the console (**container-registry** in the API or CLI) at the **Account** level. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level.
      - **Administrator** platform access role for **Cloud Object Storage** in the console (**cos** in the API or CLI) for the standard instance that you want to use to back up the internal registry images in a VPC cluster.
-     - If you plan to [expose apps with Ingress](/docs/containers?topic=containers-ingress-about), assign the user **Administrator** or **Editor** platform access role and the **Manager** service access role for **{{site.data.keyword.cloudcerts_short}}** in **All resource groups**.
+     - If you plan to [expose apps with Ingress](/docs/containers?topic=containers-ingress-about), assign the user **Administrator** or **Editor** platform access role and the **Manager** service access role for **{{site.data.keyword.secrets-manager_short}}** in **All resource groups**.
      - **Viewer** platform access role for the resource group access.
      - If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), the **Service ID creator** role to **IAM Identity Service** in the console (`iam-identity` in the API or CLI).
      - If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), the **User API key creator** role to **IAM Identity Service** in the console (`iam-identity` in the API or CLI).

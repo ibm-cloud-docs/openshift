@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-13"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -59,9 +59,7 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 
 {{site.data.keyword.openshiftlong}} clusters include built-in tools to help cluster administrators get information about the availability and capacity of storage volumes.
 {: shortdesc}
-
-To manually view storage metrics in the CLI, see [Manually viewing {{site.data.keyword.openshiftlong}} Storage Metrics in the CLI](#manual-monitor-metrics).
-{: tip}
+{: note}
 
 The following metrics can be monitored for {{site.data.keyword.openshiftlong}} clusters.
 - `kubelet_volume_stats_available_bytes`

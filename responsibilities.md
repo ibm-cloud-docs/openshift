@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-13"
 
 keywords: openshift, responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 
@@ -35,20 +35,20 @@ If you use other {{site.data.keyword.cloud_notm}} products such as {{site.data.k
 | - | - | - | - | - | - |
 | [Data](#applications-and-data) | You | You | You | You | You |
 | [Applications](#applications-and-data) | You | You | You | You | You |
-| Observability | [Shared](#incident-and-ops) | IBM | [Shared](#iam-responsibilities) | IBM | IBM |
-| App networking | [Shared](#incident-and-ops) | IBM | IBM | IBM | IBM |
-| Cluster networking | [Shared](#incident-and-ops) | IBM | IBM | IBM | IBM |
-| Cluster version | IBM | [Shared](#change-management) | IBM | IBM | IBM |
-| Worker nodes | [Shared](#incident-and-ops) | [Shared](#change-management) | IBM | IBM | IBM |
-| Master | IBM | IBM | IBM | IBM | IBM |
-| Service | IBM | IBM | IBM | IBM | IBM |
-| Virtual storage | IBM | IBM | IBM | IBM | IBM |
-| Virtual network | IBM | IBM | IBM | IBM | IBM |
-| Hypervisor | IBM | IBM | IBM | IBM | IBM |
-| Physical servers and memory | IBM | IBM | IBM | IBM | IBM |
-| Physical storage | IBM | IBM | IBM | IBM | IBM |
-| Physical network and devices | IBM | IBM | IBM | IBM | IBM |
-| Facilities and Data Centers | IBM | IBM | IBM | IBM | IBM |
+| Observability | [Shared](#incident-and-ops) | {{site.data.keyword.IBM_notm}} | [Shared](#iam-responsibilities) | {{site.data.keyword.IBM_notm}} | IBM |
+| App networking | [Shared](#incident-and-ops) | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | IBM |
+| Cluster networking | [Shared](#incident-and-ops) | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | IBM |
+| Cluster version | {{site.data.keyword.IBM_notm}} | [Shared](#change-management) | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Worker nodes | [Shared](#incident-and-ops) | [Shared](#change-management) | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Master | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Service | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Virtual storage | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Virtual network | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Hypervisor | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Physical servers and memory | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Physical storage | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Physical network and devices | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Facilities and Data Centers | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column. The next five columns describe whether you, IBM, or both have shared responsibilities for a particular area."}
 {: caption="Table 1. Responsibilities by resource." caption-side="top"}
 

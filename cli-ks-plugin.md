@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: openshift
 
@@ -3693,7 +3693,7 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
-### `ibmcloud oc instance default set`
+### `ibmcloud oc ingress instance default set`
 {: #cs_ingress_instance_default_set}
 
 Set a registered an IBM Cloud {{site.data.keyword.secrets-manager_short}} instance to default. If an existing default instance exists, it will be unset from default.
@@ -3734,7 +3734,7 @@ ibmcloud oc ingress instance default set --cluster --cluster a111aaa11a1aaaaaaa1
 ```
 {: pre}
 
-### `ibmcloud oc instance default unset`
+### `ibmcloud oc ingress instance default unset`
 {: #cs_ingress_instance_default_unset}
 
 Remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance.
@@ -4050,7 +4050,7 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster mycluster --cidr 1.1.1.1/
 ### `ibmcloud oc ingress secret create`
 {: #cs_ingress_secret_create}
 
-Create an Ingress secret in a cluster for a certificate that is stored in {{site.data.keyword.cloudcerts_long}}.
+Create an Ingress secret in a cluster for a certificate that is stored in {{site.data.keyword.cloudcerts_long}} or {{site.data.keyword.secrets-manager_full}}.
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
@@ -4216,7 +4216,7 @@ ibmcloud oc ingress secret field rm --cluster a11a11a11a111a1a111a --name my-sec
 ### `ibmcloud oc ingress secret get`
 {: #cs_ingress_secret_get}
 
-View information about Ingress secrets in your cluster, including secrets that you imported for a certificate from {{site.data.keyword.cloudcerts_long_notm}}.
+View information about Ingress secrets in your cluster, including secrets that you imported for a certificate from {{site.data.keyword.cloudcerts_long_notm}} and secrets stored in {{site.data.keyword.secrets-manager_full}}.
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert get`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
@@ -4261,7 +4261,7 @@ ibmcloud oc ingress secret get --cluster my_cluster --name my_alb_secret --names
 ### `ibmcloud oc ingress secret ls`
 {: #cs_ingress_secret_ls}
 
-List Ingress secrets in your cluster, including secrets that you imported for a certificate from {{site.data.keyword.cloudcerts_long_notm}}.
+List Ingress secrets in your cluster, including secrets that you imported for a certificate from {{site.data.keyword.cloudcerts_long_notm}} and secrets stored in {{site.data.keyword.secrets-manager_full}}.
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert ls`, is deprecated.
@@ -4304,7 +4304,7 @@ ibmcloud oc ingress secret ls --cluster my_cluster
 ### `ibmcloud oc ingress secret rm`
 {: #cs_ingress_secret_rm}
 
-Delete an Ingress secret from your cluster. If you created a secret for a certificate from {{site.data.keyword.cloudcerts_long_notm}}, only the secret in the cluster is deleted and the certificate remains in your {{site.data.keyword.cloudcerts_long_notm}} instance.
+Delete an Ingress secret from your cluster. If you created a secret for a certificate from {{site.data.keyword.cloudcerts_short}} or {{site.data.keyword.secrets-manager_short}}, only the secret in the cluster is deleted and the certificate remains in your {{site.data.keyword.cloudcerts_short}} or {{site.data.keyword.secrets-manager_short}} instance.
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert rm`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
@@ -4348,10 +4348,10 @@ ibmcloud oc ingress secret rm --cluster my_cluster --name my_alb_secret --namesp
 ### `ibmcloud oc ingress secret update`
 {: #cs_ingress_secret_update}
 
-Update an Ingress secret for a certificate that is not hosted in the default {{site.data.keyword.cloudcerts_short}} instance that was created for your cluster.
+Update an Ingress secret for a certificate that is not hosted in the default {{site.data.keyword.cloudcerts_short}} or {{site.data.keyword.secrets-manager_short}} instance that was created for your cluster.
 {: shortdesc}
 
-Any changes that you make to a certificate in the default {{site.data.keyword.cloudcerts_short}} instance that was created for your cluster, which is named in the format `kube-crtmgr-<cluster_ID>`, are automatically reflected in the secret in your cluster. If you make changes to a certificate that is not hosted in your cluster's {{site.data.keyword.cloudcerts_short}} instance, you must use this command to update the secret in your cluster the pick up the certificate changes.
+Any changes that you make to a certificate in the default {{site.data.keyword.cloudcerts_short}} or {{site.data.keyword.secrets-manager_short}} instance in your cluster are automatically reflected in the secret in your cluster. If you make changes to a certificate that is not hosted in your cluster's {{site.data.keyword.cloudcerts_short}} or {{site.data.keyword.secrets-manager_short}} instance, you must use this command to update the secret in your cluster the pick up the certificate changes.
 
 ```sh
 ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [--cert-crn CRN] [-q]
