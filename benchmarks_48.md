@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-13"
 
 keywords: openshift
 
@@ -23,7 +23,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 ## 1 Master Node Security Configuration
 {: #cis-section-1-48}
 
-Reivew the Master Node Security Configuration results of the version 1.5 CIS Kubernetes benchmark.
+Review the Master Node Security Configuration results of the version 1.5 CIS Kubernetes benchmark.
 {: shortdesc}
 
 ### 1.1 Master Node Configuration Files
@@ -128,7 +128,7 @@ Reivew the Master Node Security Configuration results of the version 1.5 CIS Kub
 ## 2 Etcd Node Configuration
 {: #cis-section-2-48}
 
-Reivew the Etcd Node Configuration results of the version 1.5 CIS Kubernetes benchmark.
+Review the Etcd Node Configuration results of the version 1.5 CIS Kubernetes benchmark.
 {: shortdesc}
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
@@ -147,7 +147,7 @@ Reivew the Etcd Node Configuration results of the version 1.5 CIS Kubernetes ben
 ## 3 Control Plane Configuration
 {: #cis-section-3-48}
 
-Reivew the Control Plane Configuration results of the version 1.5 CIS Kubernetes benchmark.
+Review the Control Plane Configuration results of the version 1.5 CIS Kubernetes benchmark.
 {: shortdesc}
 
 ### 3.1 Authentication and Authorization
@@ -172,7 +172,7 @@ Reivew the Control Plane Configuration results of the version 1.5 CIS Kubernetes
 ## 4 Worker Node Security Configuration
 {: #cis-section-4-48}
 
-Reivew the Worker Node Security Configuration results of the version 1.5 CIS Kubernetes benchmark.
+Review the Worker Node Security Configuration results of the version 1.5 CIS Kubernetes benchmark.
 {: shortdesc}
 
 ### 4.1 Worker Node Configuration Files
@@ -218,7 +218,7 @@ Reivew the Worker Node Security Configuration results of the version 1.5 CIS Kub
 ## 5 Kubernetes Policies
 {: #cis-section-5-48}
 
-Reivew the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchmark.
+Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchmark.
 {: shortdesc}
 
 ### 5.1 RBAC and Service Accounts

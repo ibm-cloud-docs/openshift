@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-13"
 
 keywords: openshift
 
@@ -67,7 +67,7 @@ The following table describes the priority classes that are in your cluster by d
 |---|---|---|---|
 | `system-node-critical` | Kubernetes | 2000001000 | Select pods that are deployed into the `kube-system` namespace when you create the cluster use this priority class to protect critical functionality for worker nodes, such as for networking, storage, logging, monitoring, and metrics pods. |
 | `system-cluster-critical` | Kubernetes | 2000000000 | Select pods that are deployed into the `kube-system` namespace when you create the cluster use this priority class to protect critical functionality for clusters, such as for networking, storage, logging, monitoring, and metrics pods. |
-| `ibm-app-cluster-critical` | IBM | 900000000 | Select pods that are deployed into the `ibm-system` namespace when you create the cluster use this priority class to protect critical functionality for apps, such as the load balancer pods. |
+| `ibm-app-cluster-critical` | {{site.data.keyword.IBM_notm}} | 900000000 | Select pods that are deployed into the `ibm-system` namespace when you create the cluster use this priority class to protect critical functionality for apps, such as the load balancer pods. |
 {: caption="Default priority classes that you must not modify" caption-side="top"}
 
 You can check which pods use the priority classes by running the following command.

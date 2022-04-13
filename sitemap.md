@@ -5077,7 +5077,7 @@ subcollection: openshift
 
     * [5.6 General Policies](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-56-49)
 
-* [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-remediations-49)
+* [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark-49#ibm-remediations-and-explanations-49)
 
 
 ### Version 4.8
