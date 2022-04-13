@@ -74,7 +74,8 @@ Worker node fix pack
 ### 7 April 2022
 {: #openshift-apr0722}
 
-{{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+{{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. 
+:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 
 
@@ -138,7 +139,8 @@ Cloud Image Key Synchronizer add-on
 {: #openshift-mar2222}
 {: release-note}
 
-Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year.
+:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 Ingress ALB changelog updates
 :   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
