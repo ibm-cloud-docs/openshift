@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-18"
 
 keywords: openshift, version, update, upgrade
 
@@ -56,7 +56,7 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | ---- | ----------- | 
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.9 deprecated and removed features](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-deprecated-removed-features){: external}. |
-| **Unsupported:**  Beta versions of numerous Kubernetes APIs | For more information, review [Preparing to upgrade to OpenShift Container Platform 4.9](https://access.redhat.com/articles/6329921){: external}, [Kubernetes API and Feature Removals In 1.22: Here’s What You Need To Know](https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/){: external} and [Deprecated API Migration Guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-22){: external}. See [Deprecation Warnings](https://kubernetes.io/blog/2020/09/03/warnings/#deprecation-warnings){: external} for methods to identify use of deprecated APIs. Warnings for components provided by the Red Hat OpenShift on IBM Cloud cluster install can be ignored since they will be handled during the update. /n Note that {{site.data.keyword.openshiftlong_notm}} cluster administrators do not need to provide a manual acknowledgment before the cluster can be upgraded as mentioned in this Red Hat [article](behttps://access.redhat.com/articles/6329921). |
+| **Unsupported:**  Beta versions of numerous Kubernetes APIs | For more information, review [Preparing to upgrade to OpenShift Container Platform 4.9](https://access.redhat.com/articles/6329921){: external}, [Kubernetes API and Feature Removals In 1.22: Here’s What You Need To Know](https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/){: external} and [Deprecated API Migration Guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-22){: external}. See [Deprecation Warnings](https://kubernetes.io/blog/2020/09/03/warnings/#deprecation-warnings){: external} for methods to identify use of deprecated APIs. Warnings for components provided by the Red Hat OpenShift on IBM Cloud cluster install can be ignored since they will be handled during the update. Note that {{site.data.keyword.openshiftlong_notm}} cluster administrators do not need to provide a manual acknowledgment before the cluster can be upgraded, as mentioned in this Red Hat [article](https://access.redhat.com/articles/6329921){: external}. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.9" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
 

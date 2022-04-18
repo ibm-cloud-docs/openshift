@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-18"
 
 keywords: openshift
 
@@ -148,6 +148,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
 {: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="top"}
 {: summary="The rows are read from left to right. In the first column is the characteristic that differs between standard OpenShift Container Platform installations in the second column and {{site.data.keyword.openshiftlong_notm}} clusters in the third column."}
+
 
 
 

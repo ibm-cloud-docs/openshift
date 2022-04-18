@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-18"
 
 keywords: openshift
 
@@ -164,8 +164,8 @@ Review the Control Plane Configuration results of the version 1.5 CIS Kubernetes
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 3.2.1 | Ensure that a minimal audit policy is created | Scored | 1 | [Fail](#cis-benchmark-remediations-49) | Shared |
-| 3.2.2 | Ensure that the audit policy covers key security concerns | Not Scored | 2 | [Fail](#cis-benchmark-remediations-49) | Shared |
+| 3.2.1 | Ensure that a minimal audit policy is created | Scored | 1 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
+| 3.2.2 | Ensure that the audit policy covers key security concerns | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 3.2 Logging benchmark results" caption-side="top"}
 
@@ -204,9 +204,9 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 | 4.2.3 | Ensure that the `--client-ca-file` argument is set as appropriate | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.2.4 | Ensure that the `--read-only-port` argument is set to 0 | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.2.5 | Ensure that the `--streaming-connection-idle-timeout` argument is not set to 0 | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-| 4.2.6 | Ensure that the `--protect-kernel-defaults` argument is set to true | Scored | 1 | [Fail](#cis-benchmark-remediations-49) | {{site.data.keyword.IBM_notm}} |
+| 4.2.6 | Ensure that the `--protect-kernel-defaults` argument is set to true | Scored | 1 | [Fail](#ibm-remediations-and-explanations-49) | {{site.data.keyword.IBM_notm}} |
 | 4.2.7 | Ensure that the `--make-iptables-util-chains` argument is set to true | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-| 4.2.8 | Ensure that the `--hostname-override` argument is not set | Not Scored | 1 | [Fail](#cis-benchmark-remediations-49) | {{site.data.keyword.IBM_notm}} |
+| 4.2.8 | Ensure that the `--hostname-override` argument is not set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-49) | {{site.data.keyword.IBM_notm}} |
 | 4.2.9 | Ensure that the `--event-qps` argument is set to 0 or a level which ensures appropriate event capture | Not Scored | 2 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.2.10 | Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.2.11 | Ensure that the `--rotate-certificates` argument is not set to false | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
@@ -227,11 +227,11 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.1.1 | Ensure that the cluster-admin role is only used where required | Not Scored | 1 | Pass | Shared |
-| 5.1.2 | Minimize access to secrets | Not Scored | 1 | [Fail](#cis-benchmark-remediations-49) | Shared |
-| 5.1.3 | Minimize wildcard use in Roles and ClusterRoles | Not Scored | 1 | [Fail](#cis-benchmark-remediations-49) | Shared |
+| 5.1.2 | Minimize access to secrets | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
+| 5.1.3 | Minimize wildcard use in Roles and ClusterRoles | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
 | 5.1.4 | Minimize access to create pods | Not Scored | 1 | Pass | Shared |
-| 5.1.5 | Ensure that default service accounts are not actively used. | Scored | 1 | [Fail](#cis-benchmark-remediations-49) | Shared |
-| 5.1.6 | Ensure that Service Account Tokens are only mounted where necessary | Not Scored | 1 | [Fail](#cis-benchmark-remediations-49) | Shared |
+| 5.1.5 | Ensure that default service accounts are not actively used. | Scored | 1 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
+| 5.1.6 | Ensure that Service Account Tokens are only mounted where necessary | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 5.1 RBAC and Service Accounts benchmark results" caption-side="top"}
 
@@ -241,15 +241,15 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 5.2.1 | Minimize the admission of privileged containers | Not Scored | 1 | [Pass](#cis-benchmark-remediations-49) | Shared |
-| 5.2.2 | Minimize the admission of containers wishing to share the host process ID namespace | Scored | 1 | [Pass](#cis-benchmark-remediations-49) | Shared |
-| 5.2.3 | Minimize the admission of containers wishing to share the host IPC namespace | Scored | 1 | [Pass](#cis-benchmark-remediations-49) | Shared |
-| 5.2.4 | Minimize the admission of containers wishing to share the host network namespace | Scored | 1 | [Pass](#cis-benchmark-remediations-49) | Shared |
-| 5.2.5 | Minimize the admission of containers with allowPrivilegeEscalation | Scored | 1 | [Pass](#cis-benchmark-remediations-49) | Shared |
-| 5.2.6 | Minimize the admission of root containers | Not Scored | 2 | [Pass](#cis-benchmark-remediations-49) | Shared |
-| 5.2.7 | Minimize the admission of containers with the NET_RAW capability | Not Scored | 1 | [Pass](#cis-benchmark-remediations-49) | Shared |
-| 5.2.8 | Minimize the admission of containers with added capabilities | Not Scored | 1 | [Pass](#cis-benchmark-remediations-49) | Shared |
-| 5.2.9 | Minimize the admission of containers with capabilities assigned | Not Scored | 2 | [Pass](#cis-benchmark-remediations-49) | Shared |
+| 5.2.1 | Minimize the admission of privileged containers | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
+| 5.2.2 | Minimize the admission of containers wishing to share the host process ID namespace | Scored | 1 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
+| 5.2.3 | Minimize the admission of containers wishing to share the host IPC namespace | Scored | 1 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
+| 5.2.4 | Minimize the admission of containers wishing to share the host network namespace | Scored | 1 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
+| 5.2.5 | Minimize the admission of containers with allowPrivilegeEscalation | Scored | 1 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
+| 5.2.6 | Minimize the admission of root containers | Not Scored | 2 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
+| 5.2.7 | Minimize the admission of containers with the NET_RAW capability | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
+| 5.2.8 | Minimize the admission of containers with added capabilities | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
+| 5.2.9 | Minimize the admission of containers with capabilities assigned | Not Scored | 2 | [Pass](#ibm-remediations-and-explanations-49) | Shared |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 5.2 Pod Security Policies benchmark results" caption-side="top"}
 
@@ -261,7 +261,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.3.1 | Ensure that the CNI in use supports Network Policies | Not Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-| 5.3.2 | Ensure that all Namespaces have Network Policies defined | Scored | 2 | [Fail](#cis-benchmark-remediations-49) | Shared |
+| 5.3.2 | Ensure that all Namespaces have Network Policies defined | Scored | 2 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 5.3 Network Policies and CNI benchmark results" caption-side="top"}
 
@@ -271,8 +271,8 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 5.4.1 | Prefer using secrets as files over secrets as environment variables | Not Scored | 1 | [Fail](#cis-benchmark-remediations-49) | Shared |
-| 5.4.2 | Consider external secret storage | Not Scored | 2 | [Fail](#cis-benchmark-remediations-49) | Shared |
+| 5.4.1 | Prefer using secrets as files over secrets as environment variables | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
+| 5.4.2 | Consider external secret storage | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 5.4 Secrets Management benchmark results" caption-side="top"}
 
@@ -281,7 +281,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 5.5.1 | Configure Image Provenance using ImagePolicyWebhook admission controller | Not Scored | 2 | [Fail](#cis-benchmark-remediations-49) | Shared |
+| 5.5.1 | Configure Image Provenance using ImagePolicyWebhook admission controller | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 5.5 Extensible Admission Control benchmark results" caption-side="top"}
 
@@ -291,8 +291,8 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.6.1 | Create administrative boundaries between resources using namespaces | Not Scored | 1 | Pass | Shared |
-| 5.6.2 | Ensure that the seccomp profile is set to docker/default in your pod definitions | Not Scored | 2 | [Fail](#cis-benchmark-remediations-49) | Shared |
-| 5.6.3 | Apply Security Context to Your Pods and Containers | Not Scored | 2 | [Fail](#cis-benchmark-remediations-49) | Shared |
+| 5.6.2 | Ensure that the seccomp profile is set to docker/default in your pod definitions | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
+| 5.6.3 | Apply Security Context to Your Pods and Containers | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-49) | Shared |
 | 5.6.4 | The default namespace should not be used | Scored | 2 | Pass | Shared |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 5.6 General Policies benchmark results" caption-side="top"}

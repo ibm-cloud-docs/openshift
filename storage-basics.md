@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-18"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ Before you get started with provisioning storage, it is important to understand 
 
 The following image shows the storage components in a cluster.
 
-![Storage components in a cluster.](images/cs_storage_pvc_pv.png){: caption="Figure 1. Storage components in a cluster" caption-side="bottom"}
+![Storage components in a cluster.](images/cs_storage_pvc_pv.svg){: caption="Figure 1. Storage components in a cluster" caption-side="bottom"}
 
 Cluster
 :    By default, every cluster is set up with a plug-in to [provision file storage](/docs/openshift?topic=openshift-file_storage#add_file). You can choose to install other add-ons, such as the one for [block storage](/docs/containers?topic=containers-block_storage). To use storage in a cluster, you must create a persistent volume claim, a persistent volume and a physical storage instance. When you delete the cluster, you have the option to delete related storage instances.
@@ -68,7 +68,7 @@ The following image shows how file storage is dynamically provisioned in a clust
 
 **Sample flow for dynamic provisioning of file storage with the pre-defined silver storage class**
 
-![Sample flow to dynamically provision file storage in a cluster, as described in the following list.](images/cs_storage_dynamic.png){: caption="Figure 1. Sample flow to dynamically provision file storage in a cluster" caption-side="bottom"}
+![Sample flow to dynamically provision file storage in a cluster, as described in the following list.](images/cs_storage_dynamic-01.svg){: caption="Figure 1. Sample flow to dynamically provision file storage in a cluster" caption-side="bottom"}
 
 1. The user creates a persistent volume claim (PVC) that specifies the storage type, storage class, size in gigabytes, number of IOPS, and billing type. The storage class determines the type of storage that is provisioned and the allowed ranges for size and IOPS. Creating a PVC in a cluster automatically triggers the storage plug-in for the requested type of storage to provision storage with the given specification.
 2. The storage device is automatically ordered and provisioned into your IBM Cloud infrastructure account. The billing cycle for your storage device starts.
@@ -106,7 +106,7 @@ The following image shows how to statically provision file storage in a cluster.
 
 **Sample flow for static provisioning of file storage**
 
-![Sample flow to statically provision file storage in a cluster, as described in the following list.](images/cs_storage_static.png){: caption="Figure 1. Sample flow to statically provision file storage in a cluster" caption-side="bottom"}
+![Sample flow to statically provision file storage in a cluster, as described in the following list.](images/cs_storage_static-01.svg){: caption="Figure 1. Sample flow to statically provision file storage in a cluster" caption-side="bottom"}
 
 1. The cluster admin gathers all the details about the existing storage device and creates a persistent volume (PV) in the cluster.
 2. Based on the storage details in the PV, the storage plug-in connects the PV with the storage device in your IBM Cloud infrastructure account.
