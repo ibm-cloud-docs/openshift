@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-18"
 
 keywords: openshift
 
@@ -106,7 +106,7 @@ The following image shows how to statically provision file storage in a cluster.
 
 **Sample flow for static provisioning of file storage**
 
-![Sample flow to statically provision file storage in a cluster, as described in the following list.](images/cs_storage_static.svg){: caption="Figure 1. Sample flow to statically provision file storage in a cluster" caption-side="bottom"}
+![Sample flow to statically provision file storage in a cluster, as described in the following list.](images/cs_storage_static-01.svg){: caption="Figure 1. Sample flow to statically provision file storage in a cluster" caption-side="bottom"}
 
 1. The cluster admin gathers all the details about the existing storage device and creates a persistent volume (PV) in the cluster.
 2. Based on the storage details in the PV, the storage plug-in connects the PV with the storage device in your IBM Cloud infrastructure account.
