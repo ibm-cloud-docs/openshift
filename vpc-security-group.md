@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-19"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -14,64 +14,194 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Controlling traffic with the default security group
+# Controlling traffic with VPC security groups
 {: #vpc-security-group}
 {: help}
 {: support}
 
-Control inbound and outbound traffic to your worker nodes by modifying a VPC security group.
+VPC clusters use various security groups to protect cluster components. These security groups are automatically created and attached to cluster workers, load balancers, and cluster-related VPE gateways. You can modify or replace these security groups to meet your specific requirements, however, any modifications must be made according to these guidelines to avoid network connectivity disruptions.
 {: shortdesc}
 
-The default rules of the security group for your cluster differs with your cluster version.
-{: note}
-
-Level of application
-:   Worker node
+## VPC security groups
+{: #vpc-security-groups-details}
 
 Default behavior
 :   VPC security groups filter traffic at the hypervisor level. Security group rules are not applied in a particular order. However, requests to your worker nodes are only permitted if the request matches one of the rules that you specify. When you allow traffic in one direction by creating an inbound or outbound rule, responses are also permitted in the opposite direction. Security groups are additive, meaning that if your worker nodes are attached to more than one security group, all rules included in the security groups are applied to the worker nodes.
-:   The default security group for the VPC is applied to your worker nodes. This security group allows incoming ICMP packets (pings) and incoming traffic from other worker nodes in your cluster.
-:   Additionally, a unique security group that is named in the format `kube-<cluster_ID>` is automatically created and applied to the worker nodes for that cluster. This security group allows incoming traffic requests to the 30000 - 32767 port range on your worker nodes, and ensures that all inbound and outbound traffic to the pod subnet is permitted so that worker nodes can communicate with each other across subnets.
 
 Limitations
-:   Because the worker nodes of your VPC cluster exist in a service account and aren't listed in the VPC infrastructure dashboard, you can't create a security group and apply it to your worker node instances. You can only modify the existing security group.
+:   Because the worker nodes of your VPC cluster exist in a service account and aren't listed in the VPC infrastructure dashboard, you can't create a security group and apply it to your worker node instances. You can only modify the existing security group. 
 
-If you modfiy the default VPC security group, you must, at minumum, include the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules so that your cluster works properly.
+If you modfiy the default VPC security groups, you must, at minumum, include the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules so that your cluster works properly.  
 {: important}
 
-For more information about security groups, see the [VPC documentation](/docs/vpc?topic=vpc-using-security-groups){: external}.
+### Security groups applied to cluster workers
+{: #vpc-sg-cluster-workers}
+
+| Security group type | Name | Details |
+| --- | --- | --- | 
+| VPC security group | Randomly generated | - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.  \n - Allows all outbound traffic by default. |
+| VPC cluster secruity group | `kube-<cluster-ID>`| - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.   \n - Allows traffic necessary for the cluster infrastructure to function
+. |
+{: caption="Table 1. VPC security groups" caption-side="top"}
+{: summary="The table shows the three types of security groups that are automatically created for VPCs. The first column includes the type of security group. The second column includes the naming format of the security group. The third column includes details on when and where the security group is created and what type of traffic it allows."}
+
+### Security groups applied to VPE gateways and VPC ALBs
+{: #vpc-sg-vpe-alb}
+
+Modifying the `kube-<vpc-id>` security group is not recommended as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. However, you can [remove the default security group from the VPC ALB](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
+{: important}
+
+| Security group type | Name | Details |
+| --- | --- | --- | 
+| {{site.data.keyword.openshiftlong_notm}} security group | `kube-<vpc-id>` | - Automatically created and attached to any cluster-related VPE gateways in the VPC.  \n - Automatically created and attached to each VPC ALB that is created in the VPC.  \n - Allows traffic necessary for the cluster infrastructure to function. |
+{: caption="Table 1. VPC security groups" caption-side="top"}
+{: summary="The table shows the three types of security groups that are automatically created for VPCs. The first column includes the type of security group. The second column includes the naming format of the security group. The third column includes details on when and where the security group is created and what type of traffic it allows."}
+
+## Viewing the VPC security groups
+{: vpc-sg-view}
+
+Follow the steps to view details about the VPC security groups.
+
+Before you begin, gather the relevant VPC and cluster IDs.
+ 1. List your VPCs and note the **ID** and **Name** of the VPC for which you want to view the security groups. 
+
+    ```sh
+    ibmcloud oc vpcs
+    ```
+    {: pre}
+
+2. List your VPC clusters and note the **ID** of the cluster that you are working in.
+
+    To check what VPC a cluster is in, run `ibmcloud oc cluster get --cluster <cluster_name_or_id>` and check the **VPC ID** in the output.
+    {: tip}
+
+    ```sh
+    ibmcloud oc cluster ls --provider vpc-gen2
+    ```
+    {: screen}
+
+### Viewing VPC security groups in the CLI
+{: #vpc-sg-cli}
+
+1. List the security groups attached to the VPC. The VPC security group is assigned a randomly generated name, such as `trench-hexagon-matriarch-flower`. The VPC cluster security group is named in the format of `kube-<cluster-ID>`. The {{site.data.keyword.openshiftlong_notm}} security group is named in the format of `kube-<vpc-ID>`. 
+
+    ```sh
+    ibmcloud is sgs | grep <vpc_name>
+    ```
+    {: pre}
+
+    Example output.
+
+    ```sh
+    ID                                          Name                                             Rules   Network interfaces   VPC                          Resource group   
+
+    r006-111aa1aa-1a1a-1a11-1111-a111aaa1a11a   trench-hexagon-matriarch-flower                    4       0                    my-vpc                      default   
+    r006-222aa2aa-2a2a-2a22-2222-a222aaa2a22a   kube-a111a11a11aa1aa11a11                          4       0                    my-vpc                      default   
+    r006-333aa3aa-3a3a-3a33-3333-a333aaa3a33a   kube-r006-111a11aa-aaa1-1a1a-aa11-1a1a111aa11      4       0                    my-vpc                      default   
+    ```
+    {: screen}
+
+2. Get the details of a security group. Find the **Rules** section in the output to view the inbound and outbound rules attached to the security group.
+
+    ```sh
+    ibmcloud is sg <security-group-name>
+    ```
+    {: pre}
+
+    Example output.
+
+    ```sh
+    ...
+    Rules      
+    ID                                          Direction   IP version   Protocol                  Remote   
+    r006-111bb1bb-1b1b-1b11-1111-b111bbb1b11b   outbound    ipv4         all                       0.0.0.0/0   
+    r006-222bb2bb-2b2b-2b22-2222-b222bbb2b22b   inbound     ipv4         all                       behind-unbuilt-guidable-anthill   
+    r006-333bb3bb-3b3b-3b33-3333-b333bbb3b33b   inbound     ipv4         icmp Type=8               0.0.0.0/0   
+    r006-444bb4bb-4b4b-4b44-4444-b444bbb4b44b   inbound     ipv4         tcp Ports:Min=22,Max=22   0.0.0.0/0 
+    ```
+    {: screen}
+
+### Viewing the default VPC security groups in the UI
+{: #vpc-sg-ui}
+
+1. From the [Security groups for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/securityGroups){: external}, find the security groups that are attached to the VPC that your cluster is in. The VPC cluster security group is named in the format of `kube-<cluster-ID>`. The {{site.data.keyword.openshiftlong_notm}} security group is named in the format of `kube-<vpc-ID>`. Click on the security group.
+
+To sort the security groups by the VPC they are attached to, click the **Virtual Private Cloud** column heading in the table. 
 {: tip}
 
+2. To view the inbound and outbound rules attached to the security group, click the **Rules** tab.
 
+## Minimum inbound and outbound requirements 
+{: #vpc-sg-inbound-outbound}
 
+The following inbound and outbound rules are covered by the default VPC security groups. Note that you can modify the randomly-named VPC security group and the cluster-level `kube-<cluster-id>` security group, but you must make sure that these rules are still met. 
 
-## Required inbound rules
-{: #required-group-inbound-rules}
+Modifying the `kube-<vpc-id>` security group is not recommended as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. Instead, you can [remove the default security group from the VPC ALB or VPE gateway](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
+{: important}
 
-| Rule purpose | Protocol | Port or Value | Type |
+### Required inbound and outbound rules for cluster workers
+{: #required-group-rules-workers}
+
+By default, traffic rules for cluster workers are covered by the randomly-named VPC security group and the `kube-<cluster-id>` cluster security group. If you modify or replace either of these security groups, make sure the following traffic rules are still allowed. 
+{: shortdesc}
+
+#### Inbound rules
+{: min-inbound-rules-sg-workers}
+
+| Rule purpose | Protocol | Port or Value | Source |
 | --- | --- | --- | --- |
-| Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `<SG_name>` |
+| Allow all worker nodes in this cluster to communicate with each other. | ALL | - | VPC security group `randomly-generated-sg-name` |
 | Allow incoming traffic requests to apps that run on your worker nodes. | TCP | `30000` - `32767` | Any |
 | If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `30000` - `32767` | Any |
-{: caption="Table 2. Required inbound rules" caption-side="top"}
+{: caption="Required inbound rules for cluster worker security groups" caption-side="top"}
 {: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 
+#### Outbound rules
+{: min-outbound-rules-sg-workers}
 
-## Required outbound rules
-{: #security-group-outbound-rules}
-
-| Rule purpose | Protocol | Port or Value | Source type |
+| Rule purpose | Protocol | Port or Value | Destination |
 | --- | --- | --- | --- |
 | Allow worker nodes to be created in your cluster. | ALL | - | CIDR block `161.26.0.0/16` |
 | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints. | ALL | - | CIDR block `166.8.0.0/14` | 
 | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `kube-<cluster_ID>` |
 | Allow outbound traffic to be sent to the Virtual private endpoint gateway which is used to talk to the Kubernetes master. | ALL | - | Virtual private endpoint gateway IP addresses. The Virtual private endpoint gateway is assigned an IP address from a VPC subnet in each of the zones where your cluster has a worker node. For example, if the cluster spans 3 zones, there are up to 3 IP addresses assigned to each Virtual private endpoint gateway. To find the Virtual private endpoint gateway IPs:  \n 1. Go to the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}.  \n 2. Click **Virtual private endpoint gateways**, then select the **Region** where you cluster is located.  \n 3. Find your cluster, then click the IP addresses in the **IP Address** column to copy them. |
 | Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service. To find the IPs needed to apply this rule, see [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](#worker-node-public-service-endpoint). | TCP | 443 | Security group `kube-<cluster_ID>` |
-| Allow the worker nodes to connect to the public LoadBalancer. To find the IPs needed to apply this rule, see [Allow worker nodes to connect to the public LoadBalancer](#vpc-security-group-loadbalancer-outbound). | TCP | 443 | Security group `kube-<cluster_ID>` service |
-{: caption="Table 4. Required outbound rules" caption-side="top"}
+| Allow the worker nodes to connect to the public LoadBalancer. To find the IPs needed to apply this rule, see [Allow worker nodes to connect to the public LoadBalancer](#vpc-security-group-loadbalancer-outbound). | TCP | 443 | Security group `kube-<cluster_ID>` |
+{: caption="Required outbound rules for cluster worker security groups" caption-side="top"}
 {: summary="The table shows required outbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 
-## Creating inbound and outbound rules in the console
+### Required inbound and outbound rules for VPC ALBs
+{: #required-group-rules-alb}
+
+By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` security group. Note that you should not modify this security group as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. However, you can [remove the security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) from your ALB and [replace it](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) with one that you create and manage. If you do so, you must make sure that the following traffic rules are still covered. 
+{: shortdesc}
+
+#### Inbound rules
+{: min-inbound-rules-sg-alb}
+
+| Rule purpose | Protocol | Port or Value | Source |
+| --- | --- | --- | --- |
+| If you use your own security group to the LBaaS for Ingress, set port 80 to allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses. Alternatively, to allow the inbound traffic for router health checks, you can create a single rule to allow all incoming traffic on port 80. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}.
+{: caption="Required inbound rules for VPC ALB security groups" caption-side="top"}
+{: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
+
+#### Outbound rules
+{: min-outbound-rules-sg-alb}
+
+| Rule purpose | Protocol | Port or Value | Destination |
+| --- | --- | --- | --- |
+| Allow the ALB to send traffic to the cluster workers on the TCP nodeport range | TCP | `30000` - `32767` | Any |
+| Allow the ALB to send traffic to the cluster workers on the UDP nodeport range | UDP | `30000` - `32767` | Any |
+{: caption="Required outbound rules for VPE and VPC ALB security groups " caption-side="top"}
+{: summary="The table shows required outbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
+
+## Creating security group rules 
+{: #vpc-sg-create-rules}
+
+You can add inbound and outbound rules to the default VPC security groups. If you modify the randomly-named VPC security group and the cluster-level `kube-<cluster-id>` security group or replace the `kube-<vpc-id>` security group, you must make sure that the [minimum inbound and outbound rules](#vpc-sg-inbound-outbound) are still met. Do not modify the `kube-<vpc-id>` security group itself.
+{: shortdesc}
+
+### Creating rules in the console
 {: #security-group-inbound-rules}
 
 1. From the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}, click the name of the **Default Security Group** for the VPC that your cluster is in.
@@ -83,7 +213,7 @@ Keep in mind that in addition to any rules you create, you must also create the 
 {: note}
 
 
-## Creating security group rules in the command line
+### Creating security group rules in the command line
 {: #security_groups_cli}
 
 Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules to the default security group for your cluster.
@@ -174,8 +304,6 @@ Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules t
 Keep in mind that in addition to any rules you create, you must also create the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules.
 {: note}
 
-
-
 ## Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service
 {: #worker-node-public-service-endpoint}
 
@@ -264,18 +392,7 @@ Required for VPC clusters with a public service endpoint.
     
 If the {{site.data.keyword.redhat_openshift_notm}} Ingress or console operators fail their health checks, you can repeat these steps to see if the LoadBalancer IPs changed. Note that these IPs might change after updating your cluster master. While rare, if the amount of traffic to your LoadBalancers varies widely, these IPs might change to handle the increased or decreased load.
 {: tip}
-
-
-
     
-    
-
-
-
-
-
-
-
 
 
 

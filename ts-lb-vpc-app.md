@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-19"
 
 keywords: openshift
 
@@ -50,6 +50,7 @@ Requests can't be routed to your app in the following situations:
 Verify that no VPC security groups are blocking traffic to your cluster and that the VPC load balancer is available.
 {: tsResolve}
 
+
 1. {{site.data.keyword.redhat_openshift_notm}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC load balancer to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
 
 2. Verify that the VPC load balancer for the Kubernetes `LoadBalancer` service exists. In the output, look for the VPC load balancer that is formatted `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. You can get the Kubernetes `LoadBalancer` service UID by running `oc get svc <service_name> -o yaml`.
@@ -58,16 +59,18 @@ Verify that no VPC security groups are blocking traffic to your cluster and that
     ```
     {: pre}
 
-- If the VPC load balancer is not listed, it does not exist for one of the following reasons:
+    - If the VPC load balancer is not listed, it does not exist for one of the following reasons:
     * You reached the maximum number of VPC load balancers permitted per account. Across all your VPC clusters in your VPC, a maximum of 20 VPC load balancers can be created. One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only.
     * The VPC load balancer was deleted through the VPC console or the CLI. To re-create the VPC load balancer for your Kubernetes `LoadBalancer` service, restart the Kubernetes master by running `ibmcloud oc cluster master refresh --cluster <cluster_name_or_id>`.
     
     If you want to remove the load balancing setup for an app in your VPC cluster, delete the Kubernetes `LoadBalancer` service by running `oc delete svc <kubernetes_lb_service_name>`. The VPC load balancer that is associated with the Kubernetes `LoadBalancer` service is automatically deleted from your VPC.
     {: tip}
-    
-- If the VPC load balancer is listed, it might not be responsive for the following reasons:
-    * Its DNS entry might still be registering. When a VPC load balancer is created, the hostname is registered through a public DNS. Sometimes, it can take several minutes for this DNS entry to be replicated to the specific DNS that your client is using. You can either wait for the hostname to be registered in your DNS, or access the VPC load balancer directly by using one of its IP addresses. To find the VPC load balancer IP addresses, run `ibmcloud is lb <LB_ID>` and look for the **Public IPs** field.
-    * If after several minutes you can't reach the load balancer, it might be offline due to provisioning or connection issues. [Open an {{site.data.keyword.cloud_notm}} support case](https://cloud.ibm.com/unifiedsupport/cases/add). For the type, select **Technical**. For the category, select **Network** in the VPC section. In the description, include your cluster ID and the VPC load balancer ID.
+
+3. If the load balancer exists, [view the VPC security groups that are attached to it](/docs/containers?topic=containers-vpc-security-group#vpc-sg-view). If you have made any modifications to the `kube-<vpc-id>` security group, which is automatically attached to the load balancer, set the original rules back in the security group.
+
+    - If the VPC load balancer is listed and you have not modified any attached security groups, it might not be responsive for the following reasons:
+        * Its DNS entry might still be registering. When a VPC load balancer is created, the hostname is registered through a public DNS. Sometimes, it can take several minutes for this DNS entry to be replicated to the specific DNS that your client is using. You can either wait for the hostname to be registered in your DNS, or access the VPC load balancer directly by using one of its IP addresses. To find the VPC load balancer IP addresses, run `ibmcloud is lb <LB_ID>` and look for the **Public IPs** field.
+        * If after several minutes you can't reach the load balancer, it might be offline due to provisioning or connection issues. [Open an {{site.data.keyword.cloud_notm}} support case](https://cloud.ibm.com/unifiedsupport/cases/add). For the type, select **Technical**. For the category, select **Network** in the VPC section. In the description, include your cluster ID and the VPC load balancer ID.
 
 
 

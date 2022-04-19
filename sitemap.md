@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-19"
 
 keywords: openshift
 subcollection: openshift
@@ -2994,15 +2994,31 @@ subcollection: openshift
 
 * [Access control lists (ACLs) or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
 
-[Controlling traffic with the default security group](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
+[Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
 
-* [Required inbound rules](/docs/openshift?topic=openshift-vpc-security-group#required-group-inbound-rules)
+* [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-groups-details)
 
-* [Required outbound rules](/docs/openshift?topic=openshift-vpc-security-group#security-group-outbound-rules)
+    * [Security groups applied to cluster workers](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster-workers)
 
-* [Creating inbound and outbound rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
+    * [Security groups applied to VPE gateways and VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-vpe-alb)
 
-* [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
+* [Viewing the VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#viewing-the-vpc-security-groups)
+
+    * [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cli)
+
+    * [Viewing the default VPC security groups in the UI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-ui)
+
+* [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-inbound-outbound)
+
+    * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers)
+
+    * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
+
+* [Creating security group rules](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules)
+
+    * [Creating rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
+
+    * [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
 
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
