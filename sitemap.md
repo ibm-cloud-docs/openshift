@@ -3002,7 +3002,7 @@ subcollection: openshift
 
     * [Security groups applied to VPE gateways and VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-vpe-alb)
 
-* [Viewing the VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#viewing-the-vpc-security-groups)
+* [Viewing the VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-view)
 
     * [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cli)
 

@@ -31,7 +31,7 @@ Default behavior
 Limitations
 :   Because the worker nodes of your VPC cluster exist in a service account and aren't listed in the VPC infrastructure dashboard, you can't create a security group and apply it to your worker node instances. You can only modify the existing security group. 
 
-If you modfiy the default VPC security groups, you must, at minumum, include the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules so that your cluster works properly.  
+If you modfiy the default VPC security groups, you must, at minumum, include the required [inbound](#min-outbound-rules-sg-workers) and [outbound](#min-inbound-rules-sg-workers) rules so that your cluster works properly.  
 {: important}
 
 ### Security groups applied to cluster workers
@@ -58,12 +58,12 @@ Modifying the `kube-<vpc-id>` security group is not recommended as doing so migh
 {: summary="The table shows the three types of security groups that are automatically created for VPCs. The first column includes the type of security group. The second column includes the naming format of the security group. The third column includes details on when and where the security group is created and what type of traffic it allows."}
 
 ## Viewing the VPC security groups
-{: vpc-sg-view}
+{: #vpc-sg-view}
 
 Follow the steps to view details about the VPC security groups.
 
 Before you begin, gather the relevant VPC and cluster IDs.
- 1. List your VPCs and note the **ID** and **Name** of the VPC for which you want to view the security groups. 
+1. List your VPCs and note the **ID** and **Name** of the VPC for which you want to view the security groups. 
 
     ```sh
     ibmcloud oc vpcs
@@ -146,7 +146,7 @@ By default, traffic rules for cluster workers are covered by the randomly-named 
 {: shortdesc}
 
 #### Inbound rules
-{: min-inbound-rules-sg-workers}
+{: #min-inbound-rules-sg-workers}
 
 | Rule purpose | Protocol | Port or Value | Source |
 | --- | --- | --- | --- |
@@ -157,7 +157,7 @@ By default, traffic rules for cluster workers are covered by the randomly-named 
 {: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 
 #### Outbound rules
-{: min-outbound-rules-sg-workers}
+{: #min-outbound-rules-sg-workers}
 
 | Rule purpose | Protocol | Port or Value | Destination |
 | --- | --- | --- | --- |
@@ -177,7 +177,7 @@ By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` securi
 {: shortdesc}
 
 #### Inbound rules
-{: min-inbound-rules-sg-alb}
+{: #min-inbound-rules-sg-alb}
 
 | Rule purpose | Protocol | Port or Value | Source |
 | --- | --- | --- | --- |
@@ -186,7 +186,7 @@ By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` securi
 {: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
 
 #### Outbound rules
-{: min-outbound-rules-sg-alb}
+{: #min-outbound-rules-sg-alb}
 
 | Rule purpose | Protocol | Port or Value | Destination |
 | --- | --- | --- | --- |
