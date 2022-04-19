@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-04-19"
 
 keywords: openshift
 
@@ -68,7 +68,7 @@ The following image shows how file storage is dynamically provisioned in a clust
 
 **Sample flow for dynamic provisioning of file storage with the pre-defined silver storage class**
 
-![Sample flow to dynamically provision file storage in a cluster, as described in the following list.](images/cs_storage_dynamic-01.svg){: caption="Figure 1. Sample flow to dynamically provision file storage in a cluster" caption-side="bottom"}
+![Sample flow to dynamically provision file storage in a cluster, as described in the following list.](images/cs_storage_dynamic-01-01.svg){: caption="Figure 1. Sample flow to dynamically provision file storage in a cluster" caption-side="bottom"}
 
 1. The user creates a persistent volume claim (PVC) that specifies the storage type, storage class, size in gigabytes, number of IOPS, and billing type. The storage class determines the type of storage that is provisioned and the allowed ranges for size and IOPS. Creating a PVC in a cluster automatically triggers the storage plug-in for the requested type of storage to provision storage with the given specification.
 2. The storage device is automatically ordered and provisioned into your IBM Cloud infrastructure account. The billing cycle for your storage device starts.

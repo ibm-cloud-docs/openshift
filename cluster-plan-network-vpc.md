@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-19"
 
 keywords: openshift network
 
@@ -151,22 +151,24 @@ If you need to connect your cluster to resources in your {{site.data.keyword.clo
 
 When you deploy an app in your cluster, you might want to make the app accessible to only users and services that are on the same private network as your cluster. Private load balancing is ideal for making your app available to requests from outside the cluster without exposing the app to the general public. You can also use private load balancing to test access, request routing, and other configurations for your app before you later expose your app to the public with public network services.
 
-To allow private network traffic requests from outside the cluster to your apps, you can use private Kubernetes networking services, such as creating [`LoadBalancer` services](/docs/containers?topic=containers-vpc-lbaas). For example, when you create a Kubernetes `LoadBalancer` service in your cluster, a load balancer for VPC is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. You can then modify the default VPC security group for your worker nodes to allow inbound network traffic requests from specified sources.
+To allow private network traffic requests from outside the cluster to your apps, you can use private Kubernetes networking services, such as creating [`LoadBalancer` services](/docs/containers?topic=containers-vpc-lbaas). For example, when you create a Kubernetes `LoadBalancer` service in your cluster, a load balancer for VPC is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. For VPC ALBs, a [security group](/docs/containers?topic=containers-vpc-security-group), named in the form of `kube-<vpc-id>`, is automatically attached to your ALB instance.
+
+The `kube-<vpc-id>` security group that is attached to your VPC ALB is the same security group used for the private VPE gateway that communicates with the Kubernetes master. Do not modify this security group, as doing so might result in disruptions to the network connectivty between the cluster and the Kubernetes master. Instead, you can [remove the security group from the VPC ALB](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
+{:important}
+
 
 For more information, see [Planning private external load balancing](/docs/openshift?topic=openshift-cs_network_planning#private_access).
+
 
 ## Public traffic to cluster apps
 {: #vpc-worker-services-onprem-apps-public}
 
 To make your apps accessible from the public internet, you can use public networking services. Even though your worker nodes are connected to private VPC subnets only, the VPC load balancer that is created for public networking services can route public requests to your app on the private network by providing your app a public URL. When an app is publicly exposed, anyone that has the public URL can send a request to your app.
 
-You can use public Kubernetes networking services, such as creating [`LoadBalancer` services](/docs/containers?topic=containers-vpc-lbaas). For example, when you create a Kubernetes `LoadBalancer` service in your cluster, a load balancer for VPC is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. You can then modify the default security group for your cluster to allow inbound network traffic requests from specified sources to your worker nodes.
+You can use public Kubernetes networking services, such as creating [`LoadBalancer` services](/docs/containers?topic=containers-vpc-lbaas). For example, when you create a Kubernetes `LoadBalancer` service in your cluster, a load balancer for VPC is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. For VPC ALBs, a [security group](/docs/containers?topic=containers-vpc-security-group), named in the form of `kube-<vpc-id>`, is automatically attached to your ALB instance.
 
-
-
-
-
-
+The `kube-<vpc-id>` security group that is attached to your VPC ALB is the same security group used for the private VPE gateway that communicates with the Kubernetes master. Do not modify this security group, as doing so might result in disruptions to the network connectivty between the cluster and the Kubernetes master. Instead, you can [remove the security group from the VPC ALB](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
+{:important}
 
 ## Example scenarios for VPC cluster network setups
 {: #vpc-scenarios}
@@ -203,7 +205,7 @@ If your app workload requires other {{site.data.keyword.cloud_notm}} services, y
 ### External communication to apps that run on worker nodes
 {: #vpc-no-pgw-external}
 
-After you test your app, you can expose it to the internet by creating a public Kubernetes `LoadBalancer` service or using the default public Ingress application load balancers (ALBs). The VPC load balancer that is automatically created in your VPC outside of your cluster when you use one of these services routes traffic to your app. You can improve the security of your cluster and control public network traffic to your apps by modifying the default VPC security group for your cluster. Security groups consist of rules that define which inbound traffic is permitted for your worker nodes.
+After you test your app, you can expose it to the internet by creating a public Kubernetes `LoadBalancer` service or using the default public Ingress application load balancers (ALBs). The VPC load balancer that is automatically created in your VPC outside of your cluster when you use one of these services routes traffic to your app. You can improve the security of your cluster and control public network traffic to your apps by replacing the `kube-<vpc-id>` security group, which is automatically applied to the VPC ALB, with a security group that you create and manage. When applied to ALBs, security groups control which inbound traffic is permitted to your cluster through the ALB. 
 
 Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/containers?topic=containers-ha_clusters) and [worker node](/docs/containers?topic=containers-planning_worker_nodes) setups, see [Creating VPC clusters](/docs/containers?topic=containers-clusters).
 
