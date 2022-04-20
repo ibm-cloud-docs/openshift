@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-20"
 
 keywords: openshift
 
@@ -161,14 +161,17 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     6. Save your changes and navigate to your working directory.
 
 
-9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. **VPC clusters only**: To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
+9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. To set a limit on how much storage is available for the bucket, set the `-set quotaLimit=true` **VPC clusters only**: To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
 
 Example `helm ibmc install` command for OS X and Linux.
 
 ```sh
-helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
+helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] 
 ```
 {: pre}
+
+`quotaLimit`
+:   A quota limit sets the maximum amount of storage (in bytes) available for a bucket. For more information see [Setting a quota on a bucket](/docs/cloud-object-storage?topic=cloud-object-storage-quota).
 
 Example `helm install` command for Windows.
 
@@ -534,5 +537,4 @@ Review the pod details to verify that the plug-in installation succeeded.
 
 If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
 {: tip}
-
 
