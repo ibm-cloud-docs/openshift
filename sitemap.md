@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-21"
 
 keywords: openshift
 subcollection: openshift
@@ -3794,8 +3794,6 @@ subcollection: openshift
 
 * [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
 
-    * [Using the {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}} migration script](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr-script)
-
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
@@ -5006,7 +5004,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.redhat_openshift_notm}} 4.3 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp43)
 
-[Version changelog](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
+[Version change log](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
 
 * [Version change logs](/docs/openshift?topic=openshift-openshift_changelog#change-logs-by-version-roks)
 
