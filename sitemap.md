@@ -3794,6 +3794,8 @@ subcollection: openshift
 
 * [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
 
+    * [Migrating certificates stored with custom domains](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr-custom)
+
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)

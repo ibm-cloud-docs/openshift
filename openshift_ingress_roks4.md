@@ -1276,6 +1276,7 @@ ibmcloud oc ingress instance default unset --cluster <cluster_name_or_id> --crn 
 {: #migrate-secrets-mgr}
 
 With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates with {{site.data.keyword.secrets-manager_short}}. For a comparison between the two services and details on migrating your resources, see [Migrating certificates from Certificate Manager](/docs/secrets-manager?topic=secrets-manager-migrate-from-certificate-manager#migrate-process). For migration instructions, see [Migration guidelines](/docs/secrets-manager?topic=secrets-manager-migrate-from-certificate-manager#migrate-guidelines).
+{: shortdesc}
 
 Support for the {{site.data.keyword.cloudcerts_short}} in Kubernetes clusters is set to end in late 2022, and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. Secrets in deleted {{site.data.keyword.cloudcerts_short}} are written directly to the cluster. If you do not migrate your secrets and set a default {{site.data.keyword.secrets-manager_short}}, your secrets are only written to the cluster and not to any manager instance.
 {: note}
@@ -1293,9 +1294,26 @@ When migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keywor
 **Service-to-service enablement**:
 :    If you want to enable service-to-service communication, you must [set up IAM credentials for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-configure-iam-engine&interface=ui) and [create a service-to-service authorization](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 
-You can run the [`certificate-manager-to-secrets-manager` migration script](https://github.com/ibm-cloud-security/certificate-manager-to-secrets-manager){: external} to easily migrate your custom secrets and certifictes to your new {{site.data.keyword.secrets-manager_short}} instance. Before you run the script, make sure you have followed the steps in the [Migration guidelines](/docs/secrets-manager?topic=secrets-manager-migrate-from-certificate-manager#migrate-guidelines). Note that this script is only intended for secrets that are not managed by IBM Cloud and should only be run after you have [set up a default {{site.data.keyword.secrets-manager_short}} instance](#default-secrets-mgr).
-{: tip}
+### Migrating certificates stored with custom domains
+{: #migrate-secrets-mgr-custom}
 
+If you want to migrate a certificate that is stored with a custom domain and is not managed by IBM Cloud, you must manually download the certificate and upload it to the new {{site.data.keyword.secrets-manager_short}} instance.
+{: shortdesc}
+
+1. In the {{site.data.keyword.cloudcerts_short}} dashboard, [download the certificate from {{site.data.keyword.cloudcerts_short}}](docs/certificate-manager?topic=certificate-manager-managing-certificates-from-the-dashboard#downloading-certificates).
+2. [Upload the certificate to the {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-certificates&interface=ui#import-certificates).
+3. Update the certificate CRN to match the certificate of the {{site.data.keyword.secrets-manager_short}} instance.
+    1. Get the CRN of the new default {{site.data.keyword.secrets-manager_short}} instance. 
+        ```sh
+        ibmcloud oc ingress instance get --cluster <cluster_name_or_id> --name <secret_name>
+        ```
+        {: pre}
+        
+    2. Update the certificate CRN to match the CRN of the new default instance.
+        ```sh
+        ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <default_instance_crn>
+        ```
+        {: pre}
 
 
 
