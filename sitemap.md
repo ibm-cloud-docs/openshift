@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-22"
 
 keywords: openshift
 subcollection: openshift
@@ -3018,7 +3018,7 @@ subcollection: openshift
 
     * [Creating rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
 
-    * [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
+    * [Creating rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
 
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 

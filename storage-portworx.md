@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-22"
 
 keywords: portworx, openshift
 
@@ -1270,7 +1270,7 @@ Creating snapshots of your Portworx volumes
 :   You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the Cloud. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/){: external}.
 
 Monitoring and managing your Portworx cluster with Lighthouse
-:   [Lighthouse](https://docs.portworx.com/reference/lighthouse/){: external} is an intuitive, graphical tool to help you manage and monitor your Portworx clusters and volume snapshots. With Lighthouse, you can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in Prometheus, Grafana, or Kibana.
+:   You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/install-with-other/operate-and-maintain/monitoring/){: external}.
 
 
 

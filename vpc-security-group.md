@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-22"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -209,11 +209,11 @@ You can add inbound and outbound rules to the default VPC security groups. If yo
     *  To create new inbound rules to control inbound traffic to your worker nodes, in the **Inbound rules** section, click **Create**. 
     * To create new rules to control outbound traffic to your worker nodes, in the **Outbound rules** section, delete the default rule that allows all outbound traffic. Then, in the **Outbound rules** section, click **Create**. 
 
-Keep in mind that in addition to any rules you create, you must also create the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules.
+Keep in mind that in addition to any rules you create, you must also create the required [inbound and outbound rules](#vpc-sg-inbound-outbound).
 {: note}
 
 
-### Creating security group rules in the command line
+### Creating rules in the command line
 {: #security_groups_cli}
 
 Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules to the default security group for your cluster.
@@ -257,7 +257,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules t
     ```
     {: pre}
 
-1. Review the default rules for the security group. Keep in mind that in addition to any rules you create, you must also create the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules.
+1. Review the default rules for the security group. Keep in mind that in addition to any rules you create, you must also create the required [inbound and outbound rules](#vpc-sg-inbound-outbound).
     ```sh
     ibmcloud is sg $sg
     ```
@@ -301,8 +301,10 @@ Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules t
             ```
             {: pre}
     
-Keep in mind that in addition to any rules you create, you must also create the required [inbound](#security-group-inbound-rules) and [outbound](#security-group-outbound-rules) rules.
+
+Keep in mind that in addition to any rules you create, you must also create the required [inbound and outbound rules](#vpc-sg-inbound-outbound).
 {: note}
+
 
 ## Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service
 {: #worker-node-public-service-endpoint}

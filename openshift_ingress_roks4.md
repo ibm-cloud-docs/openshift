@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-22"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1300,7 +1300,7 @@ When migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keywor
 If you want to migrate a certificate that is stored with a custom domain and is not managed by IBM Cloud, you must manually download the certificate and upload it to the new {{site.data.keyword.secrets-manager_short}} instance.
 {: shortdesc}
 
-1. In the {{site.data.keyword.cloudcerts_short}} dashboard, [download the certificate from {{site.data.keyword.cloudcerts_short}}](docs/certificate-manager?topic=certificate-manager-managing-certificates-from-the-dashboard#downloading-certificates).
+1. In the {{site.data.keyword.cloudcerts_short}} dashboard, [download the certificate from {{site.data.keyword.cloudcerts_short}}](/docs/certificate-manager?topic=certificate-manager-managing-certificates-from-the-dashboard#downloading-certificates).
 2. [Upload the certificate to the {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-certificates&interface=ui#import-certificates).
 3. Update the certificate CRN to match the certificate of the {{site.data.keyword.secrets-manager_short}} instance.
     1. Get the CRN of the new default {{site.data.keyword.secrets-manager_short}} instance. 
