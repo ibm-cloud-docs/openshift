@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-22"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -34,7 +34,6 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 {: #cli-10394}
 
 Version 1.0.394 of the CLI was released on 7 April 2022.
-:   Adds the `--cluster-security-group` option to the `ibmcloud oc cluster create vpc-gen2` command.
 :   Adds the `--operating-system` label to `ibmcloud oc worker-pool create satellite` and `ibmcloud oc cluster create satellite`.
 
 ## Version 1.0.384
