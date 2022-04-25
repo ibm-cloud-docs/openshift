@@ -206,6 +206,10 @@ subcollection: openshift
 
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
 
+    * [26 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2622)
+
+        * Ingress ALB changelog updates
+
     * [25 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2522)
 
         * Worker node fix pack

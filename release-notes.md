@@ -27,6 +27,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## April 2022
 {: #openshift-apr22}
 
+
+### 26 April 2022
+{: #openshift-apr2622}
+
+Ingress ALB changelog updates
+:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog) for version `1.2.0_2131_iks`. Version `1.1.1` is no longer available.
+
+
 ### 25 April 2022
 {: #openshift-apr2522}  
 {: release-note}
@@ -34,6 +42,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Worker node fix pack
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.9.29_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.37_1555_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.49_1562_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.664_1630_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+
 
 
 
