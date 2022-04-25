@@ -61,7 +61,7 @@ Events:        <none>
 {: screen}
 
 3. If the PVC is not mounted to a pod, review the steps for [setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-add) and mount the PVC to a pod. Then try to view the metrics again. 
-4. If the PVC is mounted, follow the steps for [manually verifying the {{site.data.keyword.block_storage_is_short}} metrics](/docs/openshift?topic=openshift-health-monitor#manual-monitor-metrics) then [open a support issue](/docs/openshift?topic=openshift-get-help#help-support). The steps for manual verification in the CLI allow you to view your metrics, but are not a solution for metrics that do not populate in the console. However, if you are able to manually verify your metrics, this indicates that there is a console issue for which you must open an issue.
+4. If the PVC is mounted, follow the steps for [manually verifying the {{site.data.keyword.block_storage_is_short}} metrics](#manual-monitor-metrics) then [open a support issue](/docs/openshift?topic=openshift-get-help#help-support). The steps for manual verification in the CLI allow you to view your metrics, but are not a solution for metrics that do not populate in the console. However, if you are able to manually verify your metrics, this indicates that there is a console issue for which you must open an issue.
 
 ### Manually viewing storage metrics in the CLI
 {: #manual-monitor-metrics}
