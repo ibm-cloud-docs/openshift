@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-25"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -40,7 +40,18 @@ Review the version 4.7 changelog.
 {: shortdesc}
 
 
+### Change log for worker node fix pack 4.7.49_1562_openshift, released 25 April 2022
+{: #4749_1562_openshift}
 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | N/A | N/A | Package updates. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.46 | 4.7.49 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-49){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.46_1560_openshift" caption-side="top"}
 
 
 

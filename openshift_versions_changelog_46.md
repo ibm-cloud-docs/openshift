@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-25"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -32,11 +32,21 @@ Master patch updates are applied automatically. Worker node patch updates can be
 ## Change logs
 {: #47_changelog}
 
-Review the version 4.6 changelog.
+Review the version 4.6 change log.
 {: shortdesc}
 
 
+### Change log for worker node fix pack 4.6.56_1581_openshift, released 25 April 2022
+{: #4656_1581_openshift}
 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | N/A | N/A | Package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.56_1579_openshift" caption-side="top"}
 
 
 

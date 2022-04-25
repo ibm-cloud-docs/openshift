@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-25"
 
 keywords: openshift
 subcollection: openshift
@@ -70,6 +70,8 @@ subcollection: openshift
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
 
 * [Comparison between {{site.data.keyword.redhat_openshift_notm}} 3.11 and 4 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
+
+* [Operator support overview](/docs/openshift?topic=openshift-cs_ov#operator-support-comparison)
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers)
 
@@ -203,6 +205,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
+
+    * [25 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2522)
+
+        * Worker node fix pack
 
     * [13 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1322)
 
@@ -5037,6 +5043,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#47_changelog)
 
+    * [Change log for worker node fix pack 4.9.29_1537_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4929_1537_openshift)
+
     * [Change log for worker node fix pack 4.9.26_1535_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4926_1535_openshift)
 
     * [Changelog for master fix pack 4.9.25_1534_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4.9.25_1534)
@@ -5113,6 +5121,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#47_changelog)
+
+    * [Change log for worker node fix pack 4.8.37_1555_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4837_1555_openshift)
 
     * [Change log for worker node fix pack 4.8.35_1553_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1553_openshift)
 
@@ -5216,6 +5226,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for worker node fix pack 4.7.49_1562_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4749_1562_openshift)
 
     * [Change log for worker node fix pack 4.7.46_1560_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4746_1560_openshift)
 
@@ -5343,6 +5355,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#47_changelog)
+
+    * [Change log for worker node fix pack 4.6.56_1581_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4656_1581_openshift)
 
     * [Change log for worker node fix pack 4.6.56_1579_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4656_1579_openshift)
 
@@ -5496,6 +5510,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_overview_311)
 
 * [Deprecated: Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#version-311)
+
+    * [Change log for worker node fix pack 3.11.664_1630_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311664_1630_openshift)
 
     * [Change log for worker node fix pack 3.11.664_1628_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311664_1628_openshift)
 
@@ -7019,6 +7035,10 @@ subcollection: openshift
 
 [Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?](/docs/openshift?topic=openshift-block_not_attached_vpc#block_not_attached_vpc)
 
+[Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/openshift?topic=openshift-debug_monitoring#debug_monitoring)
+
+    * [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
+
 
 ### Object Storage
 {: #sitemap_object_storage}
@@ -7146,3 +7166,5 @@ subcollection: openshift
     * [Storage](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_storage_limit)
 
 * [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits)
+
+* [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_limitations#not-supported-features-table)

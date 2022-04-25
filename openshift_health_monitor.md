@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-25"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -59,7 +59,9 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 
 {{site.data.keyword.openshiftlong}} clusters include built-in tools to help cluster administrators get information about the availability and capacity of storage volumes.
 {: shortdesc}
-{: note}
+
+If you are unable to view storage metrics in the {{site.data.keyword.redhat_openshift_notm}} monitoring dashboard, see [Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/containers?topic=containers-debug_monitoring).
+{: tip}
 
 The following metrics can be monitored for {{site.data.keyword.openshiftlong}} clusters.
 - `kubelet_volume_stats_available_bytes`
@@ -68,7 +70,10 @@ The following metrics can be monitored for {{site.data.keyword.openshiftlong}} c
 - `kubelet_volume_stats_inodes_free`
 - `kubelet_volume_stats_inodes_used`
 
-Before monitoring metrics for {{site.data.keyword.block_storage_is_short}} you must have a cluster with the {{site.data.keyword.block_storage_is_short}} add-on enabled and you must have a {{site.data.keyword.block_storage_is_short}} volume attached to a worker node. 
+Want to set up storage monitoring alerts for platforms such as email or Slack? See [Sending notifications to external systems](https://docs.openshift.com/container-platform/4.10/monitoring/managing-alerts.html#sending-notifications-to-external-systems_managing-alerts){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
+{: tip}
+
+Before monitoring metrics for {{site.data.keyword.block_storage_is_short}} you must have a cluster with the {{site.data.keyword.block_storage_is_short}} add-on enabled and you must have a {{site.data.keyword.block_storage_is_short}} volume attached to a worker node. {{site.data.keyword.openshiftlong}} Storage Metrics are only populated for mounted storage volumes.
 {: note}
 
 1. Navigate to the {{site.data.keyword.redhat_openshift_notm}} web console and select **Monitoring** and then **Metrics**. 
@@ -90,7 +95,6 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 
 If your volume is reaching capacity, try setting up [volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand).
 {: tip}
-
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_monitoring}

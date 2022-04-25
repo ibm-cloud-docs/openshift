@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-25"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -207,6 +207,54 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | Worker nodes | Worker nodes run on hosts in your own infrastructure environments. The hosts must meet [host](/docs/satellite?topic=satellite-host-reqs) and provider-specific requirements, such as for [AWS](/docs/satellite?topic=satellite-aws), [Azure](/docs/satellite?topic=satellite-azure), [GCP](/docs/satellite?topic=satellite-gcp), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) (testing and demonstration purposes only). You are responsible for [managing the infrastructure lifecycle of your hosts](/docs/satellite?topic=satellite-host-concept), including adding and updating worker nodes. As such, worker node operations like `ibmcloud oc worker add, update, replace, reload` commands are not supported. |
 | Worker pools | To use operations like `resize`, your worker pool uses [host labels](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) that must match available (unassigned) hosts in the {{site.data.keyword.satelliteshort}} location. |
 {: caption="{{site.data.keyword.satelliteshort}} cluster limitations"}
+
+
+## Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}
+{: #not-supported-features-table}
+
+The following features and operators are not supported in {{site.data.keyword.openshiftlong_notm}}.
+
+* 3scale 
+* 3scale APIcast 
+* Advanced Cluster Management
+* Advanced Cluster Security 
+* AMQ Broker 
+* AMQ Broker LTS
+* AMQ Interconnect 
+* AMQ Online 
+* AMQ Streams
+* Ansible Automation Platform Resource Operator
+* API Designer
+* Business Automation Operator
+* Camel K
+* Cost management Operator
+* Data Grid Operator
+* Device Manager
+* File Integrity Operator 
+* Fuse Console
+* Fuse Online 
+* Gatekeeper Operator 
+* JBoss EAP
+* JBoss Web Server
+* Metering and Cost Management SaaS Service
+* OpenShift Cloud Manager(OCM) SaaS Service 
+* OpenShift Container Storage
+* OVS and OVN SDN 
+* Performance Add-on Operator 
+* PTP Operator
+* Quay Operator
+* Red Hat OpenStack Platform Kuryr Integration
+* Red Hat Integration Operator 
+* Service Registry Operator 
+* Smart Gateway Operator
+* SR-IOV Network Operator 
+* Telemeter and Insights Connected Experience 
+* Windows Machine Config 
+
+
+
+
+
 
 
 

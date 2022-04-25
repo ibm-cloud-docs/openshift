@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-25"
 
 keywords: openshift
 
@@ -26,6 +26,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## April 2022
 {: #openshift-apr22}
+
+### 25 April 2022
+{: #openshift-apr2522}  
+{: release-note}
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.29_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.37_1555_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.49_1562_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.664_1630_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 
 

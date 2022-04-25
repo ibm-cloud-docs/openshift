@@ -465,6 +465,7 @@ toc:
                 - ts-storage-block-throttling.md
                 - ts-storage-vpc-block-api-key.md
                 - ts-storage-block-not-attached.md
+                - ts-storage-vpc-block-monitoring.md
             - topicgroup:
                 label: Object Storage
                 topics:

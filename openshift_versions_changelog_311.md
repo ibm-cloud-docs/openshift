@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-25"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -33,14 +33,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 ## Deprecated: Version 3.11 change log
 {: #version-311}
 
-Review the changelogs for {{site.data.keyword.openshiftlong_notm}} version 3.11 patch updates.
+Review the change logs for {{site.data.keyword.openshiftlong_notm}} version 3.11 patch updates.
 {: shortdesc}
 
 ![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
 {: deprecated}
 
 
+### Change log for worker node fix pack 3.11.664_1630_openshift, released 25 April 2022
+{: #311664_1630_openshift}
 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages |  N/A | N/A  | Package updates. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.664_1628_openshift" caption-side="top"}
 
 
 
