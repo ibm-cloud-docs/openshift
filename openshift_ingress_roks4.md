@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-25"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1259,11 +1259,14 @@ When you set a new default {{site.data.keyword.secrets-manager_short}} instance,
         {: pre}
 
 
-2. Update your secrets to upload them to the new default instance. 
+3. Update your secrets to upload them to the new default instance. 
     ```sh
     ibmcloud oc nlb-dns secret regenerate --cluster <cluster_name_or_id> --nlb-subdomain <nlb_subdomain>
     ```
     {: pre}
+
+If you previously created a secret with a managed Ingress certificate CRN in a different namespace or using a different name, you must also update those secrets with the CRN of the new {{site.data.keyword.secrets-manager_short}} instance.
+{: important} 
 
 To remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance of a cluster, run the following command. Note that if no default instance is set, your secrets are only written directly to the cluster and are not uploaded to any {{site.data.keyword.secrets-manager_short}} instance.
 

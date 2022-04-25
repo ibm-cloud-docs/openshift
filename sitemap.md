@@ -71,6 +71,8 @@ subcollection: openshift
 
 * [Comparison between {{site.data.keyword.redhat_openshift_notm}} 3.11 and 4 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
 
+* [Operator support overview](/docs/openshift?topic=openshift-cs_ov#operator-support-comparison)
+
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers)
 
 [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks#responsibilities_iks)
@@ -7150,3 +7152,5 @@ subcollection: openshift
     * [Storage](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_storage_limit)
 
 * [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits)
+
+* [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_limitations#not-supported-features-table)

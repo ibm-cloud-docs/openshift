@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-04-25"
 
 keywords: openshift
 
@@ -191,6 +191,69 @@ You can't update from an {{site.data.keyword.redhat_openshift_notm}} 3.11 to 4 c
 
 
 
+
+
+
+
+## Operator support overview
+{: #operator-support-comparison}
+
+Review the following operator support table. To receive support on the for the following operators, [open a support case](/docs/openshift?topic=openshift-get-help#help-support). Note that depending on the operator or feature, your request might be forwared by IBM support to Red Hat support.
+{: note}
+
+| Feature or Operator | Support provided by | 
+| --- | --- | 
+| CRIO Runtime | {{site.data.keyword.cloud_notm}} |
+| `kubectl` and `oc` command line | {{site.data.keyword.cloud_notm}} |
+| Operator Lifecycle Manager (OLM) | {{site.data.keyword.cloud_notm}} |
+| Administrator web console | {{site.data.keyword.cloud_notm}} |
+| OpenShift Virtualization Operator | Red Hat |
+| Compliance Operator | {{site.data.keyword.cloud_notm}} |
+| Klusterlet | Red Hat |
+| Kube Descheduler Operator | Red Hat |
+| Local Storage Operator | Red Hat |
+| Node Feature Discovery | Red Hat |
+| Service Telemetry Operator | Red Hat |
+| Vertical Pod Autoscaler | Red Hat |
+| Cluster Monitoring (Prometheus) | {{site.data.keyword.cloud_notm}} |
+| Log Forwarding (with fluentd) | Red Hat |
+| HAProxy Ingress Controller | {{site.data.keyword.cloud_notm}} |
+| Ingress Cluster-wide Firewall | Red Hat |
+| Egress Pod and Namespace Granular Control | {{site.data.keyword.cloud_notm}} |
+| Ingress Non-Standard Ports | {{site.data.keyword.cloud_notm}} |
+| Multus and Available Multus plug-ins | {{site.data.keyword.cloud_notm}} |
+| Network Policies | {{site.data.keyword.cloud_notm}} |
+|Embedded Registry| {{site.data.keyword.cloud_notm}} |
+| Helm | {{site.data.keyword.cloud_notm}} |
+| User Workload Monitoring | Red Hat |
+| Red Hat OpenShift Logging Operator | Red Hat |
+| OpenShift Elasticsearch Operator | Red Hat |
+| Developer Web Console | {{site.data.keyword.cloud_notm}} | 
+| Developer Application Catalog | {{site.data.keyword.cloud_notm}} |
+| Source to Image and Builder Automation (Tekton) | Red Hat |
+| OpenShift Service Mesh Operator | Red Hat |
+| Service Binding Operator | Red Hat |
+| OpenShift Serverless Operator | Red Hat |
+| Web Terminal Operator | Red Hat |
+| Jenkins Operator | Red Hat |
+| Red Hat OpenShift Pipelines Operator | OpenShift Pipelines Operator | Red Hat |
+| Embedded Component of IBM Cloud Pak and RHT MW Bundles | Red Hat |
+| Red Hat OpenShift GitOps | Red Hat |
+| Red Hat CodeReady Workspaces | Red Hat |
+| Red Hat CodeReady Containers | Red Hat |
+| Quay Bridge Operator | Red Hat |
+| Quay Container Security | Red Hat |
+| Red Hat OpenShift distributed tracing platform | Red Hat |
+| Red Hat OpenShift Kiali | Red Hat |
+| Migration Toolkit for Containers Operator | Red Hat |
+| Red Hat JBoss Web Server | Red Hat | 
+| Red Hat Build of Quarkus | Red Hat |
+| Kourier Ingress Controller | Red Hat |
+| OpenShift Do (`odo`) | Red Hat |
+| Source to Image and Tekton Builders | Red Hat |
+| OpenShift Serverless FaaS | Red Hat |
+| IDE Integrations | Red Hat |
+{: caption="Operator support overview" caption-side="top"}
 
 
 
