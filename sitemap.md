@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-25"
 
 keywords: openshift
 subcollection: openshift
@@ -7018,6 +7018,10 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts#vpc-block-api-key-reset-ts)
 
 [Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?](/docs/openshift?topic=openshift-block_not_attached_vpc#block_not_attached_vpc)
+
+[Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/openshift?topic=openshift-debug_monitoring#debug_monitoring)
+
+    * [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
 
 
 ### Object Storage
