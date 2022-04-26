@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 keywords: openshift
 subcollection: openshift
@@ -4880,6 +4880,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.404](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10404)
 
 * [Version 1.0.394](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10394)
 
