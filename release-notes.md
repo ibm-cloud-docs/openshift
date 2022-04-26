@@ -31,7 +31,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-apr2622}
 
 CLI changelog update
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.404.
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.403.
 
 ### 25 April 2022
 {: #openshift-apr2522}  
