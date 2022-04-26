@@ -29,10 +29,10 @@ Refer to the following changelogs for a summary of changes for each version of t
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
-## Version 1.0.404
-{: #cli-10404}
+## Version 1.0.403
+{: #cli-10403}
 
-Version 1.0.404 of the CLI was released on 26 April 2022.
+Version 1.0.403 of the CLI was released on 26 April 2022.
 :   Adds support for M1 processor on Linux and macOS.
 :   Updates the help text in various languages. 
 
