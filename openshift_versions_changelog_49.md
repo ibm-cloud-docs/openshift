@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-27"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -12,7 +12,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.redhat_openshift_notm}} version 4.9 changelog
+# {{site.data.keyword.redhat_openshift_notm}} version 4.9 change log
 {: #openshift_changelog_49}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run version 4.9. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
@@ -24,13 +24,13 @@ View information of version changes for major, minor, and patch updates that are
 Unless otherwise noted in the change logs, the {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.redhat_openshift_notm}} APIs and features that are at beta. {{site.data.keyword.redhat_openshift_notm}} alpha features, which are subject to change, are disabled.
 {: shortdesc}
 
-Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security) for security vulnerabilities that affect {{site.data.keyword.openshiftlong_notm}}. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to {{site.data.keyword.openshiftlong_notm}}. Changelog entries that address other security vulnerabilities but don't also refer to an {{site.data.keyword.IBM_notm}} security bulletin are for vulnerabilities that are not known to affect {{site.data.keyword.openshiftlong_notm}} in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
+Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security) for security vulnerabilities that affect {{site.data.keyword.openshiftlong_notm}}. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to {{site.data.keyword.openshiftlong_notm}}. Change log entries that address other security vulnerabilities but don't also refer to an {{site.data.keyword.IBM_notm}} security bulletin are for vulnerabilities that are not known to affect {{site.data.keyword.openshiftlong_notm}} in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_changelog).
 {: tip}
 
 ## Change logs
-{: #47_changelog}
+{: #49_changelog}
 
 Review the version 4.9 change log.
 {: shortdesc}
@@ -38,9 +38,6 @@ Review the version 4.9 change log.
 
 ### Change log for worker node fix pack 4.9.29_1537_openshift, released 25 April 2022
 {: #4929_1537_openshift}
-
-
-
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -64,7 +61,7 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.9.25_1532_openshift" caption-side="top"}
 
-### Changelog for master fix pack 4.9.25_1534_openshift, released 6 April 2022
+### Change log for master fix pack 4.9.25_1534_openshift, released 6 April 2022
 {: #4.9.25_1534}
 
 | Component | Previous | Current | Description |

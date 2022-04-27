@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-04-27"
 
 keywords: openshift, version, update, upgrade
 
@@ -14,7 +14,7 @@ subcollection: openshift
 
 
 
-# (Deprecated) 3.11 version 
+# (Deprecated) Version 3.11
 {: #cs_versions_311}
 
 Review information about version 3.11 of {{site.data.keyword.openshiftlong_notm}}, released 01 Aug 2019.

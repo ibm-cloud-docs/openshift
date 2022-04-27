@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-27"
 
 keywords: openshift
 
@@ -1174,10 +1174,10 @@ You can only expand volumes that are mounted by an app pod.
     ```
     {: screen}
 
-1. Resize the volume by using a PATCH request.
+1. Resize the volume by using a PATCH request. The following example resizes a volume to 250 GiB.
 
     ```sh
-    curl -sS -X PATCH -H "Authorization: <iam_token>" "https://<region>.iaas.cloud.ibm.com/v1/volumes/<volumeId>?generation=2&version=2020-06-16" -d '{"capacity": <capacity>}'
+    curl -sS -X PATCH -H "Authorization: <iam_token>" "https://<region>.iaas.cloud.ibm.com/v1/volumes/<volumeId>?generation=2&version=2020-06-16" -d '{"capacity":250}'
     ```
     {: pre}
     
@@ -1191,7 +1191,7 @@ You can only expand volumes that are mounted by an app pod.
     :   The volume ID that you retrieved earlier. For example `r011-a1aaa1f1-3aaa-4a73-84aa-0aa32e11a1a1`.
     
     `<capacity>`
-    :   The increased capacity, for example `100Gi`.
+    :   The increased capacity in GiB, for example `250`.
 
 1. Log in to your app pod.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: openshift
 subcollection: openshift
@@ -205,6 +205,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
+
+    * [27 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2722)
+
+        * New! {{site.data.keyword.openshiftlong_notm}} 4.10
+
+        * Master fix pack update
+
+        * Worker node fix pack update
 
     * [26 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2622)
 
@@ -5031,6 +5039,27 @@ subcollection: openshift
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
 
+### Version 4.10
+{: #sitemap_version_410}
+
+
+[4.10 version information and update actions](/docs/openshift?topic=openshift-cs_versions_410#cs_versions_410)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_410#release_timeline_410)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_410#prep-up-410)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_410#410_before)
+
+[Version 4.10 change log](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_410)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
+
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for fix pack 4.10.9_1515_openshift (master) and 4.10.10_1516_openshift (worker node), released 27 April 2022](/docs/openshift?topic=openshift-openshift_changelog_410#4109_1515_openshift_and_41010_1516_openshift)
+
+
 ### Version 4.9 (Default)
 {: #sitemap_version_49_default}
 
@@ -5043,17 +5072,17 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_49#49_before)
 
-[{{site.data.keyword.redhat_openshift_notm}} version 4.9 changelog](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_49)
+[{{site.data.keyword.redhat_openshift_notm}} version 4.9 change log](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_49)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
-* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#47_changelog)
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
 
     * [Change log for worker node fix pack 4.9.29_1537_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4929_1537_openshift)
 
     * [Change log for worker node fix pack 4.9.26_1535_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4926_1535_openshift)
 
-    * [Changelog for master fix pack 4.9.25_1534_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4.9.25_1534)
+    * [Change log for master fix pack 4.9.25_1534_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4.9.25_1534)
 
     * [Change log for worker node pack 4.9.25_1532_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4925_1532)
 
@@ -5067,7 +5096,7 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 February 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4917_1525)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.9: CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-49)
+[{{site.data.keyword.openshiftlong_notm}} version 4.9 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-49)
 
 * [1 Master Node Security Configuration](/docs/openshift?topic=openshift-cis-benchmark-49#cis-section-1-49)
 
@@ -5122,7 +5151,7 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_48#48_before)
 
-[{{site.data.keyword.redhat_openshift_notm}} version 4.8 changelog](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_48)
+[Version 4.8 change log](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_48)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
@@ -5172,7 +5201,7 @@ subcollection: openshift
 
     * [Change log for fix pack 4.8.11_1526_openshift (master) and 4.8.12_1527_openshift (worker node), released 29 Sept 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4811_1526_and_4812_1527)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.8: CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-48#cis-benchmark-48)
+[{{site.data.keyword.openshiftlong_notm}} version 4.8 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-48#cis-benchmark-48)
 
 * [1 Master Node Security Configuration](/docs/openshift?topic=openshift-cis-benchmark-48#cis-section-1-48)
 
@@ -5227,7 +5256,7 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_47#47_before)
 
-[{{site.data.keyword.redhat_openshift_notm}} version 4.7 changelog](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_47)
+[Version 4.7 change log](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_47)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
@@ -5301,7 +5330,7 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4712_1520)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.7: CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-47#cis-benchmark-47)
+[{{site.data.keyword.openshiftlong_notm}} version 4.7 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-47#cis-benchmark-47)
 
 * [1 Master Node Security Configuration](/docs/openshift?topic=openshift-cis-benchmark-47#cis-section-1-47)
 
@@ -5458,7 +5487,7 @@ subcollection: openshift
 
     * [Change log for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog_46#4616_1530)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.6: CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-46#cis-benchmark-46)
+[{{site.data.keyword.openshiftlong_notm}} version 4.6 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-46#cis-benchmark-46)
 
 * [1 Master Node Security Configuration](/docs/openshift?topic=openshift-cis-benchmark-46#cis-section-1-46)
 
@@ -5505,13 +5534,13 @@ subcollection: openshift
 {: #sitemap_version_311}
 
 
-[(Deprecated) 3.11 version](/docs/openshift?topic=openshift-cs_versions_311#cs_versions_311)
+[(Deprecated) Version 3.11](/docs/openshift?topic=openshift-cs_versions_311#cs_versions_311)
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_311#release_timeline_46)
 
     * [Why is the deprecated version 3.11 supported longer than more recent versions like 4.6?](/docs/openshift?topic=openshift-cs_versions_311#311_deprecated)
 
-[{{site.data.keyword.redhat_openshift_notm}} version 3.11 changelog](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_311)
+[Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_311)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_overview_311)
 
@@ -5727,9 +5756,9 @@ subcollection: openshift
 
     * [Change log for 3.11.129_1517_openshift, released 2 August 2019](/docs/openshift?topic=openshift-openshift_changelog_311#311129_1517)
 
-[Archived {{site.data.keyword.redhat_openshift_notm}} version changelogs](/docs/openshift?topic=openshift-changelog_archive#changelog_archive)
+[Archived version change logs](/docs/openshift?topic=openshift-changelog_archive#changelog_archive)
 
-* [Version 4.5 changelog (Unsupported as of 10 October 2021)](/docs/openshift?topic=openshift-changelog_archive#version-45)
+* [Version 4.5 change log (Unsupported as of 10 October 2021)](/docs/openshift?topic=openshift-changelog_archive#version-45)
 
     * [Change log for worker node fix pack 4.5.41_1553_openshift, released 27 September 2021](/docs/openshift?topic=openshift-changelog_archive#4541_1553)
 

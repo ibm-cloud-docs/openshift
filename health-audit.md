@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -41,7 +41,7 @@ Before you set up a Kubernetes API audit configuration, review the following inf
 * Only one audit webhook can be created in a cluster.
 * You must have the  [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the {{site.data.keyword.openshiftlong_notm}} cluster.
 
-To get started, follow the instructions to send Kubernetes API audit logs [to {{site.data.keyword.la_full_notm}}](#audit-api-server-la)or [to a resource in the {{site.data.keyword.cloud_notm}} private network](#audit-api-server-priv).
+To get started, follow the instructions to send Kubernetes API audit logs [to {{site.data.keyword.la_full_notm}}](#audit-api-server-la) or [to a resource in the {{site.data.keyword.cloud_notm}} private network](#audit-api-server-priv).
 
 ### Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}
 {: #audit-api-server-la}

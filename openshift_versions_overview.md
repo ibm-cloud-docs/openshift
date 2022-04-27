@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-27"
 
 keywords: openshift, version, update, upgrade
 
@@ -20,12 +20,13 @@ Review information about the supported {{site.data.keyword.redhat_openshift_notm
 {: shortdesc}
 
 For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the RedHat OpenShift release notes.
+* [{{site.data.keyword.redhat_openshift_notm}} 4.10 release notes overview](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.9 release notes overview](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
 * Deprecated: [{{site.data.keyword.redhat_openshift_notm}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
-* [Kubernetes changelog](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
+* [Kubernetes change log](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
 ## Available {{site.data.keyword.redhat_openshift_notm}} versions
 {: #openshift_versions_available}
@@ -33,6 +34,9 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**
+:     4.10 (Kubernetes 1.23)
+     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
+     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 :    **Default**: 4.9 (Kubernetes 1.22)
      - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
      - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
@@ -75,7 +79,7 @@ Example output
 ```sh
 Client Version: 4.9.3
 Server Version: 4.9.12
-Kubernetes Version: v1.21.2
+Kubernetes Version: v1.22.2
 ```
 {: screen}
 
@@ -90,11 +94,12 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
+| Supported | 4.10 / 1.23 | 27 Apr 2022 | October 2023`†` |
 | Supported | 4.9 / 1.22 | 09 Feb 2022 | May 2023`†` |
 | Supported | 4.8 / 1.21 | 29 Sep 2021 | Feb 2023`†` |
 | Supported | 4.7 / 1.20 | 09 Jun 2021 | Dec 2022`†` |
-| Supported | 4.6 / 1.19 | 17 Feb 2021 | Oct 2022 `†` |
-| Not supported | 4.5 / 1.18 | 13 Oct 2020 | Oct 10 2021 |
+| Supported | 4.6 / 1.19 | 17 Feb 2021 | 27 Oct 2022 `†` |
+| Not supported | 4.5 / 1.18 | 13 Oct 2020 | 10 Oct 2021 |
 | Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |
 | Not supported | 4.3 / 1.16 | 20 Apr 2020 | 7 Mar 2021 |
 | Deprecated | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |
@@ -142,6 +147,4 @@ As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [
 {: shortdesc}
 
 Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.
-
-
 

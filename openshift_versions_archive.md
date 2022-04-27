@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-27"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -14,21 +14,21 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Archived {{site.data.keyword.redhat_openshift_notm}} version changelogs
+# Archived version change logs
 {: #changelog_archive}
 
-The following versions are no longer supported for {{site.data.keyword.openshiftlong}}. You can review the archive of the changelogs.
+The following versions are no longer supported for {{site.data.keyword.openshiftlong}}. You can review the archive of the change logs.
 {: shortdesc}
 
 Unsupported versions: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
 
-Looking for the changelogs of supported versions? See [{{site.data.keyword.redhat_openshift_notm}} version changelog](/docs/openshift?topic=openshift-openshift_changelog).
+Looking for the change logs of supported versions? See [{{site.data.keyword.redhat_openshift_notm}} version change log](/docs/openshift?topic=openshift-openshift_changelog).
 {: tip}
 
-## Version 4.5 changelog (Unsupported as of 10 October 2021)
+## Version 4.5 change log (Unsupported as of 10 October 2021)
 {: #version-45}
 
-Version 4.5 is unsupported. You can review the following archive of the 4.5 changelogs.
+Version 4.5 is unsupported. You can review the following archive of the 4.5 change logs.
 {: shortdesc}
 
 ### Change log for worker node fix pack 4.5.41_1553_openshift, released 27 September 2021

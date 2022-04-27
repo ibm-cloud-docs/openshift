@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-27"
 
 keywords: openshift, version, update, upgrade
 
@@ -23,6 +23,7 @@ Review information about the supported {{site.data.keyword.redhat_openshift_notm
 {: shortdesc}
 
 For more information about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the following information.
+* [{{site.data.keyword.redhat_openshift_notm}} 4.10 release notes overview](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.9 release notes overview](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
@@ -59,14 +60,14 @@ If you use an `oc` or `oc` CLI version that does match at least the `major.minor
 ### Patch updates (4.7.36_xxxx_openshift)
 {: #patch_updates_oc}
 
-Changes across patches are documented in the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog). Master patches are applied automatically, but you initiate worker node patches updates.
+Changes across patches are documented in the [Version change log](/docs/openshift?topic=openshift-openshift_changelog). Master patches are applied automatically, but you initiate worker node patches updates.
 {: shortdesc}
 
 Worker nodes can also run patch versions that are greater than the masters. As updates become available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the following commands: `ibmcloud oc cluster ls`, `cluster get`, `worker ls`, or `worker get`. Patches can be for worker nodes, masters, or both.
 
 **Worker node patches**: Check monthly to see whether an update is available, and use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) or the `ibmcloud oc worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to apply these security and operating system patches. During an update or reload, your worker node machine is reimaged, and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 
-**Master patches**: Master patches are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, as noted in the changelog, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can choose to safely use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply. When a master patch update is initiated for a cluster, the `containers-kubernetes.version.update` event is [sent to {{site.data.keyword.at_short}}](/docs/openshift?topic=openshift-at_events).
+**Master patches**: Master patches are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, as noted in the change log, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can choose to safely use the `ibmcloud oc cluster master update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply. When a master patch update is initiated for a cluster, the `containers-kubernetes.version.update` event is [sent to {{site.data.keyword.at_short}}](/docs/openshift?topic=openshift-at_events).
 
 
 
@@ -79,8 +80,8 @@ Worker nodes can also run patch versions that are greater than the masters. As u
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. The worker node operating system is Red Hat Enterprise Linux 7.
 
 **Supported versions**:
-* Latest: 4.9 (Kubernetes 1.22)
-* Default: 4.9 (Kubernetes 1.21)
+* Latest: 4.10 (Kubernetes 1.23)
+* Default: 4.9 (Kubernetes 1.22)
 * 4.7 (Kubernetes 1.20)
 * 4.6 (Kubernetes 1.19)
 
@@ -99,7 +100,7 @@ Example output
 ```sh
 Client Version: 4.9.3
 Server Version: 4.9.12
-Kubernetes Version: v1.21.2
+Kubernetes Version: v1.22.2
 ```
 {: screen}
 

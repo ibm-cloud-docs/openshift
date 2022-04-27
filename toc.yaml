@@ -275,6 +275,11 @@ toc:
             - openshift_versions_changelog.md
             - benchmarks_overview.md
             - topicgroup:
+                label: Version 4.10
+                topics:
+                - openshift_versions_410.md
+                - openshift_versions_changelog_410.md
+            - topicgroup:
                 label: Version 4.9 (Default)
                 topics:
                 - openshift_versions_49.md
