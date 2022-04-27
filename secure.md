@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: openshift
 
@@ -412,7 +412,7 @@ By default, all {{site.data.keyword.cloud_notm}} storage solutions automatically
 Depending on the type of storage that you choose, you can set up additional encryption with {{site.data.keyword.keymanagementservicelong_notm}} to protect your data in transit and at rest with your own encryption key.
 
 - [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-encryption)
-- [Portworx](/docs/openshift?topic=openshift-portworx#encrypt_volumes)</br>
+- [Portworx](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
 
 You can also use an {{site.data.keyword.cloud_notm}} database service, such as [{{site.data.keyword.cloudant}} NoSQL DB](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant), to persist data in a managed database outside the cluster. Data that is stored with a cloud database service can be accessed across clusters, zones, and regions. For security-related information, see the database service-specific {{site.data.keyword.cloud_notm}} documentation.
 
@@ -513,7 +513,7 @@ Research shows that most malicious attacks leverage known software vulnerabiliti
 
 To protect your apps, consider to address the following areas:
 
-1. **Automate the build process and limit permissions**: </br>
+1. **Automate the build process and limit permissions**: 
 Automate the process to build your container image from your source code to eliminate source code variations and defects. By integrating the build process into your CI/CD pipeline, you can ensure that your image is scanned and built only if the image passes the security checks that you specified. To avoid that developers apply hot fixes to sensitive images, limit the number of people in your organization who have access to the build process.
 
 2. **Scan images before they deploy into production:**

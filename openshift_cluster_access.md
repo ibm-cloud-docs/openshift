@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-27"
 
 keywords: openshift, clusters
 
@@ -572,7 +572,7 @@ Before you begin, make sure that you have an {{site.data.keyword.redhat_openshif
         ```
         {: pre}
 
-    3. Display the public and the private key that you created. </br>
+    3. Display the public and the private key that you created. 
         **Private key**:
         ```sh
         cat /etc/wireguard/keys/server.key
@@ -599,7 +599,7 @@ Before you begin, make sure that you have an {{site.data.keyword.redhat_openshif
     {: screen}
 
 6. Create the WireGuard server configuration.
-    1. Open the WireGuard server configuration. The configuration is intially empty.
+    1. Open the WireGuard server configuration. The configuration is initially empty.
         ```sh
         nano /etc/wireguard/wg0.conf
         ```

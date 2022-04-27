@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-04-27"
 
 keywords: openshift, nginx, ingress controller
 
@@ -42,7 +42,7 @@ Quickly expose your app to the Internet by creating an Ingress resource.
     ```
     {: screen}
 
-3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (<code>/</code>) only.
+3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (`/`) only.
 
     * For OpenShift 4.6 or later, use `networking.k8s.io/v1`.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-27"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -45,38 +45,63 @@ To get started, see [Setting up your location and cluster for autoscaling](#setu
 
 1. [Create a cluster in your location](/docs/openshift?topic=openshift-satellite-clusters).
 
-1. Verify that the `storage-secret-store` secret exists in the `kube-system` namespace of your cluster.
+1. Create a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
+
     ```sh
-    oc get secrets -n kube-system | grep storage
+    oc get secrets -n kube-system | grep storage-secret-store
     ```
     {: pre}
-    
-    Example output.
-    
-    ```sh
-    storage-secret-store     Opaque      1      54d
-    ```
-    {: pre}
-    
-1. **Optional**: If the `storage-secret-store` secret doesn't exist in your cluster, create it.
-    1. Create a file called `slclient.toml` and include your API key. If you have a private-only {{site.data.keyword.satelliteshort}} cluster, you must also include the `satellite-link-route`. You can find the `satellite-link-route` by viewing the Link endpoints for your Location in the [console](https://cloud.ibm.com/satellite/locations){: external}
+
+1. If the `storage-secret-store` secret doesn't exist, create it.
+
+    1. Create a `secret.yaml` file that has your IAM API key.
+
+        ```yaml
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          name: storage-secret-store
+          namespace: kube-system
+        type: Opaque
+        stringData:
+           ca_iam_api_key="APIKEY"  # Enter your IAM API key
+           private_container_api_route="API ROUTE" # Pirvate clusters only. 
+        ```
+        {: codeblock}
+
+    1. Create the secret in your cluster. 
+
         ```sh
-        [Bluemix]
-          iam_api_key = "APIKEY"
-          containers_api_route = "satellite-link-route" # private clusters only
+        oc create -f secret.yaml -n kube-system
         ```
         {: pre}
-        
-    1. Create a secret by using the `slclient.toml` file.
+
+1. If the `storage-secret-store` secret exists, update it.
+
+    1. Edit the `storage-secret-store` secret.
+
         ```sh
-        oc create secret generic storage-secret-store --from-file=slclient.toml -n kube-system
+        oc edit secret storage-secret-store -n kube-system
         ```
         {: pre}
+
+        ```yaml
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          name: storage-secret-store
+          namespace: kube-system
+        type: Opaque
+        stringData:
+          iam_api_key: "<iam_api_key>" # Enter your IAM API key
+          private_container_api_route: "API ROUTE" # Pirvate clusters only.
+        ```
+        {: codeblock}
 
 1. Attach more hosts to your location that you want to use in your autoscaled worker pool. As a best practice, don't set up autoscaling on the default worker pool. When you attach the hosts that you want to use in the autoscaled worker pool, be sure specify host labels such as the host `cpu=16` and `memory=64`. Host labels are used by the cluster autoscaler add-on to find hosts that are available for scaling.
     Example command to attach hosts while specifying host labels for CPU and memory.
     ```sh
-    ibmcloud sat host attach --location LOCATION --host-label "cpu=16" --host-label "memory=64" [--operating-system SYSTEM] 
+    ibmcloud sat host attach --location LOCATION --host-label "cpu=16" --host-label "memory=64" [--operating-system SYSTEM]
     ```
     {: pre}
     

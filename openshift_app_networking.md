@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-27"
 
 keywords: openshift, networking
 
@@ -191,7 +191,7 @@ Check out the following methods for private app networking:
 ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) To make an app available over a private network only in a VPC cluster, choose a load balancing deployment pattern based on your cluster's service endpoint setup: public and private cloud service endpoint, or private cloud service endpoint only. For each service endpoint setup, the following table describes each possible app exposure method, why you might use it, and how to set it up.
 {: shortdesc}
 
-![Version 4 icon.](images/icon-version-43.png) Only version 4 clusters can be created on VPC infrastructure. The following methods don't apply to version 3.11 clusters, which can be created on classic infrastructure only.</br></br>You can't use multiple app exposure methods for one app.
+![Version 4 icon.](images/icon-version-43.png) Only version 4 clusters can be created on VPC infrastructure. The following methods don't apply to version 3.11 clusters, which can be created on classic infrastructure only.You can't use multiple app exposure methods for one app.
 {: note}
 
 |Name|Load-balancing method|Use case|Implementation|
