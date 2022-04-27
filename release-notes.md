@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: openshift
 
@@ -27,8 +27,28 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## April 2022
 {: #openshift-apr22}
 
+
+
+
+### 27 April 2022
+{: #openshift-apr2722}
+
+New! {{site.data.keyword.openshiftlong_notm}} 4.10
+:   You can create or [update clusters to version 4.10](/docs/openshift?topic=openshift-openshift_changelog_410). With {{site.data.keyword.openshiftlong_notm}} version 4.10, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
+
+Master fix pack update
+:   {{site.data.keyword.openshiftlong_notm}} [4.10.9_1515_openshift](/docs/openshift?topic=openshift-openshift_changelog_410).
+
+Worker node fix pack update
+:   {{site.data.keyword.openshiftlong_notm}} [4.10.10_1516_openshift](/docs/openshift?topic=openshift-openshift_changelog_410).
+
+
+
+
+
 ### 26 April 2022
 {: #openshift-apr2622}
+
 
 CLI changelog update
 :   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.403.

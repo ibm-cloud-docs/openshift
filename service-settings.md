@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-27"
 
 keywords: openshift
 
@@ -29,6 +29,9 @@ Review the feature gates that are applied to all master and worker node componen
 {: shortdesc}
 
 
+
+4.10
+:   `ServiceLBNodePortControl=false`
   
 4.9
 :   `ServiceLBNodePortControl=false`
