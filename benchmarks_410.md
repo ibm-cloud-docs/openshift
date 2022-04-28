@@ -296,14 +296,14 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 1.2.12 | {{site.data.keyword.openshiftlong_notm}} does not enable the [*AlwaysPullImages*](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) admission controller since it overrides a container's *imagePullPolicy* and may impact performance. |
 | 1.2.13 | {{site.data.keyword.openshiftlong_notm}} supports [pod security context constraints](/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
 | 1.2.16 | {{site.data.keyword.openshiftlong_notm}} supports [pod security context constraints](/docs/openshift?topic=openshift-openshift_scc) which are similar to Kubernetes pod security policies. |
-| 1.2.22 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.23 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.24 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.25 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.22 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.23 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.24 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 1.2.25 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 | 1.2.33 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 1.2.34 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
-| 3.2.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 3.2.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 3.2.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
+| 3.2.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server). |
 | 4.2.6 | {{site.data.keyword.openshiftlong_notm}} does not protect kernel defaults in order to allow customers to tune kernel parameters. |
 | 4.2.8 | {{site.data.keyword.openshiftlong_notm}} ensures that the hostname matches the name issued by the infrastructure. |
 | 5.1.2 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could have their Kubernetes secret access further restricted. |
@@ -323,7 +323,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
 | 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
-| 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp). |
+| 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/). |
 | 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/). |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column contains details on the remediation actions."}
 {: caption="Explanation and remediation" caption-side="top"}
