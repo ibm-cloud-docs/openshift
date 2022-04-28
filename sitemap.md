@@ -206,7 +206,7 @@ subcollection: openshift
 
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
 
-    * [28 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#28-april-2022)
+    * [28 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2822)
 
         * Certified Kubernetes
 

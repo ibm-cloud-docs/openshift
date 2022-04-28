@@ -31,6 +31,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 ### 28 April 2022
+{: #openshift-apr2822}
 
 Certified Kubernetes
 :   Version [4.10](/docs/openshift?topic=openshift-openshift_changelog_410) release is now certified.
