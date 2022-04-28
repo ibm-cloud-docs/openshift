@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-28"
 
 keywords: openshift
 
@@ -27,8 +27,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## April 2022
 {: #openshift-apr22}
 
+### 28 April 2022
+{: #openshift-apr2822}
 
+CLI changelog update
+:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.404.
 
+Certified Kubernetes
+:   Version [4.10](/docs/openshift?topic=openshift-openshift_changelog_410) release is now certified.
+
+CIS Kubernetes Benchmark
+:   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.10.
+
+Cluster security groups
+:    You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group##vpc-sg-cluster).
 
 ### 27 April 2022
 {: #openshift-apr2722}
@@ -41,8 +53,6 @@ Master fix pack update
 
 Worker node fix pack update
 :   {{site.data.keyword.openshiftlong_notm}} [4.10.10_1516_openshift](/docs/openshift?topic=openshift-openshift_changelog_410).
-
-
 
 
 
