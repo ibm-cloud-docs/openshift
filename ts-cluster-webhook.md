@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-28"
 
 keywords: openshift
 
@@ -50,7 +50,7 @@ Identify and restore the resource that causes the broken webhook.
 
 1. Create a test pod to get an error that identifies the broken webhook. The error message might have the name of the broken webhook. If the webhook test passes, then the failure may have been temporary and can be retried.
     ```sh
-    oc run webhook-test --generator=run-pod/v1 --image registry.ng.bluemix.net/armada-master/pause:3.2 -n ibm-system
+    oc run webhook-test --image registry.ng.bluemix.net/armada-master/pause:3.2 -n ibm-system
     ```
     {: pre}
 
