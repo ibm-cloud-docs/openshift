@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-28"
 
 keywords: openshift
 
@@ -29,6 +29,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+### 28 April 2022
+
+Certified Kubernetes
+:   Version [4.10](/docs/openshift?topic=openshift-openshift_changelog_410) release is now certified.
+
+CIS Kubernetes Benchmark
+:   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.10.
 
 ### 27 April 2022
 {: #openshift-apr2722}
