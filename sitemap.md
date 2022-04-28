@@ -208,9 +208,13 @@ subcollection: openshift
 
     * [28 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2822)
 
+        * CLI changelog update
+
         * Certified Kubernetes
 
         * CIS Kubernetes Benchmark
+
+        * Cluster security groups
 
     * [27 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2722)
 
@@ -3044,6 +3048,22 @@ subcollection: openshift
 
     * [Creating rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
 
+* [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster)
+
+    * [If you only want the default VPC and cluster security groups and no additional security groups](/docs/openshift?topic=openshift-vpc-security-group#default-sgs-only)
+
+    * [If you only want the cluster security group and not the default VPC security group](/docs/openshift?topic=openshift-vpc-security-group#cluster-sg-only)
+
+    * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group#cluster-customer-sgs)
+
+    * [If you only want your own security groups](/docs/openshift?topic=openshift-vpc-security-group#customer-sgs-only)
+
+* [Adding security groups to worker pools at worker pool create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-worker-pool)
+
+    * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#no-worker-sgs)
+
+* [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#worker-sgs)
+
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
 * [Allow worker nodes to connect to the public LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
@@ -4898,6 +4918,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.404](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10404)
 
 * [Version 1.0.403](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10403)
 

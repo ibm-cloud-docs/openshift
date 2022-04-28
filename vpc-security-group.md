@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-28"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -304,6 +304,113 @@ Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules t
 
 Keep in mind that in addition to any rules you create, you must also create the required [inbound and outbound rules](#vpc-sg-inbound-outbound).
 {: note}
+
+## Adding VPC security groups to clusters and worker pools during create time
+{: #vpc-sg-cluster}
+
+When you create a new VPC cluster, the default VPC security group, which has a randomly generated name, and the cluster security group, named `kube-<cluster-id>`, are automatically created and applied to all workers in the cluster. When you create your VPC cluster, you can also attach additional security groups alongside, or instead of, the default VPC security groups. The security groups applied to the workers in the cluster are a combination of the security groups applied when you create the cluster and [when you create the worker pool](#vpc-sg-worker-pool). A total of five security groups can be applied to workers, including the default security groups and any security groups applied to the worker pool. Note that these security group options are only available in the CLI. 
+{: shortdesc}
+
+The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. 
+{: important}
+
+### If you only want the default VPC and cluster security groups and no additional security groups
+{: #default-sgs-only}
+
+Note that this is the default behavior at cluster create time.
+{: note}
+
+When you create your cluster, do not specify any additional security groups. 
+
+Example command to create a VPC cluster with only the default VPC and `kube-<cluster-id>` cluster security groups:
+
+```sh
+ ibmcloud oc cluster create vpc-gen2 --name <cluster-name> --zone <zone> --vpc-id <vpc-id> --subnet-id <subnet-id>
+```
+{: pre}
+
+The following security groups are applied:
+- Default VPC security group (randomly generated name)
+- `kube-<cluster-id>`
+
+### If you only want the cluster security group and not the default VPC security group
+{: #cluster-sg-only}
+
+When you create the cluster specify `--cluster-security-group cluster`. Do not specify any additional security groups.
+
+Example command to create a VPC cluster with only the `kube-<cluster-id>` cluster security group:
+
+```sh
+ ibmcloud oc cluster create vpc-gen2 --name <cluster-name> --zone <zone> --vpc-id <vpc-id> --subnet-id <subnet-id> --cluster-security-group cluster
+```
+{: pre}
+
+The cluster `kube-<cluster-id>` security group is applied. 
+ 
+### If you want the cluster security group and your own additional security groups
+{: #cluster-customer-sgs} 
+
+When you create the cluster, specify `--cluster-security-group cluster` and up to four additional security groups that you own. You must include a separate `--cluster-security-group` option for each individual security group you want to add. Note that at maximum of five security groups can be applied to workers, including the security groups that are applied by default. 
+
+Example command to create a VPC cluster with the `kube-<cluster-id>` cluster security group and your own additional security groups:
+```sh
+ ibmcloud oc cluster create vpc-gen2 --name <cluster-name> --zone <zone> --vpc-id <vpc-id> --subnet-id <subnet-id> --cluster-security-group cluster --cluster-security-group <group-id-1> --cluster-security-group <group-id-2> --cluster-security-group <group-id-3>
+```
+{: pre}
+
+The following security groups are applied:
+- `kube-<cluster-id>`
+- Up to four of your own additional security groups, for a maximum of five total security groups. 
+
+### If you only want your own security groups 
+{: #customer-sgs-only}
+
+When you create the cluster, specify up to five security groups that you own. You must include a separate `--cluster-security-group` option for each individual security group you want to add. 
+
+Example command to create a VPC cluster with only your own security groups:
+```sh
+ ibmcloud oc cluster create vpc-gen2 --name <cluster-name> --zone <zone> --vpc-id <vpc-id> --subnet-id <subnet-id> --cluster-security-group <group-id-1> --cluster-security-group <group-id-2> --cluster-security-group <group-id-3>
+```
+{: pre}
+
+Up to five of your own security groups are applied to the workers on the cluster. 
+
+## Adding security groups to worker pools at worker pool create time 
+{: #vpc-sg-worker-pool}
+
+By default, the security groups applied to a worker pool are the same security groups that are indicated at cluster create time. However, you can specify additional security groups to apply to a worker pool. If you apply additional security groups to the worker pool, then the security group applied to the workers on the cluster is a combination of the [security groups applied at cluster create](#vpc-sg-cluster) and the security groups applied to the worker pool. 
+
+A maximum of five security groups can be applied to a worker, including the security groups applied by default.
+{: note} 
+
+The security groups applied to a worker pool cannot be changed once the worker pool is created. You can change the rules of the security groups that are applied to the worker pool, but you cannot add or remove security groups at the worker pool level. If you apply the incorrect security groups at worker pool create time, you must delete the worker pool and create a new one. 
+{: important}
+
+### If you do not want to attach additional security groups to the worker pool
+{: #no-worker-sgs}
+
+When you create the worker pool, do not specify any additional security groups.
+
+Example command to create a worker pool with no security groups applied:
+```sh
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> 
+```
+{: pre}
+
+Only the security groups applied to the cluster are applied to the workers.
+
+## If you do want to attach additional security groups to the worker pool
+{: #worker-sgs}
+
+When you create the worker pool specify additional security groups at worker pool create time. You must include a separate `--security-group` option for each individual security group you want to add.
+
+Example command to create a worker pool with your own security groups applied:
+```sh
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --security-group <group-id-1> --security-group <group-id-2> --security-group <group-id-3>
+```
+{: pre}
+
+The security groups applied to the workers in the worker pool are a combination of those applied to the cluster that the worker pool is attached to and those applied to the worker pool at create time.
 
 
 ## Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service
