@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-04-29"
 
 keywords: openshift
 subcollection: openshift
@@ -2200,6 +2200,31 @@ subcollection: openshift
 [IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: external}
 
 
+## Using Calico network policies to control traffic on Classic clusters
+{: #sitemap_using_calico_network_policies_to_control_traffic_on_classic_clusters}
+
+
+[Using Calico network policies to control traffic on Classic clusters](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial)
+
+* [Objectives](/docs/openshift?topic=openshift-policy_tutorial#policies_objectives)
+
+* [Audience](/docs/openshift?topic=openshift-policy_tutorial#policies_audience)
+
+* [Prerequisites](/docs/openshift?topic=openshift-policy_tutorial#policies_prereqs)
+
+* [Deploy an app and expose it by using an NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson1)
+
+* [Block all incoming traffic to all node ports](/docs/openshift?topic=openshift-policy_tutorial#lesson2)
+
+* [Allow incoming traffic from a specific IP to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson3)
+
+* [Deny incoming traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson4)
+
+* [Logging blocked traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson5)
+
+* [What's next?](/docs/openshift?topic=openshift-policy_tutorial#whats_next)
+
+
 ## Installing the CLI and API
 {: #sitemap_installing_the_cli_and_api}
 
@@ -2973,9 +2998,11 @@ subcollection: openshift
 
 * [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
 
-* [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
+* [Example Calico policies to restrict public or private network traffic](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
 
-* [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers)
+    * [Applying public network policies](/docs/openshift?topic=openshift-network_policies#calico-public)
+
+    * [Applying private network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers)
 
 * [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
 

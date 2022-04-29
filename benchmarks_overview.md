@@ -1,9 +1,8 @@
-
 ---
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-29"
 
 keywords: openshift
 
@@ -28,10 +27,16 @@ When a new Kubernetes version is released as part of a [supported {{site.data.ke
 
 Use the list below to find CIS Kubernetes Benchmark results for available versions.
 
-- [Version 1.23](/docs/containers?topic=containers-cis-benchmark-123)
-- [Version 1.22](/docs/containers?topic=containers-cis-benchmark-122)
-- [Version 1.21](/docs/containers?topic=containers-cis-benchmark-121)
-- [(Deprecated) Version 1.20](/docs/containers?topic=containers-cis-benchmark-120)
+
+- [Version 4.10](/docs/openshift?topic=openshift-cis-benchmark-410)
+- [Version 4.9](/docs/openshift?topic=openshift-cis-benchmark-49)
+- [Version 4.8](/docs/openshift?topic=openshift-cis-benchmark-48)
+- [Version 4.7](/docs/openshift?topic=openshift-cis-benchmark-47)
+- [Version 4.6](/docs/openshift?topic=openshift-cis-benchmark-46)
+
+
+
+
 
 ## Using the benchmark
 {: #cis-benchmark-use}
