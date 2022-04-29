@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-29"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -208,7 +208,7 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
 
 1. **Clusters that run version 3.11**: Exising secrets are not automatically encrypted and need to be rewritten to be encrypted.
     1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-    2. With `cluster-admin` access, rewrite the secrets.
+    1. With `cluster-admin` access, rewrite the secrets.
         ```sh
         kubectl get secrets --all-namespaces -o json | kubectl replace -f -
         ```
@@ -247,10 +247,10 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
     ```
     {: screen}
 
-  After the KMS provider is enabled in the cluster, all cluster secrets are automatically encrypted.
+    After the KMS provider is enabled in the cluster, all cluster secrets are automatically encrypted.
     {: note}
 
-6. **Clusters that run version 3.11**: Exising secrets are not automatically encrypted and need to be rewritten to be encrypted.
+7. **Clusters that run version 3.11**: Exising secrets are not automatically encrypted and need to be rewritten to be encrypted.
     1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
     2. With `cluster-admin` access, rewrite the secrets.
         ```sh
@@ -258,7 +258,7 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
         ```
         {: pre}
 
-7. Optional: [Verify that your secrets are encrypted](#verify_kms).
+8. Optional: [Verify that your secrets are encrypted](#verify_kms).
 
 Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and can't be recovered. When you rotate a root key, you can't reuse a previous root key for the same cluster. Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.
 {: important}

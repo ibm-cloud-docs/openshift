@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-29"
 
 keywords: openshift, lb2.0, nlb
 
@@ -407,7 +407,7 @@ Dynamic connection counting algorithms
     - Shortest Expected Delay (`seq`)
 
 Weighted pod algorithms
-:   The following algorithms depend on weighted app pods. However, in {{site.data.keyword.openshiftlong_notm}}, all app pods are assigned equal weight for load balancing.<ul>
+:   The following algorithms depend on weighted app pods. However, in {{site.data.keyword.openshiftlong_notm}}, all app pods are assigned equal weight for load balancing.
     - Weighted Least Connection (`wlc`)
     - Weighted Round Robin (`wrr`)
 

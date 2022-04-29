@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-04-29"
 
 keywords: openshift
 
@@ -45,8 +45,7 @@ Review the following goals for {{site.data.keyword.openshiftlong_notm}}.
 
 - **Check whether {{site.data.keyword.redhat_openshift_notm}} worker nodes are updated to the latest image to ensure patching of vulnerabilities.** You can review the worker node version by selecting your cluster in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or in the command line by running `ibmcloud oc worker ls -c <cluster_name_or_ID>`. For more information, see the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog).
 - **Check whether {{site.data.keyword.redhat_openshift_notm}} clusters are accessible only by using private cloud service endpoints.** You can enable the private cloud service endpoint only for VPC clusters. Review which cloud service endpoints are enabled by selecting your cluster in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or in the command line by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. For more information, see the [Example scenarios for VPC cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master).
-- **Check whether your {{site.data.keyword.redhat_openshift_notm}} cluster has image pull secrets enabled.** To verify that your cluster has the default image pull secrets, [log in](/docs/openshift?topic=openshift-access_cluster), run `oc get secrets -n default` and look for the `all-icr-io` secret. To create the image pull images to {{site.data.keyword.registrylong_notm}} in your cluster, see [Updating existing clusters to use the API key image pull secret
-](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key).
+- **Check whether your {{site.data.keyword.redhat_openshift_notm}} cluster has image pull secrets enabled.** To verify that your cluster has the default image pull secrets, [log in](/docs/openshift?topic=openshift-access_cluster), run `oc get secrets -n default` and look for the `all-icr-io` secret. To create the image pull images to {{site.data.keyword.registrylong_notm}} in your cluster, see [Updating existing clusters to use the API key image pull secret](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key).
 - **Check whether {{site.data.keyword.redhat_openshift_notm}} clusters are enabled with {{site.data.keyword.monitoringlong_notm}}.** For more information, see [Forwarding cluster and app metrics to {{site.data.keyword.monitoringlong_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring).
 - **Check whether {{site.data.keyword.redhat_openshift_notm}} clusters are enabled with {{site.data.keyword.la_full_notm}}.** For more information, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging).
 - **Check whether {{site.data.keyword.redhat_openshift_notm}} Ingress is configured only with TLS v1.2 for all inbound traffic.** For more information, see [About Ingress](/docs/openshift?topic=openshift-ingress-about-roks4).

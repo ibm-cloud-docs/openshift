@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-29"
 
 keywords: openshift dedicated hosts
 
@@ -82,7 +82,7 @@ To remove worker nodes from a dedicated host, you must disable dedicated host pl
 {: shortdesc}
 
 1. List your dedicated hosts and host pools. Make a note of the dedicated host and the dedicated host pool that you want to remove.
-  HOST
+    HOST
     ```sh
     ibmcloud oc dedicated host ls
     ibmcloud oc dedicated pool ls

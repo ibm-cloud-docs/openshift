@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-29"
 
 keywords: openshift, networking
 
@@ -67,8 +67,9 @@ The following table compares the features of each app exposure method.
 |Custom routing rules| | | |Yes|
 |Multiple apps per route or service| | | |Yes|
 |Consistent hybrid multicloud deployment| | | |Yes|
-{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 4 clusters." caption-side="top"}
 {: #roks-net-compare-43}
+{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 4 clusters." caption-side="top"}
+
 
 
 
@@ -81,8 +82,9 @@ The following table compares the features of each app exposure method.
 |Custom routing rules|| |Yes|
 |Multiple apps per route or service| | |Yes|
 |Consistent hybrid multicloud deployment| | |Yes|
-{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 3.11 clusters." caption-side="top"}
 {: #roks-net-compare-311}
+{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 3.11 clusters." caption-side="top"}
+
 
 
 
@@ -117,7 +119,7 @@ You can't use multiple app exposure methods for one app.
 
 | Name | Load-balancing method | Use case | Implementation | 
 | --- | --- | --- | --- |
-| Route | HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules | Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain {{site.data.keyword.redhat_openshift_notm}}-native; for example, you can use the {{site.data.keyword.redhat_openshift_notm}} web console to create and manage routes.  \n 1. [Create a <code>ClusterIP</code> service](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service){: external} to assign an internal IP address to your app.  \n 2. [Set up an {{site.data.keyword.redhat_openshift_notm}} route](https://docs.openshift.com/container-platform/4.9/applications/deployments/route-based-deployment-strategies.html){: external}.  \n 3. Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.9/networking/routes/route-configuration.html){: external}. |
+| Route | HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules | Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain {{site.data.keyword.redhat_openshift_notm}}-native; for example, you can use the {{site.data.keyword.redhat_openshift_notm}} web console to create and manage routes.  \n 1. [Create a `ClusterIP` service](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service){: external} to assign an internal IP address to your app.  \n 2. [Set up an {{site.data.keyword.redhat_openshift_notm}} route](https://docs.openshift.com/container-platform/4.9/applications/deployments/route-based-deployment-strategies.html){: external}.  \n 3. Customize routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.9/networking/routes/route-configuration.html){: external}. |
 | NodePort | Port on a worker node that exposes the app on the worker's public IP address | Test public access to one app or provide access for only a short amount of time. | [Create a public NodePort service](/docs/openshift?topic=openshift-nodeport#nodeport_config). |
 | NLB v1.0 (+ subdomain) | Basic load balancing that exposes the app with an IP address or a subdomain. | Quickly expose one app to the public with an IP address or a subdomain that supports SSL termination. | [Create a public network load balancer](/docs/openshift?topic=openshift-loadbalancer#lb_config) (NLB) 1.0 in a [single](/docs/openshift?topic=openshift-loadbalancer#lb_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config) cluster. Optionally [register](/docs/openshift?topic=openshift-loadbalancer_hostname) a subdomain and health checks. |
 | NLB v2.0 (+ subdomain) | DSR load balancing that exposes the app with an IP address or a subdomain. | Expose an app that might receive high levels of traffic to the public with an IP address or a subdomain that supports SSL termination.  \n 1. Complete the [prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).  \n 2. Create a public NLB 2.0 in a [single](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config) cluster.  \n 3. Optionally [register](/docs/openshift?topic=openshift-loadbalancer_hostname) a subdomain and health checks. |

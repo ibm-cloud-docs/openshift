@@ -21,7 +21,7 @@ completion-time: 60m
 # Using Calico network policies to control traffic on Classic clusters
 {: #policy_tutorial}
 {: toc-content-type="tutorial"}
-{: toc-services="containers"}
+{: toc-services="openshift"}
 {: toc-completion-time="60m"}
 
 Learn how to use Calico policies to allow network traffic from and to certain IP addresses.
@@ -50,6 +50,7 @@ This tutorial is intended for software developers and network administrators who
 
 ## Prerequisites
 {: #policies_prereqs}
+
 - [Create a classic cluster with at least 3 worker nodes. Free clusters, or single worker node clusters don’t have the required resources to complete this tutorial](/docs/openshift?topic=openshift-clusters#clusters_ui). This tutorial is not available for VPC clusters.
 - [Target your CLI to the cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
 - [Install and configure the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).

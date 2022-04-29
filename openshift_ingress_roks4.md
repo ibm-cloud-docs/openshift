@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-29"
 
 keywords: openshift, nginx, ingress controller
 
@@ -139,7 +139,10 @@ Choose the domain that you use to access your apps and the TLS termination for t
 
 You can use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain.
 
-The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can use a TLS certificate so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.<p class="note">Currently, when you configure TLS termination for Ingress, only HTTPS connections are permitted.</p>
+The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can use a TLS certificate so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. 
+
+Currently, when you configure TLS termination for Ingress, only HTTPS connections are permitted.
+{: note}
 
 For more information about TLS certificates, see [Managing TLS certificates and secrets](#manage_certs).
 
@@ -179,7 +182,10 @@ For more information about TLS certificates, see [Managing TLS certificates and 
     2. Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
-    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
+        Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+        {: note}
+        
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
         ```
@@ -244,19 +250,19 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     
 
     `tls`
-    :   If you want to use TLS, include this TLS section in your resource with the following fields:<ul><li>Replace `<domain>` with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation. Replace <tls_secret_name> with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
+    :    If you want to use TLS, include this TLS section in your resource. Replace `<domain>` with your subdomain. Do not use `*` for your host or leave the host property empty to avoid failures during Ingress creation. Replace `<tls_secret_name>` with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
 
     `host`
-    :   Replace `<domain>` with the IBM-provided Ingress subdomain or your custom domain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
+    :    Replace `<domain>` with the IBM-provided Ingress subdomain or your custom domain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the Ingress controller sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+    :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the Ingress controller sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
-    :   Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
+    :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
 
     `servicePort`
-    :   The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
+    :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
     
     
 
@@ -356,7 +362,10 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
     {: tip}
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
-    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
+        Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+        {: note}
+        
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
         ```
@@ -457,10 +466,10 @@ After you get your domain and TLS certificate ready, you must create a public In
 4. Register the service's VPC hostname with the domain you previously chose.
     * Custom domain: Work with your DNS provider to add the `router-public-ingress-controller` service's VPC hostname as a CNAME that maps to your custom domain.
     * IBM-provided domain: Create a DNS entry for the `router-public-ingress-controller` service's VPC hostname. When you run the following command, the subdomain that you specified in the `public-ingress-controller.yaml` file is automatically generated, and is registered with the `router-public-ingress-controller` service. A TLS secret for the domain is automatically generated in the project that you specify where your app runs. The secret name follows a truncated format of the subdomain, such as `mycluster-a1b2cdef345678g9hi012j3kl4567890-0003`.
-    ```sh
-    ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <VPC_hostname> --type public --secret-namespace <project>
-    ```
-    {: pre}
+        ```sh
+        ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <VPC_hostname> --type public --secret-namespace <project>
+        ```
+        {: pre}
 
 
 
@@ -497,22 +506,22 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     {: codeblock}
 
     `tls`
-    :   If you want to use TLS, include this TLS section in your resource with the following fields.
-    :   Replace `<domain>` with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
-    :   Replace `<tls_secret_name>` with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
+    :    If you want to use TLS, include this TLS section in your resource with the following fields.
+    :    Replace `<domain>` with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
+    :    Replace `<tls_secret_name>` with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
     
     `host`
-    :   Replace `<domain>` with your subdomain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
+    :    Replace `<domain>` with your subdomain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
-    :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+    :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
-    :   Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
+    :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
 
     `servicePort`
-    :   The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
+    :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
     
     
 
@@ -614,13 +623,13 @@ To expose apps that are outside of your cluster to the public:
     {: codeblock}
 
     `name`
-    :   Replace `<myexternalendpoint>` with the name of the Kubernetes service that you created earlier.
+    :    Replace `<myexternalendpoint>` with the name of the Kubernetes service that you created earlier.
 
     `ip`
-    :   Replace `<external_IP>` with the public IP addresses to connect to your external app.
+    :    Replace `<external_IP>` with the public IP addresses to connect to your external app.
         
     `port`
-    :   Replace `<external_port>` with the port that your external app listens to.
+    :    Replace `<external_port>` with the port that your external app listens to.
 
 4. Create the endpoint in your cluster.
     ```sh
@@ -681,7 +690,9 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
-    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
+        Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+        {: note}
     
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
@@ -789,10 +800,10 @@ After you get your domain and TLS certificate ready, you must create a private I
 4. Register the service's external IP address or VPC hostname with the domain you previously chose.
     * Custom domain: Work with your DNS provider to add the `router-private-ingress-controller` service's external IP address as an A record (classic clusters) or VPC hostname as a CNAME (VPC clusters) that maps to your custom domain.
     * IBM-provided domain: Create a DNS entry for the `router-private-ingress-controller` service's VPC hostname. When you run the following command, the subdomain that you specified in the `private-ingress-controller.yaml` file is automatically generated, and is registered with the `router-private-ingress-controller` service. A TLS secret for the domain is automatically generated in the project that you specify where your app runs. The secret name follows a truncated format of the subdomain, such as `mycluster-a1b2cdef345678g9hi012j3kl4567890-i003`.
-    ```sh
-    ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <VPC_hostname> --type private --secret-namespace <project>
-    ```
-    {: pre}
+        ```sh
+        ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <VPC_hostname> --type private --secret-namespace <project>
+        ```
+        {: pre}
 
 
 
@@ -829,23 +840,23 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     {: codeblock}
 
     `tls`
-    If you want to use TLS, include this TLS section in your resource with the following fields:<ul><li>Replace `<domain>` with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
-    :   Replace `<tls_secret_name>` with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
+    :    If you want to use TLS, include this TLS section in your resource. Replace `<domain>` with your subdomain. Do not use `*` for your host or leave the host property empty to avoid failures during Ingress creation.
+    :    Replace `<tls_secret_name>` with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
     
     `host`
-    :   Replace `<domain>` with your subdomain.
-    :   If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`.
-    :   Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
+    :    Replace `<domain>` with your subdomain.
+    :    If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`.
+    :    Do not use `*` for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
-    :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+    :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
-    :   Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
+    :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
 
     `servicePort`
-    :   The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
+    :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
     
     
 
@@ -978,7 +989,10 @@ For more information about TLS certificates, see [Managing TLS certificates and 
     2. Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
-    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
+        Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+        {: note}
+        
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
         ```
@@ -1042,22 +1056,23 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 
     `tls`
-    :   If you want to use TLS, include this TLS section in your resource with the following fields.
-    :   Replace `<domain>` with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
-    :   Replace <tls_secret_name> with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
+    :    If you want to use TLS, include this TLS section in your resource with the following fields.
+    :    Replace `<domain>` with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
+    :    Replace <tls_secret_name> with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
 
     `host`
-    :   Replace `<domain>` with the IBM-provided Ingress subdomain or your custom domain.<ul><li>If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`.</li><li>Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
+    :    Replace `<domain>` with the IBM-provided Ingress subdomain or your custom domain.
+    :    If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. Do not use`*` for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
-    :   Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+    :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
-    :   Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
+    :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
 
     `servicePort`
-    :   The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
+    :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
     
     
 
@@ -1180,7 +1195,10 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
     * TLS certificates that contain pre-shared keys (TLS-PSK) are not supported.
     * If your custom domain is registered as a wildcard domain such as `*.custom_domain.net`, you must get a wildcard TLS certificate.
 
-3. Import the certificate's associated secret into the same project where your Ingress resource for an app exists. If you want to use this certificate for apps in multiple projects, repeat this command for each project.<p class="note">Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.</p>
+3. Import the certificate's associated secret into the same project where your Ingress resource for an app exists. If you want to use this certificate for apps in multiple projects, repeat this command for each project.
+    Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+    {: note}
+    
     ```sh
     ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
     ```

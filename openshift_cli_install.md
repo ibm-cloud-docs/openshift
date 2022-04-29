@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-29"
 
 keywords: openshift, oc
 
@@ -142,7 +142,7 @@ Looking for a simple installation? You can try installing the plug-in with a pac
 3. Open the downloaded, compressed files. For example, you might double-click the compressed files in your Downloads folder, or run a command such as `tar -xvf oc.tar.gz`.
 4. Complete the following steps to add the binary files to your `PATH` system variable.
 
-* **If you use Mac OS or Linux**
+**If you use Mac OS or Linux**
 
 1. Move the `oc` and `kubectl` executable files to the `/usr/local/bin` directory.
     ```sh
@@ -167,10 +167,10 @@ Looking for a simple installation? You can try installing the plug-in with a pac
     ```
     {: screen}
         
-* **If you use Windows**
+**If you use Windows**
 
 1. Move the `oc` and `kubectl` executable files to the `C:\Program Files\IBM\Cloud\bin` directory.
-    ```sh
+     ```sh
     move "/<filepath>/oc" "C:\Program Files\IBM\Cloud\bin"
     ```
     {: pre}

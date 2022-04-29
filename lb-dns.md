@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-29"
 
 keywords: openshift, lb2.0, nlb
 
@@ -114,7 +114,7 @@ For example, a subdomain that you create for an NLB might look like `mycluster-a
 The first and second characters, `00`, indicate a public subdomain. The third and fourth characters, such as `01` or another number, act as a counter for each subdomain that you create.|
 |`<region>`|The region that the cluster is created in.|
 |`containers.appdomain.cloud`|The subdomain for {{site.data.keyword.openshiftlong_notm}} subdomains.|
-{: caption="Understanding the NLB subdomain format"}
+{: caption="Table 1. Understanding the NLB subdomain format" caption-side="bottom"}
 
 
 

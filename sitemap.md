@@ -3323,7 +3323,7 @@ subcollection: openshift
 
 * [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options)
 
-    * [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#)
+    * [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#oc_mon_details)
 
     * [Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-mon-tools)
 

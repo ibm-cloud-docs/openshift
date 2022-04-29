@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-29"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -44,7 +44,8 @@ ibmcloud oc locations
 The following image is used as an example to explain how {{site.data.keyword.openshiftlong_notm}} locations are organized. For more information, see [Locations for resource deployment](/docs/overview?topic=overview-locations).
 {: shortdesc}
 
-![Organization of {{site.data.keyword.openshiftlong_notm}} locations](images/cs_regions_hierarchy.png)
+![Organization of {{site.data.keyword.openshiftlong_notm}} locations](images/cs_regions_hierarchy.png){: caption="Figure 1. Organization of {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
+
 
 |Type|Example|Description|
 |--- |--- |--- |
@@ -90,7 +91,7 @@ Mexico City (MEX01) is deprecated and becomes unsupported later this year. To pr
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
-| Asia Pacific | China | Hong Kong<br>SAR of the PRC | hkg02 | AP North (`ap-north`, `jp-tok`) |
+| Asia Pacific | China | Hong Kong  \n SAR of the PRC | hkg02 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Japan | Osaka | osa21, osa22, osa23 | `jp-osa` |
 | Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
@@ -122,15 +123,15 @@ Mexico City (MEX01) is deprecated and becomes unsupported later this year. To pr
 
 | Geography |  Country  | Metro | Region | Zone | Location |
 |---|---|---|---|---| --- |
-| Asia Pacific | Australia | Sydney | au-syd | au-syd-1<br>au-syd-2<br>au-syd-3 | Sydney 1<br>Sydney 2<br>Sydney 3|
-| Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1<br>jp-osa-2<br>jp-osa-3 | Osaka 1<br>Osaka 2<br>Osaka 3|
-| Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1<br>jp-tok-2<br>jp-tok-3 | Tokyo 1<br>Tokyo 2<br>Tokyo 3|
-| Europe | Germany | Frankfurt | eu-de | eu-de-1<br>eu-de-2<br>eu-de-3 | Frankfurt 1<br>Frankfurt 2<br>Frankfurt 3|
-| Europe | United Kingdom | London | eu-gb | eu-gb-1<br>eu-gb-2<br>eu-gb-3 | London 1<br>London 2<br>London 3|
-| North America | Canada | `†` Toronto | ca-tor | ca-tor-1<br>ca-tor-2<br>ca-tor-3 | Toronto 1<br>Toronto 2<br>Toronto 3|
-| North America | United States | Dallas | us-south | us-south-1<br>us-south-2<br>us-south-3 | Dallas 1<br>Dallas 2<br>Dallas 3|
-| North America | United States | Washington DC | us-east | us-east-1<br>us-east-2<br>us-east-3 | Washington DC 1<br>Washington DC 2<br>Washington DC 3|
-| South America | Brazil | `†` São Paulo | br-sao | br-sao-1<br>br-sao-2<br>br-sao-3 | São Paulo 1<br>São Paulo 2<br>São Paulo 3|
+| Asia Pacific | Australia | Sydney | au-syd | au-syd-1  \n au-syd-2  \n au-syd-3 | Sydney 1  \n  Sydney 2  \n  Sydney 3|
+| Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1  \n jp-osa-2  \n jp-osa-3 | Osaka 1  \n Osaka 2  \n Osaka 3|
+| Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1  \n jp-tok-2  \n jp-tok-3 | Tokyo 1  \n Tokyo 2  \n Tokyo 3|
+| Europe | Germany | Frankfurt | eu-de | eu-de-1  \n eu-de-2  \n eu-de-3 | Frankfurt 1  \n Frankfurt 2  \n Frankfurt 3|
+| Europe | United Kingdom | London | eu-gb | eu-gb-1  \n eu-gb-2  \n eu-gb-3 | London 1  \n London 2  \n London 3|
+| North America | Canada | `†` Toronto | ca-tor | ca-tor-1  \n ca-tor-2  \n ca-tor-3 | Toronto 1  \n Toronto 2  \n Toronto 3|
+| North America | United States | Dallas | us-south | us-south-1  \n us-south-2  \n us-south-3 | Dallas 1  \n Dallas 2  \n Dallas 3|
+| North America | United States | Washington DC | us-east | us-east-1  \n us-east-2  \n us-east-3 | Washington DC 1  \n Washington DC 2  \n Washington DC 3|
+| South America | Brazil | `†` São Paulo | br-sao | br-sao-1  \n br-sao-2  \n br-sao-3 | São Paulo 1  \n São Paulo 2  \n São Paulo 3|
 {: caption="Available multizone metro locations for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the IBM Cloud geography of the location. The second column is where the country of the location. The third column is the metro that the location is in. The fourth column is the zone of the location. The fifth column is the name of the location."}
 
