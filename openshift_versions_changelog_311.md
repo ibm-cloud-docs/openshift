@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-29"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -40,6 +40,26 @@ Review the change logs for {{site.data.keyword.openshiftlong_notm}} version 3.11
 {: deprecated}
 
 
+
+
+### Change log for master fix pack 3.11.664_1629_openshift, released 26 April 2022
+{: #311664_1629_openshift}
+
+The following table shows the changes that are in the master fix pack 3.11.664_1629_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.1.35 | v1.1.36 | Updated `Go` to version `1.17.9` and also updated the dependencies. Update `registry base image` version to `103`. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 407 | 408 | Fixed [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}. |
+| Load balancer and Load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1866 | 1915 | Updated the image to resolve CVEs. |
+| OpenVPN client | 2.5.4-r0-IKS-579 | 2.5.6-r0-IKS-592 | Updated `OpenVPN client` to version `2.5.6-r0`. |
+| OpenVPN server | 2.5.4-r0-IKS-578 | 2.5.6-r0-IKS-591 | Updated `OpenVPN server` to version `2.5.6-r0`. |
+| Red Hat {{site.data.keyword.openshiftshort}} Control Plane | 3.11.634 | 3.11.664 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-664){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.634_1626_openshift" caption-side="top"}
+
 ### Change log for worker node fix pack 3.11.664_1630_openshift, released 25 April 2022
 {: #311664_1630_openshift}
 
@@ -49,6 +69,8 @@ Review the change logs for {{site.data.keyword.openshiftlong_notm}} version 3.11
 | RHEL 7 Packages |  N/A | N/A  | Package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.664_1628_openshift" caption-side="top"}
+
+
 
 
 
@@ -64,6 +86,8 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | OpenShift | 3.11.634 | 3.11.664 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-664). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.634_1627_openshift" caption-side="top"}
+
+
 
 
 ### Change log for master fix pack 3.11.634_1626_openshift, released 30 March 2022
@@ -83,6 +107,8 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 
 
 
+
+
 ### Change log for worker node pack 3.11.634_1627_openshift, released 28 March 2022
 {: #311634_1627-1}
 
@@ -94,6 +120,8 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1624_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node pack 3.11.570_1624_openshift, released 14 March 2022
 {: #311570_1624-1}
 
@@ -103,6 +131,8 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | {{site.data.keyword.redhat_openshift_notm}} | 3.11.570 | 3.11.634 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-634){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1623_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.570_1623_openshift, released 3 March 2022
 {: #311570_1623}
@@ -116,6 +146,8 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 {: caption="Changes since version 3.11.570_1619_openshift" caption-side="top"}
 
 
+
+
 ### Change log for worker node fix pack 3.11.570_1624_openshift, released 28 February 2022
 {: #311570_1624}
 
@@ -125,6 +157,8 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | HA proxy | f6a2b3 | 15198fb | Contains fixes for [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external} | 
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1621_openshift" caption-side="top"}
+
+
 
 
 ### Change log for worker node fix pack 3.11.570_1621_openshift, released 14 February 2022
@@ -138,6 +172,8 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1620_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.570_1620_openshift, released 31 January 2022
 {: #311570_1620}
 
@@ -149,6 +185,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/CVE-2021-4034){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1618_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.570_1619_openshift, released 26 January 2022
 {: #311570_1619}
@@ -168,6 +206,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.542_1614_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.570_1618_openshift, released 18 January 2022
 {: #311570_1618}
 
@@ -179,6 +219,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | 3.10.0-1160.49.1.el7 | 3.10.0-1160.53.1.el7 | Kernel and package updates for [CVE-2020-25704](https://nvd.nist.gov/vuln/detail/CVE-2020-25704){: external}, [CVE-2020-36322](https://nvd.nist.gov/vuln/detail/CVE-2020-36322){: external}, [CVE-2021-42739](https://nvd.nist.gov/vuln/detail/CVE-2021-42739){: external}, [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1617_openshift" caption-side="top"}
+
+
 
 ### Change log for worker node fix pack 3.11.570_1617_openshift, released 4 January 2022
 {: #311570_1617}
@@ -192,6 +234,8 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1616_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.570_1616_openshift, released 20 December 2021
 {: #311570_1616_openshift}
 
@@ -203,6 +247,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | {{site.data.keyword.redhat_openshift_notm}} node | 3.11.542 | 3.11.570 | See [change logs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-570){: external} |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.542_1612_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.542_1614_openshift, released 7 December 2021
 {: #311542_1614}
@@ -219,6 +265,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.542_1611_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.542_1615_openshift, released 6 December 2021
 {: #311542_1615_openshift}
 
@@ -232,6 +280,8 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 3.11.542_1612_openshift" caption-side="top"}
 
 
+
+
 ### Change log for worker node fix pack 3.11.542_1612_openshift, released 22 November 2021
 {: #311542_1612_openshift}
 
@@ -243,6 +293,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | HA proxy | 07f1e9e | 3b8663 | Contains fixes for [CVE-2021-20231](https://nvd.nist.gov/vuln/detail/CVE-2021-20231){: external}, [CVE-2021-20232](https://nvd.nist.gov/vuln/detail/CVE-2021-20232){: external}, [CVE-2021-3580](https://nvd.nist.gov/vuln/detail/CVE-2021-3580){: external}, [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}, [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}, [CVE-2021-22876](https://nvd.nist.gov/vuln/detail/CVE-2021-22876){: external}, [CVE-2021-22898](https://nvd.nist.gov/vuln/detail/CVE-2021-22898){: external}, [CVE-2021-22925](https://nvd.nist.gov/vuln/detail/CVE-2021-22925){: external}, [CVE-2019-20838](https://nvd.nist.gov/vuln/detail/CVE-2019-20838){: external}, [CVE-2020-14155](https://nvd.nist.gov/vuln/detail/CVE-2020-14155){: external}, [CVE-2018-20673](https://nvd.nist.gov/vuln/detail/CVE-2018-20673){: external}, [CVE-2021-42574](https://nvd.nist.gov/vuln/detail/CVE-2021-42574){: external}, [CVE-2019-17594](https://nvd.nist.gov/vuln/detail/CVE-2019-17594){: external}, [CVE-2019-17595](https://nvd.nist.gov/vuln/detail/CVE-2019-17595){: external}, [CVE-2020-12762](https://nvd.nist.gov/vuln/detail/CVE-2020-12762){: external}, [CVE-2020-16135](https://nvd.nist.gov/vuln/detail/CVE-2020-16135){: external}, [CVE-2021-3445](https://nvd.nist.gov/vuln/detail/CVE-2021-3445){: external}, [CVE-2021-36084](https://nvd.nist.gov/vuln/detail/CVE-2021-36084){: external}, [CVE-2021-36085](https://nvd.nist.gov/vuln/detail/CVE-2021-36085){: external}, [CVE-2021-36086](https://nvd.nist.gov/vuln/detail/CVE-2021-36086){: external}, [CVE-2021-36087](https://nvd.nist.gov/vuln/detail/CVE-2021-36087){: external}, [CVE-2021-20266](https://nvd.nist.gov/vuln/detail/CVE-2021-20266){: external}, [CVE-2019-18218](https://nvd.nist.gov/vuln/detail/CVE-2019-18218){: external}, [CVE-2021-23840](https://nvd.nist.gov/vuln/detail/CVE-2021-23840){: external}, [CVE-2021-23841](https://nvd.nist.gov/vuln/detail/CVE-2021-23841){: external}, [CVE-2021-27645](https://nvd.nist.gov/vuln/detail/CVE-2021-27645){: external}, [CVE-2021-33574](https://nvd.nist.gov/vuln/detail/CVE-2021-33574){: external}, [CVE-2021-35942](https://nvd.nist.gov/vuln/detail/CVE-2021-35942){: external}, [CVE-2021-33560](https://nvd.nist.gov/vuln/detail/CVE-2021-33560){: external}, [CVE-2019-13750](https://nvd.nist.gov/vuln/detail/CVE-2019-13750){: external}, [CVE-2019-13751](https://nvd.nist.gov/vuln/detail/CVE-2019-13751){: external}, [CVE-2019-19603](https://nvd.nist.gov/vuln/detail/CVE-2019-19603){: external}, [CVE-2019-5827](https://nvd.nist.gov/vuln/detail/CVE-2019-5827){: external}, [CVE-2020-13435](https://nvd.nist.gov/vuln/detail/CVE-2020-13435){: external}, [CVE-2020-24370](https://nvd.nist.gov/vuln/detail/CVE-2020-24370){: external}, [CVE-2021-28153](https://nvd.nist.gov/vuln/detail/CVE-2021-28153){: external}, [CVE-2021-3800](https://nvd.nist.gov/vuln/detail/CVE-2021-3800){: external}, [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}, [CVE-2021-33929](https://nvd.nist.gov/vuln/detail/CVE-2021-33929){: external}, [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}, [CVE-2021-33938](https://nvd.nist.gov/vuln/detail/CVE-2021-33938){: external}, and[CVE-2021-3200](https://nvd.nist.gov/vuln/detail/CVE-2021-3200){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.542_1610_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.542_1611_openshift, released 17 November 2021
 {: #311542_1611}
@@ -262,6 +314,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.524_1608_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.542_1610_openshift, released 10 November 2021
 {: #311542_1610}
 
@@ -274,6 +328,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | {{site.data.keyword.redhat_openshift_notm}} | 3.11.524 | 3.11.542 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-542){: external} |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.524_1609_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.524_1608_openshift, released 29 October 2021
 {: #311524_1608}
@@ -291,6 +347,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.521_1604_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.524_1609_openshift, released 25 October 2021
 {: #311524_1609}
 
@@ -305,6 +363,8 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.524_1606_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.524_1606_openshift, released 11 October 2021
 {: #311524_1606_openshift}
 
@@ -317,19 +377,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.521_1605_openshift" caption-side="top"}
 
-### Change log for worker node fix pack 3.11.521_1605_openshift, released 27 September 2021
-{: #311521_1605}
 
-The following table shows the changes that are in the worker node fix pack patch update `3.11.521_1605_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
-{: shortdesc}
-
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
-| HA proxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}, [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}, [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}, [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}, and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}. |
-|OpenShift Container Platform| 3.11.501 | 3.11.521 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-521){: external}. |
-{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
-{: caption="Changes since version 3.11.501_1603_openshift" caption-side="top"}
 
 ### Change log for master fix pack 3.11.521_1604_openshift, released 28 September 2021
 {: #311521_1604}
@@ -346,6 +394,24 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 3.11.487_1601_openshift" caption-side="top"}
 
 
+
+
+### Change log for worker node fix pack 3.11.521_1605_openshift, released 27 September 2021
+{: #311521_1605}
+
+The following table shows the changes that are in the worker node fix pack patch update `3.11.521_1605_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
+| HA proxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}, [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}, [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}, [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}, and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}. |
+|OpenShift Container Platform| 3.11.501 | 3.11.521 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-521){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.501_1603_openshift" caption-side="top"}
+
+
+
 ### Change log for worker node fix pack 3.11.501_1603_openshift, released 13 September 2021
 {: #311501_1603}
 
@@ -358,6 +424,8 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.501_1602_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.501_1602_openshift, released 30 August 2021
 {: #311501_1602}
 
@@ -369,6 +437,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | OpenShift Container Platform | 3.11.487 |	3.11.501 | See [changelogs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-501){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.487_1600_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.487_1601_openshift, released 25 August 2021
 {: #311487_1601}
@@ -385,6 +455,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.465_1599_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.487_1600_openshift, released 16 August 2021
 {: #311487_1600}
 
@@ -395,6 +467,8 @@ The following table shows the changes that are in the master fix pack patch upda
 | OpenShift Container Platform |3.11.465 | 3.11.487 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-487){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.465_1599_openshift" caption-side="top"}
+
+
 
 
 
@@ -413,6 +487,8 @@ The following table shows the changes that are in the worker node fix pack patch
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.465_1596_openshift" caption-side="top"}
 
+
+
 ### Change log for master fix pack 3.11.439_1598_openshift, released 27 July 2021
 {: #311439_1598}
 
@@ -427,6 +503,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.439_1594_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.465_1596_openshift, released 19 July 2021
 {: #311465_1596}
 
@@ -440,6 +518,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.462_1595_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.462_1595_openshift, released 6 July 2021
 {: #311462_1595}
 
@@ -452,6 +532,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | {{site.data.keyword.redhat_openshift_notm}} | 3.11.452 | 3.11.462 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-462){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.452_1593_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.439_1594_openshift, released 28 June 2021
 {: #311439_1594}
@@ -468,6 +550,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.420_1590_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.452_1593_openshift, released 22 June 2021
 {: #311452_1593}
 
@@ -483,6 +567,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.439_1592_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.439_1592_openshift, released 7 June 2021
 {: #311439_1592}
 
@@ -497,6 +583,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.439_1591_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.439_1591_openshift, released 24 May 2021
 {: #311439_1591}
 
@@ -510,6 +598,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.420_1588_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.420_1590_openshift, released 24 May 2021
 {: #311420_1590}
@@ -526,6 +616,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: caption="Changes since version 3.11.420_1586_openshift" caption-side="top"}
 
 
+
+
 ### Change log for worker node fix pack 3.11.420_1588_openshift, released 10 May 2021
 {: #311420_1588}
 
@@ -537,6 +629,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | 3.10.0-1160.24 | 3.10.0-1160.25 | To increase resiliency, `rsyslog` no longer keeps old file descriptors. Updated worker node images with kernel and package updates for [CVE-2021-25215](https://nvd.nist.gov/vuln/detail/CVE-2021-25215){: external}, [CVE-2020-25692](https://nvd.nist.gov/vuln/detail/CVE-2020-25692){: external}, and [CVE-2020-25648](https://nvd.nist.gov/vuln/detail/CVE-2020-25648){: external}.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.420_1587_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.420_1586_openshift, released 27 April 2021
 {: #311420_1586}
@@ -555,6 +649,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.394_1583_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.420_1587_openshift, released 26 April 2021
 {: #311420_1587}
 
@@ -569,6 +665,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.404_1585_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.404_1585_openshift, released 12 April 2021
 {: #311404_1585}
 
@@ -581,6 +679,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | 3.10.0-1160.21.1.el7 | 3.10.0-1160.24.1.el7 | Updated worker node images with kernel and package updates for [CVE-2021-27363](https://nvd.nist.gov/vuln/detail/CVE-2021-27363){: external}, [CVE-2021-27364](https://nvd.nist.gov/vuln/detail/CVE-2021-27364){: external}, and [CVE-2021-27365](https://nvd.nist.gov/vuln/detail/CVE-2021-27365){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.404_1584_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.394_1583_openshift, released 30 March 2021
 {: #311394_1583}
@@ -598,6 +698,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.380_1581_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.404_1584_openshift, released 29 March 2021
 {: #311404_1584}
 
@@ -610,6 +712,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | 3.10.0-1160.15.2.el7 | 3.10.0-1160.21.1.el7 | Updated worker node images with kernel and package updates for [CVE-2019-19532](https://nvd.nist.gov/vuln/detail/CVE-2019-19532){: external}, [CVE-2020-0427](https://nvd.nist.gov/vuln/detail/CVE-2020-0427){: external}, [CVE-2020-7053](https://nvd.nist.gov/vuln/detail/CVE-2020-7053){: external}, [CVE-2020-14351](https://nvd.nist.gov/vuln/detail/CVE-2020-14351){: external}, [CVE-2020-25211](https://nvd.nist.gov/vuln/detail/CVE-2020-25211){: external}, [CVE-2020-25645](https://nvd.nist.gov/vuln/detail/CVE-2020-25645){: external}, [CVE-2020-25656](https://nvd.nist.gov/vuln/detail/CVE-2020-25656){: external}, [CVE-2020-25705](https://nvd.nist.gov/vuln/detail/CVE-2020-25705){: external}, [CVE-2020-28374](https://nvd.nist.gov/vuln/detail/CVE-2020-28374){: external}, [CVE-2020-29661](https://nvd.nist.gov/vuln/detail/CVE-2020-29661){: external}, and [CVE-2021-20265](https://nvd.nist.gov/vuln/detail/CVE-2021-20265){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.394_1582_openshift" caption-side="top"}
+
+
 
 ### Change log for worker node fix pack 3.11.394_1582_openshift, released 12 March 2021
 {: #311394_1582}
@@ -624,6 +728,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.380_1581_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.380_1581_openshift, released 1 March 2021
 {: #311380_1581_worker}
 
@@ -635,6 +741,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.380_1580_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.380_1581_openshift, released 22 February 2021
 {: #311380_1581}
@@ -652,6 +760,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.346_1578_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.380_1580_openshift, released 15 February 2021
 {: #311380_1580}
 
@@ -665,6 +775,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.374_1579_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.374_1579_openshift, released 1 February 2021
 {: #311347_1579}
 
@@ -677,6 +789,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2021-3156](https://nvd.nist.gov/vuln/detail/CVE-2021-3156){: external}, [CVE-2020-25684](https://nvd.nist.gov/vuln/detail/CVE-2020-25684){: external}, [CVE-2020-25685](https://nvd.nist.gov/vuln/detail/CVE-2020-25685){: external}, and [CVE-2020-25686](https://nvd.nist.gov/vuln/detail/CVE-2020-25686){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.346_1578_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.346_1578_openshift, released 19 January 2021
 {: #311346_1578_master}
@@ -693,6 +807,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.346_1577_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.346_1578_openshift, released 18 January 2021
 {: #311346_1578}
 
@@ -704,6 +820,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.346_1576_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.346_1577_openshift, released 6 January 2021
 {: #311346_1577}
@@ -717,6 +835,8 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.redhat_openshift_notm}} | 3.11.318 | 3.11.346 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-346){: external}. The update resolves CVE-2018-1002102 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6404300){: external}) and CVE-2020-8559 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6404296){: external}). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.318_1575_openshift" caption-side="top"}
+
+
 ### Change log for worker node fix pack 3.11.346_1576_openshift, released 21 December 2020
 {: #311346_1576_master}
 
@@ -730,6 +850,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | 3.10.0-1160.6.1.el7 | 3.10.0-1160.11.1.el7 | Updated worker node image with kernel and package updates for: [CVE-2019-18282](https://nvd.nist.gov/vuln/detail/CVE-2019-18282){: external}, [CVE-2020-10769](https://nvd.nist.gov/vuln/detail/CVE-2020-10769){: external}, [CVE-2020-14314](https://nvd.nist.gov/vuln/detail/CVE-2020-14314){: external}, [CVE-2020-14385](https://nvd.nist.gov/vuln/detail/CVE-2020-14385){: external}, [CVE-2020-24394](https://nvd.nist.gov/vuln/detail/CVE-2020-24394){: external}, [CVE-2020-25212](https://nvd.nist.gov/vuln/detail/CVE-2020-25212){: external}, [CVE-2020-25643](https://nvd.nist.gov/vuln/detail/CVE-2020-25643){: external}, and [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.318_1575_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.318_1575_openshift, released 14 December 2020
 {: #311306_1573_master}
@@ -748,6 +870,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.306_1573_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.318_1574_openshift, released 7 December 2020
 {: #311318_1574}
 
@@ -761,6 +885,8 @@ The following table shows the changes that are in the worker node fix pack updat
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.318_1573_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.318_1573_openshift, released 23 November 2020
 {: #311318_1573}
 
@@ -773,6 +899,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages |  3.10.0-1160.2.2.el7 | 3.10.0-1160.6.1.el7 | Updated worker node image with kernel and package updates for [CVE-2020-8622](https://nvd.nist.gov/vuln/detail/CVE-2020-8622){: external}, [CVE-2020-8623](https://nvd.nist.gov/vuln/detail/CVE-2020-8623){: external}, [CVE-2020-8624](https://nvd.nist.gov/vuln/detail/CVE-2020-8624){: external}, [CVE-2019-20907](https://nvd.nist.gov/vuln/detail/CVE-2019-20907){: external}, [CVE-2020-15999](https://nvd.nist.gov/vuln/detail/CVE-2020-15999){: external}, [CVE-2020-8177](https://nvd.nist.gov/vuln/detail/CVE-2020-8177){: external}, [CVE-2019-20811](https://nvd.nist.gov/vuln/detail/CVE-2019-20811){: external}, [CVE-2020-14331](https://nvd.nist.gov/vuln/detail/CVE-2020-14331){: external}, [CVE-2020-8695](https://nvd.nist.gov/vuln/detail/CVE-2020-8695){: external}, [CVE-2020-8696](https://nvd.nist.gov/vuln/detail/CVE-2020-8696){: external}, and [CVE-2020-8698](https://nvd.nist.gov/vuln/detail/CVE-2020-8698){: external}.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.306_1572_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.306_1573_openshift, released 16 November 2020
 {: #311306_1573}
@@ -790,6 +918,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.286_1570_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.306_1572_openshift, released 9 November 2020
 {: #311306_1572}
 
@@ -801,6 +931,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2020-15999](https://nvd.nist.gov/vuln/detail/CVE-2020-15999){: external}.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.306_1571_openshift" caption-side="top"}
+
+
 
 ### Change log for worker node fix pack 3.11.306_1571_openshift, released 26 October 2020
 {: #311306_1571}
@@ -815,6 +947,8 @@ The following table shows the changes that are in the worker node fix pack updat
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.286_1570_openshift" caption-side="top"}
 
+
+
 ### Change log for master fix pack 3.11.286_1571_openshift, released 26 October 2020
 {: #311286_1571}
 
@@ -828,6 +962,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.272_1567_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.286_1570_openshift, released 12 October 2020
 {: #311286_1570}
 
@@ -839,6 +975,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | 3.10.0-1127.19.1.el7 | 3.10.0-1160.2.1.el7 | Updated worker node image with kernel and package updates for: [CVE-2019-12450](https://nvd.nist.gov/vuln/detail/CVE-2019-12450){: external}, [CVE-2019-14822](https://nvd.nist.gov/vuln/detail/CVE-2019-14822){: external}, [CVE-2020-12243](https://nvd.nist.gov/vuln/detail/CVE-2020-12243){: external}, [CVE-2019-14866](https://nvd.nist.gov/vuln/detail/CVE-2019-14866){: external}, [CVE-2017-12652](https://nvd.nist.gov/vuln/detail/CVE-2017-12652){: external}, [CVE-2017-18551](https://nvd.nist.gov/vuln/detail/CVE-2017-18551){: external}, [CVE-2018-20836](https://nvd.nist.gov/vuln/detail/CVE-2018-20836){: external}, [CVE-2019-9454](https://nvd.nist.gov/vuln/detail/CVE-2019-9454){: external}, [CVE-2019-9458](https://nvd.nist.gov/vuln/detail/CVE-2019-9458){: external}, [CVE-2019-12614](https://nvd.nist.gov/vuln/detail/CVE-2019-12614){: external}, [CVE-2019-15217](https://nvd.nist.gov/vuln/detail/CVE-2019-15217){: external}, [CVE-2019-15807](https://nvd.nist.gov/vuln/detail/CVE-2019-15807){: external}, [CVE-2019-15917](https://nvd.nist.gov/vuln/detail/CVE-2019-15917){: external}, [CVE-2019-16231](https://nvd.nist.gov/vuln/detail/CVE-2019-16231){: external}, [CVE-2019-16233](https://nvd.nist.gov/vuln/detail/CVE-2019-16233){: external}, [CVE-2019-16994](https://nvd.nist.gov/vuln/detail/CVE-2019-16994){: external}, [CVE-2019-17053](https://nvd.nist.gov/vuln/detail/CVE-2019-17053){: external}, [CVE-2019-17055](https://nvd.nist.gov/vuln/detail/CVE-2019-17055){: external}, [CVE-2019-18808](https://nvd.nist.gov/vuln/detail/CVE-2019-18808){: external}, [CVE-2019-19046](https://nvd.nist.gov/vuln/detail/CVE-2019-19046){: external}, [CVE-2019-19055](https://nvd.nist.gov/vuln/detail/CVE-2019-19055){: external}, [CVE-2019-19058](https://nvd.nist.gov/vuln/detail/CVE-2019-19058){: external}, [CVE-2019-19059](https://nvd.nist.gov/vuln/detail/CVE-2019-19059){: external}, [CVE-2019-19062](https://nvd.nist.gov/vuln/detail/CVE-2019-19062){: external}, [CVE-2019-19063](https://nvd.nist.gov/vuln/detail/CVE-2019-19063){: external}, [CVE-2019-19332](https://nvd.nist.gov/vuln/detail/CVE-2019-19332){: external}, [CVE-2019-19447](https://nvd.nist.gov/vuln/detail/CVE-2019-19447){: external}, [CVE-2019-19523](https://nvd.nist.gov/vuln/detail/CVE-2019-19523){: external}, [CVE-2019-19524](https://nvd.nist.gov/vuln/detail/CVE-2019-19524){: external}, [CVE-2019-19530](https://nvd.nist.gov/vuln/detail/CVE-2019-19530){: external}, [CVE-2019-19534](https://nvd.nist.gov/vuln/detail/CVE-2019-19534){: external}, [CVE-2019-19537](https://nvd.nist.gov/vuln/detail/CVE-2019-19537){: external}, [CVE-2019-19767](https://nvd.nist.gov/vuln/detail/CVE-2019-19767){: external}, [CVE-2019-19807](https://nvd.nist.gov/vuln/detail/CVE-2019-19807){: external}, [CVE-2019-20054](https://nvd.nist.gov/vuln/detail/CVE-2019-20054){: external}, [CVE-2019-20095](https://nvd.nist.gov/vuln/detail/CVE-2019-20095){: external}, [CVE-2019-20636](https://nvd.nist.gov/vuln/detail/CVE-2019-20636){: external}, [CVE-2020-1749](https://nvd.nist.gov/vuln/detail/CVE-2020-1749){: external}, [CVE-2020-2732](https://nvd.nist.gov/vuln/detail/CVE-2020-2732){: external}, [CVE-2020-8647](https://nvd.nist.gov/vuln/detail/CVE-2020-8647){: external}, [CVE-2020-8649](https://nvd.nist.gov/vuln/detail/CVE-2020-8649){: external}, [CVE-2020-9383](https://nvd.nist.gov/vuln/detail/CVE-2020-9383){: external}, [CVE-2020-10690](https://nvd.nist.gov/vuln/detail/CVE-2020-10690){: external}, [CVE-2020-10732](https://nvd.nist.gov/vuln/detail/CVE-2020-10732){: external}, [CVE-2020-10742](https://nvd.nist.gov/vuln/detail/CVE-2020-10742){: external}, [CVE-2020-10751](https://nvd.nist.gov/vuln/detail/CVE-2020-10751){: external}, [CVE-2020-10942](https://nvd.nist.gov/vuln/detail/CVE-2020-10942){: external}, [CVE-2020-11565](https://nvd.nist.gov/vuln/detail/CVE-2020-11565){: external}, [CVE-2020-12770](https://nvd.nist.gov/vuln/detail/CVE-2020-12770){: external}, [CVE-2020-12826](https://nvd.nist.gov/vuln/detail/CVE-2020-12826){: external}, [CVE-2020-14305](https://nvd.nist.gov/vuln/detail/CVE-2020-14305){: external}, [CVE-2019-5482](https://nvd.nist.gov/vuln/detail/CVE-2019-5482){: external}, [CVE-2019-19126](https://nvd.nist.gov/vuln/detail/CVE-2019-19126){: external}, [CVE-2020-12825](https://nvd.nist.gov/vuln/detail/CVE-2020-12825){: external}, [CVE-2019-5094](https://nvd.nist.gov/vuln/detail/CVE-2019-5094){: external}, [CVE-2019-5188](https://nvd.nist.gov/vuln/detail/CVE-2019-5188){: external}, [CVE-2019-2974](https://nvd.nist.gov/vuln/detail/CVE-2019-2974){: external}, [CVE-2020-2574](https://nvd.nist.gov/vuln/detail/CVE-2020-2574){: external}, [CVE-2020-2752](https://nvd.nist.gov/vuln/detail/CVE-2020-2752){: external}, [CVE-2020-2780](https://nvd.nist.gov/vuln/detail/CVE-2020-2780){: external}, [CVE-2020-2812](https://nvd.nist.gov/vuln/detail/CVE-2020-2812){: external}, [CVE-2019-12749](https://nvd.nist.gov/vuln/detail/CVE-2019-12749){: external}, [CVE-2019-19956](https://nvd.nist.gov/vuln/detail/CVE-2019-19956){: external}, [CVE-2019-20388](https://nvd.nist.gov/vuln/detail/CVE-2019-20388){: external}, [CVE-2020-7595](https://nvd.nist.gov/vuln/detail/CVE-2020-7595){: external}, [CVE-2020-10754](https://nvd.nist.gov/vuln/detail/CVE-2020-10754){: external}, [CVE-2019-11719](https://nvd.nist.gov/vuln/detail/CVE-2019-11719){: external}, [CVE-2019-11727](https://nvd.nist.gov/vuln/detail/CVE-2019-11727){: external}, [CVE-2019-11756](https://nvd.nist.gov/vuln/detail/CVE-2019-11756){: external}, [CVE-2019-17006](https://nvd.nist.gov/vuln/detail/CVE-2019-17006){: external}, [CVE-2019-17023](https://nvd.nist.gov/vuln/detail/CVE-2019-17023){: external}, [CVE-2020-6829](https://nvd.nist.gov/vuln/detail/CVE-2020-6829){: external}, [CVE-2020-12400](https://nvd.nist.gov/vuln/detail/CVE-2020-12400){: external}, [CVE-2020-12401](https://nvd.nist.gov/vuln/detail/CVE-2020-12401){: external}, [CVE-2020-12402](https://nvd.nist.gov/vuln/detail/CVE-2020-12402){: external}, [CVE-2020-12403](https://nvd.nist.gov/vuln/detail/CVE-2020-12403){: external}, [CVE-2018-20843](https://nvd.nist.gov/vuln/detail/CVE-2018-20843){: external}, [CVE-2019-15903](https://nvd.nist.gov/vuln/detail/CVE-2019-15903){: external}, [CVE-2019-14834](https://nvd.nist.gov/vuln/detail/CVE-2019-14834){: external}, [CVE-2019-11068](https://nvd.nist.gov/vuln/detail/CVE-2019-11068){: external}, [CVE-2019-18197](https://nvd.nist.gov/vuln/detail/CVE-2019-18197){: external}, [CVE-2019-16935](https://nvd.nist.gov/vuln/detail/CVE-2019-16935){: external}, [CVE-2019-20386](https://nvd.nist.gov/vuln/detail/CVE-2019-20386){: external}, [CVE-2019-17498](https://nvd.nist.gov/vuln/detail/CVE-2019-17498){: external}, and [CVE-2020-14365](https://nvd.nist.gov/vuln/detail/CVE-2020-14365){: external}.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.286_1569_openshift" caption-side="top"}
+
+
 
 ### Change log for worker node fix pack 3.11.286_1569_openshift, released 30 September 2020
 {: #311286_1569}
@@ -852,6 +990,8 @@ The following table shows the changes that are in the worker node fix pack updat
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.286_1568_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.286_1568_openshift, released 28 September 2020
 {: #311286_1568}
 
@@ -863,6 +1003,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | {{site.data.keyword.redhat_openshift_notm}} | 3.11.272    | 3.11.286 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-286){: external}.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.272_1566_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.272_1567_openshift, released 21 September 2020
 {: #311272_1567}
@@ -880,6 +1022,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.272_1566_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.272_1566_openshift, released 14 September 2020
 {: #311272_1566}
 
@@ -893,6 +1037,8 @@ The following table shows the changes that are in the worker node fix pack updat
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.272_1565_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.272_1565_openshift, released 31 August 2020
 {: #311272_1565}
 
@@ -905,6 +1051,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | {{site.data.keyword.redhat_openshift_notm}} node | 3.11.248 | 3.11.272 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-272){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.248_1564_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.248_1564_openshift, released 18 August 2020
 {: #311248_1564_master}
@@ -922,6 +1070,8 @@ The following table shows the changes that are in the master fix pack patch upda
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.232_1561_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.248_1564_openshift, released 17 August 2020
 {: #311248_1564}
 
@@ -933,6 +1083,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 packages | N/A | N/A | Updated worker node images with package updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.248_1561_openshift" caption-side="top"}
+
+
 
 ### Change log for worker node fix pack 3.11.248_1561_openshift, released 3 August 2020
 {: #311248_1561}
@@ -946,6 +1098,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | 3.10.0-1127.13.1.el7 | 3.10.0-1127.18.2.el7 | Updated worker node images with package updates for [CVE-2020-10713](https://nvd.nist.gov/vuln/detail/CVE-2020-10713){: external}, [CVE-2020-14308](https://nvd.nist.gov/vuln/detail/CVE-2020-14308){: external}, [CVE-2020-14309](https://nvd.nist.gov/vuln/detail/CVE-2020-14309){: external}, [CVE-2020-14310](https://nvd.nist.gov/vuln/detail/CVE-2020-14310){: external}, [CVE-2020-14311](https://nvd.nist.gov/vuln/detail/CVE-2020-14311){: external}, [CVE-2020-15705](https://nvd.nist.gov/vuln/detail/CVE-2020-15705){: external}, [CVE-2020-15706](https://nvd.nist.gov/vuln/detail/CVE-2020-15706){: external}, [CVE-2020-15707](https://nvd.nist.gov/vuln/detail/CVE-2020-15707){: external}, [CVE-2019-19527](https://nvd.nist.gov/vuln/detail/CVE-2019-19527){: external}, [CVE-2020-10757](https://nvd.nist.gov/vuln/detail/CVE-2020-10757){: external}, [CVE-2020-12653](https://nvd.nist.gov/vuln/detail/CVE-2020-12653){: external}, and [CVE-2020-12654](https://nvd.nist.gov/vuln/detail/CVE-2020-12654){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.232_1558_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.232_1560_openshift, released 24 July 2020
 {: #311232_1560}
@@ -961,6 +1115,8 @@ The following table shows the changes that are in the master fix pack update `3.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.232_1559_openshift" caption-side="top"}
 
+
+
 ### Change log for master fix pack 3.11.232_1559_openshift, released 20 July 2020
 {: #311232_1559}
 
@@ -975,6 +1131,8 @@ The following table shows the changes that are in the master fix pack update `3.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.232_1555_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.232_1558_openshift, released 20 July 2020
 {: #311232_1558}
 
@@ -987,6 +1145,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages |  N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.232_1555_openshift" caption-side="top"}
+
+
 
 ### Change log for worker node fix pack 3.11.232_1555_openshift, released 6 July 2020
 {: #311232_1555}
@@ -1001,6 +1161,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | Worker node `drain` automation | N/A | N/A | Fixes a race condition that can cause worker node `drain` automation to fail. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.232_1554_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.219_1554_openshift and worker node fix pack 3.11.232_1554_openshift, released 22 June 2020
 {: #311219_1554_master}
@@ -1022,6 +1184,8 @@ The following table shows the changes that are in the master fix pack update `3.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is where the component is located, the master, worker node, or both. The third column is the previous version number of the component. The fourth column is the current version number of the component. The fifth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.219_1552_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.219_1552_openshift, released 8 June 2020
 {: #311219_1552}
 
@@ -1033,6 +1197,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | {{site.data.keyword.redhat_openshift_notm}} node | 3.11.216 | 3.11.219 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-219){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.216_1551_openshift" caption-side="top"}
+
+
 
 ### Change log for 3.11.216_1551_openshift, released 26 May 2020
 {: #311216_1551}
@@ -1053,6 +1219,8 @@ The following table shows the changes that are in the master and worker node upd
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is where the component is located, the master, worker node, or both. The third column is the previous version number of the component. The fourth column is the current version number of the component. The fifth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.216_1550_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.216_1550_openshift, released 11 May 2020
 {: #311216_1550}
 
@@ -1064,6 +1232,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | {{site.data.keyword.redhat_openshift_notm}} node | 3.11.200 | 3.11.216 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-216){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.200_1549_openshift" caption-side="top"}
+
+
 
 ### Change log for worker node fix pack 3.11.200_1549_openshift, released 27 April 2020
 {: #311200_1549}
@@ -1077,6 +1247,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2019-19921](https://nvd.nist.gov/vuln/detail/CVE-2019-19921){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.200_1546_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.200_1548_openshift, released 23 April 2020
 {: #311200_1548}
@@ -1096,6 +1268,8 @@ The following table shows the changes that are in the master fix pack update `3.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.200_1546_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.200_1546_openshift, released 13 April 2020
 {: #311200_1546_worker}
 
@@ -1110,6 +1284,8 @@ The following table shows the changes that are in the worker node fix pack updat
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.188_1545_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.188_1545_openshift, released 30 March 2020
 {: #311188_1545_worker}
 
@@ -1122,6 +1298,8 @@ The following table shows the changes that are in the worker node fix pack updat
 | {{site.data.keyword.redhat_openshift_notm}} node | 3.11.170 | 3.11.188 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-188){: external}.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.170_1544_openshift" caption-side="top"}
+
+
 
 ### Change log for 3.11.170_1544_openshift, released 16 March 2020
 {: #311170_1544}
@@ -1138,17 +1316,7 @@ The following table shows the changes that are in the master and worker node upd
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is where the component is located: the master, worker node, or both. The third column is the previous version number of the component. The fourth column is the current version number of the component. The fifth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.170_1543" caption-side="top"}
 
-### Change log for worker node fix pack 3.11.170_1543_openshift, released 17 February 2020
-{: #311170_1543_worker}
 
-The following table shows the changes that are in the worker node fix pack update `3.11.170_1543_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
-{: shortdesc}
-
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.161 | 3.11.170 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-170){: external}. Fixes [CVE-2019-11244](https://nvd.nist.gov/vuln/detail/CVE-2019-11244){: external}.|
-{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
-{: caption="Changes since version 3.11.161_1542_openshift" caption-side="top"}
 
 ### Change log for master fix pack 3.11.161_1542_openshift, released 18 February 2020
 {: #311161_1542_master}
@@ -1164,6 +1332,22 @@ The following table shows the changes that are in the master fix pack update `3.
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.161_1540_openshift" caption-side="top"}
 
+
+
+### Change log for worker node fix pack 3.11.170_1543_openshift, released 17 February 2020
+{: #311170_1543_worker}
+
+The following table shows the changes that are in the worker node fix pack update `3.11.170_1543_openshift`. Worker node patch updates can be applied by updating or reloading the worker node
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.161 | 3.11.170 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-170){: external}. Fixes [CVE-2019-11244](https://nvd.nist.gov/vuln/detail/CVE-2019-11244){: external}.|
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.161_1542_openshift" caption-side="top"}
+
+
+
 ### Change log for worker node fix pack 3.11.161_1542_openshift, released 17 February 2020
 {: #311161_1542_worker}
 
@@ -1176,6 +1360,8 @@ The following table shows the changes that are in the worker node fix pack updat
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.161_1540_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.161_1540_openshift, released 3 February 2020
 {: #311161_1540}
 
@@ -1187,6 +1373,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 packages | N/A | N/A | Updated worker node images with package updates for [CVE-2019-13734](https://nvd.nist.gov/vuln/detail/CVE-2019-13734){: external} and [CVE-2019-18408](https://nvd.nist.gov/vuln/detail/CVE-2019-18408){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.161_1538_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 3.11.161_1539_openshift, released 3 February 2020
 {: #311161_1539}
@@ -1202,6 +1390,8 @@ The following table shows the changes that are in the master fix pack `3.11.161_
 | OpenVPN server | N/A | N/A | OpenVPN server is now restarted during the [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) operation. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.161_1538_openshift" caption-side="top"}
+
+
 
 ### Change log for 3.11.161_1538_openshift, released 20 January 2020
 {: #311161_1538}
@@ -1223,6 +1413,8 @@ The following table shows the changes that are in the patch `3.11.161_1538_opens
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.154_1537" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 3.11.157_1537_openshift, released 23 December 2019
 {: #311157_1537}
 
@@ -1236,6 +1428,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | Maximum process IDs (PIDs) for pods | N/A | N/A | Updated to support scaling the maximum allowed pod process IDs (PIDs) based on the [worker node machine type](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node). |
 {: caption="Changes since version 3.11.154_1534" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for master fix pack 3.11.154_1536_openshift, released 17 December 2019
 {: #311154_1536}
@@ -1252,6 +1446,8 @@ The following table shows the changes that are in the master fix pack `3.11.154_
 {: caption="Changes since version 3.11.154_1534" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for worker node fix pack 3.11.154_1534_openshift, released 9 December 2019
 {: #311154_1534_worker}
 
@@ -1263,6 +1459,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 kernel and packages | 3.10.0-1062.4.3.el7 | 3.10.0-1062.9.1.el7 | Updated worker node images with kernel and package updates for [CVE-2019-14821](https://nvd.nist.gov/vuln/detail/CVE-2019-14821){: external} and [CVE-2019-15239](https://nvd.nist.gov/vuln/detail/CVE-2019-15239){: external}.|
 {: caption="Changes since version 3.11.153_1533" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for worker node fix pack 3.11.154_1533_openshift, released 25 November 2019
 {: #311154_1533_worker}
@@ -1276,6 +1474,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 kernel and packages | 3.10.0-1062.4.1.el7 | 3.10.0-1062.4.3.el7 | Updated worker node images with kernel and package updates for [CVE-2018-12207](https://nvd.nist.gov/vuln/detail/CVE-2018-12207){: external}, [CVE-2019-0154](https://nvd.nist.gov/vuln/detail/CVE-2019-0154){: external}, [CVE-2019-11135](https://nvd.nist.gov/vuln/detail/CVE-2019-11135){: external}, and [CVE-2019-0155](https://nvd.nist.gov/vuln/detail/CVE-2019-0155){: external}.|
 {: caption="Changes since version 3.11.153_1530" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for master fix pack 3.11.154_1533_openshift, released 21 November 2019
 {: #311154_1533}
@@ -1293,6 +1493,8 @@ The following table shows the changes that are in the master fix pack `3.11.154_
 {: caption="Changes since version 3.11.153_1530" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for worker node fix pack 3.11.153_1530_openshift, released 11 November 2019
 {: #311153_1530}
 
@@ -1304,6 +1506,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 packages | N/A | N/A | Updated worker node images with package updates. |
 {: caption="Changes since version 3.11.146_1529" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for worker node fix pack 3.11.153_1529_openshift, released 28 October 2019
 {: #311153_1529}
@@ -1317,6 +1521,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 packages and kernel |  3.10.0-1062.1.2.el7 | 3.10.0-1062.4.1.el7 | Updated worker node images with kernel and package updates for [CVE-2019-14835](https://nvd.nist.gov/vuln/detail/CVE-2019-14835){: external}, [CVE-2019-14287](https://nvd.nist.gov/vuln/detail/CVE-2019-14287){: external}, [CVE-2019-3846](https://nvd.nist.gov/vuln/detail/CVE-2019-3846){: external} [CVE-2019-10126](https://nvd.nist.gov/vuln/detail/CVE-2019-10126){: external}, [CVE-2019-9506](https://nvd.nist.gov/vuln/detail/CVE-2019-9506){: external}, and [CVE-2018-20856](https://nvd.nist.gov/vuln/detail/CVE-2018-20856){: external}. |
 {: caption="Changes since version 3.11.146_1528" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for master fix pack 3.11.146_1528_openshift, released 22 October 2019
 {: #311146_1528}
@@ -1335,6 +1541,8 @@ The following table shows the changes that are in the master fix pack `3.11.146_
 {: caption="Changes since version 3.11.146_1527" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for worker node fix pack 3.11.146_1527_openshift, released 14 October 2019
 {: #311146_1527}
 
@@ -1347,6 +1555,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 {: caption="Changes since version 3.11.146_1525" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for master fix pack 3.11.146_1526_openshift, released 4 October 2019
 {: #311146_1526}
 
@@ -1358,6 +1568,8 @@ The following table shows the changes that are in the master fix pack `3.11.146_
 | Default {{site.data.keyword.IBM_notm}} security context constraints | N/A | N/A | To support [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks/){: external}, the `seLinuxContext` setting is changed from `MustRunAs` to `RunAsAny` for the following [default {{site.data.keyword.IBM_notm}} security context constraints](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs): `ibm-anyuid-hostaccess-scc`, `ibm-anyuid-hostpath-scc`, and `ibm-anyuid-scc`. |
 {: caption="Changes since version 3.11.146_1525" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for 3.11.146_1525_openshift, released 3 October 2019
 {: #311146_1525}
@@ -1376,6 +1588,8 @@ The following table shows the changes that are in the patch `3.11.146_1525_opens
 {: caption="Changes since version 3.11.141_1524" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for 3.11.141_1524_openshift, released 16 September 2019
 {: #311141_1524}
 
@@ -1390,6 +1604,8 @@ The following table shows the changes that are in the patch `3.11.141_1524_opens
 {: caption="Changes since version 3.11.135_1523" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for worker node fix pack 3.11.135_1523_openshift, released 3 September 2019
 {: #311135_1523_worker}
 
@@ -1401,6 +1617,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | RHEL 7 packages | N/A | N/A | Updated worker node images with package updates.|
 {: caption="Changes since version 3.11.135_1521" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for master fix pack 3.11.135_1522_openshift, released 28 August 2019
 {: #311135_1522}
@@ -1418,6 +1636,8 @@ The following table shows the changes that are in the master fix pack `3.11.135_
 {: caption="Changes since version 3.11.135_1521" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for worker node fix pack 3.11.135_1521_openshift, released 19 August 2019
 {: #311135_1521_worker}
 
@@ -1432,6 +1652,8 @@ The following table shows the changes that are in the worker node fix pack `3.11
 {: caption="Changes since version 3.11.129_1518" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for master fix pack 3.11.135_1521_openshift, released 17 August 2019
 {: #311135_1521_master}
 
@@ -1443,6 +1665,8 @@ The following table shows the changes that are in the master fix pack `3.11.135_
 | Key Management Service provider | 167 | 207 | Fixed an issue that causes the Kubernetes key management service (KMS) provider to fail to manage Kubernetes secrets. |
 {: caption="Changes since version 3.11.135_1520" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for master fix pack 3.11.135_1520_openshift, released 15 August 2019
 {: #311135_1520_master}
@@ -1462,6 +1686,8 @@ The following table shows the changes that are in the master fix pack `3.11.135_
 {: caption="Changes since version 3.11.129_1517" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 
+
+
 ### Change log for worker node patch 3.11.129_1518_openshift, released 5 August 2019
 {: #311129_1518_worker}
 
@@ -1473,6 +1699,8 @@ The following table shows the changes that are in the worker node patch `3.11.12
 | RHEL 7 packages | N/A | N/A | Updated base packages in the worker node Red Hat Enterprise Linux image. |
 {: caption="Changes since version 3.11.129_1517" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+
+
 
 ### Change log for 3.11.129_1517_openshift, released 2 August 2019
 {: #311129_1517}
