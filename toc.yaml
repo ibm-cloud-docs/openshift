@@ -58,6 +58,7 @@ toc:
       - link:
           label: IBM Developer OpenShift tutorials
           href: https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/
+      - cs_tutorials_policies.md
   - navgroup: 
       id: howto
       topics:
