@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-29"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -36,6 +36,39 @@ Review the version 4.9 change log.
 {: shortdesc}
 
 
+
+
+### Change log for master fix pack 4.9.28_1536_openshift, released 26 April 2022
+{: #4928_1536_openshift}
+
+The following table shows the changes that are in the master fix pack 4.9.28_1536_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.21.4 | v3.21.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.21/release-notes/#v3215){: external}. |
+| Calico Operator | v1.23.5 | v1.23.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.7){: external}. |
+| Cluster health image | v1.3.5 | v1.3.6 | Updated `Go` to version `1.17.9` and also updated the dependencies. Update `registry base image` version to `103`. |
+| Gateway-enabled cluster controller | 1669 | 1680 | Updated metadata for a rotated key. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 950 | 954 | Updated to latest UBI-minimal image to resolve [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}, [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}, [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}, [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}, and [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.1 | v2.2.2 | Updated `ubi images` to `8.5-240.1648458092` |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.8-3 | v1.22.8-7 | Updated `vpcctl` to the `3003` binary image. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 407 | 408 | Fixed [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 6c43ef1 | 8c8c82b | Updated `Go` to version `1.17.8` |
+| Key Management Service provider | v2.5.3 | v2.5.4 | Moved to a different base image, version `102`, to reduce CVE footprint. Resolved [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}. |
+| Load balancer and Load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1899 | 1916 | Updated the image to resolve CVEs. |
+| OpenVPN client | 2.5.4-r0-IKS-579 | 2.5.6-r0-IKS-592 | Upgrade openvpn to version `2.5.6-r0`. |
+| OpenVPN server | 2.5.4-r0-IKS-578 | 2.5.6-r0-IKS-591 | Upgrade openvpn to version `2.5.6-r0`. |
+| OpenVPN Operator image | v1.4.2 | v1.4.3 | Updated ansible operator base image to version v1.19.0 to resolve CVEs. |
+| Portieris admission controller | v0.12.3 | v0.12.4 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.12.4){: external}. |
+| Red Hat {{site.data.keyword.openshiftshort}}. | 4.9.25 | 4.9.28 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-28){: external}. |
+| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.9.0-20220322 | v4.9.0-20220412 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0%2B20220412){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.9.0-20220322 | v4.9.0-20220412 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0%2B20220412){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.9.0+20220322 | 4.9.0+20220412 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0%2B20220412){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.9.25_1534_openshift" caption-side="top"}
+
 ### Change log for worker node fix pack 4.9.29_1537_openshift, released 25 April 2022
 {: #4929_1537_openshift}
 
@@ -45,6 +78,8 @@ Review the version 4.9 change log.
 | {{site.data.keyword.openshiftshort}}. | 4.9.26 | 4.9.29 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-29){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.9.26_1535_openshift" caption-side="top"}
+
+
 
 
 
@@ -60,6 +95,8 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 | OpenShift | 4.9.25 | 4.9.26 | See [changelogs](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-26){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.9.25_1532_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 4.9.25_1534_openshift, released 6 April 2022
 {: #4.9.25_1534}
@@ -89,6 +126,8 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 
 
 
+
+
 ### Change log for worker node pack 4.9.25_1532_openshift, released 28 March 2022
 {: #4925_1532}
 
@@ -100,6 +139,8 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.9.23_1530_openshift_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node pack 4.9.23_1530_openshift, released 14 March 2022
 {: #4923_1530}
 
@@ -109,6 +150,8 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 | {{site.data.keyword.redhat_openshift_notm}} | 4.9.22 | 4.9.23 | See the [change log](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-23){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.9.22_1529_openshift" caption-side="top"}
+
+
 
 
 ### Change log for master fix pack 4.9.21_1528_openshift, released 3 March 2022
@@ -133,6 +176,8 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 {: caption="Changes since version 4.9.17_1525_openshift" caption-side="top"}
 
 
+
+
 ### Change log for worker node fix pack 4.9.22_1529_openshift, released 28 February 2022
 {: #4922_1529}
 
@@ -145,6 +190,8 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 {: caption="Changes since version 4.9.19_1526_openshift" caption-side="top"}
 
 
+
+
 ### Change log for worker node fix pack 4.9.19_1526_openshift, released 14 February 2022
 {: #4919_1526}
 
@@ -155,6 +202,8 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 | HA proxy | d38fa1 | f6a2b3 | [CVE-2021-3521](https://nvd.nist.gov/vuln/detail/CVE-2021-3521){: external}, [CVE-2021-4122](https://nvd.nist.gov/vuln/detail/CVE-2021-4122){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.9.17_1523_openshift" caption-side="top"}
+
+
 
 ### Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 February 2022
 {: #4917_1525}
