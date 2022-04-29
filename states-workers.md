@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-29"
 
 keywords: kubernetes, worker nodes, state
 
@@ -29,7 +29,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 
 A worker node can go into a `Critical` state for many reasons: 
 - You initiated a reboot for your worker node without cordoning and draining your worker node. Rebooting a worker node can cause data corruption in `containerd`, `kubelet`, `kube-proxy`, and `calico`.
-- The pods that are deployed to your worker node don't use proper resource limits for [memory](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource){: external} and [CPU](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource){: external}. If you set none or excessive resource limits, pods can consume all available resources, leaving no resources for other pods to run on this worker node. This overcommitment of workload causes the worker node to fail.
+- The pods that are deployed to your worker node don't use proper resource limits for [memory](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/){: external} and [CPU](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/){: external}. If you set none or excessive resource limits, pods can consume all available resources, leaving no resources for other pods to run on this worker node. This overcommitment of workload causes the worker node to fail.
     1. List the pods that run on your worker node and review the CPU and memory usage, requests and limits. 
         ```bash
         oc describe node <worker_private_IP>

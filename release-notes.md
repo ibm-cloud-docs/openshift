@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-04-29"
 
 keywords: openshift
 
@@ -40,7 +40,7 @@ CIS Kubernetes Benchmark
 :   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.10.
 
 Cluster security groups
-:    You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group##vpc-sg-cluster).
+:    You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster).
 
 ### 27 April 2022
 {: #openshift-apr2722}
