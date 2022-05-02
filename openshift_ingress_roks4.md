@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-02"
 
 keywords: openshift, nginx, ingress controller
 
@@ -71,7 +71,7 @@ If the apps in your cluster are in different projects, you must create one Ingre
 You can either define the same domain in multiple resources, or use a wildcard domain to specify different subdomains within the Ingress resource for each project.
 
 
-When a wildcard domain is registered, multiple subdomains can all resolve to the same host. The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster.{: #wildcard_tls} 
+When a wildcard domain is registered, multiple subdomains can all resolve to the same host. The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster.{: #wildcard_tls}
 
 The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain. If you want to use a wildcard custom domain, you must register the custom domain as a wildcard domain such as `*.custom_domain.net`, and to use TLS, you must get a wildcard certificate.
 {: note}
@@ -139,7 +139,7 @@ Choose the domain that you use to access your apps and the TLS termination for t
 
 You can use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, to access your app from the internet. To use a custom domain instead, you can set up a CNAME record to map your custom domain to the IBM-provided domain.
 
-The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can use a TLS certificate so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. 
+The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can use a TLS certificate so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.
 
 Currently, when you configure TLS termination for Ingress, only HTTPS connections are permitted.
 {: note}
@@ -185,7 +185,7 @@ For more information about TLS certificates, see [Managing TLS certificates and 
     * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
         {: note}
-        
+
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
         ```
@@ -246,8 +246,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
               servicePort: 80
     ```
     {: codeblock}
-    
-    
+
+
 
     `tls`
     :    If you want to use TLS, include this TLS section in your resource. Replace `<domain>` with your subdomain. Do not use `*` for your host or leave the host property empty to avoid failures during Ingress creation. Replace `<tls_secret_name>` with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
@@ -263,8 +263,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     `servicePort`
     :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
-    
-    
+
+
 
 2. Create the Ingress resource for your cluster. Ensure that the resource deploys into the same project as the app services that you specified in the resource.
     ```sh
@@ -357,7 +357,7 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 **Custom domain and TLS secret**:
 
-1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later. 
+1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
     If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
     {: tip}
 
@@ -365,7 +365,7 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
     * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
         {: note}
-        
+
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
         ```
@@ -509,12 +509,12 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :    If you want to use TLS, include this TLS section in your resource with the following fields.
     :    Replace `<domain>` with your subdomain. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
     :    Replace `<tls_secret_name>` with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
-    
+
     `host`
     :    Replace `<domain>` with your subdomain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
     :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
@@ -522,8 +522,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     `servicePort`
     :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
-    
-    
+
+
 
 2. Create the Ingress resource for your cluster. Ensure that the resource deploys into the same project as the app services that you specified in the resource.
     ```sh
@@ -627,7 +627,7 @@ To expose apps that are outside of your cluster to the public:
 
     `ip`
     :    Replace `<external_IP>` with the public IP addresses to connect to your external app.
-        
+
     `port`
     :    Replace `<external_port>` with the port that your external app listens to.
 
@@ -675,7 +675,7 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 When you configure the private Ingress controller, you must expose your app by using a custom or an IBM-provided domain.
 {: shortdesc}
 
-The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can add a TLS certificate to your Ingress resource in the next section so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. 
+The Ingress controller load balances HTTP network traffic to the apps in your cluster. To load balance incoming HTTPS connections, you can add a TLS certificate to your Ingress resource in the next section so that the Ingress controller can decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster.
 
 Currently, when you configure TLS termination for Ingress, only HTTPS connections are permitted.
 {: note}
@@ -684,7 +684,7 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 **Custom domain and TLS secret, classic or VPC clusters**:
 
-1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later. 
+1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
     If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
     {: tip}
 
@@ -693,7 +693,7 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
     * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
         {: note}
-    
+
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
         ```
@@ -842,14 +842,14 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     `tls`
     :    If you want to use TLS, include this TLS section in your resource. Replace `<domain>` with your subdomain. Do not use `*` for your host or leave the host property empty to avoid failures during Ingress creation.
     :    Replace `<tls_secret_name>` with the secret that you created earlier that holds your TLS certificate and key for a custom domain or the TLS secret that was automatically generated for an IBM-provided subdomain.
-    
+
     `host`
     :    Replace `<domain>` with your subdomain.
     :    If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`.
     :    Do not use `*` for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
     :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
@@ -857,8 +857,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     `servicePort`
     :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
-    
-    
+
+
 
 2. Create the Ingress resource for your cluster. Ensure that the resource deploys into the same project as the app services that you specified in the resource.
     ```sh
@@ -992,7 +992,7 @@ For more information about TLS certificates, see [Managing TLS certificates and 
     * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
         {: note}
-        
+
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
         ```
@@ -1065,7 +1065,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :    If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net` or `subdomain1.mycluster-<hash>-0000.us-south.containers.appdomain.cloud`. Do not use`*` for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. 
+    :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
     :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
     `serviceName`
@@ -1073,8 +1073,8 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     `servicePort`
     :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
-    
-    
+
+
 
 2. Create the Ingress resource for your cluster. Ensure that the resource deploys into the same project as the app services that you specified in the resource.
     ```sh
@@ -1198,7 +1198,7 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
 3. Import the certificate's associated secret into the same project where your Ingress resource for an app exists. If you want to use this certificate for apps in multiple projects, repeat this command for each project.
     Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
     {: note}
-    
+
     ```sh
     ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
     ```
@@ -1216,83 +1216,6 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
     ```
     {: pre}
 
-## Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}
-{: #manage_certs_secrets_mgr}
-
-As of 11 April 2022, you can integrate your own {{site.data.keyword.secrets-manager_full_notm}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. You can use {{site.data.keyword.secrets-manager_short}} instances across multiple clusters, and a single cluster can have more than one instance. For each cluster, you set one instance as a default where all Ingress subdomain certificates are uploaded. With the [`ibmcloud oc ingress secret` commands](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_create), you can also utilize {{site.data.keyword.secrets-manager_short}} to easily create and manage TLS or Opaque secrets that are stored in your {{site.data.keyword.redhat_openshift_notm}} cluster. 
-{: shortdesc}
-
-**What secret types are supported with {{site.data.keyword.secrets-manager_short}}?**
-:    {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
-:    For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and Opaque secret types. For TLS secrets, you can specify one certificate CRN. For Opaque secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type, TLS is applied by default.  
-
-**Is a {{site.data.keyword.secrets-manager_short}} instance automatically generated in my cluster?**
-:    No. You must [create a {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) and then [register your instance to your cluster](#register-secrets-mgr). 
-
-### Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster
-{: #register-secrets-mgr}
-
-After you have created a {{site.data.keyword.secrets-manager_short}} instance, you must register the instance to a cluster. After you have registered the instance to a cluster, an update to secret values in the instance also updates any secrets with a corresponding CRN. 
-
-```sh
-ibmcloud oc ingress instance register --cluster <cluster_name_or_id> --crn <instance_crn>
-```
-{: pre}
-
-If you want to register an instance to a cluster and also [set it as the default instance](#default-secrets-mgr), include the `--is-default` option. Otherwise, you can set a default instance with the `ibmcloud oc ingress instance set` command. 
-{: tip}
-
-### Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance
-{: #default-secrets-mgr}
-
-When you set a default {{site.data.keyword.secrets-manager_short}} instance, all new Ingress subdomain certificates are stored in that instance. If a previous default instance had already been set, it is removed as the default.
-{: shortdesc}
-
-When you set a new default {{site.data.keyword.secrets-manager_short}} instance, any existing secrets that are not managed by IBM Cloud must have their certificate CRN manually updated to match the CRN of the new default instance. To update the CRN, use the `ibmcloud oc ingress secret update` command. If you do not update the CRN, these user-managed secrets do not update at the next scheduled certificate renewal. 
-{: important}
-
-1. Run the command to set the new default. 
-
-    ```sh
-    ibmcloud oc ingress instance default set --cluster <cluster_name_or_id> --crn <instance_crn> --name <instance_name>
-    ```
-    {: pre}
-
-2. For secrets that are not manged by IBM Cloud, update the secret CRN to match the CRN of the new default instance. 
-
-    To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
-
-    1. Get the CRN of the new default {{site.data.keyword.secrets-manager_short}} instance. 
-
-        ```sh
-        ibmcloud oc ingress instance get --cluster <cluster_name_or_id> --name <secret_name>
-        ```
-        {: pre}
-    
-    2. Update the secret CRN to match the CRN of the new default instance.
-
-        ```sh
-        ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <default_instance_crn>
-        ```
-        {: pre}
-
-
-3. Update your secrets to upload them to the new default instance. 
-    ```sh
-    ibmcloud oc nlb-dns secret regenerate --cluster <cluster_name_or_id> --nlb-subdomain <nlb_subdomain>
-    ```
-    {: pre}
-
-If you previously created a secret with a managed Ingress certificate CRN in a different namespace or using a different name, you must also update those secrets with the CRN of the new {{site.data.keyword.secrets-manager_short}} instance.
-{: important} 
-
-To remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance of a cluster, run the following command. Note that if no default instance is set, your secrets are only written directly to the cluster and are not uploaded to any {{site.data.keyword.secrets-manager_short}} instance.
-
-```sh
-ibmcloud oc ingress instance default unset --cluster <cluster_name_or_id> --crn <instance_crn> --name <instance_name>
-```
-{: pre}
-
 ## Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}
 {: #migrate-secrets-mgr}
 
@@ -1307,37 +1230,129 @@ To learn how you can use {{site.data.keyword.secrets-manager_short}} with your {
 When migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}, keep the following points in mind:
 
 **Secrets created in different namespaces**:
-:    If you used your default {{site.data.keyword.cloudcerts_short}} instance to create secrets with Ingress CRNs in other namespaces, those CRNs become invalid once you register a {{site.data.keyword.secrets-manager_short}} default instance. Once you have set a {{site.data.keyword.secrets-manager_short}} instance as default, you must manually change those CRNs to match the new {{site.data.keyword.secrets-manager_short}} CRNs. 
+:   If you used your default {{site.data.keyword.cloudcerts_short}} instance to create secrets with Ingress CRNs in other namespaces, those CRNs become invalid once you register a {{site.data.keyword.secrets-manager_short}} default instance. Once you have set a {{site.data.keyword.secrets-manager_short}} instance as default, you must manually change those CRNs to match the new {{site.data.keyword.secrets-manager_short}} CRNs.
 
 **Callback functionality to update secrets**:
-:    Previously, {{site.data.keyword.cloudcerts_short}} provided a callback functionality to automatically update any Ingress secret created with a specific CRN if that secret CRN is updated in the default manager instance. This functionality is **not** available in {{site.data.keyword.secrets-manager_short}}. If you update a secret, you must run the `ibmcloud oc ingress secret update` command to apply the update to a Ingress secret with the CRN in the cluster. Otherwise, IBM Cloud periodically polls secrets for updates apply to the cluster, which may take up to 24 hours. 
+:   Previously, {{site.data.keyword.cloudcerts_short}} provided a callback functionality to automatically update any Ingress secret created with a specific CRN if that secret CRN is updated in the default manager instance. This functionality is **not** available in {{site.data.keyword.secrets-manager_short}}. If you update a secret, you must run the `ibmcloud oc ingress secret update` command to apply the update to a Ingress secret with the CRN in the cluster. Otherwise, IBM Cloud periodically polls secrets for updates apply to the cluster, which may take up to 24 hours.
 
 **Service-to-service enablement**:
 :    If you want to enable service-to-service communication, you must [set up IAM credentials for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-configure-iam-engine&interface=ui) and [create a service-to-service authorization](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 
-### Migrating certificates stored with custom domains
-{: #migrate-secrets-mgr-custom}
+**Migrating certificates stored with custom domains**:
+:    For certificates stored with custom domains, you must manually upload the certificate to your secrets manager instance and update the secret with the corresponding new certificate CRN.
 
-If you want to migrate a certificate that is stored with a custom domain and is not managed by IBM Cloud, you must manually download the certificate and upload it to the new {{site.data.keyword.secrets-manager_short}} instance.
+**Removing the registered Certificate Manager instance**:
+:    Once you have successfully migrated to Secrets Manager, you can unregister the Certificate Manager instance that was provisioned with your cluster by running `ibmcloud oc ingress instance unregister`.
+
+
+## Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}
+{: #manage_certs_secrets_mgr}
+
+As of 11 April 2022, you can integrate your own {{site.data.keyword.secrets-manager_full_notm}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. You can use {{site.data.keyword.secrets-manager_short}} instances across multiple clusters, and a single cluster can have more than one instance. For each cluster, you set one instance as a default where all Ingress subdomain certificates are uploaded. With the [`ibmcloud oc ingress secret` commands](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_create), you can also utilize {{site.data.keyword.secrets-manager_short}} to easily create and manage TLS or Opaque secrets that are stored in your {{site.data.keyword.redhat_openshift_notm}} cluster.
 {: shortdesc}
 
-1. In the {{site.data.keyword.cloudcerts_short}} dashboard, [download the certificate from {{site.data.keyword.cloudcerts_short}}](/docs/certificate-manager?topic=certificate-manager-managing-certificates-from-the-dashboard#downloading-certificates).
-2. [Upload the certificate to the {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-certificates&interface=ui#import-certificates).
-3. Update the certificate CRN to match the certificate of the {{site.data.keyword.secrets-manager_short}} instance.
-    1. Get the CRN of the new default {{site.data.keyword.secrets-manager_short}} instance. 
+**What secret types are supported with {{site.data.keyword.secrets-manager_short}}?**
+:    {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
+:    For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and Opaque secret types. For TLS secrets, you can specify one certificate CRN. For Opaque secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type, TLS is applied by default.  
+
+**Is a {{site.data.keyword.secrets-manager_short}} instance automatically generated in my cluster?**
+:    No. You must [create a {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) and then [register your instance to your cluster](#register-secrets-mgr).
+
+### Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster
+{: #register-secrets-mgr}
+
+After you have created a {{site.data.keyword.secrets-manager_short}} instance, you must register the instance to a cluster. After you have registered the instance to a cluster, an update to secret values in the instance also updates any secrets with a corresponding CRN.
+
+```sh
+ibmcloud oc ingress instance register --cluster <cluster_name_or_id> --crn <instance_crn>
+```
+{: pre}
+
+If you want to register an instance to a cluster and also [set it as the default instance](#default-secrets-mgr), include the `--is-default` option. Otherwise, you can set a default instance with the `ibmcloud oc ingress instance set` command.
+{: tip}
+
+### Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance
+{: #default-secrets-mgr}
+
+When you set a default {{site.data.keyword.secrets-manager_short}} instance, all new Ingress subdomain certificates are stored in that instance. If a previous default instance had already been set, it is removed as the default.
+{: shortdesc}
+
+When you set a new default {{site.data.keyword.secrets-manager_short}} instance, any existing secrets that are not managed by IBM Cloud must have their certificate CRN manually updated to match the CRN of the new default instance. To update the CRN, use the `ibmcloud oc ingress secret update` command. If you do not update the CRN, these user-managed secrets do not update at the next scheduled certificate renewal.
+{: important}
+
+1. Run the command to set the new default.
+
+    ```sh
+    ibmcloud oc ingress instance default set --cluster <cluster_name_or_id> --crn <instance_crn> --name <instance_name>
+    ```
+    {: pre}
+
+2. Regenerate your secrets to upload them to the new default instance.
+
+    ```sh
+    ibmcloud oc nlb-dns secret regenerate --cluster <cluster_name_or_id> --nlb-subdomain <nlb_subdomain>
+    ```
+    {: pre}
+
+3. List your secrets to see the secrets updated with the new CRN in {{site.data.keyword.secrets-manager_short}}.
+
         ```sh
-        ibmcloud oc ingress instance get --cluster <cluster_name_or_id> --name <secret_name>
+        ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
         ```
         {: pre}
-        
-    2. Update the certificate CRN to match the CRN of the new default instance.
+
+4. Update any non-managed IBM secrets correlated with that CRN to match the CRN located in the new default instance.
+
+If you previously created a secret with a managed Ingress certificate CRN in a different namespace or using a different name, you must also update those secrets with the CRN of the new {{site.data.keyword.secrets-manager_short}} instance.
+{: important}
+
+To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
+
+    ```sh
+    ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <updated_cert_crn>
+    ```
+    {: pre}
+
+To remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance of a cluster, run the following command. Note that if no default instance is set, your secrets are only written directly to the cluster and are not uploaded to any {{site.data.keyword.secrets-manager_short}} instance.
+
+```sh
+ibmcloud oc ingress instance default unset --cluster <cluster_name_or_id> --crn <instance_crn> --name <instance_name>
+```
+{: pre}
+
+### Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster
+{: #unregister-secret-instance}
+
+After migrating to {{site.data.keyword.secrets-manager_short}}, a user can opt to remove the {{site.data.keyword.cloudcerts_short}} instance that is provisioned with the lifecycle of the cluster. Once this instance is removed, the callback functionality provided by {{site.data.keyword.cloudcerts_short}} will no longer exist with the cluster.
+
+1. Verify you have completed the migration to {{site.data.keyword.secrets-manager_short}}
+
+    1. Registered a default {{site.data.keyword.secrets-manager_short}} instance.
+
+    2. Regenerated all nlb-dns subdomains and updated all non-IBM managed secrets with the new CRNs.
+
+    3. Listed all secrets in the cluster and verified that no CRNs have `:cloudcert` in the CRN. If there are any, migrate and update as needed.
         ```sh
-        ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <default_instance_crn>
+        ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
         ```
         {: pre}
+    4. Enabled service-to-service between your cluster and {{site.data.keyword.secrets-manager_short}}.
 
+2. Get the {site.data.keyword.cloudcerts_short}} instances registered to the cluster. The instance name will be prepended with `kube-certmgr-` or `kube-certmgr-` and have a type of `cloudcerts`.
 
+    ```sh
+    ibmcloud oc ingress instance ls --cluster <cluster_name_or_id>
+    ```
+    {: pre}
 
+3. Unregister the {{site.data.keyword.cloudcerts_short}} instance from the cluster.
+
+    ```sh
+    ibmcloud oc ingress instance unregister --cluster <cluster_name_or_id> --name <instance_name>
+    ```
+    {: pre}
+
+4. A user can optionally choose to delete the instance in the IBM Cloud Dashboard. However, if it is not deleted, Certificate Manager will delete it automatically when the service is deprecated.
 
 
 ## Customizing Ingress routing with annotations
@@ -1347,8 +1362,4 @@ If you want to customize routing rules for your app, you can use [route-specific
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
 {: important}
-
-
-
-
 
