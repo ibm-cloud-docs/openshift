@@ -21,7 +21,7 @@ Use the release notes to learn about the latest changes to the documentation tha
 {: shortdesc}
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
-{: note}
+{: tip}
 
 
 ## April 2022
@@ -30,8 +30,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ### 28 April 2022
 {: #openshift-apr2822}
 
-CLI changelog update
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.404.
+CLI change log update
+:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.404.
+
 
 Certified Kubernetes
 :   Version [4.10](/docs/openshift?topic=openshift-openshift_changelog_410) release is now certified.
@@ -40,7 +41,7 @@ CIS Kubernetes Benchmark
 :   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.10.
 
 Cluster security groups
-:    You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster).
+:   You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster).
 
 ### 27 April 2022
 {: #openshift-apr2722}
@@ -60,8 +61,8 @@ Worker node fix pack update
 {: #openshift-apr2622}
 
 
-CLI changelog update
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.403.
+CLI change log update
+:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.403.
 
 ### 25 April 2022
 {: #openshift-apr2522}  
@@ -100,7 +101,7 @@ Create and manage dedicated hosts in VPC Gen 2.
 
 
 New! {{site.data.keyword.secrets-manager_full}}
-:    With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
+:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
 
 
 HPCS Router add-on
@@ -131,8 +132,8 @@ Worker node fix pack
 {{site.data.keyword.openshiftlong_notm}} default version update.
 :   [4.9](/docs/openshift?topic=openshift-openshift_changelog) is now the default version.
 
-CLI changelog update
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.394.
+CLI change log update
+:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.394.
 
 ### 6 April 2022
 {: #openshift-apr0622}}
@@ -191,8 +192,8 @@ Cloud Image Key Synchronizer add-on
 Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year.
 :   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
-Ingress ALB changelog updates
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
+Ingress ALB change log updates
+:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
 
 
 
@@ -201,8 +202,8 @@ Ingress ALB changelog updates
 {: #openshift-mar2122}
 {: release-note}
 
-CLI changelog update
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.384.
+CLI change log update
+:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.384.
 
 ### 17 March 2022
 {: #openshift-mar1722}
@@ -221,6 +222,7 @@ CLI changelog update
 Worker node fix pack update.
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.9.23_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.32_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.44_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.55_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+
 
 
 HPCS Router add-on
@@ -307,7 +309,7 @@ Worker node fix pack
 
 
 Container service CLI 
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.374.
+:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.374.
 
 
 
@@ -330,7 +332,7 @@ Cluster autoscaler
 {: release-note}
 
 Container service CLI 
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.372.
+:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.372.
 
 
 ### 17 February 2022
@@ -463,7 +465,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
 
 
 ### 20 January 2022
@@ -491,7 +493,7 @@ Review the release notes for January 2022.
 {: shortdesc}
 
 **New!** {{site.data.keyword.openshiftlong_notm}} CLI Map
-:    The [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/containers?topic=containers-icks_map) lists all `ibmcloud oc` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud oc commands are organized, or to quickly find a specific command. 
+:   The [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/containers?topic=containers-icks_map) lists all `ibmcloud oc` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud oc commands are organized, or to quickly find a specific command. 
 
 {{site.data.keyword.containershort}} 1.19, 1.20, 1.21, and 1.22 unsupported date change
 :   The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#release-history) page has been updated with the new unsupported dates. 
@@ -506,7 +508,7 @@ Worker node fix pack update.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
 
 
 
@@ -611,7 +613,7 @@ Review the release notes for November 2021.
 {: release-note}
 
 Container service CLI 
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.347.
+:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.347.
 
 
 
@@ -688,7 +690,7 @@ HPCS Router add-on
 {: release-note}
 
 CLI changelog
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.344. 
+:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.344. 
 
 ### 12 November 2021
 {: #openshift-nov1221}
@@ -749,7 +751,7 @@ Istio add-on change log
 {: release-note}
 
 CLI changelog
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.334. 
+:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.334. 
 
 ### 25 October 2021
 {: #openshift-oct2521}
@@ -769,8 +771,8 @@ Worker node fix pack update
 {: #openshift-oct1921}
 {: release-note}
 
-Ingress ALB changelog updates
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
+Ingress ALB change log updates
+:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
 
 ### 18 October 2021
 {: #openshift-oct1821}
@@ -795,7 +797,7 @@ OpenShift Data Foundation
 {: release-note}
 
 CLI changelog
-:   The [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.331. 
+:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.331. 
 
 ### 11 October 2021
 {: #openshift-oct1121}
@@ -1057,7 +1059,7 @@ Registry token update
 :   Registry tokens are no longer accepted for authentication in {{site.data.keyword.registrylong_notm}}. Update your clusters to use {{site.data.keyword.cloud_notm}} IAM authentication. For more information, see [Accessing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access). For more information about Registry token deprecation, see [IBM Cloud Container Registry Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 
 Ingress changelogs
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1541_iks`, `0.47.0_1540_iks`, and `0.43.0_1539_iks`. Version `0.45.0_1482_iks` is removed.
+:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1541_iks`, `0.47.0_1540_iks`, and `0.43.0_1539_iks`. Version `0.45.0_1482_iks` is removed.
 
  
 
@@ -1074,7 +1076,7 @@ Image key synchronizer
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update changelog documentation is available. For more information, see [Version changelog](/docs/containers?topic=containers-changelog).
+:   Worker node fix pack update changelog documentation is available. For more information, see [Version change log(/docs/containers?topic=containers-changelog).
 
 
 
@@ -1083,7 +1085,7 @@ Worker node versions
 {: release-note}
 
 Ingress changelogs
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1465_iks`, `0.47.0_1480_iks`, and `0.45.0_1482_iks`.
+:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1465_iks`, `0.47.0_1480_iks`, and `0.45.0_1482_iks`.
 
 
 
@@ -1100,14 +1102,14 @@ Image key synchronizer
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.312](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.312](/docs/containers?topic=containers-cs_cli_changelog).
 
 ### 2 August 2021
 {: #openshift-aug0221}
 {: release-note}
 
 Ingress changelogs
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1434_iks` and `0.45.0_1435_iks`. Version `0.35.0` is now unsupported. 
+:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1434_iks` and `0.45.0_1435_iks`. Version `0.35.0` is now unsupported. 
 
 Worker node versions
 :   Worker node fix pack update changelog documentation is available for version [`4.7.21_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4721_1527), [`4.6.40_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4640_1551), [`4.5.41_1547_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1547), and [`3.11.465_1599_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311465_1599).
@@ -1170,7 +1172,7 @@ OpenShift Data Foundation doc restructuring.
 {: release-note}
 
 OpenShift Data Foundation
-:   As of 10 July 2021, version `0.0.2` of the OpenShift Container Storage add-on is deprecated and becomes unsupported on 24 July 2021. Add-on versions `4.6.0` and `4.7.0` are now available. If you have version `0.0.2` of the add-on installed in your cluster, update the add-on to a supported version. For more information, see the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   As of 10 July 2021, version `0.0.2` of the OpenShift Container Storage add-on is deprecated and becomes unsupported on 24 July 2021. Add-on versions `4.6.0` and `4.7.0` are now available. If you have version `0.0.2` of the add-on installed in your cluster, update the add-on to a supported version. For more information, see the [change log(/docs/openshift?topic=openshift-odf_addon_changelog).
 
 
 
@@ -1179,7 +1181,7 @@ OpenShift Data Foundation
 {: release-note}
 
 Ingress changelogs
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.
+:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.
 
 Worker node versions
 :   Worker node fix pack update changelog documentation is available for version [`4.7.18_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4718_1524), [`4.6.36_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4636_1548), [`4.5.40_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1544), and [`3.11.462_1595_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311462_1595).
@@ -1217,7 +1219,7 @@ Master versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.295](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.295](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 23 June 2021
 {: #openshift-june2321}
@@ -1231,7 +1233,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
 
 Worker node versions
 :   Worker node fix pack update changelog documentation is available for version [`4.7.16_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4716_1522), [`4.6.34_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4634_1546), [`4.5.40_1542_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1542)and [`3.11.452_1593_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311452_1593).
@@ -1241,7 +1243,7 @@ Worker node versions
 {: release-note}
 
 Ingress changelogs
-:   Updated the [Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.
+:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.
 
 New! The `addon options` command is now available
 :   For more information, see [addon options](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
@@ -1307,7 +1309,7 @@ Worker node versions
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
 
 ### 2 June 2021
 {: #openshift-june0221}
@@ -1344,7 +1346,7 @@ Unsupported version
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.275](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.275](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Version 0.45.0 of the Kubernetes Ingress image
 :   Due to a [regression in the community Kubernetes Ingress NGINX code](https://github.com/kubernetes/ingress-nginx/issues/6931){: external}, trailing slashes (`/`) are removed from subdomains during TLS redirects.
@@ -1438,7 +1440,7 @@ Master versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -1482,7 +1484,7 @@ Cluster autoscaler add-on
 :   [Patch update `1.0.2_256`](/docs/containers?topic=containers-ca_changelog) of the cluster autoscaler add-on is available.
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
 
 
 
@@ -1701,7 +1703,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler add-on
-:   Version 1.0.2 of the cluster autoscaler add-on is released. For more information, see the [cluster autoscaler add-on changelog](/docs/containers?topic=containers-ca_changelog).
+:   Version 1.0.2 of the cluster autoscaler add-on is released. For more information, see the [cluster autoscaler add-on change log(/docs/containers?topic=containers-ca_changelog).
 
 
 
@@ -1726,7 +1728,7 @@ Trusted images
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.233](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.233](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -1756,7 +1758,7 @@ Master versions
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on
-:   Version `3.0.0` of the {{site.data.keyword.block_storage_is_short}} add-on is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/containers?topic=containers-vpc_bs_changelog).
+:   Version `3.0.0` of the {{site.data.keyword.block_storage_is_short}} add-on is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log(/docs/containers?topic=containers-vpc_bs_changelog).
 
 
 
@@ -1765,7 +1767,7 @@ Master versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.231](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.231](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -1836,7 +1838,7 @@ Gateway firewalls and Calico policies
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -1867,7 +1869,7 @@ Worker node versions
 {: release-note}
 
 Block Storage for VPC add-on
-:   Block Storage for VPC add-on patch update `2.0.3_471` is released. For more information, see the [Block Storage for VPC add-on changelog](/docs/containers?topic=containers-vpc_bs_changelog).
+:   Block Storage for VPC add-on patch update `2.0.3_471` is released. For more information, see the [Block Storage for VPC add-on change log(/docs/containers?topic=containers-vpc_bs_changelog).
 
 
 
@@ -1911,7 +1913,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler
-:   Cluster autoscaler add-on patch update `1.0.1_210` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/containers?topic=containers-ca_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_210` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/containers?topic=containers-ca_changelog).
 
 ### 12 January 2021
 {: #openshift-jan1221}
@@ -1957,10 +1959,10 @@ Worker node versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.6` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in changelog](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.0.6` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
 
 ### 17 December 2020
 {: #openshift-dec1720}
@@ -1970,7 +1972,7 @@ Audit documentation
 :   Reorganized information about the configuration and forwarding of Kubernetes API server and worker node [audit logs](/docs/containers?topic=containers-health-audit).
 
 Back up and restore
-:   Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart changelog](/docs/containers?topic=containers-backup_restore_changelog).
+:   Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart change log(/docs/containers?topic=containers-backup_restore_changelog).
 
 
 
@@ -1979,7 +1981,7 @@ Back up and restore
 {: release-note}
 
 Cluster autoscaler
-:   Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/containers?topic=containers-ca_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/containers?topic=containers-ca_changelog).
 
 ### 14 December 2020
 {: #openshift-dec1420}
@@ -2001,7 +2003,7 @@ Master versions
 {: release-note}
 
 Storage add-ons
-:   Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/containers?topic=containers-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/containers?topic=containers-vpc_bs_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/containers?topic=containers-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log(/docs/containers?topic=containers-vpc_bs_changelog).
 
 strongSwan versions
 :   Added information about which [strongSwan Helm chart versions](/docs/containers?topic=containers-116_changelog#11615_1554) are supported.
@@ -2016,7 +2018,7 @@ Accessing clusters
 :   Updated the steps for [accessing clusters through the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#access_private_se) to use the `--endpoint private` flag in the **`ibmcloud oc cluster config`** command.
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Proxy protocol for Ingress
 :   In VPC clusters, you can now [enable the PROXY protocol](/docs/containers?topic=containers-comm-ingress-annotations#preserve_source_ip_vpc) for all load balancers that expose Ingress ALBs in your cluster. The PROXY protocol enables load balancers to pass client connection information that is contained in headers on the client request, including the client IP address, the proxy server IP address, and both port numbers, to ALBs.
@@ -2042,7 +2044,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler add-on
-:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog).
+:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog).
 
 
 
@@ -2103,12 +2105,12 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
 New! {{site.data.keyword.block_storage_is_short}} changelog
-:   Added a [changelog](/docs/containers?topic=containers-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.
+:   Added a [change log(/docs/containers?topic=containers-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.
 
 ### 16 November 2020
 {: #openshift-nov1620}
@@ -2278,7 +2280,7 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Ingress secret expiration synchronization
 :   Added a troubleshooting topic for when [Ingress secret expiration dates are out of sync or are not updated](/docs/containers?topic=containers-sync_cert_dates).
@@ -2335,7 +2337,7 @@ Versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 23 September 2020
 {: #openshift-sept2320}
@@ -2418,7 +2420,7 @@ New! Worker node flavors
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.157](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.157](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Cluster autoscaler
 :   The [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
@@ -2468,7 +2470,7 @@ Versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.143](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.143](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 5 August 2020
 {: #openshift-aug0520}
@@ -2574,7 +2576,7 @@ Pod and service subnets
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.118](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.118](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 6 July 2020
 {: #openshift-july0620}
@@ -2583,7 +2585,7 @@ CLI changelog
 Version changelogs
 :   Worker node fix pack update changelog documentation is available.
 
-:    {{site.data.keyword.redhat_openshift_notm}} [`4.3.27_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4327_1528) and [`3.11.232_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311232_1555).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.27_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4327_1528) and [`3.11.232_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311232_1555).
 
 ### 2 July 2020
 {: #openshift-july0220}
@@ -2665,14 +2667,14 @@ New! Virtual Private Cloud Generation 2
 
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 9 June 2020
 {: #openshift-june0920}
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.94](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.94](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Permissions
 :   Added a [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions) reference topic, and restructured cluster creation and user access topics to refer to this reference topic.
@@ -2733,7 +2735,7 @@ The minimum number of worker nodes per zone is increased from one to two so that
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.84](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.84](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Image pull secrets
 :   Now, the `default-icr-io` and `default-<region>-icr-io` image pull secrets in the `default` project are replaced by a single `all-icr-io` image pull secret that has credentials to all the public and private regional registry domains. Clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11 still have the previous `default-<region>-icr-io` image pull secrets for backwards compatibility.
@@ -2832,7 +2834,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -2958,7 +2960,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -3003,7 +3005,7 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 ### 18 March 2020
@@ -3025,7 +3027,7 @@ IAM issuer details
 {: release-note}
 
 New! CLI 1.0
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#10). This version contains permanent syntax and behavior changes that are not compatible with earlier versions, so before you update be sure to follow the guidance in [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#10). This version contains permanent syntax and behavior changes that are not compatible with earlier versions, so before you update be sure to follow the guidance in [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).
 
 
 
@@ -3084,7 +3086,7 @@ Managing Ingress ALBs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 0.4.102](/docs/openshift?topic=openshift-cs_cli_changelog#04).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.102](/docs/openshift?topic=openshift-cs_cli_changelog#04).
 
 Ingress ALB changelog
 :   Updated the [`ingress-auth` image build to 390](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -3108,7 +3110,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 0.4.90](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.90](/docs/containers?topic=containers-cs_cli_changelog).
 
 
 
@@ -3304,7 +3306,7 @@ Assigning access
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in changelog page for the [release of version 0.4.64](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.64](/docs/containers?topic=containers-cs_cli_changelog).
 
 
   
@@ -3355,7 +3357,7 @@ Use the internal KVDB in Portworx
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.61](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.61](/docs/containers?topic=containers-cs_cli_changelog).
 
 Diagnostics and Debug Tool add-on for {{site.data.keyword.redhat_openshift_notm}} clusters
 :   The [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) add-on is now available for {{site.data.keyword.redhat_openshift_notm}} clusters.
@@ -3395,7 +3397,7 @@ Ingress ALB changelog
 Version changelog
 :   Master patch updates are available.
 
-:    {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311154_1533).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311154_1533).
 
 
 ### 19 November 2019
@@ -3444,7 +3446,7 @@ Using {{site.data.keyword.registrylong_notm}}
 Version changelog
 :   Worker node patch updates are available.
 :   
-:    {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311153_1530).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311153_1530).
 
 
 ### 7 November 2019
@@ -3452,7 +3454,7 @@ Version changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.51](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.51](/docs/containers?topic=containers-cs_cli_changelog).
 
 
 
@@ -3498,7 +3500,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.42](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.42](/docs/containers?topic=containers-cs_cli_changelog).
 
 
 
@@ -3530,7 +3532,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.38](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.38](/docs/containers?topic=containers-cs_cli_changelog).
 
 
 
@@ -3613,7 +3615,7 @@ New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} cluste
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.31](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.31](/docs/containers?topic=containers-cs_cli_changelog).
 
 Ingress ALB changelog
 :   Updated the ALB [`nginx-ingress` image to build 566](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -3646,7 +3648,7 @@ New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} cluste
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the release of version 0.4.23.
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the release of version 0.4.23.
 
 {{site.data.keyword.at_full_notm}} events
 :   Added information about [which {{site.data.keyword.at_short}} location your events are sent to](/docs/openshift?topic=openshift-at_events#at-ui) based on the {{site.data.keyword.containerlong_notm}} location where the cluster is located.
@@ -3720,7 +3722,7 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.4.3](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.3](/docs/containers?topic=containers-cs_cli_changelog).
 
 IAM allowlists
 :   If you use an IAM allowlist, you must [allow the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/openshift?topic=openshift-firewall#iam_allowlist) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
@@ -3737,7 +3739,7 @@ New! Montreal, Canada `mon01` single zone location for {{site.data.keyword.redha
 {: release-note}
 
 New! {{site.data.keyword.openshiftlong_notm}} plug-in version `0.4`
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for multiple changes in the [release of version 0.4.1](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for multiple changes in the [release of version 0.4.1](/docs/containers?topic=containers-cs_cli_changelog).
 
 Version changelog
 :   Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-115_changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-114_changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-113_changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-112_changelog#11210_1566_worker), and {{site.data.keyword.redhat_openshift_notm}} [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog_311#311135_1523_worker).
@@ -3768,7 +3770,7 @@ Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.112](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.112](/docs/containers?topic=containers-cs_cli_changelog).
 
 
 
@@ -3846,7 +3848,7 @@ Version changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.103](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.103](/docs/containers?topic=containers-cs_cli_changelog).
 
 Ingress ALB changelog
 :   Updated the ALB `ingress-auth` image to build 335 for [`musl libc` vulnerabilities](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -3856,7 +3858,7 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.99](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.99](/docs/containers?topic=containers-cs_cli_changelog).
 
 
 
@@ -3889,7 +3891,7 @@ Version changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.95](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.95](/docs/containers?topic=containers-cs_cli_changelog).
 
 Ingress ALB changelog
 :   Updated the ALB `nginx-ingress` image to build 515 for the [ALB pod readiness check](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -3954,7 +3956,7 @@ Troubleshooting clusters
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of version 0.3.58](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.58](/docs/containers?topic=containers-cs_cli_changelog).
 
 ### 1 July 2019
 {: #openshift-july0119}
@@ -4008,7 +4010,7 @@ Troubleshooting {{site.data.keyword.redhat_openshift_notm}} clusters
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in changelog page for the [release of versions 0.3.47 and 0.3.49](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of versions 0.3.47 and 0.3.49](/docs/containers?topic=containers-cs_cli_changelog).
 
 Ingress ALB changelog
 :   Updated the [ALB `nginx-ingress` image to build 473 and `ingress-auth` image to build 331](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -4063,7 +4065,7 @@ Ingress ALB changelog
 {: release-note}
 
 Fluentd changelog
-:   Added a [Fluentd version changelog](/docs/containers?topic=containers-cluster-add-ons-changelog#fluentd_changelog).
+:   Added a [Fluentd version change log(/docs/containers?topic=containers-cluster-add-ons-changelog#fluentd_changelog).
 
 Ingress ALB changelog
 :   Updated the [ALB `nginx-ingress` image to build 470](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).

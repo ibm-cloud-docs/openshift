@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-02"
+lastupdated: "2022-05-03"
 
 keywords: openshift
 subcollection: openshift
@@ -208,7 +208,7 @@ subcollection: openshift
 
     * [28 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2822)
 
-        * CLI changelog update
+        * CLI change log update
 
         * Certified Kubernetes
 
@@ -226,7 +226,7 @@ subcollection: openshift
 
     * [26 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2622)
 
-        * CLI changelog update
+        * CLI change log update
 
     * [25 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2522)
 
@@ -260,7 +260,7 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} default version update.
 
-        * CLI changelog update
+        * CLI change log update
 
     * [6 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0622)
 
@@ -290,11 +290,11 @@ subcollection: openshift
 
         * Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year.
 
-        * Ingress ALB changelog updates
+        * Ingress ALB change log updates
 
     * [21 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2122)
 
-        * CLI changelog update
+        * CLI change log update
 
     * [17 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1722)
 
@@ -548,7 +548,7 @@ subcollection: openshift
 
     * [19 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1921)
 
-        * Ingress ALB changelog updates
+        * Ingress ALB change log updates
 
     * [18 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1821)
 
