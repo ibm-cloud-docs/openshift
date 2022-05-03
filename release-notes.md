@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-03"
 
 keywords: openshift
 
@@ -868,7 +868,7 @@ Deprecated and unsupported OpenShift versions
 :   With the release of OpenShift 4.8, clusters that run version 4.5 remain deprecated, with a tentative unsupported date of 10 Oct 2021. Clusters that run versions 4.3 or 4.4 are unsupported. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_changelog) as soon as possible.
 
 Master fix pack and worker node fix pack update
-:   Change log documentation is available for OpenShift version [`4.8.11_1526_openshift` and `4.8.12_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4811_1526_and_4812_1527).
+:   Change log documentation is available for OpenShift version [`4.8.11_1526_openshift` and `4.8.12_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48).
 
 
 
