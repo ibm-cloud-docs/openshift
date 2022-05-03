@@ -359,6 +359,7 @@ toc:
                 - ts-cluster-debug-ocp.md
                 - states-cluster.md
                 - ts-cluster-cli.md
+                - ts-cluster-console-user.md
                 - ts-cluster-create-delete.md
                 - ts-cluster-cos-bucket.md
                 - ts-cluster-no-resources.md

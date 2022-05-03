@@ -145,7 +145,7 @@ Before you begin:
 
 To synchronize the IAM information for the user, you have 2 options:
 - Log in to your cluster from the {{site.data.keyword.redhat_openshift_notm}} [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
-- Set your command line context for the cluster by runnign the  `ibmcloud oc cluster config --cluster CLUSTER` command.
+- Set your command line context for the cluster by running the  `ibmcloud oc cluster config --cluster CLUSTER` command.
 
 If you use an API key for a functional ID or another user, make sure to log in as the correct user.
 {: note}

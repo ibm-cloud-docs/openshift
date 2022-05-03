@@ -6778,6 +6778,8 @@ subcollection: openshift
 
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
 
+[Why do I see `Could not find user` when I try to access the Red Hat {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
+
 [Why can't I create or delete clusters?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
 * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cluster_infra_errors#cs_credentials)

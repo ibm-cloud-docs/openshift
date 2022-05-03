@@ -153,6 +153,9 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
 
 5. Run debug commands to help you gather information and troubleshoot issues. Commands that you might use to debug, such as `tcpdump`, `mtr`, `curl`, `ip`, `ifconfig`, `nc`, `ping`, and `ps`, are already available in the shell. You can also install other tools, such as `dig`, by running `apk add <tool>`. For example, to add `dig`, run `apk add bind-tools`.
 
+Before you can use the `tcpdump` command, you must first move the binary to a new location that does not conflict with the install path for the binary on the host. You can use the following command to relocate the binary: `mv /usr/sbin/tcpdump /usr/local/bin/`.
+{: note}
+
 6. Delete the host access pod that you created for debugging.
 
     ```sh
