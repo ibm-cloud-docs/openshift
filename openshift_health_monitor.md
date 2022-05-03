@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-29"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -27,6 +27,8 @@ To help understand when to use the built-in {{site.data.keyword.redhat_openshift
 {: shortdesc}
 
 ### {{site.data.keyword.mon_full_notm}}
+{: #oc_mon_details}
+
 Review the following details about {{site.data.keyword.mon_full_notm}}. 
 {: shortdesc}
 

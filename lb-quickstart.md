@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-29"
 
 keywords: openshift, nlb, lbaas
 
@@ -59,7 +59,7 @@ First time setting up a load balancer? Check out [Classic: Setting up basic load
     {: pre}
 
     In a web browser, enter the hostname that is created. Example output
-    ```
+    ```sh
     NLB hostname was created as mycluster-35366fb2d3d90fd50548180f69e7d12a-0001.us-south.containers.appdomain.cloud
     ```
     {: screen}
