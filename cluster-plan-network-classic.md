@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-03"
 
 keywords: openshift network, classic
 
@@ -80,7 +80,7 @@ To make your master publicly or privately accessible to cluster users, you can e
 
 
 
-### Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks
+## Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks
 {: #worker-services-onprem}
 
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services and to an on-premises network.
@@ -118,7 +118,7 @@ If you plan to connect your cluster to on-premises networks, check out the follo
 
 
 
-### External communication to apps that run on worker nodes
+## External communication to apps that run on worker nodes
 {: #external-workers}
 
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Allow public or private traffic requests from outside the cluster to your apps that run on worker nodes.
@@ -135,16 +135,9 @@ When you deploy an app in your cluster, you might want to make the app accessibl
 To make your apps externally accessible from the public internet, you can create public NodePorts, network load balancers (NLBs), and Ingress application load balancers (ALBs). Public networking services connect to this public network interface by providing your app with a public IP address and, depending on the service, a public URL. When an app is publicly exposed, anyone that has the public service IP address or the URL that you set up for your app can send a request to your app. You can then use Calico pre-DNAT policies to control traffic to public networking services, such as allowing traffic from only certain source IP addresses or CIDRs and blocking all other traffic. For more information, see [Planning public external load balancing](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers).
 
 Edge worker nodes can improve the security of your cluster by allowing fewer worker nodes that are connected to public VLANs to be accessed externally and by isolating the networking workload. When you [label worker nodes as edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes), NLB and ALB pods are deployed to only those specified worker nodes. Router pods remain deployed to the non-edge worker nodes. To also prevent other workloads from running on edge nodes, you can [taint the edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads). Then, you can deploy both public and private NLBs and ALBs to edge nodes.
+For example, if your worker nodes are connected to a private VLAN only, but you need to permit public access to an app in your cluster, you can create an edge worker pool in which the edge nodes are connected to public and private VLANs. You can deploy public NLBs and ALBs to these edge nodes to ensure that only those workers handle public connections.
 
-
-
-## Example scenarios for classic cluster network setups
-{: #classic-scenarios}
-
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Now that you understand the basics of cluster networking, check out some example scenarios in which various classic cluster network setups can meet your workload needs.
-{: shortdesc}
-
-### Running internet-facing app workloads in a classic cluster
+## Scenario: Running internet-facing app workloads in a classic cluster
 {: #internet-facing}
 
 ![Classic infrastructure provider icon.](images/icon-classic-2.svg) In this scenario, you want to run workloads in a classic cluster that are accessible to requests from the Internet so that end users can access your apps. You want the option of isolating public access in your cluster and of controlling what public requests are permitted to your cluster. Additionally, your workers have automatic access to any {{site.data.keyword.cloud_notm}} services that you want to connect with your cluster.
@@ -152,7 +145,7 @@ Edge worker nodes can improve the security of your cluster by allowing fewer wor
 
 ![Architecture image for a cluster that runs internet-facing workloads.](images/cs_clusters_planning_internet.png){: caption="Figure 1. Network setup for a cluster that runs internet-facing workloads" caption-side="bottom"}
 
-### Worker-to-worker communication in classic clusters
+### Worker-to-worker communication in classic clusters with internet-facing workloads
 {: #internet-facing-worker}
 
 To achieve this setup, you create a cluster by connecting worker nodes to public and private VLANs.
@@ -160,21 +153,21 @@ To achieve this setup, you create a cluster by connecting worker nodes to public
 If you create the cluster with both public and private VLANs, you can't later remove all public VLANs from that cluster. Removing all public VLANs from a cluster causes several cluster components to stop working. Instead, create a new worker pool that is connected to a private VLAN only.
 {: note}
 
-### Worker-to-master and user-to-master communication in classic clusters
+### Worker-to-master and user-to-master communication in classic clusters with internet-facing workloads
 {: #internet-facing-master}
 
 You can choose to allow worker-to-master and user-to-master communication over the public and private networks, or over the public network only.
 - Public and private cloud service endpoints: Your account must be enabled with VRF and enabled to use service endpoints. Communication between worker nodes and master is established over both the private network through the private cloud service endpoint and the public network through the public cloud service endpoint. The master is publicly accessible to authorized cluster users through the public cloud service endpoint.
 - Public service endpoint: If you don’t want to or can't enable VRF for your account, your worker nodes and authorized cluster users can automatically connect to the Kubernetes master over the public network through the public cloud service endpoint.
 
-### Worker communication to other services or networks
+### Worker communication to other services or networks with internet-facing workloads
 {: #internet-facing-services}
 
 Your worker nodes can automatically, securely communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints over your IBM Cloud infrastructure private network. If an {{site.data.keyword.cloud_notm}} service does not support private cloud service endpoints, workers can securely communicate with the services over the public network. You can lock down the public or private interfaces of worker nodes by using Calico network policies for public network or private network isolation. You might need to allow access to the public and private IP addresses of the services that you want to use in these Calico isolation policies.
 
 If your worker nodes need to access services in private networks outside of your {{site.data.keyword.cloud_notm}} account, you can configure and deploy the strongSwan IPSec VPN service in your cluster or leverage {{site.data.keyword.cloud_notm}} {{site.data.keyword.dl_full_notm}} services to connect to these networks.
 
-### External communication to apps that run on worker nodes
+### External communication to apps that run on worker nodes with internet-facing workloads
 {: #internet-facing-external}
 
 To expose an app in your cluster to the internet, you can create a public network load balancer (NLB) or Ingress application load balancer (ALB) service. You can improve the security of your cluster by creating a pool of worker nodes that are labeled as edge nodes. The pods for public network services are deployed to the edge nodes so that external traffic workloads are isolated to only a few workers in your cluster. You can further control public traffic to the network services that expose your apps by creating Calico pre-DNAT policies, such as allowlist and blocklist policies.
@@ -183,37 +176,29 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 
 
 
-### Extending your on-premises data center to a classic cluster and add limited public access
-{: #limited-public}
-
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) In this scenario, you want to run workloads in a classic cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private cloud service endpoints, and must be accessed over the public network. Or you might need to provide limited public access to an app that runs in your cluster.
-{: shortdesc}
-
-To achieve this cluster setup, you can create a firewall by [using a gateway appliance](#vyatta-gateway).
-
-### Using a gateway appliance
+## Scenario: Allow limited public connectivity with a gateway appliance
 {: #vyatta-gateway}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Allow limited public connectivity to your classic cluster by configuring a gateway appliance, such as a Virtual Router Appliance (Vyatta), as a public gateway and firewall.
+![Classic infrastructure provider icon.](images/icon-classic-2.svg) In this scenario, you want to run workloads in a classic cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private cloud service endpoints, and must be accessed over the public network. Or you might need to provide limited public access to an app that runs in your cluster. To achieve this cluster setup, you can configure a gateway appliance, such as a Virtual Router Appliance (Vyatta), as a public gateway and firewall.
 {: shortdesc}
 
 ![Architecture image for a cluster that uses a gateway appliance for secure public access.](images/cs_clusters_planning_gateway.png){: caption="Figure 1. Network setup for a cluster that uses a gateway appliance for secure public access" caption-side="bottom"}
 
-### Worker-to-worker communication, worker-to-master and user-to-master communication
+### Worker-to-worker communication, worker-to-master and user-to-master communication with a gateway appliance
 {: #limited-public-gw-worker}
 
 Configure a gateway appliance to provide network connectivity between your worker nodes and the master over the public network. For example, you might choose to set up a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) or a [Fortigate Security Appliance](/docs/vmwaresolutions/services?topic=vmwaresolutions-fsa_considerations).
 
 You can set up your gateway appliance with custom network policies to provide dedicated network security for your cluster and to detect and remediate network intrusion. When you set up a firewall on the public network, you must open up the required ports and private IP addresses for each region so that the master and the worker nodes can communicate. If you also configure this firewall for the private network, you must also open up the required ports and private IP addresses to allow communication between worker nodes and let your cluster access infrastructure resources over the private network. You must also enable VLAN spanning for your account so that subnets can route on the same VLAN and across VLANs.
 
-### Worker communication to other services or networks
+### Worker communication to other services or networks with a gateway appliance
 {: #limited-public-gw-services}
 
 To securely connect your worker nodes and apps to an on-premises network or services outside of {{site.data.keyword.cloud_notm}}, set up an IPSec VPN endpoint on your gateway appliance and the strongSwan IPSec VPN service in your cluster to use the gateway VPN endpoint. If you don't want to use strongSwan, you can set up VPN connectivity directly with VRA.
 
 Your worker nodes can securely communicate with other {{site.data.keyword.cloud_notm}} services and public services outside of {{site.data.keyword.cloud_notm}} through your gateway appliance. You can configure your firewall allow access to the public and private IP addresses of only the services that you want to use
 
-### External communication to apps that run on worker nodes
+### External communication to apps that run on worker nodes with a gateway appliance
 {: #limited-public-gw-external}
 
 To provide private access to an app in your cluster, you can create a private network load balancer (NLB) or Ingress application load balancer (ALB) to expose your app to the private network only. If you need to provide limited public access to an app in your cluster, you can create a public NLB or ALB to expose your app. Because all traffic goes through your gateway appliance firewall, you can control public and private traffic to the network services that expose your apps by opening up the service's ports and IP addresses in your firewall to permit inbound traffic to these services.
