@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-03"
 
 keywords: openshift
 
@@ -33,6 +33,7 @@ Calico network policies
     - Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or CIDR.
     - Allow or block network traffic for pods across namespaces.
     - [Block inbound traffic to Kubernetes LoadBalancer or NodePort services](#block_ingress).
+
 
 Calico enforces these policies, including any Kubernetes network policies, by setting up Iptables rules serve as a firewall for the worker node to define the characteristics that the network traffic must meet to be forwarded to the targeted resource.
 
