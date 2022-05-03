@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-03"
 
 keywords: openshift
 
@@ -345,7 +345,7 @@ You can attach a volume to one worker node only. Make sure that the volume is in
               operator: In
               values:
               - <worker_node_region> # Example: eu-de
-            - key: failure-domain.beta.kubernetes.io/hostname
+            - key: kubernetes.io/hostname
               operator: In
               values:
               - <worker_node_primary_IP>

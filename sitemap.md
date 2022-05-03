@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-02"
+lastupdated: "2022-05-03"
 
 keywords: openshift
 subcollection: openshift
@@ -208,7 +208,7 @@ subcollection: openshift
 
     * [28 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2822)
 
-        * CLI changelog update
+        * CLI change log update
 
         * Certified Kubernetes
 
@@ -226,7 +226,7 @@ subcollection: openshift
 
     * [26 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2622)
 
-        * CLI changelog update
+        * CLI change log update
 
     * [25 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2522)
 
@@ -260,7 +260,7 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} default version update.
 
-        * CLI changelog update
+        * CLI change log update
 
     * [6 April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0622)
 
@@ -290,11 +290,11 @@ subcollection: openshift
 
         * Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year.
 
-        * Ingress ALB changelog updates
+        * Ingress ALB change log updates
 
     * [21 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2122)
 
-        * CLI changelog update
+        * CLI change log update
 
     * [17 March 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1722)
 
@@ -548,7 +548,7 @@ subcollection: openshift
 
     * [19 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1921)
 
-        * Ingress ALB changelog updates
+        * Ingress ALB change log updates
 
     * [18 October 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1821)
 
@@ -2360,7 +2360,7 @@ subcollection: openshift
 
     * [Public and private cloud service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv)
 
-    * [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem)
+* [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem)
 
     * [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-pub-priv)
 
@@ -2368,33 +2368,29 @@ subcollection: openshift
 
     * [strongSwan IPSec VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-strongswan)
 
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
+* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
 
     * [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-private)
 
     * [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-public)
 
-* [Example scenarios for classic cluster network setups](/docs/openshift?topic=openshift-plan_basics#classic-scenarios)
+* [Scenario: Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_basics#internet-facing)
 
-    * [Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_basics#internet-facing)
+    * [Worker-to-worker communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-worker)
 
-    * [Worker-to-worker communication in classic clusters](/docs/openshift?topic=openshift-plan_basics#internet-facing-worker)
+    * [Worker-to-master and user-to-master communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-master)
 
-    * [Worker-to-master and user-to-master communication in classic clusters](/docs/openshift?topic=openshift-plan_basics#internet-facing-master)
+    * [Worker communication to other services or networks with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-services)
 
-    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_basics#internet-facing-services)
+    * [External communication to apps that run on worker nodes with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-external)
 
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#internet-facing-external)
+* [Scenario: Allow limited public connectivity with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#vyatta-gateway)
 
-    * [Extending your on-premises data center to a classic cluster and add limited public access](/docs/openshift?topic=openshift-plan_basics#limited-public)
+    * [Worker-to-worker communication, worker-to-master and user-to-master communication with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-worker)
 
-    * [Using a gateway appliance](/docs/openshift?topic=openshift-plan_basics#vyatta-gateway)
+    * [Worker communication to other services or networks with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
 
-    * [Worker-to-worker communication, worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-worker)
-
-    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
-
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
+    * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
@@ -6781,6 +6777,8 @@ subcollection: openshift
 * [500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login)
 
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
+
+[Why do I see `Could not find user` when I try to access the Red Hat {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
 
 [Why can't I create or delete clusters?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
