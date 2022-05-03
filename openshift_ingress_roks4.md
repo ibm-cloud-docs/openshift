@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-02"
+lastupdated: "2022-05-03"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1296,10 +1296,10 @@ When you set a new default {{site.data.keyword.secrets-manager_short}} instance,
 
 3. List your secrets to see the secrets updated with the new CRN in {{site.data.keyword.secrets-manager_short}}.
 
-        ```sh
-        ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
-        ```
-        {: pre}
+    ```sh
+    ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
+    ```
+    {: pre}
 
 4. Update any non-managed IBM secrets correlated with that CRN to match the CRN located in the new default instance.
 
@@ -1308,10 +1308,10 @@ If you previously created a secret with a managed Ingress certificate CRN in a d
 
 To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
 
-    ```sh
-    ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <updated_cert_crn>
-    ```
-    {: pre}
+```sh
+ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <updated_cert_crn>
+```
+{: pre}
 
 To remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance of a cluster, run the following command. Note that if no default instance is set, your secrets are only written directly to the cluster and are not uploaded to any {{site.data.keyword.secrets-manager_short}} instance.
 
@@ -1336,10 +1336,10 @@ After migrating to {{site.data.keyword.secrets-manager_short}}, a user can opt t
         ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
         ```
         {: pre}
-        
+
     4. Enabled service-to-service between your cluster and {{site.data.keyword.secrets-manager_short}}.
 
-2. Get the {{site.data.keyword.cloudcerts_short}} instances registered to the cluster. The instance name will be prepended with `kube-certmgr-` or `kube-certmgr-` and have a type of `cloudcerts`.
+2. Get the {{site.data.keyword.cloudcerts_short}} instances registered to the cluster. The instance name will be prepended with `kube-certmgr-` or `kube-` and have a type of `cloudcerts`.
 
     ```sh
     ibmcloud oc ingress instance ls --cluster <cluster_name_or_id>
@@ -1354,7 +1354,6 @@ After migrating to {{site.data.keyword.secrets-manager_short}}, a user can opt t
     {: pre}
 
 4. A user can optionally choose to delete the instance in the IBM Cloud Dashboard. However, if it is not deleted, Certificate Manager will delete it automatically when the service is deprecated.
-
 
 ## Customizing Ingress routing with annotations
 {: #annotations-roks4}
