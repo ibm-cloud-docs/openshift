@@ -6372,6 +6372,8 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
 
+    * [Version 1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0956)
+
     * [Version 1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0927)
 
     * [Version 1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0906)
