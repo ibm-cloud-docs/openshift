@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-04"
 
 keywords: openshift, audit
 
@@ -23,8 +23,10 @@ You can view, manage, and audit user-initiated activities in your {{site.data.ke
 {{site.data.keyword.openshiftlong_notm}} automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 
-Previously, clusters running in Toronto (`ca-tor`) sent logs to Washington D.C., and clusters running in Osaka (`jp-osa`) or Sydney (`au-syd`) sent logs to Tokyo. As of **18 November 2021**, all instances of Log Analysis and Activity Tracker that are used for clusters running in Osaka (`jp-osa`), Toronto (`ca-tor`), and Sydney (`au-syd`) send logs to their respective regions. To continue receiving logs for clusters in these regions, you must create instances of {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.at_full_notm}} in the same region as your cluster. If you already have instances in these regions, look for logs in those instances.
+Currently, {{site.data.keyword.openshiftlong_notm}} clusters running in Washington, D.C. (`us-east`) send logs to {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} instances in Dallas (`us-south`). On 10 June 2022, {{site.data.keyword.openshiftlong_notm}} clusters running in Washington, D.C. (`us-east`) begin sending logs to {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} instances in the same region, Washington, D.C. (`us-east`). If you have clusters in Washington, D.C. (`us-east`), and you already have instances of {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} in the same region, no action is needed. If you have clusters in Washington, D.C. (`us-east`), and **do not** have instances of {{site.data.keyword.at_full_notm}} and {{site.data.keyword.loganalysisshort}} in the same region, you must create instances of {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} in  Washington, D.C. (`us-east`). On 10 June 2022, logs of clusters in  Washington, D.C. (`us-east`) automatically show up in {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} instances in the same region. If you want to export {{site.data.keyword.at_full_notm}} events, see [Exporting {{site.data.keyword.at_full_notm}} events](/docs/activity-tracker?topic=activity-tracker-export). If you want to export logs, see [Exporting logs](/docs/log-analysis?topic=log-analysis-export).
 {: important}
+
+
 
 ## Cluster events
 {: #clusters-events}
@@ -352,7 +354,6 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}
-
 
 
 
