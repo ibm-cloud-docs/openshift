@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-04"
 
 keywords: openshift
 subcollection: openshift
@@ -203,6 +203,14 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
+
+    * [4 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0422)
+
+        * HPCS Router add-on
+
+        * Cloud Image Key Synchronizer add-on
 
 * [April 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr22)
 
@@ -6250,6 +6258,8 @@ subcollection: openshift
 
 * [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
 
+    * [Version 4.9.0_1559, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1559)
+
     * [Version 4.9.0_1471, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1471)
 
     * [Version 4.9.0_1384, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1384)
@@ -6261,6 +6271,8 @@ subcollection: openshift
     * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
 
 * [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_1560, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1560)
 
     * [Version 4.8.0_1470, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1470)
 
@@ -6277,6 +6289,8 @@ subcollection: openshift
     * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_1561, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1561)
 
     * [Version 4.7.0_1469, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1469)
 
@@ -6297,6 +6311,8 @@ subcollection: openshift
     * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_1570, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1570)
 
     * [Version 4.6.0_1468, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1468)
 
@@ -6355,6 +6371,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0956)
 
     * [Version 1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0927)
 
@@ -6585,8 +6603,6 @@ subcollection: openshift
 
 * [fra05](/docs/openshift?topic=openshift-classic-flavors#fra05)
 
-* [hkg02](/docs/openshift?topic=openshift-classic-flavors#hkg02)
-
 * [lon02](/docs/openshift?topic=openshift-classic-flavors#lon02)
 
 * [lon04](/docs/openshift?topic=openshift-classic-flavors#lon04)
@@ -6610,8 +6626,6 @@ subcollection: openshift
 * [par01](/docs/openshift?topic=openshift-classic-flavors#par01)
 
 * [sao01](/docs/openshift?topic=openshift-classic-flavors#sao01)
-
-* [seo01](/docs/openshift?topic=openshift-classic-flavors#seo01)
 
 * [sjc03](/docs/openshift?topic=openshift-classic-flavors#sjc03)
 

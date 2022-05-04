@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-05-04"
 
 keywords: openshift, route, router
 
@@ -35,6 +35,14 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} HP
 
 ## Version 4.9.0
 {: #4.9.0}
+
+### Version 4.9.0_1559, released on 4 May 2022
+{: #4_9_0_1559}
+
+- [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}.
+- [CVE-2022-28327](https://nvd.nist.gov/vuln/detail/CVE-2022-28327){: external}.
+- [CVE-2022-24675](https://nvd.nist.gov/vuln/detail/CVE-2022-24675){: external}.
+- [CVE-2022-27536](https://nvd.nist.gov/vuln/detail/CVE-2022-27536){: external}.
 
 ### Version 4.9.0_1471, released on 11 April 2022
 {: #4_9_0_1471}
@@ -73,6 +81,14 @@ Initial release of 4.9.0.
 
 ## Version 4.8.0
 {: #4_8_0}
+
+### Version 4.8.0_1560, released on 4 May 2022
+{: #4_8_0_1560}
+
+- [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}.
+- [CVE-2022-28327](https://nvd.nist.gov/vuln/detail/CVE-2022-28327){: external}.
+- [CVE-2022-24675](https://nvd.nist.gov/vuln/detail/CVE-2022-24675){: external}.
+- [CVE-2022-27536](https://nvd.nist.gov/vuln/detail/CVE-2022-27536){: external}.
 
 ### Version 4.8.0_1470, released on 11 April 2022
 {: #4_8_0_1470}
@@ -122,6 +138,14 @@ Initial release of 4.8.0.
 
 ## Version 4.7.0
 {: #4_7_0}
+
+### Version 4.7.0_1561, released on 4 May 2022
+{: #4_7_0_1561}
+
+- [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}.
+- [CVE-2022-28327](https://nvd.nist.gov/vuln/detail/CVE-2022-28327){: external}.
+- [CVE-2022-24675](https://nvd.nist.gov/vuln/detail/CVE-2022-24675){: external}.
+- [CVE-2022-27536](https://nvd.nist.gov/vuln/detail/CVE-2022-27536){: external}.
 
 ### Version 4.7.0_1469, released on 11 April 2022
 {: #4_7_0_1469}
@@ -188,6 +212,14 @@ Resolves [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: exter
 
 ## Version 4.6.0
 {: #4_6_0}
+
+### Version 4.6.0_1570, released on 4 May 2022
+{: #4_6_0_1570}
+
+- [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}.
+- [CVE-2022-28327](https://nvd.nist.gov/vuln/detail/CVE-2022-28327){: external}.
+- [CVE-2022-24675](https://nvd.nist.gov/vuln/detail/CVE-2022-24675){: external}.
+- [CVE-2022-27536](https://nvd.nist.gov/vuln/detail/CVE-2022-27536){: external}.
 
 ### Version 4.6.0_1468, released on 11 April 2022
 {: #4_6_0_1468}
