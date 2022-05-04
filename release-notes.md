@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-04"
 
 keywords: openshift
 
@@ -22,6 +22,21 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## May 2022
+{: #openshift-may22}
+
+### 4 May 2022
+{: #openshift-may0422}
+
+
+HPCS Router add-on
+:   Versions 4.6.0_1570, 4.7.0_1561, 4.8.0_1560, and 4.9.0_1559 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_956 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+
+
+
 
 ## April 2022
 {: #openshift-apr22}
