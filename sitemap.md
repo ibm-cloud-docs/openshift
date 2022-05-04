@@ -3863,13 +3863,13 @@ subcollection: openshift
 
 * [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
 
+    * [Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster](/docs/openshift?topic=openshift-ingress-roks4#unregister-secret-instance)
+
 * [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
 
     * [Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/openshift?topic=openshift-ingress-roks4#register-secrets-mgr)
 
     * [Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance](/docs/openshift?topic=openshift-ingress-roks4#default-secrets-mgr)
-
-    * [Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster](/docs/openshift?topic=openshift-ingress-roks4#unregister-secret-instance)
 
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
