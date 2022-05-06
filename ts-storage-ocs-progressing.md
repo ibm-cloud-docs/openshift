@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-06"
 
 keywords: openshift, storage
 
@@ -62,7 +62,7 @@ Review the following common storage cluster error messages for steps to resolve 
 {: #ts-storage-ocs-cos-cred}
 
 When you run `oc describe noobaa` or `oc describe ocscluster <ocscluster_name>`, the status is stuck at `Progressing` and you see the following error message:
-```
+```sh
 Error: Cloud credentials secret "ibm-cloud-cos-creds" is not ready yet
 ```
 {: screen}

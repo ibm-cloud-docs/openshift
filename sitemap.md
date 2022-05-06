@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-04"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 subcollection: openshift
@@ -205,6 +205,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
+
+    * [6 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0622)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
     * [4 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0422)
 
@@ -1194,7 +1198,7 @@ subcollection: openshift
 
     * [24 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2420)
 
-        * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) New! Reservations to reduce classic worker node costs
+        * ![Classic](../icons/classic.svg "Classic") New! Reservations to reduce classic worker node costs
 
     * [23 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2320)
 
@@ -2576,7 +2580,7 @@ subcollection: openshift
 
     * [Adding tags to clusters with the console](/docs/openshift?topic=openshift-add_workers#add-tags-console)
 
-    * [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-add_workers#adding-tags-to-clusters-with-the-cli)
+    * [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-add_workers#add-tags-cli)
 
 * [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
 
@@ -3863,13 +3867,13 @@ subcollection: openshift
 
 * [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
 
+    * [Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster](/docs/openshift?topic=openshift-ingress-roks4#unregister-secret-instance)
+
 * [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
 
     * [Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/openshift?topic=openshift-ingress-roks4#register-secrets-mgr)
 
     * [Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance](/docs/openshift?topic=openshift-ingress-roks4#default-secrets-mgr)
-
-    * [Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster](/docs/openshift?topic=openshift-ingress-roks4#unregister-secret-instance)
 
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
@@ -4949,6 +4953,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.408](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10408)
 
 * [Version 1.0.404](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10404)
 
@@ -6202,6 +6208,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.1.15, released 6 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02115_object_plugin)
+
 * [Change log for version 2.1.14, released 13 April 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02114_object_plugin)
 
 * [Change log for version 2.1.13, released 24 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02113_object_plugin)
@@ -7189,7 +7197,7 @@ subcollection: openshift
 
 [Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/openshift?topic=openshift-debug_monitoring#debug_monitoring)
 
-    * [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
+* [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
 
 
 ### Object Storage
@@ -7231,6 +7239,8 @@ subcollection: openshift
 [Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-cos_pvc_pending#cos_pvc_pending)
 
 [Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails#cos_secret_access_fails)
+
+[Why is the transport endpoint not connected?](/docs/openshift?topic=openshift-cos_transport_ts_connect#cos_transport_ts_connect)
 
 
 ### Portworx Storage

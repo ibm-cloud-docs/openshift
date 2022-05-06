@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-05-06"
 
 keywords: vpc, monitoring, block storage, metrics
 
@@ -34,36 +34,36 @@ Check that the PVC is mounted. If the issue persists, manually view your metrics
 
 2. Describe the PVC. If the **Used By** row of the output is populated with the name of a pod, then the PVC is mounted. 
 
-```sh
-oc describe pvc <pvc_name>
-```
-{: pre}
+    ```sh
+    oc describe pvc <pvc_name>
+    ```
+    {: pre}
 
-Example output. 
+    Example output. 
 
-```sh
-Name:          my-pvc
-Namespace:     default
-StorageClass:  ibmc-vpc-block-5iops-tier
-Status:        Bound
-Volume:        pvc-a11a11a1-111a-111a-a1a1-aaa111aa1a1a 
-Labels:        <none>
-Annotations:   pv.kubernetes.io/bind-completed: yes
-               pv.kubernetes.io/bound-by-controller: yes
-               volume.beta.kubernetes.io/storage-provisioner: vpc.block.csi.ibm.io
-Finalizers:    [kubernetes.io/pvc-protection]
-Capacity:      10Gi
-Access Modes:  RWO
-VolumeMode:    Filesystem
-Used By:       my-pod-11a1a1a1a1-1a11a 
-Events:        <none>
-```
-{: screen}
+    ```sh
+    Name:          my-pvc
+    Namespace:     default
+    StorageClass:  ibmc-vpc-block-5iops-tier
+    Status:        Bound
+    Volume:        pvc-a11a11a1-111a-111a-a1a1-aaa111aa1a1a 
+    Labels:        <none>
+    Annotations:   pv.kubernetes.io/bind-completed: yes
+                   pv.kubernetes.io/bound-by-controller: yes
+                   volume.beta.kubernetes.io/storage-provisioner: vpc.block.csi.ibm.io
+    Finalizers:    [kubernetes.io/pvc-protection]
+    Capacity:      10Gi
+    Access Modes:  RWO
+    VolumeMode:    Filesystem
+    Used By:       my-pod-11a1a1a1a1-1a11a 
+    Events:        <none>
+    ```
+    {: screen}
 
 3. If the PVC is not mounted to a pod, review the steps for [setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-add) and mount the PVC to a pod. Then try to view the metrics again. 
 4. If the PVC is mounted, follow the steps for [manually verifying the {{site.data.keyword.block_storage_is_short}} metrics](#manual-monitor-metrics) then [open a support issue](/docs/openshift?topic=openshift-get-help#help-support). The steps for manual verification in the CLI allow you to view your metrics, but are not a solution for metrics that do not populate in the console. However, if you are able to manually verify your metrics, this indicates that there is a console issue for which you must open an issue.
 
-### Manually viewing storage metrics in the CLI
+## Manually viewing storage metrics in the CLI
 {: #manual-monitor-metrics}
 
 If your storage metrics are not visible in the monitoring dashboard, you can manually view them in the CLI. Note that manual verification of your storage metrics is a temporary workaround and not a permanent monitoring solution for viewing metrics. After completing the following steps, if you are able to manually view the metrics in the CLI and not the dashboard, this indicates that there is a console issue for which you must [open a support issue](/docs/openshift?topic=openshift-get-help#help-support).
@@ -176,34 +176,34 @@ After you complete the following steps, make sure to remove the resources you cr
 
 1. After you have finished viewing the metrics, and determined whether the issue is related to dashboard or the metrics agent, delete the configurations and resources that you created in the previous steps.
 
-    Do not skip this step. 
-    {: important}
+Do not skip this step. 
+{: important}
 
-  1. Exit the pod.
+1. Exit the pod.
     ```sh
     exit
     ```
     {: pre}
 
-  2. Delete the pod.
+1. Delete the pod.
     ```sh 
     oc delete pod testpod
     ```
     {: pre}
-  
-  3. Delete the `clusterRoleBinding`.
+
+1. Delete the `clusterRoleBinding`.
     ```sh
     oc delete clusterrolebinding test-metrics-reader
     ```
     {: pre}
-  
-  4. Delete the service account. 
+
+1. Delete the service account. 
     ```sh
     oc delete sa test-sa
     ```
     {: pre}
 
-  5. Delete the cluster role.
+1. Delete the cluster role.
     ```sh
     oc delete clusterrole test-metrics-reader
     ```

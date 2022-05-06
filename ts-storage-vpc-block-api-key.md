@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-06"
 
 keywords: openshift, storage
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+![VPC](../icons/vpc.svg "VPC") VPC
 
 
 After you reset your API key, {{site.data.keyword.block_storage_is_short}} PVC creation fails with an IAM permission error.

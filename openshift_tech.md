@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -25,7 +25,7 @@ In {{site.data.keyword.openshiftlong_notm}}, your clusters comprise an IBM-manag
 ## Classic {{site.data.keyword.redhat_openshift_notm}} version 4 architecture
 {: #service-architecture-4}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) ![Version 4 icon.](images/icon-version-43.png) Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/architecture/architecture.html){: external}.
+![Classic](../icons/classic.svg "Classic") ![Version 4 icon.](images/icon-version-43.png) Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/architecture/architecture.html){: external}.
 {: shortdesc}
 
 When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
@@ -204,7 +204,7 @@ Projects
 ## Classic {{site.data.keyword.redhat_openshift_notm}} version 3 architecture
 {: #service-architecture-3}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) ![Version 3.11 icon.](images/icon-version-311.png) Review the architecture diagram and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 3. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/3.11/architecture/index.html){: external}.
+![Classic](../icons/classic.svg "Classic") ![Version 3.11 icon.](images/icon-version-311.png) Review the architecture diagram and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 3. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/3.11/architecture/index.html){: external}.
 {: shortdesc}
 
 ![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks.png)
@@ -317,7 +317,7 @@ Other projects
 ## VPC cluster service architecture
 {: #service-architecture_vpc}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) ![Version 4 icon.](images/icon-version-43.png) The following architectural overviews are specific to the VPC infrastructure provider, which is available for clusters that run version 4 only. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
+![VPC](../icons/vpc.svg "VPC") ![Version 4 icon.](images/icon-version-43.png) The following architectural overviews are specific to the VPC infrastructure provider, which is available for clusters that run version 4 only. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
 {: note}
 
 Review the architecture diagrams and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on virtual private cloud (VPC) compute infrastructure.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-06"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -28,6 +28,13 @@ Refer to the following changelogs for a summary of changes for each version of t
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version 1.0.408
+{: #cli-10408}
+
+Version 1.0.408 of the CLI was released on 6 May 2022.
+:   Fixes Ingress secret type backward compatibility. 
+:   Deprecates the Ingress migration tool.
 
 ## Version 1.0.404
 {: #cli-10404}

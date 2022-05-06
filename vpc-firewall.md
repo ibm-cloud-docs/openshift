@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift, firewall, ips
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # VPC: Opening required ports and IP addresses in other network firewalls
 {: #vpc-firewall}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) This firewall information is specific to VPC clusters. For firewall information for classic clusters, see [Opening required ports and IP addresses in your firewall for classic clusters](/docs/containers?topic=containers-firewall).
+![VPC](../icons/vpc.svg "VPC") This firewall information is specific to VPC clusters. For firewall information for classic clusters, see [Opening required ports and IP addresses in your firewall for classic clusters](/docs/containers?topic=containers-firewall).
 {: note}
 
 ## Opening ports in a corporate firewall
@@ -80,20 +80,20 @@ To allow access for a specific cluster:
     ```
     {: pre}
 
-2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
+1. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
     ```sh
     ibmcloud target -g <resource_group_name>
     ```
     {: pre}
 
-4. Get the name of your cluster.
+1. Get the name of your cluster.
 
     ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
 
-5. Retrieve the service endpoint URLs for your cluster.
+1. Retrieve the service endpoint URLs for your cluster.
     * If only the **Private Service Endpoint URL** is populated, get this URL. Your authorized cluster users can access the master through this endpoint on the private network.
     * If both the **Public Service Endpoint URL** and **Private Service Endpoint URL** are populated, get both URLs. Your authorized cluster users can access the master through the public endpoint on the public network or the private endpoint on the private network.
 
@@ -112,9 +112,9 @@ To allow access for a specific cluster:
     ```
     {: screen}
 
-6. Allow access to the service endpoint URLs and ports that you got in the previous step. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](/docs/openshift?topic=openshift-firewall#master_ips).
+1. Allow access to the service endpoint URLs and ports that you got in the previous step. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](/docs/openshift?topic=openshift-firewall#master_ips).
 
-7. Verify your connection.
+1. Verify your connection.
     * If the public cloud service endpoint is enabled:
         ```sh
         curl --insecure <public_service_endpoint_URL>/version
@@ -128,7 +128,7 @@ To allow access for a specific cluster:
         {: pre}
 
         Example output
-        ```
+        ```json
         {
             "major": "1",
             "minor": "7+",
@@ -156,7 +156,7 @@ To allow access for a specific cluster:
         {: pre}
 
         Example output
-        ```
+        ```json
         {
             "major": "1",
             "minor": "7+",
@@ -171,7 +171,7 @@ To allow access for a specific cluster:
         ```
         {: screen}
 
-8. Optional: Repeat these steps for each cluster that you need to expose.
+1. Optional: Repeat these steps for each cluster that you need to expose.
 
 ### Running `calicoctl` commands from behind a firewall
 {: #vpc-firewall_calicoctl}
@@ -288,7 +288,7 @@ To permit egress to your cluster from another service, modify that service's fir
             {: pre}
 
             Example output
-            ```
+            ```sh
             ...
             Worker Zones:                   us-south-1, us-south-2, us-south-3
             Ingress Subdomain:              vpc-prod.us-south.containers.appdomain.cloud
@@ -303,13 +303,13 @@ To permit egress to your cluster from another service, modify that service's fir
             {: screen}
 
         2. For the subnets in the zones and VPC that your cluster is in, note the **Subnet CIDR**.
-            ```
+            ```sh
             ibmcloud is subnets
             ```
             {: pre}
 
             Example output
-            ```
+            ```sh
             ID                                     Name             Status      Subnet CIDR        Addresses   ACL                                                          Public Gateway                             VPC              Zone
             5f5787a4-f560-471b-b6ce-20067ac93439   vpc-prod-dal1    available   10.240.0.0/24      183/256     allow-all-network-acl-ff537d43-a5a4-4b65-9627-17eddfa5237b   -                                          prod             us-south-1
             e3c19786-1c54-4248-86ca-e60aab74ed62   vpc-prod-dal2    available   10.240.64.0/24     183/256     allow-all-network-acl-ff537d43-a5a4-4b65-9627-17eddfa5237b   -                                          prod             us-south-2

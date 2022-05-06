@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -21,8 +21,8 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 
 You uploaded files to your {{site.data.keyword.cos_full_notm}} service instance by using the console or the REST API. When you try to access these files with a non-root user that you defined with `runAsUser` in your app deployment, access to the files is denied.
@@ -67,21 +67,21 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
    ```
    {: codeblock}
 
-2. Create the `test-permission` pod.
+1. Create the `test-permission` pod.
 
     ```sh
     oc apply -f test-permission.yaml
     ```
     {: pre}
 
-3. Log in to your pod.
+1. Log in to your pod.
 
     ```sh
     oc exec test-permission -it bash
     ```
     {: pre}
 
-4. Navigate to your mount path and list the permissions for your files.
+1. Navigate to your mount path and list the permissions for your files.
 
     ```sh
     cd test && ls -al
@@ -95,14 +95,14 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
     ```
     {: screen}
 
-5. Delete the pod.
+1. Delete the pod.
 
     ```sh
     oc delete pod test-permission
     ```
     {: pre}
 
-6. Create a configuration file for the pod that you use to correct the permissions of your files and name it `fix-permission.yaml`.
+1. Create a configuration file for the pod that you use to correct the permissions of your files and name it `fix-permission.yaml`.
 
     ```yaml
     apiVersion: v1
@@ -126,28 +126,28 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
     ```
     {: codeblock}
 
-3. Create the `fix-permission` pod.
+1. Create the `fix-permission` pod.
 
     ```sh
     oc apply -f fix-permission.yaml
     ```
     {: pre}
 
-4. Wait for the pod to go into a `Completed` state. 
+1. Wait for the pod to go into a `Completed` state. 
 
     ```sh
     oc get pod fix-permission
     ```
     {: pre}
 
-5. Delete the `fix-permission` pod.
+1. Delete the `fix-permission` pod.
 
     ```sh
     oc delete pod fix-permission
     ```
     {: pre}
 
-5. Re-create the `test-permission` pod that you used earlier to check the permissions.
+1. Re-create the `test-permission` pod that you used earlier to check the permissions.
 
     ```sh
     oc apply -f test-permission.yaml
@@ -164,7 +164,7 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
     ```
     {: pre}
 
-2. Navigate to your mount path and list the permissions for your files.
+1. Navigate to your mount path and list the permissions for your files.
 
     ```sh
     cd test && ls -al
@@ -178,14 +178,14 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
     ```
     {: screen}
 
-6. Delete the `test-permission` pod.
+1. Delete the `test-permission` pod.
 
     ```sh
     oc delete pod test-permission
     ```
     {: pre}
 
-7. Mount the PVC to the app with the non-root user.
+1. Mount the PVC to the app with the non-root user.
 
 
 Define the non-root user as `runAsUser` without setting `fsGroup` in your deployment YAML at the same time. Setting `fsGroup` triggers the {{site.data.keyword.cos_full_notm}} plug-in to update the group permissions for all files in a bucket when the pod is deployed. Updating the permissions is a write operation and might prevent your pod from getting into a `Running` state.

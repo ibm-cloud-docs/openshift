@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -19,13 +19,13 @@ content-type: troubleshoot
 {: #ts_no_vpc}
 {: support}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+**Infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC
 
 You try to create a VPC cluster by using the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}.
 {: tsSymptoms} 
 
 You have an existing [VPC](https://cloud.ibm.com/vpc){: external} in your account, but when you try to select an existing **Virtual Private Cloud** to create the cluster in, you see the following error message:
-```
+```sh
 No VPC is available. Create a VPC.
 ```
 {: screen}

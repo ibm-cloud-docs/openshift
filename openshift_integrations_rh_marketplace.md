@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-06"
 
 keywords: kubernetes, openshift
 
@@ -22,9 +22,9 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 {: shortdesc}
 
 **Supported infrastructure providers**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
-* ![Satellite infrastructure provider icon.](images/icon-satellite.svg) {{site.data.keyword.satelliteshort}}
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
+* ![Satellite](../icons/satellite.svg "Satellite") {{site.data.keyword.satelliteshort}}
 
 **Required permissions**:
 * The IAM **Operator** platform access role for the cluster in {{site.data.keyword.containershort_notm}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -25,7 +25,7 @@ Minimum required permissions
 :   **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service.
 
 **Supported infrastructure provider**:
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 1. [Follow the instructions to install the `ibmc` Helm plug-in](/docs/containers?topic=containers-storage_cos_install). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 

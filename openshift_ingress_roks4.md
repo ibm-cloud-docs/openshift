@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-06"
 
 keywords: openshift, nginx, ingress controller
 
@@ -38,9 +38,9 @@ Before you get started with Ingress, review the following prerequisites.
     - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.redhat_openshift_notm}} projects)
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller in that zone.
 - To ensure high availability, at least two worker nodes per zone are recommended.
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the Ingress controller](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
+* ![VPC](../icons/vpc.svg "VPC") VPC clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
+* ![VPC](../icons/vpc.svg "VPC") VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the Ingress controller](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
+* ![Classic](../icons/classic.svg "Classic") Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
 
 
@@ -106,7 +106,7 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 ## Publicly exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #ingress-roks4-public}
 
-If your cluster is created on ![Classic infrastructure provider icon.](images/icon-classic-2.svg) classic infrastructure, or if your cluster is created on ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, you can use the default public Ingress controller to expose apps in your cluster to receive requests that are from the public network.
+If your cluster is created on ![Classic](../icons/classic.svg "Classic") classic infrastructure, or if your cluster is created on ![VPC](../icons/vpc.svg "VPC") VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, you can use the default public Ingress controller to expose apps in your cluster to receive requests that are from the public network.
 {: shortdesc}
 
 **Before you begin**:
@@ -319,7 +319,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 ## Publicly exposing apps in VPC clusters with a private cloud service endpoint only
 {: #priv-se-pub-controller}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private Ingress controller by default. To publicly expose your apps, you must first create a public Ingress controller. Then, you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
+![VPC](../icons/vpc.svg "VPC") If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private Ingress controller by default. To publicly expose your apps, you must first create a public Ingress controller. Then, you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
 {: shortdesc}
 
 **Before you begin**:
@@ -644,7 +644,7 @@ To expose apps that are outside of your cluster to the public:
 ## Privately exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #ingress-roks4-private}
 
-If your cluster is created on ![Classic infrastructure provider icon.](images/icon-classic-2.svg) classic infrastructure, or if your cluster is created on ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private Ingress controller. Then you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
+If your cluster is created on ![Classic](../icons/classic.svg "Classic") classic infrastructure, or if your cluster is created on ![VPC](../icons/vpc.svg "VPC") VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private Ingress controller. Then you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
 {: shortdesc}
 
 **Before you begin**:
@@ -915,7 +915,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 ## Privately exposing apps in VPC clusters with a private cloud service endpoint only
 {: #priv-se-priv-controller}
 
-If your cluster is created on ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC infrastructure and you enabled the private cloud service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.
+If your cluster is created on ![VPC](../icons/vpc.svg "VPC") VPC infrastructure and you enabled the private cloud service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.
 {: shortdesc}
 
 **Before you begin**:
@@ -1244,6 +1244,39 @@ When migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keywor
 **Removing the registered Certificate Manager instance**:
 :    Once you have successfully migrated to Secrets Manager, you can unregister the Certificate Manager instance that was provisioned with your cluster by running `ibmcloud oc ingress instance unregister`.
 
+### Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster
+{: #unregister-secret-instance}
+
+After migrating to {{site.data.keyword.secrets-manager_short}}, a user can opt to remove the {{site.data.keyword.cloudcerts_short}} instance that is provisioned with the lifecycle of the cluster. Once this instance is removed, the callback functionality provided by {{site.data.keyword.cloudcerts_short}} is no longer available for the cluster.
+
+Before you begin, verify that you have completed the following {{site.data.keyword.secrets-manager_short}} migration and setup steps.
+
+1. [Registered a default {{site.data.keyword.secrets-manager_short}} instance](#default-secrets-mgr).
+2. [Regenerated all nlb-dns subdomains and updated all non-IBM managed secrets with the new CRNs](#default-secrets-mgr).
+3. Listed all secrets in the cluster and verified that no CRNs have `:cloudcert` in the CRN. If there are any, migrate and update as needed.
+    ```sh
+    ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
+    ```
+    {: pre}
+4. [Enabled service-to-service between your cluster and {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+
+To remove the instance:
+
+1. List the {{site.data.keyword.cloudcerts_short}} instances registered to the cluster. The instance name begins with `kube-certmgr-` or `kube-` and is of type `cloudcerts`.
+
+    ```sh
+    ibmcloud oc ingress instance ls --cluster <cluster_name_or_id>
+    ```
+    {: pre}
+
+2. Unregister the {{site.data.keyword.cloudcerts_short}} instance from the cluster.
+
+    ```sh
+    ibmcloud oc ingress instance unregister --cluster <cluster_name_or_id> --name <instance_name>
+    ```
+    {: pre}
+
+3. **Optional**: Delete the instance in the IBM Cloud Dashboard. If you do not delete the instance, it is automatically deleted when the {{site.data.keyword.cloudcerts_short}} service is deprecated.
 
 ## Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}
 {: #manage_certs_secrets_mgr}
@@ -1287,31 +1320,46 @@ When you set a new default {{site.data.keyword.secrets-manager_short}} instance,
     ```
     {: pre}
 
-2. Regenerate your secrets to upload them to the new default instance.
+2. Regenerate your secrets. Any secrets that are managed by IBM are uploaded to the new default instance. 
 
     ```sh
     ibmcloud oc nlb-dns secret regenerate --cluster <cluster_name_or_id> --nlb-subdomain <nlb_subdomain>
     ```
     {: pre}
 
-3. List your secrets to see the secrets updated with the new CRN in {{site.data.keyword.secrets-manager_short}}.
+3. If the subdomain you specified in the `ibmcloud oc nlb-dns secret regenerate` command also corresponds to any secret that is not managed by IBM, you must manually update the CRN of that secret.
 
-    ```sh
-    ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
-    ```
-    {: pre}
+    To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
+    {: tip}
 
-4. Update any non-managed IBM secrets correlated with that CRN to match the CRN located in the new default instance.
+    1. List the secrets in the cluster and note the CRN of the updated secrets that correspond with the subdomain. 
 
-If you previously created a secret with a managed Ingress certificate CRN in a different namespace or using a different name, you must also update those secrets with the CRN of the new {{site.data.keyword.secrets-manager_short}} instance.
-{: important}
+        ```sh
+        ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
+        ```
+        {: pre}
 
-To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
+        Example output.
 
-```sh
-ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <updated_cert_crn>
-```
-{: pre}
+        ```sh
+        Name                                                             Namespace        CRN                                                                                                                                                              Expires On                 Domain                                                                                                  Status    Type   
+        pvg-classic-111aaaaa1aaa-1a1111aa11a111a1aaa1aaa111111a11-000   default          crn:v1:staging:public:cloudcerts:us-south:a/1a11a1a111aa11aa111aa1a1111aa1a1:a111a1aa-1aa1-111-aa11-a1a1a111aa1a:certificate:1aaa1aaa1a111a1a1111a11a111a11a1    2022-08-01T08:49:42+0000   pvg-classic-111aaaaa1aaa-1a1111aa11a111a1aaa1aaa111111a11-000.us-east.stg.containers.appdomain.cloud   created   TLS   
+        pvg-classic-111aaaaa1aaa-1a1111aa11a111a1aaa1aaa111111a11-000   ibm-cert-store   crn:v1:staging:public:cloudcerts:us-south:a/1a11a1a111aa11aa111aa1a1111aa1a1:a111a1aa-1aa1-111-aa11-a1a1a111aa1a:certificate:1aaa1aaa1a111a1a1111a11a111a11a1   2022-08-01T08:49:42+0000   pvg-classic-111aaaaa1aaa-1a1111aa11a111a1aaa1aaa111111a11-000.us-east.stg.containers.appdomain.cloud   created   TLS   
+        pvg-classic-111aaaaa1aaa-1a1111aa11a111a1aaa1aaa111111a11-000   kube-system      crn:v1:staging:public:cloudcerts:us-south:a/1a11a1a111aa11aa111aa1a1111aa1a1:a111a1aa-1aa1-111-aa11-a1a1a111aa1a:certificate:1aaa1aaa1a111a1a1111a11a111a11a1   2022-08-01T08:49:42+0000   pvg-classic-111aaaaa1aaa-1a1111aa11a111a1aaa1aaa111111a11-000.us-east.stg.containers.appdomain.cloud   created   TLS  
+
+        ```
+        {: screen}
+
+    2. Update the non-IBM managed secrets with the CRN of the matching subdomain you found earlier. 
+
+        ```sh
+        ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <updated_crn>
+        ```
+        {: pre}
+    
+
+#### Removing a {{site.data.keyword.secrets-manager_short}} instance as the default instance
+{: secret-mgr-remove-default}
 
 To remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance of a cluster, run the following command. Note that if no default instance is set, your secrets are only written directly to the cluster and are not uploaded to any {{site.data.keyword.secrets-manager_short}} instance.
 
@@ -1320,40 +1368,6 @@ ibmcloud oc ingress instance default unset --cluster <cluster_name_or_id> --crn 
 ```
 {: pre}
 
-### Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster
-{: #unregister-secret-instance}
-
-After migrating to {{site.data.keyword.secrets-manager_short}}, a user can opt to remove the {{site.data.keyword.cloudcerts_short}} instance that is provisioned with the lifecycle of the cluster. Once this instance is removed, the callback functionality provided by {{site.data.keyword.cloudcerts_short}} will no longer exist with the cluster.
-
-1. Verify you have completed the migration to {{site.data.keyword.secrets-manager_short}}
-
-    1. Registered a default {{site.data.keyword.secrets-manager_short}} instance.
-
-    2. Regenerated all nlb-dns subdomains and updated all non-IBM managed secrets with the new CRNs.
-
-    3. Listed all secrets in the cluster and verified that no CRNs have `:cloudcert` in the CRN. If there are any, migrate and update as needed.
-        ```sh
-        ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
-        ```
-        {: pre}
-
-    4. Enabled service-to-service between your cluster and {{site.data.keyword.secrets-manager_short}}.
-
-2. Get the {{site.data.keyword.cloudcerts_short}} instances registered to the cluster. The instance name will be prepended with `kube-certmgr-` or `kube-` and have a type of `cloudcerts`.
-
-    ```sh
-    ibmcloud oc ingress instance ls --cluster <cluster_name_or_id>
-    ```
-    {: pre}
-
-3. Unregister the {{site.data.keyword.cloudcerts_short}} instance from the cluster.
-
-    ```sh
-    ibmcloud oc ingress instance unregister --cluster <cluster_name_or_id> --name <instance_name>
-    ```
-    {: pre}
-
-4. A user can optionally choose to delete the instance in the IBM Cloud Dashboard. However, if it is not deleted, Certificate Manager will delete it automatically when the service is deprecated.
 
 ## Customizing Ingress routing with annotations
 {: #annotations-roks4}

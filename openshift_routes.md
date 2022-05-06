@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: openshift, route, router
 
@@ -36,8 +36,8 @@ By default, an {{site.data.keyword.redhat_openshift_notm}} Ingress controller is
 You can use the OpenShift Ingress controller to create routes for your apps. Routes are assigned a publicly or privately accessible hostname from the Ingress controller subdomain that external clients can use to send requests to your app. You can choose to create unsecured or secured routes by using the TLS certificate of the Ingress controller to secure your hostname. When external request reach your hostname, the Ingress controller proxies your request and forwards it to the private IP address that your app listens on.
 
 The type of Ingress controller that is created by default varies depending on your cluster's infrastructure provider and your service endpoint setup.
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters / ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters with public cloud service endpoint**: Your cluster is created with a public Ingress controller by default. The Ingress controller assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface. When a request is received, the Ingress controller directs the request to the private IP address that the app listens on. If you want to privately expose your apps instead, you must first create a private Ingress controller, and then create private routes.
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters with private cloud service endpoint only**: Your cluster is created with a private Ingress controller by default. The Ingress controller assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps that are exposed by a private route. If you want to publicly expose your apps instead, you must first create a public Ingress controller, and then create public routes.
+* ![Classic](../icons/classic.svg "Classic") **Classic clusters / ![VPC](../icons/vpc.svg "VPC") VPC clusters with public cloud service endpoint**: Your cluster is created with a public Ingress controller by default. The Ingress controller assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface. When a request is received, the Ingress controller directs the request to the private IP address that the app listens on. If you want to privately expose your apps instead, you must first create a private Ingress controller, and then create private routes.
+* ![VPC](../icons/vpc.svg "VPC") **VPC clusters with private cloud service endpoint only**: Your cluster is created with a private Ingress controller by default. The Ingress controller assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps that are exposed by a private route. If you want to publicly expose your apps instead, you must first create a public Ingress controller, and then create public routes.
 
 If you have a multizone cluster, one high-availability Ingress controller is deployed to your cluster, and one Ingress controller service is created in each zone. Two worker nodes are required per zone so that the two replicas of the Ingress controller can be deployed and updated correctly. Note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in zones that you subsequently add to your cluster have names such as `router-dal12`.
 * To see the Ingress controller services in each zone of your cluster, run `oc get svc -n openshift-ingress`.
@@ -49,7 +49,7 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 ### Traffic flow in a classic single-zone cluster
 {: #route_single}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
+![Classic](../icons/classic.svg "Classic") The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
 {: shortdesc}
 
 ![Expose an app in a single-zone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router.png)
@@ -65,7 +65,7 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 ### Traffic flow in a classic multizone cluster
 {: #route_multi}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
+![Classic](../icons/classic.svg "Classic") The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
 {: shortdesc}
 
 ![Expose an app in a multizone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router-multi.png)
@@ -83,7 +83,7 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 ### Traffic flow in a multizone VPC cluster with a public cloud service endpoint
 {: #route_vpc}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) When you create a multizone VPC cluster with the public cloud service endpoint enabled, a public Ingress controller is created by default. The Ingress controller assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface.
+![VPC](../icons/vpc.svg "VPC") When you create a multizone VPC cluster with the public cloud service endpoint enabled, a public Ingress controller is created by default. The Ingress controller assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface.
 {: shortdesc}
 
 The following diagram shows how a Ingress controller directs network traffic from the internet to an app in a multizone, VPC cluster.
@@ -107,7 +107,7 @@ The following diagram shows how a Ingress controller directs network traffic fro
 ### Traffic flow in a multizone VPC cluster with a private cloud service endpoint only
 {: #route_vpc_private}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) When you create a multizone VPC cluster with the private cloud service endpoint only, a private Ingress controller is created by default. The Ingress controller assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps that are exposed by a private route.
+![VPC](../icons/vpc.svg "VPC") When you create a multizone VPC cluster with the private cloud service endpoint only, a private Ingress controller is created by default. The Ingress controller assigns privately accessible routes for your apps and listens on the private host network interface. Only clients that are connected to your private VPC network can access apps that are exposed by a private route.
 {: shortdesc}
 
 The following diagram shows how a Ingress controller directs network traffic from private networks to an app in a multizone, VPC cluster.
@@ -168,7 +168,7 @@ The method for setting up public routes varies depending on your cluster's infra
 ### Setting up public routes in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #routes-public-classic}
 
-If your cluster is created on ![Classic infrastructure provider icon.](images/icon-classic-2.svg) classic infrastructure, or if your cluster is created on ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with a public Ingress controller by default. You can use this Ingress controller to create public routes for your app.
+If your cluster is created on ![Classic](../icons/classic.svg "Classic") classic infrastructure, or if your cluster is created on ![VPC](../icons/vpc.svg "VPC") VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with a public Ingress controller by default. You can use this Ingress controller to create public routes for your app.
 {: shortdesc}
 
 1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the Ingress controller can send traffic to.
@@ -228,7 +228,7 @@ If your cluster is created on ![Classic infrastructure provider icon.](images/ic
 ### Setting up public routes in VPC clusters with a private cloud service endpoint only
 {: #routes-public-vpc-privse}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private router by default. To publicly expose your apps, you must first create a public IngressController resource and configure that with a subdomain. The Ingress operator automatically creates and configures a new public Ingress controller based on the IngressController, which you can use to create public routes for your apps.
+![VPC](../icons/vpc.svg "VPC") If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private router by default. To publicly expose your apps, you must first create a public IngressController resource and configure that with a subdomain. The Ingress operator automatically creates and configures a new public Ingress controller based on the IngressController, which you can use to create public routes for your apps.
 {: shortdesc}
 
 Note that even though you create an IngressController resource in the following steps, the IngressController is only required to create and configure the necessary Ingress controller for you. After the Ingress controller is created, you use the Ingress controller directly to create routes.
@@ -387,7 +387,7 @@ The method for setting up private routes varies depending on your cluster's infr
 ### Setting up private routes in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #private-routes-setup-43}
 
-If your cluster is created on ![Classic infrastructure provider icon.](images/icon-classic-2.svg) classic infrastructure, or if your cluster is created on ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private IngressController resource and configure the controller with a subdomain. The Ingress operator automatically creates and configures a new private Ingress controller, which you can use to create private routes for your apps.
+If your cluster is created on ![Classic](../icons/classic.svg "Classic") classic infrastructure, or if your cluster is created on ![VPC](../icons/vpc.svg "VPC") VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private IngressController resource and configure the controller with a subdomain. The Ingress operator automatically creates and configures a new private Ingress controller, which you can use to create private routes for your apps.
 {: shortdesc}
 
 Note that even though you create an IngressController resource in the following steps, the IngressController resource is only required to create and configure the necessary Ingress controller for you. After the Ingress controller is created, you use the router directly to create routes.
@@ -537,7 +537,7 @@ Note that even though you create an IngressController resource in the following 
 ### Setting up private routes in VPC clusters with a private cloud service endpoint only
 {: #routes-private-vpc-privse}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) If your cluster is created on VPC infrastructure and you enabled the only private cloud service endpoint during cluster creation, your cluster is created with a private Ingress controller by default. You can use this Ingress controller to create private routes for your app.
+![VPC](../icons/vpc.svg "VPC") If your cluster is created on VPC infrastructure and you enabled the only private cloud service endpoint during cluster creation, your cluster is created with a private Ingress controller by default. You can use this Ingress controller to create private routes for your app.
 {: shortdesc}
 
 1. Create a Kubernetes `ClusterIP` service for your app deployment. The service provides an internal IP address for the app that the Ingress controller can send traffic to.
@@ -601,7 +601,7 @@ Note that even though you create an IngressController resource in the following 
 ## Moving Ingress controller services across VLANs in classic clusters
 {: #migrate-router-vlan-classic}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) When you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, Ingress controller services can't automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and Ingress controllers are connected to different VLANs, the Ingress controllers can't forward incoming network traffic to app pods on your worker nodes. To move your Ingress controller services to a different VLAN, you must create the Ingress controller service on the new VLAN and delete the Ingress controller service on the old VLAN.
+![Classic](../icons/classic.svg "Classic") When you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, Ingress controller services can't automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and Ingress controllers are connected to different VLANs, the Ingress controllers can't forward incoming network traffic to app pods on your worker nodes. To move your Ingress controller services to a different VLAN, you must create the Ingress controller service on the new VLAN and delete the Ingress controller service on the old VLAN.
 {: shortdesc}
 
 1. Create a Ingress controller service on the new VLAN.

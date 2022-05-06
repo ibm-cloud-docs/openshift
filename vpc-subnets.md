@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} VPC cluster.
 {: shortdesc}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) The content on this page is specific to VPC clusters. For information about classic clusters, see [Configuring subnets and IP addresses for classic clusters](/docs/containers?topic=containers-subnets).
+![VPC](../icons/vpc.svg "VPC") The content on this page is specific to VPC clusters. For information about classic clusters, see [Configuring subnets and IP addresses for classic clusters](/docs/containers?topic=containers-subnets).
 {: note}
 
 ## Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}
@@ -234,6 +234,7 @@ To create a VPC subnet, follow these steps.
 
     - If you already have a public gateway in each zone, note the **ID**s of the public gateways.
     - If you don't have a public gateway in each zone, create a public gateway. Consider naming the public gateway in the format `<cluster>-<zone>-gateway`. In the output, note the public gateway's **ID**.
+    
     ```sh
     ibmcloud is public-gateway-create <gateway_name> <VPC_ID> <zone>
     ```

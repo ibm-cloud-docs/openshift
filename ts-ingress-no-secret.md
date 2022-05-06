@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -20,24 +20,24 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 
 When you run `ibmcloud oc ingress status -c <cluster_name_or_ID>`, one of the following messages continues to be displayed:
 {: tsSymptoms}
 
-```
+```sh
 Creating TLS certificate for Ingress subdomain, which might take several minutes. Ensure you have the correct IAM permissions.
 ```
 {: screen}
 
-```
+```sh
 Could not upload certificates to Certificate Manager instance. Ensure you have the correct IAM service permissions.
 ```
 {: screen}
 
-```
+```sh
 Could not create a Certificate Manager instance. Ensure you have the correct IAM platform permissions.
 ```
 {: screen}

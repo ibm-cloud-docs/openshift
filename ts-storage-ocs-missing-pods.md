@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-06"
 
 keywords: openshift, storage
 
@@ -23,7 +23,7 @@ content-type: troubleshoot
 There are no pods listed when you run the `oc get pods -n openshift-storage` command. When you view the `ibm-ocs-operator-controller-manager` logs with the `oc logs <ibm-ocs-operator-controller-manager-a1a1a1a> -n kube-system` command, you see the following error message:
 {: tsSymptoms}
 
-```
+```sh
 Failed to get StorageCluster","error":"no matches for kind \"StorageCluster\" in version \"ocs.openshift.io/v1\
 ```
 {: screen}

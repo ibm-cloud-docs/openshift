@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -24,8 +24,8 @@ Review the following common reasons for CLI connection issues or command failure
 {: shortdesc}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 ## Firewall prevents running CLI commands
 {: #ts_firewall_clis}
@@ -53,7 +53,7 @@ This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM p
 When you run `kubectl` or `oc` commands against your cluster, your commands fail with an error message similar to the following.
 {: tsSymptoms}
 
-```
+```sh
 No resources found.
 Error from server (NotAcceptable): unknown (get nodes)
 ```
@@ -64,7 +64,7 @@ invalid object doesn't have additional properties
 ```
 {: screen}
 
-```
+```sh
 error: No Auth Provider found for name "oidc"
 ```
 {: screen}
@@ -94,7 +94,7 @@ If you have multiple clusters at different Kubernetes versions or different cont
 You try to connect to a pod, such as logging in with `oc exec` or getting logs with `oc logs`. The pod is healthy, but you see an error message similar to the following.
 {: tsSymptoms}
 
-```
+```sh
 Error from server: Get https://<10.xxx.xx.xxx>:<port>/<address>: dial tcp <10.xxx.xx.xxx>:<port>: connect: connection timed out
 ```
 {: screen}
@@ -159,8 +159,8 @@ After the impacted user completes the IAM synchronization, the cluster administr
 {: support}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC Generation 2 compute
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC Generation 2 compute
 
 
 You don't see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.

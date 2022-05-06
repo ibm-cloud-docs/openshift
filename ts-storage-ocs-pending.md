@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-06"
 
 keywords: openshift, storage
 
@@ -33,7 +33,7 @@ oc describe pod <pod> -n openshift-storage
 {: pre}
 
 In the output, check the `Events` section for the following error:
-```
+```sh
 "Error: 0/3 nodes are available: 1 node(s) didn't match pod affinity/anti-affinity, 2 node(s) had volume node affinity conflict"
 ```
 {: screen}

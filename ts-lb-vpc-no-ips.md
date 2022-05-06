@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -19,13 +19,13 @@ content-type: troubleshoot
 {: #vpc_no_lb}
 {: support}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+**Infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC
 
 You exposed your app by creating a Kubernetes `LoadBalancer` service in your VPC cluster.
 {: tsSymptoms}
 
 When you run `oc describe svc <kubernetes_lb_service_name>`, you see a warning message in the **Events** section similar to one of the following:
-```
+```sh
 The subnet with ID(s) '<subnet_id>' has insufficient available ipv4 addresses.
 ```
 {: screen}

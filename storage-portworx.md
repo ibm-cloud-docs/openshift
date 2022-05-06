@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-05-06"
 
 keywords: portworx, openshift
 
@@ -21,8 +21,8 @@ subcollection: openshift
 {: shortdesc}
 
 **Supported infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 
 ## About Portworx
@@ -131,7 +131,7 @@ Portworx supports block storage only. Worker nodes that mount file or object sto
 Keep in mind that the networking of non-SDS worker nodes in classic clusters is not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: note}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters:**
+![Classic](../icons/classic.svg "Classic") **Classic clusters:**
 
 1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#block_storage_attacher).
 2. [Manually add block storage](/docs/openshift?topic=openshift-utilities#manual_block) to your worker nodes. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
@@ -145,7 +145,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 5. [Attach the block storage](/docs/openshift?topic=openshift-utilities#attach_block) to your worker nodes.
 6. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters:**
+![VPC](../icons/vpc.svg "VPC") **VPC clusters:**
 1. Follow the [steps](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 2. If you want to use [journal devices](https://docs.portworx.com/install-with-other/operate-and-maintain/performance-and-tuning/tuning/){: external}, choose from the following options.
     - [Attach](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) an additional 3 GB disk to at least 3 worker nodes in your cluster and find the device path. To find the device path after you attach the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
@@ -945,7 +945,7 @@ When you update a worker node in a VPC cluster, the worker node is removed from 
 Update only one worker node at a time. When the worker node update is complete, attach your {{site.data.keyword.block_storage_is_short}} and restart the Portworx pod.
 {: important}
 
-**Supported infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+**Supported infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC
 
 1. [Enter maintenance mode on the worker nodes that you want to update](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/troubleshooting/enter-maintenance-mode/){: external}.
 
