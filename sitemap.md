@@ -6104,7 +6104,7 @@ subcollection: openshift
 {: #sitemap_add-on_version_history}
 
 
-[Cluster add-on versions](/docs/openshift?topic=openshift-access-creds#access-creds)
+[Cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
