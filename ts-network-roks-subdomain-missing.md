@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why is my cluster missing the public `containers.appdomain.cloud` subdomain?
 {: #roks_ts_subdomain}
 {: troubleshoot}

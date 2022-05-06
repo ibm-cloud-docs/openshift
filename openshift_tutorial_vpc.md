@@ -18,6 +18,7 @@ completion-time: 45m
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Creating an {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
 {: #vpc_rh_tutorial}
 {: toc-content-type="tutorial"}

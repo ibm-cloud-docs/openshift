@@ -16,6 +16,7 @@ subcollection: openshift
 
 
 
+
 # Learning path for developers
 {: #learning-path-dev}
 

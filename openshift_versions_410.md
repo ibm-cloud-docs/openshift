@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-06"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # 4.10 version information and update actions

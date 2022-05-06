@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why is my Portieris cluster image security enforcement installation canceled?
 {: #portieris_enable}
 {: support}

@@ -16,6 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why does encryption fail with an invalid KMS endpoint?
 {: #px-kms-endpoint}
 {: support}

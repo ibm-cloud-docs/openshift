@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ completion-time: 60m
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Using Calico network policies to control traffic on Classic clusters

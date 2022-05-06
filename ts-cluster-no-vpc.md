@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # VPC: Why is no VPC available when I create a cluster in the console?
 {: #ts_no_vpc}
 {: support}

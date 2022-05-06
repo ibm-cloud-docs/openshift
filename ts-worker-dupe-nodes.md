@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # After a worker node updates or reloads, why do duplicate nodes and pods appear?
 {: #cs_duplicate_nodes}
 {: support}

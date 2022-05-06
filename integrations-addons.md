@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Adding services by using managed add-ons
 {: #managed-addons}
 

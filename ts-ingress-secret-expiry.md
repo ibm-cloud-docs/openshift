@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why isn't the Ingress secret expiration date updated?
 {: #sync_cert_dates}
 {: support}

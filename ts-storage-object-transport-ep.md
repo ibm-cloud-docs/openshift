@@ -16,6 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why is the transport endpoint not connected?
 {: #cos_transport_ts_connect}
 {: support}

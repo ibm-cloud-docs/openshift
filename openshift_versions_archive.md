@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-06"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Archived version change logs

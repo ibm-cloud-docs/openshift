@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Understanding costs for your clusters
 {: #costs}
 

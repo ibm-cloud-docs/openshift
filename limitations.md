@@ -13,6 +13,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Service limitations
 {: #openshift_limitations}
 

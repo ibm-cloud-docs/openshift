@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Planning app deployments
 {: #plan_deploy}
 

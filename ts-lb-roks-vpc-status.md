@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # VPC clusters: Why do I see VPC load balancer health status failures?
 {: #vpc_lb_healthcheck}
 {: support}

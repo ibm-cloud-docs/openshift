@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Debugging worker nodes
 {: #debug_worker_nodes}
 {: troubleshoot}

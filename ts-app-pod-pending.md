@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why do pods remain in pending state?
 {: #ts-app-pod-pending}
 {: support}

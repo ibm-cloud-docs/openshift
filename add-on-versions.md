@@ -12,6 +12,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Cluster add-on versions
 {: #supported-cluster-addon-versions}
 

@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations
 {: #cs_ingress_health_check_ctm}
 {: support}

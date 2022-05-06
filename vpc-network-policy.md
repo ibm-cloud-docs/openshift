@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Overview of network security options
 {: #vpc-network-policy}
 

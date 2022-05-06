@@ -13,6 +13,7 @@ subcollection: openshift, container storage
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # OpenShift Data Foundation add-on changelog
 {: #odf_addon_changelog}
 

@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Classic: Setting up DSR load balancing with an NLB 2.0
 {: #loadbalancer-v2}
 

@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why can't I establish VPN connectivity with the strongSwan Helm chart?
 {: #cs_vpn_fails}
 {: support}

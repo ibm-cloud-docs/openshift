@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why can't I install a Helm chart with updated configuration values?
 {: #ts-app-helm-install}
 {: support}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-04"
+lastupdated: "2022-05-06"
 
 keywords: openshift, route, router
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # {{site.data.keyword.cloud_notm}} HPCS Router add-on changelog

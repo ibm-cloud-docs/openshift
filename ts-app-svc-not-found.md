@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why does binding a service to a cluster results in service not found error?
 {: #ts-app-svc-bind-not-found}
 {: support}

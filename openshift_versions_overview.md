@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-06"
 
 keywords: openshift, version, update, upgrade
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # {{site.data.keyword.openshiftshort}} version information
 {: #openshift_versions}

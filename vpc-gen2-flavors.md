@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-06"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -17,6 +17,7 @@ subcollection: openshift
 Review the VPC Gen 2 worker node flavors by zone.
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

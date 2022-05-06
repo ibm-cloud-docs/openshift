@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why does my build error due to image pull authentication?
 {: #ts-app-build-img-pull}
 {: troubleshoot}

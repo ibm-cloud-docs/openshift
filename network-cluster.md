@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Changing service endpoints or VLAN connections in {{site.data.keyword.redhat_openshift_notm}} 3.11
 {: #cs_network_cluster}
 

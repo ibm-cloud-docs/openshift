@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Controlling traffic with network policies on classic clusters
 {: #network_policies}
 

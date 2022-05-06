@@ -16,6 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why does my PVC remain in a pending state?
 {: #cos_pvc_pending}
 {: support}
