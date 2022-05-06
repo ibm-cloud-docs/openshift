@@ -4950,6 +4950,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.408](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10408)
+
 * [Version 1.0.404](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10404)
 
 * [Version 1.0.403](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10403)
