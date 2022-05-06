@@ -54,7 +54,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 - Updates the UBI to 8.5-243.1651231653
 - Resolves [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}
-- Updates GoLang update to 1.17.9
+- Updates GoLang to 1.17.9
 
 ## Change log for version 2.1.14, released 13 April 2022
 {: #02114_object_plugin}
