@@ -314,6 +314,7 @@ toc:
             - topicgroup:
                 label: Add-on version history
                 topics:
+                - add-on-versions.md 
                 - versions-autoscaler.md
                 - versions-vpc-block-addon.md
                 - versions-object.md
