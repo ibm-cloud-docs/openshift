@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider and version**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+* ![Classic](../icons/classic.svg "Classic") Classic
 * ![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} version 4
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: #root}
 {: support}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
 
 
 After you [create](/docs/openshift?topic=openshift-file_storage#add_file) or [add existing](/docs/openshift?topic=openshift-file_storage#existing_file) NFS storage to your cluster, your app's container deployment fails. You see group ID (GID) error messages.

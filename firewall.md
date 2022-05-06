@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # Classic: Opening required ports and IP addresses in your firewall
 {: #firewall}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) This firewall information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your firewall for VPC clusters](/docs/containers?topic=containers-vpc-firewall).
+![Classic](../icons/classic.svg "Classic") This firewall information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your firewall for VPC clusters](/docs/containers?topic=containers-vpc-firewall).
 {: note}
 
 Review these situations in which you might need to open specific ports and IP addresses in your firewalls for your {{site.data.keyword.openshiftlong}} clusters.
@@ -581,8 +581,6 @@ Before you begin, the following steps require you to change the IAM allowlist fo
 7. For **Classic infrastructure**, enter the [CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. For VPC infrastructure, enter the CIDRs of the zones in the region where your cluster is located in your security group of ALB. To find the region that your cluster's zones are location in, see the `README` for the directory.
 8. Enter the CIDRs of the worker node subnets that you found in step 2.
 9. Click **Apply**.
-
-
 
 
 

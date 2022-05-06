@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-04"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 subcollection: openshift
@@ -1194,7 +1194,7 @@ subcollection: openshift
 
     * [24 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2420)
 
-        * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) New! Reservations to reduce classic worker node costs
+        * ![Classic](../icons/classic.svg "Classic") New! Reservations to reduce classic worker node costs
 
     * [23 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2320)
 
@@ -2576,7 +2576,7 @@ subcollection: openshift
 
     * [Adding tags to clusters with the console](/docs/openshift?topic=openshift-add_workers#add-tags-console)
 
-    * [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-add_workers#adding-tags-to-clusters-with-the-cli)
+    * [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-add_workers#add-tags-cli)
 
 * [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
 
@@ -7189,7 +7189,7 @@ subcollection: openshift
 
 [Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/openshift?topic=openshift-debug_monitoring#debug_monitoring)
 
-    * [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
+* [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
 
 
 ### Object Storage
@@ -7231,6 +7231,8 @@ subcollection: openshift
 [Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-cos_pvc_pending#cos_pvc_pending)
 
 [Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails#cos_secret_access_fails)
+
+[Why is the transport endpoint not connected?](/docs/openshift?topic=openshift-cos_transport_ts_connect#cos_transport_ts_connect)
 
 
 ### Portworx Storage

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-04"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -2089,7 +2089,7 @@ New! {{site.data.keyword.cloud_notm}} HPCS Router
 {: #openshift-nov2420}
 {: release-note}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) New! Reservations to reduce classic worker node costs
+![Classic](../icons/classic.svg "Classic") New! Reservations to reduce classic worker node costs
 :   Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on-demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/containers?topic=containers-reservations).
 
 ### 23 November 2020

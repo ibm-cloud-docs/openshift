@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -17,13 +17,13 @@ content-type: troubleshoot
 {: #rhoks_ts_openvpn_subnet}
 {: support}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
 
 
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>`, you see the following error message in the **Master Status** field.
 {: tsSymptoms}
 
-```
+```sh
 CAE003: Unable to determine the ingress IP address for the network load balancer.
 ```
 {: screen}

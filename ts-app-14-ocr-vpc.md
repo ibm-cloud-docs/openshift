@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -19,14 +19,14 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider and applicable versions**:
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![VPC](../icons/vpc.svg "VPC") VPC
 * {{site.data.keyword.redhat_openshift_notm}} 4.4 or later
 
 
 When you try to push container images to the internal {{site.data.keyword.redhat_openshift_notm}} container image registry, the push fails with a message similar to the following.
 {: tsSymptoms} 
 
-```
+```sh
 dial tcp 161.26.0.28:443: connect: network is unreachable
 ```
 {: screen}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: openshift, route, router
 
@@ -37,7 +37,7 @@ If you have a multizone cluster, one router is deployed to your cluster, and a r
 ### Traffic flow in a classic single-zone cluster
 {: #route_single}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
+![Classic](../icons/classic.svg "Classic") The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
 {: shortdesc}
 
 ![Expose an app in a single-zone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router.png)
@@ -53,7 +53,7 @@ If you have a multizone cluster, one router is deployed to your cluster, and a r
 ### Traffic flow in a classic multizone cluster
 {: #route_multi}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
+![Classic](../icons/classic.svg "Classic") The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
 {: shortdesc}
 
 ![Expose an app in a multizone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router-multi.png)

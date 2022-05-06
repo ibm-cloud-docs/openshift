@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -32,14 +32,14 @@ Review the options to debug persistent storage and find the root causes for fail
     ```
     {: pre}
 
-2. Get the details of your pod and check whether errors are displayed in the **Events** section of your CLI output.
+1. Get the details of your pod and check whether errors are displayed in the **Events** section of your CLI output.
     ```sh
     oc describe pod <pod_name>
     ```
     {: pre}
 
 
-3. Retrieve the logs for your app and check whether you can see any error messages.
+1. Retrieve the logs for your app and check whether you can see any error messages.
     ```sh
     oc logs <pod_name>
     ```
@@ -59,9 +59,9 @@ Review the options to debug persistent storage and find the root causes for fail
     ```
     {: pre}
 
-3. If restarting your pod does not resolve the issue, [reload your worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+1. If restarting your pod does not resolve the issue, [reload your worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
-4. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
+1. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
     ```sh
     ibmcloud update
     ```
@@ -81,7 +81,7 @@ Review the options to debug persistent storage and find the root causes for fail
     ```
     {: pre}
 
-2. If the storage driver and plug-in pods don't show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all the following commands.
+1. If the storage driver and plug-in pods don't show a **Running** status, get more details of the pod to find the root cause. Depending on the status of your pod, you might not be able to execute all the following commands.
     1. Get the names of the containers that run in the driver pod.
         ```sh
         kubectl get pod <pod_name> -n kube-system -o jsonpath="{.spec['containers','initContainers'][*].name}" | tr -s '[[:space:]]' '\n'
@@ -114,7 +114,7 @@ Review the options to debug persistent storage and find the root causes for fail
         ```
         {: pre}
 
-3. Analyze the **Events** section of the CLI output of the `oc describe pod` command and the latest logs to find the root cause for the error.
+1. Analyze the **Events** section of the CLI output of the `oc describe pod` command and the latest logs to find the root cause for the error.
 
 ## Checking whether your PVC is successfully provisioned.
 {: #check_pvc_provision}
@@ -126,22 +126,22 @@ Review the options to debug persistent storage and find the root causes for fail
     ```
     {: pre}
 
-2. If the state of the PVC shows **Pending**, retrieve the error for why the PVC remains pending.
+1. If the state of the PVC shows **Pending**, retrieve the error for why the PVC remains pending.
     ```sh
     oc describe pvc <pvc_name>
     ```
     {: pre}
 
-3. Review common errors that can occur during the PVC creation.
+1. Review common errors that can occur during the PVC creation.
     - [File storage and classic block storage: PVC remains in a pending state](/docs/containers?topic=containers-file_pvc_pending)
     - [Object storage: PVC remains in a pending state](/docs/containers?topic=containers-cos_pvc_pending)
 
-4. Review common errors that can occur when you mount a PVC to your app.
+1. Review common errors that can occur when you mount a PVC to your app.
     - [File storage: App can't access or write to PVC](/docs/containers?topic=containers-file_app_failures)
     - [Classic Block storage: App can't access or write to PVC](/docs/containers?topic=containers-block_app_failures)
     - [Object storage: Accessing files with a non-root user fails](/docs/containers?topic=containers-cos_nonroot_access)
 
-7. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/releases/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
+1. Verify that the `kubectl` CLI version that you run on your local machine matches the Kubernetes version that is installed in your cluster. If you use a `kubectl` CLI version that does not match at least the major.minor version of your cluster, you might experience unexpected results. For example, [Kubernetes does not support ![External link icon](../icons/launch-glyph.svg “External link icon”)](https://kubernetes.io/releases/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
     1. Show the `kubectl` CLI version that is installed in your cluster and your local machine.
         ```sh
         oc version
@@ -159,9 +159,9 @@ Review the options to debug persistent storage and find the root causes for fail
     2. If the `kubectl` CLI versions on your local machine and your cluster don't match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
 
 
-8. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
+1. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
-9. For classic block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
+1. For classic block storage, object storage, and Portworx only: Make sure that you installed the latest Helm chart version for the plug-in.
 
     **Block and object storage**:
 
@@ -208,15 +208,15 @@ Review the options to debug persistent storage and find the root causes for fail
 ## Portworx
 {: #ts-portworx-helm}
 
-    1. Find the [latest Helm chart version](https://github.com/IBM/charts/tree/master/community/portworx){: external} that is available.
+1. Find the [latest Helm chart version](https://github.com/IBM/charts/tree/master/community/portworx){: external} that is available.
 
-    2. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
-        ```sh
-        helm list --all-namespaces
-        ```
-        {: pre}
+2. List the installed Helm charts in your cluster and compare the version that you installed with the version that is available.
+    ```sh
+    helm list --all-namespaces
+    ```
+    {: pre}
 
-    3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
+3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
 
 
 ## OpenShift Data Foundation 
@@ -244,25 +244,25 @@ Describe your ODF resources and review the command outputs for any error message
     ```
     {: pre}
 
-2. List the pods in the `kube-system` namespace and verify that they are `Running.`
+1. List the pods in the `kube-system` namespace and verify that they are `Running.`
     ```sh
     oc get pods -n kube-system
     ```
     {: pre}
 
-4. Describe the `ibm-ocs-operator-controller-manager` pod and review the `Events` section in the output for any error messages.
+1. Describe the `ibm-ocs-operator-controller-manager` pod and review the `Events` section in the output for any error messages.
     ```sh
     oc describe pod <ibm-ocs-operator-controller-manager-a1a1a1a> -n kube-system
     ```
     {: pre}
 
-5. Review the logs of the `ibm-ocs-operator-controller-manager`.
+1. Review the logs of the `ibm-ocs-operator-controller-manager`.
     ```sh
     oc logs <ibm-ocs-operator-controller-manager-a1a1a1a> -n kube-system
     ```
     {: pre}
 
-6. Describe NooBaa and review the `Events` section of the output for any error messages.
+1. Describe NooBaa and review the `Events` section of the output for any error messages.
     ```sh
     oc describe noobaa -n openshift-storage
     ```

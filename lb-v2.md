@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-06"
 
 keywords: openshift, lb2.0, nlb
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Classic: Setting up DSR load balancing with an NLB 2.0
 {: #loadbalancer-v2}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Version 2.0 NLBs can be created in classic clusters only, and can't be created in VPC clusters. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
+![Classic](../icons/classic.svg "Classic") Version 2.0 NLBs can be created in classic clusters only, and can't be created in VPC clusters. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/containers?topic=containers-vpc-lbaas).
 {: note}
 
 Expose a port and use a portable IP address for a Layer 4 network load balancer (NLB) to expose a containerized app. For more information about version 2.0 NLBs, see [Components and architecture of an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-about#planning_ipvs).

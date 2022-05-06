@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -364,7 +364,7 @@ A user with the **Super User** infrastructure access role [sets the API key for 
 {: shortdesc}
 
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic infrastructure permissions apply only to classic clusters. For VPC clusters, see [Granting user permissions for VPC resources](/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
+![Classic](../icons/classic.svg "Classic") Classic infrastructure permissions apply only to classic clusters. For VPC clusters, see [Granting user permissions for VPC resources](/docs/vpc?topic=vpc-managing-user-permissions-for-vpc-resources).
 {: note}
 
 

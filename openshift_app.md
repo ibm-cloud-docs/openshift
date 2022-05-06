@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: kubernetes, openshift
 
@@ -785,6 +785,8 @@ To set up configuration files with Kustomize:
         job.batch/staging-pi created
         persistentvolumeclaim/staging-kustomtest-pvc-v2 created
         ```
+        {: screen}
+        
     3. Check to make sure that the staging-unique changes are applied. For example, if you added a `staging-` prefix, the pods and other resources that are created include this prefix in their name.
         ```sh
         oc get -k ../staging

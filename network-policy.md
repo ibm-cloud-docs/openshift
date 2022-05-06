@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Controlling traffic with network policies on classic clusters
 {: #network_policies}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) This network policy information is specific to classic clusters. For network policy information for VPC clusters, see [Controlling traffic with security groups](/docs/containers?topic=containers-vpc-security-group).
+![Classic](../icons/classic.svg "Classic") This network policy information is specific to classic clusters. For network policy information for VPC clusters, see [Controlling traffic with security groups](/docs/containers?topic=containers-vpc-security-group).
 {: note}
 
 Every {{site.data.keyword.openshiftlong}} cluster comes with a network plug-in called Calico. Default network policies secure the public network interface of every worker node in the cluster.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-05-06"
 
 keywords: openshift, block storage
 
@@ -21,7 +21,7 @@ The following documentation covers the steps to deploy the {{site.data.keyword.b
 {: important}
 
 **Supported infrastructure provider**:
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Storing data on Block Storage for VPC](/docs/containers?topic=containers-vpc-block) for more information.
 {: tip}

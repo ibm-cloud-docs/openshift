@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -17,33 +17,33 @@ content-type: troubleshoot
 {: #ts_cos_bucket_cluster_create}
 {: support}
 
-**Infrastructure provider**: ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC 
+**Infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC 
 
 
 When you create a cluster, you see an error message similar to the following.
 {: tsSymptoms}
 
-```
+```sh
 Could not store the cloud object storage bucket and IAM service key.
 ```
 {: screen}
 
-```
+```sh
 Could not find the specified cloud object storage instance.
 ```
 {: screen}
 
-```
+```sh
 Could not create an IAM service key to access the cloud object storage bucket '{{.Name}}'.
 ```
 {: screen}
 
-```
+```sh
 Could not create a bucket in your cloud object storage instance.
 ```
 {: screen}
 
-```
+```sh
 Verify your user permissions and the API key permissions to Cloud Object Storage, or use a different instance that you have permissions to, and try again. For more information, see 'http://ibm.biz/roks_cos_ts'.
 ```
 {: screen}

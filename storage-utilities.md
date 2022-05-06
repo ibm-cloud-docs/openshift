@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -23,7 +23,7 @@ subcollection: openshift
 Use the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in to attach raw, unformatted, and unmounted block storage to a classic worker node in your cluster.  
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) The {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in is available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
+![Classic](../icons/classic.svg "Classic") The {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in is available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
 {: note}
 
 For example, you want to store your data with a software-defined storage solution (SDS), such as [Portworx](/docs/containers?topic=containers-portworx), but you don't want to use classic bare metal worker nodes that are optimized for SDS usage and that come with extra local disks. To add local disks to your classic non-SDS worker node, you must manually create your block storage devices in your {{site.data.keyword.cloud_notm}} infrastructure account and use the {{site.data.keyword.cloud_notm}} Block Volume Attacher to attach the storage to your non-SDS worker node.
@@ -212,7 +212,7 @@ The removal of the storage class is successful if no storage class is displayed 
 Use this option if you want to add different block storage configurations, add block storage to a subset of worker nodes only, or to have more control over the provisioning process.
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) The instructions in this topic are available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
+![Classic](../icons/classic.svg "Classic") The instructions in this topic are available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
 {: note}
 
 1. List the worker nodes in your cluster and note the private IP address and the zone of the non-SDS worker nodes where you want to add a block storage device.
@@ -320,7 +320,7 @@ Use this option if you want to add different block storage configurations, add b
 To attach the block storage device to a non-SDS worker node, you must create a persistent volume (PV) with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class and the details of your block storage device.
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) The instructions in this topic are available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
+![Classic](../icons/classic.svg "Classic") The instructions in this topic are available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes](#vpc_api_attach).
 {: note}
 
 **Before you begin**:
@@ -467,7 +467,7 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 ## VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API
 {: #vpc_api_attach}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/GetClassicVolume){: external} to a worker node in your VPC cluster.
+![VPC](../icons/vpc.svg "VPC") You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/GetClassicVolume){: external} to a worker node in your VPC cluster.
 {: shortdesc}
 
 You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.
@@ -712,7 +712,7 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
 ## VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI
 {: #vpc_cli_attach}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) You can use the {{site.data.keyword.containershort_notm}} CLI to attach and detach raw, unformatted {{site.data.keyword.blockstorageshort}} to a worker node in your VPC cluster.
+![VPC](../icons/vpc.svg "VPC") You can use the {{site.data.keyword.containershort_notm}} CLI to attach and detach raw, unformatted {{site.data.keyword.blockstorageshort}} to a worker node in your VPC cluster.
 {: shortdesc}
 
 You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.

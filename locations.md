@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-06"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -59,7 +59,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 ### Classic multizone regions
 {: #zones-mz}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic multizone**: If you create a classic cluster in a multizone region, the replicas of your highly available Kubernetes master are automatically spread across the data centers (zones). You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
+![Classic](../icons/classic.svg "Classic") **Classic multizone**: If you create a classic cluster in a multizone region, the replicas of your highly available Kubernetes master are automatically spread across the data centers (zones). You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
 {: shortdesc}
 
 | Geography |  Country  | Metro | Data center |  Previous region  |
@@ -79,7 +79,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 ### Classic single zone regions
 {: #zones-sz}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic single zone**: If you create a classic cluster in a single zone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
+![Classic](../icons/classic.svg "Classic") **Classic single zone**: If you create a classic cluster in a single zone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
 {: shortdesc}
 
 Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
@@ -118,7 +118,7 @@ Mexico City (MEX01) is deprecated and becomes unsupported later this year. To pr
 ### VPC multizone regions
 {: #zones-vpc}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC regions and zones**: VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
+![VPC](../icons/vpc.svg "VPC") **VPC regions and zones**: VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
 {: shortdesc}
 
 | Geography |  Country  | Metro | Region | Zone | Location |

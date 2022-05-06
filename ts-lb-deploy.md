@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #cs_subnet_limit_lb}
 {: support}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
 
 When you describe the `ibm-cloud-provider-vlan-ip-config` configmap in your classic cluster, you might see an error message similar to the following example output.
 {: tsSymptoms}

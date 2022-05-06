@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-06"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -48,7 +48,7 @@ Private registry
 :   Private registries are a good choice to protect your images from unauthorized users. Private registries must be set up by the cluster administrator to make sure that access, storage quotas, image trust and other features work as intended. By default, your [{{site.data.keyword.redhat_openshift_notm}} clusters](#openshift_iccr) are integrated with the private {{site.data.keyword.registrylong_notm}} through image pull secrets in the `default` project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global `icr.io` registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with integration with {{site.data.keyword.cloud_notm}} IAM and billing. Advantages of using {{site.data.keyword.registrylong_notm}} with the internal registry:
     - Local image caching for faster builds via the internal registry.
     - Deployments in other projects can see the image stream so that you don't have to copy pull secrets to each project.
-    - Sharing images across multiple clusters without needing to push images to multiple registries.</li>
+    - Sharing images across multiple clusters without needing to push images to multiple registries.
     - [Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.
     - Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).
     - [Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.
@@ -74,8 +74,8 @@ Public registry
 {{site.data.keyword.redhat_openshift_notm}} clusters have an internal registry by default. The images in the internal registry are backed up, but vary depending on the infrastructure provider of your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
-- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) ![Version 3.11 icon.](images/icon-version-311.png) ![Version 4 icon.](images/icon-version-43.png) **Classic clusters**: Your {{site.data.keyword.redhat_openshift_notm}} cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.redhat_openshift_notm}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/registry/index.html){: external}.
-- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) ![Version 4 icon.](images/icon-version-43.png) **VPC clusters (version 4 only)**: The internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
+- ![Classic](../icons/classic.svg "Classic") ![Version 3.11 icon.](images/icon-version-311.png) ![Version 4 icon.](images/icon-version-43.png) **Classic clusters**: Your {{site.data.keyword.redhat_openshift_notm}} cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.redhat_openshift_notm}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/registry/index.html){: external}.
+- ![VPC](../icons/vpc.svg "VPC") ![Version 4 icon.](images/icon-version-43.png) **VPC clusters (version 4 only)**: The internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 - **Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters**: You can optionally choose to set up the internal registry to store data in the `emptyDir` of the worker node where the internal registry pod runs. Keep in mind that this data is not persistent, and if the pod or worker node is restarted, the stored data is deleted and unrecoverable. You might store the images locally in the `emptyDir` to increase performance if you build containers from large images regularly.
 
 ### VPC: Backing up your {{site.data.keyword.redhat_openshift_notm}} internal image registry to {{site.data.keyword.cos_full_notm}}
@@ -84,7 +84,7 @@ Public registry
 Your images in your {{site.data.keyword.redhat_openshift_notm}} cluster internal registry are automatically backed up to an {{site.data.keyword.cos_full_notm}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 {: shortdesc}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) ![Version 4 icon.](images/icon-version-43.png) The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on VPC infrastructure.
+![VPC](../icons/vpc.svg "VPC") ![Version 4 icon.](images/icon-version-43.png) The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on VPC infrastructure.
 {: note}
 
 However, if the bucket fails to create when you create your cluster, you must manually create a bucket and set up your cluster to use the bucket. In the meantime, the internal registry uses an `emptyDir` Kubernetes volume that stores your container images on the secondary disk of your worker node. The `emptyDir` volumes are not considered persistent highly available storage, and if you delete the pods that use the image, the image is automatically deleted.
@@ -94,7 +94,7 @@ To manually create a bucket for your internal registry, see [Cluster create erro
 ### Classic: Storing images in the internal registry
 {: #storage_internal_registry}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) By default, your {{site.data.keyword.redhat_openshift_notm}} cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
+![Classic](../icons/classic.svg "Classic") By default, your {{site.data.keyword.redhat_openshift_notm}} cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
 **Viewing volume details**

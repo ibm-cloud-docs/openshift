@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: #cs_storage_nonroot}
 {: support}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
 
 
 After you [add non-root user access to persistent storage](/docs/containers?topic=containers-nonroot) or deploy a Helm chart with a non-root user ID specified, the user can't write to the mounted storage.
@@ -70,7 +70,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 
     To create the storage class in your cluster, run `kubectl apply -f storageclass.yaml`.
 
-3. Create a YAML file for your PVC that uses the storage class that you created.
+1. Create a YAML file for your PVC that uses the storage class that you created.
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -89,14 +89,14 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: codeblock}
 
-4. Create the PVC in your cluster.
+1. Create the PVC in your cluster.
 
     ```sh
     kubectl apply -f pvc.yaml
     ```
     {: pre}
 
-5. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status. Note that if you created the PVC in a multizone cluster, the PVC remains in a `pending` state.
+1. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status. Note that if you created the PVC in a multizone cluster, the PVC remains in a `pending` state.
 {: note}
 
     ```sh
@@ -112,7 +112,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: screen}
 
-6. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage.
+1. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage.
 
     Example for creating an `node-hello` deployment.
     ```yaml
@@ -146,14 +146,14 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: codeblock}
 
-7. Create the deployment in your cluster.
+1. Create the deployment in your cluster.
 
     ```sh
     kubectl apply -f deployment.yaml
     ```
     {: pre}
 
-8. Verify that your pod is in a **Running** status.
+1. Verify that your pod is in a **Running** status.
 
     ```sh
     kubectl get pods
@@ -168,7 +168,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: screen}
 
-9. Log in to your pod.
+1. Log in to your pod.
 
     ```sh
     kubectl exec <pod_name> -it -- bash

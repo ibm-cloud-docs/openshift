@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -22,8 +22,8 @@ content-type: troubleshoot
 
 **Infrastructure provider**:
 
-- ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-- ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+- ![Classic](../icons/classic.svg "Classic") Classic
+- ![VPC](../icons/vpc.svg "VPC") VPC
 
 
 You can't access your worker node by using an SSH connection.
@@ -153,8 +153,8 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
 
 5. Run debug commands to help you gather information and troubleshoot issues. Commands that you might use to debug, such as `tcpdump`, `mtr`, `curl`, `ip`, `ifconfig`, `nc`, `ping`, and `ps`, are already available in the shell. You can also install other tools, such as `dig`, by running `apk add <tool>`. For example, to add `dig`, run `apk add bind-tools`.
 
-Before you can use the `tcpdump` command, you must first move the binary to a new location that does not conflict with the install path for the binary on the host. You can use the following command to relocate the binary: `mv /usr/sbin/tcpdump /usr/local/bin/`.
-{: note}
+    Before you can use the `tcpdump` command, you must first move the binary to a new location that does not conflict with the install path for the binary on the host. You can use the following command to relocate the binary: `mv /usr/sbin/tcpdump /usr/local/bin/`.
+    {: note}
 
 6. Delete the host access pod that you created for debugging.
 
@@ -181,7 +181,7 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
     ```
     {: pre}
     
-    ```
+    ```sh
     id_rsa id_rsa.pub
     ```
     {: screen}

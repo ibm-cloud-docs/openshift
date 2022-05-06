@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -18,8 +18,8 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 {{site.data.keyword.redhat_openshift_notm}} clusters have many built-in components that work together to simplify the developer experience. For example, you can use the {{site.data.keyword.redhat_openshift_notm}} web console to manage and deploy your cluster workloads, or enable 3rd-party operators from the OperatorHub to enhance your cluster with a service mesh and other capabilities.  
 {: shortdesc}

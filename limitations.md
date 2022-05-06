@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-05-06"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -83,7 +83,7 @@ Review limitations that are specific to {{site.data.keyword.redhat_openshift_not
 ## Classic cluster limitations
 {: #classic_limits}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic infrastructure clusters in {{site.data.keyword.openshiftlong_notm}} are released with the following limitations.
+![Classic](../icons/classic.svg "Classic") Classic infrastructure clusters in {{site.data.keyword.openshiftlong_notm}} are released with the following limitations.
 {: shortdesc}
 
 ### Compute
@@ -132,7 +132,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 ## VPC cluster limitations
 {: #ks_vpc_gen2_limits}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters in {{site.data.keyword.openshiftlong_notm}} are released with the following limitations. Additionally, all the underlying [VPC quotas, VPC limits](/docs/vpc?topic=vpc-quotas), [VPC service limitations](/docs/vpc?topic=vpc-limitations), and [regular service limitations](#tech_limits) apply.
+![VPC](../icons/vpc.svg "VPC") VPC clusters in {{site.data.keyword.openshiftlong_notm}} are released with the following limitations. Additionally, all the underlying [VPC quotas, VPC limits](/docs/vpc?topic=vpc-quotas), [VPC service limitations](/docs/vpc?topic=vpc-limitations), and [regular service limitations](#tech_limits) apply.
 {: shortdesc}
 
 ### Compute

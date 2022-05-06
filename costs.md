@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -55,7 +55,7 @@ Worker nodes begin to incur charges after they successfully complete the `provis
 * **Monthly billing only**: All bare metals are charged monthly.
 * **Longer ordering process**: After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.
 
-    ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC Generation 2 only**: Prices vary by region where the underlying worker node infrastructure resides, and you can get sustained usage discounts. For more information, see [What are the regional uplift charges and sustained usage discounts for VPC worker nodes?](#charges_vpc_gen2).
+    ![VPC](../icons/vpc.svg "VPC") **VPC Generation 2 only**: Prices vary by region where the underlying worker node infrastructure resides, and you can get sustained usage discounts. For more information, see [What are the regional uplift charges and sustained usage discounts for VPC worker nodes?](#charges_vpc_gen2).
     {: note}
 
 For more information about worker node specifications, see [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
@@ -119,14 +119,14 @@ Do not exceed your entitlement. Keep in mind that your OpenShift Container Platf
 Bandwidth refers to the public data transfer of inbound and outbound network traffic, both to and from {{site.data.keyword.cloud_notm}} resources in data centers around the globe.
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**: Public bandwidth is charged per GB. You can review your current bandwidth summary by logging into the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/), from the menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon") selecting **Classic Infrastructure**, and then selecting the **Network > Bandwidth > Summary** page.
+![Classic](../icons/classic.svg "Classic") **Classic clusters**: Public bandwidth is charged per GB. You can review your current bandwidth summary by logging into the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/), from the menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon") selecting **Classic Infrastructure**, and then selecting the **Network > Bandwidth > Summary** page.
 
 Review the following factors that impact public bandwidth charges:
 * **Location**: As with worker nodes, charges vary depending on the zone that your resources are deployed in.
 * **Pay-As-You-Go for VM**: Because VMs are billed at an hourly rate, your VM worker node machines have a Pay-As-You-Go allocation of outbound networking based on GB usage.
 * **Included bandwidth and tiered packages for BM**: Bare metal worker nodes might come with a certain allocation of outbound networking per month that varies by geography: 20 TB for North America and Europe, or 5 TB for Asia Pacific and South America. After you exceed your included bandwidth, you are charged according to a tiered usage scheme for your geography. If you exceed a tier allotment, you might also be charged a standard data transfer fee. For more information, see [Bandwidth packages](https://www.ibm.com/cloud/bandwidth){: external}.
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: For more information about how internet data transfer works in your Virtual Private Cloud, see [Pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
+![VPC](../icons/vpc.svg "VPC") **VPC clusters**: For more information about how internet data transfer works in your Virtual Private Cloud, see [Pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 
 ### Subnet IP addresses
 {: #subnet_ips}
@@ -134,9 +134,9 @@ Review the following factors that impact public bandwidth charges:
 Subnets for {{site.data.keyword.openshiftlong_notm}} clusters vary by infrastructure provider.
 {: shortdesc}
 
-![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**: When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets?topic=subnets-pricing-for-ibm-cloud-subnets) documentation or estimate your costs in the [classic subnets console)](https://cloud.ibm.com/classic/network/subnet/provision){: external}.  If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/openshift?topic=openshift-subnets#subnets_custom).
+![Classic](../icons/classic.svg "Classic") **Classic clusters**: When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets?topic=subnets-pricing-for-ibm-cloud-subnets) documentation or estimate your costs in the [classic subnets console)](https://cloud.ibm.com/classic/network/subnet/provision){: external}.  If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/openshift?topic=openshift-subnets#subnets_custom).
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: For more information about charges for floating IPs and other networking costs, see [Pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
+![VPC](../icons/vpc.svg "VPC") **VPC clusters**: For more information about charges for floating IPs and other networking costs, see [Pricing for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 
 ### Multizone load balancer
 {: #mzlb_pricing}
@@ -145,8 +145,8 @@ When you create a multizone cluster or add zones to a single zone cluster, you m
 {: shortdesc}
 
 The type of load balancer that is automatically created varies depending on the type of cluster. For more information, see [Multizone load balancer (MZLB) or Load Balancer for VPC](/docs/containers?topic=containers-ingress-about#mzlb).
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**: An Akamai MZLB is automatically created for each multizone cluster. You can view the hourly rate in the pricing summary when you create the cluster.
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: A Load Balancer for VPC is automatically created in your VPC for your cluster. For cost information, see [Pricing for Load Balancer for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
+* ![Classic](../icons/classic.svg "Classic") **Classic clusters**: An Akamai MZLB is automatically created for each multizone cluster. You can view the hourly rate in the pricing summary when you create the cluster.
+* ![VPC](../icons/vpc.svg "VPC") **VPC clusters**: A Load Balancer for VPC is automatically created in your VPC for your cluster. For cost information, see [Pricing for Load Balancer for VPC](https://www.ibm.com/cloud/vpc/pricing){: external}.
 
 
 
@@ -156,8 +156,8 @@ The type of load balancer that is automatically created varies depending on the 
 To store images in the internal registry, {{site.data.keyword.openshiftlong_notm}} creates a storage instance that varies by infrastructure provider.
 {: shortdesc}
 
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) **Classic clusters**: A classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed at an hourly rate. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost. For more information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-billing).
+* ![Classic](../icons/classic.svg "Classic") **Classic clusters**: A classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed at an hourly rate. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost. For more information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
+* ![VPC](../icons/vpc.svg "VPC") **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-billing).
 
 
 
@@ -191,7 +191,7 @@ Each service that you integrate with your cluster has its own pricing model. Rev
 Pricing for VPC infrastructure varies based on regional location and sustained usage.
 {: shortdesc}
 
-![VPC infrastructure provider icon.](images/icon-vpc-2.svg) This information applies to VPC worker nodes only.
+![VPC](../icons/vpc.svg "VPC") This information applies to VPC worker nodes only.
 {: note}
 
 Regional uplift charges

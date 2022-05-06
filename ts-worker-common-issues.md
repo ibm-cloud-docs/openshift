@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -24,8 +24,8 @@ Review common error messages and learn how to resolve them. Messages might begin
 {: shortdesc}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 ## Account prohibited from ordering
 {: #order-prohibit}
@@ -59,7 +59,7 @@ The zone that you selected might not have enough infrastructure capacity to prov
 To resolve, try one of the following options:
 * Infrastructure resource availability in zones can fluctuate often. Wait a few minutes and try again.
 * For a single zone cluster, create the cluster in a different zone. For a multizone cluster, add a zone to the cluster.
-* Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the `ibmcloud oc zone network-set` [command](</li>
+* Specify a different pair of public and private VLANs for your worker nodes in your IBM Cloud infrastructure account. For worker nodes that are in a worker pool, you can use the `ibmcloud oc zone network-set` [command](
 * Contact your IBM Cloud infrastructure account manager to verify that you don't exceed an account limit, such as a global quota.
 * Open an [IBM Cloud infrastructure support case](/docs/containers?topic=containers-get-help).
 
@@ -169,7 +169,7 @@ The owner of the API key that is used to access the IBM Cloud infrastructure por
 
 As the **user**, follow these steps:
 1. If you have access to multiple accounts, make sure that you are logged in to the account where you want to work with {{site.data.keyword.openshiftlong_notm}}.
-2. Run `ibmcloud oc api-key info --cluster <cluster_name_or_ID>` to view the current API key owner that is used to access the IBM Cloud infrastructure portfolio. </li>
+2. Run `ibmcloud oc api-key info --cluster <cluster_name_or_ID>` to view the current API key owner that is used to access the IBM Cloud infrastructure portfolio. 
 3. Run `ibmcloud account list` to view the owner of the {{site.data.keyword.cloud_notm}} account that you currently use.
 4. Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted.
 

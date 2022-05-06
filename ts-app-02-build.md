@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -19,14 +19,14 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 
 When a build such as from Operator Hub or the built-in developer content catalog tries to pull an image from a Red Hat registry, the build might fail with an authentication error similar to the following.
 {: tsSymptoms}
 
-```
+```sh
 error: build error: After retrying 2 times, Pull image still failed due to error: unauthorized: authentication required
 ```
 {: screen}

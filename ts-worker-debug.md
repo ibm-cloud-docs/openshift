@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -24,8 +24,8 @@ Review the options to debug your worker nodes and find the root causes for failu
 {: shortdesc}
 
 **Infrastructure provider**:
-* ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
-* ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC
+* ![Classic](../icons/classic.svg "Classic") Classic
+* ![VPC](../icons/vpc.svg "VPC") VPC
 
 ## Step 1: Get the worker node state
 {: #worker-debug-get-state}

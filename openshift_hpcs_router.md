@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-06"
 
 keywords: openshift, route, router
 
@@ -214,14 +214,14 @@ Use the {{site.data.keyword.cloud_notm}} HPCS Router operator to create a router
 7. Register the IP address (classic) or hostname (VPC) of each load balancer with a DNS entry by creating a subdomain for your {{site.data.keyword.cloud_notm}} HPCS router.
     * **IBM-provided domain**: If you don't need to use a custom domain, you can generate an IBM-provided subdomain.
 
-        * ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic:
+        * ![Classic](../icons/classic.svg "Classic") Classic:
 
             ```sh
             ibmcloud oc nlb-dns create classic --cluster <cluster_name_or_ID> --ip LB_IP [--ip LB2_IP --ip LB3_IP]
             ```
             {: pre}
 
-        * ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC:
+        * ![VPC](../icons/vpc.svg "VPC") VPC:
 
             ```sh
             ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <LB_hostname>

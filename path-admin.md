@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-05-06"
 
 keywords: openshift, red hat, red hat openshift, admin
 
@@ -78,7 +78,7 @@ Review the following optional topics to manage the network connectivity of your 
     - To route responses from your cluster back to your on-premises network in VPN solutions that preserve the request source IP address, add [custom static routes](/docs/containers?topic=containers-static-routes) to worker nodes for on-premises subnets.
 - **Subnets and VLANs**:
     - Add or change the available subnets and IP addresses for your [classic cluster](/docs/containers?topic=containers-subnets) or [VPC cluster](/docs/containers?topic=containers-vpc-subnets).
-    - ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic clusters: Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+    - ![Classic](../icons/classic.svg "Classic") Classic clusters: Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
 
 
 
@@ -90,10 +90,10 @@ Use built-in security features to protect your cluster infrastructure and networ
 
 1. **Security strategy**: Start by reviewing all [security options](/docs/containers?topic=containers-security) that are available for your cluster.
 2. **Network security**:
-    - ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic clusters:
+    - ![Classic](../icons/classic.svg "Classic") Classic clusters:
         1. To isolate networking workloads, you can restrict network traffic to [edge worker nodes](/docs/containers?topic=containers-edge).
         2. Set up a firewall by using a [gateway appliance](/docs/openshift?topic=openshift-firewall#vyatta_firewall) or [Calico network policies](/docs/containers?topic=containers-network_policies).
-    - ![VPC infrastructure provider icon.](images/icon-vpc-2.svg) VPC clusters: Control traffic to and from your cluster with [VPC security groups](/docs/containers?topic=containers-vpc-network-policy).
+    - ![VPC](../icons/vpc.svg "VPC") VPC clusters: Control traffic to and from your cluster with [VPC security groups](/docs/containers?topic=containers-vpc-network-policy).
 3. **Workload security**:
     1. [Encrypt sensitive information](/docs/containers?topic=containers-encryption) in the cluster, such as the master's local disk and secrets.
     2. Set up a [private image registry](/docs/openshift?topic=openshift-security#images_registry) for your developers, such as the one provided by {{site.data.keyword.registryshort}}, to control access to the registry and the image content that can be pushed.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-06"
 
 keywords: openshift
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #cs_vpn_fails}
 {: support}
 
-**Infrastructure provider**: ![Classic infrastructure provider icon.](images/icon-classic-2.svg) Classic
+**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
 
 
 When you check VPN connectivity by running `oc exec $STRONGSWAN_POD -- ipsec status`, you don't see a status of `ESTABLISHED`, or the VPN pod is in an `ERROR` state or continues to crash and restart.

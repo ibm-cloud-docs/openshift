@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-06"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -31,7 +31,7 @@ Default behavior
 Limitations
 :   Because the worker nodes of your VPC cluster exist in a service account and aren't listed in the VPC infrastructure dashboard, you can't create a security group and apply it to your worker node instances. You can only modify the existing security group. 
 
-If you modfiy the default VPC security groups, you must, at minumum, include the required [inbound](#min-outbound-rules-sg-workers) and [outbound](#min-inbound-rules-sg-workers) rules so that your cluster works properly.  
+If you modify the default VPC security groups, you must, at minimum, include the required [inbound](#min-outbound-rules-sg-workers) and [outbound](#min-inbound-rules-sg-workers) rules so that your cluster works properly.  
 {: important}
 
 ### Security groups applied to cluster workers
@@ -40,7 +40,7 @@ If you modfiy the default VPC security groups, you must, at minumum, include the
 | Security group type | Name | Details |
 | --- | --- | --- | 
 | VPC security group | Randomly generated | - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.  \n - Allows all outbound traffic by default. |
-| VPC cluster secruity group | `kube-<cluster-ID>`| - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.   \n - Allows traffic necessary for the cluster infrastructure to function
+| VPC cluster security group | `kube-<cluster-ID>`| - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.   \n - Allows traffic necessary for the cluster infrastructure to function
 . |
 {: caption="Table 1. VPC security groups" caption-side="top"}
 {: summary="The table shows the three types of security groups that are automatically created for VPCs. The first column includes the type of security group. The second column includes the naming format of the security group. The third column includes details on when and where the security group is created and what type of traffic it allows."}
@@ -126,8 +126,8 @@ Before you begin, gather the relevant VPC and cluster IDs.
 
 1. From the [Security groups for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/securityGroups){: external}, find the security groups that are attached to the VPC that your cluster is in. The VPC cluster security group is named in the format of `kube-<cluster-ID>`. The {{site.data.keyword.openshiftlong_notm}} security group is named in the format of `kube-<vpc-ID>`. Click on the security group.
 
-To sort the security groups by the VPC they are attached to, click the **Virtual Private Cloud** column heading in the table. 
-{: tip}
+    To sort the security groups by the VPC they are attached to, click the **Virtual Private Cloud** column heading in the table. 
+    {: tip}
 
 2. To view the inbound and outbound rules attached to the security group, click the **Rules** tab.
 

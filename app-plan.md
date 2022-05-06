@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-06"
 
 keywords: openshift, deploy
 
@@ -284,7 +284,7 @@ Configmap
 
 Secret
 :   Provide sensitive information to your workloads, such as follows. Other users of the cluster might have access to the secret, so be sure that you know the secret information can be shared with those users.
-    - Personally identifiable information (PII: Store sensitive information such as email addresses or other types of information that are required for company compliance or government regulation in secrets.</li>
+    - Personally identifiable information (PII: Store sensitive information such as email addresses or other types of information that are required for company compliance or government regulation in secrets.
     - Credentials: Put credentials such as passwords, keys, and tokens in a secret to reduce the risk of accidental exposure. For example, when you [bind a service](/docs/containers?topic=containers-service-binding) to your cluster, the credentials are stored in a secret.
 
 Want to make your secrets even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt new and existing secrets.
@@ -450,7 +450,7 @@ Set up a continuous integration and delivery (CI/CD) pipeline
 
 Package your app configuration files
 :   Package your app with tools like Kustomize or Helm.
-    - With the `kustomize` [project](/docs/openshift?topic=openshift-openshift_apps#kustomize), you can write, customize, and reuse your Kubernetes resource YAML configurations.</li>
+    - With the `kustomize` [project](/docs/openshift?topic=openshift-openshift_apps#kustomize), you can write, customize, and reuse your Kubernetes resource YAML configurations.
     - With the [Helm](https://helm.sh/docs/){: external} Kubernetes package manager, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster. You can also [integrate {{site.data.keyword.cloud_notm}}-provided Helm charts](https://cloud.ibm.com/kubernetes/helm){: external} to extend your cluster's capabilities, such as with a block storage plug-in.
         
 Are you looking to create YAML file templates? Some people use Helm to do just that, or you might try out other community tools such as [`ytt`](https://get-ytt.io/){: external}.
