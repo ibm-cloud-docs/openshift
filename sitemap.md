@@ -206,6 +206,10 @@ subcollection: openshift
 
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
 
+    * [6 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0622)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in
+
     * [4 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0422)
 
         * HPCS Router add-on
@@ -6203,6 +6207,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.1.15, released 6 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02115_object_plugin)
 
 * [Change log for version 2.1.14, released 13 April 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02114_object_plugin)
 

@@ -26,6 +26,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2022
 {: #openshift-may22}
 
+### 6 May 2022
+{: #openshift-may0622}
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.15` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+
 ### 4 May 2022
 {: #openshift-may0422}
 

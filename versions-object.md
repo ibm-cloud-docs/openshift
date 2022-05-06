@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-06"
 
 keywords: object storage, plug-in, changelog
 
@@ -26,7 +26,8 @@ Refer to the following tables for a summary of changes for each version of the [
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
 | 2.1.14 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.1.13 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.14 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.13 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.12 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.11 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.10 | Deprecated | Greater than or equal to 4.3 | x86 |
@@ -47,6 +48,13 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+## Change log for version 2.1.15, released 6 May 2022
+{: #02115_object_plugin}
+
+- Updates the UBI to 8.5-243.1651231653
+- Resolves [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}
+- Updates GoLang update to 1.17.9
 
 ## Change log for version 2.1.14, released 13 April 2022
 {: #02114_object_plugin}
