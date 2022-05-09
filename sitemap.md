@@ -3364,6 +3364,8 @@ subcollection: openshift
 
 * [Service audit logs](/docs/openshift?topic=openshift-health-audit#audit-service)
 
+    * [Viewing `AuditWebhookError` alerts in auditing-enabled clusters](/docs/openshift?topic=openshift-health-audit#audit-webhook-error-410)
+
 
 ## Setting up an image build pipeline
 {: #sitemap_setting_up_an_image_build_pipeline}
