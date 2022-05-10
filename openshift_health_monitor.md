@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-10"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -54,7 +54,7 @@ Review the following details about built-in monitoring tools for your cluster.
 - At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.redhat_openshift_notm}} **Cluster Console**.
 - Monitoring is on a per-cluster basis.
 - The `openshift-monitoring` project stack is set up in a single zone only. No persistent storage is available to back up or view metric history.
-- In cluster versions 4.10 and later an `AuditWebhookError` alert was added that fires when the audit webhook crashes or is deleted. For more information, see [Viewing the `AuditWebhookError` alert](/docs/openshift?topic=openshift-health-audit##audit-webhook-error-410).
+- In cluster versions 4.10 and later an `AuditWebhookError` alert was added that fires when the audit webhook crashes or is deleted. For more information, see [Viewing the `AuditWebhookError` alert](/docs/openshift?topic=openshift-health-audit#audit-webhook-error-410).
 
 For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html){: external}.
 
