@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-10"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -40,7 +40,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
+| Disk identification | N/A | N/A | Enhanced the disk identification logic to handle the case of 2+ partitions. |
 | Haproxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}, [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}, [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}, [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}, and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}. |
 {: caption="Changes since version 4.5.41_1551_openshift" caption-side="top"}
 
