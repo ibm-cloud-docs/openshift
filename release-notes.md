@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-10"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: release-note
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Release notes
 {: #openshift-relnotes}
@@ -25,6 +26,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2022
 {: #openshift-may22}
+
+### 9 May 2022
+{: #openshift-may0922}
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.12_1517_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.31_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1556_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.49_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.685_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+
 
 ### 6 May 2022
 {: #openshift-may0622}

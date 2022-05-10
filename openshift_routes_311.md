@@ -13,6 +13,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Exposing apps with routes in {{site.data.keyword.redhat_openshift_notm}} 3.11
 {: #routes-311}
 

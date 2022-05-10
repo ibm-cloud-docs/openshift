@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # After logging in to my cluster, why do I see a no resources found message?
 {: #rhoks_ts_not_found}
 {: troubleshoot}

@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Checking the status of Ingress components
 {: #ingress-status}
 {: support}

@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Security for {{site.data.keyword.openshiftlong_notm}}
 {: #security}
 

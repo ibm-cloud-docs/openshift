@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-05-06"
 
 keywords: openshift, dedicated hosts, host pool, dedicated pool
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # VPC: Why can't I create worker nodes on dedicated hosts?
 {: #ts-worker-dedicated}

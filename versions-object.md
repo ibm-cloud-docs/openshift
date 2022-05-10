@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # {{site.data.keyword.cos_full_notm}} plug-in 
 {: #cos_plugin_changelog}
 

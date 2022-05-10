@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-09"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -13,6 +13,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Reviewing service, API server, and worker node logs
@@ -328,4 +329,22 @@ See [Forwarding logs to an {{site.data.keyword.la_full_notm}} instance](/docs/co
 {: #audit-service}
 
 By default, {{site.data.keyword.openshiftlong_notm}} generates and sends events to {{site.data.keyword.at_full_notm}}. To see these events, you must create an {{site.data.keyword.at_full_notm}} instance. For more information, see [{{site.data.keyword.at_full_notm}} events](/docs/containers?topic=containers-at_events).
+
+
+
+### Viewing `AuditWebhookError` alerts in auditing-enabled clusters
+{: #audit-webhook-error-410}
+
+{{site.data.keyword.openshiftlong_notm}} clusters version 4.10 and later have an `AuditWebhookError` alert that fires when the audit webhook crashes or is deleted.
+{: shortdesc}
+
+To view the alert:
+
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+
+1. From the {{site.data.keyword.openshiftshort}}, select the **Administrator** view.
+1. Click **Observe** > **Alerting** > **AuditWebhookError**.
+1. To create a notification for this alert, see [Sending notifications to external systems](https://docs.openshift.com/container-platform/4.10/monitoring/managing-alerts.html#sending-notifications-to-external-systems_managing-alerts){: external}.
+
+
 

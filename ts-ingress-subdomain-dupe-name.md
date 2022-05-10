@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why does no Ingress subdomain exist after I create clusters of the same or similar name?
 {: #cs_rate_limit}
 {: support}

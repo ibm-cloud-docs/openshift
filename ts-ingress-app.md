@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Classic clusters: Why can't my app connect via Ingress?
 {: #cs_ingress_fails}
 {: support}

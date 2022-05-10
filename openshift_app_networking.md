@@ -13,6 +13,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Choosing an app exposure service
 {: #cs_network_planning}
 

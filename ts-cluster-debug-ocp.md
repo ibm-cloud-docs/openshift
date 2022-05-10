@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Debugging {{site.data.keyword.redhat_openshift_notm}} web console, OperatorHub, internal registry, and other components
 {: #ocp-debug}
 {: support}

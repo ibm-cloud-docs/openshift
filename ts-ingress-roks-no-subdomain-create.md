@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why does no Ingress subdomain exist after cluster creation?
 {: #ingress_subdomain}
 {: support}

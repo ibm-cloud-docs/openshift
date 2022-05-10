@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Pods in the `openshift-markeplace` namespace are in `ImagePullBackOff`
 {: #ts-openshift-marketplace}
 {: support}

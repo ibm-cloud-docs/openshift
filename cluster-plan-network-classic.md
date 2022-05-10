@@ -12,6 +12,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Understanding network basics of classic clusters
 {: #plan_basics}
 

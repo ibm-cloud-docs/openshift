@@ -15,6 +15,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # {{site.data.keyword.openshiftlong_notm}} CLI reference
 {: #kubernetes-service-cli}
 

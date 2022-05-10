@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Controlling traffic with VPC security groups
 {: #vpc-security-group}
 {: help}

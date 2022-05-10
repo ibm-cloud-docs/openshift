@@ -16,6 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why can't the ownership of the mount path be changed?
 {: #cos_mountpath_error}
 {: support}

@@ -13,6 +13,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Architecture and dependencies of the service
 {: #service-architecture}
 

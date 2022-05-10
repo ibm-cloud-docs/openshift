@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Configuring classic subnets and IP addresses
 {: #subnets}
 

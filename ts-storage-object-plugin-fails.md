@@ -16,6 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why does installing the {{site.data.keyword.cos_full_notm}} plug-in fail?
 {: #cos_plugin_fails}
 {: support}

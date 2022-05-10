@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why does strongSwan VPN connectivity fail after I add or delete worker nodes?
 {: #cs_vpn_fails_worker_add}
 {: support}

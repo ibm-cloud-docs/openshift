@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why do I see `Could not find user` when I try to access the Red Hat {{site.data.keyword.openshiftshort}} web console?
 {: #ts-cluster-ocp-console}
 

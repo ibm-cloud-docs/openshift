@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why can't I SSH into my worker node?
 {: #cs_ssh_worker}
 {: support}

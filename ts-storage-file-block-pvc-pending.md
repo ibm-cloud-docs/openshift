@@ -16,6 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # File storage and block storage: Why does my PVC remain in a pending state?
 {: #file_pvc_pending}
 {: support}

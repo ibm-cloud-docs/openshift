@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Developing apps to run on OpenShift
 {: #openshift_apps}
 

@@ -16,6 +16,7 @@ subcollection: openshift
 
 
 
+
 # Classic: Opening required ports and IP addresses in your firewall
 {: #firewall}
 

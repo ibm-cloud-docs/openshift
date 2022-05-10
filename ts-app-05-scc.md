@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why does pod not build with a permission denied error because of security context constraint (SCC)?
 {: #ts-app-scc}
 {: troubleshoot}

@@ -16,6 +16,7 @@ subcollection: openshift
 
 
 
+
 # Getting started with {{site.data.keyword.openshiftlong_notm}}
 {: #getting-started}
 

@@ -15,6 +15,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Configuring VPC subnets
 {: #vpc-subnets}
 

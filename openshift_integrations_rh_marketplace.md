@@ -13,6 +13,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+
  
 
 # Setting up the {{site.data.keyword.redhat_notm}} Marketplace

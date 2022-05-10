@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why can't I create or delete worker nodes?
 {: #worker_infra_errors}
 {: troubleshoot}

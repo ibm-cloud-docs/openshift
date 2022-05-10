@@ -16,6 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Why are the file systems for worker nodes changed to read-only?
 {: #readonly_nodes}
 {: support}

@@ -13,6 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Why can't I push or pull images from my local machine to the Docker registry?
 {: #ts-app-docker-local}
 {: troubleshoot}

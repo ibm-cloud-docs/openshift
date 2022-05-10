@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Deploying apps in OpenShift clusters
 {: #deploy_app}
 

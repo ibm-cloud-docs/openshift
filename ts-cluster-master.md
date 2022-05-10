@@ -15,6 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Reviewing master health
 {: #debug_master}
 {: troubleshoot}

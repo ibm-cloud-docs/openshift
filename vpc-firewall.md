@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # VPC: Opening required ports and IP addresses in other network firewalls
 {: #vpc-firewall}
 

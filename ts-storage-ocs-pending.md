@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 
 
+
 # Why are the ODF pods stuck at `Pending`?
 {: #ts-ocs-pods-pending-status}
 {: support}

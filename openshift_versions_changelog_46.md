@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-10"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # {{site.data.keyword.redhat_openshift_notm}} version 4.6 changelog
 {: #openshift_changelog_46}
@@ -37,6 +38,22 @@ Review the version 4.6 change log.
 
 
 
+
+
+
+### Change log for worker node fix pack 4.6.57_1582_openshift, released 09 May 2022
+{: #4657_1582_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.6.57_1582_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | N/A | N/A | N/A |
+| {{site.data.keyword.openshiftshort}}. | 4.6.56 | 4.6.57 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-57){: external}. |
+| Haproxy | f53b22 | 36b030 | [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}, [CVE-2022-1154](https://nvd.nist.gov/vuln/detail/CVE-2022-1154){: external}, [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.56_1581_openshift" caption-side="top"}
 
 ### Change log for master fix pack 4.6.56_1580_openshift, released 26 April 2022
 {: #4656_1580_openshift}
@@ -67,6 +84,8 @@ The following table shows the changes that are in the master fix pack 4.6.56_158
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.56_1578_openshift" caption-side="top"}
 
+
+
 ### Change log for worker node fix pack 4.6.56_1581_openshift, released 25 April 2022
 {: #4656_1581_openshift}
 
@@ -83,6 +102,8 @@ The following table shows the changes that are in the master fix pack 4.6.56_158
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.56_1579_openshift, released 11 April 2022
 {: #4656_1579_openshift}
 
@@ -94,6 +115,8 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 | RHEL Packages | 3.10.0-1160.59.1 | 3.10.0-1160.62.1 | Kernel and package updates for [CVE-2021-45960](https://nvd.nist.gov/vuln/detail/CVE-2021-45960), [CVE-2021-46143](https://nvd.nist.gov/vuln/detail/CVE-2021-46143), [CVE-2022-22822](https://nvd.nist.gov/vuln/detail/CVE-2022-22822), [CVE-2022-22823](https://nvd.nist.gov/vuln/detail/CVE-2022-22823), [CVE-2022-22824](https://nvd.nist.gov/vuln/detail/CVE-2022-22824), [CVE-2022-22825](https://nvd.nist.gov/vuln/detail/CVE-2022-22825), [CVE-2022-22826](https://nvd.nist.gov/vuln/detail/CVE-2022-22826)   [CVE-2022-22827](https://nvd.nist.gov/vuln/detail/CVE-2022-22827), [CVE-2022-23852](https://nvd.nist.gov/vuln/detail/CVE-2022-23852), [CVE-2022-25235](https://nvd.nist.gov/vuln/detail/CVE-2022-25235), [CVE-2022-25236](https://nvd.nist.gov/vuln/detail/CVE-2022-25236), [CVE-2022-25315](https://nvd.nist.gov/vuln/detail/CVE-2022-25315), [CVE-2021-4028](https://nvd.nist.gov/vuln/detail/CVE-2021-4028), [CVE-2021-4083](https://nvd.nist.gov/vuln/detail/CVE-2021-4083)   [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.56_1577_openshift" caption-side="top"}
+
+
 
 
 
@@ -128,16 +151,20 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 
 
 
+
+
 ### Change log for worker node pack 4.6.56_1577_openshift, released 28 March 2022
 {: #4656_1577}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| RHEL Packages | NA | NA | NA |
+| RHEL Packages | N/A | N/A | N/A |
 | HA proxy | 15198f | b40c07 | [CVE-2021-45960](https://nvd.nist.gov/vuln/detail/CVE-2021-45960){: external}, [CVE-2021-46143](https://nvd.nist.gov/vuln/detail/CVE-2021-46143){: external}, [CVE-2022-22822](https://nvd.nist.gov/vuln/detail/CVE-2022-22822){: external}, [CVE-2022-22823](https://nvd.nist.gov/vuln/detail/CVE-2022-22823){: external}, [CVE-2022-22824](https://nvd.nist.gov/vuln/detail/CVE-2022-22824){: external}, [CVE-2022-22825](https://nvd.nist.gov/vuln/detail/CVE-2022-22825){: external}, [CVE-2022-22826](https://nvd.nist.gov/vuln/detail/CVE-2022-22826){: external}, [CVE-2022-22827](https://nvd.nist.gov/vuln/detail/CVE-2022-22827){: external}, [CVE-2022-23852](https://nvd.nist.gov/vuln/detail/CVE-2022-23852){: external}, [CVE-2022-25235](https://nvd.nist.gov/vuln/detail/CVE-2022-25235){: external}, [CVE-2022-25236](https://nvd.nist.gov/vuln/detail/CVE-2022-25236){: external}, [CVE-2022-25315](https://nvd.nist.gov/vuln/detail/CVE-2022-25315){: external}, [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}, [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}, [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}, [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}, [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.6.55 | 4.6.56 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-56){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.55_1575_openshift" caption-side="top"}
+
+
 
 
 
@@ -146,10 +173,12 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| RHEL Packages | NA | NA | NA |
+| RHEL Packages | N/A | N/A | N/A |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.6.53 | 4.6.55 | See the [change log](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-55){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.53_1574_openshift" caption-side="top"}
+
+
 
 
 
@@ -176,6 +205,8 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.53_1574_openshift, released 28 February 2022
 {: #4653_1574}
 
@@ -185,6 +216,8 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 | HA proxy | f6a2b3 | 15198fb | Contains fixes for [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external}. | 
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.53_1572_openshift" caption-side="top"}
+
+
 
 
 
@@ -201,6 +234,8 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.53_1571_openshift, released 31 January 2022
 {: #4653_1571}
 
@@ -212,6 +247,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 | RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/CVE-2021-4034){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.53_1569_openshift" caption-side="top"}
+
+
 
 
 
@@ -245,6 +282,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.53_1569_openshift, released 18 January 2022
 {: #4653_1569}
 
@@ -257,6 +296,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 | {{site.data.keyword.redhat_openshift_notm}} | 4.6.52 | 4.6.53 | See the [change logs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-53){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.52_1568_openshift" caption-side="top"}
+
+
 
 
 
@@ -274,6 +315,8 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.52_1567_openshift, released 20 December 2021
 {: #4652_1567_openshift}
 
@@ -285,6 +328,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | {{site.data.keyword.redhat_openshift_notm}} node | 4.6.49 | 4.6.52 | See the [change logs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-52){: external} |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.49_1566_openshift" caption-side="top"}
+
+
 
 
 
@@ -316,6 +361,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.49_1566_openshift, released 6 December 2021
 {: #4649_1566}
 
@@ -327,6 +374,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | RHEL 7 Packages | 3.10.0-1160.45 | 3.10.0-1160.49 | Updated worker node images and kernel with package updates. Contains fixes for [CVE-2020-36385](https://nvd.nist.gov/vuln/detail/CVE-2020-36385){: external}, [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}, [CVE-2021-41617](https://nvd.nist.gov/vuln/detail/CVE-2021-41617){: external}, [CVE-2021-20271](https://nvd.nist.gov/vuln/detail/CVE-2021-20271){: external}"{: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.49_1564_openshift" caption-side="top"}
+
+
 
 
 
@@ -342,6 +391,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | HA proxy | 07f1e9e | 3b8663 | Contains fixes for [CVE-2021-20231](https://nvd.nist.gov/vuln/detail/CVE-2021-20231){: external}, [CVE-2021-20232](https://nvd.nist.gov/vuln/detail/CVE-2021-20232){: external}, [CVE-2021-3580](https://nvd.nist.gov/vuln/detail/CVE-2021-3580){: external}, [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}, [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}, [CVE-2021-22876](https://nvd.nist.gov/vuln/detail/CVE-2021-22876){: external}, [CVE-2021-22898](https://nvd.nist.gov/vuln/detail/CVE-2021-22898){: external}, [CVE-2021-22925](https://nvd.nist.gov/vuln/detail/CVE-2021-22925){: external}, [CVE-2019-20838](https://nvd.nist.gov/vuln/detail/CVE-2019-20838){: external}, [CVE-2020-14155](https://nvd.nist.gov/vuln/detail/CVE-2020-14155){: external}, [CVE-2018-20673](https://nvd.nist.gov/vuln/detail/CVE-2018-20673){: external}, [CVE-2021-42574](https://nvd.nist.gov/vuln/detail/CVE-2021-42574){: external}, [CVE-2019-17594](https://nvd.nist.gov/vuln/detail/CVE-2019-17594){: external}, [CVE-2019-17595](https://nvd.nist.gov/vuln/detail/CVE-2019-17595){: external}, [CVE-2020-12762](https://nvd.nist.gov/vuln/detail/CVE-2020-12762){: external}, [CVE-2020-16135](https://nvd.nist.gov/vuln/detail/CVE-2020-16135){: external}, [CVE-2021-3445](https://nvd.nist.gov/vuln/detail/CVE-2021-3445){: external}, [CVE-2021-36084](https://nvd.nist.gov/vuln/detail/CVE-2021-36084){: external}, [CVE-2021-36085](https://nvd.nist.gov/vuln/detail/CVE-2021-36085){: external}, [CVE-2021-36086](https://nvd.nist.gov/vuln/detail/CVE-2021-36086){: external}, [CVE-2021-36087](https://nvd.nist.gov/vuln/detail/CVE-2021-36087){: external}, [CVE-2021-20266](https://nvd.nist.gov/vuln/detail/CVE-2021-20266){: external}, [CVE-2019-18218](https://nvd.nist.gov/vuln/detail/CVE-2019-18218){: external}, [CVE-2021-23840](https://nvd.nist.gov/vuln/detail/CVE-2021-23840){: external}, [CVE-2021-23841](https://nvd.nist.gov/vuln/detail/CVE-2021-23841){: external}, [CVE-2021-27645](https://nvd.nist.gov/vuln/detail/CVE-2021-27645){: external}, [CVE-2021-33574](https://nvd.nist.gov/vuln/detail/CVE-2021-33574){: external}, [CVE-2021-35942](https://nvd.nist.gov/vuln/detail/CVE-2021-35942){: external}, [CVE-2021-33560](https://nvd.nist.gov/vuln/detail/CVE-2021-33560){: external}, [CVE-2019-13750](https://nvd.nist.gov/vuln/detail/CVE-2019-13750){: external}, [CVE-2019-13751](https://nvd.nist.gov/vuln/detail/CVE-2019-13751){: external}, [CVE-2019-19603](https://nvd.nist.gov/vuln/detail/CVE-2019-19603){: external}, [CVE-2019-5827](https://nvd.nist.gov/vuln/detail/CVE-2019-5827){: external}, [CVE-2020-13435](https://nvd.nist.gov/vuln/detail/CVE-2020-13435){: external}, [CVE-2020-24370](https://nvd.nist.gov/vuln/detail/CVE-2020-24370){: external}, [CVE-2021-28153](https://nvd.nist.gov/vuln/detail/CVE-2021-28153){: external}, [CVE-2021-3800](https://nvd.nist.gov/vuln/detail/CVE-2021-3800){: external}, [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}, [CVE-2021-33929](https://nvd.nist.gov/vuln/detail/CVE-2021-33929){: external}, [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}, [CVE-2021-33938](https://nvd.nist.gov/vuln/detail/CVE-2021-33938){: external}, and[CVE-2021-3200](https://nvd.nist.gov/vuln/detail/CVE-2021-3200){: external} |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.49_1562_openshift" caption-side="top"}
+
+
 
 
 
@@ -372,6 +423,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.49_1562_openshift, released 10 November 2021
 {: #4649_1562}
 
@@ -384,6 +437,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | {{site.data.keyword.redhat_openshift_notm}} | 4.6.48 | 4.6.49 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-49){: external} |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.46_1558_openshift" caption-side="top"}
+
+
 
 
 
@@ -412,6 +467,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.48_1561_openshift, released 25 October 2021
 {: #4648_1561}
 
@@ -428,6 +485,8 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.46_1558_openshift, released 11 October 2021
 {: #4646_1558_openshift}
 
@@ -440,6 +499,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | {{site.data.keyword.redhat_openshift_notm}} | 4.6.45 | 4.6.46 | See the [change logs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-46){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}). |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.45_1557_openshift" caption-side="top"}
+
+
 
 
 
@@ -471,6 +532,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.45_1557_openshift, released 27 September 2021
 {: #4645_1557}
 
@@ -479,11 +542,13 @@ The following table shows the changes that are in the worker node fix pack patch
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Disk identification | NA | NA | Enhanced the disk identification logic to handle the case of 2+ partitions. |
+| Disk identification | N/A | N/A | Enhanced the disk identification logic to handle the case of 2+ partitions. |
 | HA proxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}, [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}, [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}, [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}, and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}. |
 |OpenShift Container Platform| 4.6.44 | 4.6.45 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-45){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.44_1555_openshift" caption-side="top"}
+
+
 
 
 
@@ -502,6 +567,8 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.43_1554_openshift, released 30 August 2021
 {: #4643_1554}
 
@@ -513,6 +580,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | OpenShift Container Platform | 4.6.42 | 4.6.43 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-43){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.42_1552_openshift" caption-side="top"}
+
+
 
 
 
@@ -544,6 +613,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.42_1552_openshift, released 16 August 2021
 {: #4642_1552}
 
@@ -557,6 +628,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | OpenShift Container Platform | 4.6.40 | 4.6.42 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-42){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.40_1551_openshift" caption-side="top"}
+
+
 
 
 
@@ -575,6 +648,8 @@ The following table shows the changes that are in the worker node fix pack patch
 | OpenShift Container Platform | 4.6.38 |4.6.40 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-40){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.38_1549_openshift" caption-side="top"}
+
+
 
 
 
@@ -604,6 +679,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.38_1549_openshift, released 19 July 2021
 {: #4638_1549}
 
@@ -619,6 +696,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.36_1548_openshift, released 6 July 2021
 {: #4636_1548}
 
@@ -631,6 +710,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 | {{site.data.keyword.redhat_openshift_notm}} node | 4.6.34 | 4.6.36 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-36){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.34_1546_openshift" caption-side="top"}
+
+
 
 
 
@@ -661,6 +742,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.34_1546_openshift, released 22 June 2021
 {: #4634_1546}
 
@@ -675,6 +758,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 | RHEL 7 Packages | 3.10.0-1160.25 | 3.10.0-1160.31 | Updated worker node image with kernel package updates for [CVE-2020-8648](https://nvd.nist.gov/vuln/detail/CVE-2020-8648){: external}, [CVE-2020-12362](https://nvd.nist.gov/vuln/detail/CVE-2020-12362){: external}[CVE-2020-12363](https://nvd.nist.gov/vuln/detail/CVE-2020-12363){: external}[CVE-2020-12364](https://nvd.nist.gov/vuln/detail/CVE-2020-12364){: external}[CVE-2020-27170](https://nvd.nist.gov/vuln/detail/CVE-2020-27170){: external}[CVE-2021-3347](https://nvd.nist.gov/vuln/detail/CVE-2021-3347){: external}, [CVE-2020-24489](https://nvd.nist.gov/vuln/detail/CVE-2020-24489){: external}, [CVE-2020-24511](https://nvd.nist.gov/vuln/detail/CVE-2020-24511){: external}[CVE-2020-24512](https://nvd.nist.gov/vuln/detail/CVE-2020-24512){: external}, [CVE-2020-24513](https://nvd.nist.gov/vuln/detail/CVE-2020-24513){: external} and [CVE-2021-25217](https://nvd.nist.gov/vuln/detail/CVE-2021-25217){: external}.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.5.40_1541_openshift" caption-side="top"}
+
+
 
 
 
@@ -695,6 +780,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.29_1544_openshift, released 24 May 2021
 {: #4629_1544}
 
@@ -708,6 +795,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.27_1542_openshift" caption-side="top"}
+
+
 
 
 
@@ -739,6 +828,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.27_1542_openshift, released 10 May 2021
 {: #4627_1542}
 
@@ -751,6 +842,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 | RHEL 7 Packages | 3.10.0-1160.24 | 3.10.0-1160.25 | To increase resiliency, `rsyslog` no longer keeps old file descriptors. Updated worker node images with kernel and package updates for [CVE-2021-25215](https://nvd.nist.gov/vuln/detail/CVE-2021-25215){: external}, [CVE-2020-25692](https://nvd.nist.gov/vuln/detail/CVE-2020-25692){: external}, and [CVE-2020-25648](https://nvd.nist.gov/vuln/detail/CVE-2020-25648){: external}.|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.25_1541_openshift" caption-side="top"}
+
+
 
 
 
@@ -777,6 +870,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.25_1541_openshift, released 26 April 2021
 {: #4625_1541}
 
@@ -790,6 +885,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 | RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2021-20305](https://nvd.nist.gov/vuln/detail/CVE-2021-20305){: external}.  |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.23_1539_openshift" caption-side="top"}
+
+
 
 
 
@@ -809,6 +906,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 
 
 
+
+
 ### Change log for master fix pack 4.6.22_1538_openshift, released 2 April 2021
 {: #4622_1538}
 
@@ -824,6 +923,8 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.6.0+20210126 | 4.6.0+20210331 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210331){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.21_1535_openshift" caption-side="top"}
+
+
 
 
 
@@ -848,6 +949,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.22_1536_openshift, released 29 March 2021
 {: #4622_1536}
 
@@ -863,6 +966,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.20_1534_openshift, released 12 March 2021
 {: #4620_1534}
 
@@ -875,6 +980,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 | RHEL 7 Packages | N/A | N/A | Updated worker node with package updates for [CVE-2020-8625](https://nvd.nist.gov/vuln/detail/CVE-2020-8625){: external}, [CVE-2020-14372](https://nvd.nist.gov/vuln/detail/CVE-2020-14372){: external}, [CVE-2020-25632](https://nvd.nist.gov/vuln/detail/CVE-2020-25632){: external}, [CVE-2020-25647](https://nvd.nist.gov/vuln/detail/CVE-2020-25647){: external}, [CVE-2020-27749](https://nvd.nist.gov/vuln/detail/CVE-2020-27749){: external}, [CVE-2020-27779](https://nvd.nist.gov/vuln/detail/CVE-2020-27779){: external}, [CVE-2021-20225](https://nvd.nist.gov/vuln/detail/CVE-2021-20225){: external}, [CVE-2021-20233](https://nvd.nist.gov/vuln/detail/CVE-2021-20233){: external}, and [CVE-2021-27803](https://nvd.nist.gov/vuln/detail/CVE-2021-27803){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.18_1533_openshift" caption-side="top"}
+
+
 
 
 
@@ -896,6 +1003,8 @@ The following table shows the changes that are in the worker node fix pack `4.6.
 
 
 
+
+
 ### Change log for master fix pack 4.6.17_1533_openshift, released 27 February 2021
 {: #4617_1533}
 
@@ -912,6 +1021,8 @@ The following table shows the changes that are in the master fix pack patch upda
 
 
 
+
+
 ### Change log for master fix pack 4.6.16_1532_openshift, released 22 February 2021
 {: #4616_1532}
 
@@ -925,6 +1036,8 @@ The following table shows the changes that are in the master fix pack patch upda
 | OpenVPN Operator image | v1.1.0 | v1.1.2 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.16_1530_openshift" caption-side="top"}
+
+
 
 
 

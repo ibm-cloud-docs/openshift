@@ -16,6 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # What permissions do I need to manage storage and create PVCs?
 {: #missing_permissions}
 {: support}
