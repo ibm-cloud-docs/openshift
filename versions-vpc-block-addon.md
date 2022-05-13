@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: block, add-on, changelog
 
@@ -44,7 +44,7 @@ Refer to the following tables for a summary of changes for each version of the {
 | 3.0.1 | Unsupported |
 | 3.0.0 | Unsupported |
 | 2.0.3 | Unsupported |
-{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.block_storage_is_short}} add-on version. The second column is the version of your cluster that the {{site.data.keyword.block_storage_is_short}} version is supported for."}
+{: caption="VPC block storage add-on version support" caption-side="top"}
 
 
 
