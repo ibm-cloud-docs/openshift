@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-05-09"
+  years: 2022, 2022
+lastupdated: "2022-05-13"
 
 keywords: openshift add-ons, cluster addon
 
