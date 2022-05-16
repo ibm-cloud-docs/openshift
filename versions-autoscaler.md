@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-16"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -54,11 +54,19 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 Review the changes included in version 1.1.0 of the managed cluster autoscaler add-on.
 {: shortdesc}
 
+### Change log for patch update 1.1.0_615, released 16 May 2022
+{: #110615_ca}
+
+- Image tags: `1.19.1-110-0`, `1.20.0-110-0`, `1.21.0-110-0`, `1.22.0-110-0`, `1.23.0-110-0`
+- Resolves [CVE-2022-28327](https://nvd.nist.gov/vuln/detail/CVE-2022-28327){: external}, [CVE-2022-24675](https://nvd.nist.gov/vuln/detail/CVE-2022-24675){: external}, and [CVE-2022-27536](https://nvd.nist.gov/vuln/detail/CVE-2022-27536){: external}.
+- Ignores label `ibm-cloud.kubernetes.io/vpc-instance-id` for zone balancing in satellite environments.
+- Adds experimental flag `balancingIgnoreLabelsFlag`. This flag defines a node label that should be ignored when considering node group similarity. One label can be defined per flag occurrence.
+
 ### Change log for patch update 1.1.0_475, released 30 March 2022
 {: #110475_ca}
 
 - Image tags: `1.19.1-12`, `1.20.0-12`, `1.21.0-8`, `1.22.0-6`, `1.23.0-3`
-- Resolves [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921{: external}.
+- Resolves [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921){: external}.
 - Adds permissions for `cluster-autoscaler` to watch namespaces.
 
 ### Change log for patch update 1.1.0_429, released 16 March 2022
@@ -72,6 +80,14 @@ Review the changes included in version 1.1.0 of the managed cluster autoscaler a
 
 Review the changes included in version 1.0.5 of the managed cluster autoscaler add-on.
 {: shortdesc}
+
+### Change log for patch update 1.0.5_628, released 16 May 2022
+{: #105628_ca}
+
+- Image tags: `1.19.1-105-0`, `1.20.0-105-0`, `1.21.0-105-0`, `1.22.0-105-0`, `1.23.0-105-0`
+- Resolves [CVE-2022-28327](https://nvd.nist.gov/vuln/detail/CVE-2022-28327){: external}, [CVE-2022-24675](https://nvd.nist.gov/vuln/detail/CVE-2022-24675){: external}, and [CVE-2022-27536](https://nvd.nist.gov/vuln/detail/CVE-2022-27536){: external}.
+- Ignores label `ibm-cloud.kubernetes.io/vpc-instance-id` for zone balancing in satellite environments.
+- Adds experimental flag `balancingIgnoreLabelsFlag`. This flag defines a node label that should be ignored when considering node group similarity. One label can be defined per flag occurrence.
 
 ### Change log for patch update 1.0.5_415, released 28 February 2022
 {: #104415_ca}
