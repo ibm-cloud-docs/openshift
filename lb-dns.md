@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-16"
 
 keywords: openshift, lb2.0, nlb
 
@@ -38,6 +38,9 @@ You can see all subdomains that are registered for NLB IPs in your cluster by ru
 ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
 ```
 {: pre}
+
+DNS microservice updates are asynchronous and might take several minutes to apply. Note that if you run an `ibmcloud oc nlb-dns` command and receive a 200 confirmation message, you might still have to wait for your changes to be implemented. To check the status of your subdomain, run `ibmcloud oc nlb-dns ls` and find the `Status` column in the output.
+{: tip}
 
 
 ## Registering NLB IPs with a DNS subdomain

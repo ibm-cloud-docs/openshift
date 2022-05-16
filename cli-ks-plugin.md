@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-16"
 
 keywords: openshift
 
@@ -43,7 +43,7 @@ The tables below list the `ibmcloud oc` command groups. For a complete list of a
 | [Worker-pool commands](#worker-pool) | View and modify worker pools for a cluster. |
 | [Zone commands](#zone) | List availability zones and modify the zones attached to a worker pool. |
 | [Ingress commands](#alb-commands) | View and modify Ingress services and settings. | 
-| [Nlb-dns commands](#nlb-dns) | Create and manage host names for network load balancer (NLB) IP addresses in a cluster and health check monitors for host names. |
+| [NLB-DNS commands](#nlb-dns) | Create and manage host names for network load balancer (NLB) IP addresses in a cluster and health check monitors for host names. |
 | [Webhook-create commands](#cs_webhook_create) | Register a webhook in a cluster. |
 | [API-key commands](#api_key-commands) | View information about the API key for a cluster or reset it to a new key. |
 | [Credential commands](#credential) | Set and unset credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account. |
@@ -4447,6 +4447,9 @@ ibmcloud oc ingress status --cluster mycluster
 
 Create and manage subdomains for network load balancer (NLB) IP addresses and health check monitors for subdomains. For more information, see [Registering a load balancer subdomain](/docs/containers?topic=containers-loadbalancer_hostname).
 {: shortdesc}
+
+DNS microservice updates are asynchronous and might take several minutes to apply. Note that if you run an `ibmcloud oc nlb-dns` command and receive a 200 confirmation message, you might still have to wait for your changes to be implemented. To check the status of your subdomain, run `ibmcloud oc nlb-dns ls` and find the `Status` column in the output.
+{: tip}
 
 ### `ibmcloud oc nlb-dns add`
 {: #cs_nlb-dns-add}
