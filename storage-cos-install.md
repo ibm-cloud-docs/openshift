@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-17"
 
 keywords: openshift
 
@@ -216,8 +216,6 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
     ```
     {: screen}
 
-1. Follow the steps in [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install) to install the latest version of the {{site.data.keyword.cos_full_notm}} plug-in.
-
 1. Update the {{site.data.keyword.cloud_notm}} Helm repo to retrieve the most recent version of all Helm charts in this repo.
 
     ```sh
@@ -234,17 +232,17 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 
 1. Install the most recent version of the `ibm-object-storage-plugin` for your operating system.
 
-  Example `helm ibmc install` command for OS X and Linux.
+    Example `helm ibmc upgrade` command for OS X and Linux.
 
     ```sh
-    helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
+    helm ibmc upgrade ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
     ```
     {: pre}
 
-  Example `helm install` command for Windows.
+    Example `helm ibmc upgrade` command for Windows.
 
     ```sh
-    helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
+    helm ibmc upgrade ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-17"
 
 keywords: portworx, openshift
 
@@ -24,6 +24,7 @@ subcollection: openshift
 **Supported infrastructure provider**:
 * ![Classic](../icons/classic.svg "Classic") Classic
 * ![VPC](../icons/vpc.svg "VPC") VPC
+* ![Satellite](../icons/satellite.svg "Satellite") Satellite
 
 
 ## About Portworx
@@ -104,15 +105,15 @@ Before you create your cluster and install Portworx, review the following planni
 * **Operator** and **Manager** for the Kubernetes service.
 
 1. Review the [Portworx limitations](#portworx_limitations).
-2. Create a [multizone cluster](/docs/containers?topic=containers-clusters).
-    1. Infrastructure provider: If you use classic infrastructure, you must choose a bare metal flavor for the worker nodes. For classic clusters, virtual machines have only 1000 Mbps of networking speed, which is not sufficient to run production workloads with Portworx. Instead, provision Portworx on bare metal machines for the best performance.
+1. Create a [multizone cluster](/docs/containers?topic=containers-clusters).
+    1. Infrastructure provider: For Satellite clusters, make sure to add block storage volumes to your hosts before attaching them to your location. If you use classic infrastructure, you must choose a bare metal flavor for the worker nodes. For classic clusters, virtual machines have only 1000 Mbps of networking speed, which is not sufficient to run production workloads with Portworx. Instead, provision Portworx on bare metal machines for the best performance.
     2. Worker node flavor: Choose an SDS or bare metal flavor. If you want to use virtual machines, use a worker node with 16 vCPU and 64 GB memory or more, such as `b3c.16x64`. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` don't provide the required resources for Portworx to work properly.
     3. Minimum number of workers: Two worker nodes per zone across three zones, for a minimum total of six worker nodes.
-3. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](#create_block_storage).
-4. For production workloads, create an [external Databases for etcd](#portworx_database) instance for your Portworx metadata key-value store.
-5. **Optional** [Set up encryption](#setup_encryption).
-6. [Install Portworx](#install_portworx).
-7. Maintain the lifecycle of your Portworx deployment in your cluster.
+1. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](#create_block_storage).
+1. For production workloads, create an [external Databases for etcd](#portworx_database) instance for your Portworx metadata key-value store.
+1. **Optional** [Set up encryption](#setup_encryption).
+1. [Install Portworx](#install_portworx).
+1. Maintain the lifecycle of your Portworx deployment in your cluster.
     1. When you update worker nodes in [VPC](#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
         * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr).
         * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
@@ -132,7 +133,8 @@ Portworx supports block storage only. Worker nodes that mount file or object sto
 Keep in mind that the networking of non-SDS worker nodes in classic clusters is not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: note}
 
-![Classic](../icons/classic.svg "Classic") **Classic clusters:**
+### Classic clusters
+{: #px-create-classic-volumes}
 
 1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#block_storage_attacher).
 2. [Manually add block storage](/docs/openshift?topic=openshift-utilities#manual_block) to your worker nodes. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
@@ -146,7 +148,9 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 5. [Attach the block storage](/docs/openshift?topic=openshift-utilities#attach_block) to your worker nodes.
 6. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
-![VPC](../icons/vpc.svg "VPC") **VPC clusters:**
+### VPC clusters
+{: px-create-vpc-volumes}
+
 1. Follow the [steps](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 2. If you want to use [journal devices](https://docs.portworx.com/install-with-other/operate-and-maintain/performance-and-tuning/tuning/){: external}, choose from the following options.
     - [Attach](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) an additional 3 GB disk to at least 3 worker nodes in your cluster and find the device path. To find the device path after you attach the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
@@ -155,6 +159,21 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
     - Attach an additional disk to at least 3 worker nodes use for the KVDB. [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select one of the block storage devices that you added earlier to use for the KVDB and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
 4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
+
+
+
+### Satellite clusters
+{: px-create-satellite-volumes}
+
+1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+1. Create VMs in your cloud provider or set up on-premises hosts that have at least 16 vCPU and 64 GB and enough storage to be attached to your location plus additional storage volumes for app data, the Portwox journal, and KVDB. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
+1. If you want to use [journal devices](https://docs.portworx.com/install-with-other/operate-and-maintain/performance-and-tuning/tuning/){: external}, choose from the following options.
+    - Attach an additional 3 GB disk to at least 3 worker nodes in your cluster and find the device path. To find the device path after you attach the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - Select a device on a worker node where you want Portworx to create the journal.
+1. If you want to use a specific device for the internal Portworx KVDB, choose from the following options.
+    - Attach an additional disk to at least 3 worker nodes use for the KVDB, add a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - Select one of the block storage devices that you added earlier to use for the KVDB and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+1. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
 
 
