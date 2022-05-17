@@ -110,7 +110,7 @@ Use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to r
 
 3. On the Diagnostics and Debug Tool card, click **Install**.
 
-4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. <p class="tip">To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/openshift?topic=openshift-debug_addons).</p>
+4. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/openshift?topic=openshift-debug_addons).</p>
 
 5. On the Diagnostics and Debug Tool card, click **Dashboard**.
 
@@ -119,7 +119,7 @@ Use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to r
 7. Click **Run**.
 
 8. Check the results of each test.
-    * If any test fails, click the information icon next to the test's name in the left-hand column for information about how to resolve the issue.
+    * If any test fails, click the information icon next to the test's name in the left column for information about how to resolve the issue.
     * You can also use the results of tests that only gather information while you debug your Ingress service in the following sections.
 
 ## Step 3: Check the health of the Ingress controller
@@ -201,10 +201,10 @@ Check the availability of the public IP addresses of the Ingress controller and 
 {: shortdesc}
 
 1. Verify that your Ingress controller services are reachable by the Ingress controller health check.
-    * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 from the {{site.data.keyword.redhat_openshift_notm}} control plane and Akamai's IPv4 IP addresses to the IP addresses of your Ingress controller services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your Ingress controllers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-network_policies#isolate_workers) to allow inbound access to your Ingress controllers from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} that are used to check the health of your Ingress controllers on port 80 and the [control plane subnets for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Continue to the next step to get the Ingress controller service IP addresses.
+    * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 or 443 from the {{site.data.keyword.redhat_openshift_notm}} control plane and Akamai's IPv4 IP addresses to the IP addresses of your Ingress controller services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your Ingress controllers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](https://cloud.ibm.com/docs/openshift?topic=openshift-policy_tutorial#lesson3) to allow inbound access to your Ingress controllers from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} that are used to check the health of your Ingress controllers on port 80 and the [control plane subnets for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Continue to the next step to get the Ingress controller service IP addresses.
     
     
-    * **VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses. Alternatively, to allow the inbound traffic for Ingress controller healthchecks, you can create one rule to allow all incoming traffic on port 80.
+    * **VPC**: If you have a custom security group on the VPC LBaaS (LoadBalancer-as-a-Service) instances for the cluster ingress, ensure that the security group rules allow the necessary health-check traffic from the Kubernetes [control plane IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external} to port 80 or 443. Alternatively, you can allow all ingress traffic on either port 80 or 443.
 
 2. Get the external IP addresses that the Ingress controller services are listening on. If you have a multizone cluster, note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`. In VPC clusters, the external IP addresses are behind a hostname that is assigned by the VPC load balancer, such as `aabb1122-us-south.lb.appdomain.cloud`.
     ```sh

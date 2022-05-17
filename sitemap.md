@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-17"
 
 keywords: openshift
 subcollection: openshift
@@ -2630,9 +2630,9 @@ subcollection: openshift
 
 [Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#prepare-autoscale-sat)
 
-* [Setting up your location and cluster for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#setup-location-cluster-scale-sat)
-
 * [Understanding autoscaling in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat#cluster-scaling-sat)
+
+* [Setting up your location and cluster for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#setup-location-cluster-scale-sat)
 
 [Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
 
@@ -4191,6 +4191,12 @@ subcollection: openshift
 * [Planning your Portworx setup](/docs/openshift?topic=openshift-portworx#portworx_planning)
 
 * [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
+
+    * [Classic clusters](/docs/openshift?topic=openshift-portworx#px-create-classic-volumes)
+
+    * [VPC clusters](/docs/openshift?topic=openshift-portworx#vpc-clusters)
+
+    * [Satellite clusters](/docs/openshift?topic=openshift-portworx#satellite-clusters)
 
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
 
@@ -7090,6 +7096,8 @@ subcollection: openshift
 [VPC clusters: Why can't my app connect via load balancer?](/docs/openshift?topic=openshift-vpc_ts_lb#vpc_ts_lb)
 
 [VPC clusters: Why does a Kubernetes `LoadBalancer` service fail with no IPs?](/docs/openshift?topic=openshift-vpc_no_lb#vpc_no_lb)
+
+[Why do I see `SyncLoadBalancerFailed` errors when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-loadbalancer-sync-failed#ts-loadbalancer-sync-failed)
 
 
 ### Ingress and routers

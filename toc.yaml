@@ -435,6 +435,7 @@ toc:
                 - ts-lb-roks-vpc-status.md
                 - ts-lb-vpc-app.md
                 - ts-lb-vpc-no-ips.md
+                - ts-lb-sync-failed.md
             - topicgroup:
                 label: Ingress and routers
                 topics:

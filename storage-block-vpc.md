@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-17"
 
 keywords: openshift
 
@@ -1228,14 +1228,14 @@ You can only expand volumes that are mounted by an app pod.
 1. Resize the file system.
 
     ```sh
-    resize2fs <filesystem-path>
+    sudo resize2fs <filesystem-path>
     ```
     {: pre}
 
     Example command
     
     ```sh
-    resize2fs /dev/vdg
+    sudo resize2fs /dev/vdg
     ```
     {: pre}
 
