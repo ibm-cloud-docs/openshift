@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-18"
 
 keywords: openshift
 
@@ -205,7 +205,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
 2. Review the configuration of a storage class.
 
     ```sh
-    oc describe storageclass <storageclass_name>
+    oc describe storageclass STORAGECLASS
     ```
     {: pre}
 
