@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: openshift
 
@@ -53,7 +53,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     2. Review the [version changelog](/docs/containers?topic=containers-changelog) to find the changes that are in the latest patch version.
 
     3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
-1. Review the changelog and verify support for your [cluster version and architecture](/docs/containers?topic=containers-cos_plugin_changelog).
+1. Review the change log and verify support for your [cluster version and architecture](/docs/containers?topic=containers-cos_plugin_changelog).
 2. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
 
     If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you can't enable VRF or service endpoints in your account, use the public Helm repository.
@@ -66,7 +66,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     ```
     {: pre}
 
-4. Update the Helm repo to retrieve the most recent version of all Helm charts in this repo.
+4. Update the Helm repos to retrieve the most recent version of all Helm charts in this repo.
     ```sh
     helm repo update
     ```
@@ -239,10 +239,10 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
     ```
     {: pre}
 
-    Example `helm ibmc upgrade` command for Windows.
+    Example `helm upgrade` command for Windows.
 
     ```sh
-    helm ibmc upgrade ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
+    helm upgrade ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
     ```
     {: pre}
 
