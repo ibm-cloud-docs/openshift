@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-19"
 
 keywords: openshift
 
@@ -1148,7 +1148,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 ## Setting up {{site.data.keyword.mon_full_notm}} for storage volumes
 {: #monitor_storage}
 
-Set up alerts in {{site.data.keyword.mon_full_notm}} for your workloads that are using storage volumes. For more information see, [Alerts](/docs/monitoring?topic=monitoring-monitoring#monitoring_alerts).
+Set up alerts in {{site.data.keyword.mon_full_notm}} for your workloads that are using storage volumes. For more information see, [Alerts](/docs/monitoring?topic=monitoring-monitoring).
 {: shortdesc}
 
 When a storage volume is down, your app pods that are using storage have a low file system I/O, have network errors, or crash which causes the replica count to go down. You can set up alerts in {{site.data.keyword.mon_full_notm}} to get notified if the file system operations for your app drop below a specific threshold, if network errors occur, or if your app pods don't reach a `Ready` state.
