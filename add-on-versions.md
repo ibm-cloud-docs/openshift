@@ -12,7 +12,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Cluster add-on versions
+# Supported cluster add-on versions
 {: #supported-cluster-addon-versions}
 
 Review the following list of supported cluster add-ons.

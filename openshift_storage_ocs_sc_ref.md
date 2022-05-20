@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, storage classes
 
@@ -57,6 +57,22 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 
 | Feature | Description |
 |-----|-----|
+| Supported access | rwo |
+| Volume mode | Block |
+| Performance | High |
+| Consistency | Strong |
+| Resiliency | High |
+| Scalability | Multizone |
+| Encryption | At rest |
+{: caption="Ceph FS storage class details." caption-side="top"}
+{: #ocs_sc3}
+{: tab-title="ocs-storagecluster-ceph-rbd-encyrpted"}
+{: tab-group="sc_ref"}
+{: class="simple-tab-table"}
+{: summary="The first column contains a feature of the storage class. The second column contains a brief description of the feature."}
+
+| Feature | Description |
+|-----|-----|
 | Supported access | rwx |
 | Volume mode | s3fs (Cloud Object Storage s3fs plug-in) |
 | Performance | High |
@@ -65,7 +81,7 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 | Scalability | Multizone |
 | Encryption | In transit and at rest |
 {: caption="Ceph RGW storage class details." caption-side="top"}
-{: #ocs_sc3}
+{: #ocs_sc4}
 {: tab-title="ocs-storagecluster-ceph-rgw"}
 {: tab-group="sc_ref"}
 {: class="simple-tab-table"}

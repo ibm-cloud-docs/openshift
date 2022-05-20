@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-20"
 
 keywords: openshift
 subcollection: openshift
@@ -4303,6 +4303,8 @@ subcollection: openshift
 
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-cos)
 
+    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-hscrypto-vpc)
+
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
 
 * [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-cli-vpc)
@@ -4321,7 +4323,9 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
-    * [Version 4.8 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
+    * [Version 4.10 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-410)
+
+    * [Version 4.8 and 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
     * [Version 4.7 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
 
@@ -4330,6 +4334,8 @@ subcollection: openshift
 * [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-plan)
 
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-sat#odf-create-cos-sat)
+
+    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-sat#odf-create-hscrypto-sat)
 
 * [Creating a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-secret-create)
 
@@ -4341,7 +4347,9 @@ subcollection: openshift
 
 * [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-param-ref)
 
-    * [Version 4.8 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-48)
+    * [Version 4.10 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-410)
+
+    * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-48)
 
     * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-47)
 
@@ -4351,6 +4359,8 @@ subcollection: openshift
 
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-cos-classic)
 
+    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-hscrypto-classic)
+
     * [Preparing your cluster for an OpenShift Data Foundation installation](/docs/openshift?topic=openshift-deploy-odf-classic#odf-cluster-prepare-classic)
 
     * [Getting your device details](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-get-devices)
@@ -4359,11 +4369,15 @@ subcollection: openshift
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
 
+* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
+
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic#ocs-classic-deploy-crd)
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
 
-    * [Version 4.8 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
+    * [Version 4.10 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
+
+    * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
 
     * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-47)
 
@@ -6133,7 +6147,7 @@ subcollection: openshift
 {: #sitemap_add-on_version_history}
 
 
-[Cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
+[Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
@@ -6294,6 +6308,10 @@ subcollection: openshift
     * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-static-route-changelog#100_649)
 
 [OpenShift Data Foundation add-on changelog](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
+
+* [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
+
+    * [Version 4.10.1, release 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.1_odf)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
 
