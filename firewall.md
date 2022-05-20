@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-20"
 
 keywords: openshift
 
@@ -385,20 +385,20 @@ Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEnca
 
 To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
 
-- `TCP port 443 FROM <each_worker_node_privateIP> TO <registry_subnet>`
-- Replace *<registry_subnet>* with the registry subnet to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. 
+- `TCP port 443 FROM <each_worker_node_privateIP> TO <registry_ip>`
+- Replace `<registry_ip>` with the registry IP address to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. 
 
-| {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses |
-|---------------|-------------|-------------|
-| Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `private.icr.io` `cp.icr.io` | `166.9.20.31`, `166.9.22.22`, `166.9.24.16` |
-| AP North | `private.jp.icr.io` | `166.9.40.20`, `166.9.42.21`, `166.9.44.12` |
-| AP South | `private.au.icr.io` | `166.9.52.20`, `166.9.54.19`, `166.9.56.13` |
-| EU Central | `private.de.icr.io` | `166.9.28.35`, `166.9.30.2`, `166.9.32.2` |
-| Osaka | `private.jp2.icr.io` | `166.9.70.4`, `166.9.71.5`, `166.9.72.6` |
-| Sao Paolo | `private.br.icr.io` | `166.9.82.13`, `166.9.83.13`, `166.9.84.13` |
-| Toronto | `private.ca.icr.io` | `166.9.76.12`, `166.9.77.11`, `166.9.78.11` |
-| UK South | `private.uk.icr.io` | `166.9.36.19`, `166.9.38.14`, `166.9.34.12` |
-| US East, US South | `private.us.icr.io` | `166.9.12.227`, `166.9.15.116`, `166.9.16.244` |
+| {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses until 20 June 2022 | Registry private IP addresses after 20 June 2022 |
+| --- | --- | --- | --- |
+| Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `private.icr.io` `cp.icr.io` | 166.9.20.31, 166.9.22.22, 166.9.24.16 | 166.9.251.49, 166.9.251.82, 166.9.251.113 |
+| AP North | `private.jp.icr.io` | 166.9.40.20, 166.9.42.21, 166.9.44.12 | 166.9.249.104, 166.9.249.157, 166.9.249.168 |
+| AP South | `private.au.icr.io` | 166.9.52.20, 166.9.54.19, 166.9.56.13 | 166.9.244.106, 166.9.244.136, 166.9.244.170 |
+| EU Central | `private.de.icr.io` | 166.9.28.35, 166.9.30.2, 166.9.32.2 | 166.9.248.76, 166.9.248.105, 166.9.248.136 |
+| Osaka | `private.jp2.icr.io` | 166.9.70.4, 166.9.71.5, 166.9.72.6 | 166.9.247.39, 166.9.247.73, 166.9.247.105 |
+| Sao Paolo | `private.br.icr.io` | 166.9.82.13, 166.9.83.13, 166.9.84.13 | 166.9.246.72, 166.9.246.104, 166.9.246.130 |
+| Toronto | `private.ca.icr.io` | 166.9.76.12, 166.9.77.11, 166.9.78.11 | 166.9.247.143, 166.9.247.170, 166.9.247.207 |
+| UK South | `private.uk.icr.io` | 166.9.36.19, 166.9.38.14, 166.9.34.12 | 166.9.244.9, 166.9.244.45, 166.9.244.73 |
+| US East, US South | `private.us.icr.io` | 166.9.12.227, 166.9.15.116, 166.9.16.244 | 166.9.250.214, 166.9.250.246, 166.9.251.21 |
 {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
 {: caption="Table 4. IP addresses to open for Registry traffic" caption-side="top"}
 
@@ -588,6 +588,7 @@ Before you begin, the following steps require you to change the IAM allowlist fo
 7. For **Classic infrastructure**, enter the [CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. For VPC infrastructure, enter the CIDRs of the zones in the region where your cluster is located in your security group of ALB. To find the region that your cluster's zones are location in, see the `README` for the directory.
 8. Enter the CIDRs of the worker node subnets that you found in step 2.
 9. Click **Apply**.
+
 
 
 
