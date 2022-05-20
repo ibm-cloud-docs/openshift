@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, oc
 
@@ -43,7 +43,7 @@ To install the CLIs:
     Plan to use the CLI often? Try [Enabling autocompletion for the {{site.data.keyword.cloud_notm}} CLI (Linux/macOS only)](/docs/cli/reference/ibmcloud?topic=cli-shell-autocomplete#shell-autocomplete-linux).
     {: tip}
 
-2. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
     ```sh
     ibmcloud login
     ```
@@ -52,25 +52,25 @@ To install the CLIs:
     If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
 
-4. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.openshiftlong_notm}} (`ibmcloud oc`). Use this plug-in to create and manage {{site.data.keyword.openshiftlong_notm}} resources such as clusters, worker nodes, or network load balancers.
+1. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.openshiftlong_notm}} (`ibmcloud oc`). Use this plug-in to create and manage {{site.data.keyword.openshiftlong_notm}} resources such as clusters, worker nodes, or network load balancers.
     ```sh
     ibmcloud plugin install container-service
     ```
     {: pre}
 
-5. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
+1. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by IBM, and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
     ```sh
     ibmcloud plugin install container-registry
     ```
     {: pre}
 
-6. To create a logging configuration for {{site.data.keyword.la_full_notm}} or a monitoring configuration for {{site.data.keyword.mon_full_notm}} for your cluster, install the {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`).
+1. To create a logging configuration for {{site.data.keyword.la_full_notm}} or a monitoring configuration for {{site.data.keyword.mon_full_notm}} for your cluster, install the {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`).
     ```sh
     ibmcloud plugin install observe-service
     ```
     {: pre}
 
-7. Verify that the plug-ins are installed correctly.
+1. Verify that the plug-ins are installed correctly.
     ```sh
     ibmcloud plugin list
     ```
@@ -309,14 +309,14 @@ To uninstall the CLIs:
     ```
     {: pre}
 
-2. Uninstall the {{site.data.keyword.registrylong_notm}} plug-in.
+1. Uninstall the {{site.data.keyword.registrylong_notm}} plug-in.
 
     ```sh
     ibmcloud plugin uninstall container-registry
     ```
     {: pre}
 
-4. Verify the plug-ins were uninstalled by running the following command and checking the list of the plug-ins that are installed.
+1. Verify the plug-ins were uninstalled by running the following command and checking the list of the plug-ins that are installed.
 
     ```sh
     ibmcloud plugin list
@@ -325,9 +325,9 @@ To uninstall the CLIs:
 
     The `kubernetes-service` and the `container-registry` plug-in are not displayed in the results.
 
-5. [Uninstall the {{site.data.keyword.cloud_notm}} CLI.](/docs/cli?topic=cli-uninstall-ibmcloud-cli)
+1. [Uninstall the {{site.data.keyword.cloud_notm}} CLI.](/docs/cli?topic=cli-uninstall-ibmcloud-cli)
 
-6. Uninstall the Kubernetes CLI.
+1. Uninstall the Kubernetes CLI.
     ```sh
     sudo rm /usr/local/bin/oc
     ```
@@ -354,9 +354,9 @@ To launch and use the {{site.data.keyword.cloud-shell_notm}}:
 2. A session starts and automatically logs you in to the {{site.data.keyword.cloud_notm}} CLI with your current account credentials.
 3. Access your cluster by getting the `oc login` token.
 
-    3. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
-    4. In the **Actions...** drop-down list, select **Connect via CLI**.
-    5. Follow the instructions.
+    1. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
+    1. In the **Actions...** drop-down list, select **Connect via CLI**.
+    1. Follow the instructions.
 
 If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm}} console, you can set the cluster context with the `--admin` flag through the CLI with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin` command.
 {: note}

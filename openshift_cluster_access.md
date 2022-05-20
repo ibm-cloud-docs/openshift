@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, clusters
 
@@ -823,8 +823,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} API key.
-Save your API key in a secure location. You can't retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
-{: important}
+    Save your API key in a secure location. You can't retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
+    {: important}
 
     ```sh
     ibmcloud iam api-key-create <name>

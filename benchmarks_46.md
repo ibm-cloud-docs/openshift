@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, benchmarks, 4.6
 
@@ -165,7 +165,8 @@ Review the Control Plane Configuration results of the version 1.5 CIS Kubernetes
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-
+| 3.2.1 |	Ensure that a minimal audit policy is created	| Scored	| 1	| Fail | Shared |
+| 3.2.2	| Ensure that the audit policy covers key security concerns	| Not Scored	| 2	| Fail	| Shared |
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 3.2 Logging benchmark results" caption-side="top"}
 
@@ -282,7 +283,6 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.5.1 | Configure Image Provenance using ImagePolicyWebhook admission controller | Not Scored | 2 | [Fail](#cis-benchmark-remediations-46) | Shared |
-
 {: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column is the benchmark recommendation. The third column is the scoring of the recommendation, either scored or not scored. The fourth column is the level of the recommendation, either 1 for basic or 2 for more advanced and performance-impacting. The fifth column contains the result of whether the service passes or fails the recommendation. The sixth column designates the responsibility of passing the recommendation, either IBM or shared between IBM and you."}
 {: caption="Section 5.5 Extensible Admission Control benchmark results" caption-side="top"}
 

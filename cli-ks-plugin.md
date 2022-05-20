@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-20"
 
 keywords: openshift
 
@@ -244,10 +244,10 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION
 
 
 **Example**:
-    ```sh
-    ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
-    ```
-    {: pre}
+```sh
+ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
+```
+{: pre}
 
 #### `ibmcloud oc cluster addon enable image-key-synchronizer`
 {: #cs_cluster_addon_enable_image-key-synchronizer}
@@ -276,10 +276,10 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 
 
 **Example**:
-    ```sh
-    ibmcloud oc cluster addon enable image-key-synchronizer --cluster my_cluster
-    ```
-    {: pre}
+```sh
+ibmcloud oc cluster addon enable image-key-synchronizer --cluster my_cluster
+```
+{: pre}
 
 **Supported infrastructure provider**:
 * ![Classic](../icons/classic.svg "Classic") Classic
@@ -1048,10 +1048,10 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 
 
 **Example**:
-    ```sh
-    ibmcloud oc cluster image-security disable --cluster my_cluster
-    ```
-    {: pre}
+```sh
+ibmcloud oc cluster image-security disable --cluster my_cluster
+```
+{: pre}
 
 ### `ibmcloud oc cluster image-security enable`
 {: #cs-image-security-enable}
@@ -1083,10 +1083,10 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 
 
 **Example**:
-    ```sh
-    ibmcloud oc cluster image-security enable --cluster my_cluster
-    ```
-    {: pre}
+```sh
+ibmcloud oc cluster image-security enable --cluster my_cluster
+```
+{: pre}
 
 ### `ibmcloud oc cluster ls`
 {: #cs_clusters}
