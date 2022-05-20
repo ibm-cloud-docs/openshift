@@ -383,10 +383,13 @@ Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEnca
 #### Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}
 {: #firewall_private_container_registry}
 
-To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions):
+To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 
 - `TCP port 443 FROM <each_worker_node_privateIP> TO <registry_ip>`
-- Replace `<registry_ip>` with the registry IP address to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images. 
+- Replace `<registry_ip>` with the registry IP address to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
+
+The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 20 June 2022. For more information, see [Update IAM restricted IP address lists by 20 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
+{: note}
 
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses until 20 June 2022 | Registry private IP addresses after 20 June 2022 |
 | --- | --- | --- | --- |
