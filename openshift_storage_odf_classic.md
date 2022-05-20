@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -92,6 +92,89 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 1. Verify that your secret is created.
     ```sh
     oc get secrets -A | grep cos
+    ```
+    {: pre}
+
+### Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}
+{: #odf-create-hscrypto-classic}
+
+If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create an instance of {{site.data.keyword.hscrypto}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} credentials.
+
+
+1. Create an [{{site.data.keyword.hscrypto}} service instance](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui).
+
+1. Create [root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys&interface=ui).
+
+1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} instance name, instance ID, root key ID, and public endpoint.
+
+1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys#create_serviceid), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
+
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. List your namespaces to determine whether you have an `openshift-storage` namespace. If you don't have an `openshift-storage` namespace, create it.
+    ```sh
+    oc get namespaces | openshift-storage
+    ```
+    {: pre}
+
+    1. Create an `openshift-storage` namespace in your cluster. The driver pods are deployed to this namespace. Copy the following YAML and save it as `os-namespace.yaml` on your local machine.
+        ```yaml
+        apiVersion: v1
+        kind: Namespace
+        metadata:
+          labels:
+            openshift.io/cluster-monitoring: "true"
+          name: openshift-storage
+        ```
+        {: codeblock}
+
+    1. Create the `openshift-storage` namespace by using the YAML file that you saved.
+        ```sh
+        oc create -f os-namespace.yaml
+        ```
+        {: pre}
+
+    1. Verify that the namespace is created.
+        ```sh
+        oc get namespaces | grep storage
+        ```
+        {: pre}
+        
+1. Encode both the ID of your root key and the API key of the service ID that you created to base64.
+    ```sh
+    echo "ROOT-KEY-ID" | base64
+    ```
+    {: pre}
+    
+    ```sh
+    echo "SERVICE-ID-API-KEY" | base64
+    ```
+    {: pre}
+
+1. Create the Kubernetes secret in the `openshift-storage` namespace that uses your {{site.data.keyword.hscrypto}} credentials. 
+    1. Save the following secret as a YAML file called `ibm-hpcs-secret.yaml`.
+        ```yaml
+        apiVersion: v1
+        data:
+          IBM_KP_CUSTOMER_ROOT_KEY: AaAAAaZAAAAy11AAAyAAkaAaQtAAk0AAA2AzY5AjYaaa67aa # your base64 encoded root key ID
+          IBM_KP_SERVICE_API_KEY: AAAaaajAAAAAncmAAaaaaAAAAdAAId1AtVjBJRU1aAAaAeTh1aEw=AaaaA # your base64 encoded API
+        kind: Secret
+        metadata:
+          name: ibm-hpcs-secret
+          namespace: openshift-storage
+        type: Opaque
+        ```
+        {: pre}
+    
+    1. Create the secret in your cluster.
+        ```sh
+        oc apply -f ibm-hpcs-secret.yaml
+        ```
+        {: pre}
+
+1. Verify that your secret is created.
+    ```sh
+    oc get secrets -A | grep ibm-hpcs-secret
     ```
     {: pre}
 
@@ -306,9 +389,32 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` flag for each parameter that you want to override.
 
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
 
 1. Review the add-on options for the version of the add-on that you want to deploy. Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes.
+
+    Add-on options for version 4.10.0.
+    ```sh
+    Add-on Options
+    Option                Default Value   
+    osdSize               250Gi   
+    numOfOsd              1   
+    clusterEncryption     false   
+    hpcsTokenUrl          <Please provide HPCS token URL>   
+    workerNodes           all   
+    hpcsEncryption        false   
+    hpcsBaseUrl           <Please provide HPCS Base URL>   
+    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier   
+    hpcsInstanceId        <Please provide HPCS Service ID>   
+    autoDiscoverDevices   false   
+    hpcsServiceName       <Please provide HPCS service name>   
+    hpcsSecretName        <Please provide the HPCS secret name>   
+    odfDeploy             true   
+    osdDevicePaths        <Please provide IDs of the disks to be used for OSD pods if using local disks or standard classic cluster>   
+    ocsUpgrade            false   
+    billingType           advanced 
+    ```
+    {: screen}
 
     Add-on options for version 4.8.0.
     
@@ -359,6 +465,12 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Enable the `openshift-data-foundation` add-on. If you want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
+    Example command for enabling add-on version 4.10.0, automatically discovering local volumes, and enabling encryption with {{site.data.keyword.hscrypto}}.
+    ```sh
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.10.0 --param "odfDeploy=true"  --param "osdSize=1" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/oidc/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
+    ```
+    {: pre}
+
     Example command for enabling add-on version 4.8.0 only and not creating a storage cluster.
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.8.0 --param "odfDeploy=false"
@@ -408,22 +520,36 @@ To install ODF in your cluster, complete the following steps.
 On classic clusters, you must have disks available on your worker nodes for ODF. When you install ODF, you provide the device paths to those devices. Before installing ODF, [gather your local block storage device details](#odf-classic-get-devices).
 {: important}
 
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
+1. [Review the parameter reference](#odf-classic-param-ref).
+1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
+1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
+
+## Installing the OpenShift Data Foundation add-on from the console
+{: #install-odf-console-classic}
+
+To install ODF in your cluster, complete the following steps.
+{: shortdesc}
+
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.8 or 4.9 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
 1. [Review the parameter reference](#odf-classic-param-ref).
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
-    - `odfDeploy`: Enter `true` to enable the add-on and deploy the ODF resources to your cluster. Enter `false` to only enable the add-on. If you enter `false`, you must create a [CRD to deploy ODF](#ocs-classic-deploy-crd) later.
-    - `monSize`: Enter the size of the {{site.data.keyword.block_storage_is_short}} devices that you want to provision for the ODF [monitor pods](/docs/openshift?topic=openshift-ocs-storage-prep). The default setting `20Gi`.
-    - `monStorageClassName`:  Enter `localfile`.
-    - `monDevicePaths`: Enter a comma separated list of device IDs. To gather the device IDs for the disks on your worker nodes, see [Gathering your local block storage device details](#odf-classic-get-devices).
-    - `osdSize`: Enter `1`.
-     `osdStorageClassName`: Enter `localblock`.
-    - `osdDevicePaths`: Enter a comma separated list of device IDs. To gather the device IDs for the disk on your worker nodes, see [Gathering your local block storage device details](#odf-classic-get-devices).
-    - `numOfOsd`: Enter the number of block storage device sets that you want to provision for ODF. A `numOfOsd` value of 1 provisions 1 device set which includes 3 block storage devices. The devices are provisioned evenly across your worker nodes. For more information, see [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
-    - `workerNodes`: Enter the worker nodes where you want to deploy ODF. You must have at least 3 worker nodes. The default setting is `all`. If you want to deploy ODF only on certain nodes, enter the IP addresses of the worker nodes in a comma-separated list without spaces, for example: `XX.XXX.X.X,XX.XXX.X.X,XX.XXX.X.X`.
-    - `ocsUpgrade`: Enter `true` or `false` to upgrade the ODF operators. For initial deployment, leave this setting as `false`. The default setting is `false`.
-    - `clusterEncryption`: Enter `true` or `false` to enable cluster encryption. The default setting is `false`.
+1. Select either **Essentials** or **Advanced** as your billing plan.
+1. For classic clusters, select **Local storage** to use local volumes on the worker nodes.
+1. If you want to automatically discover the available storage devices on your worker nodes and use them in ODF, select **Local disk discovery**.
+1. If you want to manually specify the storage devices on your worker nodes that you want to use in ODF, enter a comma-separated list of the disk IDs that you want to use. To find these disk IDs, see [Gathering your device details](#getting-your-device-details).
+1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find you node names, run the `oc get nodes` command in your cluster. Leave this field blank to deploy ODF on all worker nodes.
+1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
+1. If you are re-enabling the add-on to upgrade the add-on version, select the **Upgrade ODF** option.
+1. If you want to encrypt the volumes used by the ODF system pods, select **Enable cluster encryption**.
+1. If you want to enable encryption on the OSD volumes (app storage), select **Enable volume encryption**.
+    1. In the **Instance name** field, enter the name of your {{site.data.keyword.hscrypto}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`.
+    1. In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
+    1. In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`.
+    1. In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
+    1. In the **Token URL** field, enter `https://iam.cloud.ibm.com/oidc/token`.
 
 ## Creating your storage cluster
 {: #ocs-classic-deploy-crd}
@@ -599,7 +725,31 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 Refer to the following OpenShift Data Foundation parameters when you use the add-on or operator in classic clusters.
 {: shortdesc}
 
-### Version 4.8 parameters
+### Version 4.10 parameters
+{: #odf-classic-params-410}
+
+| Parameter | Description | Default value |
+| --- | --- | --- |
+| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
+| `osdStorageClassName` | Enter `localblock`. | N/A |
+| `osdSize` | Enter `1`. | N/A |
+| `osdDevicePath` | Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`,`/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
+| `autoDiscoverDevices` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
+| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
+| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
+| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`. | `false` |
+| `hpcsBaseUrl` | Enter the public endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
+| `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/oidc/token`. | `false` |
+{: caption="Classic parameter reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+
+### Version 4.8 and 4.9 parameters
 {: #odf-classic-params-48}
 
 | Parameter | Description | Default value |
@@ -637,7 +787,6 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Classic parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
 
 
 

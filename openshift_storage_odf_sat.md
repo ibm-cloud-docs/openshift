@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -93,6 +93,89 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 1. Verify that your secret is created.
     ```sh
     oc get secrets -A | grep cos
+    ```
+    {: pre}
+
+### Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}
+{: #odf-create-hscrypto-sat}
+
+If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create an instance of {{site.data.keyword.hscrypto}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} credentials.
+
+
+1. Create an [{{site.data.keyword.hscrypto}} service instance](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui).
+
+1. Create [root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys&interface=ui).
+
+1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} instance name, instance ID, root key ID, and public endpoint.
+
+1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys#create_serviceid), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
+
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. List your namespaces to determine whether you have an `openshift-storage` namespace. If you don't have an `openshift-storage` namespace, create it.
+    ```sh
+    oc get namespaces | openshift-storage
+    ```
+    {: pre}
+
+    1. Create an `openshift-storage` namespace in your cluster. The driver pods are deployed to this namespace. Copy the following YAML and save it as `os-namespace.yaml` on your local machine.
+        ```yaml
+        apiVersion: v1
+        kind: Namespace
+        metadata:
+          labels:
+            openshift.io/cluster-monitoring: "true"
+          name: openshift-storage
+        ```
+        {: codeblock}
+
+    1. Create the `openshift-storage` namespace by using the YAML file that you saved.
+        ```sh
+        oc create -f os-namespace.yaml
+        ```
+        {: pre}
+
+    1. Verify that the namespace is created.
+        ```sh
+        oc get namespaces | grep storage
+        ```
+        {: pre}
+        
+1. Encode both the ID of your root key and the API key of the service ID that you created to base64.
+    ```sh
+    echo "ROOT-KEY-ID" | base64
+    ```
+    {: pre}
+    
+    ```sh
+    echo "SERVICE-ID-API-KEY" | base64
+    ```
+    {: pre}
+
+1. Create the Kubernetes secret in the `openshift-storage` namespace that uses your {{site.data.keyword.hscrypto}} credentials. 
+    1. Save the following secret as a YAML file called `ibm-hpcs-secret.yaml`.
+        ```yaml
+        apiVersion: v1
+        data:
+          IBM_KP_CUSTOMER_ROOT_KEY: AaAAAaZAAAAy11AAAyAAkaAaQtAAk0AAA2AzY5AjYaaa67aa # your base64 encoded root key ID
+          IBM_KP_SERVICE_API_KEY: AAAaaajAAAAAncmAAaaaaAAAAdAAId1AtVjBJRU1aAAaAeTh1aEw=AaaaA # your base64 encoded API
+        kind: Secret
+        metadata:
+          name: ibm-hpcs-secret
+          namespace: openshift-storage
+        type: Opaque
+        ```
+        {: pre}
+    
+    1. Create the secret in your cluster.
+        ```sh
+        oc apply -f ibm-hpcs-secret.yaml
+        ```
+        {: pre}
+
+1. Verify that your secret is created.
+    ```sh
+    oc get secrets -A | grep ibm-hpcs-secret
     ```
     {: pre}
 
@@ -563,7 +646,32 @@ If you enabled the add-on from the CLI and set the `odfDeploy=false` parameter, 
 Refer to the following parameters when you use the add-on or operator in {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-### Version 4.8 parameters
+
+### Version 4.10 parameters
+{: #odf-sat-parameters-410}
+
+| Parameter | Description | Default value |
+| --- | --- | --- |
+| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
+| `monStorageClassName` | Enter the name of the storage class that you want to use for the monitor pod storage devices. To use the local disks on your worker nodes, enter `localfile`. To dynamically provision disks, enter the name of the storage class that you want to use. For **Multizone clusters**, make sure that you specify a storage class that has the `waitForFirstConsumer` binding mode. For **Single zone clusters**, enter the name of the storage class that you want to use. | N/A |
+| `osdStorageClassName` | To use the local disks on your worker nodes, enter `localblock`. To dynamically provision volumes for your storage cluster, enter the name of the storage class that you want to use. For **Multizone clusters**, make sure that you specify a storage class that has the `waitForFirstConsumer` binding mode. For **Single zone clusters**, enter the name of the storage class that you want to use. | N/A |
+| `osdSize` | Enter a size for your OSD block storage devices. Example: `100Gi`. | N/A |
+| `osdDevicePath` | **Local disks only** If you want to use dynamically provisioned disks in your storage cluster, don't specify the device path parameter. Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must not be formatted or mounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`,`/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`. |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
+| `autoDiscoverDevices` | **Optional for local disk configurations**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
+| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
+| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
+| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`. | `false` |
+| `hpcsBaseUrl` | Enter the public endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
+| `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/oidc/token`. | `false` |
+{: caption="Satellite parameter reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+### Version 4.8 and 4.9 parameters
 {: #odf-sat-parameters-48}
 
 | Parameter | Description | Default value |
@@ -601,7 +709,6 @@ Refer to the following parameters when you use the add-on or operator in {{site.
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
 
 
 
