@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -145,7 +145,7 @@ Key technologies:
 * Developers and Researchers are spread across the globe and across organizational boundaries, which make PaaS and SaaS the best option for each user group.
 * Regional differences in health regulations require some data and data processing to remain within that region.
 
-#### The solution
+#### Solution: Securely hosting and sharing disease data for Research Nonprofit
 {: #uc_research_solution}
 
 The research nonprofit wants to aggregate cancer research data across the globe. So they create a division that is dedicated to solutions for their researchers.
@@ -190,7 +190,7 @@ To achieve global availability, the Dev, Test, and Production systems are deploy
 
 Developers focus on domain problems, by using existing tools: Instead of writing unique ML code, ML logic is snapped into apps, by binding {{site.data.keyword.cloud_notm}} services to clusters. Developers are also freed up from infrastructure management tasks because IBM takes care of Kubernetes and infrastructure upgrades, security, and more.
 
-#### The solution
+#### Solution: Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}
 {: #uc_research_the_solution}
 
 On-demand compute, storage, and Node starter kits run in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.

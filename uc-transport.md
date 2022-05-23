@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -21,7 +21,6 @@ subcollection: openshift
 
 These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} can
 take advantage of toolchains for rapid app updates and multiregion deployments across the globe. At the same time, these workloads can connect to existing back-end systems, use {{site.data.keyword.watson}} AI for personalization, and access IOT data with {{site.data.keyword.messagehub_full}}.
-
 {: shortdesc}
 
 ## Shipping company increases availability of worldwide systems for business partner ecosystem
@@ -36,7 +35,7 @@ An IT Exec has worldwide shipping routing and scheduling systems that partners i
 {{site.data.keyword.openshiftlong_notm}} scales containerized apps with five 9s of availability to meet growing demands. App deployments occur 40 times daily when Developers experiment easily, pushing changes to Development and Test systems quickly. The IoT Platform makes access to IoT data easy.
 
 Key technologies:    
-* [Multi-regions for business partner ecosystem ](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
+* [Multi-regions for business partner ecosystem](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 * [Horizontal scaling](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 * [Open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [Cloud services for innovation](https://www.ibm.com/cloud/products#analytics){: external}

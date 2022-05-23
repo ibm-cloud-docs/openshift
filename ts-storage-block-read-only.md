@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -26,6 +26,7 @@ content-type: troubleshoot
 
 You might see the following symptoms:
 {: tsSymptoms}
+
 - When you run `oc get pods -o wide`, you see that multiple pods on the same worker node are stuck in the `ContainerCreating` or `CrashLoopBackOff` state. All these pods use the same block storage instance.
 - When you run a `oc describe pod` command, you see the following error in the **Events** section: `MountVolume.SetUp failed for volume ... read-only`.
 

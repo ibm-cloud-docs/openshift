@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -41,7 +41,7 @@ Manually update the reference of the private IP address to point to the correct 
     ```
     {: pre}
 
-    ```
+    ```txt
     ID                                                 Public IP       Private IP       Machine Type   State     Status   Zone   Version
     kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.22.7
     kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.22.7

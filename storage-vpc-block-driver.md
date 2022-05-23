@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, block storage
 
@@ -124,7 +124,7 @@ To create the Kubernetes secret that is used in the {{site.data.keyword.block_st
     * `<g2_resource_group_id>` - To retrieve this value, run the `ibmcloud is vpc <vpc-ID>` command and note the `Resource group` field.
 
 2. Save the following TOML configuration file to your local machine called `config.toml`. Make sure that there are no blank lines between the values and no blank lines at the end of the file.
-    ```
+    ```sh
     [server]
     debug_trace = false
     [vpc]
@@ -317,6 +317,7 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
 
 ## Removing the {{site.data.keyword.block_storage_is_short}} driver
 {: #removing-the-block-storage-for-vpc-driver}
+
 If you no longer want to use the {{site.data.keyword.block_storage_is_short}} driver in your cluster, you can remove the configmap to remove the driver pods.
 {: shortdesc}
 
@@ -340,6 +341,7 @@ Removing the {{site.data.keyword.block_storage_is_short}} driver from your clust
 
 ## Config map reference
 {: #vpc-block-um-cm-ref}
+
 Select one of the following configmaps based on your worker node operating system.
 
 * [RHEL or CentOS configmap](#vpc-block-rhel-cm)
@@ -1207,8 +1209,6 @@ metadata:
 
 
 ```
-
-
 {: codeblock}
 
 ### Ubuntu configmap

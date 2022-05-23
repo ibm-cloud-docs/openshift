@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ When you expose an app through a Ingress controller subdomain, you get a local s
 
 When you try to open the {{site.data.keyword.redhat_openshift_notm}} web console or another app route in your browser, you might see an error similar to the following.
 
-```
+```txt
 Application is not available
 The application is currently not serving requests on this endpoint.
 ```
@@ -58,7 +58,7 @@ When the components fully provision, a public Ingress controller subdomain is av
     * ![Classic](../icons/classic.svg "Classic") Classic clusters:
         * In the output of Step 2, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a public cloud service endpoint, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
         * Check that at least some worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
-          ```
+          ```sh
           ibmcloud oc workers -c <cluster_name_or_ID>
           ```
           {: pre}

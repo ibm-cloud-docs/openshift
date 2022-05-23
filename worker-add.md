@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -114,13 +114,13 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 1. For each zone, note the ID of VPC subnet that you want to use for the worker pool. If you don't have a VPC subnet in the zone, [create a VPC subnet](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256.
     ```sh
-    ibmcloud oc subnets --zone <zone> --provider vpc-gen2 --vpc-id <VPC_ID>
+    ibmcloud oc subnets --zone <ZONE> --provider vpc-gen2 --vpc-id <VPC_ID>
     ```
     {: pre}
 
 1.For each zone, review the [available flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm).
     ```sh
-    ibmcloud oc flavors --zone <zone> --provider vpc-gen2
+    ibmcloud oc flavors --zone <ZONE> --provider vpc-gen2
     ```
     {: pre}
 

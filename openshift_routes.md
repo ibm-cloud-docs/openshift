@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, route, router
 
@@ -294,10 +294,11 @@ Note that even though you create an IngressController resource in the following 
 1. Register the service's VPC hostname with the domain that you chose in step 1. This step ensures that your Ingress controller services' IP addresses, which are kept behind the VPC hostname, are registered with the domain that you chose for the Ingress controller.
     * **Custom domain**: Work with your DNS provider to add the service's VPC hostname as a CNAME that maps to your custom domain.
     * **IBM-provided domain**: Create a DNS entry for the service's VPC hostname. When you run the following command, the subdomain that you specified in step 2 is automatically generated, and is registered with the Ingress controller service.
-    ```sh
-    ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <router_VPC_hostname> --type public
-    ```
-    {: pre}
+    
+        ```sh
+        ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <router_VPC_hostname> --type public
+        ```
+        {: pre}
 
 1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}.
     ```yaml
@@ -459,10 +460,10 @@ Note that even though you create an IngressController resource in the following 
 1. Register the service's external IP address or VPC hostname with the domain that you chose in step 1.
     * **Custom domain, classic or VPC clusters**: Work with your DNS provider to add the service's external IP address as an A record (classic clusters) or VPC hostname as a CNAME (VPC clusters) that maps to your custom domain.
     * **IBM-provided domain, VPC clusters only**: Create a DNS entry for the service's VPC hostname. When you run the following command, the subdomain that you specified in step 2 is automatically generated, and is registered with the Ingress controller service.
-    ```sh
-    ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <router_VPC_hostname> --type private
-    ```
-    {: pre}
+        ```sh
+        ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <router_VPC_hostname> --type private
+        ```
+        {: pre}
 
 1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}.
     ```yaml

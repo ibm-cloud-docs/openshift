@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
 
@@ -144,7 +144,7 @@ After you create backing stores and a bucket class, create a storage class to ma
     {: pre}
 
 ## Creating an Object Bucket Claim
-{: odf-obc}
+{: #odf-obc}
 
 After you create backing stores and a bucket class, you can create an object bucket claim that you can use to claim storage resources for your s3 apps.
 {: shortdesc}

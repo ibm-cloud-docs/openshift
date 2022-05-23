@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -54,31 +54,31 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
     3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 1. Review the change log and verify support for your [cluster version and architecture](/docs/containers?topic=containers-cos_plugin_changelog).
-2. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
+1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
 
     If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you can't enable VRF or service endpoints in your account, use the public Helm repository.
     {: note}
 
-3. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
+1. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
 
     ```sh
     helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
     ```
     {: pre}
 
-4. Update the Helm repos to retrieve the most recent version of all Helm charts in this repo.
+1. Update the Helm repos to retrieve the most recent version of all Helm charts in this repo.
     ```sh
     helm repo update
     ```
     {: pre}
 
-5. If you installed the {{site.data.keyword.cos_full_notm}} Helm plug-in earlier, remove the `ibmc` plug-in.
+1. If you installed the {{site.data.keyword.cos_full_notm}} Helm plug-in earlier, remove the `ibmc` plug-in.
     ```sh
     helm plugin uninstall ibmc
     ```
     {: pre}
 
-6. Download the Helm charts and unpack the charts in your current directory.
+1. Download the Helm charts and unpack the charts in your current directory.
 
     ```sh
     helm fetch --untar ibm-helm/ibm-object-storage-plugin
@@ -88,7 +88,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     If the output shows `Error: failed to untar: a file or directory with the name ibm-object-storage-plugin already exists`, delete your `ibm-object-storage-plugin` directory and rerun the `helm fetch` command.
     {: tip}
 
-7. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in automatically retrieves your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
+1. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in automatically retrieves your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
     1. Install the Helm plug-in.
         ```sh
         helm plugin install ./ibm-object-storage-plugin/helm-ibmc
@@ -126,7 +126,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         ```
         {: screen}
 
-8. Optional: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in can access all Kubernetes secrets in your cluster.
+1. Optional: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in can access all Kubernetes secrets in your cluster.
     1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
     2. [Store your {{site.data.keyword.cos_full_notm}} service credentials in a Kubernetes secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)).
     3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.
@@ -162,7 +162,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     6. Save your changes and navigate to your working directory.
 
 
-9. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. To set a limit on how much storage is available for the bucket, set the `-set quotaLimit=true` **VPC clusters only**: To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
+1. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. To set a limit on how much storage is available for the bucket, set the `-set quotaLimit=true` **VPC clusters only**: To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
 
 Example `helm ibmc install` command for OS X and Linux.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -93,7 +93,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
         {: screen}
 
         1. Check that you defined **LoadBalancer** as the type for your service.
-        2. In the `spec.selector` section of the LoadBalancer service, ensure that the `<selector_key>` and `<selector_value>` is the same as the key/value pair that you used in the `spec.template.metadata.labels` section of your deployment YAML. If labels don't match, the **Endpoints** section in your LoadBalancer service displays **<none>** and your app is not accessible from the internet.
+        2. In the `spec.selector` section of the LoadBalancer service, ensure that the `<selector_key>` and `<selector_value>` is the same as the key/value pair that you used in the `spec.template.metadata.labels` section of your deployment YAML. If labels don't match, the **Endpoints** section in your LoadBalancer service displays **none** and your app is not accessible from the internet.
         3. Check that you used the **port** that your app listens on.
 
 4. Check your NLB service and review the **Events** section to find potential errors.

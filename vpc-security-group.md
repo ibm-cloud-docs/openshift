@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -41,8 +41,7 @@ If you modify the default VPC security groups, you must, at minimum, include the
 | Security group type | Name | Details |
 | --- | --- | --- | 
 | VPC security group | Randomly generated | - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.  \n - Allows all outbound traffic by default. |
-| VPC cluster security group | `kube-<cluster-ID>`| - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.   \n - Allows traffic necessary for the cluster infrastructure to function
-. |
+| VPC cluster security group | `kube-<cluster-ID>`| - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.   \n - Allows traffic necessary for the cluster infrastructure to function. |
 {: caption="Table 1. VPC security groups" caption-side="top"}
 {: summary="The table shows the three types of security groups that are automatically created for VPCs. The first column includes the type of security group. The second column includes the naming format of the security group. The third column includes details on when and where the security group is created and what type of traffic it allows."}
 

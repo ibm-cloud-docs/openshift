@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -425,7 +425,8 @@ To deploy a stateful set that uses object storage:
 :   In the spec volume claim templates metadata annotations section, enter the storage class that you want to use. Choose between the following options:
     - If `ibm.io/auto-create-bucket: "true"`: Enter the storage class that you want to use for your new bucket.
     - If `ibm.io/auto-create-bucket: "false"`: Enter the storage class that you used to create your existing bucket.
-    To list existing storage classes, run`oc get storageclasses | grep s3`. If you don't specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-s3fs` provisioner so that your stateful set is provisioned with object storage.
+
+:   To list existing storage classes, run`oc get storageclasses | grep s3`. If you don't specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-s3fs` provisioner so that your stateful set is provisioned with object storage.
 
 `storageClassName`
 :   In the spec volume claim templates spec section, enter the same storage class that you entered in the `spec.volumeClaimTemplates.metadata.annotations.volume.beta.kubernetes.io/storage-class` section of your stateful set YAML.

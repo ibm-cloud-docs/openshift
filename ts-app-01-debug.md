@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -39,11 +39,11 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
     ```
     {: pre}
 
-2. [Check whether the containers are stuck in the `ContainerCreating` state](/docs/containers?topic=containers-readonly_nodes).
+1. [Check whether the containers are stuck in the `ContainerCreating` state](/docs/containers?topic=containers-readonly_nodes).
 
-3. Check whether the cluster is in the `Critical` state. If the cluster is in a `Critical` state, check the firewall rules and verify that the master can communicate with the worker nodes.
+1. Check whether the cluster is in the `Critical` state. If the cluster is in a `Critical` state, check the firewall rules and verify that the master can communicate with the worker nodes.
 
-4. Verify that the service is listening on the correct port.
+1. Verify that the service is listening on the correct port.
     1. Get the name of a pod.
         ```sh
         oc get pods
@@ -62,7 +62,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
         ```
         {: pre}
 
-5. Verify that the service is linked correctly to the pods.
+1. Verify that the service is linked correctly to the pods.
     1. Get the name of a pod.
         ```sh
         oc get pods
@@ -85,7 +85,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
         * If no endpoints are listed, then the selector for the service does not match the pods. For example, your app deployment might have the label `app=foo`, but the service might have the selector `run=foo`.
         * If endpoints are listed, then look at the target port field on the service and make sure that the target port is the same as what is being used for the pods. For example, your app might listen on port 9080, but the service might listen on port 80.
 
-6. For Ingress services, verify that the service is accessible from within the cluster.
+1. For Ingress services, verify that the service is accessible from within the cluster.
     1. Get the name of a pod.
         ```sh
         oc get pods
@@ -98,7 +98,7 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
         ```
         {: pre}
 
-    2. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint.
+    3. Curl the URL specified for the Ingress service. If the URL is not accessible, check for a firewall issue between the cluster and the external endpoint.
         ```sh
         curl <host_name>.<domain>
         ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, autoscaler
 
@@ -101,7 +101,7 @@ oc describe cm -n kube-system cluster-autoscaler-status
 * **`ScaleDown`**: Review the status of scaledown activity. If the cluster autoscaler identifies `NoCandidates`, your worker pool is not scaled down because none of the worker nodes can be removed without taking away requested resources from your workloads.
 * **`Events`**: Review the events for more troubleshooting information, if any.
 
-**Example of a healthy cluster autoscaler status**
+Example of a healthy cluster autoscaler status
 
 ```sh
 Data

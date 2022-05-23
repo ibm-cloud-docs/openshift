@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-05-23"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -509,21 +509,6 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. If you enabled the add-on and set the `odfDeploy=false` flag, follow the steps to [create an ODF custom resource](#ocs-classic-deploy-crd).
 
-
-
-## Installing the OpenShift Data Foundation add-on from the console
-{: #install-odf-console-classic}
-
-To install ODF in your cluster, complete the following steps.
-{: shortdesc}
-
-On classic clusters, you must have disks available on your worker nodes for ODF. When you install ODF, you provide the device paths to those devices. Before installing ODF, [gather your local block storage device details](#odf-classic-get-devices).
-{: important}
-
-1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
-1. [Review the parameter reference](#odf-classic-param-ref).
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
-1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 
 ## Installing the OpenShift Data Foundation add-on from the console
 {: #install-odf-console-classic}

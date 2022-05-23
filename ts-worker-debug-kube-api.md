@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -57,7 +57,7 @@ Before you begin, make sure that you have the **Manager** service access role in
     {: pre}
 
 6. If you configured [log forwarding](/docs/containers?topic=containers-health), review the node-related logs from the following paths.
-    ```
+    ```txt
     /var/log/containerd.log
     /var/log/kubelet.log
     /var/log/kube-proxy.log
@@ -76,20 +76,20 @@ Before you begin, make sure that you have the **Manager** service access role in
     2. Make sure that you deleted any custom admission controllers as described in step 5.
     3. Restart the worker node.
         * **Classic**: Reload the worker node.
-          ```
+          ```sh
           ibmcloud oc worker reload -c <cluster_name_or_ID> --worker <worker_ID>
           ```
           {: pre}
 
         * **VPC**: Replace the worker node.
-          ```
+          ```sh
           ibmcloud oc worker replace -c <cluster_name_or_ID> --worker <worker_ID> --update
           ```
           {: pre}
 
     4. Wait for the worker node to finish restarting. If the worker node enters a healthy state, the issue is likely caused by a workload.
     5. Schedule one workload at a time onto the worker node to see which workload causes the issue. To schedule the workloads, add the following toleration.
-        ```
+        ```txt
         tolerations:
         - effect: NoExecute
           key: ibm-cloud-debug-isolate-customer-workload

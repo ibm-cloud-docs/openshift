@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -43,7 +43,8 @@ Internal {{site.data.keyword.redhat_openshift_notm}} Container Registry (OCR)
     - Integrating the internal registry with other Red Hat products like CloudForms for extended features such as vulnerability scanning.
     - Option to expose the internal registry with a route so that users can pull images from the registry over the public network.
     - Option to set up the internal registry to [pull images](#imagestream_registry) from or [push images](#builds_registry) to a private registry such as {{site.data.keyword.registrylong_notm}}.
-    For more information, see [Using the internal registry](#openshift_internal_registry).
+
+:   For more information, see [Using the internal registry](#openshift_internal_registry).
 
 Private registry
 :   Private registries are a good choice to protect your images from unauthorized users. Private registries must be set up by the cluster administrator to make sure that access, storage quotas, image trust and other features work as intended. By default, your [{{site.data.keyword.redhat_openshift_notm}} clusters](#openshift_iccr) are integrated with the private {{site.data.keyword.registrylong_notm}} through image pull secrets in the `default` project. {{site.data.keyword.registrylong_notm}} is a highly available, multi-tenant private registry to store your own images. You can also pull IBM-provided images from the global `icr.io` registry, and licensed software from the entitled registry. With {{site.data.keyword.registrylong_notm}}, you can manage images for multiple clusters with integration with {{site.data.keyword.cloud_notm}} IAM and billing. Advantages of using {{site.data.keyword.registrylong_notm}} with the internal registry:
@@ -56,7 +57,8 @@ Private registry
     - Version 4 clusters on VPC infrastructure: Using the private registry service endpoint so that clusters that use only a private cloud service endpoint can still access the registry.
     - [Setting storage and image pull traffic quotas](/docs/Registry?topic=Registry-registry_quota) to better control image storage, usage, and billing.
     - Pulling licensed IBM content from the [entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).
-    To get started, see the following topics:
+
+:   To get started, see the following topics:
     - [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started).  
     - [Importing images from {{site.data.keyword.registrylong_notm}}](#imagestream_registry) into the internal registry image stream.  
     - [Using {{site.data.keyword.registrylong_notm}}](#openshift_iccr).
@@ -66,7 +68,7 @@ Public registry
     - Pushing and pulling images on the public network.
     - Quick testing of a container across cloud providers.
     - Don't need enterprise-grade features such as vulnerability scanning or access management.
-    For more information, see the public registry's documentation, such as [Quay](https://quay.io/){: external} or [Docker Hub](https://hub.docker.com/){: external}.
+:   For more information, see the public registry's documentation, such as [Quay](https://quay.io/){: external} or [Docker Hub](https://hub.docker.com/){: external}.
 
 
 ## Storing images in the internal registrys
@@ -98,25 +100,28 @@ To manually create a bucket for your internal registry, see [Cluster create erro
 ![Classic](../icons/classic.svg "Classic") By default, your {{site.data.keyword.redhat_openshift_notm}} cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
 {: shortdesc}
 
-**Viewing volume details**
+#### Viewing volume details
+{: #view_volume_details_registry}
 
 To view volume details including the storage class and size, you can describe the persistent volume claim.
 
-**Version 4**
+Version 4
 
 ```sh
 oc describe pvc -n openshift-image-registry image-registry-storage
 ```
 {: pre}
 
-**Version 3**
+Version 3
 
 ```sh
 oc describe pvc registry-backing -n default
 ```
 {: pre}
 
-**Changing volume details**:
+#### Changing volume details
+{: #change_volume_details_registry}
+
 If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `openshift-image-registry` ({{site.data.keyword.redhat_openshift_notm}} 4) or `docker-registry` ({{site.data.keyword.redhat_openshift_notm}} 3.11) pod that uses the `registry-backing` PVC to verify that the volume is resized.
 
 ![Version 3.11 icon.](images/icon-version-311.png) **{{site.data.keyword.redhat_openshift_notm}} 3.11 only**: Don't change the name of the `registry-backing` PVC, even if you change the volume details. Any master operation, such as patch version update or API server refresh, reverts the PVC name back to `registry-backing`, and the custom-named PVC becomes inaccessible.
@@ -709,7 +714,8 @@ Yes, if you [sign your images for trusted content](/docs/Registry?topic=Registry
 New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image pull secrets to authorize access to {{site.data.keyword.registrylong_notm}}](#cluster_registry_auth). With these image pull secrets, you can deploy containers from images that are stored in the `icr.io` registry domains. You can add the image pull secrets to your cluster if your cluster was not created with the secrets.
 {: shortdesc}
 
-**Before you begin**
+Before you begin
+
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Make sure that you have the following permissions: {{site.data.keyword.cloud_notm}} IAM **Operator or Administrator** platform access role for {{site.data.keyword.openshiftlong_notm}}. The account owner can give you the role by running the following command.
 
@@ -718,16 +724,17 @@ New {{site.data.keyword.openshiftlong_notm}} clusters store an API key in [image
     ```
     {: pre}
 
-2. {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.registrylong_notm}}, across all regions and resource groups. The policy can't be scoped to a particular region or resource group. The account owner can give you the role by running the following command.
+3. {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.registrylong_notm}}, across all regions and resource groups. The policy can't be scoped to a particular region or resource group. The account owner can give you the role by running the following command.
 
-    ```sh
+    ```shfVerify that the secret was created successfully
+    
     ibmcloud iam user-policy-create <your_user_email> --service-name container-registry --roles Administrator
     ```
     {: pre}
 
- 3. If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), add the **Service ID creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).
+4. If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), add the **Service ID creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).
  
-4. If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), add the **User API key creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).<
+5. If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), add the **User API key creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).
 
 ### Updating your image pull secret
 {: #update-pull-secret}
@@ -983,7 +990,7 @@ The following steps create an API key that stores the credentials of an {{site.d
     `--docker-email <docker-email>`
     :   Required. If you have one, enter your Docker email address. If you don't, enter a fictional email address, such as `a@b.c`. This email is required to create a Kubernetes secret, but is not used after creation.
 
-7. Verify that the secret was created successfully. Replace <em>&lt;project&gt;</em> with the project where you created the image pull secret.
+7. Verify that the secret was created successfully. Replace <project> with the project where you created the image pull secret.
 
     ```sh
     oc get secrets --namespace <project>

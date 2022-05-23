@@ -2824,7 +2824,7 @@ subcollection: openshift
 
 * [Classic {{site.data.keyword.redhat_openshift_notm}} version 3 architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-3)
 
-    * [Version 3 master components](/docs/openshift?topic=openshift-service-architecture#version-3-master)
+    * [{{site.data.keyword.redhat_openshift_notm}} version 3 master components](/docs/openshift?topic=openshift-service-architecture#version-3-master)
 
     * [Classic version 3 worker node components](/docs/openshift?topic=openshift-service-architecture#version-3-worker)
 
@@ -3967,7 +3967,7 @@ subcollection: openshift
 
     * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
 
-    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#replicating-snapshots-to-another-zone)
+    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#file-replicate-snapshot-diff-zone)
 
     * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
 
@@ -4194,9 +4194,9 @@ subcollection: openshift
 
     * [Classic clusters](/docs/openshift?topic=openshift-portworx#px-create-classic-volumes)
 
-    * [VPC clusters](/docs/openshift?topic=openshift-portworx#vpc-clusters)
+    * [VPC clusters](/docs/openshift?topic=openshift-portworx#px-create-vpc-volumes)
 
-    * [Satellite clusters](/docs/openshift?topic=openshift-portworx#satellite-clusters)
+    * [Satellite clusters](/docs/openshift?topic=openshift-portworx#px-create-satellite-volumes)
 
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
 
@@ -4369,8 +4369,6 @@ subcollection: openshift
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
 
-* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
-
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic#ocs-classic-deploy-crd)
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
@@ -4415,7 +4413,7 @@ subcollection: openshift
 
 * [Creating a storage class](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-sc)
 
-* [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-noobaa#creating-an-object-bucket-claim)
+* [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-obc)
 
 * [Deploying an s3 app in the Multicloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-noobaa#mcg-deploy-app)
 
@@ -5477,6 +5475,8 @@ subcollection: openshift
     * [Change log for worker node fix pack 4.7.21_1527_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4721_1527)
 
     * [Change log for master fix pack 4.7.19_1526_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4719_1526)
+
+    * [Change log for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4719_1525)
 
     * [Change log for worker node fix pack 4.7.18_1524_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4718_1524)
 

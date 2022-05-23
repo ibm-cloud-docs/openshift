@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -61,13 +61,13 @@ Review the following steps based on the error type.
 
 1. Remove the {{site.data.keyword.cos_full_notm}} Helm plug-in.
     **Linux**
-    ```
+    ```sh
     rm -rf ~/.helm/plugins/helm-ibmc
     ```
     {: pre}
 
     **Mac OS**
-    ```
+    ```sh
     rm -rf ~/Library/helm/plugins/helm-ibmc for macOS
     ```
     {: pre}
@@ -78,13 +78,13 @@ Review the following steps based on the error type.
 
 1. Change the permissions for the `ibmc` plug-in.
     **Linux**
-    ```
+    ```sh
     chmod 755 ~/.helm/plugins/helm-ibmc/ibmc.sh
     ```
     {: pre}
 
     **Mac OS**
-    ```
+    ```sh
     chmod 755 ~/Library/helm/plugins/helm-ibmc/ibmc.sh
     ```
 

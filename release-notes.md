@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -176,7 +176,7 @@ CLI change log update
 Master fix pack update
 
 
-:   {{site.data.keyword.openshiftlong_notm}} [ 4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_48)
+:   {{site.data.keyword.openshiftlong_notm}} [4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_48)
 
 
 
@@ -2693,6 +2693,7 @@ New! Virtual Private Cloud Generation 2
 :   For more information, check out the following links.
     - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
     - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
+
 :   New VPC Gen 2 commands for the CLI
     - [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
     - [Change log for master fix pack `4.3.23_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4323_1525)
