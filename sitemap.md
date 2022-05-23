@@ -207,6 +207,20 @@ subcollection: openshift
 
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
 
+    * Worker node fix pack
+
+    * [20 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2022)
+
+        * {{site.data.keyword.registrylong_notm}} private IP address changes beginning 20 June 2022
+
+        * New! Enable volume encryption in OpenShift Data Foundation by using {{site.data.keyword.hscrypto}}.
+
+        * New! Version 4.10.0 of the OpenShift Data Foundation add-on is available.
+
+    * [16 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1622)
+
+        * Cluster autoscaler add-on
+
     * [12 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1222)
 
         * {{site.data.keyword.block_storage_is_short}} add-on.
