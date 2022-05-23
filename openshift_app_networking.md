@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, networking
 
@@ -77,10 +77,10 @@ The following table compares the features of each app exposure method.
 |Characteristics|NodePort|NLB|Route|
 |---------------|--------|---|-----|
 |Stable external IP| |Yes|Yes|
-|External hostname||Yes|Yes|Yes|
+|External hostname|Yes|Yes|Yes|
 |HTTP(S) load balancing| |Yes*|Yes|
 |TLS termination| | |Yes|
-|Custom routing rules|| |Yes|
+|Custom routing rules| | |Yes|
 |Multiple apps per route or service| | |Yes|
 |Consistent hybrid multicloud deployment| | |Yes|
 {: #roks-net-compare-311}

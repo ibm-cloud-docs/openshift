@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,20 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
+
+    * Worker node fix pack
+
+    * [20 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2022)
+
+        * {{site.data.keyword.registrylong_notm}} private IP address changes beginning 20 June 2022
+
+        * New! Enable volume encryption in OpenShift Data Foundation by using {{site.data.keyword.hscrypto}}.
+
+        * New! Version 4.10.0 of the OpenShift Data Foundation add-on is available.
+
+    * [16 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1622)
+
+        * Cluster autoscaler add-on
 
     * [12 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1222)
 
@@ -2824,7 +2838,7 @@ subcollection: openshift
 
 * [Classic {{site.data.keyword.redhat_openshift_notm}} version 3 architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-3)
 
-    * [Version 3 master components](/docs/openshift?topic=openshift-service-architecture#version-3-master)
+    * [{{site.data.keyword.redhat_openshift_notm}} version 3 master components](/docs/openshift?topic=openshift-service-architecture#version-3-master)
 
     * [Classic version 3 worker node components](/docs/openshift?topic=openshift-service-architecture#version-3-worker)
 
@@ -3967,7 +3981,7 @@ subcollection: openshift
 
     * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
 
-    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#replicating-snapshots-to-another-zone)
+    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#file-replicate-snapshot-diff-zone)
 
     * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
 
@@ -4194,9 +4208,9 @@ subcollection: openshift
 
     * [Classic clusters](/docs/openshift?topic=openshift-portworx#px-create-classic-volumes)
 
-    * [VPC clusters](/docs/openshift?topic=openshift-portworx#vpc-clusters)
+    * [VPC clusters](/docs/openshift?topic=openshift-portworx#px-create-vpc-volumes)
 
-    * [Satellite clusters](/docs/openshift?topic=openshift-portworx#satellite-clusters)
+    * [Satellite clusters](/docs/openshift?topic=openshift-portworx#px-create-satellite-volumes)
 
 * [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
 
@@ -4369,8 +4383,6 @@ subcollection: openshift
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
 
-* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
-
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic#ocs-classic-deploy-crd)
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
@@ -4415,7 +4427,7 @@ subcollection: openshift
 
 * [Creating a storage class](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-sc)
 
-* [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-noobaa#creating-an-object-bucket-claim)
+* [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-obc)
 
 * [Deploying an s3 app in the Multicloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-noobaa#mcg-deploy-app)
 
@@ -5153,6 +5165,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
 
+    * [Change log for worker node fix pack 4.10.14_1519_openshift, released 23 May 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41014_1519_openshift)
+
     * [Change log for worker node fix pack 4.10.12_1517_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41012_1517_openshift)
 
     * [Change log for fix pack 4.10.9_1515_openshift (master) and 4.10.10_1516_openshift (worker node), released 27 April 2022](/docs/openshift?topic=openshift-openshift_changelog_410#4109_1515_openshift_and_41010_1516_openshift)
@@ -5217,6 +5231,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.33_1539_openshift, released 23 May 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4933_1539_openshift)
 
     * [Change log for worker node fix pack 4.9.31_1538_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4931_1538_openshift)
 
@@ -5300,6 +5316,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#47_changelog)
+
+    * [Change log for worker node fix pack 4.8.39_1557_openshift, released 23 May 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4839_1557_openshift)
 
     * [Change log for worker node fix pack 4.8.39_1556_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4839_1556_openshift)
 
@@ -5408,6 +5426,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
 
+    * [Change log for worker node fix pack 4.7.50_1564_openshift, released 23 May 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4750_1564_openshift)
+
     * [Change log for worker node fix pack 4.7.49_1566_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4749_1566_openshift)
 
     * [Change log for master fix pack 4.7.48_1561_openshift, released 26 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4748_1561_openshift)
@@ -5469,6 +5489,8 @@ subcollection: openshift
     * [Change log for worker node fix pack 4.7.21_1527_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4721_1527)
 
     * [Change log for master fix pack 4.7.19_1526_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4719_1526)
+
+    * [Change log for worker node fix pack 4.7.19_1525_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4719_1525)
 
     * [Change log for worker node fix pack 4.7.18_1524_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4718_1524)
 
@@ -5540,6 +5562,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#47_changelog)
+
+    * [Change log for worker node fix pack 4.6.57_1583_openshift, released 23 May 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4657_1583_openshift)
 
     * [Change log for worker node fix pack 4.6.57_1582_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4657_1582_openshift)
 
@@ -5699,6 +5723,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_overview_311)
 
 * [Deprecated: Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#version-311)
+
+    * [Change log for worker node fix pack 3.11.685_1632_openshift, released 23 May 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311685_1632_openshift)
 
     * [Change log for worker node fix pack 3.11.685_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311685_openshift)
 

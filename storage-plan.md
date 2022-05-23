@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -88,7 +88,7 @@ You can use non-persistent storage options if your data is not required to be pe
 
 The following image shows available non-persistent data storage options in {{site.data.keyword.openshiftlong_notm}}. These options are available for free and standard clusters.
 
-![Non-persistent data storage options](images/cs_storage_nonpersistent.png)
+![Non-persistent data storage options](images/cs_storage_nonpersistent.png){: caption="Figure 1. Non-persistent data storage options" caption-side="bottom"}
 
 
 | Characteristics | Inside the container | On the worker node's primary or secondary disk |
@@ -106,7 +106,6 @@ The following image shows available non-persistent data storage options in {{sit
 | Durability | Data is lost when the container crashes or is removed. | Data in `hostPath` or `emptyDir` volumes is lost when the worker node is deleted, the worker node is reloaded or updated, the cluster is deleted, the {{site.data.keyword.cloud_notm}} account reaches a suspended state. In addition, data in an `emptyDir` volume is removed when the assigned pod is permanently deleted from the worker node, the assigned pod is scheduled on another worker node. |
 | Common use cases | Local image cache or container logs | Setting up a high-performance local cache, accessing files from the worker node file system, or running unit tests. | 
 | Non-ideal use cases | Persistent data storage or sharing data between containers | Persistent data storage |
-{: summary="The columns are read from left to right. The first column has the characteristic of the non-persistent storage option. The second column says whether the non-persistent storage is inside the container. The third column says whether the non-persistent storage is on the worker node disk."}
 {: caption="Non-persistent storage options"}
 
 
@@ -123,7 +122,7 @@ Persistent data storage options are available for standard clusters only.
 
 The following image shows the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a single cluster.
 
-![Persistent storage options for single zone cluster](images/cs_storage_single_zone.png)
+![Persistent storage options for single zone cluster](images/cs_storage_single_zone.png){: caption="Figure 1. Persistent storage options for single zone cluster" caption-side="bottom"}
 
 
 | Characteristics | Classic {{site.data.keyword.filestorage_short}} | Classic Block Storage / VPC Block Storage
@@ -145,7 +144,6 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Backup and recovery | Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers. |   \n **Classic Block Storage**: Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers.  \n - **VPC Block Storage**: Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} command. |
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. | Stateful sets, backing storage when you run your own database, or high-performance access for single pods. | 
 | Non-ideal use cases| Multizone clusters or geographically distributed data | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. | 
-{: summary="The columns are read from left to right. The first column has the characteristic of the single-zone persistent storage option. The second column describes the characteristic for file storage. The third column describes the characteristic for block storage."}
 {: caption="Persistent storage options for single zone clusters"}
 
 
@@ -168,7 +166,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 The {{site.data.keyword.cos_full_notm}} plug-in uses s3fs to manage your Object Storage buckets and objects. Object Storage, and the plug-in, works best with read-intensive workloads. If your workload is read/write intensive, you might want to try Block or File storage instead.
 {: note}
 
-![High availability options for persistent storage in a multizone cluster](images/cs_storage_options_multizone.png)
+![High availability options for persistent storage in a multizone cluster](images/cs_storage_options_multizone.png){: caption="Figure 1. High availability options for persistent storage in a multizone cluster" caption-side="bottom"}
 
 
 | Characteristics | Object Storage | SDS (Portworx) | {{site.data.keyword.cloud_notm}} Databases|
@@ -182,8 +180,7 @@ The {{site.data.keyword.cos_full_notm}} plug-in uses s3fs to manage your Object 
 | Supported Kubernetes access writes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) | All | N/A as accessed from the app directly. | 
 | Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
 | Consistency| Eventual | Strong | Depends on the DBaaS | 
-| Durability | Very high as data slices are dispersed across a cluster of storage
-nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High | 
+| Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High | 
 | Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only. | High when set up with replication across three zones. Medium, when you store data in a single zone only. | Depends on the DBaaS and your setup. |
 | Availability | High due to the distribution across zones or regions. | High when you replicate data across three worker nodes in different zones. | High if you set up multiple instances. |
 | Scalability | Scales automatically | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. | Scales automatically | 
@@ -192,7 +189,6 @@ nodes. Every node stores only a part of the data. | Very high as three copies of
 | Common use cases | Multizone clusters. Geographically distributed data. Static big data. Static multimedia content | Web apps | Backups | Archives | Stateful sets. Geographically distributed data. Common storage solution when you run apps across multiple cloud providers. Backing storage when you run your own database. High-performance access for single pods. Shared storage access across multiple pods and worker nodes. | Multizone clusters, relational and non-relational databases, or geographically distributed data. | 
 | Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. | N/A | App that is designed to write to a file system. | 
 {: caption: Persistent storage options for multizone clusters"}
-{: summary="The columns are read from left to right. The first column has the characteristic of the multizone persistent storage option. The second column describes the characteristic for object storage. The third column describes the characteristic for SDS Portworx storage. The fourth column describes the characteristic for database-as-a-service storage."}
 
 
 

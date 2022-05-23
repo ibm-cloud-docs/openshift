@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, deploy
 
@@ -133,7 +133,10 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: pre}
 
-4. Add a privileged security context constraint to the service account for the project.<p class="note">If you want to check what policies are in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.9/authentication/managing-security-context-constraints.html){: external}.</p>
+4. Add a privileged security context constraint to the service account for the project.
+    If you want to check what policies are in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.9/authentication/managing-security-context-constraints.html){: external}.
+    {: note}
+    
     ```sh
     oc adm policy add-scc-to-user privileged -n <project_name> -z <sa_name>
     ```
@@ -332,7 +335,7 @@ The more widely you distribute your setup across multiple worker nodes and clust
 
 Review the following potential app setups that are ordered with increasing degrees of availability.
 
-![Stages of high availability for an app](images/cs_app_ha_roadmap-mz.png)
+![Stages of high availability for an app](images/cs_app_ha_roadmap-mz.png){: caption="Figure 1. Stages of high availability for an app" caption-side="bottom"}
 
 1. A deployment with n+2 pods that are managed by a replica set in a single node in a single zone cluster.
 2. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a single zone cluster.

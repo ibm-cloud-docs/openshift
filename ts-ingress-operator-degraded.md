@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -26,7 +26,8 @@ content-type: troubleshoot
 You receive an error message similar to one of the following.
 {: tsSymptoms}
 
-**Example error message when installing {{site.data.keyword.icp4dfull_notm}} from the console**
+The following example error message is displayed when installing {{site.data.keyword.icp4dfull_notm}} from the console.
+
 ```sh
 XXX.us-south.containers.appdomain.cloud: Get "http://image-registry-openshift-image-registry.ocp-data-privacy-prod-c-XXX.us-south.containers.appdomain.cloud/v2/": dial tcp: lookup image-registry-openshift-image-registry.ocp-data-privacy-prod-c-XXX.us-south.containers.appdomain.cloud on XXX.XX.X.XX:XX: can't marshal DNS message
 ```

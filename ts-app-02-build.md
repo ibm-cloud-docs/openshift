@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -76,7 +76,7 @@ For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docum
             {: pre}
 
             Example to refer to the secret in the build configuration file.
-            ```
+            ```yaml
             spec:
               output:
                 to:

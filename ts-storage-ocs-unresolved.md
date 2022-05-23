@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, storage
 
@@ -30,15 +30,15 @@ If your ODF issue is still unresolved or is not addressed in the troubleshooting
 
 4. Click **Continue**.
 
-4. Use the {{site.data.keyword.redhat_notm}} `must-gather` tool to collect data about your cluster in a compressed file. For more information, see [Gathering data about your cluster](https://docs.openshift.com/container-platform/4.6/support/gathering-cluster-data.html#gathering-data-specific-features_gathering-cluster-data){: external}.
+5. Use the {{site.data.keyword.redhat_notm}} `must-gather` tool to collect data about your cluster in a compressed file. For more information, see [Gathering data about your cluster](https://docs.openshift.com/container-platform/4.6/support/gathering-cluster-data.html#gathering-data-specific-features_gathering-cluster-data){: external}.
     ```sh
     oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:latest --dest-dir=ocs_mustgather
     ```
     {: pre}
 
-5. Follow the prompts to describe the issue you have. Attach the file with the `must-gather` data you collected earlier.
+6. Follow the prompts to describe the issue you have. Attach the file with the `must-gather` data you collected earlier.
 
-6. Click **Open a case** to submit your issue. 
+7. Click **Open a case** to submit your issue. 
 
 
 

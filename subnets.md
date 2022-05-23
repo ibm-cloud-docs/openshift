@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -107,7 +107,8 @@ Range requirements
       - `172.21.0.0 - 172.31.255.255`
       - `192.168.0.0 - 192.168.254.255`
       - `198.18.0.0 - 198.19.255.255`
-    The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+
+:   The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 #### Services
 {: #subnets_services}
@@ -124,7 +125,8 @@ Range requirements
       - `172.21.0.0 - 172.31.255.255`
       - `192.168.0.0 - 192.168.254.255`
       - `198.18.0.0 - 198.19.255.255`
-    The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+
+:   The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 ### Network segmentation
 {: #basics_segmentation}

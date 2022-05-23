@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -328,7 +328,7 @@ Debug classic clusters that are connected to a public VLAN by logging in to your
     ```
     {: pre}
 
-6. Run debug commands to help you gather information and troubleshoot issues, such as `ip`, `ifconfig`, `nc`, `tcpdump`, `ping`, `ps`, and `curl`. You can also install other tools, such as `mtr`, by running `yum install <tool>`.
+5. Run debug commands to help you gather information and troubleshoot issues, such as `ip`, `ifconfig`, `nc`, `tcpdump`, `ping`, `ps`, and `curl`. You can also install other tools, such as `mtr`, by running `yum install <tool>`.
 
 ### Cleaning up after debugging
 {: #ssh-debug-cleanup}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -401,6 +401,7 @@ After you deploy your Helm chart, test the VPN connectivity.
         1. Run `helm uninstall <release_name> -n <namespace>`
         2. Fix the incorrect values in the configuration file.
         3. Run `helm install vpn iks-charts/strongswan -f config.yaml`
+            
         You can also run more checks in the next step.
 
     - If the VPN pod is in an `ERROR` state or continues to crash and restart, it might be due to parameter validation of the `ipsec.conf` settings in the chart's configmap.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -26,6 +26,32 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2022
 {: #openshift-may22}
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.14_1519_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.33_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.685_1632_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+
+
+
+### 20 May 2022
+{: #openshift-may2022}
+
+{{site.data.keyword.registrylong_notm}} private IP address changes beginning 20 June 2022
+:   The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 20 June 2022. For more information, see [Update IAM restricted IP address lists by 20 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
+
+New! Enable volume encryption in OpenShift Data Foundation by using {{site.data.keyword.hscrypto}}.
+:   For more information, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc), [Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-deploy-odf-sat), and [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic). Note that volume encryption is available with add-on version 4.10 and later. 
+
+New! Version 4.10.0 of the OpenShift Data Foundation add-on is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
+
+
+### 16 May 2022
+{: #openshift-may1622}
+
+Cluster autoscaler add-on
+:   Versions `1.0.5_628` and `1.1.0_615` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
 
 ### 12 May 2022
 {: #openshift-may1222}
@@ -176,7 +202,7 @@ CLI change log update
 Master fix pack update
 
 
-:   {{site.data.keyword.openshiftlong_notm}} [ 4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_48)
+:   {{site.data.keyword.openshiftlong_notm}} [4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_48)
 
 
 
@@ -2693,6 +2719,7 @@ New! Virtual Private Cloud Generation 2
 :   For more information, check out the following links.
     - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
     - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
+
 :   New VPC Gen 2 commands for the CLI
     - [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
     - [Change log for master fix pack `4.3.23_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4323_1525)

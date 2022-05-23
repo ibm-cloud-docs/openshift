@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-20"
 
 keywords: openshift, route, router
 
@@ -131,7 +131,9 @@ To set up routes to publicly expose apps:
         ```
         {: pre}
 
-        <p class="tip">Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.</p>
+        Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
+        {: tip}
+  
     * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` flags, and optionally the `--ca-cert` flag. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.openshift.com/container-platform/4.9/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
@@ -301,7 +303,10 @@ When you [change your worker node VLAN connections](/docs/openshift?topic=opensh
 {: shortdesc}
 
 1. Create a router service on the new VLAN.
-    1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.<p class="note">Note that the router service in the first zone where you have workers nodes is always named `router`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.</p>
+    1. Describe the configuration for the default public router service. In the output, copy the `prometheus.openshift.io/password: xxxxxxxxxx` annotation, and any custom annotations that you manually added to the router. Do not copy other annotations.
+        Note that the router service in the first zone where you have workers nodes is always named `router`, and router services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
+        {: note}
+        
         ```sh
         oc get svc router -o yaml
         ```

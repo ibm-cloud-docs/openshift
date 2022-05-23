@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -227,6 +227,7 @@ Check the availability of the public IP addresses of the Ingress controller and 
 3. Check the health of your Ingress controller pods (classic) or hostname (VPC).
     - Classic clusters: [Check the status of your Ingress controller pods](#errors-43).
     - VPC clusters: Router services in multizone clusters are created with a `/healthz` path so that you can check the health of each service IP address. The following HTTP cURL command uses the `/healthz` path, which returns the `ok` status for a healthy IP.
+
     ```sh
     curl -X GET http://<router_svc_IP_or_hostname>/healthz -H "Host:router-default.<ingress_subdomain>"
     ```

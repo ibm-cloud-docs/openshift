@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: object storage, plug-in, changelog
 
@@ -70,7 +70,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: #02113_object_plugin}
 
 - Updates the UBI to `8.5-240`
-- Updates Golang to `v1.16.15 `
+- Updates Golang to `v1.16.15`
 - Resolves [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921){: external}, and [CVE-2022-23852](https://nvd.nist.gov/vuln/detail/CVE-2022-23852){: external}.
 - s3fs fuse updated to `v1.91`
 - Added support for additional mount options `Ex: ibm.io/add-mount-param: "del_cache,retries=6"`
@@ -188,7 +188,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Image tags: `1.8.29`  
 - Fixes an upgrade issue in version `2.1.0`.  
 - Includes a new version of the `helm ibmc` plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in.](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).  
-- Users can now specify <code>default</code> in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps).  
+- Users can now specify `default` in PVC configurations to use the default TLS cipher suite when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM` cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default. For more information, see [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps).  
 - Fixes [CVE-2020-28851](https://nvd.nist.gov/vuln/detail/CVE-2020-28851){: external}.  
 
 

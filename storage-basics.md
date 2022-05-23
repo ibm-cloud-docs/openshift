@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -67,8 +67,6 @@ To order the storage, you must create a PVC. The PVC determines the specificatio
 
 The following image shows how file storage is dynamically provisioned in a cluster. This sample flow works similarly with other storage types, such as block storage.
 
-**Sample flow for dynamic provisioning of file storage with the pre-defined silver storage class**
-
 ![Sample flow to dynamically provision file storage in a cluster, as described in the following list.](images/cs_storage_dynamic-01-01.svg){: caption="Figure 1. Sample flow to dynamically provision file storage in a cluster" caption-side="bottom"}
 
 1. The user creates a persistent volume claim (PVC) that specifies the storage type, storage class, size in gigabytes, number of IOPS, and billing type. The storage class determines the type of storage that is provisioned and the allowed ranges for size and IOPS. Creating a PVC in a cluster automatically triggers the storage plug-in for the requested type of storage to provision storage with the given specification.
@@ -104,8 +102,6 @@ Static provisioning is a feature that is native to Kubernetes and that allows cl
 To make existing storage available to a cluster user, you must manually create the storage device, a PV, and a PVC.  
 
 The following image shows how to statically provision file storage in a cluster. This sample flow works similar with other storage types, such as block storage.
-
-**Sample flow for static provisioning of file storage**
 
 ![Sample flow to statically provision file storage in a cluster, as described in the following list.](images/cs_storage_static-01.svg){: caption="Figure 1. Sample flow to statically provision file storage in a cluster" caption-side="bottom"}
 

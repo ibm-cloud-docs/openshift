@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-20"
 
 keywords: openshift, lb2.0, nlb
 
@@ -114,8 +114,7 @@ For example, a subdomain that you create for an NLB might look like `mycluster-a
 |`*`|The wildcard for the subdomain is registered by default for your cluster.|
 |`<cluster_name>`|The name of your cluster. - If the cluster name is 26 characters or fewer and the cluster name is unique in this region, the entire cluster name is included and is not modified: `myclustername`.  \n - If the cluster name is 26 characters or fewer and there is an existing cluster of the same name in this region, the entire cluster name is included and a dash with six random characters is added: `myclustername-ABC123`.  \n - If the cluster name is 26 characters or greater and the cluster name is unique in this region, only the first 24 characters of the cluster name are used: `myveryverylongclusternam`.  \n - If the cluster name is 26 characters or greater and there is an existing cluster of the same name in this region, only the first 17 characters of the cluster name are used and a dash with six random characters is added: `myveryverylongclu-ABC123`.|
 |`<globally_unique_account_HASH>`|A globally unique HASH is created for your {{site.data.keyword.cloud_notm}} account. All subdomains that you create for NLBs in clusters in your account use this globally unique HASH.|
-|`0001`|The first and second characters indicate a public or a private (internal) subdomain. - `00` indicates a subdomain that has a public DNS entry.  \n - `i0` indicates a subdomain that has a private DNS entry.
-The first and second characters, `00`, indicate a public subdomain. The third and fourth characters, such as `01` or another number, act as a counter for each subdomain that you create.|
+|`0001`|The first and second characters indicate a public or a private (internal) subdomain. - `00` indicates a subdomain that has a public DNS entry.  \n - `i0` indicates a subdomain that has a private DNS entry.  \n - The first and second characters, `00`, indicate a public subdomain.  \n - The third and fourth characters, such as `01` or another number, act as a counter for each subdomain that you create.|
 |`<region>`|The region that the cluster is created in.|
 |`containers.appdomain.cloud`|The subdomain for {{site.data.keyword.openshiftlong_notm}} subdomains.|
 {: caption="Table 1. Understanding the NLB subdomain format" caption-side="bottom"}

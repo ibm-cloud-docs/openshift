@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -179,6 +179,7 @@ Ensuring that IP blocks are free is especially important for all classic cluster
 2. Choose whether to lock the data store for the Calico IPAM records.
     - If you lock the data store, existing pods continue to run, but any pods that are created remain in the `ContainerCreating` state and can't start until you unlock the data store. This data store lock ensures that pods can't be created after you check for unused blocks, but before you release the blocks.
     - If you don't lock the data store, you must immediately verify that no new pods used IP addresses from a released block that you deleted.
+    
     ```sh
     calicoctl datastore migrate lock
     ```

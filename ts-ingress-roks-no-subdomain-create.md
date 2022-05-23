@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -77,6 +77,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 3. Verify that the prerequisite steps for your Ingress controller creation are completed.
     * ![Classic](../icons/classic.svg "Classic") **Classic clusters**: Get the details of the `ibm-cloud-provider-vlan-ip-config` config map.
+    
     ```sh
     oc describe cm ibm-cloud-provider-vlan-ip-config -n kube-system
     ```
@@ -162,12 +163,14 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
     {: screen}
 
     * ![VPC](../icons/vpc.svg "VPC") **VPC clusters**: Verify that the VPC load balancer for your Ingress controllers exists. In the output, look for the VPC load balancer **Name** that starts with `kube-<cluster_ID>`. If you did not install the `infrastructure-service` plug-in, install it by running `ibmcloud plugin install infrastructure-service`.
+    
     ```sh
     ibmcloud is load-balancers
     ```
     {: pre}
 
-    <p class="note">Even though the VPC load balancer is listed, its DNS entry might still be registering. When a VPC load balancer is created, the hostname is registered through a public DNS. Sometimes, it can take several minutes for this DNS entry to be replicated to the specific DNS that your client is using.</p>
+    Even though the VPC load balancer is listed, its DNS entry might still be registering. When a VPC load balancer is created, the hostname is registered through a public DNS. Sometimes, it can take several minutes for this DNS entry to be replicated to the specific DNS that your client is using.
+    {: note}
 
 4. Verify that the Ingress controller is successfully created.
     1. Check whether a Ingress controller deployment exists for your cluster.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, vpn, on-prem, gateway, static
 
@@ -46,9 +46,10 @@ The static route cluster add-on can be used to apply and manage static routes on
 To get started with static routes in {{site.data.keyword.openshiftlong_notm}}, enable the static route add-on.
 {: shortdesc}
 
-**Before you begin**
-* Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#checking-perms).
-* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin
+
+- Ensure that you have the [**Administrator** IAM platform access role for the cluster in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#checking-perms).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 ### Enabling the static route add-on from the console
 {: #enable-add-on-console}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -32,7 +32,7 @@ In {{site.data.keyword.openshiftlong_notm}}, your clusters comprise an IBM-manag
 When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
 {: note}
 
-![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks4.png)
+![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks4.png){: caption="Figure 1. Red Hat OpenShift version 4 master components" caption-side="bottom"}
 
 ### {{site.data.keyword.redhat_openshift_notm}} version 4 master components
 {: #service-architecture-4-master}
@@ -116,6 +116,7 @@ Admission controllers
     - `openshift.io/ClusterResourceQuota`
     - `MutatingAdmissionWebhook`
     - `ValidatingAdmissionWebhook`
+
 :   You can [install your own admission controllers in the cluster](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks){: external} or choose from the optional admission controllers that {{site.data.keyword.openshiftlong_notm}} provides. Container image security enforcement: Install [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec) to block container deployments from unsigned images.
 :   If you manually installed admission controllers and you don't want to use them anymore, make sure to remove them entirely. If admission controllers aren't entirely removed, they might block all actions that you want to perform on the cluster.</p>
 
@@ -208,9 +209,9 @@ Projects
 ![Classic](../icons/classic.svg "Classic") ![Version 3.11 icon.](images/icon-version-311.png) Review the architecture diagram and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 3. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/3.11/architecture/index.html){: external}.
 {: shortdesc}
 
-![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks.png)
+![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks.png){: caption="Figure 1. Classic Red Hat OpenShift version 3 architecture" caption-side="bottom"}
 
-### Version 3 master components 
+### {{site.data.keyword.redhat_openshift_notm}} version 3 master components 
 {: #version-3-master}
 
 Single tenancy
@@ -262,6 +263,7 @@ Admission controllers
     - `openshift.io/ClusterResourceQuota`
     - `MutatingAdmissionWebhook`
     - `ValidatingAdmissionWebhook`
+
 :   You can [install your own admission controllers in the cluster](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks){: external} or choose from the optional admission controllers that {{site.data.keyword.openshiftlong_notm}} provides.
 :   Container image security enforcement: Install [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec) to block container deployments from unsigned images.
 :   If you manually installed admission controllers and you don't want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.
@@ -329,14 +331,14 @@ Review the architecture diagrams and then scroll through the following table for
 
 The following diagram shows the components of your cluster and how they interact when both the [public and private cloud service endpoints are enabled](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master). Because both service endpoints are enabled, your VPC creates a public load balancer for each service for inbound traffic.
 
-![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with public and private cloud service endpoints](/images/arch_roks_vpc.svg)
+![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with public and private cloud service endpoints](/images/arch_roks_vpc.svg){: caption="Figure 1. Red Hat OpenShift on VPC cluster architecture with public and private cloud service endpoints" caption-side="bottom"}
 
 ### Cluster with private cloud service endpoint only
 {: #vpc-service-arch-private-only}
 
 The following diagram shows the components of your cluster and how they interact when only the [private cloud service endpoint is enabled](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master). Because only the private cloud service endpoint is enabled, your VPC creates a private load balancer for each service for inbound traffic.
 
-![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only](images/arch_roks_vpc_private.svg)
+![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only](images/arch_roks_vpc_private.svg){: caption="Figure 1. Red Hat OpenShift on VPC cluster architecture with the private cloud service endpoint only" caption-side="bottom"}
 
 
 ### VPC version 4 master and worker node components
@@ -380,7 +382,7 @@ For each cluster that you create with {{site.data.keyword.openshiftlong_notm}}, 
 |-------|----------|
 |Personal information|The email address of the {{site.data.keyword.cloud_notm}} account that created the cluster.|
 |Sensitive information|  - The TLS certificate and secret that is used for the assigned Ingress subdomain.  \n - The certificate authority that is used for the TLS certificate.  \n - The certificate authority, private keys, and TLS certificates for the {{site.data.keyword.redhat_openshift_notm}} master components, including the {{site.data.keyword.redhat_openshift_notm}} API server, etcd data store, and VPN.  \n - A customer root key in {{site.data.keyword.keymanagementservicelong_notm}} for each {{site.data.keyword.cloud_notm}} account that is used to encrypt personal and sensitive information.|
-
+{: caption="Table 1. Information that is stored with IBM" caption-side="bottom"}
 
 ### How is my information stored and encrypted?
 {: #pi-storage}

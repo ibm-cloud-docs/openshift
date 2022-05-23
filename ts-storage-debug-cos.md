@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: file, debug, help
 
@@ -52,7 +52,7 @@ Follow the steps to review any error messages related to pod deployment.
     {: pre}
     
 
-4. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).  
+1. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).  
 
 ## Restarting your app pod
 {: #debug_storage_cos_restart}
@@ -142,7 +142,7 @@ Follow the steps to check the status of your storage driver and plug-in pods and
         {: pre}
         
 
-3. Check the latest logs for any error messages. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).
+1. Check the latest logs for any error messages. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).
 
 ## Checking whether your PVC is successfully provisioned
 {: #debug_storage_cos_pvc}
@@ -195,7 +195,7 @@ Follow the steps to check the status of your PVC and review any error messages.
       {: screen}
       
 
-4. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common {{site.data.keyword.cos_short}} PVC errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).
+1. [Review the {{site.data.keyword.cos_short}} troubleshooting documentation for steps to resolve common {{site.data.keyword.cos_short}} PVC errors](/docs/openshift?topic=openshift-sitemap#sitemap_object_storage).
 
 ## Checking and updating the oc CLI version
 {: #debug_storage_cos_cli}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -122,7 +122,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 When you try to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` for the first time and you see an error message similar to the following.
 {: tsSymptoms}
 
-```
+```txt
 $ oc login SERVER -u apikey -p <APIKEY>
 The server uses a certificate signed by an unknown authority.
 You can bypass the certificate check, but any data you send to the server could be intercepted by others.
@@ -167,7 +167,7 @@ After the impacted user completes the IAM synchronization, the cluster administr
 You don't see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.
 {: tsSymptoms}
 
-```
+```txt
 No resources found.
 Error from server (Forbidden): <resource> is forbidden: User "IAM#user@email.com" can't list <resources> at the cluster scope: no RBAC policy matched
 ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-23"
 
 keywords: openshift
 
@@ -1305,6 +1305,8 @@ Complete the following steps to create a snapshot for your volume.
 
 
 ### Replicating snapshots to another zone
+{: #file-replicate-snapshot-diff-zone}
+
 To protect your data from a zone failure, you can [replicate snapshots](/docs/FileStorage?topic=FileStorage-replication#replication) to a {{site.data.keyword.filestorage_short}} instance that is set up in another zone. 
 {: shortdesc}
 
@@ -1715,7 +1717,7 @@ To clean up persistent data:
     ```
     {: screen}
 
-2. Review the **`ReclaimPolicy`** and **`billingType`** for the storage class.
+1. Review the **`ReclaimPolicy`** and **`billingType`** for the storage class.
 
     ```sh
     oc describe storageclass <storageclass_name>
@@ -1727,7 +1729,7 @@ To clean up persistent data:
     If your storage is charged monthly, you still get charged for the entire month, even if you remove the storage before the end of the billing cycle.
     {: important}
 
-3. Remove any pods that mount the PVC. List the pods that mount the PVC. If no pod is returned in your CLI output, you don't have a pod that uses the PVC.
+1. Remove any pods that mount the PVC. List the pods that mount the PVC. If no pod is returned in your CLI output, you don't have a pod that uses the PVC.
 
     ```sh
     oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
@@ -1741,42 +1743,42 @@ To clean up persistent data:
     ```
     {: screen}
 
-4. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+1. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
 
     ```sh
     oc delete pod <pod_name>
     ```
     {: pre}
 
-5. Verify that the pod is removed.
+1. Verify that the pod is removed.
 
     ```sh
     oc get pods
     ```
     {: pre}
 
-6. Remove the PVC.
+1. Remove the PVC.
 
     ```sh
     oc delete pvc <pvc_name>
     ```
     {: pre}
 
-7. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**. When you remove the PVC, the PV that is bound to the PVC is released. Depending on how you provisioned your storage, your PV goes into a `Deleting` state if the PV is deleted automatically, or into a `Released` state, if you must manually delete the PV. **Note**: For PVs that are automatically deleted, the status might briefly say `Released` before it is deleted. Rerun the command after a few minutes to see whether the PV is removed.
+1. Review the status of your PV. Use the name of the PV that you retrieved earlier as **`VOLUME`**. When you remove the PVC, the PV that is bound to the PVC is released. Depending on how you provisioned your storage, your PV goes into a `Deleting` state if the PV is deleted automatically, or into a `Released` state, if you must manually delete the PV. **Note**: For PVs that are automatically deleted, the status might briefly say `Released` before it is deleted. Rerun the command after a few minutes to see whether the PV is removed.
 
     ```sh
     oc get pv <pv_name>
     ```
     {: pre}
 
-8. If your PV is not deleted, manually remove the PV.
+1. If your PV is not deleted, manually remove the PV.
 
     ```sh
     oc delete pv <pv_name>
     ```
     {: pre}
 
-9. Verify that the PV is removed.
+1. Verify that the PV is removed.
 
     ```sh
     oc get pv
