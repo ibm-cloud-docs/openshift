@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-24"
 
 keywords: openshift
 subcollection: openshift
@@ -211,7 +211,7 @@ subcollection: openshift
 
     * [20 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2022)
 
-        * {{site.data.keyword.registrylong_notm}} private IP address changes beginning 20 June 2022
+        * {{site.data.keyword.registrylong_notm}} private IP address changes beginning 23 June 2022
 
         * New! Enable volume encryption in OpenShift Data Foundation by using {{site.data.keyword.hscrypto}}.
 
