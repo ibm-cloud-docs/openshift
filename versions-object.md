@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-24"
 
 keywords: object storage, plug-in, changelog
 
@@ -26,8 +26,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
-| 2.1.14 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.1.14 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.16 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.15 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.14 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.13 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.12 | Deprecated | Greater than or equal to 4.3 | x86 |
 | 2.1.11 | Deprecated | Greater than or equal to 4.3 | x86 |
@@ -50,12 +51,19 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
 
+## Change log for version 2.1.16, released 25 May 2022
+{: #02115_object_plugin}
+
+- Updates the UBI to `8.6-751`
+- Added support for adding ips via pvc annotation for `configBucketAccess`
+- Added support for `crftoken` to be fetched from `storage-secret-store`
+
 ## Change log for version 2.1.15, released 6 May 2022
 {: #02115_object_plugin}
 
-- Updates the UBI to 8.5-243.1651231653
+- Updates the UBI to `8.5-243.1651231653`
 - Resolves [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}
-- Updates GoLang to 1.17.9
+- Updates GoLang to `1.17.9`
 
 ## Change log for version 2.1.14, released 13 April 2022
 {: #02114_object_plugin}
