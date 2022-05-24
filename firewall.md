@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-05-24"
 
 keywords: openshift
 
@@ -388,10 +388,10 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 - `TCP port 443 FROM <each_worker_node_privateIP> TO <registry_ip>`
 - Replace `<registry_ip>` with the registry IP address to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
 
-The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 20 June 2022. For more information, see [Update IAM restricted IP address lists by 20 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
+The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 23 June 2022. For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
 {: note}
 
-| {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses until 20 June 2022 | Registry private IP addresses after 20 June 2022 |
+| {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses until 23 June 2022 | Registry private IP addresses after 23 June 2022 |
 | --- | --- | --- | --- |
 | Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `private.icr.io` `cp.icr.io` | 166.9.20.31, 166.9.22.22, 166.9.24.16 | 166.9.251.49, 166.9.251.82, 166.9.251.113 |
 | AP North | `private.jp.icr.io` | 166.9.40.20, 166.9.42.21, 166.9.44.12 | 166.9.249.104, 166.9.249.157, 166.9.249.168 |

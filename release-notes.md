@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-24"
 
 keywords: openshift
 
@@ -36,8 +36,8 @@ Worker node fix pack
 ### 20 May 2022
 {: #openshift-may2022}
 
-{{site.data.keyword.registrylong_notm}} private IP address changes beginning 20 June 2022
-:   The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 20 June 2022. For more information, see [Update IAM restricted IP address lists by 20 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
+{{site.data.keyword.registrylong_notm}} private IP address changes beginning 23 June 2022
+:   The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 23 June 2022. For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
 
 New! Enable volume encryption in OpenShift Data Foundation by using {{site.data.keyword.hscrypto}}.
 :   For more information, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc), [Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-deploy-odf-sat), and [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic). Note that volume encryption is available with add-on version 4.10 and later. 
