@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-25"
 
 keywords: block, add-on, changelog
 
@@ -38,18 +38,37 @@ Refer to the following tables for a summary of changes for each version of the {
 
 | {{site.data.keyword.block_storage_is_short}} add-on version | {{site.data.keyword.openshiftlong_notm}} version support |
 | --- | --- |
-| 4.2 (default) | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
-| 4.1 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
-| 4.0 | Deprecated |
+| 4.3 (default) | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
+| 4.2  | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
+| 4.1 | Deprecated |
+| 4.0 | Unsupported |
 | 3.0.1 | Unsupported |
 | 3.0.0 | Unsupported |
 | 2.0.3 | Unsupported |
 {: caption="VPC block storage add-on version support" caption-side="top"}
 
+## Version 4.3
+{: #043_is_block}
 
+### Change log for version 4.3.0_1163, released 25 May 2022
+{: #430_1163_is_block_relnote}
+
+- Resolves the following CVEs: [CVE-2021-3634](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3634){: external}, [CVE-2021-3737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3737){: external}, [CVE-2021-4189]https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4189){: external}.
+- Updates the `storage-secret-sidecar` image to `v1.1.10`
+- Fixes Volume provisioning failure when in StorageClass Region is provided without zone info
+- Fixes an issue where volume creation fails if only `failure-domain.beta.kubernetes.io/zone` is given in `allowedTopologies`
+- `Region` support is now *DEPRECATED* in the storage class. Providing "region" detail in storage classes is deprecated in this release, this will not cause any issues with either existing PVC or new PVC. For now the default behaviour is to get the region detail from the node label only which is now mandatory for all cases.
 
 ## Version 4.2
 {: #042_is_block}
+
+
+### Change log for version 4.2.6_1161, released 12 May 2022
+{: #426_1161_is_block_relnote}
+
+- Updates armada-storage-secret to `v1.1.10`
+- Resolves the following CVEs: [CVE-2021-3634](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3634){: external},[CVE-2021-3737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3737){: external},[CVE-2021-4189](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4189){: external}.
+
 
 ### Change log for version 4.2.5_1106, released 12 May 2022
 {: #425_1106_is_block_relnote}

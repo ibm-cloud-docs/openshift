@@ -27,6 +27,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2022
 {: #openshift-may22}
 
+### 25 May 2022
+{: #openshift-may2522}
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.16` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.3.0_1163](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.2.6_1161](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+
+### 20 May 2022
+{: #openshift-may2022}
+
 Worker node fix pack
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.14_1519_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.33_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.685_1632_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).

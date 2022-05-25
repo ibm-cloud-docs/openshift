@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-24"
 
 keywords: openshift, app protocol, application protocol
 
@@ -109,6 +109,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
+* When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made in a timely manner. 
+
 
 **To enable your app to receive public requests:**
 
@@ -277,6 +279,8 @@ Before you begin
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
+* When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made in a timely manner. 
+
 
 
 To enable your app to receive private network requests,
@@ -529,6 +533,8 @@ Before you begin
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
+* When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made in a timely manner. 
+
 
 To enable your app to receive public or private requests,
 
