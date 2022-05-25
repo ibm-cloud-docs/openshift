@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-05-25"
 
 keywords: block, add-on, changelog
 
@@ -64,7 +64,7 @@ Refer to the following tables for a summary of changes for each version of the {
 
 
 ### Change log for version 4.2.6_1161, released 12 May 2022
-{: #425_1106_is_block_relnote}
+{: #426_1161_is_block_relnote}
 
 - Updates armada-storage-secret to `v1.1.10`
 - Resolves the following CVEs: [CVE-2021-3634](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3634){: external},[CVE-2021-3737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3737){: external},[CVE-2021-4189](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4189){: external}.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-05-25"
 
 keywords: object storage, plug-in, changelog
 
@@ -52,7 +52,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
 
 ## Change log for version 2.1.16, released 25 May 2022
-{: #02115_object_plugin}
+{: #02116_object_plugin}
 
 - Updates the UBI to `8.6-751`
 - Added support for adding ips via pvc annotation for `configBucketAccess`
