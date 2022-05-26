@@ -8,7 +8,7 @@ toc:
     path: openshift
     label: Red Hat OpenShift on IBM Cloud
     version: 2
-    console-page: /openshift
+    console-page: /kubernetes/overview?platformType=openshift
     product-page: https://www.ibm.com/cloud/openshift
   entries:
   - navgroup: 
