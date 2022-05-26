@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
 
+    * [26 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2622)
+
+        * CLI change log update
+
     * [25 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2522)
 
         * {{site.data.keyword.cos_full_notm}} plug-in
@@ -5010,6 +5014,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.415](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10415)
 
 * [Version 1.0.408](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10408)
 
