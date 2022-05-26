@@ -3130,7 +3130,7 @@ subcollection: openshift
 
     * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#no-worker-sgs)
 
-* [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#worker-sgs)
+    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#worker-sgs)
 
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
@@ -3746,6 +3746,10 @@ subcollection: openshift
     * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
 
     * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+
+* [Health checks for load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health)
+
+    * [Enabling TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_udp)
 
 * [Changing load balancer subnets or zones](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_change_subnets)
 

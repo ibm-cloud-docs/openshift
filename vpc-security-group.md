@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-26"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -399,7 +399,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 
 Only the security groups applied to the cluster are applied to the workers.
 
-## If you do want to attach additional security groups to the worker pool
+### If you do want to attach additional security groups to the worker pool
 {: #worker-sgs}
 
 When you create the worker pool specify additional security groups at worker pool create time. You must include a separate `--security-group` option for each individual security group you want to add.
