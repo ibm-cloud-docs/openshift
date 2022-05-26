@@ -1905,7 +1905,7 @@ Worker node versions
 {: release-note}
 
 Gateway firewalls and Calico policies
-:   For classic clusters in Frankfurt, updated the required IP addresses and ports that you must open in a [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private) or [Calico private network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3/eu-de){: external}.
+:   For classic clusters in Frankfurt, updated the required IP addresses and ports that you must open in a [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private) or [Calico private network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/eu-de){: external}.
 
 ### 10 February 2021
 {: #openshift-feb1021}
