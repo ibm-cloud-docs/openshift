@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-26"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -192,6 +192,7 @@ ibmcloud login -a https://cloud.ibm.com -g <nondefault_resource_group_name>
 
 When you log in to {{site.data.keyword.cloud_notm}}, you can access the {{site.data.keyword.containershort_notm}}. To help you get started, check out the following resources for using the {{site.data.keyword.openshiftlong_notm}} CLI and API.
 {: shortdesc}
+
 
 
 **{{site.data.keyword.openshiftlong_notm}} CLI**:

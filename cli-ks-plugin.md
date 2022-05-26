@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-05-26"
 
 keywords: openshift
 
@@ -3182,7 +3182,7 @@ View and configure Ingress application load balancers (ALBs).
 In CLI version 1.0.157 and later, the `ibmcloud oc alb` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress alb` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: important}
 
-###  `ibmcloud oc ingress alb autoupdate disable`
+### `ibmcloud oc ingress alb autoupdate disable`
 {: #cs_alb_autoupdate_disable}
 
 Disable automatic updates of all Ingress ALB pods in a cluster.
@@ -3589,7 +3589,7 @@ ibmcloud oc ingress alb migrate start --type test --cluster my_cluster
 {: pre}
 
 
-###  `ibmcloud oc ingress alb migrate status`
+### `ibmcloud oc ingress alb migrate status`
 {: #cs_alb_migrate_status}
 
 Version 3.11 clusters only: Check the status of a [migration of your Ingress configmap and resources](#cs_alb_migrate_start).

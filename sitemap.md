@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-05-26"
 
 keywords: openshift
 subcollection: openshift
@@ -4829,7 +4829,7 @@ subcollection: openshift
 
 * [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands)
 
-    * [ `ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
+    * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
 
     * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
 
@@ -4849,7 +4849,7 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress alb migrate start`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_start)
 
-    * [ `ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
+    * [`ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
 
     * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
 

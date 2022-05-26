@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-26"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -118,13 +118,13 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     ```
     {: pre}
 
-1.For each zone, review the [available flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm).
+1. For each zone, review the [available flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm).
     ```sh
     ibmcloud oc flavors --zone <ZONE> --provider vpc-gen2
     ```
     {: pre}
 
-1.Optional: To encrypt the local disk of each worker node in the worker pool, get the details of your key management service (KMS) provider.
+1. Optional: To encrypt the local disk of each worker node in the worker pool, get the details of your key management service (KMS) provider.
     1. Complete the steps in [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc) to create your KMS instance and to authorize your service in IAM. 
 
     1. List available KMS instances and note the **ID**.
@@ -141,7 +141,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
         ```
         {: pre}
 
-1.Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. Include the `--vpc-id` option if the worker pool is the first in the cluster. Optionally include the `--kms-instance` and `--crk` flags with the values you previously retrieved. To attach additional security groups to the workers in the worker pool, [specify the security group IDs with the `--security-group` option](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-worker-pool). For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).  Note that the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
+1. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. Include the `--vpc-id` option if the worker pool is the first in the cluster. Optionally include the `--kms-instance` and `--crk` flags with the values you previously retrieved. To attach additional security groups to the workers in the worker pool, [specify the security group IDs with the `--security-group` option](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-worker-pool). For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).  Note that the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
     If you want to create your worker pool on dedicated hosts, make sure to specify the `--dedicated-host-pool` option.
     {: note}
 
