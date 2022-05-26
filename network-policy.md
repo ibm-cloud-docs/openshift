@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-05-26"
 
 keywords: openshift
 
@@ -325,10 +325,10 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: pre}
 
-1. Go to the `calico-v3` private policy directory for the region that your cluster is in. Example command for a cluster in US South:
+1. Go to the private policy directory for the region that your cluster is in. Example command for a cluster in US South:
 
     ```sh
-    cd <filepath>/IBM-Cloud/kube-samples/calico-policies/private-network-isolation/calico-v3/us-south
+    cd <filepath>/IBM-Cloud/kube-samples/calico-policies/private-network-isolation/us-south
     ```
     {: pre}
 

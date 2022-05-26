@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-05-26"
 
 keywords: openshift
 subcollection: openshift
@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
 
+    * [26 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2622)
+
+        * CLI change log update
+
     * [25 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2522)
 
         * {{site.data.keyword.cos_full_notm}} plug-in
@@ -218,8 +222,6 @@ subcollection: openshift
     * [20 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2022)
 
         * Worker node fix pack
-
-    * [20 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2022)
 
         * {{site.data.keyword.registrylong_notm}} private IP address changes beginning 23 June 2022
 
@@ -3130,7 +3132,7 @@ subcollection: openshift
 
     * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#no-worker-sgs)
 
-* [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#worker-sgs)
+    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#worker-sgs)
 
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
@@ -3746,6 +3748,10 @@ subcollection: openshift
     * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
 
     * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
+
+* [Health checks for load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health)
+
+    * [Enabling TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_udp)
 
 * [Changing load balancer subnets or zones](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_change_subnets)
 
@@ -4829,7 +4835,7 @@ subcollection: openshift
 
 * [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands)
 
-    * [ `ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
+    * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
 
     * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
 
@@ -4849,7 +4855,7 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress alb migrate start`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_start)
 
-    * [ `ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
+    * [`ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
 
     * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
 
@@ -5006,6 +5012,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.415](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10415)
 
 * [Version 1.0.408](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10408)
 

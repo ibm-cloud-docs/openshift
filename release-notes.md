@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-05-26"
 
 keywords: openshift
 
@@ -27,6 +27,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2022
 {: #openshift-may22}
 
+
+### 26 May 2022
+{: #openshift-may2622}
+
+CLI change log update
+:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.415.
+
+
 ### 25 May 2022
 {: #openshift-may2522}
 
@@ -45,11 +53,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Worker node fix pack
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.14_1519_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.33_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.685_1632_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
-
-
-
-### 20 May 2022
-{: #openshift-may2022}
 
 {{site.data.keyword.registrylong_notm}} private IP address changes beginning 23 June 2022
 :   The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 23 June 2022. For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
@@ -1897,7 +1900,7 @@ Worker node versions
 {: release-note}
 
 Gateway firewalls and Calico policies
-:   For classic clusters in Frankfurt, updated the required IP addresses and ports that you must open in a [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private) or [Calico private network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/calico-v3/eu-de){: external}.
+:   For classic clusters in Frankfurt, updated the required IP addresses and ports that you must open in a [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private) or [Calico private network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/eu-de){: external}.
 
 ### 10 February 2021
 {: #openshift-feb1021}
