@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-26"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -107,7 +107,7 @@ If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create
 
 1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} instance name, instance ID, root key ID, and public endpoint.
 
-1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys#create_serviceid), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
+1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -524,7 +524,7 @@ To install ODF in your cluster, complete the following steps.
 1. Select either **Essentials** or **Advanced** as your billing plan.
 1. For classic clusters, select **Local storage** to use local volumes on the worker nodes.
 1. If you want to automatically discover the available storage devices on your worker nodes and use them in ODF, select **Local disk discovery**.
-1. If you want to manually specify the storage devices on your worker nodes that you want to use in ODF, enter a comma-separated list of the disk IDs that you want to use. To find these disk IDs, see [Gathering your device details](#getting-your-device-details).
+1. If you want to manually specify the storage devices on your worker nodes that you want to use in ODF, enter a comma-separated list of the disk IDs that you want to use. To find these disk IDs, see [Gathering your device details](#odf-classic-get-devices).
 1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find you node names, run the `oc get nodes` command in your cluster. Leave this field blank to deploy ODF on all worker nodes.
 1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
 1. If you are re-enabling the add-on to upgrade the add-on version, select the **Upgrade ODF** option.
