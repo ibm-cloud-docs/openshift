@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-05-31"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -156,7 +156,7 @@ Before you enable a key management service (KMS) provider in your cluster, creat
 You can enable a KMS provider, update the KMS provider instance, or update the root key through the CLI.
 {: shortdesc}
 
-1. Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key.
+1. Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key. If you want to use cross account KMS encryption, the 1. and 2. steps should be done in the KMS instance's account.
 1. Get the ID of the KMS instance that you previously created.
     ```sh
     ibmcloud oc kms instance ls
@@ -169,9 +169,9 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
     ```
     {: pre}
 
-1. Enable the KMS provider to encrypt secrets in your cluster. Fill in the flags with the information that you previously retrieved. The KMS provider's private cloud service endpoint is used by default to download the encryption keys. To use the public cloud service endpoint instead, include the `--public-endpoint` flag. The enablement process can take some time to complete.
+1. Enable the KMS provider to encrypt secrets in your cluster. Fill in the flags with the information that you previously retrieved. The KMS provider's private cloud service endpoint is used by default to download the encryption keys. To use the public cloud service endpoint instead, include the `--public-endpoint` flag. If you are providing KMS instance from a different account, provide the `--kms-account-ID` flag. The enablement process can take some time to complete.
     ```sh
-    ibmcloud oc kms enable -c <cluster_name_or_ID> --instance-id <kms_instance_ID> --crk <root_key_ID> [--public-endpoint]
+    ibmcloud oc kms enable -c <cluster_name_or_ID> --kms-account-id <kms_account_ID> --instance-id <kms_instance_ID> --crk <root_key_ID> [--public-endpoint]
     ```
     {: pre}
     
@@ -222,6 +222,9 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 
 ### Enabling KMS encryption for the cluster through the console
 {: #kms_ui}
+
+Cross account KMS enablement is not supported through the UI. Please follow [Enabling KMS encryption for the cluster through the CLI](#kms_cli).
+{: important}
 
 You can enable a KMS provider, update the KMS provider instance, or update the root key through the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
@@ -297,7 +300,7 @@ To verify secret encryption by disabling a root key
     ```
     {: pre}
 
-4. In your KMS instance, [disable the root key](/docs/key-protect?topic=key-protect-disable-keys) that is used to encrypt your cluster.
+4. In your KMS instance, [disable the root key](/docs/key-protect?topic=key-protect-disable-keys) that is used to encrypt your cluster. If you encrypted your cluster with a KMS and CRK from a different account, the CRK can only be disabled from the account where it is located.
 5. Wait for the cluster to detect the change to your root key.
 
     In clusters that run a version earlier than `4.5`, you might need to wait for an hour or longer.
@@ -349,34 +352,36 @@ You can manage the encryption of the local disks in your worker nodes by using a
 You can manage the encryption of the worker nodes by enabling a KMS provider at the worker pool level.
 
 1. Complete the same [prerequisite steps](#kms_prereqs) for enabling a KMS provider at the cluster level, including to create your own KMS instance and root key. You don't have to enable encryption at the cluster level, but you might want to so that you manage the encryption of cluster secrets.
-2. Make sure that you have [service authorization policies in {{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/authorizations){: external} with the following details.
+2. Make sure that you have [service authorization policies in {{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/authorizations){: external}, created under the account where the KMS instance resides, with the following details:
     - **Required service access policy for Kubernetes Service and the KMS provider**
-        1. Set the **Source service** to **Kubernetes Service**.
-        2. Set the **Target service** to your KMS provider, such as **Key Protect**.
-        3. Include at least **Reader** service access.
-        4. Enable the authorization to be delegated by the source and dependent services.
-    - **Required service access policy for Cloud Block Storage and and the KMS provider**
-        1. Set the **Source service** to **Cloud Block Storage**. 
-        2. Set the **Target service** to your KMS provider, such as **Key Protect**.
-        3. Include at least **Reader** service access.
+        1. Set the **Source account** for **This account** if the cluster you want to authorize accessing KMS resides in the current account, otherwise if the cluster located under a different account, select **Other account** and provide the account ID.
+        2. Set the **Source service** to **Kubernetes Service**.
+        3. Set the **Target service** to your KMS provider, such as **Key Protect**.
+        4. Include at least **Reader** service access.
+        5. Enable the authorization to be delegated by the source and dependent services.
+    - **Required service access policy for Cloud Block Storage and the KMS provider**
+        1. Set the **Source account** for **This account** if the cluster you want to authorize accessing KMS resides in the current account, otherwise if the cluster located under a different account, select **Other account** and provide the account ID.
+        2. Set the **Source service** to **Cloud Block Storage**. 
+        3. Set the **Target service** to your KMS provider, such as **Key Protect**.
+        4. Include at least **Reader** service access.
 
-    {{site.data.keyword.openshiftlong_notm}} automatically creates a service-to-service delegation policy for the Cloud Block Storage service in the IBM-managed service account to the KMS provider instance in your user account. This delegation policy is required so that the VPC infrastructure can encrypt the boot volume of the worker nodes in the IBM-managed service account with your customer-provided root key of the KMS provider in your account. 
+    {{site.data.keyword.openshiftlong_notm}} automatically creates a service-to-service delegation policy for the Cloud Block Storage service in the IBM-managed service account to the KMS provider instance under the account where the KMS instance and CRK reside. This delegation policy is required so that the VPC infrastructure can encrypt the boot volume of the worker nodes in the IBM-managed service account with your customer-provided root key of the KMS provider. 
     {: note}
 
-3. Create a cluster or worker pool that includes your KMS provider instance and root key. Each worker node in the worker pool then is encrypted by the KMS provider that you manage. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
+3. Create a cluster or worker pool that includes the account where the KMS instanced resides, the KMS provider instance and root key. Each worker node in the worker pool then is encrypted by the KMS provider that you manage. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
     - **Creating a cluster**: Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. For more information, see [Creating clusters](/docs/openshift?topic=openshift-clusters#clusters_vpcg2) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
-        - **UI**: From the [cluster creation page](https://cloud.ibm.com/kubernetes/catalog/create){: external}, make sure to include the **KMS instance** and **Root key** fields.
-        - **CLI**: Make sure to include the `--kms-instance-id` and `--crk` fields, such as in the following VPC example.
+        - **UI**: From the [cluster creation page](https://cloud.ibm.com/kubernetes/catalog/create){: external}, make sure to include the **KMS instance**, **Root key** and optionally, if the KMS instance resides in a different account, the **KMS account** fields.
+        - **CLI**: Make sure to include the `--kms-instance-id`, `--crk` fields and also the optional`--kms-account-id` field if the KMS instance resides in an account different from the clusters account, such as in the following VPC example.
             ```sh
-            ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet> --flavor <flavor> --workers <number_of_workers_per_zone> --kms-instance-id <kms_instance_ID> --crk <kms_root_key_ID>
+            ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet> --flavor <flavor> --workers <number_of_workers_per_zone> --kms-account-id <kms_account_ID> --kms-instance-id <kms_instance_ID> --crk <kms_root_key_ID>
             ```
             {: codeblock}
 
     - **Creating a worker pool**: For more information, see [Creating VPC worker pools](/docs/openshift?topic=openshift-add_workers#vpc_add_pool) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
-        - **UI**: After selecting your cluster from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools > Add**. Then,  make sure to include the **KMS instance** and **Root key** fields.
-        - **CLI**: Make sure to include the `--kms-instance-id` and `--crk` fields, such as in the  following VPC example.
+        - **UI**: After selecting your cluster from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools > Add**. Then,  make sure to include the **KMS instance**, **Root key** and optionally, if the KMS instance resides in a different account, the **KMS account** fields.
+        - **CLI**: Make sure to include the `--kms-instance-id`, `--crk` fields and also the optional`--kms-account-id` field if the KMS instance resides in an account different from the clusters account, such as in the following VPC example.
             ```sh
-            ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster  <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone>  [--vpc-id <VPC ID> --kms-instance-id <kms_instance_ID> --crk <kms_root_key_ID>
+            ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster  <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --vpc-id <VPC ID> --kms-account-id <kms_account_ID> --kms-instance-id <kms_instance_ID> --crk <kms_root_key_ID>
             ```
             {: codeblock}
 

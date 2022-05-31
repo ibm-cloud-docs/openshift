@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-31"
 
 keywords: openshift
 
@@ -288,7 +288,7 @@ If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-i
 If you don't want to provision and use {{site.data.keyword.cos_full_notm}} in your cluster, you can uninstall the `ibm-object-storage-plugin` and the `ibmc` Helm plug-in.
 {: shortdesc}
 
-Removing the `ibmc` Helm plug-in or the `ibm-object-storage-plugin` doesn't remove existing PVCs, PVs, data. When you remove the `ibm-object-storage-plugin`, all the related pods and daemon sets are removed from your cluster. You can't provision new {{site.data.keyword.cos_full_notm}} for your cluster or use existing PVCs and PVs after you remove the plug-in, unless you configure your app to use the {{site.data.keyword.cos_full_notm}} API directly.
+Removing the `ibmc` Helm plug-in or the `ibm-object-storage-plugin` doesn't remove existing PVCs, PVs, or data. When you remove the `ibm-object-storage-plugin`, all the related driver pods and daemon sets are removed from your cluster, which means you can't provision new {{site.data.keyword.cos_full_notm}} for your cluster unless you configure your app to use the {{site.data.keyword.cos_full_notm}} API directly. There is no impact on existing PVCs and PVs.
 {: important}
 
 Before you begin:
@@ -536,4 +536,3 @@ Review the pod details to verify that the plug-in installation succeeded.
 
 If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
 {: tip}
-

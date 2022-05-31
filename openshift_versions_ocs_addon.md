@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-27"
+lastupdated: "2022-05-31"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -51,7 +51,7 @@ Initial release.
 
 
 ## Version 4.9
-{: #4.10_odf}
+{: #4.9_odf}
 
 ### Version 4.9.5, release 20 May 2022
 {: #4.9.5_odf}
