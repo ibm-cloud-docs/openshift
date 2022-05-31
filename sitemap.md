@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-27"
+lastupdated: "2022-05-31"
 
 keywords: openshift
 subcollection: openshift
@@ -232,6 +232,8 @@ subcollection: openshift
     * [16 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1622)
 
         * Cluster autoscaler add-on
+
+        * ALB OAuth Proxy add-on
 
     * [12 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1222)
 

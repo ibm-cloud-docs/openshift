@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-05-31"
 
 keywords: openshift
 
@@ -70,6 +70,9 @@ New! Version 4.10.0 of the OpenShift Data Foundation add-on is available.
 
 Cluster autoscaler add-on
 :   Versions `1.0.5_628` and `1.1.0_615` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+
+ALB OAuth Proxy add-on
+:   Verion 1.0.0 is no longer supported. For more information, see the [change log](/docs/containers?topic=containers-alb-oauth-proxy-changelog).
 
 ### 12 May 2022
 {: #openshift-may1222}
