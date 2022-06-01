@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-01"
 
 keywords: openshift
 
@@ -23,6 +23,8 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+
 
 ## May 2022
 {: #openshift-may22}
@@ -62,6 +64,7 @@ New! Enable volume encryption in OpenShift Data Foundation by using {{site.data.
 
 New! Version 4.10.0 of the OpenShift Data Foundation add-on is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
 
 
 
