@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-01"
 
 keywords: openshift dedicated hosts
 
@@ -20,7 +20,7 @@ subcollection: openshift
 
 Dedicated hosts are single-tenant managed hypervisors that can only be used to deploy {{site.data.keyword.openshiftlong_notm}} clusters. 
 
-Dedicated hosts are available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist.
+Dedicated hosts, including those with instance storage, are available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. Additionally, if you want to use dedicated hosts with instance storage, include this in your support case.
 {: important}
 
 
@@ -32,7 +32,7 @@ To order dedicated hosts, you must first create a host pool. Then, you can creat
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-1. Review the available dedicated host flavors and make a note of the flavor class that you want to create your host pool with, for example `bx2`.
+1. Review the available dedicated host flavors and make a note of the flavor class that you want to create your host pool with, for example `bx2`. Dedicated host flavors that include instance storage are indicated with the letter `d` in the fourth position of the name, for example `bx2d-2x8`. For more information about using instance storage, see [Instance storage](/docs/vpc?topic=vpc-instance-storage).
     ```sh
     ibmcloud oc dedicated flavors --zone ZONE --provider PROVIDER
     ```
@@ -83,7 +83,7 @@ To remove worker nodes from a dedicated host, you must disable dedicated host pl
 {: shortdesc}
 
 1. List your dedicated hosts and host pools. Make a note of the dedicated host and the dedicated host pool that you want to remove.
-    HOST
+
     ```sh
     ibmcloud oc dedicated host ls
     ibmcloud oc dedicated pool ls
@@ -183,8 +183,6 @@ To remove worker nodes from a dedicated host, you must disable dedicated host pl
     ```
     {: pre}
     
-
     
-
 
 
