@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-01"
 
 keywords: openshift, clusters
 
@@ -506,7 +506,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     * For more information, see [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
 4. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.9_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--cluster-security-group <group_ID>] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-ID <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.9_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--cluster-security-group <group_ID>] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [--kms-instance <KMS_instance_ID> --crk <root_key_ID>]
     ```
     {: pre}
 
@@ -563,11 +563,6 @@ Your VPC cluster is created with both a public and a private cloud service endpo
         If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.
         {: important}
         
-
-    `--kms-account-ID <KMS_acount_ID>`
-    :   Optional: Must be included if the `--kms-instance-id` and `--crk` flags are provided and the KMS instance resides in an account different from the cluster's account, otherwise it can be omitted.
-    {: note}
-
 
     `--kms-instance <KMS_instance_ID>`
     :   Optional: Include the ID of a key management service (KMS) instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available KMS instances, run `ibmcloud oc kms instance ls`. If you include this option, you must also include the `--crk` option.
