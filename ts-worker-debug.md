@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-02"
 
 keywords: openshift
 
@@ -28,7 +28,22 @@ Review the options to debug your worker nodes and find the root causes for failu
 * ![Classic](../icons/classic.svg "Classic") Classic
 * ![VPC](../icons/vpc.svg "VPC") VPC
 
-## Step 1: Get the worker node state
+
+## Quick steps to resolve worker node issues
+{: #worker-debug-quick}
+
+If your worker node is not functioning as expected, you can follow these steps to update your cluster and command line tools or run diagnostic tests. If the issue persists, see [Debugging your worker node](#worker-debug-steps) for additional steps. 
+{: shortdesc}
+
+1. [Update your cluster and worker nodes to the latest version](/docs/containers?topic=containers-update#update).
+2. [Update your command line tools](/docs/containers?topic=containers-cs_cli_install#cs_cli_upgrade).
+3. [Run tests in the Diagnostics and Debug Tool add-on](/docs/containers?topic=containers-debug-tool). 
+
+
+## Debugging your worker node
+{: #worker-debug-steps}
+
+### Step 1: Get the worker node state
 {: #worker-debug-get-state}
 
 If your cluster is in a **Critical**, **Delete failed**, or **Warning** state, or is stuck in the **Pending** state for a long time, review the state of your worker nodes.
@@ -38,14 +53,14 @@ ibmcloud oc worker ls --cluster <cluster_name_or_id>
 ```
 {: pre}
 
-## Step 2: Review the worker node state
+### Step 2: Review the worker node state
 {: #worker-debug-rev-state}
 
 Review the **State** and **Status** field for every worker node in your CLI output.
 
 For more information, see [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
 
-## Step 3: Get the details for each worker node
+### Step 3: Get the details for each worker node
 {: #worker-debug-get-details}
 
 Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to learn how to resolve the problem.
@@ -55,7 +70,7 @@ ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>
 ```
 {: pre}
 
-## Step 4: Review the infrastructure provider for the worker node
+### Step 4: Review the infrastructure provider for the worker node
 {: #worker-debug-rev-infra}
 
 Review the infrastructure environment to check for other reasons that might cause the worker node issues.
