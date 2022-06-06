@@ -35,7 +35,7 @@ Worker node fix pack
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.16_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.36_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.42_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.51_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.58_1585_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.705_1634_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 Version 3.11 is unsupported
-:   Update your cluster to a supported as soon as possible. For more information, see the 3.11 [release information](/docs/openshift?topic=openshift-cs_versions_311) and [change log](/docs/openshift?topic=openshift-openshift_changelog_311). For more information about the supported releases, see the [{{site.data.keyword.redhat_openshift_notm}} version information](https://test.cloud.ibm.com/docs/openshift?topic=openshift-openshift_versions).
+:   Update your cluster to a supported as soon as possible. For more information, see the 3.11 [release information](/docs/openshift?topic=openshift-cs_versions_311) and [change log](/docs/openshift?topic=openshift-openshift_changelog_311). For more information about the supported releases, see the [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 
 
