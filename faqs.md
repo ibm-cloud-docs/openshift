@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-06"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -170,8 +170,8 @@ Keep in mind that some services such as Ingress might require multiple worker no
 * Default: 4.9 (Kubernetes 1.22)
 
 **Deprecated and unsupported versions**:
-* Deprecated: 3.11 (Kubernetes 1.11)
-* Unsupported: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
+* Deprecated: 
+* Unsupported: 4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18), 3.11 (Kubernetes 1.11)
 
 
 ## Where is the service available?

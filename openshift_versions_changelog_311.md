@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-06-06"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -19,6 +19,9 @@ subcollection: openshift
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run version 3.11. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {: shortdesc}
 
+![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is unsupported as of 6 June 2022.
+{: important}
+
 ## Overview
 {: #openshift_changelog_overview_311}
 
@@ -31,21 +34,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 
-## Deprecated: Version 3.11 change log
+## Version 3.11 change log
 {: #version-311}
 
 Review the change logs for {{site.data.keyword.openshiftlong_notm}} version 3.11 patch updates.
 {: shortdesc}
 
-![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
-{: deprecated}
+### Change log for worker node fix pack 3.11.705_1634_openshift, released 06 June 2022
+{: #311705_1634_openshift}
 
+The following table shows the changes that are in the worker node fix pack 3.11.705_1634_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
 
-
-
-
-
-
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-24903](https://nvd.nist.gov/vuln/detail/CVE-2022-24903){: external}. |
+| {{site.data.keyword.openshiftshort}} node | 3.11.685 | 3.11.705 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-705){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.685_1632_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 3.11.685_1632_openshift, released 23 May 2022
 {: #311685_1632_openshift}

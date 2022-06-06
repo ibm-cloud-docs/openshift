@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-06"
 
 keywords: openshift
 
@@ -60,7 +60,7 @@ Great! You're already in our public cloud documentation. Keep reading for more s
 
 **Want to run workloads in both on-premises and off-premises clouds?**
 
-Explore [{{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-about) to extend the flexibility and scalability of {{site.data.keyword.cloud_notm}} into your on-premises, edge, or other cloud provider environments.
+Explore [{{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-faqs) to extend the flexibility and scalability of {{site.data.keyword.cloud_notm}} into your on-premises, edge, or other cloud provider environments.
 
 ### Can I automate my infrastructure deployments?
 {: #infra_packaging}

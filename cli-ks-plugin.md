@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-06"
 
 keywords: openshift
 
@@ -871,6 +871,9 @@ ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID 
 
 Create a Virtual Private Cloud (VPC) cluster with worker nodes on Generation 2 infrastructure. When you log in to your {{site.data.keyword.cloud_notm}} account, target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group.
 {: shortdesc}
+
+VPC Gen 2 cluster flavors with instance storage are available for allowlisted accounts. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
+{: note}
 
 Free clusters are not available in VPC.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-06-06"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -45,6 +45,21 @@ Review the version 4.8 change log.
 
 
 
+
+
+
+### Change log for worker node fix pack 4.8.42_1559_openshift, released 06 June 2022
+{: #4842_1559_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.8.42_1559_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-24903](https://nvd.nist.gov/vuln/detail/CVE-2022-24903){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.8.39 | 4.8.42 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-42){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.8.39_1557_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 4.8.39_1557_openshift, released 23 May 2022
 {: #4839_1557_openshift}

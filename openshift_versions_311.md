@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-06"
 
 keywords: openshift, version, update, upgrade
 
@@ -15,23 +15,23 @@ subcollection: openshift
 
 
 
-# (Deprecated) Version 3.11
+# Version 3.11  
 {: #cs_versions_311}
 
 Review information about version 3.11 of {{site.data.keyword.openshiftlong_notm}}, released 01 Aug 2019.
 {: shortdesc}
 
-Version 3.11 is deprecated, with a tentative unsupported date of June 2022. This is the last minor version of major version 3. Note that you [cannot update a cluster from one major version to another](#311_deprecated). 
-{: deprecated}
+![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is unsupported as of 6 June 2022. Note that you [cannot update a cluster from one major version to another](#311_deprecated). 
+{: important}
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat OpenShift on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_changelog).
 {: tip}
 
 
 ## Release timeline 
-{: #release_timeline_46}
+{: #release_timeline_311}
 
-The following table includes the expected release timeline for version 4.6. You can use this information for planning purposes, such as to estimate the general time that the version might become unsupported. 
+The following table includes the expected release timeline for version 3.11. You can use this information for planning purposes, such as to estimate the general time that the version might become unsupported. 
 {: shortdesc}
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
@@ -39,7 +39,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Deprecated | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |
+| Unsupported | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 3.11." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
