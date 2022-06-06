@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-06-06"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -46,6 +46,21 @@ Review the change logs for {{site.data.keyword.openshiftlong_notm}} version 3.11
 
 
 
+
+
+
+### Change log for worker node fix pack 3.11.705_1634_openshift, released 06 June 2022
+{: #311705_1634_openshift}
+
+The following table shows the changes that are in the worker node fix pack 3.11.705_1634_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-24903](https://nvd.nist.gov/vuln/detail/CVE-2022-24903){: external}. |
+| {{site.data.keyword.openshiftshort}} node | 3.11.685 | 3.11.705 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-705){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.685_1632_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 3.11.685_1632_openshift, released 23 May 2022
 {: #311685_1632_openshift}
