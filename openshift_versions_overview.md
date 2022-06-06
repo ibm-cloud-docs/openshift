@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-06"
 
 keywords: openshift, version, update, upgrade
 
@@ -56,14 +56,15 @@ Supported versions
     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_46)
 
 
-**Deprecated versions**:
+
+
+Unsupported versions:
+:   4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
+:   [Archived change logs](#version-archive)
+
 :   3.11 (Kubernetes 1.15)
     - [Version information and update actions](/docs/openshift?topic=openshift-openshift_changelog_311)
     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_311)
-
-**Unsupported versions**:
-:   4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
-:   [Archived change logs](#version-archive)
      
 
 ## Checking a cluster's Kubernetes server version

@@ -19,6 +19,9 @@ subcollection: openshift
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run version 3.11. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {: shortdesc}
 
+![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is unsupported as of 6 June 2022.
+{: important}
+
 ## Overview
 {: #openshift_changelog_overview_311}
 
@@ -31,23 +34,11 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 
-## Deprecated: Version 3.11 change log
+## Version 3.11 change log
 {: #version-311}
 
 Review the change logs for {{site.data.keyword.openshiftlong_notm}} version 3.11 patch updates.
 {: shortdesc}
-
-![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
-{: deprecated}
-
-
-
-
-
-
-
-
-
 
 ### Change log for worker node fix pack 3.11.705_1634_openshift, released 06 June 2022
 {: #311705_1634_openshift}

@@ -211,6 +211,8 @@ subcollection: openshift
 
         * Worker node fix pack
 
+        * Version 3.11 is unsupported
+
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
 
     * [26 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2622)
@@ -5748,9 +5750,9 @@ subcollection: openshift
 {: #sitemap_version_311}
 
 
-[(Deprecated) Version 3.11](/docs/openshift?topic=openshift-cs_versions_311#cs_versions_311)
+[Version 3.11](/docs/openshift?topic=openshift-cs_versions_311#cs_versions_311)
 
-* [Release timeline](/docs/openshift?topic=openshift-cs_versions_311#release_timeline_46)
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_311#release_timeline_311)
 
     * [Why is the deprecated version 3.11 supported longer than more recent versions like 4.6?](/docs/openshift?topic=openshift-cs_versions_311#311_deprecated)
 
@@ -5758,7 +5760,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_overview_311)
 
-* [Deprecated: Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#version-311)
+* [Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#version-311)
 
     * [Change log for worker node fix pack 3.11.705_1634_openshift, released 06 June 2022](/docs/openshift?topic=openshift-openshift_changelog_311#311705_1634_openshift)
 
