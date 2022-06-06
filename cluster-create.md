@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-06-06"
 
 keywords: openshift, clusters
 
@@ -83,6 +83,9 @@ ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --work
 ![VPC](../icons/vpc.svg "VPC") **VPC clusters**
 
 VPC cluster.
+
+VPC Gen 2 cluster flavors with instance storage are available for allowlisted accounts. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
+{: note}
 
 ```sh
 ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.9_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
