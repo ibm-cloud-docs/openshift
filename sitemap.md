@@ -205,6 +205,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+
+    * [6 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun622)
+
+        * Worker node fix pack
+
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
 
     * [26 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2622)
