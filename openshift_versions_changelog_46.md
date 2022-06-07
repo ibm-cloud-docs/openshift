@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-06-07"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -46,7 +46,7 @@ Review the version 4.6 change log.
 
 
 
-### Change log for worker node fix pack 4.6.58_1585_openshift, released 06 June 2022
+### Change log for worker node fix pack 4.6.58_1585_openshift, released 07 June 2022
 {: #4658_1585_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.6.58_1585_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
