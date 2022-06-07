@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
 
+    * [7 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun722)
+
+        * CLI change log update
+
     * [6 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun622)
 
         * Worker node fix pack
@@ -5022,6 +5026,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.419](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10419)
 
 * [Version 1.0.415](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10415)
 
