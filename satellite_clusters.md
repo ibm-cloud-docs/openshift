@@ -26,7 +26,7 @@ You can create {{site.data.keyword.openshiftlong}} clusters in an {{site.data.ke
 Before you can create clusters in {{site.data.keyword.satellitelong_notm}}, you must first set up a location.
 {: shortdesc}
 
-1. [Review the {{site.data.keyword.satellitelong_notm}} components](/docs/satellite?topic=satellite-about) and the [location planning guide](/docs/satellite?topic=satellite-infrastructure-plan).
+1. [Review the {{site.data.keyword.satellitelong_notm}} components](/docs/satellite?topic=satellite-faqs) and the [location planning guide](/docs/satellite?topic=satellite-infrastructure-plan).
 1. Prepare to create your {{site.data.keyword.satellitelong_notm}} location. Choose from one of the following options.
     Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-locations#location-create-console). Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), Tokyo (`jp-tok`), and London (`eu-gb`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
     {: note}
