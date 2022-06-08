@@ -6411,7 +6411,7 @@ subcollection: openshift
 
     * [Version 4.10.1, released 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.1_odf)
 
-    * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#version-4100,-released-9-may-2022)
+    * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
 
 * [Version 4.9](/docs/openshift?topic=openshift-odf_addon_changelog#4.9_odf)
 
@@ -6423,7 +6423,7 @@ subcollection: openshift
 
     * [Version 4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.2_odf)
 
-    * [Version 4.9.1, released 23 Febraury 2022](/docs/openshift?topic=openshift-odf_addon_changelog#version-491,-released-23-febraury-2022)
+    * [Version 4.9.1, released 23 Febraury 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
 
     * [Version 4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.0_odf)
 
