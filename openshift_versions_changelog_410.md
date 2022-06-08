@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -44,6 +44,8 @@ Review the version 4.10 change log.
 
 
 
+
+
 ### Change log for worker node fix pack 4.10.16_1521_openshift, released 07 June 2022
 {: #41016_1521_openshift}
 
@@ -56,6 +58,28 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 | {{site.data.keyword.openshiftshort}}. | 4.10.14 | 4.10.16 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-14){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.10.14_1519_openshift" caption-side="top"}
+
+### Change log for master fix pack 4.10.15_1520_openshift, released 3 June 2022
+{: #41015_1520_openshift}
+
+The following table shows the changes that are in the master fix pack 4.10.15_1520_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.6 | v1.3.7 | Updated `Go` to version `1.17.10` and also updated the dependencies. Update registry base image version to `104` |
+| {{site.data.keyword.IBM_notm}} Calico extension | 976 | 980 | Updated to use `Go` version `1.17.10`. Updated minimal UBI to version `8.5`. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.3 | v2.2.4 | Updated universal base image (UBI) to version `8.6-751` to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.6-2 | v1.23.7-4 | Updated to support the Kubernetes `1.23.7` release and `Go` version `1.17.10` |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 408 | 410 | Updated universal base image (UBI) to version `8.6-751` to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 8c8c82b | 8c96932 | Updated `Go` to version `1.18.1` |
+| Key Management Service provider | v2.5.4 | v2.5.5 | Updated `Go` to version `1.17.10` and updated the golang dependencies. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1916 | 1998 | Updated `Go` to version `1.17.10` and updated dependencies. |
+| OpenVPN Operator image | v1.4.4 | v1.4.5 | Updated base image to `v1.21.0` for CVE remediation. |
+| Red Hat {{site.data.keyword.openshiftshort}}. | 4.10.12 | 4.10.15 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-15){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.10.9_1515_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 4.10.14_1519_openshift, released 23 May 2022
 {: #41014_1519_openshift}

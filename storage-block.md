@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-06-08"
 
 keywords: openshift
 
@@ -1980,9 +1980,9 @@ When you clean up persistent storage, you delete all the data that is stored in 
 
 After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
+**I deleted my cluster. How do I remove the remaining storage volumes?**
 
-
-
+See the steps in [Why am I still seeing charges for block storage devices after deleting my cluster](/docs/containers?topic=containers-ts_storage_clean_volume).
 
 
 ### Cleaning up persistent storage

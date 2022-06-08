@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: openshift
 
@@ -43,6 +43,15 @@ Worker node fix pack
 Version 3.11 is unsupported
 :   Update your cluster to a supported as soon as possible. For more information, see the 3.11 [release information](/docs/openshift?topic=openshift-cs_versions_311) and [change log](/docs/openshift?topic=openshift-openshift_changelog_311). For more information about the supported releases, see the [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
+
+
+### 3 June 2022
+{: #openshift-jun322}
+
+Master fix pack update
+
+
+:   {{site.data.keyword.openshiftlong_notm}} [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.33_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), and [3.11.705_1633_openshift](/docs/openshift?topic=openshift-openshift_changelog_311)(
 
 
 

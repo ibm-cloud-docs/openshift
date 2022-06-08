@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -46,6 +46,8 @@ Review the version 4.6 change log.
 
 
 
+
+
 ### Change log for worker node fix pack 4.6.58_1585_openshift, released 07 June 2022
 {: #4658_1585_openshift}
 
@@ -58,6 +60,32 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 | {{site.data.keyword.openshiftshort}}. | 4.6.57 | 4.6.58 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-58){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.57_1583_openshift" caption-side="top"}
+
+### Change log for master fix pack 4.6.57_1584_openshift, released 3 June 2022
+{: #4657_1584_openshift}
+
+The following table shows the changes that are in the master fix pack 4.6.57_1584_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.6 | v1.3.7 | Updated `Go` to version `1.17.10` and also updated the dependencies. Update registry base image version to `104` |
+| {{site.data.keyword.IBM_notm}} Calico extension | 954 | 980 | Updated to use `Go` version `1.17.10`. Updated minimal UBI to version `8.5`. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.2 | v2.2.4 | Updated universal base image (UBI) to version `8.6-751` to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.19.16-11 | v1.19.16-15 | Build changes for new key. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 408 | 410 | Updated universal base image (UBI) to version `8.6-751` to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 8c8c82b | 8c96932 | Updated `Go` to version `1.18.1` |
+| Key Management Service provider | v2.5.4 | v2.5.5 | Updated `Go` to version `1.17.10` and updated the golang dependencies. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1915 | 1997 | Updated `Go` to version `1.17.10` and updated dependencies. |
+| OpenVPN Operator image | v1.4.3 | v1.4.5 | Updated base image to `v1.21.0` for CVE remediation. |
+| Portieris admission controller | v0.10.3 | v0.12.4 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.12.4){: external}. |
+| Red Hat {{site.data.keyword.openshiftshort}}. | 4.6.56 | 4.6.57 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-57){: external}. |
+| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20220411 | v4.6.0-20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220509){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.6.0-20220411 | v4.6.0-20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220509){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.6.0+20220411 | 4.6.0+20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220509){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.56_1580_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 4.6.57_1583_openshift, released 23 May 2022
 {: #4657_1583_openshift}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -40,6 +40,8 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the change logs for {{site.data.keyword.openshiftlong_notm}} version 3.11 patch updates.
 {: shortdesc}
 
+
+
 ### Change log for worker node fix pack 3.11.705_1634_openshift, released 07 June 2022
 {: #311705_1634_openshift}
 
@@ -52,6 +54,23 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | {{site.data.keyword.openshiftshort}} node | 3.11.685 | 3.11.705 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-705){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.685_1632_openshift" caption-side="top"}
+
+### Change log for master fix pack 3.11.705_1633_openshift, released 3 June 2022
+{: #311705_1633_openshift}
+
+The following table shows the changes that are in the master fix pack 3.11.705_1633_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.1.36 | v1.1.37 | Updated `Go` to version `1.17.10` and also updated the dependencies. Update registry base image version to `104` |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 408 | 410 | Updated universal base image (UBI) to version `8.6-751` to resolve CVEs. |
+| Key Management Service provider | v1.0.26 | v1.0.27 | Updated `Go` to version `1.17.10` and updated the golang dependencies. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1915 | 1997 | Updated `Go` to version `1.17.10` and updated dependencies. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane | 3.11.664 | 3.11.705 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-705){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 3.11.664_1629_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 3.11.685_1632_openshift, released 23 May 2022
 {: #311685_1632_openshift}
