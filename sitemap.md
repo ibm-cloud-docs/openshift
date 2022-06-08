@@ -217,6 +217,10 @@ subcollection: openshift
 
         * Version 3.11 is unsupported
 
+    * [3 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun322)
+
+        * Master fix pack update
+
 * [May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may22)
 
     * [26 May 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2622)
