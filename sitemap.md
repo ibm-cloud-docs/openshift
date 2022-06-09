@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-09"
 
 keywords: openshift
 subcollection: openshift
@@ -7423,6 +7423,8 @@ subcollection: openshift
 [Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/openshift?topic=openshift-debug_monitoring#debug_monitoring)
 
 * [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
+
+[Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume#ts_storage_clean_volume)
 
 
 ### Object Storage
