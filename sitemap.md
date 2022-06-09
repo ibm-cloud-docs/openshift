@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-09"
 
 keywords: openshift
 subcollection: openshift
@@ -6411,7 +6411,7 @@ subcollection: openshift
 
     * [Version 4.10.1, released 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.1_odf)
 
-    * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#version-4100,-released-9-may-2022)
+    * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
 
 * [Version 4.9](/docs/openshift?topic=openshift-odf_addon_changelog#4.9_odf)
 
@@ -6423,7 +6423,7 @@ subcollection: openshift
 
     * [Version 4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.2_odf)
 
-    * [Version 4.9.1, released 23 Febraury 2022](/docs/openshift?topic=openshift-odf_addon_changelog#version-491,-released-23-febraury-2022)
+    * [Version 4.9.1, released 23 Febraury 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
 
     * [Version 4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.0_odf)
 
@@ -7423,6 +7423,8 @@ subcollection: openshift
 [Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/openshift?topic=openshift-debug_monitoring#debug_monitoring)
 
 * [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
+
+[Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume#ts_storage_clean_volume)
 
 
 ### Object Storage

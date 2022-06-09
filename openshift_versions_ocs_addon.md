@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-08"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -46,6 +46,7 @@ Includes storage class encryption parameter parsing improvements.
 - Updates the UBI to version `8.6-751`.
 
 ### Version 4.10.0, released 9 May 2022
+{: #4.10_odf}
 
 Initial release.
 
@@ -77,6 +78,7 @@ UBI update.
 Use PVC for mon on VPC.
 
 ### Version 4.9.1, released 23 Febraury 2022
+{: #4.9.1_odf}
 
 Updates the UBI.
 
