@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-10"
 
 keywords: openshift
 
@@ -26,6 +26,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2022
 {: #openshift-jun22}
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 5.0.0-beta_1125](/docs/containers?topic=containers-vpc_bs_changelog) is available for allowlisted accounts.
+
+### 9 June 2022
+{: #openshift-jun922}
+
+New! Kubernetes 1.24
+:   You can create or [update clusters to Kubernetes version 1.24](/docs/containers?topic=containers-cs_versions_124). With Kubernetes 1.24, you get the latest stable enhancements from the Kubernetes community as well as enhancements to the {{site.data.keyword.cloud_notm}} product. 
+
+Deprecated and unsupported Kubernetes versions
+:   With the release of Kubernetes 1.24, clusters that run version 1.21 are deprecated, with a tentative unsupported date of 31 Aug 2022. Update your cluster to at least [version 1.22](/docs/containers?topic=containers-cs_versions_122) as soon as possible.
 
 ### 7 June 2022
 {: #openshift-jun722}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-06-10"
 
 keywords: block, add-on, changelog
 
@@ -38,6 +38,7 @@ Refer to the following tables for a summary of changes for each version of the {
 
 | {{site.data.keyword.block_storage_is_short}} add-on version | {{site.data.keyword.openshiftlong_notm}} version support |
 | --- | --- |
+| 5.0 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.7 or higher. |
 | 4.3 (default) | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
 | 4.2  | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
 | 4.1 | Deprecated |
@@ -46,6 +47,22 @@ Refer to the following tables for a summary of changes for each version of the {
 | 3.0.0 | Unsupported |
 | 2.0.3 | Unsupported |
 {: caption="VPC block storage add-on version support" caption-side="top"}
+
+
+
+## Version 5.0 (Beta)
+{: #050_is_block}
+
+
+### Change log for version 5.0.0-beta_1125, released 10 June 2022
+{: #5.0.0-beta_1125_is_block_relnote}
+
+Version 5.0.0 is available in Beta for allowlisted accounts.
+{:preview}
+
+Adds snapshot support.
+
+
 
 ## Version 4.3
 {: #043_is_block}

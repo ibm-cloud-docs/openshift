@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-10"
 
 keywords: openshift
 
@@ -81,8 +81,6 @@ Next, decide whether the component falls within your responsibility. If so, you 
 **What else can I do to increase the security and compliance of my cluster?**
 
 See [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-security).
-
-
 
 ## Running the worker node CIS Kubernetes benchmark
 {: #cis-worker-test}
