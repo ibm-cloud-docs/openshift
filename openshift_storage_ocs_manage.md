@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-10"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -72,7 +72,9 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
 ## Updating VPC worker nodes that use OpenShift Data Foundation
 {: #odf-vpc-update-worker}
 
-To update your VPC worker nodes that use OpenShift Data Foundation, you must cordon, drain, and replace each worker node individually. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
+
+
+For VPC Gen2 clusters with a storage solution such as OpenShift Data Foundation or Portworx, you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the ocscluster resource to include the new worker node.
 {: shortdesc}
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
@@ -192,8 +194,6 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     oc get pods -n openshift-storage
     ```
     {: pre}
-    
-
 
 
 ## Removing the OpenShift Data Foundation add-on from your cluster

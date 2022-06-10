@@ -2744,6 +2744,8 @@ subcollection: openshift
 
     * [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update#vpc_worker_cli)
 
+    * [Updating VPC Gen2 worker nodes that use software-defined storage](/docs/openshift?topic=openshift-update#vpc_odf_cli)
+
     * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update#vpc_worker_ui)
 
 * [Updating flavors (machine types)](/docs/openshift?topic=openshift-update#machine_type)
