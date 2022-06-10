@@ -27,6 +27,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## June 2022
 {: #openshift-jun22}
 
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 5.0.0-beta_1125](/docs/containers?topic=containers-vpc_bs_changelog) is available for allowlisted accounts.
+
 ### 9 June 2022
 {: #openshift-jun922}
 

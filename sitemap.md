@@ -207,6 +207,8 @@ subcollection: openshift
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
 
+    * {{site.data.keyword.block_storage_is_short}} add-on.
+
     * [9 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun922)
 
         * New! Kubernetes 1.24
