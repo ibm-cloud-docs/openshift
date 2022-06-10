@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-10"
 
 keywords: openshift, audit
 
@@ -323,11 +323,11 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 |-----|-----|
 | Dallas (dal10, dal12, dal13) | Dallas |
 | Mexico City (mex01) | Dallas |
-| Montreal (mon01) | Dallas |
+| Montreal (mon01) | Washington, D.C. |
 | San Jose (sjc03, sjc04) | Dallas |
 | São Paulo (sao01) | Dallas |
 | Toronto (tor01) | Toronto |
-| Washington, D.C. (wdc04, wdc06, wdc07) | Dallas |
+| Washington, D.C. (wdc04, wdc06, wdc07) | Washington, D.C. |
 | Amsterdam (ams03) | Frankfurt |
 | Frankfurt (fra02, fra04, fra05) | Frankfurt |
 | Milan (mil01) | Frankfurt |
