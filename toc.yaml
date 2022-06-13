@@ -305,24 +305,27 @@ toc:
                 - openshift_versions_46.md
                 - openshift_versions_changelog_46.md
                 - benchmarks_46.md
-            - topicgroup:
-                label: Version 3.11
-                topics:
+      - topicgroup:
+          label: Add-on version history
+          topics:
+          - add-on-versions.md 
+          - versions-autoscaler.md
+          - versions-vpc-block-addon.md
+          - versions-object.md
+          - versions-static-route.md
+          - openshift_versions_ocs_addon.md
+          - versions-backup-restore.md
+          - openshift_versions_hpcs_router.md
+          - openshift_versions_image_key_synchronizer.md
+      - topicgroup:
+          label: Archived version history
+          topics:
+          - topicgroup:
+              label: Version 3.11
+              topics:
                 - openshift_versions_311.md
-                - openshift_versions_changelog_311.md 
-            - openshift_versions_archive.md
-            - topicgroup:
-                label: Add-on version history
-                topics:
-                - add-on-versions.md 
-                - versions-autoscaler.md
-                - versions-vpc-block-addon.md
-                - versions-object.md
-                - versions-static-route.md
-                - openshift_versions_ocs_addon.md
-                - versions-backup-restore.md
-                - openshift_versions_hpcs_router.md
-                - openshift_versions_image_key_synchronizer.md
+                - openshift_versions_changelog_311.md
+          - openshift_versions_archive.md
       - topicgroup:
           label: IAM and Activity Tracker events
           topics:
