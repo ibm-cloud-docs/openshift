@@ -209,6 +209,8 @@ subcollection: openshift
 
     * [13 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1322)
 
+        * {{site.data.keyword.block_storage_is_short}} add-on.
+
         * HPCS Router add-on
 
         * Cloud Image Key Synchronizer add-on
@@ -5853,6 +5855,10 @@ subcollection: openshift
 * [Version 5.0 (Beta)](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
+
+* [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.5_1371, released 13 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#445_1371_is_block_relnote)
 
 * [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
 
