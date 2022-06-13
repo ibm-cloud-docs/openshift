@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-13"
 
 keywords: openshift
 subcollection: openshift
@@ -207,7 +207,13 @@ subcollection: openshift
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
 
-    * {{site.data.keyword.block_storage_is_short}} add-on.
+    * [13 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1322)
+
+        * HPCS Router add-on
+
+        * Cloud Image Key Synchronizer add-on
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
     * [9 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun922)
 
@@ -6594,6 +6600,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_1022, released on 13 Jun 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1022)
 
     * [Version 1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0956)
 
