@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-13"
 
 keywords: block, add-on, changelog
 
@@ -39,6 +39,7 @@ Refer to the following tables for a summary of changes for each version of the {
 | {{site.data.keyword.block_storage_is_short}} add-on version | {{site.data.keyword.openshiftlong_notm}} version support |
 | --- | --- |
 | 5.0 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.7 or higher. |
+| 4.4 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.7 or higher. |
 | 4.3 (default) | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
 | 4.2  | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
 | 4.1 | Deprecated |
@@ -61,6 +62,19 @@ Version 5.0.0 is available in Beta for allowlisted accounts.
 {:preview}
 
 Adds snapshot support.
+
+
+
+## Version 4.4
+{: #044_is_block}
+
+### Change log for version 4.4.5_1371, released 13 June 2022
+{: #445_1371_is_block_relnote}
+
+- Adds support for IAM trusted profiles.
+- Adds IAM token caching in memory for up to 40 minutes which reduces the number of calls to IAM and improves driver performance.
+- Updates the `storage-secret-sidecar` image to `v1.2.3`.
+- Fixes a volume expansion error handling issue.
 
 
 

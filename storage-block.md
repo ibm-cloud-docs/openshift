@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-13"
 
 keywords: openshift
 
@@ -550,7 +550,7 @@ You can verify the encryption of your volumes by checking the volume mount path.
         ```
         {: screen}
 
-Removing your Kubernetes secret does not revoke access to the volume data. If you created a pod-only deployment, you must delete the pod. If you created a deployment, you must delete the deployment.
+Removing your Kubernetes secret doesn't revoke access to the volume data. If you created a pod-only deployment, you must delete the pod. If you created a deployment, you must delete the deployment.
 {: note}
 
 
@@ -1402,7 +1402,7 @@ For questions about billing and to find the steps for how to use the {{site.data
     ```
     {: screen}
 
-2. If you want to change the IOPS and the size for your block storage, edit the IOPS in the `metadata.labels.IOPS` section of your PV first. You can change to a lower or greater IOPS value. Make sure that you enter an IOPS that is supported for the storage type that you have. For example, if you have endurance block storage with 4 IOPS, you can change the IOPS to either 2 or 10. For more supported IOPS values, see [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
+1. If you want to change the IOPS and the size for your block storage, edit the IOPS in the `metadata.labels.IOPS` section of your PV first. You can change to a lower or greater IOPS value. Make sure that you enter an IOPS that is supported for the storage type that you have. For example, if you have endurance block storage with 4 IOPS, you can change the IOPS to either 2 or 10. For more supported IOPS values, see [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
 
     ```sh
     oc edit pv <pv_name>
@@ -1412,14 +1412,14 @@ For questions about billing and to find the steps for how to use the {{site.data
     To change the IOPS from the CLI, you must also change the size of your block storage. If you want to change only the IOPS, but not the size, you must [request the IOPS change from the console](/docs/BlockStorage?topic=BlockStorage-adjustingIOPS).
     {: note}
 
-3. Edit the PVC and add the new size in the `spec.resources.requests.storage` section of your PVC. You can change to a greater size only up to the maximum capacity that is set by your storage class. You can't downsize your existing storage. To see available sizes for your storage class, see [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
+1. Edit the PVC and add the new size in the `spec.resources.requests.storage` section of your PVC. You can change to a greater size only up to the maximum capacity that is set by your storage class. You can't downsize your existing storage. To see available sizes for your storage class, see [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
 
     ```sh
     oc edit pvc <pvc_name>
     ```
     {: pre}
 
-4. Verify that the volume expansion is requested. The volume expansion is successfully requested when you see a `FileSystemResizePending` message in the **Conditions** section of your CLI output.
+1. Verify that the volume expansion is requested. The volume expansion is successfully requested when you see a `FileSystemResizePending` message in the **Conditions** section of your CLI output.
 
     ```sh
     oc describe pvc <pvc_name>
@@ -1437,7 +1437,7 @@ For questions about billing and to find the steps for how to use the {{site.data
     ```
     {: screen}
 
-5. List all the pods that mount the PVC. If your PVC is mounted by a pod, the volume expansion is automatically processed. If your PVC is not mounted by a pod, you must mount the PVC to a pod so that the volume expansion can be processed.
+1. List all the pods that mount the PVC. If your PVC is mounted by a pod, the volume expansion is automatically processed. If your PVC is not mounted by a pod, you must mount the PVC to a pod so that the volume expansion can be processed.
 
     ```sh
     oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
@@ -1446,9 +1446,9 @@ For questions about billing and to find the steps for how to use the {{site.data
 
     Mounted pods are returned in the format: `<pod_name>: <pvc_name>`.
 
-6. If your PVC is not mounted by a pod, [create a pod or deployment and mount the PVC](/docs/openshift?topic=openshift-block_storage#add_block). If your PVC is mounted by a pod, continue with the next step.
+1. If your PVC is not mounted by a pod, [create a pod or deployment and mount the PVC](/docs/openshift?topic=openshift-block_storage#add_block). If your PVC is mounted by a pod, continue with the next step.
 
-7. Verify that the size and IOPS are changed in the **Labels** section of your CLI output. This process might take a few minutes to complete.
+1. Verify that the size and IOPS are changed in the **Labels** section of your CLI output. This process might take a few minutes to complete.
 
     ```sh
     oc describe pv <pv_name>
@@ -1464,6 +1464,33 @@ For questions about billing and to find the steps for how to use the {{site.data
     IOPS=500
     ```
     {: screen}
+    
+1. Log in to the pod that mounts the PVC.
+    ```sh
+    oc exec -i -t bash
+    ```
+    {: pre}
+
+1. Resize the file system.
+
+    ```sh
+    sudo resize2fs <filesystem-path>
+    ```
+    {: pre}
+
+    Example command
+    
+    ```sh
+    sudo resize2fs /dev/vdg
+    ```
+    {: pre}
+
+1. Verify the file system is resized.
+
+    ```sh
+    df -h
+    ```
+    {: pre}
 
 
 ## Backing up and restoring data

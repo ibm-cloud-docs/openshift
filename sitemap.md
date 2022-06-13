@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-13"
 
 keywords: openshift
 subcollection: openshift
@@ -207,7 +207,15 @@ subcollection: openshift
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
 
-    * {{site.data.keyword.block_storage_is_short}} add-on.
+    * [13 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1322)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
+
+        * HPCS Router add-on
+
+        * Cloud Image Key Synchronizer add-on
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
     * [9 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun922)
 
@@ -5776,6 +5784,416 @@ subcollection: openshift
 * [IBM Remediations and Explanations](/docs/openshift?topic=openshift-cis-benchmark-46#cis-benchmark-remediations-46)
 
 
+## Add-on version history
+{: #sitemap_add-on_version_history}
+
+
+[Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
+
+[Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 1.1.0](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_615, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#110615_ca)
+
+    * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-ca_changelog#110475_ca)
+
+    * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
+
+* [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_628, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#105628_ca)
+
+    * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-ca_changelog#104415_ca)
+
+* [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
+
+    * [Change log for patch update 1.0.4_410, released 23 February 2022](/docs/openshift?topic=openshift-ca_changelog#104410_ca)
+
+    * [Change log for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
+
+    * [Change log for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#104387_ca)
+
+    * [Change log for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
+
+* [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
+
+    * [Change log for patch update 1.0.3_360, released 26 August 2021](/docs/openshift?topic=openshift-ca_changelog#103360_ca)
+
+    * [Change log for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#103352_ca)
+
+* [Version 1.0.2](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
+
+    * [Change log for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-ca_changelog#102267_ca)
+
+    * [Change log for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-ca_changelog#102256_ca)
+
+    * [Change log for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-ca_changelog#102249_ca)
+
+    * [Change log for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-ca_changelog#10224_ca)
+
+* [Version 1.0.1](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
+
+    * [Change log for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-ca_changelog#101219_ca)
+
+    * [Change log for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-ca_changelog#101210_ca)
+
+    * [Change log for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-ca_changelog#101205_ca)
+
+    * [Change log for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-ca_changelog#101195_ca)
+
+    * [Change log for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-ca_changelog#101146_ca)
+
+    * [Change log for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-ca_changelog#101128_ca)
+
+    * [Change log for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-ca_changelog#101124_ca)
+
+    * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
+
+[{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
+
+* [Version 5.0 (Beta)](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
+
+* [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.5_1371, released 13 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#445_1371_is_block_relnote)
+
+* [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
+
+    * [Change log for version 4.3.0_1163, released 25 May 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#430_1163_is_block_relnote)
+
+* [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog#042_is_block)
+
+    * [Change log for version 4.2.6_1161, released 12 May 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#426_1161_is_block_relnote)
+
+    * [Change log for version 4.2.5_1106, released 12 May 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#425_1106_is_block_relnote)
+
+    * [Change log for version 4.2.3_983, released 11 April 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#423_983_is_block_relnote)
+
+    * [Change log for version 4.2.2_900, released 24 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#422_900_is_block_relnote)
+
+    * [Change log for version 4.2.1_895, released 17 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#421_895_is_block_relnote)
+
+    * [Change log for version 4.2.0_890, released 28 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#420_890_is_block_relnote)
+
+* [Version 4.1](/docs/openshift?topic=openshift-vpc_bs_changelog#041_is_block)
+
+    * [Change log for version 4.1.3_846, released 14 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#413_846_is_block_relnote)
+
+    * [Change log for version 4.1.2_834, released 27 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#412_834_is_block_relnote)
+
+    * [Change log for version 4.1.1_827, released 20 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#0411837_is_block_relnote)
+
+    * [Change log for version 4.1.0_807, released 06 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#41_is_block_relnote)
+
+* [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
+
+    * [Change log for version 4.0.3_793, released 22 November 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#403793_is_block_relnote)
+
+    * [Change log for version 4.0.1_780, released 06 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
+
+    * [Change log for version 4.0.0_769, released 16 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400769_is_block_relnote)
+
+    * [Change log for version 4.0, released 1 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block_relnote)
+
+* [Version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog#0301_is_block)
+
+    * [Change log for version 3.0.1, released 15 July 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#301_init)
+
+* [Version 3.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block)
+
+    * [Change log for patch update 3.0.0_521, released 01 April 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#3.0.0_521)
+
+    * [Change log for version 3.0.0, released 26 February 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block_relnote)
+
+* [Archive](/docs/openshift?topic=openshift-vpc_bs_changelog#unsupported_versions)
+
+    * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
+
+[{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.1.16, released 25 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02116_object_plugin)
+
+* [Change log for version 2.1.15, released 6 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02115_object_plugin)
+
+* [Change log for version 2.1.14, released 13 April 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02114_object_plugin)
+
+* [Change log for version 2.1.13, released 24 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02113_object_plugin)
+
+* [Change log for version 2.1.12, released 11 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02112_object_plugin)
+
+* [Change log for version 2.1.11, released 1 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02111_object_plugin)
+
+* [Change log for version 2.1.10, released 17 February 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02110_object_plugin)
+
+* [Change log for version 2.1.9, released 24 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
+
+* [Change log for version 2.1.8, released 17 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0218_object_plugin)
+
+* [Change log for version 2.1.7, released 18 November 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0217_object_plugin)
+
+* [Change log for version 2.1.6, released 22 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0216_object_plugin)
+
+* [Change log for version 2.1.5, released 5 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
+
+* [Change log for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
+
+* [Change log for version 2.1.3, released 25 August 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0213_object_plugin)
+
+* [Change log for version 2.1.2, released 22 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
+
+* [Change log for version 2.1.1, released 03 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
+
+* [Change log for version 2.1.0, released 26 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
+
+* [Change log for version 2.0.9, 10 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
+
+* [Change log for version 2.0.8, 19 April 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
+
+* [Change log for version 2.0.7, 26 March 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
+
+* [Change log for version 2.0.6, 18 December 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
+
+* [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
+
+[Static route add-on version changelog](/docs/openshift?topic=openshift-static-route-changelog#static-route-changelog)
+
+* [Version 1.0.0](/docs/openshift?topic=openshift-static-route-changelog#v100)
+
+    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-static-route-changelog#100_649)
+
+[OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
+
+* [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
+
+    * [Version 4.10.2, released 23 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.2_odf)
+
+    * [Version 4.10.1, released 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.1_odf)
+
+    * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.0_odf)
+
+* [Version 4.9](/docs/openshift?topic=openshift-odf_addon_changelog#4.9_odf)
+
+    * [Version 4.9.5, release 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.5_odf)
+
+    * [Version 4.9.4, released 13 April 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.4_odf)
+
+    * [Version 4.9.3, released 23 March 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.3_odf)
+
+    * [Version 4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.2_odf)
+
+    * [Version 4.9.1, released 23 Febraury 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
+
+    * [Version 4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.0_odf)
+
+* [Version 4.8](/docs/openshift?topic=openshift-odf_addon_changelog#4.8_odf)
+
+    * [Version 4.8.4, release 17 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.4_odf)
+
+    * [Version 4.8.3, released Jan 07, 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.3_odf)
+
+    * [Version 4.8.2, released 03 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.2_odf)
+
+    * [Version 4.8.1, released 17 November 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.1_odf)
+
+    * [Version 4.8.0, released 25 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.0_odf)
+
+* [Version 4.7](/docs/openshift?topic=openshift-odf_addon_changelog#4.7_odf)
+
+    * [Version 4.7.14, released 25 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.14_odf)
+
+    * [Version 4.7.13, released 13 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.13_odf)
+
+    * [Version 4.7.12, released 30 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.12_odf)
+
+    * [Version 4.7.11, released 29 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.11_odf)
+
+    * [Version 4.7.10, released 15 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.10_odf)
+
+    * [Version 4.7.9, released 06 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.9_odf)
+
+    * [Version 4.7.8, released 16 August 202](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.8_odf)
+
+    * [Version 4.7.7, released 27 July 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.7_odf)
+
+    * [Version 4.7.6, released 05 July 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.6_odf)
+
+[Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
+
+* [Change log for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
+
+[{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog#hpcs-router-changelog)
+
+* [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
+
+    * [Version 4.9.0_1983, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1983)
+
+    * [Version 4.9.0_1559, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1559)
+
+    * [Version 4.9.0_1471, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1471)
+
+    * [Version 4.9.0_1384, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1384)
+
+    * [Version 4.9.0_1364, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_1364)
+
+    * [Version 4.9.0_1349, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1349)
+
+    * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
+
+* [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_1984, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1984)
+
+    * [Version 4.8.0_1560, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1560)
+
+    * [Version 4.8.0_1470, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1470)
+
+    * [Version 4.8.0_1385, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1385)
+
+    * [Version 4.8.0_1363, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1363)
+
+    * [Version 4.8.0_1310, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1310)
+
+    * [Version 4.8.0_1232, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1232)
+
+    * [Version 4.8.0_1125, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1125)
+
+    * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
+
+* [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_1985, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1985)
+
+    * [Version 4.7.0_1561, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1561)
+
+    * [Version 4.7.0_1469, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1469)
+
+    * [Version 4.7.0_1386, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1386)
+
+    * [Version 4.7.0_1362, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1362)
+
+    * [Version 4.7.0_1309, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1309)
+
+    * [Version 4.7.0_1226, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1226)
+
+    * [Version 4.7.0_1127, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1127)
+
+    * [Version 4.7.0_1013, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1013)
+
+    * [Version 4.7.0_985, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0985)
+
+    * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
+
+* [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_1986, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1986)
+
+    * [Version 4.6.0_1570, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1570)
+
+    * [Version 4.6.0_1468, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1468)
+
+    * [Version 4.6.0_1383, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1383)
+
+    * [Version 4.6.0_1360, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1360)
+
+    * [Version 4.6.0_1308, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1308)
+
+    * [Version 4.6.0_1227, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1227)
+
+    * [Version 4.6.0_1126, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1126)
+
+    * [Version 4.6.0_1012, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1012)
+
+    * [Version 4.6.0_987, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0987)
+
+    * [Version 4.6.0_860, released on 21 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0860)
+
+    * [Version 4.6.0_838, released on 23 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0838)
+
+    * [Version 4.6.0_796, released on 10 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0796)
+
+    * [Version 4.6.0_750, released on 26 Jul 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0750)
+
+    * [Version 4.6.0_696, released on 02 Jun 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0696)
+
+    * [Version 4.6.0_678, released on 22 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0678)
+
+    * [Version 4.6.0_663, released on 19 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0663)
+
+    * [Version 4.6.0_654, released on 14 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0654)
+
+    * [Version 4.6.0_646, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0646)
+
+* [Version 4.5.0 (Unsupported)](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
+
+    * [Version 4.5.0_861, released on 21 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0861)
+
+    * [Version 4.5.0_837, released on 23 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0837)
+
+    * [Version 4.5.0_790, released on 10 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0790)
+
+    * [Version 4.5.0_749, released on 26 Jul 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0749)
+
+    * [Version 4.5.0_694, released on 02 Jun 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0694)
+
+    * [Version 4.5.0_679, released on 22 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0679)
+
+    * [Version 4.5.0_662, released on 19 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0662)
+
+    * [Version 4.5.0_655, released on 14 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0655)
+
+    * [Version 4.5.0_647, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0647)
+
+[{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
+
+* [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_1022, released on 13 Jun 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1022)
+
+    * [Version 1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0956)
+
+    * [Version 1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0927)
+
+    * [Version 1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0906)
+
+    * [Version 1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0883)
+
+    * [Version 1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0834)
+
+    * [Version 1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0804)
+
+    * [Version 1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0744)
+
+    * [Version 1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0734)
+
+    * [Version 1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690)
+
+    * [Version 1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0627)
+
+    * [Version 1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0614)
+
+    * [Version 1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0575)
+
+    * [Version 1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0549)
+
+    * [Version 1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0529)
+
+    * [Version 1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0485)
+
+    * [Version 1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0473)
+
+    * [Version 1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0461)
+
+    * [Version 1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0438)
+
+
+## Archived version history
+{: #sitemap_archived_version_history}
+
+
+
 ### Version 3.11
 {: #sitemap_version_311}
 
@@ -6239,397 +6657,6 @@ subcollection: openshift
     * [Change log for worker node fix pack 4.3.13_1521_openshift, released 27 April 2020](/docs/openshift?topic=openshift-changelog_archive#4313_1521)
 
     * [Change log for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-changelog_archive#4312_1520_master)
-
-
-### Add-on version history
-{: #sitemap_add-on_version_history}
-
-
-[Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
-
-[Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
-
-* [Version 1.1.0](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
-
-    * [Change log for patch update 1.1.0_615, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#110615_ca)
-
-    * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-ca_changelog#110475_ca)
-
-    * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
-
-* [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
-
-    * [Change log for patch update 1.0.5_628, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#105628_ca)
-
-    * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-ca_changelog#104415_ca)
-
-* [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
-
-    * [Change log for patch update 1.0.4_410, released 23 February 2022](/docs/openshift?topic=openshift-ca_changelog#104410_ca)
-
-    * [Change log for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
-
-    * [Change log for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#104387_ca)
-
-    * [Change log for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
-
-* [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
-
-    * [Change log for patch update 1.0.3_360, released 26 August 2021](/docs/openshift?topic=openshift-ca_changelog#103360_ca)
-
-    * [Change log for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#103352_ca)
-
-* [Version 1.0.2](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
-
-    * [Change log for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-ca_changelog#102267_ca)
-
-    * [Change log for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-ca_changelog#102256_ca)
-
-    * [Change log for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-ca_changelog#102249_ca)
-
-    * [Change log for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-ca_changelog#10224_ca)
-
-* [Version 1.0.1](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
-
-    * [Change log for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-ca_changelog#101219_ca)
-
-    * [Change log for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-ca_changelog#101210_ca)
-
-    * [Change log for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-ca_changelog#101205_ca)
-
-    * [Change log for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-ca_changelog#101195_ca)
-
-    * [Change log for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-ca_changelog#101146_ca)
-
-    * [Change log for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-ca_changelog#101128_ca)
-
-    * [Change log for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-ca_changelog#101124_ca)
-
-    * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
-
-[{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
-
-* [Version 5.0 (Beta)](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
-
-    * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
-
-* [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
-
-    * [Change log for version 4.3.0_1163, released 25 May 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#430_1163_is_block_relnote)
-
-* [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog#042_is_block)
-
-    * [Change log for version 4.2.6_1161, released 12 May 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#426_1161_is_block_relnote)
-
-    * [Change log for version 4.2.5_1106, released 12 May 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#425_1106_is_block_relnote)
-
-    * [Change log for version 4.2.3_983, released 11 April 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#423_983_is_block_relnote)
-
-    * [Change log for version 4.2.2_900, released 24 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#422_900_is_block_relnote)
-
-    * [Change log for version 4.2.1_895, released 17 March 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#421_895_is_block_relnote)
-
-    * [Change log for version 4.2.0_890, released 28 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#420_890_is_block_relnote)
-
-* [Version 4.1](/docs/openshift?topic=openshift-vpc_bs_changelog#041_is_block)
-
-    * [Change log for version 4.1.3_846, released 14 February 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#413_846_is_block_relnote)
-
-    * [Change log for version 4.1.2_834, released 27 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#412_834_is_block_relnote)
-
-    * [Change log for version 4.1.1_827, released 20 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#0411837_is_block_relnote)
-
-    * [Change log for version 4.1.0_807, released 06 January 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#41_is_block_relnote)
-
-* [Version 4.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block)
-
-    * [Change log for version 4.0.3_793, released 22 November 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#403793_is_block_relnote)
-
-    * [Change log for version 4.0.1_780, released 06 October 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400780_is_block_relnote)
-
-    * [Change log for version 4.0.0_769, released 16 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400769_is_block_relnote)
-
-    * [Change log for version 4.0, released 1 September 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0400_is_block_relnote)
-
-* [Version 3.0.1](/docs/openshift?topic=openshift-vpc_bs_changelog#0301_is_block)
-
-    * [Change log for version 3.0.1, released 15 July 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#301_init)
-
-* [Version 3.0.0](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block)
-
-    * [Change log for patch update 3.0.0_521, released 01 April 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#3.0.0_521)
-
-    * [Change log for version 3.0.0, released 26 February 2021](/docs/openshift?topic=openshift-vpc_bs_changelog#0300_is_block_relnote)
-
-* [Archive](/docs/openshift?topic=openshift-vpc_bs_changelog#unsupported_versions)
-
-    * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
-
-[{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
-
-* [Change log for version 2.1.16, released 25 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02116_object_plugin)
-
-* [Change log for version 2.1.15, released 6 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02115_object_plugin)
-
-* [Change log for version 2.1.14, released 13 April 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02114_object_plugin)
-
-* [Change log for version 2.1.13, released 24 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02113_object_plugin)
-
-* [Change log for version 2.1.12, released 11 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02112_object_plugin)
-
-* [Change log for version 2.1.11, released 1 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02111_object_plugin)
-
-* [Change log for version 2.1.10, released 17 February 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02110_object_plugin)
-
-* [Change log for version 2.1.9, released 24 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
-
-* [Change log for version 2.1.8, released 17 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0218_object_plugin)
-
-* [Change log for version 2.1.7, released 18 November 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0217_object_plugin)
-
-* [Change log for version 2.1.6, released 22 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0216_object_plugin)
-
-* [Change log for version 2.1.5, released 5 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
-
-* [Change log for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
-
-* [Change log for version 2.1.3, released 25 August 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0213_object_plugin)
-
-* [Change log for version 2.1.2, released 22 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
-
-* [Change log for version 2.1.1, released 03 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
-
-* [Change log for version 2.1.0, released 26 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
-
-* [Change log for version 2.0.9, 10 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
-
-* [Change log for version 2.0.8, 19 April 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
-
-* [Change log for version 2.0.7, 26 March 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
-
-* [Change log for version 2.0.6, 18 December 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
-
-* [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
-
-[Static route add-on version changelog](/docs/openshift?topic=openshift-static-route-changelog#static-route-changelog)
-
-* [Version 1.0.0](/docs/openshift?topic=openshift-static-route-changelog#v100)
-
-    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-static-route-changelog#100_649)
-
-[OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
-
-* [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
-
-    * [Version 4.10.2, released 23 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.2_odf)
-
-    * [Version 4.10.1, released 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.1_odf)
-
-    * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.0_odf)
-
-* [Version 4.9](/docs/openshift?topic=openshift-odf_addon_changelog#4.9_odf)
-
-    * [Version 4.9.5, release 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.5_odf)
-
-    * [Version 4.9.4, released 13 April 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.4_odf)
-
-    * [Version 4.9.3, released 23 March 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.3_odf)
-
-    * [Version 4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.2_odf)
-
-    * [Version 4.9.1, released 23 Febraury 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
-
-    * [Version 4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.0_odf)
-
-* [Version 4.8](/docs/openshift?topic=openshift-odf_addon_changelog#4.8_odf)
-
-    * [Version 4.8.4, release 17 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.4_odf)
-
-    * [Version 4.8.3, released Jan 07, 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.3_odf)
-
-    * [Version 4.8.2, released 03 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.2_odf)
-
-    * [Version 4.8.1, released 17 November 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.1_odf)
-
-    * [Version 4.8.0, released 25 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.0_odf)
-
-* [Version 4.7](/docs/openshift?topic=openshift-odf_addon_changelog#4.7_odf)
-
-    * [Version 4.7.14, released 25 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.14_odf)
-
-    * [Version 4.7.13, released 13 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.13_odf)
-
-    * [Version 4.7.12, released 30 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.12_odf)
-
-    * [Version 4.7.11, released 29 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.11_odf)
-
-    * [Version 4.7.10, released 15 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.10_odf)
-
-    * [Version 4.7.9, released 06 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.9_odf)
-
-    * [Version 4.7.8, released 16 August 202](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.8_odf)
-
-    * [Version 4.7.7, released 27 July 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.7_odf)
-
-    * [Version 4.7.6, released 05 July 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.6_odf)
-
-[Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
-
-* [Change log for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
-
-[{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog#hpcs-router-changelog)
-
-* [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
-
-    * [Version 4.9.0_1559, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1559)
-
-    * [Version 4.9.0_1471, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1471)
-
-    * [Version 4.9.0_1384, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1384)
-
-    * [Version 4.9.0_1364, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_1364)
-
-    * [Version 4.9.0_1349, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1349)
-
-    * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
-
-* [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
-
-    * [Version 4.8.0_1560, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1560)
-
-    * [Version 4.8.0_1470, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1470)
-
-    * [Version 4.8.0_1385, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1385)
-
-    * [Version 4.8.0_1363, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1363)
-
-    * [Version 4.8.0_1310, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1310)
-
-    * [Version 4.8.0_1232, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1232)
-
-    * [Version 4.8.0_1125, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1125)
-
-    * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
-
-* [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
-
-    * [Version 4.7.0_1561, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1561)
-
-    * [Version 4.7.0_1469, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1469)
-
-    * [Version 4.7.0_1386, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1386)
-
-    * [Version 4.7.0_1362, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1362)
-
-    * [Version 4.7.0_1309, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1309)
-
-    * [Version 4.7.0_1226, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1226)
-
-    * [Version 4.7.0_1127, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1127)
-
-    * [Version 4.7.0_1013, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1013)
-
-    * [Version 4.7.0_985, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0985)
-
-    * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
-
-* [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
-
-    * [Version 4.6.0_1570, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1570)
-
-    * [Version 4.6.0_1468, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1468)
-
-    * [Version 4.6.0_1383, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1383)
-
-    * [Version 4.6.0_1360, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1360)
-
-    * [Version 4.6.0_1308, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1308)
-
-    * [Version 4.6.0_1227, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1227)
-
-    * [Version 4.6.0_1126, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1126)
-
-    * [Version 4.6.0_1012, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1012)
-
-    * [Version 4.6.0_987, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0987)
-
-    * [Version 4.6.0_860, released on 21 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0860)
-
-    * [Version 4.6.0_838, released on 23 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0838)
-
-    * [Version 4.6.0_796, released on 10 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0796)
-
-    * [Version 4.6.0_750, released on 26 Jul 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0750)
-
-    * [Version 4.6.0_696, released on 02 Jun 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0696)
-
-    * [Version 4.6.0_678, released on 22 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0678)
-
-    * [Version 4.6.0_663, released on 19 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0663)
-
-    * [Version 4.6.0_654, released on 14 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0654)
-
-    * [Version 4.6.0_646, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0646)
-
-* [Version 4.5.0 (Unsupported)](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
-
-    * [Version 4.5.0_861, released on 21 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0861)
-
-    * [Version 4.5.0_837, released on 23 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0837)
-
-    * [Version 4.5.0_790, released on 10 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0790)
-
-    * [Version 4.5.0_749, released on 26 Jul 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0749)
-
-    * [Version 4.5.0_694, released on 02 Jun 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0694)
-
-    * [Version 4.5.0_679, released on 22 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0679)
-
-    * [Version 4.5.0_662, released on 19 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0662)
-
-    * [Version 4.5.0_655, released on 14 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0655)
-
-    * [Version 4.5.0_647, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0647)
-
-[{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
-
-* [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
-
-    * [Version 1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0956)
-
-    * [Version 1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0927)
-
-    * [Version 1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0906)
-
-    * [Version 1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0883)
-
-    * [Version 1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0834)
-
-    * [Version 1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0804)
-
-    * [Version 1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0744)
-
-    * [Version 1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0734)
-
-    * [Version 1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690)
-
-    * [Version 1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0627)
-
-    * [Version 1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0614)
-
-    * [Version 1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0575)
-
-    * [Version 1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0549)
-
-    * [Version 1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0529)
-
-    * [Version 1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0485)
-
-    * [Version 1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0473)
-
-    * [Version 1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0461)
-
-    * [Version 1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0438)
 
 
 ## IAM and Activity Tracker events

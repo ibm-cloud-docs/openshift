@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-13"
 
 keywords: openshift, audit
 
@@ -348,7 +348,7 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 |-----|-----|
 | Dallas (us-south-1, us-south-2, us-south-3) | Dallas |
 | São Paulo (br-sao-1, br-sao-2, br-sao-3) | Dallas |
-| Washington, D.C. (us-east-1, us-east-2, us-east-3) | Dallas |
+| Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
 | Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Toronto |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
 | London (eu-gb-1, eu-gb-2, eu-gb-3) | London |
