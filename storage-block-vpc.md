@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-14"
 
 keywords: openshift
 
@@ -31,6 +31,9 @@ The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled
 
 In this quickstart guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block_storage_is_short}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
 {: shortdesc}
+
+Your {{site.data.keyword.block_storage_is_short}} volumes can be mounted by mutliple pods as long as those pods are scheduled on the same node.
+{: note}
 
 1. Create a file for your PVC and name it `pvc.yaml`.
 
@@ -1590,6 +1593,5 @@ To clean up persistent data:
     ```
     {: pre}
     
-
 
 
