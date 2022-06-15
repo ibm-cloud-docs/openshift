@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-06-15"
 
 keywords: openshift
 subcollection: openshift
@@ -7485,6 +7485,10 @@ subcollection: openshift
 * [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_cli)
 
 * [Checking and updating the {{site.data.keyword.cos_short}} plug-in](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_plugin)
+
+* [Checking driver logs and the driver version installed](/docs/openshift?topic=openshift-debug_storage_cos#debug-storage-logs)
+
+* [Updating the Helm chart](/docs/openshift?topic=openshift-debug_storage_cos#debug-helm-update)
 
 [Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails#cos_access_bucket_fails)
 

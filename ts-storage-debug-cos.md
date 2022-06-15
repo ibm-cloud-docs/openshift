@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-06-15"
 
 keywords: file, debug, help
 
@@ -224,6 +224,64 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 {: #debug_storage_cos_plugin}
 
 [Follow the steps to update the {{site.data.keyword.cos_short}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
+
+## Checking driver logs and the driver version installed
+{: #debug-storage-logs}
+
+To check the driver logs and see the driver version of your {{site.data.keyword.cos_short}} installation perform the following steps: 
+
+1. List the pods in the kube-system namespace.
+    ```sh
+    kubectl get pods -n kube-system -o wide -l app=ibmcloud-object-storage-driver
+    ```
+    {: pre}
+
+1. Review the logs of your pods. 
+    ```sh
+    kubectl -n kube-system exec -it -- cat /host/log/ibmc-s3fs.log
+    ```
+    {: pre}
+    
+    
+
+## Updating the Helm chart
+{: #debug-helm-update}
+
+To update the Helm chart from any older version perform the following steps.
+
+1. Uninstall the current Helm chart.
+    ```sh
+    helm ls --all --all-namespaces
+    ```
+    {: pre}
+
+    ```sh
+    helm uninstall <helm_chart_name> -n <helm_chart_namespace>
+    ```
+    {: pre}
+
+1. Add and update Helm repo.
+
+    ```sh
+    helm repo add ibm-helm https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
+    ```
+    {: pre}
+
+    ```sh
+    helm repo update
+    ```
+    {: pre}
+
+
+1. Install the new Helm chart.
+
+    ```sh
+    helm plugin uninstall ibmc
+    helm fetch --untar ibm-helm/ibm-object-storage-plugin && cd ibm-object-storage-plugin
+    helm plugin install ./ibm-object-storage-plugin/helm-ibmc
+    helm ibmc --help
+    ```
+   {: screen}
 
 
 
