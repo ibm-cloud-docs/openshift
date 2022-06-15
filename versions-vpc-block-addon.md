@@ -58,7 +58,7 @@ Version 5.0.0 is available in Beta for allowlisted accounts.
 {: preview}
 
 ### Change log for version 5.0.1-beta_1411, released 10 June 2022
-{: #5.0.0-beta_1125_is_block_relnote}
+{: #5.0.0-beta_1411_is_block_relnote}
 
 Fixes a bug where the resource group wasn't included in the snapshot creation request payload.
 
