@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-06-15"
 
 keywords: openshift
 
@@ -26,6 +26,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2022
 {: #openshift-jun22}
+
+### 15 June 2022
+{: #openshift-jun1522}
+
+{{site.data.keyword.mon_full_notm}} metrics and label updates
+:   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#removed-featurees){: external}.
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version version 5.0.1-beta_1411](/docs/containers?topic=containers-vpc_bs_changelog) is available for allowlisted accounts.
+
+
 
 ### 13 June 2022
 {: #openshift-jun1322}

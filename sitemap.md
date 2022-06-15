@@ -207,6 +207,12 @@ subcollection: openshift
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
 
+    * [15 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1522)
+
+        * {{site.data.keyword.mon_full_notm}} metrics and label updates
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
+
     * [13 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1322)
 
         * {{site.data.keyword.block_storage_is_short}} add-on.
