@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-06-15"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -45,14 +45,9 @@ Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm)
 VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) worker nodes only, and must be created in one of the supported [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). Free VPC clusters are not supported.
 
 
-
 VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts. Free VPC clusters are not supported.
 
 
-
-
-
-.
 
 **Can I combine different flavors in a cluster?**
 
