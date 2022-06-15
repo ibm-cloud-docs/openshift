@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-06-15"
 
 keywords: openshift, nginx, ingress controller
 
@@ -224,7 +224,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.redhat_openshift_notm}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 # For 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -482,7 +482,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.redhat_openshift_notm}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 # For 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -816,7 +816,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.redhat_openshift_notm}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 # For 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource
@@ -1031,7 +1031,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For {{site.data.keyword.redhat_openshift_notm}} 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 # For 4.5 or earlier, use networking.k8s.io/v1beta1 instead
     kind: Ingress
     metadata:
       name: myingressresource

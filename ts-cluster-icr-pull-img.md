@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-15"
 
 keywords: openshift
 
@@ -30,7 +30,7 @@ When you created a cluster, you received an error message similar to the followi
 
 
 ```sh
-Your cluster can't pull images from the {{site.data.keyword.registrylong_notm}} 'icr.io' domains because an IAM access policy could not be created. Make sure that you have the IAM Administrator platform access role to {{site.data.keyword.registrylong_notm}}. Then, create an image pull secret with IAM credentials to the registry by running 'ibmcloud ks cluster pull-secret apply'.
+Your cluster can't pull images from the 'icr.io' domains because an IAM access policy could not be created. Make sure that you have the IAM Administrator platform access role to. Then, create an image pull secret with IAM credentials to the registry by running 'ibmcloud ks cluster pull-secret apply'.
 ```
 {: screen}
 

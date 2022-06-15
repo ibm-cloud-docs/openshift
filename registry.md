@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-15"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -72,7 +72,7 @@ Public registry
 :   For more information, see the public registry's documentation, such as [Quay](https://quay.io/){: external} or [Docker Hub](https://hub.docker.com/){: external}.
 
 
-## Storing images in the internal registrys
+## Storing images in the internal registries
 {: #openshift_internal_registry}
 
 {{site.data.keyword.redhat_openshift_notm}} clusters have an internal registry by default. The images in the internal registry are backed up, but vary depending on the infrastructure provider of your {{site.data.keyword.openshiftlong_notm}} cluster.
@@ -123,10 +123,7 @@ oc describe pvc registry-backing -n default
 #### Changing volume details
 {: #change_volume_details_registry}
 
-If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `openshift-image-registry` ({{site.data.keyword.redhat_openshift_notm}} 4) or `docker-registry` ({{site.data.keyword.redhat_openshift_notm}} 3.11) pod that uses the `registry-backing` PVC to verify that the volume is resized.
-
-![Version 3.11 icon.](images/icon-version-311.png) **{{site.data.keyword.redhat_openshift_notm}} 3.11 only**: Don't change the name of the `registry-backing` PVC, even if you change the volume details. Any master operation, such as patch version update or API server refresh, reverts the PVC name back to `registry-backing`, and the custom-named PVC becomes inaccessible.
-{: important}
+If your registry needs additional gigabytes of storage for your images, you can resize the file storage volume. For more information, see [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration). When you resize the volume in your IBM Cloud infrastructure account, the attached PVC description is not updated. Instead, you can log in to the `openshift-image-registry` pod that uses the `registry-backing` PVC to verify that the volume is resized.
 
 ### Storing images in the worker node empty directory
 {: #emptydir_internal_registry}
@@ -242,9 +239,6 @@ Before you begin:
 *  Make sure that your cluster has public network connectivity to expose the internal registry with a public route.
 *  Install Docker on your local machine.
 *  [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-![Version 3.11 icon.](images/icon-version-311.png) For {{site.data.keyword.redhat_openshift_notm}} 3.11 clusters, the internal registry is in the `default` project and uses the `docker-registry` service. The following steps are specific for version 4 clusters. To set up the route in a 3.11 cluster, replace the `openshift-image-registry` project with `default` and the `image-registry` service with `docker-registry`.
-{: important}
 
 To use the internal registry, set up a public route to access the registry. Then, create an image pull secret that includes the credentials to access the registry so that deployments in other projects can pull images from this registry.
 
@@ -773,9 +767,6 @@ To update your cluster image pull secret in the `default` Kubernetes namespace.
     all-icr-io           kubernetes.io/dockerconfigjson        1         16d
     ```
     {: screen}
-
-    To maintain backwards compatibility, your {{site.data.keyword.redhat_openshift_notm}} 3.11 clusters have a separate image pull secret for each {{site.data.keyword.registrylong_notm}} region. However, you can copy and refer to only the `all-icr-io` image pull secret, which has credentials to the public and private `icr.io` registry domains for all regions.
-    {: note}
 
 4. Update your [container deployments](/docs/openshift?topic=openshift-openshift_apps#image) to pull images from the `icr.io` domain name.
 5. Optional: If you have a firewall, make sure you [allow outbound network traffic to the registry subnets](/docs/openshift?topic=openshift-firewall#firewall_outbound) for the domains that you use.

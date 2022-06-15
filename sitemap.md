@@ -3451,7 +3451,7 @@ subcollection: openshift
 
 * [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
 
-* [Storing images in the internal registrys](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
+* [Storing images in the internal registries](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
 
     * [VPC: Backing up your {{site.data.keyword.redhat_openshift_notm}} internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 

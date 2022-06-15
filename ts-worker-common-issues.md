@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-15"
 
 keywords: openshift
 
@@ -100,11 +100,11 @@ Your IBM Cloud infrastructure is not set up to order compute resources in the se
 **Message**:
 
 ```sh
-The user does not have the necessary {{site.data.keyword.cloud_notm}} classic infrastructure permissions to add servers
+The user does not have the necessary classic infrastructure permissions to add servers
 
 'Item' must be ordered with permission.
 
-The IBM Cloud infrastructure credentials could not be validated.
+The credentials could not be validated.
 
 '<Provider>' infrastructure request not authorized
 ```
