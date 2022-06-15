@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-06-15"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+
+    * [15 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1522)
+
+        * {{site.data.keyword.mon_full_notm}} metrics and label updates
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
     * [13 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1322)
 
@@ -5854,6 +5860,8 @@ subcollection: openshift
 
 * [Version 5.0 (Beta)](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
+    * [Change log for version 5.0.1-beta_1411, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1411_is_block_relnote)
+
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
@@ -7485,6 +7493,10 @@ subcollection: openshift
 * [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_cli)
 
 * [Checking and updating the {{site.data.keyword.cos_short}} plug-in](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos_plugin)
+
+* [Checking driver logs and the driver version installed](/docs/openshift?topic=openshift-debug_storage_cos#debug-storage-logs)
+
+* [Updating the Helm chart](/docs/openshift?topic=openshift-debug_storage_cos#debug-helm-update)
 
 [Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails#cos_access_bucket_fails)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-06-15"
 
 keywords: block, add-on, changelog
 
@@ -54,12 +54,17 @@ Refer to the following tables for a summary of changes for each version of the {
 ## Version 5.0 (Beta)
 {: #050_is_block}
 
+Version 5.0.0 is available in Beta for allowlisted accounts.
+{: preview}
+
+### Change log for version 5.0.1-beta_1411, released 10 June 2022
+{: #5.0.0-beta_1411_is_block_relnote}
+
+Fixes a bug where the resource group wasn't included in the snapshot creation request payload.
+
 
 ### Change log for version 5.0.0-beta_1125, released 10 June 2022
 {: #5.0.0-beta_1125_is_block_relnote}
-
-Version 5.0.0 is available in Beta for allowlisted accounts.
-{:preview}
 
 Adds snapshot support.
 
