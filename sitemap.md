@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-16"
 
 keywords: openshift
 subcollection: openshift
@@ -205,7 +205,7 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
-* [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+* [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#june-2022)
 
     * [15 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1522)
 
@@ -3451,7 +3451,7 @@ subcollection: openshift
 
 * [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
 
-* [Storing images in the internal registrys](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
+* [Storing images in the internal registries](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
 
     * [VPC: Backing up your {{site.data.keyword.redhat_openshift_notm}} internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 

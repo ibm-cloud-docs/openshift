@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-15"
 
 keywords: openshift
 
@@ -39,11 +39,11 @@ You can't manage worker nodes for your cluster, and you receive an error message
 {: tsSymptoms}
 
 ```sh
-We were unable to connect to your IBM Cloud infrastructure account.
+We were unable to connect to your Softlayer account.
 Creating a standard cluster requires that you have either a
 Pay-As-You-Go account that is linked to an IBM Cloud infrastructure
-account term or that you have used the {{site.data.keyword.containerlong_notm}}
-CLI to set your {{site.data.keyword.cloud_notm}} Infrastructure API keys.
+account term or that you have used the Kubernetes service
+CLI to set your Infrastructure API keys.
 ```
 {: screen}
 
@@ -74,7 +74,7 @@ IAM token exchange request failed: <message>
 {: screen}
 
 ```sh
-The cluster could not be configured with the registry. Make sure that you have the Administrator role for {{site.data.keyword.registrylong_notm}}.
+The cluster could not be configured with the registry. Make sure that you have the Administrator role for Container Registry.
 ```
 {: screen}
 
