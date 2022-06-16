@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-16"
 
 keywords: openshift
 
@@ -27,8 +27,11 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## June 2022
 {: #openshift-jun22}
 
+
+
 ### 15 June 2022
 {: #openshift-jun1522}
+{: release-note}
 
 {{site.data.keyword.mon_full_notm}} metrics and label updates
 :   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#removed-featurees){: external}.
@@ -40,6 +43,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ### 13 June 2022
 {: #openshift-jun1322}
+{: release-note}
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
@@ -57,6 +61,7 @@ Cloud Image Key Synchronizer add-on
 
 ### 9 June 2022
 {: #openshift-jun922}
+{: release-note}
 
 New! Kubernetes 1.24
 :   You can create or [update clusters to Kubernetes version 1.24](/docs/containers?topic=containers-cs_versions_124). With Kubernetes 1.24, you get the latest stable enhancements from the Kubernetes community as well as enhancements to the {{site.data.keyword.cloud_notm}} product. 
@@ -66,12 +71,14 @@ Deprecated and unsupported Kubernetes versions
 
 ### 7 June 2022
 {: #openshift-jun722}
+{: release-note}
 
 CLI change log update
 :   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.419.
 
 ### 6 June 2022
 {: #openshift-jun622}
+{: release-note}
 
 Worker node fix pack
 
@@ -84,6 +91,7 @@ Version 3.11 is unsupported
 
 ### 3 June 2022
 {: #openshift-jun322}
+{: release-note}
 
 Master fix pack update
 
@@ -95,6 +103,7 @@ Master fix pack update
 
 ## May 2022
 {: #openshift-may22}
+{: release-note}
 
 
 ### 26 May 2022
@@ -106,6 +115,7 @@ CLI change log update
 
 ### 25 May 2022
 {: #openshift-may2522}
+{: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
 :   Version `2.1.16` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
@@ -118,6 +128,7 @@ CLI change log update
 
 ### 20 May 2022
 {: #openshift-may2022}
+{: release-note}
 
 Worker node fix pack
 
@@ -137,6 +148,7 @@ New! Version 4.10.0 of the OpenShift Data Foundation add-on is available.
 
 ### 16 May 2022
 {: #openshift-may1622}
+{: release-note}
 
 Cluster autoscaler add-on
 :   Versions `1.0.5_628` and `1.1.0_615` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
@@ -146,12 +158,14 @@ ALB OAuth Proxy add-on
 
 ### 12 May 2022
 {: #openshift-may1222}
+{: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.2.5_1106](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
 ### 9 May 2022
 {: #openshift-may0922}
+{: release-note}
 
 Worker node fix pack
 
@@ -160,12 +174,14 @@ Worker node fix pack
 
 ### 6 May 2022
 {: #openshift-may0622}
+{: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
 :   Version `2.1.15` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
 
 ### 4 May 2022
 {: #openshift-may0422}
+{: release-note}
 
 
 HPCS Router add-on
@@ -178,9 +194,11 @@ Cloud Image Key Synchronizer add-on
 
 ## April 2022
 {: #openshift-apr22}
+{: release-note}
 
 ### 28 April 2022
 {: #openshift-apr2822}
+{: release-note}
 
 CLI change log update
 :   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.404.
@@ -197,6 +215,7 @@ Cluster security groups
 
 ### 27 April 2022
 {: #openshift-apr2722}
+{: release-note}
 
 New! {{site.data.keyword.openshiftlong_notm}} 4.10
 :   You can create or [update clusters to version 4.10](/docs/openshift?topic=openshift-openshift_changelog_410). With {{site.data.keyword.openshiftlong_notm}} version 4.10, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
