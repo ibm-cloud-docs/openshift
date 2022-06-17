@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-17"
 
 keywords: block, add-on, changelog
 
@@ -58,7 +58,7 @@ Version 5.0.0 is available in Beta for allowlisted accounts.
 {: preview}
 
 ### Change log for version 5.0.1-beta_1411, released 10 June 2022
-{: #5.0.0-beta_1411_is_block_relnote}
+{: #5.0.1-beta_1411_is_block_relnote}
 
 Fixes a bug where the resource group wasn't included in the snapshot creation request payload.
 
@@ -85,6 +85,13 @@ Adds snapshot support.
 
 ## Version 4.3
 {: #043_is_block}
+
+### Change log for version 4.3.2_1441, released 17 June 2022
+{: #430_1163_is_block_relnote}
+
+- Added security fix related to image signing
+- Updates the `storage-secret-sidecar` image to `v1.1.11`
+- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=){: external}
 
 ### Change log for version 4.3.0_1163, released 25 May 2022
 {: #430_1163_is_block_relnote}
