@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-17"
 
 keywords: openshift
 
@@ -154,7 +154,7 @@ Review frequently asked questions for IBM Cloud Paks on {{site.data.keyword.open
 ### How do I install a Cloud Pak in my {{site.data.keyword.openshiftlong_notm}} cluster? How do I access it later?
 {: #cloud_pak_manage}
 
-Cloud Paks are integrated with the {{site.data.keyword.cloud_notm}} catalog so that you can quickly configure and install the all the Cloud Pak components into an existing or new {{site.data.keyword.redhat_openshift_notm}} cluster. When you install the Cloud Pak, the Cloud Pak is provisioned with [{{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-about-schematics) and a {{site.data.keyword.bpshort}} workspace is created for you. You can use the workspace later to access information about your Cloud Pak installation. You access your Cloud Pak services from the Cloud Pak URL. For more information, consult each [Cloud Pak's documentation](#oc_cloud_pak_ov).
+Cloud Paks are integrated with the {{site.data.keyword.cloud_notm}} catalog so that you can quickly configure and install the all the Cloud Pak components into an existing or new {{site.data.keyword.redhat_openshift_notm}} cluster. When you install the Cloud Pak, the Cloud Pak is provisioned with [{{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-getting-started) and a {{site.data.keyword.bpshort}} workspace is created for you. You can use the workspace later to access information about your Cloud Pak installation. You access your Cloud Pak services from the Cloud Pak URL. For more information, consult each [Cloud Pak's documentation](#oc_cloud_pak_ov).
 
 ### Can I use the {{site.data.keyword.redhat_openshift_notm}} entitlement that comes with my Cloud Pak for my cluster?
 {: #cloud_pak_byo_entitlement}
