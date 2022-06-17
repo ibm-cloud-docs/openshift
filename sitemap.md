@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-17"
 
 keywords: openshift
 subcollection: openshift
@@ -205,7 +205,11 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
-* [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#june-2022)
+* [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+
+    * [17 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1722)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
     * [15 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1522)
 
@@ -5869,6 +5873,8 @@ subcollection: openshift
     * [Change log for version 4.4.5_1371, released 13 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#445_1371_is_block_relnote)
 
 * [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
+
+    * [Change log for version 4.3.2_1441, released 17 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#430_1163_is_block_relnote)
 
     * [Change log for version 4.3.0_1163, released 25 May 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#430_1163_is_block_relnote)
 
