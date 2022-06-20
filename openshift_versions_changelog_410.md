@@ -39,15 +39,6 @@ Review the version 4.10 change log.
 
 
 
-
-
-
-
-
-
-
-
-
 ### Change log for worker node fix pack 4.10.18_1523_openshift, released 20 June 2022
 {: #41018_1523_openshift}
 

@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
 
+    * [20 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2022)
+
+        * Worker node fix pack
+
     * [17 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1722)
 
         * {{site.data.keyword.block_storage_is_short}} add-on.
@@ -5411,7 +5415,7 @@ subcollection: openshift
 
     * [Change log for worker node fix pack 4.8.35_1553_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1553_openshift)
 
-    * [Changelog for master fix pack 4.8.35_1552_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1552)
+    * [Change log for master fix pack 4.8.35_1552_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1552)
 
     * [Change log for worker node pack 4.8.35_1550_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1550)
 
@@ -5526,7 +5530,7 @@ subcollection: openshift
 
     * [Change log for worker node fix pack 4.7.46_1560_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4746_1560_openshift)
 
-    * [Changelog for master fix pack 4.7.45_1559_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4745_1559)
+    * [Change log for master fix pack 4.7.45_1559_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4745_1559)
 
     * [Change log for worker node pack 4.7.45_1557_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4745_1557)
 
@@ -5647,7 +5651,7 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_46#46_before)
 
-[{{site.data.keyword.redhat_openshift_notm}} version 4.6 changelog](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_46)
+[{{site.data.keyword.redhat_openshift_notm}} version 4.6 change log](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_46)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
