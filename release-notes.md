@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-20"
+lastupdated: "2022-06-21"
 
 keywords: openshift
 
@@ -42,6 +42,8 @@ Worker node fix pack
 
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version version 4.3.2_1441](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+
+
 
 
 
