@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-21"
+lastupdated: "2022-06-22"
 
 keywords: openshift
 
@@ -26,6 +26,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2022
 {: #openshift-jun22}
+
+### 22 June 2022
+{: #openshift-jun2222}
+{: release-note}
+
+New! Portworx Cloud Drive support
+:   You can now dynamically provision storage for Portworx during installation by using Portworx Cloud Drives. For more information, see [Getting started with Portworx](/docs/containers?topic=containers-portworx).
 
 
 ### 20 June 2022

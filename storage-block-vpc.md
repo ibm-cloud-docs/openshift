@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-06-22"
 
 keywords: openshift
 
@@ -611,7 +611,7 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 
 3. Retrieve the service CRN for your root key.
 
-    1. From the {{site.data.keyword.keymanagementserviceshort}} details page, select the **Manage** tab to find the list of your keys.
+    1. From the {{site.data.keyword.keymanagementserviceshort}} details page, select the **Keys** tab to find the list of your keys.
     
     2. Find the root key that you created and from the actions menu, click **View CRN**.
     
