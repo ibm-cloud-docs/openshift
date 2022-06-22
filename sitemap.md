@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-20"
+lastupdated: "2022-06-22"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+
+    * [22 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2222)
+
+        * New! Portworx Cloud Drive support
 
     * [20 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2022)
 
