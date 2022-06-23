@@ -71,6 +71,19 @@ Adds snapshot support.
 
 
 
+## Version 4.4
+{: #044_is_block}
+
+### Change log for version 4.4.6_1446, released 24 June 2022
+{: #4.4.6_1446_is_block_relnote}
+
+- Includes an update where volume creation or expansion isn't retried if the provided volume capacity is not supported by volume profile.
+- Updates the `storage-secret-sidecar` image to `v1.2.4`
+- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2022-1271){: external}
+- Adds a security fix related with image signing.
+
+
+
 ### Change log for version 4.4.5_1371, released 13 June 2022
 {: #445_1371_is_block_relnote}
 
