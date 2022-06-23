@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-22"
+lastupdated: "2022-06-23"
 
 keywords: openshift
 subcollection: openshift
@@ -5890,7 +5890,7 @@ subcollection: openshift
 
 * [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
 
-    * [Change log for version 4.3.2_1441, released 17 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#430_1163_is_block_relnote)
+    * [Change log for version 4.3.2_1441, released 17 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#432_1441_is_block_relnote)
 
     * [Change log for version 4.3.0_1163, released 25 May 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#430_1163_is_block_relnote)
 
