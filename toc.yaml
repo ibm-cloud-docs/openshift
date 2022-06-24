@@ -216,11 +216,9 @@ toc:
               - storage-cos-install.md
               - storage-sat-cos.md
               - storage-cos-apps.md
-             
               - storage-cos-vpc-ip.md
               - storage-cos-reference.md
           - storage-portworx.md
-          - storage-vpc-block-driver.md
           - topicgroup:
               label: Storing data on OpenShift Data Foundation
               topics:
@@ -232,7 +230,11 @@ toc:
                 - openshift_storage_ocs_manage.md
                 - openshift_storage_noobaa.md
                 - openshift_storage_ocs_sc_ref.md
-          - storage-vpc-block-driver.md
+          - topicgroup:
+                label: Storing data on IBM Cloud VPC Block Storage
+                topics: 
+                - storage-vpc-block-driver.md
+                - vpc-volume-snapshot.md
           - storage-utilities.md
           - storage-br.md
       - topicgroup:
