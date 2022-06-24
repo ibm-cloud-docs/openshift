@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-06-24"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+
+    * [24 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2422)
+
+        * {{site.data.keyword.block_storage_is_short}}
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
 
     * [22 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2222)
 
@@ -4344,28 +4350,6 @@ subcollection: openshift
 
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
-[Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
-
-* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
-
-    * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
-
-    * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
-
-* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
-
-* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
-
-* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
-
-* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
-
-* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
-
-    * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
-
-    * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
-
 
 ### Storing data on OpenShift Data Foundation
 {: #sitemap_storing_data_on_openshift_data_foundation}
@@ -4503,6 +4487,11 @@ subcollection: openshift
 
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
+
+### Storing data on IBM Cloud VPC Block Storage
+{: #sitemap_storing_data_on_ibm_cloud_vpc_block_storage}
+
+
 [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
@@ -4524,6 +4513,16 @@ subcollection: openshift
     * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
 
     * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
+[Setting up snapshots with {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
+
+* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-addon-enable)
+
+* [Creating a deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
+
+* [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
+
+* [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
@@ -5885,6 +5884,10 @@ subcollection: openshift
     * [Change log for version 5.0.1-beta_1411, released 15 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-beta_1411_is_block_relnote)
 
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
+
+* [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.6_1446, released 24 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.6_1446_is_block_relnote)
 
     * [Change log for version 4.4.5_1371, released 13 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#445_1371_is_block_relnote)
 
@@ -7561,6 +7564,8 @@ subcollection: openshift
 
 * [Updating Helm charts](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_helm)
 
+* [What permissions do I need to manage storage and create PVCs?](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
+
 [Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx#debug-portworx)
 
 * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-debug-portworx#px-verify-catalog)
@@ -7587,6 +7592,8 @@ subcollection: openshift
 * [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cli)
 
 * [Debugging your ODF resources](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cluster)
+
+* [What permissions do I need to manage storage and create PVCs?](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Why is the status of my OpenShift Data Foundation storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug#ts-ocs-roks-debug)
 

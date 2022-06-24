@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-06-24"
 
 keywords: openshift
 
@@ -26,6 +26,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2022
 {: #openshift-jun22}
+
+### 24 June 2022
+{: #openshift-jun2422}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}}
+:   You can now [create snapshots of your PVCs](/docs/containers?topic=containers-vpc-volume-snapshot) by using version `5.0.0-beta` of the {{site.data.keyword.block_storage_is_short}} add-on.
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version version 4.4.6_1446](/docs/containers?topic=containers-vpc_bs_changelog) is available in `us-south`, `jp-tok`, `jp-osa`, `au-syd` `us-east`, `eu-de`, `ca-tor`, and `eu-gb`.
 
 ### 22 June 2022
 {: #openshift-jun2222}
