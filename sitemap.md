@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-06-27"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+
+    * [27 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2722)
+
+        * {{site.data.keyword.block_storage_is_short}}
 
     * [24 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2422)
 
@@ -4492,27 +4496,55 @@ subcollection: openshift
 {: #sitemap_storing_data_on_ibm_cloud_vpc_block_storage}
 
 
-[Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
+[Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
 
-* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
+* [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
 
-    * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+* [Adding {{site.data.keyword.block_storage_is_short}} to your apps](/docs/openshift?topic=openshift-vpc-block#vpc-block-add)
 
-    * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
+* [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
 
-* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
+* [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
 
-* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
+    * [Recreating custom storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
 
-* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+* [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
 
-* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
+* [Customizing the default storage settings](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default)
 
-* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
+    * [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit)
 
-    * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+    * [Creating a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
 
-    * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+    * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
+
+    * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
+
+    * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
+
+    * [Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret)
+
+* [Setting up volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand)
+
+    * [Manually expanding volumes prior to add-on version 4.2](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
+
+* [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
+
+* [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
+
+    * [10 IOPs tier](/docs/openshift?topic=openshift-vpc-block#10iops-sc-vpc-block)
+
+    * [5 IOPs tier](/docs/openshift?topic=openshift-vpc-block#5iops-sc-vpc-block)
+
+    * [Custom](/docs/openshift?topic=openshift-vpc-block#custom-sc-vpc-block)
+
+    * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
+
+* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup_block_vpc)
+
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-vpc-block#storage_delete_options_block_vpc)
+
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
 
 [Setting up snapshots with {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
@@ -4523,6 +4555,12 @@ subcollection: openshift
 * [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
 
 * [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
+
+[Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles.md#storage-block-vpc-trusted-profiles.md)
+
+* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles.md#vpc-addon-enable-trusted)
+
+* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles.md#vpc-block-setup-trusted)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 

@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## June 2022
 {: #openshift-jun22}
 
+### 27 June 2022
+{: #openshift-jun2722}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}}
+:   You can now [set up the {{site.data.keyword.block_storage_is_short}} add-on with {{site.data.keyword.iamshort}} trusted profiles](/docs/containers?topic=containers-storage-block-vpc-trusted-profiles).
+
 ### 24 June 2022
 {: #openshift-jun2422}
 {: release-note}
