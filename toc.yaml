@@ -233,8 +233,10 @@ toc:
           - topicgroup:
                 label: Storing data on IBM Cloud VPC Block Storage
                 topics: 
-                - storage-vpc-block-driver.md
-                - vpc-volume-snapshot.md
+                - storage-block-vpc.md
+                - storage-block-vpc-snapshot.md
+                - storage-block-vpc-trusted-profiles.md
+                - storage-block-vpc-unmanaged.md
           - storage-utilities.md
           - storage-br.md
       - topicgroup:
