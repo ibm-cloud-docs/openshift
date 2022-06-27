@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-06-27"
 
 keywords: openshift
 
@@ -157,6 +157,7 @@ App
 
 Review how you can learn about Kubernetes concepts and the terminology.
 {: shortdesc}
+
 
 * Familiarize yourself with the product by completing the [Creating clusters tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
 * Learn how Kubernetes and {{site.data.keyword.openshiftlong_notm}} work together by completing this [course](https://cognitiveclass.ai/courses/kubernetes-course){: external}.
