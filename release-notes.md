@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-06-27"
 
 keywords: openshift
 
@@ -705,7 +705,7 @@ Review the release notes for January 2022.
 :   The [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/containers?topic=containers-icks_map) lists all `ibmcloud oc` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud oc commands are organized, or to quickly find a specific command. 
 
 {{site.data.keyword.containershort}} 1.19, 1.20, 1.21, and 1.22 unsupported date change
-:   The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#release-history) page has been updated with the new unsupported dates. 
+:   The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#cs_versions_available) page has been updated with the new unsupported dates. 
 
 Worker node fix pack update.
 
@@ -746,7 +746,7 @@ Cloud Image Key Synchronizer add-on
 
 
 {{site.data.keyword.containershort}} 1.20 end of support date change
-:   The end of support date of {{site.data.keyword.containershort}} 1.20 is now March 2022. The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#release-history) page has been updated with the new date. 
+:   The end of support date of {{site.data.keyword.containershort}} 1.20 is now March 2022. The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#cs_versions_available) page has been updated with the new date. 
 
 
 ### 4 January 2022
@@ -2710,7 +2710,7 @@ Versions
 {: release-note}
 
 {{site.data.keyword.redhat_openshift_notm}} version 4.4
-:   The [{{site.data.keyword.redhat_openshift_notm}} version 4.4 release](/docs/containers?topic=containers-cs_versions#cs_v118) is certified for Kubernetes version 1.17.
+:   The [{{site.data.keyword.redhat_openshift_notm}} version 4.4 release](/docs/containers?topic=containers-cs_versions#k8s_version_archive) is certified for Kubernetes version 1.17.
 
 ### 28 July 2020
 {: #openshift-july2820}
