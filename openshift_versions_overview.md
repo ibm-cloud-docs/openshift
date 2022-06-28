@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-28"
 
 keywords: openshift, version, update, upgrade
 
@@ -105,7 +105,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | Not supported | 4.5 / 1.18 | 13 Oct 2020 | 10 Oct 2021 |
 | Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |
 | Not supported | 4.3 / 1.16 | 20 Apr 2020 | 7 Mar 2021 |
-| Deprecated | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 |
+| Not supported | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}}." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
@@ -151,3 +151,10 @@ As of 7 March 2021, {{site.data.keyword.openshiftlong_notm}} clusters that run [
 
 Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.
 
+### {{site.data.keyword.redhat_openshift_notm}} 3.11 (Unsupported)
+{: #ocp311}
+
+As of 6 June 2022, {{site.data.keyword.openshiftlong_notm}} clusters that run [version 3.11](/docs/openshift?topic=openshift-changelog_archive) are unsupported.
+{: shortdesc}
+
+Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes. To continue running your apps in {{site.data.keyword.openshiftlong_notm}}, [make a new cluster](/docs/containers?topic=containers-clusters#clusters) and [deploy your apps](/docs/containers?topic=containers-app#app) to the new cluster.

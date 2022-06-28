@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-28"
 
 keywords: openshift
 
@@ -46,11 +46,11 @@ First time using {{site.data.keyword.filestorage_short}} in your cluster? Come b
            zone: # Example: dal13
     spec:
      accessModes:
-        - ReadWriteMany
-       resources:
-         requests:
-           storage: 24Gi
-       storageClassName: ibmc-file-silver
+     - ReadWriteMany
+     resources:
+       requests:
+         storage: 24Gi
+     storageClassName: ibmc-file-silver
     ```
     {: codeblock}
 

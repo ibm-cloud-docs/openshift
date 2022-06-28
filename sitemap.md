@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-06-28"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+
+    * [28 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2822)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in
 
     * [27 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2722)
 
@@ -4151,56 +4155,6 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
 
-[Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
-
-* [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
-
-* [Adding {{site.data.keyword.block_storage_is_short}} to your apps](/docs/openshift?topic=openshift-vpc-block#vpc-block-add)
-
-* [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
-
-* [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
-
-    * [Recreating custom storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
-
-* [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
-
-* [Customizing the default storage settings](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default)
-
-    * [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit)
-
-    * [Creating a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
-
-    * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
-
-    * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
-
-    * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
-
-    * [Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret)
-
-* [Setting up volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand)
-
-    * [Manually expanding volumes prior to add-on version 4.2](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
-
-* [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
-
-    * [10 IOPs tier](/docs/openshift?topic=openshift-vpc-block#10iops-sc-vpc-block)
-
-    * [5 IOPs tier](/docs/openshift?topic=openshift-vpc-block#5iops-sc-vpc-block)
-
-    * [Custom](/docs/openshift?topic=openshift-vpc-block#custom-sc-vpc-block)
-
-    * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
-
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup_block_vpc)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-vpc-block#storage_delete_options_block_vpc)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
-
 
 ### Storing data on IBM Cloud Object Storage
 {: #sitemap_storing_data_on_ibm_cloud_object_storage}
@@ -4492,8 +4446,8 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
 
-### Storing data on IBM Cloud VPC Block Storage
-{: #sitemap_storing_data_on_ibm_cloud_vpc_block_storage}
+### Storing data on Block Storage for VPC
+{: #sitemap_storing_data_on_block_storage_for_vpc}
 
 
 [Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
@@ -4556,11 +4510,11 @@ subcollection: openshift
 
 * [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
 
-[Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles.md#storage-block-vpc-trusted-profiles.md)
+[Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
 
-* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles.md#vpc-addon-enable-trusted)
+* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-addon-enable-trusted)
 
-* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles.md#vpc-block-setup-trusted)
+* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-block-setup-trusted)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
@@ -5244,6 +5198,8 @@ subcollection: openshift
     * [{{site.data.keyword.redhat_openshift_notm}} 4.4 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp44)
 
     * [{{site.data.keyword.redhat_openshift_notm}} 4.3 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp43)
+
+    * [{{site.data.keyword.redhat_openshift_notm}} 3.11 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp311)
 
 [Version change log](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
 
@@ -5984,6 +5940,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.1.17, released 28 June 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02117_object_plugin)
 
 * [Change log for version 2.1.16, released 25 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02116_object_plugin)
 
