@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-06-29"
 
 keywords: openshift
 
@@ -3720,7 +3720,7 @@ When you set a new default {{site.data.keyword.secrets-manager_short}} instance,
 {: important}
 
 ```sh
-ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME [-q]
+ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME [-q] 
 ```
 {: pre}
 
@@ -3747,7 +3747,7 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME
 **Example**:
 
 ```sh
-ibmcloud oc ingress instance default set --cluster --cluster a111aaa11a1aaaaaaa1 --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 --name my-secret-manager --namespace default
+ibmcloud oc ingress instance default set --cluster --cluster a111aaa11a1aaaaaaa1 --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 --name my-secret-manager --namespace default 
 ```
 {: pre}
 
@@ -3875,7 +3875,7 @@ Register a {{site.data.keyword.secrets-manager_short}} instance to a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default] [-q]
+ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default] [-q] 
 ```
 {: pre}
 
@@ -3902,7 +3902,7 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 **Example**:
 
 ```sh
-ibmcloud oc ingress instance register --cluster my-cluster --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11
+ibmcloud oc ingress instance register --cluster my-cluster --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 
 ```
 {: pre}
 
