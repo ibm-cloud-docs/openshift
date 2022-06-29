@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-29"
 
 keywords: openshift, app protocol, application protocol
 
@@ -722,7 +722,7 @@ Before you begin
 
 To register a VPC ALB hostname with a DNS subdomain,
 
-1. Retrieve the hostname for your VPC ALB by running the `get svc` command. In the output, look for the hostname in the **EXTERNAL-IP** column.
+1. Retrieve the hostname for your VPC ALB by running the `get svc` command. In the output, look for the hostname in the **EXTERNAL-IP** column. For example, `1234abcd-us-south.lb.appdomain.cloud`. 
     ```sh
     oc get svc -o wide
     ```
@@ -738,9 +738,21 @@ To register a VPC ALB hostname with a DNS subdomain,
     {: screen}
 
 2. Create a custom or IBM-provided DNS subdomain for the load balancer hostname.
-    - **Custom domain**: Provide your own custom domain and give it an alias by specifying the load balancer hostname as a Canonical Name record (CNAME).
+    - **Custom domain**: Provide your own custom domain and give it an alias by specifying the load balancer external IP, in the format `1234abcd-us-south.lb.appdomain.cloud` as a Canonical Name record (CNAME).
         1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started).
-        2. Define an alias for your custom domain by specifying the load balancer hostname as a Canonical Name record (CNAME).
+        2. Define an alias for your custom domain by specifying the load balancer external IP as a Canonical Name record (CNAME). In the following example, the load balancer with the external IP of `1234abcd-us-south.lb.appdomain.cloud` is reachable at `www.your-custom-domain.com`.
+        
+        Host/Service
+        :   The prefix where you want to reach your app such as, `www`.
+        
+        Resource Type
+        :   Select `CNAME`.
+        
+        TTL
+        :   Select a time to live.
+        
+        Value/Target
+        :   The LoadBalancer external IP that you retrieved earlier. For example `1234abcd-us-south.lb.appdomain.cloud.`. Note that when using {{site.data.keyword.cloud_notm}} DNS, make sure to enter a trailing period.
 
     - **IBM-provided subdomain**: Use `nlb-dns` commands to generate a subdomain with a TLS certificate for the VPC ALB hostname. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard TLS certificate for the subdomain for you.
         1. Create a DNS subdomain and TLS certificate.
@@ -762,7 +774,7 @@ To register a VPC ALB hostname with a DNS subdomain,
             ```
             {: screen}
 
-3. If you created a subdomain for a public VPC ALB, open a web browser and enter the URL to access your app through the subdomain. If you created a subdomain for a private VPC ALB, you must be [connected to your private VPC network](/docs/vpc?topic=vpc-vpn-onprem-example) to test access to your subdomain.
+3. If you created a subdomain for a public VPC ALB, open a web browser and enter the URL to access your app through the subdomain such as the example `www.your-custom-domain.com`. If you created a subdomain for a private VPC ALB, you must be [connected to your private VPC network](/docs/vpc?topic=vpc-vpn-onprem-example) to test access to your subdomain.
 
 To use the TLS certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_ks_vpc_lb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
 {: tip}
