@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-06-29"
 
 keywords: openshift, version, update, upgrade
 
@@ -26,7 +26,6 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 * [{{site.data.keyword.redhat_openshift_notm}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
-* Deprecated: [{{site.data.keyword.redhat_openshift_notm}} 3.11 release notes overview](https://docs.openshift.com/container-platform/3.11/release_notes/index.html){: external}
 * [Kubernetes change log](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
 ## Available {{site.data.keyword.redhat_openshift_notm}} versions

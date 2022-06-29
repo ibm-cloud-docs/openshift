@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-06-29"
 
 keywords: openshift
 
@@ -162,8 +162,8 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 Review the following characteristics to decide which {{site.data.keyword.openshiftlong_notm}} cluster version to create. In both {{site.data.keyword.openshiftlong_notm}} versions, you get the same overall [benefits](#benefits), such as the IBM-managed master, version and security patch updates, and IBM Support according to your [terms of service](/docs/overview/terms-of-use?topic=overview-terms#terms).
 {: shortdesc}
 
-![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is deprecated, and becomes unsupported on 6 June 2022 (date subject to change).
-{: deprecated}
+![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is unsupported as of 06 June 2022.
+{: important}
 
 You can't update from an {{site.data.keyword.redhat_openshift_notm}} 3.11 to 4 cluster. Instead, [create a version 4 cluster](/docs/openshift?topic=openshift-clusters).
 {: note}
