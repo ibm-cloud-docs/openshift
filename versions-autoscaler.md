@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-06-29"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -41,7 +41,7 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 | Cluster autoscaler add-on version | Supported? | Cluster version support |
 | -------------------- | -----------|--------------------------- |
 | 1.1.0 | Yes |  >=4.6 |
-| 1.0.5 | Yes |  >=4.3 |
+| 1.0.5 | Yes |  >=4.6 |
 | 1.0.4 | Yes |  >=4.3 |
 | 1.0.3 | Yes |  >=4.3 |
 | 1.0.2 | Yes |  4.3 - 4.6 |
@@ -53,6 +53,13 @@ ibmcloud oc cluster addon versions --addon cluster-autoscaler
 
 Review the changes included in version 1.1.0 of the managed cluster autoscaler add-on.
 {: shortdesc}
+
+### Change log for patch update 1.1.0_682, released 30 June 2022
+{: #110682_ca}
+
+- Image tags: `1.19.1 110-1`, `1.20.0 110-1`, `1.21.0 110-1`, `1.22.0 110-1`, `1.23.0 110-1`
+- Adds `storage-secret-store` compatibility fixes for {{site.data.keyword.satelliteshort}} clusters.
+- Adds logging improvements.
 
 ### Change log for patch update 1.1.0_615, released 16 May 2022
 {: #110615_ca}
@@ -80,6 +87,12 @@ Review the changes included in version 1.1.0 of the managed cluster autoscaler a
 
 Review the changes included in version 1.0.5 of the managed cluster autoscaler add-on.
 {: shortdesc}
+
+### Change log for patch update 1.0.5_694, released 30 June 2022
+{: #105694_ca}
+
+- Image tags: `1.19.1 105-1`, `1.20.0 105-1`, `1.21.0 105-1`, `1.22.0 105-1`, `1.23.0 105-1`
+- Adds logging improvements.
 
 ### Change log for patch update 1.0.5_628, released 16 May 2022
 {: #105628_ca}

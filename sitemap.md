@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-06-29"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun22)
+
+    * [30 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun3022)
+
+        * Cluster autoscaler add-on
 
     * [28 June 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2822)
 
@@ -5815,6 +5819,8 @@ subcollection: openshift
 
 * [Version 1.1.0](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
 
+    * [Change log for patch update 1.1.0_682, released 30 June 2022](/docs/openshift?topic=openshift-ca_changelog#110682_ca)
+
     * [Change log for patch update 1.1.0_615, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#110615_ca)
 
     * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-ca_changelog#110475_ca)
@@ -5822,6 +5828,8 @@ subcollection: openshift
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_694, released 30 June 2022](/docs/openshift?topic=openshift-ca_changelog#105694_ca)
 
     * [Change log for patch update 1.0.5_628, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#105628_ca)
 
