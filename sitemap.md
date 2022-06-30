@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-06-30"
 
 keywords: openshift
 subcollection: openshift
@@ -4519,6 +4519,8 @@ subcollection: openshift
 * [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-addon-enable-trusted)
 
 * [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-block-setup-trusted)
+
+    * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#secret-create-truted-profile)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
