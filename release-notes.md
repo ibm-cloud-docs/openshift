@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-06-29"
 
 keywords: openshift
 
@@ -26,6 +26,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2022
 {: #openshift-jun22}
+
+### 30 June 2022
+{: #openshift-jun3022}
+{: release-note}
+
+Cluster autoscaler add-on
+:   Versions `1.0.5_694` and `1.1.0_682` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
 
 ### 28 June 2022
 {: #openshift-jun2822}
