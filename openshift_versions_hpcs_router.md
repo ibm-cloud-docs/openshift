@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-07-01"
 
 keywords: openshift, route, router
 
@@ -20,6 +20,9 @@ subcollection: openshift
 
 View information for version updates to the [{{site.data.keyword.cloud_notm}} HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router) in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
 {: shortdesc}
+
+{{site.data.keyword.cloud_notm}} HPCS Router add-on is deprecated and become unsupported on 15 August 2022.
+{: important}
 
 * **Patch updates**: {{site.data.keyword.cloud_notm}} keeps all your add-on components up-to-date by automatically rolling out patch updates to the most recent version of the HPCS Router that is offered by {{site.data.keyword.openshiftlong_notm}}.
 * **Minor version updates**: The minor version of the HPCS Router add-on matches the minor version of your {{site.data.keyword.redhat_openshift_notm}} cluster. In the CLI, you can run `ibmcloud oc cluster addon ls -c <cluster_name_or_ID>` to check the current version of your add-on, and `ibmcloud oc cluster get -c <cluster_name_or_ID>` to check the current version of your cluster.
