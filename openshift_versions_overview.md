@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-01"
 
 keywords: openshift, version, update, upgrade
 
@@ -96,10 +96,10 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.10 / 1.23 | 27 Apr 2022 | October 2023`†` |
-| Supported | 4.9 / 1.22 | 09 Feb 2022 | May 2023`†` |
-| Supported | 4.8 / 1.21 | 29 Sep 2021 | Feb 2023`†` |
-| Supported | 4.7 / 1.20 | 09 Jun 2021 | Dec 2022`†` |
+| Supported | 4.10 / 1.23 | 27 Apr 2022 | 25 October 2023`†` |
+| Supported | 4.9 / 1.22 | 09 Feb 2022 | 12 July 2023`†` |
+| Supported | 4.8 / 1.21 | 29 Sep 2021 | 29 March 2023`†` |
+| Supported | 4.7 / 1.20 | 09 Jun 2021 | 7 Dec 2022`†` |
 | Supported | 4.6 / 1.19 | 17 Feb 2021 | 27 Oct 2022 `†` |
 | Not supported | 4.5 / 1.18 | 13 Oct 2020 | 10 Oct 2021 |
 | Not supported | 4.4 / 1.17 | 21 Jul 2020 | 31 May 2021 |

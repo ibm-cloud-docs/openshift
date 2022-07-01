@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-01"
 
 keywords: openshift
 subcollection: openshift
@@ -4522,6 +4522,28 @@ subcollection: openshift
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#secret-create-truted-profile)
 
+[Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
+
+* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
+
+    * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+
+    * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
+
+* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
+
+* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
+
+* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+
+* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
+
+* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
+
+    * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+
+    * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
@@ -5311,6 +5333,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
 
+    * [Change log for master fix pack 4.9.37_1544_openshift, released 22 June 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4937_1544_openshift)
+
     * [Change log for worker node fix pack 4.9.38_1543_openshift, released 20 June 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4938_1543_openshift)
 
     * [Change log for worker node fix pack 4.9.36_1541_openshift, released 7 June 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4936_1541_openshift)
@@ -5401,6 +5425,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#47_changelog)
+
+    * [Change log for master fix pack 4.8.42_1562_openshift, released 22 June 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4842_1562_openshift)
 
     * [Change log for worker node fix pack 4.8.42_1561_openshift, released 20 June 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4842_1561_openshift)
 
@@ -5516,6 +5542,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for master fix pack 4.7.52_1569_openshift, released 22 June 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4752_1569_openshift)
 
     * [Change log for worker node fix pack 4.7.53_1568_openshift, released 20 June 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4753_1568_openshift)
 
@@ -5659,6 +5687,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#47_changelog)
+
+    * [Change log for master fix pack 4.6.58_1588_openshift, released 22 June 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4658_1588_openshift)
 
     * [Change log for worker node fix pack 4.6.58_1587_openshift, released 20 June 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4658_1587_openshift)
 

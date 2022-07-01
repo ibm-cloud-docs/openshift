@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-01"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -907,9 +907,9 @@ The following steps create an API key that stores the credentials of an {{site.d
     {: pre}
 
 2. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials in the image pull secret. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including both the cluster and project name.
-
-    ```sh
-    ibmcloud iam service-id-create <cluster_name>-<project>-id --description "Service ID for IBM Cloud Container Registry in {{site.data.keyword.redhat_openshift_notm}} cluster <cluster_name> project <project>"
+  
+      ```sh
+    ibmcloud iam service-id-create <cluster_name>-<project>-id --description "Service ID for IBM Cloud Container Registry in Red Hat OpenShift on IBM Cloud cluster <cluster_name> project <project>"
     ```
     {: pre}
 
@@ -935,10 +935,10 @@ The following steps create an API key that stores the credentials of an {{site.d
     :   Optional. If you want to limit access to only images in certain [{{site.data.keyword.registrylong_notm}} namespaces](/docs/Registry?topic=Registry-registry_setup_cli_namespace#registry_setup_cli_namespace_plan), enter `namespace` for the resource type and specify the `<registry_namespace>`. To list registry namespaces, run `ibmcloud cr namespaces`.
 
 4. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created,
-    `<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later
+    `<cluster_name>-<kube_namespace>-id`. Be sure to give the API key a description that helps you retrieve the key later.
     
     ```sh
-    ibmcloud iam service-api-key-create <cluster_name>-<project>-key <cluster_name>-<project>-id --description "API key for service ID <service_id> in {{site.data.keyword.redhat_openshift_notm}} cluster <cluster_name> project <project>"
+    ibmcloud iam service-api-key-create <cluster_name>-<project>-key <cluster_name>-<project>-id --description "API key for service ID <service_id> in Red Hat OpenShift on IBM Cloud cluster <cluster_name> project <project>"
     ```
     {: pre}
 
