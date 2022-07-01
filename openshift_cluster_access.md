@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-01"
 
-keywords: openshift, clusters
+keywords: openshift, clusters, access, endpoint
 
 subcollection: openshift
 
@@ -926,7 +926,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 
 1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.
     ```sh
-    ibmcloud iam service-id-create <cluster_name>-id --description "Service ID for {{site.data.keyword.openshiftlong_notm}} cluster <cluster_name>"
+    ibmcloud iam service-id-create <cluster_name>-id --description "Service ID for Red Hat OpenShift on IBM Cloud cluster <cluster_name>"
     ```
     {: pre}
 
@@ -934,7 +934,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 
     ```sh
     NAME          <cluster_name>-id
-    Description   Service ID for {{site.data.keyword.openshiftlong_notm}} cluster <cluster_name>
+    Description   Service ID for Red Hat OpenShift on IBM Cloud cluster <cluster_name>
     CRN           crn:v1:bluemix:public:iam-identity::a/1aa111aa1a11111aaa1a1111aa1aa111::serviceid:ServiceId-bbb2b2b2-2bb2-2222-b222-b2b2b2222b22
     Bound To      crn:v1:bluemix:public:::a/1aa111aa1a11111aaa1a1111aa1aa111:::
     Version       1-c3c333333333ccccc33333c33cc3cc33
@@ -961,7 +961,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 3. Create an API key for the service ID. Name the API key similar to your service ID, and include the service ID that you previously created, `<cluster_name>-id`. Be sure to give the API key a description that helps you retrieve the key later. Save your API key in a secure location. You can't retrieve the API key again. If you want to export the output to a file on your local machine, include the `--file <path>/<file_name>` flag.
 
     ```sh
-    ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in {{site.data.keyword.redhat_openshift_notm}} cluster <cluster_name>"
+    ibmcloud iam service-api-key-create <cluster_name>-key <service_ID> --description "API key for service ID <service_ID> in Red Hat OpenShift cluster <cluster_name>"
     ```
     {: pre}
 
@@ -971,7 +971,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     Please preserve the API key! It can't be retrieved after it's created.
 
     Name          <cluster_name>-key
-    Description   API key for service ID <service_ID> in {{site.data.keyword.redhat_openshift_notm}} cluster <cluster_name>
+    Description   API key for service ID <service_ID> in Red Hat OpenShift cluster <cluster_name>
     Bound To      crn:v1:bluemix:public:iam-identity::a/1bb222bb2b33333ddd3d3333ee4ee444::serviceid:ServiceId-ff55555f-5fff-6666-g6g6-777777h7h7hh
     Created At    2019-02-01T19:06+0000
     API Key       i-8i88ii8jjjj9jjj99kkkkkkkkk_k9-llllll11mmm1

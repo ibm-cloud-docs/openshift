@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-01"
 
 keywords: openshift
 
@@ -120,7 +120,7 @@ You might not have the required permissions to perform the action in your IBM Cl
 **Message**:
 
 ```sh
-Worker unable to talk to {{site.data.keyword.containerlong_notm}} servers. Please verify your firewall setup is allowing traffic from this worker.
+Worker unable to talk to IBM Cloud Kubernetes Service servers. Please verify your firewall setup is allowing traffic from this worker.
 ```
 {: screen}
 
