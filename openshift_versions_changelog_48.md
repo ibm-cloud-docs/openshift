@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-20"
+lastupdated: "2022-07-01"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -51,6 +51,28 @@ Review the version 4.8 change log.
 
 
 
+
+
+
+### Change log for master fix pack 4.8.42_1562_openshift, released 22 June 2022
+{: #4842_1562_openshift}
+
+The following table shows the changes that are in the master fix pack 4.8.42_1562_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.7 | v1.3.8 | Updated `Go` to version `1.17.11` and also updated the dependencies. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.4 | v2.2.6 | Bug fixes for the driver installation. Block plugin base images were updated to `ubi`: `8.6-751.1655117800` for CVE-2022-1271 |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.21.13-2 | v1.21.13-5 | Update prometheus/client_golang@v1.7.1 to `v1.11.1`. |
+| Key Management Service provider | v2.5.5 | v2.5.6 | Updated `Go` to version `1.17.11` and also updated the dependencies. |
+| OpenVPN Operator image | v1.4.5 | v1.4.6 | Update base image to version `v1.22.0` to resolve CVEs. |
+| Red Hat {{site.data.keyword.openshiftshort}}. | 4.8.39 | 4.8.42 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-42){: external}. |
+| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20220509 | v4.8.0-20220614 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20220614){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit | v4.8.0-20220509 | v4.8.0-20220614 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20220614){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.8.39_1558_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 4.8.42_1561_openshift, released 20 June 2022
 {: #4842_1561_openshift}
