@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-07-05"
 
 keywords: openshift
 
@@ -367,7 +367,7 @@ This table is moving. For the latest IP lists and continued updates, see the pri
 #### Open ports
 {: #firewall_private_open_ports}
 
-Open the following ports that are necessary for worker nodes to function properly.
+Open the following ports in your firewall for your worker nodes to function properly. The following ports need should be open all destination IPs.
 
 - Allow outbound TCP and UDP connections from the workers to ports 80 and 443 to allow worker node updates and reloads.
 - Allow outbound TCP and UDP to port 2049 to allow mounting file storage as volumes.
@@ -378,7 +378,7 @@ Open the following ports that are necessary for worker nodes to function properl
 #### Enable worker-to-worker communication
 {: #firewall_private_worker2worker}
 
-Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the public and private interfaces. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for private load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
+Enable worker-to-worker communication by allowing all TCP, UDP, VRRP, and IPEncap traffic between worker nodes on the private interfaces and also allow VRRP on the public interface. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for load balancers and the IPEncap protocol to permit pod to pod traffic across subnets.
 
 #### Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}
 {: #firewall_private_container_registry}

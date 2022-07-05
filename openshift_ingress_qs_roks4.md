@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-05"
 
 keywords: openshift, nginx, ingress controller
 
@@ -64,25 +64,6 @@ Quickly expose your app to the Internet by creating an Ingress resource.
                     name: my-app-svc
                     port:
                       number: 80
-        ```
-        {: codeblock}
-
-    * For OpenShift 4.5 or earlier, use `networking.k8s.io/v1beta1`.
-
-        ```yaml
-        apiVersion: networking.k8s.io/v1beta1
-        kind: Ingress
-        metadata:
-        name: myingressresource
-        spec:
-          rules:
-          - host: <ingress_subdomain>
-            http:
-              paths:
-              - path: /<app_path>
-                backend:
-                  serviceName: my-app-svc
-                  servicePort: 80
         ```
         {: codeblock}
 
