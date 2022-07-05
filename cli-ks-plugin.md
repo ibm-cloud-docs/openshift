@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2014, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-05"
 
 keywords: openshift
 
@@ -36,7 +36,7 @@ Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_no
 The tables below list the `ibmcloud oc` command groups. For a complete list of all `ibmcloud oc` commands as they are structured in the CLI, see the [{{site.data.keyword.openshiftlong_notm}} CLI map](/docs/containers?topic=containers-icks_map).
 {: shortdesc}
 
-| Command group | Description | 
+| Command group | Description |
 | --- | --- |
 | [Cluster commands](#cluster) | Create, view, and modify clusters and cluster settings, such as add-on, subnet, and master settings. |
 | [Worker commands](#worker_node_commands) | View and modify worker nodes for a cluster.  |
@@ -57,10 +57,10 @@ The tables below list the `ibmcloud oc` command groups. For a complete list of a
 | [Locations commands](#cs_supported-locations) | List the locations that are supported by IBM Cloud Kubernetes Service. |
 | [Messages commands](#cs_messages) | View the current user messages. |
 | [Versions commands](#cs_versions_command) | List the container platform versions that are available for IBM Cloud Kubernetes Service clusters. |
-| **Deprecated** [API commands](#cs_cli_api) | View or target the API endpoint and API version for the service. | 
-| **Deprecated** [Init commands](#cs_init) | Initialize the IBM Cloud Kubernetes Service plug-in or specify the region where you want to create or access Kubernetes clusters. | 
-| [Script commands](#script) | Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. | 
-| **Beta** [Storage commands](#cs_storage) | View and modify storage resources. | 
+| **Deprecated** [API commands](#cs_cli_api) | View or target the API endpoint and API version for the service. |
+| **Deprecated** [Init commands](#cs_init) | Initialize the IBM Cloud Kubernetes Service plug-in or specify the region where you want to create or access Kubernetes clusters. |
+| [Script commands](#script) | Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. |
+| **Beta** [Storage commands](#cs_storage) | View and modify storage resources. |
 {: summary="The rows are read from left to right. The first column is the command group. The second column is a description of the command group."}
 {: caption="{{site.data.keyword.openshiftlong_notm}} CLI command groups" caption-side="top"}
 
@@ -169,7 +169,7 @@ Disable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-o
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-f] [-q] 
+ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
@@ -577,7 +577,7 @@ ibmcloud oc cluster ca create --cluster my_cluster
 ### `ibmcloud oc cluster ca get`
 {: #cs_cluster_ca_get}
 
-View the details of a cluster's CA certificate. 
+View the details of a cluster's CA certificate.
 {: shortdesc}
 
 ```sh
@@ -716,7 +716,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE
      - `link`: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to `link` to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this flag, you must also specify the `--admin` flag. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this flag is not required because the cluster service URL is used.
 
 `--network`
-:    Optional: Download the Calico configuration file, TLS certificates, and permission files that are required to run `calicoctl` commands in your cluster. 
+:    Optional: Download the Calico configuration file, TLS certificates, and permission files that are required to run `calicoctl` commands in your cluster.
      This option can't be used with the `--yaml` option.
      {: note}
 
@@ -814,7 +814,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     
+
 :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
 
 `--service-subnet *SUBNET`{: #service-subnet}
@@ -824,7 +824,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     
+
 :    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
 
 `--skip-advance-permissions-check`
@@ -921,7 +921,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 `--cluster-security-group GROUP_ID`
 :    Optional. Specify additional security group IDs to apply to all workers on the cluster. You must include a separate `--cluster-security-group` option for each individual security group you want to add. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, only the `kube-clusterID` and the default VPC security group are applied. A maximum of five security groups can be applied to workers, including the default security groups. Note that the VPC security group is only applied if no other security groups are specified. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster).
-    The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. See [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster) for more details before adding security groups to your cluster. 
+    The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. See [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster) for more details before adding security groups to your cluster.
     {: important}
 
 `--cos-instance COS_CRN`
@@ -945,7 +945,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     
+
 :    Note that the pod and service subnets can't overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets don't overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).
 
 `--service-subnet SUBNET`
@@ -955,7 +955,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     
+
 :    Note that the pod and service subnets can't overlap.
 
 `--entitlement cloud_pak`
@@ -1329,8 +1329,8 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster myclu
 ### `ibmcloud oc cluster master private-service-endpoint disable`
 {: #cs_cluster_master_pse_disable}
 
-![Version 3.11 icon.](images/icon-version-311.png) Version 3.11 only: Disable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) to remove private accessibility to your cluster master. 
-{: shortdesc} 
+![Version 3.11 icon.](images/icon-version-311.png) Version 3.11 only: Disable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) to remove private accessibility to your cluster master.
+{: shortdesc}
 
 **Important**: Before you disable the private endpoint, you first must complete the following steps to enable the public cloud service endpoint:
 1. Enable the public cloud service endpoint by running `ibmcloud oc cluster master public-service-endpoint enable --cluster <cluster_name>`.
@@ -1338,11 +1338,11 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster myclu
 3. [Reload all the worker nodes in your cluster to pick up the public endpoint configuration.](#cs_worker_reload)
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint disable --cluster CLUSTER [-f] [-q] [-y] 
+ibmcloud oc cluster master private-service-endpoint disable --cluster CLUSTER [-f] [-q] [-y]
 ```
 {: pre}
 
-**Supported infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic. 
+**Supported infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic.
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1411,7 +1411,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster my_cluster
 Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) to make your cluster master publicly accessible.
 {: shortdesc}
 
-For {{site.data.keyword.openshiftlong_notm}} clusters, public service endpoints can't be disabled. If you enable a public service endpoint in a {{site.data.keyword.redhat_openshift_notm}} cluster, you can't later convert the cluster from public to private. 
+For {{site.data.keyword.openshiftlong_notm}} clusters, public service endpoints can't be disabled. If you enable a public service endpoint in a {{site.data.keyword.redhat_openshift_notm}} cluster, you can't later convert the cluster from public to private.
 {: important}
 
 
@@ -3716,7 +3716,7 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 Set a registered an IBM Cloud {{site.data.keyword.secrets-manager_short}} instance to default. If an existing default instance exists, it will be unset from default.
 {: shortdesc}
 
-When you set a new default {{site.data.keyword.secrets-manager_short}} instance, any existing secrets that are not managed by IBM Cloud must have their certificate CRN manually updated to match the CRN of the new default instance. To update the CRN, use the `ibmcloud oc ingress secret update` command. If you do not update the CRN, these secrets do not update at the next scheduled certificate renewal. 
+When you set a new default {{site.data.keyword.secrets-manager_short}} instance, any existing secrets that are not managed by IBM Cloud must have their certificate CRN manually updated to match the CRN of the new default instance. To update the CRN, use the `ibmcloud oc ingress secret update` command. If you do not update the CRN, these secrets do not update at the next scheduled certificate renewal.
 {: important}
 
 ```sh
@@ -3757,7 +3757,7 @@ ibmcloud oc ingress instance default set --cluster --cluster a111aaa11a1aaaaaaa1
 Remove a {{site.data.keyword.secrets-manager_short}} instance as the default instance.
 {: shortdesc}
 
-If no default instance is set, your secrets are only written directly to the cluster and are not written to any {{site.data.keyword.secrets-manager_short}} instance. 
+If no default instance is set, your secrets are only written directly to the cluster and are not written to any {{site.data.keyword.secrets-manager_short}} instance.
 {: important}
 
 ```sh
@@ -3826,7 +3826,7 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 **Example**:
 
 ```sh
-ibmcloud oc ingress instance get --cluster my-cluster --name my-secrets-manager 
+ibmcloud oc ingress instance get --cluster my-cluster --name my-secrets-manager
 ```
 {: pre}
 
@@ -3871,11 +3871,11 @@ ibmcloud oc ingress instance ls --cluster my-cluster --show-deleted
 ### `ibmcloud oc ingress instance register`
 {: #cs_ingress_instance_register}
 
-Register a {{site.data.keyword.secrets-manager_short}} instance to a cluster. 
+Register a {{site.data.keyword.secrets-manager_short}} instance to a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default] [-q] 
+ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]   [-q]
 ```
 {: pre}
 
@@ -3909,7 +3909,7 @@ ibmcloud oc ingress instance register --cluster my-cluster --crn crn:v1:staging:
 ### `ibmcloud oc ingress instance unregister`
 {: #cs_ingress_instance_unregister}
 
-Remove a {{site.data.keyword.secrets-manager_short}} instance from a cluster. 
+Remove a {{site.data.keyword.secrets-manager_short}} instance from a cluster.
 {: shortdesc}
 
 ```sh
@@ -3929,7 +3929,7 @@ ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
 :    Required. The name or ID of the cluster.
 
 `--name`
-:    Required. The name of the {{site.data.keyword.secrets-manager_short}} instance to remove. 
+:    Required. The name of the {{site.data.keyword.secrets-manager_short}} instance to remove.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -4074,7 +4074,7 @@ The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is d
 {: note}
 
 ```sh
-ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME [--namespace NAMESPACE] [--persist] [--type] [-q] 
+ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME [--namespace NAMESPACE] [--persist] [--type] [-q]
 ```
 {: pre}
 
@@ -4118,7 +4118,7 @@ ibmcloud oc ingress secret create --cert-crn crn:v1:staging:public:cloudcerts:us
 ### `ibmcloud oc ingress secret field add`
 {: #cs_ingress_secret_field_add}
 
-Add a non-certificate CRN field to an Opaque secret. 
+Add a non-certificate CRN field to an Opaque secret.
 {: shortdesc}
 
 ```sh
@@ -4151,14 +4151,14 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name SECRET_NAME --fiel
 
 **Example**:
 ```sh
-ibmcloud ks ingress secret field add --cluster a111aaa11a1aaaaaaa1 --name my-secret --namespace default --field prefix=crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 
+ibmcloud ks ingress secret field add --cluster a111aaa11a1aaaaaaa1 --name my-secret --namespace default --field prefix=crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11
 ```
 {: pre}
 
 ### `ibmcloud oc ingress secret field ls`
 {: #cs_ingress_secret_field_ls}
 
-View the CRN fields of an Ingress secret. This command applies only to Opaque secrets. 
+View the CRN fields of an Ingress secret. This command applies only to Opaque secrets.
 {: shortdesc}
 
 ```sh
@@ -5409,7 +5409,7 @@ ibmcloud oc infra-permissions get --region REGION [--output json] [-q]
 **Command options**:
 
 `--region REGION`
-:    Required: Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`. 
+:    Required: Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.
@@ -5957,7 +5957,7 @@ ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-
 
 `--endpoint ENDPOINT`
     :    The {{site.data.keyword.containerlong_notm}} API endpoint. **Note**: This endpoint is different than the {{site.data.keyword.cloud_notm}} endpoints. This value is required to set the API endpoint.
-    
+
 
 `--insecure`
 :    Allow an insecure HTTP connection. This flag is optional.
@@ -6423,7 +6423,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     
+
 :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
 
 `--pull-secret SECRET`
@@ -6440,7 +6440,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
-     
+
 :    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
 
 `--workers COUNT`
