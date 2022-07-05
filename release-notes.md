@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-05"
 
 keywords: openshift
 
@@ -23,6 +23,17 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## July 2022
+{: #openshift-july22}
+
+### 5 July 2022
+{: #openshift-july0522}
+{: release-note}
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.20_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.40_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.45_1561_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.53_1570_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1589_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
 
 ## June 2022
 {: #openshift-jun22}

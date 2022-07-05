@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-05"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -415,7 +415,7 @@ There is a [known issue](https://github.com/IBM/portieris/issues/350){: external
 ### Enabling or disabling image security enforcement
 {: #portieris-enable}
 
-**{{site.data.keyword.redhat_openshift_notm}} version 4.5 or later**: You can enable or disable image security enforcement for your cluster from the CLI or console. For earlier versions, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
+You can enable or disable image security enforcement for your cluster from the CLI or console. For earlier versions, see the [Portieris documentation](https://github.com/IBM/portieris){: external}.
 {: shortdesc}
 
 #### Enabling or disabling image security enforcement with the CLI

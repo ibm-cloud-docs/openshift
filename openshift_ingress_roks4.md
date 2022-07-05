@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-05"
 
 keywords: openshift, nginx, ingress controller
 
@@ -224,7 +224,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1 
     kind: Ingress
     metadata:
       name: myingressresource
@@ -239,12 +239,16 @@ Ingress resources define the routing rules that the Ingress controller uses to r
           paths:
           - path: /<app1_path>
             backend:
-              serviceName: <app1_service>
-              servicePort: 80
+                service:
+                    name: test
+                    port:
+                        number: 80
           - path: /<app2_path>
             backend:
-              serviceName: <app2_service>
-              servicePort: 80
+                service:
+                    name: <app2_service>
+                    port:
+                        number: 80
     ```
     {: codeblock}
 
@@ -259,10 +263,10 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     `path`
     :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the Ingress controller sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
-    `serviceName`
+    `name`
     :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
 
-    `servicePort`
+    `port`
     :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
 
 
@@ -497,12 +501,16 @@ Ingress resources define the routing rules that the Ingress controller uses to r
           paths:
           - path: /<app1_path>
             backend:
-              serviceName: <app1_service>
-              servicePort: 80
+                service:
+                  name: <app1_service>
+                  port:
+                    number: 80
           - path: /<app2_path>
             backend:
-              serviceName: <app2_service>
-              servicePort: 80
+                service:
+                  name: <app2_service>
+                  port:
+                    number: 80
     ```
     {: codeblock}
 
@@ -518,10 +526,10 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
     :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
-    `serviceName`
+    `name`
     :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
 
-    `servicePort`
+    `port`
     :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
 
 
@@ -831,12 +839,16 @@ Ingress resources define the routing rules that the Ingress controller uses to r
           paths:
           - path: /<app1_path>
             backend:
-              serviceName: <app1_service>
-              servicePort: 80
+                service:
+                    name: <app1_service>
+                    port:
+                        number: 80
           - path: /<app2_path>
             backend:
-              serviceName: <app2_service>
-              servicePort: 80
+                serivce:
+                  name: <app2_service>
+                  port:
+                    number: 80
     ```
     {: codeblock}
 
@@ -1046,12 +1058,16 @@ Ingress resources define the routing rules that the Ingress controller uses to r
           paths:
           - path: /<app1_path>
             backend:
-              serviceName: <app1_service>
-              servicePort: 80
+                service:
+                  name: <app1_service>
+                  port:
+                    number: 80
           - path: /<app2_path>
             backend:
-              serviceName: <app2_service>
-              servicePort: 80
+                service:
+                  name: <app2_service>
+                  port:
+                    number: 80
     ```
     {: codeblock}
 
@@ -1069,10 +1085,10 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
     :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
 
-    `serviceName`
+    `name`
     :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
 
-    `servicePort`
+    `port`
     :    The port that your service listens to. Use the same port that you defined when you created the Kubernetes service for your app.
 
 
@@ -1259,7 +1275,7 @@ Before you begin, verify that you have completed the following {{site.data.keywo
     ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
     ```
     {: pre}
-    
+
 4. [Enabled service-to-service between your cluster and {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 
 To remove the instance:
@@ -1315,14 +1331,14 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
 When you set a new default {{site.data.keyword.secrets-manager_short}} instance, any existing secrets that are not managed by IBM Cloud must have their certificate CRN manually updated to match the CRN of the new default instance. To update the CRN, use the `ibmcloud oc ingress secret update` command. If you do not update the CRN, these user-managed secrets do not update at the next scheduled certificate renewal.
 {: important}
 
-1. Run the command to set the new default.
+1. Run the command to set the new default instance.
 
     ```sh
-    ibmcloud oc ingress instance default set --cluster <cluster_name_or_id> --crn <instance_crn> --name <instance_name>
+    ibmcloud oc ingress instance default set --cluster <cluster_name_or_id> --name <instance_name> 
     ```
     {: pre}
 
-2. Regenerate your secrets. Any secrets that are managed by IBM are uploaded to the new default instance. 
+2. Regenerate your secrets. Any secrets that are managed by IBM are uploaded to the new default instance.
 
     ```sh
     ibmcloud oc nlb-dns secret regenerate --cluster <cluster_name_or_id> --nlb-subdomain <nlb_subdomain>
@@ -1334,7 +1350,7 @@ When you set a new default {{site.data.keyword.secrets-manager_short}} instance,
     To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
     {: tip}
 
-    1. List the secrets in the cluster and note the CRN of the updated secrets that correspond with the subdomain. 
+    1. List the secrets in the cluster and note the CRN of the updated secrets that correspond with the subdomain.
 
         ```sh
         ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
@@ -1352,13 +1368,13 @@ When you set a new default {{site.data.keyword.secrets-manager_short}} instance,
         ```
         {: screen}
 
-    2. Update the non-IBM managed secrets with the CRN of the matching subdomain you found earlier. 
+    2. Update the non-IBM managed secrets with the CRN of the matching subdomain you found earlier.
 
         ```sh
         ibmcloud oc ingress secret update --cluster <cluster_name_or_id> --name <secret_name> --namespace <namespace> --cert-crn <updated_crn>
         ```
         {: pre}
-    
+
 
 #### Removing a {{site.data.keyword.secrets-manager_short}} instance as the default instance
 {: #secret-mgr-remove-default}
@@ -1369,7 +1385,6 @@ To remove a {{site.data.keyword.secrets-manager_short}} instance as the default 
 ibmcloud oc ingress instance default unset --cluster <cluster_name_or_id> --crn <instance_crn> --name <instance_name>
 ```
 {: pre}
-
 
 ## Customizing Ingress routing with annotations
 {: #annotations-roks4}

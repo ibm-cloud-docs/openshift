@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-01"
+lastupdated: "2022-07-05"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -50,6 +50,20 @@ Review the version 4.9 change log.
 
 
 
+
+
+
+### Change log for worker node fix pack 4.9.40_1545_openshift, released 05 July 2022
+{: #4940_1545_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.9.40_1545_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.9.38 | 4.9.40 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-40){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.9.38_1543_openshift" caption-side="top"}
 
 ### Change log for master fix pack 4.9.37_1544_openshift, released 22 June 2022
 {: #4937_1544_openshift}
