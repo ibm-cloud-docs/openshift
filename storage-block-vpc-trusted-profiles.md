@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-06"
 
 keywords: openshift, block storage, pod identity, trusted profiles
 
@@ -91,6 +91,12 @@ Supported infrastructure provider
 
     You can create the trusted profile for specific clusters or for all current and future clusters.
     {: note}
+    
+    Make sure to give the truted profile the following access.
+    
+    * **Resource group** - Viewer
+    * **Service access** - Reader and Writer
+    * **Platform access** - Viewer, Operator, Editor
     
 1. After you create your trusted profile, copy the ID from the **Trusted profiles** page in the console.
 

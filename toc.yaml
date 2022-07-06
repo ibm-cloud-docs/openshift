@@ -399,6 +399,7 @@ toc:
                 label: Cluster autoscaler
                 topics:
                 - ts-ca-debug.md
+                - ts-storage-ca-apikey-reset.md
                 - ts-ca-resize.md
                 - ts-ca-unbalanced.md
             - topicgroup:

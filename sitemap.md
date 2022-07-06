@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-06"
 
 keywords: openshift
 subcollection: openshift
@@ -5092,6 +5092,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.426](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10426)
+
 * [Version 1.0.419](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10419)
 
 * [Version 1.0.415](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10415)
@@ -7312,6 +7314,8 @@ subcollection: openshift
 * [Step 6: Disable and reenable](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-disable)
 
 * [Step 8: Check if the issue is resolved](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-more)
+
+[Autoscaling fails after API key reset](/docs/openshift?topic=openshift-ts-storage-ca-apikey-reset#ts-storage-ca-apikey-reset)
 
 [Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ts-ca-resize#ts-ca-resize)
 

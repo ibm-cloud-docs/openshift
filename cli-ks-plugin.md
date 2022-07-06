@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-06"
 
 keywords: openshift
 
@@ -3720,7 +3720,7 @@ When you set a new default {{site.data.keyword.secrets-manager_short}} instance,
 {: important}
 
 ```sh
-ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME [-q] 
+ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME [-q] [--secret-group GROUP]
 ```
 {: pre}
 
@@ -3744,10 +3744,13 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
+`--secret-group GROUP`
+:    Secret Group ID of the IBM Cloud Secret Manager instance where the secrets are persisted.
+
 **Example**:
 
 ```sh
-ibmcloud oc ingress instance default set --cluster --cluster a111aaa11a1aaaaaaa1 --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 --name my-secret-manager --namespace default 
+ibmcloud oc ingress instance default set --cluster --cluster a111aaa11a1aaaaaaa1 --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 --name my-secret-manager --namespace default --secret-group 90e059dd-d04e-a32b-010f-4d303b9050b8
 ```
 {: pre}
 
@@ -3875,7 +3878,7 @@ Register a {{site.data.keyword.secrets-manager_short}} instance to a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]   [-q]
+ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default] [--secret-group GROUP] [-q]
 ```
 {: pre}
 
@@ -3899,10 +3902,13 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
+`--secret-group GROUP`
+:    Secret Group ID of the IBM Cloud Secret Manager instance where the secrets are persisted.
+
 **Example**:
 
 ```sh
-ibmcloud oc ingress instance register --cluster my-cluster --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 
+ibmcloud oc ingress instance register --cluster my-cluster --crn crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11 --secret-group 90e059dd-d04e-a32b-010f-4d303b9050b8
 ```
 {: pre}
 
@@ -5203,8 +5209,8 @@ ibmcloud oc api-key info --cluster my_cluster
 Create an {{site.data.keyword.cloud_notm}} IAM API key that impersonates the user's permissions to authenticate requests for all clusters in the current resource group and region. For more information, see [Understanding how the API key works](/docs/openshift?topic=openshift-access-creds#api_key_about).
 {: shortdesc}
 
-If you use the {{site.data.keyword.block_storage_is_short}} add-on in your cluster, you must re-create the controller pod after resetting your API key. To re-create the controller pod, delete it by running the `oc delete pod -n kube-system ibm-vpc-block-csi-controller-0` command.
-{: note}
+If you use the {{site.data.keyword.block_storage_is_short}} or cluster autoscaler add-ons in your cluster, you must re-create the add-on controller pods after you reset your API key. For more information, see [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts) and [Autoscaling fails after API key reset](/docs/openshift?topic=openshift-ts-storage-ca-apikey-reset).
+{: important}
 
 Before you use this command, make sure that the user who runs this command has the required [{{site.data.keyword.containerlong_notm}} and IBM Cloud infrastructure permissions](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). Target the resource group and region that you want to set the API key for. When the API key is reset, the previous API key that was used, if any, for the region and resource group is now obsolete. You can then delete the old API key from your list of API keys. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect) or the [default {{site.data.keyword.cloudcerts_long}} service instance for your cluster](/docs/containers?topic=containers-ingress-types#manage_certs).
 {: important}

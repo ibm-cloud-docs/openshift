@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-06"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1261,6 +1261,9 @@ When migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keywor
 **Removing the registered Certificate Manager instance**:
 :    Once you have successfully migrated to Secrets Manager, you can unregister the Certificate Manager instance that was provisioned with your cluster by running `ibmcloud oc ingress instance unregister`.
 
+**Controlling access with secret groups**:
+:    With {{site.data.keyword.secrets-manager_short}}, you can create secret groups to organize your secrets and control who on your team has access to them. You specify a secret group when you [set a default {{site.data.keyword.secrets-manager_short}} instance](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_instance_default_set) or [register a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_instance_register). For more information, see [Organizing your secrets](/docs/secrets-manager?topic=secrets-manager-secret-groups).
+
 ### Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster
 {: #unregister-secret-instance}
 
@@ -1331,10 +1334,10 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
 When you set a new default {{site.data.keyword.secrets-manager_short}} instance, any existing secrets that are not managed by IBM Cloud must have their certificate CRN manually updated to match the CRN of the new default instance. To update the CRN, use the `ibmcloud oc ingress secret update` command. If you do not update the CRN, these user-managed secrets do not update at the next scheduled certificate renewal.
 {: important}
 
-1. Run the command to set the new default instance.
+1. Run the command to set the new default instance and optionally specify a [secret group](/docs/secrets-manager?topic=secrets-manager-secret-groups) that is allowed access.
 
     ```sh
-    ibmcloud oc ingress instance default set --cluster <cluster_name_or_id> --name <instance_name> 
+    ibmcloud oc ingress instance default set --cluster <cluster_name_or_id> --name <instance_name> --secret-group <secret_group_id>
     ```
     {: pre}
 
