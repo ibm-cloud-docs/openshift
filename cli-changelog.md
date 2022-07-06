@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-07-06"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -29,6 +29,12 @@ Refer to the following changelogs for a summary of changes for each version of t
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version 1.0.426
+{: #cli-10426}
+
+Version 1.0.426 of the CLI was released on 6 Jul 2022.
+:   Adds the `--secret-group` option to various {{site.data.keyword.secrets-manager_short}} commands. With this option, you can create secret groups to organize your secrets and control who on your team has access to them.
 
 ## Version 1.0.419
 {: #cli-10419}
