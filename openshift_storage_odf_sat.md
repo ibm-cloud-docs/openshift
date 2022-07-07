@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-07-07"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, satellite
 
@@ -244,6 +244,7 @@ Before you install ODF, create a Kubernetes secret with your Link credentials.
 
 ## Installing the add-on from the CLI
 {: #install-odf-cli-sat}
+
 
 You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
 {: shortdesc}

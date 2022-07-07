@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: openshift
 subcollection: openshift
@@ -2554,7 +2554,7 @@ subcollection: openshift
 
 [Creating clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
-* [Sample commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
+* [Sample CLI commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
 
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 
@@ -2572,7 +2572,7 @@ subcollection: openshift
 
     * [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 
-* [Creating a cluster on dedicated host infrastructure](/docs/openshift?topic=openshift-clusters#cluster_dedicated_host_cli)
+* [Creating a cluster on dedicated host infrastructure in the CLI](/docs/openshift?topic=openshift-clusters#cluster_dedicated_host_cli)
 
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
