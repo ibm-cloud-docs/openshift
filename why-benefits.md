@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-07"
 
 keywords: openshift
 
@@ -111,7 +111,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Integrated CI/CD with Jenkins| |Yes|
 |Stricter app security context set up by default| |Yes|
 |Simplified Kubernetes developer experience, with an app console that is suited for beginners| |Yes|
-|Supported operating system| Ubuntu 18.04 x86_64, 16.04 x86_64 (deprecated) |Red Hat Enterprise Linux 7|
+|Supported operating system| Ubuntu 18.04 x86_64, 16.04 x86_64 (deprecated) | Red Hat Enterprise Linux 7 |
 |Preferred external traffic networking| Ingress | Router |
 |Secured routes encrypted with {{site.data.keyword.hscrypto}} | | Yes |
 {: caption="Characteristics of community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters" caption-side="top"}
@@ -133,7 +133,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Compute machines (worker nodes) | You create your own compatible compute machines, set up compatible network connectivity, SSH into the machines, install OCP, and register the machines as worker nodes in the cluster. Your machines might be installer-provisioned infrastructure (IPI) for a guided setup, or user-provisioned infrastructure (UPI) for more control and subsequent administration on your end. You are responsible for maintaining and updating the worker nodes. You can install updates from the {{site.data.keyword.redhat_openshift_notm}} web console. | You select the flavor of worker nodes that you want to add to your cluster, and IBM automatically connects the worker nodes to the cluster and installs OCP. In this sense, the installation is similar to IPI for you because you don't have to manage all the infrastructure and network settings. IBM also provides patch updates that you can choose to apply to your worker nodes, from the {{site.data.keyword.cloud_notm}} interface (not the {{site.data.keyword.redhat_openshift_notm}} web console). SSH is disabled for added security. |
 | OCP versions and patch updates | You are responsible for updating the underlying infrastructure for the master and worker nodes. You can use the {{site.data.keyword.redhat_openshift_notm}} web console to update OCP versions. | IBM automatically applies updates to the master, and provides version updates and security patch updates for the worker nodes. You choose when to apply these updates to your worker nodes, from the {{site.data.keyword.cloud_notm}} interface (not the {{site.data.keyword.redhat_openshift_notm}} web console). Supported versions might vary from standard OpenShift Container Platform.|
 | Autoscaling compute machines | You can set up a `ClusterAutoscaler` resource. | You can set up the [cluster autoscaler plug-in](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc). |
-| Worker node operating system | CoreOS or RHEL. | RHEL 7. |
+| Worker node operating system | CoreOS or RHEL. |  Red Hat Enterprise LinuxRHEL 7. |
 | Support | Provided per the terms of your Red Hat subscription or cloud provider. You can use the `oc adm must-gather` tool to help gather information. | Provided by [{{site.data.keyword.cloud_notm}} Support](https://www.ibm.com/cloud/support){: external}. You can use the `oc adm must-gather` tool, or the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) to help gather information. |
 | {{site.data.keyword.redhat_openshift_notm}} web console | You set up and can configure or disable the {{site.data.keyword.redhat_openshift_notm}} web console. | The {{site.data.keyword.redhat_openshift_notm}} web console is set up for you. You can't configure or disable the web console. IBM also provides the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} to manage your cluster infrastructure. |
 | Authentication | An OAuth server is provided, but you configure the token settings and identity provider to control access to the cluster. You also manage RBAC to control user access within the cluster. | IBM automatically sets up the OAuth server to use {{site.data.keyword.cloud_notm}} IAM. You can't change the identity provider. {{site.data.keyword.cloud_notm}} IAM is also set up to [automatically sync to RBAC](/docs/openshift?topic=openshift-access_reference#service) so that you can use IAM to manage access to and within the cluster. |
@@ -171,7 +171,7 @@ You can't update from an {{site.data.keyword.redhat_openshift_notm}} 3.11 to 4 c
 |Characteristics|{{site.data.keyword.redhat_openshift_notm}} 3.11|{{site.data.keyword.redhat_openshift_notm}} 4|
 |---------------|-------------|-----------------|
 | Supported version? | Deprecated | Supported |
-| RHEL version | 7 | 7 |
+| RHEL version | RHEL7 |  RHEL 7 |
 | Kubernetes version | 1.11 | 1.16 |
 | CRI-O runtime version | 1.11 | 1.16 |
 | Worker node DNS | `dnsmasq` daemon set | `openshift-dns` operator (CoreDNS) |

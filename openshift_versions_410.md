@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-07"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -70,4 +70,5 @@ The following table shows the actions that you must take before you [update the 
 | Kubernetes API server metrics job name changed | Kubernetes API server metrics now use job `kube-apiserver` rather than `cluster-version-operator`. Update any custom metrics and alerts to use the new job name. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.10" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
+
 

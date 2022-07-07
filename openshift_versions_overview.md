@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-01"
+lastupdated: "2022-07-07"
 
 keywords: openshift, version, update, upgrade
 
@@ -31,7 +31,7 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 ## Available {{site.data.keyword.redhat_openshift_notm}} versions
 {: #openshift_versions_available}
 
-{{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. The worker node operating system is Red Hat Enterprise Linux 7.
+{{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. The worker node operating system is Red Hat Enterprise Linux (RHEL) 7.  
 
 Supported versions
 :   4.10 (Kubernetes 1.23)
@@ -50,7 +50,7 @@ Supported versions
     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
 
-:    4.6 (Kubernetes 1.19)
+:   4.6 (Kubernetes 1.19)
     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_46)
     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_46)
 
@@ -59,7 +59,7 @@ Supported versions
 
 Unsupported versions:
 :   4.3 (Kubernetes 1.16), 4.4 (Kubernetes 1.17), 4.5 (Kubernetes 1.18)
-:   [Archived change logs](#version-archive)
+:   - [Archived change logs](#version-archive)
 
 :   3.11 (Kubernetes 1.15)
     - [Version information and update actions](/docs/openshift?topic=openshift-openshift_changelog_311)

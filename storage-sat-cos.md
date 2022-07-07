@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-07"
 
 keywords: COS, cloud object storage, satellite storage, object storage, satellite, satellite configurations,
 
@@ -51,8 +51,8 @@ Retrieve the {{site.data.keyword.cos_full_notm}} Helm chart configuration parame
     
     Example output
     ```sh
-    ibm-cloud.kubernetes.io/os: REDHAT_7_64
-    ibm-cloud.kubernetes.io/os: REDHAT_7_64
+    ibm-cloud.kubernetes.io/os: REDHAT_8_64
+    ibm-cloud.kubernetes.io/os: REDHAT_8_64
     ```
     {: screen}
     
@@ -148,7 +148,7 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
     
     Container Platform
     :   The platform of the worker nodes. To retrieve this parameter, run `kubectl get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/os'`.
-    :   If the output is `REDHAT_7_64` or `OPENSHIFT` for example, enter `"redhat"` for the worker OS and `"openshift"` for the platform.
+    :   If the output is `REDHAT_8_64` or `OPENSHIFT` for example, enter `"redhat"` for the worker OS and `"openshift"` for the platform.
 
     Service Provider
     :   Enter `SATELLITE`.
@@ -159,7 +159,7 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
 
     Worker OS
     :   The operating system of the worker nodes. To retrieve this parameter, run `kubectl get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/os'`. 
-    :   If the output is `REDHAT_7_64` for example, enter `"redhat"`.
+    :   If the output is `REDHAT_8_64` for example, enter `"redhat"`.
     
     
 1. Click **Install**
@@ -296,7 +296,7 @@ helm upgrade ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin  --se
 
 `worker-os` and `platform`
 :   The operating system of the worker nodes. To retrieve this parameter, run `kubectl get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/os'`. 
-:   If the output is `REDHAT_7_64` for example, enter `"redhat"` for the worker OS and `"openshift"` for the `platform`.
+:   If the output is `REDHAT_8_64` for example, enter `"redhat"` for the worker OS and `"openshift"` for the `platform`.
 
 `kube-driver-path`
 :   The driver path for the `kubelet`. To retrieve this parameter, run `kubectl get nodes -o yaml | grep 'node\.openshift\.io/os_id'`. 

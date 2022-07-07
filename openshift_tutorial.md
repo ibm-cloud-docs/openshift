@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-07"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -76,7 +76,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 
 2. Create a cluster with a unique name. The following command creates a version 4.10 cluster in Washington, DC with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`. For more information, see [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
     ```sh
-    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --version 4.10_openshift --flavor b3c.4x16.encrypted  --workers 2 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --public-service-endpoint
+    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --version 4.10_openshift --flavor b3c.4x16.encrypted  --workers 2  --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --public-service-endpoint
     ```
     {: pre}
 
