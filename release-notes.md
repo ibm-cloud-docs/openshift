@@ -25,7 +25,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 ## July 2022
-{: #openshift-july22} 
+{: #openshift-july22}
+
+### 7 July 2022
+{: #openshift-july0722}
+{: release-note} 
+
+
+HPCS Router add-on
+:   Versions 4.6.0_2245, 4.7.0_2252, 4.8.0_2246, and 4.9.0_2251 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+
+Cloud Image Key Synchronizer add-on
+:   Version 1.0.0_1061 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+
 
 ### 5 July 2022
 {: #openshift-july0522}
