@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
+
+    * [7 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0722)
+
+        * HPCS Router add-on
+
+        * Cloud Image Key Synchronizer add-on
 
     * [5 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0522)
 
@@ -2554,7 +2560,7 @@ subcollection: openshift
 
 [Creating clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
-* [Sample commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
+* [Sample CLI commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
 
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 
@@ -2572,7 +2578,7 @@ subcollection: openshift
 
     * [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
 
-* [Creating a cluster on dedicated host infrastructure](/docs/openshift?topic=openshift-clusters#cluster_dedicated_host_cli)
+* [Creating a cluster on dedicated host infrastructure in the CLI](/docs/openshift?topic=openshift-clusters#cluster_dedicated_host_cli)
 
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
@@ -6115,6 +6121,8 @@ subcollection: openshift
 
 * [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
 
+    * [Version 4.9.0_2251, released on 7 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_2251)
+
     * [Version 4.9.0_1983, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1983)
 
     * [Version 4.9.0_1559, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1559)
@@ -6130,6 +6138,8 @@ subcollection: openshift
     * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
 
 * [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
+
+    * [Version 4.8.0_2246, released on 7 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_2246)
 
     * [Version 4.8.0_1984, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1984)
 
@@ -6150,6 +6160,8 @@ subcollection: openshift
     * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
 
 * [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
+
+    * [Version 4.7.0_2252, released on 7 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_2252)
 
     * [Version 4.7.0_1985, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1985)
 
@@ -6174,6 +6186,8 @@ subcollection: openshift
     * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
 
 * [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
+
+    * [Version 4.6.0_2245, released on 7 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_2245)
 
     * [Version 4.6.0_1986, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1986)
 
@@ -6236,6 +6250,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+
+    * [Version 1.0.0_1061, released on 13 Jun 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1022)
 
     * [Version 1.0.0_1022, released on 13 Jun 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1022)
 

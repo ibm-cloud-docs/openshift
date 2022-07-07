@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-07-07"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -200,6 +200,7 @@ If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create
 
 ## Installing the OpenShift Data Foundation add-on from the console
 {: #install-odf-console-vpc}
+{: ui}
 
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
@@ -283,6 +284,8 @@ rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-784c848c8qrp   2/2     Runnin
 
 ## Installing the add-on from the CLI
 {: #install-odf-cli-vpc}
+{: cli}
+
 
 You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
 {: shortdesc}
