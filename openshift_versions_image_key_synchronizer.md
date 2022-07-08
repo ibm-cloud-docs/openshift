@@ -38,8 +38,8 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
 {: shortdesc}
 
-### Version 1.0.0_1061, released on 13 Jun 2022
-{: #1_0_1022}
+### Version 1.0.0_1061, released on 7 July 2022
+{: #1_0_1061}
 
 Resolves [CVE-2021-38561](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38561){: external}.
 

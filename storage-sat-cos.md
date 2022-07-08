@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-07"
 
 keywords: COS, cloud object storage, satellite storage, object storage, satellite, satellite configurations,
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-07-08"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -65,10 +65,10 @@ To resize the worker pool, change the number of worker nodes that the worker poo
     Example output for a worker pool that is in two zones, `dal10` and `dal12`, and is resized to two worker nodes per zone:
     ```sh
     ID                                                 Public IP        Private IP      Machine Type      State    Status  Zone    Version
-    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal10   1.22.7
-    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal10   1.22.7
-    kube-dal12-crb20b637238ea471f8d4a8b881aae4962-w9   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal12   1.22.7
-    kube-dal12-crb20b637238ea471f8d4a8b881aae4962-w10  169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal12   1.22.7
+    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal10   1.23
+    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal10   1.23
+    kube-dal12-crb20b637238ea471f8d4a8b881aae4962-w9   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal12   1.23
+    kube-dal12-crb20b637238ea471f8d4a8b881aae4962-w10  169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          normal   Ready   dal12   1.23
     ```
     {: screen}
 
@@ -173,7 +173,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     ```sh
     ID                                                     Primary IP     Flavor   State          Status                                        Zone       Version   
     kube-<ID_string>-<cluster_name>-<pool_name>-00000002   10.xxx.xx.xxx   c2.2x4   provisioning   Infrastructure instance status is 'pending'   us-south-1   -   
-    kube-<ID_string>-<cluster_name>-<pool_name>-00000003   10.xxx.xx.xxx   c2.2x4   normal   Ready   us-south-1   1.22.7_1511   
+    kube-<ID_string>-<cluster_name>-<pool_name>-00000003   10.xxx.xx.xxx   c2.2x4   normal   Ready   us-south-1   1.23_1511   
     ```
     {: screen}
 
@@ -306,7 +306,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     * The new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
 
     ```sh
-    ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone_min_2> [--label key=value]
+    ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone_min_2>  [--label key=value]
     ```
     {: pre}
 
@@ -332,8 +332,8 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
     ```sh
     ID                                                 Public IP        Private IP      Machine Type      State    Status  Zone    Version
-    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.22.7
-    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.22.7
+    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w7   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.23
+    kube-dal10-crb20b637238ea471f8d4a8b881aae4962-w8   169.xx.xxx.xxx   10.xxx.xx.xxx   b3c.4x16          provision_pending   Ready   dal10   1.23
     ```
     {: screen}
 
@@ -413,7 +413,7 @@ To add a zone with worker nodes to your worker pool:
     Ingress Secret:                 mycluster-<hash>-0000
     Workers:                        6
     Worker Zones:                   dal10, dal12
-    Version:                        1.22.7_1524
+    Version:                        1.23_1524
     Owner:                          owner@email.com
     Resource Group ID:              a8a12accd63b437bbd6d58fb6a462ca7
     Resource Group Name:            Default
@@ -461,12 +461,13 @@ To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
     * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
     * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You can't update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
     
-    * `--operating-system`: Optional: Specify the operating system of the hosts that you want to use to create your worker pool such as `RHEL7` or `RHCOS`. Note that you must create a Red Hat CoreOS enabled location to use your RHCOS hosts in your clusters. Support for Red Hat CoreOS hosts is available only in new locations that are managed from Dallas (`us-south`) or Frankfurt (`eu-de`). For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
+    * `--operating-system`: Optional: Specify the operating system of the hosts that you want to use to create your worker pool such as `RHEL7` or `RHCOS`. Note that you must create a Red Hat CoreOS enabled location to use your RHCOS hosts in your clusters. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
+    
     
     Example `worker-pool create` command
 
     ```sh
-    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] [--operating-system RHEL7|RHCOS]
+    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] [--operating-system (RHEL7|RHCOS)]
     ```
     {: pre}
     
