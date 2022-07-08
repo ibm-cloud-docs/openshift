@@ -88,7 +88,7 @@ You can use non-persistent storage options if your data is not required to be pe
 
 The following image shows available non-persistent data storage options in {{site.data.keyword.openshiftlong_notm}}. These options are available for free and standard clusters.
 
-![Non-persistent data storage options](images/cs_storage_nonpersistent.png){: caption="Figure 1. Non-persistent data storage options" caption-side="bottom"}
+![Non-persistent data storage options](images/cs_storage_nonpersistent.svg){: caption="Figure 1. Non-persistent data storage options" caption-side="bottom"}
 
 
 | Characteristics | Inside the container | On the worker node's primary or secondary disk |
@@ -122,7 +122,7 @@ Persistent data storage options are available for standard clusters only.
 
 The following image shows the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a single cluster.
 
-![Persistent storage options for single zone cluster](images/cs_storage_single_zone.png){: caption="Figure 1. Persistent storage options for single zone cluster" caption-side="bottom"}
+![Persistent storage options for single zone cluster](images/cs_storage_single_zone.svg){: caption="Figure 1. Persistent storage options for single zone cluster" caption-side="bottom"}
 
 
 | Characteristics | Classic {{site.data.keyword.filestorage_short}} | Classic Block Storage / VPC Block Storage

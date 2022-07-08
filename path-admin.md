@@ -18,7 +18,7 @@ subcollection: openshift
 # Learning path for administrators
 {: #learning-path-admin}
 
-Following a curated learning path through {{site.data.keyword.openshiftlong}} to create an {{site.data.keyword.redhat_openshift_notm}} cluster, manage the cluster's resources and lifecycle, and use the powerful tools of {{site.data.keyword.openshiftlong_notm}} to secure, manage, and monitor your cluster workloads.
+Following a curated learning path through {{site.data.keyword.openshiftlong}} to create a cluster, manage the cluster's resources and lifecycle, and use the powerful tools of {{site.data.keyword.openshiftlong_notm}} to secure, manage, and monitor your cluster workloads.
 {: shortdesc}
 
 
