@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-12"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -53,6 +53,20 @@ Review the version 4.6 change log.
 
 
 
+
+
+
+### Change log for worker node fix pack 4.6.59_1590_openshift, released 11 July 2022
+{: #4659_1590_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.6.59_1590_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| General |N/A|N/A| Fix to address a bug that occurred if you used the persistent volume claim NFS v3 storage. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.59_1589_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 4.6.59_1589_openshift, released 05 July 2022
 {: #4659_1589_openshift}
