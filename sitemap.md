@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
 
+    * [11 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1122)
+
+        * Worker node fix pack
+
     * [7 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july0722)
 
         * HPCS Router add-on
