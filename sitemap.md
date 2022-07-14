@@ -5255,17 +5255,9 @@ subcollection: openshift
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
-* [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+* [Release lifecycle](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
 
 * [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp45)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.4 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp44)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.3 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp43)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 3.11 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp311)
 
 [Version change log](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
 
