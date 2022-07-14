@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-14"
 
 keywords: openshift
 
@@ -886,7 +886,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 {: important}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID]  [--version 4.9_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] --kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID]  [--version 4.9_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
 ```
 {: pre}
 
@@ -969,6 +969,9 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 `--skip-advance-permissions-check`
 :    Optional: Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you don't have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.
+
+`--kms-account-id ID`
+:    Optional: The ID of the account that contains the KMS instance you want to use for local disk or secret encryption.
 
 `--kms-instance KMS_INSTANCE_ID`
 :    Optional: Include the ID of a key management service (KMS) instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available KMS instances, run `ibmcloud oc kms instance ls`. If you include this option, you must also include the `--crk` option.
@@ -2454,7 +2457,7 @@ Add a worker pool to a VPC cluster. No worker nodes are created until you [add z
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [--kms-instance KMS_INSTANCE_ID --crk ROOT_KEY_ID] [-q] [--output json]
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [-q] [--output json]
 ```
 {: pre}
 
@@ -2489,6 +2492,9 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 :    Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
      Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
      {: note}
+
+`--kms-account-id ID`
+:    Optional: The ID of the account that contains the KMS instance you want to use for local disk or secret encryption.
 
 `--kms-instance KMS_INSTANCE_ID`
 :    Optional: Include the ID of a key management service (KMS) instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available KMS instances, run `ibmcloud oc kms instance ls`. If you include this option, you must also include the `--crk` option. For more information including steps to create, see [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).
@@ -3328,7 +3334,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE)
 
 **Example**:
 ```sh
-ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 0.47.0_1434_iks
+ibmcloud oc ingress alb create classic --cluster mycluster --type public --vlan 2234945 --zone dal10 --ip 1.1.1.1 --version 1.2.1_2337_iks
 ```
 {: pre}
 
@@ -3417,7 +3423,7 @@ ibmcloud oc ingress alb enable classic --alb ALB_ID --cluster CLUSTER [--ip IP_A
 
 **Example**:
 ```sh
-ibmcloud oc ingress alb enable classic --alb private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --cluster mycluster --ip 169.XX.XXX.XX --version 0.47.0_1434_iks
+ibmcloud oc ingress alb enable classic --alb private-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --cluster mycluster --ip 169.XX.XXX.XX --version 1.2.1_2337_iks
 ```
 {: pre}
 
@@ -3679,13 +3685,13 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 **Example commands:**
 * To update all ALB pods in the cluster:
     ```sh
-    ibmcloud oc ingress alb update -c mycluster --version 0.47.0_1434_iks
+    ibmcloud oc ingress alb update -c mycluster --version 1.2.1_2337_iks
     ```
     {: pre}
 
 * To update the ALB pods for one or more specific ALBs:
     ```sh
-    ibmcloud oc ingress alb update -c mycluster --version 0.47.0_1434_iks --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
+    ibmcloud oc ingress alb update -c mycluster --version 1.2.1_2337_iks --alb public-crdf253b6025d64944ab99ed63bb4567b6-alb1
     ```
     {: pre}
 
@@ -5517,7 +5523,7 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 {: important}
 
 ```sh
-ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--public-endpoint] [-q]
+ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--kms-account-id ID] [--public-endpoint] [-q]
 ```
 {: pre}
 
@@ -5537,6 +5543,9 @@ ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_I
 
 `--crk ROOT_KEY_ID`
 :    The ID of the customer root key (CRK) in your KMS instance that you want to use to wrap the data encryption keys (DEK) that are stored locally in your cluster. To list available root keys, run `ibmcloud oc kms crk ls --instance-id <kms_instance_id>`.
+
+`--kms-account-id ID`
+:    Optional: The ID of the account that contains the KMS instance you want to use for local disk or secret encryption.
 
 `--public-endpoint`
 :    Optional: Specify this option to use the KMS public cloud service endpoint. If you don't include this flag, the private cloud service endpoint is used by default.

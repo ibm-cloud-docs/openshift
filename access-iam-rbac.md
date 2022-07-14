@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-14"
 
 keywords: openshift
 
@@ -119,7 +119,7 @@ Create an {{site.data.keyword.cloud_notm}} IAM access policy to set permissions 
 
 User
 :   CLI option: N/A
-:   You can assign the policy to an individual or group of users. Place this positional argument immediately following the command.
+:   You can assign the policy to an individual or group of users. Place this positional option immediately following the command.
 
 - Individual user: Enter the email address of the user.
 - Access group: Enter the name of the access group of users. You can create an access group with the `ibmcloud iam access-group-create` command. To list available access groups, run `ibmcloud iam access-groups`. To add a user to an access group, run `ibmcloud iam access-group-user-add <access_group_name> <user_email>`.
@@ -708,7 +708,7 @@ If you are an administrator for the region and resource group, you might want to
 4. Click the **Classic infrastructure** tab.
 5. Review each of the classic infrastructure tabs.
     1. **Permissions**: Expand the categories to review the permissions that the user has.
-    2. **Devices**: Review the devices that the user has permissions to. A common issue is when a user has administrator permissions but the `Enable future access` was not checked so whenever a new device is ordered, the user can't administer the device.
+    2. **Devices**: Review the devices that the user has permissions to. A common issue is when a user has administrator permissions but the `Enable future access` was Not checked so whenever a new device is ordered, the user can't administer the device.
     3. **VPN subnets**: The subnets permission is important if the user must administer the subnets for the cluster.
 6. To review what the roles and allowed actions permit, see the following topics.
     * [Account classic infrastructure permissions](/docs/account?topic=account-mngclassicinfra)

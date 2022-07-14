@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-07-14"
 
 keywords: portworx, openshift
 
@@ -458,7 +458,7 @@ Follow these steps to set up encryption for your Portworx volumes.
         ```
         {: pre}
 
-4. If you set up encryption before your installed Portworx, you can now [install Portworx in your cluster](#add_portworx_storage). To add encryption to your cluster after you installed Portworx, update the Portworx DaemonSet to add `"-secret_type"` and `"ibm-kp"` as additional arguments to the Portworx container definition.
+4. If you set up encryption before your installed Portworx, you can now [install Portworx in your cluster](#add_portworx_storage). To add encryption to your cluster after you installed Portworx, update the Portworx DaemonSet to add `"-secret_type"` and `"ibm-kp"` as additional options to the Portworx container definition.
     1. Update the Portworx DaemonSet.
         ```sh
         oc edit daemonset portworx -n kube-system

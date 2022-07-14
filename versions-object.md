@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-07-14"
 
 keywords: object storage, plug-in, changelog
 
@@ -26,6 +26,8 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.18 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.17 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.16 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.15 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.14 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -51,10 +53,18 @@ Refer to the following tables for a summary of changes for each version of the [
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
 
+## Change log for version 2.1.18, released 14 July 2022
+{: #02118_object_plugin}
+
+- Updates the UBI Image to `8.6-854` 
+- Resolves [CVE-2022-29824](https://nvd.nist.gov/vuln/detail/CVE-2022-29824){: external}, [CVE-2021-40528](https://nvd.nist.gov/vuln/detail/CVE-2021-40528){: external}, [CVE-2022-22576](https://nvd.nist.gov/vuln/detail/CVE-2022-22576){: external}, [CVE-2022-27774](https://nvd.nist.gov/vuln/detail/CVE-2022-27774){: external}, [CVE-2022-27776](https://nvd.nist.gov/vuln/detail/CVE-2022-27776){: external}, [CVE-2022-27782](https://nvd.nist.gov/vuln/detail/CVE-2022-27782){: external}, [CVE-2022-25313](https://nvd.nist.gov/vuln/detail/CVE-2022-25313){: external}, [CVE-2022-25314] (https://nvd.nist.gov/vuln/detail/CVE-2022-25314){: external}
+- Updates Golang to `1.18.3`
+
+
 ## Change log for version 2.1.17, released 28 June 2022
 {: #02117_object_plugin}
 
-- Updates the UBI to `8.6-751.1655117800`.
+- Updates the UBI to `8.6-751.1655117800`
 - Updates `s3fs-fuse` fix a segfault issue.
 - Adds support to configure ephemeral storage of plug-in and driver pods.
 

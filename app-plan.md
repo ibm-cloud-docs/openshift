@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-07-14"
 
 keywords: openshift, deploy
 
@@ -284,7 +284,7 @@ Configmap
 :   Provide non-sensitive configuration information for workloads that are specified in a deployment. You can use configmaps in three main ways.
     - File system: You can mount an entire file or a set of variables to a pod. A file is created for each entry based on the key name contents of the file that are set to the value.
     - Environment variable: Dynamically set the environment variable for a container spec.
-    - Command-line argument: Set the command-line argument that is used in a container spec.
+    - Command-line option: Set the command-line option that is used in a container spec.
 
 Secret
 :   Provide sensitive information to your workloads, such as follows. Other users of the cluster might have access to the secret, so be sure that you know the secret information can be shared with those users.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-12"
+lastupdated: "2022-07-14"
 
 keywords: openshift
 
@@ -29,12 +29,50 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 14 July 2022
+{: #openshift-july1422}
+
+Cross-account encryption
+:   You can now set up cross-account encryption. Note that this feature is available for allowlisted accounts only. For more infomration see, [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect).
+
+{{site.data.keyword.cos_full_notm}} plug-in
+:   Version `2.1.18` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   Version [5.0.1-beta_1411](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+
+
+
+HPCS Router add-on
+:   Versions 4.6.0_2289, 4.7.0_2288, 4.8.0_2269, and 4.9.0_2290 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+
+### 13 July 2022
+{: #openshift-july1322}
+
+CLI change log update
+:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.430.
+
+
+
+
+### 13 July 2022
+{: #openshift-july1322}
+{: release-note}
+
+Compliance Operator benchmarks
+:   Compliance operator benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} versions [4.9](/docs/containers?topic=openshift-benchmarks_49_co) and [4.10](/docs/containers?topic=openshift-benchmarks_410_co). For a comparison of the benchmark results, see [Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/containers?topic=openshift-benchmark-comparison).
+
+
+
+
 ### 11 July 2022
 {: #openshift-july1122}
 {: release-note}
 
 Worker node fix pack
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.20_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.44_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+
+
 
 ### 7 July 2022
 {: #openshift-july0722}
@@ -88,7 +126,7 @@ Cluster autoscaler add-on
 :   You can now [create snapshots of your PVCs](/docs/containers?topic=containers-vpc-volume-snapshot) by using version `5.0.0-beta` of the {{site.data.keyword.block_storage_is_short}} add-on.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version version 4.4.6_1446](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.4.6_1446](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
 ### 22 June 2022
 {: #openshift-jun2222}

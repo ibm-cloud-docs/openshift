@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-07-14"
 
 keywords: block, add-on, changelog
 
@@ -57,6 +57,26 @@ Refer to the following tables for a summary of changes for each version of the {
 Version 5.0.0 is available in Beta for allowlisted accounts.
 {: preview}
 
+### Change log for version 5.0.1-beta_1411, released 14 July 2022
+{: #5.0.4-beta_1556_is_block_relnote}
+
+- Updates the storage-secret-sidecar image to `v1.1.12`.
+- Updates Golang to version `1.18.3`.
+- Updates UBI image to version `8.6-854`.
+- Pushes community images to `icr.io`.
+- Fixes a bug for `user_tags` and `service_tags` data types.
+- Changes the `volumesnapshotclass` name.
+- Fixes for format errors and mount failures.
+- Resolves the following CVEs:
+    - [CVE-2022-29824](https://nvd.nist.gov/vuln/detail/CVE-2022-29824){: external}
+    - [CVE-2021-40528](https://nvd.nist.gov/vuln/detail/CVE-2021-40528){: external}
+    - [CVE-2022-22576](https://nvd.nist.gov/vuln/detail/CVE-2022-22576){: external}
+    - [CVE-2022-27774](https://nvd.nist.gov/vuln/detail/CVE-2022-27774){: external}
+    - [CVE-2022-27776](https://nvd.nist.gov/vuln/detail/CVE-2022-27776){: external}
+    - [CVE-2022-27782](https://nvd.nist.gov/vuln/detail/CVE-2022-27782){: external}
+    - [CVE-2022-25313](https://nvd.nist.gov/vuln/detail/CVE-2022-25313){: external}
+    - [CVE-2022-25314](https://nvd.nist.gov/vuln/detail/CVE-2022-25314){: external}
+
 ### Change log for version 5.0.1-beta_1411, released 15 June 2022
 {: #5.0.1-beta_1411_is_block_relnote}
 
@@ -73,6 +93,9 @@ Adds snapshot support.
 
 ## Version 4.4
 {: #044_is_block}
+
+
+
 
 ### Change log for version 4.4.6_1446, released 24 June 2022
 {: #4.4.6_1446_is_block_relnote}
@@ -97,12 +120,13 @@ Adds snapshot support.
 ## Version 4.3
 {: #043_is_block}
 
+
 ### Change log for version 4.3.2_1441, released 17 June 2022
 {: #432_1441_is_block_relnote}
 
 - Added security fix related to image signing
 - Updates the `storage-secret-sidecar` image to `v1.1.11`
-- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=){: external}
+- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271){: external}
 
 ### Change log for version 4.3.0_1163, released 25 May 2022
 {: #430_1163_is_block_relnote}
