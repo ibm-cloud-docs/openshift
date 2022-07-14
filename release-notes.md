@@ -29,6 +29,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 14 July 2022
+{: #openshift-july1422}
+
+HPCS Router add-on
+:   Versions 4.6.0_2289, 4.7.0_2288, 4.8.0_2269, and 4.9.0_2290 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
+
 ### 13 July 2022
 {: #openshift-july1322}
 
