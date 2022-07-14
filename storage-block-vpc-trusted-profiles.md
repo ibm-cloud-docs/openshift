@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-14"
 
 keywords: openshift, block storage, pod identity, trusted profiles
 
@@ -178,21 +178,21 @@ Supported infrastructure provider
         fi
     }
 
-    #validate_arguments validates the arguments provided to the script
-    validate_arguments() {
+    #validate_options validates the options provided to the script
+    validate_options() {
         if [[ "$#" -eq 1 ]]; then
            if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
               usage; exit 1
            fi
         fi
 
-        #number of arguments provided to the script must be 2
+        #number of options provided to the script must be 2
         if [[ "$#" -ne 2 ]]; then
-            echo "Invalid number of arguments provided"
+            echo "Invalid number of options provided"
             usage; exit 1
         fi
 
-        #1st argument must be 'iam' or 'pod-identity'
+        #1st option must be 'iam' or 'pod-identity'
         if [[ "$1" != "iam" ]] && [[ "$1" != "pod-identity" ]]; then
             echo "Provide a valid auth-type"
             usage; exit 1
@@ -212,7 +212,7 @@ Supported infrastructure provider
     #main
     main() {
 
-        validate_arguments "$@"
+        validate_options "$@"
 
         auth_type="IBMCLOUD_AUTHTYPE=$IBMCLOUD_AUTHTYPE"
 

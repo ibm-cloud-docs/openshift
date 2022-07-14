@@ -49,12 +49,25 @@ CLI change log update
 
 
 
+
+### 13 July 2022
+{: #openshift-july1322}
+{: release-note}
+
+Compliance Operator benchmarks
+:   Compliance operator benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} versions [4.9](/docs/containers?topic=openshift-benchmarks_49_co) and [4.10](/docs/containers?topic=openshift-benchmarks_410_co). For a comparison of the benchmark results, see [Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/containers?topic=openshift-benchmark-comparison).
+
+
+
+
 ### 11 July 2022
 {: #openshift-july1122}
 {: release-note}
 
 Worker node fix pack
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.20_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.44_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+
+
 
 ### 7 July 2022
 {: #openshift-july0722}

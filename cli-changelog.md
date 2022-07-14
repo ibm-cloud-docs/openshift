@@ -97,7 +97,7 @@ Version 1.0.374 of the CLI was released on 24 February 2022.
 
 Version 1.0.372 of the CLI was released on 18 February 2022.
 
-:   Modifies relevant commands to accept either the `--worker-pool` or `-p` flags for worker pool arguments.
+:   Modifies relevant commands to accept either the `--worker-pool` or `-p` flags for worker pool options.
 :   Updates JSON outputs to include additional resources, such as addons, VLANs, and subnets. 
 :   Makes `ibmcloud oc ingress` commands generally available.
 :   Updates the `ibmcloud oc ingress alb get` command output to include ALB status. 
@@ -362,7 +362,7 @@ Version 1.0.84 of the CLI was released on 26 May 2020.
 
 Version 1.0.57 of the CLI was released on 7 May 2020.
 
-- Adds a check for deprecated positional arguments. 
+- Adds a check for deprecated positional options. 
 - Updates the macOS DNS resolver to fix network issues when you use the CLI plug-in with a VPN connection. 
 - Help documentation updates: 
     - Adds instructions for enabling or disabling an add-on to the help text for the `ibmcloud oc addon-versions` command. 
@@ -419,8 +419,8 @@ Check out the following syntax and behavior changes between each version of the 
 | Supported? | Deprecated | Deprecated | Deprecated | Default |
 | `ibmcloud oc help` output structure  \n -  Legacy: Alphabetical list of commands  \n -  Latest: Categories of commands | Legacy | Legacy | Latest | Latest |
 | Command structure  \n -  Legacy: Hyphenated structure (`ibmcloud oc cluster-get`)  \n -  Latest: Spaced structure (`ibmcloud oc cluster get`) | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
-| Positional arguments  \n -  Legacy: Arguments specified by position (`cluster-get mycluster`)  \n -  Latest: Arguments specified by flags (`cluster get --cluster mycluster`) | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
-| Repeated arguments  \n -  Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)  \n -  Latest: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`) | Legacy | Legacy | Legacy and latest | Latest |
+| Positional options  \n -  Legacy: options specified by position (`cluster-get mycluster`)  \n -  Latest: options specified by flags (`cluster get --cluster mycluster`) | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
+| Repeated options  \n -  Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)  \n -  Latest: Repeated flags for each value with optional shorthand flag aliases (`-p pool1 -p pool2 ...`) | Legacy | Legacy | Legacy and latest | Latest |
 | Flag format  \n -  Legacy: Camel-case (`--showResources`)  \n -  Latest: Dashed (`--show-resources`) | Legacy | Legacy | Legacy and latest | Latest |
 | Cluster context provided by `ibmcloud oc cluster-config`  \n -  Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.  \n -  Latest: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [last file that is set by the `KUBECONFIG` environment variable](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple). | Legacy | Legacy | Legacy | Latest |
 {: caption="Latest versions of the redesigned {{site.data.keyword.openshiftlong_notm}} plug-in" caption-side="top"}
