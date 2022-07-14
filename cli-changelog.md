@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-14"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -29,6 +29,12 @@ Refer to the following changelogs for a summary of changes for each version of t
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version 1.0.430
+{: #cli-10430}
+
+Version 1.0.430 of the CLI was released on 13 Jul 2022.
+:   Adds the `--kms-account-id ID` option to various commands to support cross-account encryption for KMS enablement, VPC cluster, and worker pool creation.
 
 ## Version 1.0.426
 {: #cli-10426}
