@@ -70,7 +70,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 {: caption="Section 1.2 API server benchmark results"}
 
 ### 1.3 Controller manager
-{: #co-benchmark-410-11}
+{: #co-benchmark-410-13}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -85,7 +85,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 
 
 ### 1.4 Scheduler
-{: #co-benchmark-410-11}
+{: #co-benchmark-410-14}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |

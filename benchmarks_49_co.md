@@ -73,7 +73,7 @@ check by Compliance Operator.
 {: caption="Section 1.2 API server benchmark results" caption-side="top"}
 
 ### 1.3 Controller manager
-{: #co-benchmark-49-11}
+{: #co-benchmark-49-13}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -88,7 +88,7 @@ check by Compliance Operator.
 
 
 ### 1.4 Scheduler
-{: #co-benchmark-49-11}
+{: #co-benchmark-49-14}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |

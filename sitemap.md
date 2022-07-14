@@ -5370,9 +5370,9 @@ subcollection: openshift
 
     * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_410_co#co-benchmark-410-12)
 
-    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_410_co#co-benchmark-410-11)
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_410_co#co-benchmark-410-13)
 
-    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_410_co#co-benchmark-410-11)
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_410_co#co-benchmark-410-14)
 
 * [2 etcd](/docs/openshift?topic=openshift-benchmarks_410_co#co-benchmark-410-2)
 
@@ -5505,9 +5505,9 @@ subcollection: openshift
 
     * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_49_co#co-benchmark-49-12)
 
-    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_49_co#co-benchmark-49-11)
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_49_co#co-benchmark-49-13)
 
-    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_49_co#co-benchmark-49-11)
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_49_co#co-benchmark-49-14)
 
 * [2 etcd](/docs/openshift?topic=openshift-benchmarks_49_co#co-benchmark-49-2)
 
