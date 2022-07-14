@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-07-14"
 
 keywords: openshift
 
@@ -44,7 +44,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
         ibm.io/bucket: "<bucket_name>"
         ibm.io/object-path: "<bucket_subdirectory>"
         ibm.io/secret-name: "<secret_name>" 
-        ibm.io/quota-limit: "true/false" # Disable or enable a quota limit for your PVC. 
+        ibm.io/quota-limit: "true/false" # Disable or enable a quota limit for your PVC. To use this annotation you must specify the -set quotaLimit=true option during installation.
         ibm.io/endpoint: "https://<s3fs_service_endpoint>"
         ibm.io/tls-cipher-suite: "default"
         ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
@@ -82,9 +82,9 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials) to the default storage classes, you must not list secret in the PVC.
 
     `ibm.io/quota-limit`
-    :   Choose between the following options. 
-    :   If `ibm.io/quota-limit` is set to `true`: Your PVC will set a maximum amount of storage (in bytes) available for the bucket.
-    :   If `ibm.io/quota-limit` is set to `false`: Your PVC will not set a maximum amount of storage available for the bucket. 
+    :   To use this annotation, you must specify the `--set quotaLimit=true` option during installation. If you want to use this annotation, but didn't specify `--set quotaLimit=true` during installation, [re-install the helm chart](/docs/containers?topic=containers-storage_cos_install). 
+    :   If `ibm.io/quota-limit` is set to `true`, your PVC will set a maximum amount of storage (in bytes) available for the bucket based on the size `storage: <size>` that you specify.
+    :   If `ibm.io/quota-limit` is set to `false`, the quota is not enforced on your PVC meaning that actual amount of storage in bytes might exceed the `storage: <size>` that you specified depending on your app. 
     
     `ibm.io/endpoint`
     :   If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For more information and an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the `ibmc` Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, for example Dallas. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass < storageclassname>`. Make sure that you enter your service endpoint in the format `https://< s3fs_private_service_endpoint>` for private cloud service endpoints, or `http://< s3fs_public_service_endpoint>` for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, don't include the `ibm.io/endpoint` option in your PVC YAML file.
@@ -96,7 +96,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   Enter a comma-separated list of IPs that can access your volumes. For example, `ibm.io/access-policy-allowed-ips: "XX.XXX.XX.XXX, XX.XX.XX.XXX, XX.XX.XX.XX`.
     
     `storage`
-    :   In the spec resources requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
+    :   In the spec resources requests section, enter a size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create#pricing){: external}. If you enabled quotas when you installed the plug-in , the quota for your bucket is equal to this size.
     
     `storageClassName`
     :   Choose between the following options.

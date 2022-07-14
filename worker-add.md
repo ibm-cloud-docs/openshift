@@ -535,6 +535,7 @@ When you remove a worker pool, all the worker nodes in the cluster are removed. 
 
 
 
+
 ## Deprecated: Adding stand-alone worker nodes
 {: #standalone}
 
