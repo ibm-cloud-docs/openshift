@@ -32,6 +32,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ### 14 July 2022
 {: #openshift-july1422}
 
+Cross-account encryption
+:   You can now set up cross-account encryption. Note that this feature is available for allowlisted accounts only. For more infomration see, [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect).
+
+
+
+
 HPCS Router add-on
 :   Versions 4.6.0_2289, 4.7.0_2288, 4.8.0_2269, and 4.9.0_2290 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 

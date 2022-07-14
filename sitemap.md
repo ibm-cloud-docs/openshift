@@ -209,6 +209,8 @@ subcollection: openshift
 
     * [14 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1422)
 
+        * Cross-account encryption
+
         * HPCS Router add-on
 
     * [13 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1322)
