@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
 
+    * [15 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1522)
+
+        * CLI change log update
+
     * [14 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1422)
 
         * Cross-account encryption
@@ -5113,6 +5117,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.431](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10431)
 
 * [Version 1.0.430](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10430)
 

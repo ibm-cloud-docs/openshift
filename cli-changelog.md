@@ -30,6 +30,12 @@ Refer to the following changelogs for a summary of changes for each version of t
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version 1.0.431
+{: #cli-10431}
+
+Version 1.0.431 of the CLI was released on 15 Jul 2022.
+:   The `KMS Account ID` string is now translatable.
+
 ## Version 1.0.430
 {: #cli-10430}
 
