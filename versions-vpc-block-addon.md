@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-07-14"
 
 keywords: block, add-on, changelog
 
@@ -74,6 +74,9 @@ Adds snapshot support.
 ## Version 4.4
 {: #044_is_block}
 
+
+
+
 ### Change log for version 4.4.6_1446, released 24 June 2022
 {: #4.4.6_1446_is_block_relnote}
 
@@ -97,12 +100,13 @@ Adds snapshot support.
 ## Version 4.3
 {: #043_is_block}
 
+
 ### Change log for version 4.3.2_1441, released 17 June 2022
 {: #432_1441_is_block_relnote}
 
 - Added security fix related to image signing
 - Updates the `storage-secret-sidecar` image to `v1.1.11`
-- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=){: external}
+- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271){: external}
 
 ### Change log for version 4.3.0_1163, released 25 May 2022
 {: #430_1163_is_block_relnote}

@@ -27,6 +27,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## July 2022
 {: #openshift-july22}
 
+
+
 ### 13 July 2022
 {: #openshift-july1322}
 
@@ -94,7 +96,7 @@ Cluster autoscaler add-on
 :   You can now [create snapshots of your PVCs](/docs/containers?topic=containers-vpc-volume-snapshot) by using version `5.0.0-beta` of the {{site.data.keyword.block_storage_is_short}} add-on.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version version 4.4.6_1446](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.4.6_1446](/docs/containers?topic=containers-vpc_bs_changelog) is available.
 
 ### 22 June 2022
 {: #openshift-jun2222}

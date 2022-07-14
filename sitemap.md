@@ -6025,6 +6025,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.1.18, released 14 July 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02118_object_plugin)
+
 * [Change log for version 2.1.17, released 28 June 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02117_object_plugin)
 
 * [Change log for version 2.1.16, released 25 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02116_object_plugin)
