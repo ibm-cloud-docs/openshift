@@ -145,7 +145,7 @@ To set up a logging configuration for your cluster,
 
         The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
-    3. Review the configmap that was created for your {{site.data.keyword.la_short}} agent.
+    3. Review the ConfigMap that was created for your {{site.data.keyword.la_short}} agent.
         ```sh
         oc describe configmap -n ibm-observe
         ```

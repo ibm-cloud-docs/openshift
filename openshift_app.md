@@ -308,7 +308,7 @@ If you have a requirement to deploy `hostNetwork` pods to listen on specific por
 Configmaps provide non-sensitive configuration information for your deployment workloads.
 {: shortdesc}
 
-The following example shows how you can reference values from your configmap as environment variables in the container spec section of your deployment YAML. By referencing values from your configmap, you can decouple this configuration information from your deployment to keep your containerized app portable.
+The following example shows how you can reference values from your ConfigMap as environment variables in the container spec section of your deployment YAML. By referencing values from your ConfigMap, you can decouple this configuration information from your deployment to keep your containerized app portable.
 * [Help me decide whether to use a Kubernetes `ConfigMap` or `Secret` object for variables](/docs/openshift?topic=openshift-plan_deploy#variables).
 * For more ways to use configmaps, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external}.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-15"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -181,7 +181,7 @@ To set up a monitoring configuration for your cluster:
 
         The number of daemon set instances that are deployed equals the number of worker nodes in your cluster.
 
-    3. Review the configmap that was created for your {{site.data.keyword.mon_short}} agent.
+    3. Review the ConfigMap that was created for your {{site.data.keyword.mon_short}} agent.
         ```sh
         oc describe configmap -n ibm-observe
         ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -231,7 +231,7 @@ To create a cluster by using existing subnets:
     ```
     {: screen}
 
-5. Add the subnet to your cluster by specifying the subnet ID. When you make a subnet available to a cluster, a Kubernetes configmap is created for you that includes all available portable public IP addresses that you can use. If no Ingress ALBs exist in the zone where the subnet's VLAN is located, one portable public and one portable private IP address is automatically used to create the public and private ALBs for that zone. You can use all other portable public and private IP addresses from the subnet to create NLB services for your apps.
+5. Add the subnet to your cluster by specifying the subnet ID. When you make a subnet available to a cluster, a Kubernetes ConfigMap is created for you that includes all available portable public IP addresses that you can use. If no Ingress ALBs exist in the zone where the subnet's VLAN is located, one portable public and one portable private IP address is automatically used to create the public and private ALBs for that zone. You can use all other portable public and private IP addresses from the subnet to create NLB services for your apps.
     ```sh
     ibmcloud oc cluster subnet add --cluster <cluster_name_or_id> --subnet-id <subnet_ID>
     ```
@@ -312,7 +312,7 @@ To list available portable public IP addresses,
     ```
     {: pre}
 
-    The creation of this service fails because the Kubernetes master can't find the specified NLB IP address in the Kubernetes configmap. When you run this command, you can see the error message and a list of available public IP addresses for the cluster.
+    The creation of this service fails because the Kubernetes master can't find the specified NLB IP address in the Kubernetes ConfigMap. When you run this command, you can see the error message and a list of available public IP addresses for the cluster.
 
     ```sh
     Error on cloud load balancer a8bfa26552e8511e7bee4324285f6a4a for service default/myservice with UID 8bfa2655-2e85-11e7-bee4-324285f6a4af: Requested cloud provider IP 1.1.1.1 is not available. The following cloud provider IP addresses are available: <list_of_IP_addresses>

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-15"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -331,7 +331,7 @@ Review the changes in version `1.0.1_124` of the cluster autoscaler add-on.
 
 - Image tags: `1.15.4-4`, `1.16.2-6`, `1.17.0-7`, `1.18.1-6`, and `1.19.0-1`.  
 - Supported cluster versions: 4.3 - 4.5  
-- Exposes the `--new-pod-scale-up-delay` flag in the configmap.  
+- Exposes the `--new-pod-scale-up-delay` flag in the ConfigMap.  
 - Adds support for Kubernetes 1.19.  
 
 ### Change log for patch update 1.0.1_114, released 10 September 2020

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-15"
 
 keywords: openshift, block storage
 
@@ -114,7 +114,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 ### Retrieving IAM and VPC details
 {: #vpc-block-driver-get-details}
 
-To create the Kubernetes secret that is used in the {{site.data.keyword.block_storage_is_short}} configmap, you must retrieve your IAM and VPC details.
+To create the Kubernetes secret that is used in the {{site.data.keyword.block_storage_is_short}} ConfigMap, you must retrieve your IAM and VPC details.
 {: shortdesc}
 
 1. Retrieve the following configuration parameter values. These values are used to create the Kubernetes secret that is required for {{site.data.keyword.block_storage_is_short}}.
@@ -138,7 +138,7 @@ To create the Kubernetes secret that is used in the {{site.data.keyword.block_st
     ```
     {: codeblock}
 
-3. Enter the values that you retrieved earlier and encode the TOML file to base64. Save the base64 output to use in the Block Storage driver configmap.
+3. Enter the values that you retrieved earlier and encode the TOML file to base64. Save the base64 output to use in the Block Storage driver ConfigMap.
     ```sh
     cat ./config.toml | base64
     ```
@@ -166,16 +166,16 @@ Create an image pull secret in your cluster. The secret you create is used to pu
 ## Creating the {{site.data.keyword.block_storage_is_short}} driver deployment
 {: #vpc-block-um-deploy-cm}
 
-Select the {{site.data.keyword.block_storage_is_short}} driver configmap that matches the operating system of your worker nodes. When you create the deployment in your cluster, the {{site.data.keyword.block_storage_is_short}} driver and storage classes are installed.
+Select the {{site.data.keyword.block_storage_is_short}} driver ConfigMap that matches the operating system of your worker nodes. When you create the deployment in your cluster, the {{site.data.keyword.block_storage_is_short}} driver and storage classes are installed.
 {: shortdesc}
 
-1. Save one of the following YAML configurations to a file on your local machine called `configmap.yaml`. Select the configmap based on your cluster operating system.
-    * [RHEL or CentOS configmap](#vpc-block-rhel-cm)
-    * [Ubuntu configmap](#vpc-block-ubuntu-cm)
+1. Save one of the following YAML configurations to a file on your local machine called `configmap.yaml`. Select the ConfigMap based on your cluster operating system.
+    * [RHEL or CentOS ConfigMap](#vpc-block-rhel-cm)
+    * [Ubuntu ConfigMap](#vpc-block-ubuntu-cm)
 
-2. Add the encoded TOML configuration details that you created earlier to the configmap in the `slclient.toml` secret configuration section.
+2. Add the encoded TOML configuration details that you created earlier to the ConfigMap in the `slclient.toml` secret configuration section.
 
-3. Create the configmap in your cluster.
+3. Create the ConfigMap in your cluster.
     ```sh
     oc create -f configmap.yaml
     ```
@@ -318,19 +318,19 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
 ## Removing the {{site.data.keyword.block_storage_is_short}} driver
 {: #removing-the-block-storage-for-vpc-driver}
 
-If you no longer want to use the {{site.data.keyword.block_storage_is_short}} driver in your cluster, you can remove the configmap to remove the driver pods.
+If you no longer want to use the {{site.data.keyword.block_storage_is_short}} driver in your cluster, you can remove the ConfigMap to remove the driver pods.
 {: shortdesc}
 
 Removing the {{site.data.keyword.block_storage_is_short}} driver from your cluster does not remove the data in your storage volumes. If you want to fully remove your PVs and PVCs, see [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc).
 {: important}
 
-1. Delete the `ibm-vpc-block-csi-configmap` configmap from your cluster.
+1. Delete the `ibm-vpc-block-csi-configmap` ConfigMap from your cluster.
     ```sh
     oc rm cm ibm-vpc-block-csi-configmap -n kube-system
     ```
     {: pre}
 
-2. Verify that the configmap is removed.
+2. Verify that the ConfigMap is removed.
     ```sh
     oc get cm -n kube-system | grep ibm-vpc-block-csi-configmap
     ```
@@ -344,13 +344,13 @@ Removing the {{site.data.keyword.block_storage_is_short}} driver from your clust
 
 Select one of the following configmaps based on your worker node operating system.
 
-* [RHEL or CentOS configmap](#vpc-block-rhel-cm)
-* [Ubuntu configmap](#vpc-block-ubuntu-cm)
+* [RHEL or CentOS ConfigMap](#vpc-block-rhel-cm)
+* [Ubuntu ConfigMap](#vpc-block-ubuntu-cm)
 
-### RHEL or CentOS configmap
+### RHEL or CentOS ConfigMap
 {: #vpc-block-rhel-cm}
 
-Save the following configmap YAML as a file on your local machine.
+Save the following ConfigMap YAML as a file on your local machine.
 
 ```yaml
 apiVersion: v1
@@ -1211,7 +1211,7 @@ metadata:
 ```
 {: codeblock}
 
-### Ubuntu configmap
+### Ubuntu ConfigMap
 {: #vpc-block-ubuntu-cm}
 
 Save the following the YAML configuration as a file on your local machine.

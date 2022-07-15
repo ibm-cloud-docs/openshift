@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -60,10 +60,10 @@ Can I change how scale-up and scale-down work?
 :   You can customize settings or use other Kubernetes resources to affect how scaling up and down work.
 
 Scale-up
-:   [Customize the cluster autoscaler configmap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
+:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
 
 Scale-down
-:   [Customize the cluster autoscaler configmap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
+:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
 
 
 Can I increase the minimum size per zone to trigger a scale up my cluster to that size?
@@ -85,7 +85,7 @@ Make the most out of the cluster autoscaler by using the following strategies fo
 ### Can I autoscale multiple worker pools at once?
 {: #scalable-practices-multiple}
 
-Yes, after you install the cluster autoscaler, you can choose which worker pools within the cluster to autoscale [in the configmap](/docs/containers?topic=containers-cluster-scaling-enable). You can run only one autoscaler per cluster. Create and enable autoscaling on worker pools other than the default worker pool, because the default worker pool has system components that can prevent automatically scaling down.
+Yes, after you install the cluster autoscaler, you can choose which worker pools within the cluster to autoscale [in the ConfigMap](/docs/containers?topic=containers-cluster-scaling-enable). You can run only one autoscaler per cluster. Create and enable autoscaling on worker pools other than the default worker pool, because the default worker pool has system components that can prevent automatically scaling down.
 {: shortdesc}
 
 ### How can I make sure that the cluster autoscaler responds to what resources my app needs?
@@ -202,7 +202,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 
 1. [Install the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon).
 
-After install the add-on, update the configmap values to [enable autoscaling in your cluster](/docs/containers?topic=containers-cluster-scaling-enable).
+After install the add-on, update the ConfigMap values to [enable autoscaling in your cluster](/docs/containers?topic=containers-cluster-scaling-enable).
 
 
 

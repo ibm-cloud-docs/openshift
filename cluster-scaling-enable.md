@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Update the cluster autoscaler configmap to enable automatically scaling worker nodes in your worker pools based on the minimum and maximum values that you set.
 {: shortdesc}
 
-After you edit the configmap to enable a worker pool, the cluster autoscaler scales your cluster in response to your workload requests. As such, you can't [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools. Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca-addon-rm), you must first disable each worker pool in the configmap.
+After you edit the configmap to enable a worker pool, the cluster autoscaler scales your cluster in response to your workload requests. As such, you can't [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools. Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca-addon-rm), you must first disable each worker pool in the ConfigMap.
 {: note}
 
 **Before you begin**:
@@ -49,7 +49,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     ```
     {: screen}
 
-2. Edit the configmap with the parameters to define how the cluster autoscaler scales your cluster worker pool. **Note:** Unless you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your standard cluster, you must change the `minSize` to `2` per zone so that the ALB pods can be spread for high availability.
+2. Edit the ConfigMap with the parameters to define how the cluster autoscaler scales your cluster worker pool. **Note:** Unless you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your standard cluster, you must change the `minSize` to `2` per zone so that the ALB pods can be spread for high availability.
 
     - `"name": "default"`: Replace `"default"` with the name or ID of the worker pool that you want to scale. To list worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`. To manage more than one worker pool, copy the JSON line to a comma-separated line, such as follows.
     
@@ -70,7 +70,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
         {: note}
 
     - `"maxSize": 2`: Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up the worker pool to. The value must be equal to or greater than the value that you set for the `minSize`.
-    - `"enabled": false`: Set the value to `true` for the cluster autoscaler to manage scaling for the worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca-addon-rm), you must first disable each worker pool in the configmap.
+    - `"enabled": false`: Set the value to `true` for the cluster autoscaler to manage scaling for the worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca-addon-rm), you must first disable each worker pool in the ConfigMap.
 
 3. Save the configuration file.
 
@@ -81,7 +81,7 @@ After you edit the configmap to enable a worker pool, the cluster autoscaler sca
     ```
     {: pre}
 
-5. Review the **`Events`** section of the cluster autoscaler pod for a **`ConfigUpdated`** event to verify that the configmap is successfully updated. The event message for your configmap is in the following format: `minSize:maxSize:PoolName:<SUCCESS|FAILED>:error message`.
+5. Review the **`Events`** section of the cluster autoscaler pod for a **`ConfigUpdated`** event to verify that the ConfigMap is successfully updated. The event message for your ConfigMap is in the following format: `minSize:maxSize:PoolName:<SUCCESS|FAILED>:error message`.
 
     ```sh
     oc describe pod -n kube-system <cluster_autoscaler_pod>
@@ -117,15 +117,15 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 *  [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *  [Install the `ibm-iks-cluster-autoscaler` add-on](/docs/containers?topic=containers-cluster-scaling-install-addon).
 
-### Customizing the cluster autoscaler add-on configmap
+### Customizing the cluster autoscaler add-on ConfigMap
 {: #cluster-scaling-customize}
 
-When you modify a configmap parameter other than the worker pool `minSize`, `maxSize`, or if you enable or disable a worker pool, the cluster autoscaler pods are restarted.
+When you modify a ConfigMap parameter other than the worker pool `minSize`, `maxSize`, or if you enable or disable a worker pool, the cluster autoscaler pods are restarted.
 {: note}
 
-1. Review the [cluster autoscaler configmap](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca_addon_ref) parameters.
+1. Review the [cluster autoscaler ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca_addon_ref) parameters.
 
-2. Download the cluster autoscaler add-on configmap and review the parameters.
+2. Download the cluster autoscaler add-on ConfigMap and review the parameters.
 
     ```sh
     oc get cm iks-ca-configmap -n kube-system -o yaml > configmap.yaml

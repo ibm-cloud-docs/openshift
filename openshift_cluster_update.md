@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-15"
 
 keywords: openshift, version, upgrade, update
 
@@ -162,7 +162,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 ### Updating classic worker nodes in the CLI with a configmap
 {: #worker-up-configmap}
 
-Set up a configmap to perform a rolling update of your classic worker nodes.
+Set up a ConfigMap to perform a rolling update of your classic worker nodes.
 {: shortdesc}
 
 1. Complete the [prerequisite steps](#worker-up-prereqs).

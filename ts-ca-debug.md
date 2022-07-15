@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-15"
 
 keywords: openshift, autoscaler
 
@@ -50,7 +50,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 {: #ca-debug-config}
 
 Check that the cluster autoscaler is configured correctly.
-1. Get the YAML configuration file of the cluster autoscaler configmap.
+1. Get the YAML configuration file of the cluster autoscaler ConfigMap.
     ```sh
     oc get cm iks-ca-configmap -n kube-system -o yaml > iks-ca-configmap.yaml
     ```
@@ -58,7 +58,7 @@ Check that the cluster autoscaler is configured correctly.
 
 2. In the `data.workerPoolsConfig.json` field, check that the correct worker pools are enabled with the minimum and maximum size per worker pool.
 
-    *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the configmap must be exactly the same as the name of the worker pool in your cluster. Multiple worker pools must be comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-pool ls -c <cluster_name_or_ID>`.
+    *  **`"name": "<worker_pool_name>"`**: The name of your worker pool in the ConfigMap must be exactly the same as the name of the worker pool in your cluster. Multiple worker pools must be comma-separated. To check the name of your cluster worker pools, run `ibmcloud oc worker-pool ls -c <cluster_name_or_ID>`.
     *  **`"minSize": 2`**: In general, the `minSize` must be `2` or greater. Remember that the`minSize` value can't be `0`, and you can only have a `minSize` of 1 if you [disable the public ALBs](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure).
     * **`"maxSize": 3`**: The `maxSize` must be equal to or greater than the `minSize`.
     * **`"enabled": true`**: Set the value to `true` to enable autoscaling the worker pool.

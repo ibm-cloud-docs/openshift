@@ -2774,7 +2774,7 @@ subcollection: openshift
 
 * [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-cluster-scaling-enable#ca_customize)
 
-    * [Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
+    * [Customizing the cluster autoscaler add-on ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
 
 [Deploying apps to worker pools where autoscaling is enabled](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#cluster-scaling-deploy-apps)
 
@@ -4550,9 +4550,9 @@ subcollection: openshift
 
 * [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
 
-    * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+    * [RHEL or CentOS ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
 
-    * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+    * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 

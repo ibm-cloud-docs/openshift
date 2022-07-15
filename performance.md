@@ -279,7 +279,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 
 
 
-1. Edit the `calico-config` configmap resource.
+1. Edit the `calico-config` ConfigMap resource.
     ```sh
     oc edit cm calico-config -n kube-system
     ```
@@ -287,7 +287,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 
 2. In the `data` section, add a `calico_mtu_override: "<new_MTU>"` field and specify the new MTU value for Calico. Note that the quotation marks (`"`) around the new MTU value are required.
 
-    Do not change the values of `mtu` or `veth_mtu`. Changing any other settings besides the `calico_mtu_override` field for the Calico plug-in in this configmap is not supported.
+    Do not change the values of `mtu` or `veth_mtu`. Changing any other settings besides the `calico_mtu_override` field for the Calico plug-in in this ConfigMap is not supported.
     {: important}
 
     ```yaml
@@ -438,7 +438,7 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 
 
 
-1. Edit the `calico-config` configmap resource.
+1. Edit the `calico-config` ConfigMap resource.
     ```sh
     oc edit cm calico-config -n kube-system
     ```
@@ -482,7 +482,7 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
     ```
     {: codeblock}
 
-    Changing any other settings for the Calico plug-in in this configmap is not supported.
+    Changing any other settings for the Calico plug-in in this ConfigMap is not supported.
     {: important}
 
 3. Apply the change to your cluster by restarting all `calico-node` pods.
