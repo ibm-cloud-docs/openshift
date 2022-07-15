@@ -379,7 +379,7 @@ Your authorized users can now continue with [Accessing {{site.data.keyword.redha
 ## Accessing {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}}
 {: #access_cluster_sat}
 
-After you [create an {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
+After you [create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
 
 Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the WireGuard VPN](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift).
@@ -816,13 +816,13 @@ Before you begin, make sure that you have an {{site.data.keyword.redhat_openshif
 ## Accessing clusters from automation tools by using an API key
 {: #access_automation}
 
-{{site.data.keyword.openshiftlong_notm}} is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the {{site.data.keyword.redhat_openshift_notm}} console, your IAM identity is used to generate an {{site.data.keyword.redhat_openshift_notm}} login token that you can use to log in to the command line. You can automate logging in to your cluster by creating an IAM API key or service ID to use for the `oc login` command.
+{{site.data.keyword.openshiftlong_notm}} is integrated with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). With IAM, you can authenticate users and services by using their IAM identities and authorize actions with access roles and policies. When you authenticate as a user through the {{site.data.keyword.redhat_openshift_notm}} console, your IAM identity is used to generate a {{site.data.keyword.redhat_openshift_notm}} login token that you can use to log in to the command line. You can automate logging in to your cluster by creating an IAM API key or service ID to use for the `oc login` command.
 {: shortdesc}
 
 ### Using an API key to log in to clusters
 {: #access_api_key}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
+You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} API key.
@@ -847,7 +847,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         {: pre}
 
-3. Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for an {{site.data.keyword.redhat_openshift_notm}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/authentication/configuring-internal-oauth.html){: external}.
+3. Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for a {{site.data.keyword.redhat_openshift_notm}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/authentication/configuring-internal-oauth.html){: external}.
 
     **Log in by using the `oc` CLI**:
     Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value. To use the private cloud service endpoint, include the `--server=<private_service_endpoint>` flag.
@@ -919,7 +919,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 ### Using a service ID to log in to clusters
 {: #access_service_id}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
+You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.

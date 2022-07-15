@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-07-15"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -35,7 +35,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
 ![Classic](../icons/classic.svg "Classic") Create a {{site.data.keyword.openshiftlong_notm}} cluster on classic {{site.data.keyword.cloud_notm}} infrastructure in the {{site.data.keyword.cloud_notm}} console. To get started, create a cluster that runs OpenShift Container Platform version 4.9. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
-Want to learn more about customizing your cluster setup with the CLI? Check out [Creating an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
+Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
 {: tip}
 
 1. Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.

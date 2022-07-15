@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -488,7 +488,7 @@ Version 0.4.66 of the CLI was released on 19 December 2019.
 Version 0.4.64 of the CLI was released on 11 December 2019.
 
 
-- Adds the `--entitlement` flag to the `ibmcloud oc cluster create` and `ibmcloud oc worker-pool create` commands. Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has an {{site.data.keyword.redhat_openshift_notm}} entitlement.
+- Adds the `--entitlement` flag to the `ibmcloud oc cluster create` and `ibmcloud oc worker-pool create` commands. Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement.
 - Updates the Go version to 1.12.11. 
 - Updates the help text in various languages.
   

@@ -197,7 +197,7 @@ To set up a monitoring configuration for your cluster:
 ## Viewing cluster states
 {: #states}
 
-Review the state of an {{site.data.keyword.redhat_openshift_notm}} cluster to get information about the availability and capacity of the cluster, and potential problems that might occur.
+Review the state of a {{site.data.keyword.redhat_openshift_notm}} cluster to get information about the availability and capacity of the cluster, and potential problems that might occur.
 {: shortdesc}
 
 To view information about a specific cluster, such as its zones, service endpoint URLs, Ingress subdomain, version, and owner, use the `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get). Include the `--show-resources` flag to view more cluster resources such as add-ons for storage pods or subnet VLANs for public and private IPs.

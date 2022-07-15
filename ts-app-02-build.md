@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -44,7 +44,7 @@ Set up the build with access to the image, either by pulling the image from the 
 
 For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](http://docs.openshift.com/container-platform/4.9/cicd/builds/creating-build-inputs.html){: external}.
 
-1. Check the build configuration file to see what registry the build needs pull access to. For example, if your build is part of an {{site.data.keyword.redhat_openshift_notm}} template, the build config `spec.strategy.sourceStrategy.from.name` value refers to the `registry.redhat.io` private registry.
+1. Check the build configuration file to see what registry the build needs pull access to. For example, if your build is part of a {{site.data.keyword.redhat_openshift_notm}} template, the build config `spec.strategy.sourceStrategy.from.name` value refers to the `registry.redhat.io` private registry.
     ```sh
     oc -n openshift get template react-web-app-example -o yaml
     ```

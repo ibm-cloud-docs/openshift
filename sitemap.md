@@ -2291,11 +2291,11 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 
-## Creating an {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
-{: #sitemap_creating_an__cluster_in_your_virtual_private_cloud_vpc}
+## Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
+{: #sitemap_creating_a__cluster_in_your_virtual_private_cloud_vpc}
 
 
-[Creating an {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+[Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
 
 * [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
 
@@ -7257,7 +7257,7 @@ subcollection: openshift
 
 * [Time out when trying to connect to a pod](/docs/openshift?topic=openshift-ts_clis#roks_timeout)
 
-* [500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login)
+* [500 error when trying to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login)
 
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
 

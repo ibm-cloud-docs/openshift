@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -282,7 +282,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.2.9 | v1.2.11 | Fixed {{site.data.keyword.redhat_openshift_notm}} version check for unsupported add-ons. Updated to use `Go` version 1.15.11. Updated image to implement additional IBM security controls and for [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3449){: external}, [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3450){: external}, and [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}. |
-| Cluster master operations | N/A | N/A | Resolved an {{site.data.keyword.redhat_openshift_notm}} API server target down alert on clusters that are updated from version 4.4 or earlier. |
+| Cluster master operations | N/A | N/A | Resolved a {{site.data.keyword.redhat_openshift_notm}} API server target down alert on clusters that are updated from version 4.4 or earlier. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.0.1 | v2.0.3 | Updated to use `Go` version 1.15.9 and for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.18.17-1 | v1.18.18-1 | Updated to support the Kubernetes 1.18.18 release. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 389 | 390 | Updated to use `Go` version 1.15.9 and for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}, and [CVE-2021-3121](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3121){: external}. |

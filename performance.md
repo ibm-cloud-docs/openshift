@@ -234,7 +234,7 @@ To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that 
 ### Changing the Calico MTU for version 4 clusters
 {: #calico-mtu-43}
 
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
+Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in a {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
@@ -274,7 +274,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 ### Changing the Calico MTU for 3.11 clusters
 {: #calico-mtu-311}
 
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
+Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in a {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
 {: shortdesc}
 
 
@@ -397,7 +397,7 @@ If you must use `hostPorts`, don't disable the port map plug-in.
 ### Disabling the port map plug-in for version 4 clusters
 {: #calico-portmap-43}
 
-Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
+Disable the port map plug-in by disabling `hostPorts` for Calico in a {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
@@ -433,7 +433,7 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 ### Disabling the port map plug-in for 3.11 clusters
 {: #calico-portmap-311}
 
-Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
+Disable the port map plug-in by disabling `hostPorts` for Calico in a {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
 {: shortdesc}
 
 

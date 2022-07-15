@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -165,7 +165,7 @@ Review the following characteristics to decide which {{site.data.keyword.openshi
 ![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} version 3.11 is unsupported as of 06 June 2022.
 {: important}
 
-You can't update from an {{site.data.keyword.redhat_openshift_notm}} 3.11 to 4 cluster. Instead, [create a version 4 cluster](/docs/openshift?topic=openshift-clusters).
+You can't update from a {{site.data.keyword.redhat_openshift_notm}} 3.11 to 4 cluster. Instead, [create a version 4 cluster](/docs/openshift?topic=openshift-clusters).
 {: note}
 
 |Characteristics|{{site.data.keyword.redhat_openshift_notm}} 3.11|{{site.data.keyword.redhat_openshift_notm}} 4|

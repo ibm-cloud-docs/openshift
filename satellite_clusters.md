@@ -104,7 +104,7 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     ```
     {: screen}
 
-3. Create an {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location. Specify {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane. 
+3. Create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location. Specify {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane. 
 
     * To ensure that hosts are automatically assigned as worker nodes in the default worker pool of your cluster, specify those hosts' labels in the `--host-label` flags, and specify the number of worker nodes per zone in the `--workers` flag. 
     * To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -115,11 +115,11 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: pre}
     
-## 500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`
+## 500 error when trying to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`
 {: #500_error_oc_login}
 
 
-When you try to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` for the first time and you see an error message similar to the following.
+When you try to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` for the first time and you see an error message similar to the following.
 {: tsSymptoms}
 
 ```txt

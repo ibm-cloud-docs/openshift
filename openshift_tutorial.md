@@ -36,7 +36,7 @@ With {{site.data.keyword.openshiftlong}}, you can create highly available cluste
 ## Objectives
 {: #openshift_objectives}
 
-In the tutorial lessons, you create a standard {{site.data.keyword.openshiftlong_notm}} cluster, open the {{site.data.keyword.redhat_openshift_notm}} console, access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in an {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on an {{site.data.keyword.redhat_openshift_notm}} route so that external users can access the service.
+In the tutorial lessons, you create a standard {{site.data.keyword.openshiftlong_notm}} cluster, open the {{site.data.keyword.redhat_openshift_notm}} console, access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in a {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on a {{site.data.keyword.redhat_openshift_notm}} route so that external users can access the service.
 {: shortdesc}
 
 ![OpenShift tutorial diagram.](images/roks_tutorial.png){: caption="Figure 1. OpenShift tutorial diagram" caption-side="bottom"}
@@ -145,13 +145,13 @@ Developer perspective
 {: #openshift_deploy_app}
 {: step}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can create a new app and expose your app service via an {{site.data.keyword.redhat_openshift_notm}} Ingress controller for external users to use.
+With {{site.data.keyword.openshiftlong_notm}}, you can create a new app and expose your app service via a {{site.data.keyword.redhat_openshift_notm}} Ingress controller for external users to use.
 {: shortdesc}
 
 If you took a break from the last lesson and started a new command line, make sure that you log back in to your cluster. Open your {{site.data.keyword.redhat_openshift_notm}} web console at `https://<master_URL>/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. Then from the menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
 {: tip}
 
-1. Create a project for your Hello World app. A project is an {{site.data.keyword.redhat_openshift_notm}} version of a Kubernetes namespace with additional annotations.
+1. Create a project for your Hello World app. A project is a {{site.data.keyword.redhat_openshift_notm}} version of a Kubernetes namespace with additional annotations.
     ```sh
     oc new-project hello-world
     ```
