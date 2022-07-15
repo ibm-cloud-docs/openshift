@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 subcollection: openshift
@@ -210,6 +210,8 @@ subcollection: openshift
     * [15 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1522)
 
         * CLI change log update
+
+        * Cluster autoscaler add-on
 
     * [14 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1422)
 
@@ -2282,9 +2284,7 @@ subcollection: openshift
 
 * [Navigate the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-    * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
-
-    * [![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console311_overview_tutorial)
+    * [{{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
 
 * [Deploy an app to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
@@ -2842,7 +2842,9 @@ subcollection: openshift
 
     * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
 
-* [Modifying default worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
+* [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
+
+    * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
@@ -2951,12 +2953,6 @@ subcollection: openshift
     * [{{site.data.keyword.redhat_openshift_notm}} version 4 master components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-master)
 
     * [{{site.data.keyword.redhat_openshift_notm}} version 4 worker node components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-workers)
-
-* [Classic {{site.data.keyword.redhat_openshift_notm}} version 3 architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-3)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} version 3 master components](/docs/openshift?topic=openshift-service-architecture#version-3-master)
-
-    * [Classic version 3 worker node components](/docs/openshift?topic=openshift-service-architecture#version-3-worker)
 
 * [VPC cluster service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc)
 
@@ -3710,8 +3706,6 @@ subcollection: openshift
 
     * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
 
-    * [![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console311_overview)
-
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
 * [About NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport_planning)
@@ -3803,22 +3797,6 @@ subcollection: openshift
 * [Step 5: Create an encrypted route with the certificate](/docs/openshift?topic=openshift-hpcs-router#create-route)
 
 * [Version history](/docs/openshift?topic=openshift-hpcs-router#hpcs-versions)
-
-[Exposing apps with routes in {{site.data.keyword.redhat_openshift_notm}} 3.11](/docs/openshift?topic=openshift-routes-311#routes-311)
-
-* [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview-311)
-
-    * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-routes-311#route_single)
-
-    * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-routes-311#route_multi)
-
-* [Route types and TLS termination](/docs/openshift?topic=openshift-routes-311#route-types)
-
-* [Setting up public routes](/docs/openshift?topic=openshift-routes-311#routes-setup-311)
-
-* [Setting up private routes](/docs/openshift?topic=openshift-routes-311#private-routes-311)
-
-* [Moving router services across VLANs](/docs/openshift?topic=openshift-routes-311#migrate-router-vlan)
 
 
 ### Exposing apps with load balancers
@@ -4668,10 +4646,6 @@ subcollection: openshift
 * [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4)
 
 * [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub)
-
-* [Using Operators in 3.11 clusters](/docs/openshift?topic=openshift-operators#operators_311)
-
-* [Using the service catalog in 3.11 clusters](/docs/openshift?topic=openshift-operators#service_catalog)
 
 [Setting up the {{site.data.keyword.redhat_notm}} Marketplace](/docs/openshift?topic=openshift-rh-marketplace#rh-marketplace)
 
@@ -5990,6 +5964,10 @@ subcollection: openshift
     * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-ca_changelog#110475_ca)
 
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
+
+* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#105694_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-07-15"
 
 keywords: openshift, networking
 
@@ -34,9 +34,6 @@ To securely expose your apps to external traffic, you can use choose from the fo
     - The Route resource defines the rules for how to route and load balance incoming requests for an app.
 
 :   A Route exposes a service as a hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. An Ingress controller is deployed by default to your cluster, which enable Routes to be used by external clients. The Ingress controller uses the service selector to find the service and the endpoints that back the service. You can configure the service selector to direct traffic through one Route to multiple services. You can also create either unsecured or secured Routes by using the TLS certificate that is assigned by the Ingress controller for your hostname. Note that the Ingress controller supports only the HTTP and HTTPS protocols.
-
-[{{site.data.keyword.redhat_openshift_notm}} Router](/docs/openshift?topic=openshift-routes-311)
-:   ![Version 3.11 icon.](images/icon-version-311.png) **{{site.data.keyword.redhat_openshift_notm}} version 3.11 clusters**: The {{site.data.keyword.redhat_openshift_notm}} Router in the {{site.data.keyword.redhat_openshift_notm}} version 3.11 clusters is the same functionality as the {{site.data.keyword.redhat_openshift_notm}} Ingress controller in the {{site.data.keyword.redhat_openshift_notm}} version 4 clusters. The Router is a HAProxy-based Kubernetes service that manages all incoming traffic for the apps in your cluster by implementing routing rules for the apps. The Router listens for incoming HTTP, or HTTPS service requests, and then forwards requests to the pods for that app only according to the rules defined in the Route resources.The Router processes the Route resources and exposes the services as configrued in those Route resources.
 
 [NodePort](/docs/openshift?topic=openshift-nodeport)
 :   When you expose apps with a NodePort service, a NodePort in the range of 30000 - 32767 and an internal cluster IP address is assigned to the service. To access the service from outside the cluster, you use the public or private IP address of any worker node and the NodePort in the format `<IP_address>:<nodeport>`. However, the public and private IP addresses of the worker node are not permanent. When a worker node is removed or re-created, a new public and a new private IP address are assigned to the worker node. NodePorts are ideal for testing public or private access or providing access for only a short amount of time.

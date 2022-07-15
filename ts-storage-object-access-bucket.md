@@ -26,11 +26,6 @@ content-type: troubleshoot
 * ![VPC](../icons/vpc.svg "VPC") VPC
 
 
-![Version 3.11 icon.](images/icon-version-311.png) This troubleshooting topic applies only to {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
-{: note}
-
-
-
 
 When you create the PVC, the bucket in {{site.data.keyword.cos_full_notm}} can't be accessed. You see an error message similar to the following:
 {: tsSymptoms}

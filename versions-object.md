@@ -97,8 +97,9 @@ Refer to the following tables for a summary of changes for each version of the [
 - Updates the UBI to `8.5-240`
 - Updates Golang to `v1.16.15`
 - Resolves [CVE-2022-24921](https://nvd.nist.gov/vuln/detail/CVE-2022-24921){: external}, and [CVE-2022-23852](https://nvd.nist.gov/vuln/detail/CVE-2022-23852){: external}.
-- s3fs fuse updated to `v1.91`
-- Added support for additional mount options `Ex: ibm.io/add-mount-param: "del_cache,retries=6"`
+- Updates s3fs fuse to `v1.91`.
+- Adds support for additional mount options `Ex: ibm.io/add-mount-param: "del_cache,retries=6"`.
+- Fixes a bug where `mixupload` returns `EntityTooSmall` when a `copypart` is less than 5MB after split.
 
 
 ## Change log for version 2.1.12, released 11 March 2022

@@ -26,12 +26,6 @@ content-type: troubleshoot
 * ![VPC](../icons/vpc.svg "VPC") VPC
 
 
-![Version 3.11 icon.](images/icon-version-311.png) This troubleshooting topic applies only to {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
-{: note}
-
-
-
-
 When you install the {{site.data.keyword.cos_full_notm}} `ibmc` Helm plug-in, the installation fails with one of the following errors:
 {: tsSymptoms}
 

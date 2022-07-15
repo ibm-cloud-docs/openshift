@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-01"
+lastupdated: "2022-07-15"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -888,9 +888,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```sh
         <token_endpoint>/oauth/token
         ```
-    3. Log in to the cluster with the endpoint that you previously retrieved.
-        * ![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.redhat_openshift_notm}} version 4**: Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
-        * ![Version 3.11 icon.](images/icon-version-311.png) **{{site.data.keyword.redhat_openshift_notm}} version 3.11**: Replace `<URL>` with the master URL.
+    3. Log in to the cluster with the endpoint that you previously retrieved. Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
 
         Example curl request:
         ```sh

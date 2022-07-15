@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: openshift, benchmarks, 4.9, compliance operator, compliance
 
@@ -26,9 +26,7 @@ subcollection: openshift
 ### 1.1 Master node configuration files
 {: #co-benchmark-49-11}
 
-Master node configuration is not stored as a set of files, and
-therefore rules in section 1.1 are out of the scope of automated
-check by Compliance Operator.
+Master node configuration is not stored as a set of files, therefore rules in section 1.1 are out of the scope of automated check by the Compliance Operator.
 
 ### 1.2 API server
 {: #co-benchmark-49-12}

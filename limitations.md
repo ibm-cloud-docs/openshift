@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -46,7 +46,6 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | KMS provider | Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementservicefull}} instance is not supported.|
 | {{site.data.keyword.redhat_openshift_notm}} | Make sure to review the [OpenShift Container Platform limitations](https://docs.openshift.com/container-platform/4.9/scalability_and_performance/planning-your-environment-according-to-object-maximums.html){: external} for your version.|
 | Kubernetes pod logs | To check the logs for individual app pods, you can use the command line to run `oc logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard. |
-| Logging | ![Version 3.11 icon.](images/icon-version-311.png) **{{site.data.keyword.redhat_openshift_notm}} 3.11 only**: You can't run the Ansible playbook to deploy the  [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/3.11/install_config/aggregate_logging.html){: external} because you can't modify the default configuration of the {{site.data.keyword.openshiftlong_notm}} cluster. In addition, collecting and forwarding API audit logs to {{site.data.keyword.la_full_notm}} is not supported.  |
 | Monitoring |  - Because IBM manages your cluster master, event alerting for the master is disabled. IBM monitors your cluster master and fixes issues as they are detected. For this reason, in the Administrator perspective of the {{site.data.keyword.redhat_openshift_notm}}, you might see a `Not available` message for the control plane status. \n - The built-in Prometheus alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts. |
 | Operating system | Worker nodes must run RHEL 7 . You can't create a cluster with worker nodes that run different types of operating systems, such as {{site.data.keyword.redhat_openshift_notm}} on Red Hat Enterprise Linux and community Kubernetes on Ubuntu.|
 | OperatorHub catalog | To use the OperatorHub catalog in private clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, see [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub). |

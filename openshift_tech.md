@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -203,116 +203,6 @@ Projects
 :   The certificate authority (CA) operator runs certificate signing and injects certificates into API server resources and configmaps in the cluster. For more information, see the [GitHub project](https://github.com/openshift/service-ca-operator){: external}.
 
 
-## Classic {{site.data.keyword.redhat_openshift_notm}} version 3 architecture
-{: #service-architecture-3}
-
-![Classic](../icons/classic.svg "Classic") ![Version 3.11 icon.](images/icon-version-311.png) Review the architecture diagram and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 3. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/3.11/architecture/index.html){: external}.
-{: shortdesc}
-
-![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks.png){: caption="Figure 1. Classic Red Hat OpenShift version 3 architecture" caption-side="bottom"}
-
-### {{site.data.keyword.redhat_openshift_notm}} version 3 master components 
-{: #version-3-master}
-
-Single tenancy
-:   The master and all master components are dedicated only to you, and are not shared with other IBM customers.
-
-Replicas
-:   Master components, including the {{site.data.keyword.redhat_openshift_notm}} Kubernetes API server and etcd data store have three replicas and, if located in a multizone metro, are spread across zones for even higher availability. The master components are backed up every 8 hours.
-
-`openshift-api`
-:   The {{site.data.keyword.redhat_openshift_notm}} Kubernetes API server serves as the main entry point for all cluster management requests from the worker node to the master. The API server validates and processes requests that change the state of Kubernetes resources, such as pods or services, and stores this state in the etcd data store.
-
-`openvpn-server`
-:   The OpenVPN server works with the OpenVPN client to securely connect the master to the worker node. This connection supports `apiserver proxy` calls to your pods and services, and `oc exec`, `attach`, and `logs` calls to the kubelet.
-
-`etcd`
-:   etcd is a highly available key value store that stores the state of all Kubernetes resources of a cluster, such as services, deployments, and pods. Data in etcd is backed up to an encrypted storage instance that IBM manages.
-
-`openshift-controller`
-:   The {{site.data.keyword.redhat_openshift_notm}} controller manager watches for newly created pods and decides where to deploy them based on capacity, performance needs, policy constraints, anti-affinity specifications, and workload requirements. If no worker node can be found that matches the requirements, the pod is not deployed in the cluster. The controller also watches the state of cluster resources, such as replica sets. When the state of a resource changes, for example if a pod in a replica set goes down, the controller manager initiates correcting actions to achieve the required state. The `openshift-controller` functions as both the scheduler and controller manager in a community Kubernetes configuration.
-
-`cloud-controller-manager`
-:   The cloud controller manager manages cloud provider-specific components such as the {{site.data.keyword.cloud_notm}} load balancer.
-
-Admission controllers
-:   Admission controllers are implemented for specific features in {{site.data.keyword.openshiftlong_notm}} clusters. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user can't perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the API server. When you create an {{site.data.keyword.redhat_openshift_notm}} cluster, the following [Kubernetes admission controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} are automatically installed in the given order in the {{site.data.keyword.redhat_openshift_notm}} master, which you can't change:
-    - `NamespaceLifecycle`
-    - `LimitRanger` -`ServiceAccount`
-    - `DefaultStorageClass`
-    - `ResourceQuota`
-    - `StorageObjectInUseProtection`
-    - `PersistentVolumeClaimResize`
-    - `Priority`
-    - `BuildByStrategy`
-    - `OriginPodNodeEnvironment`
-    - `PodNodeSelector`
-    - `ExternalIPRanger`
-    - `NodeRestriction`
-    - `SecurityContextConstraint`
-    - `SCCExecRestrictions`
-    - `PersistentVolumeLabel`
-    - `OwnerReferencesPermissionEnforcement`
-    - `PodTolerationRestriction`
-    - `openshift.io/JenkinsBootstrapper`
-    - `openshift.io/BuildConfigSecretInjector`
-    - `openshift.io/ImageLimitRange`
-    - `openshift.io/RestrictedEndpointsAdmission`
-    - `openshift.io/ImagePolicy`
-    - `openshift.io/IngressAdmission`
-    - `openshift.io/ClusterResourceQuota`
-    - `MutatingAdmissionWebhook`
-    - `ValidatingAdmissionWebhook`
-
-:   You can [install your own admission controllers in the cluster](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks){: external} or choose from the optional admission controllers that {{site.data.keyword.openshiftlong_notm}} provides.
-:   Container image security enforcement: Install [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec) to block container deployments from unsigned images.
-:   If you manually installed admission controllers and you don't want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.
-
-
-### Classic version 3 worker node components
-{: #version-3-worker}
-
-Single tenancy
-:   The worker nodes and all worker node components are dedicated only to you, and are not shared with other IBM customers. However, if you use worker node virtual machines, the underlying hardware might be shared with other IBM customers depending on the [level of hardware isolation](/docs/openshift?topic=openshift-planning_worker_nodes#vm) that you choose.
-
-Operating System
-:   {{site.data.keyword.openshiftlong_notm}} worker nodes run on the Red Hat Enterprise Linux 7 operating system.
-
-Projects
-:   {{site.data.keyword.redhat_openshift_notm}} organizes your resources into projects, which are Kubernetes namespaces with annotations, and includes many more components than community Kubernetes clusters to run {{site.data.keyword.redhat_openshift_notm}} features such as the catalog. Select components of projects are described in the following rows. For more information, see [Working with projects](http://docs.openshift.com/container-platform/4.9/applications/projects/working-with-projects.html){: external}.
-
-`kube-system`
-:   This namespace includes many components that are used to run Kubernetes on the worker node.
-    - `ibm-master-proxy`: The `ibm-master-proxy` is a daemon set that forwards requests from the worker node to the IP addresses of the highly available master replicas. In single zone clusters, the master has three replicas on separate hosts. For clusters that are in a multizone-capable zone, the master has three replicas that are spread across zones. A highly available load balancer forwards requests to the master domain name to the master replicas.
-    - `openvpn-client`: The OpenVPN client works with the OpenVPN server to securely connect the master to the worker node. This connection supports `apiserver proxy` calls to your pods and services, and `oc exec`, `attach`, and `logs` calls to the kubelet.
-    - `kubelet`: The kubelet is a worker node agent that runs on every worker node and is responsible for monitoring the health of pods that run on the worker node and for watching the events that the Kubernetes API server sends. Based on the events, the kubelet creates or removes pods, ensures liveness and readiness probes, and reports back the status of the pods to the Kubernetes API server.
-    - `calico`: Calico manages network policies for your cluster, and includes a few components to manage container network connectivity, IP address assignment, and network traffic control.
-    - Other components: The `kube-system` namespace also includes components to manage IBM-provided resources such as storage plug-ins for file and block storage, ingress application load balancer (ALB), `fluentd` logging, and `keepalived`.
-
-`ibm-system`
-:   This namespace includes the `ibm-cloud-provider-ip` deployment that works with `keepalived` to provide health checking and Layer 4 load balancing for requests to app pods.
-
-`kube-proxy-and-dns`
-:   This namespace includes the components to validate incoming network traffic against the `iptables` rules that are set up on the worker node, and proxies requests that are allowed to enter or leave the cluster.
-
-`default`
-:   This namespace is used if you don't specify a namespace or create a project for your Kubernetes resources. In addition, the default namespace includes the following components to support your {{site.data.keyword.redhat_openshift_notm}} clusters.
-    - `router`: {{site.data.keyword.redhat_openshift_notm}} uses [routes](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html){: external} to expose an app's service on a hostname so that external clients can reach the service. The router maps the service to the hostname. By default, the router includes two replicas. Make sure that your cluster has at least two worker nodes so that the router can run on separate compute hosts for higher availability.
-    - `docker-registry` and `registry-console`.: {{site.data.keyword.redhat_openshift_notm}} provides an internal [container image registry](https://docs.openshift.com/container-platform/3.11/install_config/registry/index.html){: external} that you can use to locally manage and view images through the console. Alternatively, you can set up the private {{site.data.keyword.registrylong_notm}}. The internal registry comes with a classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} volume in your IBM Cloud infrastructure account to [store the registry images](/docs/openshift?topic=openshift-registry#openshift_internal_registry) by using the `registry-backing` persistent volume claim (PVC).|
-
-Other projects
-:   Other components are installed in various namespaces by default to enable functionality such as logging, monitoring, and the {{site.data.keyword.redhat_openshift_notm}} console.
-    - `ibm-cert-store`
-    - `kube-public`
-    - `kube-service-catalog`
-    - `openshift`
-    - `openshift-ansible-service-broker`
-    - `openshift-console`
-    - `openshift-infra`
-    - `openshift-monitoring`
-    - `openshift-node`
-    - `openshift-template-service-broker`
-    - `openshift-web-console`
 
 
 

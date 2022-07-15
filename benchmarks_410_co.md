@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: openshift, benchmarks, 4.9, compliance operator, compliance
 
@@ -31,8 +31,10 @@ Master node configuration is not stored as a set of files, therefore rules in se
 ### 1.2 API server
 {: #co-benchmark-410-12}
 
-| -- | -- | -- | -- | -- |
-| 1.2.1|Ensure that anonymous requests are authorized. |Manual|1|Pass |
+
+| Section|Recommendation|Manual/Automated|Level|Result |
+| --- | --- | --- | --- | --- |
+| 1.2.1 | Ensure that anonymous requests are authorized. | Manual | 1| Pass |
 | 1.2.2|Ensure that the `--basic-auth-file` option is not set. |Automated|1|Pass |
 | 1.2.3|Ensure that the `--token-auth-file` parameter is not set. |Automated|1|Pass |
 | 1.2.4|Use `https` for kubelet connections. |Automated|1|[Fail](#co-benchmark-410-remdiations) |

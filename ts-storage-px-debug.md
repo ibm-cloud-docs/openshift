@@ -95,8 +95,6 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx#create_block_storage) to your cluster so that Portworx can include the disks into the Portworx storage layer.
 3. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/containers?topic=containers-plan_clusters).
 
-
-
 ## Step 3: Reach out to Portworx and IBM
 {: #px-support}
 
