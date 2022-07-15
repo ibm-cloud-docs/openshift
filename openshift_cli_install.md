@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-15"
 
 keywords: openshift, oc
 
@@ -115,91 +115,20 @@ Looking for a simple installation? You can try installing the plug-in with a pac
 
 1. Download the latest {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) for your local operating system and {{site.data.keyword.redhat_openshift_notm}} version. The current default {{site.data.keyword.redhat_openshift_notm}} version is 4.9. If you use Windows, install the `oc` CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. You can get the download link for `oc` from the {{site.data.keyword.redhat_openshift_notm}} web console, or manually from the `mirror.openshift.com` website.
 
-    **![Version 4 icon.](images/icon-version-43.png) Version 4 clusters only: Download the `oc` CLI from your cluster.**
     1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
     2. Click **{{site.data.keyword.redhat_openshift_notm}} web console**.
     3. From the menu bar, click the information (question mark) icon.
     4. Click **Command Line Tools**.
     5. Click the download link for your operating system.
 
-    **![Version 3.11 icon.](images/icon-version-311.png) ![Version 4 icon.](images/icon-version-43.png) Version 3 or 4 clusters: Links to manually download the `oc` CLI from `mirror.openshift.com`.**
-    * [OpenShift Container Platform version 3 `oc` download link](https://mirror.openshift.com/pub/openshift-v3/clients/){: external}
-    * [OpenShift Container Platform version 4 `oc` download links](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/){: external}.
+2. [Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.redhat_openshift_notm}} cluster](https://kubernetes.io/docs/tasks/tools/){: external}. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.24.1. For clusters that run {{site.data.keyword.redhat_openshift_notm}}, download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.redhat_openshift_notm}} cluster. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_changelog).
 
-2. Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.redhat_openshift_notm}} cluster. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.24.1.
-
-    * ![Version 3.11 icon.](images/icon-version-311.png) For clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11: Download at least version 1.15. Because earlier `kubectl` versions are no longer supported, the `kubectl` version that you use for your {{site.data.keyword.redhat_openshift_notm}} 3.11, Kubernetes 1.11 cluster can't meet the `+/- 1` [skew policy](https://kubernetes.io/releases/version-skew-policy/){: external}. Instead, use at least `kubectl` version 1.15 to protect your cluster from Common Vulnerability and Exposures (CVEs) that might arise in unsupported versions.
-        - **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/darwin/amd64/kubectl){: external}
-        - **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/linux/amd64/kubectl){: external}
-        - **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.15.11/bin/windows/amd64/kubectl.exe){: external}
-    * ![Version 4 icon.](images/icon-version-43.png) For clusters that run {{site.data.keyword.redhat_openshift_notm}} 4: Download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.redhat_openshift_notm}} cluster. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_changelog).
-        - **OS X**: [https://storage.googleapis.com/kubernetes-release/release/v1.23/bin/darwin/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.23/bin/darwin/amd64/kubectl){: external}
-        - **Linux**: [https://storage.googleapis.com/kubernetes-release/release/v1.23/bin/linux/amd64/kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.23/bin/linux/amd64/kubectl){: external}
-        - **Windows**: Install the Kubernetes CLI in the same directory as the {{site.data.keyword.cloud_notm}} CLI. This setup saves you some file path changes when you run commands later. [https://storage.googleapis.com/kubernetes-release/release/v1.23/bin/windows/amd64/kubectl.exe](https://storage.googleapis.com/kubernetes-release/release/v1.23/bin/windows/amd64/kubectl.exe){: external}
 
     If you have multiple clusters that run different versions of Kubernetes, you can download separate `kubectl` binary files. Then, set up an alias in your local command-line interface (CLI) profile to point to the separate binary files that match the version of `kubectl` your cluster needs.
     {: tip}
 
-3. Open the downloaded, compressed files. For example, you might double-click the compressed files in your Downloads folder, or run a command such as `tar -xvf oc.tar.gz`.
-4. Complete the following steps to add the binary files to your `PATH` system variable.
 
-**If you use Mac OS or Linux**
-
-1. Move the `oc` and `kubectl` executable files to the `/usr/local/bin` directory.
-    ```sh
-    mv /<filepath>/oc /usr/local/bin/oc
-    ```
-    {: pre}
-
-    ```sh
-    mv /<filepath>/kubectl /usr/local/bin/kubectl
-    ```
-    {: pre}
-
-2. Make sure that `/usr/local/bin` is listed in your `PATH` system variable. The `PATH` variable contains all directories where your operating system can find executable files. The directories that are listed in the `PATH` variable serve different purposes. `/usr/local/bin` is used to store executable files for software that is not part of the operating system and that was manually installed by the system administrator.
-    ```sh
-    echo $PATH
-    ```
-    {: pre}
-
-    Example CLI output:
-    ```sh
-    /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-    ```
-    {: screen}
-        
-**If you use Windows**
-
-1. Move the `oc` and `kubectl` executable files to the `C:\Program Files\IBM\Cloud\bin` directory.
-     ```sh
-    move "/<filepath>/oc" "C:\Program Files\IBM\Cloud\bin"
-    ```
-    {: pre}
-
-    ```sh
-    move "/<filepath>/kubectl" "C:\Program Files\IBM\Cloud\bin"
-    ```
-    {: pre}
-    
-2. Make sure that `C:\Program Files\IBM\Cloud\bin` is listed in your `PATH` system variable. The `PATH` variable contains all directories where your operating system can find executable files. The directories that are listed in the `PATH` variable serve different purposes. `C:\Program Files\IBM\Cloud\bin` is used to store executable files for the IBM Cloud software that is not part of the operating system and that was manually installed by the system administrator.
-    ```sh
-    echo $PATH
-    ```
-    {: pre}
-    
-    Example CLI output:
-    ```sh
-    PATH:C:\Windows\System32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
-    ```
-    {: screen}
-    
-    If `C:\Program Files\IBM\Cloud\bin` is not listed, add it to your `PATH` system variable.
-    ```sh
-    set PATH="%PATH%;C:\Program Files\IBM\Cloud\bin\"
-    ```
-    {: pre}           
-
-**Optional**: [Enable autocompletion for `kubectl` commands](https://kubernetes.io/docs/tasks/tools/#enabling-shell-autocompletion){: external}. The steps vary depending on the shell that you use. You can repeat the steps to enable autocompletion for `oc` commands. For example, in bash on Linux, instead of `kubectl completion bash >/etc/bash_completion.d/kubectl`, you can run `oc completion bash >/etc/bash_completion.d/oc_completion`.
+3. **Optional**: [Enable autocompletion for `kubectl` commands](https://kubernetes.io/docs/tasks/tools/#enabling-shell-autocompletion){: external}. The steps vary depending on the shell that you use. You can repeat the steps to enable autocompletion for `oc` commands. For example, in bash on Linux, instead of `kubectl completion bash >/etc/bash_completion.d/kubectl`, you can run `oc completion bash >/etc/bash_completion.d/oc_completion`.
 
 Next, start [Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial).
 
@@ -360,7 +289,6 @@ To launch and use the {{site.data.keyword.cloud-shell_notm}}:
 
 If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm}} console, you can set the cluster context with the `--admin` flag through the CLI with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin` command.
 {: note}
-
 
 
 

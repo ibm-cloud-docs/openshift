@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-15"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -29,30 +29,15 @@ Release updates
 
 Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-classic-vpc).
 
-As of 23 June 2021, version `1.0.2` of the cluster autoscaler add-on is deprecated and becomes unsupported on 23 July 2021. Version `1.0.3`, which adds support for Kubernetes 1.21 is now available. If you have a deprecated or unsupported version of the add-on installed in your cluster, update the add-on to version `1.0.3`. To update the add-on in your cluster, disable the add-on and then re-enable the add-on. You might see a warning that resources or data might be deleted. For the cluster autoscaler update, any autoscaling operations that are in process when you disable the add-on fail. When you re-enable the add-on, autoscaling operations are restarted for you. Existing cluster autoscaler resources like the `iks-ca-configmap` are retained even after you disable the add-on. Your worker nodes are not deleted because of disabling the add-on.
-{: important}
+To view a list of add-ons and the supported cluster versions, run the following command or see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
-To view a list of add-ons and the supported cluster versions, run the following command.
 ```sh
-ibmcloud oc cluster addon versions --addon cluster-autoscaler
+ibmcloud oc cluster addon versions
 ```
 {: pre}
 
-| Cluster autoscaler add-on version | Supported? | Cluster version support |
-| -------------------- | -----------|--------------------------- |
-| 1.1.0 | Yes |  >=4.6 |
-| 1.0.5 | Yes |  >=4.6 |
-| 1.0.4 | Yes |  >=4.3 |
-| 1.0.3 | Yes |  >=4.3 |
-| 1.0.2 | Yes |  4.3 - 4.6 |
-| 1.0.1 | No |  4.3 - 4.6 |
-{: caption="Cluster autoscaler add-on version support" caption-side="top"}
-
 ## Version 1.1.0
 {: #0110_ca_addon}
-
-Review the changes included in version 1.1.0 of the managed cluster autoscaler add-on.
-{: shortdesc}
 
 ### Change log for patch update 1.1.0_682, released 30 June 2022
 {: #110682_ca}
@@ -82,11 +67,18 @@ Review the changes included in version 1.1.0 of the managed cluster autoscaler a
 - Image tags: `1.19.1-11`, `1.20.0-11`, `1.21.0-7`, `1.22.0-5`, `1.23.0-2`
 - Adds Beta support for {{site.data.keyword.satelliteshort}} clusters in allowlisted accounts.
 
-## Version 1.0.5
+## Version 1.0.6
 {: #0105_ca_addon}
 
-Review the changes included in version 1.0.5 of the managed cluster autoscaler add-on.
-{: shortdesc}
+### Change log for patch update 1.0.6_742, released 15 July 2022
+{: #105694_ca}
+
+- Adds support for Kubernetes 1.24.
+- Resolves [CVE-2022-29526](https://nvd.nist.gov/vuln/detail/CVE-2022-29526){: external}.
+- Image tags: `1.19.1 106-1`, `1.20.0 106-1`, `1.21.0 106-1`, `1.22.0 106-1`, `1.23.0 106-1`, `1.24.0 106-1`
+
+## Version 1.0.5
+{: #0105_ca_addon}
 
 ### Change log for patch update 1.0.5_694, released 30 June 2022
 {: #105694_ca}
@@ -339,7 +331,7 @@ Review the changes in version `1.0.1_124` of the cluster autoscaler add-on.
 
 - Image tags: `1.15.4-4`, `1.16.2-6`, `1.17.0-7`, `1.18.1-6`, and `1.19.0-1`.  
 - Supported cluster versions: 4.3 - 4.5  
-- Exposes the `--new-pod-scale-up-delay` flag in the configmap.  
+- Exposes the `--new-pod-scale-up-delay` flag in the ConfigMap.  
 - Adds support for Kubernetes 1.19.  
 
 ### Change log for patch update 1.0.1_114, released 10 September 2020
@@ -352,4 +344,3 @@ Review the changes in version `1.0.1_114` of the cluster autoscaler add-on.
 - Supported cluster versions: 4.3 - 4.5  
 - Includes fixes for `CVE-5188` and `CVE-3180`.  
 - Unlike the previous Helm chart, you can modify all the add-on configuration settings via a single configmap.  
-

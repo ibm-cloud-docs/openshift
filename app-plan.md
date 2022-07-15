@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: openshift, deploy
 
@@ -276,7 +276,7 @@ The following table describes why you might create different types of Kubernetes
 To add variable information to your deployments instead of hard-coding the data into the YAML file, you can use a Kubernetes [`ConfigMap`](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external} or [`Secret`](https://kubernetes.io/docs/concepts/configuration/secret/){: external} object.
 {: shortdesc}
 
-To consume a configmap or secret, you need to mount it to the pod. The configmap or secret is combined with the pod just before the pod is run. You can reuse a deployment spec and image across many apps, but then swap out the customized configmaps and secrets. Secrets in particular can take up a lot of storage on the local node, so plan accordingly.
+To consume a ConfigMap or secret, you need to mount it to the pod. The ConfigMap or secret is combined with the pod just before the pod is run. You can reuse a deployment spec and image across many apps, but then swap out the customized configmaps and secrets. Secrets in particular can take up a lot of storage on the local node, so plan accordingly.
 
 Both resources define key-value pairs, but you use them for different situations.
 

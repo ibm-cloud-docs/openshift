@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
+
+    * [15 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1522)
+
+        * CLI change log update
+
+        * Cluster autoscaler add-on
 
     * [14 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1422)
 
@@ -2278,20 +2284,18 @@ subcollection: openshift
 
 * [Navigate the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-    * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
-
-    * [![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console311_overview_tutorial)
+    * [{{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
 
 * [Deploy an app to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 
-## Creating an {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
-{: #sitemap_creating_an__cluster_in_your_virtual_private_cloud_vpc}
+## Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
+{: #sitemap_creating_a__cluster_in_your_virtual_private_cloud_vpc}
 
 
-[Creating an {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+[Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
 
 * [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
 
@@ -2626,12 +2630,6 @@ subcollection: openshift
 
 * [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry)
 
-* [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools-sat)
-
-    * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-create-labels)
-
-    * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-maintenance)
-
 * [Exposing apps](/docs/openshift?topic=openshift-satellite-clusters#satcluster-expose-apps)
 
 * [Storing application data in persistent storage](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage)
@@ -2776,7 +2774,7 @@ subcollection: openshift
 
 * [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-cluster-scaling-enable#ca_customize)
 
-    * [Customizing the cluster autoscaler add-on configmap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
+    * [Customizing the cluster autoscaler add-on ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
 
 [Deploying apps to worker pools where autoscaling is enabled](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#cluster-scaling-deploy-apps)
 
@@ -2844,7 +2842,9 @@ subcollection: openshift
 
     * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
 
-* [Modifying default worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
+* [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
+
+    * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
@@ -2953,12 +2953,6 @@ subcollection: openshift
     * [{{site.data.keyword.redhat_openshift_notm}} version 4 master components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-master)
 
     * [{{site.data.keyword.redhat_openshift_notm}} version 4 worker node components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-workers)
-
-* [Classic {{site.data.keyword.redhat_openshift_notm}} version 3 architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-3)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} version 3 master components](/docs/openshift?topic=openshift-service-architecture#version-3-master)
-
-    * [Classic version 3 worker node components](/docs/openshift?topic=openshift-service-architecture#version-3-worker)
 
 * [VPC cluster service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc)
 
@@ -3712,8 +3706,6 @@ subcollection: openshift
 
     * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
 
-    * [![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console311_overview)
-
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
 * [About NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport_planning)
@@ -3805,22 +3797,6 @@ subcollection: openshift
 * [Step 5: Create an encrypted route with the certificate](/docs/openshift?topic=openshift-hpcs-router#create-route)
 
 * [Version history](/docs/openshift?topic=openshift-hpcs-router#hpcs-versions)
-
-[Exposing apps with routes in {{site.data.keyword.redhat_openshift_notm}} 3.11](/docs/openshift?topic=openshift-routes-311#routes-311)
-
-* [Overview](/docs/openshift?topic=openshift-routes-311#routes-overview-311)
-
-    * [Traffic flow in a classic single-zone cluster](/docs/openshift?topic=openshift-routes-311#route_single)
-
-    * [Traffic flow in a classic multizone cluster](/docs/openshift?topic=openshift-routes-311#route_multi)
-
-* [Route types and TLS termination](/docs/openshift?topic=openshift-routes-311#route-types)
-
-* [Setting up public routes](/docs/openshift?topic=openshift-routes-311#routes-setup-311)
-
-* [Setting up private routes](/docs/openshift?topic=openshift-routes-311#private-routes-311)
-
-* [Moving router services across VLANs](/docs/openshift?topic=openshift-routes-311#migrate-router-vlan)
 
 
 ### Exposing apps with load balancers
@@ -4574,9 +4550,9 @@ subcollection: openshift
 
 * [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
 
-    * [RHEL or CentOS configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+    * [RHEL or CentOS ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
 
-    * [Ubuntu configmap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+    * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
@@ -4670,10 +4646,6 @@ subcollection: openshift
 * [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4)
 
 * [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub)
-
-* [Using Operators in 3.11 clusters](/docs/openshift?topic=openshift-operators#operators_311)
-
-* [Using the service catalog in 3.11 clusters](/docs/openshift?topic=openshift-operators#service_catalog)
 
 [Setting up the {{site.data.keyword.redhat_notm}} Marketplace](/docs/openshift?topic=openshift-rh-marketplace#rh-marketplace)
 
@@ -5120,6 +5092,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.431](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10431)
+
 * [Version 1.0.430](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10430)
 
 * [Version 1.0.426](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10426)
@@ -5255,17 +5229,9 @@ subcollection: openshift
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
-* [Release history](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+* [Release lifecycle](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
 
 * [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.5 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp45)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.4 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp44)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 4.3 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp43)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} 3.11 (Unsupported)](/docs/openshift?topic=openshift-openshift_versions#ocp311)
 
 [Version change log](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
 
@@ -5998,6 +5964,10 @@ subcollection: openshift
     * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-ca_changelog#110475_ca)
 
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
+
+* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#105694_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
 
@@ -7287,7 +7257,7 @@ subcollection: openshift
 
 * [Time out when trying to connect to a pod](/docs/openshift?topic=openshift-ts_clis#roks_timeout)
 
-* [500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login)
+* [500 error when trying to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login)
 
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
 

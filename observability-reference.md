@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -110,7 +110,7 @@ Delete a {{site.data.keyword.la_short}} configuration from your cluster.
 To remove logging configurations that you manually set up without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, you must first make this configuration available to the plug-in by using the `ibmcloud ob logging agent discover` [command](#logging_agent_discover).
 {: note}
 
-When you delete the logging configuration, the components that are deleted depend on how you created the logging configuration. For logging configurations that were created with the `ibmcloud ob logging config create` command, the daemon set for the {{site.data.keyword.la_short}} agent, the configmap, and secret are removed from your cluster, and pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Logging configurations that you manually created and made visible to the plug-in by using the `ibmcloud ob logging agent discover` command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.la_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Independent of how you created the configuration, existing log data is still available in {{site.data.keyword.la_full_notm}} until your selected retention period ends.  
+When you delete the logging configuration, the components that are deleted depend on how you created the logging configuration. For logging configurations that were created with the `ibmcloud ob logging config create` command, the daemon set for the {{site.data.keyword.la_short}} agent, the ConfigMap, and secret are removed from your cluster, and pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Logging configurations that you manually created and made visible to the plug-in by using the `ibmcloud ob logging agent discover` command, only the ConfigMap is removed. Your daemon set, secret, and the {{site.data.keyword.la_short}} agent are still deployed to your cluster and you must manually remove them. Because the ConfigMap is removed, pod logs are no longer sent to your {{site.data.keyword.la_full_notm}} service instance. Independent of how you created the configuration, existing log data is still available in {{site.data.keyword.la_full_notm}} until your selected retention period ends.  
 {: important}
 
 
@@ -372,7 +372,7 @@ To remove monitoring configurations that you manually set up without using the {
 {: note}
 
 
-When you delete the monitoring configuration, the components that are deleted depend on how you created the monitoring configuration. For monitoring configurations that were created with the `ibmcloud ob monitoring config create` command, the daemon set for the {{site.data.keyword.mon_short}} agent, the configmap, and secret are removed from your cluster, and metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Monitoring configurations that you manually created and made visible to the plug-in by using the `ibmcloud ob monitoring agent discover` command, only the configmap is removed. Your daemon set, secret, and the {{site.data.keyword.mon_short}} agent are still deployed to your cluster and you must manually remove them. Because the configmap is removed, metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Independent of how you created the configuration, existing metrics are still available in {{site.data.keyword.mon_full_notm}} until your selected retention period ends.  
+When you delete the monitoring configuration, the components that are deleted depend on how you created the monitoring configuration. For monitoring configurations that were created with the `ibmcloud ob monitoring config create` command, the daemon set for the {{site.data.keyword.mon_short}} agent, the ConfigMap, and secret are removed from your cluster, and metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Monitoring configurations that you manually created and made visible to the plug-in by using the `ibmcloud ob monitoring agent discover` command, only the ConfigMap is removed. Your daemon set, secret, and the {{site.data.keyword.mon_short}} agent are still deployed to your cluster and you must manually remove them. Because the ConfigMap is removed, metrics are no longer sent to your {{site.data.keyword.mon_full_notm}} service instance. Independent of how you created the configuration, existing metrics are still available in {{site.data.keyword.mon_full_notm}} until your selected retention period ends.  
 {: important}
 
 ```sh

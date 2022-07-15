@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -794,7 +794,7 @@ Image pull secrets are valid only for the {{site.data.keyword.redhat_openshift_n
 Before you begin:
 
 1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-2. [Create an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
+2. [Create a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
 3. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 
@@ -999,7 +999,7 @@ If you already have a private registry, you must store the registry credentials 
 
 Before you begin:
 
-1. [Create an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
+1. [Create a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
 2. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To create an image pull secret:

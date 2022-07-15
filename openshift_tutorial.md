@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -36,7 +36,7 @@ With {{site.data.keyword.openshiftlong}}, you can create highly available cluste
 ## Objectives
 {: #openshift_objectives}
 
-In the tutorial lessons, you create a standard {{site.data.keyword.openshiftlong_notm}} cluster, open the {{site.data.keyword.redhat_openshift_notm}} console, access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in an {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on an {{site.data.keyword.redhat_openshift_notm}} route so that external users can access the service.
+In the tutorial lessons, you create a standard {{site.data.keyword.openshiftlong_notm}} cluster, open the {{site.data.keyword.redhat_openshift_notm}} console, access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in a {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on a {{site.data.keyword.redhat_openshift_notm}} route so that external users can access the service.
 {: shortdesc}
 
 ![OpenShift tutorial diagram.](images/roks_tutorial.png){: caption="Figure 1. OpenShift tutorial diagram" caption-side="bottom"}
@@ -125,7 +125,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 {{site.data.keyword.openshiftlong_notm}} comes with built-in services that you can use to help operate your cluster, such as the {{site.data.keyword.redhat_openshift_notm}} console.
 {: shortdesc}
 
-### ![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} console overview
+### {{site.data.keyword.redhat_openshift_notm}} console overview
 {: #openshift_console4_overview_tutorial}
 
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.redhat_openshift_notm}} cluster, then click **OpenShift web console**.
@@ -140,31 +140,18 @@ Developer perspective
 :   The Developer perspective is available from the side navigation menu perspective switcher. From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.9/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
 
 
-### ![Version 3.11 icon.](images/icon-version-311.png) {{site.data.keyword.redhat_openshift_notm}} console overview
-{: #openshift_console311_overview_tutorial}
-
-Service Catalog
-:   The Service catalog is available from the dropdown menu in the **OpenShift Container Platform** menu bar. Browse the catalog of built-in services that you can deploy on {{site.data.keyword.redhat_openshift_notm}}. For example, if you already have a `node.js` app that is hosted on GitHub, you can click the **Languages** tab and deploy a **JavaScript** app. The **My Projects** pane provides a quick view of all the projects that you have access to, and clicking on a project takes you to the Application Console. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
-
-Application Console
-:   The Application console is available from the dropdown menu in the **OpenShift Container Platform** menu bar. For each project that you have access to, you can manage your {{site.data.keyword.redhat_openshift_notm}} resources such as pods, services, routes, builds, images or persistent volume claims. You can also view and analyze logs for these resources, or add services from the catalog to the project. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
-
-Cluster Console
-:   The Cluster console is available from the dropdown menu in the **OpenShift Container Platform** menu bar. For cluster-wide administrators across all the projects in the cluster, you can manage projects, service accounts,RBAC roles, role bindings, and resource quotas. You can also see the status and events for resources within the cluster in a combined view. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} Web Console Walkthrough](https://docs.openshift.com/container-platform/3.11/getting_started/developers_console.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
-
-
 
 ## Deploy an app to your {{site.data.keyword.redhat_openshift_notm}} cluster
 {: #openshift_deploy_app}
 {: step}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can create a new app and expose your app service via an {{site.data.keyword.redhat_openshift_notm}} Ingress controller for external users to use.
+With {{site.data.keyword.openshiftlong_notm}}, you can create a new app and expose your app service via a {{site.data.keyword.redhat_openshift_notm}} Ingress controller for external users to use.
 {: shortdesc}
 
 If you took a break from the last lesson and started a new command line, make sure that you log back in to your cluster. Open your {{site.data.keyword.redhat_openshift_notm}} web console at `https://<master_URL>/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. Then from the menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
 {: tip}
 
-1. Create a project for your Hello World app. A project is an {{site.data.keyword.redhat_openshift_notm}} version of a Kubernetes namespace with additional annotations.
+1. Create a project for your Hello World app. A project is a {{site.data.keyword.redhat_openshift_notm}} version of a Kubernetes namespace with additional annotations.
     ```sh
     oc new-project hello-world
     ```

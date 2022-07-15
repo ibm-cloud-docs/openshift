@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -19,7 +19,7 @@ completion-time: 45m
 
 
 
-# Creating an {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
+# Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
 {: #vpc_rh_tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="openshift, vpc"}
@@ -39,7 +39,7 @@ Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cl
 ## Objectives
 {: #vpc_rh_objectives}
 
-In the tutorial lessons, you create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC). Then, you access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in an {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on with a VPC load balancer so that external users can access the service.
+In the tutorial lessons, you create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC). Then, you access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in a {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on with a VPC load balancer so that external users can access the service.
 
 ## Audience
 {: #vpc_rh_audience}
@@ -179,7 +179,7 @@ The components that you deploy by completing this lesson are shown in the follow
 
 ![Deployment setup](images/cs_app_tutorial_mz-components1.png){: caption="Figure 1. Deployment setup" caption-side="bottom"}
 
-1. Create an {{site.data.keyword.redhat_openshift_notm}} project for your Hello World app.
+1. Create a {{site.data.keyword.redhat_openshift_notm}} project for your Hello World app.
     ```sh
     oc new-project hello-world
     ```
@@ -234,7 +234,7 @@ When you create a Kubernetes `LoadBalancer` service in your cluster, a VPC load 
 
 ![VPC load balancing for an OpenShift cluster.](images/vpc_roks_tutorial_lesson4_lb.png "Title text that shows on hover here"){: caption="Figure 1. VPC load balancing for an OpenShift cluster" caption-side="bottom"}
 
-Interested in using an {{site.data.keyword.redhat_openshift_notm}} route to expose your app instead? Check out [How does a request via route get to my app in a VPC cluster?](/docs/openshift?topic=openshift-openshift_routes#route_vpc) and [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup).
+Interested in using a {{site.data.keyword.redhat_openshift_notm}} route to expose your app instead? Check out [How does a request via route get to my app in a VPC cluster?](/docs/openshift?topic=openshift-openshift_routes#route_vpc) and [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup).
 {: tip}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -104,7 +104,7 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     ```
     {: screen}
 
-3. Create an {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location. Specify {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane. 
+3. Create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location. Specify {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane. 
 
     * To ensure that hosts are automatically assigned as worker nodes in the default worker pool of your cluster, specify those hosts' labels in the `--host-label` flags, and specify the number of worker nodes per zone in the `--workers` flag. 
     * To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
@@ -204,136 +204,21 @@ By default, the internal registry does not run in your {{site.data.keyword.satel
 *  **Non-persistent data on the worker node**: See [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry).
 *  **Persistent data in {{site.data.keyword.cos_full_notm}}**: See the resolution steps in [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create).
 
-By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.9/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the configmap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
+By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.9/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the ConfigMap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
 {: note}
-
-
-
-## Managing {{site.data.keyword.satelliteshort}} worker pools
-{: #satcluster-worker-pools-sat}
-
-Review the following differences from classic {{site.data.keyword.openshiftlong_notm}} clusters when you manage the worker pool life cycle of clusters that are in a {{site.data.keyword.satelliteshort}} location.
-{: shortdesc}
-
-### Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment
-{: #sat-pool-create-labels}
-
-Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with host labels. Then, {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool. For more information, see [Using host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
-{: shortdesc}
-
-Before you begin
-
-- Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
-- Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
-
-To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
-
-1. List the {{site.data.keyword.satelliteshort}} clusters in your account.
-    ```sh
-    ibmcloud oc cluster ls --provider satellite
-    ```
-    {: pre}
-
-1. Get the details of the cluster that you want to create the worker pool in. Note the **Worker Zones**.
-    ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
-    ```
-    {: pre}
-
-1. Create the worker pool in your {{site.data.keyword.satelliteshort}} cluster, with the following parameters.
-
-    * `--cluster`: Enter the name or ID of your cluster.
-    * `--name`: Give a name for your worker pool.
-    * `--size-per-zone`: Specify the number of worker nodes that you want to have in each zone that the worker pool spans. You can change this value later by resizing the worker pool.
-    * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
-    * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You can't update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
-    
-    * `--operating-system`: Optional: Specify the operating system of the hosts that you want to use to create your worker pool such as `RHEL7` or `RHCOS`. Note that you must create a Red Hat CoreOS enabled location to use your RHCOS hosts in your clusters. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
-    
-    
-    Example `worker-pool create` command
-
-    ```sh
-    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] [--operating-system (RHEL7|RHCOS)]
-    ```
-    {: pre}
-    
-    Example `worker-pool create` command for creating a worker pool that uses Red Hat CoreOS hosts.
-    
-    ```sh
-    ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> --operating-system RHCOS
-    ```
-    {: pre}
-    
-
-Your worker pool is created!
-* If {{site.data.keyword.satelliteshort}} hosts with matching labels are available, the hosts are assigned to the worker pool as worker nodes. Keep in mind that hosts might also have a zone label and are assigned only to that zone.
-* If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
-
-When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
-{: note}
-
-### Maintaining {{site.data.keyword.satelliteshort}} worker pools
-{: #sat-pool-maintenance}
-
-You can maintain your worker pools by using the same worker pool lifecycle operations as you use for {{site.data.keyword.openshiftlong_notm}} clusters. Review the {{site.data.keyword.satelliteshort}} considerations for common operations.
-{: shortdesc}
-
-#### Resizing a {{site.data.keyword.satelliteshort}} worker pool
-{: #sat-pool-maintenance-resize}
-
-Resize your worker pool to request more compute capacity in your cluster.
-{: shortdesc}
-
-* When host autoassignment is enabled, {{site.data.keyword.satelliteshort}} automatically assigns available hosts to the worker pool, as long as the host labels match the host labels of the worker pool. If no hosts are available, [attach more hosts](/docs/satellite?topic=satellite-attach-hosts) with matching labels to the {{site.data.keyword.satelliteshort}} location.
-* If host autoassignment is disabled, resizing the worker pool enables autoassignment again.
-
-For more information, see [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool).
-
-#### Rebalancing a {{site.data.keyword.satelliteshort}} worker pool
-{: #sat-pool-maintenance-rebalance}
-
-When you rebalance a worker pool, the worker pool is sized up or down depending on the most recently requested number of worker nodes per zone. You can check the requested number in the worker pool details, or set the requested number by resizing the worker pool.
-{: shortdesc}
-
-In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
-
-#### Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool
-{: #sat-pool-maintenance-update}
-
-Follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
-{: shortdesc}
-
-#### Adding zones to a {{site.data.keyword.satelliteshort}} worker pool
-{: #sat-pool-maintenance-addzone}
-
-You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort}} hosts with a zone label can be assigned only to that zone in the worker pool.
-{: shortdesc}
-
-* For more information about zones in {{site.data.keyword.satelliteshort}}, see [Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan).
-* To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat).
-
-#### Removing a {{site.data.keyword.satelliteshort}} worker pool
-{: #sat-pool-maintenance-remove}
-
-When you remove a worker pool, all the worker nodes in the cluster are removed. The hosts that the worker nodes ran on are unassigned from the cluster, and become unusable by but still attached to the {{site.data.keyword.satelliteshort}} location. For more information, see [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-rm).
-{: shortdesc}
 
 
 
 ## Exposing apps
 {: #satcluster-expose-apps}
 
-Several options exist to securely expose apps to traffic requests from the public network, from resources that are connected to your hosts' private network, or from resources in {{site.data.keyword.cloud_notm}}.
-{: shortdesc}
-
-Although these options include services that are available in standard {{site.data.keyword.redhat_openshift_notm}} clusters, the implementation of these services is different in {{site.data.keyword.redhat_openshift_notm}} clusters that were created on {{site.data.keyword.satelliteshort}}-provided infrastructure. For example, no load balancer services are created for the {{site.data.keyword.redhat_openshift_notm}} Ingress controller in your cluster. For a list of app exposure options and steps to configure them, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
+Several options exist to securely expose apps to traffic requests from the public network, from resources that are connected to your hosts' private network, or from resources in {{site.data.keyword.cloud_notm}}. Although these options include services that are available in standard {{site.data.keyword.redhat_openshift_notm}} clusters, the implementation of these services is different in {{site.data.keyword.redhat_openshift_notm}} clusters that were created on {{site.data.keyword.satelliteshort}}-provided infrastructure. For example, no load balancer services are created for the {{site.data.keyword.redhat_openshift_notm}} Ingress controller in your cluster. For a list of app exposure options and steps to configure them, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
 
 ## Storing application data in persistent storage
 {: #satcluster-storage}
 
 Unlike standard {{site.data.keyword.redhat_openshift_notm}} clusters that are created on {{site.data.keyword.cloud_notm}} infrastructure, your {{site.data.keyword.satelliteshort}} clusters don't come installed with a storage driver that provides Kubernetes storage classes that are ready to use with Kubernetes persistent volumes for your apps. However, you can install your own storage driver to set up your apps to save their data in a backing storage device. Review the following common options.
-{: shortdesc}
+
 
 *  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install) in your cluster.
 *  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
@@ -345,7 +230,6 @@ Unlike standard {{site.data.keyword.redhat_openshift_notm}} clusters that are cr
 {: #satcluster-rm}
 
 When you remove {{site.data.keyword.redhat_openshift_notm}} clusters or worker nodes in a cluster, the hosts that provide the compute capacity for your worker nodes are not automatically deleted. Instead, the hosts remain attached to your {{site.data.keyword.satelliteshort}} location, but require you to reload the host to be able to reassign the hosts to other {{site.data.keyword.satelliteshort}} resources.
-{: shortdesc}
 
 1. Back up any data that runs in the worker node or cluster that you want to save. For example, you might save a copy of all the data in your cluster and upload these files to a persistent storage solution, such as {{site.data.keyword.cos_full_notm}}.
     ```sh

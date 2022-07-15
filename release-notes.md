@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -28,6 +28,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-july22}
 
 
+
+### 15 July 2022
+{: #openshift-july1522}
+
+CLI change log update
+:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.431.
+
+Cluster autoscaler add-on
+:   Versions `1.0.6_742` is available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
 
 ### 14 July 2022
 {: #openshift-july1422}
@@ -727,8 +736,8 @@ Version changelog
 {: release-note}
 
 **New!** Troubleshooting the {{site.data.keyword.redhat_openshift_notm}} console.
-:   If you receive a 500 error when trying to log in to your {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` or the console, you can resolve this issue by running the `cluster config` command. For more information, see [500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
-:   You must synchronize the IAM user information initially to fix this error. See [500 error when trying to log in to an {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
+:   If you receive a 500 error when trying to log in to your {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` or the console, you can resolve this issue by running the `cluster config` command. For more information, see [500 error when trying to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
+:   You must synchronize the IAM user information initially to fix this error. See [500 error when trying to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
 
 
 
@@ -4300,7 +4309,7 @@ Ingress ALB changelog
 
 
 Accessing clusters
-:   Added steps for [automating access to a cluster by using an {{site.data.keyword.redhat_openshift_notm}} login token](/docs/openshift?topic=openshift-access_cluster#access_oc_console).
+:   Added steps for [automating access to a cluster by using a {{site.data.keyword.redhat_openshift_notm}} login token](/docs/openshift?topic=openshift-access_cluster#access_oc_console).
 
 Troubleshooting {{site.data.keyword.redhat_openshift_notm}} clusters
 :   Added a [troubleshooting section](/docs/openshift?topic=openshift-debug_clusters) to the Creating a {{site.data.keyword.openshiftlong_notm}} cluster tutorial.

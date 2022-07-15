@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift, kernel
 
@@ -51,8 +51,14 @@ To change the compute hardware, such as the CPU and memory per worker node, choo
 * [Create a worker pool](/docs/containers?topic=containers-add_workers). The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, {{site.data.keyword.satelliteshort}}, or gateway clusters.
 * [Update the flavor](/docs/containers?topic=containers-update#machine_type) in your cluster by creating a worker pool and removing the previous worker pool.
 
-## Modifying default worker node settings to optimize performance
+## Modifying worker node settings to optimize performance
 {: #worker}
+
+
+
+
+### Modifying worker node kernel settings
+{: #worker-kernel-ds}
 
 If you have specific performance optimization requirements, you can change the default settings for the Linux kernel `sysctl` parameters on worker nodes.
 {: shortdesc}
@@ -127,15 +133,13 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: codeblock}
 
-2. Apply the daemon set to your worker nodes. The changes are applied immediately.
+1. Apply the daemon set to your worker nodes. The changes are applied immediately.
     ```sh
     oc apply -f worker-node-kernel-settings.yaml
     ```
     {: pre}
 
-
-
-To revert your worker nodes' `sysctl` parameters to the default values set by {{site.data.keyword.containerlong_notm}}:
+To revert your worker nodes `sysctl` parameters to the default values, follow these steps.
 
 1. Delete the daemon set. The `initContainers` that applied the custom settings are removed.
     ```sh
@@ -143,7 +147,7 @@ To revert your worker nodes' `sysctl` parameters to the default values set by {{
     ```
     {: pre}
 
-2. [Reboot all worker nodes in the cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot). The worker nodes come back online with the default values applied.
+1. [Reboot all worker nodes in the cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot). The worker nodes come back online with the default values applied.
 
 
 
@@ -230,7 +234,7 @@ To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that 
 ### Changing the Calico MTU for version 4 clusters
 {: #calico-mtu-43}
 
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
+Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in a {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
@@ -270,12 +274,12 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 ### Changing the Calico MTU for 3.11 clusters
 {: #calico-mtu-311}
 
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in an {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
+Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in a {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
 {: shortdesc}
 
 
 
-1. Edit the `calico-config` configmap resource.
+1. Edit the `calico-config` ConfigMap resource.
     ```sh
     oc edit cm calico-config -n kube-system
     ```
@@ -283,7 +287,7 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 
 2. In the `data` section, add a `calico_mtu_override: "<new_MTU>"` field and specify the new MTU value for Calico. Note that the quotation marks (`"`) around the new MTU value are required.
 
-    Do not change the values of `mtu` or `veth_mtu`. Changing any other settings besides the `calico_mtu_override` field for the Calico plug-in in this configmap is not supported.
+    Do not change the values of `mtu` or `veth_mtu`. Changing any other settings besides the `calico_mtu_override` field for the Calico plug-in in this ConfigMap is not supported.
     {: important}
 
     ```yaml
@@ -393,7 +397,7 @@ If you must use `hostPorts`, don't disable the port map plug-in.
 ### Disabling the port map plug-in for version 4 clusters
 {: #calico-portmap-43}
 
-Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
+Disable the port map plug-in by disabling `hostPorts` for Calico in a {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
 {: shortdesc}
 
 1. Edit the `default` Calico installation resource.
@@ -429,12 +433,12 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
 ### Disabling the port map plug-in for 3.11 clusters
 {: #calico-portmap-311}
 
-Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
+Disable the port map plug-in by disabling `hostPorts` for Calico in a {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
 {: shortdesc}
 
 
 
-1. Edit the `calico-config` configmap resource.
+1. Edit the `calico-config` ConfigMap resource.
     ```sh
     oc edit cm calico-config -n kube-system
     ```
@@ -478,7 +482,7 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in an {{site.da
     ```
     {: codeblock}
 
-    Changing any other settings for the Calico plug-in in this configmap is not supported.
+    Changing any other settings for the Calico plug-in in this ConfigMap is not supported.
     {: important}
 
 3. Apply the change to your cluster by restarting all `calico-node` pods.

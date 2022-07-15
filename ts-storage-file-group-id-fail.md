@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -37,7 +37,7 @@ However, when you want to mount an NFS file share to your container, the user ID
 Use a Kubernetes [`DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external} to enable root permission to the storage mount path on all your worker nodes for NFSv4 file shares.
 {: tsResolve}
 
-To allow root permission on the volume mount path, you must set up a configmap on your worker node. The configmap maps the user ID `nobody` from the NFS host system to the root user ID `0` in your container. This process is also referred to as no root squash. An effective way of updating all your worker nodes is to use a daemon set, which runs a specified pod on every worker node in your cluster. In this case, the pod that is controlled by the daemon set updates each of your worker nodes to enable root permission on the volume mount path.
+To allow root permission on the volume mount path, you must set up a ConfigMap on your worker node. The ConfigMap maps the user ID `nobody` from the NFS host system to the root user ID `0` in your container. This process is also referred to as no root squash. An effective way of updating all your worker nodes is to use a daemon set, which runs a specified pod on every worker node in your cluster. In this case, the pod that is controlled by the daemon set updates each of your worker nodes to enable root permission on the volume mount path.
 
 The deployment is configured to allow the daemon set pod to run in privileged mode, which is necessary to access the host file system. Running a pod in privileged mode does create a security risk, so use this option with caution.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-07-15"
 
 keywords: openshift, audit
 
@@ -164,7 +164,7 @@ The following list of Ingress application load balancer (ALB) events are sent to
 | `containers-kubernetes.cluster-alb.list` | ALBs in a cluster are listed. |
 | `containers-kubernetes.cluster-alb.update` | ALB pods are updated. |
 | `containers-kubernetes.cluster-alb-policy.get` | The status of automatic updates for Ingress ALBs is viewed. |
-| `containers-kubernetes.cluster-alb-migration.start` | A migration of {{site.data.keyword.cloud_notm}} Ingress configmap and Ingress resources to the Kubernetes Ingress format is started. |
+| `containers-kubernetes.cluster-alb-migration.start` | A migration of {{site.data.keyword.cloud_notm}} Ingress ConfigMap and Ingress resources to the Kubernetes Ingress format is started. |
 | `containers-kubernetes.cluster-alb-migration-status.get` | The status of the migration process is viewed. |
 | `containers-kubernetes.cluster-ingress-status.get` | The status of migrated Ingress resources in a cluster is viewed. |
 | `containers-kubernetes.cluster-alb-migration.cleanup` | Ingress resources and configmaps that are no longer needed after an Ingress migration are deleted. |

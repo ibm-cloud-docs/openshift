@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -54,7 +54,7 @@ Enabling MFA at the user level is not supported. If MFA is enabled for some user
 
     1. Use the {{site.data.keyword.cloud_notm}} console or CLI to [ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to.
     2. Restart the components for the **Developer catalog** in the web console.
-        1. Edit the configmap for the samples operator.
+        1. Edit the ConfigMap for the samples operator.
             ```sh
             oc edit configs.samples.operator.openshift.io/cluster
             ```

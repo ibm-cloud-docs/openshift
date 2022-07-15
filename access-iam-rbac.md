@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -308,7 +308,7 @@ If you want users to be able to interact with Kubernetes resources from within a
 
 To learn more about the actions permitted by each RBAC role, check out the [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service) reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref).
 
-All users of an {{site.data.keyword.redhat_openshift_notm}} cluster are added to the following {{site.data.keyword.redhat_openshift_notm}} RBAC groups by cluster version. ![Version 3.11 icon.](images/icon-version-311.png) Version 3 clusters: `basic-users` and `self-provisioners`. ![Version 4 icon.](images/icon-version-43.png) Version 4 clusters: `basic-users`.
+All users of a {{site.data.keyword.redhat_openshift_notm}} cluster are added to the following {{site.data.keyword.redhat_openshift_notm}} RBAC groups by cluster version. Version 4 clusters: `basic-users`.
 {: note}
 
 **Can I create custom roles or cluster roles?**
@@ -909,7 +909,6 @@ Classic infrastructure permissions apply only to classic clusters. For VPC clust
 3. Click the **Classic infrastructure** tab, then click the **Permissions, Devices, or VPN subnets** tabs.
 4. In each tab, deselect specific permissions.
 5. To save your changes, click **Set** and **Save**. Permissions are downgraded after a few minutes.
-
 
 
 

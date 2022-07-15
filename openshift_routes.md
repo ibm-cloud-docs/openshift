@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-15"
 
 keywords: openshift, route, router
 
@@ -31,7 +31,7 @@ Not sure whether to use {{site.data.keyword.redhat_openshift_notm}} routes or In
 ## Overview
 {: #routes-overview}
 
-By default, an {{site.data.keyword.redhat_openshift_notm}} Ingress controller is deployed to your cluster that functions as the ingress endpoint for external network traffic.
+By default, a {{site.data.keyword.redhat_openshift_notm}} Ingress controller is deployed to your cluster that functions as the ingress endpoint for external network traffic.
 {: shortdesc}
 
 You can use the OpenShift Ingress controller to create routes for your apps. Routes are assigned a publicly or privately accessible hostname from the Ingress controller subdomain that external clients can use to send requests to your app. You can choose to create unsecured or secured routes by using the TLS certificate of the Ingress controller to secure your hostname. When external request reach your hostname, the Ingress controller proxies your request and forwards it to the private IP address that your app listens on.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-14"
 
 keywords: openshift
 
@@ -162,7 +162,10 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     6. Save your changes and navigate to your working directory.
 
 
-1. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. To set a limit on how much storage is available for the bucket, set the `-set quotaLimit=true` **VPC clusters only**: To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
+1. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. To set a limit on how much storage is available for the bucket, set the `--set quotaLimit=true` **VPC clusters only**: To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` flag.
+
+If you don't set the `--set quotaLimit=true` option during installation, you can't set quotas for your PVCs.
+{: note}
 
 Example `helm ibmc install` command for OS X and Linux.
 
@@ -172,7 +175,7 @@ helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin -
 {: pre}
 
 `quotaLimit`
-:   A quota limit sets the maximum amount of storage (in bytes) available for a bucket. For more information see [Setting a quota on a bucket](/docs/cloud-object-storage?topic=cloud-object-storage-quota).
+:   A quota limit sets the maximum amount of storage (in bytes) available for a bucket. If you set this option to `true`, then when you create PVCs, the quota on buckets created by those PVCs is equal to the 
 
 Example `helm install` command for Windows.
 

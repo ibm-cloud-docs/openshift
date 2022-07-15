@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -99,11 +99,11 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ```
     {: pre}
 
-2. Create a configmap with the `config` and `node` configuration files from the [kube-samples](https://github.com/IBM-Cloud/kube-samples/tree/master/cis-kube-benchmark/cis-1.5/ibm){: external} GitHub repository.
+2. Create a ConfigMap with the `config` and `node` configuration files from the [kube-samples](https://github.com/IBM-Cloud/kube-samples/tree/master/cis-kube-benchmark/cis-1.5/ibm){: external} GitHub repository.
     1. Download the the `config` and `node` configuration files into a local directory called `ibm`. You can also clone the repository and navigate into the `ibm` directory.
         * [`config` file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/cis-kube-benchmark/cis-1.5/ibm/config.yaml){: external}
         * [`node` file](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/cis-kube-benchmark/cis-1.5/ibm/node.yaml){: external}
-    2. Create the configmap by using the `--from-file` flag to specify the `ibm` directory where your downloaded the configuration files.
+    2. Create the ConfigMap by using the `--from-file` flag to specify the `ibm` directory where your downloaded the configuration files.
         ```sh
         oc create cm kube-bench-node -n ibm-kube-bench-test --from-file ibm
         ```

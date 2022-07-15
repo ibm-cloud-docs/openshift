@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -102,7 +102,7 @@ OpenVPN ({{site.data.keyword.redhat_openshift_notm}} version 4.7 or earlier) or 
 
 Fine-grained access control
 :   As the account administrator you can [grant access to other users for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.openshiftlong_notm}}, and all the resources in your account. Setting up proper user roles and permissions is key to limiting who can access your resources and to limiting the damage that a user can do when legitimate permissions are misused. You can select from the following pre-defined user roles that determine the set of actions that the user can perform: 
-    - **Platform access roles:** Determine the cluster and worker node management-related actions that a user can perform in {{site.data.keyword.openshiftlong_notm}}. Platform access roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create an {{site.data.keyword.redhat_openshift_notm}} project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles don't grant access to other {{site.data.keyword.redhat_openshift_notm}} projects. To view and access other {{site.data.keyword.redhat_openshift_notm}} projects, you must be assigned the appropriate service access role in IAM.  
+    - **Platform access roles:** Determine the cluster and worker node management-related actions that a user can perform in {{site.data.keyword.openshiftlong_notm}}. Platform access roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create a {{site.data.keyword.redhat_openshift_notm}} project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles don't grant access to other {{site.data.keyword.redhat_openshift_notm}} projects. To view and access other {{site.data.keyword.redhat_openshift_notm}} projects, you must be assigned the appropriate service access role in IAM.  
     - **Service access roles:** Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external} that is assigned to the user and the actions that a user can run against the {{site.data.keyword.redhat_openshift_notm}} API server. While the `basic-users` and `self-provisioners` RBAC role that is assigned with a platform access role lets you create and manage your own {{site.data.keyword.redhat_openshift_notm}} projects, you can't view, access, or work with other {{site.data.keyword.redhat_openshift_notm}} projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service). 
     - **Classic infrastructure:** Enables access to your classic {{site.data.keyword.cloud_notm}} infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.
     - **VPC infrastructure:** Enables access to VPC infrastructure resources. Example actions that are permitted by VPC infrastructure roles are creating a VPC, adding subnets, changing floating IP addresses, and creating VPC Block Storage instances.
@@ -361,7 +361,7 @@ Depending on the network that you want to connect your worker nodes to, you can 
 If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes](https://docs.openshift.com/container-platform/4.9/networking/routes/route-configuration.html){: external}.  
 {: shortdesc}
 
-Every {{site.data.keyword.redhat_openshift_notm}} cluster is automatically set up with an {{site.data.keyword.redhat_openshift_notm}} router that is assigned a unique domain name and secured with a TLS certificate. When you expose your app by using a route, your app is assigned a URL from the {{site.data.keyword.redhat_openshift_notm}} router.
+Every {{site.data.keyword.redhat_openshift_notm}} cluster is automatically set up with a {{site.data.keyword.redhat_openshift_notm}} router that is assigned a unique domain name and secured with a TLS certificate. When you expose your app by using a route, your app is assigned a URL from the {{site.data.keyword.redhat_openshift_notm}} router.
 
 **How can I create secured routes and control TLS termination?**
 
@@ -548,7 +548,7 @@ You can install third-party solutions in your cluster, such as [Twistlock](https
 When you run multiple apps in your cluster, you want to make sure that your workloads run isolated from each other and that you restrict the permissions of your pods within the cluster to avoid noisy neighbors or denial-of-service attacks.
 {: shortdesc}
 
-**What is an {{site.data.keyword.redhat_openshift_notm}} project and why should I use it?**
+**What is a {{site.data.keyword.redhat_openshift_notm}} project and why should I use it?**
 
 {{site.data.keyword.redhat_openshift_notm}} projects are a way to virtually partition a cluster and provide isolation for your deployments and the groups of users that want to move their workload onto the cluster. With projects, you can organize resources across worker nodes and also across zones in multizone clusters.  
 
@@ -612,7 +612,7 @@ You are responsible for ensuring the security of your personal information in Ku
 {: shortdesc}
 
 Use a Kubernetes secret to store personal information
-:   Store personal information only in Kubernetes resources that are designed to hold personal information. For example, don't use your name in the name of an {{site.data.keyword.redhat_openshift_notm}} project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} instead.
+:   Store personal information only in Kubernetes resources that are designed to hold personal information. For example, don't use your name in the name of a {{site.data.keyword.redhat_openshift_notm}} project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} instead.
 
 :   For centralized management of all your secrets across clusters and injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets).
     {: tip}

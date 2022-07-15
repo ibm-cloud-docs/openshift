@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -173,7 +173,7 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 | `POST​/v1​/alb​/albsecrets` | Import an ALB secret from {{site.data.keyword.cloudcerts_short}} to a cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.create` |
 | `POST​/v1​/alb​/clusters​/{idOrName}​/zone​/{zoneId}` | Create a public or private ALB in a classic cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.create` |
 | `POST​/v2​/alb​/cleanupMigration` | Clean up any Ingress resources and configmaps that are no longer needed after an Ingress migration. | `containers-kubernetes.cluster.create` | `cluster-alb-migration.cleanup` |
-| `POST​/v2​/alb​/startMigration` | Start a migration of your {{site.data.keyword.cloud_notm}} Ingress configmap and Ingress resources to the Kubernetes Ingress format. | `containers-kubernetes.cluster.create` | `cluster-alb-migration.start` |
+| `POST​/v2​/alb​/startMigration` | Start a migration of your {{site.data.keyword.cloud_notm}} Ingress ConfigMap and Ingress resources to the Kubernetes Ingress format. | `containers-kubernetes.cluster.create` | `cluster-alb-migration.start` |
 | `POST​/v2​/alb​/updateAlb` | Update ALBs in a cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.update` |
 | `POST​/v2​/alb​/vpc​/createAlb` | Create a public or private ALB in a VPC cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.create` |
 | `POST​/v2​/alb​/vpc​/disableAlb` | Disable an ALB in a VPC cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.delete` |

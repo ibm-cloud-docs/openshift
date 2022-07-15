@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-15"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -404,7 +404,7 @@ After you deploy your Helm chart, test the VPN connectivity.
             
         You can also run more checks in the next step.
 
-    - If the VPN pod is in an `ERROR` state or continues to crash and restart, it might be due to parameter validation of the `ipsec.conf` settings in the chart's configmap.
+    - If the VPN pod is in an `ERROR` state or continues to crash and restart, it might be due to parameter validation of the `ipsec.conf` settings in the chart's ConfigMap.
     
         1. Check for any validation errors in the strongSwan pod logs by running `oc logs $STRONGSWAN_POD`.
         2. If validation errors exist, run `helm uninstall <release_name> -n <namespace>`
@@ -463,7 +463,7 @@ After you deploy your Helm chart, test the VPN connectivity.
 
 8. Save the updated `config.yaml` file.
 
-9. Install the Helm chart to your cluster with the updated `config.yaml` file. The updated properties are stored in a configmap for your chart.
+9. Install the Helm chart to your cluster with the updated `config.yaml` file. The updated properties are stored in a ConfigMap for your chart.
 
     ```sh
     helm install vpn iks-charts/strongswan -f config.yaml

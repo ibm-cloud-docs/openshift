@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -70,7 +70,7 @@ Update your cluster master and worker nodes.
 
 1. Get the details of the `openshift-dns` configmap and review the `bufsize` by running the following command. 
     ```sh
-    oc get configmap -n openshift-dns dns-default -o yaml
+    oc get ConfigMap -n openshift-dns dns-default -o yaml
     ```
     {: pre}
 
@@ -105,7 +105,7 @@ Update your cluster master and worker nodes.
     ```
     {: pre}
 
-1. Get the configmap YAML and verify that the the `bufsize` is `512`. 
+1. Get the ConfigMap YAML and verify that the the `bufsize` is `512`. 
     ```sh
     oc get configmap -n openshift-dns dns-default -o yaml
     ```

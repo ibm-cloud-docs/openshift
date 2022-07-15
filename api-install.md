@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift, api
 
@@ -49,7 +49,7 @@ Supported container platforms
 
   
 {{site.data.keyword.redhat_openshift_notm}} API
-:    v1 API: To use the {{site.data.keyword.redhat_openshift_notm}} API to manage {{site.data.keyword.redhat_openshift_notm}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for an {{site.data.keyword.redhat_openshift_notm}} access token. See [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+:    v1 API: To use the {{site.data.keyword.redhat_openshift_notm}} API to manage {{site.data.keyword.redhat_openshift_notm}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for a {{site.data.keyword.redhat_openshift_notm}} access token. See [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 :    v2 API: Same as `v1`; see [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 
 Supported infrastructure providers

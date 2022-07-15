@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-15"
 
 keywords: openshift
 
@@ -67,7 +67,7 @@ Complete the following steps to increase the log level for the `calico-typha` co
 
 Complete the following steps to increase the log level for the `calico-cni` component.
 
-1. Run the following command to edit the `calico-config` configmap.  
+1. Run the following command to edit the `calico-config` ConfigMap.  
     
     ```sh
     oc edit cm -n kube-system calico-config
@@ -125,7 +125,7 @@ Complete the following steps to increase the log level for the `calico-node` com
     ```
     {: pre}    
     
-3. Save the change. After saving your changes, all the pods in the `calico-node` daemonset complete a rolling update that applies the changes. The `calico-cni` also applies any changes to logging levels in the `kube-system/calico-config` configmap.
+3. Save the change. After saving your changes, all the pods in the `calico-node` daemonset complete a rolling update that applies the changes. The `calico-cni` also applies any changes to logging levels in the `kube-system/calico-config` ConfigMap.
 
 ## Increasing the log level for the `calico-kube-controllers` components
 {: #calico-increase-logging-kube-controllers}
