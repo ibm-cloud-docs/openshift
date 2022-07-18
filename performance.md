@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-18"
 
 keywords: openshift, kernel
 
@@ -53,6 +53,59 @@ To change the compute hardware, such as the CPU and memory per worker node, choo
 
 ## Modifying worker node settings to optimize performance
 {: #worker}
+
+
+
+
+### Modifying worker node settings by using the Node Tuning Operator
+{: #worker-nto}
+
+You can use the node tuning operator to tune worker node performance by creating custom profiles. For more information, see the {{site.data.keyword.redhat_notm}} [Node Tuning Operator](https://docs.openshift.com/container-platform/4.7/scalability_and_performance/using-node-tuning-operator.html){: external} docs.
+
+{{site.data.keyword.redhat_notm}} SRE is not responsible for the tuning and performance management of nodes that are customized with the Node Tuning Operator (NTO). If changes made by the NTO cause the worker nodes to be unschedulable or unresponsive, then revert the changes made by using the NTO.
+{: important}
+    
+1. Save the following example `Tuned` resource to a file called `tuned-node.yaml` and include the specifications you want to use for your worker nodes. Note that you can use the `recommend` method to apply the settings to your worker nodes by using node labels. In this example, the profile is called `tuned-node` and applies to worker nodes with the label `label: node-role.kubernetes.io/master` label.
+
+    If you have custom labels on your worker nodes, or if you want to tune only certain workers in your cluster, you can [label your worker nodes](/docs/openshift?topic=openshift-add_workers#worker_pool_labels), then use those labels in your tuning configuration.
+    {: tip}
+
+    Example custom `Tuned` profile. For more information about customizing your `Tuned` profile, see [Node Tuning Operator](https://docs.openshift.com/container-platform/4.7/scalability_and_performance/using-node-tuning-operator.html){: external} docs.
+    
+    ```yaml
+    apiVersion: tuned.openshift.io/v1
+    kind: Tuned
+    metadata:
+      name: tuned-node
+      namespace: openshift-cluster-node-tuning-operator
+    spec:
+      profile:
+      - data: |
+          [main]
+          summary=Custom OpenShift node profile for my workloads
+          include=openshift-control-plane
+          [sysctl]
+          kernel.sem="250 1024000 200 32768"
+          kernel.msgmax="65536"
+          kernel.shmmni="32768"
+        name: openshift-node-parms
+      recommend:
+      - match:
+        - label: node-role.kubernetes.io/master
+        priority: 10
+        profile: openshift-node-parms
+    ```
+    {: codeblock}
+
+1. Create the custom `tuned-node` profile in your cluster.
+    ```sh
+    oc apply -f tuned-node.yaml
+    ```
+    {: pre}
+    
+The `oc debug` pods do not have access to retrieve worker node tuned profile settings. To retreive or verify the updated worker node settings, you must be logged into a pod that has `hostIPC: true`.
+{: note}
+
 
 
 

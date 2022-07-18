@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
 
+    * [19 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1922)
+
+        * Node Tuning Operator
+
     * [18 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1822)
 
         * {{site.data.keyword.block_storage_is_short}} add-on.
@@ -2847,6 +2851,8 @@ subcollection: openshift
     * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
 
 * [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
+
+    * [Modifying worker node settings by using the Node Tuning Operator](/docs/openshift?topic=openshift-kernel#worker-nto)
 
     * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
 
