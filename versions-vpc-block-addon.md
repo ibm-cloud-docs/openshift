@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-18"
 
 keywords: block, add-on, changelog
 
@@ -57,7 +57,7 @@ Refer to the following tables for a summary of changes for each version of the {
 Version 5.0.0 is available in Beta for allowlisted accounts.
 {: preview}
 
-### Change log for version 5.0.1-beta_1411, released 14 July 2022
+### Change log for version 5.0.1-beta_1566, released 14 July 2022
 {: #5.0.4-beta_1556_is_block_relnote}
 
 - Updates the storage-secret-sidecar image to `v1.1.12`.
@@ -95,6 +95,14 @@ Adds snapshot support.
 {: #044_is_block}
 
 
+### Change log for version 4.4.8_1550, released 18 July 2022
+{: #4.4.8_1550_is_block_relnote}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.5`
+- Updates Golang to version `1.18.3`
+- Updates UBI image to version `8.6-854`
+- Fixes an issue where volume mounting on node fails with already mounted error.
+- Resolves the following CVEs: [CVE-2022-29824](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29824){: external}, [CVE-2021-40528](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40528){: external}, [CVE-2022-22576](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22576){: external}, [CVE-2022-27774](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27774){: external}, [CVE-2022-27776](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27776){: external}, [CVE-2022-27782](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27782){: external}, [CVE-2022-25313](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25313){: external}, [CVE-2022-25314](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25314){: external}. 
 
 
 ### Change log for version 4.4.6_1446, released 24 June 2022
@@ -119,6 +127,20 @@ Adds snapshot support.
 
 ## Version 4.3
 {: #043_is_block}
+
+
+### Change log for version 4.3.4_1551, released 18 July 2022
+{: #434_1551_is_block_relnote}
+
+
+- Updates the `storage-secret-sidecar` image to `v1.1.12`
+- Updates Golang to version `1.18.3`
+- Updates UBI image to version `8.6-854`
+- Improves secret watcher in case of secret update.
+- Fixes an issue where volume mounting on node fails with already mounted error.
+- Resolves the following CVEs: [CVE-2022-29824](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29824){: external}, [CVE-2021-40528](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40528){: external}, [CVE-2022-22576](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22576){: external}, [CVE-2022-27774](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27774){: external}, [CVE-2022-27776](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27776){: external}, [CVE-2022-27782](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27782){: external}, [CVE-2022-25313](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25313){: external}, [CVE-2022-25314](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25314){: external}.
+
+
 
 
 ### Change log for version 4.3.2_1441, released 17 June 2022

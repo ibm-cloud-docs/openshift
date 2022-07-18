@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-12"
+lastupdated: "2022-07-18"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -56,6 +56,21 @@ Review the version 4.7 change log.
 
 
 
+
+
+
+### Change log for worker node fix pack 4.7.54_1572_openshift, released 18 July 2022
+{: #4754_1572_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.7.54_1572_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | 3.10.0-1160.66.1 | 3.10.0-1160.71.1 | Worker node package updates for [CVE-2020-26116](https://nvd.nist.gov/vuln/detail/CVE-2020-26116){: external},[CVE-2020-26137](https://nvd.nist.gov/vuln/detail/CVE-2020-26137){: external},[CVE-2021-3177](https://nvd.nist.gov/vuln/detail/CVE-2021-3177){: external},[CVE-2022-0391](https://nvd.nist.gov/vuln/detail/CVE-2022-0391){: external},[CVE-2022-1729](https://nvd.nist.gov/vuln/detail/CVE-2022-1729){: external},[CVE-2022-1966](https://nvd.nist.gov/vuln/detail/CVE-2022-1966){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.53 | 4.7.54 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-54){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.7.53_1571_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 4.7.53_1571_openshift, released 11 July 2022
 {: #4753_1571_openshift}
