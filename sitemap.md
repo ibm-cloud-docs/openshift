@@ -5993,6 +5993,8 @@ subcollection: openshift
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
 
+    * [Change log for patch update 1.0.5_728, released 19 July 2022](/docs/openshift?topic=openshift-ca_changelog#105728_ca)
+
     * [Change log for patch update 1.0.5_694, released 30 June 2022](/docs/openshift?topic=openshift-ca_changelog#105694_ca)
 
     * [Change log for patch update 1.0.5_628, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#105628_ca)

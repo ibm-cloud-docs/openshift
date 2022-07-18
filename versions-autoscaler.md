@@ -80,6 +80,12 @@ ibmcloud oc cluster addon versions
 ## Version 1.0.5
 {: #0105_ca_addon}
 
+### Change log for patch update 1.0.5_728, released 19 July 2022
+{: #105728_ca}
+
+- Image tags: `1.19.1-105-2`, `1.20.0-105-2`, `1.21.0-105-2`, `1.22.0-105-2`, `1.23.0-105-2`
+- Resolves [CVE-2022-29526](https://nvd.nist.gov/vuln/detail/CVE-2022-29526){: external}.
+
 ### Change log for patch update 1.0.5_694, released 30 June 2022
 {: #105694_ca}
 
