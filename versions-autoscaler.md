@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-18"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -68,10 +68,10 @@ ibmcloud oc cluster addon versions
 - Adds Beta support for {{site.data.keyword.satelliteshort}} clusters in allowlisted accounts.
 
 ## Version 1.0.6
-{: #0105_ca_addon}
+{: #0106_ca_addon}
 
 ### Change log for patch update 1.0.6_742, released 15 July 2022
-{: #105694_ca}
+{: #106742_ca}
 
 - Adds support for Kubernetes 1.24.
 - Resolves [CVE-2022-29526](https://nvd.nist.gov/vuln/detail/CVE-2022-29526){: external}.

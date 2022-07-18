@@ -233,8 +233,6 @@ subcollection: openshift
 
         * CLI change log update
 
-    * [13 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1322)
-
         * Compliance Operator benchmarks
 
     * [11 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1122)
@@ -5253,9 +5251,9 @@ subcollection: openshift
 
 [Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison)
 
-* [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#major-differences)
+* [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
-* [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#minor-differences)
+* [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
 
 
 ### Version 4.10
@@ -5981,9 +5979,9 @@ subcollection: openshift
 
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
-* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
 
-    * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#105694_ca)
+    * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#106742_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-18"
 
 keywords: openshift, version, update, upgrade
 
@@ -112,9 +112,9 @@ Estimated days and versions are provided for general understanding. Actual avail
 ## Archive
 {: #version-archive}
 
-Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If your cluster master is two or more versions behind the oldest supported version, you must [make a new cluster](/docs/openshift?topic=openshift-clusters#clusters) and [deploy your apps](/docs/openshift?topic=openshift-app#app) to the new cluster.
+Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If your cluster master is two or more versions behind the oldest supported version, you must [make a new cluster](/docs/openshift?topic=openshift-clusters#clusters) and [deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the new cluster.
 {: shortdesc}
 
 **Unsupported Kubernetes versions**: 
-:    [4.5](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11](docs/openshift?topic=openshift-openshift_changelog_311).
+:    [4.5](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11](/docs/openshift?topic=openshift-openshift_changelog_311).
 

@@ -73,15 +73,8 @@ CLI change log update
 
 
 
-
-### 13 July 2022
-{: #openshift-july1322}
-{: release-note}
-
 Compliance Operator benchmarks
 :   Compliance operator benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} versions [4.9](/docs/containers?topic=openshift-benchmarks_49_co) and [4.10](/docs/containers?topic=openshift-benchmarks_410_co). For a comparison of the benchmark results, see [Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/containers?topic=openshift-benchmark-comparison).
-
-
 
 
 ### 11 July 2022

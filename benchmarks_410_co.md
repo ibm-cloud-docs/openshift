@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-18"
 
 keywords: openshift, benchmarks, 4.9, compliance operator, compliance
 
@@ -169,7 +169,7 @@ to perform automated check for worker node configuration.
 | 5.2.7|Minimize the admission of containers with the `NET_RAW` capability. |Manual|1|Fail |
 | 5.2.8|Minimize the admission of containers with added capabilities. |Manual|1|[Not checked](#co-benchmark-410-remdiations) |
 | 5.2.9|Minimize the admission of containers with capabilities assigned. |Manual|2|Fail |
-{: caption="Section 5.2 Pod Security Policies benchmark results"
+{: caption="Section 5.2 Pod Security Policies benchmark results"}
 
 
 ### 5.3 Network policies and CNI
