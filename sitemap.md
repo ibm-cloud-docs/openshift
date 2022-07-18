@@ -6049,11 +6049,15 @@ subcollection: openshift
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
 
+    * [Change log for version 4.4.8_1550, released 18 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.8_1550_is_block_relnote)
+
     * [Change log for version 4.4.6_1446, released 24 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.6_1446_is_block_relnote)
 
     * [Change log for version 4.4.5_1371, released 13 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#445_1371_is_block_relnote)
 
 * [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
+
+    * [Change log for version 4.3.4_1551, released 18 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#434_1551_is_block_relnote)
 
     * [Change log for version 4.3.2_1441, released 17 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#432_1441_is_block_relnote)
 
