@@ -207,6 +207,12 @@ subcollection: openshift
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
 
+    * [18 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1822)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on.
+
+        * Worker node fix pack
+
     * [15 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1522)
 
         * CLI change log update
@@ -6035,7 +6041,7 @@ subcollection: openshift
 
 * [Version 5.0 (Beta)](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
-    * [Change log for version 5.0.1-beta_1411, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
+    * [Change log for version 5.0.1-beta_1566, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
 
     * [Change log for version 5.0.1-beta_1411, released 15 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-beta_1411_is_block_relnote)
 

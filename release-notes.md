@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-18"
 
 keywords: openshift
 
@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-july22}
 
 
+### 18 July 2022
+{: #openshift-july1822}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on.
+:   [Version 4.3.4_1551](/docs/containers?topic=containers-vpc_bs_changelog) and [Version 4.4.8_1550](/docs/containers?topic=containers-vpc_bs_changelog) are available.
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.21_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.42_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.46_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.54_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
 
 ### 15 July 2022
 {: #openshift-july1522}
