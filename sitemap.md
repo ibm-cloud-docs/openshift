@@ -209,6 +209,8 @@ subcollection: openshift
 
     * [19 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1922)
 
+        * Cluster autoscaler add-on
+
         * Node Tuning Operator
 
     * [18 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1822)
