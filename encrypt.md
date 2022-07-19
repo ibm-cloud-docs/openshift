@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-18"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -27,7 +27,7 @@ For more information about securing your cluster and personal information, see [
 {: #encrypt_ov}
 
 The following image and description outline default and optional data encryption for {{site.data.keyword.openshiftlong_notm}} clusters.
-{: shortdesc}
+
 
 ![Overview of cluster encryption, as described in the following sections.](images/cs_encrypt_ov_kms-vpc.png "Overview of cluster encryption"){: caption="Figure 1. Overview of cluster encryption" caption-side="bottom"}
 
@@ -55,13 +55,13 @@ The following image and description outline default and optional data encryption
 
 
 You can protect Kubernetes secrets and any credentials stored in a secret by enabling a [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} which provides an encryption solution using a root key you control.
-{: shortdesc}
+
 
 ### Available KMS providers
 {: #kms-providers}
 
 By default, {{site.data.keyword.openshiftlong_notm}} supports the following KMS providers.
-{: shortdesc}
+
 
 * {{site.data.keyword.keymanagementservicefull}} for [public cloud](/docs/key-protect?topic=key-protect-getting-started-tutorial) or [on-prem](https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=apis-key-management-service){: external} environments.
 * [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external} for keep your own key (KYOK) crypto unit support.
@@ -116,7 +116,7 @@ If KMS was enabled before this version, [update your cluster](/docs/openshift?to
 
 
 Enable a [key management service (KMS) provider](#kms) to encrypt the Kubernetes secrets in your cluster.
-{: shortdesc}
+
 
 
 
@@ -156,7 +156,8 @@ Setting up encryption by using a KMS in a different account is available for all
 {: #kms_cli}
 
 You can enable a KMS provider, update the KMS provider instance, or update the root key through the CLI.
-{: shortdesc}
+
+
 Setting up encryption by using a KMS from a different account is available for allowlisted accounts only. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
 {: note}
 
@@ -228,7 +229,7 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 {: #kms_ui}
 
 You can enable a KMS provider, update the KMS provider instance, or update the root key through the {{site.data.keyword.cloud_notm}} console.
-{: shortdesc}
+
 
 1. Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key.
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you want to enable encryption for.
@@ -272,7 +273,7 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 {: #kms_rotate}
 
 To rotate the root key that is used to encrypt your cluster, you can repeat the steps to enable KMS encryption from the [CLI](#kms_cli) or [console](#kms_ui). When you rotate a root key, you can't reuse a previous root key for the same cluster.
-{: shortdesc}
+
 
 Additionally, if your cluster runs version `4.5.18_1521_openshift` or later, you can [rotate the root key](/docs/key-protect?topic=key-protect-rotate-keys) from your KMS instance. This action automatically re-enables KMS in your cluster with the new root key.
 
@@ -280,7 +281,7 @@ Additionally, if your cluster runs version `4.5.18_1521_openshift` or later, you
 {: #verify_kms}
 
 After you enable a KMS provider in your {{site.data.keyword.openshiftlong_notm}} cluster, you can verify that your cluster secrets are encrypted by disabling the root key. When you disable the root key, the cluster can no longer decrypt the secrets and becomes unusable, which signifies that your secrets were encrypted.
-{: shortdesc}
+
 
 Before you begin
 - Consider [updating your cluster](/docs/containers?topic=containers-update) to at least {{site.data.keyword.redhat_openshift_notm}} version `4.5`. If you don't update your cluster to this version, changes to the root key are not reported in the cluster health status and take longer to take effect in your cluster.
@@ -333,13 +334,13 @@ To verify secret encryption by disabling a root key
 {: #worker-encryption}
 
 You can manage the encryption of the local disks in your worker nodes by using a [key management service (KMS) provider](#kms) such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external}. The way that you manage encryption for worker nodes depends on the infrastructure provider.
-{: shortdesc}
+
 
 ### Classic worker nodes
 {: #worker-encryption-classic}
 
 ![Classic](../icons/classic.svg "Classic") **Classic infrastructure**: Classic worker nodes have two disks, and you can manage encryption for the second disk.
-{: shortdesc}
+
 
 - The primary disk has the kernel images to boot your worker node. This disk is unencrypted.
 - The secondary disk has the container file system and locally pulled images. This disk is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a Kubernetes secret in your cluster. When you reload or update your worker nodes, the LUKS keys are rotated. 
@@ -348,7 +349,7 @@ You can manage the encryption of the local disks in your worker nodes by using a
 {: #worker-encryption-vpc}
 
 ![VPC](../icons/vpc.svg "VPC") **VPC infrastructure**: By default, the one primary disk of VPC worker nodes is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
-{: shortdesc}
+
 
 You can manage the encryption of the worker nodes by enabling a KMS provider at the worker pool level.
 
@@ -406,7 +407,7 @@ The encryption for the disks of the worker nodes in your worker pool are now man
 {: #worker-encryption-satellite}
 
 ![Satellite](../icons/satellite.svg "Satellite") **{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a Kubernetes secret in your cluster. When you reload or update your worker nodes, the LUKS keys are rotated.
-{: shortdesc}
+
 
 You can't manage the encryption of the LUKS key with your own KMS provider because KMS provider integration is not supported.
 {: important}
@@ -417,7 +418,7 @@ You can't manage the encryption of the LUKS key with your own KMS provider becau
 {: #datashield}
 
 {{site.data.keyword.datashield_short}} is integrated with Intel® Software Guard Extensions (SGX) and Fortanix® technology so that the app code and data of your containerized workloads are protected in use. The app code and data run in CPU-hardened enclaves, which are trusted areas of memory on the worker node that protect critical aspects of the app, which helps to keep the code and data confidential and unmodified.
-{: shortdesc}
+
 
 ![Classic](../icons/classic.svg "Classic") Applies to only classic clusters. VPC clusters can't have bare metal worker nodes, which are required to use {{site.data.keyword.datashield_short}}.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-18"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -164,7 +164,7 @@ Projects
 :   The cloud credential operator manages a controller for {{site.data.keyword.redhat_openshift_notm}} components that request cloud provider credentials. The controller ensures that only the credentials that are required for the operation are used, and not any elevated permissions like `admin`. For more information, see the [GitHub project](https://github.com/openshift/cloud-credential-operator){: external}.
 
 `openshift-cluster-node-tuning-operator`
-:   IBM manages the [node tuning operator](https://docs.openshift.com/container-platform/4.9/scalability_and_performance/using-node-tuning-operator.html){: external}, which runs a daemon set on each worker node in the cluster to tune the default worker node settings. You can't edit the default worker node settings.
+:   IBM manages the [node tuning operator](https://docs.openshift.com/container-platform/4.9/scalability_and_performance/using-node-tuning-operator.html){: external}, which runs a daemon set on each worker node in the cluster to tune worker nodes. You can apply custom profiles to your worker nodes to improve performance. For more information, see [Modifying worker node settings by using the Node Tuning Operator](/docs/openshift?topic=openshift-kernel#worker-nto).
 
 `openshift-cluster-samples-operator`
 :   The [samples operator](https://docs.openshift.com/container-platform/4.9/openshift_images/configuring-samples-operator.html){: external} manages select image streams and templates that come with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. You can deploy these templates from the [**Developer** perspective in the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console).

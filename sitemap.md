@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-07-19"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
+
+    * [19 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1922)
+
+        * Cluster autoscaler add-on
+
+        * Node Tuning Operator
 
     * [18 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1822)
 
@@ -2847,6 +2853,8 @@ subcollection: openshift
     * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
 
 * [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
+
+    * [Modifying worker node settings by using the Node Tuning Operator](/docs/openshift?topic=openshift-kernel#worker-nto)
 
     * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
 
@@ -5985,6 +5993,8 @@ subcollection: openshift
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
 
+    * [Change log for patch update 1.0.5_728, released 19 July 2022](/docs/openshift?topic=openshift-ca_changelog#105728_ca)
+
     * [Change log for patch update 1.0.5_694, released 30 June 2022](/docs/openshift?topic=openshift-ca_changelog#105694_ca)
 
     * [Change log for patch update 1.0.5_628, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#105628_ca)
@@ -6039,7 +6049,7 @@ subcollection: openshift
 
 * [Version 5.0 (Beta)](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
-    * [Change log for version 5.0.1-beta_1566, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
+    * [Change log for version 5.0.4-beta_1566, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
 
     * [Change log for version 5.0.1-beta_1411, released 15 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-beta_1411_is_block_relnote)
 

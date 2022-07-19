@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-07-19"
 
 keywords: block, add-on, changelog
 
@@ -57,7 +57,7 @@ Refer to the following tables for a summary of changes for each version of the {
 Version 5.0.0 is available in Beta for allowlisted accounts.
 {: preview}
 
-### Change log for version 5.0.1-beta_1566, released 14 July 2022
+### Change log for version 5.0.4-beta_1566, released 14 July 2022
 {: #5.0.4-beta_1556_is_block_relnote}
 
 - Updates the storage-secret-sidecar image to `v1.1.12`.
