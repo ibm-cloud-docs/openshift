@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-21"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -33,6 +33,7 @@ How does OpenShift Data Foundation work?
         - For VPC clusters the storage volumes are dynamically provisioned {{site.data.keyword.block_storage_is_short}} devices.
         - For bare metal Classic clusters, the storage volumes are local disks on your bare metal worker nodes.
         - For {{site.data.keyword.satelliteshort}} clusters, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
+
 :   ODF uses these devices to create a virtualized storage layer, where your app data is replicated for high availability. Because ODF abstracts your underlying storage, you can use ODF to create File, Block, or Object storage claims from the same underlying raw block storage.
 
 For a full overview of the features and benefits, see [OpenShift Data Foundation](https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation){: external}.
@@ -45,7 +46,7 @@ For a full overview of the features and benefits, see [OpenShift Data Foundation
 Review the following diagram and table to learn more about OpenShift Data Foundation.
 {: shortdesc}
 
-![ODF Architecture](images/ODF_components.svg "ODF Architecture")
+![ODF architecture](images/ODF_components.svg "ODF architecture"){: caption="Figure 1. ODF architecture" caption-side="bottom"}
 
 
 | Number | ODF component | Description |
@@ -56,7 +57,6 @@ Review the following diagram and table to learn more about OpenShift Data Founda
 | 4 | Monitor (Mon) pods | The Monitor pods keep a map of your OpenShift Data Foundation storage cluster and monitor storage cluster health. |
 | 5 | Monitor (Mon) block storage device | The monitor storage devices are the underlying storage devices for the monitor pods. Each monitor device is a raw block storage device that can be a local disk on your worker node or dynamically provisioned when you deploy ODF. Each device provides storage to a monitor pod. |
 {: caption="ODF architecture overview" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the diagram number of ODF resource. The second column is the name of the resource. The third column is a brief description of the resource."}
 
 
 
@@ -66,7 +66,7 @@ Review the following diagram and table to learn more about OpenShift Data Founda
 The Multicloud Object Gateway consists of the open source tool [NooBaa](https://www.noobaa.io/){: external} and is a component of OpenShift Data Foundation. With the Multicloud Object Gateway, you can manage objects and buckets across cloud providers.
 {: shortdesc}
 
-![Multicloud Object Gateway overview](images/noobaa.svg "NooBaa overview")
+![Multicloud Object Gateway overview](images/noobaa.svg "NooBaa overview"){: caption="Figure 2. Multicloud Object Gateway overview" caption-side="bottom"}
 
 | Number | Multicloud Object Gateway component | Description |
 | --- | --- | --- |
@@ -83,7 +83,6 @@ The Multicloud Object Gateway consists of the open source tool [NooBaa](https://
 | 11 | Namespace bucket access key | The access key is used to access your namespace bucket. Namespace buckets can include multiple namespace resources from different cloud providers or on-prem buckets. The namespace bucket access key and secret key are used in your s3 apps to configure access to your namespace bucket which then defines read and write policies to namespace resources that you configure. |
 | 12 | Namespace bucket secret key | The secret key is used to access your namespace bucket. Namespace buckets can include multiple namespace resources from different cloud providers or on-prem buckets. The namespace bucket access key and secret key are used in your s3 apps to configure access to your namespace bucket which then defines read and write policies to namespace resources that you configure. |
 {: caption="NooBaa overview" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the diagram number of the resource. The second column is a brief description of the resource."}
 
 
 

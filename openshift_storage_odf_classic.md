@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-21"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -318,25 +318,25 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     ```
     {: pre}
 
-2. Log in to each worker node that you want to use for your ODF.
+1. Log in to each worker node that you want to use for your ODF.
     ```sh
     oc debug node/<node-name>
     ```
     {: pre}
 
-3. After you deploy the debug pod on the worker node, run the following command to allow host binaries.
+1. After you deploy the debug pod on the worker node, run the following command to allow host binaries.
     ```sh
     chroot /host
     ```
     {: pre}
 
-4. List the available disks on the worker node.
+1. List the available disks on the worker node.
     ```sh
     lsblk
     ```
     {: pre}
 
-5. Review the command output for available disks. You can use only unmounted disks for ODF deployments, such as `sdc` disks in the following example. Note the initial storage capacity of your ODF deployment is equal to the size of the disk that you specify as the `osd-device-path`. In this example, the `sdc` disk is unmounted and has two available partitions: `sdc1` and `sdc2`.
+1. Review the command output for available disks. You can use only unmounted disks for ODF deployments, such as `sdc` disks in the following example. Note the initial storage capacity of your ODF deployment is equal to the size of the disk that you specify as the `osd-device-path`. In this example, the `sdc` disk is unmounted and has two available partitions: `sdc1` and `sdc2`.
     ```sh
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
@@ -351,7 +351,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     ```
     {: screen}
 
-6. For each unmounted disk that you want to use in your deployment, find the disk ID. In the following example, the ID for the `sdc1` partition is `scsi-3600605b00d87b43027b3bc310a64c6c9-part1` and the ID for the `sdc2` partition is `scsi-3600605b00d87b43027b3bc310a64c6c9-part2`.
+1. For each unmounted disk that you want to use in your deployment, find the disk ID. In the following example, the ID for the `sdc1` partition is `scsi-3600605b00d87b43027b3bc310a64c6c9-part1` and the ID for the `sdc2` partition is `scsi-3600605b00d87b43027b3bc310a64c6c9-part2`.
 
     ```sh
     ls -l /dev/disk/by-id/
@@ -373,7 +373,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     ```
     {: screen}
 
-7. Repeat the previous steps for each worker node that you want to use for your OpenShift Data Foundation deployment.
+1. Repeat the previous steps for each worker node that you want to use for your OpenShift Data Foundation deployment.
 
 1. [Install ODF in your cluster](#install-odf-cli-classic).
 
