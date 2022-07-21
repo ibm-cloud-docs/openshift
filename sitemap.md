@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-19"
+lastupdated: "2022-07-21"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
+
+    * [21 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2122)
+
+        * Cluster autoscaler add-on
 
     * [19 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1922)
 
@@ -5978,6 +5982,8 @@ subcollection: openshift
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.1.0](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_729, released 21 July 2022](/docs/openshift?topic=openshift-ca_changelog#110729_ca)
 
     * [Change log for patch update 1.1.0_682, released 30 June 2022](/docs/openshift?topic=openshift-ca_changelog#110682_ca)
 
