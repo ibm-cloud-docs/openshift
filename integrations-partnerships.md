@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-22"
 
 keywords: kubernetes, openshift
 
@@ -65,7 +65,7 @@ For more information about how to install and use Portworx with {{site.data.keyw
 Classic SDS worker node machines that come with local disks, and classic virtual machines that you use for Portworx are in your monthly {{site.data.keyword.openshiftlong_notm}} bill. For pricing information, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/kubernetes/catalog/about). The Portworx license is a separate cost and is not included in your monthly bill.
 {: shortdesc}
 
-If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [requeset access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/openshift?topic=openshift-portworx#portworx_logs) before opening a support ticket.
+If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/openshift?topic=openshift-portworx#portworx_logs) before opening a support ticket.
 
 
 
