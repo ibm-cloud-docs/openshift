@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-22"
 
 keywords: kubernetes, openshift
 
@@ -201,7 +201,7 @@ If you have a [bare metal graphics processing unit (GPU) machine type](/docs/ope
 
 In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. After, you might find it useful to play around with mathematically intensive workloads such as the [TensorFlow](https://www.tensorflow.org/){: external} machine learning framework with [this Kubernetes demo](https://github.com/pachyderm/pachyderm/tree/master/examples/ml/tensorflow){: external}.
 
-![Classic](../icons/classic.svg "Classic") ![Version 4 icon.](images/icon-version-43.png) GPU machines are available only for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 on classic infrastructure.
+![Classic](../icons/classic.svg "Classic") {[icon_ocp_4]} GPU machines are available only for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 on classic infrastructure.
 {: note}
 
 Before you begin
@@ -363,7 +363,7 @@ You can use the {{site.data.keyword.redhat_openshift_notm}} console to manage yo
 
 For more information about the console, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.9/web_console/web-console.html){: external}.
 
-### ![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} console overview
+### {{site.data.keyword.redhat_openshift_notm}} console overview
 {: #openshift_console4_overview}
 
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.redhat_openshift_notm}} cluster, then click **OpenShift web console**.

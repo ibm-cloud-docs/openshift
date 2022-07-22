@@ -207,7 +207,9 @@ subcollection: openshift
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
 
-    * [21 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2122)
+    * [22 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2222)
+
+        * Version change log
 
         * Cluster autoscaler add-on
 
@@ -857,7 +859,7 @@ subcollection: openshift
 
         * {{site.data.keyword.cos_full_notm}} plug-in
 
-        * Master fix pack update changelog documentation
+        * Master fix pack update change log documentation
 
     * [23 August 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2321)
 
@@ -1845,7 +1847,7 @@ subcollection: openshift
 
     * [18 February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1820)
 
-        * Version changelogs
+        * Version change logs
 
     * [17 February 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1720)
 
@@ -3720,7 +3722,7 @@ subcollection: openshift
 
 * [Accessing the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
 
-    * [![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
+    * [{{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-22"
 
 keywords: openshift, nginx, ingress controller
 
@@ -22,7 +22,7 @@ subcollection: openshift
 Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by creating Ingress resources that are managed by the Ingress controller.
 {: shortdesc}
 
-![Version 4 icon.](images/icon-version-43.png) This information is for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
+This information is for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 {: note}
 
 For information about how to expose apps in {{site.data.keyword.satelliteshort}}, see Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).

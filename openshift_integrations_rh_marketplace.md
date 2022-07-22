@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-07-22"
 
 keywords: kubernetes, openshift
 
@@ -31,7 +31,7 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 * The IAM **Operator** platform access role for the cluster in {{site.data.keyword.containershort_notm}}.
 * The IAM **Manager** service access role in all namespaces (`cluster-admin` RBAC) for the cluster in {{site.data.keyword.containershort_notm}}.
 
-![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_notm}} Marketplace is available for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
+{{site.data.keyword.redhat_notm}} Marketplace is available for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 {: note}
 
 **Before you begin**:

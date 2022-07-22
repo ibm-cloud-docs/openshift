@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-07-22"
 
 keywords: openshift, route, router
 
@@ -22,7 +22,7 @@ subcollection: openshift
 Expose the services in your {{site.data.keyword.openshiftlong}} cluster on the router's external IP address by using a route.
 {: shortdesc}
 
-![Version 4 icon.](images/icon-version-43.png) This information is for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.
+This information is for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.
 {: important}
 
 Not sure whether to use {{site.data.keyword.redhat_openshift_notm}} routes or Ingress? Check out [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning).

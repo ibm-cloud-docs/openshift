@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-22"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 
 **Infrastructure provider and version**:
 * ![Classic](../icons/classic.svg "Classic") Classic
-* ![Version 4 icon.](images/icon-version-43.png) {{site.data.keyword.redhat_openshift_notm}} version 4
+* {{site.data.keyword.redhat_openshift_notm}} version 4
 
 
 When you run `oc get svc -n openshift-ingress`, one or more zones has no public Ingress controller.

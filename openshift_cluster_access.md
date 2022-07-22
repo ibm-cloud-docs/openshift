@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-22"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -878,7 +878,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         {: screen}
 
-    2. ![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.redhat_openshift_notm}} version 4 only**: Get the token endpoint of the {{site.data.keyword.redhat_openshift_notm}} `oauth` server.
+    2. **{{site.data.keyword.redhat_openshift_notm}} version 4 only**: Get the token endpoint of the {{site.data.keyword.redhat_openshift_notm}} `oauth` server.
         ```sh
         curl <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
         ```
