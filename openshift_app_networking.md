@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-22"
 
 keywords: openshift, networking
 
@@ -27,7 +27,7 @@ To securely expose your apps to external traffic, you can use choose from the fo
 {: shortdesc}
 
 [{{site.data.keyword.redhat_openshift_notm}} Ingress controller](/docs/openshift?topic=openshift-openshift_routes)
-: ![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.redhat_openshift_notm}} version 4 clusters**: Expose multiple apps in a cluster by setting up routing with the {{site.data.keyword.redhat_openshift_notm}} Ingress controller. The Ingress controller uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. The Ingress controller solution uses three components.
+: **{{site.data.keyword.redhat_openshift_notm}} version 4 clusters**: Expose multiple apps in a cluster by setting up routing with the {{site.data.keyword.redhat_openshift_notm}} Ingress controller. The Ingress controller uses the Ingress subdomain as a secured and unique public or private entry point to route incoming requests. You can use one subdomain to expose multiple apps in your cluster as services. The Ingress controller solution uses three components.
 
     - The Ingress operator that manages the Ingress controllers in your cluster. 
     - The Ingress controller is a HAProxy-based Kubernetes service that manages all incoming traffic for the apps in your cluster by implementing routing rules for the apps. This controller is managed by the Ingress operator. The Ingress controller listens for incoming HTTP, or HTTPS service requests, and then forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
@@ -46,7 +46,7 @@ LoadBalancer
 
 
 Ingress
-:   ![Version 4 icon.](images/icon-version-43.png) **{{site.data.keyword.redhat_openshift_notm}} version 4 clusters**:  You can use [Ingress](/docs/openshift?topic=openshift-ingress-roks4) to expose your app to external traffic via the {{site.data.keyword.redhat_openshift_notm}} Ingress controller. The {{site.data.keyword.redhat_openshift_notm}} Controller Manager converts your Ingress resources to Route resources and the {{site.data.keyword.redhat_openshift_notm}} Ingress controller processes those Routes.
+:   **{{site.data.keyword.redhat_openshift_notm}} version 4 clusters**:  You can use [Ingress](/docs/openshift?topic=openshift-ingress-roks4) to expose your app to external traffic via the {{site.data.keyword.redhat_openshift_notm}} Ingress controller. The {{site.data.keyword.redhat_openshift_notm}} Controller Manager converts your Ingress resources to Route resources and the {{site.data.keyword.redhat_openshift_notm}} Ingress controller processes those Routes.
 
 ## Choosing among load balancing solutions
 {: #load-balancing-comparison}
@@ -191,7 +191,7 @@ Check out the following methods for private app networking:
 ![VPC](../icons/vpc.svg "VPC") To make an app available over a private network only in a VPC cluster, choose a load balancing deployment pattern based on your cluster's service endpoint setup: public and private cloud service endpoint, or private cloud service endpoint only. For each service endpoint setup, the following table describes each possible app exposure method, why you might use it, and how to set it up.
 {: shortdesc}
 
-![Version 4 icon.](images/icon-version-43.png) Only version 4 clusters can be created on VPC infrastructure. The following methods don't apply to version 3.11 clusters, which can be created on classic infrastructure only.You can't use multiple app exposure methods for one app.
+Only version 4 clusters can be created on VPC infrastructure. The following methods don't apply to version 3.11 clusters, which can be created on classic infrastructure only.You can't use multiple app exposure methods for one app.
 {: note}
 
 |Name|Load-balancing method|Use case|Implementation|
