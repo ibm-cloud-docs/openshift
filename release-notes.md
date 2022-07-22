@@ -34,6 +34,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-july2222}
 {: release-note}
 
+
 Version change log
 :   Change log added for master fix pack [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_410).
 
