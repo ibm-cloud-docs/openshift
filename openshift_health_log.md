@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-25"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -42,7 +42,7 @@ Built-in {{site.data.keyword.redhat_openshift_notm}} logging tools
 :   Built-in view of pod logs in the {{site.data.keyword.redhat_openshift_notm}} web console.
     - Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.
   
-    **{{site.data.keyword.redhat_openshift_notm}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/4.9/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.
+   **{{site.data.keyword.redhat_openshift_notm}} 4**: To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/4.9/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.
     {: note}
 
 Service logs: {{site.data.keyword.at_full}}

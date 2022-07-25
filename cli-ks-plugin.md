@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-25"
 
 keywords: openshift
 
@@ -1929,6 +1929,381 @@ ibmcloud oc cluster user-subnet rm --cluster my_cluster --subnet-cidr 169.xx.xxx
 ```
 {: pre}
 
+## Beta: `dedicated` commands
+{: #dedicated_commands}
+
+View, create, and remove a dedicated host or dedicated host pool.
+{: shortdesc}
+
+The `dedicated` commands are available in beta.
+{: beta}
+
+### Beta: `ibmcloud oc dedicated flavors`
+{: #dedicated_flavors}
+
+View dedicated host flavors.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated flavors --zone ZONE --provider PROVIDER
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--zone ZONE`
+:    The zone to search for dedicated host flavors.
+
+`--provider PROVIDER`
+:    The provider to use to search for dedicated host flavors.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated flavors --zone us-south-1 --provider myprovider1
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated host create`
+{: #dedicated_host_create}
+
+Create a dedicated host.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated host create --flavor FLAVOR --pool POOL --zone ZONE [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`-- flavor FLAVOR`
+:    The flavor of the dedicated host.
+
+`-- pool POOL`
+:    The name of the dedicated host pool where the dedicated host is added.
+
+`--zone ZONE`
+:    The zone to create the dedicated host in.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated host create --flavor b3c.4x16 --pool mypool --zone wdc
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated host get`
+{: #dedicated_host_get}
+
+Get the details of a dedicated host.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated host get --host HOST --pool POOL [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--host HOST`
+:    The ID of the dedicated host.
+
+`--pool POOL`
+:    The ID of the dedicated host pool that the dedicated host is located in. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated host get --host myhost  --pool mypool
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated host ls`
+{: #dedicated_host_ls}
+
+List all dedicated hosts in a dedicated host pool.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated host ls --pool POOL [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--pool POOL`
+:    The ID of the dedicated host pool. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated host ls --pool mypool
+```
+{: pre}
+
+
+### Beta: `ibmcloud oc dedicated host placement disable`
+{: #dedicated_host_placement_disable}
+
+Disable dedicated host placement.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated host placement disable --host HOST --pool POOL
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--host HOST`
+:    The ID of the dedicated host to disable placement for.
+
+`--pool POOL`
+:    The ID of the dedicated host pool that the dedicated host is located in. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
+
+`--q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated host placement disable --host myhost --pool mypool
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated host placement enable`
+{: #dedicated_host_placement_enable}
+
+Enable dedicated host placement.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated host placement enable --host HOST --pool POOL
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--host HOST`
+:    The ID of the dedicated host to enable placement for.
+
+`--pool POOL`
+:    The ID of the dedicated host pool that the dedicated host is located in. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
+
+`--q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated host placement enable --host myhost --pool mypool
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated host rm`
+{: #dedicated_host_rm}
+
+Delete a dedicated host. This action can't be undone.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated host rm --host HOST --pool POOL [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--pool POOL`
+:    The ID of the dedicated host pool that contains the dedicated host to delete. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`--q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated host rm --host myhost --pool mypool
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated pool create`
+{: #dedicated_pool_create}
+
+Create a dedicated host pool.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated pool create --flavor-class CLASS --metro METRO --name NAME [--output OUTPUT]
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--flavor-class CLASS`
+:    The flavor-class of the dedicated host pool. To see available options, run `ibmcloud ks flavors`.
+
+`--metro METRO`
+:    The metro to create the dedicated host pool in, such as `dal` or `wdc`.
+
+`--name NAME`
+:    The name of the dedicated host pool.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated pool --flavor-class mb4c.20x64 --metro dal --name mypool
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated pool get`
+{: #dedicated_pool_get}
+
+Get the details of a dedicated host pool.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated pool get --pool POOL [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--pool POOL`
+:    The ID of the dedicated host pool. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
+
+`--output OUTPUT`
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated pool get --pool mypool
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated pool ls`
+{: #dedicate_pool_ls}
+
+List all dedicated host pools.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated pool ls [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`--q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated pool ls
+```
+{: pre}
+
+### Beta: `ibmcloud oc dedicated pool rm`
+{: #dedicated_pool_rm}
+
+Delete a dedicated host pool. This action can't be undone.
+{: shortdesc}
+
+```sh
+ibmcloud oc dedicated pool rm --pool POOL [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**: * ![VPC](../icons/vpc.svg "VPC") VPC
+
+**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`--pool POOL`
+:    The ID of the dedicated host pool to delete. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
+
+`--q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc dedicated pool rm --pool mypool
+```
+{: pre}
+
 ## `worker` commands
 {: #worker_node_commands}
 
@@ -2457,7 +2832,7 @@ Add a worker pool to a VPC cluster. No worker nodes are created until you [add z
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [-q] [--output json]
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [-q] [--security-group GROUP ...] [--output json]
 ```
 {: pre}
 
@@ -2506,6 +2881,9 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
+
+`--security-group GROUP`
+:    Optional. Specify up to five security group IDs to apply to all workers in the worker pool.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.
@@ -6412,7 +6790,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...][--operating-system SYSTEM] [--pod-subnet SUBNET] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
+ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...][--operating-system SYSTEM] [--pod-subnet SUBNET] [--pod-network-interface-selection METHOD] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
 ```
 {: pre}
 
