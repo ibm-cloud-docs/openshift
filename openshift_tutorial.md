@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-25"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -30,7 +30,7 @@ Create a cluster with worker nodes that come installed with {{site.data.keyword.
 
 With {{site.data.keyword.openshiftlong}}, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the {{site.data.keyword.openshiftlong_notm}} Container Platform orchestration software. You get all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.9/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 
-{{site.data.keyword.redhat_openshift_notm}} worker nodes are available for paid accounts and standard clusters only. In this tutorial, you create a cluster that runs version 4.10. The operating system is Red Hat Enterprise Linux 7.
+{{site.data.keyword.redhat_openshift_notm}} worker nodes are available for paid accounts and standard clusters only. In this tutorial, you create a cluster that runs version 4.9. The operating system is Red Hat Enterprise Linux 7.
 {: note}
 
 ## Objectives
@@ -74,9 +74,9 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     ```
     {: pre}
 
-2. Create a cluster with a unique name. The following command creates a version 4.10 cluster in Washington, DC with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`. For more information, see [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
+2. Create a cluster with a unique name. The following command creates a version 4.9 cluster in Washington, DC with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. If you have existing VLANs that you want to use, get the VLAN IDs by running `ibmcloud oc vlan ls --zone <zone>`. For more information, see [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps).
     ```sh
-    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --version 4.10_openshift --flavor b3c.4x16.encrypted  --workers 2  --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --public-service-endpoint
+    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --version 4.9_openshift --flavor b3c.4x16.encrypted  --workers 2  --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --public-service-endpoint
     ```
     {: pre}
 
@@ -110,8 +110,8 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
     Example output
 
     ```sh
-    Client Version: v4.10.0
-    Kubernetes Version: v1.24.1.2
+    Client Version: v4.9.0
+    Kubernetes Version: v1.23.8.2
     ```
     {: screen}
 
