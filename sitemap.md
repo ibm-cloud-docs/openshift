@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-25"
 
 keywords: openshift
 subcollection: openshift
@@ -4875,6 +4875,30 @@ subcollection: openshift
     * [Deprecated: `ibmcloud oc cluster user-subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_add)
 
     * [Deprecated: `ibmcloud oc cluster user-subnet rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_rm)
+
+* [Beta: `dedicated` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_commands)
+
+    * [Beta: `ibmcloud oc dedicated flavors`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_flavors)
+
+    * [Beta: `ibmcloud oc dedicated host create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_create)
+
+    * [Beta: `ibmcloud oc dedicated host get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_get)
+
+    * [Beta: `ibmcloud oc dedicated host ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_ls)
+
+    * [Beta: `ibmcloud oc dedicated host placement disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_placement_disable)
+
+    * [Beta: `ibmcloud oc dedicated host placement enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_placement_enable)
+
+    * [Beta: `ibmcloud oc dedicated host rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_rm)
+
+    * [Beta: `ibmcloud oc dedicated pool create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_create)
+
+    * [Beta: `ibmcloud oc dedicated pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_get)
+
+    * [Beta: `ibmcloud oc dedicated pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicate_pool_ls)
+
+    * [Beta: `ibmcloud oc dedicated pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_rm)
 
 * [`worker` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_node_commands)
 
