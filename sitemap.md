@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-07-26"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
+
+    * [27 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2722)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.1.19` is available.
 
     * [22 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2222)
 
@@ -6154,6 +6158,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.1.19, released 27 July 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02119_object_plugin)
 
 * [Change log for version 2.1.18, released 14 July 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02118_object_plugin)
 

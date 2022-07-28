@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-28"
 
 keywords: openshift, deploy
 
@@ -489,7 +489,6 @@ You have different options that depend on your cluster type. For more informatio
 - **Private VLAN-only standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#plan_private_vlan). You also must open the port for the service's private IP address in your firewall.
 
 As you plan how many `Service` objects you need in your cluster, keep in mind that Kubernetes uses `iptables` to handle networking and port forwarding rules. If you run many services in your cluster, such as 5000, performance might be impacted.
-
 
 
 ## Securing apps

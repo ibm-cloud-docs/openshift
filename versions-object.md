@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-26"
 
 keywords: object storage, plug-in, changelog
 
@@ -26,6 +26,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.19 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.18 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.17 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.16 | Yes | Greater than or equal to 4.6 | x86 |
@@ -52,6 +53,14 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+## Change log for version 2.1.19, released 27 July 2022
+{: #02119_object_plugin}
+
+Updates the following mount paths for the driver pods.
+    - Mounts `/etc/os-release` or `/etc/lsb-release` as read only.
+    - Mounts `/etc/kubernetes` instead of `/etc` or `/usr/libexec/kubernetes` to install the `FlexVolume` binary.
+    - Mounts `/usr/local/bin` instead of `/usr/local` to install the `s3fs` binary.
 
 ## Change log for version 2.1.18, released 14 July 2022
 {: #02118_object_plugin}

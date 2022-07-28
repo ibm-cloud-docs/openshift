@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-07-28"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -227,8 +227,6 @@ For a list of supported services, see [Integrating services](/docs/containers?to
 {: faq}
 
 See the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}.
-
-
 
 ## What am I charged for? Can I estimate and control costs in my cluster?
 {: #charges}

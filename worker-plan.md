@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-28"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -236,6 +236,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 
 * **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
 * **SSD**: A solid-state drive storage device for high-performance data.
+* **SAN**: For select virtual machines, the storage device is mounted via software area network (SAN).
 * **Raw**: The storage device is unformatted and the full capacity is available for use.
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
@@ -254,7 +255,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 ## Software-defined storage (SDS) machines
 {: #sds}
 
-Software-defined storage (SDS) flavors are physical machines that are provisioned with additional raw disks for physical local storage. Unlike the primary and secondary local disk, these raw disks are not wiped during a worker node update or reload. Because data is co-located with the compute node, SDS machines are suited for high-performance workloads.
+Software-defined storage (SDS) flavors have additional raw disks for physical local storage. Unlike the primary and secondary local disk, these raw disks are not wiped during a worker node update or reload. Because data is co-located with the compute node, SDS machines are suited for high-performance workloads.
 {: shortdesc}
 
 ![Classic](../icons/classic.svg "Classic") Software-defined storage flavor are available for classic clusters only and are not supported in VPC clusters.
@@ -282,6 +283,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 
 * **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
 * **SSD**: A solid-state drive storage device for high-performance data.
+* **SAN**: For select virtual machines, the storage device is mounted via software area network (SAN).
 * **Raw**: The storage device is unformatted and the full capacity is available for use.
 * **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
