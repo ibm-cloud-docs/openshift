@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-07-28"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -251,8 +251,6 @@ If you took a break from the last lesson and started a new command line, make su
         oc delete all -l app=hello-world -n hello-world
         ```
         {: pre}
-
-
 
 
 

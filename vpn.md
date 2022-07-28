@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-28"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -160,6 +160,7 @@ After you deploy each Helm chart, each strongSwan VPN deployment starts up as a 
     * If applications in the remote on-premises network must access services in the cluster,
         - `localSubnetNAT`: Ensure that an application in the on-premises remote network can select a specific VPN connection to send and receive traffic to the cluster. In each strongSwan Helm configuration, use `localSubnetNAT` to uniquely identify the cluster resources that can be accessed by the remote on-premises application. Because multiple VPNs are established from the remote on-premises network to the cluster, you must add logic to the application on the on-premises network so that it can select which VPN to use when it accesses services in the cluster. Note that the services in the cluster are accessible through multiple different subnets depending on what you configured for `localSubnetNAT` in each strongSwan VPN configuration.
         - `remoteSubnetNAT`: Ensure that a pod in your cluster uses the same VPN connection to return traffic to the remote network. In each strongSwan deployment file, map the remote on-premises subnet to a unique subnet using the `remoteSubnetNAT` setting. Traffic that is received by a pod in the cluster from a VPN-specific `remoteSubnetNAT` is sent back to that same VPN-specific `remoteSubnetNAT` and then over that same VPN connection.
+    * If pods in the cluster must access services on the remote on-premises network and applications in the remote on-premises network must access services in the cluster, configure the `localSubnetNAT` and `remoteSubnetNAT` settings listed in the second bullet point. Note that if a pod in the cluster initiates a request to the remote on-premises network, you must add logic to the pod so that it can select which VPN connection to use to access the services on the remote on-premises network.
 
 3. Configure the remote VPN endpoint software to establish a separate VPN connection to the load balancer IP in each zone.
 

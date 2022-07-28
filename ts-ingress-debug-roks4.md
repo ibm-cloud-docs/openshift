@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-07-28"
 
 keywords: openshift
 
@@ -164,7 +164,7 @@ Verify that the Ingress operator and the Ingress controller are healthy. Ingress
         ```
         {: pre}
 
-    4. Get the logs for each pod and look for error messages in the logs. 
+    4. Get the logs for each pod and look for error messages in the logs.
         ```sh
         oc logs <pod> -n openshift-ingress
         ```

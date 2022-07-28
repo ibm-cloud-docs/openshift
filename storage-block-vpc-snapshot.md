@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-07-28"
 
 keywords: openshift, block storage, snapshot
 
@@ -16,13 +16,13 @@ subcollection: openshift
 # Setting up snapshots with {{site.data.keyword.block_storage_is_short}} 
 {: #vpc-volume-snapshot}
 
-{{site.data.keyword.block_storage_is_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. 
+{{site.data.keyword.block_storage_is_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. For more information, see [How snapshots work](/docs/vpc?topic=vpc-snapshots-vpc-about).
 {: shortdesc}
 
 Supported infrastructure provider
 :   ![VPC](../icons/vpc.svg "VPC") VPC
 
-Snapshot support is available in {{site.data.keyword.block_storage_is_short}} add-on version `5.0.0_beta` and later.  Version `5.0.0_beta` is available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist.
+Snapshot support is available in {{site.data.keyword.block_storage_is_short}} add-on version `5.0.0-beta` and later.  Version `5.0.0-beta` is available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. If you don't need snapshot support, follow the steps to use [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-add) in your cluster. After version `5.0.0` is released, version `5.0.0-beta` of the add-on becomes depreacted and Beta users must migrate to version `5.0.0`. Do not use the Beta version of the add-on unless you want to test snapshot support.
 {: important}
 
 ## Enabling the {{site.data.keyword.block_storage_is_short}} add-on
@@ -37,7 +37,7 @@ Snapshot support is available in {{site.data.keyword.block_storage_is_short}} ad
     {: pre}
 
 
-1. If you have an add-on version earlier than 5.0.0 of the {{site.data.keyword.block_storage_is_short}} add-on installed in your cluster, you must first disable the add-on and then enable version 5.0.0 or later. 
+1. If you have an add-on version earlier than `5.0.0-beta` of the {{site.data.keyword.block_storage_is_short}} add-on installed in your cluster, you must first disable the add-on and then enable version 5.0.0 or later. 
     ```sh
     ibmcloud oc cluster addon disable vpc-block-csi-driver  --cluster CLUSTER-ID
     ```
@@ -56,6 +56,9 @@ Snapshot support is available in {{site.data.keyword.block_storage_is_short}} ad
     {: screen}
 
 1. Verify that the add-on state is `normal` and the status is `ready`.
+    If you enabled the add-on, but the state is `critical`, then your account is not allowlisted. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. Retry the steps to enable the add-on after your account is allowlisted.
+    {: note}
+    
     ```sh
     ibmcloud oc cluster addon ls --cluster CLUSTER-ID
     ```
@@ -111,7 +114,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     ```
     {: pre}
 
-1. Verify that the PVC is created and is in a `Bound` state. 
+1. Verify that the PVC is created and is in a `Bound` state.
     ```sh
     kubectl get pvc
     ```
@@ -171,6 +174,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     testcustom-58dd7c89b6-8zdcl   1/1     Running   0          4m50s    
     ```
     {: screen}
+   
 
 1. Now that you have created the pod, log in to the pod and create a text file to use for the snapshot. 
     ```sh
@@ -193,47 +197,23 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
 After you create a deployment and a PVC, you can create the volume snapshot resources.
 
-1. Save the following YAML to a file called `volumeSnapshotClass.yaml`.
+1. Verify your volume is in the `attached` state.
 
-    ```yaml
-    apiVersion: snapshot.storage.k8s.io/v1
-    kind: VolumeSnapshotClass
-    metadata:
-        name: snapshotclass
-    driver: vpc.block.csi.ibm.io
-    deletionPolicy: Delete
-    ```
-    {: codeblock}
-
-1. Apply the `VolumeSnapshotClass` class to your cluster.
     ```sh
-    kubectl create -f volumeSnapshotClass.yaml
+    oc get pvc
     ```
     {: pre}
 
-1. Verify that the VolumeSnapshotClass class is created.
 
-    ```sh
-    kubectl get volumesnapshotclass
-    ```
-    {: pre}
-
-    ```sh
-    NAME            DRIVER                 DELETIONPOLICY   AGE
-    snapshotclass   vpc.block.csi.ibm.io   Delete           3m17s
-    ```
-    {: screen}
-
-
-1. Create a volume snapshot resource in your cluster and reference the PVC that you created for your deployment earlier. Save the following YAML configuration to a file called `snapvol.yaml`. 
+1. Create a volume snapshot resource in your cluster by using the `vpc-block-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
 
     ```yaml
     apiVersion: snapshot.storage.k8s.io/v1
     kind: VolumeSnapshot
     metadata:
-        name: snapshot-csi-block-pvc-custom
+        name: vpc-block-snapshot
     spec:
-        volumeSnapshotClassName: snapshotclass
+        volumeSnapshotClassName: vpc-block-snapshot
         source:
             persistentVolumeClaimName: csi-block-pvc-custom
     ```
@@ -244,14 +224,14 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     ```
     {: pre}
 
-1. Verify that the snapshot is created.
+1. Verify that the snapshot is created and ready to use.
 
     ```sh
     kubectl get volumesnapshots
     ```
     {: pre}
     
-    
+    Example output where `READYTOUSE` is `true`.
     ```sh
     NAME                            READYTOUSE   SOURCEPVC              SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS SNAPSHOTCONTENT                                    CREATIONTIME   AGE
     snapshot-csi-block-pvc-custom   true         csi-block-pvc-custom                           1Gi           snapshotclass   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
@@ -261,8 +241,8 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
 ## Restoring from a volume snapshot
 {: #vpc-restore-from-snapshot}
 
-After you deploy the snapshot resources, you can restore data to a new pod by using the snapshot. 
-{: shortdesc}
+After you deploy the snapshot resources, you can restore data to a new volume by using the snapshot. Creating a PVC dynamically provisions a new volume with snapshot data.
+
 
 1. Create a second PVC that references your volume snapshot. 
     ```yaml
