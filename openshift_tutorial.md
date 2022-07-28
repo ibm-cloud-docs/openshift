@@ -111,7 +111,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 
     ```sh
     Client Version: v4.9.0
-    Kubernetes Version: v1.23.8.2
+    Kubernetes Version: v1.23.9.2
     ```
     {: screen}
 
