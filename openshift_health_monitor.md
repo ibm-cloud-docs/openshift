@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-01"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -22,7 +22,7 @@ For cluster metrics and app monitoring, {{site.data.keyword.openshiftlong}} clus
 {: shortdesc}
 
 ## Understanding options for monitoring
-{: #oc_logmet_options}
+{: #oc_logmet_options_monitoring}
 
 To help understand when to use the built-in {{site.data.keyword.redhat_openshift_notm}} tools or {{site.data.keyword.cloud_notm}} integrations, review the following information.
 {: shortdesc}

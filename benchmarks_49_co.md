@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-01"
 
 keywords: openshift, benchmarks, 4.9, compliance operator, compliance
 
@@ -175,7 +175,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.3.1|Ensure that the CNI in use supports network policies.|Manual|1|[Not checked](#co-benchmark-49-remdiations) |
+| 5.3.1|Ensure that the CNI in use supports network policies.|Manual|1| Pass |
 | 5.3.2|Ensure that all namespaces define network policies.|Automated|2|[Not checked](#co-benchmark-49-remdiations) |
 {: caption="Section 5.3 Network policies and CNI benchmark results" caption-side="top"}
 
@@ -216,7 +216,7 @@ Review information from {{site.data.keyword.cloud_notm}} about the CIS Benchmark
 | Section | Recommendation/Explanation |
 | --- | --- |
 | 1.2.4 | {{site.data.keyword.openshiftshort}} configures the {{site.data.keyword.cloud_notm}} IAM identity provider by default. |
-| 1.2.19 | Fix is coming with https://github.com/ComplianceAsCode/content/pull/8995. |
+| 1.2.19 | Test fix is available for OpenShift versions 4.11 and later with https://github.com/ComplianceAsCode/content/pull/8995. |
 | 1.2.23 | {{site.data.keyword.openshiftshort}} can optionally enable Kubernetes API server auditing. |
 | 1.2.33 | {{site.data.keyword.openshiftshort}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
 | 1.2.34 | {{site.data.keyword.openshiftshort}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |

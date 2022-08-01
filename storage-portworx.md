@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-28"
 
 keywords: portworx, openshift
 
@@ -694,8 +694,8 @@ To install Portworx:
 ### Updating Portworx in your cluster
 {: #update_portworx}
 
-You can upgrade Portworx to the latest version.
-{: shortdesc}
+If you have a private only cluster, contact Portworx for help updating your cluster. Open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/openshift?topic=openshift-portworx#portworx_logs) before opening a support ticket.
+{: note}
 
 1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm version 3 client on your local machine.
 
@@ -722,8 +722,6 @@ You can upgrade Portworx to the latest version.
     helm upgrade <release_name> ibm-community/portworx/
     ```
     {: pre}
-
-
 
 ## Creating a Portworx volume
 {: #add_portworx_storage}
@@ -1518,7 +1516,7 @@ To stop billing for Portworx, you must remove the Portworx Helm installation fro
 ## Getting help and support
 {: #portworx_help_sup}
 
-If you run into an issue with using Portworx, you can open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/openshift?topic=openshift-portworx#portworx_logs) before opening a support ticket.
+Open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/openshift?topic=openshift-portworx#portworx_logs) before opening a support ticket.
 
 ### Gathering logs
 {: #portworx_logs}
