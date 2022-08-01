@@ -51,6 +51,21 @@ Review the version 4.10 change log.
 
 
 
+
+
+### Change log for worker node fix pack 4.10.24_1529_openshift, released 01 August 2022
+{: #41024_1529_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.10.24_1529_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages |N/A|N/A|N/A|
+| {{site.data.keyword.openshiftshort}}. | 4.10.21 | 4.10.24 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-24){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.10.21_1527_openshift" caption-side="top"}
+
 ### Change log for master fix pack 4.10.22_1528_openshift, released 26 July 2022
 {: #41022_1528_openshift}
 
