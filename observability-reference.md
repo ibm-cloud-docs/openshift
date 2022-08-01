@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-01"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -249,7 +249,7 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE
 :   If you want to replace the {{site.data.keyword.la_full_notm}} service instance that you use in your {{site.data.keyword.la_short}} configuration, enter the ID or name of the new {{site.data.keyword.la_full_notm}} service instance that you want to use. This value is required if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you want to replace the ingestion key, don't include this command option.
 
 `--logdna-ingestion-key INGESTION_KEY`
-:   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. For information about how to retrieve the ingestion key, see [Get the ingestion key through the {{site.data.keyword.cloud_notm}} UI](/docs/log-analysis?topic=log-analysis-ingestion_key#ibm_cloud_ui). This value is required if you want to replace the ingestion key, and optional if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you don't provide the ingestion key when replacing the {{site.data.keyword.la_full_notm}} service instance, the ingestion key that was last added is retrieved automatically.
+:   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. For information about how to retrieve the ingestion key, see [Get the ingestion key through the {{site.data.keyword.cloud_notm}} UI](/docs/log-analysis?topic=log-analysis-ingestion_key). This value is required if you want to replace the ingestion key, and optional if you want to replace the {{site.data.keyword.la_full_notm}} service instance. If you don't provide the ingestion key when replacing the {{site.data.keyword.la_full_notm}} service instance, the ingestion key that was last added is retrieved automatically.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-01"
 
 keywords: kubernetes, openshift
 
@@ -123,7 +123,7 @@ The following list of add-ons for clusters are supported in {{site.data.keyword.
 
 The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.
 
-- [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id)
+- [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id-auth)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
 - [Istio](/docs/containers?topic=containers-istio)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)

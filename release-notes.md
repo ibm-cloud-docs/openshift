@@ -32,6 +32,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 1 August 2022
+{: #openshift-aug0122}
+{: release-note}
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.24_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.43_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.46_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.55_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1593_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+
 ## July 2022
 {: #openshift-july22}
 

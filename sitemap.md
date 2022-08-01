@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
 
+    * [1 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0122)
+
+        * Worker node fix pack
+
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
 
     * [27 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2722)
@@ -5350,7 +5354,7 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.10 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-410)
 
-* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-11-410)
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-1-410)
 
     * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-11-410)
 

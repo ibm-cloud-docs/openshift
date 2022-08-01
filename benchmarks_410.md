@@ -23,7 +23,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 
 
 ## 1 Master node security configuration
-{: #cis-benchmark-11-410}
+{: #cis-benchmark-1-410}
 
 Review the Master node security configuration results of the version 1.5 CIS Kubernetes benchmark.
 {: shortdesc}
