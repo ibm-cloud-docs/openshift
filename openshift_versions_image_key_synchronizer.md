@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-01"
 
 keywords: openshift
 
@@ -33,7 +33,7 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 {: caption="Supported Image Key Synchronizer add-on versions" caption-side="top"}
 
 ## Version 1.0.0
-{: #1_0_0}
+{: #1_0_0-image-key}
 
 Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
 {: shortdesc}

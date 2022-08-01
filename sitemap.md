@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-08-01"
 
 keywords: openshift
 subcollection: openshift
@@ -3486,7 +3486,7 @@ subcollection: openshift
 
 [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor#health-monitor)
 
-* [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options)
+* [Understanding options for monitoring](/docs/openshift?topic=openshift-health-monitor#oc_logmet_options_monitoring)
 
     * [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#oc_mon_details)
 
@@ -5338,7 +5338,7 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.10 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-410)
 
-* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-11-49)
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-11-410)
 
     * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-11-410)
 
@@ -5570,7 +5570,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
-* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#47_changelog)
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
     * [Change log for worker node fix pack 4.8.46_1565_openshift, released 18 July 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4846_1565_openshift)
 
@@ -5844,7 +5844,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
-* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#47_changelog)
+* [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#46_changelog)
 
     * [Change log for worker node fix pack 4.6.59_1591_openshift, released 18 July 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4659_1591_openshift)
 
@@ -6415,7 +6415,7 @@ subcollection: openshift
 
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
-* [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0)
+* [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
 
     * [Version 1.0.0_1061, released on 7 July 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1061)
 

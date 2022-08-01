@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-08-01"
 
 keywords: openshift, benchmarks, 4.10
 
@@ -23,7 +23,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 
 
 ## 1 Master node security configuration
-{: #cis-benchmark-11-49}
+{: #cis-benchmark-11-410}
 
 Review the Master node security configuration results of the version 1.5 CIS Kubernetes benchmark.
 {: shortdesc}
