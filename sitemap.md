@@ -205,11 +205,17 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
+
 * [July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july22)
 
     * [27 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2722)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.1.19` is available.
+
+    * [26 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2622)
+
+        * Master fix pack update
 
     * [22 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2222)
 
