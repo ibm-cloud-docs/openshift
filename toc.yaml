@@ -161,6 +161,7 @@ toc:
           - openshift_health_log.md
           - openshift_health_monitor.md
           - health-audit.md
+          - ts-health-loglines.md
       - topicgroup: 
           label: Setting up an image build pipeline
           topics:

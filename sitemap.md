@@ -3522,6 +3522,8 @@ subcollection: openshift
 
     * [Viewing `AuditWebhookError` alerts in auditing-enabled clusters](/docs/openshift?topic=openshift-health-audit#audit-webhook-error-410)
 
+[Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
+
 
 ## Setting up an image build pipeline
 {: #sitemap_setting_up_an_image_build_pipeline}
