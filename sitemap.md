@@ -4367,6 +4367,8 @@ subcollection: openshift
 
 * [Multicloud Object Gateway overview](/docs/openshift?topic=openshift-ocs-storage-prep#understanding-noobaa)
 
+* [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep#odf-essentials-vs-advanced)
+
 * [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
 
 [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#deploy-odf-vpc)

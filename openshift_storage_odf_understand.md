@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-08-02"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -83,6 +83,28 @@ The Multicloud Object Gateway consists of the open source tool [NooBaa](https://
 | 11 | Namespace bucket access key | The access key is used to access your namespace bucket. Namespace buckets can include multiple namespace resources from different cloud providers or on-prem buckets. The namespace bucket access key and secret key are used in your s3 apps to configure access to your namespace bucket which then defines read and write policies to namespace resources that you configure. |
 | 12 | Namespace bucket secret key | The secret key is used to access your namespace bucket. Namespace buckets can include multiple namespace resources from different cloud providers or on-prem buckets. The namespace bucket access key and secret key are used in your s3 apps to configure access to your namespace bucket which then defines read and write policies to namespace resources that you configure. |
 {: caption="NooBaa overview" caption-side="top"}
+
+
+
+## Feature support by billing type
+{: #odf-essentials-vs-advanced}
+
+| Feature support | Essentials | Advanced |
+| --- | --- | --- |
+| Block storage | Yes | Yes |
+| File storage | Yes | Yes |
+| Object storage | Yes | Yes |
+| Node and disk resiliency | Yes | Yes | 
+| Operator based automation | Yes | Yes | 
+| Compression | Yes | Yes |
+| Local snapshots and cloning | Yes | Yes |
+| Basic Cluster-wide encryption | Yes | Yes | 
+| Advanced encryption with KMS | No | Yes |
+| Regional disaster recovery with replication | No | Yes | 
+| Stretched Clusters - Metro high availability and disaster recover | No | Yes |
+| Multi-cluster - Metro high availability and disaster recover | No | Yes |
+{: caption="Billing plan overview"}
+
 
 
 
