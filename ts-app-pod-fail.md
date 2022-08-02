@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #ts-app-pod-fail}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 Your pod was healthy but unexpectedly gets removed or gets stuck in a restart loop.

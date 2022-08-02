@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #cs_cluster_pending}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you deploy your cluster, it remains in a pending state and doesn't start.

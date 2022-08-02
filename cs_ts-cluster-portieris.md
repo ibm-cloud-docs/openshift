@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #portieris_enable}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 Portieris image security enforcement add-on does not install.  You see a master status similar to the following:

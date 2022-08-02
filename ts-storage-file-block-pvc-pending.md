@@ -21,9 +21,9 @@ content-type: troubleshoot
 {: #file_pvc_pending}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you create a PVC and you run `oc get pvc <pvc_name>`, your PVC remains in a **Pending** state, even after waiting for some time.

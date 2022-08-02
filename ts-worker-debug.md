@@ -24,9 +24,9 @@ content-type: troubleshoot
 Review the options to debug your worker nodes and find the root causes for failures.
 {: shortdesc}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 ## Quick steps to resolve worker node issues

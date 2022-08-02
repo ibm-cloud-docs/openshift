@@ -24,9 +24,9 @@ content-type: troubleshoot
 Review common error messages and learn how to resolve them. Messages might begin with the prefix, `'<provider>' infrastructure exception:`, where `<provider>` identifies which infrastructure provider the worker node uses.
 {: shortdesc}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ## Account prohibited from ordering
 {: #order-prohibit}

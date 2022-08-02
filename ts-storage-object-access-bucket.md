@@ -21,9 +21,9 @@ content-type: troubleshoot
 {: #cos_access_bucket_fails}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 

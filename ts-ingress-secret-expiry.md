@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #sync_cert_dates}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>` or `ibmcloud oc ingress status -c <cluster_name_or_ID>`, you see one of the following **Ingress Messages**:

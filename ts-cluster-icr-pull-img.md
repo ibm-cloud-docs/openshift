@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #ts_image_pull_create}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you created a cluster, you received an error message similar to the following.

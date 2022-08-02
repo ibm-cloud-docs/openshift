@@ -98,14 +98,14 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-        name: csi-block-pvc-custom
+      name: csi-block-pvc
     spec:
-        accessModes:
-        - ReadWriteOnce
-        resources:
-            requests:
-                storage: 10Gi
-        storageClassName: ibmc-vpc-block-5iops-tier
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: ibmc-vpc-block-5iops-tier
     ```
     {: codeblock}
 
@@ -122,7 +122,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
     ```sh
     NAME                   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                AGE
-    csi-block-pvc-custom   Bound    pvc-0798b499-0b61-4f57-a184-4caeb7b9298d   10Gi       RWO            ibmc-vpc-block-5iops-tier   4m22s
+    csi-block-pvc   Bound    pvc-0798b499-0b61-4f57-a184-4caeb7b9298d   10Gi       RWO            ibmc-vpc-block-5iops-tier   4m22s
     ```
     {: screen}
 
@@ -132,29 +132,29 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-        name: testcustom
-        labels:
-            app: testcustom
+      name: my-deployment
+      labels:
+        app: my-deployment
     spec:
-        replicas: 1
-        selector:
-            matchLabels:
-            app: testcustom
-        template:
-            metadata:
-                labels:
-                    app: testcustom
-            spec:
-                containers:
-                - image: nginx #image name which should be avilable within cluster
-                  name: container-name # name of the container inside POD
-                  volumeMounts:
-                  - mountPath: /myvolumepath  # mount path for pvc from container
-                    name: pvc-name # pvc name for this pod
-                volumes:
-                 - name: pvc-name  # volume resource name in this POD, user can choose any name as per kubernetes
-                 persistentVolumeClaim:
-                    claimName: csi-block-pvc-custom  # pvc name which was created by using claim.yaml file
+      replicas: 1
+      selector:
+        matchLabels:
+          app: my-deployment
+      template:
+        metadata:
+          labels:
+            app: my-deployment
+        spec:
+          containers:
+          - image: nginx # Your containerized app image
+            name: container-name 
+            volumeMounts:
+            - mountPath: /myvolumepath  # Mount path for PVC
+              name: my-vol # Volume mount name
+          volumes:
+          - name: my-vol  # Volume resource name
+            persistentVolumeClaim:
+              claimName: csi-block-pvc  # The name of the PVC you created earlier
     ```
     {: codeblock}
 
@@ -171,7 +171,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     
     ```sh
     NAME                          READY   STATUS    RESTARTS   AGE
-    testcustom-58dd7c89b6-8zdcl   1/1     Running   0          4m50s    
+    my-deployment-58dd7c89b6-8zdcl   1/1     Running   0          4m50s    
     ```
     {: screen}
    
@@ -185,9 +185,9 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     Example output
 
     ```sh
-    root@testcustom-58dd7c89b6-8zdcl:/# cd myvolumepath/
-    root@testcustom-58dd7c89b6-8zdcl:/myvolumepath# echo "hi" > new.txt
-    root@testcustom-58dd7c89b6-8zdcl:/myvolumepath# exit
+    root@my-deployment-58dd7c89b6-8zdcl:/# cd myvolumepath/
+    root@my-deployment-58dd7c89b6-8zdcl:/myvolumepath# echo "hi" > new.txt
+    root@my-deployment-58dd7c89b6-8zdcl:/myvolumepath# exit
     ```
     {: screen}
 
@@ -211,11 +211,11 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     apiVersion: snapshot.storage.k8s.io/v1
     kind: VolumeSnapshot
     metadata:
-        name: vpc-block-snapshot
+      name: snapshot-csi-block-pvc
     spec:
-        volumeSnapshotClassName: vpc-block-snapshot
-        source:
-            persistentVolumeClaimName: csi-block-pvc-custom
+      volumeSnapshotClassName: vpc-block-snapshot
+      source:
+        persistentVolumeClaimName: csi-block-pvc
     ```
     {: codeblock}
 
@@ -234,7 +234,7 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     Example output where `READYTOUSE` is `true`.
     ```sh
     NAME                            READYTOUSE   SOURCEPVC              SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-    snapshot-csi-block-pvc-custom   true         csi-block-pvc-custom                           1Gi           snapshotclass   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
+    vpc-block-snapshot   true         csi-block-pvc                           1Gi           snapshotclass   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
     ```
     {: screen}
 
@@ -249,18 +249,18 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-        name: restore-pvc
+      name: restore-pvc
     spec:
-        storageClassName: ibmc-vpc-block-5iops-tier
-        dataSource:
-            name: snapshot-csi-block-pvc-custom
-            kind: VolumeSnapshot
-            apiGroup: snapshot.storage.k8s.io
-        accessModes:
-            - ReadWriteOnce
-        resources:
-            requests:
-            storage: 10Gi
+      storageClassName: ibmc-vpc-block-5iops-tier
+      dataSource:
+        name: snapshot-csi-block-pvc
+        kind: VolumeSnapshot
+        apiGroup: snapshot.storage.k8s.io
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
     ```
     {: codeblock}
 
@@ -282,29 +282,29 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-        name: podtwo
-        labels:
-            app: podtwo
+      name: podtwo
+      labels:
+        app: podtwo
     spec:
-        replicas: 1
-        selector:
-            matchLabels:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: podtwo
+      template:
+        metadata:
+          labels:
             app: podtwo
-        template:
-            metadata:
-            labels:
-                app: podtwo
-            spec:
-            containers:
-            - image: nginx #image name which should be avilable within cluster
-                name: container-name # name of the container inside POD
-                volumeMounts:
-                - mountPath: /myvolumepath  # mount path for pvc from container
-                name: pvc-name # pvc name for this pod
-            volumes:
-            - name: pvc-name  # volume resource name in this POD, user can choose any name as per kubernetes
-                persistentVolumeClaim:
-                claimName: restore-pvc   # pvc name which was created by using claim.yaml file
+        spec:
+          containers:
+          - image: nginx # Your containerized app image
+            name: container-name
+            volumeMounts:
+            - mountPath: /myvolumepath  # Mount path for pvc from container
+              name: my-vol # Volume mount name
+          volumes:
+          - name: my-vol  # Volume resource name
+            persistentVolumeClaim:
+              claimName: restore-pvc   # The name of the PVC that you created earlier
     ```
     {: codeblock}
 

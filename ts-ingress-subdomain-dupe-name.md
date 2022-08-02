@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #cs_rate_limit}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 * {{site.data.keyword.satelliteshort}}
 
 

@@ -23,9 +23,9 @@ content-type: troubleshoot
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting [managed add-ons](/docs/containers?topic=containers-managed-addons), such as HPCS Router.
 {: shortdesc}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 You can check the health state and status of a cluster add-on by running the following command.
 

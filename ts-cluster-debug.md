@@ -24,9 +24,9 @@ content-type: troubleshoot
 Review the options to debug your clusters and find the root causes for failures.
 {: shortdesc}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 1. List your cluster and find the `State` of the cluster.
 

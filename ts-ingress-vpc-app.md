@@ -20,8 +20,8 @@ content-type: troubleshoot
 {: #vpc_ts_alb}
 {: support}
 
-**Infrastructure provider**:
-* VPC
+Supported infrastructure provider
+:   VPC
 
 
 You exposed your app by creating an Ingress resource for your app in your VPC cluster. When you tried to connect to your app by using the Ingress subdomain, the connection failed or timed out.

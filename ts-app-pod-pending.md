@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #ts-app-pod-pending}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you run `oc get pods`, you can see pods that remain in a **Pending** state.

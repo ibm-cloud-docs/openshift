@@ -24,9 +24,9 @@ content-type: troubleshoot
 Review the following common reasons for CLI connection issues or command failures.
 {: shortdesc}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ## Firewall prevents running CLI commands
 {: #ts_firewall_clis}
@@ -159,9 +159,9 @@ After the impacted user completes the IAM synchronization, the cluster administr
 {: troubleshoot}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC Generation 2 compute
+Supported infrastructure providers
+:   Classic
+:   VPC Generation 2 compute
 
 
 You don't see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.

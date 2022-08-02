@@ -24,9 +24,9 @@ content-type: troubleshoot
 Review your cluster master health.
 {: shortdesc}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ## Reviewing master health, status, and states
 {: #review-master-health}

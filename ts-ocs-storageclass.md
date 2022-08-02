@@ -18,9 +18,9 @@ content-type: troubleshoot
 {: #ts-ocs-roks-debug}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ## ODF device set creation fails due to PVC names exceeding the Kubernetes character limit
 {: #ocs-ts-sc-character-limit}

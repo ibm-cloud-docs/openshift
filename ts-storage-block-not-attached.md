@@ -20,8 +20,8 @@ content-type: troubleshoot
 {: #block_not_attached_vpc}
 {: support}
 
-**Infrastructure provider**:
-* VPC
+Supported infrastructure provider
+:   VPC
 
 
 When you edit a {{site.data.keyword.block_storage_is_short}} and update the `spec.resources.requests.storage` section to expand your volume, you see the following error:

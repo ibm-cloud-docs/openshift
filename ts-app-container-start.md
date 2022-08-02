@@ -55,9 +55,9 @@ If you see either of the IP address-related messages that are listed in the symp
 {: #regitry-quota}
 {: tsResolve}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 To fix registry quota issues, [free up storage in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 {: shortdesc}

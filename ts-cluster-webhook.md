@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #webhooks_update}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 During a master operation such as updating your cluster version, the cluster had a broken webhook application.

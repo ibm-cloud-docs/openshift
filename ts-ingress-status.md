@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #ingress-status}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ## Getting the status and message
 {: #check_status}

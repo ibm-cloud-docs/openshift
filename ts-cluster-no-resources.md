@@ -19,9 +19,9 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC 
+Supported infrastructure providers
+:   Classic
+:   VPC 
 
 
 When you are running an `oc` command such as `oc get nodes` or `oc get secrets`, you see an error message similar to the following.

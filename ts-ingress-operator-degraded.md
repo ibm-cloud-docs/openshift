@@ -18,9 +18,9 @@ content-type: troubleshoot
 {: #ingress_subdomain_dns_marshal}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 You receive an error message similar to one of the following.

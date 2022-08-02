@@ -21,9 +21,9 @@ content-type: troubleshoot
 {: #cos_transport_ts_connect}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you create a PVC, you see an error message similar to the following:

@@ -21,9 +21,9 @@ content-type: troubleshoot
 {: #cos_plugin_fails}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you install the `ibm-object-storage-plugin`, the installation fails with an error similar to the following:

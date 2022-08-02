@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #master_resource_limit}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 You see a master status similar to the following example.

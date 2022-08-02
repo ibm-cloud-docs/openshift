@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #ts_storage_clean_volume}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 You have already deleted your cluster but your account is still charged for the storage volumes associated with the cluster.
 {: tsSymptoms}

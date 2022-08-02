@@ -19,9 +19,9 @@ content-type: troubleshoot
 # Why does block storage change to read-only?
 {: #readonly_block}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 You might see the following symptoms:

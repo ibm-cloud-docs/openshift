@@ -21,9 +21,9 @@ content-type: troubleshoot
 {: #px-kms-endpoint}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you provision Portworx and set up encryption, you receive an error similar to the following:

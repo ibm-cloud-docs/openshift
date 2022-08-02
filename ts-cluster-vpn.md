@@ -18,9 +18,9 @@ content-type: troubleshoot
 {: #rhoks_ts_openvpn_login}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC 
+Supported infrastructure providers
+:   Classic
+:   VPC 
 
 
 After you create or update a cluster, the master status returns a VPN server configuration error message similar to the following.

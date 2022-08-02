@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #block_filesystem}
 {: support}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you run `oc describe pod <pod_name>`, you see the following error:

@@ -23,9 +23,9 @@ content-type: troubleshoot
 Review the options that you have to debug your app deployments and find the root causes for failures.
 {: shortdesc}
 
-**Infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace where your app is deployed.
 
