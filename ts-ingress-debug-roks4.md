@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -19,9 +19,9 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-**Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 You exposed your app by creating an Ingress resource for your app in your cluster. However, when you try to connect to your app through the Ingress subdomain or the IP address of the Ingress controller, the connection fails or times out.

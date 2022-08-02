@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #rhoks_ts_openvpn_subnet}
 {: support}
 
-**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
+**Infrastructure provider**: Classic
 
 
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>`, you see the following error message in the **Master Status** field.

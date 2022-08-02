@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-08-02"
 
 keywords: openshift, strongswan, ipsec, on-prem, vpnaas, direct link
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # Setting up VPC VPN connectivity
 {: #vpc-vpnaas}
 
-![VPC](../icons/vpc.svg "VPC") This VPN information is specific to VPC clusters. For VPN information for classic clusters, see [Setting up VPN connectivity](/docs/containers?topic=containers-vpn).
+This VPN information is specific to VPC clusters. For VPN information for classic clusters, see [Setting up VPN connectivity](/docs/containers?topic=containers-vpn).
 {: note}
 
 Securely connect apps and services in a VPC cluster in {{site.data.keyword.openshiftlong}} to on-premises networks, other VPCs, and {{site.data.keyword.cloud_notm}} classic infrastructure resources. You can also connect apps that are external to your cluster to an app that runs inside your cluster.

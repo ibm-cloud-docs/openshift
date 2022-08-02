@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-02"
 
 keywords: portworx, openshift
 
@@ -22,9 +22,9 @@ subcollection: openshift
 {: shortdesc}
 
 **Supported infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
-* ![Satellite](../icons/satellite.svg "Satellite") Satellite
+* Classic
+* VPC
+* Satellite
 
 
 ## About Portworx
@@ -966,7 +966,7 @@ When you update a worker node in a VPC cluster, the worker node is removed from 
 Update only one worker node at a time. When the worker node update is complete, attach your {{site.data.keyword.block_storage_is_short}} and restart the Portworx pod.
 {: important}
 
-**Supported infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC
+**Supported infrastructure provider**: VPC
 
 1. [Enter maintenance mode on the worker nodes that you want to update](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/troubleshooting/enter-maintenance-mode/){: external}.
 

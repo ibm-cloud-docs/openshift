@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-08-02"
 
 keywords: openshift dedicated hosts
 
@@ -16,7 +16,7 @@ subcollection: openshift
 # Creating and managing dedicated hosts on VPC Gen 2 infrastructure
 {: #dedicated-hosts}
 
-**Supported infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC
+**Supported infrastructure provider**: VPC
 
 Dedicated hosts are single-tenant managed hypervisors that can only be used to deploy {{site.data.keyword.openshiftlong_notm}} clusters. 
 

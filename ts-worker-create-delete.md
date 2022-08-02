@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -165,7 +165,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 ## Unable to create or delete worker nodes due to incorrect account error
 {: #orphaned}
 
-**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
+**Infrastructure provider**: Classic
 
 
 You can't manage worker nodes for your cluster, or view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
@@ -233,7 +233,7 @@ Before you begin: Log in to the [{{site.data.keyword.redhat_openshift_notm}} clu
 ## Unable to create or delete worker nodes due to endpoints error
 {: #vpe-ts}
 
-**Infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later
+**Infrastructure provider**: VPC {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later
 
 
 You can't manage worker nodes for your cluster, and you receive an error message similar to one of the following.
@@ -295,7 +295,7 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
 ## Unable to create or delete worker nodes due to paid account or one time password error
 {: #cs_totp}
 
-**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
+**Infrastructure provider**: Classic
 
 
 You can't manage worker nodes for your cluster, and you receive an error message similar to one of the following.

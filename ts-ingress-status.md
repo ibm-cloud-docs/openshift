@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -20,9 +20,9 @@ content-type: troubleshoot
 {: #ingress-status}
 {: support}
 
-**Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ## Getting the status and message
 {: #check_status}

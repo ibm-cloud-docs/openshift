@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -24,9 +24,9 @@ content-type: troubleshoot
 Review the options to debug your clusters and find the root causes for failures.
 {: shortdesc}
 
-**Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 1. List your cluster and find the `State` of the cluster.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -21,9 +21,9 @@ content-type: troubleshoot
 {: #file_pvc_pending}
 {: support}
 
-**Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 When you create a PVC and you run `oc get pvc <pvc_name>`, your PVC remains in a **Pending** state, even after waiting for some time.

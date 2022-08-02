@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-02"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -18,7 +18,7 @@ subcollection: openshift
 # Setting up classic VPN connectivity
 {: #vpn}
 
-![Classic](../icons/classic.svg "Classic") This VPN information is specific to classic clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/containers?topic=containers-vpc-vpnaas).
+This VPN information is specific to classic clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/containers?topic=containers-vpc-vpnaas).
 {: note}
 
 With VPN connectivity, you can securely connect apps in a {{site.data.keyword.redhat_openshift_notm}} cluster on {{site.data.keyword.openshiftlong}} to an on-premises network. You can also connect apps that are external to your cluster to an app that runs inside your cluster.

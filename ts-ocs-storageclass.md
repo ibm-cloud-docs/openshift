@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -18,9 +18,9 @@ content-type: troubleshoot
 {: #ts-ocs-roks-debug}
 {: support}
 
-**Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ## ODF device set creation fails due to PVC names exceeding the Kubernetes character limit
 {: #ocs-ts-sc-character-limit}

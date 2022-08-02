@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -18,9 +18,9 @@ content-type: troubleshoot
 {: #ingress_subdomain_dns_marshal}
 {: support}
 
-**Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 You receive an error message similar to one of the following.

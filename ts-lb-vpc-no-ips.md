@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: #vpc_no_lb}
 {: support}
 
-**Infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC
+**Infrastructure provider**: VPC
 
 You exposed your app by creating a Kubernetes `LoadBalancer` service in your VPC cluster.
 {: tsSymptoms}

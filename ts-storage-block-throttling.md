@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 # Why does the Block storage plug-in Helm chart give CPU throttling warnings?
 {: #block_helm_cpu}
 
-**Infrastructure provider**: ![Classic](../icons/classic.svg "Classic") Classic
+**Infrastructure provider**: Classic
 
 
 When you install the Block storage Helm chart, the installation gives a warning similar to the following:

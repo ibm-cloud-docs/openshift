@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-02"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -28,7 +28,7 @@ completion-time: 45m
 Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cloud (VPC).
 {: shortdesc}
 
-![VPC](../icons/vpc.svg "VPC") With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC**, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
+With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC**, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
 
 - {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.9/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 - VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers), with a select group of v2 API, CLI, and console functionality.

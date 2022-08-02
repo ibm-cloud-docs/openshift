@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-02"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -28,7 +28,7 @@ Before you can create clusters in {{site.data.keyword.satellitelong_notm}}, you 
 
 1. [Review the {{site.data.keyword.satellitelong_notm}} components](/docs/satellite?topic=satellite-faqs) and the [location planning guide](/docs/satellite?topic=satellite-infrastructure-plan).
 1. Prepare to create your {{site.data.keyword.satellitelong_notm}} location. Choose from one of the following options.
-    Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-locations#location-create-console). Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), Tokyo (`jp-tok`), and London (`eu-gb`), and Washington D.C. (`wdc`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
+    Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-locations#location-create-console). Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Tokyo (`jp-tok`), Toronto (`ca-tor` , and Washington D.C. (`wdc`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
     {: note}
     
     * You can automatically provision the hosts for your location. With this option, you create a custom role, or service ID, with your cloud provider credentials. This service ID is used to automatically provision virtual machines in your cloud provider. Once the VMs are provisioned and attached to your location, you can assign them to {{site.data.keyword.satellitelong_notm}} control plane or to the cloud services you want to use. To get started, see the [Automating your location set up with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
@@ -110,7 +110,7 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     * To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
     * For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
     * Optional: Specify the operating system of the hosts that you want to use to create your cluster. You can use `RHEL7` or `RHCOS` hosts. 
-        * If you want to use RHCOS hosts in your cluster, you must create a Red Hat CoreOS enabled location. Support for Red Hat CoreOS hosts is available for {{site.data.keyword.satelliteshort}} locations in Dallas or Frankfurt and for cluster version 4.9 and later. To see if your location is CoreOS enabled, run `ibmcloud sat location get --location LOCATION`. 
+        * If you want to use RHCOS hosts in your cluster, you must create a Red Hat CoreOS enabled location. Support for Red Hat CoreOS hosts is available for {{site.data.keyword.satelliteshort}} locations in Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Tokyo (`jp-tok`), Toronto (`ca-tor` , and Washington D.C. (`wdc`) regions and for cluster version 4.9 and later. To see if your location is CoreOS enabled, run `ibmcloud sat location get --location LOCATION`. 
         * For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7` . 
         * If no option is specified, `RHEL7` is used.
     

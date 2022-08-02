@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -24,9 +24,9 @@ content-type: troubleshoot
 Review your cluster master health.
 {: shortdesc}
 
-**Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ## Reviewing master health, status, and states
 {: #review-master-health}

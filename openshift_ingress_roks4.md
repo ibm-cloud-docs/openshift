@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-08-02"
 
 keywords: openshift, nginx, ingress controller
 
@@ -39,9 +39,9 @@ Before you get started with Ingress, review the following prerequisites.
     - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.redhat_openshift_notm}} projects)
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller in that zone.
 - To ensure high availability, at least two worker nodes per zone are recommended.
-* ![VPC](../icons/vpc.svg "VPC") VPC clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
-* ![VPC](../icons/vpc.svg "VPC") VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the Ingress controller](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
-* ![Classic](../icons/classic.svg "Classic") Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
+* VPC clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
+* VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the Ingress controller](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
+* Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
 
 
@@ -107,7 +107,7 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 ## Publicly exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #ingress-roks4-public}
 
-If your cluster is created on ![Classic](../icons/classic.svg "Classic") classic infrastructure, or if your cluster is created on ![VPC](../icons/vpc.svg "VPC") VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, you can use the default public Ingress controller to expose apps in your cluster to receive requests that are from the public network.
+If your cluster is created on classic infrastructure, or if your cluster is created on VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, you can use the default public Ingress controller to expose apps in your cluster to receive requests that are from the public network.
 {: shortdesc}
 
 **Before you begin**:
@@ -324,7 +324,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 ## Publicly exposing apps in VPC clusters with a private cloud service endpoint only
 {: #priv-se-pub-controller}
 
-![VPC](../icons/vpc.svg "VPC") If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private Ingress controller by default. To publicly expose your apps, you must first create a public Ingress controller. Then, you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
+If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private Ingress controller by default. To publicly expose your apps, you must first create a public Ingress controller. Then, you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
 {: shortdesc}
 
 **Before you begin**:
@@ -653,7 +653,7 @@ To expose apps that are outside of your cluster to the public:
 ## Privately exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint
 {: #ingress-roks4-private}
 
-If your cluster is created on ![Classic](../icons/classic.svg "Classic") classic infrastructure, or if your cluster is created on ![VPC](../icons/vpc.svg "VPC") VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private Ingress controller. Then you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
+If your cluster is created on classic infrastructure, or if your cluster is created on VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private Ingress controller. Then you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
 {: shortdesc}
 
 **Before you begin**:
@@ -928,7 +928,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 ## Privately exposing apps in VPC clusters with a private cloud service endpoint only
 {: #priv-se-priv-controller}
 
-If your cluster is created on ![VPC](../icons/vpc.svg "VPC") VPC infrastructure and you enabled the private cloud service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.
+If your cluster is created on VPC infrastructure and you enabled the private cloud service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.
 {: shortdesc}
 
 **Before you begin**:

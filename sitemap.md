@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 subcollection: openshift
@@ -1373,7 +1373,7 @@ subcollection: openshift
 
     * [24 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2420)
 
-        * ![Classic](../icons/classic.svg "Classic") New! Reservations to reduce classic worker node costs
+        * New! Reservations to reduce classic worker node costs
 
     * [23 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2320)
 
@@ -4366,6 +4366,8 @@ subcollection: openshift
 * [Architecture overview](/docs/openshift?topic=openshift-ocs-storage-prep#odf-ov)
 
 * [Multicloud Object Gateway overview](/docs/openshift?topic=openshift-ocs-storage-prep#understanding-noobaa)
+
+* [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep#odf-essentials-vs-advanced)
 
 * [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
 

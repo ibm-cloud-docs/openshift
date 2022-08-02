@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-08-02"
 
 keywords: openshift, block storage, pod identity, trusted profiles
 
@@ -20,7 +20,7 @@ You can use trusted profiles to limit the access that running pods in your clust
 {: shortdesc}
 
 Supported infrastructure provider
-:   ![VPC](../icons/vpc.svg "VPC") VPC
+:   VPC
 
 ## Enabling the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-enable-trusted}

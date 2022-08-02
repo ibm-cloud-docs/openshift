@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -18,9 +18,9 @@ content-type: troubleshoot
 {: #rhoks_ts_openvpn_login}
 {: support}
 
-**Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC 
+Supported infrastructure providers
+:   Classic
+:   VPC 
 
 
 After you create or update a cluster, the master status returns a VPN server configuration error message similar to the following.
