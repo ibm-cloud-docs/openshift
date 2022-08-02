@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-08-02"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -22,8 +22,8 @@ Design a network setup for your {{site.data.keyword.openshiftlong}} cluster that
 {: shortdesc}
 
 Get started by planning your setup for a VPC or a classic cluster.
-- ![VPC](../icons/vpc.svg "VPC") With [{{site.data.keyword.openshiftlong_notm}} clusters in VPC](/docs/containers?topic=containers-plan_vpc_basics), you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc) for Generation 2 compute resources. VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
-- ![Classic](../icons/classic.svg "Classic") With [{{site.data.keyword.openshiftlong_notm}} classic clusters](/docs/containers?topic=containers-plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all the {{site.data.keyword.openshiftlong_notm}} mature and robust features for compute, networking, and storage.
+- With [{{site.data.keyword.openshiftlong_notm}} clusters in VPC](/docs/containers?topic=containers-plan_vpc_basics), you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc) for Generation 2 compute resources. VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
+- With [{{site.data.keyword.openshiftlong_notm}} classic clusters](/docs/containers?topic=containers-plan_basics), you can create your cluster on classic infrastructure. Classic clusters include all the {{site.data.keyword.openshiftlong_notm}} mature and robust features for compute, networking, and storage.
 
 
 

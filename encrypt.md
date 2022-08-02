@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-08-02"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -36,9 +36,9 @@ The following image and description outline default and optional data encryption
 2. **Bring your own key (BYOK), for VPC and classic only**: When you [enable a key management service (KMS) provider](#keyprotect)`*` for your cluster, you bring your own root key. The root key is used to encrypt the data encryption keys (DEKs) which are then used to encrypt the secrets in your cluster. The root key is stored in the KMS provider instance that you control. The encrypted DEKs are stored in etcd and can only be unencrypted using the root key from the KMS provider. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect/concepts?topic=key-protect-envelope-encryption#envelope-encryption).
 3. **Worker node disks**: Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
 
-    * ![VPC](../icons/vpc.svg "VPC") **VPC**: See [VPC worker nodes](#worker-encryption-vpc).
-    * ![Classic](../icons/classic.svg "Classic") **Classic**: See [Classic worker nodes](#worker-encryption-classic).
-    * ![Satellite](../icons/satellite.svg "Satellite") **{{site.data.keyword.satelliteshort}}**: See [{{site.data.keyword.satelliteshort}} worker nodes](#worker-encryption-satellite).
+    * **VPC**: See [VPC worker nodes](#worker-encryption-vpc).
+    * **Classic**: See [Classic worker nodes](#worker-encryption-classic).
+    * **{{site.data.keyword.satelliteshort}}**: See [{{site.data.keyword.satelliteshort}} worker nodes](#worker-encryption-satellite).
 
 4. **Cluster secrets**: When you deploy your app, don't store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, which are base64 encoded by default. To enable encyption of your Kubernetes secrets, [enable a key management service (KMS) provider](#keyprotect)`*` for your cluster.
 
@@ -339,7 +339,7 @@ You can manage the encryption of the local disks in your worker nodes by using a
 ### Classic worker nodes
 {: #worker-encryption-classic}
 
-![Classic](../icons/classic.svg "Classic") **Classic infrastructure**: Classic worker nodes have two disks, and you can manage encryption for the second disk.
+**Classic infrastructure**: Classic worker nodes have two disks, and you can manage encryption for the second disk.
 
 
 - The primary disk has the kernel images to boot your worker node. This disk is unencrypted.
@@ -348,7 +348,7 @@ You can manage the encryption of the local disks in your worker nodes by using a
 ### VPC worker nodes
 {: #worker-encryption-vpc}
 
-![VPC](../icons/vpc.svg "VPC") **VPC infrastructure**: By default, the one primary disk of VPC worker nodes is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
+**VPC infrastructure**: By default, the one primary disk of VPC worker nodes is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
 
 
 You can manage the encryption of the worker nodes by enabling a KMS provider at the worker pool level.
@@ -406,7 +406,7 @@ The encryption for the disks of the worker nodes in your worker pool are now man
 ### {{site.data.keyword.satelliteshort}} worker nodes
 {: #worker-encryption-satellite}
 
-![Satellite](../icons/satellite.svg "Satellite") **{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a Kubernetes secret in your cluster. When you reload or update your worker nodes, the LUKS keys are rotated.
+**{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a Kubernetes secret in your cluster. When you reload or update your worker nodes, the LUKS keys are rotated.
 
 
 You can't manage the encryption of the LUKS key with your own KMS provider because KMS provider integration is not supported.
@@ -420,7 +420,7 @@ You can't manage the encryption of the LUKS key with your own KMS provider becau
 {{site.data.keyword.datashield_short}} is integrated with Intel® Software Guard Extensions (SGX) and Fortanix® technology so that the app code and data of your containerized workloads are protected in use. The app code and data run in CPU-hardened enclaves, which are trusted areas of memory on the worker node that protect critical aspects of the app, which helps to keep the code and data confidential and unmodified.
 
 
-![Classic](../icons/classic.svg "Classic") Applies to only classic clusters. VPC clusters can't have bare metal worker nodes, which are required to use {{site.data.keyword.datashield_short}}.
+Applies to only classic clusters. VPC clusters can't have bare metal worker nodes, which are required to use {{site.data.keyword.datashield_short}}.
 {: note}
 
 When it comes to protecting your data, encryption is one of the most popular and effective controls. But, the data must be encrypted at each step of its lifecycle for your data to be protected. During its lifecycle, data has three phases. It can be at rest, in motion, or in use. Data at rest and in motion are generally the area of focus when you think of securing your data. But, after an application starts to run, data that is in use by CPU and memory is vulnerable to various attacks. The attacks might include malicious insiders, root users, credential compromise, OS zero-day, network intruders, and others. Taking that protection one step further, you can now encrypt data in use.

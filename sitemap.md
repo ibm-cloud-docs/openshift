@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 subcollection: openshift
@@ -1373,7 +1373,7 @@ subcollection: openshift
 
     * [24 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2420)
 
-        * ![Classic](../icons/classic.svg "Classic") New! Reservations to reduce classic worker node costs
+        * New! Reservations to reduce classic worker node costs
 
     * [23 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2320)
 

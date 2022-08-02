@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 {: #ts_cos_bucket_cluster_create}
 {: support}
 
-**Infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC 
+**Infrastructure provider**: VPC 
 
 
 When you create a cluster, you see an error message similar to the following.

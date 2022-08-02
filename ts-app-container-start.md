@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -56,8 +56,8 @@ If you see either of the IP address-related messages that are listed in the symp
 {: tsResolve}
 
 **Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+* Classic
+* VPC
 
 To fix registry quota issues, [free up storage in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 {: shortdesc}
@@ -69,8 +69,8 @@ To fix IP address issues, release individual and blocks of IP addresses that wer
 {: shortdesc}
 
 **Infrastructure provider and versions**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+* Classic
+* VPC
 
 Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_changelog). If you cluster runs a deprecated or unsupported version, first [update your cluster](/docs/containers?topic=containers-update).
 

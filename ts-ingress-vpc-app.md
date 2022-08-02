@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* ![VPC](../icons/vpc.svg "VPC") VPC
+* VPC
 
 
 You exposed your app by creating an Ingress resource for your app in your VPC cluster. When you tried to connect to your app by using the Ingress subdomain, the connection failed or timed out.

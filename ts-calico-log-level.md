@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -22,8 +22,8 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+* Classic
+* VPC
 
 These instructions apply to {{site.data.keyword.openshiftlong}} 3.11.
 {: note}

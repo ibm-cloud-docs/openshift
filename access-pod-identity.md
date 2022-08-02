@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -41,9 +41,9 @@ To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster,
 
 Supported infrastructure providers
 
-- ![VPC](../icons/vpc.svg "VPC") VPC  
-- ![Classic](../icons/classic.svg "Classic") Classic  
-- ![Satellite](../icons/satellite.svg "Satellite") {{site.data.keyword.satelliteshort}}
+- VPC  
+- Classic  
+- {{site.data.keyword.satelliteshort}}
 
 
 Minimum required permissions

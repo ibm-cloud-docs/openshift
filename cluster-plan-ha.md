@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -35,7 +35,7 @@ Your users are less likely to experience downtime when you distribute your apps 
 Single zone clusters can be created in one of the supported [single zone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-sz). To improve availability for your app and to allow failover for the case that one worker node is not available in your cluster, add additional worker nodes to your single zone cluster.
 {: shortdesc}
 
-![VPC](../icons/vpc.svg "VPC") VPC clusters are supported only in [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). If your cluster must reside in one of the single zone cities, create a classic cluster instead.
+VPC clusters are supported only in [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). If your cluster must reside in one of the single zone cities, create a classic cluster instead.
 {: note}
 
 ![High availability for clusters in a single zone.](images/cluster_singlezone.png){: caption="Figure 1. High availability for clusters in a single zone" caption-side="bottom"}

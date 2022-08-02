@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -25,8 +25,8 @@ Review the following common reasons for CLI connection issues or command failure
 {: shortdesc}
 
 **Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+* Classic
+* VPC
 
 ## Firewall prevents running CLI commands
 {: #ts_firewall_clis}
@@ -160,8 +160,8 @@ After the impacted user completes the IAM synchronization, the cluster administr
 {: support}
 
 **Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC Generation 2 compute
+* Classic
+* VPC Generation 2 compute
 
 
 You don't see all the projects that you have access to. When you try to run `oc` or `kubectl` commands, you see an error similar to the following.

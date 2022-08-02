@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: #ts_no_vpc}
 {: support}
 
-**Infrastructure provider**: ![VPC](../icons/vpc.svg "VPC") VPC
+**Infrastructure provider**: VPC
 
 You try to create a VPC cluster by using the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}.
 {: tsSymptoms} 

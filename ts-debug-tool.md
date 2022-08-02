@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -25,8 +25,8 @@ While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}}
 {: shortdesc}
 
 **Infrastructure provider**:
-* ![Classic](../icons/classic.svg "Classic") Classic
-* ![VPC](../icons/vpc.svg "VPC") VPC
+* Classic
+* VPC
 
 ## Prerequisites
 {: #debug-tool-prereqs}

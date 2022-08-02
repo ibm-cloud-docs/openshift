@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: support}
 
 **Infrastructure provider and applicable versions**:
-* ![VPC](../icons/vpc.svg "VPC") VPC
+* VPC
 * {{site.data.keyword.redhat_openshift_notm}} 4.4 or later
 
 

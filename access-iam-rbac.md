@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-02"
 
 keywords: openshift
 
@@ -573,7 +573,7 @@ Check your access policies that are assigned by IAM platform and service access 
 6. To review what the roles and allowed actions permit, see the following topics.
     * [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     * [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/containers?topic=containers-access_reference)
-    * ![Satellite](../icons/satellite.svg "Satellite") **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
+    * **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
 7. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign).
 
 
@@ -604,7 +604,7 @@ Check your access policies that are assigned by IAM platform and service access 
 4. To review what the roles and allowed actions permit, see the following topics.
     * [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     * [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/containers?topic=containers-access_reference)
-    * ![Satellite](../icons/satellite.svg "Satellite") **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
+    * **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
 5. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users_cli) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign-cli).
 
 ### Checking RBAC roles
@@ -690,10 +690,10 @@ subjects:
 ### Checking infrastructure roles
 {: #checking-infra}
 
-![Classic](../icons/classic.svg "Classic") Check your {{site.data.keyword.cloud_notm}} classic infrastructure roles. For more information, see [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra).
+Check your {{site.data.keyword.cloud_notm}} classic infrastructure roles. For more information, see [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra).
 {: shortdesc}
 
-![VPC](../icons/vpc.svg "VPC") VPC infrastructure permissions are managed with [IAM platform and service access roles](#checking-iam).
+VPC infrastructure permissions are managed with [IAM platform and service access roles](#checking-iam).
 {: note}
 
 If you are an administrator for the region and resource group, you might want to [check if the user's credentials are used for infrastructure permissions](#removing_check_infra), especially before removing the user.
@@ -746,7 +746,7 @@ If you are an administrator for the region and resource group, you might want to
 ### Checking other cloud infrastructure provider roles
 {: #checking-infra-providers}
 
-![Satellite](../icons/satellite.svg "Satellite") **Satellite-only**: If your cluster runs in a {{site.data.keyword.satelliteshort}} location, you use infrastructure that comes from other on-prem or cloud providers. Consult their product documentation to make sure that you have the correct permissions to create infrastructure resources.
+**Satellite-only**: If your cluster runs in a {{site.data.keyword.satelliteshort}} location, you use infrastructure that comes from other on-prem or cloud providers. Consult their product documentation to make sure that you have the correct permissions to create infrastructure resources.
 {: shortdesc}
 
 Also, see the following related topics.

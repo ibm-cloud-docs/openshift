@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-08-02"
 
 keywords: openshift network, classic
 
@@ -16,7 +16,7 @@ subcollection: openshift
 # Understanding network basics of classic clusters
 {: #plan_basics}
 
-![Classic](../icons/classic.svg "Classic") When you create a classic cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.
+When you create a classic cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.
 {: shortdesc}
 
 - [Worker-to-worker communication](#worker-worker): All worker nodes must be able to communicate with each other on the private network. In many cases, communication must be permitted across multiple private VLANs to allow workers on different VLANs and in different zones to connect with each other.
@@ -27,7 +27,7 @@ subcollection: openshift
 ## Worker-to-worker communication: classic VLANs and subnets
 {: #worker-worker}
 
-![Classic](../icons/classic.svg "Classic") When you create a classic cluster, the cluster's worker nodes are connected automatically to a private VLAN and a public VLAN. A VLAN configures a group of worker nodes and pods as if they were attached to the same physical wire and provides a channel for connectivity among the workers.
+When you create a classic cluster, the cluster's worker nodes are connected automatically to a private VLAN and a public VLAN. A VLAN configures a group of worker nodes and pods as if they were attached to the same physical wire and provides a channel for connectivity among the workers.
 {: shortdesc}
 
 You can't create classic {{site.data.keyword.openshiftlong_notm}} clusters that are connected to a private VLAN only. Your worker nodes must be connected to both public and private VLANs.
@@ -59,7 +59,7 @@ In several situations, components in your cluster must be permitted to communica
 ## Worker-to-master and user-to-master communication: Service endpoints
 {: #workeruser-master}
 
-![Classic](../icons/classic.svg "Classic") A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. You must enable the public cloud service endpoint in your cluster, and you can optionally enable the private cloud service endpoint. You can't have only the private cloud service endpoint, and after you create the cluster, you can't change the cloud service endpoints.
+A communication channel must be set up so that worker nodes can establish a connection to the Kubernetes master. You must enable the public cloud service endpoint in your cluster, and you can optionally enable the private cloud service endpoint. You can't have only the private cloud service endpoint, and after you create the cluster, you can't change the cloud service endpoints.
 {: shortdesc}
 
 To secure communication over public and private cloud service endpoints, {{site.data.keyword.openshiftlong_notm}} automatically sets up an OpenVPN connection between the Kubernetes master and the worker node when the cluster is created. Workers securely talk to the master through TLS certificates, and the master talks to workers through the OpenVPN connection.
@@ -84,7 +84,7 @@ To make your master publicly or privately accessible to cluster users, you can e
 ## Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks
 {: #worker-services-onprem}
 
-![Classic](../icons/classic.svg "Classic") Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services and to an on-premises network.
+Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services and to an on-premises network.
 {: shortdesc}
 
 ### Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network
@@ -122,7 +122,7 @@ If you plan to connect your cluster to on-premises networks, check out the follo
 ## External communication to apps that run on worker nodes
 {: #external-workers}
 
-![Classic](../icons/classic.svg "Classic") Allow public or private traffic requests from outside the cluster to your apps that run on worker nodes.
+Allow public or private traffic requests from outside the cluster to your apps that run on worker nodes.
 {: shortdesc}
 
 ### Private traffic to cluster apps
@@ -141,7 +141,7 @@ For example, if your worker nodes are connected to a private VLAN only, but you 
 ## Scenario: Running internet-facing app workloads in a classic cluster
 {: #internet-facing}
 
-![Classic](../icons/classic.svg "Classic") In this scenario, you want to run workloads in a classic cluster that are accessible to requests from the Internet so that end users can access your apps. You want the option of isolating public access in your cluster and of controlling what public requests are permitted to your cluster. Additionally, your workers have automatic access to any {{site.data.keyword.cloud_notm}} services that you want to connect with your cluster.
+In this scenario, you want to run workloads in a classic cluster that are accessible to requests from the Internet so that end users can access your apps. You want the option of isolating public access in your cluster and of controlling what public requests are permitted to your cluster. Additionally, your workers have automatic access to any {{site.data.keyword.cloud_notm}} services that you want to connect with your cluster.
 {: shortdesc}
 
 ![Architecture image for a cluster that runs internet-facing workloads.](images/cs_clusters_planning_internet.png){: caption="Figure 1. Network setup for a cluster that runs internet-facing workloads" caption-side="bottom"}
@@ -180,7 +180,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 ## Scenario: Allow limited public connectivity with a gateway appliance
 {: #vyatta-gateway}
 
-![Classic](../icons/classic.svg "Classic") In this scenario, you want to run workloads in a classic cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private cloud service endpoints, and must be accessed over the public network. Or you might need to provide limited public access to an app that runs in your cluster. To achieve this cluster setup, you can configure a gateway appliance, such as a Virtual Router Appliance (Vyatta), as a public gateway and firewall.
+In this scenario, you want to run workloads in a classic cluster that are accessible to services, databases, or other resources in your on-premises data center. However, you might need to provide limited public access to your cluster, and want to ensure that any public access is controlled and isolated in your cluster. For example, you might need your workers to access an {{site.data.keyword.cloud_notm}} service that does not support private cloud service endpoints, and must be accessed over the public network. Or you might need to provide limited public access to an app that runs in your cluster. To achieve this cluster setup, you can configure a gateway appliance, such as a Virtual Router Appliance (Vyatta), as a public gateway and firewall.
 {: shortdesc}
 
 ![Architecture image for a cluster that uses a gateway appliance for secure public access.](images/cs_clusters_planning_gateway.png){: caption="Figure 1. Network setup for a cluster that uses a gateway appliance for secure public access" caption-side="bottom"}
