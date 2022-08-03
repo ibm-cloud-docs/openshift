@@ -88,6 +88,7 @@ toc:
           topics:
           - worker-add.md
           - dedicated-hosts.md
+          - rhel_migrate.md
           - topicgroup: 
               label: Autoscaling clusters
               topics:
