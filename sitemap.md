@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
 
+    * [3 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-august0322)
+
+        * New! {{site.data.keyword.filestorage_vpc_full_notm}} CSI Driver (Beta)
+
     * [1 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0122)
 
         * Worker node fix pack
@@ -4081,7 +4085,7 @@ subcollection: openshift
 
 [Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
 
-* [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
+* [Quickstart for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
 
 * [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
 
@@ -4591,6 +4595,27 @@ subcollection: openshift
     * [RHEL or CentOS ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
 
     * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
+
+### Storing data on IBM Cloud File Storage for VPC
+{: #sitemap_storing_data_on_ibm_cloud_file_storage_for_vpc}
+
+
+[Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
+
+[Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
+
+* [Deploying an app that uses {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file)
+
+[Managing {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-managing)
+
+* [Creating a custom storage class](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-custom-sc)
+
+* [Updating the {{site.data.keyword.filestorage_vpc_short}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
+
+* [Understanding your storage removal options](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc_storage_delete_options_file)
+
+* [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 

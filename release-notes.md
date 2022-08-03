@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-03"
 
 keywords: openshift
 
@@ -25,11 +25,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
-
 ## August 2022
 {: #openshift-aug22}
 
+### 3 August 2022
+{: #openshift-august0322}
+{: release-note}
 
+New! {{site.data.keyword.filestorage_vpc_full_notm}} CSI Driver (Beta)
+:    You can now enable the {{site.data.keyword.filestorage_vpc_full_notm}} add-on in your clusters. For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/containers?topic=containers-storage-file-vpc-install). 
 
 
 
@@ -40,6 +44,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Worker node fix pack
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.24_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.43_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.46_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.55_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1593_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+
 
 ## July 2022
 {: #openshift-july22}
