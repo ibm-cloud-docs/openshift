@@ -4621,6 +4621,8 @@ subcollection: openshift
 
 * [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
 
+[Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref#storage-file-vpc-sc-ref)
+
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
