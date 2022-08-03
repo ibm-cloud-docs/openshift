@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-08-03"
 
 keywords: openshift
 
@@ -21,10 +21,12 @@ subcollection: openshift
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
 {: shortdesc}
 
-{{site.data.keyword.filestorage_full_notm}} is available only in classic {{site.data.keyword.openshiftlong_notm}} clusters, and is not supported for VPC clusters. NFS {{site.data.keyword.filestorage_short}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
-{: important}
 
-## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}
+
+Supported infrastructure providers
+:   Classic
+
+## Quickstart for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}
 {: #file_qs}
 
 In this quickstart guide, you create a 24Gi endurance {{site.data.keyword.filestorage_short}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
@@ -54,14 +56,14 @@ First time using {{site.data.keyword.filestorage_short}} in your cluster? Come b
     ```
     {: codeblock}
 
-2. Create the PVC in your cluster.
+1. Create the PVC in your cluster.
 
     ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
 
-3. After your `silver-pvc` PVC is bound, create an app deployment that uses your PVC. Create a file for your deployment and name it `deployment.yaml`.
+1. After your `silver-pvc` PVC is bound, create an app deployment that uses your PVC. Create a file for your deployment and name it `deployment.yaml`.
 
     ```yaml
     apiVersion: apps/v1
@@ -1844,6 +1846,5 @@ The deletion process might take up to 72 hours to complete.
     
     
     
-
 
 
