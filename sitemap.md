@@ -2767,6 +2767,10 @@ subcollection: openshift
 
 [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
 
+* [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#migration-actions-by-cluster-version)
+
+* [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
+
 
 ### Autoscaling clusters
 {: #sitemap_autoscaling_clusters}
