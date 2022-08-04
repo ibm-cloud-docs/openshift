@@ -545,7 +545,16 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     `--workers <number>`
     :   Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.
 
-    
+    `--operating-system SYSTEM`
+    :   Optional. The operating system of the worker nodes you want to provision in your cluster. You can specify a `RHEL` version or `RHCOS`.
+    :   To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation.
+    :    For clusters created in default locations without Red Hat CoreOS enabled, specify a `RHEL` version.
+         - For cluster version 4.10 or later, specify `RHEL8`. 
+         - For cluster version 4.9, specify `RHEL7` (default in 4.9) or `RHEL8`.
+         - For cluster versions 4.8 or earlier, specify `RHEL7`.
+
+    :   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+
 
    `--cluster-security-group <group_ID>`
     :   Optional. Specify additional security group IDs to apply to all workers on the cluster. You must include a separate `--cluster-security-group` option for each individual security group you want to add. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, only the `kube-clusterID` and the default VPC security group are applied. A maximum of five security groups can be applied to workers, including the default security groups. Note that the VPC security group is only applied if no other security groups are specified. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster).

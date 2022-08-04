@@ -122,7 +122,15 @@ Identify and restore the resource that causes the broken webhook.
         ```
         {: pre}
 
-    2. If the service type is **ClusterIP**, check that the pod for OpenVPN is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot.
+    2. If the service type is **ClusterIP**, check that the pod for OpenVPN ({{site.data.keyword.redhat_openshift_notm}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.redhat_openshift_notm}} version 4.8 or later) is in a **Running** status so that the webhook can connect securely to the Kubernetes API in the cluster master. If the pod is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot.
+
+        * {{site.data.keyword.redhat_openshift_notm}} version 4.8 or later: Check the Konnectivity agent pods.
+            ```sh
+            oc describe pods -n kube-system -l app=konnectivity-agent
+            ```
+            {: pre}
+
+        * {{site.data.keyword.redhat_openshift_notm}} version 4.7 or earlier: Check the OpenVPN client pods.
             ```sh
             oc describe pods -n kube-system -l app=vpn
             ```
