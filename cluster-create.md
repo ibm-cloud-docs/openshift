@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift, clusters
 
@@ -43,7 +43,9 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 
 
 
-**Classic clusters**
+### Classic clusters
+{: #cluster_create_classic}
+{: cli}
 
 Classic cluster, shared virtual machine
 
@@ -78,9 +80,9 @@ ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --work
 {: pre}
 
 
-**VPC clusters**
-
-VPC cluster.
+### VPC clusters
+{: #cluster_create_vpc}
+{: cli}
 
 VPC Gen 2 cluster flavors with instance storage are available for allowlisted accounts. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
 {: note}
@@ -425,6 +427,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     * If worker nodes must access public endpoints, or if you plan to enable both the public and private cloud service endpoints, you must attach a public gateway to each subnet to access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub.
     * If you require access to classic infrastructure resources, you must follow the steps in [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_ui) to create a classic access VPC and VPC subnets without the automatic default address prefixes.
     * For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) and [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
+
 1. If you want to create a multizone cluster, create the subnets for all the remaining zones that you want to include in your cluster. You must have one VPC subnet in all the zones where you want to create your multizone cluster.
     1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets){: external}, click **New subnet**.
     2. Enter a name for your subnet.
@@ -542,7 +545,16 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     `--workers <number>`
     :   Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.
 
-    
+    `--operating-system SYSTEM`
+    :   Optional. The operating system of the worker nodes you want to provision in your cluster. You can specify a `RHEL` version or `RHCOS`.
+    :   To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation.
+    :    For clusters created in default locations without Red Hat CoreOS enabled, specify a `RHEL` version.
+         - For cluster version 4.10 or later, specify `RHEL8`. 
+         - For cluster version 4.9, specify `RHEL7` (default in 4.9) or `RHEL8`.
+         - For cluster versions 4.8 or earlier, specify `RHEL7`.
+
+    :   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+
 
    `--cluster-security-group <group_ID>`
     :   Optional. Specify additional security group IDs to apply to all workers on the cluster. You must include a separate `--cluster-security-group` option for each individual security group you want to add. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, only the `kube-clusterID` and the default VPC security group are applied. A maximum of five security groups can be applied to workers, including the default security groups. Note that the VPC security group is only applied if no other security groups are specified. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster).

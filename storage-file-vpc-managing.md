@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-04"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ Create your own customized storage class with the preferred settings for your {{
 
 To create your own storage class:
 
-1. Review the [Storage class reference](/docs/containers?topic=containers-storage-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. 
+1. Review the [Storage class reference](/docs/containers?topic=containers-storage-file-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. 
 
     If you want to use a pre-installed storage class as a template, you can get the details of a storage class by using the `oc get sc <storageclass> -o yaml` command.
     {: tip}
@@ -70,10 +70,10 @@ To create your own storage class:
     :   Enter the profile that you selected in the previous step, or enter `custom` to use a custom IOPs value. To find supported storage sizes for a specific profile, see [Tiered IOPS profile](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range.
 
     `encrypted`
-    :   In the parameters, enter **true** to create a storage class that sets up encryption for your {{site.data.keyword.filestorage_vpc_short}} volume. If you set this option to **true**, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameterencryptionKey`. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
+    :   In the parameters, enter **true** to create a storage class that sets up encryption for your {{site.data.keyword.filestorage_vpc_short}} volume. If you set this option to **true**, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameterencryptionKey`.
 
     `encryptionKey`
-    :   If you entered **true** for `parameters.encrypted`, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.filestorage_vpc_short}} volume. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
+    :   If you entered **true** for `parameters.encrypted`, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.filestorage_vpc_short}} volume.
 
     `zone`
     :   In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster CLUSTER` and look at the **Worker Zones** field in your CLI output. If you don't specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.
@@ -131,16 +131,16 @@ To create your own storage class:
 
 1. Disable the add-on.
 
-  ```sh
-  ibmcloud oc cluster addon disable vpc-file-csi-driver --version VERSION 
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon disable vpc-file-csi-driver --version VERSION 
+    ```
+    {: pre}
 
 1. Enable the newer version of the add-on.The add-on might take a few minutes to become ready.
-  ```sh
-  ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION
+    ```
+    {: pre}
 
 ## Understanding your storage removal options
 {: #vpc_storage_delete_options_file}

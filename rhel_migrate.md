@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-04"
 
 keywords: rhel, os, operating system
 
@@ -31,7 +31,7 @@ For Classic and VPC clusters, if you want to upgrade a 4.9 cluster with RHEL 7 w
 {: important}
 
 ## Migration actions by cluster version
-{: rhel_migrate_versions}
+{: #rhel_migrate_versions}
 
 Version 4.10 clusters
 :   After the release of RHEL 8, new Classic and VPC clusters and worker pools version 4.10 and later are created with RHEL 8 worker nodes.

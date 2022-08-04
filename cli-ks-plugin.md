@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift
 
@@ -6854,15 +6854,14 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 
 
-**Example to create a {{site.data.keyword.satelliteshort}} cluster with the RHEL7 operating system****
-
+The following example creates a {{site.data.keyword.satelliteshort}} cluster with the RHEL7 operating system**.
 ```sh
 ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system RHEL7 --version 4.9_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
 ```
 {: pre}
 
 
-**Example to create a {{site.data.keyword.satelliteshort}} cluster running {{site.data.keyword.openshiftshort}} version 4.9.23_openshift and RHCOS hosts**
+The following example creates a {{site.data.keyword.satelliteshort}} cluster running {{site.data.keyword.openshiftshort}} version 4.9.23_openshift and RHCOS hosts.
 
 ```sh
 ibmcloud sat cluster create satellite --name mysatcluster-coreos --location my-location --version 4.9.23_openshift --operating-system RHCOS --workers 6

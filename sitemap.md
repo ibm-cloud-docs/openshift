@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-04"
 
 keywords: openshift
 subcollection: openshift
@@ -2622,6 +2622,10 @@ subcollection: openshift
 
 * [Sample CLI commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
 
+    * [Classic clusters](/docs/openshift?topic=openshift-clusters#cluster_create_classic)
+
+    * [VPC clusters](/docs/openshift?topic=openshift-clusters#cluster_create_vpc)
+
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
@@ -2767,7 +2771,7 @@ subcollection: openshift
 
 [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
 
-* [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#migration-actions-by-cluster-version)
+* [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate_versions)
 
 * [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
 

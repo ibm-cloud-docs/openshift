@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift, nginx, ingress controller
 
@@ -59,7 +59,7 @@ If the apps in your cluster are all in the same project, you must create one Ing
 
 For example, if you have `app1` and `app2` exposed by services in a development project, you can create an Ingress resource in the project. The resource specifies `domain.net` as the host and registers the paths that each app listens on with `domain.net`.
 
-![One resource is required per project](images/cs_ingress_single_ns.png)
+![One resource is required per project](images/cs_ingress_single_ns.png){: caption="Figure 1. One resource is required per project" caption-side="bottom"}
 
 Note that if you want to use different domains for the apps within the same project, you can create one resource per domain.
 
@@ -87,7 +87,7 @@ To use different subdomains to manage traffic to these apps, you create the foll
 * A Kubernetes service in the staging project to expose `app3`.
 * An Ingress resource in the staging project that specifies the host as `stage.domain.net`.
 
-![Within a project, use subdomains in one or multiple resources](images/cs_ingress_multi_ns.png)
+![Within a project, use subdomains in one or multiple resources](images/cs_ingress_multi_ns.png){: caption="Figure 1. Subdomains in one or multiple resources within a project" caption-side="bottom"}
 
 Now, both URLs resolve to the same domain. However, because the resource in the staging project is registered with the `stage` subdomain, the Ingress controller correctly proxies requests from the `stage.domain.net/app3` URL to only `app3`.
 
@@ -97,7 +97,7 @@ Now, both URLs resolve to the same domain. However, because the resource in the 
 Within an individual project, you can use one domain to access all the apps in the project. If you want to use different domains for the apps within an individual project, use a wildcard domain. When a wildcard domain is registered, multiple subdomains all resolve to the same host. Then, you can use one resource to specify multiple subdomain hosts within that resource. Alternatively, you can create multiple Ingress resources in the project and specify a different subdomain in each Ingress resource.
 {: shortdesc}
 
-![One resource is required per project](images/cs_ingress_single_ns_multi_subs.png)
+![One resource is required per project](images/cs_ingress_single_ns_multi_subs.png){: caption="Figure 1. One resource is required per project" caption-side="bottom"}
 
 The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain. If you want to use a wildcard custom domain, you must register the custom domain as a wildcard domain such as `*.custom_domain.net`, and to use TLS, you must get a wildcard certificate.
 {: note}
@@ -1246,22 +1246,25 @@ To learn how you can use {{site.data.keyword.secrets-manager_short}} with your {
 
 When migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}, keep the following points in mind:
 
-**Secrets created in different namespaces**:
+Secrets created in different namespaces
 :   If you used your default {{site.data.keyword.cloudcerts_short}} instance to create secrets with Ingress CRNs in other namespaces, those CRNs become invalid once you register a {{site.data.keyword.secrets-manager_short}} default instance. Once you have set a {{site.data.keyword.secrets-manager_short}} instance as default, you must manually change those CRNs to match the new {{site.data.keyword.secrets-manager_short}} CRNs.
 
-**Callback functionality to update secrets**:
+Secret rotation for migrated secrets
+:   Migrated secrets have the secret type `imported` and are managed by {{site.data.keyword.cloud_notm}}. Imported secrets are automatically renewed and uploaded to the instance every 90 days.
+
+Callback functionality to update secrets
 :   Previously, {{site.data.keyword.cloudcerts_short}} provided a callback functionality to automatically update any Ingress secret created with a specific CRN if that secret CRN is updated in the default manager instance. This functionality is **not** available in {{site.data.keyword.secrets-manager_short}}. If you update a secret, you must run the `ibmcloud oc ingress secret update` command to apply the update to a Ingress secret with the CRN in the cluster. Otherwise, IBM Cloud periodically polls secrets for updates apply to the cluster, which may take up to 24 hours.
 
-**Service-to-service enablement**:
+Service-to-service enablement
 :    If you want to enable service-to-service communication, you must [set up IAM credentials for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-configure-iam-engine&interface=ui) and [create a service-to-service authorization](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 
-**Migrating certificates stored with custom domains**:
+Migrating certificates stored with custom domains
 :    For certificates stored with custom domains, you must manually upload the certificate to your secrets manager instance and update the secret with the corresponding new certificate CRN.
 
-**Removing the registered Certificate Manager instance**:
+Removing the registered Certificate Manager instance
 :    Once you have successfully migrated to Secrets Manager, you can unregister the Certificate Manager instance that was provisioned with your cluster by running `ibmcloud oc ingress instance unregister`.
 
-**Controlling access with secret groups**:
+Controlling access with secret groups
 :    With {{site.data.keyword.secrets-manager_short}}, you can create secret groups to organize your secrets and control who on your team has access to them. You specify a secret group when you [set a default {{site.data.keyword.secrets-manager_short}} instance](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_instance_default_set) or [register a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_instance_register). For more information, see [Organizing your secrets](/docs/secrets-manager?topic=secrets-manager-secret-groups).
 
 ### Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster
@@ -1305,12 +1308,12 @@ To remove the instance:
 As of 11 April 2022, you can integrate your own {{site.data.keyword.secrets-manager_full_notm}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. You can use {{site.data.keyword.secrets-manager_short}} instances across multiple clusters, and a single cluster can have more than one instance. For each cluster, you set one instance as a default where all Ingress subdomain certificates are uploaded. With the [`ibmcloud oc ingress secret` commands](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_create), you can also utilize {{site.data.keyword.secrets-manager_short}} to easily create and manage TLS or Opaque secrets that are stored in your {{site.data.keyword.redhat_openshift_notm}} cluster.
 {: shortdesc}
 
-**What secret types are supported with {{site.data.keyword.secrets-manager_short}}?**
-:    {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
+What secret types are supported with {{site.data.keyword.secrets-manager_short}}?
+:   {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
 :    For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and Opaque secret types. For TLS secrets, you can specify one certificate CRN. For Opaque secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type, TLS is applied by default.  
 
-**Is a {{site.data.keyword.secrets-manager_short}} instance automatically generated in my cluster?**
-:    No. You must [create a {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) and then [register your instance to your cluster](#register-secrets-mgr).
+Is a {{site.data.keyword.secrets-manager_short}} instance automatically generated in my cluster?
+:   No. You must [create a {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) and then [register your instance to your cluster](#register-secrets-mgr).
 
 ### Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster
 {: #register-secrets-mgr}

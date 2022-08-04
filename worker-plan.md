@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -35,7 +35,7 @@ Trying to plan how many worker nodes your need in your cluster? Check out [Sizin
 The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, the infrastructure provider that you want to use, and the {{site.data.keyword.openshiftlong_notm}} location where you want to create your cluster.
 {: shortdesc}
 
-![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.png)
+![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.png){: caption="Figure 1. Hardware options for worker nodes in a standard cluster" caption-side="bottom"}
 
 **What flavors are available to me?**
 

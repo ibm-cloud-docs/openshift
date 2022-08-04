@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift
 
@@ -256,7 +256,6 @@ The following table shows the Kubernetes resource permissions that are granted b
 | Writer role | When scoped to one namespace: **`edit`** cluster role applied by the **`ibm-edit`** role binding in that namespace. \n \n When scoped to all namespaces: **`edit`** cluster role applied by the **`ibm-edit`** role binding in each namespace of the cluster | - Read/write access to resources in a namespace \n - No read/write access to roles and role bindings< \n - Access the Kubernetes dashboard to view resources in a namespace. |
 | Manager role | When scoped to one namespace: **`admin`** cluster role applied by the **`ibm-operate`** role binding in that namespace \n  \n When scoped to all namespaces: **`cluster-admin`** cluster role applied by the **`ibm-admin`** cluster role binding that applies to all namespaces | When scoped to one namespace: \n - Read/write access to all resources in a namespace but not to resource quota or the namespace itself \n - Create RBAC roles and role bindings in a namespace  \n - Access the Kubernetes dashboard to view all resources in a namespace  \n When scoped to all namespaces: \n - Read/write access to all resources in every namespace \n - Create RBAC roles and role bindings in a namespace or cluster roles and cluster role bindings in all namespaces \n - Access the Kubernetes dashboard \n - Create an Ingress resource that makes apps publicly available \n - Review cluster metrics such as with the `oc top pods`, `oc top nodes`, or `oc get nodes` commands | 
 | Any service access role | All users of a {{site.data.keyword.redhat_openshift_notm}} cluster are given the following roles that vary by cluster version. \n - Version 3 clusters: `basic-users` and `self-provisioners`. \n -  Version 4 clusters: `basic-users`. | |  - Get basic information about projects that the user has access to. \n - Create authorized resources in the projects that the user has access to. \n - For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.9/authentication/using-rbac.html){: external} |
-
 {: caption="Table 1. Kubernetes resource permissions by service and corresponding RBAC roles" caption-side="bottom"}
 
 ## Kubernetes resource permissions per RBAC role
