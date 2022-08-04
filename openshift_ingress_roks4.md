@@ -1246,22 +1246,25 @@ To learn how you can use {{site.data.keyword.secrets-manager_short}} with your {
 
 When migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}, keep the following points in mind:
 
-**Secrets created in different namespaces**:
+Secrets created in different namespaces
 :   If you used your default {{site.data.keyword.cloudcerts_short}} instance to create secrets with Ingress CRNs in other namespaces, those CRNs become invalid once you register a {{site.data.keyword.secrets-manager_short}} default instance. Once you have set a {{site.data.keyword.secrets-manager_short}} instance as default, you must manually change those CRNs to match the new {{site.data.keyword.secrets-manager_short}} CRNs.
 
-**Callback functionality to update secrets**:
+Secret rotation for migrated secrets
+:   Migrated secrets have the secret type `imported` and are managed by {{site.data.keyword.cloud_notm}}. Imported secrets are automatically renewed and uploaded to the instance every 90 days.
+
+Callback functionality to update secrets
 :   Previously, {{site.data.keyword.cloudcerts_short}} provided a callback functionality to automatically update any Ingress secret created with a specific CRN if that secret CRN is updated in the default manager instance. This functionality is **not** available in {{site.data.keyword.secrets-manager_short}}. If you update a secret, you must run the `ibmcloud oc ingress secret update` command to apply the update to a Ingress secret with the CRN in the cluster. Otherwise, IBM Cloud periodically polls secrets for updates apply to the cluster, which may take up to 24 hours.
 
-**Service-to-service enablement**:
+Service-to-service enablement
 :    If you want to enable service-to-service communication, you must [set up IAM credentials for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-configure-iam-engine&interface=ui) and [create a service-to-service authorization](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 
-**Migrating certificates stored with custom domains**:
+Migrating certificates stored with custom domains
 :    For certificates stored with custom domains, you must manually upload the certificate to your secrets manager instance and update the secret with the corresponding new certificate CRN.
 
-**Removing the registered Certificate Manager instance**:
+Removing the registered Certificate Manager instance
 :    Once you have successfully migrated to Secrets Manager, you can unregister the Certificate Manager instance that was provisioned with your cluster by running `ibmcloud oc ingress instance unregister`.
 
-**Controlling access with secret groups**:
+Controlling access with secret groups
 :    With {{site.data.keyword.secrets-manager_short}}, you can create secret groups to organize your secrets and control who on your team has access to them. You specify a secret group when you [set a default {{site.data.keyword.secrets-manager_short}} instance](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_instance_default_set) or [register a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_instance_register). For more information, see [Organizing your secrets](/docs/secrets-manager?topic=secrets-manager-secret-groups).
 
 ### Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster
@@ -1305,12 +1308,12 @@ To remove the instance:
 As of 11 April 2022, you can integrate your own {{site.data.keyword.secrets-manager_full_notm}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. You can use {{site.data.keyword.secrets-manager_short}} instances across multiple clusters, and a single cluster can have more than one instance. For each cluster, you set one instance as a default where all Ingress subdomain certificates are uploaded. With the [`ibmcloud oc ingress secret` commands](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_create), you can also utilize {{site.data.keyword.secrets-manager_short}} to easily create and manage TLS or Opaque secrets that are stored in your {{site.data.keyword.redhat_openshift_notm}} cluster.
 {: shortdesc}
 
-**What secret types are supported with {{site.data.keyword.secrets-manager_short}}?**
-:    {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
+What secret types are supported with {{site.data.keyword.secrets-manager_short}}?
+:   {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
 :    For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and Opaque secret types. For TLS secrets, you can specify one certificate CRN. For Opaque secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type, TLS is applied by default.  
 
-**Is a {{site.data.keyword.secrets-manager_short}} instance automatically generated in my cluster?**
-:    No. You must [create a {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) and then [register your instance to your cluster](#register-secrets-mgr).
+Is a {{site.data.keyword.secrets-manager_short}} instance automatically generated in my cluster?
+:   No. You must [create a {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) and then [register your instance to your cluster](#register-secrets-mgr).
 
 ### Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster
 {: #register-secrets-mgr}
