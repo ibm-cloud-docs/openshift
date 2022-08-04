@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-04"
 
 keywords: openshift
 
@@ -94,7 +94,7 @@ First time using {{site.data.keyword.filestorage_short}} in your cluster? Come b
     ```
     {: codeblock}
 
-4. Create the deployment in your cluster.
+1. Create the deployment in your cluster.
 
     ```sh
     oc apply -f deployment.yaml

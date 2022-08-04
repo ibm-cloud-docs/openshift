@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
 
@@ -55,11 +55,13 @@ If you have a multizone cluster, one high-availability Ingress controller is dep
 If you manually create an Ingress controller, the Ingress controller is not automatically registered with the Ingress subdomain or an app in your cluster.
 {: note}
 
-**Classic clusters: Ingress controller IP addresses**
+#### Classic clusters: Ingress controller IP addresses
+{: #ingress-controller-classic-ip}
 
 To find the IP addresses of the default Ingress controller services, run `oc get svc -n openshift-ingress` and look for the **EXTERNAL IP** field. If you have a multizone cluster, note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`.
 
-**VPC clusters: Ingress controller hostnames**
+#### VPC clusters: Ingress controller hostnames
+{: #ingress-controller-vpc-ip}
 
 When you create a VPC cluster, one public and one private multizone VPC load balancer are automatically created outside of your cluster in your VPC. The public VPC load balancer creates a hostname to register the public Ingress controller, and the private VPC load balancer creates a hostname to register the private Ingress controller. In VPC clusters, a hostname is assigned to the Ingress controllers because external IP addresses are not static and might change over time. Note that this Ingress controller hostname is different than the default Ingress subdomain for your cluster.
 

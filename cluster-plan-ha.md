@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -23,7 +23,7 @@ Design your standard cluster for maximum availability and capacity for your app 
 
 Your users are less likely to experience downtime when you distribute your apps across multiple worker nodes, zones, and clusters. Built-in capabilities, like load balancing and isolation, increase resiliency against potential failures with hosts, networks, or apps. Review these potential cluster setups that are ordered with increasing degrees of availability.
 
-![High availability for clusters](images/cs_cluster_ha_roadmap_multizone_public.png)
+![High availability for clusters](images/cs_cluster_ha_roadmap_multizone_public.png){: caption="Figure 1. High availability for clusters" caption-side="bottom"}
 
 1. A [single zone cluster](#single_zone) with multiple worker nodes in a worker pool.
 2. A [multizone cluster](#multizone) that spreads worker nodes across zones within one region.

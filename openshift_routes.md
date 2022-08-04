@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift, route, router
 
@@ -53,7 +53,7 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
 {: shortdesc}
 
-![Expose an app in a single-zone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router.png)
+![Expose an app in a single-zone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router.png){: caption="Figure 1. Expose an app in a single-zone cluster by using a router" caption-side="bottom"}
 
 1. A request to your app uses the route hostname that you set up for your app.
 
@@ -69,7 +69,7 @@ The following diagram shows how a router directs network traffic from the intern
 The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
 {: shortdesc}
 
-![Expose an app in a multizone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router-multi.png)
+![Expose an app in a multizone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router-multi.png){: caption="Figure 1. Expose an app in a multizone cluster by using a router" caption-side="bottom"}
 
 1. A request to your app uses the route hostname that you set up for your app.
 

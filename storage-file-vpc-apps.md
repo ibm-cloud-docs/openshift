@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-04"
 
 keywords: openshift
 
@@ -51,7 +51,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: screen}
 
-2. Review the configuration of a storage class.
+1. Review the configuration of a storage class.
 
     ```sh
     oc describe storageclass <storageclass_name>
@@ -59,7 +59,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     {: pre}
 
   
-3. Choose the file storage `type`, `IOPS`, `reclaim policy`, and `billing` that you want to use.
+1. Choose the file storage `type`, `IOPS`, `reclaim policy`, and `billing` that you want to use.
 
 
 ## Deploying an app that uses {{site.data.keyword.filestorage_short}}
@@ -67,7 +67,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
-1. Create a configuration file to define your persistent volume claim (PVC) and save the configuration as a `.yaml` file. The following example creates a claim that is named `mypvc` by using the `ibmc-vpc-file-5iops-tier ` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
+1. Create a configuration file to define your persistent volume claim (PVC) and save the configuration as a `.yaml` file. The following example creates a claim that is named `mypvc` by using the `ibmc-vpc-file-5iops-tier` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
 
     ```yaml
     apiVersion: v1
@@ -98,7 +98,7 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
     :   Enter the size of the {{site.data.keyword.filestorage_short}}, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your {{site.data.keyword.filestorage_short}}. Make sure to specify a size that matches the amount of data that you want to store.
     
     `storageClassName`
-    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/containers?topic=containers-storage-vpc-sc-ref) or [create your own storage class]((/docs/containers?topic=containers-. If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier `. Want to set your own default? See [Changing the default storage class](/docs/containers?topic=containers-kube_concepts#default_storageclass).
+    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/containers?topic=containers-storage-vpc-sc-ref) or [create your own storage class]((/docs/containers?topic=containers-. If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`. Want to set your own default? See [Changing the default storage class](/docs/containers?topic=containers-kube_concepts#default_storageclass).
 
 
 1. Create the PVC.

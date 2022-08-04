@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-04"
 
 keywords: openshift
 
@@ -131,16 +131,16 @@ To create your own storage class:
 
 1. Disable the add-on.
 
-  ```sh
-  ibmcloud oc cluster addon disable vpc-file-csi-driver --version VERSION 
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon disable vpc-file-csi-driver --version VERSION 
+    ```
+    {: pre}
 
 1. Enable the newer version of the add-on.The add-on might take a few minutes to become ready.
-  ```sh
-  ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION
-  ```
-  {: pre}
+    ```sh
+    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION
+    ```
+    {: pre}
 
 ## Understanding your storage removal options
 {: #vpc_storage_delete_options_file}

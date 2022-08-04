@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 keywords: openshift, clusters
 
@@ -43,7 +43,9 @@ Looking for a fast way to create a cluster from the UI? Try out [Automating clus
 
 
 
-**Classic clusters**
+### Classic clusters
+{: #cluster_create_classic}
+{: cli}
 
 Classic cluster, shared virtual machine
 
@@ -78,9 +80,9 @@ ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --work
 {: pre}
 
 
-**VPC clusters**
-
-VPC cluster.
+### VPC clusters
+{: #cluster_create_vpc}
+{: cli}
 
 VPC Gen 2 cluster flavors with instance storage are available for allowlisted accounts. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
 {: note}
@@ -425,6 +427,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
     * If worker nodes must access public endpoints, or if you plan to enable both the public and private cloud service endpoints, you must attach a public gateway to each subnet to access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub.
     * If you require access to classic infrastructure resources, you must follow the steps in [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_ui) to create a classic access VPC and VPC subnets without the automatic default address prefixes.
     * For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) and [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
+
 1. If you want to create a multizone cluster, create the subnets for all the remaining zones that you want to include in your cluster. You must have one VPC subnet in all the zones where you want to create your multizone cluster.
     1. From the [VPC subnet dashboard](https://cloud.ibm.com/vpc/network/subnets){: external}, click **New subnet**.
     2. Enter a name for your subnet.
