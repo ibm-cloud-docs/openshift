@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-05"
 
 keywords: openshift
 
@@ -28,12 +28,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## August 2022
 {: #openshift-aug22}
 
+
+### 5 August 2022
+{: #openshift-aug0522}
+{: release-note}
+
+CLI change log update
+:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.433.
+
 ### 3 August 2022
 {: #openshift-august0322}
 {: release-note}
 
 New! {{site.data.keyword.filestorage_vpc_full_notm}} CSI Driver (Beta)
 :    You can now enable the {{site.data.keyword.filestorage_vpc_full_notm}} add-on in your clusters. For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/containers?topic=containers-storage-file-vpc-install). 
+
 
 
 
