@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-05"
+lastupdated: "2022-08-10"
 
 keywords: openshift
 
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2022
 {: #openshift-aug22}
+
+### 11 August 2022
+{: #openshift-aug0522}
+{: release-note}
+
+Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas enabled
+:   [Follow the tutorial](/docs/containers?topic=containers-storage-cos-tutorial-quota) to set up the {{site.data.keyword.cos_full_notm}} plug-in to automatically set quotas on buckets that are provisioned with PVCs. 
 
 
 ### 5 August 2022
