@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-09"
 
-keywords: openshift, benchmarks, 4.9, compliance operator, compliance
+keywords: openshift, benchmarks, 4.10, compliance operator, compliance
 
 subcollection: openshift
 
@@ -146,12 +146,12 @@ to perform automated check for worker node configuration.
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.1.1|Ensure that the cluster-admin role is used only where required. |Manual|1|Fail |
-| 5.1.2|Minimize access to secrets. |Manual|1|Fail |
-| 5.1.3|Minimize wildcard use in roles and `ClusterRoles`. |Manual|1|Fail |
-| 5.1.4|Minimize access to create pods. |Manual|1|Fail |
-| 5.1.5|Ensure that default service accounts are not actively used.|Automated|1|Fail |
-| 5.1.6|Ensure that Service Account Tokens are mounted only where necessary. |Manual|1|Fail |
+| 5.1.1|Ensure that the cluster-admin role is used only where required. |Manual|1| Pass |
+| 5.1.2|Minimize access to secrets. |Manual|1| Not checked |
+| 5.1.3|Minimize wildcard use in roles and `ClusterRoles`. |Manual|1| Not checked|
+| 5.1.4|Minimize access to create pods. |Manual|1| Not checked |
+| 5.1.5|Ensure that default service accounts are not actively used.|Automated|1| Not checked |
+| 5.1.6|Ensure that Service Account Tokens are mounted only where necessary. |Manual|1| Not checked |
 {: caption="Section 5.1 RBAC and Service Accounts benchmark results"}
 
 
@@ -160,15 +160,15 @@ to perform automated check for worker node configuration.
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.2.1|Minimize the admission of privileged containers. |Manual|1|Fail |
-| 5.2.2|Minimize the admission of containers wanting to share the host process ID namespace. |Automated|1|Fail |
-| 5.2.3|Minimize the admission of containers wanting to share the host IPC namespace. |Automated|1|Fail |
-| 5.2.4|Minimize the admission of containers wanting to share the host network namespace. |Automated|1|Fail |
-| 5.2.5|Minimize the admission of containers with `allowPrivilegeEscalation`. |Automated|1|Fail |
-| 5.2.6|Minimize the admission of root containers. |Manual|2|Fail |
-| 5.2.7|Minimize the admission of containers with the `NET_RAW` capability. |Manual|1|Fail |
+| 5.2.1|Minimize the admission of privileged containers. |Manual|1| Not checked |
+| 5.2.2|Minimize the admission of containers wanting to share the host process ID namespace. |Automated|1| Not checked |
+| 5.2.3|Minimize the admission of containers wanting to share the host IPC namespace. |Automated|1| Not checked |
+| 5.2.4|Minimize the admission of containers wanting to share the host network namespace. |Automated|1| Not checked |
+| 5.2.5|Minimize the admission of containers with `allowPrivilegeEscalation`. |Automated|1| Not checked |
+| 5.2.6|Minimize the admission of root containers. |Manual|2| Not checked |
+| 5.2.7|Minimize the admission of containers with the `NET_RAW` capability. |Manual|1| Not checked |
 | 5.2.8|Minimize the admission of containers with added capabilities. |Manual|1|[Not checked](#co-benchmark-410-remdiations) |
-| 5.2.9|Minimize the admission of containers with capabilities assigned. |Manual|2|Fail |
+| 5.2.9|Minimize the admission of containers with capabilities assigned. |Manual|2| Not checked |
 {: caption="Section 5.2 Pod Security Policies benchmark results"}
 
 
@@ -186,8 +186,8 @@ to perform automated check for worker node configuration.
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.4.1|Prefer to use secrets as files over secrets as environment variables. |Manual|1|Fail |
-| 5.4.2|Consider external secret storage. |Manual|2|Fail |
+| 5.4.1|Prefer to use secrets as files over secrets as environment variables. |Manual|1| Not checked |
+| 5.4.2|Consider external secret storage. |Manual|2| Not checked |
 {: caption="Section 5.4 Secrets management benchmark results"}
 
 
@@ -196,7 +196,7 @@ to perform automated check for worker node configuration.
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.5.1|Configure image provenance by using image controller configuration parameters. |Manual|2|Fail |
+| 5.5.1|Configure image provenance by using image controller configuration parameters. |Manual|2| Not checked |
 {: caption="Section 5.5 Extensible admission control benchmark results"}
 
 ### 5.7 General policies
@@ -218,7 +218,7 @@ Review information from {{site.data.keyword.cloud_notm}} on the CIS Benchmark re
 | Section | Recommendation/Explanation |
 | --- | --- |
 | 1.2.4 | {{site.data.keyword.openshiftshort}} configures the {{site.data.keyword.cloud_notm}} IAM identity provider by default. |
-| 1.2.19 | Test fix is available for OpenShift versions 4.11 and later with https://github.com/ComplianceAsCode/content/pull/8995. |
+| 1.2.19 | Test will properly ignore OpenShift version 4.11 and later clusters when https://github.com/ComplianceAsCode/compliance-operator/issues/77 is fixed. |
 | 1.2.23 | {{site.data.keyword.openshiftshort}} can optionally enable Kubernetes API server auditing. |
 | 1.2.33 | {{site.data.keyword.openshiftshort}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
 | 1.2.34 | {{site.data.keyword.openshiftshort}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
