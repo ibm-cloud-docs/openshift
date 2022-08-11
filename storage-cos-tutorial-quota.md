@@ -9,7 +9,7 @@ keywords: openshift
 subcollection: openshift
 
 content-type: tutorial
-services: openshift,
+services: openshift,cloud-object-storage
 account-plan: paid
 completion-time: 45m
 
