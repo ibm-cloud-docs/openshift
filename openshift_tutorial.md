@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-11"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -137,7 +137,7 @@ Administrator perspective
 :   The Administrator perspective is available from the side navigation menu perspective switcher. From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.9/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
 
 Developer perspective
-:   The Developer perspective is available from the side navigation menu perspective switcher. From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](http://docs.openshift.com/container-platform/4.9/web_console/odc-about-developer-perspective.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
+:   The Developer perspective is available from the side navigation menu perspective switcher. From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, drag-and-drop or uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](https://docs.openshift.com/container-platform/4.9/web_console/web-console-overview.html{: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
 
 
 

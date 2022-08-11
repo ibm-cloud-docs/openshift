@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-11"
 
 keywords: openshift
 
@@ -201,7 +201,6 @@ For example, the OperatorHub has a set of images that are stored in external reg
 
 ## Step 8: Check the OpenVPN
 {: #oc-debug-openvpn}
-
 
 
 Check that the OpenVPN in the cluster is set up properly.

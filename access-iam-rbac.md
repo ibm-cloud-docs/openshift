@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-11"
 
 keywords: openshift
 
@@ -573,8 +573,8 @@ Check your access policies that are assigned by IAM platform and service access 
 6. To review what the roles and allowed actions permit, see the following topics.
     * [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     * [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/containers?topic=containers-access_reference)
-    * **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
-7. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign).
+    * **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam-assign-access)
+7. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam-assign-access).
 
 
 #### Checking IAM platform and service access roles from the CLI
@@ -604,8 +604,8 @@ Check your access policies that are assigned by IAM platform and service access 
 4. To review what the roles and allowed actions permit, see the following topics.
     * [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     * [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/containers?topic=containers-access_reference)
-    * **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
-5. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users_cli) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam#iam-assign-cli).
+    * **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam-assign-access)
+5. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users_cli) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam-assign-access-cli).
 
 ### Checking RBAC roles
 {: #checking-rbac}
@@ -751,7 +751,7 @@ If you are an administrator for the region and resource group, you might want to
 
 Also, see the following related topics.
 
-* [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam#permissions-other-clouds)
+* [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam-common)
 
 
 

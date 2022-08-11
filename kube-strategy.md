@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-11"
 
 keywords: openshift
 
@@ -276,9 +276,6 @@ To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic
 {: #updating_kube}
 
 Make sure that your cluster always runs a [supported {{site.data.keyword.redhat_openshift_notm}} version](/docs/openshift?topic=openshift-openshift_changelog). When a new {{site.data.keyword.redhat_openshift_notm}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/containers?topic=containers-update#master) and [worker nodes](/docs/containers?topic=containers-update#worker_node).
-
-
-
 
 
 ## Making your resources highly available

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-11"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -47,7 +47,6 @@ The following image and description outline default and optional data encryption
 
 5. **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
 6. **Data-in-use encryption**: For select, SGX-enabled classic worker node flavors, you can use [{{site.data.keyword.datashield_short}}](#datashield) to encrypt data-in-use within the worker node.
-
 
 
 ## Understanding Key Management Service (KMS) providers
@@ -363,7 +362,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
         5. Enable the authorization to be delegated by the source and dependent services.
     - **Required service access policy for Cloud Block Storage and the KMS provider**
         1. Set the **Source account** for **This account** if the cluster you want to authorize accessing KMS resides in the current account, otherwise if the cluster located under a different account, select **Other account** and provide the account ID.
-        2. Set the **Source service** to **Cloud Block Storage**. 
+        2. Set the **Source service** to **Cloud Block Storage**.
         3. Set the **Target service** to your KMS provider, such as **Key Protect**.
         4. Include at least **Reader** service access.
 
