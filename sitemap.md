@@ -207,7 +207,7 @@ subcollection: openshift
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
 
-    * [11 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0522)
+    * [11 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1122)
 
         * Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas enabled
 
@@ -4294,9 +4294,9 @@ subcollection: openshift
 
 * [Creating an app that mounts the bucket](/docs/openshift?topic=openshift-storage-cos-tutorial-quota#storage-cos-quota-create-app)
 
-* [Review](/docs/openshift?topic=openshift-storage-cos-tutorial-quota#storage-cos-quota-create-app)
+* [Review](/docs/openshift?topic=openshift-storage-cos-tutorial-quota#storage-cos-quota-review)
 
-* [Next steps](/docs/openshift?topic=openshift-storage-cos-tutorial-quota#storage-cos-quota-create-app)
+* [Next steps](/docs/openshift?topic=openshift-storage-cos-tutorial-quota#storage-cos-quota-next)
 
 [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 

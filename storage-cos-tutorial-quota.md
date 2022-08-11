@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-08-11"
 
 keywords: openshift
 
@@ -19,6 +19,9 @@ completion-time: 45m
 
 # Setting capacity quotas for apps that use {{site.data.keyword.cos_full_notm}}
 {: #storage-cos-tutorial-quota}
+{: toc-content-type="tutorial"}
+{: toc-services="openshift, cloud-object-storage"}
+{: toc-completion-time="45m"}
 
 With {{site.data.keyword.cos_full_notm}}, you can dynamically provision buckets for apps running in your {{site.data.keyword.openshiftlong_notm}} clusters. You can also dynamically set capacity quotas on those buckets during provisioning. Quotas can help you manage the resources your workloads use while also avoiding unnecessary charges.
 {: shortdesc}
@@ -262,13 +265,13 @@ You can use dynamic provisioning to automatically create a {{site.data.keyword.c
 
 
 ## Review
-{: #storage-cos-quota-create-app}
+{: #storage-cos-quota-review}
 
 In this tutorial, you installed the {{site.data.keyword.cos_short}} plug-in in your cluster and enabled quotas for any PVCs created with the plug-in. Then, you created a PVC which dynamically created a bucket with a quota limit in your {{site.data.keyword.cos_short}} instance. After that, you deployed a simple app that prints the contents of a file in your bucket.
 
 
 ## Next steps
-{: #storage-cos-quota-create-app}
+{: #storage-cos-quota-next}
 
 
 - Set up the [{{site.data.keyword.cos_short}} CLI](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli) to point to your bucket.
