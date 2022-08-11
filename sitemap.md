@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-08-11"
 
 keywords: openshift
 subcollection: openshift
@@ -210,6 +210,8 @@ subcollection: openshift
     * [11 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0522)
 
         * Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas enabled
+
+        * Ingress ALB change log updates
 
     * [5 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0522)
 
