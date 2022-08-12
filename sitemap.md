@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-12"
 
 keywords: openshift
 subcollection: openshift
@@ -2467,7 +2467,7 @@ subcollection: openshift
 
     * [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-strategy#app_kinds)
 
-    * [What about serverless apps?](/docs/openshift?topic=openshift-strategy#apps_serverless)
+    * [What about serverless apps?](/docs/openshift?topic=openshift-strategy#apps_serverless-strategy)
 
     * [What knowledge and technical skills are good to have before I move my apps to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-strategy#knowledge)
 
@@ -7436,7 +7436,7 @@ subcollection: openshift
 
 [Why do I see `Could not find user` when I try to access the Red Hat {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
 
-[Why can't I create or delete clusters?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
+[Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
 * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cluster_infra_errors#cs_credentials)
 
@@ -7538,16 +7538,6 @@ subcollection: openshift
 * [Hard reboot](/docs/openshift?topic=openshift-common_worker_nodes_issues#hard-reboot)
 
 * [Instance can't be found](/docs/openshift?topic=openshift-common_worker_nodes_issues#instance-not-found)
-
-[Why can't I create or delete worker nodes?](/docs/openshift?topic=openshift-worker_infra_errors#worker_infra_errors)
-
-* [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-worker_infra_errors#cs_credentials)
-
-* [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-worker_infra_errors#orphaned)
-
-* [Unable to create or delete worker nodes due to endpoints error](/docs/openshift?topic=openshift-worker_infra_errors#vpe-ts)
-
-* [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-worker_infra_errors#cs_totp)
 
 [VPC: Why can't I create worker nodes on dedicated hosts?](/docs/openshift?topic=openshift-ts-worker-dedicated#ts-worker-dedicated)
 

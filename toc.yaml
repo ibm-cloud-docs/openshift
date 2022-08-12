@@ -397,7 +397,6 @@ toc:
                 - ts-worker-debug-kube-api.md
                 - states-workers.md
                 - ts-worker-common-issues.md
-                - ts-worker-create-delete.md
                 - ts-worker-dedicated.md
                 - ts-worker-autorebalance.md
                 - ts-worker-bm-instance-id.md

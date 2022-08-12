@@ -16,7 +16,7 @@ content-type: troubleshoot
 
 
 
-# Why can't I create or delete clusters?
+# Why can't I create or delete clusters or worker nodes?
 {: #cluster_infra_errors}
 {: troubleshoot}
 {: support}
