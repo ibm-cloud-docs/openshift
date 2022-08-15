@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-15"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -521,6 +521,8 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
     oc delete pv <pv_name> <pv_name> <pv_name>
     ```
     {: pre}
+    
+1. After deleting your PVCs and PVs, you also need to delete the storage volumes from your account. To locate and remove unused storage volumes in your account, see [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/containers?topic=containers-ts_storage_clean_volume).
 
 ## Troubleshooting ODF
 {: #odf-troubleshooting-gather}
