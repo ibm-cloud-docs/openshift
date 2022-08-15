@@ -55,7 +55,7 @@ For high availability, make sure that your VPC cluster has at least 3 worker nod
 
 1. [Install](/docs/openshift?topic=openshift-openshift-cli#cli_oc) or [update the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
 1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least 3 worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
-1. **Optional** [Set up an {{site.data.keyword.cos_full_notm}} service instance](#odf-create-cos) as your default backing store. You can skip this step if you don't want to use {{site.data.keyword.cos_full_notm}}. You can also set up backing stores later. 
+1. **Optional** [Set up an {{site.data.keyword.cos_full_notm}} service instance](#odf-create-cos) as your default backing store. You can skip this step if you don't want to use {{site.data.keyword.cos_full_notm}}. You can also set up backing stores later.
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #odf-create-cos}
@@ -127,7 +127,7 @@ If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create
 
 1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} instance name, instance ID, root key ID, and public endpoint.
 
-1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
+1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create.
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -159,19 +159,19 @@ If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create
         oc get namespaces | grep storage
         ```
         {: pre}
-        
+
 1. Encode both the ID of your root key and the API key of the service ID that you created to base64.
     ```sh
     echo "ROOT-KEY-ID" | base64
     ```
     {: pre}
-    
+
     ```sh
     echo "SERVICE-ID-API-KEY" | base64
     ```
     {: pre}
 
-1. Create the Kubernetes secret in the `openshift-storage` namespace that uses your {{site.data.keyword.hscrypto}} credentials. 
+1. Create the Kubernetes secret in the `openshift-storage` namespace that uses your {{site.data.keyword.hscrypto}} credentials.
     1. Save the following secret as a YAML file called `ibm-hpcs-secret.yaml`.
         ```yaml
         apiVersion: v1
@@ -185,7 +185,7 @@ If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create
         type: Opaque
         ```
         {: pre}
-    
+
     1. Create the secret in your cluster.
         ```sh
         oc apply -f ibm-hpcs-secret.yaml
@@ -211,10 +211,10 @@ To install ODF in your cluster, complete the following steps.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
 1. Select either **Essentials** or **Advanced** as your billing plan.
-1. For VPC clusters, select **Remove provisioning** to dynamically provision volumes for ODF by using the {{site.data.keyword.block_storage_is_short}}.
+1. For VPC clusters, select **Remote provisioning** to dynamically provision volumes for ODF by using the {{site.data.keyword.block_storage_is_short}}.
 1. In the **OSD storage class name** field, enter the name of the {{site.data.keyword.block_storage_is_short}} storage class that you want to use to provision storage volumes.
 1. In the **OSD pod size** field, enter the size of the volume that you want to provision.
-1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find you node names, run the `oc get nodes` command in your cluster. Leave this field blank to deploy ODF on all worker nodes.
+1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the `oc get nodes` command in your cluster. Leave this field blank to deploy ODF on all worker nodes.
 1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
 1. If you are re-enabling the add-on to upgrade the add-on version, select the **Upgrade ODF** option.
 1. If you want to encrypt the volumes used by the ODF system pods, select **Enable cluster encryption**.
@@ -280,7 +280,7 @@ rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-784c848c8qrp   2/2     Runnin
 {: screen}
 
 **Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app).
-    
+
 
 ## Installing the add-on from the CLI
 {: #install-odf-cli-vpc}
@@ -302,9 +302,9 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.10.0
     ```
     {: pre}
-    
+
     Add-on options for version 4.10.0.
-    
+
     ```sh
     Option                Default Value   
     osdSize               250Gi   
@@ -322,7 +322,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     odfDeploy             true   
     osdDevicePaths        <Please provide IDs of the disks to be used for OSD pods if using local disks or standard classic cluster>   
     ocsUpgrade            false   
-    billingType           advanced 
+    billingType           advanced
     ```
     {: screen}
 
@@ -335,21 +335,21 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     {: pre}
 
     Example command for deploying the ODF add-on only.
-    
+
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=false"
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster with the default configuration parameters.
-    
+
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> 
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version>
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster while overriding the `osdSize` parameter.
-    
+
     ```sh
     ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "osdSize=500Gi"
     ```
@@ -652,7 +652,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | --- | --- | --- |
 | `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
 | `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that's based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
-| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equival to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
+| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize` x 3 divided by the `numOfOsd`. | N/A |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the `numOfOsd` value. For example, if you enter `1`, ODF provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your ODF deployment. | `advanced` |
 | `ocsUpgrade` | Enter `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
@@ -679,11 +679,3 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `clusterEncryption` | Enter `true` or `false` to enable encryption. |
 {: caption="ODF parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
-
-
-
-
-
-
-
