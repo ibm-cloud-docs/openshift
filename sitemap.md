@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-12"
+lastupdated: "2022-08-15"
 
 keywords: openshift
 subcollection: openshift
@@ -3839,22 +3839,6 @@ subcollection: openshift
     * [Setting up private routes in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse)
 
 * [Moving Ingress controller services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic)
-
-[Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#hpcs-router)
-
-* [Before you begin](/docs/openshift?topic=openshift-hpcs-router#hpcs-router-prereqs)
-
-* [Step 1: Set up default router sharding](/docs/openshift?topic=openshift-hpcs-router#sharding)
-
-* [Step 2: Install the {{site.data.keyword.cloud_notm}} HPCS Router operator](/docs/openshift?topic=openshift-hpcs-router#addon-operatorhub)
-
-* [Step 3: Create and integrate a router with {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#create-hpcs-router)
-
-* [Step 4: Create a route certificate that uses a private key from {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#generate-csr)
-
-* [Step 5: Create an encrypted route with the certificate](/docs/openshift?topic=openshift-hpcs-router#create-route)
-
-* [Version history](/docs/openshift?topic=openshift-hpcs-router#hpcs-versions)
 
 
 ### Exposing apps with load balancers

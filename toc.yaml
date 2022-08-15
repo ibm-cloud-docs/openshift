@@ -185,7 +185,6 @@ toc:
               label: Exposing apps with routes
               topics: 
                 - openshift_routes.md
-                - openshift_hpcs_router.md
           - topicgroup:
               label: Exposing apps with load balancers
               topics: 
