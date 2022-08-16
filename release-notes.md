@@ -28,6 +28,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## August 2022
 {: #openshift-aug22}
 
+### 16 August 2022
+{: #openshift-aug1622}
+{: release-note}
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.26_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.45_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.47_1568_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.55_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1594_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+
+Istio add-on
+:   Version [`1.14.3`](/docs/containers?topic=containers-istio-changelog#1143) and [`1.13.7`](/docs/containers?topic=containers-istio-changelog#1137) is available.
+
 ### 11 August 2022
 {: #openshift-aug1122}
 {: release-note}

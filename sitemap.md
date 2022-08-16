@@ -207,6 +207,12 @@ subcollection: openshift
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
 
+    * [16 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1622)
+
+        * Worker node fix pack
+
+        * Istio add-on
+
     * [11 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1122)
 
         * Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas enabled
