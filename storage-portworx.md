@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-08-16"
 
 keywords: portworx, openshift
 
@@ -839,7 +839,7 @@ To access the storage from your app, you must mount the PVC to your app.
 
 1. Create a configuration file for a deployment that mounts the PVC.
 
-    For tips on how to deploy a stateful set with Portworx, see [StatefulSets](https://portworx.com/blog/cassandra-openshift-run-ha-cassandra-red-hat-openshift/){: external}{: external}. The Portworx documentation also includes examples for how to deploy [Cassandra](https://portworx.com/blog/cassandra-openshift-run-ha-cassandra-red-hat-openshift/){: external}{: external}, [Kafka](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/kafka-with-zookeeper/){: external}, [ElasticSearch with Kibana](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/elastic-search-and-kibana/){: external}, and [WordPress with MySQL](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/wordpress/){: external}.
+    For tips on how to deploy a stateful set with Portworx, see [StatefulSets](https://portworx.com/blog/cassandra-openshift-run-ha-cassandra-red-hat-openshift/){: external}{: external}. The Portworx documentation also includes examples for how to deploy [Cassandra](https://portworx.com/blog/cassandra-openshift-run-ha-cassandra-red-hat-openshift/){: external}{: external}, [Kafka](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/kafka-with-zookeeper/){: external}, [ElasticSearch with Kibana](https://docs.portworx.com/operations/operate-kubernetes/application-install-with-kubernetes/elastic-search-and-kibana/){: external}, and [WordPress with MySQL](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/wordpress/){: external}.
     {: tip}
 
     ```yaml
