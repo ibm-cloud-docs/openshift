@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-16"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
+
+    * [16 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1622)
+
+        * Worker node fix pack
+
+        * Istio add-on
 
     * [11 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1122)
 
@@ -2467,7 +2473,7 @@ subcollection: openshift
 
     * [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-strategy#app_kinds)
 
-    * [What about serverless apps?](/docs/openshift?topic=openshift-strategy#apps_serverless)
+    * [What about serverless apps?](/docs/openshift?topic=openshift-strategy#apps_serverless-strategy)
 
     * [What knowledge and technical skills are good to have before I move my apps to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-strategy#knowledge)
 
@@ -3839,22 +3845,6 @@ subcollection: openshift
     * [Setting up private routes in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse)
 
 * [Moving Ingress controller services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic)
-
-[Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#hpcs-router)
-
-* [Before you begin](/docs/openshift?topic=openshift-hpcs-router#hpcs-router-prereqs)
-
-* [Step 1: Set up default router sharding](/docs/openshift?topic=openshift-hpcs-router#sharding)
-
-* [Step 2: Install the {{site.data.keyword.cloud_notm}} HPCS Router operator](/docs/openshift?topic=openshift-hpcs-router#addon-operatorhub)
-
-* [Step 3: Create and integrate a router with {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#create-hpcs-router)
-
-* [Step 4: Create a route certificate that uses a private key from {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router#generate-csr)
-
-* [Step 5: Create an encrypted route with the certificate](/docs/openshift?topic=openshift-hpcs-router#create-route)
-
-* [Version history](/docs/openshift?topic=openshift-hpcs-router#hpcs-versions)
 
 
 ### Exposing apps with load balancers
@@ -5401,6 +5391,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
 
+    * [Change log for worker node fix pack 4.10.26_1530_openshift, released 16 August 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41026_1530_openshift)
+
     * [Change log for worker node fix pack 4.10.24_1529_openshift, released 01 August 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41024_1529_openshift)
 
     * [Change log for master fix pack 4.10.22_1528_openshift, released 26 July 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41022_1528_openshift)
@@ -5523,6 +5515,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.45_1550_openshift, released 16 August 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4945_1550_openshift)
 
     * [Change log for worker node fix pack 4.9.43_1549_openshift, released 01 August 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4943_1549_openshift)
 
@@ -5665,6 +5659,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
+    * [Change log for worker node fix pack 4.8.47_1568_openshift, released 16 August 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4847_1568_openshift)
+
     * [Change log for worker node fix pack 4.8.46_1567_openshift, released 01 August 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4846_1567_openshift)
 
     * [Change log for master fix pack 4.8.46_1566_openshift, released 26 July 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4846_1566_openshift)
@@ -5791,6 +5787,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for worker node fix pack 4.7.55_1576_openshift, released 16 August 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4755_1576_openshift)
 
     * [Change log for worker node fix pack 4.7.55_1575_openshift, released 01 August 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4755_1575_openshift)
 
@@ -5946,6 +5944,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#46_changelog)
+
+    * [Change log for worker node fix pack 4.6.60_1594_openshift, released 16 August 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4660_1594_openshift)
 
     * [Change log for worker node fix pack 4.6.60_1593_openshift, released 01 August 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4660_1593_openshift)
 
@@ -7436,7 +7436,7 @@ subcollection: openshift
 
 [Why do I see `Could not find user` when I try to access the Red Hat {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
 
-[Why can't I create or delete clusters?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
+[Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
 * [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-cluster_infra_errors#cs_credentials)
 
@@ -7538,16 +7538,6 @@ subcollection: openshift
 * [Hard reboot](/docs/openshift?topic=openshift-common_worker_nodes_issues#hard-reboot)
 
 * [Instance can't be found](/docs/openshift?topic=openshift-common_worker_nodes_issues#instance-not-found)
-
-[Why can't I create or delete worker nodes?](/docs/openshift?topic=openshift-worker_infra_errors#worker_infra_errors)
-
-* [Unable to create or delete worker nodes due to permission errors](/docs/openshift?topic=openshift-worker_infra_errors#cs_credentials)
-
-* [Unable to create or delete worker nodes due to incorrect account error](/docs/openshift?topic=openshift-worker_infra_errors#orphaned)
-
-* [Unable to create or delete worker nodes due to endpoints error](/docs/openshift?topic=openshift-worker_infra_errors#vpe-ts)
-
-* [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-worker_infra_errors#cs_totp)
 
 [VPC: Why can't I create worker nodes on dedicated hosts?](/docs/openshift?topic=openshift-ts-worker-dedicated#ts-worker-dedicated)
 

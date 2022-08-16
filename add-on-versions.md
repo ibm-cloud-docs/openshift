@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-16"
 
 keywords: openshift add-ons, cluster addon
 
@@ -25,10 +25,6 @@ Review the following list of supported cluster add-ons.
 | cluster-autoscaler | `1.0.6`  | `>=1.20.0 <1.25.0` | `>=4.6.0` |
 | cluster-autoscaler | `1.1.0`  | `>=1.20.0 <1.24.0` | `>=4.6.0` |
 | debug-tool | `2.0.0` (Default) | `>=1.13.0` | `>=3.11.0` |
-| hpcs-router | `4.6.0`  |  N/A  | `>=4.6.0 <4.7.0` |
-| hpcs-router | `4.7.0` (Default) |  N/A  | `>=4.7.0 <4.8.0` |
-| hpcs-router | `4.8.0`  |  N/A  | `>=4.8.0 <4.9.0` |
-| hpcs-router | `4.9.0`  |  N/A  | `>=4.9.0 <4.10.0` |
 | image-key-synchronizer | `1.0.0` (Default) |  N/A  | `>=4.4.0` |
 | istio | `1.13`  | `>=1.20.0 <1.24.0` |  N/A  |
 | istio | `1.14` (Default) | `>=1.20.0 <1.25.0` |  N/A  |

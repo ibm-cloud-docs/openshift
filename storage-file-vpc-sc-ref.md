@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-08-12"
 
 keywords: openshift
 
@@ -40,7 +40,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
 {: caption="3 IOPS" caption-side="top"}
-{: #simpletabtable1}
+{: #simpletabtable1-file-vpc-sc-ref}
 {: tab-title="3 IOPS"}
 {: tab-group="Class"}
 
@@ -57,7 +57,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Pricing | [Pricing information](https://www.ibm.com/cloud/virtual-servers/pricing){: external} |
 {: class="simple-tab-table"}
 {: caption="5 IOPS" caption-side="top"}
-{: #simpletabtable2}
+{: #simpletabtable2-file-vpc-sc-ref}
 {: tab-title="5 IOPS"}
 {: tab-group="Class"}
 
@@ -74,7 +74,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
 {: class="simple-tab-table"}
 {: caption="10 IOPS Tier" caption-side="top"}
-{: #simpletabtable3}
+{: #simpletabtable3-file-vpc-sc-ref}
 {: tab-title="10 IOPS"}
 {: tab-group="Class"}
 

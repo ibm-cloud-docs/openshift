@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-12"
 
 keywords: openshift
 
@@ -77,7 +77,7 @@ Your containerized app must be able to run on the supported operating system, RH
 If you already have an app, you can [migrate it to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-plan_deploy#migrate_containerize). If you want to develop a new app, check out the [guidelines for developing stateless, cloud-native apps](/docs/openshift?topic=openshift-plan_deploy#12factor).
 
 ### What about serverless apps?
-{: #apps_serverless}
+{: #apps_serverless-strategy}
 
 You can run serverless apps and jobs through the [{{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started) service. {{site.data.keyword.codeengineshort}} can also build your images for you. 
 {: shortdesc}
