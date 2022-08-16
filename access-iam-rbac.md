@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-16"
 
 keywords: openshift
 
@@ -819,7 +819,7 @@ To avoid this issue for future users, consider using a functional ID user for th
         5. If you don't find the worker node ID, the worker node is not provisioned into this infrastructure account. Switch to a different infrastructure account and try again.
     2. Determine what happens to the infrastructure account that the user used to provision the clusters after the user leaves.
         * If the user does not own the infrastructure account, then other users have access to this infrastructure account and it persists after the user leaves. You can continue to work with these clusters in your account. Make sure that at least one other user has the [**Administrator** platform access role](#add_users) for the clusters.
-        * If the user owns the infrastructure account, then the infrastructure account is deleted when the user leaves. You can't continue to work with these clusters. To prevent the cluster from becoming orphaned, the user must delete the clusters before the user leaves. If the user has left but the clusters were not deleted, you must use the `ibmcloud oc credential set` command to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, and delete the cluster. For more information, see [Unable to modify or delete infrastructure in an orphaned cluster](/docs/openshift?topic=openshift-worker_infra_errors#orphaned).
+        * If the user owns the infrastructure account, then the infrastructure account is deleted when the user leaves. You can't continue to work with these clusters. To prevent the cluster from becoming orphaned, the user must delete the clusters before the user leaves. If the user has left but the clusters were not deleted, you must use the `ibmcloud oc credential set` command to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, and delete the cluster. For more information, see [Unable to modify or delete infrastructure in an orphaned cluster](/docs/containers?topic=containers-worker_infra_errors#orphaned).
 5. Repeat these steps for each combination of resource groups and regions where you have clusters.
 
 ### Removing a user from your account
