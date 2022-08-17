@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-17"
 
 keywords: openshift
 subcollection: openshift
@@ -3035,6 +3035,48 @@ subcollection: openshift
     * [How can I remove my information?](/docs/openshift?topic=openshift-service-architecture#pi-removal)
 
     * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-architecture#pi-rh-telemetry)
+
+[Protecting {{site.data.keyword.openshiftlong_notm}} resources with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr)
+
+* [How {{site.data.keyword.openshiftlong_notm}} integrates with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr-overview)
+
+    * [Protecting {{site.data.keyword.openshiftlong_notm}} resources](/docs/openshift?topic=openshift-cbr#resources-types-cbr)
+
+    * [Protecting specific APIs](/docs/openshift?topic=openshift-cbr#protect-api-types-cbr)
+
+    * [Allowing {{site.data.keyword.openshiftlong_notm}} to access other {{site.data.keyword.cloud_notm}} resources by using CBR](/docs/openshift?topic=openshift-cbr#cbr-integrations)
+
+* [Creating network zones](/docs/openshift?topic=openshift-cbr#create-cbr-network-zone-openshift)
+
+    * [Creating network zones from the API](/docs/openshift?topic=openshift-cbr#create-network-zone-api)
+
+    * [Creating network zones from the CLI](/docs/openshift?topic=openshift-cbr#create-network-zone-cli)
+
+* [Creating rules](/docs/openshift?topic=openshift-cbr#create-cbr-rule-openshift)
+
+    * [Creating rules by using the API](/docs/openshift?topic=openshift-cbr#create-cbr-rule-api)
+
+    * [Creating rules from the CLI](/docs/openshift?topic=openshift-cbr#create-cbr-rule-cli)
+
+* [Limitations](/docs/openshift?topic=openshift-cbr#cbr-limitations)
+
+[Example context-based restrictions scenarios](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial)
+
+* [Understanding the scenario](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-scenario)
+
+* [Prerequisites](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-prereqs)
+
+* [Creating your network zone](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-create-zone)
+
+* [Creating your CBR rule](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-create-rule)
+
+* [Testing your context-based restrictions](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-create-test)
+
+* [Additional scenarios](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-create-additional-scenarios)
+
+    * [Allowing different IPs to access the public and private service endpoints](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-scenarios-pub-priv-one-ip)
+
+    * [Allowing different IPs to access different API types over the public and private service endpoints](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-scenarios-pub-priv-api-types)
 
 
 ## Managing access control

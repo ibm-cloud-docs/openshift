@@ -111,6 +111,8 @@ toc:
           topics:
           - secure.md
           - openshift_tech.md
+          - cbr.md
+          - cbr-tutorial.md
       - topicgroup:
           label: Managing access control
           topics:
