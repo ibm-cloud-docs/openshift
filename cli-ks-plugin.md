@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-08-17"
 
 keywords: openshift
 
@@ -3842,6 +3842,7 @@ ibmcloud oc ingress alb get --alb ALB_ID --cluster CLUSTER [--output json] [-q]
 ibmcloud oc ingress alb get --alb public-cr18a61a63a6a94b658596aa93a087aaa9-alb1 --cluster mycluster
 ```
 {: pre}
+
 
 
 ### `ibmcloud oc ingress alb ls`
