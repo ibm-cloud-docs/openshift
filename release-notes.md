@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-17"
 
 keywords: openshift
 
@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## August 2022
 {: #openshift-aug22}
 
+### 17 August 2022
+{: #openshift-aug1722}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.1.20` is available.
+:   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
+
+Cluster autoscaler add-on
+:   Versions `1.0.5_754` and `1.0.6_763` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+
 ### 16 August 2022
 {: #openshift-aug1622}
 {: release-note}
@@ -38,6 +48,7 @@ Worker node fix pack
 
 Istio add-on
 :   Version [`1.14.3`](/docs/containers?topic=containers-istio-changelog#1143) and [`1.13.7`](/docs/containers?topic=containers-istio-changelog#1137) is available.
+
 
 ### 11 August 2022
 {: #openshift-aug1122}

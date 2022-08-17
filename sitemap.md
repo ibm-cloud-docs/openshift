@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-17"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
+
+    * [17 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1722)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.1.20` is available.
+
+        * Cluster autoscaler add-on
 
     * [16 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1622)
 
@@ -3035,6 +3041,48 @@ subcollection: openshift
     * [How can I remove my information?](/docs/openshift?topic=openshift-service-architecture#pi-removal)
 
     * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-architecture#pi-rh-telemetry)
+
+[Protecting {{site.data.keyword.openshiftlong_notm}} resources with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr)
+
+* [How {{site.data.keyword.openshiftlong_notm}} integrates with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr-overview)
+
+    * [Protecting {{site.data.keyword.openshiftlong_notm}} resources](/docs/openshift?topic=openshift-cbr#resources-types-cbr)
+
+    * [Protecting specific APIs](/docs/openshift?topic=openshift-cbr#protect-api-types-cbr)
+
+    * [Allowing {{site.data.keyword.openshiftlong_notm}} to access other {{site.data.keyword.cloud_notm}} resources by using CBR](/docs/openshift?topic=openshift-cbr#cbr-integrations)
+
+* [Creating network zones](/docs/openshift?topic=openshift-cbr#create-cbr-network-zone-openshift)
+
+    * [Creating network zones from the API](/docs/openshift?topic=openshift-cbr#create-network-zone-api)
+
+    * [Creating network zones from the CLI](/docs/openshift?topic=openshift-cbr#create-network-zone-cli)
+
+* [Creating rules](/docs/openshift?topic=openshift-cbr#create-cbr-rule-openshift)
+
+    * [Creating rules by using the API](/docs/openshift?topic=openshift-cbr#create-cbr-rule-api)
+
+    * [Creating rules from the CLI](/docs/openshift?topic=openshift-cbr#create-cbr-rule-cli)
+
+* [Limitations](/docs/openshift?topic=openshift-cbr#cbr-limitations)
+
+[Example context-based restrictions scenarios](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial)
+
+* [Understanding the scenario](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-scenario)
+
+* [Prerequisites](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-prereqs)
+
+* [Creating your network zone](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-create-zone)
+
+* [Creating your CBR rule](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-create-rule)
+
+* [Testing your context-based restrictions](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-create-test)
+
+* [Additional scenarios](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-create-additional-scenarios)
+
+    * [Allowing different IPs to access the public and private service endpoints](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-scenarios-pub-priv-one-ip)
+
+    * [Allowing different IPs to access different API types over the public and private service endpoints](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-scenarios-pub-priv-api-types)
 
 
 ## Managing access control
@@ -6132,9 +6180,13 @@ subcollection: openshift
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
 
+    * [Change log for patch update 1.0.6_763, released 17 August 2022](/docs/openshift?topic=openshift-ca_changelog#106763_ca)
+
     * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#106742_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_754, released 17 August 2022](/docs/openshift?topic=openshift-ca_changelog#105754_ca)
 
     * [Change log for patch update 1.0.5_728, released 19 July 2022](/docs/openshift?topic=openshift-ca_changelog#105728_ca)
 
@@ -6263,6 +6315,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.1.20, released 17 August 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02120_object_plugin)
 
 * [Change log for version 2.1.19, released 27 July 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02119_object_plugin)
 
