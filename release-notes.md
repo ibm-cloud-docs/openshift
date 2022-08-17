@@ -32,6 +32,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-aug1722}
 {: release-note}
 
+{{site.data.keyword.cos_full_notm}} plug-in version `2.1.20` is available.
+:   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
+
 Cluster autoscaler add-on
 :   Versions `1.0.5_754` and `1.0.6_763` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
 
