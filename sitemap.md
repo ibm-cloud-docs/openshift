@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
 
+    * [17 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1722)
+
+        * Cluster autoscaler add-on
+
     * [16 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1622)
 
         * Worker node fix pack
@@ -6174,9 +6178,13 @@ subcollection: openshift
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
 
+    * [Change log for patch update 1.0.6_763, released 17 August 2022](/docs/openshift?topic=openshift-ca_changelog#106763_ca)
+
     * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#106742_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_754, released 17 August 2022](/docs/openshift?topic=openshift-ca_changelog#105754_ca)
 
     * [Change log for patch update 1.0.5_728, released 19 July 2022](/docs/openshift?topic=openshift-ca_changelog#105728_ca)
 

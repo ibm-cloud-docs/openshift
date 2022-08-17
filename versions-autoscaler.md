@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-08-17"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -76,15 +76,29 @@ ibmcloud oc cluster addon versions
 ## Version 1.0.6
 {: #0106_ca_addon}
 
+### Change log for patch update 1.0.6_763, released 17 August 2022
+{: #106763_ca}
+
+- Image tags: `1.19.1-106-1`, `1.20.0-106-1`, `1.21.0-106-2`, `1.22.0-106-2`, `1.23.0-106-2`, `1.24.0-106-2`
+- All non-deleting workers are considered while scaling up.
+- Worker deletion is not retried while scaling down.
+
 ### Change log for patch update 1.0.6_742, released 15 July 2022
 {: #106742_ca}
 
 - Adds support for Kubernetes 1.24.
 - Resolves [CVE-2022-29526](https://nvd.nist.gov/vuln/detail/CVE-2022-29526){: external}.
-- Image tags: `1.19.1 106-1`, `1.20.0 106-1`, `1.21.0 106-1`, `1.22.0 106-1`, `1.23.0 106-1`, `1.24.0 106-1`
+- Image tags: `1.19.1-106-2`, `1.20.0-106-2`, `1.21.0 106-1`, `1.22.0 106-1`, `1.23.0 106-1`, `1.24.0 106-1`
 
 ## Version 1.0.5
 {: #0105_ca_addon}
+
+### Change log for patch update 1.0.5_754, released 17 August 2022
+{: #105754_ca}
+
+- Image tags: `1.19.1-105-3`, `1.20.0-105-3`, `1.21.0-105-3`, `1.22.0-105-3`, `1.23.0-105-3`
+- All non-deleting workers are considered while scaling up.
+- Worker deletion is not retried while scaling down.
 
 ### Change log for patch update 1.0.5_728, released 19 July 2022
 {: #105728_ca}
