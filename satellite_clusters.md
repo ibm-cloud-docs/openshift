@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-18"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -28,7 +28,7 @@ Before you can create clusters in {{site.data.keyword.satellitelong_notm}}, you 
 
 1. [Review the {{site.data.keyword.satellitelong_notm}} components](/docs/satellite?topic=satellite-faqs) and the [location planning guide](/docs/satellite?topic=satellite-infrastructure-plan).
 1. Prepare to create your {{site.data.keyword.satellitelong_notm}} location. Choose from one of the following options.
-    Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-locations#location-create-console). Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Tokyo (`jp-tok`), Toronto (`ca-tor` , and Washington D.C. (`wdc`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
+    Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-locations#location-create-console). Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Sydney (`au-syd`), Tokyo (`jp-tok`), Toronto (`ca-tor`), and Washington D.C. (`wdc`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
     {: note}
     
     * You can automatically provision the hosts for your location. With this option, you create a custom role, or service ID, with your cloud provider credentials. This service ID is used to automatically provision virtual machines in your cloud provider. Once the VMs are provisioned and attached to your location, you can assign them to {{site.data.keyword.satellitelong_notm}} control plane or to the cloud services you want to use. To get started, see the [Automating your location set up with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
