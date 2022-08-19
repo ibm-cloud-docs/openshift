@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-08-19"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -171,7 +171,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 :   Specify the number of times that the `kubelet` retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked `Unready` for a readiness probe, if applicable. The default value is `3`.
 
 `livenessProbePeriodSeconds`
-:   Specify the interval in seconds that the `kubelet` performs a liveness probe. The default value is `10m`.
+:   Specify the interval in seconds that the `kubelet` performs a liveness probe. The default value is `600`.
 
 `livenessProbeTimeoutSeconds`
 :   Specify the time in seconds after which the liveness probe times out. The default value is `10`.
@@ -192,7 +192,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 :   Set the maximum amount of time in minutes that a worker node can take to begin provisioning before the cluster autoscaler cancels the scale-up request. The default value is `120m`.
 
 `maxRetryGap`
-:   Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler. The default value is `60m`.
+:   Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler. The default value is `3600`.
 
 `resourcesLimitsCPU`
 :  Set the maximum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod can consume. The default value is `600m`.
