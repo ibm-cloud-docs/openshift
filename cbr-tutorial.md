@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-19"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 
@@ -28,6 +28,9 @@ With context-based restrictions, account owners and administrators can define an
 
 Setting up context-based restrictions for {{site.data.keyword.openshiftlong_notm}} resources is available for allowlisted accounts only.
 {: preview}
+
+Context-based restrictions limit access to the {{site.data.keyword.openshiftlong_notm}} objects that your application runs on, such as pods and workers, but not the application itself. 
+{: note}
 
 ## Understanding the scenario
 {: #cbr-tutorial-scenario}
@@ -116,11 +119,11 @@ Now that you've created a simpled CBR network zone and rule, review the followin
 ### Allowing different IPs to access the public and private service endpoints
 {: #cbr-tutorial-scenarios-pub-priv-one-ip}
 
-In this scenario, you allow different IP addresses to access the public and private service endpoints of your {{site.data.keyword.openshiftlong_notm}} clusters by creating separate network zones for each IP address. Then, you create a rule that allows each network zone to access the public or private service endpoints.
+In this scenario, you allow different IP addresses or CIDRs to access the public and private service endpoints of your {{site.data.keyword.openshiftlong_notm}} clusters by creating separate network zones for each IP address. Then, you create a rule that allows each network zone to access the public or private service endpoints.
 
-1. Create a network zone for a public IP address and another for a private IP address that you want to allow to access your {{site.data.keyword.openshiftlong_notm}} clusters.
+1. Create a network zone for a public IP address or CIDR and another for a private IP address or CIDR that you want to allow to access your {{site.data.keyword.openshiftlong_notm}} clusters.
 
-    Example commands to create separate network zones called `public-IP-zone` and `private-IP-zone`. Each zone contains an individual IP address that you want to allow to access your clusters.
+    Example commands to create separate network zones called `public-IP-zone` and `private-IP-zone`. In this example, each zone contains multiple IP addresses or CIDRs, separated by a comma, that you want to allow to access your clusters. 
 
     ```sh
     ibmcloud cbr zone-create --addresses 1.2.3.4,12.12.12.0/24 --description "Allowed Public IP Addresses Zone" --name "public-ip-zone"
@@ -138,9 +141,9 @@ In this scenario, you allow different IP addresses to access the public and priv
     ```
     {: pre}
     
-1. Create a rule that allows the `private-ip-zone` to connect to your cluster's private service endpoint and that also allows the `public-ip-zone` to connect to your cluster's public service endpoint only.
+1. Create a rule that allows the `private-ip-zone` to connect to your cluster's private service endpoint and that also allows the `public-ip-zone` to connect to your cluster's public service endpoint only. This rule applies to the cluster specified with the `--service-instance` option. If you want to apply the rule to all clusters in your account, do not specify a cluster. 
     ```sh
-    ibmcloud cbr rule-create --context-attributes "endpointType=public,networkZoneId=PUBLIC-IP-ZONE-ID" --context-attributes "endpointType=private,networkZoneId=PRIVATE-IP-ZONE-ID" --description "Separate private and public IPs for cluster and management rule" --service-name containers-kubernetes
+    ibmcloud cbr rule-create --context-attributes "endpointType=public,networkZoneId=PUBLIC-IP-ZONE-ID" --context-attributes "endpointType=private,networkZoneId=PRIVATE-IP-ZONE-ID" --description "Separate private and public IPs for cluster and management rule" --service-name containers-kubernetes --service-instance CLUSTER-ID
     ```
     {: pre}
 
@@ -150,7 +153,7 @@ In this scenario, you allow different IP addresses to access the public and priv
 
 Similar to the previous scenario, in this scenario you allow one public IP address and one private IP address to access the respective public or private service endpoint for {{site.data.keyword.openshiftlong_notm}} clusters. However, in this scenario, access is further restricted by specific API types for the `cluster` and `management` APIs. For more information about the API types, see [Protecting specific APIs](/docs/containers?topic=containers-cbr&interface=cli#protect-api-types-cbr).
 
-1. Create four network zones, one for each of the IP addresses you want to allow to access either the public or private `cluster` APIs or the public or private `management` apis.
+1. Create four network zones, one for each of the IP addresses you want to allow to access either the public or private `cluster` APIs or the public or private `management` apis. Note that you can include multiple IP addresses or CIDRs, separated by a comma, that you want to allow to access your clusters. 
 
     ```sh
     ibmcloud cbr zone-create --addresses 1.2.3.4,12.12.12.0/24 --description "Allowed Public IP Addresses for IKS and ROKS APIs" --name "public-mgmt-zone"

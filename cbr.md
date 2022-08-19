@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-19"
 
 keywords: cbr, context based restrictions, security
 
@@ -22,6 +22,9 @@ Context-based restrictions give account owners and administrators the ability to
 
 Setting up context-based restrictions for {{site.data.keyword.openshiftlong_notm}} resources is available for allowlisted accounts only.
 {: preview}
+
+Context-based restrictions limit access to the {{site.data.keyword.openshiftlong_notm}} objects that your application runs on, such as pods and workers, but not the application itself. 
+{: note}
 
 These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 

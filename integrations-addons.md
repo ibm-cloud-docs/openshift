@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-19"
 
 keywords: kubernetes, openshift
 
@@ -41,7 +41,7 @@ For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
 - [Cluster Autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc)
 - [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)
-- [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
+- [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc)
 - [Static routes](/docs/containers?topic=containers-static-routes)
@@ -115,7 +115,7 @@ Review which managed add-ons are available for {{site.data.keyword.redhat_opensh
 The following list of add-ons for clusters are supported in {{site.data.keyword.satelliteshort}} locations.
 
 - [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)
-- [HPCS Router](/docs/openshift?topic=openshift-hpcs-router)
+- [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-odf-local) to consistently deploy ODF across clusters in your location.)
