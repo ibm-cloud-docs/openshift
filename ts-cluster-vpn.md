@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-22"
 
 keywords: openshift
 
@@ -36,7 +36,7 @@ The infrastructure credentials that are associated with the resource group that 
 {: tsCauses}
 
 
-[Complete the troubleshooting guide](/docs/openshift?topic=openshift-worker_infra_errors) to check and update the infrastructure credentials that are used for the resource group.
+[Complete the troubleshooting guide](/docs/openshift?topic=openshift-cluster_infra_errors) to check and update the infrastructure credentials that are used for the resource group.
 {: tsResolve}
 
 

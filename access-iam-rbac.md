@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-19"
+lastupdated: "2022-08-22"
 
 keywords: openshift
 
@@ -605,7 +605,7 @@ Check your access policies that are assigned by IAM platform and service access 
     * [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions)
     * [{{site.data.keyword.openshiftlong_notm}} user access permissions](/docs/containers?topic=containers-access_reference)
     * **Satellite-only**: [{{site.data.keyword.satelliteshort}} IAM platform and service roles](/docs/satellite?topic=satellite-iam-assign-access)
-5. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users_cli) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam-assign-access-cli).
+5. To change or assign new access policies, see [Assigning {{site.data.keyword.openshiftlong_notm}} roles](#add_users_cli) or [Assigning {{site.data.keyword.satelliteshort}} access](/docs/satellite?topic=satellite-iam-assign-access).
 
 ### Checking RBAC roles
 {: #checking-rbac}
