@@ -2,14 +2,14 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-22"
 
 keywords: openshift
 
 subcollection: openshift
 
 content-type: tutorial
-services: openshift,cloud-object-storage
+services: openshift, cloud-object-storage
 account-plan: paid
 completion-time: 45m
 

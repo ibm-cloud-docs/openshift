@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-08-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -100,6 +100,8 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 
 If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create an instance of {{site.data.keyword.hscrypto}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} credentials.
 
+Storage class encryption is available only for versions `4.10.0` and later of OpenShift Data Foundation.
+{: note}
 
 1. Create an [{{site.data.keyword.hscrypto}} service instance](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui).
 
@@ -188,7 +190,7 @@ Before you install OpenShift Data Foundation, prepare your cluster.
 
 
 1. Log in to each worker node in your cluster by using the `oc debug` command and complete the following steps.
-    - Log in to the worker node. Replace `<worker_node_IP>` with the private IP address of your worker node. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
+    - Log in to the worker node. Replace `<worker_node_IP>` with the name of your worker node. To get the names of your worker nodes, run the **`oc get nodes`** command.
         ```sh
         oc debug node/<node name> -- chroot /host rm -rvf /var/lib/rook /mnt/local-storage
         ```
@@ -201,7 +203,7 @@ Before you install OpenShift Data Foundation, prepare your cluster.
         ```
         {: pre}
         
-    - **4.8 only**: Edit the `/etc/kubernetes/kubelet.conf` file and change the value of the `EnableControllerAttachDetach` parameter to `true`.
+    - **4.8 and later**: Edit the `/etc/kubernetes/kubelet.conf` file and change the value of the `EnableControllerAttachDetach` parameter to `true`.
         ```sh
         nano /etc/kubernetes/kubelet.conf
         ```
@@ -518,7 +520,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
-1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.8 or 4.9 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.8.0 of the add-on to an OCP 4.8 or 4.9 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` option.
 1. [Review the parameter reference](#odf-classic-param-ref).
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
@@ -540,6 +542,7 @@ To install ODF in your cluster, complete the following steps.
 
 ## Creating your storage cluster
 {: #ocs-classic-deploy-crd}
+{: cli}
 
 To deploy ODF in your classic cluster, you can create a custom resource definition to specify your storage device details.
 {: shortdesc}
@@ -630,7 +633,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
         - <device-by-id> # Example: /dev/disk/by-id/scsi-3333333a33a33a33333a3aa333a33a3a3
         - <device-by-id> # Example: /dev/disk/by-id/scsi-4444444a44a44a44444a4aa444a44a4a4
         - <device-by-id> # Example: dev/disk/by-id/scsi-5555555a55a55a55555a5aa555a55a5a5
-      workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
+      workerNodes: # Specify the names of each worker node where you want to install ODF. Example: 10.240.1.21
         - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
         - <workerNodes>
         - <workerNodes>
@@ -684,7 +687,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
         - <device-by-id> # Example: /dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2
         - <device-by-id> # Example: /dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2
         - <device-by-id> # Example: dev/disk/by-id/scsi-2222222a22a22a22222a2aa222a22a2a2-part2
-      workerNodes: # Specify the private IP addresses of each worker node where you want to install OCS.
+      workerNodes: # Specify the names of each worker node where you want to install ODF. Example: 10.240.1.21
         - <workerNodes> # To get a list worker nodes, run `oc get nodes`.
         - <workerNodes>
         - <workerNodes>
@@ -719,12 +722,12 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | --- | --- | --- |
 | `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
 | `osdStorageClassName` | Enter `localblock`. | N/A |
-| `osdSize` | Enter `1`. | N/A |
+| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize`  multiplied by the `numOfOsd`. | N/A |
 | `osdDevicePath` | Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`,`/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 | `autoDiscoverDevices` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
 | `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
@@ -743,12 +746,12 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | --- | --- | --- |
 | `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
 | `osdStorageClassName` | Enter `localblock`. | N/A |
-| `osdSize` | Enter `1`. | N/A |
+| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize`  multiplied by the `numOfOsd`. | N/A |
 | `osdDevicePath` | Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`,`/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 | `autoDiscoverDevices` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
 {: caption="Classic parameter reference" caption-side="top"}
@@ -765,16 +768,14 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `monDevicePaths` | Enter a comma separated list of the disk-by-id paths for the storage devices that you want to use for the monitor (MON) pods. The devices that you specify must have at least `20GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, don't include spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
 | `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi`. | N/A |
 | `osdStorageClassName` | Enter `localblock`. | N/A |
-| `osdSize` | Enter `1`. | N/A |
+| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize` multiplied by the `numOfOsd`. | N/A |
 | `osdDevicePath` | Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`,`/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Enter the private IP addresses for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node IP addresses, run `oc get nodes`. | N/A |
+| `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Classic parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
-
 
 

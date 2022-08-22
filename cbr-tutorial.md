@@ -2,14 +2,14 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-19"
+lastupdated: "2022-08-22"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 
 subcollection: openshift
 
 content-type: tutorial
-services: openshift,
+services: openshift
 account-plan: paid
 completion-time: 30m
 

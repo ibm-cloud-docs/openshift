@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-19"
+lastupdated: "2022-08-22"
 
 keywords: openshift
 
@@ -171,7 +171,7 @@ Cross-account encryption
 
 
 HPCS Router add-on
-:   Versions 4.6.0_2289, 4.7.0_2288, 4.8.0_2269, and 4.9.0_2290 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.6.0_2289, 4.7.0_2288, 4.8.0_2269, and 4.9.0_2290 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 
 ### 13 July 2022
 {: #openshift-july1322}
@@ -200,7 +200,7 @@ Worker node fix pack
 
 
 HPCS Router add-on
-:   Versions 4.6.0_2245, 4.7.0_2252, 4.8.0_2246, and 4.9.0_2251 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.6.0_2245, 4.7.0_2252, 4.8.0_2246, and 4.9.0_2251 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_1061 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
@@ -301,7 +301,7 @@ Worker node fix pack
 
 
 HPCS Router add-on
-:   Versions 4.6.0_1986, 4.7.0_1985, 4.8.0_1984, and 4.9.0_1983 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.6.0_1986, 4.7.0_1985, 4.8.0_1984, and 4.9.0_1983 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_1022 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
@@ -434,7 +434,7 @@ Worker node fix pack
 
 
 HPCS Router add-on
-:   Versions 4.6.0_1570, 4.7.0_1561, 4.8.0_1560, and 4.9.0_1559 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.6.0_1570, 4.7.0_1561, 4.8.0_1560, and 4.9.0_1559 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_956 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
@@ -525,7 +525,7 @@ New! {{site.data.keyword.secrets-manager_full}}
 
 
 HPCS Router add-on
-:   Versions 4.6.0_1468, 4.7.0_1469, 4.8.0_1470, and 4.9.0_1471 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.6.0_1468, 4.7.0_1469, 4.8.0_1470, and 4.9.0_1471 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_927 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
@@ -599,7 +599,7 @@ Worker node fix pack update.
 
 
 HPCS Router add-on
-:   Versions 4.6.0_1383, 4.7.0_1386, 4.8.0_1385, and 4.9.0_1384 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.6.0_1383, 4.7.0_1386, 4.8.0_1385, and 4.9.0_1384 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_906 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
@@ -646,7 +646,7 @@ Worker node fix pack update.
 
 
 HPCS Router add-on
-:   Versions 4.6.0_1360, 4.7.0_1362, 4.8.0_1363, and 4.9.0_1364 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.6.0_1360, 4.7.0_1362, 4.8.0_1363, and 4.9.0_1364 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 
 
 ### 11 March 2022
@@ -711,7 +711,7 @@ Cluster autoscaler
 
 
 HPCS Router add-on
-:   Versions 4.6.0_1308, 4.7.0_1309, 4.8.0_1310, and 4.9.0_1349 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.6.0_1308, 4.7.0_1309, 4.8.0_1310, and 4.9.0_1349 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_883 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
@@ -770,7 +770,7 @@ Container service CLI
 {: release-note}
 
 HPCS Router add-on
-:   Version 4.9.0 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) is available.
+:   Version 4.9.0 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) is available.
 
 
 
@@ -873,7 +873,7 @@ Version changelog
 
 
 HPCS Router add-on
-:   Versions 4.8.0_1232, 4.7.0_1226, and 4.6.0_1227 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.8.0_1232, 4.7.0_1226, and 4.6.0_1227 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_834 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
@@ -939,7 +939,7 @@ Worker node fix pack update.
 {: release-note}
   
 HPCS Router add-on
-:   Versions 4.8.0_1125, 4.7.0_1127, and 4.6.0_1126 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.8.0_1125, 4.7.0_1127, and 4.6.0_1126 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_804 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
@@ -1068,7 +1068,7 @@ Cluster autoscaler add-on.
 
   
 HPCS Router add-on
-:   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
+:   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
@@ -1204,7 +1204,7 @@ New troubleshooting topic
 
 
 {{site.data.keyword.cloud_notm}} HPCS Router add-on
-:   The [{{site.data.keyword.cloud_notm}} HPCS Router add-on](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) version 4.5 is deprecated.
+:   The [{{site.data.keyword.cloud_notm}} HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) version 4.5 is deprecated.
 
 
 OpenShift Data Foundation
@@ -1337,7 +1337,7 @@ Review the release notes for 21 September 2021.
 {: shortdesc}
 
 HPCS Router add-on
-:   Version `4.5.0_861` and `4.6.0_860` of the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on are available.
+:   Version `4.5.0_861` and `4.6.0_860` of the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on are available.
 
 
 
@@ -1404,7 +1404,7 @@ Review the release notes for 8 September 2021.
 {: shortdesc}
 
 HPCS Router add-on
-:   Updated version change log for the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
+:   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
 
 
 
@@ -1484,7 +1484,7 @@ Ingress changelogs
  
 
 HPCS Router
-:   Updated version change log for the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
+:   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
 
 Image key synchronizer
 :   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
@@ -1510,7 +1510,7 @@ Ingress changelogs
 
 
 HPCS Router
-:   Updated version change log for the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
+:   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
 
 Image key synchronizer
 :   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
@@ -1554,7 +1554,7 @@ Master versions
 
 
 HPCS Router
-:   Updated version change log for the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
+:   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
 :   For centralized management of all your secrets across clusters and also injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets).
 
 {{site.data.keyword.block_storage_is_short}} add-on
@@ -1740,7 +1740,7 @@ Worker node versions
 
 
 HPCS Router
-:   Updated version change log for the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
+:   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
   
 Image key synchronizer
 :   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
@@ -1882,7 +1882,7 @@ Worker node versions
 {: release-note}
 
 HPCS Router
-:   Updated version change log for the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
+:   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) add-on.
 
 
 
@@ -1898,7 +1898,7 @@ New! Toronto multizone region for VPC
 {: release-note}
 
 Add-on changelogs
-:   Updated version changelogs for the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
+:   Updated version changelogs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
 
 Cluster autoscaler add-on
 :   [Patch update `1.0.2_256`](/docs/containers?topic=containers-ca_changelog) of the cluster autoscaler add-on is available.
@@ -1939,7 +1939,7 @@ Accessing VPC clusters
 {: release-note}
 
 {{site.data.keyword.cloud_notm}} HPCS Router add-on
-:   If you use the add-on, the [latest version build updates](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are automatically applied to your cluster.
+:   If you use the add-on, the [latest version build updates](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) are automatically applied to your cluster.
 
 {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on
 :   If you use the add-on, the [latest version build updates](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) are automatically applied to your cluster.
@@ -2009,7 +2009,7 @@ Compliance operator
 {: release-note}
 
 Add-on changelogs
-:   Added version changelogs for the [HPCS Router](docs/openshift?topic=openshift-hpcs-router-changelog-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
+:   Added version changelogs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
 
 Master versions
 :   Master fix pack update change log documentation is available for version [`4.6.21_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4621_1535), [`4.5.35_1533_openshift`](/docs/openshift?topic=openshift-changelog_archive#4535_1533), [`4.4.33_1536_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1536), and [`3.11.394_1583_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311394_1583).
@@ -2487,7 +2487,7 @@ Default version
 {: release-note}
 
 New! {{site.data.keyword.cloud_notm}} HPCS Router
-:   In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5, you can now deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an {{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance. This key can be used by the router in TLS session establishment and in Certificate Signing Request (CSR) signing. To get started, see [Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](docs/openshift?topic=openshift-hpcs-router-changelog).
+:   In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5, you can now deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an {{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance. This key can be used by the router in TLS session establishment and in Certificate Signing Request (CSR) signing. To get started, see [Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router-changelog).
 
 
 

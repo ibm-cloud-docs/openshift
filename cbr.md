@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-19"
+lastupdated: "2022-08-22"
 
 keywords: cbr, context based restrictions, security
 
@@ -71,12 +71,12 @@ Resource group
 You can create CBR rules to protect the following API types for {{site.data.keyword.openshiftlong_notm}}.
 
 Cluster control plane APIs
-:   Protect access to the APIs inside your clusters, such as the APIs for creating namespaces, pods, and more. CBR rules that apply to the cluster API type control access to your cluster API server, which includes all `oc` commands to that cluster. For more information about the APIs included in the cluster control plane API type, see [Cluster control plane APIs](#cbr-cluster-apis). If you include the cluster control plane APIs in your CBR type, then resources in the network zone that associate with the rule can interact only with the cluster control plane APIs.
+:   Protect access to the APIs inside your clusters, such as the APIs for creating namespaces, pods, and more. CBR rules that apply to the cluster API type control access to your cluster API server, which includes all `oc` commands to that cluster.  If you include the cluster control plane APIs in your CBR type, then resources in the network zone that associate with the rule can interact only with the cluster control plane APIs.
 :   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` type.
 :   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster"` in the `"operations"` spec.
 
 Management APIs
-:   Protect access to the APIs for provisioning and managing clusters, worker pools, and more. CBR rules that apply to the management API type control access the {{site.data.keyword.openshiftlong_notm}} APIs, which includes all `ibmcloud oc` commands calls, such as `ibmcloud oc clusters`, `ibmcloud oc cluster create`, and more. For more information about the APIs included in the management API type, see [Management APIs](#cbr-mgmt-apis). If you include the management APIs in your CBR type, then resources in the network zone that associate with the rule can interact only with the management APIs.
+:   Protect access to the APIs for provisioning and managing clusters, worker pools, and more. CBR rules that apply to the management API type control access the {{site.data.keyword.openshiftlong_notm}} APIs, which includes all `ibmcloud oc` commands calls, such as `ibmcloud oc clusters`, `ibmcloud oc cluster create`, and more.  If you include the management APIs in your CBR type, then resources in the network zone that associate with the rule can interact only with the management APIs.
 :   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:management` type.
 :   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster"` in the `"operations"` spec.
 
@@ -306,7 +306,7 @@ The following example payload creates a rule that protects the `CLUSTER-ID` clus
 ```
 {: codeblock}
 
-The following example payload creates a rule that protects the `CLUSTER-ID` cluster. Only the resources defined in the `NETWORK-ZONE-ID` zone can access the cluster. Since the `cluster` API type is specified, resources in the `NETWORK-ZONE-ID` zone can access the cluster only through the [cluster APIs](#cbr-cluster-apis) over the private network.
+The following example payload creates a rule that protects the `CLUSTER-ID` cluster. Only the resources defined in the `NETWORK-ZONE-ID` zone can access the cluster. Since the `cluster` API type is specified, resources in the `NETWORK-ZONE-ID` zone can access the cluster only through the cluster APIs over the private network.
 
 ```sh
 {
