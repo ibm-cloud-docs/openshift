@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-17"
+lastupdated: "2022-08-22"
 
 keywords: openshift
 subcollection: openshift
@@ -4457,7 +4457,9 @@ subcollection: openshift
 
 [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#deploy-odf-vpc)
 
-* [Quick start for VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-quickstart)
+* [Quick start for VPC clusters with the CLI](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-quickstart-cli)
+
+* [Quick start for VPC clusters from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-quickstart-ui)
 
 * [Creating a VPC cluster for OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-vpc)
 
@@ -4488,30 +4490,6 @@ subcollection: openshift
     * [Version 4.8 and 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
     * [Version 4.7 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
-
-[Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-deploy-odf-sat#deploy-odf-sat)
-
-* [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-plan)
-
-    * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-sat#odf-create-cos-sat)
-
-    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-sat#odf-create-hscrypto-sat)
-
-* [Creating a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-secret-create)
-
-* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-sat#install-odf-cli-sat)
-
-* [Gathering your local block storage device details](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-gather)
-
-* [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-deploy-crd)
-
-* [{{site.data.keyword.satelliteshort}}: OpenShift Data Foundation parameter reference](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-param-ref)
-
-    * [Version 4.10 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-410)
-
-    * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-48)
-
-    * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-sat#odf-sat-parameters-47)
 
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
