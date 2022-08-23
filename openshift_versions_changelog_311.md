@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-08-23"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -113,7 +113,7 @@ The following table shows the changes that are in the master fix pack 3.11.664_1
 | Load balancer and Load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1866 | 1915 | Updated the image to resolve CVEs. |
 | OpenVPN client | 2.5.4-r0-IKS-579 | 2.5.6-r0-IKS-592 | Updated `OpenVPN client` to version `2.5.6-r0`. |
 | OpenVPN server | 2.5.4-r0-IKS-578 | 2.5.6-r0-IKS-591 | Updated `OpenVPN server` to version `2.5.6-r0`. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane | 3.11.634 | 3.11.664 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-664){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane | 3.11.634 | 3.11.664 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-664){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.634_1626_openshift" caption-side="top"}
 

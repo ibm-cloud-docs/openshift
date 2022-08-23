@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-22"
+lastupdated: "2022-08-23"
 
 keywords: openshift
 subcollection: openshift
@@ -7466,7 +7466,7 @@ subcollection: openshift
 
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
 
-[Why do I see `Could not find user` when I try to access the Red Hat {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
+[Why do I see "Could not find user" when I try to access the {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
 
 [Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
