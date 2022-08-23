@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-23"
 
 keywords: openshift, console, user, error
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Why do I see `Could not find user` when I try to access the Red Hat {{site.data.keyword.openshiftshort}} web console?
+# Why do I see "Could not find user" when I try to access the {{site.data.keyword.openshiftshort}} web console?
 {: #ts-cluster-ocp-console}
 
 When you try to access the {{site.data.keyword.openshiftshort}} web console, you see an error message similar to the following.

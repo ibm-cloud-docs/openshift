@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-23"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -171,8 +171,8 @@ The following table shows the changes that are in the master fix pack 4.6.58_158
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.19.16-15 | v1.19.16-17 | Update prometheus/client_golang to `v1.11.1`. Update golang.org/x/text to `v0.3.7`. |
 | Key Management Service provider | v2.5.5 | v2.5.6 | Updated `Go` to version `1.17.11` and also updated the dependencies. |
 | OpenVPN Operator image | v1.4.5 | v1.4.6 | Update base image to version `v1.22.0` to resolve CVEs. |
-| Red Hat {{site.data.keyword.openshiftshort}}. | 4.6.57 | 4.6.58 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-58){: external}. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20220509 | v4.6.0-20220614 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0%2B20220614){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.6.57 | 4.6.58 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-58){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20220509 | v4.6.0-20220614 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0%2B20220614){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit | v4.6.0-20220509 | v4.6.0-20220614 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0%2B20220614){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.57_1584_openshift" caption-side="top"}
@@ -223,8 +223,8 @@ The following table shows the changes that are in the master fix pack 4.6.57_158
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1915 | 1997 | Updated `Go` to version `1.17.10` and updated dependencies. |
 | OpenVPN Operator image | v1.4.3 | v1.4.5 | Updated base image to `v1.21.0` for CVE remediation. |
 | Portieris admission controller | v0.10.3 | v0.12.4 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.12.4){: external}. |
-| Red Hat {{site.data.keyword.openshiftshort}}. | 4.6.56 | 4.6.57 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-57){: external}. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20220411 | v4.6.0-20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220509){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.6.56 | 4.6.57 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-57){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20220411 | v4.6.0-20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220509){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.6.0-20220411 | v4.6.0-20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220509){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.6.0+20220411 | 4.6.0+20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220509){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
@@ -280,7 +280,7 @@ The following table shows the changes that are in the master fix pack 4.6.56_158
 | OpenVPN client | 2.5.4-r0-IKS-579 | 2.5.6-r0-IKS-592 | Upgrade openvpn to version `2.5.6-r0`. |
 | OpenVPN server | 2.5.4-r0-IKS-578 | 2.5.6-r0-IKS-591 | Upgrade openvpn to version `2.5.6-r0`. |
 | OpenVPN Operator image | v1.4.2 | v1.4.3 | Updated ansible operator base image to version v1.19.0 to resolve CVEs. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20220308 | v4.6.0-20220411 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0%2B20220411){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.6.0-20220308 | v4.6.0-20220411 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0%2B20220411){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.6.0-20220308 | v4.6.0-20220411 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0%2B20220411){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.6.0+20220308 | 4.6.0+20220411 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220411){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
