@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-23"
 
 keywords: openshift, block storage, snapshot
 
@@ -22,7 +22,7 @@ subcollection: openshift
 Supported infrastructure provider
 :   VPC
 
-Snapshot support is available in {{site.data.keyword.block_storage_is_short}} add-on version `5.0.0-beta` and later.  Version `5.0.0-beta` is available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. If you don't need snapshot support, follow the steps to use [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-add) in your cluster. After version `5.0.0` is released, version `5.0.0-beta` of the add-on becomes depreacted and Beta users must migrate to version `5.0.0`. Do not use the Beta version of the add-on unless you want to test snapshot support.
+Snapshot support is available in {{site.data.keyword.block_storage_is_short}} add-on version `5.0.0-beta` and later.  Version `5.0.0-beta` is available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. If you don't need snapshot support, follow the steps to use [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-add) in your cluster. After version `5.0.0` is released, version `5.0.0-beta` of the add-on becomes depreacted and Beta users must migrate to version `5.0.0`. Do not use the Beta version of the add-on unless you want to test snapshot support. Security patches for the Beta version of the {{site.data.keyword.block_storage_is_short}} add-on might be delayed. 
 {: important}
 
 ## Enabling the {{site.data.keyword.block_storage_is_short}} add-on

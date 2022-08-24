@@ -38,21 +38,6 @@
     "Red Hat Openshift cost estimate",
     "cost calulator for Openshift"
   ],
-  "faq_benefits": [
-    "What is Red Hat Openshift",
-    "want to know about openshift",
-    "Tell me more about redhat openshift services",
-    "let me try red hat openshift",
-    "benefits of openshift",
-    "start with red hat",
-    "openshift",
-    "redhat",  
-    "red hat openshift",
-    "how to install openshift on IBM cloud",
-    "redhat openshift",
-    "get started using openshift",
-    "getting started with red hat openshift"
-  ],
   "faq_access": [
     "roles to I need to access openshift cluster?",
     "access policies do I give my openshift cluster users",
@@ -72,6 +57,19 @@
     "how do I add users to my openshift cluster",
     "Granting users access to openshift cluster through IAM",
     "permissions needed to create openshift clusters"
+  ],
+    "smallest_cluster": [  
+    "Create redhat classic cluster",
+    "want to create redhat classic clusters",
+    "Create a cluster in Red Hat OpenShift",
+    "Creating a standard Red Hat classic cluster",
+    "create an OpenShift Classic Cluster",
+    "I have to create OpenShift Classic Cluster",
+    "get Red Hat classic cluster",
+    "How to create my open shift cluster",
+    "creating OpenShift cluster registered with Red Hat",
+    "Create ROKS VPC cluster",
+    "ROKS cluster creation"
   ],
   "cs_cluster_access": [
     "unable to view or work with the Openshift cluster",

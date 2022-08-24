@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-24"
 
 keywords: openshift
 
@@ -96,7 +96,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
         ```
         {: pre}
         
-4. Check to see if you reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas#load-balancer-quotas) for VPC resource quotas across all your VPC clusters in your VPC.
+4. Check to see if you reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas) for VPC resource quotas across all your VPC clusters in your VPC.
 
 ## Step 2: Run Ingress tests in the Diagnostics and Debug Tool
 {: #debug-tool-43}

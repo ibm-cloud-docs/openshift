@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-24"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -68,7 +68,7 @@ Review limitations that are specific to {{site.data.keyword.redhat_openshift_not
 
 | Category | Description |
 | -------- | ----------- |
-| Cluster autoscaling | The Red Hat {{site.data.keyword.redhat_openshift_notm}} cluster autoscaler from the {{site.data.keyword.redhat_openshift_notm}} **Administration > Cluster Settings** console or `ClusterAutoscaler` object from the `autoscaling.openshift.io/v1` API is not supported. Instead, use the [`ibm-iks-cluster-autoscaler` Helm plug-in](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc). |
+| Cluster autoscaling | The {{site.data.keyword.redhat_openshift_notm}} cluster autoscaler from the {{site.data.keyword.redhat_openshift_notm}} **Administration > Cluster Settings** console or `ClusterAutoscaler` object from the `autoscaling.openshift.io/v1` API is not supported. Instead, use the [`ibm-iks-cluster-autoscaler` Helm plug-in](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc). |
 | Cluster updates | You must [update your cluster](/docs/openshift?topic=openshift-update) by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.redhat_openshift_notm}} web console. |
 | Container logs | If you use a container logging operator such as Fluentd to send logs to an ElasticSearch stack, you must [update the cluster logging deployment to use the `ibmc-block-gold` storage class](/docs/openshift?topic=openshift-health#oc_logging_operator). |
 | Private clusters | Depending on the infrastructure provider, your options for private clusters are limited. \n - **VPC**: When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private cloud service endpoint. If you want only a private cloud service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli) instead, and include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers. \n - **Classic**: You can enable the public and private cloud service endpoint or the public cloud service endpoint only, but you can't enable the private cloud service endpoint only. After cluster creation, you can't later change the service endpoints.  |
