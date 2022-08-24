@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-18"
+lastupdated: "2022-08-24"
 
 keywords: object storage, plug-in, changelog
 
@@ -26,8 +26,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.1.21 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.20 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.1.19 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.19 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.18 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.17 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.16 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -54,6 +55,13 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+## Change log for version 2.1.21, released 24 August 2022
+{: #02121_object_plugin}
+
+- Updates Golang to `1.18.5`
+- Updates the UBI image to `8.6-902`
+- Resolves [CVE-2022-1962](https://nvd.nist.gov/vuln/detail/CVE-2022-1962){: external}, [CVE-2022-1586](https://nvd.nist.gov/vuln/detail/CVE-2022-1586){: external}, [CVE-2022-2068](https://nvd.nist.gov/vuln/detail/CVE-2022-2068){: external}, [CVE-2022-1292](https://nvd.nist.gov/vuln/detail/CVE-2022-1292){: external}, [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external}.
 
 ## Change log for version 2.1.20, released 17 August 2022
 {: #02120_object_plugin}
