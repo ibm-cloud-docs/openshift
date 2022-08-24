@@ -390,6 +390,7 @@ toc:
                 - ts-cluster-pending.md
                 - ts-cluster-view-work.md
                 - ts-master-limits.md
+                - ts-admin-cert.md
             - topicgroup:
                 label: Worker nodes
                 topics:

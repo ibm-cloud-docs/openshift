@@ -7508,6 +7508,8 @@ subcollection: openshift
 
 [Why does my cluster master status say it is approaching its resource limit?](/docs/openshift?topic=openshift-master_resource_limit#master_resource_limit)
 
+[Why can't I create a new admin certificate?](/docs/openshift?topic=openshift-ts_admin-cert#ts_admin-cert)
+
 
 ### Worker nodes
 {: #sitemap_worker_nodes}
