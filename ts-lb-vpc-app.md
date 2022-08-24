@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-24"
 
 keywords: openshift
 
@@ -46,7 +46,7 @@ Requests can't be routed to your app in the following situations:
 * The VPC load balancer is offline, such as due to load balancer provisioning errors or VSI connection errors.
 * The VPC load balancer is deleted through the VPC console or the CLI.
 * The VPC load balancer's DNS entry is still registering.
-* You reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas#load-balancer-quotas) for VPC resource quotas across all your VPC clusters in your VPC.
+* You reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas) for VPC resource quotas across all your VPC clusters in your VPC.
 
 Verify that no VPC security groups are blocking traffic to your cluster and that the VPC load balancer is available.
 {: tsResolve}
