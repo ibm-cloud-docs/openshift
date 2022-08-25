@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-08-25"
 
 keywords: block, add-on, changelog
 
@@ -94,6 +94,12 @@ Adds snapshot support.
 ## Version 4.4
 {: #044_is_block}
 
+### Change log for version 4.4.9_1566, released 25 August 2022
+{: #4.4.9_1566_is_block_relnote}
+
+- Updates Golang to version `1.18.5`
+- Updates the `storage-secret-sidecar` image to `v1.2.6`
+- Resolves the following CVEs: [CVE-2022-1586](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1586){: external}, [CVE-2022-2068](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2068){: external}, [CVE-2022-1292](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1292){: external}, [CVE-2022-2097](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097){: external}. 
 
 ### Change log for version 4.4.8_1550, released 18 July 2022
 {: #4.4.8_1550_is_block_relnote}

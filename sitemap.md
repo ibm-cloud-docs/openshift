@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-08-25"
 
 keywords: openshift
 subcollection: openshift
@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
 
+    * [25 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2522)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version 4.4.9_1566 is available.
+
     * [24 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2422)
 
         * {{site.data.keyword.block_storage_is_short}} add-on version 4.3.5_1563 is available.
@@ -228,8 +232,6 @@ subcollection: openshift
     * [11 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1122)
 
         * Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas enabled
-
-        * Ingress ALB change log updates
 
     * [5 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0522)
 
@@ -6235,6 +6237,8 @@ subcollection: openshift
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.9_1566, released 25 August 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.9_1566_is_block_relnote)
 
     * [Change log for version 4.4.8_1550, released 18 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.8_1550_is_block_relnote)
 
