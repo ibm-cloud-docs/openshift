@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-08-25"
 
 keywords: openshift
 
@@ -27,6 +27,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2022
 {: #openshift-aug22}
+
+### 25 August 2022
+{: #openshift-aug2522}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on version 4.4.9_1566 is available.
+:   For more information, see [version 4.4.9_1566](/docs/containers?topic=containers-vpc_bs_changelog)
+
+Ingress ALB change log updates
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.2.1_2506_iks` and `1.1.2_2507_iks`.
+
 
 ### 24 August 2022
 {: #openshift-aug2422}
