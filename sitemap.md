@@ -211,8 +211,6 @@ subcollection: openshift
 
         * {{site.data.keyword.block_storage_is_short}} add-on version 4.4.9_1566 is available.
 
-        * Ingress ALB change log updates
-
     * [24 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2422)
 
         * {{site.data.keyword.block_storage_is_short}} add-on version 4.3.5_1563 is available.
@@ -234,8 +232,6 @@ subcollection: openshift
     * [11 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1122)
 
         * Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas enabled
-
-        * Ingress ALB change log updates
 
     * [5 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0522)
 

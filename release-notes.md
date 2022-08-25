@@ -35,8 +35,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.block_storage_is_short}} add-on version 4.4.9_1566 is available.
 :   For more information, see [version 4.4.9_1566](/docs/containers?topic=containers-vpc_bs_changelog)
 
-Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.2.1_2506_iks` and `1.1.2_2507_iks`.
 
 
 ### 24 August 2022
@@ -79,8 +77,6 @@ Istio add-on
 Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas enabled
 :   [Follow the tutorial](/docs/containers?topic=containers-storage-cos-tutorial-quota) to set up the {{site.data.keyword.cos_full_notm}} plug-in to automatically set quotas on buckets that are provisioned with PVCs. 
 
-Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.2.1_2487_iks` and `1.1.2_2488_iks`.
 
 
 ### 5 August 2022
@@ -125,7 +121,6 @@ Worker node fix pack
 {: release-note}
 
 Master fix pack update
-
 
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.22_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.42_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.46_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.53_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1592_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
 
