@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -29,6 +30,7 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_notm}} CLI reference](/docs/Registry?topic=container-registry-cli-plugin-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation](https://kubectl.docs.kubernetes.io/){: external}.
 {: tip}
+
 
 ## {{site.data.keyword.openshiftlong_notm}} commands
 {: #cli_commands}
