@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-25"
+lastupdated: "2022-08-26"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
+
+    * [26 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2622)
+
+        * CLI change log update
 
     * [25 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2522)
 
@@ -5081,6 +5085,12 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get)
 
+    * [`ibmcloud oc ingress alb health-checker disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_disable)
+
+    * [`ibmcloud oc ingress alb health-checker enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_enable)
+
+    * [`ibmcloud oc ingress alb health-checker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_get)
+
     * [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs)
 
     * [`ibmcloud oc ingress alb migrate clean`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_clean)
@@ -5244,6 +5254,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.439](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10439)
 
 * [Version 1.0.433](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10433)
 

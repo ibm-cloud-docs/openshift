@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-08-26"
 
 keywords: openshift
 
@@ -147,6 +147,10 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
         * [`ibmcloud oc ingress alb enable classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)
         * [`ibmcloud oc ingress alb enable vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli#cli_alb_configure_vpc_gen2)
     * [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get)
+    * **`ingress alb health-checker`**: Manage the Ingress ALB health checker.
+        * [`ibmcloud oc ingress alb health-checker disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_disable)
+        * [`ibmcloud oc ingress alb health-checker enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_enable)
+        * [`ibmcloud oc ingress alb health-checker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_get)
     * [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs)
     * **`ingress alb migrate`**: Migrate your IBM Cloud Ingress configmap and resources to the Kubernetes Ingress format. The `ingress alb migrate` commands are deprecated and become unsupported soon.
         * [`ibmcloud oc ingress alb migrate clean`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_clean)
