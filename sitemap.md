@@ -207,6 +207,10 @@ subcollection: openshift
 
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
 
+    * [29 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2922)
+
+        * Worker node fix pack
+
     * [26 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2622)
 
         * CLI change log update
