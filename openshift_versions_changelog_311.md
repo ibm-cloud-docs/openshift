@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-08-29"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -208,9 +208,9 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Cluster health image | v1.1.30 | v1.1.32 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://www.mend.io/vulnerability-database/CVE-2021-43565){: external}. Adds Golang dependency updates. |
-| Key Management Service provider | v1.0.22 | v1.0.25 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://www.mend.io/vulnerability-database/CVE-2021-43565){: external}. Adds Golang dependency updates.  |
-| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 404 | 405 | Adds fix for [CVE-2021-3538](https://www.mend.io/vulnerability-database/CVE-2021-3538){: external} and adds dependency updates. |
+| Cluster health image | v1.1.30 | v1.1.32 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Adds Golang dependency updates. |
+| Key Management Service provider | v1.0.22 | v1.0.25 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Adds Golang dependency updates.  |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 404 | 405 | Adds fix for [CVE-2021-3538](https://nvd.nist.gov/vuln/detail/CVE-2021-3538){: external} and adds dependency updates. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 3.11.570_1619_openshift" caption-side="top"}
 

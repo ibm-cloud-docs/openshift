@@ -412,13 +412,13 @@ The following table shows the changes that are in the worker node fix pack 4.7.4
 | --- | --- | --- | --- |
 | Calico | v3.19.3 | v3.19.4 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.19/release-notes/#v3194){: external}. |
 | Calico Operator | v1.17.8 | v1.17.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.9){: external}. |
-| Cluster health image | v1.2.21 | v1.3.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://www.mend.io/vulnerability-database/CVE-2021-43565){: external}. Golang dependency updates. |
+| Cluster health image | v1.2.21 | v1.3.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Golang dependency updates. |
 | Gateway-enabled cluster controller | 1586 | 1653 | Updated to use `Go` version `1.17.7` and updated `Go` modules to fix CVEs. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 923 | 929 | Updated universal base image (UBI) to the `8.5-230` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
-| {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.1.6 | v2.1.7 | Fix for [CVE-2021-3538](https://www.mend.io/vulnerability-database/CVE-2021-3538){: external}. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.1.6 | v2.1.7 | Fix for [CVE-2021-3538](https://nvd.nist.gov/vuln/detail/CVE-2021-3538){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.20.15-1 | v1.20.15-4 | Adds changes to the renovate rules. |
-| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 404 | 405 | Adds fix for [CVE-2021-3538](https://www.mend.io/vulnerability-database/CVE-2021-3538){: external} and adds dependency updates. |
-| Key Management Service provider | v2.3.13 | v2.4.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://www.mend.io/vulnerability-database/CVE-2021-43565){: external}. Adds Golang dependency updates. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 404 | 405 | Adds fix for [CVE-2021-3538](https://nvd.nist.gov/vuln/detail/CVE-2021-3538){: external} and adds dependency updates. |
+| Key Management Service provider | v2.3.13 | v2.4.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Adds Golang dependency updates. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.7.40 | 4.7.43 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html#ocp-4-7-43){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} Control Plane Operator | v4.7.0-20220107 | v4.7.0-20220222 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220222){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.7.0-20220107 | v4.7.0-20220222 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220222){: external}. |

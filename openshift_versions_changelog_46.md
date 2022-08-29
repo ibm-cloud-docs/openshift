@@ -405,13 +405,13 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Cluster health image | v1.2.21 | v1.3.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://www.mend.io/vulnerability-database/CVE-2021-43565){: external}. Adds Golang dependency updates. |
+| Cluster health image | v1.2.21 | v1.3.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Adds Golang dependency updates. |
 | Gateway-enabled cluster controller | 1586 | 1653 | Updated to use `Go` version `1.17.7` and updated `Go` modules to fix CVEs. |
 | IBM Calico extension | 923 | 929 | Updated universal base image (UBI) to the `8.5-230` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.1.6 | v2.1.7 | Adds fix for CVE-2021-3538](https://www.mend.io/vulnerability-database/CVE-2021-3538){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.1.6 | v2.1.7 | Adds fix for CVE-2021-3538](https://nvd.nist.gov/vuln/detail/CVE-2021-3538){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.19.16-6 | v1.19.16-9 | Adds changes to the renovate rules. |
-| {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 404 | 405 | Adds fix for [CVE-2021-3538](https://www.mend.io/vulnerability-database/CVE-2021-3538){: external} and adds dependency updates. |
-| Key Management Service provider | v2.3.13 | v2.4.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://www.mend.io/vulnerability-database/CVE-2021-43565){: external}. Adds Golang dependency updates. |
+| {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 404 | 405 | Adds fix for [CVE-2021-3538](https://nvd.nist.gov/vuln/detail/CVE-2021-3538){: external} and adds dependency updates. |
+| Key Management Service provider | v2.3.13 | v2.4.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Adds Golang dependency updates. |
 | OpenVPN server | 2.5.4-r0-IKS-555 | 2.5.4-r0-IKS-562 | Turns off CRL verification in the openvpn image. |
 | OpenVPN Operator image | v1.4.0 | v1.4.1 | Turns off CRL verification in the opevpn-operator images. |
 | Red Hat OpenShift Control Plane Operator | v4.6.0-20220107 | v4.6.0-20220222 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20220222){: external}. |
