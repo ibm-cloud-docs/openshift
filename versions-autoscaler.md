@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-17"
+lastupdated: "2022-08-31"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -36,8 +36,38 @@ ibmcloud oc cluster addon versions
 ```
 {: pre}
 
-## Version 1.1.0
+## Version 1.0.6
+{: #0106_ca_addon}
+
+### Change log for patch update 1.0.6_774, released 31 August 2022
+{: #106774_ca}
+
+- Image tags: `1.19.1-106-3`, `1.20.0-106-3`, `1.21.0-106-3`, `1.22.0-106-3`, `1.23.0-106-3`, `1.24.0-106-3`
+- Resolves [CVE-2022-30630](https://nvd.nist.gov/vuln/detail/CVE-2022-30630){: external}, [CVE-2022-30635](https://nvd.nist.gov/vuln/detail/CVE-2022-30635){: external}, [CVE-2022-32148](https://nvd.nist.gov/vuln/detail/CVE-2022-32148){: external}, [CVE-2022-30631](https://nvd.nist.gov/vuln/detail/CVE-2022-30631){: external}, [CVE-2022-30632](https://nvd.nist.gov/vuln/detail/CVE-2022-30632){: external}, [CVE-2022-32189](https://nvd.nist.gov/vuln/detail/CVE-2022-32189){: external}, [CVE-2022-28131](https://nvd.nist.gov/vuln/detail/CVE-2022-28131){: external}, [CVE-2022-30633](https://nvd.nist.gov/vuln/detail/CVE-2022-30633){: external}, and [CVE-2022-1705](https://nvd.nist.gov/vuln/detail/CVE-2022-1705){: external}.
+
+### Change log for patch update 1.0.6_763, released 17 August 2022
+{: #106763_ca}
+
+- Image tags: `1.19.1-106-1`, `1.20.0-106-1`, `1.21.0-106-2`, `1.22.0-106-2`, `1.23.0-106-2`, `1.24.0-106-2`
+- All non-deleting workers are considered while scaling up.
+- Worker deletion is not retried while scaling down.
+
+### Change log for patch update 1.0.6_742, released 15 July 2022
+{: #106742_ca}
+
+- Adds support for Kubernetes 1.24.
+- Resolves [CVE-2022-29526](https://nvd.nist.gov/vuln/detail/CVE-2022-29526){: external}.
+- Image tags: `1.19.1-106-2`, `1.20.0-106-2`, `1.21.0 106-1`, `1.22.0 106-1`, `1.23.0 106-1`, `1.24.0 106-1`
+
+## Version 1.1.0 (Beta)
 {: #0110_ca_addon}
+- Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches might be slower on this version.
+
+### Change log for patch update 1.1.0_776, released 31 August 2022
+{: #110776_ca}
+
+- Image tags: `1.19.1-110-4`, `1.20.0-110-4`, `1.21.0-110-4`, `1.22.0-110-4`, `1.23.0-110-4`
+- Resolves [CVE-2022-30630](https://nvd.nist.gov/vuln/detail/CVE-2022-30630){: external}, [CVE-2022-30635](https://nvd.nist.gov/vuln/detail/CVE-2022-30635){: external}, [CVE-2022-32148](https://nvd.nist.gov/vuln/detail/CVE-2022-32148){: external}, [CVE-2022-30631](https://nvd.nist.gov/vuln/detail/CVE-2022-30631){: external}, [CVE-2022-30632](https://nvd.nist.gov/vuln/detail/CVE-2022-30632){: external}, [CVE-2022-32189](https://nvd.nist.gov/vuln/detail/CVE-2022-32189){: external}, [CVE-2022-28131](https://nvd.nist.gov/vuln/detail/CVE-2022-28131){: external}, [CVE-2022-30633](https://nvd.nist.gov/vuln/detail/CVE-2022-30633){: external}, and [CVE-2022-1705](https://nvd.nist.gov/vuln/detail/CVE-2022-1705){: external}.
 
 ### Change log for patch update 1.1.0_729, released 21 July 2022
 {: #110729_ca}
@@ -73,25 +103,14 @@ ibmcloud oc cluster addon versions
 - Image tags: `1.19.1-11`, `1.20.0-11`, `1.21.0-7`, `1.22.0-5`, `1.23.0-2`
 - Adds Beta support for {{site.data.keyword.satelliteshort}} clusters in allowlisted accounts.
 
-## Version 1.0.6
-{: #0106_ca_addon}
-
-### Change log for patch update 1.0.6_763, released 17 August 2022
-{: #106763_ca}
-
-- Image tags: `1.19.1-106-1`, `1.20.0-106-1`, `1.21.0-106-2`, `1.22.0-106-2`, `1.23.0-106-2`, `1.24.0-106-2`
-- All non-deleting workers are considered while scaling up.
-- Worker deletion is not retried while scaling down.
-
-### Change log for patch update 1.0.6_742, released 15 July 2022
-{: #106742_ca}
-
-- Adds support for Kubernetes 1.24.
-- Resolves [CVE-2022-29526](https://nvd.nist.gov/vuln/detail/CVE-2022-29526){: external}.
-- Image tags: `1.19.1-106-2`, `1.20.0-106-2`, `1.21.0 106-1`, `1.22.0 106-1`, `1.23.0 106-1`, `1.24.0 106-1`
-
 ## Version 1.0.5
 {: #0105_ca_addon}
+
+### Change log for patch update 1.0.5_775, released 31 August 2022
+{: #105775_ca}
+
+- Image tags: `1.19.1-105-4`, `1.20.0-105-4`, `1.21.0-105-4`, `1.22.0-105-4`, `1.23.0-105-4`
+- Resolves [CVE-2022-30630](https://nvd.nist.gov/vuln/detail/CVE-2022-30630){: external}, [CVE-2022-30635](https://nvd.nist.gov/vuln/detail/CVE-2022-30635){: external}, [CVE-2022-32148](https://nvd.nist.gov/vuln/detail/CVE-2022-32148){: external}, [CVE-2022-30631](https://nvd.nist.gov/vuln/detail/CVE-2022-30631){: external}, [CVE-2022-30632](https://nvd.nist.gov/vuln/detail/CVE-2022-30632){: external}, [CVE-2022-32189](https://nvd.nist.gov/vuln/detail/CVE-2022-32189){: external}, [CVE-2022-28131](https://nvd.nist.gov/vuln/detail/CVE-2022-28131){: external}, [CVE-2022-30633](https://nvd.nist.gov/vuln/detail/CVE-2022-30633){: external}, and [CVE-2022-1705](https://nvd.nist.gov/vuln/detail/CVE-2022-1705){: external}.
 
 ### Change log for patch update 1.0.5_754, released 17 August 2022
 {: #105754_ca}
