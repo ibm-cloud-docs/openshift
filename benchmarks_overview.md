@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-09-01"
 
 keywords: openshift
 
@@ -27,6 +27,7 @@ When a new Kubernetes version is released as part of a [supported {{site.data.ke
 {: #cis-benchmark-versions}
 
 Use the list below to find CIS Kubernetes Benchmark results for available versions.
+
 
 
 - [Version 4.10](/docs/openshift?topic=openshift-cis-benchmark-410)
