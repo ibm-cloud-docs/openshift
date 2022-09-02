@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-01"
+lastupdated: "2022-09-02"
 
 keywords: openshift
 subcollection: openshift
@@ -5440,6 +5440,8 @@ subcollection: openshift
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_411#411_before)
 
     * [Update after master](/docs/openshift?topic=openshift-cs_versions_411#411_after)
+
+* [Migrating your worker nodes from RHEL 7 to RHEL 8](/docs/openshift?topic=openshift-cs_versions_411#rhel-migrate-411)
 
 [Version 4.11 change log](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_411)
 
