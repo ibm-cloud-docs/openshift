@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-01"
+lastupdated: "2022-09-02"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -89,6 +89,61 @@ The following table shows the actions that you must take before you [update the 
 | **Unsupported:** RHEL 7 worker nodes | Using RHEL 7 worker nodes with Red Hat OpenShift on IBM Cloud version 4.11 clusters is unsupported. After updating the cluster master, the cluster worker pools must be re-created with RHEL 8 worker nodes. For more information about steps to take after you upgrade your cluster to 4.11, see [Migrating your worker nodes from RHEL 7 to RHEL 8](#rhel-migrate-411). |
 {: caption="Changes to make after you update the master to Red Hat OpenShift 4.11" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
+
+
+## Migrating your worker nodes from RHEL 7 to RHEL 8
+{: #rhel-migrate-411}
+
+RHEL 8 is the default operating system supported for clusters that run version 4.11. RHEL 7, which is currently the default operating system for cluster versions 4.10 and earlier, is not supported in version 4.11. If you upgrade a cluster from version 4.10 to 4.11, you must migrate your worker nodes from RHEL 7 to RHEL 8. You cannot upgrade RHEL 7 worker nodes directly to RHEL 8. Instead, after you have upgraded to 4.11, you must provision a RHEL 8 new worker node in your 4.11 cluster and then remove the RHEL 7 worker nodes. 
+{: shortdesc}
+
+For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools) or [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools).
+
+1. [Upgrade your cluster](/docs/openshift?topic=openshift-update#update) from version 4.10 to 4.11.
+
+2. In your 4.11 cluster, create a new worker pool to contain your RHEL 8 worker nodes. By default, any worker nodes added to your new worker pool run RHEL 8.
+
+    **For classic clusters**. See the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_create) for command details.
+
+    ```sh
+    ibmcloud ks worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION 
+    ```
+    {: pre}
+
+    **For VPC clusters**. See the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details.
+
+    ```sh
+    ibmcloud ks worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> 
+    ```
+    {: pre}
+
+3. Verify that the worker pool is created.
+
+    ```sh
+    ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
+
+4. Add worker nodes to the new worker pool. Worker pools are created with zero worker nodes. To add worker nodes, you must [resize the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize). To avoid disruptions in your cluster, make sure you that the number of new worker nodes you add is at least the number of RHEL 7 worker nodes you plan to remove.
+
+    ```sh
+    ibmcloud ks worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --size-per-zone WORKERS_PER_ZONE [-q]
+    ```
+    {: pre}
+
+5. [Remove the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
+
+    1. List your worker pools and note the name of the worker pool you want to remove.
+    ```sh
+    ibmcloud ks worker-pool ls --cluster CLUSTER [--output json] [-q]
+    ```
+    {: pre}
+
+    2. Run the command to remove the worker pool.
+    ```sh
+    ibmcloud ks worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
+    ```
+    {: pre}
 
 
 
