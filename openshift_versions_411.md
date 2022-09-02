@@ -94,7 +94,7 @@ The following table shows the actions that you must take before you [update the 
 ## Migrating your worker nodes from RHEL 7 to RHEL 8
 {: #rhel-migrate-411}
 
-RHEL 8 is the default operating system supported for clusters that run version 4.11. RHEL 7, which is currently the default operating system for cluster versions 4.10 and earlier, is not supported in version 4.11. If you upgrade a cluster from version 4.10 to 4.11, you must migrate your worker nodes from RHEL 7 to RHEL 8. You cannot upgrade RHEL 7 worker nodes directly to RHEL 8. Instead, after you have upgraded to 4.11, you must provision a RHEL 8 new worker node in your 4.11 cluster and then remove the RHEL 7 worker nodes. 
+RHEL 8 is the default operating system supported for clusters that run version 4.11. RHEL 7, which is currently the default operating system for cluster versions 4.10 and earlier, is not supported in version 4.11. If you upgrade a cluster from version 4.10 to 4.11, you must migrate your worker nodes from RHEL 7 to RHEL 8. You cannot upgrade RHEL 7 worker nodes directly to RHEL 8. Instead, after you have upgraded to 4.11, you must provision a new RHEL 8 worker pool in your 4.11 cluster and then remove the RHEL 7 worker pool. 
 {: shortdesc}
 
 For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools) or [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools).
