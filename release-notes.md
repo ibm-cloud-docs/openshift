@@ -24,15 +24,6 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
-## September 2022
-{: #openshift-sep22}
-
-### 6 September 2022
-{: #openshift-sep0622}
-{: release-note}
-
-CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.443.
 
 ## August 2022
 {: #openshift-aug22}
