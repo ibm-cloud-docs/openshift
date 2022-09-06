@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-09-06"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -40,7 +40,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
 
 1. Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
 2. From the **Catalog**, click [**{{site.data.keyword.openshiftlong_notm}}**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
-3. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.9.42**.
+3. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.9.46**.
 4. If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
 5. For the **Infrastructure**, select **Classic**.
 6. Configure the **Location** details for your cluster.
@@ -81,7 +81,7 @@ Want to learn more about customizing your cluster setup with the CLI? Check out 
     5. Click **Create virtual private cloud**.
 2. From the [{{site.data.keyword.openshiftlong_notm}} dashboard](https://cloud.ibm.com/kubernetes/landing?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster's VPC environment.
-    1. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.9.42**.
+    1. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.9.46**.
     2. If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
     3. For the **Infrastructure**, select **VPC**.
     4. From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.

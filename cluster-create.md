@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-22"
+lastupdated: "2022-09-06"
 
 keywords: openshift, clusters
 
@@ -175,7 +175,7 @@ Create your single zone or multizone classic {{site.data.keyword.redhat_openshif
 1. Make sure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
 2. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
-    1. From the {{site.data.keyword.redhat_openshift_notm}} drop-down list, select the version that you want to use in your cluster, such as 4.9.42.
+    1. From the {{site.data.keyword.redhat_openshift_notm}} drop-down list, select the version that you want to use in your cluster, such as 4.9.46.
     1. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. Usually, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with a {{site.data.keyword.redhat_openshift_notm}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
 4. Configure the **Location** details for your cluster.
     1. Select the **Resource group** that you want to create your cluster in.
@@ -358,7 +358,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     When the provisioning of your {{site.data.keyword.redhat_openshift_notm}} master is completed, the **State** of your cluster changes to `normal`. After your {{site.data.keyword.redhat_openshift_notm}} master is ready, the provisioning of your worker nodes is initiated.
     ```sh
     NAME         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.9.42_1544_openshift      Default             classic
+    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.9.46_1544_openshift      Default             classic
     ```
     {: screen}
 
@@ -374,7 +374,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     When the worker nodes are ready, the worker node state changes to **normal** and the status changes to **Ready**. When the node status is **Ready**, you can then access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process. Note that if you created your cluster with a private VLAN only, no **Public IP** addresses are assigned to your worker nodes.
     ```sh
     ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.23.9_1526
+    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   u3c.2x4.encrypted   normal   Ready    dal10   1.23.10_1526
     ```
     {: screen}
 
@@ -606,7 +606,7 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     When the provisioning of your {{site.data.keyword.redhat_openshift_notm}} master is completed, the state of your cluster changes to **normal**. After the {{site.data.keyword.redhat_openshift_notm}} master is ready, your worker nodes are set up.
     ```sh
     NAME         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.9.42_1544_openshift      Default               vpc-gen2
+    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.9.46_1544_openshift      Default               vpc-gen2
     ```
     {: screen}
 
@@ -622,7 +622,7 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     When the worker nodes are ready, the worker node **State** changes to `normal` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
     ```sh
     ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.9.42_1544_openshift
+    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.9.46_1544_openshift
     ```
     {: screen}
 
@@ -808,7 +808,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
 
     ```sh
     Name           ID                   State     Created      Workers   Location    Version                  Resource Group Name   Provider   
-    my_cluster    a111a11a11aa1aa11a11  normal    1 hour ago   4         Dallas      1.23.9  default               vpc-gen2
+    my_cluster    a111a11a11aa1aa11a11  normal    1 hour ago   4         Dallas      1.23.10  default               vpc-gen2
     ```
     {: screen}
     
