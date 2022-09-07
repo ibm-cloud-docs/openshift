@@ -293,6 +293,7 @@ toc:
                 topics:
                 - openshift_versions_411.md
                 - openshift_versions_changelog_411.md
+                - benchmarks_411.md
             - topicgroup:
                 label: Version 4.10
                 topics:
