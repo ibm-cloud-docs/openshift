@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-06"
+lastupdated: "2022-09-07"
 
 keywords: openshift
 
@@ -23,6 +23,17 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+
+## September 2022
+{: #openshift-sep22}
+
+### 7 September 2022
+{: #openshift-sep722}
+{: release-note}
+
+New! Pod security admission
+:    Versions 4.11 and later include support for Kubernetes [pod security admission](/docs/openshift?topic=openshift-pod_security_admission). 
 
 
 ## August 2022

@@ -127,6 +127,7 @@ toc:
           - openshift_scc.md
           - pod-priority.md
           - kubeapi-priority.md
+          - openshift_pod_security_admission.md
       - topicgroup: 
           label: Securing the cluster network
           topics:

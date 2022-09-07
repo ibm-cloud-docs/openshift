@@ -205,6 +205,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
+
+    * [7 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep722)
+
+        * New! Pod security admission
+
 * [August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug22)
 
     * [31 August 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3122)
@@ -3253,6 +3259,12 @@ subcollection: openshift
 * [Reviewing default flow schema and priority levels](/docs/openshift?topic=openshift-kubeapi-priority#kubeapi-default-priority)
 
     * [Viewing {{site.data.keyword.openshiftlong_notm}} created priority level configurations](/docs/openshift?topic=openshift-kubeapi-priority#kube-api-prioritylevelconfig)
+
+[Pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_admission)
+
+* [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
+
+* [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_configure)
 
 
 ## Securing the cluster network
