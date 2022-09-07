@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-29"
+lastupdated: "2022-09-07"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -64,6 +64,39 @@ Review the version 4.9 change log.
 
 
 
+
+
+
+### Change log for master fix pack 4.9.46_1554_openshift, released 1 September 2022
+{: #4946_1554_openshift}
+
+The following table shows the changes that are in the master fix pack 4.9.46_1554_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.22.2 | v3.22.4 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.22/release-notes/#v3224){: external}. Updated the Calico custom resource definitions to include `preserveUnknownFields: false`. |
+| Calico Operator | v1.25.7 | v1.25.11 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.11){: external}. |
+| Cluster health image | v1.3.9 | v1.3.10 | Updated `Go` dependencies and to `Go` version `1.18.5`. |
+| Gateway-enabled cluster controller | 1792 | 1823 | Updated to `Go` version `1.17.13`. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 997 | 1006 | Updated to `Go` version `1.17.13`. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.8 | v2.2.9 | Updated to `Go` version `1.18.5`. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.11-3 | v1.22.13-1 | Updated `vpcctl` binary to version `3367`. Updated to support the Kubernetes `1.22.13` release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 412 | 414 | Updated to `Go` version `1.18.5`. Updated universal base image (UBI) to version `8.6-902` to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 0a187a4 | dc1725a | Updated `Go` dependencies and to `Go` version `1.18.3`. |
+| Key Management Service provider | v2.5.7 | v2.5.8 | Updated `Go` dependencies. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2058 | 2110 | Updated `Go` dependencies and to `Go` version `1.17.13`. |
+| {{site.data.keyword.openshiftshort}}. | 4.9.42 | 4.9.46 | See the [{{site.data.keyword.openshiftshort}} Release Notes](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-46){: external}. |
+| OpenVPN client | 2.5.6-r1-IKS-629 | 2.5.6-r1-IKS-648 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external} and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |
+| OpenVPN Operator image | v1.4.7 | v1.4.8 | Updated Ansible operator base image to version `v1.22.2` to resolve CVEs. |
+| OpenVPN server | 2.5.6-r1-IKS-628 | 2.5.6-r1-IKS-647 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external} and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |
+| Portieris admission controller | v0.12.5 | v0.12.6 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.12.6){: external}. |
+| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.9.0-20220712 | v4.9.0-20220816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0%2B20220816){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.9.0-20220712 | v4.9.0-20220816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0%2B20220816){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.9.0+20220712 | 4.9.0+20220816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20220816){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.9.42_1548_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 4.9.46_1553_openshift, released 29 August 2022
 {: #4946_1553_openshift}

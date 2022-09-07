@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-07"
 
 keywords: openshift
 
@@ -23,6 +23,21 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+
+## September 2022
+{: #openshift-sep22}
+
+### 7 September 2022
+{: #openshift-sep722}
+{: release-note}
+
+Master fix pack update
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.26_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.46_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.47_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.56_1580_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1598_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+
+New! Pod security admission
+:    Versions 4.11 and later include support for Kubernetes [pod security admission](/docs/openshift?topic=openshift-pod_security_admission). 
 
 
 ## August 2022
@@ -2885,7 +2900,7 @@ Cluster autoscaler
 :   The [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
 
 New! Community Kubernetes Ingress support
-:   The Ingress ALBs in your version 3.11 cluster can now run the Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller. To use the Kubernetes Ingress image, you create your Ingress resources and configmaps according to the Kubernetes Ingress format, including community Kubernetes Ingress annotations instead of custom {{site.data.keyword.openshiftlong_notm}} annotations. For more information about the differences between the {{site.data.keyword.openshiftlong_notm}} Ingress image and the Kubernetes Ingress image, see the [Comparison of the ALB image types](/docs/containers?topic=containers-ingress-types#about-alb-images). To get started, see [Creating ALBs that run the Kubernetes Ingress image](/docs/containers?topic=containers-ingress-types#alb-comm-create) or [Changing existing ALBs to run Kubernetes Ingress](/docs/containers?topic=containers-ingress-types#alb-type-migration).
+:   The Ingress ALBs in your version 3.11 cluster can now run the Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller. To use the Kubernetes Ingress image, you create your Ingress resources and ConfigMaps according to the Kubernetes Ingress format, including community Kubernetes Ingress annotations instead of custom {{site.data.keyword.openshiftlong_notm}} annotations. For more information about the differences between the {{site.data.keyword.openshiftlong_notm}} Ingress image and the Kubernetes Ingress image, see the [Comparison of the ALB image types](/docs/containers?topic=containers-ingress-types#about-alb-images).
 
 New! Default {{site.data.keyword.cloudcerts_long}} instances
 :   A {{site.data.keyword.cloudcerts_long_notm}} service instance is now created by default for all new and existing standard clusters. The {{site.data.keyword.cloudcerts_short}} service instance, which is named in the format `kube-crtmgr-<cluster_ID>`, stores the TLS certificate for your cluster's default Ingress subdomain. You can also upload your own TLS certificates for custom Ingress domains to this {{site.data.keyword.cloudcerts_short}} instance and use the new [**`ibmcloud oc ingress secret`** commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create) to create secrets for these certificates in your cluster. To ensure that a {{site.data.keyword.cloudcerts_short}} instance is automatically created for your new or existing cluster, [verify that the API key for the region and resource group that the cluster is created in has the correct {{site.data.keyword.cloudcerts_short}} permissions](/docs/containers?topic=containers-ingress-types#manage_certs).

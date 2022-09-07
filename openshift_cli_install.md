@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-09-06"
 
 keywords: openshift, oc
 
@@ -121,7 +121,7 @@ Looking for a simple installation? You can try installing the plug-in with a pac
     4. Click **Command Line Tools**.
     5. Click the download link for your operating system.
 
-2. [Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.redhat_openshift_notm}} cluster](https://kubernetes.io/docs/tasks/tools/){: external}. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.23.9. For clusters that run {{site.data.keyword.redhat_openshift_notm}}, download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.redhat_openshift_notm}} cluster. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_changelog).
+2. [Download the Kubernetes CLI (`kubectl`) for your {{site.data.keyword.redhat_openshift_notm}} cluster](https://kubernetes.io/docs/tasks/tools/){: external}. You might use different `kubectl` versions if you have community Kubernetes clusters that run other Kubernetes versions such as 1.23.10. For clusters that run {{site.data.keyword.redhat_openshift_notm}}, download the `kubectl` version that matches the Kubernetes version of your {{site.data.keyword.redhat_openshift_notm}} cluster. For supported versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_changelog).
 
 
     If you have multiple clusters that run different versions of Kubernetes, you can download separate `kubectl` binary files. Then, set up an alias in your local command-line interface (CLI) profile to point to the separate binary files that match the version of `kubectl` your cluster needs.

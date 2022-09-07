@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-26"
+lastupdated: "2022-09-06"
 
 keywords: openshift, red hat, red hat openshift, oc
 

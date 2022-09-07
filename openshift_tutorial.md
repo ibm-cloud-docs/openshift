@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-09-06"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -111,7 +111,7 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what c
 
     ```sh
     Client Version: v4.9.0
-    Kubernetes Version: v1.23.9.2
+    Kubernetes Version: v1.23.10.2
     ```
     {: screen}
 

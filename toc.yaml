@@ -127,6 +127,7 @@ toc:
           - openshift_scc.md
           - pod-priority.md
           - kubeapi-priority.md
+          - openshift_pod_security_admission.md
       - topicgroup: 
           label: Securing the cluster network
           topics:
@@ -293,6 +294,7 @@ toc:
                 topics:
                 - openshift_versions_411.md
                 - openshift_versions_changelog_411.md
+                - benchmarks_411.md
             - topicgroup:
                 label: Version 4.10
                 topics:
