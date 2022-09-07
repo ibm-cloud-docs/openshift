@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-06"
+lastupdated: "2022-09-07"
 
 keywords: openshift
 
@@ -4043,9 +4043,6 @@ ibmcloud oc ingress alb migrate clean -c my_cluster --reset-kube-controller-conf
 ### `ibmcloud oc ingress alb migrate start`
 {: #cs_alb_migrate_start}
 
-Version 3.11 clusters only: Start a migration of your Ingress ConfigMap and resources that are formatted for use with ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress to instead use with ALBs that run the Kubernetes Ingress image. Note that this command helps you create all the resources for ALBs that run Kubernetes Ingress, but afterward you must still manually change your ALB from one type of image to another. For more information about how to prepare for a migration, see [Changing the image of existing ALBs](/docs/containers?topic=containers-ingress-types#alb-type-migration).
-{: shortdesc}
-
 This command is deprecated and becomes unsupported soon.
 {: deprecated}
 
@@ -4066,7 +4063,7 @@ ibmcloud oc ingress alb migrate start --cluster CLUSTER --type (test | test-with
 :    Required: The name or ID of the cluster where you want to start a migration of the Ingress ConfigMap and resources.
 
 `--type (test | test-with-private | production)`
-:    The type of migration: a test migration for public Ingress routing, a test migration with private Ingress routing, or a production migration of all Ingress routing. To see the resources that are created by and the processes for each type of migration, see [Changing the image of existing ALBs](/docs/containers?topic=containers-ingress-types#alb-type-migration).
+:    The type of migration: a test migration for public Ingress routing, a test migration with private Ingress routing, or a production migration of all Ingress routing.
 
 `-f`
 :    Optional: Force the command to run with no user prompts./dd>
@@ -4149,7 +4146,7 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 :    Optional: The ID of the individual ALB to update. To list ALB IDs, run `ibmcloud oc ingress alb ls -c <cluster>`. To update multiple ALBs, use multiple flags, such as `--alb ALB1_ID --alb ALB2_ID`. If you omit this flag, all ALBs in the cluster are updated.
 
 `--version IMAGE_VERSION`
-:    Optional: The version of the image that you want to update ALBs to. Note that you can't use this flag to [change your ALB from one type of image to another](/docs/containers?topic=containers-ingress-types#alb-type-migration). To list available versions, run `ibmcloud oc ingress alb versions`. If you omit this flag, ALBs are updated to the latest version of the image type.
+:    Optional: The version of the image that you want to update ALBs to.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.

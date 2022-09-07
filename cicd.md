@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-09-07"
 
 keywords: openshift
 
@@ -65,9 +65,6 @@ Razee
 
 Adopt a DevOps approach by using {{site.data.keyword.deliverypipelinelong}}, which includes open toolchains that automate the building and deployment of containerized apps.
 {: shortdesc}
-
-Want a more detailed walkthrough? Check out the [Developing a Kubernetes app toolchain with Code Risk Analyzer](https://www.ibm.com/cloud/architecture/tutorials/develop-kubernetes-app-with-code-risk-analyzer){: external} tutorial.
-{: tip}
 
 Before you begin, make sure that you have at least the following permissions in {{site.data.keyword.cloud_notm}} IAM:
 - **Editor** platform access role and **Writer** service access role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/containers?topic=containers-access_reference).
