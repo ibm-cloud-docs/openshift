@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-08"
 
 keywords: openshift
 
@@ -749,7 +749,7 @@ Create a cluster with worker nodes on classic infrastructure. For free clusters,
 {: important}
 
 ```sh
-ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME   [--version MAJOR.MINOR.PATCH] [--no-subnet] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] --workers WORKER [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-q]
+ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME   [--version MAJOR.MINOR.PATCH] [--no-subnet] [--sm-group GROUP] [--sm-instance INSTANCE] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] --workers WORKER [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement cloud_pak][-q]
 ```
 {: pre}
 
@@ -784,6 +784,12 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 
 `--no-subnet`
 :    By default, a public and a private portable subnet are created on the VLAN associated with the cluster. Include the `--no-subnet` flag to avoid creating subnets with the cluster. You can [create](#cs_cluster_subnet_create) or [add](#cs_cluster_subnet_add) subnets to a cluster later.
+
+`--sm-group GROUP`
+:    The Secret Group ID of the {{site.data.keyword.cloud_notm}} Secrets Manager instance where your secrets are persisted.
+
+`--sm-group GROUP`
+:    The CRN of the {{site.data.keyword.cloud_notm}} Secrets Manager instance.
 
 `--private-vlan PRIVATE_VLAN`
 :    This parameter is not available for free clusters. If this standard cluster is the first standard cluster that you create in this zone, don't include this flag. A private VLAN is created for you when the cluster is created. If you created a standard cluster before in this zone or created a private VLAN in IBM Cloud infrastructure before, you must specify that private VLAN. Private VLAN routers always begin with `bcr` (back-end router) and public VLAN routers always begin with `fcr` (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.
@@ -886,7 +892,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 {: important}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID]  [--version 4.9_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [-q]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID]  [--version 4.9_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [-q]
 ```
 {: pre}
 
@@ -982,6 +988,12 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 :    Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available root keys, run `ibmcloud oc kms crk ls --instance-id`. If you include this option, you must also include the `--kms-instance` option.
      Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).
      {: note}
+     
+`--sm-group GROUP`
+:    The Secret Group ID of the {{site.data.keyword.cloud_notm}} Secrets Manager instance where your secrets are persisted.
+
+`--sm-group GROUP`
+:    The CRN of the {{site.data.keyword.cloud_notm}} Secrets Manager instance.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -2775,7 +2787,7 @@ You can create a worker pool in your cluster. When you add a worker pool, it is 
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [--entitlement cloud_pak] [-q] [--output json]
+ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [--operating-system SYSTEM] [--entitlement cloud_pak] [-q] [--output json]
 ```
 {: pre}
 
@@ -2806,6 +2818,9 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 `-l, --label KEY1=VALUE1`
 :    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.
 
+`--operating-system SYSTEM`
+:    Specifies the operating system.
+
 `--entitlement cloud_pak`
 :    Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
      Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
@@ -2832,7 +2847,7 @@ Add a worker pool to a VPC cluster. No worker nodes are created until you [add z
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [-q] [--security-group GROUP ...] [--output json]
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [--operating-system SYSTEM] [-q] [--security-group GROUP ...] [--output json]
 ```
 {: pre}
 
@@ -2878,6 +2893,9 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 :    Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in this worker pool. To list available root keys, run `ibmcloud oc kms crk ls --instance-id`. If you include this option, you must also include the `--kms-instance` option.
      Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).
      {: note}
+     
+`--operating-system SYSTEM`
+:    Specifies the operating system.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -3983,139 +4001,6 @@ ibmcloud oc ingress alb ls --cluster my_cluster
 {: pre}
 
 
-### `ibmcloud oc ingress alb migrate clean`
-{: #cs_alb_migrate_clean}
-
-Version 3.11 clusters only: Clean up any Ingress resources and configmaps that you no longer need, such as after an Ingress migration.
-{: shortdesc}
-
-This command is deprecated and becomes unsupported soon.
-{: deprecated}
-
-```sh
-ibmcloud oc ingress alb migrate clean --cluster CLUSTER [--generated-resources] [--iks-ingresses] [--kube-ingresses] [--reset-kube-controller-ConfigMap] [--test-ingresses] [-f] [--output json] [-q]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-* Classic
-* VPC
-
-**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c, --cluster CLUSTER`
-:    Required: The name or ID of the cluster where you want to check the migration status.
-
-`--generated-resources`
-:    Delete all resources that were automatically generated during an Ingress migration, including the Ingress resources and configmaps listed in the **Migrated to** sections in the output of `ibmcloud oc ingress alb migrate status`.
-
-`--iks-ingresses`
-:    Delete Ingress resources of class `iks-nginx`, class `nginx`, or of no class for public or private ALBs that run the {{site.data.keyword.openshiftlong_notm}} Ingress image.
-
-`--kube-ingresses`
-:    Delete automatically generated and manually created Ingress resources of class `public-iks-k8s-nginx` or `private-iks-k8s-nginx` for public or private ALBs that run the Kubernetes Ingress image.
-
-`--reset-kube-controller-ConfigMap`
-:    Reset the `ibm-k8s-controller-config` ConfigMap to the default settings. The ConfigMap is deleted and redeployed.
-
-`--test-ingresses`
-:    Delete automatically generated and manually created Ingress resources of class `test` for the test ALB service running the Kubernetes Ingress image.
-
-`-f`
-:    Optional: Force the command to run with no user prompts. If you don't include this flag, you are prompted for each type of resource to be deleted.
-
-`--output json`
-:    Optional: Prints the command output in JSON format.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-**Example**:
-```sh
-ibmcloud oc ingress alb migrate clean -c my_cluster --reset-kube-controller-configmap --test-ingresses -f
-```
-{: pre}
-
-
-### `ibmcloud oc ingress alb migrate start`
-{: #cs_alb_migrate_start}
-
-This command is deprecated and becomes unsupported soon.
-{: deprecated}
-
-```sh
-ibmcloud oc ingress alb migrate start --cluster CLUSTER --type (test | test-with-private | production) [-f] [-q]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-* Classic
-* VPC
-
-**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c, --cluster CLUSTER`
-:    Required: The name or ID of the cluster where you want to start a migration of the Ingress ConfigMap and resources.
-
-`--type (test | test-with-private | production)`
-:    The type of migration: a test migration for public Ingress routing, a test migration with private Ingress routing, or a production migration of all Ingress routing.
-
-`-f`
-:    Optional: Force the command to run with no user prompts./dd>
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-**Example**:
-```sh
-ibmcloud oc ingress alb migrate start --type test --cluster my_cluster
-```
-{: pre}
-
-
-### `ibmcloud oc ingress alb migrate status`
-{: #cs_alb_migrate_status}
-
-Version 3.11 clusters only: Check the status of a [migration of your Ingress ConfigMap and resources](#cs_alb_migrate_start).
-{: shortdesc}
-
-This command is deprecated and becomes unsupported soon.
-{: deprecated}
-
-```sh
-ibmcloud oc ingress alb migrate status --cluster CLUSTER [--output json] [-q]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-* Classic
-* VPC
-
-**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c, --cluster CLUSTER`
-:    Required: The name or ID of the cluster where you want to check the migration status.
-
-`--output json`
-:    Optional: Prints the command output in JSON format.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-**Example**:
-```sh
-ibmcloud oc ingress alb migrate status --cluster my_cluster --output json
-```
-{: pre}
 
 
 ### `ibmcloud oc ingress alb update`
@@ -6883,7 +6768,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...][--operating-system SYSTEM] [--pod-subnet SUBNET] [--pod-network-interface-selection METHOD] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--workers COUNT] [--zone ZONE]
+ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...][--operating-system SYSTEM] [--pod-subnet SUBNET] [--pod-network-interface-selection METHOD] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--workers COUNT] [--zone ZONE]
 ```
 {: pre}
 
@@ -6938,6 +6823,12 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
+
+`--sm-group GROUP`
+:    The Secret Group ID of the {{site.data.keyword.cloud_notm}} Secrets Manager instance where your secrets are persisted.
+
+`--sm-group GROUP`
+:    The CRN of the {{site.data.keyword.cloud_notm}} Secrets Manager instance.
 
 `--workers COUNT`
 :    Required when `--host-label` is specified. The number of worker nodes per zone in the default worker pool.
