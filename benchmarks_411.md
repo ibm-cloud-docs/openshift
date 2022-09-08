@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-08"
 
 keywords: openshift, benchmarks, 4.11, openshift benchmarks, openshift 4.11
 
@@ -290,14 +290,14 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 1.2.12 | {{site.data.keyword.openshiftshort}} does not enable the [*AlwaysPullImages*](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages){: external} admission controller since it overrides a container's *imagePullPolicy* and may impact performance. |
 | 1.2.13 | {{site.data.keyword.openshiftshort}} supports [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 1.2.16 | {{site.data.keyword.openshiftshort}} supports [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 1.2.22 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.23 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.24 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 1.2.25 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 1.2.22 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit). |
+| 1.2.23 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit). |
+| 1.2.24 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit). |
+| 1.2.25 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit). |
 | 1.2.33 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 1.2.34 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
-| 3.2.1 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
-| 3.2.2 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#api-server-config). |
+| 3.2.1 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit). |
+| 3.2.2 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](https://cloud.ibm.com/docs/openshift?topic=openshift-health-audit). |
 | 4.2.6 | {{site.data.keyword.openshiftshort}} does not protect kernel defaults in order to allow customers to tune kernel parameters. |
 | 4.2.8 | {{site.data.keyword.openshiftshort}} ensures that the hostname matches the name issued by the infrastructure. |
 | 5.1.2 | {{site.data.keyword.openshiftshort}} deploys some system components that could have their Kubernetes secret access further restricted. |
@@ -317,7 +317,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.4.1 | {{site.data.keyword.openshiftshort}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
 | 5.4.2 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 5.5.1 | {{site.data.keyword.openshiftshort}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
-| 5.6.2 | {{site.data.keyword.openshiftshort}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp){: external}. |
+| 5.6.2 | {{site.data.keyword.openshiftshort}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
 | 5.6.3 | {{site.data.keyword.openshiftshort}} deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 
 {: caption="Explanation and remediation" caption-side="top"}

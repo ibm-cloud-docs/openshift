@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-01"
+lastupdated: "2022-09-08"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -44,7 +44,7 @@ The following table shows the changes that are in the master fix pack 4.11.0_151
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.22.2 | v3.23.3 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico | v3.22.2 | v3.23.3 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
 | Calico Operator | v1.25.7 | v1.27.12 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.12){: external}. |
 | Cluster health image | v1.3.9 | v1.3.10 | Updated `Go` dependencies and to `Go` version `1.18.5`. |
 | etcd | v3.4.18 | v3.5.4 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.4){: external}. |

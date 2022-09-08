@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-09-08"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -30,7 +30,7 @@ RHEL 7 worker nodes with {{site.data.keyword.openshiftlong_notm}} version 4.10 c
 {: note}
 
 
-![This badge indicates Kubernetes version 1.23 certification for {{site.data.keyword.containerlong_notm}}](images/certified_kubernetes_1x23.svg){: caption="Figure 1. Kubernetes version 1.23 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.23 certification for {{site.data.keyword.containerlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.23 certification badge" caption-side="bottom"}
 
 {{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.23 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
