@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-08"
 
 keywords: openshift
 subcollection: openshift
@@ -3324,6 +3324,8 @@ subcollection: openshift
 * [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
 
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
+
+* [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
 
 
 ### Controlling traffic with ACLs, security groups, and network policies

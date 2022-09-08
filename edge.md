@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-09-08"
 
 keywords: openshift
 
@@ -48,7 +48,7 @@ To create an edge node worker pool,
     If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two worker nodes per zone. You can label the worker pool with `dedicated=edge` by using the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
     {: tip}
 
-    Version 3.11 clusters: To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least three edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that don't permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two edge nodes per zone, both ALB pod replicas already exist on those edge nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three edge nodes are present in a zone, the new ALB pod can be scheduled to the third edge node. Then, the old ALB pod is removed.
+    To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least three edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that don't permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two edge nodes per zone, both ALB pod replicas already exist on those edge nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three edge nodes are present in a zone, the new ALB pod can be scheduled to the third edge node. Then, the old ALB pod is removed.
     {: important}
 
 2. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
@@ -213,12 +213,14 @@ A benefit of edge worker nodes is that they can be specified to run networking s
 Using the `dedicated=edge` toleration means that all network load balancer (NLB) and, in version 3.11 clusters, Ingress application load balancer (ALB) services are deployed to the labeled worker nodes only. However, to prevent other workloads from running on edge worker nodes and consuming worker node resources, you must use [Kubernetes taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external}.
 
 
-
 Before you begin
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role for all namespaces](/docs/openshift?topic=openshift-users#checking-perms).
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To prevent other workloads from running on edge worker nodes,
+Complete the following steps to prevent other workloads from running on edge worker nodes.
+
+If you want to allow the Sysdig agent to run on your edge nodes, see [Deploying the Sysdig agent to edge worker nodes](#sysdig-edge).
+{: tip}
 
 1. Apply a taint to the worker nodes with the `dedicated=edge` label. The taint prevents pods from running on the worker node and removes pods that don't have the `dedicated=edge` label from the worker node. The pods that are removed are redeployed to other worker nodes with capacity.
 
@@ -267,7 +269,18 @@ To prevent other workloads from running on edge worker nodes,
     oc adm taint node <node_name> dedicated:NoSchedule- dedicated:NoExecute-
     ```
     {: pre}
+    
+## Deploying the Sysdig agent on edge worker nodes
+{: #sysdig-edge}
 
+To allow the Sysdig agent pods to be deployed to your edge worker nodes, run the following `kubectl patch` command to update the `sysdig-agent` DaemonSet. This command applies the `NoExecute` toleration to the DaemonSet to ensure that the agent pods don't get evicted from the node.
 
+```sh
+kubectl patch ds sysdig-agent -n ibm-observe --type merge --type='json' -p='[{"op": "add", "path": "/spec/template/spec/tolerations/-", "value": {"operator": Exists, "effect": NoExecute}}]'
+```
+{: pre}
+
+If you used pod labels such as `dedicated=edge`, you can also apply this label to any pods that you want to allow on your edge nodes.
+{: tip}
 
 
