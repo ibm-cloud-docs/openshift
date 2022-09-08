@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-08"
 
 keywords: openshift
 subcollection: openshift
@@ -206,6 +206,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
+
+    * [8 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0822)
+
+        * CLI change log update
 
     * [7 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep722)
 
@@ -3325,6 +3329,8 @@ subcollection: openshift
 
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
+* [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
+
 
 ### Controlling traffic with ACLs, security groups, and network policies
 {: #sitemap_controlling_traffic_with_acls,_security_groups,_and_network_policies}
@@ -5115,12 +5121,6 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs)
 
-    * [`ibmcloud oc ingress alb migrate clean`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_clean)
-
-    * [`ibmcloud oc ingress alb migrate start`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_start)
-
-    * [`ibmcloud oc ingress alb migrate status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_migrate_status)
-
     * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
 
     * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
@@ -5276,6 +5276,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.444](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10444)
 
 * [Version 1.0.439](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10439)
 
