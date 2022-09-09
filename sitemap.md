@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-09-09"
 
 keywords: openshift
 subcollection: openshift
@@ -69,8 +69,6 @@ subcollection: openshift
 * [Comparison between {{site.data.keyword.redhat_openshift_notm}} and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
 
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
-
-* [Comparison between {{site.data.keyword.redhat_openshift_notm}} 3.11 and 4 clusters](/docs/openshift?topic=openshift-cs_ov#3.11_vs_4.3)
 
 * [Operator support overview](/docs/openshift?topic=openshift-cs_ov#operator-support-comparison)
 
@@ -2950,13 +2948,9 @@ subcollection: openshift
 
     * [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
 
-    * [Changing the Calico MTU for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-311)
-
 * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
-    * [Disabling the port map plug-in for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
-
-    * [Disabling the port map plug-in for 3.11 clusters](/docs/openshift?topic=openshift-kernel#calico-portmap-311)
+    * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
 
 [Removing clusters](/docs/openshift?topic=openshift-remove#remove)
 

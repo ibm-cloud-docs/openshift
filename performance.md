@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-09-09"
 
 keywords: openshift, kernel
 
@@ -324,114 +324,6 @@ Increase the Calico plug-in MTU to meet the network throughput requirements of y
 
 4. Apply the MTU changes to your worker nodes by [rebooting all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot).
 
-### Changing the Calico MTU for 3.11 clusters
-{: #calico-mtu-311}
-
-Increase the Calico plug-in MTU to meet the network throughput requirements of your environment in a {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
-{: shortdesc}
-
-
-
-1. Edit the `calico-config` ConfigMap resource.
-    ```sh
-    oc edit cm calico-config -n kube-system
-    ```
-    {: pre}
-
-2. In the `data` section, add a `calico_mtu_override: "<new_MTU>"` field and specify the new MTU value for Calico. Note that the quotation marks (`"`) around the new MTU value are required.
-
-    Do not change the values of `mtu` or `veth_mtu`. Changing any other settings besides the `calico_mtu_override` field for the Calico plug-in in this ConfigMap is not supported.
-    {: important}
-
-    ```yaml
-    apiVersion: v1
-    data:
-      calico_backend: bird
-      calico_mtu_override: "8980"
-      cni_network_config: |-
-        {
-          "name": "k8s-pod-network",
-          "cniVersion": "0.3.1",
-          "plugins": [
-            {
-              "type": "calico",
-              "log_level": "info",
-              "etcd_endpoints": "__ETCD_ENDPOINTS__",
-              "etcd_key_file": "__ETCD_KEY_FILE__",
-              "etcd_cert_file": "__ETCD_CERT_FILE__",
-              "etcd_ca_cert_file": "__ETCD_CA_CERT_FILE__",
-              "mtu": __CNI_MTU__,
-              "ipam": {
-                  "type": "calico-ipam"
-              },
-              "container_settings": {
-                  "allow_ip_forwarding": true
-              },
-              "policy": {
-                  "type": "k8s"
-              },
-              "kubernetes": {
-                  "kubeconfig": "__KUBECONFIG_FILEPATH__"
-              }
-            },
-            {
-              "type": "portmap",
-              "snat": true,
-              "capabilities": {"portMappings": true}
-            }
-          ]
-        }
-      etcd_ca: /calico-secrets/etcd-ca
-      etcd_cert: /calico-secrets/etcd-cert
-      etcd_endpoints: https://172.20.0.1:2041
-      etcd_key: /calico-secrets/etcd-key
-      typha_service_name: none
-      veth_mtu: "1480"
-    kind: ConfigMap
-    ...
-    ```
-    {: codeblock}
-
-    To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
-    {: important} 
-
-3. Apply the MTU changes to your cluster master by refreshing the master API server. It might take several minutes for the master to refresh.
-    ```sh
-    ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-
-4. Verify that the master refresh is completed. When the refresh is complete, the **Master Status** changes to `Ready`.
-    ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-
-5. In the `data` section of the output, verify that the `veth_mtu` field shows the new MTU value for Calico that you specified in step 2.
-    ```sh
-    oc get cm -n kube-system calico-config -o yaml
-    ```
-    {: pre}
-
-    Example output
-
-    ```yaml
-    apiVersion: v1
-    data:
-      ...
-      etcd_ca: /calico-secrets/etcd-ca
-      etcd_cert: /calico-secrets/etcd-cert
-      etcd_endpoints: https://172.20.0.1:2041
-      etcd_key: /calico-secrets/etcd-key
-      typha_service_name: none
-      veth_mtu: "8980"
-      kind: ConfigMap
-      ...
-    ```
-    {: screen}
-
-6. Apply the MTU changes to your worker nodes by [rebooting all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot).
-
 
 
 ## Disabling the port map plug-in
@@ -447,11 +339,8 @@ If you must use `hostPorts`, don't disable the port map plug-in.
 
 
 
-### Disabling the port map plug-in for version 4 clusters
+### Disabling the port map plug-in
 {: #calico-portmap-43}
-
-Disable the port map plug-in by disabling `hostPorts` for Calico in a {{site.data.keyword.redhat_openshift_notm}} version 4 cluster.
-{: shortdesc}
 
 1. Edit the `default` Calico installation resource.
     ```sh
@@ -483,71 +372,3 @@ Disable the port map plug-in by disabling `hostPorts` for Calico in a {{site.dat
 
 3. Save and close the file. Your changes are automatically applied.
 
-### Disabling the port map plug-in for 3.11 clusters
-{: #calico-portmap-311}
-
-Disable the port map plug-in by disabling `hostPorts` for Calico in a {{site.data.keyword.redhat_openshift_notm}} version 3.11 cluster.
-{: shortdesc}
-
-
-
-1. Edit the `calico-config` ConfigMap resource.
-    ```sh
-    oc edit cm calico-config -n kube-system
-    ```
-    {: pre}
-
-2. In the `data.cni_network_config.plugins` section after the `kubernetes` plug-in, remove the `portmap` plug-in section. After you remove the `portmap` section, the configuration looks like the following:
-    ```yaml
-    apiVersion: v1
-    data:
-      calico_backend: bird
-      cni_network_config: |-
-        {
-          "name": "k8s-pod-network",
-          "cniVersion": "0.3.1",
-          "plugins": [
-            {
-              "type": "calico",
-              "log_level": "info",
-              "etcd_endpoints": "__ETCD_ENDPOINTS__",
-              "etcd_key_file": "__ETCD_KEY_FILE__",
-              "etcd_cert_file": "__ETCD_CERT_FILE__",
-              "etcd_ca_cert_file": "__ETCD_CA_CERT_FILE__",
-              "mtu": __CNI_MTU__,
-              "ipam": {
-                  "type": "calico-ipam"
-              },
-              "container_settings": {
-                  "allow_ip_forwarding": true
-              },
-              "policy": {
-                  "type": "k8s"
-              },
-              "kubernetes": {
-                  "kubeconfig": "__KUBECONFIG_FILEPATH__"
-              }
-            }
-          ]
-        }
-      etcd_ca: /calico-secrets/etcd-ca
-      ...
-    ```
-    {: codeblock}
-
-    Changing any other settings for the Calico plug-in in this ConfigMap is not supported.
-    {: important}
-
-3. Apply the change to your cluster by restarting all `calico-node` pods.
-
-    1. Get the names of the `calico-node` pods in your cluster.
-        ```sh
-        oc get pods -n kube-system | grep calico-node
-        ```
-        {: pre}
-
-    2. Restart all `calico-node` pods by manually deleting them. Separate each pod name with one space.
-        ```sh
-        oc delete pods -n kube-system <pod1> <pod2> ...
-        ```
-        {: pre}
