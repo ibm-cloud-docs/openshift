@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-09"
 
 keywords: openshift
 
@@ -49,9 +49,6 @@ Helm
 
 Kustomize
 :   Use the Kubernetes project [Kustomize](https://github.com/kubernetes-sigs/kustomize){: external} to package your apps by both standardizing and customizing your deployments across multiple environments. Kustomize helps you write, customize, and reuse your Kubernetes resource YAML configurations. To get started, see [Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize).
-:   Kustomize is not supported for {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
-    {: note}
-    
     
 Operators
 :   With operators, you can manage the lifecycle of the apps in your cluster, including third-party software and services that you integrate into your cluster from the [OperatorHub](https://operatorhub.io/){: external}. You can consistently install, update, and monitor system components by using operators or by making operators available to developers that work in specific projects or across projects. To set up operators, see [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4).

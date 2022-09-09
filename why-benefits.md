@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-09-09"
 
 keywords: openshift
 
@@ -124,9 +124,6 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of the {{site.data.keyword.openshiftlong}} components and global settings that you manually set up in OpenShift Container Platform are set up for you by default in {{site.data.keyword.openshiftlong_notm}}. Review the following differences between {{site.data.keyword.openshiftlong_notm}} clusters and a standard installation of OpenShift Container Platform on your own infrastructure. You can also review the [service architecture](/docs/openshift?topic=openshift-service-architecture) for an overview of how {{site.data.keyword.redhat_openshift_notm}} components are set up in the cluster master and worker nodes, or the [global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or can't configure.
 {: shortdesc}
 
-The following comparison applies to clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4. For version 3.11 clusters, the general principles are similar, such as that IBM provides a managed master, but the implementation details differ due to the changes in the underlying OCP version. For more information, see [Comparison between {{site.data.keyword.redhat_openshift_notm}} 3.11 and 4 clusters](#3.11_vs_4.3).
-{: note}
-
 |Characteristics|Standard OCP|{{site.data.keyword.openshiftlong_notm}}|
 |---------------|----------------------|----------------------------------------|
 | Cluster master (control plane) | You set up control plane components like the API server and etcd on machines that get the `master` role. You can modify the control plane components, but keep in mind that you are responsible for backing up, restoring, and making control plane data highly available. | IBM sets up the master, manages the control plane components, and automatically applies master patch updates for you. The masters are highly available and backed up automatically.|
@@ -151,51 +148,6 @@ The following comparison applies to clusters that run {{site.data.keyword.redhat
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
 {: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="top"}
 {: summary="The rows are read from left to right. In the first column is the characteristic that differs between standard OpenShift Container Platform installations in the second column and {{site.data.keyword.openshiftlong_notm}} clusters in the third column."}
-
-
-
-
-
-## Comparison between {{site.data.keyword.redhat_openshift_notm}} 3.11 and 4 clusters
-{: #3.11_vs_4.3}
-
-Review the following characteristics to decide which {{site.data.keyword.openshiftlong_notm}} cluster version to create. In both {{site.data.keyword.openshiftlong_notm}} versions, you get the same overall [benefits](#benefits), such as the IBM-managed master, version and security patch updates, and IBM Support according to your [terms of service](/docs/overview/terms-of-use?topic=overview-terms#terms).
-{: shortdesc}
-
-{{site.data.keyword.redhat_openshift_notm}} version 3.11 is unsupported as of 06 June 2022.
-{: important}
-
-You can't update from a {{site.data.keyword.redhat_openshift_notm}} 3.11 to 4 cluster. Instead, [create a version 4 cluster](/docs/openshift?topic=openshift-clusters).
-{: note}
-
-|Characteristics|{{site.data.keyword.redhat_openshift_notm}} 3.11|{{site.data.keyword.redhat_openshift_notm}} 4|
-|---------------|-------------|-----------------|
-| Supported version? | Deprecated | Supported |
-| RHEL version | RHEL7 |  RHEL 7 |
-| Kubernetes version | 1.11 | 1.16 |
-| CRI-O runtime version | 1.11 | 1.16 |
-| Worker node DNS | `dnsmasq` daemon set | `openshift-dns` operator (CoreDNS) |
-| App service integration tool | Service catalog | Operators |
-| Virtual private cloud (VPC) support | | Yes |
-| Managed {{site.data.keyword.redhat_openshift_notm}} master | Yes | Yes |
-| Provided version and security patch updates | Yes | Yes |
-| Encryption with {{site.data.keyword.keymanagementservicelong_notm}} | Yes | |
-| Istio | | [Service mesh operator](https://docs.openshift.com/container-platform/4.9/service_mesh/v1x/servicemesh-release-notes.html){: external} |
-| Debug tool | Yes | Yes |
-| Cluster autoscaler | Yes | Yes |
-| Classic {{site.data.keyword.filestorage_short}} | Yes | Yes |
-| Classic Block Storage | Yes | Yes |
-| {{site.data.keyword.cos_full_notm}} | Yes | Yes |
-| Portworx | Yes | Yes |
-| Subdomains for ingress | Separate subdomains for `Ingress` and `Route` resources | Same subdomain for both `Ingress` and `Router` resources |
-| Ingress resources with {{site.data.keyword.openshiftlong_notm}} ALBs | Yes | |
-| Ingress resources with {{site.data.keyword.redhat_openshift_notm}} Ingress controllers | | Yes |
-{: caption="Supported features in {{site.data.keyword.redhat_openshift_notm}} 3.11 and 4 clusters" caption-side="top"}
-
-
-
-
-
 
 
 ## Operator support overview
