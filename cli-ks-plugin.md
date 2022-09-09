@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-09-09"
 
 keywords: openshift
 
@@ -6805,7 +6805,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
 
-:    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
+:    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet.
 
 `--pull-secret SECRET`
 :    Optional. Specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret](https://console.redhat.com/openshift/install/pull-secret){: external}. The cluster also uses this pull secret to download {{site.data.keyword.redhat_openshift_notm}} images from your own {{site.data.keyword.redhat_notm}} account.
@@ -6822,7 +6822,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
 
-:    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
+:    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default. This value can't be set to the value of the related location's service-subnet.
 
 `--sm-group GROUP`
 :    The Secret Group ID of the {{site.data.keyword.cloud_notm}} Secrets Manager instance where your secrets are persisted.
