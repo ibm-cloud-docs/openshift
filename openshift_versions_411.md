@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-09-09"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -59,13 +59,13 @@ Gateway-enabled clusters
 :    Classic clusters created with the `--gateway-enabled` option do not support RHEL 8 worker nodes, and therefore are not supported for version 4.11. Do not update your cluster to version 4.11 if it has the gateway-enabled cluster controller installed. 
 
 Cluster autoscaler add-on
-:    The cluster autoscaler add-on does not support {{site.keyword.openshiftshort}} version 4.11. Do not update your cluster to version 4.11 if this add-on is installed.
+:    The cluster autoscaler add-on does not support {{site.data.keyword.openshiftshort}} version 4.11. Do not update your cluster to version 4.11 if this add-on is installed.
 
 Portworx
-:    Portworx does not support {{site.keyword.openshiftshort}} version 4.11. Do not update your cluster to version 4.11 if you have Portworx installed. To check if you have Portworx installed in your cluster, run `oc get pods -n kube-system | grep 'portworx'`.
+:    Portworx does not support {{site.data.keyword.openshiftshort}} version 4.11. Do not update your cluster to version 4.11 if you have Portworx installed. To check if you have Portworx installed in your cluster, run `oc get pods -n kube-system | grep 'portworx'`.
 
 OpenShift Data Foundation (ODF)
-:    ODF version 4.10 supports {{site.keyword.openshiftshort}} version 4.11 clusters. You may continue to use version 4.10 of the ODF add-on.
+:    ODF version 4.10 supports {{site.data.keyword.openshiftshort}} version 4.11 clusters. You may continue to use version 4.10 of the ODF add-on.
 
 Extended update support (EUS)
 :    EUS updates are not available at this time for clusters that run version 4.11.

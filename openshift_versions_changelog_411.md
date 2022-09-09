@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-09-09"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -56,7 +56,7 @@ The following table shows the changes that are in the master fix pack 4.11.0_151
 | Key Management Service provider | v2.5.7 | v2.5.8 | Updated `Go` dependencies. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 2058 | 2110 | Updated `Go` dependencies and to `Go` version `1.17.13`. |
 | Red Hat OpenShift (master) | 4.10.22 | 4.11.0 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-0-ga){: external}. |
-| Red Hat OpenShift (worker) | 4.10.26 | 4.11.1 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-noteshtml#ocp-4-11-1){: external}. |
+| Red Hat OpenShift (worker) | 4.10.26 | 4.11.1 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-1){: external}. |
 | OpenVPN client | 2.5.6-r1-IKS-629 | 2.5.6-r1-IKS-648 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097) and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |
 | OpenVPN Operator image | v1.4.7 | v1.4.8 | Updated Ansible operator base image to version `v1.22.2` to resolve CVEs. |
 | OpenVPN server | 2.5.6-r1-IKS-628 | 2.5.6-r1-IKS-647 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external} and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |

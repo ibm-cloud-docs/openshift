@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-01"
+lastupdated: "2022-09-09"
 
 keywords: openshift
 
@@ -33,7 +33,7 @@ Review the feature gates that are applied to all master and worker node componen
 
 
 4.11
-:   No feature gates applied.
+:   Community feature gates applied. 
 
 4.10
 :   `ServiceLBNodePortControl=false`
