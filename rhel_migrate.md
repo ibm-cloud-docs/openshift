@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-09-09"
 
 keywords: rhel, os, operating system
 
@@ -18,7 +18,7 @@ subcollection: openshift
 With the release of RHEL 8, the use of RHEL 7 worker nodes is deprecated in clusters that run version 4.10 and is not supported in clusters that run 4.11 or greater. You cannot upgrade RHEL 7 worker nodes to RHEL 8. Instead, you must provision a new worker pool and then delete the previous worker pool. In versions 4.10 and later, worker nodes in the new worker pool run RHEL 8 by default. 
 {: shortdesc}
 
-This page is a preview of the migration steps for moving to Red Hat Enterprise Linux (RHEL) version 8. Some of the commands listed here are not yet available. RHEL 8 for Classic and VPC clusters is planned to be released in August 2022. For {{site.data.keyword.satelliteshort}} clusters, you can now add RHEL 8 hosts to your location control plane and clusters in your location.
+This page is a preview of the migration steps for moving to Red Hat Enterprise Linux (RHEL) version 8. Some of the commands listed here are not yet available. RHEL 8 for Classic and VPC clusters is planned to be released in the coming months. For {{site.data.keyword.satelliteshort}} clusters, you can now add RHEL 8 hosts to your location control plane and clusters in your location.
 {: preview}
 
 Supported infrastructure providers
