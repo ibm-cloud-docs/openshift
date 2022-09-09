@@ -38,6 +38,7 @@ Review the version 4.11 change log.
 {: shortdesc}
 
 ### Change log for master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift, released 31 August 2022
+{: #4.11.0_1519_openshift-and-4.11.1_1520_openshift}
 
 The following table shows the changes that are in the master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node. 
 {: shortdesc}
@@ -47,7 +48,7 @@ The following table shows the changes that are in the master fix pack 4.11.0_151
 | Calico | v3.22.2 | v3.23.3 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
 | Calico Operator | v1.25.7 | v1.27.12 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.12){: external}. |
 | Cluster health image | v1.3.9 | v1.3.10 | Updated `Go` dependencies and to `Go` version `1.18.5`. |
-| etcd | v3.4.18 | v3.5.4 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.4){: external}. |
+| etcd | v3.4.18 | v3.5.4 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.4){: external}. |
 | IBM Calico extension | 997 | 1006 | Updated to `Go` version `1.17.13`. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.8 | v2.2.9 | Updated to `Go` version `1.18.5`. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.8-7 | v1.24.4-1 | Updated `Go` dependencies and to `Go` version `1.18.5`. Updated to support the Kubernetes `1.24.4` release. [Disabling load balancer NodePort allocation](https://kubernetes.io/docs/concepts/services-networking/service/#load-balancer-nodeport-allocation){: external} is now prevented for VPC load balancers. |
@@ -56,7 +57,7 @@ The following table shows the changes that are in the master fix pack 4.11.0_151
 | Key Management Service provider | v2.5.7 | v2.5.8 | Updated `Go` dependencies. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 2058 | 2110 | Updated `Go` dependencies and to `Go` version `1.17.13`. |
 | Red Hat OpenShift (master) | 4.10.22 | 4.11.0 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-0-ga){: external}. |
-| Red Hat OpenShift (worker) | 4.10.26 | 4.11.1 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-1){: external}. |
+| Red Hat OpenShift (worker) | 4.10.26 | 4.11.1 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html){: external}. |
 | OpenVPN client | 2.5.6-r1-IKS-629 | 2.5.6-r1-IKS-648 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097) and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |
 | OpenVPN Operator image | v1.4.7 | v1.4.8 | Updated Ansible operator base image to version `v1.22.2` to resolve CVEs. |
 | OpenVPN server | 2.5.6-r1-IKS-628 | 2.5.6-r1-IKS-647 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external} and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |

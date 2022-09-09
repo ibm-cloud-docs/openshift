@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-09-09"
 
 keywords: openshift
 
@@ -47,7 +47,7 @@ To create your own storage class:
         - nfsvers=4.0
         - sec=sys
     parameters:
-      profile: "custom-iops"            # The VPC Storage profile used. https://cloud.ibm.com/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#tiers-beta
+      profile: "custom-iops"            # The VPC Storage profile used. /docs/vpc?topic=vpc-block-storage-profiles&interface=ui#tiers-beta
       iops: "400"                       # Default IOPS. User can override from secrets
       billingType: "hourly"             # The default billing policy used. User can override this default
       encrypted: "false"                # By default, all PVC using this class will only be provider managed encrypted. The user can override this default

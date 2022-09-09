@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-09-09"
 
 keywords: openshift
 
@@ -856,7 +856,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
       name: "block-storage-pv" # Enter a name for your PV. For example, my-static-pv.
       labels:
          failure-domain.beta.kubernetes.io/region: "<region>" # Example us-east.
-         failure-domain.beta.kubernetes.io/zone: "<zone>" # Example: wdc04. See https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones#zones-sz
+         failure-domain.beta.kubernetes.io/zone: "<zone>" # Example: wdc04. See /docs/containers?topic=containers-regions-and-zones#zones-sz
     spec:
       capacity:
         storage: "<storage>"

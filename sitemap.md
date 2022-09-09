@@ -5459,7 +5459,7 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
-    * [Change log for master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift, released 31 August 2022](/docs/openshift?topic=openshift-openshift_changelog_411#change-log-for-master-fix-pack-4110_1519_openshift-and-worker-node-fix-pack-4111_1520_openshift,-released-31-august-2022)
+    * [Change log for master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift, released 31 August 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4.11.0_1519_openshift-and-4.11.1_1520_openshift)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.11 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-411#cis-benchmark-411)
 
