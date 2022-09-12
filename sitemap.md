@@ -213,6 +213,8 @@ subcollection: openshift
 
         * CLI change log update
 
+        * ALB OAuth Proxy add-on
+
     * [8 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0822)
 
         * CLI change log update
