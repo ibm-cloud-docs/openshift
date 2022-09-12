@@ -205,6 +205,12 @@ subcollection: openshift
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
 
+    * [12 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1222)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version 4.3.6_1579 is available.
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.0` is available.
+
     * [8 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0822)
 
         * CLI change log update
@@ -6371,6 +6377,8 @@ subcollection: openshift
 
 * [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
 
+    * [Change log for version 4.3.6_1579, released 12 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#436_1579_is_block_relnote)
+
     * [Change log for version 4.3.5_1563, released 24 August 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#435_1563_is_block_relnote)
 
     * [Change log for version 4.3.4_1551, released 18 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#434_1551_is_block_relnote)
@@ -6428,6 +6436,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.0, released 12 September 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0220_object_plugin)
 
 * [Change log for version 2.1.21, released 24 August 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02121_object_plugin)
 

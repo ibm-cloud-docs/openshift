@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-09-12"
 
 keywords: object storage, plug-in, changelog
 
@@ -26,8 +26,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.0 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.1.21 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.1.20 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.1.20 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.19 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.18 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.17 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -55,6 +56,13 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+## Change log for version 2.2.0, released 12 September 2022
+{: #0220_object_plugin}
+
+- Updates the UBI image to `8.6-902.1661794353`
+- Resolves [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external}, [CVE-2022-32208](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208){: external}, [CVE-2022-2526](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2526){: external}.
+- Cloudpak certification renewed for the plugin
 
 ## Change log for version 2.1.21, released 24 August 2022
 {: #02121_object_plugin}
