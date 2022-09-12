@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-09-12"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -29,6 +29,12 @@ Refer to the following changelogs for a summary of changes for each version of t
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version 1.0.446
+{: #cli-10446}
+
+Version 1.0.446 of the CLI was released on 12 September 2022.
+:   Adds `--pod-network-interface-selection` option to location create flow.
 
 ## Version 1.0.444
 {: #cli-10444}

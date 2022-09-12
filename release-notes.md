@@ -37,6 +37,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.0` is available.
 :   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
 
+CLI change log update
+:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.446.
+
 ### 8 September 2022
 {: #openshift-sep0822}
 {: release-note}

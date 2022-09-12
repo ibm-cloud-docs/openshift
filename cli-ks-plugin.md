@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-09"
+lastupdated: "2022-09-12"
 
 keywords: openshift
 
@@ -6806,6 +6806,11 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet.
+
+`--pod-network-interface-selection METHOD`
+:    Optional. The method for selecting the node network interface for the internal pod network. The available methods are `can-reach` and `interface`. This option can only be used if you also enable Red Hat CoreOS with the `--operating-system` option. 
+     - To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. If the network interface can reach the provided URL or IP address, this option is used. For example, use `can-reach=www.exampleurl.com` for specifying a URL and `can-reach=172.19.0.0` for specifying an IP address.
+     - To choose an interface with a Regex string, specify `interface=<regex_string>`; for example, `interface=eth.*`
 
 `--pull-secret SECRET`
 :    Optional. Specify an existing OCP entitlement for the worker nodes in this cluster by providing your [{{site.data.keyword.redhat_full}} account pull secret](https://console.redhat.com/openshift/install/pull-secret){: external}. The cluster also uses this pull secret to download {{site.data.keyword.redhat_openshift_notm}} images from your own {{site.data.keyword.redhat_notm}} account.
