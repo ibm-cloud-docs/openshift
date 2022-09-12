@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-09"
+lastupdated: "2022-09-12"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -105,7 +105,7 @@ For more information about creating worker pools and adding worker nodes, see [A
 
 1. [Upgrade your cluster master](/docs/openshift?topic=openshift-update#update) from version 4.10 to 4.11.
 
-2. In your 4.11 cluster, create a new worker pool to contain your RHEL 8 worker nodes. By default, any worker nodes added to your new worker pool run RHEL 8.
+2. In your 4.11 cluster, create a new worker pool to contain your RHEL 8 worker nodes. Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of RHEL 7 worker nodes that are to be replaced. By default, any worker nodes added to your new worker pool run RHEL 8.
 
     **For classic clusters**. See the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_create) for command details.
 
@@ -128,14 +128,19 @@ For more information about creating worker pools and adding worker nodes, see [A
     ```
     {: pre}
 
-4. Add worker nodes to the new worker pool. Worker pools are created with zero worker nodes. To add worker nodes, you must [resize the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize). To avoid disruptions in your cluster, make sure you that the number of new worker nodes you add is at least the number of RHEL 7 worker nodes you plan to remove.
+4. Add a zone to your worker pool. When you add a zone, the number of worker nodes you specified with the `--size-per-zone` option are added to the zone. These worker nodes run the RHEL 8 operating system. 
+        * [Adding a zone to a worker pool in a classic cluster](/docs/containers?topic=containers-add_workers#add_zone)
+        * [Adding a zone to a worker pool in a VPC cluster](/docs/containers?topic=containers-add_workers#vpc_add_zone)
 
+5. Verify that worker nodes are available in your new worker pool. In the output, check the number in the **Workers** column for the worker pool.
     ```sh
-    ibmcloud ks worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --size-per-zone WORKERS_PER_ZONE [-q]
+    ibmcloud oc worker-pool ls --cluster <cluster_name_or-ID>
     ```
     {: pre}
 
-5. [Remove the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
+6. Scale down the worker pool that contains the RHEL 7 hosts by [manually resizing the worker pool to zero](/docs/containers?topic=containers-add_workers#resize_pool).
+
+7. [Remove the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
 
     1. List your worker pools and note the name of the worker pool you want to remove.
     ```sh

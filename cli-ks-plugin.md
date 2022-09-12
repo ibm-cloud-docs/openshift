@@ -6916,7 +6916,7 @@ After you create an {{site.data.keyword.satellitelong_notm}} cluster or worker p
 {: shortdesc}
 
 ```sh
-ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER [--worker-pool WORKER_POOL] [--output json] [-q]
+ibmcloud oc zone add satellite --zone ZONE --cluster CLUSTER [--worker-pool WORKER_POOL] [--output json] [-q]
 ```
 {: pre}
 
@@ -6942,7 +6942,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER [--worker-pool WORKER
 
 **Example**:
 ```sh
-ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -w pool2
+ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -p pool2
 ```
 {: pre}
 
