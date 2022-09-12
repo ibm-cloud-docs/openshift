@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-09"
+lastupdated: "2022-09-12"
 
 keywords: openshift
 subcollection: openshift
@@ -7435,8 +7435,6 @@ subcollection: openshift
 * [par01](/docs/openshift?topic=openshift-classic-flavors#par01)
 
 * [sao01](/docs/openshift?topic=openshift-classic-flavors#sao01)
-
-* [seo01](/docs/openshift?topic=openshift-classic-flavors#seo01)
 
 * [sjc03](/docs/openshift?topic=openshift-classic-flavors#sjc03)
 
