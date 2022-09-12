@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-09-12"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1256,23 +1256,40 @@ Callback functionality to update secrets
 :   Previously, {{site.data.keyword.cloudcerts_short}} provided a callback functionality to automatically update any Ingress secret created with a specific CRN if that secret CRN is updated in the default manager instance. This functionality is **not** available in {{site.data.keyword.secrets-manager_short}}. If you update a secret, you must run the `ibmcloud oc ingress secret update` command to apply the update to a Ingress secret with the CRN in the cluster. Otherwise, IBM Cloud periodically polls secrets for updates apply to the cluster, which may take up to 24 hours.
 
 Service-to-service enablement
-:    If you want to enable service-to-service communication, you must [set up IAM credentials for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-configure-iam-engine&interface=ui) and [create a service-to-service authorization](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+:    If you want to enable service-to-service communication, you must [set up IAM credentials for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-configure-iam-engine&interface=ui) and [create a service-to-service authorization](#migrate-secrets-mgr-s2s).
 
 Migrating certificates stored with custom domains
 :    For certificates stored with custom domains, you must manually upload the certificate to your secrets manager instance and update the secret with the corresponding new certificate CRN.
 
 Removing the registered Certificate Manager instance
-:    Once you have successfully migrated to Secrets Manager, you can unregister the Certificate Manager instance that was provisioned with your cluster by running `ibmcloud oc ingress instance unregister`.
+:    Once you have successfully migrated to Secrets Manager, you can [unregister the Certificate Manager instance](#unregister-secret-instance) that was provisioned with your cluster.
 
 Controlling access with secret groups
 :    With {{site.data.keyword.secrets-manager_short}}, you can create secret groups to organize your secrets and control who on your team has access to them. You specify a secret group when you [set a default {{site.data.keyword.secrets-manager_short}} instance](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_instance_default_set) or [register a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_instance_register). For more information, see [Organizing your secrets](/docs/secrets-manager?topic=secrets-manager-secret-groups).
+
+## Enabling service-to-service communication for your {{site.data.keyword.secrets-manager_short}} instance
+{: #migrate-secrets-mgr-s2s}
+
+{{site.data.keyword.secrets-manager_short}} requires service-to-service communication auhtorization. After you [create a {{site.data.keyword.secrets-manager_short}} instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui) and [register it to a cluster](#register-secrets-mgr), follow the steps below to set up the authorization. For additional info, see [Integrations for Secrets Manager](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+{: shortdesc}
+ 
+1. Enable [service-to-service communication](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization) for your {{site.data.keyword.secrets-manager_short}} instance.
+    1. In the {{site.keyword.data.cloud_notm}} console, click **Manage** > **Access (IAM)**.
+    2. Click **Authorizations**.
+    3. Click **Create**.
+    4. In the **Source service** list, select **Kubernetes Service**.
+    5. Select the option to scope the access to **All resources**.
+    6. In the **Target service** list, select **Secrets Manager**.
+    7. Select the option to scope the access to **All resources**. 
+    8. In the **Service access** section, check the **Manager** option. 
+    9. Click **Authorize**. 
 
 ### Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster
 {: #unregister-secret-instance}
 
 After migrating to {{site.data.keyword.secrets-manager_short}}, a user can opt to remove the {{site.data.keyword.cloudcerts_short}} instance that is provisioned with the lifecycle of the cluster. Once this instance is removed, the callback functionality provided by {{site.data.keyword.cloudcerts_short}} is no longer available for the cluster.
 
-Before you begin, verify that you have completed the following {{site.data.keyword.secrets-manager_short}} migration and setup steps.
+**Before you begin**: Verify that you have completed the following {{site.data.keyword.secrets-manager_short}} migration and setup steps.
 
 1. [Registered a default {{site.data.keyword.secrets-manager_short}} instance](#default-secrets-mgr).
 2. [Regenerated all nlb-dns subdomains and updated all non-IBM managed secrets with the new CRNs](#default-secrets-mgr).
@@ -1282,7 +1299,7 @@ Before you begin, verify that you have completed the following {{site.data.keywo
     ```
     {: pre}
 
-4. [Enabled service-to-service between your cluster and {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+4. [Set up the required IAM credentials and service-to-service authorizations](#migrate-secrets-mgr-s2s).
 
 To remove the instance:
 
@@ -1327,6 +1344,9 @@ ibmcloud oc ingress instance register --cluster <cluster_name_or_id> --crn <inst
 
 If you want to register an instance to a cluster and also [set it as the default instance](#default-secrets-mgr), include the `--is-default` option. Otherwise, you can set a default instance with the `ibmcloud oc ingress instance set` command.
 {: tip}
+
+You can specify a {{site.data.keyword.secrets-manager_short}} instance and a secret group when you [create a cluster](/docs/containers?topic=containers-clusters&interface=cli) with the [`ibmcloud oc cluster create classic`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`{{icks}} cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2) commands. Use the `--sm-instance` option to register an instance to the cluster and the `--sm-group` option to specify a secret group that can access the secrets on the cluster.
+{: tip} 
 
 ### Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance
 {: #default-secrets-mgr}

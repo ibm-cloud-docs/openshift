@@ -4128,6 +4128,8 @@ subcollection: openshift
 
 * [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
 
+* [Enabling service-to-service communication for your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr-s2s)
+
     * [Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster](/docs/openshift?topic=openshift-ingress-roks4#unregister-secret-instance)
 
 * [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
