@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-19"
+lastupdated: "2022-09-12"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -29,7 +29,7 @@ You can enable the add-on from the console or the command the line.
     
     1. Enable the `cluster-autoscaler` add-on.
         ```sh
-        ibmcloud oc cluster addon enable cluster-autoscaler —-cluster <cluster_name>
+        ibmcloud oc cluster addon enable cluster-autoscaler --cluster <cluster_name>
         ```
         {: pre}
 
@@ -133,7 +133,7 @@ You can enable the add-on from the console or the command the line.
     1. Disable the `cluster-autoscaler` add-on.
     
         ```sh
-        ibmcloud oc cluster addon disable cluster-autoscaler —-cluster <cluster_name>
+        ibmcloud oc cluster addon disable cluster-autoscaler --cluster <cluster_name>
         ```
         {: pre}
 
