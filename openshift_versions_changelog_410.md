@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-12"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -58,6 +58,21 @@ Review the version 4.10 change log.
 
 
 
+
+
+
+### Change log for worker node fix pack 4.10.31_1535_openshift, released 12 September 2022
+{: #41031_1535_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.10.31_1535_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages |N/A|N/A|N/A|
+| {{site.data.keyword.openshiftshort}}. | 4.10.28 | 4.10.31 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-31){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.10.28_1533_openshift" caption-side="top"}
 
 ### Change log for master fix pack 4.10.26_1534_openshift, released 1 September 2022
 {: #41026_1534_openshift}

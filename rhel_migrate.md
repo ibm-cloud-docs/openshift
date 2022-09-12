@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-09"
+lastupdated: "2022-09-12"
 
 keywords: rhel, os, operating system
 
@@ -49,7 +49,7 @@ Version 4.6, 4.7 and 4.8 clusters
 ## Creating RHEL 8 worker pools in the command line
 {: #rhel-migrate-create-pools-cli}
 
-1. You can use the following example commands to create a new worker pool with RHEL 8 worker nodes for your cluster type. Note that you must include the `--operating-system` flag and specify `RHEL8`.
+1. You can use the following example commands to create a new worker pool with RHEL 8 worker nodes for your cluster type. Note that you must include the `--operating-system` flag and specify `RHEL8`. Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of RHEL 7 worker nodes that are to be replaced.
 
     **Classic**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create classic` command, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_create). For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools).
 
@@ -87,12 +87,17 @@ Version 4.6, 4.7 and 4.8 clusters
     ```
     {: screen}
 
-1. Add more RHEL 8 worker nodes to the new worker pool. By default, Classic and VPC worker pools are created with zero worker nodes. To add worker nodes, you must [resize the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize). To avoid disruptions in your cluster, ensure that the size of the new worker pool is large enough to support your current workload. You can do this by making sure that the number of RHEL 8 worker nodes you add is at least the number of RHEL 7 worker nodes that will be removed.
+1. Add a zone to your worker pool. When you add a zone, the number of worker nodes you specified with the `--size-per-zone` option are added to the zone. These worker nodes run the RHEL 8 operating system. 
+    * For classic and VPC clusters:
+        * [Adding a zone to a worker pool in a classic cluster](/docs/containers?topic=containers-add_workers#add_zone)
+        * [Adding a zone to a worker pool in a VPC cluster](/docs/containers?topic=containers-add_workers#vpc_add_zone)
+    * For Satellite clusters:
+        ```sh
+        ibmcloud oc zone add satellite --zone <zone_name> --cluster <cluster_name_or_ID> --worker-pool <worker_pool> 
+        ```
+        {: pre}
 
-    ```sh
-    ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --size-per-zone WORKERS_PER_ZONE
-    ```
-    {: pre}
+
 
 1. Migrate your workload to the new RHEL 8 worker pool. For more information about restricting your workload to the new worker pool, see [Deploying apps to specific worker nodes by using labels](/docs/containers?topic=containers-deploy_app#node_affinity).
 

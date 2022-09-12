@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-09"
+lastupdated: "2022-09-12"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,16 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
+
+    * [12 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1222)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version 4.3.6_1579 is available.
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.0` is available.
+
+        * CLI change log update
+
+        * ALB OAuth Proxy add-on
 
     * [8 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0822)
 
@@ -4120,6 +4130,8 @@ subcollection: openshift
 
 * [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
 
+* [Enabling service-to-service communication for your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr-s2s)
+
     * [Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster](/docs/openshift?topic=openshift-ingress-roks4#unregister-secret-instance)
 
 * [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
@@ -5271,6 +5283,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.446](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10446)
+
 * [Version 1.0.444](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10444)
 
 * [Version 1.0.439](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10439)
@@ -5522,6 +5536,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
 
+    * [Change log for worker node fix pack 4.10.31_1535_openshift, released 12 September 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41031_1535_openshift)
+
     * [Change log for master fix pack 4.10.26_1534_openshift, released 1 September 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41026_1534_openshift)
 
     * [Change log for worker node fix pack 4.10.28_1533_openshift, released 29 August 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41028_1533_openshift)
@@ -5650,6 +5666,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.47_1555_openshift, released 12 September 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4947_1555_openshift)
 
     * [Change log for master fix pack 4.9.46_1554_openshift, released 1 September 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4946_1554_openshift)
 
@@ -5798,6 +5816,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
+    * [Change log for worker node fix pack 4.8.48_1572_openshift, released 12 September 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4848_1572_openshift)
+
     * [Change log for master fix pack 4.8.47_1571_openshift, released 1 September 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4847_1571_openshift)
 
     * [Change log for worker node fix pack 4.8.47_1570_openshift, released 29 August 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4847_1570_openshift)
@@ -5930,6 +5950,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for worker node fix pack 4.7.56_1581_openshift, released 12 September 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4756_1581_openshift)
 
     * [Change log for master fix pack 4.7.56_1580_openshift, released 1 September 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4756_1580_openshift)
 
@@ -6091,6 +6113,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#46_changelog)
+
+    * [Change log for worker node fix pack 4.6.60_1599_openshift, released 12 September 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4660_1599_openshift)
 
     * [Change log for master fix pack 4.6.60_1598_openshift, released 1 September 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4660_1598_openshift)
 
@@ -6371,6 +6395,8 @@ subcollection: openshift
 
 * [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
 
+    * [Change log for version 4.3.6_1579, released 12 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#436_1579_is_block_relnote)
+
     * [Change log for version 4.3.5_1563, released 24 August 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#435_1563_is_block_relnote)
 
     * [Change log for version 4.3.4_1551, released 18 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#434_1551_is_block_relnote)
@@ -6428,6 +6454,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.0, released 12 September 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0220_object_plugin)
 
 * [Change log for version 2.1.21, released 24 August 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02121_object_plugin)
 
@@ -7435,8 +7463,6 @@ subcollection: openshift
 * [par01](/docs/openshift?topic=openshift-classic-flavors#par01)
 
 * [sao01](/docs/openshift?topic=openshift-classic-flavors#sao01)
-
-* [seo01](/docs/openshift?topic=openshift-classic-flavors#seo01)
 
 * [sjc03](/docs/openshift?topic=openshift-classic-flavors#sjc03)
 
