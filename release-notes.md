@@ -25,6 +25,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
+
 ## September 2022
 {: #openshift-sep22}
 
@@ -46,8 +47,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 CLI change log update
 :   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.446.
 
-ALB OAuth Proxy add-on
-:   Version 2.0.0_1214 of the [ALB OAuth Proxy add-on](/docs/containers?topic=containers-alb-oauth-proxy-changelog) is released. 
+
 
 ### 8 September 2022
 {: #openshift-sep0822}
