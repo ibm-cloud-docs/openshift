@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-13"
 
 keywords: block, add-on, changelog
 
@@ -93,6 +93,13 @@ Adds snapshot support.
 
 ## Version 4.4
 {: #044_is_block}
+
+### Change log for version 4.4.10_1578, released 13 September 2022
+{: #4.4.10_1578_is_block_relnote}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.7`
+- Resolves the following CVEs: [CVE-2022-32206](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32206){: external}, [CVE-2022-32208](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208){: external}, [CVE-2022-2526](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2526){: external}.
+
 
 ### Change log for version 4.4.9_1566, released 25 August 2022
 {: #4.4.9_1566_is_block_relnote}
