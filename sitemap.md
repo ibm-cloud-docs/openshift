@@ -209,6 +209,8 @@ subcollection: openshift
 
         * {{site.data.keyword.block_storage_is_short}} add-on version 4.4.10_1578 is available.
 
+        * New! vGPU worker node flavors are now available for VPC Gen 2.
+
     * [12 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1222)
 
         * {{site.data.keyword.block_storage_is_short}} add-on version 4.3.6_1579 is available.
