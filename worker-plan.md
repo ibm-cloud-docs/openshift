@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-09-13"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -128,7 +128,7 @@ You can also log in to your cluster to check the operating system of the worker 
 ## Virtual machines
 {: #vm}
 
-With VMs, you get greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price. You can use VMs for most general-purpose use cases such as testing and development environments, staging, and prod environments, microservices, and business apps. However, there is a trade-off in performance. If you need high-performance computing for data-, GPU-, or RAM-intensive workloads, consider creating classic clusters with [bare metal](#bm) worker nodes.
+With VMs, you get greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price. You can use VMs for most general-purpose use cases such as testing and development environments, staging, and prod environments, microservices, and business apps. However, there is a trade-off in performance. If you need high-performance computing for data- or RAM-intensive workloads, consider creating classic clusters with [bare metal](#bm) worker nodes.
 {: shortdesc}
 
 ### Planning considerations for VMs

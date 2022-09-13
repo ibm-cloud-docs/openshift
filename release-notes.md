@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-13"
 
 keywords: openshift
 
@@ -25,8 +25,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
+
 ## September 2022
 {: #openshift-sep22}
+
+### 13 September 2022
+{: #openshift-sep1322}
+
+{{site.data.keyword.block_storage_is_short}} add-on version 4.4.10_1578 is available.
+:   For more information, see [version 4.4.10_1578](/docs/containers?topic=containers-vpc_bs_changelog).
+
+New! vGPU worker node flavors are now available for VPC Gen 2.
+:   For more information about the available worker node flavors, see [VPC Gen 2 flavors](/docs/containers?topic=containers-vpc-gen2-flavors). Worker node flavors with vGPU support are the `gx2` flavor class, for example: `gx2.16x128.2v100`.
 
 ### 12 September 2022
 {: #openshift-sep1222}
@@ -40,8 +50,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 CLI change log update
 :   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.446.
 
-ALB OAuth Proxy add-on
-:   Version 2.0.0_1214 of the [ALB OAuth Proxy add-on](/docs/containers?topic=containers-alb-oauth-proxy-changelog) is released. 
+
 
 ### 8 September 2022
 {: #openshift-sep0822}
