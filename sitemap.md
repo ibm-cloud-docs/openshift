@@ -2968,16 +2968,6 @@ subcollection: openshift
 
 [Removing clusters](/docs/openshift?topic=openshift-remove#remove)
 
-[Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
-
-* [Identifying your affected workers](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-list)
-
-* [Actions to take before the maintenance period](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-actions)
-
-    * [Workers in Classic clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-classic)
-
-    * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
-
 
 ## Managing cluster costs
 {: #sitemap_managing_cluster_costs}
