@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-14"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1274,7 +1274,7 @@ Controlling access with secret groups
 {: shortdesc}
  
 1. Enable [service-to-service communication](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization) for your {{site.data.keyword.secrets-manager_short}} instance.
-    1. In the {{site.keyword.data.cloud_notm}} console, click **Manage** > **Access (IAM)**.
+    1. In the {{site.data.keyword.cloud_notm}} console, click **Manage** > **Access (IAM)**.
     2. Click **Authorizations**.
     3. Click **Create**.
     4. In the **Source service** list, select **Kubernetes Service**.

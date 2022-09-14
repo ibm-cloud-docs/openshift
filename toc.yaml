@@ -303,7 +303,7 @@ toc:
                 - benchmarks_410.md
                 - benchmarks_410_co.md
             - topicgroup:
-                label: Version 4.9 (Default)
+                label: Version 4.9
                 topics:
                 - openshift_versions_49.md
                 - openshift_versions_changelog_49.md
