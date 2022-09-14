@@ -5663,8 +5663,8 @@ subcollection: openshift
 * [{{site.data.keyword.IBM_notm}} Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_410_co#co-benchmark-410-remdiations)
 
 
-### Version 4.9 (Default)
-{: #sitemap_version_49_default}
+### Version 4.9
+{: #sitemap_version_49}
 
 
 [4.9 version information and update actions](/docs/openshift?topic=openshift-cs_versions_49#cs_versions_49)
