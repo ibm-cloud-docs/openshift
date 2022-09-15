@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-09-15"
 
 keywords: kubernetes, openshift
 
@@ -51,12 +51,13 @@ For more information about the prerequisites for each add-on, see:
 
 The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm}} and approved for use in {{site.data.keyword.openshiftlong_notm}}. To update the components of an add-on to the most recent version supported by {{site.data.keyword.openshiftlong_notm}}, use the following steps.
 {: shortdesc}
-
-1. Check for update instructions that are specific to your managed add-on. If you don't find update instructions, continue with the next step.
     
-2. If your add-on does not have specific update instructions, select the cluster where you installed managed add-ons from your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters).
-3. Select the **Add-ons** tab.
-4. From the actions menu, select **Update** to start updating the managed add-on. When the update is installed, the latest version of the managed add-on is listed on the cluster add-on page.
+Review the following links for specific update steps for each add-on.
+- [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon)
+- [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
+- [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment&interface=ui#odf-addon-update)
+   
 
 
 ## Reviewing add-on states and statuses
