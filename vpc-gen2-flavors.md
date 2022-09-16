@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-16"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -832,6 +832,10 @@ Review the VPC Gen 2 worker node flavors by zone.
 | cx2.48x96 | 96GB | 25Gbps | 48 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | cx2.4x8 | 8GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | cx2.8x16 | 16GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.16x128.2v100 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.16x128.v100 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.32x256.2v100 | 256GB | 25Gbps | 32 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.8x64.v100 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.16x128 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.2x16 | 16GB | 4Gbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
@@ -861,6 +865,10 @@ Review the VPC Gen 2 worker node flavors by zone.
 | cx2.48x96 | 96GB | 25Gbps | 48 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | cx2.4x8 | 8GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | cx2.8x16 | 16GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.16x128.2v100 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.16x128.v100 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.32x256.2v100 | 256GB | 25Gbps | 32 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.8x64.v100 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.16x128 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.2x16 | 16GB | 4Gbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
@@ -890,6 +898,10 @@ Review the VPC Gen 2 worker node flavors by zone.
 | cx2.48x96 | 96GB | 25Gbps | 48 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | cx2.4x8 | 8GB | 8Gbps | 4 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | cx2.8x16 | 16GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.16x128.2v100 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.16x128.v100 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.32x256.2v100 | 256GB | 25Gbps | 32 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
+| gx2.8x64.v100 | 64GB | 16Gbps | 8 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.16x128 | 128GB | 24Gbps | 16 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
 | mx2.2x16 | 16GB | 4Gbps | 2 | UBUNTU_18_64 | virtual |  Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none |
