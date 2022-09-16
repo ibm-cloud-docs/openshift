@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-16"
 
 keywords: openshift, security, admission, pod security, configure pod security
 
@@ -20,7 +20,7 @@ subcollection: openshift
 
 For more information, see [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} and [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/){: external} in the Kubernetes documentation. 
 
-## Configuring pod security admission
+## Configure pod security admission
 {: #pod_security_profiles}
 
 The default pod security configuration globally enforces the `privileged` Kubernetes pod security profile, which is unrestricted and allows for known privilege escalations, and generates warnings and audit events based on the policies set by the `restricted` profile. The `restricted` profile is heavily restricted and follows the current pod hardening best practices. For more information about pod security profiles, see [Profile details](https://kubernetes.io/docs/concepts/security/pod-security-standards/){: external} in the Kubernetes documentation.

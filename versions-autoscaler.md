@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-16"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -61,6 +61,7 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.1.0 (Beta)
 {: #0110_ca_addon}
+
 - Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches might be slower on this version.
 
 ### Change log for patch update 1.1.0_776, released 31 August 2022

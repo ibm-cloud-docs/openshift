@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-16"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -143,16 +143,16 @@ For more information about creating worker pools and adding worker nodes, see [A
 7. [Remove the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
 
     1. List your worker pools and note the name of the worker pool you want to remove.
-    ```sh
-    ibmcloud ks worker-pool ls --cluster CLUSTER [--output json] [-q]
-    ```
-    {: pre}
+        ```sh
+        ibmcloud ks worker-pool ls --cluster CLUSTER [--output json] [-q]
+        ```
+        {: pre}
 
     2. Run the command to remove the worker pool.
-    ```sh
-    ibmcloud ks worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
-    ```
-    {: pre}
+        ```sh
+        ibmcloud ks worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
+        ```
+        {: pre}
 
 
 

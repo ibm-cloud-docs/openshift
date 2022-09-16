@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-09-16"
 
 keywords: openshift
 
@@ -118,3 +118,5 @@ Billing
 
 Pricing
 :  Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
+
+

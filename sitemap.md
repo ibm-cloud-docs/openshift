@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-15"
+lastupdated: "2022-09-16"
 
 keywords: openshift
 subcollection: openshift
@@ -3286,7 +3286,7 @@ subcollection: openshift
 
 [Pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_admission)
 
-* [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
+* [Configure pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
 
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_configure)
 
