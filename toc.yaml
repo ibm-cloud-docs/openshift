@@ -504,6 +504,7 @@ toc:
                 - ts-storage-block-not-attached.md
                 - ts-storage-vpc-block-monitoring.md
                 - ts-storage-clean-volume.md
+                - ts-storage-fsck.md
             - topicgroup:
                 label: Object Storage
                 topics:

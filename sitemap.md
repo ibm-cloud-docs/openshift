@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-16"
+lastupdated: "2022-09-19"
 
 keywords: openshift
 subcollection: openshift
@@ -3286,9 +3286,13 @@ subcollection: openshift
 
 [Pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_admission)
 
-* [Configure pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
+* [Understanding security profiles](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
 
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_configure)
+
+    * [Understanding {{site.data.keyword.openshiftlong_notm}} pod security namespace labeling](/docs/openshift?topic=openshift-pod_security_admission#pod-sec-namespace-labels)
+
+    * [Additional resources](/docs/openshift?topic=openshift-pod_security_admission#pod-sec-additional-resources)
 
 
 ## Securing the cluster network
@@ -8045,6 +8049,8 @@ subcollection: openshift
 * [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
 
 [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume#ts_storage_clean_volume)
+
+[Why does mounting {{site.data.keyword.blockstorageshort}} fail with an `fsck` error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
 
 
 ### Object Storage
