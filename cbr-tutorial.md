@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-22"
+lastupdated: "2022-09-19"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 
@@ -29,7 +29,7 @@ With context-based restrictions, account owners and administrators can define an
 Setting up context-based restrictions for {{site.data.keyword.openshiftlong_notm}} resources is available for allowlisted accounts only.
 {: preview}
 
-Context-based restrictions limit access to the {{site.data.keyword.openshiftlong_notm}} objects that your application runs on, such as pods and workers, but not the application itself. 
+Applications running on {{site.data.keyword.openshiftlong_notm}} clusters, for example web servers exposed by a Kubernetes LoadBalancer, are not restricted by CBR rules.
 {: note}
 
 ## Understanding the scenario
@@ -77,20 +77,20 @@ Before beginning this tutorial, make sure you have created or installed the foll
 {: #cbr-tutorial-create-rule}
 {: step}
 
-1. After you create your network zone (allowlist), create a CBR rule and add the network zone you created in the previous step. The following example creates a rule that uses the `cluster` API type.
+1. After you create your network zone (allowlist), create a CBR rule and add the network zone you created in the previous step. The following example creates a rule that uses the `cluster` API type. Replace `NETWORK-ZONE-ID` with the ID of the `allow-client-ip` network zone that you created in step 1.
 
     ```sh
-    ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster --description "privateAccess=allowAll, publicAccess=oneIP" --service-name containers-kubernetes --service-instance CLUSTER-ID --context-attributes endpointType=private --context-attributes endpointType=public,networkZoneId=allow-client-ip
+    ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster --description "privateAccess=allowAll, publicAccess=oneIP" --service-name containers-kubernetes --service-instance CLUSTER-ID --context-attributes endpointType=private --context-attributes endpointType=public,networkZoneId=NETWORK-ZONE-ID
     ```
     {: pre}
     
     Understanding the command options.
     
     `--api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster`
-    :   Set the `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` API to allow resources in the network zone you created earlier to access only the `cluster` APIs, which include the APIs for various `oc` commands.
+    :   Set the `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` API to allow only resources in the network zone you created earlier to access only the `cluster` APIs, which include the APIs for various `oc` commands.
     
     `--service-instance CLUSTER-ID`
-    :   Scope the rule to a single cluster so that resources in the network zone you created earlier can access only the `CLUSTER-ID`.
+    :   Scope the rule to a single cluster so that only resources in the network zone you created earlier can access only the `CLUSTER-ID`.
     
     `--context-attributes endpointType=private`
     :   Set the context attribute `endpointType=private` without associating a network zone allows all private traffic to the cluster.
@@ -151,7 +151,7 @@ In this scenario, you allow different IP addresses or CIDRs to access the public
 ### Allowing different IPs to access different API types over the public and private service endpoints
 {: #cbr-tutorial-scenarios-pub-priv-api-types}
 
-Similar to the previous scenario, in this scenario you allow one public IP address and one private IP address to access the respective public or private service endpoint for {{site.data.keyword.openshiftlong_notm}} clusters. However, in this scenario, access is further restricted by specific API types for the `cluster` and `management` APIs. For more information about the API types, see [Protecting specific APIs](/docs/containers?topic=containers-cbr&interface=cli#protect-api-types-cbr).
+Similar to the previous scenario, in this scenario you allow different IP addresses to access the respective public or private service endpoint for {{site.data.keyword.openshiftlong_notm}} clusters. However, in this scenario, access is further restricted by specific API types for the `cluster` and `management` APIs. For more information about the API types, see [Protecting specific APIs](/docs/containers?topic=containers-cbr&interface=cli#protect-api-types-cbr).
 
 1. Create four network zones, one for each of the IP addresses you want to allow to access either the public or private `cluster` APIs or the public or private `management` apis. Note that you can include multiple IP addresses or CIDRs, separated by a comma, that you want to allow to access your clusters. 
 
