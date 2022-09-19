@@ -20,7 +20,7 @@ completion-time: 30m
 # Example context-based restrictions scenarios
 {: #cbr-tutorial}
 {: toc-content-type="tutorial"}
-{: toc-services="openshift}
+{: toc-services="openshift"}
 {: toc-completion-time="30m"}
 
 With context-based restrictions, account owners and administrators can define and enforce access restrictions for {{site.data.keyword.cloud}} resources, based on the context of access requests. Access to {{site.data.keyword.openshiftlong_notm}} resources can be controlled with context-based restrictions and identity and access management policies. For more information, see [Protecting {{site.data.keyword.openshiftlong_notm}} resources with context-based restrictions](/docs/containers?topic=containers-cbr).
