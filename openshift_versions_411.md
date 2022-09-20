@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-19"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -69,6 +69,9 @@ OpenShift Data Foundation (ODF)
 
 Extended update support (EUS)
 :    EUS updates are not available at this time for clusters that run version 4.11.
+
+Pod security admission
+:   Version 4.11 enables a new [Pod security admission controller](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-auth-pod-security-admission){: external}, which coexists with `SecurityContextConstraints`. The new pod security admission controller in version 4.11 includes warning messages and `kube-apiserver` audit events for pods that violate the Pod Security profile configured for the namespace. There is also a new `PodSecurityViolation "Information"` alert that is generated for pods that violate the pod security audit profile defined for that namespace. For more information about the pod security admission controller, see [Configuring Pod Security admission](/docs/openshift?topic=openshift-pod_security_admission).
 
 ### Update before master
 {: #411_before}
@@ -143,17 +146,16 @@ For more information about creating worker pools and adding worker nodes, see [A
 7. [Remove the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
 
     1. List your worker pools and note the name of the worker pool you want to remove.
-    ```sh
-    ibmcloud ks worker-pool ls --cluster CLUSTER [--output json] [-q]
-    ```
-    {: pre}
+        ```sh
+        ibmcloud ks worker-pool ls --cluster CLUSTER [--output json] [-q]
+        ```
+        {: pre}
 
     2. Run the command to remove the worker pool.
-    ```sh
-    ibmcloud ks worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
-    ```
-    {: pre}
-
+        ```sh
+        ibmcloud ks worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
+        ```
+        {: pre}
 
 
 

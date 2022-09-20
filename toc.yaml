@@ -226,7 +226,7 @@ toc:
           - topicgroup:
               label: Storing data on OpenShift Data Foundation
               topics:
-                - openshift_storage_odf_understand.md
+                - openshift_storage_odf_understand.md 
                 - openshift_storage_odf_vpc.md
                 - openshift_storage_odf_classic.md
                 - openshift_storage_odf_apps.md
@@ -504,6 +504,7 @@ toc:
                 - ts-storage-block-not-attached.md
                 - ts-storage-vpc-block-monitoring.md
                 - ts-storage-clean-volume.md
+                - ts-storage-fsck.md
             - topicgroup:
                 label: Object Storage
                 topics:

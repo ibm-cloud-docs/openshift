@@ -100,7 +100,7 @@ Delete the resource that is display in the error message and retry the installat
 
 1. Get a list of deployments that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
-    oc get Deployments --all-namespaces \
+    oc get deployments --all-namespaces \
         -l app=ibmcloud-object-storage-plugin \
         -o jsonpath='{range .items[*]}{.metadata.namespace}{"\t"}{.metadata.name}{"\n"}{end}'
     ```

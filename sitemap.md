@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-15"
+lastupdated: "2022-09-20"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
+
+    * [20 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2022)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.1` is available.
 
     * [13 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1322)
 
@@ -3286,9 +3290,13 @@ subcollection: openshift
 
 [Pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_admission)
 
-* [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
+* [Understanding security profiles](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
 
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_configure)
+
+    * [Understanding {{site.data.keyword.openshiftlong_notm}} pod security namespace labeling](/docs/openshift?topic=openshift-pod_security_admission#pod-sec-namespace-labels)
+
+    * [Additional resources](/docs/openshift?topic=openshift-pod_security_admission#pod-sec-additional-resources)
 
 
 ## Securing the cluster network
@@ -6471,6 +6479,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.1, released 20 September 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0221_object_plugin)
+
 * [Change log for version 2.2.0, released 12 September 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0220_object_plugin)
 
 * [Change log for version 2.1.21, released 24 August 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02121_object_plugin)
@@ -8045,6 +8055,8 @@ subcollection: openshift
 * [Manually viewing storage metrics in the CLI](/docs/openshift?topic=openshift-debug_monitoring#manual-monitor-metrics)
 
 [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume#ts_storage_clean_volume)
+
+[Why does mounting {{site.data.keyword.blockstorageshort}} fail with an `fsck` error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
 
 
 ### Object Storage

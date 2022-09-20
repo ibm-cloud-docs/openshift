@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-20"
 
 keywords: openshift
 
@@ -6883,7 +6883,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :    Required. The name that you want to give your worker pool.
 
 `--operating-system SYSTEM`
-:     Optional. The operating system of the hosts that you want to use in your worker pool. You can use `RHEL7` or `RHCOS` hosts. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
+:    Optional. The operating system of the hosts that you want to use in your worker pool. You can use `RHEL7` or `RHCOS` hosts. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
 
 
 

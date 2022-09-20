@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-15"
+lastupdated: "2022-09-20"
 
 keywords: openshift
 
@@ -27,6 +27,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2022
 {: #openshift-sep22}
+
+### 20 September 2022
+{: #openshift-sep2022}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.1` is available.
+:   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
 
 
 
