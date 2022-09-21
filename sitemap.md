@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-20"
+lastupdated: "2022-09-21"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
+
+    * [21 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2122)
+
+        * CLI change log update
 
     * [20 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2022)
 
@@ -5304,6 +5308,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.452](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
 
 * [Version 1.0.446](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10446)
 

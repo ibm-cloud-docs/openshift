@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-13"
+lastupdated: "2022-09-21"
 
 keywords: openshift, version, update, upgrade
 
@@ -64,7 +64,7 @@ Supported versions
 
 :   4.7 (Kubernetes 1.20)
     - Release date: **09 Jun 2021**
-    - Tentative unsupported date: **7 Dec 2022**`†`
+    - Unsupported date: **7 Dec 2022**
     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
 
