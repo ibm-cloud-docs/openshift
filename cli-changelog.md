@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-21"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -30,6 +30,12 @@ Refer to the following changelogs for a summary of changes for each version of t
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version 1.0.452
+{: #cli-10452}
+
+Version 1.0.452 of the CLI was released on 21 September 2022.
+:   Updates the help text in various languages.
+
 ## Version 1.0.446
 {: #cli-10446}
 
@@ -40,7 +46,7 @@ Version 1.0.446 of the CLI was released on 12 September 2022.
 {: #cli-10444}
 
 Version 1.0.444 of the CLI was released on 8 September 2022.
-:   Adds secret manager registration to cluster create flow. 
+:   Adds {{site.data.keyword.secrets-manager_short}} registration to cluster create flow. 
 :   Adds worker-pool OS support.
 :   Removes Ingress migration command support.
 
