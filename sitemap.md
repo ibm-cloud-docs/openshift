@@ -3900,6 +3900,8 @@ subcollection: openshift
 
 * [Enabling access to an app by using a NodePort service](/docs/openshift?topic=openshift-nodeport#nodeport_config)
 
+* [Restricting NodePort service access](/docs/openshift?topic=openshift-nodeport#nodeport-restrict-access)
+
 [Managing the app lifecycle](/docs/openshift?topic=openshift-update_app#update_app)
 
 * [Update strategies](/docs/openshift?topic=openshift-update_app#updating_apps)
