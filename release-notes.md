@@ -29,11 +29,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-sep22}
 
 
+
+
 ### 22 September 2022
 {: #openshift-sep2222}
 
 Cluster autoscaler add-on versions `1.1.0_798`, `1.0.6_800`, and `1.0.5_779`.
 :   For more information, see [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+
+{{site.data.keyword.block_storage_is_short}} add-on version `4.3.7_1613`.
+:   For more information, see [the change log](/docs/containers?topic=containers-vpc_bs_changelog).
 
 
 ### 21 September 2022
