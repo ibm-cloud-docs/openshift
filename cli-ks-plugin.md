@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-22"
 
 keywords: openshift
 
@@ -4784,40 +4784,6 @@ ibmcloud oc ingress secret update --cluster my_cluster --name my_alb_secret --na
 {: pre}
 
 
-### `ibmcloud oc ingress status`
-{: #cs_ingress_status}
-
-Get the status of the health of Ingress resources for a cluster.
-{: shortdesc}
-
-```sh
-ibmcloud oc ingress status --cluster CLUSTER [--output json] [-q]
-```
-{: pre}
-
-**Supported infrastructure provider**:
-* Classic
-* VPC
-
-**Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c, --cluster CLUSTER`
-:    Required: The name or ID of the cluster.
-
-`--output json`
-:    Optional: Prints the command output in JSON format.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-**Example**:
-```sh
-ibmcloud oc ingress status --cluster mycluster
-```
-{: pre}
 
 
 

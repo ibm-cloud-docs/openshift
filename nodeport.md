@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-09-22"
 
 keywords: openshift, app access
 
@@ -60,7 +60,7 @@ If you don't already have an app ready, you can use a Kubernetes example app cal
 Before you begin
 
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* VPC clusters: [Allow traffic requests that are routed to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
+* VPC clusters: [Allow traffic requests that are routed to NodePorts on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
 
 To use a NodePort,
 
@@ -152,5 +152,63 @@ To use a NodePort,
         {: note}
 
 
+## Restricting NodePort service access
+{: #nodeport-restrict-access}
 
+By default, NodePort services are accessible on all network interfaces that are available to the cluster, for example `0.0.0.0`. Depending on your cluster setup, you might want to limit the available network interfaces for your services, for example in {{site.data.keyword.satelliteshort}} locations where multiple networks are available to the hosts. 
+
+Supported infrastructure providers
+:   Classic
+:   VPC
+:   {{site.data.keyword.satelliteshort}}
+
+You can restrict the listening addresses for NodePort services at the cluster level. This restriction allows the cluster administrator to limit access to a specific network interface by using the IP subnet as the allowed listening address range. Complete the following steps reconfigure the `kube-proxy` component to limit the listening address range for your NodePort services.
+
+
+Misconfiguring the `node-port-addresses` might isolate your services from valid sources. Make sure you plan for all the required subnets your service needs. {{site.data.keyword.cloud_notm}} doesn't require access to any subnet in order to manage your clusters.
+{: important}
+
+
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. Prepare your planned source subnet CIDR list that you want to allow to access the NodePort Services.
+1. Run the following command to get the `network.operator.openshift.io` configuration and save a copy in case you need to revert the changes.
+    ```sh
+    kubectl get network.operator.openshift.io cluster -o yaml
+    ```
+    {: pre}
+    
+1. Edit the `network.operator.openshift.io` configuration and set the subnet list under the `spec` section and include the required subnets for your NodePort service.
+    ```yaml
+    spec:
+      kubeProxyConfig:
+        node-port-addresses:
+        - 192.0.2.0/24
+        - 198.51.100.0/24
+    ```
+    {: codeblock}
+    
+1. Save your changes and apply them to the cluster.
+
+    ```sh
+    kubectl apply -f updated-network-config.yaml
+    ```
+    {: pre}
+    
+1. Restart the `kube-proxy` DaemonSet to apply the changes. This operation is not disruptive.
+
+    ```sh
+    kubectl rollout restart ds -n openshift-kube-proxy openshift-kube-proxy
+    ```
+    {: pre}
+    
+1. Wait until all your `kube-proxy` pods are restarted. Check the status by running the following command.
+    ```sh
+    kubectl get po -n openshift-kube-proxy --selector app=kube-proxy
+    ```
+    {: pre}
+
+After all pods are restarted, your cluster is configured with the restricted subnets. You can repeat these steps to update or remove the subnet list as needed.
+
+You can further restrict the traffic by using `NetworkPolicies` [on a per-service basis](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
+{: tip}
 

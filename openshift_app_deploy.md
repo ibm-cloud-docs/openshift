@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-13"
+lastupdated: "2022-09-22"
 
 keywords: kubernetes, openshift
 
@@ -199,6 +199,9 @@ To deploy apps to specific worker nodes,
 If you have a [GPU machine type](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes), you can schedule mathematically intensive workloads onto the worker node. For example, you might run a 3D app that uses the Compute Unified Device Architecture (CUDA) platform to share the processing load across the GPU and CPU to increase performance.
 {: shortdesc}
 
+VPC Gen 2 worker nodes with vGPUs are available for allowlisted accounts only. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help). Be sure to include the data centers, the worker flavors, and the number of workers that you want use. For example `12 worker nodes in us-east-1 of flavor gx2.16x128.v100`.
+{: important}
+
 In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. After, you might find it useful to play around with mathematically intensive workloads such as the [TensorFlow](https://www.tensorflow.org/){: external} machine learning framework with [this Kubernetes demo](https://github.com/pachyderm/pachyderm/tree/master/examples/ml/tensorflow){: external}.
 
 
@@ -346,6 +349,8 @@ To run a workload on a GPU machine,
     In this example, you see that both GPUs were used to execute the job because both the GPUs were scheduled in the worker node. If the limit is set to 1, only 1 GPU is shown.
 
 Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}.
+
+    
 
 ## Deploying Cloud Paks, licensed software, and other integrations
 {: #openshift_app_cloud_paks}

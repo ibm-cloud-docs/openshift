@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-22"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
+
+    * [22 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2222)
+
+        * Cluster autoscaler add-on versions `1.1.0_798`, `1.0.6_800`, and `1.0.5_779`.
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `4.3.7_1613`.
 
     * [21 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2122)
 
@@ -3894,6 +3900,8 @@ subcollection: openshift
 
 * [Enabling access to an app by using a NodePort service](/docs/openshift?topic=openshift-nodeport#nodeport_config)
 
+* [Restricting NodePort service access](/docs/openshift?topic=openshift-nodeport#nodeport-restrict-access)
+
 [Managing the app lifecycle](/docs/openshift?topic=openshift-update_app#update_app)
 
 * [Update strategies](/docs/openshift?topic=openshift-update_app#updating_apps)
@@ -5191,8 +5199,6 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
 
-    * [`ibmcloud oc ingress status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
-
 * [`nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns)
 
     * [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add)
@@ -6321,15 +6327,9 @@ subcollection: openshift
 
 [Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
-* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
-
-    * [Change log for patch update 1.0.6_774, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#106774_ca)
-
-    * [Change log for patch update 1.0.6_763, released 17 August 2022](/docs/openshift?topic=openshift-ca_changelog#106763_ca)
-
-    * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#106742_ca)
-
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_798, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#110798_ca)
 
     * [Change log for patch update 1.1.0_776, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#110776_ca)
 
@@ -6343,7 +6343,19 @@ subcollection: openshift
 
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
+* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_800, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#106800_ca)
+
+    * [Change log for patch update 1.0.6_774, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#106774_ca)
+
+    * [Change log for patch update 1.0.6_763, released 17 August 2022](/docs/openshift?topic=openshift-ca_changelog#106763_ca)
+
+    * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#106742_ca)
+
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_779, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#105779_ca)
 
     * [Change log for patch update 1.0.5_775, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#105775_ca)
 
@@ -6424,6 +6436,8 @@ subcollection: openshift
     * [Change log for version 4.4.5_1371, released 13 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#445_1371_is_block_relnote)
 
 * [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
+
+    * [Change log for version 4.3.7_1613, released 22 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.3.7_1613_is_block_relnote)
 
     * [Change log for version 4.3.6_1579, released 12 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#436_1579_is_block_relnote)
 
@@ -7579,6 +7593,8 @@ subcollection: openshift
 * [Feedback and questions](/docs/openshift?topic=openshift-get-help#feedback-qs)
 
 * [Contacting support](/docs/openshift?topic=openshift-get-help#help-support)
+
+* [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help#allowlist-access-request)
 
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
 

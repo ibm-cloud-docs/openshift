@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-09-22"
 
 keywords: red hat openshift, openshift container platform, red hat, red hat cluster, openshift, containers, clusters
 
@@ -94,6 +94,28 @@ Before you open a support case, gather relevant information about your cluster e
 5. For the **Problem type**, search for or select **{{site.data.keyword.openshiftlong_notm}}**.
 
 6. For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to.
+
+
+## Requesting access to allowlisted features
+{: #allowlist-access-request}
+
+1. [Create a ticket](https://cloud.ibm.com/unifiedsupport/cases/form).
+
+1. On the **Category** tab, select **Account**
+
+1. On the **Topic** tab, select the **Other** subtopic and click **Next**.
+
+1. On the **Details** tab, in the **Subject** field, enter `Allowlist request for <FEATURE> for account <ACCOUNTID>` and include the feature name and your account ID. 
+
+1. In the **Description** field, include details about the feature that you want access to.
+
+1. Click **Next** and review your selections ticket.
+
+1. Click **Submit case**.
+
+1. After support processes the ticket, you will receive a notification that your account is updated.
+
+
 
 
 
