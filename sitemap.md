@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-22"
 
 keywords: openshift
 subcollection: openshift
@@ -7579,6 +7579,8 @@ subcollection: openshift
 * [Feedback and questions](/docs/openshift?topic=openshift-get-help#feedback-qs)
 
 * [Contacting support](/docs/openshift?topic=openshift-get-help#help-support)
+
+* [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help#allowlist-access-request)
 
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
 
