@@ -205,6 +205,10 @@ subcollection: openshift
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
 
+    * [23 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2322)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `4.4.11_1614`.
+
     * [22 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2222)
 
         * Cluster autoscaler add-on versions `1.1.0_798`, `1.0.6_800`, and `1.0.5_779`.
@@ -6426,6 +6430,8 @@ subcollection: openshift
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.11_1614, released 23 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.11_1614_is_block_relnote)
 
     * [Change log for version 4.4.10_1578, released 13 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.10_1578_is_block_relnote)
 
