@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-09"
+lastupdated: "2022-09-23"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -36,6 +36,18 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.11 change log.
 {: shortdesc}
+
+### Change log for master fix pack 4.11.0_1521_openshift, released 1 September 2022
+{: #4.11.0_1521_openshift}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Red Hat OpenShift Control Plane Operator | v4.11.0-20220824 | v4.11.0-20220829 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0%2B20220829){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.11.0-20220824 | v4.11.0-20220829 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0%2B20220829){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.11.0+20220824 | 4.11.0+20220829 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20220829){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.11.0_1519_openshift" caption-side="top"}
+
 
 ### Change log for master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift, released 31 August 2022
 {: #4.11.0_1519_openshift-and-4.11.1_1520_openshift}

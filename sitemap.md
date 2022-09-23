@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-09-23"
 
 keywords: openshift
 subcollection: openshift
@@ -5506,6 +5506,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for master fix pack 4.11.0_1521_openshift, released 1 September 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4.11.0_1521_openshift)
 
     * [Change log for master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift, released 31 August 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4.11.0_1519_openshift-and-4.11.1_1520_openshift)
 
