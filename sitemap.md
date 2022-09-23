@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-09-23"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
+
+    * [23 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2322)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `4.4.11_1614`.
 
     * [22 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2222)
 
@@ -5507,6 +5511,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
+    * [Change log for master fix pack 4.11.0_1521_openshift, released 1 September 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4.11.0_1521_openshift)
+
     * [Change log for master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift, released 31 August 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4.11.0_1519_openshift-and-4.11.1_1520_openshift)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.11 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-411#cis-benchmark-411)
@@ -6424,6 +6430,8 @@ subcollection: openshift
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.11_1614, released 23 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.11_1614_is_block_relnote)
 
     * [Change log for version 4.4.10_1578, released 13 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.10_1578_is_block_relnote)
 
