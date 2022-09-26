@@ -205,6 +205,10 @@ subcollection: openshift
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
 
+    * [26 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2622)
+
+        * Worker node fix pack
+
     * [23 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2322)
 
         * {{site.data.keyword.block_storage_is_short}} add-on version `4.4.11_1614`.
@@ -1575,7 +1579,7 @@ subcollection: openshift
 
     * [29 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2920)
 
-        * For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+        * For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/containers?topic=containers-firewall#firewall_outbound), [private gateway device firewall](/docs/containers?topic=containers-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
 
     * [26 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2620)
 
