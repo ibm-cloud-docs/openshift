@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-23"
+lastupdated: "2022-09-26"
 
 keywords: openshift
 subcollection: openshift
@@ -8152,8 +8152,6 @@ subcollection: openshift
 
 * [Updating Helm charts](/docs/openshift?topic=openshift-debug_storage_px#debug_storage_px_helm)
 
-* [What permissions do I need to manage storage and create PVCs?](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
-
 [Debugging your Portworx installation](/docs/openshift?topic=openshift-debug-portworx#debug-portworx)
 
 * [Step 1: Verifying the {{site.data.keyword.cloud_notm}} catalog information](/docs/openshift?topic=openshift-debug-portworx#px-verify-catalog)
@@ -8180,8 +8178,6 @@ subcollection: openshift
 * [Checking and updating the oc CLI version](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cli)
 
 * [Debugging your ODF resources](/docs/openshift?topic=openshift-debug_storage_ocs#debug_storage_ocs_cluster)
-
-* [What permissions do I need to manage storage and create PVCs?](https://cloud.ibm.com/docs/openshift?topic=openshift-missing_permissions){: external}
 
 [Why is the status of my OpenShift Data Foundation storage cluster stuck at `Failed to reconcile`.](/docs/openshift?topic=openshift-ts-ocs-roks-debug#ts-ocs-roks-debug)
 
