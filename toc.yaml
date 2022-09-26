@@ -83,6 +83,8 @@ toc:
           - openshift_clusters_template.md
           - satellite_clusters.md
           - openshift_cluster_access.md
+          - cluster-access-admission-control.md
+          - cluster-access-wireguard.md
       - topicgroup:
           label: Managing the cluster and worker node lifecycle
           topics:
@@ -383,6 +385,7 @@ toc:
                 label: Clusters and masters
                 topics:
                 - ts-cluster-debug.md
+                - ts-webhook-debug.md
                 - ts-cluster-master.md
                 - ts-cluster-debug-ocp.md
                 - states-cluster.md

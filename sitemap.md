@@ -2806,6 +2806,18 @@ subcollection: openshift
 
     * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_cluster#access_webhooks-help)
 
+[Accessing the cluster master with admission controllers and webhooks](/docs/openshift?topic=openshift-access_webhooks#access_webhooks)
+
+* [Can I create my own admission controllers?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks_create_controllers)
+
+* [What are the best practices for using webhooks?](/docs/openshift?topic=openshift-access_webhooks#webhook-best-practice)
+
+* [What other types of apps use admission controllers?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-app-use-controllers)
+
+* [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
+
+[Accessing private clusters by using the WireGuard VPN](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
+
 
 ## Managing the cluster and worker node lifecycle
 {: #sitemap_managing_the_cluster_and_worker_node_lifecycle}
@@ -7630,6 +7642,12 @@ subcollection: openshift
 
 
 [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters#debug_clusters)
+
+[Debugging webhooks](/docs/openshift?topic=openshift-ts-webhook-debug#ts-webhook-debug)
+
+* [Reviewing the service that the webhook is calling](/docs/openshift?topic=openshift-ts-webhook-debug#review-webhook-service)
+
+* [Disabling or removing a webhook](/docs/openshift?topic=openshift-ts-webhook-debug#webhook-disable-rm)
 
 [Reviewing master health](/docs/openshift?topic=openshift-debug_master#debug_master)
 
