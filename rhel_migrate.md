@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-28"
 
 keywords: rhel, os, operating system
 
@@ -109,14 +109,12 @@ Version 4.6, 4.7 and 4.8 clusters
     
     For more information about rescheduling workloads, see [Safely Drain a Node](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/){: external} in the Kubernetes docs or [Understanding how to evacuate pods on nodes](https://docs.openshift.com/container-platform/4.9/nodes/nodes/nodes-nodes-working.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
     {: tip}
-    
 
-1. Scale down the worker pool that contains the RHEL 7 hosts by [manually resizing the worker pool to zero](/docs/containers?topic=containers-add_workers#resize_pool).
-
-    Consider scaling down your RHEL 7 worker pool and keeping it for several days before you delete it. This way, you can easily scale the worker pool back up if your workload experiences disruptions during the migration process. After you delete the worker pool, you cannot provision another RHEL 7 worker pool in the event of disruptions. When you have determined that your workload is stable and functions normally, you can safely delete the RHEL 7 worker pool.
-    {: important}
 
 1. [Remove the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 workers. 
+
+    Consider scaling down your RHEL 7 worker pool and keeping it for several days before you remove it. This way, you can easily scale the worker pool back up if your workload experiences disruptions during the migration process. After you remove the worker pool, you cannot provision another RHEL 7 worker pool in the event of disruptions. When you have determined that your workload is stable and functions normally, you can safely remove the RHEL 7 worker pool.
+    {: important}
 
     1. List your worker pools and note the name of the worker pool you want to remove.
         ```sh

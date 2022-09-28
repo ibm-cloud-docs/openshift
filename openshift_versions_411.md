@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-28"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -132,8 +132,8 @@ For more information about creating worker pools and adding worker nodes, see [A
     {: pre}
 
 4. Add a zone to your worker pool. When you add a zone, the number of worker nodes you specified with the `--size-per-zone` option are added to the zone. These worker nodes run the RHEL 8 operating system. 
-        * [Adding a zone to a worker pool in a classic cluster](/docs/containers?topic=containers-add_workers#add_zone)
-        * [Adding a zone to a worker pool in a VPC cluster](/docs/containers?topic=containers-add_workers#vpc_add_zone)
+    * [Adding a zone to a worker pool in a classic cluster](/docs/containers?topic=containers-add_workers#add_zone)
+    * [Adding a zone to a worker pool in a VPC cluster](/docs/containers?topic=containers-add_workers#vpc_add_zone)
 
 5. Verify that worker nodes are available in your new worker pool. In the output, check the number in the **Workers** column for the worker pool.
     ```sh
@@ -141,9 +141,10 @@ For more information about creating worker pools and adding worker nodes, see [A
     ```
     {: pre}
 
-6. Scale down the worker pool that contains the RHEL 7 hosts by [manually resizing the worker pool to zero](/docs/containers?topic=containers-add_workers#resize_pool).
-
 7. [Remove the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
+
+    Consider scaling down your RHEL 7 worker pool and keeping it for several days before you remove it. This way, you can easily scale the worker pool back up if your workload experiences disruptions during the migration process. After you remove the worker pool, you cannot provision another RHEL 7 worker pool in the event of disruptions. When you have determined that your workload is stable and functions normally, you can safely remove the RHEL 7 worker pool.
+    {: important}
 
     1. List your worker pools and note the name of the worker pool you want to remove.
         ```sh
