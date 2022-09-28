@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-26"
+lastupdated: "2022-09-28"
 
 keywords: openshift, clusters
 
@@ -25,7 +25,7 @@ Creating a cluster by using a template is available as a technical preview only,
 {: preview}
 
 **What do I get when I deploy the secure cluster template?**
-When you create a secure cluster by using the {{site.data.keyword.bpshort}} template, you get a multizone, private-only cluster with logging and monitoring enabled as well as {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.cos_full_notm}} instances. The secure cluster doesn't have public network access, so to access your cluster, you must [set up a VPN connection]((/docs/openshift?topic=openshift-cluster-access-wireguard)). For more information and specifications, see [Resources that are created from the template](#sch-tf-resources-created). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
+When you create a secure cluster by using the {{site.data.keyword.bpshort}} template, you get a multizone, private-only cluster with logging and monitoring enabled as well as {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.cos_full_notm}} instances. The secure cluster doesn't have public network access, so to access your cluster, you must [set up a VPN connection](/docs/openshift?topic=openshift-cluster-access-wireguard). For more information and specifications, see [Resources that are created from the template](#sch-tf-resources-created). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
 
 
 ## Resources that are created from the template
