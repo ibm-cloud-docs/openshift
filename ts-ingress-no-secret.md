@@ -46,11 +46,12 @@ Could not create a Certificate Manager instance. Ensure you have the correct IAM
 
 When you run `ibmcloud oc ingress secret ls`, no secrets are listed.
 
-
-As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance is automatically created for each cluster that you can use to manage the cluster's Ingress TLS certificates.
+Previously, a [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance was automatically created for each cluster and used to manage the cluster's Ingress TLS certificates. Automatic provisioning is no longer supported for new clusters. However, for exisiting {{site.data.keyword.cloudcerts_short}} instances to continue managing certificates in a cluster, the API key for the region and resource group that the cluster is created in must have the correct IAM permissions. 
 {: tsCauses}
 
-For a {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, the API key for the region and resource group that the cluster is created in must have the correct IAM permissions. The API key that your cluster uses does not have the correct IAM permissions to create and access a {{site.data.keyword.cloudcerts_short}} instance.
+{{site.data.keyword.cloudcerts_short}} is deprecated and instances are no longer automatically provisioned in new clusters. Support for {{site.data.keyword.cloudcerts_short}} ends on 1 December 2022 and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. After this date, certificates are set to be written only to the cluster unless you set up a Secrets Manager instance. [Migrate your certificates to IBM Cloud Secrets Manager](/docs/containers?topic=containers-certs-mgr-migration) as soon as possible.
+{: deprecated}
+
 
 Also, if you used the same cluster name repeatedly, you might have a rate limiting issue. For more information, see [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/containers?topic=containers-cs_rate_limit).
 
