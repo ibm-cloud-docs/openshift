@@ -6763,8 +6763,9 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation.
 :   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
 :   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
-     - For cluster version 4.10 or later, specify `REDHAT_8_64`. 
-     - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
+     - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
+     - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
+     - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
      - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
 
 :   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
@@ -6862,8 +6863,9 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation.
 :   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
 :   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
-     - For cluster version 4.10 or later, specify `REDHAT_8_64`. 
-     - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
+     - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
+     - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
+     - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
      - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
 
 :   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
