@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-09-29"
 
 keywords: openshift, audit
 
@@ -337,7 +337,6 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Chennai (che01) | Chennai |
 | Seoul (seo01) | Seoul |
 | Osaka (osa21, osa22, osa23) | Osaka |
-| Hong Kong SAR of the PRC (hkg02) | Tokyo |
 | Singapore (sng01) | Tokyo |
 | Tokyo (tok02, tok04, tok05) | Tokyo |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="top"}

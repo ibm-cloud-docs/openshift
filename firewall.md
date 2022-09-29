@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-09-29"
 
 keywords: openshift
 
@@ -95,7 +95,7 @@ To allow access for a specific cluster:
     ```
     {: pre}
 
-2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
+2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/containers?topic=containers-users#checking-perms) for the resource group.
 
     ```sh
     ibmcloud target -g <resource_group_name>
@@ -254,7 +254,7 @@ This table is moving. For the latest IP lists and continued updates, see the pub
 
 | Region             | Public IP address  | 
 |--------------------|------------------|
-| AP North (`che01`, `hkg02`, `seo01`, `sng01`, `tok02`, `tok04`, `tok05`) | `119.81.194.90`, `119.81.222.210`, `128.168.106.194`, `128.168.71.117`, `128.168.75.194`, `128.168.85.154`, `135.90.69.66`, `135.90.69.82`, `161.202.126.210`, `161.202.154.10`, `161.202.186.226`, `161.202.56.10`, `161.202.57.34`, `165.192.69.69`, `165.192.80.146`, `165.192.83.202`, `165.192.95.90`, `169.38.68.178`, `169.38.70.10`, `169.38.79.170`, `169.56.1.162`, `169.56.132.234`, `169.56.48.114`, `169.56.69.242`, `169.56.96.42` | 
+| AP North (`che01`,`seo01`, `sng01`, `tok02`, `tok04`, `tok05`) | `119.81.194.90`, `119.81.222.210`, `128.168.106.194`, `128.168.71.117`, `128.168.75.194`, `128.168.85.154`, `135.90.69.66`, `135.90.69.82`, `161.202.126.210`, `161.202.154.10`, `161.202.186.226`, `161.202.56.10`, `161.202.57.34`, `165.192.69.69`, `165.192.80.146`, `165.192.83.202`, `165.192.95.90`, `169.38.68.178`, `169.38.70.10`, `169.38.79.170`, `169.56.1.162`, `169.56.132.234`, `169.56.48.114`, `169.56.69.242`, `169.56.96.42` | 
 | AP South (`syd01`, `syd04`, `syd05`) | `130.198.64.19`, `130.198.66.26`, `130.198.79.170`, `130.198.83.34`, `130.198.102.82`, `135.90.66.2`, `135.90.68.114`, `135.90.69.66`, `135.90.69.82`, `135.90.89.234`, `168.1.6.106`, `168.1.8.195`, `168.1.12.98`, `168.1.39.34`, `168.1.58.66` | 
 | EU Central (`ams03`, `mil01`,  `par01`, `fra02`, `fra04`, `fra05`) | `149.81.103.98`, `149.81.104.122`, `149.81.113.154`, `149.81.123.18`, `149.81.142.90`, `149.81.180.114`, `149.81.180.122`, `149.81.68.2`, `149.81.78.114`, `158.177.102.162`, `158.177.107.50`, `158.177.112.146`, `158.177.138.138`, `158.177.151.2`, `158.177.156.178`, `158.177.198.138`, `158.177.79.34`, `159.122.141.69`, `159.122.150.2`, `159.8.79.250`, `159.8.86.149`, `159.8.95.34`, `161.156.115.138`, `161.156.120.74`, `161.156.12.82`, `161.156.183.218`, `161.156.187.226`, `161.156.65.42`, `161.156.65.82`, `161.156.74.10`, `161.156.79.26`, `169.50.146.82`, `169.50.169.110`, `169.50.184.18`, `169.50.56.174`, `169.51.197.18` |
 | Osaka (`osa21`, `osa22`, `osa23`) | `163.68.69.114`, `163.68.69.122`, `163.69.65.114`, `163.69.65.122`, `163.73.64.250`, `163.73.65.194` | 
@@ -332,7 +332,7 @@ Before you begin
 1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
 
     1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges).
-    2. Allow the IBM Cloud infrastructure private IP ranges for all the [zones](/docs/openshift?topic=openshift-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges).
+    2. Allow the IBM Cloud infrastructure private IP ranges for all the [zones](/docs/containers?topic=containers-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges).
 
 2. Note the private IP address for each worker node in the cluster.
 
@@ -354,7 +354,7 @@ This table is moving. For the latest IP lists and continued updates, see the pri
 
 | Region | Private IP address  |
 |---------------|-------------|
-| AP North (`che01`, `hkg02`, `seo01`, `sng01`, `tok02`, `tok04`, `tok05`) | `166.9.40.102`, `166.9.40.21`, `166.9.40.36`, `166.9.40.39`, `166.9.40.6`, `166.9.40.7`, `166.9.40.8`, `166.9.40.88`, `166.9.42.23`, `166.9.42.28`, `166.9.42.55`, `166.9.42.6`, `166.9.42.7`, `166.9.42.97`, `166.9.44.15`, `166.9.44.3`, `166.9.44.4`, `166.9.44.47`, `166.9.44.5`, `166.9.44.88`, `166.9.46.4`, `166.9.60.2`, `166.9.60.4`, `166.9.249.106`, `166.9.249.136`, `166.9.249.170` |
+| AP North (`che01`,`seo01`, `sng01`, `tok02`, `tok04`, `tok05`) | `166.9.40.102`, `166.9.40.21`, `166.9.40.36`, `166.9.40.39`, `166.9.40.6`, `166.9.40.7`, `166.9.40.8`, `166.9.40.88`, `166.9.42.23`, `166.9.42.28`, `166.9.42.55`, `166.9.42.6`, `166.9.42.7`, `166.9.42.97`, `166.9.44.15`, `166.9.44.3`, `166.9.44.4`, `166.9.44.47`, `166.9.44.5`, `166.9.44.88`, `166.9.46.4`, `166.9.60.2`, `166.9.60.4`, `166.9.249.106`, `166.9.249.136`, `166.9.249.170` |
 | AP South (`syd01`, `syd04`, `syd05`) | `166.9.52.14`, `166.9.52.15`, `166.9.52.23`, `166.9.52.30`, `166.9.52.31`, `166.9.54.11`, `166.9.54.12`, `166.9.54.13`, `166.9.54.21`, `166.9.54.32`, `166.9.54.33`, `166.9.56.10`, `166.9.56.11`, `166.9.56.16`, `166.9.56.24`, `166.9.56.36`, `166.9.244.107`, `166.9.244.137`, `166.9.244.171` |
 | EU Central (`ams03`, `mil01`,  `par01`, `fra02`, `fra04`, `fra05`) | `166.9.28.107`, `166.9.28.17`, `166.9.28.19`, `166.9.28.20`, `166.9.28.203`, `166.9.28.22`, `166.9.28.23`, `166.9.28.235`, `166.9.28.24`, `166.9.28.240`, `166.9.28.43`, `166.9.28.64`, `166.9.28.84`, `166.9.28.87`, `166.9.28.91`, `166.9.28.94`, `166.9.28.95`, `166.9.30.100`, `166.9.30.11`, `166.9.30.116`, `166.9.30.12`, `166.9.30.13`, `166.9.30.22`, `166.9.30.41`, `166.9.30.54`, `166.9.30.56`, `166.9.30.9`, `166.9.30.92`, `166.9.32.101`, `166.9.32.185`, `166.9.32.20`, `166.9.32.26`, `166.9.32.27`, `166.9.32.44`, `166.9.32.54`, `166.9.32.56`, `166.9.32.84`, `166.9.32.88`, `166.9.32.9`, `166.9.248.77`, `166.9.248.106`, `166.9.248.137` |
 | Osaka (`osa21`, `osa22`, `osa23`) | `166.9.70.6`, `166.9.70.8`, `166.9.71.8`, `166.9.71.10`, `166.9.72.9`, `166.9.72.10`, `166.9.247.41`, `166.9.247.75`, `166.9.247.107` | 
@@ -438,8 +438,8 @@ Route
 Instead of setting up a gateway firewall device, you can choose to use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a cluster firewall on the public or private network. For more information, see the following topics.
 {: shortdesc}
 
-- [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
-- [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
+- [Isolating clusters on the public network](/docs/containers?topic=containers-network_policies#isolate_workers_public).
+- [Isolating clusters on the private network](/docs/containers?topic=containers-network_policies#isolate_workers).
 
 
 
