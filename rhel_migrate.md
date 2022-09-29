@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-09-29"
 
 keywords: rhel, os, operating system
 
@@ -49,26 +49,26 @@ Version 4.6, 4.7 and 4.8 clusters
 ## Creating RHEL 8 worker pools in the command line
 {: #rhel-migrate-create-pools-cli}
 
-1. You can use the following example commands to create a new worker pool with RHEL 8 worker nodes for your cluster type. Note that you must include the `--operating-system` flag and specify `RHEL8`. Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of RHEL 7 worker nodes that are to be replaced.
+1. You can use the following example commands to create a new worker pool with RHEL 8 worker nodes for your cluster type. Note that you must include the `--operating-system` flag and specify `REDHAT_8_64`. Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of RHEL 7 worker nodes that are to be replaced.
 
     **Classic**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create classic` command, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_create). For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools).
 
     ```sh
-    ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION --operating-system RHEL8 [--disable-disk-encrypt] [--label KEY1=VALUE1]
+    ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION --operating-system REDHAT_8_64 [--disable-disk-encrypt] [--label KEY1=VALUE1]
     ```
     {: pre}
 
     **VPC**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools).
 
     ```sh
-    ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system RHEL8 [--crk ROOT_KEY_ID] [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--kms-instance KMS_INSTANCE_ID]
+    ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system REDHAT_8_64 [--crk ROOT_KEY_ID] [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--kms-instance KMS_INSTANCE_ID]
     ```
     {: pre}
     
     **{{site.data.keyword.satelliteshort}}**: Example command to create a RHEL 8 worker pool. Note that for {{site.data.keyword.satelliteshort}} clusters, you must first [attach RHEL 8 hosts to your location](/docs/satellite?topic=satellite-attach-hosts) before you can create a worker pool.
     
     ```sh
-    ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label "os=RHEL8" --name NAME --size-per-zone SIZE --operating-system RHEL8 --zone ZONE [--label LABEL ...] 
+    ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label "os=RHEL8" --name NAME --size-per-zone SIZE --operating-system REDHAT_8_64 --zone ZONE [--label LABEL ...] 
     ```
     {: pre}
 
@@ -104,7 +104,7 @@ Version 4.6, 4.7 and 4.8 clusters
     If you have software-defined storage (SDS) solutions like OpenShift Data Foundation or Portworx, update your storage configurations to include the new worker nodes and verify your workloads before removing your RHEL 7 worker nodes.
     {: important}
 
-    Your RHEL 8 worker nodes have the `os=RHEL8` label set by default, which can be used to [create an affinity rule](/docs/containers?topic=containers-deploy_app#node_affinity) to reschedule your workload in your RHEL 8 worker pool. 
+    Your RHEL 8 worker nodes have the `os` label set by default, which can be used to [create an affinity rule](/docs/containers?topic=containers-deploy_app#node_affinity) to reschedule your workload in your RHEL 8 worker pool. 
     {: tip}
     
     For more information about rescheduling workloads, see [Safely Drain a Node](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/){: external} in the Kubernetes docs or [Understanding how to evacuate pods on nodes](https://docs.openshift.com/container-platform/4.9/nodes/nodes/nodes-nodes-working.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.

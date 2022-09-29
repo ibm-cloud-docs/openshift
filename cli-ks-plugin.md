@@ -2818,7 +2818,11 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 :    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.
 
 `--operating-system SYSTEM`
-:    Specifies the operating system.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster.
+    - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
+    - For cluster version 4.10, specify `REDHAT_7_64`  or `REDHAT_8_64`.
+    - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
+    - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
 
 `--entitlement cloud_pak`
 :    Include this flag only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
@@ -2892,9 +2896,6 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 :    Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in this worker pool. To list available root keys, run `ibmcloud oc kms crk ls --instance-id`. If you include this option, you must also include the `--kms-instance` option.
      Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/containers?topic=containers-encryption#worker-encryption).
      {: note}
-     
-`--operating-system SYSTEM`
-:    Specifies the operating system.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -6718,6 +6719,8 @@ ibmcloud oc storage volume ls --cluster aa1111aa11aaaaa11aa1
 ```
 {: pre}
 
+
+
 ## {{site.data.keyword.satelliteshort}} commands
 {: #sat_commands}
 
@@ -6757,7 +6760,14 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
 `--operating-system SYSTEM`
-:    Optional. The operating system of the hosts that you want to use to create your cluster. You can use `RHEL7` or `RHCOS` hosts. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation.
+:   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
+:   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
+     - For cluster version 4.10 or later, specify `REDHAT_8_64`. 
+     - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
+     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+
+:   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
 
 
@@ -6808,9 +6818,10 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 
 
-The following example creates a {{site.data.keyword.satelliteshort}} cluster with the RHEL7 operating system**.
+The following example creates a {{site.data.keyword.satelliteshort}} cluster with the `REDHAT_8_64` operating system.
+
 ```sh
-ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system RHEL7 --version 4.9_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
+ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system REDHAT_8_64 --version 4.9_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
 ```
 {: pre}
 
@@ -6848,7 +6859,14 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :    Required. The name that you want to give your worker pool.
 
 `--operating-system SYSTEM`
-:    Optional. The operating system of the hosts that you want to use in your worker pool. You can use `RHEL7` or `RHCOS` hosts. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation. For clusters created in default locations without Red Hat CoreOS enabled, specify `RHEL7`. If no option is specified, `RHEL7` is used.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation.
+:   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
+:   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
+     - For cluster version 4.10 or later, specify `REDHAT_8_64`. 
+     - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
+     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+
+:   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
 
 

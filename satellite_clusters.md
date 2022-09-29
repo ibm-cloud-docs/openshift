@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-29"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -116,7 +116,7 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     Example `cluster create` command.
 
     ```sh
-    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.9_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system (RHEL7|RHCOS)] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
+    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.9_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system (REDHAT_7_64|REDHAT_8_64|RHCOS)] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
     ```
     {: pre}
     
