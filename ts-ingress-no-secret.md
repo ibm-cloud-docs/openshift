@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-09-29"
 
 keywords: openshift
 
@@ -63,12 +63,12 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
     ```
     {: pre}
 
-2. [Assign the following IAM permissions](/docs/openshift?topic=openshift-users#add_users) to the user or functional user who sets the API key.
+2. [Assign the following IAM permissions](/docs/containers?topic=containers-users#add_users) to the user or functional user who sets the API key.
     * The **Administrator** or **Editor** platform access role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
     * The **Manager** service access role for {{site.data.keyword.cloudcerts_short}} in **All resource groups**
-3. The user must [reset the API key for the region and resource group](/docs/openshift?topic=openshift-access-creds#api_key_most_cases).
+3. The user must [reset the API key for the region and resource group](/docs/containers?topic=containers-access-creds#api_key_most_cases).
 
-    When the API key is reset, the previous API key that was used for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/openshift?topic=openshift-encryption#keyprotect).
+    When the API key is reset, the previous API key that was used for the region and resource group is deleted. Before you reset the API key, check whether you have other services that use the existing API key, such as a [key management service (KMS) provider](/docs/containers?topic=containers-encryption#keyprotect).
     {: important}
 
 4. After the cluster has access to the updated permissions in the API key, the creation of the {{site.data.keyword.cloudcerts_short}} instance is automatically triggered. Note that the {{site.data.keyword.cloudcerts_short}} instance might take up to an hour to become visible in the {{site.data.keyword.cloud_notm}} console.
@@ -82,9 +82,6 @@ Also, if you used the same cluster name repeatedly, you might have a rate limiti
     ibmcloud oc ingress secret ls -c <cluster_name_or_ID>
     ```
     {: pre}
-
-
-For more information, see [Managing TLS certificates and secrets](/docs/containers?topic=containers-ingress-types#manage_certs).
 
 
 
