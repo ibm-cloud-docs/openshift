@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-29"
+lastupdated: "2022-09-30"
 
 keywords: openshift
 
@@ -6760,7 +6760,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
 `--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. Red Hat CoreOS is available in all [regions where Satellite is supported](/docs/satellite?topic=satellite-sat-regions).
 :   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
 :   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
      - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
@@ -6860,7 +6860,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :    Required. The name that you want to give your worker pool.
 
 `--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. For information on which regions Red Hat CoreOS is available in, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) in the {{site.data.keyword.satelliteshort}} documentation.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. Red Hat CoreOS is available in all [regions where Satellite is supported](/docs/satellite?topic=satellite-sat-regions).
 :   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
 :   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
      - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
