@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-27"
+lastupdated: "2022-09-30"
 
 keywords: openshift
 subcollection: openshift
@@ -3697,6 +3697,12 @@ subcollection: openshift
     * [Viewing `AuditWebhookError` alerts in auditing-enabled clusters](/docs/openshift?topic=openshift-health-audit#audit-webhook-error-410)
 
 [Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
+
+[Enabling Flow Logs for VPC cluster components](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log)
+
+* [Configuring a flow log collector](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_create)
+
+* [Viewing worker node flow logs](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_view)
 
 
 ## Setting up an image build pipeline
