@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-27"
+lastupdated: "2022-09-30"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
+
+    * [30 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep3022)
+
+        * New! Enabling Flow logs for VPC components
 
     * [26 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2622)
 
@@ -3697,6 +3701,12 @@ subcollection: openshift
     * [Viewing `AuditWebhookError` alerts in auditing-enabled clusters](/docs/openshift?topic=openshift-health-audit#audit-webhook-error-410)
 
 [Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
+
+[Enabling Flow Logs for VPC cluster components](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log)
+
+* [Configuring a flow log collector](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_create)
+
+* [Viewing worker node flow logs](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_view)
 
 
 ## Setting up an image build pipeline
