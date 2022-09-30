@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-29"
+lastupdated: "2022-09-30"
 
 keywords: openshift
 
@@ -27,6 +27,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2022
 {: #openshift-sep22}
+
+### 30 September 2022
+{: #openshift-sep3022}
+
+New! Enabling Flow logs for VPC components
+:    Flow logs gather information about the traffic entering or leaving your VPC cluster worker nodes.  For more information, see [Enabling Flow Logs for VPC cluster components](/docs/containers?topic=containers-vpc-flow-log).
 
 
 ### 26 September 2022

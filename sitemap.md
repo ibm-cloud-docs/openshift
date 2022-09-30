@@ -205,6 +205,10 @@ subcollection: openshift
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
 
+    * [30 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep3022)
+
+        * New! Enabling Flow logs for VPC components
+
     * [26 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2622)
 
         * Worker node fix pack
