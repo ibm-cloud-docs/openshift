@@ -203,6 +203,10 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [3 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0322)
+
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
 
     * [30 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep3022)
