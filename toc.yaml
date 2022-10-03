@@ -77,11 +77,17 @@ toc:
           - cluster-plan-ha.md
           - worker-plan.md
       - topicgroup: 
-          label: Creating and accessing clusters
+          label: Creating clusters
           topics:
           - cluster-create.md
-          - openshift_clusters_template.md
+          - cluster-create-classic.md
+          - cluster-create-vpc-gen2.md
+          - cluster-create-dedicated-hosts.md
           - satellite_clusters.md
+          - openshift_clusters_template.md
+      - topicgroup: 
+          label: Accessing clusters
+          topics:
           - openshift_cluster_access.md
           - cluster-access-admission-control.md
           - cluster-access-wireguard.md
@@ -432,6 +438,9 @@ toc:
                 label: Cluster network
                 topics:
                 - ts-network-roks-subdomain-missing.md
+                - ts-network-calico-node.md
+                - ts-network-calico-node.md
+                - ts-network-egress-124.md
                 - ts-network-strongswan-vpn.md
                 - ts-network-strongswan-install-new.md
                 - ts-network-strongswan-network-nodes.md

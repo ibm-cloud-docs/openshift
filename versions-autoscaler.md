@@ -21,11 +21,13 @@ subcollection: openshift
 View information for patch updates to the cluster autoscaler add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
+
+
 Patch updates
 :   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-:   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon).
+:   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon#cluster-scaling-update-addon).
 
 Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-classic-vpc).
 

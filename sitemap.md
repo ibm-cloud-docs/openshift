@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 subcollection: openshift
@@ -2710,49 +2710,37 @@ subcollection: openshift
 * [Worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node)
 
 
-## Creating and accessing clusters
-{: #sitemap_creating_and_accessing_clusters}
+## Creating clusters
+{: #sitemap_creating_clusters}
 
 
 [Creating clusters](/docs/openshift?topic=openshift-clusters#clusters)
-
-* [Sample CLI commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
-
-    * [Classic clusters](/docs/openshift?topic=openshift-clusters#cluster_create_classic)
-
-    * [VPC clusters](/docs/openshift?topic=openshift-clusters#cluster_create_vpc)
 
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
 
-* [Creating a standard classic cluster](/docs/openshift?topic=openshift-clusters#clusters_standard)
-
-    * [Creating a standard classic cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_ui)
-
-    * [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps)
-
-* [Creating a standard VPC cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2)
-
-    * [Creating a standard VPC cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui)
-
-    * [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
-
-* [Creating a cluster on dedicated host infrastructure in the CLI](/docs/openshift?topic=openshift-clusters#cluster_dedicated_host_cli)
-
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
-[Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates#templates)
+[Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
 
-* [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
+* [Creating a classic cluster in the console](/docs/openshift?topic=openshift-cluster-create-classic#clusters_ui)
 
-* [Creating a secure cluster by using a template from the UI](/docs/openshift?topic=openshift-templates#sch-secure-cluster-ui)
+* [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-classic#clusters_cli_steps)
 
-* [Creating a secure cluster by using a template with the CLI](/docs/openshift?topic=openshift-templates#tf-secure-cluster-cli)
+* [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster_create_classic)
 
-* [Next steps](/docs/openshift?topic=openshift-templates#sch-tf-whats-next)
+[Creating VPC Gen 2 clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
-[Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satellite-clusters)
+* [Creating a standard VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
+
+* [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
+
+* [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
+
+[Creating clusters on dedicated hosts](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
+
+[Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satellite-clusters)
 
 * [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
 
@@ -2771,6 +2759,21 @@ subcollection: openshift
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
 
 * [Limitations for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
+
+[Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates#templates)
+
+* [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
+
+* [Creating a secure cluster by using a template from the UI](/docs/openshift?topic=openshift-templates#sch-secure-cluster-ui)
+
+* [Creating a secure cluster by using a template with the CLI](/docs/openshift?topic=openshift-templates#tf-secure-cluster-cli)
+
+* [Next steps](/docs/openshift?topic=openshift-templates#sch-tf-whats-next)
+
+
+## Accessing clusters
+{: #sitemap_accessing_clusters}
+
 
 [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-access_cluster#access_cluster)
 
@@ -2992,7 +2995,7 @@ subcollection: openshift
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
-    * [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
+* [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
 
 * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
@@ -7905,6 +7908,10 @@ subcollection: openshift
 
 
 [Why is my cluster missing the public `containers.appdomain.cloud` subdomain?](/docs/openshift?topic=openshift-roks_ts_subdomain#roks_ts_subdomain)
+
+[Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
+
+[Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
 [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails#cs_vpn_fails)
 
