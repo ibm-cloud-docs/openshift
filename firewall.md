@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-29"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -13,38 +13,34 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
-
-
-# Classic: Opening required ports and IP addresses in your firewall
+# Classic: Opening required ports and IP addresses in your allowlist
 {: #firewall}
 
-This firewall information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your firewall for VPC clusters](/docs/containers?topic=containers-vpc-firewall).
+This allowlist information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your allowlist for VPC clusters](/docs/containers?topic=containers-vpc-firewall).
 {: note}
 
-Review these situations in which you might need to open specific ports and IP addresses in your firewalls for your {{site.data.keyword.openshiftlong}} clusters.
+Review these situations in which you might need to open specific ports and IP addresses in your allowlists for your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-- [Corporate firewalls](#corporate): If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run `ibmcloud`, `ibmcloud oc`, `ibmcloud cr`, `oc`, and `calicoctl` commands from your local system.
-- [Gateway appliance firewalls](#vyatta_firewall): If you have firewalls set up on the public or private network in your IBM Cloud infrastructure account, such as a VRA, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
-- [Calico network policies](#firewall_calico_egress): If you use Calico network policies to act as a firewall to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
-- [Other services or network firewalls](#allowlist_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by a firewall, you must add the IP addresses of your worker nodes in that firewall.
+- [Corporate allowlists](#corporate): If corporate network policies prevent access from your local system to public endpoints via proxies or allowlists, you must allow access to run `ibmcloud`, `ibmcloud oc`, `ibmcloud cr`, `oc`, and `calicoctl` commands from your local system.
+- [Gateway appliance allowlists](#vyatta_firewall): If you have allowlists set up on the public or private network in your IBM Cloud infrastructure account, such as a VRA, you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services. You can also open ports to allow incoming traffic to services exposing apps in your cluster.
+- [Calico network policies](#firewall_calico_egress): If you use Calico network policies to act as an allowlist to restrict all worker node egress, you must allow your worker nodes to access the resources that are required for the cluster to function.
+- [Other services or network allowlists](#firewall_workers): To allow your cluster to access services that run inside or outside {{site.data.keyword.cloud_notm}} or in on-premises networks and that are protected by an allowlist, you must add the IP addresses of your worker nodes in that allowlist.
 
 
-## Opening ports in a corporate firewall
+## Opening ports in a corporate allowlist
 {: #corporate}
 
-If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, you must allow access to run [`ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands](#firewall_bx), [`oc` commands](#firewall_kubectl), and [`calicoctl` commands](#firewall_calicoctl) from your local system.
+If corporate network policies prevent access from your local system to public endpoints via proxies or allowlists, you must allow access to run [`ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands](#firewall_bx), [`oc` commands](#firewall_kubectl), and [`calicoctl` commands](#firewall_calicoctl) from your local system.
 {: shortdesc}
 
-### Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall
+### Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist
 {: #firewall_bx}
 
-If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `ibmcloud`, `ibmcloud oc` and `ibmcloud cr` commands, you must allow TCP access for {{site.data.keyword.cloud_notm}}, {{site.data.keyword.openshiftlong_notm}}, and {{site.data.keyword.registrylong_notm}}.
+If corporate network policies prevent access from your local system to public endpoints via proxies or allowlists, to run `ibmcloud`, `ibmcloud oc` and `ibmcloud cr` commands, you must allow TCP access for {{site.data.keyword.cloud_notm}}, {{site.data.keyword.openshiftlong_notm}}, and {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
-1. Allow access to `cloud.ibm.com` on port 443 in your firewall.
+1. Allow access to `cloud.ibm.com` on port 443 in your allowlist.
 2. Verify your connection by logging in to {{site.data.keyword.cloud_notm}} through this API endpoint.
 
     ```sh
@@ -52,7 +48,7 @@ If corporate network policies prevent access from your local system to public en
     ```
     {: pre}
 
-3. Allow access to `containers.cloud.ibm.com` on port 443 in your firewall.
+3. Allow access to `containers.cloud.ibm.com` on port 443 in your allowlist.
 4. Verify your connection. If access is configured correctly, zones are displayed in the output.
 
     ```sh
@@ -68,18 +64,14 @@ If corporate network policies prevent access from your local system to public en
     {: screen}
 
 
-5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your firewall. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
+5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your allowlist. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
 
 6. Verify your connection by [listing your container registry namespaces](/apidocs/container-registry#list-namespaces){: external}.
 
-
-
-
-
-### Running `oc` commands from behind a firewall
+### Running `oc` commands from behind an allowlist
 {: #firewall_kubectl}
 
-If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `oc` commands, you must allow TCP access for the cluster.
+If corporate network policies prevent access from your local system to public endpoints via proxies or allowlists, to run `oc` commands, you must allow TCP access for the cluster.
 {: shortdesc}
 
 When a cluster is created, the port in the service endpoint URLs is randomly assigned from within 30000-32767. You can either choose to open port range 30000-32767 for any cluster that might get created or you can choose to allow access for a specific existing cluster.
@@ -130,7 +122,7 @@ To allow access for a specific cluster:
     ```
     {: screen}
 
-5. Allow access to the service endpoint URLs and ports that you got in the previous step. If your firewall is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](#master_ips).
+5. Allow access to the service endpoint URLs and ports that you got in the previous step. If your allowlist is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](#master_ips).
 
 6. Verify your connection.
 
@@ -200,10 +192,10 @@ To allow access for a specific cluster:
 
 
 
-### Running `calicoctl` commands from behind a firewall
+### Running `calicoctl` commands from behind an allowlist
 {: #firewall_calicoctl}
 
-If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, to run `calicoctl` commands, you must allow TCP access for the Calico commands.
+If corporate network policies prevent access from your local system to public endpoints via proxies or allowlists, to run `calicoctl` commands, you must allow TCP access for the Calico commands.
 {: shortdesc}
 
 Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`oc` commands](#firewall_kubectl).
@@ -220,18 +212,18 @@ Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`
 3. Allow access for the Calico policies via the master URL IP address and the etcd port.
 
 
-## Opening ports in gateway appliance firewalls
+## Opening ports in gateway appliance allowlists
 {: #vyatta_firewall}
 {: help}
 {: support}
 
-If you have firewalls set up on the [public network](#firewall_outbound) or [private network](#firewall_private) in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
+If you have allowlists set up on the [public network](#firewall_outbound) or [private network](#firewall_private) in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
-### Opening required ports in a public firewall
+### Opening required ports in a public allowlist
 {: #firewall_outbound}
 
-If you have a firewall on the public network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
+If you have an allowlist on the public network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your allowlist to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 Before you begin, note the public IP address for each worker node in the cluster.
@@ -272,7 +264,7 @@ This table is moving. For the latest IP lists and continued updates, see the pub
 To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} [regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 {: shortdesc}
 
-Previously Registry subnets (IP addresses) were published in the following table. As of 17 August 2021, the Registry subnets are no longer published. When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any firewall restrictions that are based on IP addresses in place. If you have any concerns about opening your firewall, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private IBM Cloud network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
+Previously Registry subnets (IP addresses) were published in the following table. As of 17 August 2021, the Registry subnets are no longer published. When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any allowlist restrictions that are based on IP addresses in place. If you have any concerns about opening your allowlist, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private IBM Cloud network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
 {: important}
 
 - `TCP port 443 FROM <each_worker_node_publicIP> TO us.icr.io`
@@ -295,7 +287,7 @@ Previously Registry subnets (IP addresses) were published in the following table
 #### Allow outgoing network traffic from worker node to IAM
 {: #firewall-iam}
 
-Allow outgoing network traffic from your worker node to {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
+Allow outgoing network traffic from your worker node to {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). Your allowlist must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your allowlist does not support Layer 7, you can allow all HTTPS network traffic on port 443.
 
 - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.bluemix.net`
 - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.cloud.ibm.com`
@@ -321,10 +313,10 @@ If you use load balancer services, ensure that all traffic that uses the VRRP pr
 If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your routers.
 
 
-### Opening required ports in a private firewall
+### Opening required ports in a private allowlist
 {: #firewall_private}
 
-If you have a firewall on the private network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your firewall to allow worker nodes to communicate with the master, with each other, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
+If you have an allowlist on the private network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your allowlist to allow worker nodes to communicate with the master, with each other, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 Before you begin
@@ -367,7 +359,7 @@ This table is moving. For the latest IP lists and continued updates, see the pri
 #### Open ports
 {: #firewall_private_open_ports}
 
-Open the following ports in your firewall for your worker nodes to function properly. The following ports need should be open all destination IPs.
+Open the following ports in your allowlist for your worker nodes to function properly. The following ports need should be open all destination IPs.
 
 - Allow outbound TCP and UDP connections from the workers to ports 80 and 443 to allow worker node updates and reloads.
 - Allow outbound TCP and UDP to port 2049 to allow mounting file storage as volumes.
@@ -405,15 +397,15 @@ On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining r
 {: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
 {: caption="Table 4. IP addresses to open for Registry traffic" caption-side="top"}
 
-#### Optional: Set up firewall rules for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services
+#### Optional: Set up allowlist rules for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services
 {: #firewall_private_mon_la}
 
-To send logging and metric data, set up firewall rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
+To send logging and metric data, set up allowlist rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
 
 - [{{site.data.keyword.la_short}} private endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_private)
 - [{{site.data.keyword.mon_short}} private endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints_monitoring)
 
-### Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes
+### Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes
 {: #firewall_inbound}
 
 You can allow incoming access to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes.
@@ -435,7 +427,7 @@ Route
 ## Allowing the cluster to access resources through Calico network policies
 {: #firewall_calico_egress}
 
-Instead of setting up a gateway firewall device, you can choose to use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a cluster firewall on the public or private network. For more information, see the following topics.
+Instead of setting up a gateway allowlist device, you can choose to use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a cluster allowlist on the public or private network. For more information, see the following topics.
 {: shortdesc}
 
 - [Isolating clusters on the public network](/docs/containers?topic=containers-network_policies#isolate_workers_public).
@@ -443,17 +435,17 @@ Instead of setting up a gateway firewall device, you can choose to use [Calico n
 
 
 
-## Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls
-{: #allowlist_workers}
+## Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists
+{: #firewall_workers}
 
-If you want to access services that run inside or outside {{site.data.keyword.cloud_notm}} or on-premises and that are protected by a firewall, you can add the IP addresses of your worker nodes in that firewall to allow outbound network traffic to your cluster. For example, you might want to read data from an {{site.data.keyword.cloud_notm}} database that is protected by a firewall, or specify your worker node subnets in an on-premises firewall to allow network traffic from your cluster.
+If you want to access services that run inside or outside {{site.data.keyword.cloud_notm}} or on-premises and that are protected by an allowlist, you can add the IP addresses of your worker nodes in that allowlist to allow outbound network traffic to your cluster. For example, you might want to read data from an {{site.data.keyword.cloud_notm}} database that is protected by an allowlist, or specify your worker node subnets in an on-premises allowlist to allow network traffic from your cluster.
 {: shortdesc}
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 2. Get the worker node subnets or the worker node IP addresses.
 
-    - **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc), you might not want to update your firewall for each new worker node. Instead, you can add the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
+    - **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc), you might not want to update your allowlist for each new worker node. Instead, you can add the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
         Note that the **primary public subnets** that {{site.data.keyword.openshiftlong_notm}} provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to allow can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.
 
         1. List the worker nodes in your cluster.
@@ -495,26 +487,23 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
             *   `169.xx.210.xxx/28`
             *   `169.xx.178.xxx/28`
             
-    - **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and don't need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private cloud service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your firewall accordingly.
+    - **Individual worker node IP addresses**: If you have a small number of worker nodes that run only one app and don't need to scale, or if you want to add only one worker node, list all the worker nodes in your cluster and note the **Public IP** addresses. If your worker nodes are connected to a private network only and you want to connect to {{site.data.keyword.cloud_notm}} services by using the private cloud service endpoint, note the **Private IP** addresses instead. Only these worker nodes are added. If you delete the worker nodes or add worker nodes to the cluster, you must update your allowlist accordingly.
 
         ```sh
         ibmcloud oc worker ls --cluster <cluster_name_or_ID>
         ```
         {: pre}
 
-3. Add the subnet CIDR or IP addresses to your service's firewall for outbound traffic or your on-premises firewall for inbound traffic.
+3. Add the subnet CIDR or IP addresses to your service's allowlist for outbound traffic or your on-premises allowlist for inbound traffic.
 4. Repeat these steps for each cluster that you want to allow traffic to or from.
 
+## Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses
+{: #iam_firewall}
 
+By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and perform actions to manage your cluster, such as creating, updating, deleting or viewing credentials. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted.
+{: shortdesc} 
 
-## Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses
-{: #iam_allowlist}
-
-By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and access your cluster. In the IBM Cloud Identity and Access Management (IAM) console, you can generate a firewall by [creating an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted. If you use an IAM firewall, you must add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist. You must allow these CIDRs so that {{site.data.keyword.openshiftlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
-{: shortdesc}
-
-Setting up an IAM allowlist blocks access to the {{site.data.keyword.redhat_openshift_notm}} web console. Do not use an IAM allowlist if you must access the {{site.data.keyword.redhat_openshift_notm}} web console for your cluster.
-{: important}
+In your allowlist, you must also add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located so that {{site.data.keyword.openshiftlong_notm}} can create or access components such as Ingress ALBs  or the {{site.data.keyword.redhat_openshift_notm}} web console, which requires all control plane IP addresses.
 
 Before you begin, the following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.
 
@@ -559,42 +548,105 @@ Before you begin, the following steps require you to change the IAM allowlist fo
         ```
         {: screen}
 
-2. Get the CIDRs of the private and public subnets that your worker nodes are attached to.
-
-    ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID> --show-resources
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    NAME:                           mycluster
-    ID:                             df222b2222d64944ab99ed63bb4567b6
-    State:                          normal
-    Status:                         All Workers
-    ...
-
-    Subnet VLANs
-    VLAN ID   Subnet CIDR        Public   User-managed
-    2234947   10.176.22.48/29    false    false
-    2294021   10.185.94.144/29   false    false
-    2234945   169.46.17.0/29     true     false
-    2294019   169.48.228.72/29   true     false
-    ```
-    {: screen}
-
+2. [Get the CIDRs and IPs of the subnets that your worker nodes are attached to](#iam_cidr_ip).
+3. Get the [control plane CIDRs of the region where you cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. 
 3. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
 4. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
 5. Select the user that you found in step 1 from the list.
 6. From the **User details** page, go to the **IP address restrictions** section.
-7. For **Classic infrastructure**, enter the [CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. For VPC infrastructure, enter the CIDRs of the zones in the region where your cluster is located in your security group of ALB. To find the region that your cluster's zones are location in, see the `README` for the directory.
-8. Enter the CIDRs of the worker node subnets that you found in step 2.
-9. Click **Apply**.
+7. Enter the subnet CIDRs and IPs, and the control plane CIDRs of the region where you cluster is located.
+8. Click **Apply**.
 
 
+### Getting your {{site.data.keyword.containershort}} subnet IP addresses
+{: #iam_cidr_ip}
 
+Follow the steps to obtain the correct subnet IP addresses to add to your IAM allowlist.
+{: shortdesc}
 
+#### Getting your subnet IP addresses in the console
+{: #iam_cidr_ip_console}
 
+1. From the {{site.data.keyword.cloud_notm}} console [resource list](https://cloud.ibm.com/resources), click on your cluster.
+2. Click **Worker nodes**.
+3. Note each **Public VLAN** used by the worker nodes in your cluster. Multiple worker nodes may use the same public VLAN. 
+4. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **Classic Infrastructure** > **IP Management** > **VLANs**.
+5. Click on each public VLAN to check if it is used by the worker nodes in your cluster. 
+6. For each public VLAN that is used by the worker nodes in your cluster, find the **Subnets** section and note each IP address included in the table. These are the IP addresses that you must include in your allowlist. 
+
+#### Getting your subnet IP addresses in the CLI
+{: #iam_cidr_ip_cli}
+
+1. List the public VLANs your worker nodes use. The output is formatted as `publicVLAN=<vlan_id>`. 
+
+    ```sh
+    oc describe nodes | grep publicVLAN | sort | uniq
+    ```
+    {: pre}
+
+2. For each public VLAN, find the associated public subnets. In the output, note the subnet IP addresses in the **identifier** column.
+
+    ```sh
+    ibmcloud sl subnet list | grep <vlan-id>
+    ```
+    {: pre}
+
+Below is an example output of subnets associated with public VLAN with ID `2761690`.
+
+    ```sh
+    ID        identifier        type                 network_space   datacenter   vlan_id   IPs   hardware   virtual_servers  
+    1962263   169.62.46.56      SECONDARY_ON_VLAN    PUBLIC          wdc07        2761690   8     0          0   
+    2008207   169.62.39.248     SECONDARY_ON_VLAN    PUBLIC          wdc07        2761690   8     0          0   
+    2342562   169.62.2.128      ADDITIONAL_PRIMARY   PUBLIC          wdc07        2761690   16    0          5 
+    ```
+    {: screen}
+        
+3. List your worker nodes and get their public IPs. In the output, the public IPs are listed in the **External-IP** column. Note which of these IP addresses are contained in the subnets you listed earlier, and note those subnet IDs. 
+
+4. For each subnet ID, run the command to get the subnet details. In each output, note the IP address in the **identifier** column. This is the IP address you must add to the IAM allowlist. 
+
+    ```sh
+    ibmcloud sl subnet detail <subnet_id>
+    ```
+    {: pre}
+
+    Example output.
+
+    ```sh
+    Name             Value   
+    ID               2342562   
+    identifier       169.62.2.128/28   
+    subnet type      ADDITIONAL_PRIMARY   
+    network space    PUBLIC   
+    gateway          169.62.2.129   
+    broadcast        169.62.2.143   
+    datacenter       wdc07   
+    usable ips       13   
+    IP address       ID          IP address      
+                    186531376   169.62.2.128      
+                    186531378   169.62.2.129      
+                    186531380   169.62.2.130      
+                    186531382   169.62.2.131      
+                    186531384   169.62.2.132      
+                    186531386   169.62.2.133      
+                    186531388   169.62.2.134      
+                    186531390   169.62.2.135      
+                    186531392   169.62.2.136      
+                    186531394   169.62.2.137      
+                    186531396   169.62.2.138      
+                    186531398   169.62.2.139      
+                    186531400   169.62.2.140      
+                    186531402   169.62.2.141      
+                    186531404   169.62.2.142      
+                    186531406   169.62.2.143      
+                        
+    virtual guests   hostname                                                 domain    public_ip      private_ip      
+                    kube-c8ofi5pw077drsbovf90-roks47class-default-00000187   iks.ibm   169.62.2.130   10.191.55.109      
+                    kube-c8ofi5pw077drsbovf90-roks47class-default-000002a2   iks.ibm   169.62.2.133   10.191.55.108      
+                    kube-c8ofi5pw077drsbovf90-roks47class-default-00000372   iks.ibm   169.62.2.135   10.191.55.121      
+                    kube-c8ofh6kw0jj8l6jovf8g-iks22classi-default-00000219   iks.ibm   169.62.2.132   10.191.55.105      
+                    kube-c8ofh6kw0jj8l6jovf8g-iks22classi-default-0000012f   iks.ibm   169.62.2.134   10.191.55.107     
+    ```
+    {: screen}
 
 

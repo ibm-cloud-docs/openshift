@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 subcollection: openshift
@@ -202,6 +202,10 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [3 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0322)
 
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
 
@@ -2706,49 +2710,37 @@ subcollection: openshift
 * [Worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node)
 
 
-## Creating and accessing clusters
-{: #sitemap_creating_and_accessing_clusters}
+## Creating clusters
+{: #sitemap_creating_clusters}
 
 
 [Creating clusters](/docs/openshift?topic=openshift-clusters#clusters)
-
-* [Sample CLI commands](/docs/openshift?topic=openshift-clusters#cluster_create_samples)
-
-    * [Classic clusters](/docs/openshift?topic=openshift-clusters#cluster_create_classic)
-
-    * [VPC clusters](/docs/openshift?topic=openshift-clusters#cluster_create_vpc)
 
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 
 * [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
 
-* [Creating a standard classic cluster](/docs/openshift?topic=openshift-clusters#clusters_standard)
-
-    * [Creating a standard classic cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_ui)
-
-    * [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-clusters#clusters_cli_steps)
-
-* [Creating a standard VPC cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2)
-
-    * [Creating a standard VPC cluster in the console](/docs/openshift?topic=openshift-clusters#clusters_vpcg2_ui)
-
-    * [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-clusters#cluster_vpcg2_cli)
-
-* [Creating a cluster on dedicated host infrastructure in the CLI](/docs/openshift?topic=openshift-clusters#cluster_dedicated_host_cli)
-
 * [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
 
-[Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates#templates)
+[Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
 
-* [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
+* [Creating a classic cluster in the console](/docs/openshift?topic=openshift-cluster-create-classic#clusters_ui)
 
-* [Creating a secure cluster by using a template from the UI](/docs/openshift?topic=openshift-templates#sch-secure-cluster-ui)
+* [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-classic#clusters_cli_steps)
 
-* [Creating a secure cluster by using a template with the CLI](/docs/openshift?topic=openshift-templates#tf-secure-cluster-cli)
+* [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster_create_classic)
 
-* [Next steps](/docs/openshift?topic=openshift-templates#sch-tf-whats-next)
+[Creating VPC Gen 2 clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
-[Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satellite-clusters)
+* [Creating a standard VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
+
+* [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
+
+* [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
+
+[Creating clusters on dedicated hosts](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
+
+[Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satellite-clusters)
 
 * [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
 
@@ -2767,6 +2759,21 @@ subcollection: openshift
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
 
 * [Limitations for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
+
+[Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates#templates)
+
+* [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
+
+* [Creating a secure cluster by using a template from the UI](/docs/openshift?topic=openshift-templates#sch-secure-cluster-ui)
+
+* [Creating a secure cluster by using a template with the CLI](/docs/openshift?topic=openshift-templates#tf-secure-cluster-cli)
+
+* [Next steps](/docs/openshift?topic=openshift-templates#sch-tf-whats-next)
+
+
+## Accessing clusters
+{: #sitemap_accessing_clusters}
+
 
 [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-access_cluster#access_cluster)
 
@@ -2988,7 +2995,7 @@ subcollection: openshift
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
-    * [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
+* [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
 
 * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
@@ -3349,29 +3356,31 @@ subcollection: openshift
 
 * [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
 
-[Classic: Opening required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall#firewall)
+[Classic: Opening required ports and IP addresses in your allowlist](/docs/openshift?topic=openshift-firewall#firewall)
 
-* [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-firewall#corporate)
+* [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-firewall#corporate)
 
-    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_bx)
+    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_bx)
 
-    * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
 
-    * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_calicoctl)
+    * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_calicoctl)
 
-* [Opening ports in gateway appliance firewalls](/docs/openshift?topic=openshift-firewall#vyatta_firewall)
+* [Opening ports in gateway appliance allowlists](/docs/openshift?topic=openshift-firewall#vyatta_firewall)
 
-    * [Opening required ports in a public firewall](/docs/openshift?topic=openshift-firewall#firewall_outbound)
+    * [Opening required ports in a public allowlist](/docs/openshift?topic=openshift-firewall#firewall_outbound)
 
-    * [Opening required ports in a private firewall](/docs/openshift?topic=openshift-firewall#firewall_private)
+    * [Opening required ports in a private allowlist](/docs/openshift?topic=openshift-firewall#firewall_private)
 
-    * [Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
+    * [Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
 
-* [Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#allowlist_workers)
+* [Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists](/docs/openshift?topic=openshift-firewall#firewall_workers)
 
-* [Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_firewall)
+
+    * [Getting your {{site.data.keyword.containershort}} subnet IP addresses](/docs/openshift?topic=openshift-firewall#iam_cidr_ip)
 
 [Restricting network traffic to edge worker nodes on classic infrastructure](/docs/openshift?topic=openshift-edge#edge)
 
@@ -3450,23 +3459,25 @@ subcollection: openshift
 
 * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
 
-[VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
+[VPC: Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
-* [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
+* [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
 
-    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
+    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
 
-    * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
+    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
 
-    * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
+    * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
 
-    * [Allowing access to the {{site.data.keyword.redhat_openshift_notm}} image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
+    * [Allowing access to the {{site.data.keyword.redhat_openshift_notm}} image registry in an allowlist](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
 
-* [Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
+* [Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
 
     * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
 
     * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
+
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-vpc-firewall#iam_allowlist_vpc)
 
 
 ## Managing security and compliance with {{site.data.keyword.redhat_openshift_notm}}
@@ -7901,6 +7912,10 @@ subcollection: openshift
 
 
 [Why is my cluster missing the public `containers.appdomain.cloud` subdomain?](/docs/openshift?topic=openshift-roks_ts_subdomain#roks_ts_subdomain)
+
+[Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
+
+[Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
 [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails#cs_vpn_fails)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -18,7 +18,7 @@ subcollection: openshift
 # Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}
 {: #file_storage}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the right storage option for you, see [Choosing a storage solution](/docs/containers?topic=containers-storage_planning#choose_storage_solution). For pricing information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
 {: shortdesc}
 
 
@@ -115,7 +115,7 @@ For more information, see the following links.
 
 Every storage class specifies the type of {{site.data.keyword.filestorage_short}} that you provision, including available size, IOPS, file system, and the retention policy.  
 
-After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](#file_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
+After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](#file_change_storage_configuration) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/containers?topic=containers-kube_concepts#update_storageclass) from the old storage instance to your new one.
 {: important}
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -232,7 +232,7 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 ## Adding {{site.data.keyword.filestorage_short}} to apps
 {: #add_file}
 
-Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the physical storage device in your IBM Cloud infrastructure account.
+Create a persistent volume claim (PVC) to [dynamically provision](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the physical storage device in your IBM Cloud infrastructure account.
 {: shortdesc}
 
 Before you begin:
@@ -317,7 +317,7 @@ To add {{site.data.keyword.filestorage_short}}:
     :   This option is available for the custom storage classes only (`ibmc-file-custom / ibmc-file-retain-custom`). Specify the total IOPS for the storage, selecting a multiple of 100 within the allowable range. If you choose an IOPS other than one that is listed, the IOPS is rounded up.
     
     `storageClassName`
-    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](#file_storageclass_reference) or [create your own storage class](#file_custom_storageclass). If you don't specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`. Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).
+    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](#file_storageclass_reference) or [create your own storage class](#file_custom_storageclass). If you don't specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`. Want to set your own default? See [Changing the default storage class](/docs/containers?topic=containers-kube_concepts#default_storageclass).
 
 
     If you want to use a customized storage class, create your PVC with the corresponding storage class name, a valid IOPS and size.   
@@ -452,7 +452,7 @@ To add {{site.data.keyword.filestorage_short}}:
 ## Using existing {{site.data.keyword.filestorage_short}} in your cluster
 {: #existing_file}
 
-If you have an existing physical storage device that you want to use in your cluster, you can manually create the PV and PVC to [statically provision](/docs/openshift?topic=openshift-kube_concepts#static_provisioning) the storage.
+If you have an existing physical storage device that you want to use in your cluster, you can manually create the PV and PVC to [statically provision](/docs/containers?topic=containers-kube_concepts#static_provisioning) the storage.
 {: shortdesc}
 
 Before you begin:
@@ -580,7 +580,7 @@ If you want to use existing storage that you provisioned earlier, but never used
     ```
     {: pre}
 
-4. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields don't match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
+4. Create another configuration file to create your PVC. In order for the PVC to match the PV that you created earlier, you must choose the same value for `storage` and `accessMode`. The `storage-class` field must be an empty string. If any of these fields don't match the PV, then a new PV, and a new physical storage instance is [dynamically provisioned](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning).
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -632,7 +632,7 @@ If you want to use existing storage that you provisioned earlier, but never used
     {: screen}
 
 
-You successfully created a PV and bound it to a PVC. Cluster users can now [mount the PVC](/docs/openshift?topic=openshift-file_storage#file_app_volume_mount) to their deployments and start reading from and writing to the PV object.
+You successfully created a PV and bound it to a PVC. Cluster users can now [mount the PVC](/docs/containers?topic=containers-file_storage#file_app_volume_mount) to their deployments and start reading from and writing to the PV object.
 
 
 
@@ -652,7 +652,7 @@ You can't deploy two stateful sets at the same time. If you try to create a stat
 
 **How can I create my stateful set in a specific zone?**
 
-In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
+In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
 **Can I delay binding of a PV to my stateful pod until the pod is ready?**
 
@@ -1250,56 +1250,62 @@ You can [set up periodic snapshots for your {{site.data.keyword.filestorage_shor
 Complete the following steps to create a snapshot for your volume.
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2. Log in to the `ibmcloud sl` CLI. 
+1. Log in to the `ibmcloud sl` CLI. 
 
     ```sh
     ibmcloud sl init
     ```
     {: pre}
     
-3. List existing PVs in your cluster. 
+1. List existing PVs in your cluster. 
 
     ```sh
     oc get pv
     ```
     {: pre}
 
-4. Get the details for the PV for which you want to create snapshot space and note the volume ID, the size and the IOPS. The volume ID, the size and the IOPS can be found in the **Labels** section of your CLI output.
+1. Get the details for the PV for which you want to create snapshot space and note the volume ID, the size and the IOPS. The volume ID, the size and the IOPS can be found in the **Labels** section of your CLI output.
 
     ```sh
     oc describe pv <pv_name>
     ```
     {: pre}  
     
-5. Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. 
+1. Create the snapshot size for your existing volume with the parameters that you retrieved in the previous step. 
 
     ```sh
     ibmcloud sl file snapshot-order <volume_ID> --size <size> --tier <iops>
     ```
     {: pre}
     
-6. Wait for the snapshot size to create. The snapshot size is successfully provisioned when the **Snapshot Size (GB)**in your CLI output changes from 0 to the size that you ordered.
+1. Wait for the snapshot size to create. The snapshot size is successfully provisioned when the **Snapshot Size (GB)**in your CLI output changes from 0 to the size that you ordered.
 
     ```sh
     ibmcloud sl file volume-detail &lt;volume_ID>
     ```
     {: pre}
 
-7. Create the snapshot for your volume and note the ID of the snapshot that is created for you. 
+1. Create the snapshot for your volume and note the ID of the snapshot that is created for you. 
 
     ```sh
     ibmcloud sl file snapshot-create <volume_ID>
     ```
     {: pre}
     
-8. Verify that the snapshot is created successfully. 
+1. Verify that the snapshot is created successfully. 
 
     ```sh
     ibmcloud sl file snapshot-list <volume_ID>
     ```
     {: pre}
 
-9. To restore data from a snapshot to an existing volume, run the following command.
+1. Set the snapshot schedule. For more information on the options available for your snapshot schedule, refer to the [CLI documentation](/docs/cli?topic=cli-sl-block-storage#sl_block_snapshot_enable). 
+
+    ```sh
+    ibmcloud sl block snapshot-enable VOLUME_ID <OPTIONS>
+    ```
+
+1. To restore data from a snapshot to an existing volume, run the following command.
     ```sh
     ibmcloud sl file snapshot-restore <volume_ID> <snapshot_ID>
     ```
@@ -1326,7 +1332,7 @@ A duplicate has the same data as the original storage instance at the point in t
 ### Backing up data to {{site.data.keyword.cos_full}}
 {: #file-backup-helm}
 
-You can use the [`ibm-backup-restore` Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore) to spin up a backup and restore pod in your cluster.
+You can use the [`ibm-backup-restore` Helm chart](/docs/containers?topic=containers-utilities#ibmcloud-backup-restore) to spin up a backup and restore pod in your cluster.
 {: shortdesc}
 
 This pod contains a script to run a one-time or periodic backup for any persistent volume claim (PVC) in your cluster. Data is stored in your {{site.data.keyword.cos_full}} instance that you set up in a zone.
@@ -1453,7 +1459,7 @@ You can create a customized storage class and use the storage class in your PVC.
 
 {{site.data.keyword.openshiftlong_notm}} provides [pre-defined storage classes](#file_storageclass_reference) to provision {{site.data.keyword.filestorage_short}} with a particular tier and configuration. Sometimes, you might want to provision storage with a different configuration that is not covered in the pre-defined storage classes. You can use the examples in this topic to find sample customized storage classes.
 
-To create your customized storage class, see [Customizing a storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass). Then, [use your customized storage class in your PVC](#add_file).
+To create your customized storage class, see [Customizing a storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass). Then, [use your customized storage class in your PVC](#add_file).
 
 ### Creating topology-aware storage
 {: #file-topology}
