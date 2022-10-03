@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-10-03"
 
 keywords: file, debug, help
 
@@ -189,7 +189,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
 
 
-3. If a more recent version is available, install the new version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)(/docs/openshift?topic=openshift-portworx#update_portworx).
+3. If a more recent version is available, install the new version. For instructions, see [Updating Portworx in your cluster](/docs/containers?topic=containers-portworx#update_portworx)(/docs/openshift?topic=openshift-portworx#update_portworx).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -136,7 +136,7 @@ Minimum required permissions
     You can't read or write to your bucket from the console. You can only access your bucket from within an app pod on your cluster.
     {: note}
 
-11. [Create a deployment YAML that references the PVC you created](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps).
+11. [Create a deployment YAML that references the PVC you created](/docs/containers?topic=containers-storage_cos_apps#create-cos-deployment-steps).
 
 12. Create the app in your cluster.
 

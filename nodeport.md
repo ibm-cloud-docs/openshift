@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-10-03"
 
 keywords: openshift, app access
 
@@ -91,7 +91,7 @@ To use a NodePort,
     
     | Component | Description |
     | ----- | -------- |
-    | `name` | Replace `<my-nodeport-service>` with a name for your NodePort service. Learn more about [securing your personal information](/docs/openshift?topic=openshift-security#pi) when you work with Kubernetes resources. |
+    | `name` | Replace `<my-nodeport-service>` with a name for your NodePort service. Learn more about [securing your personal information](/docs/containers?topic=containers-security#pi) when you work with Kubernetes resources. |
     | `labels` | Replace `<my-label-key>` and `<my-label-value>` with the label that you want to use for your service. |
     | `selector` | Replace `<my-selector-key>` and `<my-selector-value>` with the key/value pair that you used in the `spec.template.metadata.labels` section of your deployment YAML. To associate the service with the deployment, the selector must match the deployment labels. |
     | `port` | Replace `<8081>` with the port that your service listens on. |

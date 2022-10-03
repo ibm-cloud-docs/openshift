@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -120,7 +120,7 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
     ```
     {: screen}
 
-5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install), or if you already installed the plug-in, [decide on the configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
+5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install), or if you already installed the plug-in, [decide on the configuration](/docs/containers?topic=containers-storage_cos_install#configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
 
 6. **Optional**: [Add your secret to the default storage classes](/docs/containers?topic=containers-storage_cos_install).
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -39,7 +39,7 @@ If no API key is set for the `default` resource group, no VPCs are listed in the
 To set an API key for the `default` resource group, use the {{site.data.keyword.openshiftlong_notm}} CLI.
 {: tsResolve}
 
-1. Log in to the command line as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
+1. Log in to the command line as the account owner. If you want a different user than the account owner to set the API key, first [ensure that the API key owner has the correct permissions](/docs/containers?topic=containers-access-creds#owner_permissions).
     ```sh
     ibmcloud login [--sso]
     ```
