@@ -3356,29 +3356,31 @@ subcollection: openshift
 
 * [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
 
-[Classic: Opening required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall#firewall)
+[Classic: Opening required ports and IP addresses in your allowlist](/docs/openshift?topic=openshift-firewall#firewall)
 
-* [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-firewall#corporate)
+* [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-firewall#corporate)
 
-    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_bx)
+    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_bx)
 
-    * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
 
-    * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-firewall#firewall_calicoctl)
+    * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_calicoctl)
 
-* [Opening ports in gateway appliance firewalls](/docs/openshift?topic=openshift-firewall#vyatta_firewall)
+* [Opening ports in gateway appliance allowlists](/docs/openshift?topic=openshift-firewall#vyatta_firewall)
 
-    * [Opening required ports in a public firewall](/docs/openshift?topic=openshift-firewall#firewall_outbound)
+    * [Opening required ports in a public allowlist](/docs/openshift?topic=openshift-firewall#firewall_outbound)
 
-    * [Opening required ports in a private firewall](/docs/openshift?topic=openshift-firewall#firewall_private)
+    * [Opening required ports in a private allowlist](/docs/openshift?topic=openshift-firewall#firewall_private)
 
-    * [Opening ports in a public or private firewall for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
+    * [Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
 
-* [Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-firewall#allowlist_workers)
+* [Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists](/docs/openshift?topic=openshift-firewall#firewall_workers)
 
-* [Updating IAM firewalls for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_allowlist)
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_firewall)
+
+    * [Getting your {{site.data.keyword.containershort}} subnet IP addresses](/docs/openshift?topic=openshift-firewall#iam_cidr_ip)
 
 [Restricting network traffic to edge worker nodes on classic infrastructure](/docs/openshift?topic=openshift-edge#edge)
 
@@ -3457,23 +3459,25 @@ subcollection: openshift
 
 * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
 
-[VPC: Opening required ports and IP addresses in other network firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
+[VPC: Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
-* [Opening ports in a corporate firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
+* [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
 
-    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
+    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
 
-    * [Running `oc` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
+    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
 
-    * [Running `calicoctl` commands from behind a firewall](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
+    * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
 
-    * [Allowing access to the {{site.data.keyword.redhat_openshift_notm}} image registry in a firewall](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
+    * [Allowing access to the {{site.data.keyword.redhat_openshift_notm}} image registry in an allowlist](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
 
-* [Allowing traffic from your cluster in other services' firewalls or in on-premises firewalls](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
+* [Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
 
     * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
 
     * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
+
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-vpc-firewall#iam_allowlist_vpc)
 
 
 ## Managing security and compliance with {{site.data.keyword.redhat_openshift_notm}}
