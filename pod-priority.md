@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -28,7 +28,7 @@ As a cluster administrator, you want to control which pods are more critical to 
 By setting pod priority, you can help prevent lower priority workloads from impacting critical workloads in your cluster, especially in cases where the cluster starts to reach its resource capacity.
 
 
-Make sure that you have [set up proper user access](/docs/openshift?topic=openshift-users#users) to your cluster, and if applicable, [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs). Access policies and SCCs can help prevent untrusted users from deploying high priority pods that prevent other pods from scheduling.
+Make sure that you have [set up proper user access](/docs/containers?topic=containers-users#users) to your cluster, and if applicable, [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs). Access policies and SCCs can help prevent untrusted users from deploying high priority pods that prevent other pods from scheduling.
 {: tip}
 
 
@@ -86,7 +86,7 @@ To set pod priority, you need to use a priority class.
 
 Before you begin:
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the `default` namespace.
 
 To use a priority class:
 
@@ -151,7 +151,7 @@ Assign a priority class to your pod spec to set the pod's priority within your {
 
 Before you begin:
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) in the namespace that you want to deploy the pods to.
+* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) in the namespace that you want to deploy the pods to.
 * [Understand how priority scheduling works](#priority_scheduling), as priority can preempt existing pods and affect how your cluster's resources are consumed.
 
 To assign priority to your pods:

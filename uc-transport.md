@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -35,8 +35,8 @@ An IT Exec has worldwide shipping routing and scheduling systems that partners i
 {{site.data.keyword.openshiftlong_notm}} scales containerized apps with five 9s of availability to meet growing demands. App deployments occur 40 times daily when Developers experiment easily, pushing changes to Development and Test systems quickly. The IoT Platform makes access to IoT data easy.
 
 Key technologies:    
-* [Multi-regions for business partner ecosystem](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
-* [Horizontal scaling](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
+* [Multi-regions for business partner ecosystem](/docs/containers?topic=containers-regions-and-zones#regions-and-zones)
+* [Horizontal scaling](/docs/containers?topic=containers-plan_deploy#highly_available_apps)
 * [Open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [Cloud services for innovation](https://www.ibm.com/cloud/products#analytics){: external}
 * [{{site.data.keyword.messagehub_full}} to feed event data to apps](/docs/EventStreams?topic=EventStreams-about#about)
@@ -138,7 +138,7 @@ An HR Exec (CHRO) needs a new HR benefits site with an innovative chatbot, but c
 {{site.data.keyword.openshiftlong_notm}} provides easy spin-up of compute. Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their traditional software development tools get a boost when they add on IBM {{site.data.keyword.watson}} Assistant. The new benefits site was created in less than 3 weeks.
 
 Key technologies:    
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
 * [Chatbot service powered by {{site.data.keyword.watson}}](https://developer.ibm.com/components/watson-assistant/){: external}
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)

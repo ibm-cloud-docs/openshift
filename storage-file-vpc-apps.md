@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -21,7 +21,7 @@ subcollection: openshift
 
 Every storage class specifies the type of {{site.data.keyword.filestorage_short}} that you provision, including available size, IOPS, file system, and the retention policy.  
 
-After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](/docs/vpc?topic=vpc-file-storage-profiles#fs-tiers){: external} if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
+After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](/docs/vpc?topic=vpc-file-storage-profiles#fs-tiers){: external} if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/containers?topic=containers-kube_concepts#update_storageclass) from the old storage instance to your new one.
 {: important}
 
 
@@ -29,7 +29,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 1. Decide on a storage configuration by reviewing the storage class reference.
 
-    For more information about each storage class, see the [storage class reference](docs link). If you don't find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-custom-sc).
+    For more information about each storage class, see the [storage class reference](docs link). If you don't find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](/docs/containers?topic=containers-storage-file-vpc-managing#storage-file-vpc-custom-sc).
     {: tip}
 
 1. List available storage classes in {{site.data.keyword.openshiftlong_notm}}.
@@ -65,7 +65,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 ## Deploying an app that uses {{site.data.keyword.filestorage_short}}
 {: #vpc_add_file}
 
-Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
+Create a persistent volume claim (PVC) to [dynamically provision](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
 1. Create a configuration file to define your persistent volume claim (PVC) and save the configuration as a `.yaml` file. The following example creates a claim that is named `mypvc` by using the `ibmc-vpc-file-5iops-tier` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
 

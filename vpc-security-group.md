@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-10-03"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -311,7 +311,7 @@ Keep in mind that in addition to any rules you create, you must also create the 
 When you create a new VPC cluster, the default VPC security group, which has a randomly generated name, and the cluster security group, named `kube-<cluster-id>`, are automatically created and applied to all workers in the cluster. When you create your VPC cluster, you can also attach additional security groups alongside, or instead of, the default VPC security groups. The security groups applied to the workers in the cluster are a combination of the security groups applied when you create the cluster and [when you create the worker pool](#vpc-sg-worker-pool). A total of five security groups can be applied to workers, including the default security groups and any security groups applied to the worker pool. Note that these security group options are only available in the CLI. 
 {: shortdesc}
 
-The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. 
+The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. 
 {: important}
 
 ### If you only want the default VPC and cluster security groups and no additional security groups

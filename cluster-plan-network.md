@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-03"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -32,7 +32,7 @@ First time creating a cluster? First, try out the [tutorial for creating a VPC c
 
 
 
-Review the following cluster configurations and take the appropriate action in your account before provisioning your clusters. For more information, see [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare).
+Review the following cluster configurations and take the appropriate action in your account before provisioning your clusters. For more information, see [Preparing to create clusters at the account level](/docs/containers?topic=containers-clusters#cluster_prepare).
 
 - For VPC Clusters that don't require Classic Infrastructure Access, no account changes are required.
 

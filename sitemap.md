@@ -207,6 +207,8 @@ subcollection: openshift
 
     * [3 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0322)
 
+        * CLI change log update
+
 * [September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep22)
 
     * [30 September 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep3022)
@@ -5230,6 +5232,18 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
 
+    * [`ibmcloud oc ingress status-report disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_disable)
+
+    * [`ibmcloud oc ingress status-report enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_enable)
+
+    * [`ibmcloud oc ingress status-report get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_get)
+
+    * [`ibmcloud oc ingress status-report ignore add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_add)
+
+    * [`ibmcloud oc ingress status-report ignore ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_ls)
+
+    * [`ibmcloud oc ingress status-report ignore rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
+
 * [`nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns)
 
     * [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add)
@@ -5345,6 +5359,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
 
 * [Version 1.0.452](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
 
@@ -5598,6 +5614,10 @@ subcollection: openshift
 * [Preparing to update](/docs/openshift?topic=openshift-cs_versions_410#prep-up-410)
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_410#410_before)
+
+    * [Update after master](/docs/openshift?topic=openshift-cs_versions_410#410_after)
+
+* [Migrating your worker nodes to RHEL 8](/docs/openshift?topic=openshift-cs_versions_410#410_rhel-migrate)
 
 [Version 4.10 change log](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_410)
 
@@ -7622,7 +7642,7 @@ subcollection: openshift
 
 * [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 
-* [Which Kubernetes versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
+* [Which Red Hat Enterprise Linux versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
 
 * [Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
 

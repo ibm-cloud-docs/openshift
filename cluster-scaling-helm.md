@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-10-03"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -26,7 +26,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
 {: shortdesc}
 
 1. [Prepare your cluster for autoscaling](/docs/containers?topic=containers-cluster-scaling-classic-vpc).
-2. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the **Helm version 3** client on your local machine.
+2. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the **Helm version 3** client on your local machine.
 3. Add and update the Helm repo where the cluster autoscaler Helm chart is.
 
     ```sh
@@ -56,7 +56,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     :   Specify the maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `min=<number_of_workers>` size.
     
     `min=<number_of_workers>`
-    :   Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
+    :   Specify the minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale below this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
     
     `enabled=(true|false)`
     :   Set the value to `true` to enable the cluster autoscaler to scale your worker pool. Set the value to `false` to stop the cluster autoscaler from scaling the worker pool. Later, if you want to [remove the cluster autoscaler](#ca_rm),  you must first disable each worker pool in the ConfigMap.
@@ -322,7 +322,7 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
 ## Removing the cluster autoscaler
 {: #ca_rm}
 
-If you don't want to automatically scale your worker pools, you can uninstall the cluster autoscaler Helm chart. After the removal, you must [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools manually.
+If you don't want to automatically scale your worker pools, you can uninstall the cluster autoscaler Helm chart. After the removal, you must [resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) your worker pools manually.
 {: shortdesc}
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -400,12 +400,12 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 ## Cluster autoscaler Helm chart parameter reference
 {: #ca_helm_ref}
 
-This table refers to the cluster autoscaler Helm chart parameters. For add-on values, see [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca_addon_ref)
+This table refers to the cluster autoscaler Helm chart parameters. For add-on values, see [Cluster autoscaler add-on parameter reference](/docs/containers?topic=containers-cluster-scaling-install-addon#ca_addon_ref)
 {: note}
 
 
 `api_route`
-:   Set the {{site.data.keyword.openshiftlong_notm}} API [endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api) for the region that your cluster is in. No default; uses the targeted region that your cluster is in.
+:   Set the {{site.data.keyword.openshiftlong_notm}} API [endpoint](/docs/containers?topic=containers-kubernetes-service-cli#cs_cli_api) for the region that your cluster is in. No default; uses the targeted region that your cluster is in.
 
 `resources.limits.cpu`
 :   Set the maximum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod can consume. The default value is `300m`.

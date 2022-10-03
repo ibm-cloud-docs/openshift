@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-03"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -137,6 +137,9 @@ Single tenancy
 
 Operating System
 :   Worker nodes run on the Red Hat Enterprise Linux 7 or Red Hat Enterprise Linux 8 operating system.
+    - For cluster version 4.10 and later, only RHEL 8 is supported.
+    - For cluster version 4.9, you can choose RHEL 7 or RHEL 8, however the default operating system is RHEL 7.
+    - For cluster versions 4.8 and earlier, only RHEL 7 is supported.
 
 CRI-O container runtime
 :   Your worker nodes are installed with [CRI-O](https://cri-o.io/){: external} as the container runtime interface. For more information, see [Container runtime](/docs/openshift?topic=openshift-security#container-runtime).

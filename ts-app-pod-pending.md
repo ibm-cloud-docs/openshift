@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -37,7 +37,7 @@ If this cluster is an existing one:
 *  The pod might have exceeded a resource request or limit.
 
 
-This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster and the [**Manager** service access role](/docs/openshift?topic=openshift-users#checking-perms) for all namespaces.
+This task requires the {{site.data.keyword.cloud_notm}} IAM [**Administrator** platform access role](/docs/containers?topic=containers-users#checking-perms) for the cluster and the [**Manager** service access role](/docs/containers?topic=containers-users#checking-perms) for all namespaces.
 {: tsResolve}
 
 If you just created the {{site.data.keyword.redhat_openshift_notm}} cluster, run the following command and wait for the worker nodes to initialize.
@@ -81,7 +81,7 @@ If this cluster is an existing one, check your cluster capacity.
         ```
         {: pre}
 
-    2. If the request exceeds the available capacity, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with worker nodes that can fulfill the request.
+    2. If the request exceeds the available capacity, [add a new worker pool](/docs/containers?topic=containers-add_workers#add_pool) with worker nodes that can fulfill the request.
 
 6. If your pods still stay in a **pending** state after the worker node is fully deployed, review the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/#my-pod-stays-pending){: external} to further troubleshoot the pending state of your pod.
 

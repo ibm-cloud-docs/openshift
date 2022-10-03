@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-10-03"
 
 keywords: openshift, dedicated hosts, host pool, dedicated pool
 
@@ -60,7 +60,7 @@ Complete the following steps to resolve the issue.
     ```
     {: pre}
 
-    * If there are no dedicated hosts in the zone, [create a new dedicated host in the zone](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli). After creating a host, [replace the worker node to reprovision](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace).
+    * If there are no dedicated hosts in the zone, [create a new dedicated host in the zone](/docs/containers?topic=containers-dedicated-hosts#setup-dedicated-host-cli). After creating a host, [replace the worker node to reprovision](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace).
 
     * If there are available hosts in the zone, but placement is not enabled on the dedicated host you want to use, enable host placement. 
         ```sh
@@ -68,7 +68,7 @@ Complete the following steps to resolve the issue.
         ```
         {: pre}
 
-        After enabling host placement, wait to see if provisioning succeeds. If you still see provisioning errors, continue the steps to verify there are enough resources available. Or, [replace the worker node to reprovision](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace).
+        After enabling host placement, wait to see if provisioning succeeds. If you still see provisioning errors, continue the steps to verify there are enough resources available. Or, [replace the worker node to reprovision](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace).
     
 1. If there are available hosts, and placement is enabled, review the details of your dedicated host and verify there are enough resources available to create the worker node.
     ```sh
@@ -79,8 +79,8 @@ Complete the following steps to resolve the issue.
     You can also review your dedicated host resources in the [console](https://cloud.ibm.com/kubernetes/dedicated-hosts){: external}.
     {: tip}
     
-    * If there are enough resources available, [replace the worker node that failed to reprovision](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace). Note that in some cases, it is not possible to reach 100% capacity.
-    * If there are not enough resources on the dedciated host, reallocate your workloads to free up capacity on the host, or [create a new dedicated host in the zone](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli). 
+    * If there are enough resources available, [replace the worker node that failed to reprovision](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). Note that in some cases, it is not possible to reach 100% capacity.
+    * If there are not enough resources on the dedciated host, reallocate your workloads to free up capacity on the host, or [create a new dedicated host in the zone](/docs/containers?topic=containers-dedicated-hosts#setup-dedicated-host-cli). 
 
 
 

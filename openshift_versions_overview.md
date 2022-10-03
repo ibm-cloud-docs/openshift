@@ -32,7 +32,7 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 ## Available {{site.data.keyword.redhat_openshift_notm}} versions
 {: #openshift_versions_available}
 
-{{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. The worker node operating system is Red Hat Enterprise Linux (RHEL) 7.  
+{{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. The worker node operating system is Red Hat Enterprise Linux (RHEL) 7.  Note that different {{site.data.keyword.redhat_openshift_notm}} versions might support different RHEL versions. 
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}
@@ -48,14 +48,14 @@ Supported versions
 :   **Default**: 4.10 (Kubernetes 1.23)
     - Release date: **27 Apr 2022**
     - Tentative unsupported date: **25 Oct 2023**`†`
-    - RHEL 7
+    - RHEL 8 (default), RHEL 7 (deprecated)
     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
    
 :   4.9 (Kubernetes 1.22)
     - Release date: **09 Feb 2022**
     - Tentative unsupported date: **12 Jul 2023**`†`
-    - RHEL 7
+    - RHEL 8, RHEL 7 (default)
     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
 

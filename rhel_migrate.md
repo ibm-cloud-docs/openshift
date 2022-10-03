@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-29"
+lastupdated: "2022-10-03"
 
 keywords: rhel, os, operating system
 
@@ -83,7 +83,7 @@ Version 4.6, 4.7 and 4.8 clusters
 
     ```sh
     Name            ID                              Flavor                 OS              Workers 
-    my_workerpool   aaaaa1a11a1aa1aaaaa111aa11      b3c.4x16.encrypted     REDHAT_7_64    0 
+    my_workerpool   aaaaa1a11a1aa1aaaaa111aa11      b3c.4x16.encrypted     REDHAT_8_64    0 
     ```
     {: screen}
 

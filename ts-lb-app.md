@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -46,7 +46,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
     ```
     {: pre}
 
-2. For version 2.0 NLBs: Ensure that you complete the [NLB 2.0 prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).
+2. For version 2.0 NLBs: Ensure that you complete the [NLB 2.0 prerequisites](/docs/containers?topic=containers-loadbalancer-v2#ipvs_provision).
 
 3. Check the accuracy of the configuration file for your NLB service.
 
@@ -109,7 +109,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
     :   To use the NLB service, you must have a standard cluster with at least two worker nodes.
     
     No cloud provider IPs are available to fulfill the NLB service request. Add a portable subnet to the cluster and try again.
-    :   This error message indicates that no portable public IP addresses are left to be allocated to your NLB service. Refer to [Adding subnets to clusters](/docs/openshift?topic=openshift-subnets#subnets) to find information about how to request portable public IP addresses for your cluster. After portable public IP addresses are available to the cluster, the NLB service is automatically created.
+    :   This error message indicates that no portable public IP addresses are left to be allocated to your NLB service. Refer to [Adding subnets to clusters](/docs/containers?topic=containers-subnets#subnets) to find information about how to request portable public IP addresses for your cluster. After portable public IP addresses are available to the cluster, the NLB service is automatically created.
     
     Requested cloud provider IP `<cloud-provider-ip>` is not available. The following cloud provider IPs are available: `<available-cloud-provider-ips>`
     :   You defined a portable public IP address for your load balancer YAML by using the `loadBalancerIP` section, but this portable public IP address is not available in your portable public subnet. In the `loadBalancerIP` section your configuration script, remove the existing IP address and add one of the available portable public IP addresses. You can also remove the `loadBalancerIP` section from your script so that an available portable public IP address can be allocated automatically.
