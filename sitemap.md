@@ -7642,7 +7642,7 @@ subcollection: openshift
 
 * [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 
-* [Which Kubernetes versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
+* [Which Red Hat Enterprise Linux versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
 
 * [Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
 

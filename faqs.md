@@ -158,7 +158,7 @@ Keep in mind that some services such as Ingress might require multiple worker no
 `*` **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you can't later resize back down to 1 worker node.
 {: note}
 
-## Which Kubernetes versions does the service support?
+## Which Red Hat Enterprise Linux versions does the service support?
 {: #supported_kube_versions}
 {: faq}
 {: support}

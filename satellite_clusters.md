@@ -108,10 +108,17 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     * To ensure that hosts are automatically assigned as worker nodes in the default worker pool of your cluster, specify those hosts' labels in the `--host-label` flags, and specify the number of worker nodes per zone in the `--workers` flag. 
     * To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
     * For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
-    * Optional: Specify the operating system of the hosts that you want to use to create your cluster. You can use `RHEL7`, `RHEL8`, or `RHCOS` hosts. 
-        * If you want to use RHCOS hosts in your cluster, you must create a Red Hat CoreOS enabled location. Support for Red Hat CoreOS hosts is available for {{site.data.keyword.satelliteshort}} locations in Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Tokyo (`jp-tok`), Toronto (`ca-tor` , and Washington D.C. (`wdc`) regions and for cluster version 4.9 and later. To see if your location is CoreOS enabled, run `ibmcloud sat location get --location LOCATION`. 
-        * For clusters created in default locations without Red Hat CoreOS enabled, specify  a `RHEL` [version that corresponds to your cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). 
-        * If no option is specified,  the default `RHEL` version that corresponds to the cluster version is used.
+    * Optional: `--operating-system SYSTEM`
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. Red Hat CoreOS is available in all [regions where Satellite is supported](/docs/satellite?topic=satellite-sat-regions).
+:   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
+:   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
+     - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
+     - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
+     - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
+     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+
+:   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+
     
     Example `cluster create` command.
 

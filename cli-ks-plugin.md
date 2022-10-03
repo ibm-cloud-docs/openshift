@@ -6977,8 +6977,6 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 :   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
-
-
 `--pod-subnet SUBNET`
 :    Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
 :    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
@@ -7076,8 +7074,6 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
      - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
 
 :   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
-
-
 
 `--size-per-zone WORKERS_PER_ZONE`
 :    Required. The number of worker nodes to request in each zone. Ensure that you [attach enough hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to be used as worker nodes. For example, if you enter `2` and then [add 2 more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) to this worker pool after you create it, ensure that at least 6 unassigned hosts are attached to your location so that they can be assigned as 2 worker nodes in each of the 3 zones in your worker pool.

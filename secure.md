@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-29"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -235,7 +235,7 @@ The image does not include components that ensure secure end-to-end communicatio
 ![Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security.](images/oc_worker_setup.png "Worker node setup in {{site.data.keyword.openshiftlong_notm}}"){: caption="Figure 2. Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security" caption-side="bottom"}
 
 CIS-compliant RHEL image
-:   Every worker node is set up with a Red Hat Enterprise Linux (RHEL) operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine can't change this operating system to another operating system. To review the current RHEL version, run `oc get nodes -o wide`. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.
+:   Every worker node is set up with a Red Hat Enterprise Linux operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine can't change this operating system to another operating system. To review the current RHEL version, run `oc get nodes -o wide`. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.
     {{site.data.keyword.openshiftlong_notm}} uses a Red Hat Enterprise Linux kernel for worker nodes. You can run containers based on any Linux distribution in {{site.data.keyword.openshiftlong_notm}}. Check with your container image vendor to verify that your container images can run on a Red Hat Enterprise kernel.
     {: important}
 
