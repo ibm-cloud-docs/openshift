@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-10-03"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -70,5 +70,24 @@ The following table shows the actions that you must take before you [update the 
 | Kubernetes API server metrics job name changed | Kubernetes API server metrics now use job `kube-apiserver` rather than `cluster-version-operator`. Update any custom metrics and alerts to use the new job name. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.10" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
+
+### Update after master
+{: #410_after}
+
+| Type | Description |
+| --- | --- |
+| **Deprecated**: RHEL 7 | RHEL 7 is deprecated in version 4.10. [Migrate your worker nodes to RHEL 8](#410_rhel-migrate). |
+{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.10" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
+
+## Migrating your worker nodes to RHEL 8
+{: #410_rhel-migrate}
+
+With the release of RHEL 8, the use of RHEL 7 worker nodes is deprecated in clusters that run version 4.10. You cannot upgrade RHEL 7 worker nodes to RHEL 8. Instead, you must provision a new worker pool and then delete the previous worker pool. In versions 4.10 and later, worker nodes in the new worker pool run RHEL 8 by default. See [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate).
+{: shortdesc}
+
+If you want to upgrade a 4.9 cluster with RHEL 7 worker nodes to a 4.10 cluster with RHEL 8 worker nodes, [upgrade your cluster first](#prep-up-410) before you follow the steps to migrate your worker nodes. 
+{: important}
+
 
 

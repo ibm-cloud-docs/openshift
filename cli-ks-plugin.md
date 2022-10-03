@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-03"
 
 keywords: openshift
 
@@ -4785,6 +4785,213 @@ ibmcloud oc ingress secret update --cluster my_cluster --name my_alb_secret --na
 {: pre}
 
 
+
+
+### `ibmcloud oc ingress status-report disable`
+{: #cs_ingress_status_report_disable}
+
+Disable status reporting for Ingress components in a cluster.
+
+```sh
+ibmcloud oc ingress status-report disable --cluster CLUSTER [--output json] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* Classic
+* VPC
+
+**Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+```sh
+ibmcloud oc ingress status-report disable --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc ingress status-report enable`
+{: #cs_ingress_status_report_enable}
+
+Enable the status reporting of the Ingress components in a cluster.
+
+```sh
+ibmcloud oc ingress status-report enable --cluster CLUSTER [--output json] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* Classic
+* VPC
+
+**Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+```sh
+ibmcloud oc ingress status-report enable --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc ingress status-report get`
+{: #cs_ingress_status_report_get}
+
+Get the status report for Ingress components in a cluster.
+
+```sh
+ibmcloud oc ingress status-report get --cluster CLUSTER [--output json] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* Classic
+* VPC
+
+**Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+```sh
+ibmcloud oc ingress status-report get --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc ingress status-report ignore add`
+{: #cs_ingress_status_report_add}
+
+Add warnings to be ignored by Ingress status for a cluster.
+
+```sh
+ibmcloud oc ingress status-report ignore add --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* Classic
+* VPC
+
+**Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`-code, --code CODE`
+:    Required: Code of the warning to be ignored.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+
+**Example**:
+```sh
+ibmcloud oc ingress status-report ignore add --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc ingress status-report ignore ls`
+{: #cs_ingress_status_report_ignore_ls}
+
+List warnings that are currently ignored by Ingress status for a cluster.
+
+```sh
+ibmcloud oc ingress status-report ignore ls --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* Classic
+* VPC
+
+**Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+```sh
+ibmcloud oc ingress status-report ignore ls --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc ingress status-report ignore rm`
+{: #cs_ingress_status_report_ignore_rm}
+
+Remove warnings that are currently ignored by Ingress status for a cluster. Once removed, these warnings are no longer ignored. 
+
+```sh
+ibmcloud oc ingress status-report ignore rm --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* Classic
+* VPC
+
+**Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`-code, --code CODE`
+:    Required: Code of the warning to be removed from the ignored list.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+
+**Example**:
+```sh
+ibmcloud oc ingress status-report ignore rm --cluster mycluster
+```
+{: pre}
 
 
 
