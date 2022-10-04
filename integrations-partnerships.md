@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: kubernetes, openshift
 
@@ -65,7 +65,16 @@ For more information about how to install and use Portworx with {{site.data.keyw
 Classic SDS worker node machines that come with local disks, and classic virtual machines that you use for Portworx are in your monthly {{site.data.keyword.openshiftlong_notm}} bill. For pricing information, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/kubernetes/catalog/about). The Portworx license is a separate cost and is not included in your monthly bill.
 {: shortdesc}
 
-Open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+Contact Portworx support by using one of the following methods.
+
+- Sending an e-mail to `support@purestorage.com`.
+
+- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us)
+
+- Opening an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
+
+You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+{: tip}
 
 
 

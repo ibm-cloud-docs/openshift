@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-26"
+lastupdated: "2022-10-04"
 
 keywords: portworx, openshift
 
@@ -697,7 +697,16 @@ To install Portworx:
 ### Updating Portworx in your cluster
 {: #update_portworx}
 
-If you have a private only cluster, contact Portworx for help updating your cluster. Open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+If you have a private only cluster, contact Portworx for help updating your cluster. Contact Portworx support by using one of the following methods.
+
+- Sending an e-mail to `support@purestorage.com`.
+
+- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us)
+
+- Opening an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
+
+You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+{: tip}
 {: note}
 
 1. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the Helm version 3 client on your local machine.
@@ -1519,7 +1528,16 @@ To stop billing for Portworx, you must remove the Portworx Helm installation fro
 ## Getting help and support
 {: #portworx_help_sup}
 
-Open an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. You can also submit a request by sending an e-mail to `support@purestorage.com`. If you don't have an account on the Portworx Service Portal, send an e-mail to `support@purestorage.com` or see [request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}. You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+Contact Portworx support by using one of the following methods.
+
+- Sending an e-mail to `support@purestorage.com`.
+
+- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us)
+
+- Opening an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
+
+You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+{: tip}
 
 ### Gathering logs
 {: #portworx_logs}
