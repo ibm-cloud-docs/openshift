@@ -4195,19 +4195,55 @@ subcollection: openshift
 
     * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_custom)
 
-* [Migrating from {{site.data.keyword.cloudcerts_short}} to {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr)
-
-* [Enabling service-to-service communication for your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-ingress-roks4#migrate-secrets-mgr-s2s)
-
-    * [Removing the {{site.data.keyword.cloudcerts_short}} instance from the cluster](/docs/openshift?topic=openshift-ingress-roks4#unregister-secret-instance)
-
-* [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_full}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
-
-    * [Registering a {{site.data.keyword.secrets-manager_short}} instance to a cluster](/docs/openshift?topic=openshift-ingress-roks4#register-secrets-mgr)
-
-    * [Setting a {{site.data.keyword.secrets-manager_short}} instance as the default instance](/docs/openshift?topic=openshift-ingress-roks4#default-secrets-mgr)
-
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
+
+[Setting up {{site.data.keyword.secrets-manager_short}} in your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr)
+
+* [About Secrets Manager](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about)
+
+    * [What functionality can I gain with {{site.data.keyword.secrets-manager_short}}?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_functionality)
+
+    * [What types of secrets are supported with {{site.data.keyword.secrets-manager_short}}?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_types)
+
+    * [What is the difference between the `ibmcloud oc ingress instance` CLI commands and the `ibmcloud oc ingress secret` CLI commands?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_cli)
+
+* [Setting up your Secrets Manager instance](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup)
+
+    * [Enable service-to-service communication](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup_s2s)
+
+    * [Create a {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup_create)
+
+    * [Register your {{site.data.keyword.secrets-manager_short}} instance to your cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup_register)
+
+    * [Set a default {{site.data.keyword.secrets-manager_short}} instance and regenerate your secrets](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup_default)
+
+* [Controlling access to your secrets with secret groups](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_groups)
+
+* [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_cluster_create)
+
+[Migrating from {{site.data.keyword.cloudcerts_long_notm}} to {{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr-migration)
+
+* [Setting up your Secrets Manager instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup)
+
+    * [Step 1: Enable service-to-service communication](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_s2s)
+
+    * [Step 2: Creating a {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_create)
+
+    * [Step 3: Registering your {{site.data.keyword.secrets-manager_short}} instance to your cluster](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_register)
+
+    * [Step 4: Set a default {{site.data.keyword.secrets-manager_short}} instance and regenerate your secrets](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_default)
+
+    * [Step 5: Update the CRNs of secrets that are not managed by IBM](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_crn)
+
+    * [Step 6: Unregister your {{site.data.keyword.cloudcerts_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_unregister)
+
+    * [Step 7: Optional. Delete the {{site.data.keyword.cloudcerts_short}} instance.](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_delete)
+
+* [Migrating your secrets without using {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_alt)
+
+* [Migration FAQ](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_migration_faq)
+
+* [Timeline for {{site.data.keyword.cloudcerts_short}} end of support](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_timeline)
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
