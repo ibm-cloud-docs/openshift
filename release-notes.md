@@ -493,8 +493,6 @@ Version 3.11 is unsupported
 {: release-note}
 
 Master fix pack update
-
-
 :   {{site.data.keyword.openshiftlong_notm}} [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.33_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), and [3.11.705_1633_openshift](/docs/openshift?topic=openshift-openshift_changelog_311)(
 
 
