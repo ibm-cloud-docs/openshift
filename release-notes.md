@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: openshift
 
@@ -26,6 +26,10 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2022
 {: #openshift-oct22}
+
+
+
+
 
 ### 3 October 2022
 {: #openshift-oct0322}
@@ -491,8 +495,6 @@ Version 3.11 is unsupported
 {: release-note}
 
 Master fix pack update
-
-
 :   {{site.data.keyword.openshiftlong_notm}} [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.33_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), and [3.11.705_1633_openshift](/docs/openshift?topic=openshift-openshift_changelog_311)(
 
 
@@ -669,7 +671,7 @@ Create and manage dedicated hosts in VPC Gen 2.
 
 
 New! {{site.data.keyword.secrets-manager_full}}
-:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Managing TLS and Opaque certificates and secrets with {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_secrets_mgr)
+:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Migrating from IBM Cloud Certificate Manager to IBM Cloud Secrets Manager](/docs/containers?topic=containers-certs-mgr-migration).
 
 
 HPCS Router add-on

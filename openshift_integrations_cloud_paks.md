@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-06-17"
+lastupdated: "2022-10-04"
 
 keywords: openshift
 
@@ -102,7 +102,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 
 Before you begin:
 * Verify that your account administrator [set up your {{site.data.keyword.cloud_notm}} account with the Cloud Pak entitlement](#oc_cloud_paks_assign).
-* Make sure that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-clusters#cluster_prepare). These permissions include the following:
+* Make sure that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-clusters). These permissions include the following:
     * The IAM **Administrator** platform access role for {{site.data.keyword.containershort}}.
     * The IAM **Administrator** platform access role for {{site.data.keyword.registryshort}}.
     * The IAM **Viewer** platform access role for the resource group if you create the cluster in a resource group other than `default`.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: openshift dedicated hosts
 
@@ -73,7 +73,7 @@ To order dedicated hosts, you must first create a host pool. Then, you can creat
     `--zone ZONE`
     :    The zone to create the dedicated host in. For a list of available
 
-1. [Create a cluster with your dedicated host](/docs/containers?topic=containers-clusters#cluster_dedicated_host_cli). Or, [add a worker pool in an existing cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+1. [Create a cluster with your dedicated host](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui). Or, [add a worker pool in an existing cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
 
 
 ## Removing worker nodes from a dedicated host in the CLI

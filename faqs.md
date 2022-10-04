@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -158,21 +158,23 @@ Keep in mind that some services such as Ingress might require multiple worker no
 `*` **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you can't later resize back down to 1 worker node.
 {: note}
 
-## Which Red Hat Enterprise Linux versions does the service support?
+## Which {{site.data.keyword.redhat_openshift_notm}} versions does the service support?
 {: #supported_kube_versions}
 {: faq}
 {: support}
 
+{{site.data.keyword.openshiftlong_notm}} concurrently supports multiple versions of {{site.data.keyword.redhat_openshift_notm}}. When a new version (n) is released, versions up to 2 behind (n-2) are supported. Versions more than 2 behind the latest (n-3) are first deprecated and then unsupported. 
 
-
-
-{{site.data.keyword.openshiftlong_notm}} supports multiple versions of {{site.data.keyword.redhat_openshift_notm}}. 
-
-For clusters created on classic or VPC Gen 2 infrastructure, you can choose from Red Hat Enterprise Linux 7 or Red Hat Enterprise Linux 8 worker nodes depending on your cluster version.
-
-For clusters created on {{site.data.keyword.satelliteshort}}, you can choose from Red Hat Enterprise Linux 7, Red Hat Enterprise Linux 8, or RedHat CoreOS worker nodes depending the type of location your create and your cluster version..
 
 For more information about supported versions and update actions that you must take to move from one version to another, see [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
+
+## Which worker node operating systems does the service support?
+{: #supported_os_versions}
+{: faq}
+{: support}
+
+For a list of supported worker node operated systems by cluster version, see [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
+
 
 
 

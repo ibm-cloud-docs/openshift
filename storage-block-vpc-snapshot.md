@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: openshift, block storage, snapshot
 
@@ -22,8 +22,10 @@ subcollection: openshift
 Supported infrastructure provider
 :   VPC
 
-Snapshot support is available in {{site.data.keyword.block_storage_is_short}} add-on version `5.0.0-beta` and later.  Version `5.0.0-beta` is available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. If you don't need snapshot support, follow the steps to use [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block#vpc-block-add) in your cluster. After version `5.0.0` is released, version `5.0.0-beta` of the add-on becomes depreacted and Beta users must migrate to version `5.0.0`. Do not use the Beta version of the add-on unless you want to test snapshot support. Security patches for the Beta version of the {{site.data.keyword.block_storage_is_short}} add-on might be delayed. 
+Snapshot support is available in {{site.data.keyword.block_storage_is_short}} add-on version `5.0` and later. Version `5.0.0` is available in for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. If you don't need snapshot support, follow the steps to use [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block#vpc-block-add) in your cluster. 
 {: important}
+
+
 
 ## Enabling the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-enable}
@@ -37,20 +39,20 @@ Snapshot support is available in {{site.data.keyword.block_storage_is_short}} ad
     {: pre}
 
 
-1. If you have an add-on version earlier than `5.0.0-beta` of the {{site.data.keyword.block_storage_is_short}} add-on installed in your cluster, you must first disable the add-on and then enable version 5.0.0 or later. 
+1. If you have an add-on version earlier than `5.0` of the {{site.data.keyword.block_storage_is_short}} add-on installed in your cluster, you must first disable the add-on and then enable version 5.0.0 or later. 
     ```sh
-    ibmcloud oc cluster addon disable vpc-block-csi-driver  --cluster CLUSTER-ID
+    ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER-ID
     ```
     {: pre}
 
     ```sh
-    ibmcloud oc cluster addon enable vpc-block-csi-driver --version 5.0.0-beta --cluster CLUSTER-ID
+    ibmcloud oc cluster addon enable vpc-block-csi-driver --version 5.0 --cluster CLUSTER-ID
     ```
     {: pre}
 
     Example output.
     ```sh
-    Enabling add-on vpc-block-csi-driver(5.0.0-beta) for cluster CLUSTER-ID
+    Enabling add-on vpc-block-csi-driver(5.0) for cluster CLUSTER-ID
     The add-on might take several minutes to deploy and become ready for use.
     ```
     {: screen}
@@ -66,7 +68,7 @@ Snapshot support is available in {{site.data.keyword.block_storage_is_short}} ad
 
     ```sh
     Name                   Version                     Health State   Health Status   
-    vpc-block-csi-driver   5.0.0-beta* (4.3 default)   normal         Addon Ready. For more info: http://ibm.biz/addon-state (H1500)   
+    vpc-block-csi-driver   5.0   normal         Addon Ready. For more info: http://ibm.biz/addon-state (H1500)   
     ```
     {: screen}
 
