@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -906,7 +906,7 @@ Version 0.1.593 of the CLI was released on 10 October 2018.
 
 Version 0.1.591 of the CLI was released on 2 October 2018.
 
-- Adds support for [resource groups](/docs/containers?topic=containers-clusters#cluster_prepare).
+- Adds support for [resource groups](/docs/containers?topic=containers-clusters&interface=ui).
 
 #### Version 0.1.590
 {: #cli-01590}

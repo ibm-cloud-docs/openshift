@@ -31,7 +31,7 @@ Create your single zone or multizone classic {{site.data.keyword.redhat_openshif
 {{site.data.keyword.openshiftlong_notm}} clusters are created with a public only or both a public and private service endpoint. Public service endpoints can't be disabled, and therefore, you can't convert a public {{site.data.keyword.redhat_openshift_notm}} cluster to a private one. If you want your cluster to remain private, see [Planning your cluster network setup](/docs/containers?topic=containers-plan_vpc_basics#vpc-pgw).
 {: important}
 
-1. Complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level).
+1. Complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters&interface=ui) and decide on your cluster setup.
 2. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
     1. From the {{site.data.keyword.redhat_openshift_notm}} drop-down list, select the version that you want to use in your cluster, such as 4.9.46.
@@ -82,7 +82,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 {: shortdesc}
 
 **Before you begin**:
-* Ensure that you complete the prerequisites to [prepare your account](#cluster_prepare) and decide on your [cluster setup](#prepare_cluster_level). Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
+* Ensure that you complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters&interface=ui) and decide on your cluster setup. Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
 * Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-openshift-cli).
 
 

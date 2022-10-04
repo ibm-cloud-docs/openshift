@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -370,7 +370,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
     {: note}
 
 3. Create a cluster or worker pool that includes the account where the KMS instance resides, the KMS provider instance and root key. Each worker node in the worker pool then is encrypted by the KMS provider that you manage. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
-    - **Creating a cluster**: Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. For more information, see [Creating clusters](/docs/containers?topic=containers-clusters#clusters_vpcg2) or the [CLI reference documentation](/docs/containers?topic=containers-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
+    - **Creating a cluster**: Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. For more information, see [Creating clusters](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui) or the [CLI reference documentation](/docs/containers?topic=containers-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
         - **UI**: From the [cluster creation page](https://cloud.ibm.com/kubernetes/catalog/create){: external}, make sure to include the **KMS instance**, **Root key** and optionally, if the KMS instance resides in a different account, the **KMS account** fields.
         - **CLI**: Make sure to include the `--kms-instance-id`, `--crk` fields and also the optional`--kms-account-id` field if the KMS instance resides in an account different from the clusters account, such as in the following VPC example.
             ```sh

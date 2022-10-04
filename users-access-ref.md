@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: openshift
 
@@ -57,7 +57,7 @@ User that creates the cluster
 
 More information about assigning permissions
 :    - To understand how access works and how to assign users roles in {{site.data.keyword.cloud_notm}} IAM, see [Setting up access to your cluster](/docs/containers?topic=containers-access-overview#access-checklist).  
-     - To create clusters, see [Preparing to create clusters at the account level](/docs/containers?topic=containers-clusters#cluster_prepare).  
+     - To create clusters, see [Preparing to create clusters at the account level](/docs/containers?topic=containers-clusters&interface=ui).  
      - For permissions that you might set up for different types of users such as auditors, see [Example use cases and roles](/docs/containers?topic=containers-users#example-iam).  
 
 ## {{site.data.keyword.cloud_notm}} IAM platform access roles
