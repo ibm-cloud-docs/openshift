@@ -1,6 +1,26 @@
-# Red Hat OpenShift on IBM Cloud documentation repository
+---
 
-Prod source repository for the <a href="https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started" rel="nofollow">Red Hat OpenShift on IBM Cloud documentation</a>.
+copyright:
+  years: 2014, 2022
+lastupdated: "2022-10-04"
+
+---
+
+
+
+
+
+
+[Logo](images/logo-red-hat-openshift-on-ibm-cloud-light.svg)
+
+
+# Source files for customer-facing documentation
+
+
+
+Customer-facing documentation: /docs/containers?topic=containers-getting-started#getting-started
+
+
 
 
 
