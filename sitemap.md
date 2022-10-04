@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: openshift
 subcollection: openshift
@@ -6490,7 +6490,7 @@ subcollection: openshift
 
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
-* [Version 5.0 (Beta)](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+* [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
     * [Change log for version 5.0.4-beta_1566, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
 
@@ -7642,7 +7642,9 @@ subcollection: openshift
 
 * [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 
-* [Which Red Hat Enterprise Linux versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
+* [Which {{site.data.keyword.redhat_openshift_notm}} versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
+
+* [Which worker node operating systems does the service support?](/docs/openshift?topic=openshift-faqs#supported_os_versions)
 
 * [Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
 
@@ -8166,6 +8168,10 @@ subcollection: openshift
 [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume#ts_storage_clean_volume)
 
 [Why does mounting {{site.data.keyword.blockstorageshort}} fail with an `fsck` error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
+
+[Why can't I delete my {{site.data.keyword.block_storage_is_short}} `volumesnapshot` resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
+
+[Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 
 
 ### Object Storage

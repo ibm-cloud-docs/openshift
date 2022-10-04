@@ -520,6 +520,8 @@ toc:
                 - ts-storage-vpc-block-monitoring.md
                 - ts-storage-clean-volume.md
                 - ts-storage-fsck.md
+                - ts-storage-volumesnapshot-delete.md
+                - ts-storage-snapshot-fails.md
             - topicgroup:
                 label: Object Storage
                 topics:

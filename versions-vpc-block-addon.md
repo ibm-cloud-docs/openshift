@@ -28,34 +28,25 @@ Release updates
 :   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
 
 
-To view a list of add-ons and the supported cluster versions, run the following command.
+To view a list of add-ons and the supported cluster versions in the CLI, run the following command.
 ```sh
 ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 ```
 {: pre}
 
-Refer to the following tables for a summary of changes for each version of the {{site.data.keyword.block_storage_is_short}} add-on.
-
-| {{site.data.keyword.block_storage_is_short}} add-on version | {{site.data.keyword.openshiftlong_notm}} version support |
-| --- | --- |
-| 5.0 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.7 or higher. |
-| 4.4 | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.7 or higher. |
-| 4.3 (default) | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
-| 4.2  | All supported versions of {{site.data.keyword.openshiftlong_notm}} and unsupported versions that are version 4.3 or higher. |
-| 4.1 | Deprecated |
-| 4.0 | Unsupported |
-| 3.0.1 | Unsupported |
-| 3.0.0 | Unsupported |
-| 2.0.3 | Unsupported |
-{: caption="VPC block storage add-on version support" caption-side="top"}
+To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/containers?topic=containers-supported-cluster-addon-versions).
 
 
 
-## Version 5.0 (Beta)
+
+
+## Version 5.0
 {: #050_is_block}
 
-Version 5.0.0 is available in Beta for allowlisted accounts.
+Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
+
+
 
 ### Change log for version 5.0.4-beta_1566, released 14 July 2022
 {: #5.0.4-beta_1556_is_block_relnote}

@@ -38,7 +38,7 @@ In some cases. the restart might take longer. In nearly all cases, the restart i
 Monitor the `NetworkUnavailable` state with {{site.data.keyword. monitoringlong_notm}}
 {: tsResolve}
 
-By using monitoring applications such as {{site.data.keyword.monitoringlong_notm}}, you can configure alters for when a worker node goes into a `NetworkUnavailable` state, and count each time this happens. You can also configure thresholds and tune your alerts to allow for when worker nodes `NetworkUnavailable` state during routine Calico patches.
+By using services to monitor applications such as {{site.data.keyword.monitoringlong_notm}}, you can configure alerts for when a worker node goes into a `NetworkUnavailable` state, and count each time this happens. You can also configure thresholds and tune your alerts to allow for when worker nodes `NetworkUnavailable` state during routine Calico patches.
 
 When you set up {{site.data.keyword.monitoringlong_notm}} alerts, take the following scenarios into consideration.
 
