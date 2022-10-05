@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-05"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2022-10-04"
 
 
 
-[Logo](images/logo-red-hat-openshift-on-ibm-cloud-light.svg)
+![Logo](images/logo-red-hat-openshift-on-ibm-cloud-light.svg)
 
 
 # Source files for customer-facing documentation

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-10-05"
 
 keywords: openshift, clusters
 
@@ -15,13 +15,13 @@ subcollection: openshift
 
 
 
-# Creating a cluster by using a {{site.data.keyword.bpfull_notm}} template
+# Creating a private-only cluster in VPC by using a {{site.data.keyword.bpshort}} template
 {: #templates}
 
-Automate the creation of a cluster in {{site.data.keyword.openshiftlong}} by using an {{site.data.keyword.bpfull_notm}} template. 
+Automate the creation of a secure cluster in {{site.data.keyword.openshiftlong}} by using an {{site.data.keyword.bpfull_notm}} template. 
 {: shortdesc}
 
-Creating a cluster by using a template is available as a technical preview only, and isn't intended for production workloads.
+The secure cluster template is available as a technical preview only, and isn't intended for production workloads.
 {: preview}
 
 **What do I get when I deploy the secure cluster template?**
