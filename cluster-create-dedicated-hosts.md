@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-05"
 
 keywords: openshift, clusters, dedicated hosts
 
@@ -158,7 +158,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
 
     ```sh
     Name           ID                   State     Created      Workers   Location    Version                  Resource Group Name   Provider   
-    my_cluster    a111a11a11aa1aa11a11  normal    1 hour ago   4         Dallas      1.23.10  default               vpc-gen2
+    my_cluster    a111a11a11aa1aa11a11  normal    1 hour ago   4         Dallas      1.23.12  default               vpc-gen2
     ```
     {: screen}
     
