@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-05"
 
 keywords: openshift, kernel
 
@@ -222,7 +222,7 @@ By default, the Calico network plug-in in your {{site.data.keyword.openshiftlong
 Before you begin
 :   If your worker nodes still run the default MTU value, increase the MTU value for your worker nodes first before you increase the MTU value for the Calico plug-in. For example, you can apply the following daemon set to change the MTU for your worker nodes's jumbo frames to 9000 bytes. Note the interface names that are used in the **`ip link`** command vary depending on the type of your worker nodes.
     - Example command for Bare Metal worker nodes: `ip link set dev bond0 mtu 9000;ip link set dev bond1 mtu 9000;`
-    - Example command VPC Gen 2 worker nodes: `ip link set dev eth0 mtu 9000;`
+    - Example command VPC Gen 2 worker nodes: `ip link set dev ens3 mtu 9000;`
 
 ```yaml
 apiVersion: apps/v1
