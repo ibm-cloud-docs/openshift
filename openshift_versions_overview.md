@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-05"
 
 keywords: openshift, version, update, upgrade
 
@@ -48,7 +48,8 @@ Supported versions
 :   **Default**: 4.10 (Kubernetes 1.23)
     - Release date: **27 Apr 2022**
     - Tentative unsupported date: **25 Oct 2023**`†`
-    - RHEL 8 (default), RHEL 7 (deprecated)
+    - RHEL 8 (default)
+    - RHEL 7 (deprecated) unsupported date: 6 December 2022
     - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
     - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
    
@@ -128,4 +129,3 @@ Unsupported clusters are not provided with security and patch updates and are no
 
 **Unsupported {{site.data.keyword.openshiftshort}} versions**: 
 :    [4.5 (Kubernetes 1.18)](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4 (Kubernetes 1.17)](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3 (Kubernetes 1.16)](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11 (Kubernetes 1.11)](/docs/openshift?topic=openshift-openshift_changelog_311).
-
