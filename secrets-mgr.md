@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-05"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -194,11 +194,11 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
         Example output.
 
         ```sh
-        Name                                         Namespace           CRN                                                                                                                                                                  Expires On                 Domain                                                                           Status    Type   
-        secret-11111aa1a1a11aa1111111a11a1a11a-000  default   crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1-111a-1111-1a1a1a1111a1:secret:a111aa11-11a1-1111-a111-11a11aa111a1   2022-12-21T19:52:29+0000   secret-11111aa1a1a11aa1111111a11a1a11a-000.us-south.containers.appdomain.cloud   created   TLS   
-        secret-22222aa2a2a22aa2222222a22a2a22a-000  default   crn:v1:bluemix:public:secrets-manager:us-south:a/2aa222aa2a22222aaa2a2222aa2aa222:222a2222-22a2-222a-2222-2a2a2a2a2:secret:a222aa22-22a2-2222-a222-22a22aa222a2   2022-12-21T19:52:29+0000   secret-22222aa2a2a22aa2222222a22a2a22a-000.us-south.containers.appdomain.cloud   created   TLS    
+        Name                               Namespace  CRN                                                                               Expires On                 Domain                                                   Status    Type   
+        secret-11111aa1a1a11aa1111111-000  default    crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1:secret:a111aa11-11a1   2022-12-21T19:52:29+0000   secret-11111aa1a1a.us-south.containers.appdomain.cloud   created   TLS   
+        secret-22222aa2a2a22aa2222222-000  default    crn:v1:bluemix:public:secrets-manager:us-south:a/2aa222aa2:secret:a222aa22-22a2   2022-12-21T19:52:29+0000   secret-22222aa2a2a.us-south.containers.appdomain.cloud   created   TLS    
         ```
-        {: pre}
+        {: screen}
 
 ## Controlling access to your secrets with secret groups
 {: #secrets-mgr_groups}
