@@ -6982,7 +6982,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
 :    The subnet that you choose must be within one of the following ranges.
      - `172.16.0.0 - 172.17.255.255`
-     - `172.20.0.0 - 172.31.255.255`
+     - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
 
