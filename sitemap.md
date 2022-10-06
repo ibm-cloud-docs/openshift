@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-05"
+lastupdated: "2022-10-06"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [5 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0522)
+
+        * Red Hat Enterprise Linux version 8 is available for {{site.data.keyword.openshiftlong_notm}} 4.9 and 4.10 clusters
 
     * [3 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0322)
 

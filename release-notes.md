@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-06"
 
 keywords: openshift
 
@@ -26,6 +26,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2022
 {: #openshift-oct22}
+
+
+
+
+
+### 5 October 2022
+{: #openshift-oct0522}
+
+Red Hat Enterprise Linux version 8 is available for {{site.data.keyword.openshiftlong_notm}} 4.9 and 4.10 clusters
+:   You can now create {{site.data.keyword.openshiftlong_notm}} 4.9 and 4.10 clusters using Red Hat Enterprise Linux version 8 worker nodes. To review the migration guide, see [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate). To review operating system support by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 
 
@@ -495,7 +505,7 @@ Version 3.11 is unsupported
 {: release-note}
 
 Master fix pack update
-:   {{site.data.keyword.openshiftlong_notm}} [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.33_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), and [3.11.705_1633_openshift](/docs/openshift?topic=openshift-openshift_changelog_311)(
+:   {{site.data.keyword.openshiftlong_notm}} [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.33_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), and [3.11.705_1633_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 
 
