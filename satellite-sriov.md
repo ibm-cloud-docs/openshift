@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-26"
+lastupdated: "2022-10-06"
 
 keywords: satellite, hybrid, multicloud, sriov, nic, network
 
@@ -83,4 +83,5 @@ Supported network interface controllers
 
 1. You can now begin [configuring your SRIOV-enabled network device](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/configuring-sriov-device.html){: external}.
 
-
+The default Calico network interface for pod-to-pod network is always present in all pod networking stacks, including pods that have an SR-IOV network attachment. This means, that in such pods, the Calico network interface is also present next to SR-IOV virtual interfaces. Also, the Calico interface provides the default gateway for IP routing.
+{: note}
