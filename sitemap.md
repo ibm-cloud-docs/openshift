@@ -7981,6 +7981,8 @@ subcollection: openshift
 
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
+[Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125#ts-network-snat-125)
+
 [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails#cs_vpn_fails)
 
 [Why can't I install a new strongSwan Helm chart release?](/docs/openshift?topic=openshift-cs_strongswan_release#cs_strongswan_release)
