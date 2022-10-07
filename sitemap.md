@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-07"
 
 keywords: openshift
 subcollection: openshift
@@ -2758,6 +2758,8 @@ subcollection: openshift
 
 * [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry)
 
+    * [Setting up the internal container image registry with {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry-cos)
+
 * [Exposing apps](/docs/openshift?topic=openshift-satellite-clusters#satcluster-expose-apps)
 
 * [Storing application data in persistent storage](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage)
@@ -4765,15 +4767,19 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
 
-[Setting up snapshots with {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
+[Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
 * [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-addon-enable)
+
+* [Optional: Deploying the snapshot validation webhook](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-validation)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
 
 * [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
 
 * [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
+
+* [Troubleshooting snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#ts-snapshot-vpc-block-addon-next)
 
 [Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
 
@@ -7979,6 +7985,8 @@ subcollection: openshift
 
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
+[Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125#ts-network-snat-125)
+
 [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails#cs_vpn_fails)
 
 [Why can't I install a new strongSwan Helm chart release?](/docs/openshift?topic=openshift-cs_strongswan_release#cs_strongswan_release)
@@ -8211,7 +8219,7 @@ subcollection: openshift
 
 [Why can't I delete my {{site.data.keyword.block_storage_is_short}} `volumesnapshot` resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 
-[Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
+[Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-snapshotfails#ts-storage-snapshotfails)
 
 
 ### Object Storage

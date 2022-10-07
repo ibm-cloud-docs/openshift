@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-07"
 
 keywords: openshift, block storage, snapshot
 
@@ -13,7 +13,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up snapshots with {{site.data.keyword.block_storage_is_short}} 
+# Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-volume-snapshot}
 
 {{site.data.keyword.block_storage_is_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. For more information, see [How snapshots work](/docs/vpc?topic=vpc-snapshots-vpc-about).
@@ -22,24 +22,37 @@ subcollection: openshift
 Supported infrastructure provider
 :   VPC
 
-Snapshot support is available in {{site.data.keyword.block_storage_is_short}} add-on version `5.0` and later. Version `5.0.0` is available in for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. If you don't need snapshot support, follow the steps to use [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block#vpc-block-add) in your cluster. 
+
+The following steps cover setting up snapshots for {{site.data.keyword.block_storage_is_short}} volumes by using the cluster add-on.
+{: note}
+
+Snapshots support is available for cluster version 4.9 and later and with the {{site.data.keyword.block_storage_is_short}} add-on version 5.0 and later.
 {: important}
-
-
 
 ## Enabling the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-enable}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-1. Get the version number of the `vpc-block-csi-driver` add-on that is installed in your cluster.
+1. Get the version number of the `vpc-block-csi-driver` add-on in your cluster.
     ```sh
     ibmcloud oc cluster addon ls --cluster CLUSTER
     ```
     {: pre}
+    
+1. If you have a version 1.25 cluster with add-on version 5.0 or later and are using the snapshot controller, remove the snapshot controller.
+    ```sh
+    kubectl delete -f https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/deploy/kubernetes/snapshot/rbac-snapshot-controller-v6.0.1.yaml
+    ```
+    {: pre}
+    
+    ```sh
+    kubectl delete -f https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/deploy/kubernetes/snapshot/snapshot-controller-v6.0.1.yaml
+    ```
+    {: pre}
 
 
-1. If you have an add-on version earlier than `5.0` of the {{site.data.keyword.block_storage_is_short}} add-on installed in your cluster, you must first disable the add-on and then enable version 5.0.0 or later. 
+1. Disable the add-on and then enable version 5.0 or later. 
     ```sh
     ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER-ID
     ```
@@ -75,7 +88,7 @@ Snapshot support is available in {{site.data.keyword.block_storage_is_short}} ad
     
 1. Verify that the driver pods are deployed and the status is `Running`.
     ```sh
-    kubectl get pods -n kube-system | grep block
+    kubectl get pods -n kube-system | grep vpc-block-csi
     ```
     {: pre}
     
@@ -87,6 +100,13 @@ Snapshot support is available in {{site.data.keyword.block_storage_is_short}} ad
     ibm-vpc-block-csi-node-cmh2h                          4/4     Running   0          77s
     ```
     {: screen}
+    
+    
+## Optional: Deploying the snapshot validation webhook
+{: #vpc-snapshot-validation webhook}
+
+Deploy the validation snapshot webhook for validating user input. For more information, see [Deploying the snapshot validation webhook](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/tree/master/deploy/kubernetes/snapshot/validation-webhook){: external}.
+
 
 ## Creating a deployment
 {: #vpc-snapshot-deployment}
@@ -197,17 +217,13 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 ## Creating a volume snapshot
 {: #vpc-create-snapshot}
 
-After you create a deployment and a PVC, you can create the volume snapshot resources.
+After you create a deployment and a PVC, you can create the volume snapshot resources. 
 
-1. Verify your volume is in the `attached` state.
-
-    ```sh
-    oc get pvc
-    ```
-    {: pre}
+You can creating snapshots only when a volume is attached to a pod.
+{: note}
 
 
-1. Create a volume snapshot resource in your cluster by using the `vpc-block-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
+1. Create a volume snapshot resource in your cluster by using the `ibmc-vpcblock-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
 
     ```yaml
     apiVersion: snapshot.storage.k8s.io/v1
@@ -215,7 +231,7 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     metadata:
       name: snapshot-csi-block-pvc
     spec:
-      volumeSnapshotClassName: vpc-block-snapshot
+      volumeSnapshotClassName: ibmc-vpcblock-snapshot
       source:
         persistentVolumeClaimName: csi-block-pvc
     ```
@@ -226,7 +242,7 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     ```
     {: pre}
 
-1. Verify that the snapshot is created and ready to use.
+1. Verify that the snapshot is ready to use.
 
     ```sh
     kubectl get volumesnapshots
@@ -236,7 +252,7 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     Example output where `READYTOUSE` is `true`.
     ```sh
     NAME                            READYTOUSE   SOURCEPVC              SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-    vpc-block-snapshot   true         csi-block-pvc                           1Gi           snapshotclass   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
+    ibmc-vpcblock-snapshot   true         csi-block-pvc                           1Gi           snapshotclass   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
     ```
     {: screen}
 
@@ -347,4 +363,10 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     {: screen}
     
     
-    
+## Troubleshooting snapshots
+{: #ts-snapshot-vpc-block-addon-next}
+
+Review the following troubleshooting topics.
+
+- [Why can't I create snapshots?](/docs/containers?topic=containers-ts-storage-snapshotfails).
+- [Why can't I delete my `volumesnapshot` resources](/docs/containers?topic=containers-ts-storage-volumesnapshotdelete).
