@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-07"
 
 keywords: openshift, storage, snapshot, volumesnapshot
 
@@ -18,7 +18,7 @@ content-type: troubleshoot
 
 
 # Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?
-{: #ts-storage-volumesnapshotdelete}
+{: #ts-storage-snapshotfails}
 {: support}
 
 **Infrastructure provider**:

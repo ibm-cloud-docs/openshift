@@ -4767,15 +4767,19 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
 
-[Setting up snapshots with {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
+[Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
 * [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-addon-enable)
+
+* [Optional: Deploying the snapshot validation webhook](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-validation)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
 
 * [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
 
 * [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
+
+* [Troubleshooting snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#ts-snapshot-vpc-block-addon-next)
 
 [Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
 
@@ -8215,7 +8219,7 @@ subcollection: openshift
 
 [Why can't I delete my {{site.data.keyword.block_storage_is_short}} `volumesnapshot` resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 
-[Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
+[Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-snapshotfails#ts-storage-snapshotfails)
 
 
 ### Object Storage
