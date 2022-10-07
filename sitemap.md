@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-07"
 
 keywords: openshift
 subcollection: openshift
@@ -2757,6 +2757,8 @@ subcollection: openshift
 * [Accessing and working with your {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
 
 * [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry)
+
+    * [Setting up the internal container image registry with {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry-cos)
 
 * [Exposing apps](/docs/openshift?topic=openshift-satellite-clusters#satcluster-expose-apps)
 
