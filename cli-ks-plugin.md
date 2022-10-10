@@ -6974,8 +6974,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
      - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
      - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
-
-If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+:   If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
 `--pod-subnet SUBNET`
 :    Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.16.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
@@ -7072,8 +7071,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
      - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
      - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
      - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
-
-If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+:   If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
 `--size-per-zone WORKERS_PER_ZONE`
 :    Required. The number of worker nodes to request in each zone. Ensure that you [attach enough hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to be used as worker nodes. For example, if you enter `2` and then [add 2 more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) to this worker pool after you create it, ensure that at least 6 unassigned hosts are attached to your location so that they can be assigned as 2 worker nodes in each of the 3 zones in your worker pool.

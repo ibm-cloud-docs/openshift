@@ -205,6 +205,12 @@ subcollection: openshift
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
 
+    * [10 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1022)
+
+        * Worker node fix pack
+
+        * Cluster autoscaler add-on version `1.0.6_828`.
+
     * [5 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0522)
 
         * Red Hat Enterprise Linux version 8 is available for {{site.data.keyword.openshiftlong_notm}} 4.9 and 4.10 clusters
@@ -6456,7 +6462,7 @@ subcollection: openshift
 
 [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
 
-[Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+[Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
 
@@ -6475,6 +6481,8 @@ subcollection: openshift
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_828, released 10 October 2022](/docs/openshift?topic=openshift-ca_changelog#106828_ca)
 
     * [Change log for patch update 1.0.6_800, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#106800_ca)
 

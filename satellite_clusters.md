@@ -106,7 +106,7 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     ```
     {: screen}
 
-3. Create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location. Specify {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane. 
+3. Create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} control plane. 
 
     - To ensure that hosts are automatically assigned as worker nodes in the default worker pool of your cluster, specify those hosts' labels in the `--host-label` flags, and specify the number of worker nodes per zone in the `--workers` flag. 
     - To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
@@ -120,8 +120,7 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
      - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
      - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
      - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
-
-If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+:   If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
     
     Example `cluster create` command.

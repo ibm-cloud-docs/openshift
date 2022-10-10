@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-10-10"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -15,11 +15,16 @@ subcollection: openshift
 
 
 
-# Cluster autoscaler add-on changelog
+# Cluster autoscaler add-on change log
 {: #ca_changelog}
 
 View information for patch updates to the cluster autoscaler add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
+
+
+
+The cluster autoscaler add-on doesn't support {{site.data.keyword.openshiftlong_notm}} version 1.25. Don't update your cluster to version 1.25 if you have this add-on installed.
+{: important}
 
 
 
@@ -91,6 +96,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.0.6
 {: #0106_ca_addon}
+
+### Change log for patch update 1.0.6_828, released 10 October 2022
+{: #106828_ca}
+
+- Adds support for setting up to 5 additional ignore labels while balancing `balancingIgnoreLabel[1-5]`.
+- `1.19.1 106-4`, `1.20.0 106-4`, `1.21.0 106-4`, `1.22.0 106-4`, `1.23.0 106-4`, `1.24.0 106-4`.
+
 
 ### Change log for patch update 1.0.6_800, released 22 September 2022
 {: #106800_ca}
