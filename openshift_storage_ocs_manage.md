@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-10-10"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -527,7 +527,7 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
 ## Troubleshooting ODF
 {: #odf-troubleshooting-gather}
 
-To gather the information to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.9/support/gathering-cluster-data.html).
+To gather the information to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.10/support/gathering-cluster-data.html).
 {: shortdesc}
 
 You can use the Rook community toolbox to debug issues with your Ceph cluster. For more information, see the [Rook documentation](https://rook.io/docs/rook/v1.3/ceph-toolbox.html){: external}.
