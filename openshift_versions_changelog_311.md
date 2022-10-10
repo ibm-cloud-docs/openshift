@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-29"
+lastupdated: "2022-10-10"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -1812,7 +1812,7 @@ The following table shows the changes that are in the master fix pack `3.11.146_
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| Default {{site.data.keyword.IBM_notm}} security context constraints | N/A | N/A | To support [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud/paks/){: external}, the `seLinuxContext` setting is changed from `MustRunAs` to `RunAsAny` for the following [default {{site.data.keyword.IBM_notm}} security context constraints](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs): `ibm-anyuid-hostaccess-scc`, `ibm-anyuid-hostpath-scc`, and `ibm-anyuid-scc`. |
+| Default {{site.data.keyword.IBM_notm}} security context constraints | N/A | N/A | To support [{{site.data.keyword.cloud_notm}} Paks](https://www.ibm.com/cloud-paks/){: external}, the `seLinuxContext` setting is changed from `MustRunAs` to `RunAsAny` for the following [default {{site.data.keyword.IBM_notm}} security context constraints](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs): `ibm-anyuid-hostaccess-scc`, `ibm-anyuid-hostpath-scc`, and `ibm-anyuid-scc`. |
 {: caption="Changes since version 3.11.146_1525" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-10"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -24,7 +24,7 @@ With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{s
 
 
 
-Looking to use autoscaling in your {{site.data.keyword.satelliteshort}} clusters? See, [Preparing to autoscale {{site.data.keyword.satelliteshort}} clusters](/docs/containers?topic=containers-cluster-scaling-sat).
+Looking to use autoscaling in your {{site.data.keyword.satelliteshort}} clusters? See, [Preparing to autoscale {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat).
 {: tip}
 
 

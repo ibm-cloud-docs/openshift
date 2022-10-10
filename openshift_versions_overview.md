@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-05"
+lastupdated: "2022-10-10"
 
 keywords: openshift, version, update, upgrade
 
@@ -32,7 +32,7 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 ## Available {{site.data.keyword.redhat_openshift_notm}} versions
 {: #openshift_versions_available}
 
-{{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. The worker node operating system is Red Hat Enterprise Linux (RHEL) 7.  Note that different {{site.data.keyword.redhat_openshift_notm}} versions might support different RHEL versions. 
+{{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. Note that different {{site.data.keyword.redhat_openshift_notm}} versions might support different RHEL versions. 
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: important}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-10"
 
 keywords: openshift, firewall, ips
 
@@ -424,7 +424,7 @@ Before you begin, the following steps require you to change the IAM allowlist fo
     ```
     {: screen}
 
-5. Get the [control plane CIDRs of the region where you cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-allowlist-ips){: external}. These CIDRs must also be added to your allowlist. 
+5. Get the [control plane CIDRs of the region where you cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. These CIDRs must also be added to your allowlist. 
 
 6. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-10"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 1. Decide on a storage configuration by reviewing the storage class reference.
 
-    For more information about each storage class, see the [storage class reference](docs link). If you don't find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](/docs/containers?topic=containers-storage-file-vpc-managing#storage-file-vpc-custom-sc).
+    For more information about each storage class, see the [storage class reference](/docs/containers?topic=containers-storage-file-vpc-managing). If you don't find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](/docs/containers?topic=containers-storage-file-vpc-managing#storage-file-vpc-custom-sc).
     {: tip}
 
 1. List available storage classes in {{site.data.keyword.openshiftlong_notm}}.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-10"
 
 keywords: openshift
 
@@ -30,9 +30,23 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 10 October 2022
+{: #openshift-oct1022}
+{: release-note}
+
+
+Worker node fix pack
+
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.35_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.49_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.50_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.59_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.61_1602_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+
+Cluster autoscaler add-on version `1.0.6_828`.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+
+
 
 ### 5 October 2022
 {: #openshift-oct0522}
+{: release-note}
 
 Red Hat Enterprise Linux version 8 is available for {{site.data.keyword.openshiftlong_notm}} 4.9 and 4.10 clusters
 :   You can now create {{site.data.keyword.openshiftlong_notm}} 4.9 and 4.10 clusters using Red Hat Enterprise Linux version 8 worker nodes. To review the migration guide, see [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate). To review operating system support by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
@@ -43,6 +57,7 @@ Red Hat Enterprise Linux version 8 is available for {{site.data.keyword.openshif
 
 ### 3 October 2022
 {: #openshift-oct0322}
+{: release-note}
 
 CLI change log update
 :   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.454.
@@ -51,9 +66,11 @@ CLI change log update
 
 ## September 2022
 {: #openshift-sep22}
+{: release-note}
 
 ### 30 September 2022
 {: #openshift-sep3022}
+{: release-note}
 
 New! Enabling Flow logs for VPC components
 :    Flow logs gather information about the traffic entering or leaving your VPC cluster worker nodes.  For more information, see [Enabling Flow Logs for VPC cluster components](/docs/containers?topic=containers-vpc-flow-log).
@@ -61,6 +78,7 @@ New! Enabling Flow logs for VPC components
 
 ### 26 September 2022
 {: #openshift-sep2622}
+{: release-note}
 
 
 Worker node fix pack
@@ -71,6 +89,7 @@ Worker node fix pack
 
 ### 23 September 2022
 {: #openshift-sep2322}
+{: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version `4.4.11_1614`.
 :   For more information, see [the change log](/docs/containers?topic=containers-vpc_bs_changelog).
@@ -80,6 +99,7 @@ Worker node fix pack
 
 ### 22 September 2022
 {: #openshift-sep2222}
+{: release-note}
 
 Cluster autoscaler add-on versions `1.1.0_798`, `1.0.6_800`, and `1.0.5_779`.
 :   For more information, see [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
@@ -90,6 +110,7 @@ Cluster autoscaler add-on versions `1.1.0_798`, `1.0.6_800`, and `1.0.5_779`.
 
 ### 21 September 2022
 {: #openshift-sep2122}
+{: release-note}
 
 CLI change log update
 :   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.452.
@@ -100,6 +121,7 @@ CLI change log update
 
 ### 20 September 2022
 {: #openshift-sep2022}
+{: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.1` is available.
 :   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
@@ -108,6 +130,7 @@ CLI change log update
 
 ### 13 September 2022
 {: #openshift-sep1322}
+{: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.4.10_1578 is available.
 :   For more information, see [version 4.4.10_1578](/docs/containers?topic=containers-vpc_bs_changelog).
@@ -117,6 +140,7 @@ New! vGPU worker node flavors are now available for VPC Gen 2.
 
 ### 12 September 2022
 {: #openshift-sep1222}
+{: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.3.6_1579 is available.
 :   For more information, see [version 4.3.6_1579](/docs/containers?topic=containers-vpc_bs_changelog)
@@ -2701,7 +2725,7 @@ New! {{site.data.keyword.block_storage_is_short}} changelog
 New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
 :   Now, you can create GPU bare metal worker nodes in your {{site.data.keyword.openshiftlong_notm}} version 4 clusters in select zones. GPU machines are suited for high-performance computing, machine learning, or 3D applications that you might have, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}. 
 :   To get started with GPU-accelerated workloads.
-    - Create a [cluster](/docs/openshift?topic=openshift-clusters#clusters_standard) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. 
+    - Create a [cluster](/docs/openshift?topic=openshift-clusters) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. 
     - [Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}. 
     - Verify that you can run GPU workloads by [deploying a sample job](/docs/openshift?topic=openshift-deploy_app#gpu_app).
     

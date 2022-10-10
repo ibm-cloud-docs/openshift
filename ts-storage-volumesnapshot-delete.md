@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-10"
 
 keywords: openshift, storage, snapshot
 
@@ -24,7 +24,7 @@ content-type: troubleshoot
 **Infrastructure provider**:
 VPC
 
-When you try to remove your `volumesnapshot` and `volumesnapshotcontents` resources, you see the following error message.
+When you try to remove your `volumesnapshot` and `volumesnapshotcontents` resources, the removal fails
 {: tsSymptoms}
 
 There are [finalizers](https://kubernetes.io/docs/concepts/overview/working-with-objects/finalizers/){: external} preventing the resources from being removed.
@@ -33,7 +33,7 @@ There are [finalizers](https://kubernetes.io/docs/concepts/overview/working-with
 Remove the finalizers and continue deleting the resources.
 {: tsResolve}
 
-1. Edit your `volumesnapshot` or `volumesnapshotcontents` and remove the `finalizers`.
+1. Edit your `volumesnapshot` or `volumesnapshotcontents` and remove the `finalizers`. Note that the finalizers might be different for each resource.
     ```sh
     kubectl edit volumesnapshot VOLUMESNAPSHOT
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-10-10"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [10 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1022)
+
+        * Worker node fix pack
+
+        * Cluster autoscaler add-on version `1.0.6_828`.
 
     * [5 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0522)
 
@@ -2720,7 +2726,7 @@ subcollection: openshift
 {: #sitemap_creating_clusters}
 
 
-[Creating clusters](/docs/openshift?topic=openshift-clusters#clusters)
+[Preparing to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 
@@ -3003,7 +3009,7 @@ subcollection: openshift
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
-* [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
+    * [Updating the Calico installation](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
 
 * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
@@ -5406,7 +5412,7 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
-* [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
+* [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10454)
 
 * [Version 1.0.452](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
 
@@ -5671,6 +5677,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
 
+    * [Change log for worker node fix pack 4.10.35_1538_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41035_1538_openshift)
+
     * [Change log for master fix pack 4.10.32_1536_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41032_1536_openshift)
 
     * [Change log for worker node fix pack 4.10.33_1537_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41033_1537_openshift)
@@ -5805,6 +5813,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.49_1558_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4949_1558_openshift)
 
     * [Change log for master fix pack 4.9.48_1556_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4948_1556_openshift)
 
@@ -5959,6 +5969,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
+    * [Change log for worker node fix pack 4.8.50_1575_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4850_1575_openshift)
+
     * [Change log for master fix pack 4.8.49_1573_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4849_1573_openshift)
 
     * [Change log for worker node fix pack 4.8.50_1574_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4850_1574_openshift)
@@ -6097,6 +6109,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for worker node fix pack 4.7.59_1584_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4759_1584_openshift)
 
     * [Change log for master fix pack 4.7.59_1582_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4759_1582_openshift)
 
@@ -6264,6 +6278,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#46_changelog)
+
+    * [Change log for worker node fix pack 4.6.61_1602_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4661_1602_openshift)
 
     * [Change log for master fix pack 4.6.61_1600_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4661_1600_openshift)
 
@@ -6446,7 +6462,7 @@ subcollection: openshift
 
 [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
 
-[Cluster autoscaler add-on changelog](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+[Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
 
@@ -6465,6 +6481,8 @@ subcollection: openshift
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_828, released 10 October 2022](/docs/openshift?topic=openshift-ca_changelog#106828_ca)
 
     * [Change log for patch update 1.0.6_800, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#106800_ca)
 

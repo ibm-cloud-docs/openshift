@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-10"
 
 keywords: openshift, calico, node
 
@@ -35,7 +35,7 @@ When Calico is updated, the `node.kubernetes.io/network-unavailable:NoSchedule` 
 
 In some cases. the restart might take longer. In nearly all cases, the restart is fast enough to avoid any worker node network issues. However, there are situations where a Calico restart is delayed and thus, there could be network interruptions.  For these cases, the node network unavailable taint and condition are designed to keep new apps from being deployed to the new node until Calico and the node are fixed. Calico updates are rolled out in a very controlled manner so as to minimize overall application impact should there be a node problem.
 
-Monitor the `NetworkUnavailable` state with {{site.data.keyword. monitoringlong_notm}}
+Monitor the `NetworkUnavailable` state with {{site.data.keyword.monitoringlong_notm}}
 {: tsResolve}
 
 By using services to monitor applications such as {{site.data.keyword.monitoringlong_notm}}, you can configure alerts for when a worker node goes into a `NetworkUnavailable` state, and count each time this happens. You can also configure thresholds and tune your alerts to allow for when worker nodes `NetworkUnavailable` state during routine Calico patches.
