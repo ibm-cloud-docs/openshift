@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-10"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -31,7 +31,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
 ## Version 1.0.454
-{: #cli-10452}
+{: #cli-10454}
 
 Version 1.0.454 of the CLI was released on 3 October 2022.
 :   Adds new [Ingress status](/docs/containers?topic=containers-kubernetes-service-cli#alb-commands) commands.

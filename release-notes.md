@@ -2725,7 +2725,7 @@ New! {{site.data.keyword.block_storage_is_short}} changelog
 New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
 :   Now, you can create GPU bare metal worker nodes in your {{site.data.keyword.openshiftlong_notm}} version 4 clusters in select zones. GPU machines are suited for high-performance computing, machine learning, or 3D applications that you might have, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}. 
 :   To get started with GPU-accelerated workloads.
-    - Create a [cluster](/docs/openshift?topic=openshift-clusters#clusters_standard) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. 
+    - Create a [cluster](/docs/openshift?topic=openshift-clusters) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. 
     - [Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}. 
     - Verify that you can run GPU workloads by [deploying a sample job](/docs/openshift?topic=openshift-deploy_app#gpu_app).
     

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-10-10"
 
 keywords: openshift, block storage, snapshot
 
@@ -71,8 +71,6 @@ Snapshots support is available for cluster version 4.9 and later and with the {{
     {: screen}
 
 1. Verify that the add-on state is `normal` and the status is `ready`.
-    If you enabled the add-on, but the state is `critical`, then your account is not allowlisted. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. Retry the steps to enable the add-on after your account is allowlisted.
-    {: note}
     
     ```sh
     ibmcloud oc cluster addon ls --cluster CLUSTER-ID
@@ -252,7 +250,7 @@ You can creating snapshots only when a volume is attached to a pod.
     Example output where `READYTOUSE` is `true`.
     ```sh
     NAME                            READYTOUSE   SOURCEPVC              SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-    ibmc-vpcblock-snapshot   true         csi-block-pvc                           1Gi           snapshotclass   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
+    ibmc-vpcblock-snapshot   true         csi-block-pvc                           1Gi           ibmc-vpcblock-snapshot   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
     ```
     {: screen}
 

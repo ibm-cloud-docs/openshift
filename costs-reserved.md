@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-10"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -153,7 +153,7 @@ If you don't have enough capacity in your reservation to complete a worker pool 
 
 Before you begin:
 * In {{site.data.keyword.cloud_notm}} IAM, make sure that you have the **Operator** platform access role for **Kubernetes Service** for the cluster to create worker pools.
-* [Create](https://cloud.ibm.com/docs/containers?topic=containers-cluster-create-classic&interface=ui) or have an existing a classic cluster in the **same metro** as the reservation that you want to use. If you want to use worker nodes only from a reservation, you can create a cluster with zero worker nodes, or remove existing, on-demand worker pools from a cluster.
+* [Create](/docs/containers?topic=containers-cluster-create-classic) or have an existing a classic cluster in the **same metro** as the reservation that you want to use. If you want to use worker nodes only from a reservation, you can create a cluster with zero worker nodes, or remove existing, on-demand worker pools from a cluster.
 
 To use the reservation:
 1. Log in to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.

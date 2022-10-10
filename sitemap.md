@@ -2726,7 +2726,7 @@ subcollection: openshift
 {: #sitemap_creating_clusters}
 
 
-[Creating clusters](/docs/openshift?topic=openshift-clusters#clusters)
+[Preparing to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
 * [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
 
@@ -5412,7 +5412,7 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
-* [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
+* [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10454)
 
 * [Version 1.0.452](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
 

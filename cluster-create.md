@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-10"
 
 keywords: openshift, clusters
 
@@ -15,8 +15,9 @@ subcollection: openshift
 
 
 
-# Creating clusters
+# Preparing to create clusters
 {: #clusters}
+
 
 Create a cluster in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
@@ -25,7 +26,7 @@ After [getting started](/docs/containers?topic=containers-getting-started), you 
 
 1. [Prepare your account to create clusters](/docs/containers?topic=containers-clusters#cluster_prepare). This step includes creating a billable account, setting up an API key with infrastructure permissions, making sure that you have Administrator access in {{site.data.keyword.cloud_notm}} IAM, planning resource groups, and setting up account networking.
 2. [Decide on your cluster setup](/docs/containers?topic=containers-clusters#prepare_cluster_level). This step includes planning cluster network and HA setup, estimating costs, and if applicable, allowing network traffic through a firewall.
-3. Create your [VPC Gen2](#clusters_vpcg2) or [classic](#clusters_standard) cluster by following the steps in the {{site.data.keyword.cloud_notm}} console or CLI.
+3. Create your [VPC Gen2](/docs/containers?topic=containers-cluster-create-vpc-gen2) or [classic](/docs/containers?topic=containers-cluster-create-classic) cluster by following the steps in the {{site.data.keyword.cloud_notm}} console or CLI.
 
 
 ## Preparing to create clusters at the account level
