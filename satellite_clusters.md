@@ -236,7 +236,7 @@ You can configure the internal image registry in your {{site.data.keyword.satell
     2. Click **Create a bucket**.
     3. Select the option to **Customize your bucket**.
     4. Under **Resiliency**, select **Regional**.
-    5. From the **Location** drop down menu, choose the region that is closest to where your location is managed from. For example, if your location is managed from `wdc` (Washington, DC), choose the `us-east` region. To check where a {{site.data.keyword.satelliteshort}} location is managed from, run `{{icsat}} location ls` in the CLI.
+    5. From the **Location** drop down menu, choose the region that is closest to where your location is managed from. For example, if your location is managed from `wdc` (Washington, DC), choose the `us-east` region. To check where a {{site.data.keyword.satelliteshort}} location is managed from, run `ibmcloud sat location ls` in the CLI.
     6. Under **Storage class**, select **Standard**.
     7. Configure the remaining categories to your preferences.
     8. Click **Create bucket**.
