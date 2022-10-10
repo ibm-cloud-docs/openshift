@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-10-10"
 
 keywords: openshift
 subcollection: openshift
@@ -3003,7 +3003,7 @@ subcollection: openshift
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
-* [Changing the Calico MTU for version 4 clusters](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
+    * [Updating the Calico installation](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
 
 * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
