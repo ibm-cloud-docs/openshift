@@ -121,7 +121,7 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
      - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
      - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
 
-:   If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+If no option is specified, the default `RHEL` [version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
     
     Example `cluster create` command.
