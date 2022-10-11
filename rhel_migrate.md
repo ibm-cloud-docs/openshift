@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-10-11"
 
 keywords: rhel, os, operating system
 
@@ -29,6 +29,9 @@ For Classic and VPC clusters, if you want to upgrade a 4.9 cluster with RHEL 7 w
 
 ## Migration actions by cluster version
 {: #rhel_migrate_versions}
+
+Do not migrate your version 4.10 clusters to RHEL 8 workers nodes if you have Portworx installed. Portworx does not RHEL 8.
+{: important}
 
 Version 4.10 clusters
 :   After the release of RHEL 8, new Classic and VPC clusters and worker pools version 4.10 and later are created with RHEL 8 worker nodes.
