@@ -99,8 +99,8 @@ oc version
 
 Example output
 ```sh
-Client Version: 4.9.3
-Server Version: 4.9.12
+Client Version: 4.10.3
+Server Version: 4.10.12
 Kubernetes Version: v1.22.2
 ```
 {: screen}

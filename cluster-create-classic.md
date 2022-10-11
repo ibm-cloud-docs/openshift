@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-05"
+lastupdated: "2022-10-10"
 
 keywords: openshift, clusters, classic, create
 
@@ -19,6 +19,9 @@ subcollection: openshift
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a fully-customizable standard cluster with your choice of hardware isolation and access to features like multiple worker nodes for a highly available environment.
 {: shortdesc}
 
+Supported infrastructure providers
+:   Classic
+
 
 
 ## Creating a classic cluster in the console
@@ -34,7 +37,7 @@ Create your single zone or multizone classic {{site.data.keyword.redhat_openshif
 1. Complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters&interface=ui) and decide on your cluster setup.
 2. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
-    1. From the {{site.data.keyword.redhat_openshift_notm}} drop-down list, select the version that you want to use in your cluster, such as 4.9.48.
+    1. From the {{site.data.keyword.redhat_openshift_notm}} drop-down list, select the version that you want to use in your cluster, such as 4.10.32.
     1. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. Usually, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with a {{site.data.keyword.redhat_openshift_notm}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
 4. Configure the **Location** details for your cluster.
     1. Select the **Resource group** that you want to create your cluster in.
@@ -221,7 +224,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     When the provisioning of your {{site.data.keyword.redhat_openshift_notm}} master is completed, the **State** of your cluster changes to `normal`. After your {{site.data.keyword.redhat_openshift_notm}} master is ready, the provisioning of your worker nodes is initiated.
     ```sh
     NAME         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.9.48_1544_openshift      Default             classic
+    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.10.32_1544_openshift      Default             classic
     ```
     {: screen}
 
@@ -262,7 +265,7 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 Classic cluster, shared virtual machine
 
 ```sh
-ibmcloud oc cluster create classic --name my_cluster --version 4.9_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+ibmcloud oc cluster create classic --name my_cluster --version 4.10_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
 ```
 {: pre}
 
@@ -270,7 +273,7 @@ ibmcloud oc cluster create classic --name my_cluster --version 4.9_openshift --z
 Classic cluster, bare metal
 
 ```sh
-ibmcloud oc cluster create classic --name my_cluster --version 4.9_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+ibmcloud oc cluster create classic --name my_cluster --version 4.10_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
 ```
 {: pre}
 
@@ -279,7 +282,7 @@ ibmcloud oc cluster create classic --name my_cluster --version 4.9_openshift --z
 Classic cluster with an IBM Cloud Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each.
 
 ```sh
-ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.9_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.10_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
 ```
 {: pre}
 

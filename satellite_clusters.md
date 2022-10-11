@@ -112,21 +112,14 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     - To enable cluster admin access for {{site.data.keyword.satelliteshort}} Config, include the `--enable-admin-agent` flag. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
     - For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
     
-    `--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. Red Hat CoreOS is available in all [regions where Satellite is supported](/docs/satellite?topic=satellite-sat-regions).
-:   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
-:   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
-     - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
-     - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
-     - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
-     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
-:   If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+    `--operating-system REDHAT_7_64|REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). Note that to use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS-enabled location and a cluster that runs version 4.9 or later. If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
     
     Example `cluster create` command.
 
     ```sh
-    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.9_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system (REDHAT_7_64|REDHAT_8_64|RHCOS)] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
+    ibmcloud oc cluster create satellite --location <location_name_or_ID> --name <cluster_name> --pull-secret <secret> --version 4.10_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system (REDHAT_7_64|REDHAT_8_64|RHCOS)] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers <workers_per_zone>] [--zone <zone_name>]
     ```
     {: pre}
     
@@ -213,7 +206,7 @@ By default, the internal registry does not run in your {{site.data.keyword.satel
 *  **Non-persistent data on the worker node**: See [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry).
 *  **Persistent data in {{site.data.keyword.cos_full_notm}}**: See [Setting up the internal container image registry with {{site.data.keyword.cos_full_notm}}](#satcluster-internal-registry-cos)
 
-By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.9/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the ConfigMap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
+By default, the [image registry operator management state](https://docs.openshift.com/container-platform/4.10/registry/configuring-registry-operator.html#registry-operator-configuration-resource-overview_configuring-registry-operator){: external} is set to `Unmanaged`. After you change the storage section in the ConfigMap to use a different solution such as the `emptyDir`, you must update the management state to `Managed`. Then, the operator creates the internal registry pod. Use the following command: `oc patch configs.imageregistry.operator.openshift.io/cluster --type merge -p '{"spec":{"managementState":"Managed"}}'`
 {: note}
 
 ### Setting up the internal container image registry with {{site.data.keyword.cos_full_notm}}
@@ -236,7 +229,7 @@ You can configure the internal image registry in your {{site.data.keyword.satell
     2. Click **Create a bucket**.
     3. Select the option to **Customize your bucket**.
     4. Under **Resiliency**, select **Regional**.
-    5. From the **Location** drop down menu, choose the region that is closest to where your location is managed from. For example, if your location is managed from `wdc` (Washington, DC), choose the `us-east` region. To check where a {{site.data.keyword.satelliteshort}} location is managed from, run `{{icsat}} location ls` in the CLI.
+    5. From the **Location** drop down menu, choose the region that is closest to where your location is managed from. For example, if your location is managed from `wdc` (Washington, DC), choose the `us-east` region. To check where a {{site.data.keyword.satelliteshort}} location is managed from, run `ibmcloud sat location ls` in the CLI.
     6. Under **Storage class**, select **Standard**.
     7. Configure the remaining categories to your preferences.
     8. Click **Create bucket**.
@@ -350,7 +343,7 @@ Unlike standard {{site.data.keyword.redhat_openshift_notm}} clusters that are cr
 
 *  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install) in your cluster.
 *  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
-*  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.9/storage/persistent_storage/persistent-storage-local.html){: external}.
+*  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.10/storage/persistent_storage/persistent-storage-local.html){: external}.
 
 
 

@@ -892,7 +892,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 {: important}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID]  [--version 4.9_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [-q]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID]  [--version 4.10_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [-q]
 ```
 {: pre}
 
@@ -921,7 +921,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 `--subnet-id VPC_SUBNET_ID`
 :    Required: The VPC subnet to assign the cluster. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2`.
 
-`--version 4.9_openshift`
+`--version 4.10_openshift`
 :    VPC clusters are supported for {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 
 `--flavor FLAVOR`
@@ -1001,7 +1001,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 **Example**:
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.9_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.10_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
@@ -6966,18 +6966,11 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 `--host-label, -hl LABEL`
 :    Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
-`--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. Red Hat CoreOS is available in all [regions where Satellite is supported](/docs/satellite?topic=satellite-sat-regions).
-:   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
-:   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
-     - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
-     - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
-     - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
-     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
-:   If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+`--operating-system REDHAT_7_64|REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). Note that to use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS-enabled location and a cluster that runs version 4.9 or later. If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
 `--pod-subnet SUBNET`
-:    Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.16.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+:    Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
 :    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
 :    The subnet that you choose must be within one of the following ranges.
      - `172.16.0.0 - 172.17.255.255`
@@ -6985,7 +6978,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
 
-:    Note that the pod and service subnets can't overlap. The service subnet is in the 172.20.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
+:    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
 
 `--pod-network-interface-selection METHOD`
 :    Optional. The method for selecting the node network interface for the internal pod network. The available methods are `can-reach` and `interface`. This option can only be used if you also enable Red Hat CoreOS with the `--operating-system` option. 
@@ -7000,14 +6993,14 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    Optional: Do not show the message of the day or update reminders.
 
 `--service-subnet SUBNET`
-:    Optional. All services that are deployed to the cluster are assigned a private IP address in the 172.20.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your services.
+:    Optional. All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your services.
 :    The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges.
      - `172.16.0.0 - 172.17.255.255`
      - `172.20.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
      - `198.18.0.0 - 198.19.255.255`
 
-:    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.16.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
+:    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
 
 `--sm-group GROUP`
 :    The secret group ID of the {{site.data.keyword.secrets-manager_short}} instance where your secrets are persisted. To get a secret group ID, see the [Secrets Manager CLI reference](/docs/secrets-manager?topic=secrets-manager-cli-plugin-secrets-manager-cli#secrets-manager-cli-secret-groups-command).
@@ -7026,7 +7019,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 The following example creates a {{site.data.keyword.satelliteshort}} cluster with the `REDHAT_8_64` operating system.
 
 ```sh
-ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system REDHAT_8_64 --version 4.9_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
+ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system REDHAT_8_64 --version 4.10_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
 ```
 {: pre}
 
@@ -7063,15 +7056,8 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 `--name POOL_NAME`
 :    Required. The name that you want to give your worker pool.
 
-`--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. To use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS enabled location in a cluster that runs version 4.9 or later. Red Hat CoreOS is available in all [regions where Satellite is supported](/docs/satellite?topic=satellite-sat-regions).
-:   For clusters created in locations with CoreOS enabled, specify `REDHAT_8_64`, or `RHCOS`.
-:   For clusters created in locations without Red Hat CoreOS enabled, specify a `RHEL` version.
-     - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
-     - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
-     - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
-     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
-:   If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+`--operating-system REDHAT_7_64|REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). Note that to use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS-enabled location and a cluster that runs version 4.9 or later. If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
 `--size-per-zone WORKERS_PER_ZONE`
 :    Required. The number of worker nodes to request in each zone. Ensure that you [attach enough hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to be used as worker nodes. For example, if you enter `2` and then [add 2 more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) to this worker pool after you create it, ensure that at least 6 unassigned hosts are attached to your location so that they can be assigned as 2 worker nodes in each of the 3 zones in your worker pool.

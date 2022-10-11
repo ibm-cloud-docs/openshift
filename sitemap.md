@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-11"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [11 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1122)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `5.0`.
 
     * [10 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1022)
 
@@ -2742,7 +2746,7 @@ subcollection: openshift
 
 * [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster_create_classic)
 
-[Creating VPC Gen 2 clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
+[Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
 * [Creating a standard VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
 
@@ -5013,7 +5017,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.9/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.10/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -6555,6 +6559,8 @@ subcollection: openshift
 [{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0, released 11 October 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0_is_block_relnote)
 
     * [Change log for version 5.0.4-beta_1566, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
 

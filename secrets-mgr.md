@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-05"
+lastupdated: "2022-10-11"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -62,7 +62,7 @@ These steps are intended for users setting up {{site.data.keyword.secrets-manage
 {: #secrets-mgr_setup_s2s}
 {: step}
 
-Integrating {{site.data.keyword.secrets-manager_short}} with your {[product_name_short}] cluster requires service-to-service communication auhtorization. Follow the steps below to set up the authorization. For additional info, see [Integrations for Secrets Manager](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.openshiftlong_notm}} cluster requires service-to-service communication auhtorization. Follow the steps below to set up the authorization. For additional info, see [Integrations for Secrets Manager](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 {: shortdesc}
  
 1. In the {{site.data.keyword.cloud_notm}} console, click **Manage** > **Access (IAM)**.
@@ -83,7 +83,7 @@ To create a {{site.data.keyword.secrets-manager_short}} instance in the CLI or t
 {: shortdesc}
 
 - [Create a {{site.data.keyword.secrets-manager_short}} instance in CLI](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=cli).
-- [Create a {{site.data.keyword.secrets-manager_short}} instance in the UI](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-create-instance).
+- [Create a {{site.data.keyword.secrets-manager_short}} instance in the UI](/docs/secrets-manager?topic=secrets-manager-create-instance).
 
 When you create a {{site.data.keyword.secrets-manager_short}} instance, it is not provisioned directly in your cluster. You must register your new {{site.data.keyword.secrets-manager_short}} instance with your cluster in the next step. 
 {: note}
@@ -147,7 +147,7 @@ Follow the steps to register your {{site.data.keyword.secrets-manager_short}} in
     {: pre}
 
 
-You can specify a {{site.data.keyword.secrets-manager_short}} instance and a secret group when you [create a cluster](/docs/containers?topic=containers-clusters&interface=cli) with the [`ibmcloud oc cluster create classic`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`{{icks}} cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2) commands. Use the `--sm-instance` option to register an instance to the cluster and the `--sm-group` option to specify a secret group that can access the secrets on the cluster. See [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](#secrets-mgr_cluster_create).
+You can specify a {{site.data.keyword.secrets-manager_short}} instance and a secret group when you [create a cluster](/docs/containers?topic=containers-clusters&interface=cli) with the [`ibmcloud oc cluster create classic`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`ibmcloud oc cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2) commands. Use the `--sm-instance` option to register an instance to the cluster and the `--sm-group` option to specify a secret group that can access the secrets on the cluster. See [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](#secrets-mgr_cluster_create).
 {: tip} 
 
 ### Set a default {{site.data.keyword.secrets-manager_short}} instance and regenerate your secrets
