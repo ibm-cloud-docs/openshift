@@ -37,9 +37,6 @@ ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/containers?topic=containers-supported-cluster-addon-versions).
 
 
-
-
-
 ## Version 5.0
 {: #050_is_block}
 

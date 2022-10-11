@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-11"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -83,7 +83,7 @@ To create a {{site.data.keyword.secrets-manager_short}} instance in the CLI or t
 {: shortdesc}
 
 - [Create a {{site.data.keyword.secrets-manager_short}} instance in CLI](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=cli).
-- [Create a {{site.data.keyword.secrets-manager_short}} instance in the UI](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-create-instance).
+- [Create a {{site.data.keyword.secrets-manager_short}} instance in the UI](/docs/secrets-manager?topic=secrets-manager-create-instance).
 
 When you create a {{site.data.keyword.secrets-manager_short}} instance, it is not provisioned directly in your cluster. You must register your new {{site.data.keyword.secrets-manager_short}} instance with your cluster in the next step. 
 {: note}
