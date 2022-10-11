@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-11"
 
 keywords: block, add-on, changelog
 
@@ -45,6 +45,22 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
+
+
+
+### Change log for version 5.0, released 11 October 2022
+{: #5.0_is_block_relnote}
+
+- Adds snapshot support.
+- Makes the resource requests and limits of the `vpc-block-csi-driver` containers configurable. To view the config run `kubectl get cm -n kube-system addon-vpc-block-csi-driver-configmap -o yaml`
+- Adds the following parameters for customizing the driver.
+    - `AttachDetachMinRetryGAP: "3"`: The initial retry interval for checking Attach/Detach Status. The default is 3 seconds.
+    `AttachDetachMinRetryAttempt: "3"`: The number of attempts for AttachDetachMinRetryGAP. The default is 3 retries for 3 seconds retry gap.
+    `AttachDetachMaxRetryAttempt: "46"`: Total number of retries for checking Attach/Detach Status. Default is 46 times i.e ~7 mins (3 secs * 3 times + 6 secs * 6 times + 10 secs * 10 times).
+    `AttacherWorkerThreads: "15"`: The number of goroutines for processing VolumeAttachments.
+    `AttacherKubeAPIBurst: "10"`: The number of requests to the Kubernetes API server, exceeding the QPS, that can be sent at any given time
+    `AttacherKubeAPIQPS: "5.0"`: The number of requests per second sent by a Kubernetes client to the Kubernetes API server.
+- Disables the `handle-volume-inuse-error` option as this is applies to CSI drivers that support offline expansion only.
 
 
 

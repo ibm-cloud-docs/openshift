@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-11"
 
 keywords: openshift
 
@@ -26,6 +26,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2022
 {: #openshift-oct22}
+
+
+### 11 October 2022
+{: #openshift-oct1122}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on version `5.0`.
+:   For more information, see [the change log](/docs/containers?topic=containers-vpc_bs_changelog).
 
 
 

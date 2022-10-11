@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-11"
 
 keywords: openshift, app access
 
@@ -173,7 +173,7 @@ Misconfiguring the `node-port-addresses` might isolate your services from valid 
 1. Prepare your planned source subnet CIDR list that you want to allow to access the NodePort Services.
 1. Run the following command to get the `network.operator.openshift.io` configuration and save a copy in case you need to revert the changes.
     ```sh
-    kubectl get network.operator.openshift.io cluster -o yaml
+    oc get network.operator.openshift.io cluster -o yaml
     ```
     {: pre}
     
@@ -190,20 +190,20 @@ Misconfiguring the `node-port-addresses` might isolate your services from valid 
 1. Save your changes and apply them to the cluster.
 
     ```sh
-    kubectl apply -f updated-network-config.yaml
+    oc apply -f updated-network-config.yaml
     ```
     {: pre}
     
 1. Restart the `kube-proxy` DaemonSet to apply the changes. This operation is not disruptive.
 
     ```sh
-    kubectl rollout restart ds -n openshift-kube-proxy openshift-kube-proxy
+    oc rollout restart ds -n openshift-kube-proxy openshift-kube-proxy
     ```
     {: pre}
     
 1. Wait until all your `kube-proxy` pods are restarted. Check the status by running the following command.
     ```sh
-    kubectl get po -n openshift-kube-proxy --selector app=kube-proxy
+    oc get po -n openshift-kube-proxy --selector app=kube-proxy
     ```
     {: pre}
 
