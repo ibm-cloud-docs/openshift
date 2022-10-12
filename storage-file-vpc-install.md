@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-12"
 
 keywords: openshift
 
@@ -20,11 +20,16 @@ subcollection: openshift
 {: shortdesc}
 
 {{site.data.keyword.filestorage_vpc_short}} is available for allowlisted accounts in the Washington D.C., Dallas, Frankfurt, London, Sydney, Sao Paulo, and Tokyo regions. Contact your IBM Sales representative if you are interested in getting access.
-{: note}
+{: preview}
 
 Supported infrastructure providers
 :   VPC
 {: important}
+
+## Prerequisites
+{: #prereqs}
+
+1. Update the `container-service` plug in to the most recent version. You can update the plug in by running the `ibmcloud oc plugin update container-service` command. 
 
 
 
@@ -44,7 +49,7 @@ Supported infrastructure providers
 
 1. Enable the add-on. The add-on might take a few minutes to become ready.
     ```sh
-    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION
+    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION --cluster CLUSTERID
     ```
     {: pre}
 
@@ -61,4 +66,3 @@ Supported infrastructure providers
       vpc-file-csi-driver    1.0.0     normal         Addon Ready
     ```
     {: pre}
-

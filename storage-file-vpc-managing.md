@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-09-09"
+lastupdated: "2022-10-12"
 
 keywords: openshift
 
@@ -56,8 +56,8 @@ To create your own storage class:
       zone: ""                          # By default, the storage vpc driver will select a zone. The user can override this default
       tags: ""                          # A list of tags "a, b, c" that will be created when the volume is created. This can be overidden by user
       classVersion: "1"
-      UID: ""                           # The initial user identifier for the file share.
-      GID: ""                           # The initial group identifier for the file share.
+      uid: ""                           # The initial user identifier for the file share.
+      gid: ""                           # The initial group identifier for the file share.
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
     ```

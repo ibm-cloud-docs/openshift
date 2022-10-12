@@ -4845,6 +4845,8 @@ subcollection: openshift
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
 
+* [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs)
+
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
 * [Deploying an app that uses {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file)
