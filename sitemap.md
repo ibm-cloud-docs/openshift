@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-12"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [12 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1222)
+
+        * Istio add-on
 
     * [11 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1122)
 
@@ -2777,6 +2781,8 @@ subcollection: openshift
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
 
 * [Limitations for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
+
+* [How am I charged for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}?](/docs/openshift?topic=openshift-satellite-clusters#satcluster-pricing)
 
 [Creating a private-only cluster in VPC by using a {{site.data.keyword.bpshort}} template](/docs/openshift?topic=openshift-templates#templates)
 
