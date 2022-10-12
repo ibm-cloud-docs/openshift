@@ -5311,11 +5311,11 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress status-report get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_get)
 
-    * [`ibmcloud oc ingress status-report ignore add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_add)
+    * [`ibmcloud oc ingress status-report ignore-errors add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_add)
 
-    * [`ibmcloud oc ingress status-report ignore ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_ls)
+    * [`ibmcloud oc ingress status-report ignore-errors ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_ls)
 
-    * [`ibmcloud oc ingress status-report ignore rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
+    * [`ibmcloud oc ingress status-report ignore-errors rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
 
 * [`nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns)
 
