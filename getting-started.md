@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-12"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -70,7 +70,7 @@ Now that your cluster is ready, [deploying your first app](#deploy-app)!
 Create a VPC cluster by using the {{site.data.keyword.cloud_notm}} console. VPC {{site.data.keyword.redhat_openshift_notm}} clusters run version 4.10, which includes Kubernetes version 1.22. The operating system is Red Hat Enterprise Linux 7.
 {: shortdesc}
 
-Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC cluster](/docs/openshift?topic=openshift-clusters#clusters_vpcg2).
+Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2).
 {: tip}
 
 1. Create a Virtual Private Cloud (VPC) on generation 2 compute.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-12"
 
 keywords: openshift, egress, natportrange, 1.24
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 
 # Why am I seeing egress connection failures from pods?
-{: ts-network-egress-124}
+{: #ts-network-egress-124}
 {: support}
 
 

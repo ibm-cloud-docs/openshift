@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-12"
 
 keywords: openshift
 
@@ -49,7 +49,7 @@ public-crdf253b6025d64944ab99ed63bb4567b6-alb2   healthy   alb
 ```
 {: screen}
 
-The **Ingress Status** and **Ingress Message** fields are also returned in the output of the `ibmcloud oc cluster get` command. The health of your Ingress components might impact the health of your cluster master. For example,  if your Ingress components are unhealthy, your cluster master might show a `warning` state. However, the health of your Ingress components does not cause your master health to become `critical`.
+The **Ingress Status** and **Ingress Message** fields are also returned in the output of the `ibmcloud oc cluster get` command. 
 {: tip}
 
 

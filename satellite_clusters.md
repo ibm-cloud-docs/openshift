@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-10-11"
+  years: 2020, 2022
+lastupdated: "2022-10-12"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -283,7 +283,7 @@ You can configure the internal image registry in your {{site.data.keyword.satell
         ```
         {: pre}
         
-    2. Find the following section to edit. 
+    1. Find the following section to edit. 
         ```sh
         storage:
             emptyDir: {}
@@ -292,7 +292,7 @@ You can configure the internal image registry in your {{site.data.keyword.satell
         ```
         {: screen}
         
-    3. Replace `emptyDir: {}` with your bucket information and location endpoints.
+    1. Replace `emptyDir: {}` with your bucket information and location endpoints.
         ```sh
             s3:
             bucket: <bucket_name>
@@ -315,7 +315,7 @@ You can configure the internal image registry in your {{site.data.keyword.satell
         ```
         {: screen}
         
-    4. Save and apply the changes.
+    1. Save and apply the changes.
 7. Verify that the image registry was configured by checking for a pod that begins with `image-registry-` in the `openshift-image-registry` namespace. 
     ```sh
     oc get pod -n openshift-image-registry
@@ -398,7 +398,7 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 Review the table below for information on charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
-#### {{site.data.keyword.redhat_openshift_notm}} clusters
+### {{site.data.keyword.redhat_openshift_notm}} clusters
 {: #pricing-services-clusters}
 
 Get the benefits of a [managed {{site.data.keyword.redhat_openshift_notm}} service](/docs/openshift?topic=openshift-cs_ov#compare_ocp) on any compatible infrastructure that you want.
@@ -408,7 +408,7 @@ Get the benefits of a [managed {{site.data.keyword.redhat_openshift_notm}} servi
 | -------------- | ------------------------- | ---------------------- |
 | Cluster management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.openshiftlong_notm}}, such as installation and security patch updates of OpenShift Container Platform for your worker nodes; managing your cluster with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
 | {{site.data.keyword.satelliteshort}} management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
-| OCP licensing fee | Red Hat charges a fee for Red Hat Enterprise Linux and OpenShift Container Platform per 2 vCPU hour. | This charge is not included in your {{site.data.keyword.cloud_notm}} bill. Instead, you cover this charge by [bringing your own license](#byo-ocp). |
+| OCP licensing fee | Red Hat charges a fee for Red Hat Enterprise Linux and OpenShift Container Platform per 2 vCPU hour. | This charge is not included in your {{site.data.keyword.cloud_notm}} bill. Instead, you cover this charge by [bringing your own license](/docs/satellite?topic=satellite-faqs#byo-ocp). |
 {: caption="{{site.data.keyword.redhat_openshift_notm}} cluster charges." caption-side="top"}
 
 

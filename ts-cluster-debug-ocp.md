@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-10-12"
 
 keywords: openshift
 
@@ -87,7 +87,7 @@ Enabling MFA at the user level is not supported. If MFA is enabled for some user
 
 Check any firewalls or network policies to verify that you don't block any ingress or egress traffic for the OperatorHub or other {{site.data.keyword.redhat_openshift_notm}} components.
 
-* If you generated an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) allowlist by specifying which IP addresses have access to your cluster, you must [add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist](/docs/openshift?topic=openshift-firewall#iam_allowlist).
+* If you generated an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) allowlist by specifying which IP addresses have access to your cluster, you must [add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located to the allowlist](/docs/openshift?topic=openshift-firewall).
 * Classic only: If you have a firewall, [open the required ports and IP addresses in your firewall](/docs/openshift?topic=openshift-firewall).
 * VPC only: If you control traffic with VPC ACLs or security groups, make sure that you allow the minimum required [inbound and outbound rules](/docs/openshift?topic=openshift-firewall).
 

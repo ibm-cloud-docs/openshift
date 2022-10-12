@@ -167,6 +167,10 @@ toc:
               topics:
               - vpc-subnets.md
               - vpc-vpn.md
+          - topicgroup:
+              label: Satellite clusters
+              topics:
+              - satellite-sriov.md
           - static-routes.md
       - topicgroup: 
           label: Logging and monitoring

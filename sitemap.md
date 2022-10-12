@@ -2784,6 +2784,8 @@ subcollection: openshift
 
 * [How am I charged for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}?](/docs/openshift?topic=openshift-satellite-clusters#satcluster-pricing)
 
+    * [{{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-satellite-clusters#pricing-services-clusters)
+
 [Creating a private-only cluster in VPC by using a {{site.data.keyword.bpshort}} template](/docs/openshift?topic=openshift-templates#templates)
 
 * [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
@@ -3671,6 +3673,17 @@ subcollection: openshift
     * [Create a classic-access VPC](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-create-classic)
 
     * [Use {{site.data.keyword.tg_full_notm}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-use-transit-gw)
+
+
+### Satellite clusters
+{: #sitemap_satellite_clusters}
+
+
+[Setting up Single Root I/O Virtualization (SR-IOV) in {{site.data.keyword.satellitelong_notm}} clusters](/docs/openshift?topic=openshift-satellite-sriov#satellite-sriov)
+
+* [Prerequisites for using SR-IOV](/docs/openshift?topic=openshift-satellite-sriov#sriov-prereqs)
+
+* [Installing the SR-IOV network operator](/docs/openshift?topic=openshift-satellite-sriov#sriov-install-operator)
 
 [Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes#static-routes)
 
@@ -4834,6 +4847,8 @@ subcollection: openshift
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
 
+* [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs)
+
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
 * [Deploying an app that uses {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file)
@@ -5300,11 +5315,11 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress status-report get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_get)
 
-    * [`ibmcloud oc ingress status-report ignore add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_add)
+    * [`ibmcloud oc ingress status-report ignore-errors add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_add)
 
-    * [`ibmcloud oc ingress status-report ignore ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_ls)
+    * [`ibmcloud oc ingress status-report ignore-errors ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_ls)
 
-    * [`ibmcloud oc ingress status-report ignore rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
+    * [`ibmcloud oc ingress status-report ignore-errors rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
 
 * [`nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns)
 
@@ -8016,6 +8031,8 @@ subcollection: openshift
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
 [Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125#ts-network-snat-125)
+
+[Why am I seeing egress connection failures from pods?](/docs/openshift?topic=openshift-ts-network-egress-124#ts-network-egress-124)
 
 [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails#cs_vpn_fails)
 
