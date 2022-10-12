@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-10-12"
 
 keywords: cbr, context based restrictions, security
 
@@ -83,7 +83,7 @@ Cluster control plane APIs
 Management APIs
 :   Protect access to the APIs for provisioning and managing clusters, worker pools, and more. CBR rules that apply to the management API type control access the {{site.data.keyword.openshiftlong_notm}} APIs, which includes all `ibmcloud oc` commands calls, such as `ibmcloud oc clusters`, `ibmcloud oc cluster create`, and more. If you include the management APIs in your CBR type, then resources in the network zone that associate with the rule can interact only with the management APIs.
 :   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:management` type.
-:   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster"` in the `"operations"` spec.
+:   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:management"` in the `"operations"` spec.
 
 To follow an example CBR scenario, see [Setting up context-based restrictions](/docs/containers?topic=containers-cbr-tutorial).
 {: tip}
