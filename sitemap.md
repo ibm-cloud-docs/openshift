@@ -2784,6 +2784,8 @@ subcollection: openshift
 
 * [How am I charged for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}?](/docs/openshift?topic=openshift-satellite-clusters#satcluster-pricing)
 
+    * [{{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-satellite-clusters#pricing-services-clusters)
+
 [Creating a private-only cluster in VPC by using a {{site.data.keyword.bpshort}} template](/docs/openshift?topic=openshift-templates#templates)
 
 * [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
@@ -8029,6 +8031,8 @@ subcollection: openshift
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
 [Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125#ts-network-snat-125)
+
+[Why am I seeing egress connection failures from pods?](/docs/openshift?topic=openshift-ts-network-egress-124#ts-network-egress-124)
 
 [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails#cs_vpn_fails)
 
