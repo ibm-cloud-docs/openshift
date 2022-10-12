@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-12"
 
 keywords: satellite, hybrid, multicloud, sriov, nic, network
 
@@ -38,10 +38,16 @@ Supported network interface controllers
 
 1. Follow the steps to [Install the operator in your cluster](https://docs.openshift.com/container-platform/4.9/networking/hardware_networks/installing-sriov-operator.html#installing-sr-iov-operator_installing-sriov-operator){: external}. Make sure to set the **Update Approval** policy to **Manual**. 
 
-1. After the operator is installed and running, run the following command to edit the `sriov-network-operator` deployment in the `openshift-sriov-network-operator` namespace.
+1. Get the details of the `ClusterServiceVersion` in the `openshift-sriov-network-operator` namespace.
+    ```sh
+    oc get ClusterServiceVersion -n openshift-sriov-network-operator 
+    ```
+    {: pre}
+
+1. Run the following command to edit the `ClusterServiceVersion` in the `openshift-sriov-network-operator` namespace.
 
    ```sh
-   oc edit deployments.apps -n openshift-sriov-network-operator sriov-network-operator
+   oc edit ClusterServiceVersion -n openshift-sriov-network-operator NAME
    ```
    {: pre}
    
