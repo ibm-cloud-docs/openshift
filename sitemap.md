@@ -3672,6 +3672,17 @@ subcollection: openshift
 
     * [Use {{site.data.keyword.tg_full_notm}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-use-transit-gw)
 
+
+### Satellite clusters
+{: #sitemap_satellite_clusters}
+
+
+[Setting up Single Root I/O Virtualization (SR-IOV) in {{site.data.keyword.satellitelong_notm}} clusters](/docs/openshift?topic=openshift-satellite-sriov#satellite-sriov)
+
+* [Prerequisites for using SR-IOV](/docs/openshift?topic=openshift-satellite-sriov#sriov-prereqs)
+
+* [Installing the SR-IOV network operator](/docs/openshift?topic=openshift-satellite-sriov#sriov-install-operator)
+
 [Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes#static-routes)
 
 * [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
