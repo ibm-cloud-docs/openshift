@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-10-13"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -82,58 +82,26 @@ How do I set up autoscaling in my {{site.data.keyword.satelliteshort}} cluster
 
 1. [Create a cluster in your location](/docs/openshift?topic=openshift-satellite-clusters).
 
-1. Create a Kubernetes secret that contains your {{site.data.keyword.satelliteshort}} link credentials. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
+1. Copy the following `storage-secret-store` secret and save it as a file. You can find your `openshift-api` endpoint details on the {{site.data.keyword.satelliteshort}} Link endpoints [page for your location](https://cloud.ibm.com/satellite/locations){: external}.
+    ```yaml
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: storage-secret-store
+      namespace: kube-system
+    type: Opaque
+    stringData:
+      ca_iam_api_key: "<iam_api_key>" # Enter your IAM API key
+      private_container_api_route: "API ROUTE" # Enter the Destination IP of the openshift-api Link endpoint for your Satellite loction. For example: https://i43fb00XXX-XXXX6bf59a8XXX-ce00.us-east.satellite.appdomain.cloud
+    ```
+    {: codeblock}
+    
+1. Create the secret in your cluster. 
 
     ```sh
-    oc get secrets -n kube-system | grep storage-secret-store
+    oc create -f secret.yaml -n kube-system
     ```
     {: pre}
-
-1. If the `storage-secret-store` secret doesn't exist, create it.
-
-    1. Create a `secret.yaml` file that has your IAM API key.
-
-        ```yaml
-        apiVersion: v1
-        kind: Secret
-        metadata:
-          name: storage-secret-store
-          namespace: kube-system
-        type: Opaque
-        stringData:
-           ca_iam_api_key="APIKEY"  # Enter your IAM API key
-           private_container_api_route="API ROUTE" # Pirvate clusters only. 
-        ```
-        {: codeblock}
-
-    1. Create the secret in your cluster. 
-
-        ```sh
-        oc create -f secret.yaml -n kube-system
-        ```
-        {: pre}
-
-1. If the `storage-secret-store` secret exists, update it.
-
-    1. Edit the `storage-secret-store` secret.
-
-        ```sh
-        oc edit secret storage-secret-store -n kube-system
-        ```
-        {: pre}
-
-        ```yaml
-        apiVersion: v1
-        kind: Secret
-        metadata:
-          name: storage-secret-store
-          namespace: kube-system
-        type: Opaque
-        stringData:
-          iam_api_key: "<iam_api_key>" # Enter your IAM API key
-          private_container_api_route: "API ROUTE" # Pirvate clusters only.
-        ```
-        {: codeblock}
 
 1. Attach more hosts to your location that you want to use in your autoscaled worker pool. As a best practice, don't set up autoscaling on the default worker pool. When you attach the hosts that you want to use in the autoscaled worker pool, be sure specify host labels such as the host `cpu=16` and `memory=64`. Host labels are used by the cluster autoscaler add-on to find hosts that are available for scaling.
     Example command to attach hosts while specifying host labels for CPU and memory.

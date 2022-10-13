@@ -3345,15 +3345,17 @@ subcollection: openshift
 
     * [Viewing {{site.data.keyword.openshiftlong_notm}} created priority level configurations](/docs/openshift?topic=openshift-kubeapi-priority#kube-api-prioritylevelconfig)
 
-[Pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_admission)
+[Pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-admission)
 
-* [Understanding security profiles](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
+* [Understanding security profiles](/docs/openshift?topic=openshift-pod-security-admission#pod_security_profiles)
 
-* [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_configure)
+* [What if Pod Security Admission isn't the right choice for me?](/docs/openshift?topic=openshift-pod-security-admission#what-if-psa)
 
-    * [Understanding {{site.data.keyword.openshiftlong_notm}} pod security namespace labeling](/docs/openshift?topic=openshift-pod_security_admission#pod-sec-namespace-labels)
+* [Configuring Pod Security admission namespace labels](/docs/openshift?topic=openshift-pod-security-admission#psa-namespace-labels)
 
-    * [Additional resources](/docs/openshift?topic=openshift-pod_security_admission#pod-sec-additional-resources)
+* [Configuring pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-configure)
+
+* [Additional resources](/docs/openshift?topic=openshift-pod-security-admission#pod-sec-additional-resources)
 
 
 ## Securing the cluster network
