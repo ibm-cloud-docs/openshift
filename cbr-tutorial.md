@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-10-13"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 
@@ -114,7 +114,7 @@ To test your context-based restrictions setup, you can try calling the cluster A
 ## Additional scenarios
 {: #cbr-tutorial-create-additional-scenarios}
 
-Now that you've created a simpled CBR network zone and rule, review the following more advanced examples to further control access to your {{site.data.keyword.openshiftlong_notm}} resources.
+Now that you've created a simple CBR network zone and rule, review the following more advanced examples to further control access to your {{site.data.keyword.openshiftlong_notm}} resources.
 
 ### Allowing different IPs to access the public and private service endpoints
 {: #cbr-tutorial-scenarios-pub-priv-one-ip}
