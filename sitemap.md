@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-13"
 
 keywords: openshift
 subcollection: openshift
@@ -4582,6 +4582,8 @@ subcollection: openshift
 
     * [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)
 
+* [Updating Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific)
+
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
@@ -5583,6 +5585,12 @@ subcollection: openshift
 [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions#openshift_versions)
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
+
+* [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+
+* [Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite)
+
+* [Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite)
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
