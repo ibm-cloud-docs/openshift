@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-14"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -26,7 +26,7 @@ Looking for general information about updating clusters, or information on a dif
 RHEL 7 worker nodes with {{site.data.keyword.openshiftlong_notm}} version 4.10 clusters is deprecated and becomes unsupported after support for RHEL 8 is available. After RHEL 8 is available, you must replace your RHEL 7 worker nodes with RHEL 8 worker nodes.
 {: important}
 
-Do not migrate your version 4.10 clusters to RHEL 8 workers nodes if you have Portworx installed. Portworx does not support RHEL 8.
+If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific).
 {: important}
 
 [Extended update support (EUS) updates](https://docs.openshift.com/container-platform/4.10/updating/preparing-eus-eus-upgrade.html){: external} are not available at this time for {{site.data.keyword.openshiftlong_notm}} version 4.10 clusters.

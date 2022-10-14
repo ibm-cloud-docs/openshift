@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-14"
 
 keywords: rhel, os, operating system
 
@@ -30,7 +30,7 @@ For Classic and VPC clusters, if you want to upgrade a 4.9 cluster with RHEL 7 w
 ## Migration actions by cluster version
 {: #rhel_migrate_versions}
 
-Do not migrate your version 4.10 clusters to RHEL 8 workers nodes if you have Portworx installed. Portworx does not RHEL 8.
+If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific).
 {: important}
 
 Version 4.10 clusters
