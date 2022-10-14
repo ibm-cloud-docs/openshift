@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-10-14"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -142,7 +142,7 @@ Your upgrade to 1.25 fails if the cluster role binding does not have the default
 
 
 ### Verifying the `restricted-psp-user` ClusterRoleBinding is using default configuration
-{: psa-migration-crb-verify}
+{: #psa-migration-crb-verify}
 {: step}
 
 Complete the following steps the verify the `restricted-psp-user` ClusterRoleBinding is using the default configuration.
@@ -189,7 +189,7 @@ Your upgrade to 1.25 fails if the cluster role binding does not include the defa
 
 
 ### References
-{: psa-migration-references}
+{: #psa-migration-references}
 
 Review the following information before you migrate from Pod Security Policies to Pod Security Admission. Do **not** follow the migration guide as-is as some actions are not appropriate for {{site.data.keyword.openshiftlong_notm}} clusters.
 
