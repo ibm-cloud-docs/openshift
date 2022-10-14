@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-14"
 
 keywords: openshift
 
@@ -184,7 +184,7 @@ Master fix pack update
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.26_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.46_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.47_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.56_1580_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1598_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
 
 New! Pod security admission
-:    Versions 4.11 and later include support for Kubernetes [pod security admission](/docs/openshift?topic=openshift-pod_security_admission). 
+:    Versions 4.11 and later include support for Kubernetes [pod security admission](/docs/openshift?topic=openshift-pod-security-admission). 
 
 
 ## August 2022
