@@ -93,7 +93,7 @@ Upgrading to 1.25 is not recommended if the output lists a PSP other than the `i
 {: important}
 
 
-### Verifying the `privileged-psp-user` cluster role binding is using default configuration
+## Verifying the `privileged-psp-user` cluster role binding is using default configuration
 {: #psa-migration-verify-crb}
 {: step}
 
@@ -141,7 +141,7 @@ Your upgrade to 1.25 fails if the cluster role binding does not have the default
     {: codeblock}
 
 
-### Verifying the `restricted-psp-user` ClusterRoleBinding is using default configuration
+## Verifying the `restricted-psp-user` ClusterRoleBinding is using default configuration
 {: #psa-migration-crb-verify}
 {: step}
 
