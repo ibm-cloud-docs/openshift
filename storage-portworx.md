@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-13"
 
 keywords: portworx, openshift
 
@@ -713,15 +713,17 @@ You can also [gather logging information](/docs/containers?topic=containers-port
 {: tip}
 {: note}
 
+If you are updating Portworx to use RHEL 8 worker nodes, see [Updating Portworx to a specific version](#px-update-specific).
+
 1. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the Helm version 3 client on your local machine.
 
-2. Update your Helm repos.
+1. Update your Helm repos.
     ```sh
     helm repo update
     ```
     {: pre}
 
-3. Find release name of your Portworx Helm chart.
+1. Find release name of your Portworx Helm chart.
     ```sh
     helm list -A | grep portworx
     ```
@@ -733,11 +735,56 @@ You can also [gather logging information](/docs/containers?topic=containers-port
     ```
     {: screen}
 
-4. Update your Portworx release with the latest version of the Helm chart.
+1. Update your Portworx release with the latest version of the Helm chart.
     ```sh
     helm upgrade <release_name> ibm-community/portworx/
     ```
     {: pre}
+
+## Updating Portworx to a specific version
+{: #px-update-specific}
+
+
+1. Add the Helm repo.
+    ```sh
+    helm repo add ibm-porx https://raw.githubusercontent.com/IBM/charts/master/repo/community
+    ```
+    {: pre}
+
+1. Update your Helm repos.
+    ```sh
+    helm repo update
+    ```
+    {: pre}
+
+1. Download the values file.
+    ```sh
+    helm get values RELEASE > /tmp/values.yaml
+    ```
+    {: pre}
+
+1. Specify the image version that you want to use. 
+
+    If you are updating Portworx to work on RHEL 8 worker nodes, specify at least image version 2.11.4.
+    {: important}
+    ```sh
+    vi /tmp/values.yaml 
+    ```
+    {: pre}
+
+    ```sh
+    envVars: PX_IMAGE=icr.io/ext/portworx/px-enterprise:2.11.4
+    imageVersion: 2.11.4
+    ```
+    {: screen}
+
+1. Update your Portworx release.
+    ```sh
+    helm upgrade portworx -f /tmp/values.yaml ibm-porx/portworx
+    ```
+    {: pre}
+
+
 
 ## Creating a Portworx volume
 {: #add_portworx_storage}
@@ -1595,6 +1642,5 @@ Review the following Portworx limitations.
 | Private clusters | To install Portworx in a cluster that doesn't have VRF or access to private CSEs, you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, and `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group). |
 {: summary="This table contains information on limitations for Portworx on {{site.data.keyword.openshiftlong_notm}} clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Portworx limitations"}
-
 
 

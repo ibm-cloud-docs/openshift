@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-13"
 
 keywords: openshift
 subcollection: openshift
@@ -3345,15 +3345,17 @@ subcollection: openshift
 
     * [Viewing {{site.data.keyword.openshiftlong_notm}} created priority level configurations](/docs/openshift?topic=openshift-kubeapi-priority#kube-api-prioritylevelconfig)
 
-[Pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_admission)
+[Pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-admission)
 
-* [Understanding security profiles](/docs/openshift?topic=openshift-pod_security_admission#pod_security_profiles)
+* [Understanding security profiles](/docs/openshift?topic=openshift-pod-security-admission#pod_security_profiles)
 
-* [Configuring pod security admission](/docs/openshift?topic=openshift-pod_security_admission#pod_security_configure)
+* [What if Pod Security Admission isn't the right choice for me?](/docs/openshift?topic=openshift-pod-security-admission#what-if-psa)
 
-    * [Understanding {{site.data.keyword.openshiftlong_notm}} pod security namespace labeling](/docs/openshift?topic=openshift-pod_security_admission#pod-sec-namespace-labels)
+* [Configuring Pod Security admission namespace labels](/docs/openshift?topic=openshift-pod-security-admission#psa-namespace-labels)
 
-    * [Additional resources](/docs/openshift?topic=openshift-pod_security_admission#pod-sec-additional-resources)
+* [Configuring pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-configure)
+
+* [Additional resources](/docs/openshift?topic=openshift-pod-security-admission#pod-sec-additional-resources)
 
 
 ## Securing the cluster network
@@ -4582,6 +4584,8 @@ subcollection: openshift
 
     * [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)
 
+* [Updating Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific)
+
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
@@ -5583,6 +5587,12 @@ subcollection: openshift
 [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions#openshift_versions)
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
+
+* [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+
+* [Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite)
+
+* [Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite)
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
