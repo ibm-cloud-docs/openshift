@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-17"
 
 keywords: cbr, context based restrictions, security
 
@@ -19,9 +19,6 @@ subcollection: openshift
 
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.openshiftlong_notm}} resources can be controlled with context-based restrictions and identity and access management policies.
 {: shortdesc}
-
-Setting up context-based restrictions for {{site.data.keyword.openshiftlong_notm}} resources is available for allowlisted accounts only.
-{: preview}
 
 These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
@@ -246,6 +243,15 @@ Example payload to add multiple services, IP addresses, and VPCs to a network zo
     
 
 
+### Creating network zones from the console
+{: #create-network-zone-console}
+{: ui}
+
+1. Determine the resources that you want add to your allowlist.
+1. Follow the steps to [create context-based restrictions in the console](/docs/account?topic=account-context-restrictions-create). Add the Kubernetes service to your network zones to allow {{site.data.keyword.openshiftlong_notm}} to access services and resources in your account.
+
+
+
 ## Creating rules
 {: #create-cbr-rule-openshift}
 
@@ -380,6 +386,15 @@ The following example command creates a rule that allows all private network con
 ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster --description "privateAccess=allowAll, publicAccess=oneIP" --service-name containers-kubernetes --service-instance CLUSTER-ID --context-attributes endpointType=private --context-attributes endpointType=public,networkZoneId=allow-client-ip
 ```
 {: pre}
+
+
+
+### Creating rules from the console
+{: #create-cbr-rule-console}
+{: ui}
+
+1. [Review the available contexts](#cbr-overview) and determine the rules you want to create.
+1. Follow the steps to [create context-based restrictions in the console](/docs/account?topic=account-context-restrictions-create).
 
 
 

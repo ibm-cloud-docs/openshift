@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-10-17"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 
@@ -26,8 +26,6 @@ completion-time: 30m
 With context-based restrictions, account owners and administrators can define and enforce access restrictions for {{site.data.keyword.cloud}} resources, based on the context of access requests. Access to {{site.data.keyword.openshiftlong_notm}} resources can be controlled with context-based restrictions and identity and access management policies. For more information, see [Protecting {{site.data.keyword.openshiftlong_notm}} resources with context-based restrictions](/docs/containers?topic=containers-cbr).
 {: shortdesc}
 
-Setting up context-based restrictions for {{site.data.keyword.openshiftlong_notm}} resources is available for allowlisted accounts only.
-{: preview}
 
 Applications running on {{site.data.keyword.openshiftlong_notm}} clusters, for example web servers exposed by a Kubernetes LoadBalancer, are not restricted by CBR rules.
 {: note}

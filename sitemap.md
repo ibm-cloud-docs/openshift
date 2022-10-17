@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-17"
 
 keywords: openshift
 subcollection: openshift
@@ -3169,11 +3169,15 @@ subcollection: openshift
 
     * [Creating network zones from the CLI](/docs/openshift?topic=openshift-cbr#create-network-zone-cli)
 
+    * [Creating network zones from the console](/docs/openshift?topic=openshift-cbr#create-network-zone-console)
+
 * [Creating rules](/docs/openshift?topic=openshift-cbr#create-cbr-rule-openshift)
 
     * [Creating rules by using the API](/docs/openshift?topic=openshift-cbr#create-cbr-rule-api)
 
     * [Creating rules from the CLI](/docs/openshift?topic=openshift-cbr#create-cbr-rule-cli)
+
+    * [Creating rules from the console](/docs/openshift?topic=openshift-cbr#create-cbr-rule-console)
 
 * [Limitations](/docs/openshift?topic=openshift-cbr#cbr-limitations)
 
