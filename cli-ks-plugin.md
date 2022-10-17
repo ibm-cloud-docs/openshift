@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-17"
 
 keywords: openshift
 
@@ -4886,13 +4886,13 @@ ibmcloud oc ingress status-report get --cluster mycluster
 ```
 {: pre}
 
-### `ibmcloud oc ingress status-report ignore-errors add`
+### `ibmcloud oc ingress status-report ignored-errors add`
 {: #cs_ingress_status_report_add}
 
 Add warnings to be ignored by Ingress status for a cluster.
 
 ```sh
-ibmcloud oc ingress status-report ignore-errors add --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
+ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -4919,17 +4919,17 @@ ibmcloud oc ingress status-report ignore-errors add --cluster CLUSTER --code COD
 
 **Example**:
 ```sh
-ibmcloud oc ingress status-report ignore-errors add --cluster mycluster
+ibmcloud oc ingress status-report ignored-errors add --cluster mycluster
 ```
 {: pre}
 
-### `ibmcloud oc ingress status-report ignore-errors ls`
+### `ibmcloud oc ingress status-report ignored-errors ls`
 {: #cs_ingress_status_report_ignore_ls}
 
 List warnings that are currently ignored by Ingress status for a cluster.
 
 ```sh
-ibmcloud oc ingress status-report ignore-errors ls --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -4952,17 +4952,17 @@ ibmcloud oc ingress status-report ignore-errors ls --cluster CLUSTER [--output O
 
 **Example**:
 ```sh
-ibmcloud oc ingress status-report ignore-errors ls --cluster mycluster
+ibmcloud oc ingress status-report ignored-errors ls --cluster mycluster
 ```
 {: pre}
 
-### `ibmcloud oc ingress status-report ignore-errors rm`
+### `ibmcloud oc ingress status-report ignored-errors rm`
 {: #cs_ingress_status_report_ignore_rm}
 
 Remove warnings that are currently ignored by Ingress status for a cluster. Once removed, these warnings are no longer ignored. 
 
 ```sh
-ibmcloud oc ingress status-report ignore-errors rm --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
+ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -4989,7 +4989,7 @@ ibmcloud oc ingress status-report ignore-errors rm --cluster CLUSTER --code CODE
 
 **Example**:
 ```sh
-ibmcloud oc ingress status-report ignore-errors rm --cluster mycluster
+ibmcloud oc ingress status-report ignored-errors rm --cluster mycluster
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-17"
 
 keywords: openshift
 
@@ -170,7 +170,7 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
     * [`ibmcloud oc ingress status-report enable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_status_report_enable)
     * [`ibmcloud oc ingress status-report get`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_status_report_get)
 * **`ibmcloud oc ingress status-report ignore`**: Manage warnings to be ignored by ingress status reports.
-    * [`ibmcloud oc ingress status-report ignore add`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_status_report_ignore_add)
+    * [`ibmcloud oc ingress status-report ignore add`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_status_report_add)
     * [`ibmcloud oc ingress status-report ignore ls`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_status_report_ignore_ls)
     * [`ibmcloud oc ingress status-report ignore rm`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
     
