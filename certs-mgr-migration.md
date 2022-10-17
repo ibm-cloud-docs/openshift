@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-17"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 
@@ -161,7 +161,7 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
 
     3. Verify that your default Ingress secrets regenerated. In the output, the CRN of the default Ingress secrets should contain `secrets-manager`. Note that some of your secret CRNs might contain `cloudcerts` instead. These secrets are updated in the next step. 
 
-        It might take several minutes for your secrets to regenerate. During this process, the **Status** column in the output says `regenerating` and switches to `created` when the regeneration is complete. 
+        It might take several minutes for your secrets to regenerate. During this process, the **Status** column in the output says `regenerating` or `creating`. The status switches to `created` when the regeneration is complete. 
         {: note}
 
         ```sh
@@ -325,11 +325,11 @@ What functionality can I gain with {{site.data.keyword.secrets-manager_short}}?
     - Create managed Kubernetes secrets with Ingress TLS certificates included.
     - Create Kubernetes secrets of any type by using the CRN of any {{site.data.keyword.secrets-manager_short}} instance you own.
     - Automatically update your secrets in your cluster on a regular basis.
-    - Track the experation dates of your certificates from the {{site.data.keyword.cloud_notm}} console.
+    - Track the expiration dates of your certificates from the {{site.data.keyword.cloud_notm}} console.
     - Control who has access to your secrets by creating secret groups for approved users.
 
 Are secrets that are stored in a registered {{site.data.keyword.secrets-manager_short}} instance automatically updated?
-:   Yes. Secrets that are stored in a registered {{site.data.keyword.secrets-manager_short}} instance are automatically updated once a day using the value of the secret from the corresponding CRN.
+:   Yes. If you have a {{site.data.keyword.secrets-manager_short}} instance registered to your cluster, the secrets on the cluster are automatically updated with the values from {{site.data.keyword.secrets-manager_short}} once a day. These updates are made using the value of the the secret from the corresponding CRN.
 
 Are my secrets automatically updated if I do not create and register a {{site.data.keyword.secrets-manager_short}} instance?
 :    If you do not have a {{site.data.keyword.secrets-manager_short}} instance registered to your cluster, your default Ingress secrets continue to update automatically every 90 days and are applied to your cluster. However, any secrets you created that *reference* the default Ingress secret are not automatically updated. 
