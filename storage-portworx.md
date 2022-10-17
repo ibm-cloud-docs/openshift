@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-10-14"
 
 keywords: portworx, openshift
 
@@ -767,6 +767,7 @@ If you are updating Portworx to use RHEL 8 worker nodes, see [Updating Portworx 
 
     If you are updating Portworx to work on RHEL 8 worker nodes, specify at least image version 2.11.4.
     {: important}
+    
     ```sh
     vi /tmp/values.yaml 
     ```

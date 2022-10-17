@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-10-14"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -93,7 +93,7 @@ Upgrading to 1.25 is not recommended if the output lists a PSP other than the `i
 {: important}
 
 
-### Verifying the `privileged-psp-user` cluster role binding is using default configuration
+## Verifying the `privileged-psp-user` cluster role binding is using default configuration
 {: #psa-migration-verify-crb}
 {: step}
 
@@ -141,8 +141,8 @@ Your upgrade to 1.25 fails if the cluster role binding does not have the default
     {: codeblock}
 
 
-### Verifying the `restricted-psp-user` ClusterRoleBinding is using default configuration
-{: psa-migration-crb-verify}
+## Verifying the `restricted-psp-user` ClusterRoleBinding is using default configuration
+{: #psa-migration-crb-verify}
 {: step}
 
 Complete the following steps the verify the `restricted-psp-user` ClusterRoleBinding is using the default configuration.
@@ -189,12 +189,16 @@ Your upgrade to 1.25 fails if the cluster role binding does not include the defa
 
 
 ### References
-{: psa-migration-references}
+{: #psa-migration-references}
 
 Review the following information before you migrate from Pod Security Policies to Pod Security Admission. Do **not** follow the migration guide as-is as some actions are not appropriate for {{site.data.keyword.openshiftlong_notm}} clusters.
+
+- [Pod Security Admission](/docs/containers?topic=containers-pod-security-admission)
 
 - [Migrate from `PodSecurityPolicy` to the Built-In PodSecurity Admission Controller](https://kubernetes.io/docs/tasks/configure-pod-container/migrate-from-psp/){: external}
 
 - [PSP to PSA tool](https://github.com/kubernetes-sigs/pspmigrator){: external}
+
+- [Why does my cluster upgrade fail due to Pod Security upgrade prerequisites?](/docs/containers?topic=containers-ts-app-pod-security).
 
 

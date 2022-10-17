@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-10-14"
 
 keywords: openshift
 subcollection: openshift
@@ -4116,6 +4116,8 @@ subcollection: openshift
 * [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
 
 * [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
+
+* [Setting up an NLB using port range](/docs/openshift?topic=openshift-loadbalancer-v2#nlb-setup-portrange)
 
 * [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
 

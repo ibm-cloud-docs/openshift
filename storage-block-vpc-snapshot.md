@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-14"
 
 keywords: openshift, block storage, snapshot
 
@@ -37,17 +37,6 @@ Snapshots support is available for cluster version 4.9 and later and with the {{
 1. Get the version number of the `vpc-block-csi-driver` add-on in your cluster.
     ```sh
     ibmcloud oc cluster addon ls --cluster CLUSTER
-    ```
-    {: pre}
-    
-1. If you have a version 1.25 cluster with add-on version 5.0 or later and are using the snapshot controller, remove the snapshot controller.
-    ```sh
-    kubectl delete -f https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/deploy/kubernetes/snapshot/rbac-snapshot-controller-v6.0.1.yaml
-    ```
-    {: pre}
-    
-    ```sh
-    kubectl delete -f https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/deploy/kubernetes/snapshot/snapshot-controller-v6.0.1.yaml
     ```
     {: pre}
 

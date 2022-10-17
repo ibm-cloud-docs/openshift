@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-10-14"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -62,7 +62,7 @@ Cluster autoscaler add-on
 :    The cluster autoscaler add-on does not support {{site.data.keyword.openshiftshort}} version 4.11. Do not update your cluster to version 4.11 if this add-on is installed.
 
 Portworx
-:    Portworx does not support {{site.data.keyword.openshiftshort}} version 4.11. Do not update your cluster to version 4.11 if you have Portworx installed. To check if you have Portworx installed in your cluster, run `oc get pods -n kube-system | grep 'portworx'`.
+:    If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific).
 
 OpenShift Data Foundation (ODF)
 :    ODF version 4.10 supports {{site.data.keyword.openshiftshort}} version 4.11 clusters. You may continue to use version 4.10 of the ODF add-on.
@@ -71,7 +71,7 @@ Extended update support (EUS)
 :    EUS updates are not available at this time for clusters that run version 4.11.
 
 Pod security admission
-:   Version 4.11 enables a new [Pod security admission controller](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-auth-pod-security-admission){: external}, which coexists with `SecurityContextConstraints`. The new pod security admission controller in version 4.11 includes warning messages and `kube-apiserver` audit events for pods that violate the Pod Security profile configured for the namespace. There is also a new `PodSecurityViolation "Information"` alert that is generated for pods that violate the pod security audit profile defined for that namespace. For more information about the pod security admission controller, see [Configuring Pod Security admission](/docs/openshift?topic=openshift-pod_security_admission).
+:   Version 4.11 enables a new [Pod security admission controller](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-auth-pod-security-admission){: external}, which coexists with `SecurityContextConstraints`. The new pod security admission controller in version 4.11 includes warning messages and `kube-apiserver` audit events for pods that violate the Pod Security profile configured for the namespace. There is also a new `PodSecurityViolation "Information"` alert that is generated for pods that violate the pod security audit profile defined for that namespace. For more information about the pod security admission controller, see [Configuring Pod Security admission](/docs/openshift?topic=openshift-pod-security-admission).
 
 ### Update before master
 {: #411_before}
