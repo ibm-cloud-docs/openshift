@@ -342,21 +342,19 @@ I created secrets that reference a default Ingress certificate, but I have not c
 ## Timeline for {{site.data.keyword.cloudcerts_short}} end of support
 {: #certs-mgr_timeline}
 
-Review the list of important dates regarding {{site.data.keyword.cloudcerts_short}} end of support.
+{{site.data.keyword.cloudcerts_short}} instances are no longer automatically provisioned in new clusters. Review the list of important dates regarding {{site.data.keyword.cloudcerts_short}} end of support.
 {: shortdesc}
 
 The following information is provided for general awareness only. Dates that are marked with a dagger (`†`) are tentative and subject to change. This timeline and the details regarding the {{site.data.keyword.cloudcerts_short}} end of support are tentative and subject to change. 
 {: important}
 
-23 September 2022`†` 
-:   {{site.data.keyword.cloudcerts_short}} instances are no longer automatically provisioned in new clusters.
-
-24 October 2022`†`
-:   CRNs that reference secrets stored in {{site.data.keyword.cloudcerts_short}} end of support are no longer used to update secrets in the cluster.
+1 December 2022`†`
+:   CRNs that reference secrets stored in {{site.data.keyword.cloudcerts_short}} are no longer used to update secrets in the cluster.
+:   `ibmcloud oc ingress secret` commands no longer support CRNs that reference secrets stored in {{site.data.keyword.cloudcerts_short}}.
 
 31 December 2022`†`
 :   {{site.data.keyword.cloudcerts_short}} becomes fully unsupported.
 :   Any remaining {{site.data.keyword.cloudcerts_short}} instances are deleted.
 :   Secrets in deleted {{site.data.keyword.cloudcerts_short}} are written directly to the cluster. If you do not migrate your secrets and set a default {{site.data.keyword.secrets-manager_short}}, your secrets are written only to the cluster and not to any manager instance.
-:   `ibmcloud oc ingress secret` commands no longer support CRNs that reference secrets stored in {{site.data.keyword.cloudcerts_short}}.
+
 
