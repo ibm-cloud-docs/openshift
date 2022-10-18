@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-18"
 
-keywords: kubernetes, openshift
+keywords: openshift, disconnect, airgap, olm, mirror
 
 subcollection: openshift
 
