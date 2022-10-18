@@ -107,9 +107,13 @@ toc:
               - cluster-scaling-deploy-apps.md
               - cluster-scaling-helm.md
           - openshift_cluster_update.md
-          - performance.md
           - cluster-remove.md
           - host-maintenance.md
+      - topicgroup: 
+          label: Tuning performance
+          topics:
+          - performance.md
+          - rhcos-performance.md
       - topicgroup: 
           label: Managing cluster costs
           topics:
