@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-18"
 
 keywords: flow logs, VPC monitoring, worker nodes, VPC, network traffic, collector
 
@@ -34,19 +34,29 @@ To enable flow logs, you must have a {{site.data.keyword.cos_full_notm}} instanc
 ## Viewing worker node flow logs
 {: #vpc-flow-log_view}
 
-Your {{site.data.keyword.fl_full}} gathers information from the VPC, VPC subnet, or VPC load balancer level. However, you can use the flow logs to gather information that is specific to your worker nodes. Separate flow log files are created for egress and ingress traffic. 
+Your {{site.data.keyword.fl_full}} gathers information from the VPC, VPC subnet, or VPC load balancer level. However, you can use the flow logs to gather information that is specific to your worker nodes. Separate flow log files are created for ingress and egress traffic. 
 {: shortdesc}
 
-1. List your worker nodes and note the ID of the worker node you want to view.
-
+1. In the CLI, find the `ibm-cloud.kubernetes.io/instance-id` label value for the worker node. 
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_id>
+    oc describe node <worker_node_ip> | grep instance-id
     ```
-    {: pre}
-
+    Example output.
+    ```sh
+    ibm-cloud.kubernetes.io/instance-id=1010_a1aa1010-a1a0-1010-a1aa-aa1a1-a1-aa1
+    ```
+    {: screen}
+    
 2. In the {{site.data.keyword.cloud_notm}} UI, click your {{site.data.keyword.cos_full_notm}} instance in the **Resource list**.
-3. Click the bucket that you specified when you created the flow log collector.
+3. Click the bucket where your flow logs are collected.
 4. Download and uncompress the flow log object. 
-5. Re-save the file as a `json` file.
-6. Open the file. 
-7. To find the entry that corresponds to a worker node, find the `instance_crn` value that matches the ID of the worker node you found previously.
+5. Open the file and navigate through the file directory until you reach directories that begin with `instance-id=`. 
+6. Find the file directory that contains the instance ID found in the first step. The ID is included at the end of the file directory name.
+    Example.
+    ```sh
+    `instance-id=crn%3AV1%...%3Ainstance%3A1010_a1aa1010-a1a0-1010-a1aa-aa1a1-a1-aa1
+    ```
+    {: screen}
+
+6. In the `instance=id=` directory, locate the `record-type=ingress` and `record-type=egress` files. Your ingress and egress traffic logs are located here. 
+
