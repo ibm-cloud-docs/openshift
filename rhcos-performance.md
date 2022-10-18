@@ -13,13 +13,6 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-Supported infrastructure providers
-:   {{site.data.keyword.satelliteshort}}
-
-Supported worker node operating systems
-:   Red Hat CoreOS (`RHCOS`)
-
-
 
 # Tuning performance for Red Hat CoreOS worker nodes
 {: #rhcos-performance}
@@ -29,6 +22,12 @@ You can tune your Red Hat CoreOS worker node performance by enabling CPU Pinning
 
 These configurations can be beneficial for applications that have strict performance requirements. However, these customizations might cause issues with scheduling workloads.
 {: note}
+
+Supported infrastructure providers
+:   {{site.data.keyword.satelliteshort}}
+
+Supported worker node operating systems
+:   Red Hat CoreOS (`RHCOS`)
 
 ## Deploying the Node Feature Discovery Operator
 {: #rhcos-node-feature-discovery}
