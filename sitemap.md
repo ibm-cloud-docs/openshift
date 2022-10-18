@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-10-18"
 
 keywords: openshift
 subcollection: openshift
@@ -3005,6 +3005,23 @@ subcollection: openshift
 
 * [Updating managed add-ons](/docs/openshift?topic=openshift-update#addons)
 
+[Removing clusters](/docs/openshift?topic=openshift-remove#remove)
+
+[Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
+
+* [Identifying your affected workers](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-list)
+
+* [Actions to take before the maintenance period](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-actions)
+
+    * [Workers in Classic clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-classic)
+
+    * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
+
+
+## Tuning performance
+{: #sitemap_tuning_performance}
+
+
 [Tuning performance](/docs/openshift?topic=openshift-kernel#kernel)
 
 * [Default worker node settings](/docs/openshift?topic=openshift-kernel#worker-default)
@@ -3027,17 +3044,15 @@ subcollection: openshift
 
     * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
 
-[Removing clusters](/docs/openshift?topic=openshift-remove#remove)
+[Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance)
 
-[Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
+* [Deploying the Node Feature Discovery Operator](/docs/openshift?topic=openshift-rhcos-performance#rhcos-node-feature-discovery)
 
-* [Identifying your affected workers](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-list)
+* [Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-numa-pinning-huge)
 
-* [Actions to take before the maintenance period](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-actions)
+* [Enabling CPU pinning and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-numa-pinning-huge)
 
-    * [Workers in Classic clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-classic)
-
-    * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
+* [Removing performance customizations](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance-remove)
 
 
 ## Managing cluster costs
