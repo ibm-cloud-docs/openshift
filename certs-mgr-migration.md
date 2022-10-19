@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-10-19"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 
@@ -22,7 +22,7 @@ With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manag
 Support for {{site.data.keyword.cloudcerts_short}} in {{site.data.keyword.openshiftlong_notm}} clusters is set to end in late 2022, and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. Secrets in deleted {{site.data.keyword.cloudcerts_short}} are written directly to the cluster. If you do not migrate your secrets and set a default {{site.data.keyword.secrets-manager_short}}, your secrets are written only to the cluster and not to any manager instance.
 {: note}
 
-## Setting up your Secrets Manager instance
+## Setting up your {{site.data.keyword.secrets-manager_short}} instance
 {: #certs-mgr_setup}
 
 Follow the steps to set up {{site.data.keyword.secrets-manager_short}} in your cluster.
@@ -38,7 +38,7 @@ The steps to migrate to {{site.data.keyword.secrets-manager_short}} involves reg
 ### Step 1: Enable service-to-service communication
 {: #certs-mgr_setup_s2s }
 
-Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.redhat_openshift_notm}} cluster requires service-to-service communication authorization. Follow the steps below to set up the authorization. For additional info, see [Integrations for Secrets Manager](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.redhat_openshift_notm}} cluster requires service-to-service communication authorization. Follow the steps below to set up the authorization. For additional info, see [Integrations for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 {: shortdesc}
  
 1. In the {{site.data.keyword.cloud_notm}} console, click **Manage** > **Access (IAM)**.
@@ -46,7 +46,7 @@ Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.ke
 3. Click **Create**.
 4. In the **Source service** list, select **Kubernetes Service**.
 5. Select the option to scope the access to **All resources**.
-6. In the **Target service** list, select **Secrets Manager**.
+6. In the **Target service** list, select **{{site.data.keyword.secrets-manager_short}}**.
 7. Select the option to scope the access to **All resources**. 
 8. In the **Service access** section, check the **Manager** option. 
 9. Click **Authorize**. 

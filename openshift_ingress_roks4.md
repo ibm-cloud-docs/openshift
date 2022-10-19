@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-19"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1148,7 +1148,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 As of 24 August 2020, an [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance is automatically created for each cluster that you can use to manage the cluster's Ingress TLS certificates.
 {: shortdesc}
 
-{{site.data.keyword.cloudcerts_short}} is deprecated. Automatic provisioning of {{site.data.keyword.cloudcerts_short}} instances in new clusters ends on 23 September 2022. Support for {{site.data.keyword.cloudcerts_short}} ends on 1 December 2022 and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. After this date, certificates are set to be written only to the cluster unless you set up a Secrets Manager instance. Migrate your certificates to IBM Cloud Secrets Manager as soon as possible.
+{{site.data.keyword.cloudcerts_short}} is deprecated. Automatic provisioning of {{site.data.keyword.cloudcerts_short}} instances in new clusters ends on 23 September 2022. Support for {{site.data.keyword.cloudcerts_short}} ends on 1 December 2022 and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. After this date, certificates are set to be written only to the cluster unless you set up a {{site.data.keyword.secrets-manager_short}} instance. Migrate your certificates to IBM Cloud {{site.data.keyword.secrets-manager_short}} as soon as possible.
 {: deprecated}
 
 For a {{site.data.keyword.cloudcerts_short}} instance to be created for your new or existing cluster, ensure that the API key for the region and resource group that the cluster is created in has the correct permissions. You can check who set the API key for the cluster by running `ibmcloud oc api-key info -c <cluster_name_or_ID>`.

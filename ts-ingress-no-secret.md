@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-29"
+lastupdated: "2022-10-19"
 
 keywords: openshift
 
@@ -49,7 +49,7 @@ When you run `ibmcloud oc ingress secret ls`, no secrets are listed.
 Previously, a [{{site.data.keyword.cloudcerts_long}}](/docs/certificate-manager?topic=certificate-manager-about-certificate-manager) instance was automatically created for each cluster and used to manage the cluster's Ingress TLS certificates. Automatic provisioning is no longer supported for new clusters. However, for exisiting {{site.data.keyword.cloudcerts_short}} instances to continue managing certificates in a cluster, the API key for the region and resource group that the cluster is created in must have the correct IAM permissions. 
 {: tsCauses}
 
-{{site.data.keyword.cloudcerts_short}} is deprecated and instances are no longer automatically provisioned in new clusters. Support for {{site.data.keyword.cloudcerts_short}} ends on 1 December 2022 and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. After this date, certificates are set to be written only to the cluster unless you set up a Secrets Manager instance. [Migrate your certificates to IBM Cloud Secrets Manager](/docs/containers?topic=containers-certs-mgr-migration) as soon as possible.
+{{site.data.keyword.cloudcerts_short}} is deprecated and instances are no longer automatically provisioned in new clusters. Support for {{site.data.keyword.cloudcerts_short}} ends on 1 December 2022 and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. After this date, certificates are set to be written only to the cluster unless you set up a {{site.data.keyword.secrets-manager_short}} instance. [Migrate your certificates to IBM Cloud {{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-certs-mgr-migration) as soon as possible.
 {: deprecated}
 
 

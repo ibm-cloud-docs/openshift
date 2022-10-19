@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-19"
 
 keywords: openshift
 
@@ -720,7 +720,7 @@ Create and manage dedicated hosts in VPC Gen 2.
 
 
 New! {{site.data.keyword.secrets-manager_full}}
-:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Migrating from IBM Cloud Certificate Manager to IBM Cloud Secrets Manager](/docs/containers?topic=containers-certs-mgr-migration).
+:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Migrating from IBM Cloud Certificate Manager to IBM Cloud {{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-certs-mgr-migration).
 
 
 HPCS Router add-on

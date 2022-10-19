@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-18"
+lastupdated: "2022-10-19"
 
 keywords: openshift
 subcollection: openshift
@@ -4257,7 +4257,7 @@ subcollection: openshift
 
 [Setting up {{site.data.keyword.secrets-manager_short}} in your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr)
 
-* [About Secrets Manager](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about)
+* [About {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about)
 
     * [What functionality can I gain with {{site.data.keyword.secrets-manager_short}}?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_functionality)
 
@@ -4265,7 +4265,7 @@ subcollection: openshift
 
     * [What is the difference between the `ibmcloud oc ingress instance` CLI commands and the `ibmcloud oc ingress secret` CLI commands?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_cli)
 
-* [Setting up your Secrets Manager instance](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup)
+* [Setting up your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup)
 
     * [Enable service-to-service communication](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup_s2s)
 
@@ -4281,7 +4281,7 @@ subcollection: openshift
 
 [Migrating from {{site.data.keyword.cloudcerts_long_notm}} to {{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr-migration)
 
-* [Setting up your Secrets Manager instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup)
+* [Setting up your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup)
 
     * [Step 1: Enable service-to-service communication](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_s2s)
 
