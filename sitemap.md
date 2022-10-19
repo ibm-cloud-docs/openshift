@@ -7570,6 +7570,8 @@ subcollection: openshift
 
     * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
+* [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#-regions)
+
 * [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 
     * [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
