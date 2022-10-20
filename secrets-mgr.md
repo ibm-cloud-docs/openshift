@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-19"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -19,7 +19,7 @@ subcollection: containers, openshift
 When you integrate {{site.data.keyword.secrets-manager_full_notm}} with your {{site.data.keyword.openshiftlong_notm}} cluster, you can centrally manage Ingress subdomain certificates and other secrets. 
 {: shortdesc}
 
-## About Secrets Manager
+## About {{site.data.keyword.secrets-manager_short}}
 {: #secrets-mgr_about}
 
 With {{site.data.keyword.secrets-manager_short}}, you can use a single service to manage your secrets and control who has access to them. A {{site.data.keyword.secrets-manager_short}} instance is not automatically provisioned in your cluster. However, you can use a single {{site.data.keyword.secrets-manager_short}} instance across multiple clusters, and a single cluster can have more than one instance.
@@ -49,7 +49,7 @@ For more information on supported secrets, see [Working with secrets of differen
 
 There are two sets of CLI commands that work directly with {{site.data.keyword.secrets-manager_short}} instances in {{site.data.keyword.openshiftlong_notm}}: the `ibmcloud oc ingress secret` commands and the `ibmcloud oc ingress instance` commands. The `ibmcloud oc ingress instance` commands are used to manage your {{site.data.keyword.secrets-manager_short}} instances. The `ibmcloud oc ingress secret` commands are used to manage your Ingress secrets that are stored in a {{site.data.keyword.secrets-manager_short}} instance or secrets that are written directly to the cluster. 
 
-## Setting up your Secrets Manager instance
+## Setting up your {{site.data.keyword.secrets-manager_short}} instance
 {: #secrets-mgr_setup}
 
 Follow the steps to set up {{site.data.keyword.secrets-manager_short}} in your cluster.
@@ -62,7 +62,7 @@ These steps are intended for users setting up {{site.data.keyword.secrets-manage
 {: #secrets-mgr_setup_s2s}
 {: step}
 
-Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.openshiftlong_notm}} cluster requires service-to-service communication auhtorization. Follow the steps below to set up the authorization. For additional info, see [Integrations for Secrets Manager](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.openshiftlong_notm}} cluster requires service-to-service communication auhtorization. Follow the steps below to set up the authorization. For additional info, see [Integrations for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 {: shortdesc}
  
 1. In the {{site.data.keyword.cloud_notm}} console, click **Manage** > **Access (IAM)**.
@@ -70,7 +70,7 @@ Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.ke
 3. Click **Create**.
 4. In the **Source service** list, select **Kubernetes Service**.
 5. Select the option to scope the access to **All resources**.
-6. In the **Target service** list, select **Secrets Manager**.
+6. In the **Target service** list, select **{{site.data.keyword.secrets-manager_short}}**.
 7. Select the option to scope the access to **All resources**. 
 8. In the **Service access** section, check the **Manager** option. 
 9. Click **Authorize**. 

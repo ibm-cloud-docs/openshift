@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-19"
 
 keywords: openshift
 
@@ -94,7 +94,5 @@ The Ingress Message provides details of what operation is in progress or informa
 |`The expiration dates reported by Ingress secrets are out of sync across namespaces.` | To resynchronize the expiration dates, [regenerate the secrets for your Ingress subdomain certificate](/docs/containers?topic=containers-sync_cert_dates).|
 {: caption="Ingress messages"}
 {: summary="Table rows read from left to right, with the Ingress message in column one and a description in column two."}
-
-
 
 

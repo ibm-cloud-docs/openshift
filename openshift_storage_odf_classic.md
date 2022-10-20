@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-22"
+lastupdated: "2022-10-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -144,12 +144,12 @@ Storage class encryption is available only for versions `4.10.0` and later of Op
         
 1. Encode both the ID of your root key and the API key of the service ID that you created to base64.
     ```sh
-    echo "ROOT-KEY-ID" | base64
+    printf "ROOT-KEY-ID" | base64
     ```
     {: pre}
     
     ```sh
-    echo "SERVICE-ID-API-KEY" | base64
+    printf "SERVICE-ID-API-KEY" | base64
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-18"
+lastupdated: "2022-10-20"
 
 keywords: openshift
 subcollection: openshift
@@ -4084,6 +4084,8 @@ subcollection: openshift
 
     * [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
 
+    * [Setting up an NLB using port range](/docs/openshift?topic=openshift-vpc-lbaas#nlb-setup-portrange)
+
     * [Setting up a private VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv)
 
     * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
@@ -4135,8 +4137,6 @@ subcollection: openshift
 * [Prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision)
 
 * [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
-
-* [Setting up an NLB using port range](/docs/openshift?topic=openshift-loadbalancer-v2#nlb-setup-portrange)
 
 * [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
 
@@ -4257,7 +4257,7 @@ subcollection: openshift
 
 [Setting up {{site.data.keyword.secrets-manager_short}} in your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr)
 
-* [About Secrets Manager](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about)
+* [About {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about)
 
     * [What functionality can I gain with {{site.data.keyword.secrets-manager_short}}?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_functionality)
 
@@ -4265,7 +4265,7 @@ subcollection: openshift
 
     * [What is the difference between the `ibmcloud oc ingress instance` CLI commands and the `ibmcloud oc ingress secret` CLI commands?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_cli)
 
-* [Setting up your Secrets Manager instance](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup)
+* [Setting up your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup)
 
     * [Enable service-to-service communication](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup_s2s)
 
@@ -4281,7 +4281,7 @@ subcollection: openshift
 
 [Migrating from {{site.data.keyword.cloudcerts_long_notm}} to {{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr-migration)
 
-* [Setting up your Secrets Manager instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup)
+* [Setting up your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup)
 
     * [Step 1: Enable service-to-service communication](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_s2s)
 
@@ -7569,6 +7569,8 @@ subcollection: openshift
     * [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
 
     * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
+
+* [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#-regions)
 
 * [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 
