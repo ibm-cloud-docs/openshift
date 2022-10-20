@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-20"
 
 keywords: openshift, lb2.0, nlb
 
@@ -232,72 +232,6 @@ To set up an NLB 2.0 in a multizone cluster:
 
 Next, you can [register an NLB subdomain](/docs/containers?topic=containers-loadbalancer_hostname).
 
-
-## Setting up an NLB using port range
-{: #nlb-setup-portrange}
-
-Before you begin
-
-* **Important**: Complete the [NLB 2.0 prerequisites](#ipvs_provision).
-* You must have an available portable public or private IP address to assign to the NLB service. For more information, see [Configuring subnets for clusters](/docs/containers?topic=containers-subnets).
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the `default` namespace.
-* When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made in a timely manner. 
-
-
-Port ranges are supported for only sDNLB and public NLBs. You can use a comma separated list of port ranges, but typically only a range is specified. If you use the `ibm-load-balancer-cloud-provider-vpc-port-range` annotation, you must include a listening port value that matches the minimum port in the range. 
-
-You can create an NLB that uses a port range by using the following example. Note that no selector or backend pods are associated with the port range load balancer service. Instead, you must create additional NodePort services with port values in the range that is defined by the load balancer service.
-
-1. Save the following example `LoadBalancer` configuration as a file called `loadbalancer.yaml`.
-
-    ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-      annotations:
-        service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: nlb
-        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-port-range: 30000-30010
-      name: nlb-port-range
-    spec:
-      ports:
-      - port: 30000
-        nodePort: 30011
-        protocol: TCP
-      type: LoadBalancer
-    ```
-    {: codeblock}
-    
-1. Create the service.
-    ```sh
-    oc apply -f loadbalancer.yaml
-    ```
-    {: pre}
-
-1. Create a `NodePort` service with port values that are in the port range specified in the `LoadBalancer` you created earlier.
-
-    ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: echo-server-node-port
-    spec:
-      ports:
-      - port: 80
-        protocol: TCP # The protocol of the port range
-        nodePort: 30003 # Node port in the port range
-        targetPort: 8080
-      selector:
-        app: echo-server
-      type: NodePort
-    ```
-    {: codeblock}
-
-1. Create the NodePort service.
-
-    ```sh
-    oc apply -f nodeport.yaml
-    ```
-    {: pre}
 
 ## Setting up an NLB 2.0 in a single-zone cluster
 {: #ipvs_single_zone_config}
