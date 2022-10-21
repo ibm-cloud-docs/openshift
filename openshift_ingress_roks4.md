@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-21"
 
 keywords: openshift, nginx, ingress controller
 
@@ -171,6 +171,10 @@ For more information about TLS certificates, see [Managing TLS certificates and 
         {: pre}
 
     2. Using the CRN, create a secret for the certificate in the project where your app is deployed.
+
+        To create a secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+        {: important}
+
         ```sh
         ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project
         ```
@@ -183,9 +187,12 @@ For more information about TLS certificates, see [Managing TLS certificates and 
     2. Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
-    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
+    * To use a TLS certificate that is stored in {{site.data.keyword.secrets-manager_short}}, create a secret for the certificate in the same project as your app.
         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
         {: note}
+
+        To create a secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+        {: important}
 
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
@@ -367,9 +374,12 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
     {: tip}
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
-    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
+    * To use a TLS certificate that is stored in {{site.data.keyword.secrets-manager_short}}, create a secret for the certificate in the same project as your app.
         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
         {: note}
+
+        To create a secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+        {: important}
 
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
@@ -699,9 +709,12 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
-    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
+    * To use a TLS certificate that is stored in {{site.data.keyword.secrets-manager_short}}, create a secret for the certificate in the same project as your app.
         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
         {: note}
+
+        To create a secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+        {: important}
 
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
@@ -983,6 +996,10 @@ For more information about TLS certificates, see [Managing TLS certificates and 
     {: screen}
 
 2. The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your app is deployed in a project other than `openshift-ingress`, you must copy the default TLS secret from `openshift-ingress` to that project.
+
+    To copy a secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+    {: important}
+
     1. Get the CRN of the secret for your subdomain.
         ```sh
         ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace openshift-ingress
@@ -1002,9 +1019,12 @@ For more information about TLS certificates, see [Managing TLS certificates and 
     2. Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
-    * To use a TLS certificate that is stored in {{site.data.keyword.cloudcerts_long_notm}}, create a secret for the certificate in the same project as your app.
+    * To use a TLS certificate that is stored in {{site.data.keyword.secrets-manager_short}}, create a secret for the certificate in the same project as your app.
         Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
         {: note}
+
+        To create a secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+        {: important}
 
         ```sh
         ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>
@@ -1163,7 +1183,7 @@ To view your {{site.data.keyword.cloudcerts_short}} instance:
 3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-certmgr-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
 4. Click the instance's name. The **Your certificates** details page opens.
 
-To manage the secrets for TLS certificates in your cluster, you can use the `ibmcloud oc ingress secret` set of commands. For example, you can use the `ibmcloud oc ingress secret create` command to import a certificate from {{site.data.keyword.cloudcerts_short}} to a Kubernetes secret in your cluster, or the `ibmcloud oc ingress secret ls -c <cluster>` command to view all Ingress secrets for TLS certificates in your cluster.
+To manage the secrets for TLS certificates in your cluster, you can use the `ibmcloud oc ingress secret` set of commands. For example, you can use the `ibmcloud oc ingress secret create` command to import a certificate from {{site.data.keyword.cloudcerts_short}} to a Kubernetes secret in your cluster, or the `ibmcloud oc ingress secret ls -c <cluster>` command to view all Ingress secrets for TLS certificates in your cluster. Note that certain commands that require a CRN, such as `{{icks}} ingress secret create`, can only be used if you have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands.
 
 Do not delete your cluster's {{site.data.keyword.cloudcerts_short}} instance. When you delete your cluster, the {{site.data.keyword.cloudcerts_short}} instance for your cluster is also automatically deleted. Any certificates that are stored in the {{site.data.keyword.cloudcerts_short}} instance for your cluster are deleted when the {{site.data.keyword.cloudcerts_short}} instance is deleted.
 {: important}
@@ -1190,7 +1210,7 @@ ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace ope
 ```
 {: pre}
 
-The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your Ingress resources are deployed in projects other than `openshift-ingress`, you must copy the default TLS secret to those projects by running `ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project`.
+The Ingress controller can access TLS secrets only in the same project that the Ingress resource is deployed to. If your Ingress resources are deployed in projects other than `openshift-ingress`, you must copy the default TLS secret to those projects by running `ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace project`. Note that this command can only be used if you have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands.
 {: note}
 
 The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain.
@@ -1215,6 +1235,9 @@ By storing custom TLS certificates in {{site.data.keyword.cloudcerts_long_notm}}
 3. Import the certificate's associated secret into the same project where your Ingress resource for an app exists. If you want to use this certificate for apps in multiple projects, repeat this command for each project.
     Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
     {: note}
+
+    To import a secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+    {: important}
 
     ```sh
     ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <project>

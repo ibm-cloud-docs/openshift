@@ -4451,6 +4451,9 @@ Create an Ingress secret in a cluster for a certificate that is stored in {{site
 The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog#10).
 {: note}
 
+To use the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manage them with `oc` commands. 
+{: important}
+
 ```sh
 ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME [--namespace NAMESPACE] [--persist] [--type] [-q]
 ```
@@ -4771,7 +4774,7 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespa
 :    Required: The project that the secret is deployed to. To see the secret namespace, run `ibmcloud oc ingress secret get --cluster cluster_name_or_ID <--name secret_name> --namespace <project>`.
 
 `--cert-crn CERTIFICATE_CRN`
-:    Optional: The certificate CRN. To see the secret CRN, run `ibmcloud oc ingress secret get --cluster <cluster_name_or_ID> --name secret_name> --namespace <project>`.
+:    Optional: The certificate CRN. To see the secret CRN, run `ibmcloud oc ingress secret get --cluster <cluster_name_or_ID> --name secret_name> --namespace <project>`. This option requires a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr#secrets-mgr_about) instance in your cluster.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
