@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-10-21"
 
 keywords: cbr, context based restrictions, security
 
@@ -410,5 +410,6 @@ ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes
 - {{site.data.keyword.openshiftlong_notm}} CBR rules that apply to all API types or the cluster API types are limited to no more than 20 IPs/subnets for private rules, and 200 IPs/subnets for public rules. These limits are expected to increase after the backend scalability of our implementation of Red Hat OpenShift on IBM Cloud CBR is updated.
 - {{site.data.keyword.openshiftlong_notm}} public CBR rules that apply to the cluster API type do not effect clusters that are private service endpoint only. All public traffic to the cluster APIserver is blocked. To use public CBR rules to control access to your cluster, update your cluster to enable public service endpoint.
 - Due to a limitation with how {{site.data.keyword.openshiftlong_notm}} fetches cluster details, the APIs for getting clusters and listing clusters are still accessible regardless of the CBR rules. This means clusters are still visible (read-only) in the console and CLI. When this limitation is addressed, you must add new rules to protect the APIs for getting clusters and listing clusters.
+- For {{site.data.keyword.openshiftlong_notm}} clusters on VPC with a Public Service Endpoint, if you add public CBR rules to your cluster, make sure to also add the public gateway IP addresses of your VPC subnets to your CBR rules. If you don't include the public gateway IPs, your {{site.data.keyword.redhat_openshift_notm}} Console pods won't work properly because those pods need to access the Oauth port of the cluster master with the public network.
 - Due to a limitation that is currently being addressed, when you create a single private CBR rule that applies to the cluster API type and specifies a single, empty network zone, the rule does not block the private service endpoint completely. Instead, the cluster is treated as if there are no CBR rules and allows all traffic. Until this limitation is resolved, you must create a private CBR rule with at least one IP, for example, `1.1.1.1/32`, or another IP that you control.
 - Some {{site.data.keyword.openshiftlong_notm}} clusters that were created before 8/10/22 are not able to enforce public CBR rules for the cluster's APIserver. To check if your cluster supports these public cluster API type CBR rules, run the `ibmcloud ks cluster get -c <CLUSTER-ID>` command. If either of the Service Endpoint URLs starts with the `https://cXXX` (where XXX is any three digit number), then the cluster does support public CBR rules. If the Service Endpoint URLs starts with `https://cX` (where the number after the `c` is a single digit), then the cluster is not able to enforce public CBR rules for the cluster's APIserver. In order to use public CBR rules, you must create a new cluster.

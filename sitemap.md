@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-21"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [21 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2122)
+
+        * CLI change log update
 
     * [12 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1222)
 
@@ -5420,7 +5424,11 @@ subcollection: openshift
 
 * [`vpcs` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs)
 
-* [`flavors` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
+* [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
+
+    * [`flavor get` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_get)
+
+    * [`flavor ls` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls)
 
 * [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
 
@@ -5461,6 +5469,8 @@ subcollection: openshift
 [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.459](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10459)
 
 * [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10454)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-21"
 
 keywords: openshift
 
@@ -55,7 +55,7 @@ The tables below list the `ibmcloud oc` command groups. For a complete list of a
 | [Subnets commands](#cs_subnets) | List available subnets in your IBM Cloud infrastructure account. |
 | [VLAN commands](#vlan) | List public and private VLANs for a zone and view the VLAN spanning status.|
 | [VPCS commands](#cs_vpcs) | List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.|
-| [Flavors commands](#cs_machine_types) | List available flavors for a zone. |
+| [Flavor commands](#cs_machine_types) | Get the information of a flavor or list available flavors for a zone. |
 | [Locations commands](#cs_supported-locations) | List the locations that are supported by IBM Cloud Kubernetes Service. |
 | [Messages commands](#cs_messages) | View the current user messages. |
 | [Versions commands](#cs_versions_command) | List the container platform versions that are available for IBM Cloud Kubernetes Service clusters. |
@@ -4451,6 +4451,9 @@ Create an Ingress secret in a cluster for a certificate that is stored in {{site
 The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/containers?topic=containers-cs_cli_changelog#10).
 {: note}
 
+To use the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manage them with `oc` commands. 
+{: important}
+
 ```sh
 ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME [--namespace NAMESPACE] [--persist] [--type] [-q]
 ```
@@ -4771,7 +4774,7 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespa
 :    Required: The project that the secret is deployed to. To see the secret namespace, run `ibmcloud oc ingress secret get --cluster cluster_name_or_ID <--name secret_name> --namespace <project>`.
 
 `--cert-crn CERTIFICATE_CRN`
-:    Optional: The certificate CRN. To see the secret CRN, run `ibmcloud oc ingress secret get --cluster <cluster_name_or_ID> --name secret_name> --namespace <project>`.
+:    Optional: The certificate CRN. To see the secret CRN, run `ibmcloud oc ingress secret get --cluster <cluster_name_or_ID> --name secret_name> --namespace <project>`. This option requires a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr#secrets-mgr_about) instance in your cluster.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -6329,21 +6332,64 @@ ibmcloud oc vpcs
 
 
 
-## `flavors` command
+## `flavor` command
 {: #cs_machine_types}
 
-View a list of available worker node flavors. Flavors vary by zone.
+Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. 
 {: shortdesc}
 
-The `machine-types` alias for this command is deprecated.
-{: note}
-
-Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/containers?topic=containers-security#encrypted_disk).
+By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/containers?topic=containers-security#encrypted_disk).
 
 You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
 
+### `flavor get` command
+{: #cs_flavor_get}
+
+Get the information of a flavor for a zone and provider.
+{: shortdesc}
+
 ```sh
-ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage] [--output json] [-q]
+ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output OUTPUT] [-q]
+```
+{: pre}
+
+**Supported infrastructure provider**:
+* Classic
+* VPC
+
+**Minimum required permissions**: None
+
+**Command options**:
+
+`--flavor FLAVOR`
+:    The flavor you want to get information for. Flavors determine how much virtual CPU, memory, and disk space is available to each worker node.
+
+`--provider PROVIDER`
+:    The infrastructure provider for which you want to get flavor information for. Available options are `classic`, `vpc-classic` and `vpc-gen2`.
+
+`--zone ZONE`
+:    The zone where you want to get flavor information for. To see available zones for classic clusters, run `ibmcloud oc zone ls`. To see available zones for VPC clusters, run `ibmcloud oc zone ls --provider vpc-gen2` for Generation 2 compute.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+```sh
+ibmcloud oc flavor get --zone us-south-1 --provider vpc-gen2 --flavor bx2d.48x192.900gb
+```
+{: pre}
+
+### `flavor ls` command
+{: #cs_flavor_ls}
+
+List available flavors for a zone.
+{: shortdesc}
+
+```sh
+ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [--show-storage]
 ```
 {: pre}
 
@@ -6356,10 +6402,10 @@ ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage]
 **Command options**:
 
 `--zone ZONE`
-:    Required: Enter the zone where you want to list available flavors. To see available zones for classic clusters, run `ibmcloud oc zone ls`. To see available zones for VPC clusters, run `ibmcloud oc zone ls --provider vpc-gen2` for Generation 2 compute.
+:    The zone where you want to get flavor information for. To see available zones for classic clusters, run `ibmcloud oc zone ls`. To see available zones for VPC clusters, run `ibmcloud oc zone ls --provider vpc-gen2` for Generation 2 compute.
 
-`--provider (classic | vpc-gen2)`
-:    The infrastructure provider for which you want to list available flavors.
+`--provider PROVIDER`
+:    Optional: The infrastructure provider for which you want to get flavor information for. Available options are `classic`, `vpc-classic` and `vpc-gen2`.
 
 `--show-storage`
 :    Optional: Show additional raw disks that are available for SDS worker node flavors. For more information, see [Software-defined storage (SDS) machines](/docs/containers?topic=containers-planning_worker_nodes#sds).
@@ -6370,21 +6416,11 @@ ibmcloud oc flavors --zone ZONE --provider (classic | vpc-gen2) [--show-storage]
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
-
-**Example for classic clusters**:
+**Example**:
 ```sh
-ibmcloud oc flavors --zone dal10 --provider classic
+ibmcloud oc flavor ls --zone us-south-1 --provider vpc-gen2 --show-storage
 ```
 {: pre}
-
-**Example for VPC clusters**:
-```sh
-ibmcloud oc flavors --zone us-south-1 --provider vpc-gen2
-```
-{: pre}
-
-
-
 
 ## `messages` command
 {: #cs_messages}
@@ -6943,7 +6979,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...][--operating-system SYSTEM] [--pod-subnet SUBNET] [--pod-network-interface-selection METHOD] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--workers COUNT] [--zone ZONE]
+ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...] [--infrastructure-topology TOPOLOGY] [--operating-system SYSTEM] [--pod-subnet SUBNET] [--pod-network-interface-selection METHOD] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--workers COUNT] [--zone ZONE]
 ```
 {: pre}
 
@@ -6966,6 +7002,8 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 `--host-label, -hl LABEL`
 :    Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
+`--infrastructure-topology TOPOLOGY`
+:    Optional. Specify whether the cluster runs a single worker node or the default setup of three of worker nodes. To create a single-node cluster, specify `single-replica`. This option is only supported for {{site.data.keyword.openshiftlong_notm}} version 4.11 or later and requires that you specify a {{site.data.keyword.satelliteshort}} location with CoreOS enabled. **Note that single-node clusters lack high availability and are only recommended for specific circumstances. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload.** 
 `--operating-system REDHAT_7_64|REDHAT_8_64|RHCOS`
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). Note that to use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS-enabled location and a cluster that runs version 4.9 or later. If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
