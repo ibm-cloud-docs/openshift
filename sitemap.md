@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-21"
 
 keywords: openshift
 subcollection: openshift
@@ -5420,7 +5420,11 @@ subcollection: openshift
 
 * [`vpcs` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs)
 
-* [`flavors` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
+* [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
+
+    * [`flavor get` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_get)
+
+    * [`flavor ls` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls)
 
 * [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
 
