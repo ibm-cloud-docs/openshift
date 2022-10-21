@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-21"
 
 keywords: openshift, app protocol, application protocol
 
@@ -273,7 +273,7 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 
 Before you begin
 
-* **Important**: Complete the [NLB 2.0 prerequisites](#ipvs_provision).
+* **Important**: Complete the [NLB 2.0 prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).
 * You must have an available portable public or private IP address to assign to the NLB service. For more information, see [Configuring subnets for clusters](/docs/containers?topic=containers-subnets).
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the `default` namespace.
 * When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made in a timely manner. 
