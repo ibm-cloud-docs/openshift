@@ -6976,7 +6976,7 @@ Create an {{site.data.keyword.satellitelong_notm}} cluster on your own infrastru
 Before you begin, create a {{site.data.keyword.satelliteshort}} and assign at least 3 hosts to the location for control plane operations. After you create a {{site.data.keyword.satelliteshort}} cluster, assign hosts for the worker nodes. For more information, see [Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli).
 
 ```sh
-ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...][--operating-system SYSTEM] [--pod-subnet SUBNET] [--pod-network-interface-selection METHOD] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--workers COUNT] [--zone ZONE]
+ibmcloud oc cluster create satellite --location LOCATION --name NAME --version VERSION [--enable-config-admin] [--host-label LABEL ...] [--infrastructure-topology TOPOLOGY] [--operating-system SYSTEM] [--pod-subnet SUBNET] [--pod-network-interface-selection METHOD] [--pull-secret SECRET] [-q] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--workers COUNT] [--zone ZONE]
 ```
 {: pre}
 
@@ -6998,6 +6998,9 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 `--host-label, -hl LABEL`
 :    Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
+
+`--infrastructure-topology TOPOLOGY`
+:    Optional. Specify whether the cluster runs a single worker node or the default number of worker nodes. To create a single-node cluster, specify `single-replica`. To create a default cluster with multiple worker nodes, specify `highly-available`. The `highly-available` option is applied by default.
 
 `--operating-system REDHAT_7_64|REDHAT_8_64|RHCOS`
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). Note that to use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS-enabled location and a cluster that runs version 4.9 or later. If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
