@@ -454,6 +454,7 @@ toc:
                 - ts-network-strongswan-install-new.md
                 - ts-network-strongswan-network-nodes.md
                 - ts-letsencrypt.md
+                - ts-ip-whitelist-annotation.md
             - topicgroup:
                 label: Apps and services
                 topics:

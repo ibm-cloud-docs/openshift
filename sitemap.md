@@ -8093,6 +8093,8 @@ subcollection: openshift
 
 [Why do OpenSSL connections to Let's Encrypt fail after 30 September 2021?](/docs/openshift?topic=openshift-ts-letsencrypt#ts-letsencrypt)
 
+[Why can't I use the `ip_whitelist` annotation to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
+
 
 ### Apps and services
 {: #sitemap_apps_and_services}
