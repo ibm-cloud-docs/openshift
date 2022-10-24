@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-10-24"
 
 keywords: openshift
 subcollection: openshift
@@ -2772,7 +2772,15 @@ subcollection: openshift
 
 * [Creating {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
 
-* [Accessing and working with your {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
+* [Creating single-node clusters for resource-constrained edge locations](/docs/openshift?topic=openshift-satellite-clusters#single-node)
+
+    * [Limitations](/docs/openshift?topic=openshift-satellite-clusters#single-node-limitations)
+
+    * [Requirements](/docs/openshift?topic=openshift-satellite-clusters#single-node-requirements)
+
+    * [Creating a single-node cluster](/docs/openshift?topic=openshift-satellite-clusters#single-node-create)
+
+* [Accessing and working with your {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
 
 * [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry)
 
@@ -8084,6 +8092,8 @@ subcollection: openshift
 [Why does strongSwan VPN connectivity fail after I add or delete worker nodes?](/docs/openshift?topic=openshift-cs_vpn_fails_worker_add#cs_vpn_fails_worker_add)
 
 [Why do OpenSSL connections to Let's Encrypt fail after 30 September 2021?](/docs/openshift?topic=openshift-ts-letsencrypt#ts-letsencrypt)
+
+[Why can't I use the `ip_whitelist` annotation to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
 
 
 ### Apps and services

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-24"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -183,8 +183,42 @@ After you [access your cluster](/docs/openshift?topic=openshift-access_cluster#a
 {: note}
 
 
+## Creating single-node clusters for resource-constrained edge locations
+{: #single-node}
 
-## Accessing and working with your {{site.data.keyword.redhat_openshift_notm}} clusters
+If you are running your {{site.data.keyword.openshiftlong_notm}} cluster on {{site.data.keyword.satelliteshort}} infrastructure in a remote, resource-constrained edge location with limited resources, such as a small data center in a mobile tower, running a data plane with a smaller foot print might be beneficial for your setup. While typical {{site.data.keyword.openshiftlong_notm}} clusters require at least three worker nodes for high availability, you have the option to create a cluster that runs a single worker node. Single-node clusters have several limitations and should only be used in specific circumstances. 
+{: shortdesc}
+
+Single-node clusters are recommended only in specific circumstances, and should only be used in resource-constrained edge locations that have multiple redundant locations running the same workload. See the [Limitations](#single-node-clusters-limitations) section for more information. 
+{: important}
+
+Single-node clusters lack high availability. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload.
+{: important}
+
+### Limitations
+{: #single-node-limitations}
+
+Any cluster with fewer than three worker nodes lacks high availability. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload, and that regular worker node upgrades result in your workload going offline. Additionally, if a cluster is provisioned as a single-node cluster, it can not later be converted to a standard, highly available cluster. You can add more nodes, but standard deployments do not increase in replica size and the cluster does not become highly available. 
+{: shortdesc}
+
+### Requirements
+{: #single-node-requirements}
+
+Single-node clusters must meet the following requirements:
+{: shortdesc}
+
+* Must run on a {{site.data.keyword.satelliteshort}} location with [CoreOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+* Control plane hosts on your location and the host you assign to your single-node cluster must run either the RHEL 8 or RHCOS operating systems.
+* Only supported for {{site.data.keyword.satelliteshort}} clusters that run version 4.11 or later.
+
+### Creating a single-node cluster
+{: #single-node-create}
+
+You can create a single-node cluster by including the `--infrastructure-topology` option and specifying the `single-replica` value when [creating a {{site.data.keyword.satelliteshort}} cluster in the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster). If this option is not included, the cluster is provisioned with the highly available setup of three worker nodes by default.
+{: shortdesc}
+
+
+## Accessing and working with your {{site.data.keyword.satelliteshort}} clusters
 {: #satcluster-access}
 
 After you created your {{site.data.keyword.redhat_openshift_notm}} cluster, you can use the capabilities in {{site.data.keyword.openshiftlong_notm}} to work with your cluster.
