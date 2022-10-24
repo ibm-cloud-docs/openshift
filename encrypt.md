@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-24"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -129,7 +129,7 @@ Enable a [key management service (KMS) provider](#kms) to encrypt the Kubernetes
 
 Before you enable a key management service (KMS) provider in your cluster, create a KMS instance and complete the following steps.
 
-Setting up encryption by using a KMS in a different account is available for allowlisted accounts only. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support. The account that contains the KMS instance that you want to use must be added to the allowlist.
+Setting up cross-account encryption by using a KMS in a different account is supported in the CLI or API. 
 {: note}
 
 1. Create a KMS instance, such as [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision#provision) or [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external}.
@@ -156,8 +156,7 @@ Setting up encryption by using a KMS in a different account is available for all
 
 You can enable a KMS provider, update the KMS provider instance, or update the root key through the CLI.
 
-
-Setting up encryption by using a KMS from a different account is available for allowlisted accounts only. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
+Setting up cross-account encryption by using a KMS in a different account is supported in the CLI or API. 
 {: note}
 
 1. Complete the [prerequisite steps](#kms_prereqs) to create a KMS instance and root key. If you want to use cross account KMS encryption, make sure to create the KMS and root key in the account whose KMS instance you want to use.
