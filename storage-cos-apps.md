@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -20,17 +20,17 @@ Create a persistent volume claim (PVC) to provision {{site.data.keyword.cos_full
 {: shortdesc}
 
 Depending on the settings that you choose in your PVC, you can provision {{site.data.keyword.cos_full_notm}} in the following ways:
-- [Dynamic provisioning](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning): When you create the PVC, the matching persistent volume (PV) and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created.
-- [Static provisioning](/docs/containers?topic=containers-kube_concepts#static_provisioning): You can reference an existing bucket in your {{site.data.keyword.cos_full_notm}} service instance in your PVC. When you create the PVC, only the matching PV is automatically created and linked to your existing bucket in {{site.data.keyword.cos_full_notm}}.
+- [Dynamic provisioning](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning): When you create the PVC, the matching persistent volume (PV) and the bucket in your {{site.data.keyword.cos_full_notm}} service instance are automatically created.
+- [Static provisioning](/docs/openshift?topic=openshift-kube_concepts#static_provisioning): You can reference an existing bucket in your {{site.data.keyword.cos_full_notm}} service instance in your PVC. When you create the PVC, only the matching PV is automatically created and linked to your existing bucket in {{site.data.keyword.cos_full_notm}}.
 
 Before you begin:
-- [Create and prepare your {{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-storage-cos-understand#create_cos_service).
-- [Create a secret to store your {{site.data.keyword.cos_full_notm}} service credentials](/docs/containers?topic=containers-storage-cos-understand#create_cos_secret)).
-- [Decide on the configuration for your {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_install#configure_cos).
+- [Create and prepare your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
+- [Create a secret to store your {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)).
+- [Decide on the configuration for your {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_install#configure_cos).
 
 To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
-1. Create a configuration file to define your persistent volume claim (PVC). If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/containers?topic=containers-storage_cos_install), you don't need to list your secret in the PVC.
+1. Create a configuration file to define your persistent volume claim (PVC). If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-storage_cos_install), you don't need to list your secret in the PVC.
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -79,10 +79,10 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   Optional: Enter the name of the existing subdirectory in your bucket that you want to mount. Use this option if you want to mount a subdirectory only and not the entire bucket. To mount a subdirectory, you must set `ibm.io/auto-create-bucket: "false"` and provide the name of the bucket in `ibm.io/bucket`.
     
     `ibm.io/secret-name`
-    :   Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials](/docs/containers?topic=containers-storage-cos-understand#service_credentials) to the default storage classes, you must not list secret in the PVC.
+    :   Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials) to the default storage classes, you must not list secret in the PVC.
 
     `ibm.io/quota-limit`
-    :   To use this annotation, you must specify the `--set quotaLimit=true` option during installation. If you want to use this annotation, but didn't specify `--set quotaLimit=true` during installation, [re-install the helm chart](/docs/containers?topic=containers-storage_cos_install). 
+    :   To use this annotation, you must specify the `--set quotaLimit=true` option during installation. If you want to use this annotation, but didn't specify `--set quotaLimit=true` during installation, [re-install the helm chart](/docs/openshift?topic=openshift-storage_cos_install). 
     :   If `ibm.io/quota-limit` is set to `true`, your PVC will set a maximum amount of storage (in bytes) available for the bucket based on the size `storage: <size>` that you specify.
     :   If `ibm.io/quota-limit` is set to `false`, the quota is not enforced on your PVC meaning that actual amount of storage in bytes might exceed the `storage: <size>` that you specified depending on your app. 
     
@@ -102,8 +102,8 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   Choose between the following options.
     :   If `ibm.io/auto-create-bucket: "true"`: Enter the storage class that you want to use for your new bucket.
     :   If `ibm.io/auto-create-bucket: "false"`: Enter the storage class that you used to create your existing bucket. 
-    :   If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you can't remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the **Class** and **Location** of your existing bucket. Then, use the appropriate [storage class](/docs/containers?topic=containers-storage_cos_reference).
-        The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.
+    :   If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you can't remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the **Class** and **Location** of your existing bucket. Then, use the appropriate [storage class](/docs/openshift?topic=openshift-storage_cos_reference).
+        The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.
         {: note}
         
     `secret-namespace`
@@ -131,7 +131,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: screen}
 
-1. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/containers?topic=containers-cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
+1. Optional: If you plan to access your data with a non-root user, or added files to an existing {{site.data.keyword.cos_full_notm}} bucket by using the console or the API directly, make sure that the [files have the correct permission](/docs/openshift?topic=openshift-cos_nonroot_access) assigned so that your app can successfully read and update the files as needed.
 
 1. To mount the PV to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV. {: #cos_app_volume_mount}
 
@@ -257,9 +257,9 @@ If you have a stateful app such as a database, you can create stateful sets that
 {: shortdesc}
 
 Before you begin:
-- [Create and prepare your {{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-storage-cos-understand#create_cos_service).
-- [Create a secret to store your {{site.data.keyword.cos_full_notm}} service credentials](/docs/containers?topic=containers-storage-cos-understand#create_cos_secret).
-- [Decide on the configuration for your {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_install#configure_cos).
+- [Create and prepare your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
+- [Create a secret to store your {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
+- [Decide on the configuration for your {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_install#configure_cos).
 
 To deploy a stateful set that uses object storage:
 
@@ -427,7 +427,7 @@ To deploy a stateful set that uses object storage:
     - If `ibm.io/auto-create-bucket` is set to **false**: Enter the name of the existing bucket that you want to access in the cluster.
 
 `ibm.io/secret-name`
-:   In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials](/docs/containers?topic=containers-storage_cos_install) to the default storage classes, you must not list the secret in the PVC.
+:   In the spec volume claim templates metadata annotations section, enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials](/docs/openshift?topic=openshift-storage_cos_install) to the default storage classes, you must not list the secret in the PVC.
 
 `kubernetes.io/storage-class`
 :   In the spec volume claim templates metadata annotations section, enter the storage class that you want to use. Choose between the following options:

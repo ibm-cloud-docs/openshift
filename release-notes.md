@@ -39,7 +39,7 @@ Istio add-on
 {: release-note}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.459.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.459.
 
 ### 12 October 2022
 {: #openshift-oct1222}
@@ -54,7 +54,7 @@ Istio add-on
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version `5.0`.
-:   For more information, see [the change log](/docs/containers?topic=containers-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
 
@@ -69,7 +69,7 @@ Worker node fix pack
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.35_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.49_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.50_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.59_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.61_1602_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
 
 Cluster autoscaler add-on version `1.0.6_828`.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 
 
@@ -89,7 +89,7 @@ Red Hat Enterprise Linux version 8 is available for {{site.data.keyword.openshif
 {: release-note}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.454.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.454.
 
 
 
@@ -102,7 +102,7 @@ CLI change log update
 {: release-note}
 
 New! Enabling Flow logs for VPC components
-:    Flow logs gather information about the traffic entering or leaving your VPC cluster worker nodes.  For more information, see [Enabling Flow Logs for VPC cluster components](/docs/containers?topic=containers-vpc-flow-log).
+:    Flow logs gather information about the traffic entering or leaving your VPC cluster worker nodes.  For more information, see [Enabling Flow Logs for VPC cluster components](/docs/openshift?topic=openshift-vpc-flow-log).
 
 
 ### 26 September 2022
@@ -121,7 +121,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version `4.4.11_1614`.
-:   For more information, see [the change log](/docs/containers?topic=containers-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
 
@@ -131,10 +131,10 @@ Worker node fix pack
 {: release-note}
 
 Cluster autoscaler add-on versions `1.1.0_798`, `1.0.6_800`, and `1.0.5_779`.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on version `4.3.7_1613`.
-:   For more information, see [the change log](/docs/containers?topic=containers-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
 ### 21 September 2022
@@ -142,7 +142,7 @@ Cluster autoscaler add-on versions `1.1.0_798`, `1.0.6_800`, and `1.0.5_779`.
 {: release-note}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.452.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.452.
 
 
 
@@ -153,7 +153,7 @@ CLI change log update
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.1` is available.
-:   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 
@@ -162,23 +162,23 @@ CLI change log update
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.4.10_1578 is available.
-:   For more information, see [version 4.4.10_1578](/docs/containers?topic=containers-vpc_bs_changelog).
+:   For more information, see [version 4.4.10_1578](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 New! vGPU worker node flavors are now available for VPC Gen 2.
-:   For more information about the available worker node flavors, see [VPC Gen 2 flavors](/docs/containers?topic=containers-vpc-gen2-flavors). Worker node flavors with vGPU support are the `gx2` flavor class, for example: `gx2.16x128.2v100`.
+:   For more information about the available worker node flavors, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors). Worker node flavors with vGPU support are the `gx2` flavor class, for example: `gx2.16x128.2v100`.
 
 ### 12 September 2022
 {: #openshift-sep1222}
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.3.6_1579 is available.
-:   For more information, see [version 4.3.6_1579](/docs/containers?topic=containers-vpc_bs_changelog)
+:   For more information, see [version 4.3.6_1579](/docs/openshift?topic=openshift-vpc_bs_changelog)
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.0` is available.
-:   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.446.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.446.
 
 
 
@@ -187,7 +187,7 @@ CLI change log update
 {: release-note}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.444.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.444.
 
 ### 7 September 2022
 {: #openshift-sep722}
@@ -209,7 +209,7 @@ New! Pod security admission
 {: release-note}
 
 Cluster autoscaler add-on
-:   Versions `1.0.5_775`, `1.0.6_774`, and `1.1.0_776` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   Versions `1.0.5_775`, `1.0.6_774`, and `1.1.0_776` are available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 29 August 2022
 {: #openshift-aug2922}
@@ -224,14 +224,14 @@ Worker node fix pack
 {: release-note}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.439.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.439.
 
 ### 25 August 2022
 {: #openshift-aug2522}
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.4.9_1566 is available.
-:   For more information, see [version 4.4.9_1566](/docs/containers?topic=containers-vpc_bs_changelog)
+:   For more information, see [version 4.4.9_1566](/docs/openshift?topic=openshift-vpc_bs_changelog)
 
 
 
@@ -241,20 +241,20 @@ CLI change log update
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.3.5_1563 is available.
 
-:   For more information, see [version 4.3.5_1563](/docs/containers?topic=containers-vpc_bs_changelog)
+:   For more information, see [version 4.3.5_1563](/docs/openshift?topic=openshift-vpc_bs_changelog)
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.1.21` is available.
-:   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 17 August 2022
 {: #openshift-aug1722}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.1.20` is available.
-:   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 Cluster autoscaler add-on
-:   Versions `1.0.5_754` and `1.0.6_763` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   Versions `1.0.5_754` and `1.0.6_763` are available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 16 August 2022
 {: #openshift-aug1622}
@@ -273,7 +273,7 @@ Istio add-on
 {: release-note}
 
 Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas enabled
-:   [Follow the tutorial](/docs/containers?topic=containers-storage-cos-tutorial-quota) to set up the {{site.data.keyword.cos_full_notm}} plug-in to automatically set quotas on buckets that are provisioned with PVCs. 
+:   [Follow the tutorial](/docs/openshift?topic=openshift-storage-cos-tutorial-quota) to set up the {{site.data.keyword.cos_full_notm}} plug-in to automatically set quotas on buckets that are provisioned with PVCs. 
 
 
 
@@ -282,14 +282,14 @@ Dynamically provision {{site.data.keyword.cos_full_notm}} buckets with quotas en
 {: release-note}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.433.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.433.
 
 ### 3 August 2022
 {: #openshift-august0322}
 {: release-note}
 
 New! {{site.data.keyword.filestorage_vpc_full_notm}} CSI Driver (Beta)
-:    You can now enable the {{site.data.keyword.filestorage_vpc_full_notm}} add-on in your clusters. For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/containers?topic=containers-storage-file-vpc-install). 
+:    You can now enable the {{site.data.keyword.filestorage_vpc_full_notm}} add-on in your clusters. For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install). 
 
 
 
@@ -312,7 +312,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.1.19` is available.
-:   For more information, see the [change log](/docs/containers?topic=containers-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 26 July 2022
 {: #openshift-july2622}
@@ -335,7 +335,7 @@ Version change log
 
 
 Cluster autoscaler add-on
-:   Version `1.1.0_729` is available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   Version `1.1.0_729` is available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 19 July 2022
 {: #openshift-july1922}
@@ -344,7 +344,7 @@ Cluster autoscaler add-on
 
 
 Cluster autoscaler add-on
-:   Version `1.0.5_728` is available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   Version `1.0.5_728` is available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 
   
@@ -356,7 +356,7 @@ Node Tuning Operator
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.3.4_1551](/docs/containers?topic=containers-vpc_bs_changelog) and [Version 4.4.8_1550](/docs/containers?topic=containers-vpc_bs_changelog) are available.
+:   [Version 4.3.4_1551](/docs/openshift?topic=openshift-vpc_bs_changelog) and [Version 4.4.8_1550](/docs/openshift?topic=openshift-vpc_bs_changelog) are available.
 
 Worker node fix pack
 
@@ -366,22 +366,22 @@ Worker node fix pack
 {: #openshift-july1522}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.431.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.431.
 
 Cluster autoscaler add-on
-:   Versions `1.0.6_742` is available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   Versions `1.0.6_742` is available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 14 July 2022
 {: #openshift-july1422}
 
 Cross-account encryption
-:   You can now set up cross-account encryption. Note that this feature is available for allowlisted accounts only. For more infomration see, [Encrypting the Kubernetes secrets by using a KMS provider](/docs/containers?topic=containers-encryption#keyprotect).
+:   You can now set up cross-account encryption. Note that this feature is available for allowlisted accounts only. For more infomration see, [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect).
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.18` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.18` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   Version [5.0.1-beta_1411](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   Version [5.0.1-beta_1411](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 
 
@@ -392,7 +392,7 @@ HPCS Router add-on
 {: #openshift-july1322}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.430.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.430.
 
 
 
@@ -437,38 +437,38 @@ Worker node fix pack
 {: release-note}
 
 Cluster autoscaler add-on
-:   Versions `1.0.5_694` and `1.1.0_682` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   Versions `1.0.5_694` and `1.1.0_682` are available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 28 June 2022
 {: #openshift-jun2822}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.17` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.17` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 27 June 2022
 {: #openshift-jun2722}
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}}
-:   You can now [set up the {{site.data.keyword.block_storage_is_short}} add-on with {{site.data.keyword.iamshort}} trusted profiles](/docs/containers?topic=containers-storage-block-vpc-trusted-profiles).
+:   You can now [set up the {{site.data.keyword.block_storage_is_short}} add-on with {{site.data.keyword.iamshort}} trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles).
 
 ### 24 June 2022
 {: #openshift-jun2422}
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}}
-:   You can now [create snapshots of your PVCs](/docs/containers?topic=containers-vpc-volume-snapshot) by using version `5.0.0-beta` of the {{site.data.keyword.block_storage_is_short}} add-on.
+:   You can now [create snapshots of your PVCs](/docs/openshift?topic=openshift-vpc-volume-snapshot) by using version `5.0.0-beta` of the {{site.data.keyword.block_storage_is_short}} add-on.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.4.6_1446](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.4.6_1446](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 ### 22 June 2022
 {: #openshift-jun2222}
 {: release-note}
 
 New! Portworx Cloud Drive support
-:   You can now dynamically provision storage for Portworx during installation by using Portworx Cloud Drives. For more information, see [Getting started with Portworx](/docs/containers?topic=containers-portworx).
+:   You can now dynamically provision storage for Portworx during installation by using Portworx Cloud Drives. For more information, see [Getting started with Portworx](/docs/openshift?topic=openshift-portworx).
 
 
 
@@ -486,7 +486,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version version 4.3.2_1441](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version version 4.3.2_1441](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 
 
@@ -500,7 +500,7 @@ Worker node fix pack
 :   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#removed-featurees){: external}.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version version 5.0.1-beta_1411](/docs/containers?topic=containers-vpc_bs_changelog) is available for allowlisted accounts.
+:   [Version version 5.0.1-beta_1411](/docs/openshift?topic=openshift-vpc_bs_changelog) is available for allowlisted accounts.
 
 
 
@@ -511,7 +511,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.4.5_1371](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.4.5_1371](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 
 
@@ -521,7 +521,7 @@ Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_1022 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 5.0.0-beta_1125](/docs/containers?topic=containers-vpc_bs_changelog) is available for allowlisted accounts.
+:   [Version 5.0.0-beta_1125](/docs/openshift?topic=openshift-vpc_bs_changelog) is available for allowlisted accounts.
 
 ### 9 June 2022
 {: #openshift-jun922}
@@ -538,7 +538,7 @@ Deprecated and unsupported Kubernetes versions
 {: release-note}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.419.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.419.
 
 ### 6 June 2022
 {: #openshift-jun622}
@@ -572,7 +572,7 @@ Master fix pack update
 {: #openshift-may2622}
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.415.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.415.
 
 
 ### 25 May 2022
@@ -580,13 +580,13 @@ CLI change log update
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.16` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.16` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.3.0_1163](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.3.0_1163](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.6_1161](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.2.6_1161](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 ### 20 May 2022
 {: #openshift-may2022}
@@ -597,7 +597,7 @@ Worker node fix pack
 :   {{site.data.keyword.redhat_openshift_notm}} [4.10.14_1519_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.33_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.685_1632_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 {{site.data.keyword.registrylong_notm}} private IP address changes beginning 23 June 2022
-:   The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 23 June 2022. For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#firewall_private_container_registry).
+:   The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 23 June 2022. For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
 
 New! Enable volume encryption in OpenShift Data Foundation by using {{site.data.keyword.hscrypto}}.
 :   For more information, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc) and [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic). Note that volume encryption is available with add-on version 4.10 and later. 
@@ -613,7 +613,7 @@ New! Version 4.10.0 of the OpenShift Data Foundation add-on is available.
 {: release-note}
 
 Cluster autoscaler add-on
-:   Versions `1.0.5_628` and `1.1.0_615` are available. See [Cluster autoscaler add-on change log](/docs/containers?topic=containers-ca_changelog).
+:   Versions `1.0.5_628` and `1.1.0_615` are available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ALB OAuth Proxy add-on
 :   Verion 1.0.0 is no longer supported. For more information, see the [change log](/docs/containers?topic=containers-alb-oauth-proxy-changelog).
@@ -623,7 +623,7 @@ ALB OAuth Proxy add-on
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.5_1106](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.2.5_1106](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 ### 9 May 2022
 {: #openshift-may0922}
@@ -639,7 +639,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.15` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.15` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 4 May 2022
 {: #openshift-may0422}
@@ -663,7 +663,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 CLI change log update
-:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.404.
+:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.404.
 
 
 Certified Kubernetes
@@ -695,7 +695,7 @@ Worker node fix pack update
 
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.403.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.403.
 
 ### 25 April 2022
 {: #openshift-apr2522}  
@@ -714,7 +714,7 @@ Worker node fix pack
 {: #openshift-apr1322}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.14` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.14` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 12 April 2022
 {: #openshift-apr1222}
@@ -734,7 +734,7 @@ Create and manage dedicated hosts in VPC Gen 2.
 
 
 New! {{site.data.keyword.secrets-manager_full}}
-:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Migrating from IBM Cloud Certificate Manager to IBM Cloud {{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-certs-mgr-migration).
+:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Migrating from IBM Cloud Certificate Manager to IBM Cloud {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-certs-mgr-migration).
 
 
 HPCS Router add-on
@@ -745,7 +745,7 @@ Cloud Image Key Synchronizer add-on
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.3_983](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.2.3_983](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 Worker node fix pack
 
@@ -758,7 +758,7 @@ Worker node fix pack
 {: #openshift-apr0722}
 
 {{site.data.keyword.openshiftlong_notm}} clusters in Mexico City (MEX01) are deprecated and become unsupported later this year. 
-:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in these data centers after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 
 
@@ -766,7 +766,7 @@ Worker node fix pack
 :   [4.9](/docs/openshift?topic=openshift-openshift_changelog) is now the default version.
 
 CLI change log update
-:   The [CLI change log](/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.394.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.394.
 
 ### 6 April 2022
 {: #openshift-apr0622}}
@@ -788,7 +788,7 @@ Master fix pack update
 {: release-note}
 
 Cluster autoscaler add-on
-:   Version [1.1.0_475](/docs/containers?topic=containers-ca_changelog) is available.
+:   Version [1.1.0_475](/docs/openshift?topic=openshift-ca_changelog) is available.
 
 :   {{site.data.keyword.openshiftlong_notm}} [4.7.45_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1626_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
 
@@ -805,10 +805,10 @@ Worker node fix pack update.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.13` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.13` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.2_900](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.2.2_900](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 
 HPCS Router add-on
@@ -823,7 +823,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year.
-:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 Ingress ALB change log updates
 :   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
@@ -836,14 +836,14 @@ Ingress ALB change log updates
 {: release-note}
 
 CLI change log update
-:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.384.
+:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.384.
 
 ### 17 March 2022
 {: #openshift-mar1722}
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.1_895](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.2.1_895](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 
 
@@ -867,7 +867,7 @@ HPCS Router add-on
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.12` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.12` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 
@@ -914,12 +914,12 @@ Master fix pack update.
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 Cluster autoscaler
-:   Version [1.0.5_415](/docs/containers?topic=containers-ca_changelog) is available.
-:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon), and [Enabling autoscaling](/docs/containers?topic=containers-cluster-scaling-enable).
-:   New troubleshooting pages for [resizing worker pools](/docs/containers?topic=containers-ts-ca-resize) and updating [unbalanced worker pools](/docs/containers?topic=containers-ts-ca-unbalanced) in autoscaled clusters. 
+:   Version [1.0.5_415](/docs/openshift?topic=openshift-ca_changelog) is available.
+:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon), and [Enabling autoscaling](/docs/openshift?topic=openshift-cluster-scaling-enable).
+:   New troubleshooting pages for [resizing worker pools](/docs/openshift?topic=openshift-ts-ca-resize) and updating [unbalanced worker pools](/docs/openshift?topic=openshift-ts-ca-unbalanced) in autoscaled clusters. 
 
 
 
@@ -942,7 +942,7 @@ Worker node fix pack
 
 
 Container service CLI 
-:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.374.
+:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.374.
 
 
 
@@ -954,7 +954,7 @@ Container service CLI
 {: release-note}
 
 Cluster autoscaler
-:   Version [1.0.4_410](/docs/containers?topic=containers-ca_changelog) is available.
+:   Version [1.0.4_410](/docs/openshift?topic=openshift-ca_changelog) is available.
 
 
 
@@ -965,7 +965,7 @@ Cluster autoscaler
 {: release-note}
 
 Container service CLI 
-:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.372.
+:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.372.
 
 
 ### 17 February 2022
@@ -973,7 +973,7 @@ Container service CLI
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.10` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.10` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 
@@ -999,11 +999,11 @@ Worker node fix pack
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
-:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_vpc_ip), [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps), and [Storage class reference](/docs/containers?topic=containers-storage_cos_reference).
+:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps), and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.3_846](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.1.3_846](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
 
 
 ### 10 February 2022
@@ -1051,7 +1051,7 @@ Version changelog
 :   {{site.data.keyword.redhat_openshift_notm}} [4.8.28_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4828_1543), [4.7.41_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4741_1548), [4.6.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1571), [3.11.570_1620_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1620).
 
 **New!** Worker node flavor reference
-:   View a list of all available worker node flavors by zone. For more information, see [VPC Gen 2 flavors](/docs/containers?topic=containers-classic-flavors) or [Classic flavors](/docs/containers?topic=containers-vpc-gen2-flavors).
+:   View a list of all available worker node flavors by zone. For more information, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-classic-flavors) or [Classic flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors).
 
 
 
@@ -1070,7 +1070,7 @@ Version changelog
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.2_834](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.1.2_834](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
 
 **New!** Gathering Ingress logs
 :   When troubleshooting Ingress, follow the steps in [gathering Ingress logs](/docs/openshift?topic=openshift-ingress-must-gather) to retrieve useful debugging information.
@@ -1098,7 +1098,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 ### 20 January 2022
@@ -1106,10 +1106,10 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 Cluster autoscaler add-on.
-:   [Version 1.0.4_403](/docs/containers?topic=containers-ca_changelog) is released.
+:   [Version 1.0.4_403](/docs/openshift?topic=openshift-ca_changelog) is released.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.1_827](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.1.1_827](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
 
 OpenShift Data Foundation
 :   New and updated parameters for OpenShift Data Foundation.
@@ -1126,7 +1126,7 @@ Review the release notes for January 2022.
 {: shortdesc}
 
 **New!** {{site.data.keyword.openshiftlong_notm}} CLI Map
-:   The [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/containers?topic=containers-icks_map) lists all `ibmcloud oc` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud oc commands are organized, or to quickly find a specific command. 
+:   The [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/openshift?topic=openshift-icks_map) lists all `ibmcloud oc` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud oc commands are organized, or to quickly find a specific command. 
 
 {{site.data.keyword.containershort}} 1.19, 1.20, 1.21, and 1.22 unsupported date change
 :   The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#cs_versions_available) page has been updated with the new unsupported dates. 
@@ -1141,7 +1141,7 @@ Worker node fix pack update.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 
@@ -1166,7 +1166,7 @@ Cloud Image Key Synchronizer add-on
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.0_807](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.1.0_807](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
 
 
 {{site.data.keyword.containershort}} 1.20 end of support date change
@@ -1246,7 +1246,7 @@ Review the release notes for November 2021.
 {: release-note}
 
 Container service CLI 
-:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.347.
+:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.347.
 
 
 
@@ -1268,10 +1268,10 @@ Worker node fix pack update
 :   Changelog documentation is available for version [`4.8.20_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4820_1536), [`4.7.36_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4737_1540), [`4.6.49_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4649_1564), and [`3.11.542_1612_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1612).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.0.3_793](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.0.3_793](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
 
 Cluster autoscaler add-on.
-:   [Version 1.0.4_387](/docs/containers?topic=containers-ca_changelog) is released.
+:   [Version 1.0.4_387](/docs/openshift?topic=openshift-ca_changelog) is released.
 
 
 ### 19 November 2021
@@ -1296,7 +1296,7 @@ Cloud Image Key Synchronizer add-on
 :   Previously, clusters running in Toronto (`ca-tor`) sent logs to Washington D.C., and clusters running in Osaka (`jp-osa`) or Sydney (`au-syd`) sent logs to Tokyo. Beginning 18 November 2021, all instances of Log Analysis and Activity Tracker that are used for clusters running in Osaka (`jp-osa`), Toronto (`ca-tor`), and Sydney (`au-syd`) send logs to their respective regions. To continue receiving logs for clusters in these regions, you must create instances of {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.at_full_notm}} in the same region as your cluster. If you already have instances in these regions, look for logs in those instances.
 
 {{site.data.keyword.cos_full_notm}}
-:   Version 2.1.7 of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-cos_plugin_changelog) is released.
+:   Version 2.1.7 of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog) is released.
 
   
 ### 17 November 2021
@@ -1323,7 +1323,7 @@ HPCS Router add-on
 {: release-note}
 
 CLI changelog
-:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.344. 
+:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.344. 
 
 ### 12 November 2021
 {: #openshift-nov1221}
@@ -1354,7 +1354,7 @@ Update commands to use `docker build`
 {: release-note}
 
 IAM trusted profiles for pod authorization
-:   Updates for pod authorization with IAM trusted profiles. Authorizing pods with IAM trusted profiles is available for clusters that run version 4.7 or later. Note that for new clusters, authorizing pods with IAM trusted profiles is enabled automatically. You can enable IAM trusted profiles on existing clusters by running [`ibmcloud oc cluster master refresh`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_refresh). For more information, see [Authorizing pods in your cluster to IBM Cloud services with IAM trusted profiles](/docs/containers?topic=containers-pod-iam-identity).
+:   Updates for pod authorization with IAM trusted profiles. Authorizing pods with IAM trusted profiles is available for clusters that run version 4.7 or later. Note that for new clusters, authorizing pods with IAM trusted profiles is enabled automatically. You can enable IAM trusted profiles on existing clusters by running [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh). For more information, see [Authorizing pods in your cluster to IBM Cloud services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity).
 
 
 ### 2 November 2021
@@ -1384,7 +1384,7 @@ Istio add-on change log
 {: release-note}
 
 CLI changelog
-:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.334. 
+:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.334. 
 
 ### 25 October 2021
 {: #openshift-oct2521}
@@ -1398,7 +1398,7 @@ Worker node fix pack update
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in.
-:   [Version 2.1.6](/docs/containers?topic=containers-cos_plugin_changelog) is released.
+:   [Version 2.1.6](/docs/openshift?topic=openshift-cos_plugin_changelog) is released.
 
 ### 19 October 2021
 {: #openshift-oct1921}
@@ -1412,7 +1412,7 @@ Ingress ALB change log updates
 {: release-note}
 
 New troubleshooting topic
-:   See [Why does my cluster master status say it is approaching its resource limit?](/docs/containers?topic=containers-master_resource_limit). 
+:   See [Why does my cluster master status say it is approaching its resource limit?](/docs/openshift?topic=openshift-master_resource_limit). 
 
 
 
@@ -1430,7 +1430,7 @@ OpenShift Data Foundation
 {: release-note}
 
 CLI changelog
-:   The [CLI change log(/docs/containers?topic=containers-cs_cli_changelog) is updated for version 1.0.331. 
+:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.331. 
 
 ### 11 October 2021
 {: #openshift-oct1121}
@@ -1454,7 +1454,7 @@ Istio add-on change log
 :   [Version `1.11.3`](/docs/containers?topic=containers-istio-changelog#1113) of the Istio managed add-on is released.
 
 Cluster autoscaler add-on.
-:   [Version 1.0.4](/docs/containers?topic=containers-ca_changelog) is released.
+:   [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog) is released.
 
 
 
@@ -1463,7 +1463,7 @@ Cluster autoscaler add-on.
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.0.1_780](/docs/containers?topic=containers-vpc_bs_changelog) is released.
+:   [Version 4.0.1_780](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
 
 
 ### 5 October 2021
@@ -1471,7 +1471,7 @@ Cluster autoscaler add-on.
 {: release-note}
 
 Updated supported, deprecated, and unsupported versions for strongSwan Helm chart.
-:   [Upgrading or disabling the strongSwan Helm chart](/docs/containers?topic=containers-vpn#vpn_upgrade)
+:   [Upgrading or disabling the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade)
 
 
 
@@ -1481,7 +1481,7 @@ Updated supported, deprecated, and unsupported versions for strongSwan Helm char
 
 
 {{site.data.keyword.cos_full_notm}} plug-in.
-:   [Version 2.1.5](/docs/containers?topic=containers-cos_plugin_changelog) is released.
+:   [Version 2.1.5](/docs/openshift?topic=openshift-cos_plugin_changelog) is released.
 
 
 ## September 2021
@@ -1560,7 +1560,7 @@ HPCS Router add-on
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on  
-:   Version [`4.0.0_769`](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   Version [`4.0.0_769`](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 
 
@@ -1629,10 +1629,10 @@ Review the release notes for 1 September 2021.
 {: shortdesc}
 
 {{site.data.keyword.block_storage_is_short}} add-on
-:   Version [`4.0`](/docs/containers?topic=containers-vpc_bs_changelog) is available.
+:   Version [`4.0`](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 {{site.data.keyword.cos_full_notm}} plug-in 
-:   Version [`2.1.4`](/docs/containers?topic=containers-cos_plugin_changelog) is available.
+:   Version [`2.1.4`](/docs/openshift?topic=openshift-cos_plugin_changelog) is available.
 
 
 ## August 2021
@@ -1652,10 +1652,10 @@ Istio add-on changelog
 :   [Version 1.11.1](/docs/containers?topic=containers-istio-changelog#1111) of the Istio managed add-on is released.
 
 New! Sao Paulo multizone region
-:   You can now create VPC clusters in the Sao Paulo, Brazil [location](/docs/containers?topic=containers-regions-and-zones).
+:   You can now create VPC clusters in the Sao Paulo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
 
  VPC disk encryption on worker nodes
-:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/containers?topic=containers-encryption#worker-encryption-vpc).
+:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc).
 
 ### 30 August 2021
 {: #openshift-aug3021}
@@ -1679,7 +1679,7 @@ New! Create a cluster with a template
 :   No longer do you have to manually specify the networking and worker node details to create a cluster, or enable security integrations such as logging and monitoring after creation. Instead, you can try out the **technical preview** to create a multizone cluster with nine worker nodes and encryption, logging, and monitoring already enabled. For more information, see [Creating a cluster by using an {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates&interface=ui).
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.3` is [released](/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.3` is [released](/docs/openshift?topic=openshift-cos_plugin_changelog).
 Master fix pack update change log documentation
 
 :   Master fix pack update change log documentation is available for version [`4.7.23_1529_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4723_1529), [`4.6.42_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4642_1553), [`4.5.41_1549_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1549), and [`3.11.487_1601_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311487_1601).
@@ -1735,7 +1735,7 @@ Image key synchronizer
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.312](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 2 August 2021
 {: #openshift-aug0221}
@@ -1771,7 +1771,7 @@ HPCS Router
 :   For centralized management of all your secrets across clusters and also injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets).
 
 {{site.data.keyword.block_storage_is_short}} add-on
-:   [Version `3.0.1`](/docs/containers?topic=containers-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.
+:   [Version `3.0.1`](/docs/openshift?topic=openshift-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.
 
 ### 23 July 2021
 {: #openshift-july2321}
@@ -1852,21 +1852,21 @@ Master versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.295](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.295](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 23 June 2021
 {: #openshift-june2321}
 {: release-note}
 
 Cluster autoscaler add-on
-:   [Version `1.0.3`](/docs/containers?topic=containers-ca_changelog) of the cluster autoscaler add-on is available.
+:   [Version `1.0.3`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.
 
 ### 22 June 2021
 {: #openshift-june2221}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.7.16_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4716_1522), [`4.6.34_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4634_1546), [`4.5.40_1542_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1542)and [`3.11.452_1593_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311452_1593).
@@ -1879,7 +1879,7 @@ Ingress changelogs
 :   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.
 
 New! The `addon options` command is now available
-:   For more information, see [addon options](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_addon_options)
+:   For more information, see [addon options](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
 
 
 
@@ -1906,7 +1906,7 @@ Image key synchronizer
 {: release-note}
 
 New! Private VPC NLB
-:   You can now create [private Network Load Balancers for VPC](/docs/containers?topic=containers-vpc-lbaas#setup_vpc_nlb_priv) to expose apps in clusters that run version 4.6 and later.
+:   You can now create [private Network Load Balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv) to expose apps in clusters that run version 4.6 and later.
 
 ### 9 June 2021
 {: #openshift-june0921}
@@ -1915,7 +1915,7 @@ New! Private VPC NLB
 
 
 New! {{site.data.keyword.redhat_openshift_notm}} 4.7
-:   You can create or [update](/docs/openshift?topic=openshift-openshift_changelog) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.redhat_openshift_notm}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/containers?topic=containers-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+:   You can create or [update](/docs/openshift?topic=openshift-openshift_changelog) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.redhat_openshift_notm}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/openshift?topic=openshift-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
 Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.5
 :   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.7, clusters that run version 4.5 are deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_changelog) as soon as possible.
@@ -1942,7 +1942,7 @@ Worker node versions
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 2 June 2021
 {: #openshift-june0221}
@@ -1979,7 +1979,7 @@ Unsupported version
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.275](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.275](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Version 0.45.0 of the Kubernetes Ingress image
 :   Due to a [regression in the community Kubernetes Ingress NGINX code](https://github.com/kubernetes/ingress-nginx/issues/6931){: external}, trailing slashes (`/`) are removed from subdomains during TLS redirects.
@@ -2017,15 +2017,15 @@ VPC cluster healthchecks
 {: release-note}
 
 New! PX-Backup is now available
-:   For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/containers?topic=containers-portworx).
+:   For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx).
 
 
 
 Cluster autoscaler add-on
-:   [Patch update `1.0.2_267`](/docs/containers?topic=containers-ca_changelog) of the cluster autoscaler add-on is available.
+:   [Patch update `1.0.2_267`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   [Version `2.0.9`](/docs/containers?topic=containers-cos_plugin_changelog) of the {{site.data.keyword.cos_full_notm}} plug-in is available.
+:   [Version `2.0.9`](/docs/openshift?topic=openshift-cos_plugin_changelog) of the {{site.data.keyword.cos_full_notm}} plug-in is available.
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.6.27_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4627_1542), [`4.5.38_1538_openshift`](/docs/openshift?topic=openshift-changelog_archive#4538_1538), [`4.4.33_1541_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1541), and [`3.11.420_1588_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311420_1588).
@@ -2073,7 +2073,7 @@ Master versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.258](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -2083,7 +2083,7 @@ CLI changelog
 
 
 VPC NLB
-:   Adds steps for [registering a VPC network load balancer with a DNS record and TLS certificate](/docs/containers?topic=containers-vpc-lbaas#vpc_nlb_dns).
+:   Adds steps for [registering a VPC network load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns).
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.6.25_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4625_1541), [`4.5.37_1537_openshift`](/docs/openshift?topic=openshift-changelog_archive#4537_1537), [`4.4.33_1540_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1540), and [`3.11.420_1587_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311420_1587).
@@ -2104,7 +2104,7 @@ HPCS Router
 {: release-note}
 
 New! Toronto multizone region for VPC
-:   You can now create clusters on VPC infrastructure in the Toronto, Canada (`ca-tor`) [location](/docs/containers?topic=containers-regions-and-zones).
+:   You can now create clusters on VPC infrastructure in the Toronto, Canada (`ca-tor`) [location](/docs/openshift?topic=openshift-regions-and-zones).
 
 ### 19 April 2021
 {: #openshift-april1921}
@@ -2114,10 +2114,10 @@ Add-on changelogs
 :   Updated version changelogs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
 
 Cluster autoscaler add-on
-:   [Patch update `1.0.2_256`](/docs/containers?topic=containers-ca_changelog) of the cluster autoscaler add-on is available.
+:   [Patch update `1.0.2_256`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 
@@ -2126,7 +2126,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 New fields and events for {{site.data.keyword.at_short}}
-:   To align with event auditing standards across {{site.data.keyword.cloud_notm}}, the previously deprecated cluster fields and events are now replaced by new fields and events. For an updated list of events, see [{{site.data.keyword.at_full_notm}} events](/docs/containers?topic=containers-at_events).
+:   To align with event auditing standards across {{site.data.keyword.cloud_notm}}, the previously deprecated cluster fields and events are now replaced by new fields and events. For an updated list of events, see [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events).
 
 ### 15 April 2021
 {: #openshift-april1521}
@@ -2173,7 +2173,7 @@ Worker node versions
 {: release-note}
 
 Deprecated data centers for classic clusters
-:   Houston (`hou02`) and Oslo (`osl01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy all your cluster workloads](/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your `osl01` or `hou02` clusters by **1 August 2021**. Before the unsupported date, you are blocked from adding new worker nodes and clusters starting on **1 July 2021**. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure).
+:   Houston (`hou02`) and Oslo (`osl01`) are deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy all your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your `osl01` or `hou02` clusters by **1 August 2021**. Before the unsupported date, you are blocked from adding new worker nodes and clusters starting on **1 July 2021**. For more information, see [Data center closures in 2021](/docs/get-support?topic=get-support-dc-closure).
 
 ### 2 April 2021
 {: #openshift-april0221}
@@ -2191,16 +2191,16 @@ Master versions
 {: release-note}
 
 Cluster autoscaler add-on
-:   [Patch update `1.0.2_249`](/docs/containers?topic=containers-ca_changelog) of the cluster autoscaler add-on is available.
+:   [Patch update `1.0.2_249`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.
 
 {{site.data.keyword.block_storage_is_short}} add-on
-:   [Patch update `3.0.0_521`](/docs/containers?topic=containers-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.
+:   [Patch update `3.0.0_521`](/docs/openshift?topic=openshift-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.
 
 {{site.data.keyword.block_storage_is_short}} driver
-:   Added steps to install the `vpc-block-csi-driver` on unmanaged clusters. For more information, see [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/containers?topic=containers-vpc-block-storage-driver-unmanaged).
+:   Added steps to install the `vpc-block-csi-driver` on unmanaged clusters. For more information, see [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged).
 
 New! image security add-on
-:   In clusters that run version 4.5 or later, you can (/docs/containers?topic=containers-images#portieris-image-sec)install the container image security enforcement add-onto set up the (https://github.com/IBM/portieris){: external} Portieris project in your cluster.
+:   In clusters that run version 4.5 or later, you can (/docs/openshift?topic=openshift-images#portieris-image-sec)install the container image security enforcement add-onto set up the (https://github.com/IBM/portieris){: external} Portieris project in your cluster.
 
 
 ## March 2021
@@ -2336,7 +2336,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler add-on
-:   Version 1.0.2 of the cluster autoscaler add-on is released. For more information, see the [cluster autoscaler add-on change log(/docs/containers?topic=containers-ca_changelog).
+:   Version 1.0.2 of the cluster autoscaler add-on is released. For more information, see the [cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog).
 
 
 
@@ -2354,14 +2354,14 @@ Unsupported version
 {: release-note}
 
 Trusted images
-:   You can now [set up trusted content for container images](/docs/containers?topic=containers-images#trusted_images) that are signed and stored in {{site.data.keyword.registrylong_notm}}.
+:   You can now [set up trusted content for container images](/docs/openshift?topic=openshift-images#trusted_images) that are signed and stored in {{site.data.keyword.registrylong_notm}}.
 
 ### 1 March 2021
 {: #openshift-march0121}
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.233](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.233](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -2391,7 +2391,7 @@ Master versions
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on
-:   Version `3.0.0` of the {{site.data.keyword.block_storage_is_short}} add-on is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log(/docs/containers?topic=containers-vpc_bs_changelog).
+:   Version `3.0.0` of the {{site.data.keyword.block_storage_is_short}} add-on is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log(/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
 
@@ -2400,7 +2400,7 @@ Master versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.231](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.231](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -2409,7 +2409,7 @@ CLI changelog
 {: release-note}
 
 VPE
-:   In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, worker node communication to the Kubernetes master is now established over the [VPC virtual private endpoint (VPE)](/docs/containers?topic=containers-vpc-subnets#vpc_basics_vpe).
+:   In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, worker node communication to the Kubernetes master is now established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe).
 
 ### 22 February 2021
 {: #openshift-feb2221}
@@ -2444,7 +2444,7 @@ Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.4
 {: release-note}
 
 New! Osaka multizone region
-:   You can now create classic or VPC clusters in the Osaka, Japan (`jp-osa`) [location](/docs/containers?topic=containers-regions-and-zones).
+:   You can now create classic or VPC clusters in the Osaka, Japan (`jp-osa`) [location](/docs/openshift?topic=openshift-regions-and-zones).
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.5.31_1529_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1529), (/docs/openshift?topic=openshift-changelog_archive#4433_1533)`4.4.33_1533_openshift`, (/docs/openshift?topic=openshift-changelog_archive#4340_1554)`4.3.40_1554_openshift`, and [`3.11.380_1580_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311380_1580).
@@ -2454,7 +2454,7 @@ Worker node versions
 {: release-note}
 
 Gateway firewalls and Calico policies
-:   For classic clusters in Frankfurt, updated the required IP addresses and ports that you must open in a [private gateway device firewall](/docs/containers?topic=containers-firewall#firewall_private) or [Calico private network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/eu-de){: external}.
+:   For classic clusters in Frankfurt, updated the required IP addresses and ports that you must open in a [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private) or [Calico private network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation/eu-de){: external}.
 
 ### 10 February 2021
 {: #openshift-feb1021}
@@ -2464,14 +2464,14 @@ Ingress ALB changelog
 :   Updated the [`nginx-ingress` build to 2452](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 Gateway firewalls and Calico policies
-:   For classic clusters in Dallas, Washington D.C., and Frankfurt, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/containers?topic=containers-firewall#firewall_outbound), [private gateway device firewall](/docs/containers?topic=containers-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+:   For classic clusters in Dallas, Washington D.C., and Frankfurt, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
 
 ### 8 February 2021
 {: #openshift-feb0821}
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.223](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -2480,7 +2480,7 @@ CLI changelog
 {: release-note}
 
 Worker node modifications
-:   Summarized the modifications that you can make to the [default worker node settings](/docs/containers?topic=containers-kernel#worker-default).
+:   Summarized the modifications that you can make to the [default worker node settings](/docs/openshift?topic=openshift-kernel#worker-default).
 
 
 
@@ -2502,7 +2502,7 @@ Worker node versions
 {: release-note}
 
 Block Storage for VPC add-on
-:   Block Storage for VPC add-on patch update `2.0.3_471` is released. For more information, see the [Block Storage for VPC add-on change log(/docs/containers?topic=containers-vpc_bs_changelog).
+:   Block Storage for VPC add-on patch update `2.0.3_471` is released. For more information, see the [Block Storage for VPC add-on change log(/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
 
@@ -2513,7 +2513,7 @@ Block Storage for VPC add-on
 
 
 New! {{site.data.keyword.redhat_openshift_notm}} Do (`odo`) CLI tutorial
-:   Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.redhat_openshift_notm}} Do CLI](/docs/containers?topic=containers-odo-tutorial) tutorial for a quick guide on using `odo` to package and push your apps to your cluster.
+:   Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.redhat_openshift_notm}} Do CLI](/docs/openshift?topic=openshift-odo-tutorial) tutorial for a quick guide on using `odo` to package and push your apps to your cluster.
 
 New! Private service endpoint allowlists
 :   You can now control access to your private cloud service endpoint by [creating a subnet allowlist](/docs/containers?topic=containers-access_cluster#private-se-allowlist). Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.
@@ -2546,7 +2546,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler
-:   Cluster autoscaler add-on patch update `1.0.1_210` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/containers?topic=containers-ca_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_210` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog).
 
 ### 12 January 2021
 {: #openshift-jan1221}
@@ -2556,7 +2556,7 @@ Ingress resources
 :   Added example Ingress resource definitions that are compatible with Kubernetes version 1.19. See the example YAML file in the documentation for the [community Kubernetes Ingress setup](/docs/containers?topic=containers-ingress-types#alb-comm-create) or for the [deprecated custom {{site.data.keyword.containerlong_notm}} Ingress setup](/docs/containers?topic=containers-ingress-types#alb-comm-create).
 
 Kubernetes benchmarks
-:   Added how to [run the CIS Kubernetes benchmark tests on your own worker nodes](/docs/containers?topic=containers-cis-benchmark#cis-worker-test). 
+:   Added how to [run the CIS Kubernetes benchmark tests on your own worker nodes](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test). 
 
 Removal of data center support
 :   Updated the documentation to reflect that Melbourne (`mel01`) is no longer available as an option to create {{site.data.keyword.cloud_notm}} resources in.
@@ -2579,7 +2579,7 @@ Master versions
 {: release-note}
 
 Gateway firewalls and Calico policies
-:   For classic clusters in Tokyo, updated the {{site.data.keyword.openshiftlong_notm}} IP addresses that you must open in a [public gateway firewall device](/docs/containers?topic=containers-firewall#firewall_outbound) or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external}.
+:   For classic clusters in Tokyo, updated the {{site.data.keyword.openshiftlong_notm}} IP addresses that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound) or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external}.
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.
@@ -2592,20 +2592,20 @@ Worker node versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.208](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.6` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/containers?topic=containers-cos_plugin_changelog).
+:   Version `2.0.6` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 17 December 2020
 {: #openshift-dec1720}
 {: release-note}
 
 Audit documentation
-:   Reorganized information about the configuration and forwarding of Kubernetes API server and worker node [audit logs](/docs/containers?topic=containers-health-audit).
+:   Reorganized information about the configuration and forwarding of Kubernetes API server and worker node [audit logs](/docs/openshift?topic=openshift-health-audit).
 
 Back up and restore
-:   Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart change log(/docs/containers?topic=containers-backup_restore_changelog).
+:   Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart change log(/docs/openshift?topic=openshift-backup_restore_changelog).
 
 
 
@@ -2614,7 +2614,7 @@ Back up and restore
 {: release-note}
 
 Cluster autoscaler
-:   Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/containers?topic=containers-ca_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog).
 
 ### 14 December 2020
 {: #openshift-dec1420}
@@ -2636,7 +2636,7 @@ Master versions
 {: release-note}
 
 Storage add-ons
-:   Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/containers?topic=containers-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log(/docs/containers?topic=containers-vpc_bs_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log(/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 strongSwan versions
 :   Added information about which [strongSwan Helm chart versions](/docs/containers?topic=containers-116_changelog#11615_1554) are supported.
@@ -2651,7 +2651,7 @@ Accessing clusters
 :   Updated the steps for [accessing clusters through the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#access_private_se) to use the `--endpoint private` flag in the **`ibmcloud oc cluster config`** command.
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.206](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Proxy protocol for Ingress
 :   In VPC clusters, you can now [enable the PROXY protocol](/docs/containers?topic=containers-comm-ingress-annotations#preserve_source_ip_vpc) for all load balancers that expose Ingress ALBs in your cluster. The PROXY protocol enables load balancers to pass client connection information that is contained in headers on the client request, including the client IP address, the proxy server IP address, and both port numbers, to ALBs.
@@ -2666,7 +2666,7 @@ Helm version 2 unsupported
 {: release-note}
 
 {{site.data.keyword.keymanagementserviceshort}} enhancements
-:   For clusters that run `4.4.16_1513_openshift` or later, your cluster now [integrates more features from {{site.data.keyword.keymanagementserviceshort}}](/docs/containers?topic=containers-encryption#kms-keyprotect-features) when you enable {{site.data.keyword.keymanagementserviceshort}} as the KMS provider for the cluster. When you enable this integration, a **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. If you have a cluster that runs an earlier version, [update your cluster](/docs/containers?topic=containers-update) and then [re-enable KMS encryption](/docs/containers?topic=containers-encryption#keyprotect) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
+:   For clusters that run `4.4.16_1513_openshift` or later, your cluster now [integrates more features from {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features) when you enable {{site.data.keyword.keymanagementserviceshort}} as the KMS provider for the cluster. When you enable this integration, a **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. If you have a cluster that runs an earlier version, [update your cluster](/docs/containers?topic=containers-update) and then [re-enable KMS encryption](/docs/openshift?topic=openshift-encryption#keyprotect) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.
@@ -2709,7 +2709,7 @@ New! {{site.data.keyword.cloud_notm}} HPCS Router
 {: release-note}
 
 New! Reservations to reduce classic worker node costs
-:   Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on-demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/containers?topic=containers-reservations).
+:   Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on-demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations).
 
 ### 23 November 2020
 {: #openshift-nov2320}
@@ -2738,12 +2738,12 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.197](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
 New! {{site.data.keyword.block_storage_is_short}} changelog
-:   Added a [change log(/docs/containers?topic=containers-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.
+:   Added a [change log(/docs/openshift?topic=openshift-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.
 
 ### 16 November 2020
 {: #openshift-nov1620}
@@ -2768,7 +2768,7 @@ Master versions
 {: release-note}
 
 {{site.data.keyword.at_full_notm}} and IAM events
-:   Added [IAM actions and {{site.data.keyword.cloudaccesstrailshort}} events](/docs/containers?topic=containers-api-at-iam#ks-ingress) for the Ingress secret, Ingress ALB, and NLB DNS APIs.
+:   Added [IAM actions and {{site.data.keyword.cloudaccesstrailshort}} events](/docs/openshift?topic=openshift-api-at-iam#ks-ingress) for the Ingress secret, Ingress ALB, and NLB DNS APIs.
 
 ### 9 November 2020
 {: #openshift-nov0920}
@@ -2790,10 +2790,10 @@ Worker node versions
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}}
-:   Added topics for [verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/containers?topic=containers-vpc-block#vpc-block-fs-verify), [enabling every user to customize the default PVC settings](/docs/containers?topic=containers-vpc-block#customize-with-secret), and [enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/containers?topic=containers-vpc-block#static-secret).
+:   Added topics for [verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify), [enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret), and [enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret).
 
 Classic-enabled VPCs
-:   Added steps in [Creating VPC subnets for classic access](/docs/containers?topic=containers-vpc-subnets#ca_subnet_cli) for creating a classic-enabled VPC and VPC subnets without the automatic default address prefixes.
+:   Added steps in [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_cli) for creating a classic-enabled VPC and VPC subnets without the automatic default address prefixes.
 
 
   
@@ -2803,7 +2803,7 @@ Disabling remote health reporting
 
 
 Gateway firewalls and Calico policies
-:   For classic clusters in Dallas and Frankfurt, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/containers?topic=containers-firewall#firewall_outbound), [private gateway device firewall](/docs/containers?topic=containers-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+:   For classic clusters in Dallas and Frankfurt, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
 
 
 
@@ -2815,9 +2815,9 @@ Gateway firewalls and Calico policies
 
 Persistent storage
 :   Added the following topics.
-    - [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/containers?topic=containers-storage-cos-understand#create_cos_secret)
-    - [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/containers?topic=containers-storage-cos-understand#service_credentials)
-    - [Backing up and restoring storage data](/docs/containers?topic=containers-storage_br)
+    - [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)
+    - [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials)
+    - [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)
     
 
 
@@ -2848,7 +2848,7 @@ Worker node versions
 {: release-note}
 
 API key
-:   Added more information about [how the {{site.data.keyword.openshiftlong_notm}} API key is used](/docs/containers?topic=containers-access-creds#api_key_about).
+:   Added more information about [how the {{site.data.keyword.openshiftlong_notm}} API key is used](/docs/openshift?topic=openshift-access-creds#api_key_about).
 
 
   
@@ -2857,13 +2857,13 @@ API key
 {: release-note}
 
 Gateway firewalls and Calico policies
-:   For classic clusters in Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/containers?topic=containers-firewall#firewall_outbound), [private gateway device firewall](/docs/containers?topic=containers-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+:   For classic clusters in Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
 
 
 
 {{site.data.keyword.cos_short}}
 
-:   Added steps to help you [decide on the object storage configuration](/docs/containers?topic=containers-storage_cos_install#configure_cos) and added troubleshooting steps for when [app pods fail because of an `Operation not permitted` error](/docs/containers?topic=containers-cos_operation_not_permitted).
+:   Added steps to help you [decide on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos) and added troubleshooting steps for when [app pods fail because of an `Operation not permitted` error](/docs/openshift?topic=openshift-cos_operation_not_permitted).
 
 
 ### 13 October 2020
@@ -2890,7 +2890,7 @@ VPC security groups
 :   Expanded the list of required rules based on the cluster version for default VPC security groups.
 
 {{site.data.keyword.cos_short}} in VPC Gen 2
-:   Added support for authorized IP addresses in {{site.data.keyword.cos_full_notm}} for VPC Gen 2. For more information, see [Allowing IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage_cos_vpc_ip).
+:   Added support for authorized IP addresses in {{site.data.keyword.cos_full_notm}} for VPC Gen 2. For more information, see [Allowing IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip).
 
 ### 12 October 2020
 {: #openshift-oct1220}
@@ -2913,10 +2913,10 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.178](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Ingress secret expiration synchronization
-:   Added a troubleshooting topic for when [Ingress secret expiration dates are out of sync or are not updated](/docs/containers?topic=containers-sync_cert_dates).
+:   Added a troubleshooting topic for when [Ingress secret expiration dates are out of sync or are not updated](/docs/openshift?topic=openshift-sync_cert_dates).
 
 
 
@@ -2954,7 +2954,7 @@ Versions
 {: release-note}
 
 :   Gateway firewalls and Calico policies
-For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/containers?topic=containers-firewall#firewall_outbound), [private gateway device firewall](/docs/containers?topic=containers-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
 
 ### 26 September 2020
 {: #openshift-sept2620}
@@ -2970,7 +2970,7 @@ Versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.171](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 23 September 2020
 {: #openshift-sept2320}
@@ -3016,7 +3016,7 @@ Versions
 {: release-note}
 
 CA certificate rotation
-:   Added steps to [revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates](/docs/containers?topic=containers-security#cert-rotate).
+:   Added steps to [revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates](/docs/openshift?topic=openshift-security#cert-rotate).
 
 
 
@@ -3039,30 +3039,30 @@ Versions
 
 Observability CLI plug-in
 :   Added the following commands to manage your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} configurations.
-    - [**`ibmcloud ob logging agent discover`**](/docs/containers?topic=containers-observability_cli#logging_agent_discover)
-    - [**`ibmcloud ob logging config enable public-endpoint`** or `private-endpoint`](/docs/containers?topic=containers-observability_cli#logging_config_enable)
-    - [**`ibmcloud ob logging config show`**](/docs/containers?topic=containers-observability_cli#logging_config_show)
-    - [**`ibmcloud ob monitoring agent discover`**](/docs/containers?topic=containers-observability_cli#monitoring_agent_discover)
-    - [**`ibmcloud ob monitoring config enable public-endpoint`** or `private-endpoint`](/docs/containers?topic=containers-observability_cli#monitoring_config_enable)
+    - [**`ibmcloud ob logging agent discover`**](/docs/openshift?topic=openshift-observability_cli#logging_agent_discover)
+    - [**`ibmcloud ob logging config enable public-endpoint`** or `private-endpoint`](/docs/openshift?topic=openshift-observability_cli#logging_config_enable)
+    - [**`ibmcloud ob logging config show`**](/docs/openshift?topic=openshift-observability_cli#logging_config_show)
+    - [**`ibmcloud ob monitoring agent discover`**](/docs/openshift?topic=openshift-observability_cli#monitoring_agent_discover)
+    - [**`ibmcloud ob monitoring config enable public-endpoint`** or `private-endpoint`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_enable)
 
 New! Worker node flavors
-:   You can create worker nodes with new [bare metal](/docs/containers?topic=containers-planning_worker_nodes#bm-table) and [bare metal SDS](/docs/containers?topic=containers-planning_worker_nodes#sds-table) flavors in the `me4c` and `mb4c` flavors. These flavors include 2nd Generation Intel® Xeon® Scalable Processors chip sets for better performance for workloads such as machine learning, AI, and IoT.
+:   You can create worker nodes with new [bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm-table) and [bare metal SDS](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table) flavors in the `me4c` and `mb4c` flavors. These flavors include 2nd Generation Intel® Xeon® Scalable Processors chip sets for better performance for workloads such as machine learning, AI, and IoT.
 
 ### 24 August 2020
 {: #openshift-aug2420}
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.157](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.157](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Cluster autoscaler
-:   The [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
+:   The [cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
 
 New! Community Kubernetes Ingress support
 :   The Ingress ALBs in your version 3.11 cluster can now run the Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller. To use the Kubernetes Ingress image, you create your Ingress resources and ConfigMaps according to the Kubernetes Ingress format, including community Kubernetes Ingress annotations instead of custom {{site.data.keyword.openshiftlong_notm}} annotations. For more information about the differences between the {{site.data.keyword.openshiftlong_notm}} Ingress image and the Kubernetes Ingress image, see the [Choosing a supported image version](/docs/containers?topic=containers-ingress-types#alb-version-choose).
 
 New! Default {{site.data.keyword.cloudcerts_long}} instances
-:   A {{site.data.keyword.cloudcerts_long_notm}} service instance is now created by default for all new and existing standard clusters. The {{site.data.keyword.cloudcerts_short}} service instance, which is named in the format `kube-crtmgr-<cluster_ID>`, stores the TLS certificate for your cluster's default Ingress subdomain. You can also upload your own TLS certificates for custom Ingress domains to this {{site.data.keyword.cloudcerts_short}} instance and use the new [**`ibmcloud oc ingress secret`** commands](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_create) to create secrets for these certificates in your cluster. To ensure that a {{site.data.keyword.cloudcerts_short}} instance is automatically created for your new or existing cluster, verify that the API key for the region and resource group that the cluster is created in has the correct {{site.data.keyword.cloudcerts_short}} permissions.
+:   A {{site.data.keyword.cloudcerts_long_notm}} service instance is now created by default for all new and existing standard clusters. The {{site.data.keyword.cloudcerts_short}} service instance, which is named in the format `kube-crtmgr-<cluster_ID>`, stores the TLS certificate for your cluster's default Ingress subdomain. You can also upload your own TLS certificates for custom Ingress domains to this {{site.data.keyword.cloudcerts_short}} instance and use the new [**`ibmcloud oc ingress secret`** commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create) to create secrets for these certificates in your cluster. To ensure that a {{site.data.keyword.cloudcerts_short}} instance is automatically created for your new or existing cluster, verify that the API key for the region and resource group that the cluster is created in has the correct {{site.data.keyword.cloudcerts_short}} permissions.
 
 
   
@@ -3089,7 +3089,7 @@ Versions
 {: release-note}
 
 Locations
-:   You can create [clusters on VPC infrastructure](/docs/containers?topic=containers-regions-and-zones#zones-vpc) in the Tokyo multizone region.
+:   You can create [clusters on VPC infrastructure](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) in the Tokyo multizone region.
 
 Versions
 :   Worker node fix pack update change log documentation is available.
@@ -3103,7 +3103,7 @@ Versions
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.143](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.143](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 5 August 2020
 {: #openshift-aug0520}
@@ -3119,7 +3119,7 @@ Ingress ALB changelog
 {: release-note}
 
 Gateway appliance firewalls
-:   Updated the [required IP addresses and ports](/docs/containers?topic=containers-firewall#firewall_private) that you must open in a private gateway device firewall.
+:   Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_private) that you must open in a private gateway device firewall.
 
 Versions
 :   Worker node fix pack update change log documentation is available.
@@ -3151,7 +3151,7 @@ UI for creating clusters
 {: release-note}
 
 Minimum cluster size
-:   Added an FAQ about [the smallest size cluster that you can make](/docs/containers?topic=containers-faqs#smallest_cluster).
+:   Added an FAQ about [the smallest size cluster that you can make](/docs/openshift?topic=openshift-faqs#smallest_cluster).
 
 Versions
 :   Master fix pack update change log documentation is available.
@@ -3161,7 +3161,7 @@ Versions
 
 
 Worker node replacement
-:   Added a troubleshooting topic for when [replacing a worker node does not create a worker node](/docs/containers?topic=containers-auto-rebalance-off).
+:   Added a troubleshooting topic for when [replacing a worker node does not create a worker node](/docs/openshift?topic=openshift-auto-rebalance-off).
 
 
   
@@ -3200,7 +3200,7 @@ Ingress ALB changelog
 
 
 Pod and service subnets
-:   Added information about bringing your own pod and service subnets in [VPC clusters](/docs/containers?topic=containers-subnets#basics_subnets) classic or (/docs/containers?topic=containers-vpc-subnets#vpc_basics_subnets).
+:   Added information about bringing your own pod and service subnets in [VPC clusters](/docs/openshift?topic=openshift-subnets#basics_subnets) classic or (/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
 
 
 
@@ -3209,7 +3209,7 @@ Pod and service subnets
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.118](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.118](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 6 July 2020
 {: #openshift-july0620}
@@ -3238,7 +3238,7 @@ Private-only VPC clusters
 
 
 VPC load balancer
-:   Added support for specifying the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation in the [configuration file for VPC load balancers](/docs/containers?topic=containers-vpc-lbaas#setup_vpc_ks_vpc_lb).
+:   Added support for specifying the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation in the [configuration file for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb).
 
 ## June 2020
 {: #openshift-june20}
@@ -3248,7 +3248,7 @@ VPC load balancer
 {: release-note}
 
 Gateway appliance firewalls
-:   Updated the [required IP addresses and ports](/docs/containers?topic=containers-firewall#firewall_outbound) that you must open in a public gateway device.
+:   Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device.
 
 Ingress ALB changelog
 :   Updated the [`ingress-auth` image build to 413](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -3301,20 +3301,20 @@ New! Virtual Private Cloud Generation 2
 
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.99](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 ### 9 June 2020
 {: #openshift-june0920}
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.94](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.94](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Permissions
-:   Added a [Permissions to create a cluster](/docs/containers?topic=containers-access_reference#cluster_create_permissions) reference topic, and restructured cluster creation and user access topics to refer to this reference topic.
+:   Added a [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions) reference topic, and restructured cluster creation and user access topics to refer to this reference topic.
 
 New! Static routes add-on
-:   Added information about creating static routes on your worker nodes by enabling the [static routes cluster add-on](/docs/containers?topic=containers-static-routes).
+:   Added information about creating static routes on your worker nodes by enabling the [static routes cluster add-on](/docs/openshift?topic=openshift-static-routes).
 
 ### 8 June 2020
 {: #openshift-june0820}
@@ -3336,7 +3336,7 @@ Ingress ALB changelog
 
 
 VPC network security
-:   Expanded information about your options for using access control lists (ACLs), security groups, and other network policies to [control traffic to and from your VPC cluster](/docs/containers?topic=containers-vpc-network-policy).
+:   Expanded information about your options for using access control lists (ACLs), security groups, and other network policies to [control traffic to and from your VPC cluster](/docs/openshift?topic=openshift-vpc-network-policy).
 
 ### 1 June 2020
 {: #openshift-june0120}
@@ -3369,13 +3369,13 @@ The minimum number of worker nodes per zone is increased from one to two so that
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.84](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.84](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Image pull secrets
 :   Now, the `default-icr-io` and `default-<region>-icr-io` image pull secrets in the `default` project are replaced by a single `all-icr-io` image pull secret that has credentials to all the public and private regional registry domains. Clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11 still have the previous `default-<region>-icr-io` image pull secrets for backwards compatibility.
 
 Ingress status
-:   Added information about [health reporting for your Ingress components](/docs/containers?topic=containers-ingress-status).
+:   Added information about [health reporting for your Ingress components](/docs/openshift?topic=openshift-ingress-status).
 
 
 
@@ -3400,9 +3400,9 @@ New! Virtual Private Cloud Generation 2
 :   You can now create standard Kubernetes clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC Gen 2 clusters are available for only standard, Kubernetes clusters and are not supported in free clusters.
 
 :   For more information, check out the following links. 
-    - [Overview of Classic and VPC infrastructure providers](/docs/containers?topic=containers-infrastructure_providers)
-    - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/containers?topic=containers-planning_worker_nodes#vm)
-    - [New VPC Gen 2 commands for the CLI](/docs/containers?topic=containers-kubernetes-service-cli)
+    - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
+    - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
+    - [New VPC Gen 2 commands for the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
     - [VPC cluster limitations](/docs/containers?topic=containers-limitations#ks_vpc_gen2_limits)
     
 :   Ready to get started? Try out the [Creating a cluster in your VPC on generation 2 compute tutorial](/docs/containers?topic=containers-vpc_ks_tutorial).
@@ -3468,7 +3468,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.57](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -3477,7 +3477,7 @@ CLI changelog
 {: release-note}
 
 Gateway appliance firewalls
-:   Updated the [required IP addresses and ports](/docs/containers?topic=containers-firewall#firewall_outbound) that you must open in a public gateway device firewall.
+:   Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_outbound) that you must open in a public gateway device firewall.
 
 Ingress troubleshooting
 :   Added a [troubleshooting topic](/docs/containers?topic=containers-alb-pod-affinity) for when ALB pods don't deploy correctly to worker nodes.
@@ -3490,7 +3490,7 @@ Ingress troubleshooting
 {: release-note}
 
 Cluster and worker node quotas
-:   Now, each region in your {{site.data.keyword.cloud_notm}} account has quotas for {{site.data.keyword.redhat_openshift_notm}} clusters and workers. You can have **100 clusters** and **500 worker nodes** across clusters per region and per [infrastructure provider](/docs/containers?topic=containers-infrastructure_providers). With quotas in place, your account is better protected from accidental requests or billing surprises. Need more clusters? No problem, just [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new cluster or worker node quota limit for the region and infrastructure provider that you want. For more information, see the [Service limitations](/docs/containers?topic=containers-limitations).
+:   Now, each region in your {{site.data.keyword.cloud_notm}} account has quotas for {{site.data.keyword.redhat_openshift_notm}} clusters and workers. You can have **100 clusters** and **500 worker nodes** across clusters per region and per [infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers). With quotas in place, your account is better protected from accidental requests or billing surprises. Need more clusters? No problem, just [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new cluster or worker node quota limit for the region and infrastructure provider that you want. For more information, see the [Service limitations](/docs/containers?topic=containers-limitations).
 
 ### 29 April 2020
 {: #openshift-april2920}
@@ -3544,7 +3544,7 @@ Image pull secrets
  
 
 Private network connection to registry
-:   For accounts that have VRF and service endpoints enabled, image push and pull traffic to {{site.data.keyword.registrylong_notm}} is now on [the private network](/docs/containers?topic=containers-registry#cluster_registry_auth_private).
+:   For accounts that have VRF and service endpoints enabled, image push and pull traffic to {{site.data.keyword.registrylong_notm}} is now on [the private network](/docs/openshift?topic=openshift-registry#cluster_registry_auth_private).
 
 
 
@@ -3575,7 +3575,7 @@ Ingress ALB changelog
 {: release-note}
 
 Gateway appliance firewalls
-:   Updated the [required IP addresses and ports](/docs/containers?topic=containers-firewall#firewall_private) that you must open in a private gateway device firewall for {{site.data.keyword.registrylong_notm}}.
+:   Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#firewall_private) that you must open in a private gateway device firewall for {{site.data.keyword.registrylong_notm}}.
 
 
 
@@ -3594,7 +3594,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.28](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 
@@ -3611,7 +3611,7 @@ Version changelogs
 :   {{site.data.keyword.redhat_openshift_notm}} [3.11.188_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311188_1545_worker).
 
 File storage classes
-:   Added `gid` file storage classes to specify a supplemental group ID that you can assign to a non-root user ID so that the non-root user can read and write to the file storage instance. For more information, see the storage class [reference](/docs/containers?topic=containers-file_storage#file_storageclass_reference). 
+:   Added `gid` file storage classes to specify a supplemental group ID that you can assign to a non-root user ID so that the non-root user can read and write to the file storage instance. For more information, see the storage class [reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference). 
 
 ### 27 March 2020
 {: #openshift-mar2720}
@@ -3639,7 +3639,7 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.15](/docs/containers?topic=containers-cs_cli_changelog#10).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 
 ### 18 March 2020
@@ -3654,14 +3654,14 @@ Gateway appliance firewalls
 
 
 IAM issuer details
-:   Added a [reference topic](/docs/containers?topic=containers-access_reference#iam_issuer_users) for the IAM issuer details of RBAC users.
+:   Added a [reference topic](/docs/openshift?topic=openshift-access_reference#iam_issuer_users) for the IAM issuer details of RBAC users.
 
 ### 16 March 2020
 {: #openshift-mar1620}
 {: release-note}
 
 New! CLI 1.0
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.0](/docs/containers?topic=containers-cs_cli_changelog#10). This version contains permanent syntax and behavior changes that are not compatible with earlier versions, so before you update be sure to follow the guidance in [Using version 1.0 of the plug-in](/docs/containers?topic=containers-cs_cli_changelog#changelog_beta).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#10). This version contains permanent syntax and behavior changes that are not compatible with earlier versions, so before you update be sure to follow the guidance in [Using version 1.0 of the plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta).
 
 
 
@@ -3674,10 +3674,10 @@ Image build errors
 
 
 Installing SGX drivers
-:   Added a topic for [installing SGX drivers and platform software on SGX-capable worker nodes](/docs/containers?topic=containers-add_workers#install-sgx).
+:   Added a topic for [installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx).
 
 Sizing workloads
-:   Enhanced the topic with a [How do I monitor resource usage and capacity in my cluster?](/docs/containers?topic=containers-strategy#sizing_manage) FAQ.
+:   Enhanced the topic with a [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage) FAQ.
 :   `sticky-cookie-services` annotation.
 :   Added the `secure` and `httponly` parameters to the [`sticky-cookie-services` annotation](/docs/containers?topic=containers-comm-ingress-annotations#session-affinity-cookies).
 
@@ -3720,7 +3720,7 @@ Managing Ingress ALBs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.102](/docs/containers?topic=containers-cs_cli_changelog#04).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.102](/docs/openshift?topic=openshift-cs_cli_changelog#04).
 
 Ingress ALB changelog
 :   Updated the [`ingress-auth` image build to 390](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -3744,7 +3744,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.90](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.90](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
@@ -3755,22 +3755,22 @@ Troubleshooting Ingress
 
 Developing and deploying apps
 :   You can now find expanded information on how to develop and deploy an app to your cluster in the following pages.
-    - [Planning app deployments](/docs/containers?topic=containers-plan_deploy)
-    - [Building containers from images](/docs/containers?topic=containers-images)
+    - [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy)
+    - [Building containers from images](/docs/openshift?topic=openshift-images)
     - [Developing Kubernetes-native apps](/docs/containers?topic=containers-app)
     - [Deploying Kubernetes-native apps in clusters](/docs/containers?topic=containers-deploy_app)
-    - [Managing the app lifecycle](/docs/containers?topic=containers-update_app)
+    - [Managing the app lifecycle](/docs/openshift?topic=openshift-update_app)
 
 Learning paths
-:   Curated learning paths for [administrators](/docs/containers?topic=containers-learning-path-admin) and [developers](/docs/containers?topic=containers-learning-path-dev) are now available to help guide you through your {{site.data.keyword.openshiftlong_notm}} experience.
+:   Curated learning paths for [administrators](/docs/openshift?topic=openshift-learning-path-admin) and [developers](/docs/openshift?topic=openshift-learning-path-dev) are now available to help guide you through your {{site.data.keyword.openshiftlong_notm}} experience.
 
 Setting up image build pipelines
 :   You can now find expanded information on how to set up an image registry and build pipelines in the following pages. 
-    - [Setting up an image registry](/docs/containers?topic=containers-registry)
-    - [Setting up continuous integration and delivery](/docs/containers?topic=containers-cicd)
+    - [Setting up an image registry](/docs/openshift?topic=openshift-registry)
+    - [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd)
     
 Firewall subnets
-:   Removed outdated [subnet IP addresses for {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-firewall#vyatta_firewall).
+:   Removed outdated [subnet IP addresses for {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#vyatta_firewall).
 
 
 
@@ -3812,7 +3812,7 @@ New! {{site.data.keyword.redhat_openshift_notm}} 4.3
 {: release-note}
 
 Cluster autoscaler
-:   Added a [debugging guide for the cluster autoscaler](/docs/containers?topic=containers-debug_cluster_autoscaler).
+:   Added a [debugging guide for the cluster autoscaler](/docs/openshift?topic=openshift-debug_cluster_autoscaler).
 
 
 
@@ -3828,7 +3828,7 @@ Expanded troubleshooting
 
 
 Tags
-:   Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/containers?topic=containers-add_workers#cluster_tags).
+:   Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags).
 
 VPC security groups
 :   [Modify the security group rules](/docs/openshift?topic=openshift-vpc-security-group)for VPC Gen 2 clusters to allow traffic requests that are routed to node ports on your worker nodes.
@@ -3860,7 +3860,7 @@ Ingress ALB changelog
 
 
 Back up and restore File and Block storage
-:   Added steps for deploying the [`ibmcloud-backup-restore` Helm chart](/docs/containers?topic=containers-utilities#ibmcloud-backup-restore).
+:   Added steps for deploying the [`ibmcloud-backup-restore` Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).
 
 ### 22 January 2020
 {: #openshift-jan2220}
@@ -3881,7 +3881,7 @@ Storage utilities
 {: release-note}
 
 Helm version 3
-:   Updated [Adding services by using Helm charts](/docs/containers?topic=containers-helm) to include steps for installing Helm v3 in your cluster. Migrate to Helm v3 today for several advantages over Helm v2, such as the removal of the Helm server, Tiller.
+:   Updated [Adding services by using Helm charts](/docs/openshift?topic=openshift-helm) to include steps for installing Helm v3 in your cluster. Migrate to Helm v3 today for several advantages over Helm v2, such as the removal of the Helm server, Tiller.
 
 Ingress ALB changelog
 :   Updated the [`nginx-ingress` image build to 621](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog). 
@@ -3931,7 +3931,7 @@ Version changelog
 
 
 Assigning access
-:   Updated the steps to [assign access to your clusters through the {{site.data.keyword.cloud_notm}} IAM console](/docs/containers?topic=containers-users#add_users).
+:   Updated the steps to [assign access to your clusters through the {{site.data.keyword.cloud_notm}} IAM console](/docs/openshift?topic=openshift-users#add_users).
 
 
 
@@ -3940,7 +3940,7 @@ Assigning access
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.64](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 0.4.64](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
   
@@ -3950,7 +3950,7 @@ CLI installation
 
 
 Configuring VPC subnets
-:   [Added information](/docs/containers?topic=containers-vpc-subnets) about configuring VPC subnets, public gateways, and network segmentation for your VPC clusters.
+:   [Added information](/docs/openshift?topic=openshift-vpc-subnets) about configuring VPC subnets, public gateways, and network segmentation for your VPC clusters.
 
 
 
@@ -3968,7 +3968,7 @@ Version changelog
 {: release-note}
 
 Exposing apps with load balancers or Ingress ALBs
-:   Added quick start pages to help you get up and running with [load balancers](/docs/containers?topic=containers-loadbalancer-qs) and [Ingress ALBs](/docs/containers?topic=containers-ingress-types).
+:   Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/containers?topic=containers-ingress-types).
 
 
 
@@ -3981,7 +3981,7 @@ Exposing apps with load balancers or Ingress ALBs
 
 
 Use the internal KVDB in Portworx
-:   Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/containers?topic=containers-portworx#portworx-kvdb).
+:   Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-portworx#portworx-kvdb).
 
 ## November 2019
 {: #openshift-nov19}
@@ -3991,16 +3991,16 @@ Use the internal KVDB in Portworx
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.61](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.61](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Diagnostics and Debug Tool add-on for {{site.data.keyword.redhat_openshift_notm}} clusters
-:   The [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) add-on is now available for {{site.data.keyword.redhat_openshift_notm}} clusters.
+:   The [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) add-on is now available for {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 Cluster autoscaling for VPC clusters
-:   You can [set up the cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
+:   You can [set up the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
 
 New! Reservations and limits for PIDs
-:   Worker nodes that run Kubernetes version 1.14 or later set [process ID (PID) reservations and limits that vary by flavor](/docs/containers?topic=containers-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.
+:   Worker nodes that run Kubernetes version 1.14 or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.
 
 Version changelog
 :   Worker node patch updates are available.
@@ -4012,10 +4012,10 @@ Version changelog
 {: release-note}
 
 Bring your own DNS for load balancers
-:   Added steps for bringing your own custom domain for [NLBs](/docs/containers?topic=containers-loadbalancer_hostname#loadbalancer_hostname_dns) in classic clusters and [VPC load balancers](/docs/containers?topic=containers-vpc-lbaas#vpc_lb_dns) in VPC clusters.
+:   Added steps for bringing your own custom domain for [NLBs](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns) in classic clusters and [VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns) in VPC clusters.
 
 Gateway appliance firewalls
-:   Updated the [required IP addresses and ports](/docs/containers?topic=containers-firewall#vyatta_firewall) that you must open in a public gateway device firewall.
+:   Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) that you must open in a public gateway device firewall.
 
 Ingress ALB subdomain format
 :   [Changes are made to the Ingress subdomain](/docs/containers?topic=containers-ingress-about#ingress-resource). New clusters are assigned an Ingress subdomain in the format `cluster_name.globally_unique_account_HASH-0000.region.containers.appdomain.cloud` and an Ingress secret in the format `cluster_name.globally_unique_account_HASH-0000`. Any existing clusters that use the `cluster_name.region.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `cluster_name.region_or_zone.containers.appdomain.cloud` subdomain.
@@ -4088,7 +4088,7 @@ Version changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.51](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.51](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
@@ -4097,7 +4097,7 @@ CLI changelog
 {: release-note}
 
 New! Keep your own key (KYOK) support (beta)
-:   You can now [enable several key management service (KMS) providers](/docs/containers?topic=containers-encryption#kms), so that you can use your own root key to encrypt the secrets in your cluster.
+:   You can now [enable several key management service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms), so that you can use your own root key to encrypt the secrets in your cluster.
 
 
 
@@ -4134,7 +4134,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.42](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.42](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
@@ -4166,7 +4166,7 @@ Version changelogs
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.38](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.38](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
@@ -4206,7 +4206,7 @@ Ingress ALB changelog
 :   Updated the ALB [`nginx-ingress` image to build 579 and `ingress-auth` image build to 341](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
 
 DevOps toolchain
-:   You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/containers?topic=containers-cicd#continuous-delivery-pipeline).
+:   You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-cicd#continuous-delivery-pipeline).
 
 
 
@@ -4249,7 +4249,7 @@ New! Single zone location for {{site.data.keyword.redhat_openshift_notm}} cluste
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.31](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.31](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Ingress ALB changelog
 :   Updated the ALB [`nginx-ingress` image to build 566](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -4285,7 +4285,7 @@ CLI changelog
 :   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the release of version 0.4.23.
 
 {{site.data.keyword.at_full_notm}} events
-:   Added information about [which {{site.data.keyword.at_short}} location your events are sent to](/docs/containers?topic=containers-at_events#at-ui) based on the {{site.data.keyword.containerlong_notm}} location where the cluster is located.
+:   Added information about [which {{site.data.keyword.at_short}} location your events are sent to](/docs/openshift?topic=openshift-at_events#at-ui) based on the {{site.data.keyword.containerlong_notm}} location where the cluster is located.
 
 
 
@@ -4320,10 +4320,10 @@ Refreshed {{site.data.keyword.openshiftlong_notm}} docs
 
 
 Entitled software
-:   If you have licensed products from your [MyIBM.com](https://myibm.ibm.com){: external} container software library, you can [set up your cluster to pull images from the entitled registry](/docs/containers?topic=containers-registry#secret_entitled_software).
+:   If you have licensed products from your [MyIBM.com](https://myibm.ibm.com){: external} container software library, you can [set up your cluster to pull images from the entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).
 
 `script update` command
-:   Added [steps for using the `script update` command](/docs/containers?topic=containers-kubernetes-service-cli#script_update) to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.openshiftlong_notm}} plug-in.
+:   Added [steps for using the `script update` command](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.openshiftlong_notm}} plug-in.
     
 
 ### 12 September 2019
@@ -4356,10 +4356,10 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.3](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.4.3](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 IAM allowlists
-:   If you use an IAM allowlist, you must [allow the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/containers?topic=containers-firewall) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
+:   If you use an IAM allowlist, you must [allow the CIDRs of the {{site.data.keyword.containerlong_notm}} control plane](/docs/openshift?topic=openshift-firewall) for the zones in the region where your cluster is located so that {{site.data.keyword.containerlong_notm}} can create Ingress ALBs and `LoadBalancers` in your cluster.
 
 
 
@@ -4373,7 +4373,7 @@ New! Montreal, Canada `mon01` single zone location for {{site.data.keyword.redha
 {: release-note}
 
 New! {{site.data.keyword.openshiftlong_notm}} plug-in version `0.4`
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for multiple changes in the [release of version 0.4.1](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for multiple changes in the [release of version 0.4.1](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Version changelog
 :   Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-115_changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-114_changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-113_changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-112_changelog#11210_1566_worker), and {{site.data.keyword.redhat_openshift_notm}} [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog_311#311135_1523_worker).
@@ -4397,14 +4397,14 @@ New! Paris, France `par01` single zone location for {{site.data.keyword.redhat_o
 {: release-note}
 
 Forwarding Kubernetes API audit logs to {{site.data.keyword.la_full_notm}}
-:   Added steps to [create an audit webhook in your cluster](/docs/containers?topic=containers-health-audit) to collect Kubernetes API audit logs from your cluster and forward them to {{site.data.keyword.la_full_notm}}.
+:   Added steps to [create an audit webhook in your cluster](/docs/openshift?topic=openshift-health-audit) to collect Kubernetes API audit logs from your cluster and forward them to {{site.data.keyword.la_full_notm}}.
 
 ### 28 August 2019
 {: #openshift-aug2819}
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.112](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.112](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
@@ -4419,7 +4419,7 @@ Version changelog
 {: release-note}
 
 Cluster autoscaler
-:   With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/containers?topic=containers-cluster-scaling-helm) instead of modifying the config map after installation.
+:   With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/openshift?topic=openshift-cluster-scaling-helm) instead of modifying the config map after installation.
 
 Ingress ALB changelog
 :   Updated the ALB [`nginx-ingress` image to build 524 and `ingress-auth` image to build 337](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -4457,7 +4457,7 @@ Ingress ALB changelog
 {: release-note}
 
 {{site.data.keyword.at_full}}
-:   The [{{site.data.keyword.at_full_notm}} service](/docs/containers?topic=containers-at_events) is now supported for you to view, manage, and audit user-initiated activities in your clusters.
+:   The [{{site.data.keyword.at_full_notm}} service](/docs/openshift?topic=openshift-at_events) is now supported for you to view, manage, and audit user-initiated activities in your clusters.
 
 
 
@@ -4482,7 +4482,7 @@ Version changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.103](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.103](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Ingress ALB changelog
 :   Updated the ALB `ingress-auth` image to build 335 for [`musl libc` vulnerabilities](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -4492,7 +4492,7 @@ Ingress ALB changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.99](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.99](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
@@ -4525,13 +4525,13 @@ Version changelog
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.95](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.95](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Ingress ALB changelog
 :   Updated the ALB `nginx-ingress` image to build 515 for the [ALB pod readiness check](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
 
 Removing subnets from a cluster
-:   Added steps for removing subnets [in an IBM Cloud infrastructure account](/docs/containers?topic=containers-subnets#remove-subnets) from a cluster. 
+:   Added steps for removing subnets [in an IBM Cloud infrastructure account](/docs/openshift?topic=openshift-subnets#remove-subnets) from a cluster. 
 
 
 
@@ -4581,7 +4581,7 @@ Ingress ALB changelog
 :   Updated the ALB `nginx-ingress` image to build 497.
 
 Troubleshooting clusters
-:   Added [troubleshooting steps](/docs/containers?topic=containers-common_worker_nodes_issues) for when you can't manage clusters and worker nodes because the time-based one-time passcode (TOTP) option is enabled for your account.
+:   Added [troubleshooting steps](/docs/openshift?topic=openshift-common_worker_nodes_issues) for when you can't manage clusters and worker nodes because the time-based one-time passcode (TOTP) option is enabled for your account.
 
 
 
@@ -4590,24 +4590,24 @@ Troubleshooting clusters
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.58](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of version 0.3.58](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 1 July 2019
 {: #openshift-july0119}
 {: release-note}
 
 Infrastructure permissions
-:   Updated the [classic infrastructure roles](/docs/containers?topic=containers-access_reference#infra) required for common use cases.
+:   Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) required for common use cases.
 
 
 
 {{site.data.keyword.redhat_openshift_notm}} FAQs
-:   Expanded the [FAQs](/docs/containers?topic=containers-faqs#container_platforms) to include information about {{site.data.keyword.redhat_openshift_notm}} clusters.
+:   Expanded the [FAQs](/docs/openshift?topic=openshift-faqs#container_platforms) to include information about {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 
 
 strongSwan VPN service
-:   If you install strongSwan in a multizone cluster and use the `enableSingleSourceIP=true` setting, you can now [set `local.subnet` to the `%zoneSubnet` variable and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster](/docs/containers?topic=containers-vpn#strongswan_4).
+:   If you install strongSwan in a multizone cluster and use the `enableSingleSourceIP=true` setting, you can now [set `local.subnet` to the `%zoneSubnet` variable and use the `local.zoneSubnet` to specify an IP address as a /32 subnet for each zone of the cluster](/docs/openshift?topic=openshift-vpn#strongswan_4).
 
 
 ## June 2019
@@ -4618,7 +4618,7 @@ strongSwan VPN service
 {: release-note}
 
 Calico network policies
-:   Added a set of [public Calico policies](/docs/containers?topic=containers-network_policies#isolate_workers_public) and expanded the set of [private Calico policies](/docs/containers?topic=containers-network_policies#isolate_workers) to protect your cluster on public and private networks.
+:   Added a set of [public Calico policies](/docs/openshift?topic=openshift-network_policies#isolate_workers_public) and expanded the set of [private Calico policies](/docs/openshift?topic=openshift-network_policies#isolate_workers) to protect your cluster on public and private networks.
 
 Ingress ALB changelog
 :   Updated the [ALB `nginx-ingress` image to build 477](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -4644,7 +4644,7 @@ Troubleshooting {{site.data.keyword.redhat_openshift_notm}} clusters
 {: release-note}
 
 CLI changelog
-:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of versions 0.3.47 and 0.3.49](/docs/containers?topic=containers-cs_cli_changelog).
+:   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for the [release of versions 0.3.47 and 0.3.49](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Ingress ALB changelog
 :   Updated the [ALB `nginx-ingress` image to build 473 and `ingress-auth` image to build 331](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -4653,7 +4653,7 @@ Removing persistent storage
 :   Updated the information for how you are billed when you delete persistent storage.
 
 Service bindings with private endpoint
-:   [Added steps](/docs/containers?topic=containers-service-binding) for how to manually create service credentials with the private cloud service endpoint when you bind the service to your cluster.
+:   [Added steps](/docs/openshift?topic=openshift-service-binding) for how to manually create service credentials with the private cloud service endpoint when you bind the service to your cluster.
     
 
 ### 14 June 2019
@@ -4661,13 +4661,13 @@ Service bindings with private endpoint
 {: release-note}
 
 `kubectl` troubleshooting
-:   Added a [troubleshooting topic](/docs/containers?topic=containers-ts_clis#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the {{site.data.keyword.redhat_openshift_notm}} version of `kubectl`, which does not work with community Kubernetes clusters.
+:   Added a [troubleshooting topic](/docs/openshift?topic=openshift-ts_clis#kubectl_fails) for when you have a `kubectl` client version that is 2 or more versions apart from the server version or the {{site.data.keyword.redhat_openshift_notm}} version of `kubectl`, which does not work with community Kubernetes clusters.
 
 Tutorials landing page
 :   Replaced the related links page with a new tutorials landing page for all tutorials that are specific to {{site.data.keyword.containershort_notm}}.
 
 Using existing subnets to create a cluster
-:   To [reuse subnets from an unneeded cluster when you create a new cluster](/docs/containers?topic=containers-subnets#subnets_custom), the subnets must be user-managed subnets that you manually added from an on-premises network. All subnets that were automatically ordered during cluster creation are immediately marked for deletion after you delete a cluster, and you can't reuse these subnets to create a new cluster.
+:   To [reuse subnets from an unneeded cluster when you create a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom), the subnets must be user-managed subnets that you manually added from an on-premises network. All subnets that were automatically ordered during cluster creation are immediately marked for deletion after you delete a cluster, and you can't reuse these subnets to create a new cluster.
     
 
 ### 12 June 2019
@@ -4675,7 +4675,7 @@ Using existing subnets to create a cluster
 {: release-note}
 
 Aggregating cluster roles
-:   Added steps for [extending users' existing permissions by aggregating cluster roles](/docs/containers?topic=containers-users#rbac_aggregate).
+:   Added steps for [extending users' existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate).
 
 ### 7 June 2019
 {: #openshift-june0719}
@@ -4685,7 +4685,7 @@ Access to the Kubernetes master through the private cloud service endpoint
 :   Added [steps](/docs/openshift?topic=openshift-access_cluster#access_private_se) to expose the private cloud service endpoint through a private load balancer. After you complete these steps, your authorized cluster users can access the Kubernetes master from a VPN or {{site.data.keyword.dl_full_notm}} connection.
 
 {{site.data.keyword.BluDirectLink}}
-:   Added {{site.data.keyword.dl_full_notm}} to the [VPN connectivity](/docs/containers?topic=containers-vpn) page as a way to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet.
+:   Added {{site.data.keyword.dl_full_notm}} to the [VPN connectivity](/docs/openshift?topic=openshift-vpn) page as a way to create a direct, private connection between your remote network environments and {{site.data.keyword.containerlong_notm}} without routing over the public internet.
 
 Ingress ALB changelog
 :   Updated the [ALB `ingress-auth` image to build 330](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
@@ -4710,7 +4710,7 @@ Ingress ALB changelog
 {: release-note}
 
 CLI reference
-:   Updated the [CLI reference page](/docs/containers?topic=containers-kubernetes-service-cli) to reflect multiple changes for the release of version [0.3.34](/docs/containers?topic=containers-cs_cli_changelog) of the {{site.data.keyword.containerlong_notm}} CLI plug-in.
+:   Updated the [CLI reference page](/docs/openshift?topic=openshift-kubernetes-service-cli) to reflect multiple changes for the release of version [0.3.34](/docs/openshift?topic=openshift-cs_cli_changelog) of the {{site.data.keyword.containerlong_notm}} CLI plug-in.
 
 New! {{site.data.keyword.openshiftlong_notm}} clusters
 :   With the {{site.data.keyword.openshiftlong_notm}} beta, you can create {{site.data.keyword.containerlong_notm}} clusters with worker nodes that come installed with the {{site.data.keyword.redhat_openshift_notm}} container orchestration platform software. You get all the advantages of managed {{site.data.keyword.containerlong_notm}} for your cluster infrastructure environment, along with the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/3.11/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments. To get started, see [Tutorial: Creating a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial).

@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-25"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 
@@ -189,7 +189,7 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
 To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
 {: tip}
 
-If you do not change the CRN of your non-IBM managed secrets, they do not automatically update. In this case, you are responsible for regularly updating these secrets with the [`ibmcloud oc ingress secret update`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_update) command.
+If you do not change the CRN of your non-IBM managed secrets, they do not automatically update. In this case, you are responsible for regularly updating these secrets with the [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update) command.
 {: important}
 
 Follow these steps to update the CRN values.

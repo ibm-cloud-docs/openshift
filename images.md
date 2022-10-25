@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-25"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -75,12 +75,12 @@ You can deploy an app from an existing [image stream](https://docs.openshift.com
 ## Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.redhat_openshift_notm}} project
 {: #namespace}
 
-You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registrylong_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/containers?topic=containers-registry#cluster_registry_auth).
+You can deploy containers to your cluster from an IBM-provided public image or a private image that is stored in your {{site.data.keyword.registrylong_notm}} namespace. For more information about how your cluster accesses registry images, see [Understanding how your cluster is authorized to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
 {: shortdesc}
 
 Before you begin:
 1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-2. [Create a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/containers?topic=containers-clusters).
+2. [Create a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
 3. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To deploy a container into the **default** project of your cluster:
@@ -300,11 +300,11 @@ For the list of changes for each Image Key Synchronizer add-on version, see the 
 ## Referring to the image pull secret in your pod deployment
 {: #pod_imagePullSecret}
 
-If the cluster administrator did not [store the image pull secret in the Kubernetes service account](/docs/containers?topic=containers-registry#use_imagePullSecret), all deployments that don't specify a service account can't use the image pull secret to deploy containers. Instead, you can define an image pull secret in your pod deployment. When you refer to the image pull secret in a pod deployment, the image pull secret is valid for this pod only and can't be shared across pods in the {{site.data.keyword.redhat_openshift_notm}} project.
+If the cluster administrator did not [store the image pull secret in the Kubernetes service account](/docs/openshift?topic=openshift-registry#use_imagePullSecret), all deployments that don't specify a service account can't use the image pull secret to deploy containers. Instead, you can define an image pull secret in your pod deployment. When you refer to the image pull secret in a pod deployment, the image pull secret is valid for this pod only and can't be shared across pods in the {{site.data.keyword.redhat_openshift_notm}} project.
 {: shortdesc}
 
 Before you begin
-- [Create an image pull secret](/docs/containers?topic=containers-registry#other) to access images in other registries or {{site.data.keyword.redhat_openshift_notm}} projects other than `default`.
+- [Create an image pull secret](/docs/openshift?topic=openshift-registry#other) to access images in other registries or {{site.data.keyword.redhat_openshift_notm}} projects other than `default`.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To refer to the image pull secret in your pod deployment,
@@ -393,8 +393,8 @@ You can build containers from trusted images that are signed and stored in {{sit
 1. [Sign images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent). After you set up trust for your images, you can manage trusted content and signers that can push images to your registry.
 2. To enforce a policy so that only signed images can be used to build containers in your cluster, [install the open source Portieris project](#portieris-image-sec).
 3. Cluster users can deploy apps that are built from trusted images.
-    1. [Deploy to the `default` Kubernetes namespace](/docs/containers?topic=containers-images#namespace).
-    2. [Deploy to a different Kubernetes namespace, or from a different {{site.data.keyword.cloud_notm}} region or account](/docs/containers?topic=containers-registry#other).
+    1. [Deploy to the `default` Kubernetes namespace](/docs/openshift?topic=openshift-images#namespace).
+    2. [Deploy to a different Kubernetes namespace, or from a different {{site.data.keyword.cloud_notm}} region or account](/docs/openshift?topic=openshift-registry#other).
 
 
 
@@ -422,8 +422,8 @@ You can enable or disable image security enforcement for your cluster from the C
 {: #portieris-enable-cli}
 
 See the following commands.
-- [`ibmcloud oc cluster image-security enable`](/docs/containers?topic=containers-kubernetes-service-cli#cs-image-security-enable)
-- [`ibmcloud oc cluster image-security disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs-image-security-disable)
+- [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
+- [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-disable)
 
 #### Enabling or disabling image security enforcement from the console
 {: #portieris-enable-ui}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-25"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Refer to these commands to create and manage logging and monitoring configurations for your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
-Looking for `ibmcloud oc` commands? See the [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/containers?topic=containers-kubernetes-service-cli).
+Looking for `ibmcloud oc` commands? See the [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli).
 {: tip}
 
 ## Logging commands

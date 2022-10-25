@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -59,7 +59,7 @@ Worker nodes begin to incur charges after they successfully complete the `provis
     **VPC Generation 2 only**: Prices vary by region where the underlying worker node infrastructure resides, and you can get sustained usage discounts. For more information, see [What are the regional uplift charges and sustained usage discounts for VPC worker nodes?](#charges_vpc_gen2).
     {: note}
 
-For more information about worker node specifications, see [Available hardware for worker nodes](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes).
+For more information about worker node specifications, see [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
 
 
 
@@ -135,7 +135,7 @@ Review the following factors that impact public bandwidth charges:
 Subnets for {{site.data.keyword.openshiftlong_notm}} clusters vary by infrastructure provider.
 {: shortdesc}
 
-**Classic clusters**: When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets) documentation or estimate your costs in the [classic subnets console)](https://cloud.ibm.com/classic/network/subnet/provision){: external}.  If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/containers?topic=containers-subnets#subnets_custom).
+**Classic clusters**: When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets) documentation or estimate your costs in the [classic subnets console)](https://cloud.ibm.com/classic/network/subnet/provision){: external}.  If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/openshift?topic=openshift-subnets#subnets_custom).
 
 **VPC clusters**: For more information about charges for floating IPs and other networking costs, see [Pricing for VPC](https://www.ibm.com/cloud/virtual-servers/pricing/){: external}.
 
@@ -168,7 +168,7 @@ To store images in the internal registry, {{site.data.keyword.openshiftlong_notm
 When you provision storage, you can choose the storage type and storage class that is right for your use case. Charges vary depending on the type of storage, the location, and the specs of the storage instance. Some storage solutions, such as file and block storage offer hourly and monthly rates that you can choose from.
 {: shortdesc}
 
-To choose the right storage solution, see [Planning highly available persistent storage](/docs/containers?topic=containers-storage_planning#storage_planning). For more information, see:
+To choose the right storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning). For more information, see:
 * [NFS file storage pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}
 * [Block storage pricing](https://www.ibm.com/cloud/block-storage/pricing){: external}
 * [Object storage plans](https://cloud.ibm.com/objectstorage/create#pricing){: external}
@@ -196,7 +196,7 @@ This information applies to VPC worker nodes only.
 {: note}
 
 Regional uplift charges
-:    When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/containers?topic=containers-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.redhat_openshift_notm}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
+:    When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.redhat_openshift_notm}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
 
 :    For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://www.ibm.com/cloud/virtual-servers/pricing/){: external}.
 
@@ -219,17 +219,17 @@ The following steps present a general process to manage costs for your {{site.da
 1. Decide on a cloud platform strategy to manage your resources.
     * See [Best practices for billing and usage](/docs/billing-usage?topic=billing-usage-best-practices).
     * Organize your billing with [resource groups](/docs/account?topic=account-rgs).
-    * [Add tags to your clusters](/docs/containers?topic=containers-add_workers#cluster_tags) according to your organizational strategy.
+    * [Add tags to your clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags) according to your organizational strategy.
 2. Plan the type of cluster that you need.
-    * [Size your cluster to support your workloads](/docs/containers?topic=containers-strategy#sizing), including the network bandwidth that your workloads need.
-    * [Decide the cluster environment that you want](/docs/containers?topic=containers-strategy#kube_env).
-    * [Consider the availability that you want for your cluster](/docs/containers?topic=containers-ha_clusters). For example, a basic high availability setup is one multizone cluster with two worker nodes in each of three zones, for a minimum total of 6 worker nodes.
+    * [Size your cluster to support your workloads](/docs/openshift?topic=openshift-strategy#sizing), including the network bandwidth that your workloads need.
+    * [Decide the cluster environment that you want](/docs/openshift?topic=openshift-strategy#kube_env).
+    * [Consider the availability that you want for your cluster](/docs/openshift?topic=openshift-ha_clusters). For example, a basic high availability setup is one multizone cluster with two worker nodes in each of three zones, for a minimum total of 6 worker nodes.
 3. Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
 4. [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.openshiftlong_notm}} Pricing plans](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
 5. Manage the lifecycle of your cluster to control costs.
-    * Consider [enabling the cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc) to automatically add or remove worker nodes in response to your cluster workload resource requests.
-    * Manually [resize your worker pool](/docs/containers?topic=containers-add_workers) to remove worker nodes that you don't need. Keep in mind that you can't scale a worker pool down to zero worker nodes.
-    * Use Kubernetes features such as [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external}, [pod priority](/docs/containers?topic=containers-pod_priority), and [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) to control how resources are used within your cluster.
+    * Consider [enabling the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) to automatically add or remove worker nodes in response to your cluster workload resource requests.
+    * Manually [resize your worker pool](/docs/openshift?topic=openshift-add_workers) to remove worker nodes that you don't need. Keep in mind that you can't scale a worker pool down to zero worker nodes.
+    * Use Kubernetes features such as [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external}, [pod priority](/docs/openshift?topic=openshift-pod_priority), and [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) to control how resources are used within your cluster.
     * Consider setting up a [monitoring tool](/docs/openshift?topic=openshift-health) such as {{site.data.keyword.mon_full_notm}} and creating alerts for your workloads when they need more resources.
 6. [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) to continuously refine how you consume {{site.data.keyword.cloud_notm}} services.
 7. [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-18"
+lastupdated: "2022-10-25"
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
 
@@ -214,7 +214,7 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
     
     
 ## Enabling CPU pinning and huge pages on your worker nodes
-{: #rhcos-numa-pinning-huge}
+{: #rhcos-pinning-huge}
 
 Before you begin, make sure that you have deployed the [Node Feature Discovery Operator](#rhcos-node-feature-discovery).
 

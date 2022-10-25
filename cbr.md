@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-10-25"
 
 keywords: cbr, context based restrictions, security
 
@@ -82,7 +82,7 @@ Management APIs
 :   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:management` type.
 :   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:management"` in the `"operations"` spec.
 
-To follow an example CBR scenario, see [Setting up context-based restrictions](/docs/containers?topic=containers-cbr-tutorial).
+To follow an example CBR scenario, see [Setting up context-based restrictions](/docs/openshift?topic=openshift-cbr-tutorial).
 {: tip}
 
 ### Allowing {{site.data.keyword.openshiftlong_notm}} to access other {{site.data.keyword.cloud_notm}} resources by using CBR
@@ -234,7 +234,7 @@ Example payload to add multiple services, IP addresses, and VPCs to a network zo
     {: pre}
     
     
-    The following example creates a network zone to allow a single public IP address to access. You can also use this example in conjunction with the [one IP example rule](#one-ip). For more information about this scenario, see [Setting up context-based restrictions](/docs/containers?topic=containers-cbr-tutorial).
+    The following example creates a network zone to allow a single public IP address to access. You can also use this example in conjunction with the [one IP example rule](#one-ip). For more information about this scenario, see [Setting up context-based restrictions](/docs/openshift?topic=openshift-cbr-tutorial).
     
     ```sh
     ibmcloud cbr zone-create --addresses 129.41.86.7 --description "Allow only client IP" --name allow-client-ip
@@ -380,7 +380,7 @@ ibmcloud cbr rule-create my-rule-2 --service-name containers-kubernetes --servic
 ```
 {: pre}
 
-The following example command creates a rule that allows all private network connections, but allows only resources in the `allow-client-ip` network zone to connect to the cluster over the public network. For more information about this scenario, see [Setting up context-based restrictions](/docs/containers?topic=containers-cbr-tutorial).{: #one-ip}
+The following example command creates a rule that allows all private network connections, but allows only resources in the `allow-client-ip` network zone to connect to the cluster over the public network. For more information about this scenario, see [Setting up context-based restrictions](/docs/openshift?topic=openshift-cbr-tutorial).{: #one-ip}
 
 ```sh
 ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster --description "privateAccess=allowAll, publicAccess=oneIP" --service-name containers-kubernetes --service-instance CLUSTER-ID --context-attributes endpointType=private --context-attributes endpointType=public,networkZoneId=allow-client-ip

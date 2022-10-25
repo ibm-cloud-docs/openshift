@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-25"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -193,12 +193,12 @@ Your upgrade to 1.25 fails if the cluster role binding does not include the defa
 
 Review the following information before you migrate from Pod Security Policies to Pod Security Admission. Do **not** follow the migration guide as-is as some actions are not appropriate for {{site.data.keyword.openshiftlong_notm}} clusters.
 
-- [Pod Security Admission](/docs/containers?topic=containers-pod-security-admission)
+- [Pod Security Admission](/docs/openshift?topic=openshift-pod-security-admission)
 
 - [Migrate from `PodSecurityPolicy` to the Built-In PodSecurity Admission Controller](https://kubernetes.io/docs/tasks/configure-pod-container/migrate-from-psp/){: external}
 
 - [PSP to PSA tool](https://github.com/kubernetes-sigs/pspmigrator){: external}
 
-- [Why does my cluster upgrade fail due to Pod Security upgrade prerequisites?](/docs/containers?topic=containers-ts-app-pod-security).
+- [Why does my cluster upgrade fail due to Pod Security upgrade prerequisites?](/docs/openshift?topic=openshift-ts-app-pod-security).
 
 

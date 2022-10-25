@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -66,7 +66,7 @@ Review the following steps based on the error type.
     ```
     {: pre}
 
-2. Follow the [documentation](/docs/containers?topic=containers-storage_cos_install) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
+2. Follow the [documentation](/docs/openshift?topic=openshift-storage_cos_install) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
 
 **For permission errors**:
 
@@ -88,7 +88,7 @@ Review the following steps based on the error type.
     ```
     {: pre}
 
-3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install).
+3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install).
 
 
 

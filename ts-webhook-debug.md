@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-10-25"
 
 keywords: kubernetes, help, network, connectivity, webhooks
 
@@ -52,7 +52,7 @@ In {{site.data.keyword.openshiftlong_notm}}, webhooks that call services running
 Complete the following steps to identify the webhook that is causing the issue. Then debug the related service and remove or recreate your webhook if needed.
 {: tsResolve}
 
-1. Run the following command to get the VPN pod logs. If you can't get the VPN logs, follow the steps to [Debug common CLI issues](/docs/containers?topic=containers-ts_clis) and return to this page when you are able to retrieve the logs. If the command succeeds and you can get the logs, the VPN tunnel is working and you can continue to the next step.
+1. Run the following command to get the VPN pod logs. If you can't get the VPN logs, follow the steps to [Debug common CLI issues](/docs/openshift?topic=openshift-ts_clis) and return to this page when you are able to retrieve the logs. If the command succeeds and you can get the logs, the VPN tunnel is working and you can continue to the next step.
 
 
 1. Review your webhook configurations.
@@ -148,7 +148,7 @@ Complete the following steps to identify the webhook that is causing the issue. 
     ```
     {: pre}
 
-1. Review the command output. If the pods are not healthy check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
+1. Review the command output. If the pods are not healthy check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-debug_apps).
 
 ## Disabling or removing a webhook
 {: #webhook-disable-rm}

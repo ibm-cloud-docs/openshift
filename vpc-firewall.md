@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-25"
 
 keywords: openshift, firewall, ips
 
@@ -18,7 +18,7 @@ subcollection: openshift
 # VPC: Opening required ports and IP addresses in other network allowlists
 {: #vpc-firewall}
 
-This allowlist information is specific to VPC clusters. For allowlist information for classic clusters, see [Opening required ports and IP addresses in your allowlist for classic clusters](/docs/containers?topic=containers-firewall).
+This allowlist information is specific to VPC clusters. For allowlist information for classic clusters, see [Opening required ports and IP addresses in your allowlist for classic clusters](/docs/openshift?topic=openshift-firewall).
 {: note}
 
 ## Opening ports in a corporate allowlist
@@ -54,7 +54,7 @@ If corporate network policies prevent access from your local system to public en
     {: pre}
 
 
-5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your allowlist. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your allowlist is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](/docs/containers?topic=containers-firewall#firewall_registry).
+5. Allow access to the [{{site.data.keyword.registrylong_notm}} regions](/docs/Registry?topic=Registry-registry_overview#registry_regions) that you plan to use on port 443 in your allowlist. The global registry stores IBM-provided public images, and regional registries store your own private or public images. If your allowlist is IP-based, you can see which IP addresses are opened when you allow access to the {{site.data.keyword.registrylong_notm}} regional service endpoints by reviewing [this table](/docs/openshift?topic=openshift-firewall#firewall_registry).
 
 6. Verify your connection. The following is an example for the US East and US South regional registry. If access is configured correctly, a message of the day is returned in the output. Note that if there are no messages, a `204` is returned.
     ```sh
@@ -81,7 +81,7 @@ To allow access for a specific cluster:
     ```
     {: pre}
 
-1. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/containers?topic=containers-users#checking-perms) for the resource group.
+1. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
     ```sh
     ibmcloud target -g <resource_group_name>
     ```
@@ -113,7 +113,7 @@ To allow access for a specific cluster:
     ```
     {: screen}
 
-1. Allow access to the service endpoint URLs and ports that you got in the previous step. If your allowlist is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](/docs/containers?topic=containers-firewall#master_ips).
+1. Allow access to the service endpoint URLs and ports that you got in the previous step. If your allowlist is IP-based, you can see which IP addresses are opened when you allow access to the service endpoint URLs by reviewing [this table](/docs/openshift?topic=openshift-firewall#master_ips).
 
 1. Verify your connection.
     * If the public cloud service endpoint is enabled:
@@ -281,7 +281,7 @@ To permit egress to your cluster from another service, modify that service's all
 {: shortdesc}
 
 1. Get the worker node subnets or the worker node IP addresses.
-    * **Worker node subnet CIDRs**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc), you might not want to update your allowlist for each new worker node. Instead, you can add the VPC subnets that the cluster uses. Keep in mind that the VPC subnet might be shared by worker nodes in other clusters.
+    * **Worker node subnet CIDRs**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), you might not want to update your allowlist for each new worker node. Instead, you can add the VPC subnets that the cluster uses. Keep in mind that the VPC subnet might be shared by worker nodes in other clusters.
         1. Get the **Worker Zones** and **VPCs** that your cluster is created in.
             ```sh
             ibmcloud oc cluster get -c <cluster>

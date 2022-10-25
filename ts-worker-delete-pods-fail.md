@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -41,7 +41,7 @@ When you delete all worker nodes in your cluster, no worker node exists for the 
 Delete the existing `calico-node` worker node entries so that new pods can be created.
 {: tsResolve}
 
-**Before you begin**: Install the [Calico CLI](/docs/containers?topic=containers-network_policies#cli_install).
+**Before you begin**: Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
 
 1. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
     ```sh

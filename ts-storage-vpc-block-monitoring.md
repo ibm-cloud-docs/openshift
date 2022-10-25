@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: vpc, monitoring, block storage, metrics
 
@@ -61,13 +61,13 @@ Check that the PVC is mounted. If the issue persists, manually view your metrics
     ```
     {: screen}
 
-3. If the PVC is not mounted to a pod, review the steps for [setting up {{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block#vpc-block-add) and mount the PVC to a pod. Then try to view the metrics again. 
-4. If the PVC is mounted, follow the steps for [manually verifying the {{site.data.keyword.block_storage_is_short}} metrics](#manual-monitor-metrics) then [open a support issue](/docs/containers?topic=containers-get-help#help-support). The steps for manual verification in the CLI allow you to view your metrics, but are not a solution for metrics that do not populate in the console. However, if you are able to manually verify your metrics, this indicates that there is a console issue for which you must open an issue.
+3. If the PVC is not mounted to a pod, review the steps for [setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-add) and mount the PVC to a pod. Then try to view the metrics again. 
+4. If the PVC is mounted, follow the steps for [manually verifying the {{site.data.keyword.block_storage_is_short}} metrics](#manual-monitor-metrics) then [open a support issue](/docs/openshift?topic=openshift-get-help#help-support). The steps for manual verification in the CLI allow you to view your metrics, but are not a solution for metrics that do not populate in the console. However, if you are able to manually verify your metrics, this indicates that there is a console issue for which you must open an issue.
 
 ## Manually viewing storage metrics in the CLI
 {: #manual-monitor-metrics}
 
-If your storage metrics are not visible in the monitoring dashboard, you can manually view them in the CLI. Note that manual verification of your storage metrics is a temporary workaround and not a permanent monitoring solution for viewing metrics. After completing the following steps, if you are able to manually view the metrics in the CLI and not the dashboard, this indicates that there is a console issue for which you must [open a support issue](/docs/containers?topic=containers-get-help#help-support).
+If your storage metrics are not visible in the monitoring dashboard, you can manually view them in the CLI. Note that manual verification of your storage metrics is a temporary workaround and not a permanent monitoring solution for viewing metrics. After completing the following steps, if you are able to manually view the metrics in the CLI and not the dashboard, this indicates that there is a console issue for which you must [open a support issue](/docs/openshift?topic=openshift-get-help#help-support).
 {: shortdesc}
 
 After you complete the following steps, make sure to remove the resources you created while debugging. 
@@ -173,7 +173,7 @@ After you complete the following steps, make sure to remove the resources you cr
     ```
     {: pre}
 
-1. View the metrics in the terminal output. You may have to wait several minutes for the metrics to output. If you are still unable to view metrics, [open a support issue](/docs/containers?topic=containers-get-help#help-support).
+1. View the metrics in the terminal output. You may have to wait several minutes for the metrics to output. If you are still unable to view metrics, [open a support issue](/docs/openshift?topic=openshift-get-help#help-support).
 
 1. After you have finished viewing the metrics, and determined whether the issue is related to dashboard or the metrics agent, delete the configurations and resources that you created in the previous steps.
 

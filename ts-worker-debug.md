@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -37,7 +37,7 @@ If your worker node is not functioning as expected, you can follow these steps t
 
 1. [Update your cluster and worker nodes to the latest version](/docs/containers?topic=containers-update#update).
 2. [Update your command line tools](/docs/containers?topic=containers-cs_cli_install#cs_cli_upgrade).
-3. [Run tests in the Diagnostics and Debug Tool add-on](/docs/containers?topic=containers-debug-tool). 
+3. [Run tests in the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool). 
 
 
 ## Debugging your worker node
@@ -63,7 +63,7 @@ For more information, see [Worker node states](/docs/openshift?topic=openshift-w
 ### Step 3: Get the details for each worker node
 {: #worker-debug-get-details}
 
-Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](/docs/containers?topic=containers-common_worker_nodes_issues) to learn how to resolve the problem.
+Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues) to learn how to resolve the problem.
 
 ```sh
 ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ Your Helm chart configuration file has incorrect values, missing values, or synt
 To establish VPN connectivity with the strongSwan Helm chart, you might need to check for several types of issues and change your configuration file accordingly. To troubleshoot your strongSwan VPN connectivity:
 {: tsResolve}
 
-1. [Test and verify the strongSwan VPN connectivity](/docs/containers?topic=containers-vpn#vpn_test) by running the five Helm tests that are in the strongSwan chart definition.
+1. [Test and verify the strongSwan VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn_test) by running the five Helm tests that are in the strongSwan chart definition.
 
 2. If you are unable to establish VPN connectivity after running the Helm tests, you can run the VPN debugging tool that is packaged inside of the VPN pod image.
 

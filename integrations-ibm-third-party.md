@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: kubernetes, openshift
 
@@ -30,7 +30,7 @@ Review the following information to see how {{site.data.keyword.cloud_notm}} pla
 ### IBM Cloud platform services
 {: #platform-services}
 
-All {{site.data.keyword.cloud_notm}} platform services that support service keys can be integrated by using {{site.data.keyword.openshiftlong_notm}} [service binding](/docs/containers?topic=containers-service-binding).
+All {{site.data.keyword.cloud_notm}} platform services that support service keys can be integrated by using {{site.data.keyword.openshiftlong_notm}} [service binding](/docs/openshift?topic=openshift-service-binding).
 {: shortdesc}
 
 Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service and store these credentials in a Kubernetes secret in your cluster. The Kubernetes secret is automatically encrypted in etcd to protect your data. Your apps can use the credentials in the secret to access your {{site.data.keyword.cloud_notm}} service instance.
@@ -43,12 +43,12 @@ Services that don't support service keys usually provide an API that you can dir
 Because {{site.data.keyword.openshiftlong_notm}} lets you create a cluster on {{site.data.keyword.cloud_notm}} classic infrastructure, some classic infrastructure services, such as Virtual Servers, Bare Metal Servers, or VLANs are fully integrated into {{site.data.keyword.openshiftlong_notm}}. You create and work with these service instances by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console.
 {: shortdesc}
 
-Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full}} are integrated as Kubernetes flex drivers and can be set up by using [Helm charts](/docs/containers?topic=containers-helm). The Helm chart automatically sets up Kubernetes storage classes, the storage provider, and the storage driver in your cluster. You can use the storage classes to provision persistent storage by using persistent volume claims (PVCs). For more information, see [Planning highly available persistent storage](/docs/containers?topic=containers-storage_planning).
+Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full}} are integrated as Kubernetes flex drivers and can be set up by using [Helm charts](/docs/openshift?topic=openshift-helm). The Helm chart automatically sets up Kubernetes storage classes, the storage provider, and the storage driver in your cluster. You can use the storage classes to provision persistent storage by using persistent volume claims (PVCs). For more information, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning).
 
 To secure your cluster network or connect to an on-prem data center, you can configure one of the following options:
-- [strongSwan IPSec VPN Service](/docs/containers?topic=containers-vpn#vpn-setup)
+- [strongSwan IPSec VPN Service](/docs/openshift?topic=openshift-vpn#vpn-setup)
 - [{{site.data.keyword.BluDirectLink}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl)
-- [Virtual Router Appliance (VRA)](/docs/containers?topic=containers-vpn#vyatta)
+- [Virtual Router Appliance (VRA)](/docs/openshift?topic=openshift-vpn#vyatta)
 - [Fortigate Security Appliance (FSA)](/docs/vmwaresolutions/services?topic=vmwaresolutions-fsa_considerations)
 
 
@@ -61,7 +61,7 @@ With {{site.data.keyword.openshiftlong_notm}}, you can create a standard cluster
 
 Before you can create a VPC cluster, you must have a VPC and at least one VPC subnet that you provision by using the {{site.data.keyword.cloud_notm}} console, CLI, or API. You manage these resources in the VPC dashboard directly. When you create your cluster, worker nodes are automatically provisioned as [{{site.data.keyword.vsi_is_short}}](/docs/vpc?topic=vpc-about-advanced-virtual-servers) instances and you can view and manage these instances in {{site.data.keyword.openshiftlong_notm}} only.
 
-To add persistent storage to your VPC cluster, you can use the [{{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block). The add-on sets up pre-defined Kubernetes storage classes, the storage provider, and the storage driver in your cluster so that you can provision {{site.data.keyword.block_storage_is_short}} by using Kubernetes persistent volume claims (PVCs).
+To add persistent storage to your VPC cluster, you can use the [{{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block). The add-on sets up pre-defined Kubernetes storage classes, the storage provider, and the storage driver in your cluster so that you can provision {{site.data.keyword.block_storage_is_short}} by using Kubernetes persistent volume claims (PVCs).
 
 To secure your cluster network traffic, you can modify the default security group for your worker nodes. For more information, see [Security in your {{site.data.keyword.vpc_short}}](/docs/vpc?topic=vpc-security-in-your-vpc).
 
@@ -85,14 +85,14 @@ Supported integrations depend on the container platform, the infrastructure prov
 ### Integrations operated in partnership
 {: #open-source-partners}
 
-For more information about {{site.data.keyword.openshiftlong_notm}} partners and the benefit of each solution that they provide, see [{{site.data.keyword.openshiftlong_notm}} partners](/docs/containers?topic=containers-service-partners).
+For more information about {{site.data.keyword.openshiftlong_notm}} partners and the benefit of each solution that they provide, see [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners).
 
 ### Managed add-ons
 {: #cluster-add-ons}
 
-{{site.data.keyword.openshiftlong_notm}} integrates popular open source integrations by using [managed add-ons](/docs/containers?topic=containers-managed-addons). Managed add-ons are an easy way to install an open source tool in your cluster that is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
+{{site.data.keyword.openshiftlong_notm}} integrates popular open source integrations by using [managed add-ons](/docs/openshift?topic=openshift-managed-addons). Managed add-ons are an easy way to install an open source tool in your cluster that is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
 
-Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/containers?topic=containers-get-help).
+Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/openshift?topic=openshift-get-help).
 
 If the tool that you add to your cluster incurs costs, these costs are automatically integrated and listed as part of your monthly {{site.data.keyword.cloud_notm}} billing. The billing cycle is determined by {{site.data.keyword.cloud_notm}} depending on when you enabled the add-on in your cluster.
 

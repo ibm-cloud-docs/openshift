@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -42,7 +42,7 @@ Containers provide a standard way to package your application's code, configurat
 
 **What is {{site.data.keyword.redhat_openshift_notm}}?**
 
-{{site.data.keyword.redhat_openshift_notm}} is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With {{site.data.keyword.redhat_openshift_notm}}, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} cluster offerings, see the [comparison table](/docs/containers?topic=containers-cs_ov#openshift_kubernetes).
+{{site.data.keyword.redhat_openshift_notm}} is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With {{site.data.keyword.redhat_openshift_notm}}, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
 **What compute host infrastructure does the service offer?**
 
@@ -52,18 +52,18 @@ With {{site.data.keyword.openshiftlong_notm}}, you can create your cluster of co
 
 [VPC clusters](/docs/containers?topic=containers-getting-started) are created in your own Virtual Private Cloud that gives you the security of a private cloud environment with the dynamic scalability of a public cloud. You use network access control lists to protect the subnets that your worker nodes are connected to. Worker nodes on VPC clusters are created as virtual machines using either shared infrastructure or dedicated hosts.
 
-For more information, see [Overview of Classic and VPC infrastructure providers](/docs/containers?topic=containers-infrastructure_providers).
+For more information, see [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers).
 
 
 **Where can I learn more about the service?**
 
 Review the following links to find out more about the benefits and responsibilities when you use {{site.data.keyword.openshiftlong_notm}}.
 
-- [Benefits of using {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-cs_ov)
+- [Benefits of using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-cs_ov)
 - [{{site.data.keyword.openshiftlong_notm}} service architecture](/docs/openshift?topic=openshift-service-architecture)
 - [Use cases](/docs/containers?topic=containers-cs_uc_intro)
-- [Your responsibilities by using {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-responsibilities_iks)
-- [Defining your Kubernetes strategy](/docs/containers?topic=containers-strategy)
+- [Your responsibilities by using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks)
+- [Defining your Kubernetes strategy](/docs/openshift?topic=openshift-strategy)
 - [Limitations](/docs/openshift?topic=openshift-openshift_limitations)
 
 
@@ -144,13 +144,13 @@ Deployment
 
 :   Define update strategies for your app, including the number of pods that you want to add during a rolling update and the number of pods that can be unavailable at a time. When you perform a rolling update, the deployment checks whether the update is working and stops the rollout when failures are detected.
 
-:   A deployment is just one type of workload controller that you can use to manage pods. For help choosing among your options, see [What type of Kubernetes objects can I make for my app?](/docs/containers?topic=containers-plan_deploy#object). For more information about deployments, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/){: external}.
+:   A deployment is just one type of workload controller that you can use to manage pods. For help choosing among your options, see [What type of Kubernetes objects can I make for my app?](/docs/openshift?topic=openshift-plan_deploy#object). For more information about deployments, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/){: external}.
   
 Pod
 :   Every containerized app that is deployed into a cluster is deployed, run, and managed by a Kubernetes resource called a pod. Pods represent small deployable units in a Kubernetes cluster and are used to group the containers that must be treated as a single unit. Usually, each container is deployed in its own pod. However, an app might require a container and other helper containers to be deployed into one pod so that those containers can be addressed by using the same private IP address. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/pods/){: external}.
 
 App
-:   An app might refer to a complete app or a component of an app. You might deploy components of an app in separate pods or separate worker nodes. For more information, see [Planning app deployments](/docs/containers?topic=containers-plan_deploy) and [Developing Kubernetes-native apps](/docs/containers?topic=containers-app).
+:   An app might refer to a complete app or a component of an app. You might deploy components of an app in separate pods or separate worker nodes. For more information, see [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy) and [Developing Kubernetes-native apps](/docs/containers?topic=containers-app).
 
 ### Related resources
 {: #kubernetes-resources}

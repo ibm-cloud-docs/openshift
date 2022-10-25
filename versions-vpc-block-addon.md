@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-25"
 
 keywords: block, add-on, changelog
 
@@ -25,7 +25,7 @@ Patch updates
 :   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-:   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/containers?topic=containers-vpc-block#vpc-addon-update).
+:   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
 
 To view a list of add-ons and the supported cluster versions in the CLI, run the following command.
@@ -34,7 +34,7 @@ ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 ```
 {: pre}
 
-To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/containers?topic=containers-supported-cluster-addon-versions).
+To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
 
 ## Version 5.0
@@ -265,7 +265,7 @@ Updates in this version:
 After updating to version 4.2, you must complete the following steps.
 {: important}
 
-* [Delete and recreate](/docs/containers?topic=containers-vpc-block#vpc-addon-update) any custom storage classes that are using the `sizeRange` or `iopsRange` parameters.
+* [Delete and recreate](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update) any custom storage classes that are using the `sizeRange` or `iopsRange` parameters.
 * If you use a default storage class other than `ibmc-vpc-block-10iops-tier`, you must change the `isStorageClassDefault` setting to `false` in the `addon-vpc-block-csi-driver-configmap` configmap in the `kube-system` namespace. For more information, see [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
     
 
@@ -369,7 +369,7 @@ Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_stora
     - [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}
 - Updates the `storage-secret-sidecar` image to `v1.1.2`.
 - Improves error messaging if `iks_token_exchange_endpoint_private_url` is invalid or unreachable.
-- Adds [new storage classes for OpenShift Data Foundation](/docs/containers?topic=containers-vpc-block#vpc-block-reference).
+- Adds [new storage classes for OpenShift Data Foundation](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).
 - Updates to improve the volume attach/detach performance by avoiding unnecessary retries.
 - Fixes an issue where mounting failed with `already mounted` error.
 - Improves logging when the device path for a volume is not present on worker node.

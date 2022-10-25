@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-25"
 
 keywords: openshift, version, update, upgrade
 
@@ -89,7 +89,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 
 ## Satellite locations with CoreOS enabled
-{: #os-satellite}
+{: #os-satellite-with-CoreOS}
 
 
 **Latest**: 4.11 (Kubernetes 1.24)
@@ -136,7 +136,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 
 ## Satellite locations without CoreOS enabled
-{: #os-satellite}
+{: #os-satellite-without-CoreOS}
 
 
 **Latest**: 4.11 (Kubernetes 1.24)

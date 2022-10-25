@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -48,7 +48,7 @@ Manually update the reference of the private IP address to point to the correct 
     ```
     {: screen}
 
-2. Install the [Calico CLI](/docs/containers?topic=containers-network_policies#cli_install).
+2. Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
 3. List the available worker nodes in Calico. Replace <path_to_file> with the local path to the Calico configuration file.
 
     ```sh

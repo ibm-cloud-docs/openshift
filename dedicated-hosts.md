@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-25"
 
 keywords: openshift dedicated hosts
 
@@ -20,7 +20,7 @@ subcollection: openshift
 
 Dedicated hosts are single-tenant managed hypervisors that can only be used to deploy {{site.data.keyword.openshiftlong_notm}} clusters. 
 
-Dedicated hosts, including those with instance storage, are available in Beta for allowlisted accounts only. [Contact support](/docs/containers?topic=containers-get-help) for information about how to get added to the allowlist. Additionally, if you want to use dedicated hosts with instance storage, include this in your support case.
+Dedicated hosts, including those with instance storage, are available in Beta for allowlisted accounts only. [Contact support](/docs/openshift?topic=openshift-get-help) for information about how to get added to the allowlist. Additionally, if you want to use dedicated hosts with instance storage, include this in your support case.
 {: important}
 
 
@@ -73,7 +73,7 @@ To order dedicated hosts, you must first create a host pool. Then, you can creat
     `--zone ZONE`
     :    The zone to create the dedicated host in. For a list of available
 
-1. [Create a cluster with your dedicated host](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui). Or, [add a worker pool in an existing cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+1. [Create a cluster with your dedicated host](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui). Or, [add a worker pool in an existing cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
 
 
 ## Removing worker nodes from a dedicated host in the CLI
@@ -103,7 +103,7 @@ To remove worker nodes from a dedicated host, you must disable dedicated host pl
     `--pool POOL`
     :    The ID of the dedicated host pool that the dedicated host is located in. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
 
-1. [Replace](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace) or [remove](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_rm){: external} each worker node on the dedicated host. 
+1. [Replace](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [remove](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm){: external} each worker node on the dedicated host. 
     * Replace the worker nodes if you want to keep the same cluster capacity, but move the worker nodes off the dedicated host. During replacement, when new worker nodes are created, they are only created on hosts with placement enabled.
     * Remove the worker nodes if you are deleting your cluster or reducing capacity.
 

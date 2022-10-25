@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-01"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -69,7 +69,7 @@ The benchmark recommendations have scoring, levels, result status, and responsib
 
 **What parts of the benchmark am I responsible for?**
 
-Because {{site.data.keyword.openshiftlong_notm}} is a managed offering, IBM already configures many security settings for you. For example, IBM manages and automatically applies updates to your cluster master. For your worker nodes, IBM provides security and version updates, but you must apply the updates. You are also responsible for your workload applications and data. For more information, see [Your responsibilities while using {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-responsibilities_iks).
+Because {{site.data.keyword.openshiftlong_notm}} is a managed offering, IBM already configures many security settings for you. For example, IBM manages and automatically applies updates to your cluster master. For your worker nodes, IBM provides security and version updates, but you must apply the updates. You are also responsible for your workload applications and data. For more information, see [Your responsibilities while using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks).
 
 **What if some part of the service fails to comply with a recommendation?**
 
@@ -81,12 +81,12 @@ Next, decide whether the component falls within your responsibility. If so, you 
 
 **What else can I do to increase the security and compliance of my cluster?**
 
-See [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/containers?topic=containers-security).
+See [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security).
 
 ## Running the worker node CIS Kubernetes benchmark
 {: #cis-worker-test}
 
-To review the results of the CIS Kubernetes benchmark for Section 4: Worker node security configuration, you can run the test yourself. Because you own the worker nodes and are partially [responsible](/docs/containers?topic=containers-responsibilities_iks) for their compliance, you might make configuration changes that you want to validate on your own.
+To review the results of the CIS Kubernetes benchmark for Section 4: Worker node security configuration, you can run the test yourself. Because you own the worker nodes and are partially [responsible](/docs/openshift?topic=openshift-responsibilities_iks) for their compliance, you might make configuration changes that you want to validate on your own.
 {: shortdesc}
 
 These steps apply to clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later only.

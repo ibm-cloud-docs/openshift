@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-25"
 
 keywords: webhooks, admission control, ,openshift
 
@@ -56,7 +56,7 @@ Many cluster add-ons, plug-ins, and other third-party extensions use admission c
 ## I need help with a broken webhook. What can I do?
 {: #access_webhooks-help}
 
-For help troubleshooting webhooks, see [Debugging webhooks](/docs/containers?topic=containers-ts-webhook-debug) or [Cluster can't update because of broken webhook](/docs/containers?topic=containers-webhooks_update).
+For help troubleshooting webhooks, see [Debugging webhooks](/docs/openshift?topic=openshift-ts-webhook-debug) or [Cluster can't update because of broken webhook](/docs/openshift?topic=openshift-webhooks_update).
 
 
 

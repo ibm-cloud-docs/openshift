@@ -1615,7 +1615,7 @@ subcollection: openshift
 
     * [29 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2920)
 
-        * For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/containers?topic=containers-firewall#firewall_outbound), [private gateway device firewall](/docs/containers?topic=containers-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+        * For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
 
     * [26 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2620)
 
@@ -3066,7 +3066,7 @@ subcollection: openshift
 
 * [Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-numa-pinning-huge)
 
-* [Enabling CPU pinning and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-numa-pinning-huge)
+* [Enabling CPU pinning and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-pinning-huge)
 
 * [Removing performance customizations](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance-remove)
 
@@ -5633,9 +5633,9 @@ subcollection: openshift
 
 * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
-* [Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite)
+* [Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-CoreOS)
 
-* [Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite)
+* [Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-CoreOS)
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
