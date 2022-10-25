@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-25"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -23,10 +23,16 @@ You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you 
 
 
 
-![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.svg){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
+
+
+
+![{{site.data.keyword.openshiftlong_notm}} locations](images/location-old.svg){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
+
+
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}
+
 
 
 
