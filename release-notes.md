@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -26,6 +26,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2022
 {: #openshift-oct22}
+
+### 25 October 2022
+{: #openshift-oct2522}
+{: release-note}
+
+Istio add-on
+:   Versions [`1.13.9`](/docs/containers?topic=containers-istio-changelog#1139), [`1.14.5`](/docs/containers?topic=containers-istio-changelog#1145), and [`1.15.2`](/docs/containers?topic=containers-istio-changelog#1152) are available.
 
 ### 21 October 2022
 {: #openshift-oct2122}
