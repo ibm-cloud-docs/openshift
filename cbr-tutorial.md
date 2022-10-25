@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-10-25"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 
@@ -68,7 +68,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
     ```sh
     ibmcloud cbr zones
     ```
-    { :pre}
+    {: pre}
     
     
 
@@ -204,7 +204,6 @@ Similar to the previous scenario, in this scenario you allow different IP addres
     ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster --context-attributes "endpointType=public,networkZoneId=PUBLIC-CLUSTER-ZONE-ID" --context-attributes "endpointType=private,networkZoneId=PRIVATE-CLUSTER-ZONE-ID" --description "Separate private and public IPs for cluster APIs" --service-name containers-kubernetes
     ```
     {: pre}
-
 
 
 
