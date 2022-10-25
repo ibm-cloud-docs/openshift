@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-25"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -18,7 +18,7 @@ subcollection: openshift
 # Preparing classic and VPC Gen 2 clusters for autoscaling
 {: #cluster-scaling-classic-vpc}
 
-With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} classic or VPC cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `cluster-autoscaler` add-on is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler){: external}. For a list of supported add-on versions by cluster version, see [Supported cluster add-on versions](/docs/containers?topic=containers-supported-cluster-addon-versions).
+With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} classic or VPC cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `cluster-autoscaler` add-on is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler){: external}. For a list of supported add-on versions by cluster version, see [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 {: shortdesc}
 
 
@@ -30,7 +30,7 @@ Looking to use autoscaling in your {{site.data.keyword.satelliteshort}} clusters
 
 
 
-Want to autoscale your pods instead? Check out [Scaling apps](/docs/containers?topic=containers-update_app#app_scaling).
+Want to autoscale your pods instead? Check out [Scaling apps](/docs/openshift?topic=openshift-update_app#app_scaling).
 {: tip}
 
 You can't enable the cluster autoscaler on worker pools that use reservations.
@@ -47,7 +47,7 @@ The cluster autoscaler periodically scans the cluster to adjust the number of wo
 
 Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes.
 
-The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some compute resources for basic cluster functionality, default and custom [add-ons](/docs/containers?topic=containers-update#addons), and [resource reserves](/docs/containers?topic=containers-planning_worker_nodes#resource_limit_node).
+The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some compute resources for basic cluster functionality, default and custom [add-ons](/docs/containers?topic=containers-update#addons), and [resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node).
 {: note}
 
 
@@ -56,7 +56,7 @@ What does scaling up and down look like?
 :   In general, the cluster autoscaler calculates the number of worker nodes that your cluster needs to run its workload. Scaling the cluster up or down depends on many factors, including the following.
     *   The minimum and maximum worker node size per zone that you set.
     *   Your pending pod resource requests and certain metadata that you associate with the workload, such as anti-affinity, labels to place pods only on certain flavors, or [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external}.
-    *   The worker pools that the cluster autoscaler manages, potentially across zones in a [multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone).
+    *   The worker pools that the cluster autoscaler manages, potentially across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone).
     *   The [custom Helm chart values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values) that are set, such as skipping worker nodes for deletion if they use local storage.
 
 For more information, see the Kubernetes Cluster Autoscaler FAQs for [How does scale-up work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work){: external} and [How does scale-down work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work){: external}.
@@ -67,7 +67,7 @@ Can I change how scale-up and scale-down work?
 :   You can customize settings or use other Kubernetes resources to affect how scaling up and down work.
 
 Scale-up
-:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/containers?topic=containers-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
+:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
 
 Scale-down
 :   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
@@ -78,7 +78,7 @@ Can I increase the minimum size per zone to trigger a scale up my cluster to tha
 
 
 How is this behavior different from worker pools that are not managed by the cluster autoscaler?
-:   When you [create a worker pool](/docs/containers?topic=containers-add_workers#add_pool), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool. When you enable the cluster autoscaler for a worker pool, worker nodes are scaled up or down in response to your pod spec settings and resource requests. You don't need to resize or rebalance the worker pool manually.
+:   When you [create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool. When you enable the cluster autoscaler for a worker pool, worker nodes are scaled up or down in response to your pod spec settings and resource requests. You don't need to resize or rebalance the worker pool manually.
 
 
 ## Following scalable deployment practices
@@ -87,12 +87,12 @@ How is this behavior different from worker pools that are not managed by the clu
 Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}.
 {: shortdesc}
 
-[Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), what [custom values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values) you might want to configure, and any other aspects that you might want, like [overprovisioning](/docs/containers?topic=containers-cluster-scaling-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps). Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
+[Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), what [custom values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values) you might want to configure, and any other aspects that you might want, like [overprovisioning](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps). Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
 
 ### Can I autoscale multiple worker pools at once?
 {: #scalable-practices-multiple}
 
-Yes, after you install the cluster autoscaler, you can choose which worker pools within the cluster to autoscale [in the ConfigMap](/docs/containers?topic=containers-cluster-scaling-enable). You can run only one autoscaler per cluster. Create and enable autoscaling on worker pools other than the default worker pool, because the default worker pool has system components that can prevent automatically scaling down.
+Yes, after you install the cluster autoscaler, you can choose which worker pools within the cluster to autoscale [in the ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-enable). You can run only one autoscaler per cluster. Create and enable autoscaling on worker pools other than the default worker pool, because the default worker pool has system components that can prevent automatically scaling down.
 {: shortdesc}
 
 ### How can I make sure that the cluster autoscaler responds to what resources my app needs?
@@ -104,10 +104,10 @@ The cluster autoscaler scales your cluster in response to your workload [resourc
 ### Can I scale down a worker pool to zero (0) nodes?
 {: #scalable-practices-zero}
 
-No, you can't set the cluster autoscaler `minSize` to `0`. Additionally, unless you [disable](/docs/containers?topic=containers-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your cluster, you must change the `minSize` to `2` worker nodes per zone so that the ALB pods can be spread for high availability. Additionally, you can [taint](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint) your worker pool to achieve a scale to down a minimum of `1`.
+No, you can't set the cluster autoscaler `minSize` to `0`. Additionally, unless you [disable](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your cluster, you must change the `minSize` to `2` worker nodes per zone so that the ALB pods can be spread for high availability. Additionally, you can [taint](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) your worker pool to achieve a scale to down a minimum of `1`.
 {: shortdesc}
 
-If your worker pool has zero (0) worker nodes, the worker pool can't be scaled. [Disable cluster autoscaling](/docs/containers?topic=containers-cluster-scaling-enable) for the worker pool, [manually resize the worker pool](/docs/containers?topic=containers-add_workers#resize_pool) to at least one, and [re-enable cluster autoscaling](/docs/containers?topic=containers-cluster-scaling-enable).
+If your worker pool has zero (0) worker nodes, the worker pool can't be scaled. [Disable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-enable) for the worker pool, [manually resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to at least one, and [re-enable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-enable).
 
 ### Can I optimize my deployments for autoscaling?
 {: #scalable-practices-apps}
@@ -115,15 +115,15 @@ If your worker pool has zero (0) worker nodes, the worker pool can't be scaled. 
 Yes, you can add several Kubernetes features to your deployment to adjust how the cluster autoscaler considers your resource requests for scaling.
 {: shortdesc}
 
-* [Taint your worker pool](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint) to allow only the deployments or pods with the matching toleration to be deployed to your worker pool.
-* [Add a label](/docs/containers?topic=containers-add_workers#worker_pool_labels) to your worker pool other than the default worker pool. This label is used in your deployment configuration to specify `nodeAffinity` or `nodeSelector` which limits the workloads that can be deployed on the worker nodes in the labeled worker pool.
+* [Taint your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) to allow only the deployments or pods with the matching toleration to be deployed to your worker pool.
+* [Add a label](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) to your worker pool other than the default worker pool. This label is used in your deployment configuration to specify `nodeAffinity` or `nodeSelector` which limits the workloads that can be deployed on the worker nodes in the labeled worker pool.
 * Use [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external} to prevent abrupt rescheduling or deletions of your pods.
 * If you're using pod priority, you can [edit the priority cutoff](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-cluster-autoscaler-work-with-pod-priority-and-preemption){: external} to change what types of priority trigger scaling up. By default, the priority cutoff is zero (`0`).
 
 ### Can I use taints and tolerations with autoscaled worker pools?
 {: #scalable-practices-taints}
 
-Yes, but make sure to [apply taints at the worker pool level](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint) so that all existing and future worker nodes get the same taint. Then, you must include a [matching toleration in your workload configuration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} so that these workloads are scheduled onto your autoscaled worker pool with the matching taint. Keep in mind that if you deploy a workload that is not tolerated by the tainted worker pool, the worker nodes are not considered for scale-up and more worker nodes might be ordered even if the cluster has sufficient capacity. However, the tainted worker pool is still identified as underutilized if they have less than the threshold (by default 50%) of their resources utilized and thus are considered for scale-down.
+Yes, but make sure to [apply taints at the worker pool level](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) so that all existing and future worker nodes get the same taint. Then, you must include a [matching toleration in your workload configuration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} so that these workloads are scheduled onto your autoscaled worker pool with the matching taint. Keep in mind that if you deploy a workload that is not tolerated by the tainted worker pool, the worker nodes are not considered for scale-up and more worker nodes might be ordered even if the cluster has sufficient capacity. However, the tainted worker pool is still identified as underutilized if they have less than the threshold (by default 50%) of their resources utilized and thus are considered for scale-down.
 {: shortdesc}
 
 
@@ -148,7 +148,7 @@ Before you can rebalance or resize your worker pool, you must remove the worker 
 
 2. Save the `iks-ca-configmap`.
 
-3. [Resize](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/containers?topic=containers-kubernetes-service-cli#cs_rebalance) your worker pool.
+3. [Resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pool.
 
 4. **Optional** [Update your VPC worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
 
@@ -180,18 +180,18 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
     *  {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
     *  Kubernetes (`kubectl`)
 
-1. [Create a standard cluster](/docs/containers?topic=containers-clusters).
+1. [Create a standard cluster](/docs/openshift?topic=openshift-clusters).
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-1. Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/containers?topic=containers-missing_permissions).
+1. Confirm that your {{site.data.keyword.cloud_notm}} Identity and Access Management credentials are stored in the cluster. The cluster autoscaler uses this secret to authenticate credentials. If the secret is missing, [create it by resetting credentials](/docs/openshift?topic=openshift-missing_permissions).
     ```sh
     oc get secrets -n kube-system | grep storage-secret-store
     ```
     {: pre}
 
 1. Plan to autoscale a worker pool other than the `default` worker pool, because the `default` worker pool has system components that can prevent automatically scaling down. Include a label for the worker pool so that you can set [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity){: external} for the workloads that you want to deploy to the worker pool that has autoscaling enabled. For example, your label might be `app: nginx`. Choose from the following options:
-    * Create a [VPC](/docs/containers?topic=containers-add_workers#vpc_pools) or [classic](/docs/containers?topic=containers-add_workers#classic_pools) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool.
-    * [Add the label to an existing worker pool](/docs/containers?topic=containers-add_workers#worker_pool_labels) other than the `default` worker pool.
-1. Confirm that your worker pool has the necessary labels for autoscaling. In the output, you see the required `ibm-cloud.kubernetes.io/worker-pool-id` label and the label that you previously created for node affinity. If you don't see these labels, [add a new worker pool](/docs/containers?topic=containers-add_workers#add_pool), and then [add your label for node affinity](/docs/containers?topic=containers-add_workers#worker_pool_labels).
+    * Create a [VPC](/docs/openshift?topic=openshift-add_workers#vpc_pools) or [classic](/docs/openshift?topic=openshift-add_workers#classic_pools) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool.
+    * [Add the label to an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels) other than the `default` worker pool.
+1. Confirm that your worker pool has the necessary labels for autoscaling. In the output, you see the required `ibm-cloud.kubernetes.io/worker-pool-id` label and the label that you previously created for node affinity. If you don't see these labels, [add a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool), and then [add your label for node affinity](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
 
     ```sh
     ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> | grep Labels
@@ -205,11 +205,11 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
     ```
     {: screen}
 
-1. [Taint the worker pools](/docs/containers?topic=containers-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external}. As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` taint evicts pods that don't have the toleration corresponding to this taint.
+1. [Taint the worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) that you want to autoscale so that the worker pool does not accept workloads except the ones that you want to run on the autoscaled worker pool. You can learn more about taints and tolerations in the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external}. As an example, you might set a taint of `use=autoscale:NoExecute`. In this example, the `NoExecute` taint evicts pods that don't have the toleration corresponding to this taint.
 
-1. [Install the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon).
+1. [Install the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 
-After install the add-on, update the ConfigMap values to [enable autoscaling in your cluster](/docs/containers?topic=containers-cluster-scaling-enable).
+After install the add-on, update the ConfigMap values to [enable autoscaling in your cluster](/docs/openshift?topic=openshift-cluster-scaling-enable).
 
 
 

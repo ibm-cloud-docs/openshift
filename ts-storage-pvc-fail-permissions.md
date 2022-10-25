@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -74,7 +74,7 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
 
 2. If you want to change the credentials, update the API key that is used.
     1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-    2. To update the IAM API key, use the `ibmcloud oc api-key reset` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_api_key_reset). To update the IBM Cloud infrastructure key, use the `ibmcloud oc credential set` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_credentials_set).
+    2. To update the IAM API key, use the `ibmcloud oc api-key reset` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset). To update the IBM Cloud infrastructure key, use the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
     3. Wait about 10 - 15 minutes for the `storage-secret-store` Kubernetes secret to update, then verify that the key is updated.
         ```sh
         oc get secret storage-secret-store -n kube-system -o yaml | grep slclient.toml: | awk '{print $2}' | base64 --decode

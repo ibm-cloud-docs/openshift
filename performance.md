@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-25"
 
 keywords: openshift, kernel
 
@@ -27,7 +27,7 @@ If you choose to change the default settings, you are doing so at your own risk.
 ## Default worker node settings
 {: #worker-default}
 
-By default, your worker nodes have the operating system and compute hardware of the [worker node flavor](/docs/containers?topic=containers-planning_worker_nodes) that you choose when you create the worker pool.
+By default, your worker nodes have the operating system and compute hardware of the [worker node flavor](/docs/openshift?topic=openshift-planning_worker_nodes) that you choose when you create the worker pool.
 {: shortdesc}
 
 ### Customizing the operating system
@@ -48,7 +48,7 @@ To optimize your worker nodes, consider the following information.
 {: #worker-default-hw}
 
 To change the compute hardware, such as the CPU and memory per worker node, choose among the following options.
-* [Create a worker pool](/docs/containers?topic=containers-add_workers). The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, {{site.data.keyword.satelliteshort}}, or gateway clusters.
+* [Create a worker pool](/docs/openshift?topic=openshift-add_workers). The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, {{site.data.keyword.satelliteshort}}, or gateway clusters.
 * [Update the flavor](/docs/containers?topic=containers-update#machine_type) in your cluster by creating a worker pool and removing the previous worker pool.
 
 ## Modifying worker node settings to optimize performance
@@ -67,7 +67,7 @@ You can use the node tuning operator to tune worker node performance by creating
     
 1. Save the following example `Tuned` resource to a file called `tuned-node.yaml` and include the specifications you want to use for your worker nodes. Note that you can use the `recommend` method to apply the settings to your worker nodes by using node labels. In this example, the profile is called `tuned-node` and applies to worker nodes with the label `label: node-role.kubernetes.io/master` label.
 
-    If you have custom labels on your worker nodes, or if you want to tune only certain workers in your cluster, you can [label your worker nodes](/docs/containers?topic=containers-add_workers#worker_pool_labels), then use those labels in your tuning configuration.
+    If you have custom labels on your worker nodes, or if you want to tune only certain workers in your cluster, you can [label your worker nodes](/docs/openshift?topic=openshift-add_workers#worker_pool_labels), then use those labels in your tuning configuration.
     {: tip}
 
     Example custom `Tuned` profile. For more information about customizing your `Tuned` profile, see [Node Tuning Operator](https://docs.openshift.com/container-platform/4.7/scalability_and_performance/using-node-tuning-operator.html){: external} docs.
@@ -118,7 +118,7 @@ If you have specific performance optimization requirements, you can change the d
 
 Worker nodes are automatically provisioned with optimized kernel performance, but you can change the default settings by applying a custom [Kubernetes `DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external} with an [`initContainer`](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/){: external} to your cluster. The daemon set modifies the settings for all existing worker nodes and applies the settings to any new worker nodes that are provisioned in the cluster. The init container makes sure that these modifications occur before other pods are scheduled on the worker node. No pods are affected.
 
-You must have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for all namespaces to run the sample privileged `initContainer`. After the containers for the deployments are initialized, the privileges are dropped.
+You must have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for all namespaces to run the sample privileged `initContainer`. After the containers for the deployments are initialized, the privileges are dropped.
 {: note}
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -200,7 +200,7 @@ To revert your worker nodes `sysctl` parameters to the default values, follow th
     ```
     {: pre}
 
-1. [Reboot all worker nodes in the cluster](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reboot). The worker nodes come back online with the default values applied.
+1. [Reboot all worker nodes in the cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot). The worker nodes come back online with the default values applied.
 
 
 
@@ -331,7 +331,7 @@ To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that 
 
 3. Save and close the file.
 
-4. Apply the MTU changes to your worker nodes by [rebooting all worker nodes in your cluster](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reboot).
+4. Apply the MTU changes to your worker nodes by [rebooting all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift, vlan
 
@@ -18,10 +18,10 @@ subcollection: openshift
 # Changing service endpoints or VLAN connections in {{site.data.keyword.redhat_openshift_notm}} 3.11
 {: #cs_network_cluster}
 
-After you initially set up your network when you [create a cluster](/docs/containers?topic=containers-clusters), you can change the service endpoints that your cluster master is accessible through or change the VLAN connections for your worker nodes.
+After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your cluster master is accessible through or change the VLAN connections for your worker nodes.
 {: shortdesc}
 
-The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/containers?topic=containers-vpc-subnets).
+The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
 
 
@@ -36,7 +36,7 @@ The content on this page is specific to **classic clusters that run {{site.data.
 Enable the private cloud service endpoint for your cluster.
 {: shortdesc}
 
-The private cloud service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private cloud service endpoint, see [Worker-to-master and user-to-master communication](/docs/containers?topic=containers-plan_basics#workeruser-master). Note that you can't disable the private cloud service endpoint after you enable it.
+The private cloud service endpoint makes your Kubernetes master privately accessible. Your worker nodes and your authorized cluster users can communicate with the Kubernetes master over the private network. To determine whether you can enable the private cloud service endpoint, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_basics#workeruser-master). Note that you can't disable the private cloud service endpoint after you enable it.
 
 1. Enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) in your IBM Cloud infrastructure account. To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 2. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
@@ -55,7 +55,7 @@ The private cloud service endpoint makes your Kubernetes master privately access
 5. [Create a configmap](/docs/containers?topic=containers-update#worker-up-configmap) to control the maximum number of worker nodes that can be unavailable at a time in your cluster. When you update your worker nodes, the ConfigMap helps prevent downtime for your apps as the apps are rescheduled orderly onto available worker nodes.
 6. Update all the worker nodes in your cluster to pick up the private cloud service endpoint configuration.
 
-    By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/containers?topic=containers-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.
+    By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must [reload the worker nodes manually](/docs/openshift?topic=openshift-kubernetes-service-cli). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.
     {: important}
     
     ```sh
@@ -64,8 +64,8 @@ The private cloud service endpoint makes your Kubernetes master privately access
     {: pre}
 
 7. If the cluster is in an environment behind a firewall:
-    - [Allow your authorized cluster users to run `kubectl` commands to access the master through the private cloud service endpoint.](/docs/containers?topic=containers-firewall#firewall_kubectl)
-    - [Allow outbound network traffic to the private IPs](/docs/containers?topic=containers-firewall#firewall_outbound) for infrastructure resources and for the {{site.data.keyword.cloud_notm}} services that you plan to use.
+    - [Allow your authorized cluster users to run `kubectl` commands to access the master through the private cloud service endpoint.](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+    - [Allow outbound network traffic to the private IPs](/docs/openshift?topic=openshift-firewall#firewall_outbound) for infrastructure resources and for the {{site.data.keyword.cloud_notm}} services that you plan to use.
 
 
 ## Setting up the public cloud service endpoint
@@ -77,7 +77,7 @@ Enable the public cloud service endpoint for your cluster.
 Your cluster must have a public cloud service endpoint on classic infrastructure. For a cluster with only a private cloud service endpoint, create a VPC cluster instead.
 {: important}
 
-The public cloud service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/containers?topic=containers-plan_basics#internet-facing).
+The public cloud service endpoint makes your Kubernetes master publicly accessible. Your worker nodes and your authorized cluster users can securely communicate with the Kubernetes master over the public network. For more information, see [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_basics#internet-facing).
 
 ### Steps to enable the public cloud service endpoint
 {: #steps-set-up-public}
@@ -102,7 +102,7 @@ If you previously disabled the public endpoint, you can re-enable it.
     ```
     {: pre}
     
-    By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must reload the worker nodes manually with the `ibmcloud oc worker reload` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.
+    By issuing the update command, the worker nodes are reloaded to pick up the service endpoint configuration. If no worker update is available, you must reload the worker nodes manually with the `ibmcloud oc worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). If you reload, be sure to cordon, drain, and manage the order to control the maximum number of worker nodes that are unavailable at a time.
     {: important}
 
 
@@ -162,7 +162,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
 
 4. Set up a worker pool with the new VLAN network metadata for each zone. You can create a new worker pool, or modify an existing worker pool.
 
-    - **Create a new worker pool**: See [adding worker nodes by creating a new worker pool](/docs/containers?topic=containers-add_workers#add_pool).
+    - **Create a new worker pool**: See [adding worker nodes by creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool).
 
     - **Modify an existing worker pool**: Set the worker pool's network metadata to use the VLAN for each zone. Worker nodes that were already created in the pool continue to use the previous VLANs, but new worker nodes in the pool use new VLAN metadata that you set.
         ```sh
@@ -211,7 +211,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
     - Routers: Because routers can't be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic).
     - Ingress ALBs ({{site.data.keyword.redhat_openshift_notm}} version 3.11 only): Because ALBs can't be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-types#migrate-alb-vlan).
 
-10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/containers?topic=containers-subnets#remove-subnets).
+10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
 
 
 

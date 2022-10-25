@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-09-26"
+lastupdated: "2022-10-25"
 
 keywords: access, wireguard, private, ,openshift
 
@@ -218,7 +218,7 @@ Before you begin, make sure that you have an {{site.data.keyword.redhat_openshif
         ```
         {: pre}
 
-        To successfully run an `nslookup` command on your private service endpoint URL, remove `https://` and the port from your URL. Alternatively, you can note all IP address CIDRs for the region that your cluster master is in as shown in step 3 of [Opening required ports in a private firewall](/docs/containers?topic=containers-firewall#firewall_private).
+        To successfully run an `nslookup` command on your private service endpoint URL, remove `https://` and the port from your URL. Alternatively, you can note all IP address CIDRs for the region that your cluster master is in as shown in step 3 of [Opening required ports in a private firewall](/docs/openshift?topic=openshift-firewall#firewall_private).
         {: tip}
 
     3. Get the IP address CIDR of all the VPC subnets, private VLANs, or on-prem networks that your cluster worker nodes are connected to. For example, if you created a VPC cluster in {{site.data.keyword.cloud_notm}}, you can get the subnet CIDR by getting the details for each worker node.  

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -25,7 +25,7 @@ Authorizing pods with IAM trusted profiles is available for clusters that run {{
 {: note}
 
 - Clusters that are running version 4.7 or later and were created after July 2021: Authorizing pods with IAM trusted profiles is enabled automatically.
-- Clusters that are running version 4.7 or later and were created before July 2021: You can enable IAM trusted profiles by running the [`ibmcloud oc cluster master refresh`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_refresh) command. Note that if you have refreshed your cluster master after July 2021, IAM trusted profiles are enabled.
+- Clusters that are running version 4.7 or later and were created before July 2021: You can enable IAM trusted profiles by running the [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) command. Note that if you have refreshed your cluster master after July 2021, IAM trusted profiles are enabled.
 
 In IAM
 :   Start by creating an IAM trusted profile. Then, link the trusted profile with your {{site.data.keyword.openshiftlong_notm}} compute resource by selecting conditions to match with your clusters, including a Kubernetes namespace and service account in the clusters. Finally, assign access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to use.
@@ -47,13 +47,13 @@ Supported infrastructure providers
 
 
 Minimum required permissions
-- **Viewer** [platform](/docs/containers?topic=containers-access_reference#iam_platform) access role and the **Writer** [service](/docs/containers?topic=containers-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
+- **Viewer** [platform](/docs/openshift?topic=openshift-access_reference#iam_platform) access role and the **Writer** [service](/docs/openshift?topic=openshift-access_reference#service) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**.
 - The `iam-identity.profile.create` and `iam-identity.profile.linkToResource` actions for the [IAM identity service](/docs/account?topic=account-iam-service-roles-actions#iam-identity-service).
 
 Supported versions
 
-- The cluster must be [created](/docs/containers?topic=containers-clusters) at {{site.data.keyword.redhat_openshift_notm}} version 4.7 or later.
-- For new clusters, authorizing pods with IAM trusted profiles is enabled automatically. You can enable IAM trusted profiles on existing clusters by running [`ibmcloud oc cluster master refresh`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_refresh).
+- The cluster must be [created](/docs/openshift?topic=openshift-clusters) at {{site.data.keyword.redhat_openshift_notm}} version 4.7 or later.
+- For new clusters, authorizing pods with IAM trusted profiles is enabled automatically. You can enable IAM trusted profiles on existing clusters by running [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -33,7 +33,7 @@ An Open-Government Data Program Executive needs to share public data with the co
 With {{site.data.keyword.openshiftlong_notm}}, the Exec delivers the transformative value of combined public-private data. Likewise, the service provides the public cloud platform to refactor and expose microservices from monolithic on-premises apps. Also, the public cloud allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools.
 
 Key technologies  
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [Provide access to public data with {{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
 * [Plug-and-play IBM Cloud Analytics services](https://www.ibm.com/cloud/analytics){: external}
@@ -127,8 +127,8 @@ IT Execs for a private shipping company and the government-operated port need to
 {{site.data.keyword.openshiftlong_notm}} allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools. The containers provided a shareable platform where both the port and shipping company felt assured that the shared information was hosted on a secure platform. And that platform scales as they went from small Dev-Test systems to production-sized systems. Open toolchains further accelerated development by automating build, test, and deployments.
 
 Key technologies:    
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/containers?topic=containers-planning_worker_nodes#planning_worker_nodes)
-* [Container security and isolation](/docs/containers?topic=containers-security#security)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Container security and isolation](/docs/openshift?topic=openshift-security#security)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
 

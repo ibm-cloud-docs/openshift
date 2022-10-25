@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -169,5 +169,5 @@ Complete the following steps to increase the log level for the `calico-kube-cont
     ```
     {:  pre}
   
-4. Follow the instructions for [Debugging by using oc exec](/docs/containers?topic=containers-cs_ssh_worker#kubectl-exec) to get `/var/log/syslog`, `containerd.log`, `kubelet.log`, and `kern.log` from the worker node.
+4. Follow the instructions for [Debugging by using oc exec](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec) to get `/var/log/syslog`, `containerd.log`, `kubelet.log`, and `kern.log` from the worker node.
 

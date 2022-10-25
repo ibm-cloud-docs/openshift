@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ Create your own customized storage class with the preferred settings for your {{
 
 To create your own storage class:
 
-1. Review the [Storage class reference](/docs/containers?topic=containers-storage-file-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. 
+1. Review the [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. 
 
     If you want to use a pre-installed storage class as a template, you can get the details of a storage class by using the `oc get sc <storageclass> -o yaml` command.
     {: tip}

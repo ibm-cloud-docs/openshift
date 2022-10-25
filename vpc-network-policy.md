@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -18,7 +18,7 @@ subcollection: openshift
 # Overview of network security options
 {: #vpc-network-policy}
 
-This information is specific to VPC clusters. For network policy information for classic clusters, see [Classic: Controlling traffic with network policies](/docs/containers?topic=containers-network_policies).
+This information is specific to VPC clusters. For network policy information for classic clusters, see [Classic: Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies).
 {: note}
 
 Control traffic to and from your cluster and traffic between pods in your cluster by creating network rules and policies.
@@ -35,10 +35,10 @@ The following table describes the basic characteristics of each network security
 
 |Policy type|Application level|Default behavior|Use case|Limitations|
 |-----------|-----------------|----------------|--------|-----------|
-|[VPC security groups](/docs/containers?topic=containers-vpc-security-group) (Recommended)|Worker node|Version 4.5 and later: The default security groups for your cluster allow incoming traffic requests to the 30000 - 32767 port range on your worker nodes. |You can add rules to the default security group that is applied to your worker nodes. However, because your worker nodes exist in a service account and are not listed in the VPC infrastructure dashboard, you can't add more security groups and apply them to your worker nodes.|
+|[VPC security groups](/docs/openshift?topic=openshift-vpc-security-group) (Recommended)|Worker node|Version 4.5 and later: The default security groups for your cluster allow incoming traffic requests to the 30000 - 32767 port range on your worker nodes. |You can add rules to the default security group that is applied to your worker nodes. However, because your worker nodes exist in a service account and are not listed in the VPC infrastructure dashboard, you can't add more security groups and apply them to your worker nodes.|
 |[VPC security groups](/docs/vpc?topic=vpc-alb-integration-with-security-groups)|Load balancer|If you don't specify a security group when you create a load balancer, then the default security group is used.|Allow inbound traffic from all sources to the listener port on a public load balancer.|None|
-|[VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) (Not recommended)|VPC subnet|The default ACL for the VPC, `allow-all-network-acl-<VPC_ID>`, allows all traffic to and from your subnets. Changing the default ACL is not recommended; instead, use security groups.|Control inbound and outbound traffic to and from the cluster subnet that you attach the ACL to. Rules allow or deny traffic to or from an IP range with specified protocols and ports.|can't be used to control traffic between the clusters that share the same VPC subnets. Instead, you can [create Calico policies](/docs/containers?topic=containers-network_policies#isolate_workers) to isolate your clusters on the private network.|
-|[Kubernetes network policies](/docs/containers?topic=containers-vpc-kube-policies)|Worker node host endpoint|None|Control traffic within the cluster at the pod level by using pod and namespace labels. Protect pods from internal network traffic, such as isolating app microservices from each other within a namespace or across namespaces.|None|
+|[VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) (Not recommended)|VPC subnet|The default ACL for the VPC, `allow-all-network-acl-<VPC_ID>`, allows all traffic to and from your subnets. Changing the default ACL is not recommended; instead, use security groups.|Control inbound and outbound traffic to and from the cluster subnet that you attach the ACL to. Rules allow or deny traffic to or from an IP range with specified protocols and ports.|can't be used to control traffic between the clusters that share the same VPC subnets. Instead, you can [create Calico policies](/docs/openshift?topic=openshift-network_policies#isolate_workers) to isolate your clusters on the private network.|
+|[Kubernetes network policies](/docs/openshift?topic=openshift-vpc-kube-policies)|Worker node host endpoint|None|Control traffic within the cluster at the pod level by using pod and namespace labels. Protect pods from internal network traffic, such as isolating app microservices from each other within a namespace or across namespaces.|None|
 {: caption="Network security options for VPC clusters"}
 
 VPC Load Balancer also supports security groups. For more information, see [Integrating an IBM Cloud Application Load Balancer for VPC with security groups](/docs/vpc?topic=vpc-alb-integration-with-security-groups).
@@ -60,7 +60,7 @@ Review the following advantages of security groups over ACLs:
 - ACLs are applied at the level of the VPC subnet. If one cluster uses multiple subnets, rules are required to ensure that the subnets can communicate with each other. If you create multiple clusters that use the same subnets in one VPC, you can't use ACLs to control traffic between the clusters because they share the same subnets.
 - With an ACL, you must explicitly allow traffic in both directions for a connection to succeed.
 
-Regardless of which security option you choose, be sure to follow the instructions for [security groups](/docs/containers?topic=containers-vpc-security-group) or [ACLs](/docs/openshift?topic=openshift-vpc-acls) to allow the subnets and ports that are required for necessary traffic to reach your cluster.
+Regardless of which security option you choose, be sure to follow the instructions for [security groups](/docs/openshift?topic=openshift-vpc-security-group) or [ACLs](/docs/openshift?topic=openshift-vpc-acls) to allow the subnets and ports that are required for necessary traffic to reach your cluster.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: kubernetes, openshift
 
@@ -37,9 +37,9 @@ To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [
 ### What is {{site.data.keyword.cloud_notm}} service binding?
 {: #svc-bind-what}
 
-Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service by using its public cloud service endpoint and storing these credentials in a Kubernetes secret in your cluster. To bind a service to your cluster, you must provision an instance of the service first. Then, you use the `ibmcloud oc cluster service bind` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_service_bind) to create the service credentials and the Kubernetes secret. The Kubernetes secret is automatically encrypted in etcd to protect your data.
+Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service by using its public cloud service endpoint and storing these credentials in a Kubernetes secret in your cluster. To bind a service to your cluster, you must provision an instance of the service first. Then, you use the `ibmcloud oc cluster service bind` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_service_bind) to create the service credentials and the Kubernetes secret. The Kubernetes secret is automatically encrypted in etcd to protect your data.
 
-Want to make your secrets even more secured? Ask your cluster admin to [enable a key management service provider](/docs/containers?topic=containers-encryption#keyprotect) in your cluster to encrypt new and existing secrets, such as the secret that stores the credentials of your {{site.data.keyword.cloud_notm}} service instances.
+Want to make your secrets even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt new and existing secrets, such as the secret that stores the credentials of your {{site.data.keyword.cloud_notm}} service instances.
 {: tip}
 
 ### I already have an {{site.data.keyword.cloud_notm}} service. Can I still use {{site.data.keyword.cloud_notm}} service binding?
@@ -74,7 +74,7 @@ Services that don't support service keys usually provide an API that you can use
 
 {{site.data.keyword.cloud_notm}} service binding is on a per-cluster, per-service basis, and works by creating a Kubernetes secret that your pods can mount.
 
-For multiple clusters and services, you can [use IAM trusted profiles instead](/docs/containers?topic=containers-pod-iam-identity). In IAM, you create a trusted profile with access policies for the {{site.data.keyword.cloud_notm}} services that you want. Then, you link the trusted profile with as many clusters as you want, based on conditions such as all the `prod` Kubernetes namespaces in clusters in a resource group. Finally, your pods mount the Kubernetes service account projected volume to get a token that can be exchanged for an IAM token that your apps use to authenticate with the {{site.data.keyword.cloud_notm}} services.
+For multiple clusters and services, you can [use IAM trusted profiles instead](/docs/openshift?topic=openshift-pod-iam-identity). In IAM, you create a trusted profile with access policies for the {{site.data.keyword.cloud_notm}} services that you want. Then, you link the trusted profile with as many clusters as you want, based on conditions such as all the `prod` Kubernetes namespaces in clusters in a resource group. Finally, your pods mount the Kubernetes service account projected volume to get a token that can be exchanged for an IAM token that your apps use to authenticate with the {{site.data.keyword.cloud_notm}} services.
 
 ## Adding IBM Cloud services to clusters
 {: #bind-services}
@@ -84,8 +84,8 @@ Use {{site.data.keyword.cloud_notm}} service binding to automatically create ser
 
 Before you begin:
 - Ensure you have the following roles:
-    - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/containers?topic=containers-users#checking-perms) for the cluster where you want to bind a service
-    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the {{site.data.keyword.redhat_openshift_notm}} project where you want to bind the service
+    - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster where you want to bind a service
+    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the {{site.data.keyword.redhat_openshift_notm}} project where you want to bind the service
     - For Cloud Foundry services: [**Developer** Cloud Foundry role](/docs/account?topic=account-mngcf#mngcf) for the space where you want to provision the service
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -213,7 +213,7 @@ The credentials of a service instance are base64 encoded and stored inside your 
 - [Reference the secret in environment variables](#reference_secret)
 
 Before you begin:
--  Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/containers?topic=containers-users#checking-perms) for the `kube-system` project.
+-  Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `kube-system` project.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Add an {{site.data.keyword.cloud_notm}} service to your cluster](#bind-services).
 

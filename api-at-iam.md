@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -25,8 +25,8 @@ Review the following list of {{site.data.keyword.cloud_notm}} Identity and Acces
 
 For more information, see the following topics.
 - [{{site.data.keyword.openshiftlong_notm}} API docs](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}
-- [User access permissions](/docs/containers?topic=containers-access_reference)
-- [{{site.data.keyword.at_full_notm}} events](/docs/containers?topic=containers-at_events).
+- [User access permissions](/docs/openshift?topic=openshift-access_reference)
+- [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events).
 
 ## Account
 {: #ks-account}

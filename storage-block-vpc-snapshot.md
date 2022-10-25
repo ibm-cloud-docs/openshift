@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-25"
 
 keywords: openshift, block storage, snapshot
 
@@ -355,5 +355,5 @@ After you deploy the snapshot resources, you can restore data to a new volume by
 
 Review the following troubleshooting topics.
 
-- [Why can't I create snapshots?](/docs/containers?topic=containers-ts-storage-snapshotfails).
-- [Why can't I delete my `volumesnapshot` resources](/docs/containers?topic=containers-ts-storage-volumesnapshotdelete).
+- [Why can't I create snapshots?](/docs/openshift?topic=openshift-ts-storage-snapshotfails).
+- [Why can't I delete my `volumesnapshot` resources](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete).

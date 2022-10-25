@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -52,12 +52,12 @@ This tutorial is intended for software developers and network administrators who
 ## Prerequisites
 {: #policies_prereqs}
 
-- [Create a classic cluster with at least 3 worker nodes. Free clusters, or single worker node clusters don’t have the required resources to complete this tutorial](/docs/containers?topic=containers-clusters). This tutorial is not available for VPC clusters.
+- [Create a classic cluster with at least 3 worker nodes. Free clusters, or single worker node clusters don’t have the required resources to complete this tutorial](/docs/openshift?topic=openshift-clusters). This tutorial is not available for VPC clusters.
 - [Target your CLI to the cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
-- [Install and configure the Calico CLI](/docs/containers?topic=containers-network_policies#cli_install).
+- [Install and configure the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
 - Ensure that you have the following {{site.data.keyword.cloud_notm}} IAM access policies for {{site.data.keyword.containerlong_notm}}:
-    - [Any platform access role](/docs/containers?topic=containers-users#checking-perms)
-    - [The **Writer** or **Manager** service access role](/docs/containers?topic=containers-users#checking-perms)
+    - [Any platform access role](/docs/openshift?topic=openshift-users#checking-perms)
+    - [The **Writer** or **Manager** service access role](/docs/openshift?topic=openshift-users#checking-perms)
 
 
 ## Deploy an app and expose it by using an NLB
@@ -686,7 +686,7 @@ If you want to clean up the blocklist and the log policies:
 ## What's next?
 {: #whats_next}
 
-- Read more about [controlling traffic with network policies](/docs/containers?topic=containers-network_policies).
+- Read more about [controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies).
 - For more example Calico network policies that control traffic to and from your cluster, you can check out the [stars policy demo](https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-demo/kubernetes-demo){: external} and the [advanced network policy](https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-advanced){: external}.
 
 

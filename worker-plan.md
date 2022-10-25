@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -26,7 +26,7 @@ A worker node flavor describes the compute resources, such as CPU, memory, and d
 Want to save on your classic worker node costs? [Create a reservation](/docs/containers?topic=containers-reservations) to lock in a discount over 1 or 3 year terms! Then, create your worker pool by using the reserved instances. Note that autoscaling can't be enable on worker pools that use reservations.
 {: tip}
 
-Trying to plan how many worker nodes your need in your cluster? Check out [Sizing your Kubernetes cluster to support your workload](/docs/containers?topic=containers-strategy#sizing) to find information about the default worker node setup and how you can determine the resource requirements of your workloads.
+Trying to plan how many worker nodes your need in your cluster? Check out [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing) to find information about the default worker node setup and how you can determine the resource requirements of your workloads.
 {: tip}
 
 ## Available hardware for worker nodes
@@ -42,7 +42,7 @@ The worker node flavors and isolation levels that are available to you depend on
 Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes. If you create a free classic cluster, your cluster is provisioned with the smallest virtual worker node flavor on shared infrastructure.
 
 
-VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) worker nodes only, and must be created in one of the supported [multizone locations](/docs/containers?topic=containers-regions-and-zones#zones-vpc). Free VPC clusters are not supported.
+VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) worker nodes only, and must be created in one of the supported [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). Free VPC clusters are not supported.
 
 
 VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts. Free VPC clusters are not supported.
@@ -51,7 +51,7 @@ VPC clusters can be provisioned using virtual worker nodes on standard infrastru
 
 **Can I combine different flavors in a cluster?**
 
-Yes. To add different flavors to your cluster, you must [create another worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_create). You can't resize existing worker pools to have different compute resources such as CPU or memory.
+Yes. To add different flavors to your cluster, you must [create another worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create). You can't resize existing worker pools to have different compute resources such as CPU or memory.
 
 **How can I change worker node flavors?**
 
@@ -59,7 +59,7 @@ See [updating flavors](/docs/containers?topic=containers-update#machine_type).
 
 **Are the worker nodes encrypted?**
 
-The secondary disk of the worker node is encrypted. For more information, see [Overview of cluster encryption](/docs/containers?topic=containers-encryption#encrypt_ov). After you create a worker pool, you might notice that the worker node flavor has `.encrypted` in the name, such as `b3c.4x16.encrypted`.
+The secondary disk of the worker node is encrypted. For more information, see [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption#encrypt_ov). After you create a worker pool, you might notice that the worker node flavor has `.encrypted` in the name, such as `b3c.4x16.encrypted`.
 
 **How do I manage my worker nodes?**
 
@@ -75,7 +75,7 @@ Kubernetes limits the maximum number of worker nodes that you can have in a clus
 
 {{site.data.keyword.openshiftlong_notm}} also sets compute resource reserves that limit available compute resources on each worker node. For more information, see [worker node resource reserves](#resource_limit_node).
 
-Want to be sure that you always have enough worker nodes to cover your workload? Try out [the cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc).
+Want to be sure that you always have enough worker nodes to cover your workload? Try out [the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc).
 {: tip}
 
 
@@ -165,7 +165,7 @@ When you provision a worker node on a VPC Gen 2 cluster, you get the default ban
 #### How does storage work for VMs?
 {: #vm_storage_vpc}
 
-Every VM comes with an attached disk for storage of information that the VM needs to run, such as OS file system, container runtime, and the `kubelet`.  Local storage on the worker node is for short-term processing only, and the storage disks are wiped when you delete, reload, replace, or update the worker node. For persistent storage solutions for your apps, see [Planning highly available persistent storage](/docs/containers?topic=containers-storage_planning#storage_planning). Additionally, classic and VPC infrastructure differ in the disk setup.
+Every VM comes with an attached disk for storage of information that the VM needs to run, such as OS file system, container runtime, and the `kubelet`.  Local storage on the worker node is for short-term processing only, and the storage disks are wiped when you delete, reload, replace, or update the worker node. For persistent storage solutions for your apps, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning). Additionally, classic and VPC infrastructure differ in the disk setup.
 
 * **Classic VMs**: Classic VMs have two attached disks. The primary storage disk has 25 GB for the OS file system, and the secondary storage disk has 100 GB for data such as the container runtime and the `kubelet`. For reliability, the primary and secondary storage volumes are local disks instead of storage area networking (SAN). Reliability benefits include higher throughput when serializing bytes to the local disk and reduced file system degradation due to network failures. The secondary disk is encrypted by default.
 * **VPC compute VMs**: VPC VMs have one primary disk that is a block storage volume that is attached via the network. The storage layer is not separated from the other networking layers, and both network and storage traffic are routed on the same network. To account for network latency, the storage disks have a maximum of up to 3000 IOPS. The primary storage disk is used for storing data such as the OS file system, container runtime, and `kubelet`, and is [encrypted by default](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
@@ -183,8 +183,8 @@ Ubuntu 16 `x1c` or `x2c` worker node flavors are deprecated and no longer receiv
 
 
 To view a list of available VM flavors by zone, review the following pages.
-- [Classic flavors](/docs/containers?topic=containers-classic-flavors)
-- [VPC Gen 2 flavors](/docs/containers?topic=containers-vpc-gen2-flavors)*
+- [Classic flavors](/docs/openshift?topic=openshift-classic-flavors)
+- [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors)*
 
 `*` VPC: For more information about network performance caps for virtual machines, see [VPC profiles](/docs/vpc?topic=vpc-profiles). The network speeds refer to the speeds of the worker node network interfaces. The maximum speed available to your worker nodes is `25Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture.
 
@@ -204,7 +204,7 @@ Physical machines are available for classic clusters only and are not supported 
 
 **How is bare metal different than VMs?**
 
-Bare metal gives you direct access to the physical resources on the machine, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Physical flavors have more local storage than virtual, and some have RAID to increase data availability. Local storage on the worker node is for short-term processing only, and the primary and secondary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/containers?topic=containers-storage_planning#storage_planning).
+Bare metal gives you direct access to the physical resources on the machine, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Physical flavors have more local storage than virtual, and some have RAID to increase data availability. Local storage on the worker node is for short-term processing only, and the primary and secondary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
 Because you have full control over the isolation and resource consumption for your workloads, you can use bare metal machines to achieve HIPAA and PCI compliance for your environment.
 {: important}
@@ -268,11 +268,11 @@ Because you have full control over the isolation and resource consumption for yo
 {: important}
 
 You typically use SDS machines in the following cases:
-*  If you use an SDS add-on such as [Portworx](/docs/containers?topic=containers-portworx#portworx), use an SDS machine.
+*  If you use an SDS add-on such as [Portworx](/docs/openshift?topic=openshift-portworx#portworx), use an SDS machine.
 *  If your app is a [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){: external} that requires local storage, you can use SDS machines and provision [Kubernetes local persistent volumes](https://kubernetes.io/docs/concepts/storage/volumes/#local){: external}.
 *  If you have custom apps that require additional raw local storage.
 
-For more storage solutions, see [Planning highly available persistent storage](/docs/containers?topic=containers-storage_planning#storage_planning).
+For more storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
 ### Available flavors for SDS
 {: #sds-table}

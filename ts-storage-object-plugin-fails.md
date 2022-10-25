@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -56,7 +56,7 @@ Delete the resource that is display in the error message and retry the installat
     ```
     {: pre}
 
-1. [Retry the installation](/docs/containers?topic=containers-storage_cos_install).
+1. [Retry the installation](/docs/openshift?topic=openshift-storage_cos_install).
 
 1. If you continue to see the same error, get a list of the resources that are installed when the plug-in is installed. Get a list of storage classes that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
@@ -132,7 +132,7 @@ Delete the resource that is display in the error message and retry the installat
     
 1. Delete the conflicting resources.
 
-1. After you delete the conflicting resources, [retry the installation](/docs/containers?topic=containers-storage_cos_install).
+1. After you delete the conflicting resources, [retry the installation](/docs/openshift?topic=openshift-storage_cos_install).
 
 
 

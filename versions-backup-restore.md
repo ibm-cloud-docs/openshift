@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: back up, restore, changelog, openshift
 
@@ -21,7 +21,7 @@ subcollection: openshift
 View information for updates to the back up and restore Helm chart in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-Refer to the following tables for a summary of changes for each version of the [back up and restore Helm chart](/docs/containers?topic=containers-utilities#ibmcloud-backup-restore).
+Refer to the following tables for a summary of changes for each version of the [back up and restore Helm chart](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore).
 
 | `ibmcloud-backup-restore` Helm chart version | Supported? | Cluster version support |
 | -------------------- | -----------|--------------------------- |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-25"
 
 keywords: portworx, openshift
 
@@ -52,9 +52,9 @@ Portworx also comes with additional features that you can use for your stateful 
 ### What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the right one for Portworx?
 {: #about-px-flavors}
 
-The worker node flavor that you need depends on the infrastructure provider that you use. If you have a classic cluster, {{site.data.keyword.openshiftlong_notm}} provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/containers?topic=containers-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. In classic clusters, Portworx offers the best performance when you use SDS worker node machines that come with 10 Gbps network speed.
+The worker node flavor that you need depends on the infrastructure provider that you use. If you have a classic cluster, {{site.data.keyword.openshiftlong_notm}} provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. In classic clusters, Portworx offers the best performance when you use SDS worker node machines that come with 10 Gbps network speed.
 
-In VPC clusters, make sure to select a [virtual server flavor](/docs/vpc?topic=vpc-profiles) that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}. The flavor that you choose must have a network speed of 10 Gpbs or more for optimal performance. None of the VPC flavors are set up with raw and unformatted block storage devices. To successfully install and run Portworx, you must [manually attach block storage devices](/docs/containers?topic=containers-utilities#vpc_api_attach) to each of your worker nodes first.
+In VPC clusters, make sure to select a [virtual server flavor](/docs/vpc?topic=vpc-profiles) that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}. The flavor that you choose must have a network speed of 10 Gpbs or more for optimal performance. None of the VPC flavors are set up with raw and unformatted block storage devices. To successfully install and run Portworx, you must [manually attach block storage devices](/docs/openshift?topic=openshift-utilities#vpc_api_attach) to each of your worker nodes first.
 
 ### What if I want to run Portworx in a classic cluster with non-SDS worker nodes?
 {: #about-px-non-sds}
@@ -70,7 +70,7 @@ If your classic cluster has deprecated Ubuntu 16 x1c or x2c worker node flavors,
 ### How can I make sure that my data is stored highly available?
 {: #about-px-ha}
 
-You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a [multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone) and replicate your volumes across worker nodes in 3 or more zones.
+You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) and replicate your volumes across worker nodes in 3 or more zones.
 
 ### What volume topology offers the best performance for my pods?
 {: #about-px-topology}
@@ -96,7 +96,7 @@ If you want to install Portworx in a cluster that doesn't have VRF or access to 
 ### What's next?
 {: #about-px-next}
 
-All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/containers?topic=containers-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.
+All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.
 
 
 
@@ -112,7 +112,7 @@ Before you create your cluster and install Portworx, review the following planni
 * **Operator** and **Manager** for the Kubernetes service.
 
 1. Review the [Portworx limitations](#portworx_limitations).
-1. Create a [multizone cluster](/docs/containers?topic=containers-clusters).
+1. Create a [multizone cluster](/docs/openshift?topic=openshift-clusters).
     1. Infrastructure provider: For Satellite clusters, make sure to add block storage volumes to your hosts before attaching them to your location. If you use classic infrastructure, you must choose a bare metal flavor for the worker nodes. For classic clusters, virtual machines have only 1000 Mbps of networking speed, which is not sufficient to run production workloads with Portworx. Instead, provision Portworx on bare metal machines for the best performance.
     2. Worker node flavor: Choose an SDS or bare metal flavor. If you want to use virtual machines, use a worker node with 16 vCPU and 64 GB memory or more, such as `b3c.16x64`. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` don't provide the required resources for Portworx to work properly.
     3. Minimum number of workers: Two worker nodes per zone across three zones, for a minimum total of six worker nodes.
@@ -122,8 +122,8 @@ Before you create your cluster and install Portworx, review the following planni
 1. [Install Portworx](#install_portworx).
 1. Maintain the lifecycle of your Portworx deployment in your cluster.
     1. When you update worker nodes in [VPC](#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
-        * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the CLI](/docs/containers?topic=containers-kubernetes-service-cli#cs_storage_att_cr).
-        * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the API](/docs/containers?topic=containers-utilities#vpc_api_attach).
+        * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr).
+        * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
     2. To remove a Portworx volume, storage node, or the entire Portworx cluster, see [Portworx cleanup](#portworx_cleanup).
 
 ## Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes
@@ -143,27 +143,27 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 ### Classic clusters
 {: #px-create-classic-volumes}
 
-1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/containers?topic=containers-utilities#block_storage_attacher).
-2. [Manually add block storage](/docs/containers?topic=containers-utilities#manual_block) to your worker nodes. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
+1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#block_storage_attacher).
+2. [Manually add block storage](/docs/openshift?topic=openshift-utilities#manual_block) to your worker nodes. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 3. If you want to use [journal devices](https://docs.portworx.com/install-with-other/operate-and-maintain/performance-and-tuning/tuning/){: external}, choose from the following options.
-    - Attach an additional disk to at least 3 worker nodes to use for the journal. [Manually add](/docs/containers?topic=containers-utilities#manual_block) a 3 GB block storage device to a worker node in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - Attach an additional disk to at least 3 worker nodes to use for the journal. [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to a worker node in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select one of the block storage devices that you added earlier to use for the journal and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Let Portworx automatically create a journal partition during installation.
 4. If you want to use a specific device for the internal Portworx key value database (KVDB), choose from the following options.
-    - Attach an additional disk to at least 3 worker nodes to use for key value database (KVDB). [Manually add](/docs/containers?topic=containers-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - Attach an additional disk to at least 3 worker nodes to use for key value database (KVDB). [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select one of the block storage devices that you added earlier and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
-5. [Attach the block storage](/docs/containers?topic=containers-utilities#attach_block) to your worker nodes.
+5. [Attach the block storage](/docs/openshift?topic=openshift-utilities#attach_block) to your worker nodes.
 6. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
 ### VPC clusters
 {: #px-create-vpc-volumes}
 
-1. Follow the [steps](/docs/containers?topic=containers-utilities#vpc_cli_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
+1. Follow the [steps](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 2. If you want to use [journal devices](https://docs.portworx.com/install-with-other/operate-and-maintain/performance-and-tuning/tuning/){: external}, choose from the following options.
-    - [Attach](/docs/containers?topic=containers-utilities#vpc_cli_attach) an additional 3 GB disk to at least 3 worker nodes in your cluster and find the device path. To find the device path after you attach the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - [Attach](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) an additional 3 GB disk to at least 3 worker nodes in your cluster and find the device path. To find the device path after you attach the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select a device on a worker node where you want Portworx to create the journal.
 3. If you want to use a specific device for the internal Portworx KVDB, choose from the following options.
-    - Attach an additional disk to at least 3 worker nodes use for the KVDB. [Manually add](/docs/containers?topic=containers-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
+    - Attach an additional disk to at least 3 worker nodes use for the KVDB. [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select one of the block storage devices that you added earlier to use for the KVDB and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
 4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
@@ -547,7 +547,7 @@ Follow these steps to set up encryption for your Portworx volumes.
 
     6. Exit the pod.
 
-Check out how to [encrypt the secrets in your cluster](/docs/containers?topic=containers-encryption#keyprotect), including the secret where you stored your {{site.data.keyword.keymanagementserviceshort}} CRK for your Portworx storage cluster.
+Check out how to [encrypt the secrets in your cluster](/docs/openshift?topic=openshift-encryption#keyprotect), including the secret where you stored your {{site.data.keyword.keymanagementserviceshort}} CRK for your Portworx storage cluster.
 {: tip}
 
 
@@ -564,7 +564,7 @@ Looking for instructions about how to update or remove Portworx? See [Updating P
 Before you begin:
 - Make sure that you have the right [permissions](/docs/containers?topic=containers-clusters&interface=ui) to create {{site.data.keyword.openshiftlong_notm}} clusters.
 
-- [Create or use an existing cluster](/docs/containers?topic=containers-clusters).
+- [Create or use an existing cluster](/docs/openshift?topic=openshift-clusters).
 
 - If you want to use non-SDS worker nodes in a classic cluster [add a block storage device to your worker node](#create_block_storage).
 
@@ -572,7 +572,7 @@ Before you begin:
 
 - Decide whether you want to encrypt your Portworx volumes. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} or a {{site.data.keyword.hscrypto}} instance and store your service information in a Kubernetes secret](#encrypt_volumes).
 
-- Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/containers?topic=containers-registry#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/containers?topic=containers-registry#store_imagePullSecret) of the `kube-system` project.
+- Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/openshift?topic=openshift-registry#store_imagePullSecret) of the `kube-system` project.
 
 - Decide if you want to include your cluster in a Portworx disaster recovery configuration. For more information, see [Setting up disaster recovery with Portworx](#px-dr).
 
@@ -619,7 +619,7 @@ To install Portworx:
 1. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app.
 1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}, find the Portworx service that you created.
 1. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
-1. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/containers?topic=containers-debug-portworx) to start troubleshooting why your installation failed.
+1. If the **Status** changes to `Provision failure`, follow the [instructions](/docs/openshift?topic=openshift-debug-portworx) to start troubleshooting why your installation failed.
 1. If the **Status** changes to `Provisioned`, verify that your Portworx installation completed successfully and that all your local disks were recognized and added to the Portworx storage layer.
     1. List the Portworx pods in the `kube-system` project. The installation is successful when you see one or more `portworx`, `stork`, and `stork-scheduler` pods. The number of pods equals the number of worker nodes that are in your Portworx cluster. All pods must be in a `Running` state.
         ```sh
@@ -715,7 +715,7 @@ You can also [gather logging information](/docs/containers?topic=containers-port
 
 If you are updating Portworx to use RHEL 8 worker nodes, see [Updating Portworx to a specific version](#px-update-specific).
 
-1. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the Helm version 3 client on your local machine.
+1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm version 3 client on your local machine.
 
 1. Update your Helm repos.
     ```sh
@@ -790,7 +790,7 @@ If you are updating Portworx to use RHEL 8 worker nodes, see [Updating Portworx 
 ## Creating a Portworx volume
 {: #add_portworx_storage}
 
-Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs/containers?topic=containers-kube_concepts#dynamic_provisioning).
+Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
 {: shortdesc}
 
 1. List available storage classes in your cluster and check whether you can use an existing Portworx storage class that was set up during the Portworx installation. The pre-defined storage classes are optimized for database usage and to share data across pods.
@@ -1036,7 +1036,7 @@ Update only one worker node at a time. When the worker node update is complete, 
 
 2. [Update your VPC worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
 
-3. [Attach raw {{site.data.keyword.block_storage_is_short}} to your worker nodes](/docs/containers?topic=containers-utilities#vpc_api_attach).
+3. [Attach raw {{site.data.keyword.block_storage_is_short}} to your worker nodes](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
 
 4. Verify that your storage is attached by running the following command.
     ```sh
@@ -1056,7 +1056,7 @@ Update only one worker node at a time. When the worker node update is complete, 
     ```
     {: pre}
 
-7. [Mount the volume to your app](/docs/containers?topic=containers-portworx#mount_pvc).
+7. [Mount the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc).
 
 
 
@@ -1078,7 +1078,7 @@ Install PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster in your 
 Before you begin:
 - Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/start-here-installation/){: external}. 
 - [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).
-- Provision and attach 320Gi of block storage to your cluster. See [Storing data on classic {{site.data.keyword.cloud_notm}} Block Storage](/docs/containers?topic=containers-block_storage) or [Storing data on Block Storage for VPC](/docs/containers?topic=containers-vpc-block).
+- Provision and attach 320Gi of block storage to your cluster. See [Storing data on classic {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
 
 
 If you are installing PX-Backup in a newly-provisioned cluster, [you must log in to it at least once](/docs/openshift?topic=openshift-access_cluster) before beginning the installation.
@@ -1177,8 +1177,8 @@ Create an {{site.data.keyword.cos_full_notm}} instance and bucket, and add them 
 
 Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if you are the first user to access the console, you must login in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
-1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-storage-cos-understand#create_cos_service).
-2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-storage-cos-understand#create_cos_secret). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
+1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
+2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
 3. Expand your credentials in the service credentials table. Note the **access_key_id** and the **secret_access_key** in the **cos_hmac_keys** section.
 4. [Create a storage bucket in your {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 5. Click on your bucket and note its location.
@@ -1628,7 +1628,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         ```
         {: pre}
 
-4. Review the log files locally. If you can't resolve your issue by reviewing the logs, [open a support ticket](/docs/containers?topic=containers-portworx#portworx_help_sup) and provide the log information that you collected.
+4. Review the log files locally. If you can't resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-portworx#portworx_help_sup) and provide the log information that you collected.
 
 ## Limitations
 {: #portworx_limitations}
@@ -1638,7 +1638,7 @@ Review the following Portworx limitations.
 | Limitation | Description |
 | --- | --- |
 | **Classic clusters** Pod restart required when adding worker nodes. | Because Portworx runs as a DaemonSet in your cluster, existing worker nodes are automatically inspected for raw block storage and added to the Portworx data layer when you deploy Portworx. If you add or update worker nodes to your cluster and add raw block storage to those workers, restart the Portworx pods on the new or updated worker nodes so that your storage volumes are detected by the DaemonSet. |
-| **VPC clusters** Storage volume reattachment required when updating worker nodes. | When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that is replaced, you must attach the volumes to the new worker node. You can attach storage volumes with the [API](/docs/containers?topic=containers-utilities#vpc_api_attach) or the [CLI](/docs/containers?topic=containers-kubernetes-service-cli#cs_storage_att_cr). Note this limitation does not apply to Portworx deployments that are using cloud drives. |
+| **VPC clusters** Storage volume reattachment required when updating worker nodes. | When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that is replaced, you must attach the volumes to the new worker node. You can attach storage volumes with the [API](/docs/openshift?topic=openshift-utilities#vpc_api_attach) or the [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr). Note this limitation does not apply to Portworx deployments that are using cloud drives. |
 | The Portworx experimental `InitializerConfiguration` feature is not supported. | {{site.data.keyword.openshiftlong_notm}} does not support the [Portworx experimental `InitializerConfiguration` admission controller](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/hyperconvergence/#initializer-experimental-feature-in-stork-v1-1){: external}. |
 | Private clusters | To install Portworx in a cluster that doesn't have VRF or access to private CSEs, you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, and `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group). |
 {: summary="This table contains information on limitations for Portworx on {{site.data.keyword.openshiftlong_notm}} clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}

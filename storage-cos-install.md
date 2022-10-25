@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -53,8 +53,8 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     2. Review the [version changelog](/docs/containers?topic=containers-changelog) to find the changes that are in the latest patch version.
 
     3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) to gracefully reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
-1. Review the change log and verify support for your [cluster version and architecture](/docs/containers?topic=containers-cos_plugin_changelog).
-1. [Follow the instructions](/docs/containers?topic=containers-helm#install_v3) to install the version 3 Helm client on your local machine.
+1. Review the change log and verify support for your [cluster version and architecture](/docs/openshift?topic=openshift-cos_plugin_changelog).
+1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
 
     If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you can't enable VRF or service endpoints in your account, use the public Helm repository.
     {: note}
@@ -127,8 +127,8 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         {: screen}
 
 1. Optional: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in can access all Kubernetes secrets in your cluster.
-    1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/containers?topic=containers-storage-cos-understand#create_cos_service).
-    2. [Store your {{site.data.keyword.cos_full_notm}} service credentials in a Kubernetes secret](/docs/containers?topic=containers-storage-cos-understand#create_cos_secret)).
+    1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
+    2. [Store your {{site.data.keyword.cos_full_notm}} service credentials in a Kubernetes secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)).
     3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.
         **OS X and Linux**
 
@@ -282,7 +282,7 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
     ```
     {: pre}
 
-If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
+If you're having trouble updating the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/openshift?topic=openshift-cos_plugin_fails).
 {: tip}
 
 ## Removing the {{site.data.keyword.cos_full_notm}} plug-in
@@ -453,7 +453,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests.
     
     `ibm.io/object-store-endpoint`
-    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass) and use the API endpoint for your bucket.
+    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the API endpoint for your bucket.
     
     `ibm.io/object-store-storage-class`
     :   The name of the storage class.
@@ -471,7 +471,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     :   The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html){: external}. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM`cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default.
 
 
-    For more information about each storage class, see the [storage class reference](/docs/containers?topic=containers-storage_cos_reference). If you want to change any of the pre-set values, create your own [customized storage class](/docs/containers?topic=containers-kube_concepts#customized_storageclass).
+    For more information about each storage class, see the [storage class reference](/docs/openshift?topic=openshift-storage_cos_reference). If you want to change any of the pre-set values, create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
     {: tip}
 
 5. Decide on a name for your bucket. The name of a bucket must be unique in {{site.data.keyword.cos_full_notm}}. You can also choose to automatically create a name for your bucket by the {{site.data.keyword.cos_full_notm}} plug-in. To organize data in a bucket, you can create subdirectories.
@@ -481,7 +481,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
 6. Choose if you want to keep your data and the bucket after the cluster or the persistent volume claim (PVC) is deleted. When you delete the PVC, the PV is always deleted. You can choose if you want to also automatically delete the data and the bucket when you delete the PVC. Your {{site.data.keyword.cos_full_notm}} service instance is independent from the retention policy that you select for your data and is never removed when you delete a PVC.
 
-Now that you decided on the configuration that you want, you are ready to [create a PVC](/docs/containers?topic=containers-storage_cos_apps) to provision {{site.data.keyword.cos_full_notm}}.
+Now that you decided on the configuration that you want, you are ready to [create a PVC](/docs/openshift?topic=openshift-storage_cos_apps) to provision {{site.data.keyword.cos_full_notm}}.
 
 
 ## Verifying your installation
@@ -535,7 +535,7 @@ Review the pod details to verify that the plug-in installation succeeded.
     If you want to set one of the {{site.data.keyword.cos_full_notm}} storage classes as your default storage class, run `oc patch storageclass <storageclass> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'`. Replace `<storageclass>` with the name of the {{site.data.keyword.cos_full_notm}} storage class.
     {: tip}
 
-1. Follow the instructions to [add object storage to your apps](/docs/containers?topic=containers-storage_cos_apps).
+1. Follow the instructions to [add object storage to your apps](/docs/openshift?topic=openshift-storage_cos_apps).
 
-If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/containers?topic=containers-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/containers?topic=containers-cos_plugin_fails).
+If you're having trouble installing the {{site.data.keyword.cos_full_notm}} plug-in, see [Object storage: Installing the Object storage `ibmc` Helm plug-in fails](/docs/openshift?topic=openshift-cos_helm_fails) and [Object storage: Installing the {{site.data.keyword.cos_full_notm}} plug-in fails](/docs/openshift?topic=openshift-cos_plugin_fails).
 {: tip}

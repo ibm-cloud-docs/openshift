@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -28,7 +28,7 @@ Minimum required permissions
 **Supported infrastructure provider**:
 * VPC
 
-1. [Follow the instructions to install the `ibmc` Helm plug-in](/docs/containers?topic=containers-storage_cos_install). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
+1. [Follow the instructions to install the `ibmc` Helm plug-in](/docs/openshift?topic=openshift-storage_cos_install). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
 
 2. Create one `Manager` HMAC service credential and one `Writer` HMAC service credential for your {{site.data.keyword.cos_full_notm}} instance.
     * [Creating HMAC credentials from the console](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
@@ -136,7 +136,7 @@ Minimum required permissions
     You can't read or write to your bucket from the console. You can only access your bucket from within an app pod on your cluster.
     {: note}
 
-11. [Create a deployment YAML that references the PVC you created](/docs/containers?topic=containers-storage_cos_apps#create-cos-deployment-steps).
+11. [Create a deployment YAML that references the PVC you created](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps).
 
 12. Create the app in your cluster.
 

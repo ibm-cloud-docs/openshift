@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -136,7 +136,7 @@ Identify and restore the resource that causes the broken webhook.
             ```
             {: pre}
 
-    3. If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/containers?topic=containers-debug_apps).
+    3. If the service does not have an endpoint, check the health of the backing resources, such as a deployment or pod. If the resource is not healthy, check the pod events, logs, worker node health, and other components to troubleshoot. For more information, see [Debugging app deployments](/docs/openshift?topic=openshift-debug_apps).
         ```sh
         oc get all -n my-service-namespace -l <key=value>
         ```
@@ -150,8 +150,8 @@ Identify and restore the resource that causes the broken webhook.
 
 6. Retry the cluster master operation, such as updating the cluster.
 7. If you still see the error, you might have worker node or network connectivity issues.
-    *   [Worker node troubleshooting](/docs/containers?topic=containers-debug_worker_nodes).
-    *   Make sure that the webhook can connect to the Kubernetes API server in the cluster master. For example, if you use Calico network policies, security groups, or some other type of firewall, set up your [classic](/docs/containers?topic=containers-firewall) or [VPC](/docs/containers?topic=containers-vpc-firewall) cluster with the appropriate access.
+    *   [Worker node troubleshooting](/docs/openshift?topic=openshift-debug_worker_nodes).
+    *   Make sure that the webhook can connect to the Kubernetes API server in the cluster master. For example, if you use Calico network policies, security groups, or some other type of firewall, set up your [classic](/docs/openshift?topic=openshift-firewall) or [VPC](/docs/openshift?topic=openshift-vpc-firewall) cluster with the appropriate access.
     *   If the webhook is managed by an add-on that you installed, uninstall the add-on. Common add-ons that cause webhook issues include the following:
         * [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec)
 8. Re-create the webhook or reinstall the add-on.

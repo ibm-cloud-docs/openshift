@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-10-25"
 
 keywords: openshift, nlb, lbaas
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Quickly expose your app to the Internet by creating a layer 4 load balancer.
 {: shortdesc}
 
-First time setting up a load balancer? Check out [Classic: Setting up basic load balancing with an NLB 1.0](/docs/containers?topic=containers-loadbalancer) or [VPC: Exposing apps with VPC load balancers](/docs/containers?topic=containers-vpc-lbaas) for prerequisite steps, limitations, and more details. Come back to these quick start steps for a brief refresher the next time you set up a load balancer.
+First time setting up a load balancer? Check out [Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) or [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas) for prerequisite steps, limitations, and more details. Come back to these quick start steps for a brief refresher the next time you set up a load balancer.
 {: tip}
 
 ## Exposing an app by using an NLB in a classic cluster
@@ -66,10 +66,10 @@ First time setting up a load balancer? Check out [Classic: Setting up basic load
     {: screen}
 
 For more information, see:
-* [Classic: About network load balancers (NLBs)](/docs/containers?topic=containers-loadbalancer-about)
-* [Classic: Setting up basic load balancing with an NLB 1.0](/docs/containers?topic=containers-loadbalancer)
-* [Classic: Setting up DSR load balancing with an NLB 2.0](/docs/containers?topic=containers-loadbalancer-v2)
-* [Classic: Registering a DNS subdomain for an NLB](/docs/containers?topic=containers-loadbalancer_hostname)
+* [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about)
+* [Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer)
+* [Classic: Setting up DSR load balancing with an NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2)
+* [Classic: Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname)
 
 ## Exposing an app by using a VPC load balancer in a VPC cluster
 {: #lb_qs_vpc}
@@ -96,7 +96,7 @@ For more information, see:
 
 3. In a web browser, enter the hostname that is created.
 
-For more information, see [VPC: Exposing apps with VPC load balancers](/docs/containers?topic=containers-vpc-lbaas).
+For more information, see [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas).
 
 
 

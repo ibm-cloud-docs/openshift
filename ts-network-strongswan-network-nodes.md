@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -117,7 +117,7 @@ Update the Helm chart values to reflect the worker node changes.
     {: pre}
 
     * If the VPN connection has a status of `ESTABLISHED`, the VPN connection was successful. No further action is needed.
-    * If you are still having connection issues, see [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/containers?topic=containers-cs_vpn_fails) to further troubleshoot your VPN connection.
+    * If you are still having connection issues, see [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails) to further troubleshoot your VPN connection.
 
 
 

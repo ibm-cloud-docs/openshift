@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-25"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -32,9 +32,9 @@ Patch updates
 :   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-:   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-install-addon#cluster-scaling-update-addon).
+:   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon).
 
-Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/containers?topic=containers-cluster-scaling-classic-vpc).
+Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc).
 
 To view a list of add-ons and the supported cluster versions, run the following command or see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 

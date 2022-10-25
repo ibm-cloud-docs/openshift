@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: kubernetes, openshift
 
@@ -25,7 +25,7 @@ The managed add-ons that you can install in your cluster depend on the type of c
 {: note}
 
 Support
-:    Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/containers?topic=containers-get-help).
+:    Managed add-ons are fully integrated into the {{site.data.keyword.cloud_notm}} support organization. If you have a question or an issue with using the managed add-ons, you can use one of the {{site.data.keyword.openshiftlong_notm}} support channels. For more information, see [Getting help and support](/docs/openshift?topic=openshift-get-help).
 
 Billing
 :    If the tool that you add to your cluster incurs costs, these costs are automatically integrated and listed as part of your {{site.data.keyword.openshiftlong_notm}} billing. The billing cycle is determined by {{site.data.keyword.cloud_notm}} depending on when you enabled the add-on in your cluster.
@@ -35,16 +35,16 @@ Billing
 ## Adding managed add-ons
 {: #adding-managed-add-ons}
 
-To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet before you install the managed add-on.
+To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet before you install the managed add-on.
 
 For more information about the prerequisites for each add-on, see:
-- [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
-- [Cluster Autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc)
-- [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)
+- [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
+- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc)
-- [Static routes](/docs/containers?topic=containers-static-routes)
+- [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 ## Updating managed add-ons
 {: #updating-managed-add-ons}
@@ -53,8 +53,8 @@ The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm
 {: shortdesc}
     
 Review the following links for specific update steps for each add-on.
-- [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block#vpc-addon-update)
-- [Cluster Autoscaler](/docs/containers?topic=containers-cluster-scaling-install-addon#cluster-scaling-update-addon)
+- [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment&interface=ui#odf-addon-update)
    
@@ -115,18 +115,18 @@ Review which managed add-ons are available for {{site.data.keyword.redhat_opensh
 
 The following list of add-ons for clusters are supported in {{site.data.keyword.satelliteshort}} locations.
 
-- [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)
+- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-odf-local) to consistently deploy ODF across clusters in your location.)
-- [Static routes](/docs/containers?topic=containers-static-routes)
+- [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.
 
 - [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id-auth)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
 - [Istio](/docs/containers?topic=containers-istio)
-- [{{site.data.keyword.block_storage_is_short}}](/docs/containers?topic=containers-vpc-block)
+- [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 
 

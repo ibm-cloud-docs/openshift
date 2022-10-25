@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -16,7 +16,7 @@ subcollection: openshift
 # Classic: Opening required ports and IP addresses in your allowlist
 {: #firewall}
 
-This allowlist information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your allowlist for VPC clusters](/docs/containers?topic=containers-vpc-firewall).
+This allowlist information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your allowlist for VPC clusters](/docs/openshift?topic=openshift-vpc-firewall).
 {: note}
 
 Review these situations in which you might need to open specific ports and IP addresses in your allowlists for your {{site.data.keyword.openshiftlong}} clusters.
@@ -87,7 +87,7 @@ To allow access for a specific cluster:
     ```
     {: pre}
 
-2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/containers?topic=containers-users#checking-perms) for the resource group.
+2. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
 
     ```sh
     ibmcloud target -g <resource_group_name>
@@ -324,7 +324,7 @@ Before you begin
 1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
 
     1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges).
-    2. Allow the IBM Cloud infrastructure private IP ranges for all the [zones](/docs/containers?topic=containers-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges).
+    2. Allow the IBM Cloud infrastructure private IP ranges for all the [zones](/docs/openshift?topic=openshift-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal01`, `dal10`, `wdc04` zones, and if your cluster is in the Europe geography, the `ams01` zone. See [Service Network (on backend/private network)](/docs/cloud-infrastructure?topic=cloud-infrastructure-ibm-cloud-ip-ranges).
 
 2. Note the private IP address for each worker node in the cluster.
 
@@ -430,8 +430,8 @@ Route
 Instead of setting up a gateway allowlist device, you can choose to use [Calico network policies](/docs/openshift?topic=openshift-network_policies) to act as a cluster allowlist on the public or private network. For more information, see the following topics.
 {: shortdesc}
 
-- [Isolating clusters on the public network](/docs/containers?topic=containers-network_policies#isolate_workers_public).
-- [Isolating clusters on the private network](/docs/containers?topic=containers-network_policies#isolate_workers).
+- [Isolating clusters on the public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public).
+- [Isolating clusters on the private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
 
 
 
@@ -445,7 +445,7 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
 2. Get the worker node subnets or the worker node IP addresses.
 
-    - **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-classic-vpc), you might not want to update your allowlist for each new worker node. Instead, you can add the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
+    - **Worker node subnets**: If you anticipate changing the number of worker nodes in your cluster frequently, such as if you enable the [cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), you might not want to update your allowlist for each new worker node. Instead, you can add the VLAN subnets that the cluster uses. Keep in mind that the VLAN subnet might be shared by worker nodes in other clusters.
         Note that the **primary public subnets** that {{site.data.keyword.openshiftlong_notm}} provisions for your cluster come with 14 available IP addresses, and can be shared by other clusters on the same VLAN. When you have more than 14 worker nodes, another subnet is ordered, so the subnets that you need to allow can change. To reduce the frequency of change, create worker pools with worker node flavors of higher CPU and memory resources so that you don't need to add worker nodes as often.
 
         1. List the worker nodes in your cluster.

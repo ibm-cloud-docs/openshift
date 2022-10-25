@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -46,7 +46,7 @@ Verify your bucket details and storage class and recreate your PVC.
 1. From the [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/){: external}, select your {{site.data.keyword.cos_full_notm}} service instance.
 2. Select **Buckets**.
 3. Review the **Class** and **Location** information for your existing bucket.
-4. Choose the appropriate [storage class](/docs/containers?topic=containers-storage_cos_reference).
+4. Choose the appropriate [storage class](/docs/openshift?topic=openshift-storage_cos_reference).
 5. Make sure that you provide the correct name of your existing bucket.
 
 

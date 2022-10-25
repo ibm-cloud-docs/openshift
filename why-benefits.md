@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -49,7 +49,7 @@ Choice of container platform provider
 
 Single-tenant Kubernetes clusters with compute, network, and storage infrastructure isolation
 :  Create your own customized infrastructure that meets the requirements of your organization.
-:  Choose between [{{site.data.keyword.cloud_notm}} Classic or VPC infrastructure providers](/docs/containers?topic=containers-infrastructure_providers).
+:  Choose between [{{site.data.keyword.cloud_notm}} Classic or VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers).
 :   Provision a dedicated and secured {{site.data.keyword.redhat_openshift_notm}} master, worker nodes, virtual networks, and storage by using the resources provided by IBM Cloud infrastructure.
 :   Fully managed Kubernetes master that is continuously monitored and updated by {{site.data.keyword.IBM_notm}} to keep your cluster available.
 :   Option to provision worker nodes as bare metal servers for compute-intensive workloads such as data, GPU, and AI.
@@ -65,7 +65,7 @@ Multizone clusters to increase high availability
 
 Highly available masters
 :   Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.
-:   Spread your masters across zones in a [multizone cluster](/docs/containers?topic=containers-ha_clusters#multizone) to protect your cluster from zonal failures.
+:   Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) to protect your cluster from zonal failures.
 
 Image security compliance with Vulnerability Advisor
 :   Set up your own repo in our secured Docker private image registry where images are stored and shared by all users in the organization.
@@ -153,7 +153,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 ## Operator support overview
 {: #operator-support-comparison}
 
-Review the following operator support table. To receive support on the for the following operators, [open a support case](/docs/containers?topic=containers-get-help#help-support). Note that depending on the operator or feature, your request might be forwared by IBM support to Red Hat support.
+Review the following operator support table. To receive support on the for the following operators, [open a support case](/docs/openshift?topic=openshift-get-help#help-support). Note that depending on the operator or feature, your request might be forwared by IBM support to Red Hat support.
 {: note}
 
 | Feature or Operator | Support provided by | 

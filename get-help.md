@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-10-25"
 
 keywords: red hat openshift, openshift container platform, red hat, red hat cluster, openshift, containers, clusters
 
@@ -86,7 +86,7 @@ Before you open a support case, gather relevant information about your cluster e
 
 3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them.
 
-    You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) to gather and export pertinent information to share with IBM Support.
+    You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) to gather and export pertinent information to share with IBM Support.
     {: tip}
 
 4. Contact IBM Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).

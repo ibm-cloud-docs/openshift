@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-25"
 
 keywords: openshift
 
@@ -70,7 +70,7 @@ Verify the plug-in version, re-create your app, and gracefully reload your worke
         ```
         {: pre}
 
-    3. Gracefully [reload the worker node](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload).
+    3. Gracefully [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 
 

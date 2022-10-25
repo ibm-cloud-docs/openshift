@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-25"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -23,10 +23,16 @@ You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you 
 
 
 
-![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.svg){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
+
+
+
+![{{site.data.keyword.openshiftlong_notm}} locations](images/location-old.svg){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
+
+
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}
+
 
 
 
@@ -85,11 +91,11 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 **Classic single zone**: If you create a classic cluster in a single zone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
 {: shortdesc}
 
-Hong Kong (`HKG02`) is deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) clusters by 28 September 2022. Clusters remaining after 28 September 2022 will be removed. Cluster creation in this location was stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+Hong Kong (`HKG02`) is deprecated and become unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) clusters by 28 September 2022. Clusters remaining after 28 September 2022 will be removed. Cluster creation in this location was stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 {: important}
 
 
-Mexico City (MEX01) is deprecated and becomes unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/containers?topic=containers-update_app#copy_apps_cluster) to a [supported data center](/docs/containers?topic=containers-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in this data center after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
+Mexico City (MEX01) is deprecated and becomes unsupported later this year. To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your MEX01 clusters by 31 October 2022. Clusters remaining in this data center after 31 October 2022 will be removed. You cannot create clusters in this location after 07 May 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 {: important}
 
 | Geography |  Country  | Metro | Data center |  Previous region  |
@@ -160,12 +166,12 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
 1. Worker nodes are spread across multiple zones in the metro location to provide more availability for your cluster. The Kubernetes master replicas are also spread across zones. When you initiate local container orchestration actions, such as `oc` commands, the information is exchanged between your master and worker nodes through the global endpoint.
 
 2. Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
-    *   Setting up [file storage](/docs/containers?topic=containers-file_storage#add_file) and [block storage](/docs/containers?topic=containers-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/containers?topic=containers-storage_planning#persistent_storage_overview).
-    *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/containers?topic=containers-loadbalancer#multi_zone_config).
+    *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
+    *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
     *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-ingress-about).
     *   [Increasing the availability of your app](/docs/openshift?topic=openshift-openshift_apps).
 
-3. When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/containers?topic=containers-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
+3. When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
 
 
 
@@ -224,7 +230,7 @@ When you use the new global functionality in the {{site.data.keyword.openshiftlo
     * If you have clusters with the same name in different regions, use the cluster ID when you run commands or set a region with the `ibmcloud oc init` command and use the cluster name when you run commands.
 
 * Legacy functionality:
-    * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint. Example to target the US South regional endpoint:
+    * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint. Example to target the US South regional endpoint:
         ```sh
         ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
         ```
@@ -240,7 +246,7 @@ When you use the new global functionality in the {{site.data.keyword.openshiftlo
 
 
 **{{site.data.keyword.openshiftlong_notm}} API**:
-* [Get started with the API](/docs/containers?topic=containers-cs_api_install#cs_api).
+* [Get started with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api).
 * [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
 * Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}.
 
