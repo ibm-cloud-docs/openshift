@@ -455,6 +455,7 @@ toc:
                 - ts-network-strongswan-network-nodes.md
                 - ts-letsencrypt.md
                 - ts-ip-whitelist-annotation.md
+                - ts-keepalive-sysctl.md
             - topicgroup:
                 label: Apps and services
                 topics:
