@@ -2505,12 +2505,6 @@ subcollection: openshift
 [OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
-## Katacoda interactive OpenShift tutorials
-{: #sitemap_katacoda-interactive-openshift-tutorials}
-
-[Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
-
-
 ## IBM Developer OpenShift tutorials
 {: #sitemap_ibm-developer-openshift-tutorials}
 
