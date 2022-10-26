@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-10-26"
 
 keywords: openshift
 subcollection: openshift
@@ -7592,7 +7592,7 @@ subcollection: openshift
 
     * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
-* [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#-regions)
+* [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#sat-regions-openshift)
 
 * [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 
