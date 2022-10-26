@@ -53,9 +53,6 @@ toc:
           label: OpenShift interactive learning portal
           href: https://developers.redhat.com/learn
       - link:
-          label: Katacoda interactive OpenShift tutorials
-          href: https://www.katacoda.com/openshift
-      - link:
           label: IBM Developer OpenShift tutorials
           href: https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/
       - cs_tutorials_policies.md
@@ -455,6 +452,7 @@ toc:
                 - ts-network-strongswan-network-nodes.md
                 - ts-letsencrypt.md
                 - ts-ip-whitelist-annotation.md
+                - ts-keepalive-sysctl.md
             - topicgroup:
                 label: Apps and services
                 topics:

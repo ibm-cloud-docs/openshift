@@ -173,7 +173,7 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
 
 
 ## {{site.data.keyword.satelliteshort}} regions
-{# sat-regions-openshift}
+{: #sat-regions-openshift}
 
 To see a list of the supported `Managed from` regions for {{site.data.keyword.satelliteshort}} clusters, [Supported {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-sat-regions).
 

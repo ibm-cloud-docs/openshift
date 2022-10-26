@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-10-26"
 
 keywords: openshift
 
@@ -26,6 +26,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2022
 {: #openshift-oct22}
+
+
+### 26 October 2022
+{: #openshift-oct2622}
+{: release-note}
+
+
+
+
+Worker node fix pack 4.11.9_1526_openshift, 4.10.37_1539_openshift, 4.9.50_1559_openshift, 4.8.51_1576_openshift, 4.7.59_1585_openshift, 4.6.61_1603_openshift
+:   For more information, see the change logs: [4.11.9_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10.37_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.50_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.51_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.59_1585_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.61_1603_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
 
 ### 25 October 2022
 {: #openshift-oct2522}

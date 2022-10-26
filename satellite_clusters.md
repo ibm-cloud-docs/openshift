@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-10-26"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -189,7 +189,7 @@ After you [access your cluster](/docs/openshift?topic=openshift-access_cluster#a
 If you are running your {{site.data.keyword.openshiftlong_notm}} cluster on {{site.data.keyword.satelliteshort}} infrastructure in a remote, resource-constrained edge location with limited resources, such as a small data center in a mobile tower, running a data plane with a smaller foot print might be beneficial for your setup. While typical {{site.data.keyword.openshiftlong_notm}} clusters require at least three worker nodes for high availability, you have the option to create a cluster that runs a single worker node. Single-node clusters have several limitations and should only be used in specific circumstances. 
 {: shortdesc}
 
-Single-node clusters are recommended only in specific circumstances, and should only be used in resource-constrained edge locations that have multiple redundant locations running the same workload. See the [Limitations](#single-node-clusters-limitations) section for more information. 
+Single-node clusters are recommended only in specific circumstances, and should only be used in resource-constrained edge locations that have multiple redundant locations running the same workload. See the [Limitations](#single-node-limitations) section for more information. 
 {: important}
 
 Single-node clusters lack high availability. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload.

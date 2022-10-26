@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-10-26"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -34,7 +34,7 @@ After you install the OpenShift Data Foundation add-on for your {{site.data.keyw
     ```sh
     NAME                   PROVISIONER            RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
     Immediate              true                   9m19s
-    ocs-storagecluster-ceph-rbd-encrypted         openshift-storage.rbd.csi.ceph.com      Delete          Immediate              false                  9m19s
+    ocs-storagecluster-ceph-rbd                   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              false                  9m19s
     ocs-storagecluster-ceph-rgw                   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  18m
     ocs-storagecluster-cephfs                     openshift-storage.cephfs.csi.ceph.com   Delete          Immediate              true                   10m
     openshift-storage.noobaa.io                   openshift-storage.noobaa.io/obc         Delete          Immediate              false                  6m32s

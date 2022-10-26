@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-10-26"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [26 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2622)
+
+        * Worker node fix pack 4.11.9_1526_openshift, 4.10.37_1539_openshift, 4.9.50_1559_openshift, 4.8.51_1576_openshift, 4.7.59_1585_openshift, 4.6.61_1603_openshift
 
     * [25 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2522)
 
@@ -2501,12 +2505,6 @@ subcollection: openshift
 [OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
-## Katacoda interactive OpenShift tutorials
-{: #sitemap_katacoda-interactive-openshift-tutorials}
-
-[Katacoda interactive OpenShift tutorials](https://www.katacoda.com/openshift){: external}
-
-
 ## IBM Developer OpenShift tutorials
 {: #sitemap_ibm-developer-openshift-tutorials}
 
@@ -3051,6 +3049,8 @@ subcollection: openshift
     * [Modifying worker node settings by using the Node Tuning Operator](/docs/openshift?topic=openshift-kernel#worker-nto)
 
     * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
+
+* [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks)
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
@@ -5631,11 +5631,13 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-* [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+* [Available operating systems](/docs/openshift?topic=openshift-openshift_versions#available-operating-systems)
 
-* [Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-CoreOS)
+    * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
-* [Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-CoreOS)
+    * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
+
+    * [Clusters in Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos)
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
@@ -5683,6 +5685,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.9_1526_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4119_1526_openshift)
 
     * [Change log for master fix pack 4.11.4_1523_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4114_1523_openshift)
 
@@ -5754,6 +5758,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.37_1539_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41037_1539_openshift)
 
     * [Change log for worker node fix pack 4.10.35_1538_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41035_1538_openshift)
 
@@ -5891,6 +5897,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.50_1559_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4950_1559_openshift)
 
     * [Change log for worker node fix pack 4.9.49_1558_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4949_1558_openshift)
 
@@ -6047,6 +6055,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
+    * [Change log for worker node fix pack 4.8.51_1576_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4851_1576_openshift)
+
     * [Change log for worker node fix pack 4.8.50_1575_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4850_1575_openshift)
 
     * [Change log for master fix pack 4.8.49_1573_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4849_1573_openshift)
@@ -6187,6 +6197,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for worker node fix pack 4.7.59_1585_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4759_1585_openshift)
 
     * [Change log for worker node fix pack 4.7.59_1584_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4759_1584_openshift)
 
@@ -6356,6 +6368,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#46_changelog)
+
+    * [Change log for worker node fix pack 4.6.61_1603_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4661_1603_openshift)
 
     * [Change log for worker node fix pack 4.6.61_1602_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4661_1602_openshift)
 
@@ -7592,7 +7606,7 @@ subcollection: openshift
 
     * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
-* [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#-regions)
+* [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#sat-regions-openshift)
 
 * [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 
@@ -8098,6 +8112,8 @@ subcollection: openshift
 [Why do OpenSSL connections to Let's Encrypt fail after 30 September 2021?](/docs/openshift?topic=openshift-ts-letsencrypt#ts-letsencrypt)
 
 [Why can't I use the `ip_whitelist` annotation to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
+
+[Why does my pod with long running TCP connections get disconnected?](/docs/openshift?topic=openshift-ts-keepalive-sysctl#ts-keepalive-sysctl)
 
 
 ### Apps and services
