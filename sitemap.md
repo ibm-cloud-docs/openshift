@@ -205,6 +205,10 @@ subcollection: openshift
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
 
+    * [26 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2622)
+
+        * Worker node fix pack 4.11.9_1526_openshift, 4.10.37_1539_openshift, 4.9.50_1559_openshift, 4.8.51_1576_openshift, 4.7.59_1585_openshift, 4.6.61_1603_openshift
+
     * [25 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2522)
 
         * Istio add-on
