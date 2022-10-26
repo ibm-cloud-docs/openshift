@@ -5631,11 +5631,13 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-* [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+* [Available operating systems](/docs/openshift?topic=openshift-openshift_versions#available-operating-systems)
 
-* [Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-CoreOS)
+    * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
-* [Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-CoreOS)
+    * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
+
+    * [Clusters in Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos)
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
