@@ -22,6 +22,7 @@ toc:
           - why-benefits.md
           - providers.md
           - responsibilities.md
+          - satellite-resp.md
       - topicgroup:
           label: Use cases
           topics:

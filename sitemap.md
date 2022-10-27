@@ -92,6 +92,24 @@ subcollection: openshift
 
     * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
 
+[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
+
+* [Overview of shared responsibilities](/docs/openshift?topic=openshift-satellite-responsibilities#overview-by-resource-sat)
+
+* [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-satellite-responsibilities#task-responsibilities-sat)
+
+    * [Incident and operations management](/docs/openshift?topic=openshift-satellite-responsibilities#incident-and-ops-sat)
+
+    * [Change management](/docs/openshift?topic=openshift-satellite-responsibilities#change-management-sat)
+
+    * [Identity and access management](/docs/openshift?topic=openshift-satellite-responsibilities#iam-responsibilities-sat)
+
+    * [Security and regulation compliance](/docs/openshift?topic=openshift-satellite-responsibilities#security-compliance-sat)
+
+    * [Disaster recovery](/docs/openshift?topic=openshift-satellite-responsibilities#disaster-recovery-sat)
+
+    * [Applications and data](/docs/openshift?topic=openshift-satellite-responsibilities#applications-and-data-sat)
+
 
 ## Use cases
 {: #sitemap_use_cases}
@@ -5635,7 +5653,7 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-* [Available operating systems](/docs/openshift?topic=openshift-openshift_versions#available-operating-systems)
+* [Available operating systems](/docs/openshift?topic=openshift-openshift_versions#available-os)
 
     * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
