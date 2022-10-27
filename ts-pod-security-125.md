@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-10-27"
 
 keywords: openshift, help, cluster master operations error, CAE009
 
@@ -44,7 +44,7 @@ These prerequisites ensure that the cluster's version 1.24 `PodSecurityPolicy` c
 Before you begin
 
 - Review the [1.25 version information and update actions](/docs/containers?topic=containers-cs_versions_125).
-- Review the [Migrating from PSPs to Pod Security Admission](/docs/openshift?topic=openshift-pod-security-admission-migration) guide.
+- Review the [Migrating from PSPs to Pod Security Admission](/docs/containers?topic=containers-pod-security-admission-migration) guide.
 
 
 If you are not ready to migrate to Pod Security Admission, you can clear the status message by performing a cluster master refresh. 
@@ -86,7 +86,7 @@ Before you upgrade your cluster to version 1.25, verify that only the following 
     ```
     {: pre}
 
-1. If the additional PodSecurityPolicy is no longer in use, delete it. If there are additional pod security policies, [review the migration guide](/docs/openshift?topic=openshift-pod-security-admission-migration).
+1. If the additional PodSecurityPolicy is no longer in use, delete it. If there are additional pod security policies, [review the migration guide](/docs/containers?topic=containers-pod-security-admission-migration).
 
     ```sh
     kubectl delete podsecuritypolicies PSP

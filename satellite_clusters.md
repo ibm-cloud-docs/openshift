@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-27"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -372,12 +372,8 @@ Several options exist to securely expose apps to traffic requests from the publi
 ## Storing application data in persistent storage
 {: #satcluster-storage}
 
-Unlike standard {{site.data.keyword.redhat_openshift_notm}} clusters that are created on {{site.data.keyword.cloud_notm}} infrastructure, your {{site.data.keyword.satelliteshort}} clusters don't come installed with a storage driver that provides Kubernetes storage classes that are ready to use with Kubernetes persistent volumes for your apps. However, you can install your own storage driver to set up your apps to save their data in a backing storage device. Review the following common options.
+Unlike standard {{site.data.keyword.redhat_openshift_notm}} clusters that are created on {{site.data.keyword.cloud_notm}} infrastructure, your {{site.data.keyword.satelliteshort}} clusters don't come installed with a storage driver that provides Kubernetes storage classes that are ready to use with Kubernetes persistent volumes for your apps. However, you can install your own storage driver to set up your apps to save their data in a backing storage device. Review the following common options. For more information, see [Understanding {{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-sat-storage-template-ov).
 
-
-*  Install the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install) in your cluster.
-*  Manually set up a storage operator that uses a backing storage provider in your cluster. For more information, see the storage operator provider documentation.
-*  Use local storage on the host, such as the [local storage operator](https://docs.openshift.com/container-platform/4.10/storage/persistent_storage/persistent-storage-local.html){: external}.
 
 
 

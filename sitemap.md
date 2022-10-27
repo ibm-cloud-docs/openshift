@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-27"
 
 keywords: openshift
 subcollection: openshift
@@ -91,6 +91,24 @@ subcollection: openshift
     * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
 
     * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
+
+[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
+
+* [Overview of shared responsibilities](/docs/openshift?topic=openshift-satellite-responsibilities#overview-by-resource-sat)
+
+* [Tasks for shared responsibilities by area](/docs/openshift?topic=openshift-satellite-responsibilities#task-responsibilities-sat)
+
+    * [Incident and operations management](/docs/openshift?topic=openshift-satellite-responsibilities#incident-and-ops-sat)
+
+    * [Change management](/docs/openshift?topic=openshift-satellite-responsibilities#change-management-sat)
+
+    * [Identity and access management](/docs/openshift?topic=openshift-satellite-responsibilities#iam-responsibilities-sat)
+
+    * [Security and regulation compliance](/docs/openshift?topic=openshift-satellite-responsibilities#security-compliance-sat)
+
+    * [Disaster recovery](/docs/openshift?topic=openshift-satellite-responsibilities#disaster-recovery-sat)
+
+    * [Applications and data](/docs/openshift?topic=openshift-satellite-responsibilities#applications-and-data-sat)
 
 
 ## Use cases
@@ -204,6 +222,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [27 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2722)
+
+        * Cloud Image Key Synchronizer add-on version 1.0.0_1200
 
     * [26 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2622)
 
@@ -5631,7 +5653,7 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-* [Available operating systems](/docs/openshift?topic=openshift-openshift_versions#available-operating-systems)
+* [Available operating systems](/docs/openshift?topic=openshift-openshift_versions#available-os)
 
     * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
@@ -6999,6 +7021,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1200, released on 27 October 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1200)
 
     * [Version 1.0.0_1061, released on 7 July 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1061)
 
