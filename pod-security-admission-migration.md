@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-10-27"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -199,6 +199,6 @@ Review the following information before you migrate from Pod Security Policies t
 
 - [PSP to PSA tool](https://github.com/kubernetes-sigs/pspmigrator){: external}
 
-- [Why does my cluster upgrade fail due to Pod Security upgrade prerequisites?](/docs/openshift?topic=openshift-ts-app-pod-security).
+- [Why does my cluster upgrade fail due to Pod Security upgrade prerequisites?](/docs/containers?topic=containers-ts-app-pod-security).
 
 
