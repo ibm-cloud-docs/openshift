@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-27"
 
 keywords: openshift
 
@@ -26,6 +26,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2022
 {: #openshift-oct22}
+
+### 27 October 2022
+{: #openshift-oct2722}
+{: release-note}
+
+ 
+
+
+
+Cloud Image Key Synchronizer add-on version 1.0.0_1200
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+
 
 
 ### 26 October 2022

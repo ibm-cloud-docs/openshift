@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-27"
 
 keywords: openshift
 subcollection: openshift
@@ -204,6 +204,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
+
+    * [27 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2722)
+
+        * Cloud Image Key Synchronizer add-on version 1.0.0_1200
 
     * [26 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2622)
 
@@ -6999,6 +7003,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1200, released on 27 October 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1200)
 
     * [Version 1.0.0_1061, released on 7 July 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1061)
 
