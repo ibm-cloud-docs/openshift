@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-28"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -76,6 +76,20 @@ Review the version 4.9 change log.
 
 
 
+
+
+
+### Change log for worker node fix pack 4.9.50_1562_openshift, released 27 October 2022
+{: #4950_1562_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.9.50_1562_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| VPC Gen 2 RHEL 8 worker image disk size | N/A | N/A | Fixed regression on previous version where root filesystem partition was 25 GB instead of 100GB for VPC Gen 2 |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.9.50_1559_openshift" caption-side="top"}
 
 ### Change log for worker node fix pack 4.9.50_1559_openshift, released 25 October 2022
 {: #4950_1559_openshift}
@@ -598,4 +612,3 @@ The following table shows the changes that are in the master fix pack `4.9.17_15
 | {{site.data.keyword.redhat_openshift_notm}} toolkit | 4.8.0+20220107 | 4.9.0+20220201 | See the [{{site.data.keyword.redhat_openshift_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20220201){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.8.26_1542_openshift master and 4.8.28_1543_openshift worker node." caption-side="top"}
-
