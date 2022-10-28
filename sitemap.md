@@ -225,6 +225,8 @@ subcollection: openshift
 
     * [27 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2722)
 
+        * Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, 4.9.50_1562_openshift
+
         * Cloud Image Key Synchronizer add-on version 1.0.0_1200
 
     * [26 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2622)
