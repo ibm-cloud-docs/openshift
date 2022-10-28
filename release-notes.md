@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-10-28"
 
 keywords: openshift
 
@@ -34,6 +34,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
  
 
 
+Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, 4.9.50_1562_openshift
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), and [4.9](/docs/openshift?topic=openshift-openshift_changelog_49).
 
 Cloud Image Key Synchronizer add-on version 1.0.0_1200
 :   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).

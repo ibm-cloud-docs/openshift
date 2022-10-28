@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-10-28"
 
 keywords: openshift
 subcollection: openshift
@@ -224,6 +224,8 @@ subcollection: openshift
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
 
     * [27 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2722)
+
+        * Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, 4.9.50_1562_openshift
 
         * Cloud Image Key Synchronizer add-on version 1.0.0_1200
 
@@ -5708,6 +5710,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
+    * [Change log for worker node fix pack 4.11.9_1529_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4119_1529_openshift)
+
     * [Change log for worker node fix pack 4.11.9_1526_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4119_1526_openshift)
 
     * [Change log for master fix pack 4.11.4_1523_openshift, released 26 September 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4114_1523_openshift)
@@ -5780,6 +5784,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.37_1542_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41037_1542_openshift)
 
     * [Change log for worker node fix pack 4.10.37_1539_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41037_1539_openshift)
 
@@ -5919,6 +5925,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.50_1562_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4950_1562_openshift)
 
     * [Change log for worker node fix pack 4.9.50_1559_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4950_1559_openshift)
 
