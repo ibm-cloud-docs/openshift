@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-10-31"
 
 keywords: openshift, calico, node
 
@@ -53,12 +53,13 @@ After a worker update or replace, sometimes the `calico-node` pod still does not
 
 In summary, the `calico-node` pod startup depends on the webhook working; the webhook depends on the VPN client pod; and the VPN client pod depends on `calico-node` starting up. The system is stuck in a circular dependency. If you are able to gather logs from a successfully deployed `calico-node` pod, you might see an error like this:
 
-```
+```txt
 2022-09-08 07:13:19.719 [WARNING][9] startup/utils.go 228: Failed to set NetworkUnavailable; will retry error=Patch "https://172.21.0.1:443/api/v1/nodes/10.242.64.17/status?timeout=2s": net/http: request canceled (Client.Timeout exceeded while awaiting headers)
 ```
 {: pre}
 
-**Workarounds**
+## Workarounds for `calico-node`
+{: #ts-network-calico-node-work}
 
 You can use one of the following methods to work around the issue and get the `calico-node` pod running again.
 1. Remove the `sysdig-admission-controller-webhook` from the system. 

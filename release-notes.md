@@ -36,7 +36,10 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
  
 
 
-Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, 4.9.50_1562_openshift
+Master fix pack 4.6.61_1605_openshift, 4.7.59_1587_openshift, 4.8.51_1578_openshift, 4.9.49_1561_openshift, 4.10.36_1541_openshift, and 4.11.8_1528_openshift.
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6](/docs/openshift?topic=openshift-openshift_changelog_46).
+
+Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, and 4.9.50_1562_openshift
 :   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), and [4.9](/docs/openshift?topic=openshift-openshift_changelog_49).
 
 Cloud Image Key Synchronizer add-on version 1.0.0_1200
