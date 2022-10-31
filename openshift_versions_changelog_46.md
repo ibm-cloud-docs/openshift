@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-31"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -78,7 +78,22 @@ Review the version 4.6 change log.
 
 
 
-### Change log for worker node fix pack 4.6.61_1603_openshift, released 25 October 2022
+### Change log for Master fix pack 4.6.61_1605_openshift released 27 October 2022
+{: #4661_1605_openshift}
+
+The following table shows the changes that are in the master fix pack 4.6.61_1605_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.11 | v1.3.12 | Updated `Go` dependencies, golangci-lint, and to `Go` version 1.19.2. Updated base image version to 109. Excluded ingress status from cluster status calculation. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.19.16-19 | v1.19.16-21 | Updated to support the `Kubernetes 1.19.16` release. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | dc1725a | 778ef2b | Updated to `Go` version `1.18.6`. |
+| Key Management Service provider | v2.5.9 | v2.5.10 | Updated `Go` dependencies and to `Go` version `1.19.2`. |
+| OpenVPN Operator image | v1.4.9 | v1.4.10 | Updated ansible operator base image to v1.24.0 to resolve CVEs. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.6.611600openshift" caption-side="top"}### Change log for worker node fix pack 4.6.61_1603_openshift, released 25 October 2022
 {: #4661_1603_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.6.61_1603_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1403,4 +1418,3 @@ The following table shows the changes that are in the version updates for the `4
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.5.0+20210112 | 4.6.0+20210126 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.6.0+20210126){: external}. |
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.5.24_1527_openshift (master) and 4.5.31_1529_openshift (worker node)" caption-side="top"}
-

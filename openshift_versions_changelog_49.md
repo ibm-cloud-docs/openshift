@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-28"
+lastupdated: "2022-10-31"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -79,7 +79,24 @@ Review the version 4.9 change log.
 
 
 
-### Change log for worker node fix pack 4.9.50_1562_openshift, released 27 October 2022
+### Change log for Master fix pack 4.9.49_1561_openshift released 27 October 2022
+{: #4949_1561_openshift}
+
+The following table shows the changes that are in the master fix pack 4.9.49_1561_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.11 | v1.3.12 | Updated `Go` dependencies, golangci-lint, and to `Go` version 1.19.2. Updated base image version to 109. Excluded ingress status from cluster status calculation. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.14-2 | v1.22.15-3 | Updated to support the `Kubernetes 1.22.15` release. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | dc1725a | 778ef2b | Updated to `Go` version `1.18.6`. |
+| Key Management Service provider | v2.5.9 | v2.5.10 | Updated `Go` dependencies and to `Go` version `1.19.2`. |
+| OpenVPN Operator image | v1.4.9 | v1.4.10 | Updated ansible operator base image to v1.24.0 to resolve CVEs. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.9.48 | 4.9.49 | See the [{{site.data.keyword.openshiftlong_notm}} Release Notes ](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-49){: external}. |
+
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.9.481556openshift" caption-side="top"}### Change log for worker node fix pack 4.9.50_1562_openshift, released 27 October 2022
 {: #4950_1562_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.9.50_1562_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.

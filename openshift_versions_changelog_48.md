@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-31"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -80,7 +80,23 @@ Review the version 4.8 change log.
 
 
 
-### Change log for worker node fix pack 4.8.51_1576_openshift, released 25 October 2022
+### Change log for Master fix pack 4.8.51_1578_openshift released 27 October 2022
+{: #4851_1578_openshift}
+
+The following table shows the changes that are in the master fix pack 4.8.51_1578_openshift. Master patch updates are applied automatically. 
+{: shortdesc}
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.11 | v1.3.12 | Updated `Go` dependencies, golangci-lint, and to `Go` version 1.19.2. Updated base image version to 109. Excluded ingress status from cluster status calculation. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.21.14-4 | v1.21.14-6 | Updated to support the `Kubernetes 1.21.14` release. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | dc1725a | 778ef2b | Updated to `Go` version `1.18.6`. |
+| Key Management Service provider | v2.5.9 | v2.5.10 | Updated `Go` dependencies and to `Go` version `1.19.2`. |
+| OpenVPN Operator image | v1.4.9 | v1.4.10 | Updated ansible operator base image to v1.24.0 to resolve CVEs. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.8.49 | 4.8.51 | See the [{{site.data.keyword.openshiftlong_notm}} Release Notes ](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-51){: external}. |
+{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
+{: caption="Changes since version 4.8.491573openshift" caption-side="top"}### Change log for worker node fix pack 4.8.51_1576_openshift, released 25 October 2022
 {: #4851_1576_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.8.51_1576_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -848,4 +864,3 @@ The following table shows the changes that are in the worker node fix pack patch
 | {{site.data.keyword.redhat_openshift_notm}} | 4.8.12 | 4.8.13 | See the [change logs](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-13){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}).|
 {: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.8.12_1527_openshift" caption-side="top"}
-
