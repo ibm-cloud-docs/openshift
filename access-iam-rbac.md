@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-10-31"
 
 keywords: openshift
 
@@ -320,7 +320,7 @@ Making your own custom RBAC policies? Be sure not to edit the existing IBM role 
 
 **Can I assign custom RBAC roles to groups of users?**
 
-You can [manually assign users to groups](https://docs.openshift.com/container-platform/4.10/authentication/understanding-authentication.html){: external} in your cluster, and then assign roles to the group. However, a known issue is that you can't use {{site.data.keyword.cloud_notm}} IAM access groups.
+You can [manually assign users to groups](https://docs.openshift.com/container-platform/4.10/authentication/understanding-authentication.html){: external} in your cluster, and then assign roles to the group.
 
 
 **When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**

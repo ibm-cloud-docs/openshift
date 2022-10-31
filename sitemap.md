@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-28"
+lastupdated: "2022-10-31"
 
 keywords: openshift
 subcollection: openshift
@@ -225,7 +225,9 @@ subcollection: openshift
 
     * [27 October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2722)
 
-        * Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, 4.9.50_1562_openshift
+        * Master fix pack 4.6.61_1605_openshift, 4.7.59_1587_openshift, 4.8.51_1578_openshift, 4.9.49_1561_openshift, 4.10.36_1541_openshift, and 4.11.8_1528_openshift.
+
+        * Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, and 4.9.50_1562_openshift
 
         * Cloud Image Key Synchronizer add-on version 1.0.0_1200
 
@@ -1321,6 +1323,8 @@ subcollection: openshift
 
     * [22 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march2221)
 
+        * Ingress updates
+
     * [17 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1721)
 
         * Deprecated events to be replaced for {{site.data.keyword.at_short}}
@@ -1643,7 +1647,7 @@ subcollection: openshift
 
     * [29 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2920)
 
-        * For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+        * Gateway firewalls and Calico policies
 
     * [26 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2620)
 
@@ -1831,7 +1835,7 @@ subcollection: openshift
 
     * [27 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2720)
 
-        * The minimum number of worker nodes per zone is increased from one to two so that default {{site.data.keyword.redhat_openshift_notm}} components can be deployed and spread across worker nodes in a zone.
+        * Update the minimum number of worker nodes
 
     * [26 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2620)
 
@@ -1848,8 +1852,6 @@ subcollection: openshift
     * [20 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2020)
 
         * New! Virtual Private Cloud Generation 2
-
-    * [19 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1920)
 
     * [18 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1820)
 
@@ -5502,7 +5504,7 @@ subcollection: openshift
 
     * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
 
-[CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
+[CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
@@ -5710,6 +5712,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
+    * [Change log for master fix pack 4.11.8_1528_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4118_1528_openshift)
+
     * [Change log for worker node fix pack 4.11.9_1529_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4119_1529_openshift)
 
     * [Change log for worker node fix pack 4.11.9_1526_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4119_1526_openshift)
@@ -5784,6 +5788,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for master fix pack 4.10.36_1541_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41036_1541_openshift)
 
     * [Change log for worker node fix pack 4.10.37_1542_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41037_1542_openshift)
 
@@ -5925,6 +5931,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for master fix pack 4.9.49_1561_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4949_1561_openshift)
 
     * [Change log for worker node fix pack 4.9.50_1562_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4950_1562_openshift)
 
@@ -6085,6 +6093,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
+    * [Change log for master fix pack 4.8.51_1578_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4851_1578_openshift)
+
     * [Change log for worker node fix pack 4.8.51_1576_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4851_1576_openshift)
 
     * [Change log for worker node fix pack 4.8.50_1575_openshift, released 10 October 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4850_1575_openshift)
@@ -6227,6 +6237,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for master fix pack 4.7.59_1587_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4759_1587_openshift)
 
     * [Change log for worker node fix pack 4.7.59_1585_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4759_1585_openshift)
 
@@ -6398,6 +6410,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_46#openshift_changelog_overview_46)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_46#46_changelog)
+
+    * [Change log for master fix pack 4.6.61_1605_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4661_1605_openshift)
 
     * [Change log for worker node fix pack 4.6.61_1603_openshift, released 25 October 2022](/docs/openshift?topic=openshift-openshift_changelog_46#4661_1603_openshift)
 
@@ -8129,7 +8143,11 @@ subcollection: openshift
 
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
+* [Workarounds for `calico-node`](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node-work)
+
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
+
+* [Workarounds for `calico-node`](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node-work)
 
 [Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125#ts-network-snat-125)
 

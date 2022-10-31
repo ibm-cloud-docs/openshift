@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-28"
 
 keywords: openshift, oc
 
@@ -212,7 +212,7 @@ To update the CLIs:
 ## Installing the `odo` CLI for developers
 {: #cli-odo-install}
 
-Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.redhat_openshift_notm}} Do CLI](/docs/containers?topic=containers-odo-tutorial) tutorial.
+Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.redhat_openshift_notm}} Do CLI](/docs/openshift?topic=openshift-odo-tutorial) tutorial.
 {: shortdesc}
 
 

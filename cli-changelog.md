@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-10-31"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -15,14 +15,14 @@ subcollection: openshift
 
 
 
-# CLI changelog
+# CLI change log
 {: #cs_cli_changelog}
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 {: shortdesc}
 
 
-Refer to the following changelogs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
+Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
   
 ## Version 1.0
 {: #10}
@@ -453,7 +453,7 @@ Version 1.0.0 of the CLI was released on 26 March 2020.
 ## Deprecated versions
 {: #deprecated}
 
-All versions of the CLI plug-in that are earlier than version 1.0 are no longer supported. You can review the archive of the changelogs. To update to the latest version, see [Updating to version 1.0 of the plug-in](#changelog_beta).
+All versions of the CLI plug-in that are earlier than version 1.0 are no longer supported. You can review the archive of the change logs. To update to the latest version, see [Updating to version 1.0 of the plug-in](#changelog_beta).
 {: shortdesc}
 
 ### Updating to version 1.0 of the plug-in
