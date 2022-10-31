@@ -125,7 +125,7 @@ CLI change log update
 
 ## September 2022
 {: #openshift-sep22}
-{: release-note}
+
 
 ### 30 September 2022
 {: #openshift-sep3022}
@@ -595,7 +595,6 @@ Master fix pack update
 
 ## May 2022
 {: #openshift-may22}
-{: release-note}
 
 
 ### 26 May 2022
@@ -686,7 +685,7 @@ Cloud Image Key Synchronizer add-on
 
 ## April 2022
 {: #openshift-apr22}
-{: release-note}
+
 
 ### 28 April 2022
 {: #openshift-apr2822}
@@ -2290,7 +2289,7 @@ CRI-O container runtime
 
 
 
-
+Ingress updates
 :   Updated the [`nginx-ingress` build to 2466 and the `ingress-auth` build to 982](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 
@@ -2983,8 +2982,8 @@ Versions
 {: #openshift-sept2920}
 {: release-note}
 
-:   Gateway firewalls and Calico policies
-For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+Gateway firewalls and Calico policies
+:   For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
 
 ### 26 September 2020
 {: #openshift-sept2620}
@@ -3390,7 +3389,8 @@ VPC ACLs
 {: #openshift-may2720}
 {: release-note}
 
-The minimum number of worker nodes per zone is increased from one to two so that default {{site.data.keyword.redhat_openshift_notm}} components can be deployed and spread across worker nodes in a zone.
+Update the minimum number of worker nodes
+:   The minimum number of worker nodes per zone is increased from one to two so that default {{site.data.keyword.redhat_openshift_notm}} components can be deployed and spread across worker nodes in a zone.
 
 
 
@@ -3436,10 +3436,6 @@ New! Virtual Private Cloud Generation 2
     - [VPC cluster limitations](/docs/containers?topic=containers-limitations#ks_vpc_gen2_limits)
     
 :   Ready to get started? Try out the [Creating a cluster in your VPC on generation 2 compute tutorial](/docs/containers?topic=containers-vpc_ks_tutorial).
-
-### 19 May 2020
-{: #openshift-may1920}
-{: release-note}
 
 
 

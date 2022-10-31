@@ -1323,6 +1323,8 @@ subcollection: openshift
 
     * [22 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march2221)
 
+        * Ingress updates
+
     * [17 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1721)
 
         * Deprecated events to be replaced for {{site.data.keyword.at_short}}
@@ -1645,7 +1647,7 @@ subcollection: openshift
 
     * [29 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2920)
 
-        * For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
+        * Gateway firewalls and Calico policies
 
     * [26 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2620)
 
@@ -1833,7 +1835,7 @@ subcollection: openshift
 
     * [27 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2720)
 
-        * The minimum number of worker nodes per zone is increased from one to two so that default {{site.data.keyword.redhat_openshift_notm}} components can be deployed and spread across worker nodes in a zone.
+        * Update the minimum number of worker nodes
 
     * [26 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2620)
 
@@ -1850,8 +1852,6 @@ subcollection: openshift
     * [20 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2020)
 
         * New! Virtual Private Cloud Generation 2
-
-    * [19 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1920)
 
     * [18 May 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1820)
 
