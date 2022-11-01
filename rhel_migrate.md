@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-11-01"
 
 keywords: rhel, os, operating system
 
@@ -40,11 +40,12 @@ Version 4.10 clusters
 
 Version 4.9 clusters
 :   Version 4.9 supports both RHEL 7 and 8 until end of support for 4.9. RHEL 7 remains the default version when creating new clusters.
-:   If you update your version 4.9 cluster to 4.10 before RHEL 7 ends in October 2022, you must migrate to RHEL 8 after updating to 4.10.
+:   If you want to upgrade a 4.9 cluster to 4.10, make sure to migrate your worker nodes from RHEL 7 to RHEL 8 before you upgrade.
 :   For more information about updating to 4.9, see the [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49).
 
 Version 4.6, 4.7 and 4.8 clusters
 :   RHEL 7 is supported until end of support for these cluster versions. For more information about cluster version support, see the [Version information](/docs/openshift?topic=openshift-openshift_versions).
+:   If you want to upgrade a version 4.8 cluster to 4.9. Make sure to migrate your worker nodes to RHEL 8 after you upgrade.
 
 ## Creating RHEL 8 worker pools in the command line
 {: #rhel-migrate-create-pools-cli}

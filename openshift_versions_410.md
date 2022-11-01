@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-11-01"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -60,6 +60,12 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.10. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
 
+If you want to upgrade a 4.9 cluster with RHEL 7 worker nodes to 4.10, [replace your RHEL 7 worker nodes](#410_rhel-migrate) with RHEL 8 worker nodes before you follow the steps to upgrade to version 4.10. 
+{: important}
+
+Gateway-enabled clusters
+:    Classic clusters created with the `--gateway-enabled` option do not support RHEL 8 worker nodes, and therefore are not supported for version 4.11. Do not update your cluster to version 4.11 if it has the gateway-enabled cluster controller installed.
+
 ### Update before master
 {: #410_before}
 
@@ -89,8 +95,7 @@ The following table shows the actions that you must take before you [update the 
 With the release of RHEL 8, the use of RHEL 7 worker nodes is deprecated in clusters that run version 4.10. You cannot upgrade RHEL 7 worker nodes to RHEL 8. Instead, you must provision a new worker pool and then delete the previous worker pool. In versions 4.10 and later, worker nodes in the new worker pool run RHEL 8 by default. See [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate).
 {: shortdesc}
 
-If you want to upgrade a 4.9 cluster with RHEL 7 worker nodes to a 4.10 cluster with RHEL 8 worker nodes, [upgrade your cluster first](#prep-up-410) before you follow the steps to migrate your worker nodes. 
-{: important}
+
 
 
 

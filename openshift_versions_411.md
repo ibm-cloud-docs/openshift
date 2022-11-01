@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-11-01"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -53,10 +53,7 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 **Before you update**: Review the following list of considerations and limitations before you update your cluster to version 4.11. Some of the following entries are relevant to specific add-ons. To check if you have an add-on enabled in your cluster, run `ibmcloud oc cluster addon ls`. 
 
 RHEL 8 operating system support 
-:    RHEL 8 is the only operating system supported for clusters that run version 4.11. If you update an existing cluster to 4.11, you must take steps to [migrate your worker nodes](#rhel-migrate-411) to RHEL 8.
-
-Gateway-enabled clusters
-:    Classic clusters created with the `--gateway-enabled` option do not support RHEL 8 worker nodes, and therefore are not supported for version 4.11. Do not update your cluster to version 4.11 if it has the gateway-enabled cluster controller installed. 
+:    RHEL 8 is the only operating system supported for clusters that run version 4.11. If your 4.10 cluster has RHEL 7 worker nodes, [migrate your worker nodes](#rhel-migrate-411) to RHEL 8.
 
 Cluster autoscaler add-on
 :    The cluster autoscaler add-on does not support {{site.data.keyword.openshiftshort}} version 4.11. Do not update your cluster to version 4.11 if this add-on is installed.
