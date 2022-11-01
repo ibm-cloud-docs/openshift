@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-01"
 
 keywords: portworx, openshift
 
@@ -28,6 +28,7 @@ Supported infrastructure provider
 
 Supported worker node operating systems
 :   RHEL 7
+:   RHEL 8
 
 
 
@@ -602,6 +603,7 @@ To install Portworx:
         1. Select **Use Cloud Drives** (VPC Clusters only) to dynamically provision {{site.data.keyword.block_storage_is_short}} for Portworx. After selecting **Use Cloud Drives**, select the **Storage class name** and the **Size** of the block storage drives that you want to provision.
         1. Select **Use Already Attached Drives** (Classic, VPC, or Satellite) to use the block storage that is already attached to your worker nodes. 
     1. From the **Portworx metadata key-value store** drop down, choose the type of key-value store that you want to use to store Portworx metadata. Select **Portworx KVDB** to automatically create a key-value store during the Portworx installation, or select **Databases for etcd** if you want to use an existing Databases for etcd instance. If you choose **Databases for etcd**, the **Etcd API endpoints** and **Etcd secret name** fields appear.
+    1. **Namespace**: Enter the namespace where you want to deploy the Portworx resources.
     1. **Required for Databases for etcd only**: Enter the information of your Databases for etcd service instance.
         1. [Retrieve the etcd endpoint, and the name of the Kubernetes secret](#databases_credentials) that you created for your Databases for etcd service instance.
         2. In the **Etcd API endpoints** field, enter the API endpoint of your Databases for etcd service instance that you retrieved earlier. Make sure to enter the endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (`;`).

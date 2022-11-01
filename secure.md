@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-01"
 
 keywords: openshift
 
@@ -29,7 +29,20 @@ You can use built-in security features in {{site.data.keyword.openshiftlong}} fo
 To protect your cluster from being compromised, you must understand potential security threats for your cluster and what you can do to reduce the exposure to vulnerabilities.
 {: shortdesc}
 
-![Describes the security threats for your cluster.](images/cs_security_threats.png "Security threats for your cluster"){: caption="Figure 1. Security threats for your cluster" caption-side="bottom"}
+External attacks
+:   Attackers that gain access to your cluster, deployed resources, apps, or personal information.
+
+Vulnerable deployments
+:   Known vulernabilities are exploited to gain access to the cloud environment and run malicious softawre.
+
+Compromised or lost data
+:   Incorrect storage of sensitive data and missing encryption.
+
+Insiders and third party vendors
+:   Missing network isolation and segmentation can lead to the misuse of legitimate permissions.
+
+
+
 
 
 Cloud security and the protection of your systems, infrastructure, and data against attacks became very important over the last couple of years as companies continue to move their workloads into the public cloud. A cluster consists of several components that each can put your environment at risk for malicious attacks. To protect your cluster against these security threats, you must make sure that you apply the latest {{site.data.keyword.openshiftlong_notm}}, {{site.data.keyword.redhat_openshift_notm}}, and Kubernetes security features and updates in all cluster components.

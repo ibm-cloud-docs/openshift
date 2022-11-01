@@ -74,6 +74,38 @@ subcollection: openshift
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers)
 
+* [Compute and worker node resources](/docs/openshift?topic=openshift-infrastructure_providers#infra-compute)
+
+* [Security](/docs/openshift?topic=openshift-infrastructure_providers#infra-security)
+
+* [High availability](/docs/openshift?topic=openshift-infrastructure_providers#infra-high-availability)
+
+* [Reservations](/docs/openshift?topic=openshift-infrastructure_providers#infar-reservations)
+
+* [Cluster administration](/docs/openshift?topic=openshift-infrastructure_providers#infra-cluster-admin)
+
+* [Cluster networking](/docs/openshift?topic=openshift-infrastructure_providers#infra-cluster-networking)
+
+* [Apps and container platform](/docs/openshift?topic=openshift-infrastructure_providers#infra-apps-cp)
+
+* [App networking](/docs/openshift?topic=openshift-infrastructure_providers#infra-app-networking)
+
+* [Storage](/docs/openshift?topic=openshift-infrastructure_providers#infra-storage)
+
+* [User access](/docs/openshift?topic=openshift-infrastructure_providers#user-access)
+
+* [Integrations](/docs/openshift?topic=openshift-infrastructure_providers#infra-integrations)
+
+* [Locations and versions](/docs/openshift?topic=openshift-infrastructure_providers#infra-locations)
+
+* [Service interface](/docs/openshift?topic=openshift-infrastructure_providers#infra-interface)
+
+* [Service compliance](/docs/openshift?topic=openshift-infrastructure_providers#infra-compliance)
+
+* [Service limitations](/docs/openshift?topic=openshift-infrastructure_providers#infra-limitations)
+
+* [Troubleshooting and support](/docs/openshift?topic=openshift-infrastructure_providers#infra-troubleshoot)
+
 [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks#responsibilities_iks)
 
 * [Overview of shared responsibilities](/docs/openshift?topic=openshift-responsibilities_iks#overview-by-resource)
@@ -92,7 +124,7 @@ subcollection: openshift
 
     * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
 
-[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
+[Your responsibilities with using {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
 
 * [Overview of shared responsibilities](/docs/openshift?topic=openshift-satellite-responsibilities#overview-by-resource-sat)
 
@@ -2731,11 +2763,37 @@ subcollection: openshift
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
-* [Single zone cluster](/docs/openshift?topic=openshift-ha_clusters#single_zone)
+* [Single zone clusters](/docs/openshift?topic=openshift-ha_clusters#single_zone)
 
-* [Multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone)
+    * [Is my master highly available in a single zone cluster?](/docs/openshift?topic=openshift-ha_clusters#sz-master-ha)
 
-* [Multiple public clusters connected with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters)
+    * [How can I protect my workloads against a single zone failure?](/docs/openshift?topic=openshift-ha_clusters#sz-workload-failover)
+
+* [Multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters)
+
+    * [Why do I need worker nodes in three zones?](/docs/openshift?topic=openshift-ha_clusters#mz-cluster-zones)
+
+    * [How is my {{site.data.keyword.openshiftlong_notm}} master set up?](/docs/openshift?topic=openshift-ha_clusters#mz-master-setup)
+
+    * [Do I have to do anything so that the master can communicate with the workers across zones?](/docs/openshift?topic=openshift-ha_clusters#mz-master-communication)
+
+    * [Can I convert my single zone cluster to a multizone cluster?](/docs/openshift?topic=openshift-ha_clusters#convert-sz-to-mz)
+
+    * [Do my apps automatically spread across zones?](/docs/openshift?topic=openshift-ha_clusters#multizone-apps-faq)
+
+* [Multiple public clusters connected with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb)
+
+    * [Why do I need 3 clusters in three zones?](/docs/openshift?topic=openshift-ha_clusters#multicluster-three-zones)
+
+    * [What if I want to set up multiple clusters across regions?](/docs/openshift?topic=openshift-ha_clusters#multiple-regions-setup)
+
+    * [What options do I have to load balance workloads across multiple clusters?](/docs/openshift?topic=openshift-ha_clusters#multiple-cluster-lb-options)
+
+    * [Setting up a CIS global load balancer](/docs/openshift?topic=openshift-ha_clusters#cis-global-lb-setup)
+
+    * [Setting up your own global load balancer](/docs/openshift?topic=openshift-ha_clusters#byo-global-lb-setup)
+
+    * [What if I want to load balance workloads on the private network?](/docs/openshift?topic=openshift-ha_clusters#glb-private)
 
 [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 

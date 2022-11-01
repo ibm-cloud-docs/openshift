@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-11-01"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -654,7 +654,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
 | `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
 | `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`. | `false` |
-| `hpcsBaseUrl` | Enter the public endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
+| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
 | `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/oidc/token`. | `false` |
 {: caption="VPC parameter reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}

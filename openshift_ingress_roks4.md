@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-11-01"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1183,7 +1183,7 @@ To view your {{site.data.keyword.cloudcerts_short}} instance:
 3. Look for a {{site.data.keyword.cloudcerts_short}} instance that is named in the format `kube-certmgr-<cluster_ID>`. To find your cluster's ID, run `ibmcloud oc cluster ls`.
 4. Click the instance's name. The **Your certificates** details page opens.
 
-To manage the secrets for TLS certificates in your cluster, you can use the `ibmcloud oc ingress secret` set of commands. For example, you can use the `ibmcloud oc ingress secret create` command to import a certificate from {{site.data.keyword.cloudcerts_short}} to a Kubernetes secret in your cluster, or the `ibmcloud oc ingress secret ls -c <cluster>` command to view all Ingress secrets for TLS certificates in your cluster. Note that certain commands that require a CRN, such as `{{icks}} ingress secret create`, can only be used if you have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands.
+To manage the secrets for TLS certificates in your cluster, you can use the `ibmcloud oc ingress secret` set of commands. For example, you can use the `ibmcloud oc ingress secret create` command to import a certificate from {{site.data.keyword.cloudcerts_short}} to a Kubernetes secret in your cluster, or the `ibmcloud oc ingress secret ls -c <cluster>` command to view all Ingress secrets for TLS certificates in your cluster. Note that certain commands that require a CRN, such as `ibmcloud oc ingress secret create`, can only be used if you have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands.
 
 Do not delete your cluster's {{site.data.keyword.cloudcerts_short}} instance. When you delete your cluster, the {{site.data.keyword.cloudcerts_short}} instance for your cluster is also automatically deleted. Any certificates that are stored in the {{site.data.keyword.cloudcerts_short}} instance for your cluster are deleted when the {{site.data.keyword.cloudcerts_short}} instance is deleted.
 {: important}
