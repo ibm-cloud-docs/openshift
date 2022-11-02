@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-02"
 
 keywords: openshift
 
@@ -138,7 +138,7 @@ Classic
 
 
 ## User access
-{: infra-user-access}
+{: #infra-user-access}
 
 VPC
 :   You can use [{{site.data.keyword.cloud_notm}} IAM access policies](/docs/vpc?topic=vpc-iam-getting-started) to authorize users to create infrastructure, manage your cluster, and access cluster resources. The cluster can be in a different resource group than the VPC.

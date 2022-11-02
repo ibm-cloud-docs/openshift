@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-02"
 
 keywords: openshift
 subcollection: openshift
@@ -92,7 +92,7 @@ subcollection: openshift
 
 * [Storage](/docs/openshift?topic=openshift-infrastructure_providers#infra-storage)
 
-* [User access](/docs/openshift?topic=openshift-infrastructure_providers#user-access)
+* [User access](/docs/openshift?topic=openshift-infrastructure_providers#infra-user-access)
 
 * [Integrations](/docs/openshift?topic=openshift-infrastructure_providers#infra-integrations)
 
