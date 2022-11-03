@@ -367,11 +367,18 @@ toc:
               - openshift_versions_changelog_311.md
           - openshift_versions_archive.md
       - topicgroup:
-          label: IAM and Activity Tracker events
+          label: Activity Tracker events
           topics:
-          - users-access-ref.md
           - at-events.md
           - api-at-iam.md
+      - topicgroup:
+          label: IAM and user access permissions
+          topics:
+          - users-access-ref.md
+          - iam-platform-access-roles.md
+          - iam-service-access-roles.md
+          - classic-roles.md
+          - cloud-foundry-roles.md
       - locations.md
       - openshift_integrations_overview.md
       - service-settings.md
