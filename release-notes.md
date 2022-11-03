@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-31"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -23,6 +23,16 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## November 2022
+{: #openshift-nov22}
+
+### 3 November 2022
+{: #openshift-nov0322}
+{: release-note}
+
+Cluster autoscaler add-on version `1.0.7_883`.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ## October 2022
 {: #openshift-oct22}
