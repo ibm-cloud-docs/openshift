@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-11-03"
 
 keywords: openshift, benchmarks, 4.9, compliance operator, compliance
 
@@ -68,7 +68,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | 1.2.33|Ensure that the `--encryption-provider-config` option is set as appropriate. |Manual|1|[Not checked](#co-benchmark-49-remdiations) |
 | 1.2.34|Ensure that encryption providers are appropriately configured. |Manual|1|[Not checked](#co-benchmark-49-remdiations) |
 | 1.2.35|Ensure that the API Server makes use of only Strong Cryptographic Ciphers. |Manual|1|Pass |
-{: caption="Section 1.2 API server benchmark results" caption-side="top"}
+{: caption="Section 1.2 API server benchmark results" caption-side="bottom"}
 
 ### 1.3 Controller manager
 {: #co-benchmark-49-13}
@@ -82,7 +82,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | 1.3.5|Ensure that the `--root-ca-file option` is set as appropriate. |Automated. |1|Pass |
 | 1.3.6|Ensure that the `RotateKubeletServerCertificate` option is set to `true`. |Automated|2|Pass |
 | 1.3.7|Ensure that the `--bind-address` option is set to `127.0.0.1`. |Automated |1|Pass |
-{: caption="Section 1.3 Controller manager benchmark results" caption-side="top"}
+{: caption="Section 1.3 Controller manager benchmark results" caption-side="bottom"}
 
 
 ### 1.4 Scheduler
@@ -92,7 +92,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | -- | -- | -- | -- | -- |
 | 1.4.1|Ensure that the healthz endpoints for the scheduler are protected by RBAC. |Automated|1|Pass |
 | 1.4.2|Verify that the scheduler API service is protected by authentication and authorization. |Automated|1|Pass |
-{: caption="Section 1.4 Scheduler benchmark results" caption-side="top"}
+{: caption="Section 1.4 Scheduler benchmark results" caption-side="bottom"}
 
 
 ## 2 etcd
@@ -107,7 +107,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | 2.5|Ensure that the `--peer-client-cert-auth option` is set to `true`. |Automated|1|Pass |
 | 2.6|Ensure that the `--peer-auto-tls` option is not set to `true`. |Automated|1|Pass |
 | 2.7|Ensure that a unique certificate authority is used for etcd. |Manual|2|[Not checked](#co-benchmark-49-remdiations) |
-{: caption="Section 2 etcd benchmark results" caption-side="top"}
+{: caption="Section 2 etcd benchmark results" caption-side="bottom"}
 
 ## 3 Control plane configuration
 {: #co-benchmark-49-3}
@@ -118,7 +118,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 3.1.1|Do not use client certificate authentication for users.|Manual|2|Pass |
-{: caption="Section 3.1 Authentication and Authorization benchmark results" caption-side="top"}
+{: caption="Section 3.1 Authentication and Authorization benchmark results" caption-side="bottom"}
 
 
 ### 3.2 Logging
@@ -128,7 +128,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | -- | -- | -- | -- | -- |
 | 3.2.1|Ensure that a minimal audit policy is created. |Automated|1|Pass |
 | 3.2.2|Ensure that the audit policy covers key security concerns. |Manual|2|Pass |
-{: caption="Section 3.3 Logging benchmark results" caption-side="top"}
+{: caption="Section 3.3 Logging benchmark results" caption-side="bottom"}
 
 ## 4 Worker nodes
 {: #co-benchmark-49-4}
@@ -150,7 +150,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.1.4|Minimize access to create pods. |Manual|1| Not checked |
 | 5.1.5|Ensure that default service accounts are not actively used. |Automated|1| Not checked  |
 | 5.1.6|Ensure that Service Account Tokens are mounted only where necessary. |Manual|1| Not checked |
-{: caption="Section 5.1 RBAC and Service Accounts benchmark results" caption-side="top"}
+{: caption="Section 5.1 RBAC and Service Accounts benchmark results" caption-side="bottom"}
 
 
 ### 5.2 Pod Security Policies
@@ -167,7 +167,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.2.7|Minimize the admission of containers with the `NET_RAW` capability|Manual|1|Not checked  |
 | 5.2.8|Minimize the admission of containers with added capabilities|Manual|1|[Not checked](#co-benchmark-49-remdiations) |
 | 5.2.9|Minimize the admission of containers with capabilities assigned|Manual|2|Not checked  |
-{: caption="Section 5.2 Pod Security Policies benchmark results" caption-side="top"}
+{: caption="Section 5.2 Pod Security Policies benchmark results" caption-side="bottom"}
 
 
 ### 5.3 Network policies and CNI
@@ -177,7 +177,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | -- | -- | -- | -- | -- |
 | 5.3.1|Ensure that the CNI in use supports network policies.|Manual|1| Pass |
 | 5.3.2|Ensure that all namespaces define network policies.|Automated|2|[Not checked](#co-benchmark-49-remdiations) |
-{: caption="Section 5.3 Network policies and CNI benchmark results" caption-side="top"}
+{: caption="Section 5.3 Network policies and CNI benchmark results" caption-side="bottom"}
 
 ### 5.4 Secrets management
 {: #co-benchmark-49-54}
@@ -186,7 +186,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | -- | -- | -- | -- | -- |
 | 5.4.1|Prefer using secrets as files over secrets as environment variables. |Manual|1|Not checked  |
 | 5.4.2|Consider external secret storage. |Manual|2|Not checked  |
-{: caption="Section 5.4 Secrets management benchmark results" caption-side="top"}
+{: caption="Section 5.4 Secrets management benchmark results" caption-side="bottom"}
 
 
 ### 5.5 Extensible admission control
@@ -195,7 +195,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.5.1|Configure image provenance by using image controller configuration parameters. |Manual|2|Not checked  |
-{: caption="Section 5.5 Extensible admission control benchmark results" caption-side="top"}
+{: caption="Section 5.5 Extensible admission control benchmark results" caption-side="bottom"}
 
 ### 5.7 General policies
 {: #co-benchmark-49-57}
@@ -206,7 +206,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.7.2|Ensure that the seccomp profile is set to `docker/default` in your pod definitions. |Manual|2|Not checked |
 | 5.7.3|Apply security context to your pods and containers. |Manual|2|Not checked |
 | 5.7.4|Do not use the default namespace. |Automated|2|Not checked |
-{: caption="Section 5.7 General policies benchmark results" caption-side="top"}
+{: caption="Section 5.7 General policies benchmark results" caption-side="bottom"}
 
 ## {{site.data.keyword.IBM_notm}} Remediations and explanations
 {: #co-benchmark-49-remdiations}
@@ -224,4 +224,4 @@ Review information from {{site.data.keyword.cloud_notm}} about the CIS Benchmark
 | 5.2.8 | {{site.data.keyword.openshiftshort}} installs custom SCCs. |
 | 5.3.1 | Review the [issue in GitHub](https://github.com/ComplianceAsCode/content/issues/9047){: external}. |
 | 5.3.2 | {{site.data.keyword.openshiftshort}} defines a set of default Calico network policies and additional network policies can optionally be added. |
-{: caption="Remediations and explanations" caption-side="top"}
+{: caption="Remediations and explanations" caption-side="bottom"}

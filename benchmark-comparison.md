@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -41,7 +41,7 @@ Review the following tables for an overview of the differences between the CIS K
 | 1.4.2 | Ensure that the `--bind-address` option is set to `127.0.0.1`. | Verify that the scheduler API service is protected by authentication and authorization. | OpenShift has different operator than vanilla kubernetes, and configuration for its security differs |
 | 4.1.3 | Ensure that the proxy kubeconfig file permissions are set to `644` or more restrictive. | **If proxy kubeconfig file exists**, ensure permissions are set to 644 or more restrictive. | In OpenShift, the file is automatically created by `sdn` controller in a secure manner. |
 | 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to `root:root`. | **If proxy kubeconfig file exists**, ensure ownership is set to `root:root` | In OpenShift, the file is automatically created by `sdn` controller in a secure manner. |
-{: caption="Major difference between the CIS Kubernetes Benchmark and the OpenShift Compliance Operator Benchmark" caption-side="top"}
+{: caption="Major difference between the CIS Kubernetes Benchmark and the OpenShift Compliance Operator Benchmark" caption-side="bottom"}
 
 ## Minor differences
 {: #benchmark-comparison-minor}
@@ -59,4 +59,4 @@ Review the following tables for an overview of the differences between the CIS K
 | 4.1.5 | Ensure that the kubelet.conf file permissions are set to 644 or more restrictive. | Ensure that the `--kubeconfig kubelet.conf` file permissions are set to `644` or more restrictive. | Different wording for the same approach. |
 | 4.1.6 | Ensure that the kubelet.conf file ownership is set to `root:root`. | Ensure that the `--kubeconfig kubelet.conf` file ownership is set to `root:root`. | Different wording for the same approach. |
 | 4.1.9 | Ensure that the kubelet configuration file has permissions set to 644 or more restrictive. | Ensure that the kubelet `--config` configuration file has permissions set to `644` or more restrictive. | Different wording for the same approach. |
-{: caption="Minor difference between the CIS Kubernetes Benchmark and the OpenShift Compliance Operator Benchmark" caption-side="top"}
+{: caption="Minor difference between the CIS Kubernetes Benchmark and the OpenShift Compliance Operator Benchmark" caption-side="bottom"}

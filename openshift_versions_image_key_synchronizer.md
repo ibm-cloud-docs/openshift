@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -30,7 +30,7 @@ Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for ea
 | -------------------------- | -----------|----------------------------------------------------- |
 | 1.0.0 | Yes | 4.6, 4.7, 4.8 |
 {: summary="The rows are read from left to right. The first column is the Image Key Synchronizer add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.redhat_openshift_notm}} version of your cluster that the add-on version is supported for."}
-{: caption="Supported Image Key Synchronizer add-on versions" caption-side="top"}
+{: caption="Supported Image Key Synchronizer add-on versions" caption-side="bottom"}
 
 ## Version 1.0.0
 {: #1_0_0-image-key}

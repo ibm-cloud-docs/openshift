@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -69,7 +69,7 @@ The following table describes the priority classes that are in your cluster by d
 | `system-node-critical` | Kubernetes | 2000001000 | Select pods that are deployed into the `kube-system` namespace when you create the cluster use this priority class to protect critical functionality for worker nodes, such as for networking, storage, logging, monitoring, and metrics pods. |
 | `system-cluster-critical` | Kubernetes | 2000000000 | Select pods that are deployed into the `kube-system` namespace when you create the cluster use this priority class to protect critical functionality for clusters, such as for networking, storage, logging, monitoring, and metrics pods. |
 | `ibm-app-cluster-critical` | {{site.data.keyword.IBM_notm}} | 900000000 | Select pods that are deployed into the `ibm-system` namespace when you create the cluster use this priority class to protect critical functionality for apps, such as the load balancer pods. |
-{: caption="Default priority classes that you must not modify" caption-side="top"}
+{: caption="Default priority classes that you must not modify" caption-side="bottom"}
 
 You can check which pods use the priority classes by running the following command.
 
@@ -125,7 +125,7 @@ To use a priority class:
     | `value` | Required: Enter an integer less than or equal to 1 billion (1000000000). The higher the value, the higher the priority. Values are relative to the values of other priority classes in the cluster. Reserve very high numbers for system critical pods that you don't want to be preempted (removed). \n \n For example, the [default cluster-critical priority classes](#default_priority_class) range in value from 900000000-2000001000, so enter a value less than these numbers for new priority classes so that nothing is prioritized higher than these pods. |
     | `globalDefault` | Optional: Set the field to `true` to make this priority class the global default that is applied to every pod that is scheduled without a `priorityClassName` value. Only one priority class in your cluster can be set as the global default. If there is no global default, pods with no `priorityClassName` specified have a priority of zero (`0`). \n \n The [default priority classes](#default_priority_class) don't set a `globalDefault`. If you created other priority classes in your cluster, you can check to make sure that they don't set a `globalDefault` by running `oc describe priorityclass <name>`. |
     | `description` | Optional: Tell users why to use this priority class. Enclose the string in quotations (`""`). |
-    {: caption="Understanding the YAML file components" caption-side="top"}
+    {: caption="Understanding the YAML file components" caption-side="bottom"}
 
 3. Create the priority class in your cluster.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-11-03"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -56,7 +56,7 @@ Review the following diagram and table to learn more about OpenShift Data Founda
 | 3 | Object Storage Daemon (OSD) pods | The OSD pods manage data placement and replication across your storage devices. |
 | 4 | Monitor (Mon) pods | The Monitor pods keep a map of your OpenShift Data Foundation storage cluster and monitor storage cluster health. |
 | 5 | Monitor (Mon) block storage device | The monitor storage devices are the underlying storage devices for the monitor pods. Each monitor device is a raw block storage device that can be a local disk on your worker node or dynamically provisioned when you deploy ODF. Each device provides storage to a monitor pod. |
-{: caption="ODF architecture overview" caption-side="top"}
+{: caption="ODF architecture overview" caption-side="bottom"}
 
 
 
@@ -82,7 +82,7 @@ The Multicloud Object Gateway consists of the open source tool [NooBaa](https://
 | 10 | Object bucket | An object bucket is a dynamically provisioned when you create an Object bucket claim. The object bucket abstracts one or more backing stores to a single resource. |
 | 11 | Namespace bucket access key | The access key is used to access your namespace bucket. Namespace buckets can include multiple namespace resources from different cloud providers or on-prem buckets. The namespace bucket access key and secret key are used in your s3 apps to configure access to your namespace bucket which then defines read and write policies to namespace resources that you configure. |
 | 12 | Namespace bucket secret key | The secret key is used to access your namespace bucket. Namespace buckets can include multiple namespace resources from different cloud providers or on-prem buckets. The namespace bucket access key and secret key are used in your s3 apps to configure access to your namespace bucket which then defines read and write policies to namespace resources that you configure. |
-{: caption="NooBaa overview" caption-side="top"}
+{: caption="NooBaa overview" caption-side="bottom"}
 
 
 

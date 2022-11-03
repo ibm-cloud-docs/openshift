@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-05-20"
+lastupdated: "2022-11-03"
 
 keywords: openshift, openshift data foundation, openshift container storage, storage classes
 
@@ -32,7 +32,7 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 | Resiliency | High |
 | Scalability | Multizone |
 | Encryption | At rest |
-{: caption="Ceph FS storage class details." caption-side="top"}
+{: caption="Ceph FS storage class details." caption-side="bottom"}
 {: #ocs_sc1}
 {: tab-title="ocs-storagecluster-cephfs"}
 {: tab-group="sc_ref"}
@@ -48,7 +48,7 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 | Resiliency | High |
 | Scalability | Multizone |
 | Encryption | At rest |
-{: caption="Ceph RBD storage class details." caption-side="top"}
+{: caption="Ceph RBD storage class details." caption-side="bottom"}
 {: #ocs_sc2}
 {: tab-title="ocs-storagecluster-ceph-rbd"}
 {: tab-group="sc_ref"}
@@ -64,7 +64,7 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 | Resiliency | High |
 | Scalability | Multizone |
 | Encryption | At rest |
-{: caption="Ceph FS storage class details." caption-side="top"}
+{: caption="Ceph FS storage class details." caption-side="bottom"}
 {: #ocs_sc3}
 {: tab-title="ocs-storagecluster-ceph-rbd-encyrpted"}
 {: tab-group="sc_ref"}
@@ -80,7 +80,7 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 | Resiliency | High |
 | Scalability | Multizone |
 | Encryption | In transit and at rest |
-{: caption="Ceph RGW storage class details." caption-side="top"}
+{: caption="Ceph RGW storage class details." caption-side="bottom"}
 {: #ocs_sc4}
 {: tab-title="ocs-storagecluster-ceph-rgw"}
 {: tab-group="sc_ref"}

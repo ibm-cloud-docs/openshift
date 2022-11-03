@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -311,7 +311,7 @@ Review the following table to see your options for how to achieve network segmen
 |-------|----------------------------------|
 |Set up custom network policies with Calico|You can use the built-in Calico interface to [set up custom Calico network policies](/docs/openshift?topic=openshift-network_policies#network_policies) for your worker nodes. For example, you can allow or block network traffic on specific network interfaces, for specific pods, or services. To set up custom network policies, you must [install the `calicoctl` CLI](/docs/openshift?topic=openshift-network_policies#cli_install).|
 |Support for {{site.data.keyword.cloud_notm}} network firewalls|{{site.data.keyword.openshiftlong_notm}} is compatible with all [{{site.data.keyword.cloud_notm}} firewall offerings](https://www.ibm.com/cloud/network-security){: external}. For example, you can set up a firewall with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion. For example, you might choose to set up a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) to act as your firewall and block unwanted traffic. When you set up a firewall, [you must also open up the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall) for each region so that the master and the worker nodes can communicate.|
-{: caption="Network segmentation options" caption-side="top"}
+{: caption="Network segmentation options" caption-side="bottom"}
 
 **What else can I do to reduce the surface for external attacks?**
 
@@ -321,7 +321,7 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 |-------|----------------------------------|
 |Limit the number of exposed apps|By default, your apps and services that run within the cluster are not reachable over the public internet. You can choose if you want to expose your apps to the public, or if you want your apps and services be reachable on the private network only. When you keep your apps and services private, you can leverage the built-in security features to assure secured communication between worker nodes and pods. To expose services and apps to the public internet, you can use {{site.data.keyword.redhat_openshift_notm}} routes, or leverage the [NLB and Ingress ALB support](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) to securely make your services publicly available. Ensure that only necessary services are exposed, and revisit the list of exposed apps regularly to ensure that they are still valid. |
 |Limit public internet connectivity with edge nodes|Every worker node is configured to accept app pods and associated load balancer or ingress pods. You can label worker nodes as [edge nodes](/docs/openshift?topic=openshift-edge#edge) to force load balancer pods to be deployed to these worker nodes only. In addition, you can [taint your worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads) so that app pods can't schedule onto the edge nodes. With edge nodes, you can isolate the networking workload on fewer worker nodes in your cluster and keep other worker nodes in the cluster private.|
-{: caption="Private services and worker node options" caption-side="top"}
+{: caption="Private services and worker node options" caption-side="bottom"}
 
 **What if I want to connect my cluster to an on-prem data center?**
 
@@ -362,7 +362,7 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 |-------|----------------------------------|
 |Limit the number of exposed apps|By default, your apps and services that run within the cluster are not reachable over the public internet. You can choose if you want to expose your apps to the public, or if you want your apps and services be reachable on the private network only. When you keep your apps and services private, you can leverage the built-in security features to assure secured communication between worker nodes and pods. To expose services and apps to the public internet, you can leverage the [VPC load balancer and Ingress ALB support](/docs/containers?topic=containers-cs_network_planning#pattern_public_vpc) to securely make your services publicly available. Ensure that only necessary services are exposed, and revisit the list of exposed apps regularly to ensure that they are still valid. |
 |Limit public network egress to one subnet with a public gateway|If pods on your worker nodes need to connect to a public external endpoint, you can attach a public gateway to the subnet that those worker nodes are on.|
-{: caption="VPC network security options" caption-side="top"}
+{: caption="VPC network security options" caption-side="bottom"}
 
 **What if I want to connect my cluster to other networks, like other VPCs, an on-prem data center, or IBM Cloud classic resources?**
 
@@ -496,7 +496,7 @@ When you use Kubernetes to interact with a container image, such as by creating 
 | kubelet | `system_u:system_r:unconfined_service_t:s0` |
 | `crio.sock` | `system_u:object_r:container_var_run_t:s0` |
 | A container process, such as `c14` | `system_u:system_r:container_t:s0:c14` |
-{: caption="SELinux labels that are used to protect container runtime processes." caption-side="top"}
+{: caption="SELinux labels that are used to protect container runtime processes." caption-side="bottom"}
 
 Example request flow
 
@@ -545,7 +545,7 @@ You can use the built-in container registry to automate the container image buil
 |Push images with trusted content only|Ensure the integrity of your images by enabling [content trust](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent) in your image repository. With trusted content, you can control who can sign images as trusted and push images to a specific registry namespace. After trusted signers push an image to a registry namespace, users can pull the signed content so that they can verify the publisher and the integrity of the image.|
 |Automatic vulnerability scans|When you use {{site.data.keyword.registrylong_notm}}, you can leverage the built-in security scanning that is provided by [Vulnerability Advisor](/docs/va?topic=va-va_index#va_registry_cli). Every image that is pushed to your registry namespace is automatically scanned for vulnerabilities against a database of known CentOS, Debian, Red Hat, and Ubuntu issues. If vulnerabilities are found, Vulnerability Advisor provides instructions for how to resolve them to ensure image integrity and security.|
 |Block deployments from vulnerable images or untrusted users|Create an admission controller with custom policies so that you can verify container images before you deploy them. With the [open source Portieris project](https://github.com/IBM/portieris){: external}, you control where the images are deployed from and ensure that they meet content trust requirements. If a deployment does not meet the policies that you set, the admission controller blocks the deployment in your cluster.|
-{: caption="Security for images and deployments" caption-side="top"}
+{: caption="Security for images and deployments" caption-side="bottom"}
 
 
 

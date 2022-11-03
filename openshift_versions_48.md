@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-11-03"
 
 keywords: openshift, version, update, upgrade
 
@@ -39,7 +39,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
 | Supported | 4.8 / 1.21 | 29 Sep 2021 | Feb 2023`†` |
-{: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.8." caption-side="top"}
+{: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.8." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
 ## Preparing to update
@@ -59,7 +59,7 @@ The following table shows the actions that you must take before you [update the 
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.8 deprecated and removed features](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-deprecated-removed-features){: external}. |
 | Container runtime default security context capabilities | The container runtime (i.e. CRI-O) default security context capabilities have been changed to match Red Hat OpenShift Container Platform (OCP). `NET_RAW` and `SYS_CHROOT` have been removed. This brings the security behavior of containers in line with OCP. If your app requires either of these capabilities and does not list them in the container or pod `securityContext`, then the app must be changed to include these capabilities. If these changes are not made, your microservices might fail to start and you might see a `permission denied` error. Applications developed for OCP already have the necessary changes.  |
 | Strongswan users | If you are using Strongswan in your cluster, then update at least version 2.7.11 of Strongswan before you update your cluster master to {{site.data.keyword.redhat_openshift_notm}} 4.8. In versions of Strongswan earlier than 2.7.11, certain [Strongswan configuration options](/docs/openshift?topic=openshift-vpn#vpn-setup) do not work with the {{site.data.keyword.redhat_openshift_notm}} 4.8 master. |
-{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.8" caption-side="top"}
+{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.8" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
 
 

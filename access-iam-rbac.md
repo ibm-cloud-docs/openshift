@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-31"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -43,7 +43,7 @@ Wondering which access roles to assign to your cluster users? Use the examples i
 | DevOps operator | [Operator platform access role for a cluster](/docs/containers?topic=containers-access_reference#iam_platform), [Writer service access role not scoped to a namespace (for the whole cluster)](/docs/containers?topic=containers-access_reference#service), [Cloud Foundry developer space role](/docs/containers?topic=containers-access_reference#cloud-foundry).  |
 | Operator or site reliability engineer | [Administrator platform access role for a cluster, region, or resource group](/docs/containers?topic=containers-access_reference#iam_platform), [Reader service access role for a cluster or region](/docs/containers?topic=containers-access_reference#service) or [Manager service access role for all cluster namespaces](/docs/containers?topic=containers-access_reference#service) to be able to use `kubectl top nodes,pods` commands. |
 {: summary="The first column contains the use case, which is typically the role of a user. The second column is the example role and scope of the role that you assign the user in {{site.data.keyword.cloud_notm}} IAM."}
-{: caption="Types of roles you might assign to meet different use cases." caption-side="top"}
+{: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
 
 
 ## Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console
@@ -265,7 +265,7 @@ You can't scope {{site.data.keyword.cloud_notm}} IAM service access roles to an 
     | `subjects.attributes` | Enter the {{site.data.keyword.cloud_notm}} IAM details for the individual user or access group that you previously retrieved. \n * For individual users, set `iam_id` for the `name` field. Enter the previously retrieved `ibmUniqueId` for the `value` field. |
     | `roles.role_id` | Choose the [IAM service access role](/docs/openshift?topic=openshift-access_reference#service) that you want to assign. Possible values are: \n * `crn:v1:bluemix:public:iam::::serviceRole:Manager` \n * `crn:v1:bluemix:public:iam::::serviceRole:Writer` \n * `crn:v1:bluemix:public:iam::::serviceRole:Reader` |
     | `resources.attributes` | Configure the scope of the policy to your account, cluster, and namespace. Leave the `"name"` fields as given in the example, and enter certain `"value"` fields as follows. \n * For `"accountId"`: Enter your {{site.data.keyword.cloud_notm}} account ID that you previously retrieved. \n * For `"serviceName"`: Leave the service name as given: `containers-kubernetes`. \n * For `"serviceInstance"`: Enter your cluster ID. For multiple clusters, separate with a comma. To get your cluster ID, run `ibmcloud oc cluster ls`. \n * For `"namespace"`: Enter a Kubernetes namespace in your cluster. To list the namespaces in your cluster, run `oc get namespaces`.  \n \n To assign the access policy to all namespaces in a cluster, remove the entire `{"name": "namespace", "value": "<namespace_name"}` entry. |
-    {: caption="Table 1. Understanding options for service access role policy" caption-side="top"}
+    {: caption="Table 1. Understanding options for service access role policy" caption-side="bottom"}
 
 3. Apply the {{site.data.keyword.cloud_notm}} IAM policy to an individual user.
     * For individual users
@@ -387,7 +387,7 @@ To create custom RBAC permissions,
         | `rules.apiGroups` | Specify the Kubernetes [API groups](https://kubernetes.io/docs/reference/using-api/#api-groups){: external} that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`. |
         | `rules.resources` | Specify the Kubernetes [resource types](https://kubernetes.io/docs/reference/kubectl/cheatsheet/){: external} to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. If you specify `"nodes"`, then the kind must be `ClusterRole`. |
         | `rules.verbs` | Specify the types of [actions](https://kubectl.docs.kubernetes.io/){: external} that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`. |
-        {: caption="Table 3. Understanding the YAML parameters" caption-side="top"}
+        {: caption="Table 3. Understanding the YAML parameters" caption-side="bottom"}
 
     2. Create the role or cluster role in your cluster.
 
@@ -449,7 +449,7 @@ To create custom RBAC permissions,
         | `roleRef.kind` | Enter the same value as the `kind` in the role `.yaml` file: `Role` or `ClusterRole`. |
         | `roleRef.name` | Enter the name of the role `.yaml` file. |
         | `roleRef.apiGroup` | Use `rbac.authorization.k8s.io`. |
-        {: caption="Table 3. Understanding the YAML parameters" caption-side="top"}
+        {: caption="Table 3. Understanding the YAML parameters" caption-side="bottom"}
 
     2. Create the role binding or cluster role binding resource in your cluster.
 
@@ -535,7 +535,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     | `rules.apiGroups` | Specify the Kubernetes [API groups](https://kubernetes.io/docs/reference/using-api/#api-groups){: external} that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`. |
     | `rules.resources` | Specify the Kubernetes [resource types](https://kubernetes.io/docs/reference/kubectl/cheatsheet/){: external} to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. |
     | `rules.verbs` | Specify the types of [actions](https://kubectl.docs.kubernetes.io/){: external} that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`. |
-    {: caption="Table 4. Understanding the YAML parameters" caption-side="top"}
+    {: caption="Table 4. Understanding the YAML parameters" caption-side="bottom"}
 
 2. Create the cluster role in your cluster. Any users that have a role binding to the `admin` cluster role now have the additional permissions from the `view-pod-metrics` cluster role.
     ```sh

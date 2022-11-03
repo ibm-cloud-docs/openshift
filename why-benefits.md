@@ -114,7 +114,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Supported operating system| Ubuntu 18.04 x86_64, 16.04 x86_64 (deprecated) | * For versions 4.10 and later: Red Hat Enterprise Linux 8 \n  * For versions 4.9 and earlier:Red Hat Enterprise Linux 7  \n  * For a complete list, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). |
 |Preferred external traffic networking| Ingress | Router |
 |Secured routes encrypted with {{site.data.keyword.hscrypto}} | | Yes |
-{: caption="Characteristics of community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters" caption-side="top"}
+{: caption="Characteristics of community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters" caption-side="bottom"}
 
 
 
@@ -146,7 +146,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Serverless workloads | You can set up [{{site.data.keyword.redhat_openshift_notm}} Serverless](https://www.redhat.com/en/topics/microservices/why-choose-openshift-serverless){: external}. | You can also set up {{site.data.keyword.redhat_openshift_notm}} Serverless. |
 | Service mesh | You can set up the [{{site.data.keyword.redhat_openshift_notm}} Service Mesh](https://docs.openshift.com/container-platform/4.10/service_mesh/v1x/installing-ossm.html){: external}. | You can also set up the {{site.data.keyword.redhat_openshift_notm}} Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
-{: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="top"}
+{: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="bottom"}
 {: summary="The rows are read from left to right. In the first column is the characteristic that differs between standard OpenShift Container Platform installations in the second column and {{site.data.keyword.openshiftlong_notm}} clusters in the third column."}
 
 
@@ -208,7 +208,7 @@ Review the following operator support table. To receive support on the for the f
 | Source to Image and Tekton Builders | Red Hat |
 | OpenShift Serverless FaaS | Red Hat |
 | IDE Integrations | Red Hat |
-{: caption="Operator support overview" caption-side="top"}
+{: caption="Operator support overview" caption-side="bottom"}
 
 
 

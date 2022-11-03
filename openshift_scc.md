@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-11-03"
 
 keywords: openshift, scc, security context constraint, psp
 
@@ -89,7 +89,7 @@ Do not edit existing {{site.data.keyword.redhat_openshift_notm}} or IBM SCCs set
 | `nonroot`| Denies access similar to the `restricted` SCC, but allows users to run with any non-root UID. Either the user or the manifest of the container runtime must specify the UID.|
 | `privileged`| Allows access to all privileged and host features and the ability to run as any user, any group, any fsGroup, and with any SELinux context. \n  \n **Important**: Grant this SCC for only cluster administration that requires the most access possible. |
 | `restricted`| Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This is the most restrictive SCC, and it is used by default for authenticated users.|
-{: caption="Default {{site.data.keyword.redhat_openshift_notm}} security context constraints" caption-side="top"}
+{: caption="Default {{site.data.keyword.redhat_openshift_notm}} security context constraints" caption-side="bottom"}
 
 
 ## Default IBM security context constraints
@@ -108,7 +108,7 @@ Do not edit existing {{site.data.keyword.redhat_openshift_notm}} or IBM SCCs set
 | `ibm-anyuid-scc` | Allows pods to run with any UID and GID, but prevents access to the host.|
 | `ibm-privileged-scc`| Grants access to all privileged host features, and allows a pod to run with any UID and GID and any volume. \n  \n **Important**: Grant this SCC for only cluster administration that requires the most access possible. |
 | `ibm-restricted-scc` | Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This SCC is the most restrictive IBM SCC.|
-{: caption="Default IBM security context constraints" caption-side="top"}
+{: caption="Default IBM security context constraints" caption-side="bottom"}
 
 
 

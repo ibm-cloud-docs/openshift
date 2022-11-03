@@ -53,7 +53,7 @@ With {{site.data.keyword.cloud_notm}}, you have flexibility to create {{site.dat
 | PCI and HIPAA-compliant workloads | Yes | Yes |
 | Legacy apps with platform and infrastructure constraints and dependencies | | Yes |
 | Proprietary apps with strict designs, licensing, or heavy regulations | | Yes |
-{: caption="{{site.data.keyword.cloud_notm}} implementations support your workloads" caption-side="top"}
+{: caption="{{site.data.keyword.cloud_notm}} implementations support your workloads" caption-side="bottom"}
 
 **Ready to run workloads off-premises in {{site.data.keyword.openshiftlong_notm}}?**
 

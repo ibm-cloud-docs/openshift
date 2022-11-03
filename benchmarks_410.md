@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-11-03"
 
 keywords: openshift, benchmarks, 4.10
 
@@ -54,7 +54,7 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | 1.1.19 | Ensure that the Kubernetes PKI directory and file ownership is set to `root:root`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 1.1.20 | Ensure that the Kubernetes PKI certificate file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 1.1.21 | Ensure that the Kubernetes PKI key file permissions are set to `600`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-{: caption="Section 1.1 Master node benchmark results" caption-side="top"}
+{: caption="Section 1.1 Master node benchmark results" caption-side="bottom"}
 
 ### 1.2 API server
 {: #cis-benchmark-12-410}
@@ -96,7 +96,7 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | 1.2.33 | Ensure that the `--encryption-provider-config` option is set as appropriate. | Scored | 1 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
 | 1.2.34 | Ensure that encryption providers are appropriately configured. | Scored | 1 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
 | 1.2.35 | Ensure that the API Server makes use of only Strong Cryptographic Ciphers. | Not Scored | 1 | Pass |  IBM |
-{: caption="Section 1.2 API server benchmark results" caption-side="top"}
+{: caption="Section 1.2 API server benchmark results" caption-side="bottom"}
 
 ### 1.3 Controller manager
 {: #cis-benchmark-13-410}
@@ -110,7 +110,7 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | 1.3.5 | Ensure that the `--root-ca-file` option is set as appropriate. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 1.3.6 | Ensure that the `RotateKubeletServerCertificate` option is set to `true`. | Scored | 2 | Pass | {{site.data.keyword.IBM_notm}} |
 | 1.3.7 | Ensure that the `--bind-address` option is set to `127.0.0.1`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-{: caption="Section 1.3 Controller manager benchmark results" caption-side="top"}
+{: caption="Section 1.3 Controller manager benchmark results" caption-side="bottom"}
 
 ### 1.4 Scheduler
 {: #cis-benchmark-14-410}
@@ -119,7 +119,7 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | --- | --- | --- | --- | --- | --- |
 | 1.4.1 | Ensure that the `--profiling` option is set to `false`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 1.4.2 | Ensure that the `--bind-address` option is set to `127.0.0`.1 | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-{: caption="Section 1.4 Scheduler benchmark results" caption-side="top"}
+{: caption="Section 1.4 Scheduler benchmark results" caption-side="bottom"}
 
 ## 2 Etcd node configuration
 {: #cis-section-2-410}
@@ -133,7 +133,7 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | 2.5 | Ensure that the `--peer-client-cert-auth` option is set to `true`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 2.6 | Ensure that the `--peer-auto-tls` option is not set to `true`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 2.7 | Ensure that a unique Certificate Authority is used for etcd. | Not Scored | 2 | Pass | {{site.data.keyword.IBM_notm}} |
-{: caption="Section 2 Etcd Node Configuration benchmark results" caption-side="top"}
+{: caption="Section 2 Etcd Node Configuration benchmark results" caption-side="bottom"}
 
 ## 3 Control plane configuration
 {: #cis-section-3-410}
@@ -144,7 +144,7 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 3.1.1 | Client certificate authentication should not be used for users. | Not Scored | 2 | Pass |  Shared |
-{: caption="Section 3.1 Authentication and Authorization benchmark results" caption-side="top"}
+{: caption="Section 3.1 Authentication and Authorization benchmark results" caption-side="bottom"}
 
 ### 3.2 Logging
 {: #cis-benchmark-32-410}
@@ -153,7 +153,7 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | --- | --- | --- | --- | --- | --- |
 | 3.2.1 | Ensure that a minimal audit policy is created. | Scored | 1 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
 | 3.2.2 | Ensure that the audit policy covers key security concerns. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
-{: caption="Section 3.2 Logging benchmark results" caption-side="top"}
+{: caption="Section 3.2 Logging benchmark results" caption-side="bottom"}
 
 ## 4 Worker node security configuration
 {: #cis-section-4-410}
@@ -177,7 +177,7 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 | 4.1.8 | Ensure that the client certificate authorities file ownership is set to `root:root`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.1.9 | Ensure that the kubelet configuration file has permissions set to `644` or more restrictive. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.1.10 | Ensure that the kubelet configuration file ownership is set to `root:root`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-{: caption="Section 4.1 Worker Node Configuration benchmark results" caption-side="top"}
+{: caption="Section 4.1 Worker Node Configuration benchmark results" caption-side="bottom"}
 
 ### 4.2 Kubelet
 {: #cis-benchmark-42-410}
@@ -197,7 +197,7 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 | 4.2.11 | Ensure that the `--rotate-certificates` option is not set to `false`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.2.12 | Ensure that the `RotateKubeletServerCertificate`option is set to `true`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.2.13 | Ensure that the kubelet makes use of only Strong Cryptographic Ciphers | Not Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-{: caption="Section 4.2 Kubelet benchmark results" caption-side="top"}
+{: caption="Section 4.2 Kubelet benchmark results" caption-side="bottom"}
 
 ## 5 Kubernetes policies
 {: #cis-section-5-410}
@@ -216,7 +216,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.1.4 | Minimize access to create pods. | Not Scored | 1 | Pass | Shared |
 | 5.1.5 | Ensure that default service accounts are not actively used. | Scored | 1 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
 | 5.1.6 | Ensure that Service Account Tokens are only mounted where necessary. | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
-{: caption="Section 5.1 RBAC and Service Accounts benchmark results" caption-side="top"}
+{: caption="Section 5.1 RBAC and Service Accounts benchmark results" caption-side="bottom"}
 
 ### 5.2 Pod Security Policies
 {: #cis-benchmark-52-410}
@@ -232,7 +232,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.2.7 | Minimize the admission of containers with the NET_RAW capability. | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations-410) | Shared |
 | 5.2.8 | Minimize the admission of containers with added capabilities. | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations-410) | Shared |
 | 5.2.9 | Minimize the admission of containers with capabilities assigned. | Not Scored | 2 | [Pass](#ibm-remediations-and-explanations-410) | Shared |
-{: caption="Section 5.2 Pod Security Policies benchmark results" caption-side="top"}
+{: caption="Section 5.2 Pod Security Policies benchmark results" caption-side="bottom"}
 
 ### 5.3 Network policies and CNI
 {: #cis-benchmark-53-410}
@@ -241,7 +241,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | --- | --- | --- | --- | --- | --- |
 | 5.3.1 | Ensure that the CNI in use supports network policies. | Not Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 5.3.2 | Ensure that all namespaces have network policies defined. | Scored | 2  | [Fail](#ibm-remediations-and-explanations-410) | Shared |
-{: caption="Section 5.3 Network policies and CNI benchmark results" caption-side="top"}
+{: caption="Section 5.3 Network policies and CNI benchmark results" caption-side="bottom"}
 
 ### 5.4 Secrets management
 {: #cis-benchmark-54-410}
@@ -250,7 +250,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | --- | --- | --- | --- | --- | --- |
 | 5.4.1 | Prefer using secrets as files over secrets as environment variables. | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
 | 5.4.2 | Consider external secret storage | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
-{: caption="Section 5.4 Secrets management benchmark results" caption-side="top"}
+{: caption="Section 5.4 Secrets management benchmark results" caption-side="bottom"}
 
 ### 5.5 Extensible admission control
 {: #cis-benchmark-55-410}
@@ -258,7 +258,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.5.1 | Configure Image Provenance using `ImagePolicyWebhook` admission controller. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
-{: caption="Section 5.5 Extensible admission control benchmark results" caption-side="top"}
+{: caption="Section 5.5 Extensible admission control benchmark results" caption-side="bottom"}
 
 
 ### 5.6 General policies
@@ -270,7 +270,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.6.2 | Ensure that the seccomp profile is set to docker/default in your pod definitions. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
 | 5.6.3 | Apply security context to your pods and containers. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-410) | Shared |
 | 5.6.4 | The default namespace should not be used. | Scored | 2 | Pass | Shared |
-{: caption="Section 5.6 General policies benchmark results" caption-side="top"}
+{: caption="Section 5.6 General policies benchmark results" caption-side="bottom"}
 
 ### {{site.data.keyword.IBM_notm}} remediations and explanations
 {: #ibm-remediations-and-explanations-410}
@@ -311,5 +311,5 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
 | 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/). |
 | 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/). |
-{: caption="Explanation and remediation" caption-side="top"}
+{: caption="Explanation and remediation" caption-side="bottom"}
 

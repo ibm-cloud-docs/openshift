@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -324,7 +324,7 @@ To review how much compute resources are currently used on your worker node, run
 | Additional reserve for [`kubelet` eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/){: external} | 100 MB | 100 MB (flat amount) | 100 MB (flat amount)|
 | **Total reserved** | **(varies)** | **2.7 GB of 16 GB total** | **11.96 GB of 256 GB total**|
 {: class="simple-tab-table"}
-{: caption="Worker node memory reserves by tier" caption-side="top"}
+{: caption="Worker node memory reserves by tier" caption-side="bottom"}
 {: #worker-memory-reserves}
 {: tab-title="Worker node memory reserves by tier"}
 {: tab-group="Worker Node"}
@@ -337,7 +337,7 @@ To review how much compute resources are currently used on your worker node, run
 | Remaining cores (Cores 6+) | 0.25% cores | N/A | 0.0575 cores|
 | **Total reserved** | **(varies)** | **0.085 cores of four cores total** | **0.1475 cores of 28 cores total**|
 {: class="simple-tab-table"}
-{: caption="Worker node CPU reserves by tier" caption-side="top"}
+{: caption="Worker node CPU reserves by tier" caption-side="bottom"}
 {: #worker-cpu-reserves}
 {: tab-title="Worker node CPU reserves by tier"}
 {: tab-group="Worker Node"}
@@ -350,7 +350,7 @@ To review how much compute resources are currently used on your worker node, run
 | `b3c.4x16` worker node: 126,878 PIDs | 25,376 PIDs (20%) | 44,407 PIDS (35%)  |
 | `mg1c.28x256` worker node: 2,062,400 PIDs| 103,120 PIDs (5%) | 928,085 PIDs (45%) |
 {: class="simple-tab-table"}
-{: caption="Worker node PID reserves by tier" caption-side="top"}
+{: caption="Worker node PID reserves by tier" caption-side="bottom"}
 {: #worker-pid-reserves}
 {: tab-title="Worker node PID reserves by tier"}
 {: tab-group="Worker Node"}
@@ -360,7 +360,7 @@ To review how much compute resources are currently used on your worker node, run
 | Classic | {{site.data.keyword.redhat_openshift_notm}} 4.3+ | Secondary disk | 10% |
 | VPC | {{site.data.keyword.redhat_openshift_notm}} 4.3+ | Boot disk | 10% |
 {: class="simple-tab-table"}
-{: caption="Worker node disk ephemeral storage reserves" caption-side="top"}
+{: caption="Worker node disk ephemeral storage reserves" caption-side="bottom"}
 {: #worker-memory-reserves-infra}
 {: tab-title="Worker node disk reserves"}
 {: tab-group="Worker Node"}

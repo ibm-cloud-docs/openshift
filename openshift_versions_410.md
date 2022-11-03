@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-03"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -51,7 +51,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
 | Supported | 4.10 / 1.23 | 27 April 2022 | October 2023`†` |
-{: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.10." caption-side="top"}
+{: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.10." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
 ## Preparing to update
@@ -77,7 +77,7 @@ The following table shows the actions that you must take before you [update the 
 | --- | --- |
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.10 deprecated and removed features](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-deprecated-removed-features){: external}. |
 | Kubernetes API server metrics job name changed | Kubernetes API server metrics now use job `kube-apiserver` rather than `cluster-version-operator`. Update any custom metrics and alerts to use the new job name. |
-{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.10" caption-side="top"}
+{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.10" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
 
 ### Update after master
@@ -86,7 +86,7 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | --- | --- |
 | **Deprecated**: RHEL 7 | RHEL 7 is deprecated in version 4.10. [Migrate your worker nodes to RHEL 8](#410_rhel-migrate). |
-{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.10" caption-side="top"}
+{: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.10" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
 
 ## Migrating your worker nodes to RHEL 8
