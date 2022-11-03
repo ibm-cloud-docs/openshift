@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2022, 2022
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -27,5 +27,3 @@ The following table shows the Cloud Foundry roles that are required for cluster 
 | Space role: Manager | Manage user access to an {{site.data.keyword.cloud_notm}} space |
 | Space role: Developer |  - Create {{site.data.keyword.cloud_notm}} service instances \n - Bind {{site.data.keyword.cloud_notm}} service instances to clusters \n - View logs from a cluster's log forwarding configuration at the space level |
 {: caption="Table 1. Cluster management permissions by Cloud Foundry role" caption-side="bottom"}
-
-

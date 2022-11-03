@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2022, 2022
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -71,3 +71,4 @@ Other common use cases
 | Add/Upgrade Storage (Storage Layer) | Create {{site.data.keyword.cloud_notm}} File or Block storage instances to attach as volumes to your apps for persistent storage of data. | Classic infrastructure > Permissions > Account| `ibmcloud sl user permission-edit <user_id> --permission ADD_SERVICE_STORAGE --enable true`  |
 | Storage Manage | Manage {{site.data.keyword.cloud_notm}} File or Block storage instances that are attached as volumes to your apps for persistent storage of data. | Classic infrastructure > Permissions > Services| `ibmcloud sl user permission-edit <user_id> --permission NAS_MANAGE --enable true` |
 {: caption="Table 2: Suggested classic infrastructure permissions" caption-side="bottom"}
+

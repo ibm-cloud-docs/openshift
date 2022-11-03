@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2014, 2022
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -182,5 +182,3 @@ The following tables show the permissions granted by each {{site.data.keyword.cl
 | Collect a snapshot of API server logs in an {{site.data.keyword.cos_full_notm}} bucket. | [`ibmcloud oc logging collect`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_collect) | [`POST /v1/log-collector/{idOrName}/masterlogs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/log45collector/CreateMasterLogCollection){: external} |
 | See the status of the API server logs snapshot request. | [`ibmcloud oc logging collect-status`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_collect_status) | [`GET /v1/log-collector/{idOrName}/masterlogs`](https://containers.cloud.ibm.com/global/swagger-global-api/#/log45collector/GetMasterLogCollectionStatus){: external} |
 {: caption="Table 5. Overview of CLI commands and API calls available to users with the Administrator IAM platform access role." caption-side="bottom"}
-
-
