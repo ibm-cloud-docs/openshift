@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-31"
+lastupdated: "2022-11-03"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -54,7 +54,7 @@ The following table shows the changes that are in the master fix pack 4.11.8_152
 | OpenVPN Operator image | v1.4.9 | v1.4.10 | Updated ansible operator base image to v1.24.0 to resolve CVEs. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.11.4 | 4.11.8 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-8){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server and toolkit | v4.11.0-20220920 | v4.11.0-20221004 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0%2B20221004){: external}. |
-{: caption="Changes since version 4.11.41523openshift" caption-side="top"}
+{: caption="Changes since version 4.11.41523openshift" caption-side="bottom"}
 
 ### Change log for worker node fix pack 4.11.9_1529_openshift, released 27 October 2022
 {: #4119_1529_openshift}
@@ -65,7 +65,7 @@ The following table shows the changes that are in the worker node fix pack 4.11.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | VPC Gen 2 RHEL 8 worker image disk size | N/A | N/A | Fixed regression on previous version where root filesystem partition was 25 GB instead of 100GB for VPC Gen 2 |
-{: caption="Changes since version 4.11.9_1526_openshift" caption-side="top"}
+{: caption="Changes since version 4.11.9_1526_openshift" caption-side="bottom"}
 
 ### Change log for worker node fix pack 4.11.9_1526_openshift, released 25 October 2022
 {: #4119_1526_openshift}
@@ -77,7 +77,7 @@ The following table shows the changes that are in the worker node fix pack 4.11.
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A|N/A|
 | {{site.data.keyword.openshiftshort}}. | 4.11.7 | 4.11.9 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-9){: external}. |
-{: caption="Changes since version 4.11.7_1525_openshift" caption-side="top"}
+{: caption="Changes since version 4.11.7_1525_openshift" caption-side="bottom"}
 
 ### Change log for master fix pack 4.11.4_1523_openshift, released 26 September 2022
 {: #4114_1523_openshift}
@@ -100,7 +100,7 @@ The following table shows the changes that are in the master fix pack 4.11.4_152
 | Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.11.0-20220829 | v4.11.0-20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20220920){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.11.0-20220829 | v4.11.0-20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20220920){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.11.0+20220829 | 4.11.0+20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20220920){: external}. |
-{: caption="Changes since version 4.11.01521openshift" caption-side="top"}
+{: caption="Changes since version 4.11.01521openshift" caption-side="bottom"}
 
 ### Change log for master fix pack 4.11.0_1521_openshift, released 1 September 2022
 {: #4.11.0_1521_openshift}
@@ -110,7 +110,7 @@ The following table shows the changes that are in the master fix pack 4.11.4_152
 | Red Hat OpenShift Control Plane Operator | v4.11.0-20220824 | v4.11.0-20220829 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0%2B20220829){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.11.0-20220824 | v4.11.0-20220829 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0%2B20220829){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.11.0+20220824 | 4.11.0+20220829 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20220829){: external}. |
-{: caption="Changes since version 4.11.0_1519_openshift" caption-side="top"}
+{: caption="Changes since version 4.11.0_1519_openshift" caption-side="bottom"}
 
 
 ### Change log for master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift, released 31 August 2022
@@ -144,4 +144,4 @@ The following table shows the changes that are in the master fix pack 4.11.0_151
 | Red Hat OpenShift on IBM Cloud Metrics Server | v4.10.0-20220712 | v4.11.0-20220824 | See the [{{site.data.keyword.openshiftshort}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20220824){: external}. |
 | Red Hat OpenShift on IBM Cloud toolkit | 4.10.0+20220712 | 4.11.0+20220824 | See the [{{site.data.keyword.openshiftshort}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20220824){: external}. |
 | RHEL Packages | RHEL 7 | RHEL 8 | Red Hat OpenShift on IBM Cloud version 4.11 supports RHEL 8 worker nodes. |
-{: caption="Changes since version 4.10.22_1528_openshift" caption-side="top"}
+{: caption="Changes since version 4.10.22_1528_openshift" caption-side="bottom"}

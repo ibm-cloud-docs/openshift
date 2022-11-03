@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-11-03"
 
 keywords: openshift, version, update, upgrade
 
@@ -40,7 +40,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
 | Unsupported | 3.11 / 1.11 | 01 Aug 2019 | 06 Jun 2022 `†` |
-{: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 3.11." caption-side="top"}
+{: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 3.11." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
 ### Why is the deprecated version 3.11 supported longer than more recent versions like 4.6?

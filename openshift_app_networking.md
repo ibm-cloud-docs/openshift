@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-11-03"
 
 keywords: openshift, networking
 
@@ -66,7 +66,7 @@ The following table compares the features of each app exposure method.
 |Multiple apps per route or service| | | |Yes|
 |Consistent hybrid multicloud deployment| | | |Yes|
 {: #roks-net-compare-43}
-{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 4 clusters." caption-side="top"}
+{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 4 clusters." caption-side="bottom"}
 
 
 
@@ -81,7 +81,7 @@ The following table compares the features of each app exposure method.
 |Multiple apps per route or service| | |Yes|
 |Consistent hybrid multicloud deployment| | |Yes|
 {: #roks-net-compare-311}
-{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 3.11 clusters." caption-side="top"}
+{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 3.11 clusters." caption-side="bottom"}
 
 
 
@@ -181,7 +181,7 @@ Check out the following methods for private app networking:
 | NLB 1.0 | Basic load balancing that exposes the app with a private IP address|Quickly expose one app to a private network with a private IP address.|  \n 1. [Create a private NLB service](/docs/openshift?topic=openshift-loadbalancer). An NLB with a portable private IP address still has a public node port open on every worker node.  \n 2. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts. |
 | NLB v2.0 | DSR load balancing that exposes the app with a private IP address|Expose an app that might receive high levels of traffic to a private network with an IP address.|  \n 1. Complete the [prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).  \n 2. Create a private NLB 2.0 in a [single](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config) cluster. An NLB with a portable private IP address still has a public node port open on every worker node.  \n 3. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts. |
 | {{site.data.keyword.redhat_openshift_notm}} version 4 clusters: Ingress |HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps.|  \n 1. [Register your custom domain](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-2).  \n 2. [Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3).  \n 3. Create an [Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4) for the private Ingress controller. |
-{: caption="Characteristics of network deployment patterns for a public and a private VLAN setup" caption-side="top"}
+{: caption="Characteristics of network deployment patterns for a public and a private VLAN setup" caption-side="bottom"}
 
 
 
@@ -200,7 +200,7 @@ Only version 4 clusters can be created on VPC infrastructure. The following meth
 |NodePort|Port on a worker node that exposes the app on the worker's private IP address|Test private access to one app or provide access for only a short amount of time.|[Create a private NodePort service](/docs/openshift?topic=openshift-nodeport).|
 |VPC load balancer|Basic load balancing that exposes the app with a private hostname|Quickly expose one app to a private network with a VPC load balancer-assigned private hostname.|[Create a private `LoadBalancer` service](/docs/openshift?topic=openshift-vpc-lbaas) in your cluster. A multizonal VPC load balancer is automatically created in your VPC that assigns a hostname to your `LoadBalancer` service for your app.|
 |Ingress|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps.|[Create an Ingress resource for the default private Ingress controller in clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller), or [create an Ingress resource for a custom private Ingress controller in clusters with a public cloud service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).|
-{: caption="Private network deployment patterns for a VPC cluster" caption-side="top"}
+{: caption="Private network deployment patterns for a VPC cluster" caption-side="bottom"}
 
 
 

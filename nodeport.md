@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift, app access
 
@@ -96,7 +96,7 @@ To use a NodePort,
     | `selector` | Replace `<my-selector-key>` and `<my-selector-value>` with the key/value pair that you used in the `spec.template.metadata.labels` section of your deployment YAML. To associate the service with the deployment, the selector must match the deployment labels. |
     | `port` | Replace `<8081>` with the port that your service listens on. |
     | `nodePort` | Optional: Replace `<31514>` with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you. \n To specify a NodePort and see which NodePorts are already in use, run the **`oc get svc`** command. Any NodePorts in use appear under the **Ports** field.
-    {: caption="Table 1. Understanding the NodePort service components" caption-side="top"}
+    {: caption="Table 1. Understanding the NodePort service components" caption-side="bottom"}
 
 2. Save the updated configuration file.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-01"
 
 keywords: openshift, clusters, delete, remove
 
@@ -20,6 +20,11 @@ subcollection: openshift
 
 Clusters that are created with a billable account must be removed manually when they are not needed anymore so that those clusters are no longer consuming resources.
 {: shortdesc}
+
+Supported infrastructure providers
+:   Classic
+:   VPC
+:   {{site.data.keyword.satelliteshort}}
 
 When you delete the cluster, all worker nodes, apps, and containers are permanently deleted. This action can't be undone. Before you proceed, make sure to back up all required data and configuration files.
 {: important}
@@ -82,6 +87,7 @@ Next steps:
 - **Classic clusters only**: If you kept the subnets, you can [reuse them in a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
 - **VPC clusters only**: If you have infrastructure resources that you no longer want to use, such as the VPC or subnets, remove these resources in the VPC portal.
 - If you kept the persistent storage, you can delete your storage later through the {{site.data.keyword.cloud_notm}} console for the corresponding storage service.
+- **{{site.data.keyword.satellite}} short clusters}}**: If you have hosts attached to your location that you no longer want to use, remove them. For more information see [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove).
 
 
 

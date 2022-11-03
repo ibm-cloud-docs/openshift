@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift, strongswan, ipsec, on-prem, vpnaas, direct link
 
@@ -32,7 +32,7 @@ The following table compares the connection options that are available based on 
 | [On-premises networks](#onprem) |Yes| |Yes| |
 | [Other VPCs](#vpc-vpc) |Yes|Yes| | |
 | [Classic infrastructure resources](#vpc-classic) | |Yes| |Yes|
-{: caption="Comparison of connection options based on destination type" caption-side="top"}
+{: caption="Comparison of connection options based on destination type" caption-side="bottom"}
 
 ## Communication with resources in on-premises data centers
 {: #onprem}

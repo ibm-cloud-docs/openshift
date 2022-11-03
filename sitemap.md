@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-31"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 subcollection: openshift
@@ -74,6 +74,38 @@ subcollection: openshift
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers)
 
+* [Compute and worker node resources](/docs/openshift?topic=openshift-infrastructure_providers#infra-compute)
+
+* [Security](/docs/openshift?topic=openshift-infrastructure_providers#infra-security)
+
+* [High availability](/docs/openshift?topic=openshift-infrastructure_providers#infra-high-availability)
+
+* [Reservations](/docs/openshift?topic=openshift-infrastructure_providers#infar-reservations)
+
+* [Cluster administration](/docs/openshift?topic=openshift-infrastructure_providers#infra-cluster-admin)
+
+* [Cluster networking](/docs/openshift?topic=openshift-infrastructure_providers#infra-cluster-networking)
+
+* [Apps and container platform](/docs/openshift?topic=openshift-infrastructure_providers#infra-apps-cp)
+
+* [App networking](/docs/openshift?topic=openshift-infrastructure_providers#infra-app-networking)
+
+* [Storage](/docs/openshift?topic=openshift-infrastructure_providers#infra-storage)
+
+* [User access](/docs/openshift?topic=openshift-infrastructure_providers#infra-user-access)
+
+* [Integrations](/docs/openshift?topic=openshift-infrastructure_providers#infra-integrations)
+
+* [Locations and versions](/docs/openshift?topic=openshift-infrastructure_providers#infra-locations)
+
+* [Service interface](/docs/openshift?topic=openshift-infrastructure_providers#infra-interface)
+
+* [Service compliance](/docs/openshift?topic=openshift-infrastructure_providers#infra-compliance)
+
+* [Service limitations](/docs/openshift?topic=openshift-infrastructure_providers#infra-limitations)
+
+* [Troubleshooting and support](/docs/openshift?topic=openshift-infrastructure_providers#infra-troubleshoot)
+
 [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks#responsibilities_iks)
 
 * [Overview of shared responsibilities](/docs/openshift?topic=openshift-responsibilities_iks#overview-by-resource)
@@ -92,7 +124,7 @@ subcollection: openshift
 
     * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
 
-[Your responsibilities with using {{site.data.keyword.openshiftlong_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
+[Your responsibilities with using {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
 
 * [Overview of shared responsibilities](/docs/openshift?topic=openshift-satellite-responsibilities#overview-by-resource-sat)
 
@@ -220,6 +252,14 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
+
+    * [3 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0322)
+
+        * Changes to the Portworx update process beginning with version `2.12`.
+
+        * Cluster autoscaler add-on version `1.0.7_883`.
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)
 
@@ -2731,11 +2771,37 @@ subcollection: openshift
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
-* [Single zone cluster](/docs/openshift?topic=openshift-ha_clusters#single_zone)
+* [Single zone clusters](/docs/openshift?topic=openshift-ha_clusters#single_zone)
 
-* [Multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone)
+    * [Is my master highly available in a single zone cluster?](/docs/openshift?topic=openshift-ha_clusters#sz-master-ha)
 
-* [Multiple public clusters connected with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters)
+    * [How can I protect my workloads against a single zone failure?](/docs/openshift?topic=openshift-ha_clusters#sz-workload-failover)
+
+* [Multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters)
+
+    * [Why do I need worker nodes in three zones?](/docs/openshift?topic=openshift-ha_clusters#mz-cluster-zones)
+
+    * [How is my {{site.data.keyword.openshiftlong_notm}} master set up?](/docs/openshift?topic=openshift-ha_clusters#mz-master-setup)
+
+    * [Do I have to do anything so that the master can communicate with the workers across zones?](/docs/openshift?topic=openshift-ha_clusters#mz-master-communication)
+
+    * [Can I convert my single zone cluster to a multizone cluster?](/docs/openshift?topic=openshift-ha_clusters#convert-sz-to-mz)
+
+    * [Do my apps automatically spread across zones?](/docs/openshift?topic=openshift-ha_clusters#multizone-apps-faq)
+
+* [Multiple public clusters connected with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb)
+
+    * [Why do I need 3 clusters in three zones?](/docs/openshift?topic=openshift-ha_clusters#multicluster-three-zones)
+
+    * [What if I want to set up multiple clusters across regions?](/docs/openshift?topic=openshift-ha_clusters#multiple-regions-setup)
+
+    * [What options do I have to load balance workloads across multiple clusters?](/docs/openshift?topic=openshift-ha_clusters#multiple-cluster-lb-options)
+
+    * [Setting up a CIS global load balancer](/docs/openshift?topic=openshift-ha_clusters#cis-global-lb-setup)
+
+    * [Setting up your own global load balancer](/docs/openshift?topic=openshift-ha_clusters#byo-global-lb-setup)
+
+    * [What if I want to load balance workloads on the private network?](/docs/openshift?topic=openshift-ha_clusters#glb-private)
 
 [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 
@@ -5657,13 +5723,11 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-* [Available operating systems](/docs/openshift?topic=openshift-openshift_versions#available-os)
+* [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
-    * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+* [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
 
-    * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
-
-    * [Clusters in Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos)
+* [Clusters in Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos)
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
@@ -6618,6 +6682,8 @@ subcollection: openshift
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
 
+    * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
+
     * [Change log for patch update 1.0.6_828, released 10 October 2022](/docs/openshift?topic=openshift-ca_changelog#106828_ca)
 
     * [Change log for patch update 1.0.6_800, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#106800_ca)
@@ -7557,25 +7623,9 @@ subcollection: openshift
     * [Change log for master fix pack 4.3.12_1520_openshift and worker node fix pack 4.3.10_1518_openshift, released 20 April 2020](/docs/openshift?topic=openshift-changelog_archive#4312_1520_master)
 
 
-## IAM and Activity Tracker events
-{: #sitemap_iam_and_activity_tracker_events}
+## Activity Tracker events
+{: #sitemap_activity_tracker_events}
 
-
-[User access permissions](/docs/openshift?topic=openshift-access_reference#access_reference)
-
-* [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
-
-* [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform)
-
-* [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service)
-
-* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-access_reference#rbac_ref)
-
-* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-access_reference#iam_issuer_users)
-
-* [Cloud Foundry roles](/docs/openshift?topic=openshift-access_reference#cloud-foundry)
-
-* [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra)
 
 [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events#at_events)
 
@@ -7630,6 +7680,41 @@ subcollection: openshift
 * [Storage](/docs/openshift?topic=openshift-api-at-iam#ks-storage)
 
 * [Worker nodes and worker pools](/docs/openshift?topic=openshift-api-at-iam#ks-workers)
+
+
+## IAM and user access permissions
+{: #sitemap_iam_and_user_access_permissions}
+
+
+[Understanding user access permissions](/docs/openshift?topic=openshift-access_reference#access_reference)
+
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
+
+[IAM platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
+
+* [No role defined](/docs/openshift?topic=openshift-iam-platform-access-roles#no-iam-platform-role)
+
+* [Viewer](/docs/openshift?topic=openshift-iam-platform-access-roles#viewer-iam-platform-role)
+
+* [Editor](/docs/openshift?topic=openshift-iam-platform-access-roles#editor-iam-platform-role)
+
+* [Operator](/docs/openshift?topic=openshift-iam-platform-access-roles#operator-iam-platform-role)
+
+* [Administrator](/docs/openshift?topic=openshift-iam-platform-access-roles#admin-iam-platform-role)
+
+[IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles)
+
+* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_ref)
+
+* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-iam-service-access-roles#iam-issuer-users)
+
+[Classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles#classic-roles)
+
+* [Required classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles#required-classic-rbac)
+
+* [Suggested classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles#classic-rbac-suggested)
+
+[Cloud Foundry roles](/docs/openshift?topic=openshift-cloud-foundry-roles#cloud-foundry-roles)
 
 
 ## Locations

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -451,7 +451,7 @@ After you deploy your Helm chart, test the VPN connectivity.
     
     `vpn-strongswan-ping-remote-ip-2`
     :   Pings the `remote.privateIPtoPing` private IP address of the on-premises VPN gateway from the worker node in the cluster. This test might fail for the following reasons. \n - You did not specify a `remote.privateIPtoPing` IP address. If you intentionally did not specify an IP address, this failure is acceptable. \n - You did not specify the cluster worker node private subnet CIDR in the `local.subnet` list. |
-    {: caption="Table 1. Understanding the Helm VPN connectivity tests" caption-side="top"}
+    {: caption="Table 1. Understanding the Helm VPN connectivity tests" caption-side="bottom"}
 
 6. Delete the current Helm chart.
 

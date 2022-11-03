@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -96,6 +96,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.0.6
 {: #0106_ca_addon}
+
+### Change log for patch update 1.0.7_883, released 3 November 2022
+{: #107883_ca}
+
+- Image tags: `1.20.0-107-1`, `1.21.0-107-1`, `1.22.0-107-1`, `1.23.0-107-1`, `1.24.0-107-1`, `1.25.0-107-1`.
+- Adds compute identity support.
+- Adds currency support for IKS [Cluster-autoscaler 1.25](https://github.com/kubernetes/autoscaler/releases/tag/cluster-autoscaler-1.25.0){: external}.
 
 ### Change log for patch update 1.0.6_828, released 10 October 2022
 {: #106828_ca}

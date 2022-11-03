@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -65,7 +65,7 @@ Multizone clusters to increase high availability
 
 Highly available masters
 :   Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.
-:   Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) to protect your cluster from zonal failures.
+:   Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) to protect your cluster from zonal failures.
 
 Image security compliance with Vulnerability Advisor
 :   Set up your own repo in our secured Docker private image registry where images are stored and shared by all users in the organization.
@@ -114,7 +114,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Supported operating system| Ubuntu 18.04 x86_64, 16.04 x86_64 (deprecated) | * For versions 4.10 and later: Red Hat Enterprise Linux 8 \n  * For versions 4.9 and earlier:Red Hat Enterprise Linux 7  \n  * For a complete list, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). |
 |Preferred external traffic networking| Ingress | Router |
 |Secured routes encrypted with {{site.data.keyword.hscrypto}} | | Yes |
-{: caption="Characteristics of community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters" caption-side="top"}
+{: caption="Characteristics of community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters" caption-side="bottom"}
 
 
 
@@ -133,7 +133,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Worker node operating system | CoreOS or RHEL | For a list of supported operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions). |
 | Support | Provided per the terms of your Red Hat subscription or cloud provider. You can use the `oc adm must-gather` tool to help gather information. | Provided by [{{site.data.keyword.cloud_notm}} Support](https://www.ibm.com/cloud/support){: external}. You can use the `oc adm must-gather` tool, or the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) to help gather information. |
 | {{site.data.keyword.redhat_openshift_notm}} web console | You set up and can configure or disable the {{site.data.keyword.redhat_openshift_notm}} web console. | The {{site.data.keyword.redhat_openshift_notm}} web console is set up for you. You can't configure or disable the web console. IBM also provides the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} to manage your cluster infrastructure. |
-| Authentication | An OAuth server is provided, but you configure the token settings and identity provider to control access to the cluster. You also manage RBAC to control user access within the cluster. | IBM automatically sets up the OAuth server to use {{site.data.keyword.cloud_notm}} IAM. You can't change the identity provider. {{site.data.keyword.cloud_notm}} IAM is also set up to [automatically sync to RBAC](/docs/openshift?topic=openshift-access_reference#service) so that you can use IAM to manage access to and within the cluster. |
+| Authentication | An OAuth server is provided, but you configure the token settings and identity provider to control access to the cluster. You also manage RBAC to control user access within the cluster. | IBM automatically sets up the OAuth server to use {{site.data.keyword.cloud_notm}} IAM. You can't change the identity provider. {{site.data.keyword.cloud_notm}} IAM is also set up to [automatically sync to RBAC](/docs/openshift?topic=openshift-iam-service-access-roles) so that you can use IAM to manage access to and within the cluster. |
 | Container network for clusters | The cluster network operator sets up the SDN container network interface (CNI) plug-in. You can change the CNI plug-in, configure multiple networks, or attach a hardware network such as single root I/O virtualization (SR-IOV). | Calico is set up for you. You can't change the CNI plug-in, configure multiple networks, or attach a hardware network.|
 | Ingress | You can use the Ingress operator to set up one or more HAProxy-based Ingress controllers. You can route traffic to your apps by specifying `Route` or `Ingress` resources. | When you create a cluster, a default Ingress subdomain is set up for you. One HAProxy-based router is set up for each Ingress controller, and one router service is automatically created in each zone that you have worker nodes in. You can route traffic to your apps by specifying `Route` or `Ingress` resources. For more information, see [About Ingress in {{site.data.keyword.redhat_openshift_notm}} version 4](/docs/openshift?topic=openshift-ingress-about-roks4). |
 | Storage | You must set up persistent volumes to be backed up by a storage provider. OpenShift Data Foundation is available. | IBM automatically sets up storage providers such as {{site.data.keyword.cloud_notm}} File and Block. OpenShift Data Foundation is available. For supported storage options, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning). |
@@ -146,7 +146,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Serverless workloads | You can set up [{{site.data.keyword.redhat_openshift_notm}} Serverless](https://www.redhat.com/en/topics/microservices/why-choose-openshift-serverless){: external}. | You can also set up {{site.data.keyword.redhat_openshift_notm}} Serverless. |
 | Service mesh | You can set up the [{{site.data.keyword.redhat_openshift_notm}} Service Mesh](https://docs.openshift.com/container-platform/4.10/service_mesh/v1x/installing-ossm.html){: external}. | You can also set up the {{site.data.keyword.redhat_openshift_notm}} Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
-{: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="top"}
+{: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="bottom"}
 {: summary="The rows are read from left to right. In the first column is the characteristic that differs between standard OpenShift Container Platform installations in the second column and {{site.data.keyword.openshiftlong_notm}} clusters in the third column."}
 
 
@@ -208,7 +208,7 @@ Review the following operator support table. To receive support on the for the f
 | Source to Image and Tekton Builders | Red Hat |
 | OpenShift Serverless FaaS | Red Hat |
 | IDE Integrations | Red Hat |
-{: caption="Operator support overview" caption-side="top"}
+{: caption="Operator support overview" caption-side="bottom"}
 
 
 

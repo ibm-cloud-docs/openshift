@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: object storage, plug-in, changelog
 
@@ -55,7 +55,7 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.7 | Deprecated | 4.3 to 4.6 | x86 |
 | 2.0.6 | Deprecated | 4.3 - 4.6 | x86 | 
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
-{: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="top"}
+{: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
 
 ## Change log for version 2.2.1, released 20 September 2022

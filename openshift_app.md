@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-11-03"
 
 keywords: kubernetes, openshift
 
@@ -731,7 +731,7 @@ To set up configuration files with Kustomize:
         | `patchesStrategicMerge` | List the resource configuration YAML files that you want to merge to the base `kustomization`. You must also add these files to the same repo as the `kustomization` file, such as `overlay/staging`. These resource configuration files can contain small changes that are merged to the base configuration files of the same name as a patch. The resource gets all the components that are in the `base` configuration file, plus any additional components that you specify in the `overlay` configuration file. If the configuration is a new file that is not in the base, you must also add the file name to the `resources` field. |
         | `resources` | List any resource configuration YAML files that are unique to the staging repo and not included in the base repo. Include these files in the `patchesStrategicMerge` field also, and add them to the same repo as the `kustomization` file, such as `overlay/staging`. |
         | Other possible configurations | For more configurations that you might add to your file, see the [Make a `kustomization` file](https://github.com/kubernetes-sigs/kustomize#1-make-a-kustomization-file){: external}. |
-        {: caption="Table 1. Understanding YAML components" caption-side="top"}
+        {: caption="Table 1. Understanding YAML components" caption-side="bottom"}
 
     2. Build your staging overlay configuration files.
         ```sh

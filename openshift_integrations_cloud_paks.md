@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-applications){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
-{: caption="Cloud Pak for Applications" caption-side="top"}
+{: caption="Cloud Pak for Applications" caption-side="bottom"}
 {: #cloudpak1}
 {: tab-title="Applications"}
 {: tab-group="cloudpak"}
@@ -46,7 +46,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-data){: external} | For more information such as postinstallation tasks and pricing. | |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
-{: caption="Cloud Pak for Data" caption-side="top"}
+{: caption="Cloud Pak for Data" caption-side="bottom"}
 {: #cloudpak2}
 {: tab-title="Data"}
 {: tab-group="cloudpak"}
@@ -58,7 +58,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-integration){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
-{: caption="Cloud Pak for Integration" caption-side="top"}
+{: caption="Cloud Pak for Integration" caption-side="bottom"}
 {: #cloudpak3}
 {: tab-title="Integration"}
 {: tab-group="cloudpak"}
@@ -70,7 +70,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-security){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
-{: caption="Cloud Pak for Security" caption-side="top"}
+{: caption="Cloud Pak for Security" caption-side="bottom"}
 {: #cloudpak4}
 {: tab-title="Security"}
 {: tab-group="cloudpak"}
@@ -82,7 +82,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-management){: external} | For more information such as postinstallation tasks and pricing. |
 {: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
 {: class="simple-tab-table"}
-{: caption="Cloud Pak for Management" caption-side="top"}
+{: caption="Cloud Pak for Management" caption-side="bottom"}
 {: #cloudpak5}
 {: tab-title="Management"}
 {: tab-group="cloudpak"}

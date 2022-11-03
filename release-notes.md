@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-31"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -23,6 +23,19 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## November 2022
+{: #openshift-nov22}
+
+### 3 November 2022
+{: #openshift-nov0322}
+{: release-note}
+
+Changes to the Portworx update process beginning with version `2.12`.
+:   Beginning with version `2.12` Portworx uses an operator-based deployment model instead of the Helm based model use in version `2.11` and earlier. If you want to update from Portworx `2.11` to version `2.12`, follow the migration steps in the [Portworx documentation](https://docs.portworx.com/operations/operate-kubernetes/migrate-daemonset/){: external}.
+
+Cluster autoscaler add-on version `1.0.7_883`.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ## October 2022
 {: #openshift-oct22}
@@ -3680,7 +3693,7 @@ Gateway appliance firewalls
 
 
 IAM issuer details
-:   Added a [reference topic](/docs/openshift?topic=openshift-access_reference#iam_issuer_users) for the IAM issuer details of RBAC users.
+:   Added a [reference topic](/docs/openshift?topic=openshift-access_reference#iam-issuer-users) for the IAM issuer details of RBAC users.
 
 ### 16 March 2020
 {: #openshift-mar1620}
@@ -4566,7 +4579,7 @@ Removing subnets from a cluster
 {: release-note}
 
 {{site.data.keyword.openshiftlong_notm}}
-:   Added [integrations](/docs/openshift?topic=openshift-supported_integrations), [locations](/docs/openshift?topic=openshift-regions-and-zones), and [security context constraints](/docs/openshift?topic=openshift-openshift_scc) topics. Added the `basic-users` and `self-provisioning` cluster roles to the [IAM service access role](/docs/openshift?topic=openshift-access_reference#service) to RBAC sync topic.
+:   Added [integrations](/docs/openshift?topic=openshift-supported_integrations), [locations](/docs/openshift?topic=openshift-regions-and-zones), and [security context constraints](/docs/openshift?topic=openshift-openshift_scc) topics. Added the `basic-users` and `self-provisioning` cluster roles to the [IAM service access role](/docs/openshift?topic=openshift-iam-service-access-roles) to RBAC sync topic.
 
 
 
@@ -4623,7 +4636,7 @@ CLI changelog
 {: release-note}
 
 Infrastructure permissions
-:   Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) required for common use cases.
+:   Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles) required for common use cases.
 
 
 

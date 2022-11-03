@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -161,7 +161,7 @@ To ensure that all infrastructure-related actions can be successfully completed 
         - For classic clusters
             1. In the **API keys** pane, verify that the user has a **Classic infrastructure API key**, or click **Create an IBM Cloud API key**. For more information, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys#classic_keys).
             2. Click the **Classic infrastructure** tab and then click the **Permissions** tab.
-            3. If the user doesn't have each category checked, you can use the **Permission sets** drop-down list to assign the **Super User** role. Or you can expand each category and give the user the required [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
+            3. If the user doesn't have each category checked, you can use the **Permission sets** drop-down list to assign the **Super User** role. Or you can expand each category and give the user the required [infrastructure permissions](/docs/openshift?topic=openshift-classic-roles).
         - For VPC clusters, assign the user the [**Administrator** platform access role for VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
 
 
@@ -173,7 +173,7 @@ Determine whether your account has access to the IBM Cloud infrastructure portfo
 
 **Does the classic or VPC infrastructure provider for my cluster affect what access I need to the portfolio?**
 
-Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in classic and VPC clusters. Infrastructure resources for classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. Usually, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic {{site.data.keyword.cloud_notm}} infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
+Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in classic and VPC clusters. Infrastructure resources for classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. Usually, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic {{site.data.keyword.cloud_notm}} infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles).
 
 VPC infrastructure resources are integrated into IAM and as such, you must have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role to the [**VPC Infrastructure** service](/docs/vpc?topic=vpc-iam-getting-started) to create and list VPC resources.
 
@@ -320,7 +320,7 @@ Classic infrastructure permissions apply only to classic clusters. For VPC clust
 
 Before you begin:
 - Make sure that you have the **Super User** role and all device access. You can't grant a user access that you don't have.
-- Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra) to know what to assign the personal user or functional ID.
+- Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles) to know what to assign the personal user or functional ID.
 
 To customize classic infrastructure permissions through the console:
 
@@ -332,7 +332,7 @@ To customize classic infrastructure permissions through the console:
         - **View Only** gives the user permissions to view infrastructure details only.
         - **Basic User** gives the user some, but not all, infrastructure permissions.
         - **Super User** gives the user all infrastructure permissions.
-    - Select individual permissions for each category. To review permissions that are needed to perform common tasks in {{site.data.keyword.openshiftlong_notm}}, see [User access permissions](/docs/openshift?topic=openshift-access_reference#infra).
+    - Select individual permissions for each category. To review permissions that are needed to perform common tasks in {{site.data.keyword.openshiftlong_notm}}, see [User access permissions](/docs/openshift?topic=openshift-classic-roles).
 5. Click **Save**.
 6. In the **Device** tab, select the devices to grant access to.
     - In the **Select type** group, you can grant access to all bare metal, dedicated, and virtual servers so that users can work with all [flavors for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
@@ -357,7 +357,7 @@ Classic infrastructure permissions apply only to classic clusters. For VPC clust
 
 Before you begin:
 * Make sure that you are the account owner or have **Super User** and all device access. You can't grant a user access that you don't have.
-* Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
+* Review the [required and suggested classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles).
 
 To customize classic infrastructure permissions through the CLI:
 
@@ -419,7 +419,7 @@ To customize classic infrastructure permissions through the CLI:
     ```
     {: pre}
 
-6. For individual required or suggested permissions, see the [Infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) table.
+6. For individual required or suggested permissions, see the [Infrastructure roles](/docs/openshift?topic=openshift-classic-roles) table.
 
 
 

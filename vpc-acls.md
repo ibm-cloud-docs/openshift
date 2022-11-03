@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -69,7 +69,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.redhat_openshift_notm}} Console pods to contact the master | Allow |  ALL |  Master IPs | - | Any | - | After 5 |
     | `*` Allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}  | Allow | TCP | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external} | - | Any | `80` | After 6 |
     | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
-    {: caption="Table 4. Required inbound rules" caption-side="top"}
+    {: caption="Table 4. Required inbound rules" caption-side="bottom"}
 
     `**` Master IPs can be found by looking at the `server:` entry in the cluster's `kubeconfig` file (`kubectl config view`) and then running the *`nslookup`* or *`dig`* command to determine which IPs that it resolves to. The Master IP can be from 1 to 3 different IPs depending on the region and the control plane cluster.
     
@@ -90,7 +90,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.redhat_openshift_notm}} Console pods to contact the master | Allow |  ALL |  Master IPs | - | Any | - | After 5 |
     | `*` Allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | Allow | TCP | Any | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | Any | After 6 |
     | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
-    {: caption="Table 6. Required outbound rules" caption-side="top"}
+    {: caption="Table 6. Required outbound rules" caption-side="bottom"}
 
     `**` Master IPs can be found by looking at the `server:` entry in the cluster's `kubeconfig` file (`kubectl config view`) and then running the *`nslookup`* or *`dig`* command to determine which IPs that it resolves to. The Master IP can be from 1 to 3 different IPs depending on the region and the control plane cluster.
     
