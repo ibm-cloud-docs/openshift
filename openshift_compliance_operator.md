@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -33,7 +33,7 @@ Looking for the CIS Kubernetes benchmark? See [Running the worker node CIS Kuber
 Install the compliance operator with the tailored profile for worker nodes in your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
-Before you begin, make sure that you have the **Manager** [service access role](/docs/openshift?topic=openshift-access_reference#service) to the cluster.
+Before you begin, make sure that you have the **Manager** [service access role](/docs/openshift?topic=openshift-iam-service-access-roles) to the cluster.
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Install the compliance operator.

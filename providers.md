@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -146,7 +146,7 @@ VPC
 
 
 Classic
-:   To create classic infrastructure clusters, you must set up [infrastructure credentials](/docs/openshift?topic=openshift-access-creds) for each region and resource group. To let users manage the cluster, use [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform). To grant users access to cluster resources, use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-access_reference#service), which correspond with Kubernetes RBAC roles.
+:   To create classic infrastructure clusters, you must set up [infrastructure credentials](/docs/openshift?topic=openshift-access-creds) for each region and resource group. To let users manage the cluster, use [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles). To grant users access to cluster resources, use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles), which correspond with Kubernetes RBAC roles.
 
 
 ## Integrations

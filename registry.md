@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-11-03"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -237,7 +237,7 @@ By default, your {{site.data.keyword.redhat_openshift_notm}} cluster has an inte
 {: shortdesc}
 
 Before you begin:
-*  Confirm that you have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-access_reference#service) for the cluster.
+*  Confirm that you have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-service-access-roles) for the cluster.
 *  Make sure that your cluster has public network connectivity to expose the internal registry with a public route.
 *  Install Docker on your local machine.
 *  [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).

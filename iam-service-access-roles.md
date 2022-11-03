@@ -20,7 +20,7 @@ subcollection: openshift
 Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding Kubernetes role-based access control (RBAC) role in a specific namespace. To assign service access roles, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms). Do not assign {{site.data.keyword.cloud_notm}} IAM platform access roles at the same time as a service access role. You must assign platform and service access roles separately.
 {: shortdesc}
 
-Looking for which Kubernetes actions each service access role grants through RBAC? See [Kubernetes resource permissions per RBAC role](#rbac_ref). To learn more about RBAC roles, see [Assigning RBAC permissions](/docs/openshift?topic=openshift-access-overview#role-binding) and [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate). For the username details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](#iam_issuer_users).
+Looking for which Kubernetes actions each service access role grants through RBAC? See [Kubernetes resource permissions per RBAC role](#rbac_ref). To learn more about RBAC roles, see [Assigning RBAC permissions](/docs/openshift?topic=openshift-access-overview#role-binding) and [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate). For the username details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](#iam-issuer-users).
 {: tip}
 
 The following table shows the Kubernetes resource permissions that are granted by each service access role and its corresponding RBAC role.
@@ -37,622 +37,69 @@ The following table shows the Kubernetes resource permissions that are granted b
 ## Kubernetes resource permissions per RBAC role
 {: #rbac_ref}
 
-Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding, predefined Kubernetes role-based access control (RBAC) role. If you plan to manage your own custom Kubernetes RBAC roles, see [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac). For the username details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](#iam_issuer_users).
+Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service access role is also automatically assigned a corresponding, predefined Kubernetes role-based access control (RBAC) role. If you plan to manage your own custom Kubernetes RBAC roles, see [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac). For the username details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](#iam-issuer-users).
 {: shortdesc}
 
 Wondering if you have the correct permissions to run a certain `oc` command on a resource in a namespace? Try the [`oc auth can-i` command](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em-){: external}.
 {: tip}
 
-The following sections show the permissions that are granted by each RBAC role to individual Kubernetes resources. Permissions are shown as which `verbs` (or actions) a user with that role can complete against the resource, such as "get", "list", "describe", "create", or "delete".
-
-
-### `bindings`
-{: #rbac-bindings}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch`
-
-`admin`
-:   `get`, `list`, `watch`
-
-`cluster-admin`
-:   `create`, `delete`, `update`
-
-
-### `configmaps`
-{: #rbac-configmaps}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `cronjobs.batch`
-{: #rbac-cronjobs}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `daemonsets.apps`
-{: #rbac-ds-apps}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `daemonsets.extensions`
-{: #rbac-ds-extensions}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `deployments.apps` 
-{: #rbac-dep-apps}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` 
-
-### `deployments.apps/rollback`
-{: #rbac-dep-rollback}
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-
-### `deployments.apps/scale`
-{: #rbac-dep-apps-scale}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `deployments.extensions`
-{: #rbac-dep-extensions}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `deployments.extensions/rollback`
-{# rbac-dep-extension-rollback}
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `deployments.extensions/scale`
-{: #rbac-dep-extensions-scale}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:    `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `endpoints`
-{: #rbac-endpoints}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `events`
-{: #rbac-events}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch`
-
-`admin` and `cluster-admin`
-:   `get`, `list`, `watch`
-
-### `horizontalpodautoscalers.autoscaling`
-{: #rbac-hpas}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `ingresses.extensions`
-{: #rbac-configmaps}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` 
-
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `jobs.batch`
-{: #rbac-jobs-batch}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:    `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `limitranges`
-{: #rbac-limitranges}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch`
-
-`admin` and `cluster-admin`
-:   `get`, `list`, `watch`
-
-### `localsubjectaccessreviews` 
-{: #rbac-localsubjectaccessreviews}
-
-`view`,`edit` 
-:   None
-
-`admin` and `cluster-admin`
-:   `create`
-
-### `namespaces`
-{: #rbac-namespaces}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch` 
-
-`admin` 
-:   `get`, `list`, `watch`
-
-`cluster-admin`
-:   `get`, `list`, `watch`,`create`, `delete`
-
-### `namespaces/status`
-{: #rbac-namespaces-status}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch` | `get`, `list`, `watch` |
-
-### `networkpolicies`
-{: #rbac-networkpolicies}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` 
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `networkpolicies.extensions`
-{: #rbac-networkpolicies-extensions}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `node`
-{: #rbac-node}
-
-`admin`
-:   Scoped to a namespace: None
-
-`cluster-admin`
-:   All namespaces: All verbs
-
-
-### `persistentvolume`
-{: #rbac-persistentvolume}
-
-`view`
-:   None
-
-`edit`
-:   None
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-
-### `persistentvolumeclaims`
-{: #rbac-persistentvolumeclaims}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `poddisruptionbudgets.policy`
-{: #rbac-poddisruptionbudgets-policy}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `pods`
-{: #rbac-pods}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `top`, `patch`, `update`, `watch`
-
-### `pods/attach`
-{: #rbac-pods-attach}
-
-`view`
-:   None
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `pods/exec`
-{: #rbac-pods-exec}
-
-`view`
-:   None
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `pods/log`
-{: #rbac-pods-log}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch`
-
-`admin` and `cluster-admin`
-:   `get`, `list`, `watch`
-
-### `pods/portforward`
-{: #rbac-pods-portforward}
-
-`view`
-:   None
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `pods/proxy`
-{: #rbac-pods-proxy}
-
-`view`
-:   None
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `pods/status`
-{: #rbac-pods-status}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch`
-
-`admin` and `cluster-admin`
-:   `get`, `list`, `watch`
-
-### `replicasets.apps`
-{: #rbac-replicasets-apps}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `replicasets.apps/scale`
-{: #rbac-replicasets-apps-scale}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `replicasets.extensions`
-{: #rbac-replicasets-extensions}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `replicasets.extensions/scale`
-{: #rbac-replicasets-extensions-scale}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `replicationcontrollers` 
-{: #rbac-replicationcontrollers}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `replicationcontrollers/scale`
-{: #rbac-replicationcontrollers-scale}
-
-`view`
-:   `get`, `list`, `watch` 
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `replicationcontrollers/status`
-{: #rbac-replicationcontrollers-status}
-
-`view`
-:   `get`, `list`, `watch` 
-
-`edit`
-:   `get`, `list`, `watch` 
-
-`admin` and `cluster-admin`
-:   `get`, `list`, `watch`
-
-### `replicationcontrollers.extensions/scale`
-{: #rbac-replicationcontrollers-extensions-scale}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `resourcequotas`
-{: #rbac-resourcequotas}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch`
-
-`admin` and `cluster-admin`
-:   `get`, `list`, `watch`
-
-### `resourcequotas/status`
-{: #rbac-resourcequotas-status}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `get`, `list`, `watch`
-
-`admin` and `cluster-admin`
-:   `get`, `list`, `watch`
-
-### `rolebindings`
-{: #rbac-rolebindings}
-
-`view`
-:   None
-
-`edit`
-:   None
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `roles`
-{: #rbac-roles}
-
-`view`
-:   None
-
-`edit`
-:   None
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `secrets`
-{: #rbac-secrets}
-
-`view`
-:   None
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `serviceaccounts`
-{: #rbac-serviceaccounts}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`, `impersonate` 
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`, `impersonate` 
-
-### `services`
-{: #rbac-services}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch` 
-
-### `services/proxy`
-{: #rbac-services-proxy}
-
-`view`
-:   None
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `statefulsets.apps` 
-{: #rbac-statefulsets-apps}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:   `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-### `statefulsets.apps/scale`
-{: #rbac-statefulsets-apps-scale}
-
-`view`
-:   `get`, `list`, `watch`
-
-`edit`
-:    `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
-
-`admin` and `cluster-admin`
-:    `create`, `delete`, `deletecollection`, `get`, `list`, `patch`, `update`, `watch`
+The following table shows the permissions that are granted by each RBAC role to individual Kubernetes resources. Permissions are shown as which `verbs` (or actions) a user with that role can complete against the resource, such as "get", "list", "describe", "create", or "delete".
+
+
+| Kubernetes resource| `view` | `edit`| `admin` and `cluster-admin` |
+| -------------- | -------------- | -------------- | -------------- | 
+| `bindings` | get, list, watch | get, list, watch | get, list, watch \n **cluster-admin only:** create, delete, update |
+| `configmaps` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `cronjobs.batch` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `daemonsets.apps` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `daemonsets.extensions` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `deployments.apps` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `deployments.apps/rollback` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `deployments.apps/scale` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `deployments.extensions` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `deployments.extensions/rollback` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `deployments.extensions/scale` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `endpoints` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `events` | get, list, watch | get, list, watch | get, list, watch |
+| `horizontalpodautoscalers.autoscaling` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `ingresses.extensions` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `jobs.batch` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `limitranges` | get, list, watch | get, list, watch | get, list, watch |
+| `localsubjectaccessreviews` | - | - | `create` |
+| `namespaces` | get, list, watch | get, list, watch | get, list, watch \n **cluster-admin only:** create, delete |
+| `namespaces/status` | get, list, watch | get, list, watch | get, list, watch |
+| `networkpolicies` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `networkpolicies.extensions` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `node` | None | None | `admin` scoped to a namespace: None \n  \n  `cluster-admin` for all namespaces: All verbs |
+| `persistentvolume` | None | None | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `persistentvolumeclaims` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `poddisruptionbudgets.policy` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `pods` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, `top`, patch, update, watch |
+| `pods/attach` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `pods/exec` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `pods/log` | get, list, watch | get, list, watch | get, list, watch |
+| `pods/portforward` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `pods/proxy` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `pods/status` | get, list, watch | get, list, watch | get, list, watch |
+| `replicasets.apps` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `replicasets.apps/scale` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `replicasets.extensions` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `replicasets.extensions/scale` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `replicationcontrollers` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `replicationcontrollers/scale` | get, list, watch | cr}eate, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `replicationcontrollers/status` | get, list, watch | get, list, watch | get, list, watch |
+| `replicationcontrollers.extensions/scale` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `resourcequotas` | get, list, watch | get, list, watch | get, list, watch |
+| `resourcequotas/status` | get, list, watch | get, list, watch | get, list, watch |
+| `rolebindings` | - | - | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `roles` | - | - | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `secrets` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `serviceaccounts` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch, `impersonate` | create, delete, `deletecollection`, get, list, patch, update, watch, `impersonate` |
+| `services` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `services/proxy` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `statefulsets.apps` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+| `statefulsets.apps/scale` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
+{: caption="Table 1. Kubernetes resource permissions granted by each predefined RBAC role" caption-side="bottom"}
 
 
 

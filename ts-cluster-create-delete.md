@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -79,7 +79,7 @@ The cluster could not be configured with the registry. Make sure that you have t
 {: screen}
 
 
-The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-access_reference#infra).
+The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-classic-roles).
 {: tsCauses}
 
 The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-access-creds) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-access-creds#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-access-creds#credentials).
@@ -134,7 +134,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         ```
         {: pre}
 
-        For console and CLI commands to assign these permissions, see [Classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra).
+        For console and CLI commands to assign these permissions, see [Classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles).
         {: tip}
 
     2. Make sure that the [infrastructure credentials owner for the API key or the manually set account has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).

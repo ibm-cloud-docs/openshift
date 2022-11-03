@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -98,7 +98,7 @@ Use platform access roles in {{site.data.keyword.cloud_notm}} Identity and Acces
 
 With platform access roles, users can manage resources like clusters, worker pools, worker nodes, and add-ons. Example actions that are permitted by platform access roles are creating or removing clusters, binding services to a cluster, managing networking and storage resources, or adding extra worker nodes. You can set the policies for these roles by resource group, region, or cluster instance. You can't scope a platform access role by namespace within a cluster.
 
-For more information, see [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform).
+For more information, see [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 **What types of actions are not permitted by platform access roles?**
 

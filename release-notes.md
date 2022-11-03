@@ -3690,7 +3690,7 @@ Gateway appliance firewalls
 
 
 IAM issuer details
-:   Added a [reference topic](/docs/openshift?topic=openshift-access_reference#iam_issuer_users) for the IAM issuer details of RBAC users.
+:   Added a [reference topic](/docs/openshift?topic=openshift-access_reference#iam-issuer-users) for the IAM issuer details of RBAC users.
 
 ### 16 March 2020
 {: #openshift-mar1620}
@@ -4576,7 +4576,7 @@ Removing subnets from a cluster
 {: release-note}
 
 {{site.data.keyword.openshiftlong_notm}}
-:   Added [integrations](/docs/openshift?topic=openshift-supported_integrations), [locations](/docs/openshift?topic=openshift-regions-and-zones), and [security context constraints](/docs/openshift?topic=openshift-openshift_scc) topics. Added the `basic-users` and `self-provisioning` cluster roles to the [IAM service access role](/docs/openshift?topic=openshift-access_reference#service) to RBAC sync topic.
+:   Added [integrations](/docs/openshift?topic=openshift-supported_integrations), [locations](/docs/openshift?topic=openshift-regions-and-zones), and [security context constraints](/docs/openshift?topic=openshift-openshift_scc) topics. Added the `basic-users` and `self-provisioning` cluster roles to the [IAM service access role](/docs/openshift?topic=openshift-iam-service-access-roles) to RBAC sync topic.
 
 
 
@@ -4633,7 +4633,7 @@ CLI changelog
 {: release-note}
 
 Infrastructure permissions
-:   Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-access_reference#infra) required for common use cases.
+:   Updated the [classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles) required for common use cases.
 
 
 
