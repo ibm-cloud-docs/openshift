@@ -257,6 +257,8 @@ subcollection: openshift
 
     * [3 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0322)
 
+        * Changes to the Portworx update process beginning with version `2.12`.
+
         * Cluster autoscaler add-on version `1.0.7_883`.
 
 * [October 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct22)

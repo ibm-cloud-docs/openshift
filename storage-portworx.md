@@ -703,6 +703,12 @@ To install Portworx:
 ### Updating Portworx in your cluster
 {: #update_portworx}
 
+Beginning with version `2.12` Portworx uses an operator-based deployment model instead of the Helm based model use in version `2.11` and earlier. If you are updating from Portworx `2.11` to version `2.12`, follow the migration steps in the [Portworx documentation](https://docs.portworx.com/operations/operate-kubernetes/migrate-daemonset/){: external}.
+{: important}
+
+The following steps are for updating Portworx installations up to version `2.11`. Do not follow these steps if you want to update to version `2.12`
+{: important}
+
 If you have a private only cluster, contact Portworx for help updating your cluster. Contact Portworx support by using one of the following methods.
 
 - Sending an e-mail to `support@purestorage.com`.
