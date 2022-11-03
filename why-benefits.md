@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift
 
@@ -65,7 +65,7 @@ Multizone clusters to increase high availability
 
 Highly available masters
 :   Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.
-:   Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#multizone) to protect your cluster from zonal failures.
+:   Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) to protect your cluster from zonal failures.
 
 Image security compliance with Vulnerability Advisor
 :   Set up your own repo in our secured Docker private image registry where images are stored and shared by all users in the organization.

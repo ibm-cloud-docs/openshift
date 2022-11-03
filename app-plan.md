@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-03"
 
 keywords: openshift, deploy
 
@@ -341,7 +341,7 @@ Review the following potential app setups that are ordered with increasing degre
 2. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a single zone cluster.
 3. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a multizone cluster across zones.
 
-You can also [connect multiple clusters in different regions with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters) to increase the high availability.
+You can also [connect multiple clusters in different regions with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb) to increase the high availability.
 
 ### How can I increase the availability of my app?
 {: #increase_availability}
@@ -365,7 +365,7 @@ Spread pods across multiple nodes (anti-affinity)
     For an example of affinity in an app deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml).
 
 Distribute pods across multiple zones or regions</dt>
-:   To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters).
+:   To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb).
     When you use a replica set and specify pod anti-affinity, Kubernetes spreads your app pods across the nodes. If your nodes are in multiple zones, the pods are spread across the zones, increasing the availability of your app. If you want to limit your apps to run only in one zone, you can configure pod affinity, or create and label a worker pool in one zone. For more information, see [High availability for multizone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
     
 :   **In a multizone cluster deployment, are my app pods distributed evenly across the nodes?**
@@ -377,7 +377,7 @@ Distribute pods across multiple zones or regions</dt>
     {: tip}
     
 :   **What if I want to spread my app across regions?**
-    To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple_clusters) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for your app.
+    To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for your app.
     
 :   **What if my apps need persistent storage?**
     Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).

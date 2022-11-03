@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-03"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -26,8 +26,8 @@ Your users are less likely to experience downtime when you distribute your apps 
 ![High availability for clusters](images/cs_cluster_ha_roadmap_multizone_public.png){: caption="Figure 1. High availability for clusters" caption-side="bottom"}
 
 1. A [single zone cluster](#single_zone) with multiple worker nodes in a worker pool.
-2. A [multizone cluster](#multizone) that spreads worker nodes across zones within one region.
-3. **Clusters with public network connectivity**: [Multiple clusters](#multiple_clusters) that are set up across zones or regions and that are connected via a global load balancer.
+2. A [multizone cluster](#mz-clusters) that spreads worker nodes across zones within one region.
+3. **Clusters with public network connectivity**: [Multiple clusters](#multiple-clusters-glb) that are set up across zones or regions and that are connected via a global load balancer.
 
 ## Single zone clusters
 {: #single_zone}
@@ -50,7 +50,7 @@ If your cluster is created in a single zone city, the Kubernetes master of your 
 ### How can I protect my workloads against a single zone failure?
 {: #sz-workload-failover}
 
-If your single zone cluster is created in one of the [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), you can change your single zone cluster to a [multizone cluster](#multizone). In a multizone cluster, your workloads are distributed across worker nodes in different zones. If one zone is not available, your workloads continue to run in the remaining zones. If you prefer single zone clusters for simplified management, or if your cluster must reside in a specific [single zone city](/docs/openshift?topic=openshift-regions-and-zones#zones-sz) that does not support multizone capabilities, you can create [multiple clusters](#multiple_clusters) and connect them with a global load balancer.
+If your single zone cluster is created in one of the [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), you can change your single zone cluster to a [multizone cluster](#mz-clusters). In a multizone cluster, your workloads are distributed across worker nodes in different zones. If one zone is not available, your workloads continue to run in the remaining zones. If you prefer single zone clusters for simplified management, or if your cluster must reside in a specific [single zone city](/docs/openshift?topic=openshift-regions-and-zones#zones-sz) that does not support multizone capabilities, you can create [multiple clusters](#multiple-clusters-glb) and connect them with a global load balancer.
 
 ## Multizone cluster
 {: #mz-clusters}
@@ -107,12 +107,12 @@ To connect multiple clusters with a global load balancer, the clusters must be s
 
 ![High availability for multiple clusters.](images/multiple_cluster_zones.png){: caption="Figure 1. High availability for multiple clusters" caption-side="bottom"}
 
-To balance your workload across multiple clusters, you must set up a global load balancer and add the public IP addresses of your router services or load balancer services to your domain. By adding these IP addresses, you can route incoming traffic between your clusters. For the global load balancer to detect if one of your clusters is unavailable, consider adding a ping-based health check to every IP address. When you set up this check, your DNS provider regularly pings the IP addresses that you added to your domain. If one IP address becomes unavailable, then traffic is not sent to this IP address anymore. However, {{site.data.keyword.redhat_openshift_notm}} does not automatically restart pods from the unavailable cluster on worker nodes in available clusters. If you want {{site.data.keyword.redhat_openshift_notm}} to automatically restart pods in available clusters, consider setting up a [multizone cluster](#multizone).
+To balance your workload across multiple clusters, you must set up a global load balancer and add the public IP addresses of your router services or load balancer services to your domain. By adding these IP addresses, you can route incoming traffic between your clusters. For the global load balancer to detect if one of your clusters is unavailable, consider adding a ping-based health check to every IP address. When you set up this check, your DNS provider regularly pings the IP addresses that you added to your domain. If one IP address becomes unavailable, then traffic is not sent to this IP address anymore. However, {{site.data.keyword.redhat_openshift_notm}} does not automatically restart pods from the unavailable cluster on worker nodes in available clusters. If you want {{site.data.keyword.redhat_openshift_notm}} to automatically restart pods in available clusters, consider setting up a [multizone cluster](#mz-clusters).
 
 ### Why do I need 3 clusters in three zones?
 {: #multicluster-three-zones}
 
-Similar to using [3 zones in multizone clusters](#multizone), you can provide more availability to your app by setting up three clusters across zones. You can also reduce costs by purchasing smaller machines to handle your workload.
+Similar to using [3 zones in multizone clusters](#mz-clusters), you can provide more availability to your app by setting up three clusters across zones. You can also reduce costs by purchasing smaller machines to handle your workload.
 
 ### What if I want to set up multiple clusters across regions?
 {: #multiple-regions-setup}
