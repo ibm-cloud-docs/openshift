@@ -22,7 +22,6 @@ View information for patch updates to the cluster autoscaler add-on in your {{si
 {: shortdesc}
 
 
-
 Patch updates
 :   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
