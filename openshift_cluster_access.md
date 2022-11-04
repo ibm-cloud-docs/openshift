@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-04"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -632,7 +632,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     | -------------- | -------------- |
     | `<cluster_service_ID>` | Required. Enter the service ID that you previously created for your {{site.data.keyword.redhat_openshift_notm}} cluster. |
     | `--service-name containers-kubernetes` | Required. Enter `containers-kubernetes` so that the IAM policy is for {{site.data.keyword.openshiftlong_notm}} clusters. |
-    | `--roles <service_access_role>` | Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.redhat_openshift_notm}} cluster. [Platform access roles](/docs/openshift?topic=openshift-access_reference#iam_platform) permit cluster management activities such as creating worker nodes. [Service access roles](/docs/openshift?topic=openshift-iam-service-access-roles) correspond to RBAC roles that permit {{site.data.keyword.redhat_openshift_notm}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform access roles); and `Reader`, `Writer`, and `Manager` (service access roles). |
+    | `--roles <service_access_role>` | Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.redhat_openshift_notm}} cluster. [Platform access roles](/docs/openshift?topic=openshift-access_reference-iam-platform-access-roles) permit cluster management activities such as creating worker nodes. [Service access roles](/docs/openshift?topic=openshift-iam-service-access-roles) correspond to RBAC roles that permit {{site.data.keyword.redhat_openshift_notm}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform access roles); and `Reader`, `Writer`, and `Manager` (service access roles). |
     | `--service-instance <cluster_ID>` | To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`. If you don't include the service instance, the access policy grants the service ID access to all your clusters, Kubernetes and {{site.data.keyword.redhat_openshift_notm}}. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`). |
     {: caption="Table 1. Understanding this command's components" caption-side="bottom"}
     

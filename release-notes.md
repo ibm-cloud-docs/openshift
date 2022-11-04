@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-04"
 
 keywords: openshift
 
@@ -3693,7 +3693,7 @@ Gateway appliance firewalls
 
 
 IAM issuer details
-:   Added a [reference topic](/docs/openshift?topic=openshift-access_reference#iam-issuer-users) for the IAM issuer details of RBAC users.
+:   Added a [reference topic](/docs/openshift?topic=openshift-access_reference) for the IAM issuer details of RBAC users.
 
 ### 16 March 2020
 {: #openshift-mar1620}

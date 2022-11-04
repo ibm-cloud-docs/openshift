@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-04"
 
 keywords: openshift
 subcollection: openshift
@@ -74,35 +74,11 @@ subcollection: openshift
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers)
 
-* [Compute and worker node resources](/docs/openshift?topic=openshift-infrastructure_providers#infra-compute)
+* [Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-infrastructure_providers#vpc-gen2-infra-overview)
 
-* [Security](/docs/openshift?topic=openshift-infrastructure_providers#infra-security)
+* [{{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-infrastructure_providers#satellite-infra-overview)
 
-* [High availability](/docs/openshift?topic=openshift-infrastructure_providers#infra-high-availability)
-
-* [Reservations](/docs/openshift?topic=openshift-infrastructure_providers#infar-reservations)
-
-* [Cluster administration](/docs/openshift?topic=openshift-infrastructure_providers#infra-cluster-admin)
-
-* [Cluster networking](/docs/openshift?topic=openshift-infrastructure_providers#infra-cluster-networking)
-
-* [Apps and container platform](/docs/openshift?topic=openshift-infrastructure_providers#infra-apps-cp)
-
-* [App networking](/docs/openshift?topic=openshift-infrastructure_providers#infra-app-networking)
-
-* [Storage](/docs/openshift?topic=openshift-infrastructure_providers#infra-storage)
-
-* [User access](/docs/openshift?topic=openshift-infrastructure_providers#infra-user-access)
-
-* [Integrations](/docs/openshift?topic=openshift-infrastructure_providers#infra-integrations)
-
-* [Locations and versions](/docs/openshift?topic=openshift-infrastructure_providers#infra-locations)
-
-* [Service interface](/docs/openshift?topic=openshift-infrastructure_providers#infra-interface)
-
-* [Service compliance](/docs/openshift?topic=openshift-infrastructure_providers#infra-compliance)
-
-* [Service limitations](/docs/openshift?topic=openshift-infrastructure_providers#infra-limitations)
+* [Classic](/docs/openshift?topic=openshift-infrastructure_providers#classic-infra-overview)
 
 * [Troubleshooting and support](/docs/openshift?topic=openshift-infrastructure_providers#infra-troubleshoot)
 
@@ -6680,9 +6656,11 @@ subcollection: openshift
 
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
-* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+* [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
 
     * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
+
+* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
 
     * [Change log for patch update 1.0.6_828, released 10 October 2022](/docs/openshift?topic=openshift-ca_changelog#106828_ca)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-04"
 
 keywords: openshift
 
@@ -226,7 +226,7 @@ Your {{site.data.keyword.openshiftlong_notm}} is linked to one IBM Cloud infrast
 
 The number of clusters that you create depends on your workload, company policies and regulations, and what you want to do with the computing resources. You can also review security information about this decision in [Container isolation and security](/docs/openshift?topic=openshift-security#container).
 
-**Multiple clusters**: You need to set up [a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glbs) and copy and apply the same configuration YAML files in each to balance workloads across the clusters. Therefore, multiple clusters are generally more complex to manage, but can help you achieve important goals such as the following.
+**Multiple clusters**: You need to set up [a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb) and copy and apply the same configuration YAML files in each to balance workloads across the clusters. Therefore, multiple clusters are generally more complex to manage, but can help you achieve important goals such as the following.
 *  Comply with security policies that require you to isolate workloads.
 *  Test how your app runs in a different version of {{site.data.keyword.redhat_openshift_notm}} or other cluster software such as Calico.
 *  Create a cluster with your app in another region for higher performance for users in that geographical area.
