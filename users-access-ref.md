@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-04"
 
 keywords: openshift
 
@@ -42,7 +42,7 @@ IAM Services
      - **Viewer** platform access role for the resource group access.  
 
 Infrastructure
-:    - Classic clusters only: **Super User** role or the [minimum required permissions](#infra) for classic infrastructure.
+:    - Classic clusters only: **Super User** role or the [minimum required permissions](/docs/openshift?topic=openshift-classic-roles) for classic infrastructure.
      - VPC clusters only: **Administrator** platform access role for [VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
 
 User that creates the cluster

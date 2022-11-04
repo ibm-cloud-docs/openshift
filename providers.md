@@ -31,6 +31,7 @@ Virtual private cloud (VPC)
 Classic
 :   Create your cluster on a classic compute, networking, and storage environment in IBM Cloud infrastructure.
 
+
 ## Virtual Private Cloud (VPC)
 {: #vpc-gen2-infra-overview}
 
@@ -50,7 +51,7 @@ Classic
 | Locations and versions | VPC clusters are available worldwide in the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc).
 | Service interface | VPC clusters are supported by the [next version (`v2`) of the {{site.data.keyword.containerlong_notm}} API](/docs/openshift?topic=openshift-cs_api_install), and you can manage your VPC clusters through the same CLI and console as classic clusters.| 
 | Service compliance | See the VPC section in [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards).
-| Service limitations | See [Service limitations](/docs/openshift?topic=openshift-limitations#tech_limits). For VPC-specific limitations in {{site.data.keyword.openshiftlong_notm}}, see [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits). For general VPC infrastructure provider limitations, see [Limitations](/docs/vpc?topic=vpc-limitations). |
+| Service limitations | See [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits). For VPC-specific limitations in {{site.data.keyword.openshiftlong_notm}}, see [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits). For general VPC infrastructure provider limitations, see [Limitations](/docs/vpc?topic=vpc-limitations).  |
 {: caption="Table 1. VPC infrastructure overview." caption-side="bottom"}
 
 
@@ -99,7 +100,7 @@ the contract. Typical savings range between 30-50% compared to on-demand worker 
 | Locations and versions | Classic clusters are available in multizone and single zone locations [worldwide](/docs/openshift?topic=openshift-regions-and-zones#locations). |
 | Service interface | Classic clusters are fully supported in the {{site.data.keyword.containershort_notm}} [`v1` API](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}, [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli), and [console](https://cloud.ibm.com/kubernetes/clusters).|
 | Service compliance | See the classic section in [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). |
-Service limitations | See [Service limitations](/docs/openshift?topic=openshift-limitations#tech_limits). Feature-specific limitations are documented by section. |
+Service limitations | See [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits). Feature-specific limitations are documented by section. |
 {: caption="Table 3. Classic infrastructure overview." caption-side="bottom"}
 
 ## Troubleshooting and support

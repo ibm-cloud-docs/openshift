@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-04"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -85,7 +85,7 @@ The {{site.data.keyword.openshiftlong_notm}} architecture and infrastructure is 
 
 You can make your cluster even more highly available and protect your app from a downtime by spreading your workloads across multiple worker nodes in multiple zones of a region. This setup is called a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) and ensures that your app is accessible, even if a worker node or an entire zone is not available.
 
-To protect against an entire region failure, create [multiple clusters and spread them across {{site.data.keyword.cloud_notm}} regions](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glbs). By setting up a network load balancer (NLB) for your clusters, you can achieve cross-region load balancing and cross-region networking for your clusters.
+To protect against an entire region failure, create [multiple clusters and spread them across {{site.data.keyword.cloud_notm}} regions](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb). By setting up a network load balancer (NLB) for your clusters, you can achieve cross-region load balancing and cross-region networking for your clusters.
 
 If you have data that must be available, even if an outage occurs, make sure to store your data on [persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
@@ -112,14 +112,13 @@ The access policies that you assign users vary depending on what you want your u
 
 | Use case | Example roles and scope |
 | --- | --- |
-| App auditor | [Viewer platform access role for a cluster, region, or resource group](/docs/containers?topic=containers-access_reference#iam_platform), [Reader service access role for a cluster, region, or resource group](/docs/containers?topic=containers-iam-service-access-roles). |
-| App developers | [Editor platform access role for a cluster](/docs/containers?topic=containers-access_reference#iam_platform), [Writer service access role scoped to a namespace](/docs/containers?topic=containers-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles). |
-| Billing | [Viewer platform access role for a cluster, region, or resource group](/docs/containers?topic=containers-access_reference#iam_platform). |
-| Create a cluster | See [Permissions to create a cluster](/docs/containers?topic=containers-access_reference#cluster_create_permissions).|
-| Cluster administrator | [Administrator platform access role for a cluster](/docs/containers?topic=containers-access_reference#iam_platform), [Manager service access role not scoped to a namespace (for the whole cluster)](/docs/containers?topic=containers-iam-service-access-roles).|
-| DevOps operator | [Operator platform access role for a cluster](/docs/containers?topic=containers-access_reference#iam_platform), [Writer service access role not scoped to a namespace (for the whole cluster)](/docs/containers?topic=containers-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles).  |
-| Operator or site reliability engineer | [Administrator platform access role for a cluster, region, or resource group](/docs/containers?topic=containers-access_reference#iam_platform), [Reader service access role for a cluster or region](/docs/containers?topic=containers-iam-service-access-roles) or [Manager service access role for all cluster namespaces](/docs/containers?topic=containers-iam-service-access-roles) to be able to use `kubectl top nodes,pods` commands. |
-{: summary="The first column contains the use case, which is typically the role of a user. The second column is the example role and scope of the role that you assign the user in {{site.data.keyword.cloud_notm}} IAM."}
+| App auditor | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#viewer-iam-platform-role), [Reader service access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-service-access-roles). |
+| App developers | [Editor platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#editor-iam-platform-role), [Writer service access role scoped to a namespace]((/docs/openshift?topic=openshift-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles). |
+| Billing | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#viewer-iam-platform-role). |
+| Create a cluster | See [Permissions to create a cluster]((/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).|
+| Cluster administrator | [Administrator platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#admin-iam-platform-role), [Manager service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-iam-service-access-roles).|
+| DevOps operator | [Operator platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#operator-iam-platform-role), [Writer service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles).  |
+| Operator or site reliability engineer | [Administrator platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#admin-iam-platform-role), [Reader service access role for a cluster or region](/docs/openshift?topic=openshift-iam-service-access-roles) or [Manager service access role for all cluster namespaces](/docs/openshift?topic=openshift-iam-service-access-roles) to be able to use `kubectl top nodes,pods` commands. |
 {: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
 
 ## Where can I find a list of security bulletins that affect my cluster?
