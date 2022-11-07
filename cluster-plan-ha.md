@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-07"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -38,7 +38,7 @@ Single zone clusters can be created in one of the supported [single zone locatio
 VPC clusters are supported only in [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). If your cluster must reside in one of the single zone cities, create a classic cluster instead.
 {: note}
 
-![High availability for clusters in a single zone.](images/cluster_singlezone.png){: caption="Figure 1. High availability for clusters in a single zone" caption-side="bottom"}
+![High availability for clusters in a single zone.](images/ha-cluster-singlezone.svg){: caption="Figure 1. High availability for clusters in a single zone" caption-side="bottom"}
 
 You can add more worker nodes to your cluster by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) or by [adding a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool). When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. {{site.data.keyword.redhat_openshift_notm}} automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
 
@@ -58,7 +58,7 @@ If your single zone cluster is created in one of the [multizone metro locations]
 Create a multizone cluster to distribute your workloads across multiple worker nodes and zones, and protect against zone failures with hosts, networks, or apps. If resources in one zone go down, your cluster workloads continue to run in the other zones.
 {: shortdesc}
 
-![High availability for multizone clusters.](images/cluster_multizone-ha.png){: caption="Figure 1. High availability for multizone clusters" caption-side="bottom"}
+![High availability for multizone clusters.](images/ha-cluster-multizone.svg){: caption="Figure 1. High availability for multizone clusters" caption-side="bottom"}
 
 In a multizone cluster, the worker nodes in your worker pools are replicated across multiple zones within one region. Multizone clusters are designed to evenly schedule pods across worker nodes and zones to assure availability and failure recovery. If worker nodes are not spread evenly across the zones or capacity is insufficient in one of the zones, the Kubernetes scheduler or {{site.data.keyword.redhat_openshift_notm}} controller might fail to schedule all requested pods. As a result, pods might go into a **Pending** state until enough capacity is available. If you want to change the default behavior to make Kubernetes scheduler or {{site.data.keyword.redhat_openshift_notm}} controller distribute pods across zones in a best effort distribution, use the `preferredDuringSchedulingIgnoredDuringExecution` [pod affinity policy](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
 
@@ -73,7 +73,7 @@ Distributing your workload across three zones ensures high availability for your
 Let's say you need a worker node with six cores to handle the workload for your app. To make your cluster more available, you have the following options:
 
 - **Duplicate your resources in another zone:** This option leaves you with two worker nodes, each with six cores in each zone for a total of 12 cores. 
-- **Distribute resources across three zones:** With this option, you deploy three cores per zone, which leaves you with a total capacity of nine cores. To handle your workload, two zones must be up at a time. If one zone is unavailable, the other two zones can fully handle your six-core workload. If two zones are unavailable, the three remaining cores are up to handle your parts of your workload, and you could temporarily add another worker node to that zone. Deploying three cores per zone means smaller machines and hence reduced cost for you.
+- **Distribute resources across three zones:** With this option, you deploy two cores per zone, which leaves you with a total capacity of six cores. To handle your workload, two zones must be up at a time. If one zone is unavailable, the other zone can fully handle your workload. If two zones are unavailable, the two remaining cores are up to handle your parts of your workload, and you could temporarily add another worker node to that zone.
 
 ### How is my {{site.data.keyword.openshiftlong_notm}} master set up?
 {: #mz-master-setup}
@@ -105,7 +105,7 @@ To protect your app from a master failure or for classic clusters that must resi
 To connect multiple clusters with a global load balancer, the clusters must be set up with public network connectivity.
 {: note}
 
-![High availability for multiple clusters.](images/multiple_cluster_zones.png){: caption="Figure 1. High availability for multiple clusters" caption-side="bottom"}
+![High availability for multiple clusters.](images/ha-multiple-cluster-zones.svg){: caption="Figure 1. High availability for multiple clusters" caption-side="bottom"}
 
 To balance your workload across multiple clusters, you must set up a global load balancer and add the public IP addresses of your router services or load balancer services to your domain. By adding these IP addresses, you can route incoming traffic between your clusters. For the global load balancer to detect if one of your clusters is unavailable, consider adding a ping-based health check to every IP address. When you set up this check, your DNS provider regularly pings the IP addresses that you added to your domain. If one IP address becomes unavailable, then traffic is not sent to this IP address anymore. However, {{site.data.keyword.redhat_openshift_notm}} does not automatically restart pods from the unavailable cluster on worker nodes in available clusters. If you want {{site.data.keyword.redhat_openshift_notm}} to automatically restart pods in available clusters, consider setting up a [multizone cluster](#mz-clusters).
 

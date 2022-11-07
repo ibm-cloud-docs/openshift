@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-07"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,6 +39,22 @@ Review the version 4.8 change log.
 {: shortdesc}
 
 
+### Change log for worker node fix pack 4.8.52_1579_openshift, released 07 November 2022
+{: #4852_1579_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.8.52_1579_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | 3.10.0-1160.76.1 | 3.10.0-1160.80.1 | Worker node kernel & package updates for [CVE-2022-21233](https://nvd.nist.gov/vuln/detail/CVE-2022-21233){: external},[CVE-2022-23816](https://nvd.nist.gov/vuln/detail/CVE-2022-23816){: external},[CVE-2022-23825](https://nvd.nist.gov/vuln/detail/CVE-2022-23825){: external},[CVE-2022-2588](https://nvd.nist.gov/vuln/detail/CVE-2022-2588){: external},[CVE-2022-26373](https://nvd.nist.gov/vuln/detail/CVE-2022-26373){: external},[CVE-2022-29900](https://nvd.nist.gov/vuln/detail/CVE-2022-29900){: external},[CVE-2022-29901](https://nvd.nist.gov/vuln/detail/CVE-2022-29901){: external},[CVE-2022-41974](https://nvd.nist.gov/vuln/detail/CVE-2022-41974){: external}. |
+| RHEL 8 Packages | 4.18.0-372.26.1 | 4.18.0-372.32.1 | Worker node kernel & package updates for [CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external},[CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external},[CVE-2022-0494](https://nvd.nist.gov/vuln/detail/CVE-2022-0494){: external},[CVE-2022-1353](https://nvd.nist.gov/vuln/detail/CVE-2022-1353){: external},[CVE-2022-23816](https://nvd.nist.gov/vuln/detail/CVE-2022-23816){: external},[CVE-2022-23825](https://nvd.nist.gov/vuln/detail/CVE-2022-23825){: external},[CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external},[CVE-2022-2588](https://nvd.nist.gov/vuln/detail/CVE-2022-2588){: external},[CVE-2022-29900](https://nvd.nist.gov/vuln/detail/CVE-2022-29900){: external},[CVE-2022-29901](https://nvd.nist.gov/vuln/detail/CVE-2022-29901){: external},[CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external},[CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external},[CVE-2022-41974](https://nvd.nist.gov/vuln/detail/CVE-2022-41974){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.8.51 | 4.8.52 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-52){: external}. |
+| HAPROXY | b034b2 | 3a1392 | [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external},[CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external},[CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external},[CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external},[CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external},[CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external}. |
+| CUDA | 3ea43b | 576234 | [CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external},[CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external},[CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external},[CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external},[CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external}. |
+{: caption="Changes since version 4.8.51_1576_openshift" caption-side="top"}
+
+
 ### Change log for master fix pack 4.8.51_1578_openshift, released 27 October 2022
 {: #4851_1578_openshift}
 
@@ -56,6 +72,7 @@ The following table shows the changes that are in the master fix pack 4.8.51_157
 | {{site.data.keyword.openshiftlong_notm}}. | 4.8.49 | 4.8.51 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-51){: external}. |
 {: caption="Changes since version 4.8.491573openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.51_1576_openshift, released 25 October 2022
 {: #4851_1576_openshift}
 
@@ -67,6 +84,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.5
 | RHEL 7 Packages |N/A|N/A|N/A|
 | {{site.data.keyword.openshiftshort}} | 4.8.50 | 4.8.51 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-51){: external}. |
 {: caption="Changes since version 4.8.50_1575_openshift" caption-side="bottom"}
+
 
 ### Change log for worker node fix pack 4.8.50_1575_openshift, released 10 October 2022
 {: #4850_1575_openshift}
@@ -80,6 +98,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.5
 | RHEL 8 Packages |N/A|N/A|N/A|
 | {{site.data.keyword.openshiftshort}} |N/A|N/A|N/A|
 {: caption="Changes since version 4.8.50_1574_openshift" caption-side="bottom"}
+
 
 ### Change log for master fix pack 4.8.49_1573_openshift, released 26 September 2022
 {: #4849_1573_openshift}
@@ -102,6 +121,7 @@ The following table shows the changes that are in the master fix pack 4.8.49_157
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20220816 | 4.8.0+20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220920){: external}. |
 {: caption="Changes since version 4.8.471571openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.50_1574_openshift, released 26 September 2022
 {: #4850_1574_openshift}
 
@@ -115,6 +135,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.5
 | {{site.data.keyword.openshiftshort}}. | 4.8.48 | 4.8.50 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-50){: external}. |
 {: caption="Changes since version 4.8.48_1572_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.48_1572_openshift, released 12 September 2022
 {: #4848_1572_openshift}
 
@@ -126,6 +147,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | RHEL 7 Packages |N/A|N/A|N/A|
 | {{site.data.keyword.openshiftshort}}. | 4.8.47 | 4.8.48 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-48){: external}. |
 {: caption="Changes since version 4.8.47_1570_openshift" caption-side="bottom"}
+
 
 ### Change log for master fix pack 4.8.47_1571_openshift, released 1 September 2022
 {: #4847_1571_openshift}
@@ -157,6 +179,7 @@ The following table shows the changes that are in the master fix pack 4.8.47_157
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20220712 | 4.8.0+20220816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220816){: external}. |
 {: caption="Changes since version 4.8.46_1566_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.47_1570_openshift, released 29 August 2022
 {: #4847_1570_openshift}
 
@@ -170,6 +193,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | HAPROXY | 6514a2 | c1634f | [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external},[CVE-2022-32208](https://nvd.nist.gov/vuln/detail/CVE-2022-32208){: external}
 {: caption="Changes since version 4.8.47_1568_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.47_1568_openshift, released 16 August 2022
 {: #4847_1568_openshift}
 
@@ -182,6 +206,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | {{site.data.keyword.openshiftshort}}. | 4.8.46 | 4.8.47 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-47){: external}. |
 {: caption="Changes since version 4.8.46_1567_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.46_1567_openshift, released 01 August 2022
 {: #4846_1567_openshift}
 
@@ -193,6 +218,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | RHEL 7 Packages |N/A|N/A|N/A|
 | {{site.data.keyword.openshiftshort}} |N/A|N/A|N/A|
 {: caption="Changes since version 4.8.46_1565_openshift" caption-side="bottom"}
+
 
 ### Change log for master fix pack 4.8.46_1566_openshift, released 26 July 2022
 {: #4846_1566_openshift}
@@ -222,6 +248,7 @@ The following table shows the changes that are in the master fix pack 4.8.46_156
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20220614 | 4.8.0+20220712 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220712){: external}. |
 {: caption="Changes since version 4.8.42_1562_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.46_1565_openshift, released 18 July 2022
 {: #4846_1565_openshift}
 
@@ -234,6 +261,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | {{site.data.keyword.openshiftshort}}. | 4.8.44 | 4.8.46 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-46){: external}. |
 {: caption="Changes since version 4.8.44_1564_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.44_1564_openshift, released 11 July 2022
 {: #4844_1564_openshift}
 
@@ -245,6 +273,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | General |N/A|N/A| Fix to address a bug that occurred if you used the persistent volume claim NFS v3 storage. |
 {: caption="Changes since version 4.8.44_1563_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.44_1563_openshift, released 05 July 2022
 {: #4844_1563_openshift}
 
@@ -255,6 +284,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | --- | --- | --- | --- |
 | {{site.data.keyword.openshiftshort}}. | 4.8.42 | 4.8.44 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-44){: external}. |
 {: caption="Changes since version 4.8.42_1561_openshift" caption-side="bottom"}
+
 
 ### Change log for master fix pack 4.8.42_1562_openshift, released 22 June 2022
 {: #4842_1562_openshift}
@@ -275,6 +305,7 @@ The following table shows the changes that are in the master fix pack 4.8.42_156
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit | v4.8.0-20220509 | v4.8.0-20220614 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20220614){: external}. |
 {: caption="Changes since version 4.8.39_1558_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.42_1561_openshift, released 20 June 2022
 {: #4842_1561_openshift}
 
@@ -288,6 +319,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
 {: caption="Changes since version 4.8.42_1559_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.42_1559_openshift, released 7 June 2022
 {: #4842_1559_openshift}
 
@@ -299,6 +331,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.4
 | RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-24903](https://nvd.nist.gov/vuln/detail/CVE-2022-24903){: external}. |
 | {{site.data.keyword.openshiftshort}}. | 4.8.39 | 4.8.42 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-42){: external}. |
 {: caption="Changes since version 4.8.39_1557_openshift" caption-side="bottom"}
+
 
 ### Change log for master fix pack 4.8.39_1558_openshift, released 3 June 2022
 {: #4839_1558_openshift}
@@ -324,6 +357,7 @@ The following table shows the changes that are in the master fix pack 4.8.39_155
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20220412 | 4.8.0+20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220509){: external}. |
 {: caption="Changes since version 4.8.36_1554_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.39_1557_openshift, released 23 May 2022
 {: #4839_1557_openshift}
 
@@ -335,6 +369,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.3
 | RHEL 7 Packages | 3.10.0-1160.62.1 | 3.10.0-1160.66.1 | Worker node kernel & package updates for [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}, [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}, [CVE-2022-0492](https://nvd.nist.gov/vuln/detail/CVE-2022-0492){: external}. |
 | HA proxy | 36b0307 | 468c09 | [CVE-2021-3634](https://nvd.nist.gov/vuln/detail/CVE-2021-3634){: external}. |
 {: caption="Changes since version 4.8.39_1556_openshift" caption-side="bottom"}
+
 
 ### Change log for worker node fix pack 4.8.39_1556_openshift, released 09 May 2022
 {: #4839_1556_openshift}
@@ -348,6 +383,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.3
 | {{site.data.keyword.openshiftshort}}. | 4.8.37 | 4.8.39 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-39){: external}. |
 | Haproxy | f53b22 | 36b030 | [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}, [CVE-2022-1154](https://nvd.nist.gov/vuln/detail/CVE-2022-1154){: external}, [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}. |
 {: caption="Changes since version 4.8.37_1555_openshift" caption-side="bottom"}
+
 
 ### Change log for master fix pack 4.8.36_1554_openshift, released 26 April 2022
 {: #4836_1554_openshift}
@@ -390,6 +426,7 @@ The following table shows the changes that are in the master fix pack 4.8.36_155
 | {{site.data.keyword.openshiftshort}}. | 4.8.35 | 4.8.37 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-37){: external}. |
 {: caption="Changes since version 4.8.35_1553_openshift" caption-side="bottom"}
 
+
 ### Change log for worker node fix pack 4.8.35_1553_openshift, released 11 April 2022
 {: #4835_1553_openshift}
 
@@ -400,9 +437,6 @@ The following table shows the changes that are in the worker node fix pack 4.8.3
 | --- | --- | --- | --- |
 | RHEL Packages | 3.10.0-1160.59.1 | 3.10.0-1160.62.1 | Kernel and package updates for [CVE-2021-45960](https://nvd.nist.gov/vuln/detail/CVE-2021-45960), [CVE-2021-46143](https://nvd.nist.gov/vuln/detail/CVE-2021-46143), [CVE-2022-22822](https://nvd.nist.gov/vuln/detail/CVE-2022-22822), [CVE-2022-22823](https://nvd.nist.gov/vuln/detail/CVE-2022-22823), [CVE-2022-22824](https://nvd.nist.gov/vuln/detail/CVE-2022-22824), [CVE-2022-22825](https://nvd.nist.gov/vuln/detail/CVE-2022-22825), [CVE-2022-22826](https://nvd.nist.gov/vuln/detail/CVE-2022-22826)   [CVE-2022-22827](https://nvd.nist.gov/vuln/detail/CVE-2022-22827), [CVE-2022-23852](https://nvd.nist.gov/vuln/detail/CVE-2022-23852), [CVE-2022-25235](https://nvd.nist.gov/vuln/detail/CVE-2022-25235), [CVE-2022-25236](https://nvd.nist.gov/vuln/detail/CVE-2022-25236), [CVE-2022-25315](https://nvd.nist.gov/vuln/detail/CVE-2022-25315), [CVE-2021-4028](https://nvd.nist.gov/vuln/detail/CVE-2021-4028), [CVE-2021-4083](https://nvd.nist.gov/vuln/detail/CVE-2021-4083)   [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778). |
 {: caption="Changes since version 4.8.35_1550_openshift" caption-side="bottom"}
-
-
-
 
 
 ### Change log for master fix pack 4.8.35_1552_openshift, released 6 April 2022
@@ -428,10 +462,6 @@ The following table shows the changes that are in the worker node fix pack 4.8.3
 | Red Hat OpenShift on {{site.data.keyword.cloud_notm}} Metrics Server | v4.8.0-20220222 | v4.8.0-20220322 | See the [Red Hat OpenShift on {{site.data.keyword.cloud_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220322){: external}. |
 | Red Hat OpenShift on {{site.data.keyword.cloud_notm}} toolkit | 4.8.0+20220222 | 4.8.0+20220322 | See the [Red Hat OpenShift on {{site.data.keyword.cloud_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220322){: external}. |
 {: caption="Changes since version 4.8.31_1546_openshift" caption-side="bottom"}
-
-
-
-
 
 
 ### Change log for worker node pack 4.8.35_1550_openshift, released 28 March 2022
@@ -554,8 +584,6 @@ The following table shows the changes that are in the worker node fix pack `4.8.
 {: caption="Changes since version 4.8.24_1540_openshift" caption-side="bottom"}
 
 
-
-
 ### Change log for worker node fix pack 4.8.24_1540_openshift, released 4 January 2022
 {: #4824_1540}
 
@@ -606,7 +634,6 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.IBM_notm}} Cloud Metrics Server | v4.8.0-20211109 | v4.8.0-20211201 | See the [{{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20211201){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.IBM_notm}} Cloud toolkit | 4.8.0+20211109 | 4.8.0+20211201 | See the [{{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.IBM_notm}} Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20211201){: external}. |
 {: caption="Changes since version 4.8.18_1535_openshift" caption-side="bottom"}
-
 
 
 ### Change log for worker node fix pack 4.8.22_1538_openshift, released 6 December 2021
@@ -662,7 +689,6 @@ The following table shows the changes that are in the master fix pack patch upda
 {: caption="Changes since version 4.8.14_1531_openshift" caption-side="bottom"}
 
 
-
 ### Change log for worker node fix pack 4.8.18_1533_openshift, released 10 November 2021
 {: #4818_1533}
 
@@ -700,7 +726,6 @@ The following table shows the changes that are in the master fix pack patch upda
 {: caption="Changes since version 4.8.11_1526_openshift" caption-side="bottom"}
 
 
-
 ### Change log for worker node fix pack 4.8.15_1532_openshift, released 25 October 2021
 {: #4815_1532}
 
@@ -726,3 +751,5 @@ The following table shows the changes that are in the worker node fix pack patch
 | --- | --- | --- | --- |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.8.12 | 4.8.13 | See the [change logs](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-13){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}).|
 {: caption="Changes since version 4.8.12_1527_openshift" caption-side="bottom"}
+
+
