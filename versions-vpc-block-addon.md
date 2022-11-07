@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-07"
 
 keywords: block, add-on, changelog
 
@@ -48,7 +48,7 @@ Version 5.0.0 is available in for allowlisted accounts.
 ### Change log for version 5.0, released 11 October 2022
 {: #5.0_is_block_relnote}
 
-- Adds snapshot support.
+- Adds snapshot support for cluster Kubernetes version 1.25 and later.
 - Makes the resource requests and limits of the `vpc-block-csi-driver` containers configurable. To view the config run `kubectl get cm -n kube-system addon-vpc-block-csi-driver-configmap -o yaml`
 - Adds the following parameters for customizing the driver.
     - `AttachDetachMinRetryGAP: "3"`: The initial retry interval for checking Attach/Detach Status. The default is 3 seconds.
