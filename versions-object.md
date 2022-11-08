@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-08"
 
 keywords: object storage, plug-in, changelog
 
@@ -26,8 +26,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.2 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.1 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.0 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.0 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.21 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.20 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.19 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -57,6 +58,12 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+## Change log for version 2.2.2, released 8 November 2022
+{: #0222_object_plugin}
+
+- Updates the UBI image to `8.6-994`.
+- Resolves [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}, [CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external}, [CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external}, [CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external}, [CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external}, [CVE-2022-40674](https://nvd.nist.gov/vuln/detail/CVE-2022-40674){: external}.
 
 ## Change log for version 2.2.1, released 20 September 2022
 {: #0221_object_plugin}

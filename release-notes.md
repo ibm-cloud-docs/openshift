@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-07"
+lastupdated: "2022-11-08"
 
 keywords: openshift
 
@@ -26,6 +26,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2022
 {: #openshift-nov22}
+
+### 8 November 2022
+{: #openshift-nov0822}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.2` is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 7 November 2022
 {: #openshift-nov0722}
@@ -1051,7 +1058,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
-:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps), and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
+:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding {{site.data.keyword.cos_full_notm}} storage to apps](/docs/openshift?topic=openshift-storage_cos_apps), and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
