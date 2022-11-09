@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-09"
 
 keywords: openshift
 
@@ -26,6 +26,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2022
 {: #openshift-nov22}
+
+### 9 November 2022
+{: #openshift-nov0922}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on version `4.4.12_1700` and `5.0.1_1695`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
 
 ### 8 November 2022
 {: #openshift-nov0822}
