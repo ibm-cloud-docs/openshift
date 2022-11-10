@@ -10,6 +10,7 @@ subcollection: openshift
 ---
 
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -3507,9 +3508,9 @@ subcollection: openshift
 
 * [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-firewall#corporate)
 
-    * [Running `{[ic]}`, `{[icks]}`, and `{[iccr]}` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_bx)
+    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_bx)
 
-    * [Running `{[kubectl]}` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
 
     * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_calicoctl)
 
@@ -3519,7 +3520,7 @@ subcollection: openshift
 
     * [Opening required ports in a private allowlist](/docs/openshift?topic=openshift-firewall#firewall_private)
 
-    * [Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {[cluster_type]} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
+    * [Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
 
