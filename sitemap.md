@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-10"
 
 keywords: openshift
 subcollection: openshift
@@ -230,6 +230,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
+
+    * [10 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1022)
+
+        * Istio add-on version `1.15.3`
 
     * [9 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0922)
 
@@ -3503,9 +3507,9 @@ subcollection: openshift
 
 * [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-firewall#corporate)
 
-    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_bx)
+    * [Running `{[ic]}`, `{[icks]}`, and `{[iccr]}` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_bx)
 
-    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+    * [Running `{[kubectl]}` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
 
     * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_calicoctl)
 
@@ -3515,7 +3519,7 @@ subcollection: openshift
 
     * [Opening required ports in a private allowlist](/docs/openshift?topic=openshift-firewall#firewall_private)
 
-    * [Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
+    * [Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {[cluster_type]} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
 
@@ -5833,8 +5837,6 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_410#410_before)
 
-    * [Update after master](/docs/openshift?topic=openshift-cs_versions_410#410_after)
-
 * [Migrating your worker nodes to RHEL 8](/docs/openshift?topic=openshift-cs_versions_410#410_rhel-migrate)
 
 [Version 4.10 change log](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_410)
@@ -5981,6 +5983,8 @@ subcollection: openshift
 * [Preparing to update](/docs/openshift?topic=openshift-cs_versions_49#prep-up-49)
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_49#49_before)
+
+* [Migrating your worker nodes to RHEL 8](/docs/openshift?topic=openshift-cs_versions_49#49_rhel-migrate)
 
 [{{site.data.keyword.redhat_openshift_notm}} version 4.9 change log](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_49)
 
