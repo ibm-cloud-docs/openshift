@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-10"
 
 keywords: openshift, version, update, upgrade
 
@@ -40,7 +40,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | --- | --- | --- | --- |
 | Supported | 4.9 / 1.22 | 09 Feb 2022 | May 2023`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.9." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
 
 ## Preparing to update
 {: #prep-up-49}
@@ -59,6 +58,10 @@ The following table shows the actions that you must take before you [update the 
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review [OpenShift version 4.9 deprecated and removed features](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-deprecated-removed-features){: external}. |
 | **Unsupported:**  Beta versions of numerous Kubernetes APIs | For more information, review [Preparing to upgrade to OpenShift Container Platform 4.9](https://access.redhat.com/articles/6329921){: external}, [Kubernetes API and Feature Removals In 1.22: Here’s What You Need To Know](https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/){: external} and [Deprecated API Migration Guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-22){: external}. See [Deprecation Warnings](https://kubernetes.io/blog/2020/09/03/warnings/#deprecation-warnings){: external} for methods to identify use of deprecated APIs. Warnings for components provided by the Red Hat OpenShift on IBM Cloud cluster install can be ignored since they will be handled during the update. Note that {{site.data.keyword.openshiftlong_notm}} cluster administrators do not need to provide a manual acknowledgment before the cluster can be upgraded, as mentioned in this Red Hat [article](https://access.redhat.com/articles/6329921){: external}. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.9" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
+
+## Migrating your worker nodes to RHEL 8
+{: #49_rhel-migrate}
+
+After updating your worker nodes to version 4.9, migrate them to use RHEL 8 by provisioning a new worker pool, then deleting the previous worker pool. See [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate).
 
 
