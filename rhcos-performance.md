@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-11"
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Tuning performance for Red Hat CoreOS worker nodes

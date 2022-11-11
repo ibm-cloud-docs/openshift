@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-11-11"
 
 keywords: satellite, hybrid, multicloud, sriov, nic, network
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Setting up Single Root I/O Virtualization (SR-IOV) in {{site.data.keyword.satellitelong_notm}} clusters
 {: #satellite-sriov}

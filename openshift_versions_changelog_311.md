@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-11"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Version 3.11 change log

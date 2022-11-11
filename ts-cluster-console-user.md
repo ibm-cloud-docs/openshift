@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-11-11"
 
 keywords: openshift, console, user, error
 
@@ -12,6 +12,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why do I see "Could not find user" when I try to access the {{site.data.keyword.openshiftshort}} web console?

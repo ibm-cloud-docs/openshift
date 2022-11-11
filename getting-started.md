@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-11-11"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

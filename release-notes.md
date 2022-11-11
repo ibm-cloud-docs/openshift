@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-11"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: release-note
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Release notes

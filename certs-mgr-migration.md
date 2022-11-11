@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-11"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Migrating from {{site.data.keyword.cloudcerts_long_notm}} to {{site.data.keyword.secrets-manager_full_notm}}
 {: #certs-mgr-migration}

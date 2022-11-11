@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-11"
 
 keywords: rhel, os, operating system
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Migrating to a new Red Hat Enterprise Linux version
 {: #rhel_migrate}

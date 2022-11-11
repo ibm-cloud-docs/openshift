@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-11"
 
 keywords: openshift, satellite responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

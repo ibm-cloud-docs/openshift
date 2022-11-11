@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-11-11"
 
 keywords: openshift, block storage, pod identity, trusted profiles
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on
 {: #storage-block-vpc-trusted-profiles}

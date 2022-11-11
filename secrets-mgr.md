@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-11"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -11,6 +11,7 @@ subcollection: containers, openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Setting up {{site.data.keyword.secrets-manager_short}} in your {{site.data.keyword.redhat_openshift_notm}} cluster

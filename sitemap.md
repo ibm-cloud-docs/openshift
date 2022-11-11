@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-11"
 
 keywords: openshift
 subcollection: openshift
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -2849,7 +2850,7 @@ subcollection: openshift
 
 * [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
 
-[Creating clusters on dedicated hosts](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
+[Creating clusters on dedicated hosts for VPC](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
 
 [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satellite-clusters)
 

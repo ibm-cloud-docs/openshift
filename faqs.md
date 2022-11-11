@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-04"
+lastupdated: "2022-11-11"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -13,6 +13,7 @@ content-type: faq
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
