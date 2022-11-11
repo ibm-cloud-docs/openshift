@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-11"
 
 keywords: block, add-on, changelog
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -43,6 +44,15 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
 
+### Change log for version 5.0.1_1695, released 9 November 2022
+
+- Updates the `storage-secret-sidecar` image to `v1.2.10`
+- Updates the `csi-node-driver-registrar` to `v2.5.0`
+- Updates the `livenessprobe` to `v2.6.0`
+- Updates the `csi-provisioner` to `v3.2.1` 
+- Updates the `csi-attacher` to `v3.5.0` 
+- Updates the `csi-resizer` to `v1.5.0`
+- Resolves the following CVEs: [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}, [CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external}, [CVE-2022-40674](https://nvd.nist.gov/vuln/detail/CVE-2022-40674){: external}, [CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external}, [CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external}, [CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external}
 
 
 ### Change log for version 5.0, released 11 October 2022
@@ -80,16 +90,6 @@ Version 5.0.0 is available in for allowlisted accounts.
     - [CVE-2022-27782](https://nvd.nist.gov/vuln/detail/CVE-2022-27782){: external}
     - [CVE-2022-25313](https://nvd.nist.gov/vuln/detail/CVE-2022-25313){: external}
     - [CVE-2022-25314](https://nvd.nist.gov/vuln/detail/CVE-2022-25314){: external}
-
-### Change log for version 5.0.1_1695, released 9 November 2022
-
-- Updates the `storage-secret-sidecar` image to `v1.2.10`
-- Updates the `csi-node-driver-registrar` to `v2.5.0`
-- Updates the `livenessprobe` to `v2.6.0`
-- Updates the `csi-provisioner` to `v3.2.1` 
-- Updates the `csi-attacher` to `v3.5.0` 
-- Updates the `csi-resizer` to `v1.5.0`
-- Resolves the following CVEs: [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}, [CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external}, [CVE-2022-40674](https://nvd.nist.gov/vuln/detail/CVE-2022-40674){: external}, [CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external}, [CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external}, [CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external}
 
 
 ### Change log for version 5.0.1-beta_1411, released 15 June 2022
@@ -163,7 +163,6 @@ Adds snapshot support.
 - Adds a security fix related with image signing.
 
 
-
 ### Change log for version 4.4.5_1371, released 13 June 2022
 {: #445_1371_is_block_relnote}
 
@@ -176,6 +175,17 @@ Adds snapshot support.
 
 ## Version 4.3
 {: #043_is_block}
+
+### Change log for version 4.3.8_1705 released 11 November 2022
+{: #4.3.8_1705_is_block_relnote}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.10`
+- Updates the `csi-node-driver-registrar` to `v2.5.0`
+- Updates the `livenessprobe` to `v2.6.0`
+- Updates the `csi-provisioner` to `v3.2.1` 
+- Updates the `csi-attacher` to `v3.5.0` 
+- Updates the `csi-resizer` to `v1.5.0`
+- Resolves the following CVEs: [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}, [CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external}, [CVE-2022-40674](https://nvd.nist.gov/vuln/detail/CVE-2022-40674){: external}, [CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external}, [CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external}, [CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external}
 
 
 ### Change log for version 4.3.7_1613, released 22 September 2022

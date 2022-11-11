@@ -28,12 +28,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## November 2022
 {: #openshift-nov22}
 
+
+### 11 November 2022
+{: #openshift-nov1122}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on version `4.3.8_1705`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
 ### 10 November 2022
 {: #openshift-nov1022}
 {: release-note}
 
 Istio add-on version `1.15.3`
 :   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1153) is available.
+
 
 ### 9 November 2022
 {: #openshift-nov0922}
