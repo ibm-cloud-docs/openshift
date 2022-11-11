@@ -37,6 +37,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
+
+Worker node fix pack 4.11.12_1531_openshift, 4.10.39_1544_openshift, 4.9.51_1564_openshift
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49).
+
+
+
+
 ### 10 November 2022
 {: #openshift-nov1022}
 {: release-note}

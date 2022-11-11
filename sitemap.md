@@ -237,6 +237,8 @@ subcollection: openshift
 
         * {{site.data.keyword.block_storage_is_short}} add-on version `4.3.8_1705`
 
+        * Worker node fix pack 4.11.12_1531_openshift, 4.10.39_1544_openshift, 4.9.51_1564_openshift
+
     * [10 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1022)
 
         * Istio add-on version `1.15.3`
