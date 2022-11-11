@@ -170,6 +170,13 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     `--workers <number>`
     :   Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.
 
+    `--operating-system SYSTEM`
+    :   Optional. The operating system of the worker nodes you want to provision in your cluster.
+        - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
+        - For cluster version 4.10 or later, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
+        - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
+        - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+
     :   If no option is specified, the default [operating system version that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
 
 
@@ -311,4 +318,13 @@ For a VPC multizone cluster, after you created the cluster in a [multizone metro
 ibmcloud oc zone add vpc-gen2 --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --subnet-id <VPC_SUBNET_ID>
 ```
 {: pre}
+
+VPC cluster provisioned at version 4.9 with worker nodes that run the RHEL 8 operating system. For a complete list of available RHEL versions and which cluster versions they are compatible with, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available).
+
+```sh
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID <vpc_id> --subnet-id <vpc_subnet_id> --version 4.9.28_openshift --operating-system REDHAT_8_64
+```
+{: pre}
+
+
 
