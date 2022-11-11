@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-11"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: release-note
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Release notes
@@ -27,12 +28,29 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## November 2022
 {: #openshift-nov22}
 
+
+### 11 November 2022
+{: #openshift-nov1122}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on version `4.3.8_1705`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
+
+Worker node fix pack 4.11.12_1531_openshift, 4.10.39_1544_openshift, 4.9.51_1564_openshift
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49).
+
+
+
+
 ### 10 November 2022
 {: #openshift-nov1022}
 {: release-note}
 
 Istio add-on version `1.15.3`
 :   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1153) is available.
+
 
 ### 9 November 2022
 {: #openshift-nov0922}

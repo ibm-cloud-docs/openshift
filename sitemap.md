@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-11"
 
 keywords: openshift
 subcollection: openshift
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -231,6 +232,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
+
+    * [11 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1122)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `4.3.8_1705`
+
+        * Worker node fix pack 4.11.12_1531_openshift, 4.10.39_1544_openshift, 4.9.51_1564_openshift
 
     * [10 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1022)
 
@@ -2849,7 +2856,7 @@ subcollection: openshift
 
 * [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
 
-[Creating clusters on dedicated hosts](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
+[Creating clusters on dedicated hosts for VPC](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
 
 [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satellite-clusters)
 
@@ -5769,6 +5776,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
+    * [Change log for worker node fix pack 4.11.12_1531_openshift, released 11 November 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41112_1531_openshift)
+
     * [Change log for worker node fix pack 4.11.12_1530_openshift, released 07 November 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41112_1530_openshift)
 
     * [Change log for master fix pack 4.11.8_1528_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4118_1528_openshift)
@@ -5845,6 +5854,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.39_1544_openshift, released 11 November 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41039_1544_openshift)
 
     * [Change log for worker node fix pack 4.10.39_1543_openshift, released 07 November 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41039_1543_openshift)
 
@@ -5992,6 +6003,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.51_1564_openshift, released 11 November 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4951_1564_openshift)
 
     * [Change log for worker node fix pack 4.9.51_1563_openshift, released 07 November 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4951_1563_openshift)
 
@@ -6763,11 +6776,11 @@ subcollection: openshift
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
+    * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#change-log-for-version-501_1695,-released-9-november-2022)
+
     * [Change log for version 5.0, released 11 October 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0_is_block_relnote)
 
     * [Change log for version 5.0.4-beta_1566, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
-
-    * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#change-log-for-version-501_1695,-released-9-november-2022)
 
     * [Change log for version 5.0.1-beta_1411, released 15 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-beta_1411_is_block_relnote)
 
@@ -6790,6 +6803,8 @@ subcollection: openshift
     * [Change log for version 4.4.5_1371, released 13 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#445_1371_is_block_relnote)
 
 * [Version 4.3](/docs/openshift?topic=openshift-vpc_bs_changelog#043_is_block)
+
+    * [Change log for version 4.3.8_1705 released 11 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.3.8_1705_is_block_relnote)
 
     * [Change log for version 4.3.7_1613, released 22 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.3.7_1613_is_block_relnote)
 

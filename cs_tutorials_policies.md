@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-11"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ completion-time: 60m
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

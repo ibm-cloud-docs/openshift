@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-15"
+lastupdated: "2022-11-11"
 
 keywords: maintenance, host maintenance, notification, workers, offline
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Preparing for host maintenance updates
 {: #host-maintenance}

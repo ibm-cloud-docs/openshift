@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-11-11"
 
 keywords: openshift, file, debug, help
 
@@ -11,6 +11,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
