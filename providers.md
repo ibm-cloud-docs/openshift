@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: openshift
 
@@ -66,8 +66,7 @@ Classic
 | Security | See [Security and compliance](/docs/satellite?topic=satellite-compliance). |
 | High availability | See [About high availability and recover](/docs/satellite?topic=satellite-ha). |
 | Reservations | Reservations aren't available for {{site.data.keyword.satelliteshort}}. |
-the contract. Typical savings range between 30-50% compared to on-demand worker node costs.
-| Cluster administration | See [Updating hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers).| 
+| Cluster administration | See [Updating hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers). | 
 | Cluster networking | If you attach {{site.data.keyword.cloud_notm}} Classic or VPC hosts to your location, refer to those descriptions. |
 | Apps and container platform | You can create [{{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-faqs#container_platforms) to manage your containerized apps. Your app build processes don't differ because of the infrastructure provider, but how you expose the app does. For more information, see [Choosing an app exposure serivice](/docs/openshift?topic=openshift-cs_network_planning). |
 | App networking | All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods. To expose an app, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps). |
@@ -101,7 +100,7 @@ the contract. Typical savings range between 30-50% compared to on-demand worker 
 | Locations and versions | Classic clusters are available in multizone and single zone locations [worldwide](/docs/openshift?topic=openshift-regions-and-zones#locations). |
 | Service interface | Classic clusters are fully supported in the {{site.data.keyword.containershort_notm}} [`v1` API](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}, [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli), and [console](https://cloud.ibm.com/kubernetes/clusters).|
 | Service compliance | See the classic section in [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). |
-Service limitations | See [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits). Feature-specific limitations are documented by section. |
+| Service limitations | See [Service limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits). Feature-specific limitations are documented by section. |
 {: caption="Table 3. Classic infrastructure overview." caption-side="bottom"}
 
 ## Troubleshooting and support

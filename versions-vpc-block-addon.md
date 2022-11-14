@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: block, add-on, changelog
 
@@ -45,6 +45,7 @@ Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
 
 ### Change log for version 5.0.1_1695, released 9 November 2022
+{: #5.0.1-1695_is_block_relnote}
 
 - Updates the `storage-secret-sidecar` image to `v1.2.10`
 - Updates the `csi-node-driver-registrar` to `v2.5.0`

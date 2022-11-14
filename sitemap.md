@@ -6776,7 +6776,7 @@ subcollection: openshift
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
-    * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#change-log-for-version-501_1695,-released-9-november-2022)
+    * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-1695_is_block_relnote)
 
     * [Change log for version 5.0, released 11 October 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0_is_block_relnote)
 
