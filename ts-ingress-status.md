@@ -97,24 +97,20 @@ The Ingress message provides details of what operation is in progress or informa
 
 |Ingress message|Description|
 |--- |--- |
-| `The Ingress Operator is in a degraded state (ERRIODEG).` | For more information, see [Why is the Ingress Operator in a degraded state?](/docs/containers?topic=containers-ts-ingress-erriodeg). | 
-| `The Ingress Operator is missing from the cluster. (ERRSNF).` | For more information, see [Why is the Ingress LoadBalancer service missing from my cluster?](/docs/containers?topic=containers-ts-ingress-errsnf).|
-| `The Ingress Operator is missing from the cluster. (ERRIONF).` | For more information, see [Why do I get an error that the Ingress Operator is missing from my cluster?](/docs/containers?topic=containers-ts-ingress-errionf).|
-| `The external service is missing (ERRESNF).` | For more information, see [Why is the external service is missing from my cluster?](/docs/containers?topic=containers-ts-ingress-erresnf).|
-| `The load balancer service is missing (ERRSNF).` | For more information, see [Why is the LoadBalancer service missing from my cluster?](/docs/containers?topic=containers-ts-ingress-errsnf).|
-| `One or more route not admitted (ERRRNA).` | For more information, see [Why does the Ingress status show an ERRRNA error?](/docs/containers?topic=containers-ts-ingress-errrna).|
-| `The service is missing one or more worker IPs (ERRSEIPM).` | For more information, see [Why does the Ingress status show an ERRSEIPM error?](/docs/containers?topic=containers-ts-ingress-errsnf).|
-| `The subdomain has incorrect addresses registered (ERRDSIA).` | For more information, see [Why does the Ingress status show an ERRDSIA error?](/docs/openshift?topic=openshift-ts-ingress-errdsia).|
-| `The subdomain has DNS resolution issues (ERRDRISS).` | For more information, see [Why does the Ingress status show an ERRDRISS error?](/docs/openshift?topic=openshift-ts-ingress-errdriss).|
-| `The subdomain has TLS secret issues (ERRDSISS).` | For more information, see [Why does the Ingress status show an ERRDSISS error?](/docs/openshift?topic=openshift-ts-ingress-errdsiss).|
-| `Secret is not present on the cluster or is in the wrong namespace (ESSDNE).` | For more information, see [Why does the Ingress status show an ESSDNE error?](/docs/openshift?topic=openshift-ts-ingress-essdne).|
-| `Secret status shows a warning (ESSWS).` | For more information, see [Why does the Ingress status show an ESSWS error?](/docs/openshift?topic=openshift-ts-ingress-essws).|
-| `Field for opaque secret expired or will expire soon (ESSEF).` | For more information, see [Why does the Ingress status show an ESSEF error?](/docs/openshift?topic=openshift-ts-ingress-essef).|
-| `Certificate for TLS secret expired or will expire soon (ESSEC).` | For more information, see [Why does the Ingress status show an ESSEC error?](/docs/openshift?topic=openshift-ts-ingress-essec).|
-| `CRN does not match default secret with the same domain (ESSVC).` | For more information, see [Why does the Ingress status show an ESSVC error?](/docs/openshift?topic=openshift-ts-ingress-essvc).|
-| `Could not access {{site.data.keyword.secrets-manager_short}} instance group, verify default group is accessible and exists within instance (ESSSMG).` | For more information, see [Why does the Ingress status show an ESSSMG error?](/docs/openshift?topic=openshift-ts-ingress-esssmg).|
+| `The Ingress Operator is missing from the cluster. (ERRIONF).` | For more information, see [Why do I get an error that the Ingress Operator is missing from my cluster?](/docs/openshift?topic=openshift-ts-ingress-errionf).|
+| `The Ingress Operator is in a degraded state (ERRIODEG).` | For more information, see [Why is the Ingress Operator in a degraded state?](/docs/openshift?topic=openshift-ts-ingress-erriodeg). |
+| `One or more route not admitted (ERRRNA).` | For more information, see [Why does the Ingress status show an ERRRNA error?](/docs/openshift?topic=openshift-ts-ingress-errrna).|
+| `The external service is missing (ERRESNF).` | For more information, see [Why is the external service is missing from my cluster?](/docs/openshift?topic=openshift-ts-ingress-erresnf).|
+| `The service is missing one or more worker IPs (ERRSEIPM).` | For more information, see [Why does the Ingress status show an ERRSEIPM error?](/docs/openshift?topic=openshift-ts-ingress-errseipm).|
+| `The load balancer service address is missing (ERRSAM).` | For more information, see [Why does the Ingress status show an ERRSAM error?](/docs/openshift?topic=openshift-ts-ingress-errsam).|
 | `Could not access {{site.data.keyword.secrets-manager_short}} instance., verify S2S is enabled (ESSSMI).` | For more information, see [Why does the Ingress status show an ESSSMI error?](/docs/openshift?topic=openshift-ts-ingress-esssmi).|
+| `Could not access {{site.data.keyword.secrets-manager_short}} instance group, verify default group is accessible and exists within instance (ESSSMG).` | For more information, see [Why does the Ingress status show an ESSSMG error?](/docs/openshift?topic=openshift-ts-ingress-esssmg).|
+| `CRN does not match default secret with the same domain (ESSVC).` | For more information, see [Why does the Ingress status show an ESSVC error?](/docs/openshift?topic=openshift-ts-ingress-essvc).|
+| `Certificate for TLS secret expired or will expire soon (ESSEC).` | For more information, see [Why does the Ingress status show an ESSEC error?](/docs/openshift?topic=openshift-ts-ingress-essec).|
+| `Field for opaque secret expired or will expire soon (ESSEF).` | For more information, see [Why does the Ingress status show an ESSEF error?](/docs/openshift?topic=openshift-ts-ingress-essef).|
+| `Secret status shows a warning (ESSWS).` | For more information, see [Why does the Ingress status show an ESSWS error?](/docs/openshift?topic=openshift-ts-ingress-essws).|
+| `Secret is not present on the cluster or is in the wrong namespace (ESSDNE).` | For more information, see [Why does the Ingress status show an ESSDNE error?](/docs/openshift?topic=openshift-ts-ingress-essdne).|
+| `The subdomain has TLS secret issues (ERRDSISS).` | For more information, see [Why does the Ingress status show an ERRDSISS error?](/docs/openshift?topic=openshift-ts-ingress-errdsiss).|
+| `The subdomain has DNS resolution issues (ERRDRISS).` | For more information, see [Why does the Ingress status show an ERRDRISS error?](/docs/openshift?topic=openshift-ts-ingress-errdriss).|
+| `The subdomain has incorrect addresses registered (ERRDSIA).` | For more information, see [Why does the Ingress status show an ERRDSIA error?](/docs/openshift?topic=openshift-ts-ingress-errdsia).|
 {: caption="Ingress messages" caption-side="bottom"}
-
-
-
