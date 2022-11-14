@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-11-14"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ content-type: troubleshoot
 
 
 
+
 # Why isn't the Ingress secret expiration date updated?
 {: #sync_cert_dates}
 {: support}
@@ -25,7 +26,7 @@ Supported infrastructure providers
 :   VPC
 
 
-When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>` or `ibmcloud oc ingress status -c <cluster_name_or_ID>`, you see one of the following **Ingress Messages**:
+When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>` or `ibmcloud oc ingress status report-get -c <cluster_name_or_ID>`, you see one of the following **Ingress Messages**:
 {: tsSymptoms}
 
 ```sh

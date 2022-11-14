@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: openshift
 
@@ -76,7 +76,7 @@ Besides {{site.data.keyword.cloud_notm}} IAM access control policies that you se
 Access policies determine the level of access that users in your {{site.data.keyword.cloud_notm}} account have to resources across the {{site.data.keyword.cloud_notm}} platform. A policy assigns a user one or more roles that define the scope of access to a single service or to a set of services and resources that are organized together in a resource group. Each service in {{site.data.keyword.cloud_notm}} might require its own set of access policies.
 {: shortdesc}
 
-### Pick the right access policy and role for your users
+### Pick the correct access policy and role for your users
 {: #access_roles}
 
 You must define access policies for every user that works with {{site.data.keyword.openshiftlong_notm}}. The scope of an access policy is based on a user's defined role or roles, which determine the actions that the user can perform. Some policies are pre-defined but others can be customized. The same policy is enforced whether the user makes the request from the {{site.data.keyword.cloud_notm}} API, CLI, or UI.

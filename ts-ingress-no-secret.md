@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-14"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ content-type: troubleshoot
 
 
 
+
 # Why does no Ingress secret exist after cluster creation?
 {: #ingress_secret}
 {: support}
@@ -25,7 +26,7 @@ Supported infrastructure providers
 :   VPC
 
 
-When you run `ibmcloud oc ingress status -c <cluster_name_or_ID>`, one of the following messages continues to be displayed:
+When you run `ibmcloud oc ingress status report-get -c <cluster_name_or_ID>`, one of the following messages continues to be displayed:
 {: tsSymptoms}
 
 ```sh

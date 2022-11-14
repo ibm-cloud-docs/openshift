@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: openshift, deploy
 
@@ -298,7 +298,7 @@ Want to make your secrets even more secured? Ask your cluster admin to [enable a
 ### How can I make sure that my app has the right resources?
 {: #resources}
 
-When you [specify your app YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the right resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} for each container that is defined in your YAML file.
+When you [specify your app YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the correct resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} for each container that is defined in your YAML file.
 {: shortdesc}
 
 Additionally, your cluster admin might set up resource controls that can affect your app deployment, such as the following.
@@ -468,10 +468,10 @@ Are you looking to create YAML file templates? Some people use Helm to do just t
 Each of your pods in your {{site.data.keyword.redhat_openshift_notm}} cluster has an IP address. But when you deploy an app to your cluster, you don't want to rely on the pod IP address for service discovery and networking. Pods are removed and replaced frequently and dynamically. Instead, use a Kubernetes service, which represents a group of pods and provides a stable entry point through the service's virtual IP address, called its `cluster IP`. For more information, see the Kubernetes documentation on [Services](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services){: external}.
 {: shortdesc}
 
-### How can I make sure that my services are connected to the right deployments and ready to go?
+### How can I make sure that my services are connected to the correct deployments and ready to go?
 {: #services_connected}
 
-For most services, add a selector to your service `.yaml` file so that it applies to pods that run your apps by that label. Many times when your app first starts up, you don't want it to process requests right away. Add a readiness probe to your deployment so that traffic is only sent to a pod that is considered ready. For an example of a deployment with a service that uses labels and sets a readiness probe, check out this [NGINX YAML](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/deploy-apps-clusters/nginx_preferredAntiAffinity.yaml){: external}.
+For most services, add a selector to your service `.yaml` file so that it applies to pods that run your apps by that label. Many times when your app first starts up, you don't want it to process requests immediately. Add a readiness probe to your deployment so that traffic is only sent to a pod that is considered ready. For an example of a deployment with a service that uses labels and sets a readiness probe, check out this [NGINX YAML](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/deploy-apps-clusters/nginx_preferredAntiAffinity.yaml){: external}.
 {: shortdesc}
 
 Sometimes, you don't want the service to use a label. For example, you might have an external database or want to point the service to another service in a different namespace within the cluster. When this happens, you have to manually add an endpoints object and link it to the service.

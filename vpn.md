@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-14"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -347,7 +348,7 @@ Deploy the strongSwan Helm chart in your cluster with the configurations that yo
     ```
     {: pre}
 
-4. Check the chart deployment status. When the chart is ready, the **STATUS** field near the top of the output has a value of `DEPLOYED`.
+4. Check the chart deployment status. When the chart is ready, the **STATUS** field near in the output has a value of `DEPLOYED`.
 
     ```sh
     helm status vpn
@@ -471,7 +472,7 @@ After you deploy your Helm chart, test the VPN connectivity.
     ```
     {: pre}
 
-10. Check the chart deployment status. When the chart is ready, the **STATUS** field near the top of the output has a value of `DEPLOYED`.
+10. Check the chart deployment status. When the chart is ready, the **STATUS** field in the output has a value of `DEPLOYED`.
 
     ```sh
     helm status vpn
