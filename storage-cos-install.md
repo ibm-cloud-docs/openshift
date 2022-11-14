@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-14"
 
 keywords: openshift
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Installing the {{site.data.keyword.cos_full_notm}} plug-in on VPC and classic clusters
@@ -400,7 +401,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     ```
     {: screen}
 
-2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing](https://cloud.ibm.com/objectstorage/create#pricing){: external} for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is right for you is based on how frequently data is read and written to your service instance.
+2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing](https://cloud.ibm.com/objectstorage/create#pricing){: external} for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is correct for you is based on how frequently data is read and written to your service instance.
     - **Standard**: This option is used for hot data that is accessed frequently. Common use cases are web or mobile apps.
     - **Vault**: This option is used for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
     - **Cold**: This option is used for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.

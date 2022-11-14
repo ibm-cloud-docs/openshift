@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: openshift
 subcollection: openshift
@@ -3337,7 +3337,7 @@ subcollection: openshift
 
 * [Understanding IAM access policies and roles](/docs/openshift?topic=openshift-access-overview#access_policies)
 
-    * [Pick the right access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles)
+    * [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles)
 
     * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups)
 
@@ -3999,7 +3999,7 @@ subcollection: openshift
 
 * [Setting up service discovery](/docs/openshift?topic=openshift-plan_deploy#service_discovery)
 
-    * [How can I make sure that my services are connected to the right deployments and ready to go?](/docs/openshift?topic=openshift-plan_deploy#services_connected)
+    * [How can I make sure that my services are connected to the correct deployments and ready to go?](/docs/openshift?topic=openshift-plan_deploy#services_connected)
 
     * [How can I expose my services on the Internet?](/docs/openshift?topic=openshift-plan_deploy#services_expose_apps)
 
@@ -6776,11 +6776,13 @@ subcollection: openshift
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
-    * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#change-log-for-version-501_1695,-released-9-november-2022)
+    * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-1695_is_block_relnote)
 
     * [Change log for version 5.0, released 11 October 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0_is_block_relnote)
 
     * [Change log for version 5.0.4-beta_1566, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
+
+    * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-1695_is_block_relnote)
 
     * [Change log for version 5.0.1-beta_1411, released 15 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-beta_1411_is_block_relnote)
 
@@ -8409,6 +8411,46 @@ subcollection: openshift
 [Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations](/docs/openshift?topic=openshift-cs_ingress_health_check_ctm#cs_ingress_health_check_ctm)
 
 [Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain_dns_marshal#ingress_subdomain_dns_marshal)
+
+[Why do I get an error that the Ingress Operator is missing from my cluster?](/docs/openshift?topic=openshift-ts-ingress-errionf#ts-ingress-errionf)
+
+[Why is the Ingress external service missing from my cluster?](/docs/openshift?topic=openshift-ts-ingress-erresnf#ts-ingress-erresnf)
+
+[Why is the Ingress Operator in a degraded state?](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg)
+
+* [One or more status conditions indicate unavailable: `DeploymentAvailable=False`](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-da-false)
+
+* [One or more status conditions indicate unavailable: `LoadBalancerReady=False`](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-lbr-false)
+
+* [One or more other status conditions indicate a degraded state: `CanaryChecksSucceeding=False`](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-ccs-false)
+
+* [Next steps](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-next)
+
+[Why does the Ingress status show an ERRSEIPM error?](/docs/openshift?topic=openshift-ts-ingress-errseipm#ts-ingress-errseipm)
+
+[Why does the Ingress status show an ERRSAM error?](/docs/openshift?topic=openshift-ts-ingress-errsam#ts-ingress-errsam)
+
+[Why does the Ingress status show an ERRRNA error?](/docs/openshift?topic=openshift-ts-ingress-errrna#ts-ingress-errrna)
+
+[Why does the Ingress status show an ERRDSIA error?](/docs/openshift?topic=openshift-ts-ingress-errdsia#ts-ingress-errdsia)
+
+[Why does the Ingress status show an ERRDSISS error?](/docs/openshift?topic=openshift-ts-ingress-errdsiss#ts-ingress-errdsiss)
+
+[Why does the Ingress status show an ERRDRISS error?](/docs/openshift?topic=openshift-ts-ingress-errdriss#ts-ingress-errdriss)
+
+[Why does the Ingress status show an ESSSMI error?](/docs/openshift?topic=openshift-ts-ingress-esssmi#ts-ingress-esssmi)
+
+[Why does the Ingress status show an ESSSMG error?](/docs/openshift?topic=openshift-ts-ingress-esssmg#ts-ingress-esssmg)
+
+[Why does the Ingress status show an ESSVC error?](/docs/openshift?topic=openshift-ts-ingress-essvc#ts-ingress-essvc)
+
+[Why does the Ingress status show an ESSEC error?](/docs/openshift?topic=openshift-ts-ingress-essec#ts-ingress-essec)
+
+[Why does the Ingress status show an ESSEF error?](/docs/openshift?topic=openshift-ts-ingress-essef#ts-ingress-essef)
+
+[Why does the Ingress status show an ESSWS error?](/docs/openshift?topic=openshift-ts-ingress-essws#ts-ingress-essws)
+
+[Why does the Ingress status show an ESSDNE error?](/docs/openshift?topic=openshift-ts-ingress-essdne#ts-ingress-essdne)
 
 
 ### File Storage

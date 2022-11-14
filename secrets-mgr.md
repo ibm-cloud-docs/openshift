@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -175,6 +175,9 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
         {: pre}
   
     2. For each subdomain in your cluster, run the command to regenerate your IBM-managed secrets. This updates the CRN of these secrets to reference the CRN of the new default {{site.data.keyword.secrets-manager_short}} instance.
+
+        Regenerating your secrets is rate-limited to five times per week. Follow the steps in this document carefully, as repeating them might cause you to reach the limit. If you do not regenerate your secrets, or if you have reached the limit, your secrets are uploaded to your {{site.data.keyword.secrets-manager_short}} instance at the next renewal cycle.
+        {: important}
 
         ```sh
         ibmcloud oc nlb-dns secret regenerate --cluster <cluster_name_or_id> --nlb-subdomain <nlb_subdomain>

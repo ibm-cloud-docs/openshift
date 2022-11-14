@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: openshift, audit
 
@@ -323,7 +323,6 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | {{site.data.keyword.openshiftlong_notm}} classic location | {{site.data.keyword.at_short}} event location |
 |-----|-----|
 | Dallas (dal10, dal12, dal13) | Dallas |
-| Mexico City (mex01) | Dallas |
 | Montreal (mon01) | Washington, D.C. |
 | San Jose (sjc03, sjc04) | Dallas |
 | São Paulo (sao01) | Dallas |

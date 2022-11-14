@@ -511,6 +511,22 @@ toc:
               - ts-ingress-router-zone.md
               - nested-ctm.md
               - ts-ingress-operator-degraded.md
+              - ts-ingress-errionf.md
+              - ts-ingress-erresnf.md
+              - ts-ingress-erriodeg.md
+              - ts-ingress-errseipm.md
+              - ts-ingress-errsam.md
+              - ts-ingress-errrna.md
+              - ts-ingress-errdsia.md
+              - ts-ingress-errdsiss.md
+              - ts-ingress-errdriss.md
+              - ts-ingress-esssmi.md
+              - ts-ingress-esssmg.md
+              - ts-ingress-essvc.md
+              - ts-ingress-essec.md
+              - ts-ingress-essef.md
+              - ts-ingress-essws.md
+              - ts-ingress-essdne.md
           - topicgroup:
               label: File Storage
               topics:
