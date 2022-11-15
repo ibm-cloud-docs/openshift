@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ Run the following commands to gather the required logs for debugging Ingress.
 1. Get the Ingress status.
 
     ```sh
-    ibmcloud oc ingress status report-get -c CLUSTERID
+    ibmcloud oc ingress status-report get -c CLUSTERID
     ```
     {: pre}
     
