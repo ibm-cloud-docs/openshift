@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: openshift, errsam, loadbalancer service missing
 
@@ -69,7 +69,7 @@ Complete the following steps to troubleshoot the issue.
 1. Review contents of the `MESSAGE` column and complete the following steps based on your cluster type and error message.
     - If you see errors regarding your API key, you can try resetting the API key with the **`ibmcloud ks api-key reset`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset).
     - **Classic**: If you see errors regarding your load balancer deployment, ensure your cluster has at least two healthy workers. For more information, see [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers).
-    - **Classic**: If you see errors saying that no IPs are available add new portable subnet(s) to the cluster with the **`ibmcloud ks cluster subnet create`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_create).
+    - **Classic**: If you see errors saying that no IPs are available, add new portable subnet(s) to the cluster with the **`ibmcloud ks cluster subnet create`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_create).
     - **VPC**: If you see permission issues, review your IAM permissions. For more information, see [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb).
     - **VPC**: Ensure that you did not reach your LBaaS instance quota. For more information, see [Quotas and service limits](/docs/vpc?topic=vpc-quotas#load-balancer-quotas) and **`ibmcloud is load-balancers`** [command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#load-balancers).
     
