@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -184,7 +184,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 :   Set the maximum amount of time that worker nodes can be tainted or untainted with `PreferNoSchedule` at the same time. The default value is `10m`.
 
 `maxFailingTime`
-:   Set the maximum time in minutes that the cluster autoscaler pod runs without a successfully completed action before the pod is automatically restarted.`15m`| 
+:   Set the maximum time in minutes that the cluster autoscaler pod runs without a completed action before the pod is automatically restarted.`15m`| 
 
 `maxInactivity`
 :   Set the maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted. The default value is `10m`.

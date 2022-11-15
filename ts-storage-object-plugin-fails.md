@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -14,6 +14,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -39,7 +40,7 @@ Error: plugin "ibmc" exited with error
 During the installation, many different tasks are executed by the {{site.data.keyword.cos_full_notm}} plug-in such as creating storage classes and cluster role bindings. 
 {: tsCauses}
 
-Some of these resources might already exist in your cluster from previous {{site.data.keyword.cos_full_notm}} plug-in installations and were not properly removed when you removed or upgraded the plug-in.
+Some resources might already exist in your cluster from previous {{site.data.keyword.cos_full_notm}} plug-in installations and were not properly removed when you removed or upgraded the plug-in.
 
 Delete the resource that is display in the error message and retry the installation.
 {: tsResolve}

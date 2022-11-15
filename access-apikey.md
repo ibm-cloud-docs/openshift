@@ -146,7 +146,7 @@ If an API key that is set for a region and resource group in your cluster is com
 ## Ensuring that the API key or infrastructure credentials owner has the correct permissions
 {: #owner_permissions}
 
-To ensure that all infrastructure-related actions can be successfully completed in the cluster, the user whose credentials you want to set for the API key must have the proper permissions. Consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner. Note that you can't use a service ID to set the API key.
+To ensure that all infrastructure-related actions can be completed in the cluster, the user whose credentials you want to set for the API key must have the proper permissions. Consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner. Note that you can't use a service ID to set the API key.
 {: shortdesc}
 
 1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.

@@ -39,7 +39,7 @@ Clusters can have two main types of worker nodes: virtual or physical (bare meta
 
 **When do worker nodes begin to incur charges?**
 
-Worker nodes begin to incur charges after they successfully complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/containers?topic=containers-health-monitor#states).
+Worker nodes begin to incur charges after they complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/containers?topic=containers-health-monitor#states).
 
 **What is the difference between virtual and physical machines?**
 

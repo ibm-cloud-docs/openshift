@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -51,7 +51,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.11. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
 
-**Before you update**: Review the following list of considerations and limitations before you update your cluster to version 4.11. Some of the following entries are relevant to specific add-ons. To check if you have an add-on enabled in your cluster, run `ibmcloud oc cluster addon ls`. 
+**Before you update**: Review the following list of considerations and limitations before you update your cluster to version 4.11. Some entries are relevant to specific add-ons. To check if you have an add-on enabled in your cluster, run `ibmcloud oc cluster addon ls`. 
 
 RHEL 8 operating system support 
 :    RHEL 8 is the only operating system supported for clusters that run version 4.11. If your 4.10 cluster has RHEL 7 worker nodes, [migrate your worker nodes](#rhel-migrate-411) to RHEL 8.
