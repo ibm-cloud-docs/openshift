@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2022
 {: #openshift-nov22}
+
+### 15 November 2022
+{: #openshift-nov1522}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.3` is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 ### 11 November 2022

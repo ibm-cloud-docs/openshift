@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-15"
 
 keywords: object storage, plug-in, changelog
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -26,8 +27,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.3 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.2 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.1 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.1 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.0 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.21 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.1.20 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -57,7 +59,13 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.6 | Deprecated | 4.3 - 4.6 | x86 | 
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cos_full_notm}} plug-in version. The second column is the version's supported state. The third column is the version of your cluster that the {{site.data.keyword.cos_full_notm}} plug-in version is supported for."}
+
+## Change log for version 2.2.3, released 15 November 2022
+{: #0223_object_plugin}
+
+- Updates the UBI image to `8.7-923`
+- Resolves [CVE-2016-3709](https://nvd.nist.gov/vuln/detail/CVE-2016-3709){: external}, [CVE-2022-30698](https://nvd.nist.gov/vuln/detail/CVE-2022-30698){: external}, [CVE-2022-30699](https://nvd.nist.gov/vuln/detail/https://nvd.nist.gov/vuln/detail/){: external}, [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/https://nvd.nist.gov/vuln/detail/){: external}.
+
 
 ## Change log for version 2.2.2, released 8 November 2022
 {: #0222_object_plugin}
