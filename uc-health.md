@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Healthcare use cases for {{site.data.keyword.cloud_notm}}
@@ -78,7 +79,7 @@ On-demand compute, storage, and I/O services run in the public cloud with secure
 * Migrate virtual machine images to container images that run in {{site.data.keyword.openshiftlong_notm}} in the public cloud.
 * Deploy {{site.data.keyword.icp4dfull_notm}}, so that developers have their familiar analytics tools on the cloud.
 * Provide standardized DevOps dashboards and practices through Kubernetes.
-* Enable on-demand scaling of compute for batch and other back-office workloads that run infrequently.
+* Enable on demand scaling of compute for batch and other back-office workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to on-premises DBMS.
 * Private data center / on-premises capital costs are greatly reduced and replaced with a utility computing model that scales based on workload demand.
 
@@ -107,7 +108,7 @@ They can replicate and scale the apps by using defined rules and the automated K
 
 {{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query. To minimize queries to the back-office RDBMS, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps. These choices improve the front-end app usability and performance across the apps on {{site.data.keyword.openshiftlong_notm}}.
 
-Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough though. The provider needs to go through a process and methods transformation as well. By adopting the practices of the IBM Garage Method, the provider can implement an agile and iterative delivery process that supports modern DevOps practices like CI/CD.
+Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough though. The provider needs to go through a methods transformation as well. By adopting the practices of the IBM Garage Method, the provider can implement an agile and iterative delivery process that supports modern DevOps practices like CI/CD.
 
 Much of the CI/CD process itself is automated with IBM's Continuous Delivery service in the Cloud. The provider can define workflow toolchains to prepare container images, check for vulnerabilities, and deploy them to the Kubernetes cluster.
 
@@ -208,7 +209,7 @@ Technical solution:
 * Structure apps into a set of cooperative microservices within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy research apps to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enable on-demand scaling of compute for batch and other research workloads that run infrequently.
+* Enable on demand scaling of compute for batch and other research workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to existing on-premises databases.
 
 #### Step 2: Use secure and performant compute

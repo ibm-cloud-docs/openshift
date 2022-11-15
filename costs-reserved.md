@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # Using reservations to reduce classic worker node costs
 {: #reservations}
 
-When you have consistent computing needs over time of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual worker node instances in a contract for a fixed, predictable, and lower price than on-demand instances.
+When you have consistent computing needs over time of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual worker node instances in a contract for a fixed, predictable, and lower price than on demand instances.
 {: shortdesc}
 
 Reservations are available only for classic infrastructure worker nodes in multizone regions (MZRs). Also note that you can't enable the cluster autoscaler add-on on worker pools that use reservations.
@@ -39,13 +39,13 @@ Review the following diagram for an example scenario of how you might set up you
 
 **Contract**: The example reservation has two contracts for different terms. One contract is for 10 worker nodes across 3 years. The other contract is for 5 worker nodes across 1 year. Therefore, the total capacity of the reservation is 15 worker nodes.
 
-**Clusters**: Each cluster is in the same multizone region as the reservation, but can be in a different resource group. Reserved worker nodes from different reservations can be used in different clusters. A cluster can have a mix of reserved and on-demand worker pools.
+**Clusters**: Each cluster is in the same multizone region as the reservation, but can be in a different resource group. Reserved worker nodes from different reservations can be used in different clusters. A cluster can have a mix of reserved and on demand worker pools.
 
-**Worker pools**: You can create multiple worker pools in multiple clusters with your reserved worker nodes. Reserved worker nodes are used for the entire worker pool; you can't mix and match between on-demand and reserved worker nodes in the same worker pool. Reserved worker nodes are used on a first-available basis, which means if you provision a worker pool that uses all your reserved worker nodes, you have no more reserved worker nodes left for other worker pools. Therefore, you might create separate reservations for each team that owns a worker pool or cluster.
+**Worker pools**: You can create multiple worker pools in multiple clusters with your reserved worker nodes. Reserved worker nodes are used for the entire worker pool; you can't mix and match between on demand and reserved worker nodes in the same worker pool. Reserved worker nodes are used on a first-available basis, which means if you provision a worker pool that uses all your reserved worker nodes, you have no more reserved worker nodes left for other worker pools. Therefore, you might create separate reservations for each team that owns a worker pool or cluster.
 
 **Zones**: Because the reservation is created in an {{site.data.keyword.cloud_notm}} multizone region, the reserved worker nodes can be used for clusters in any of the zones. For example, reservations in Washington, DC (US East region) can be used to create classic worker nodes in `wdc04`, `wdc06`, or `wdc07`.
 
-**Reserved worker nodes that are used in the worker pools**: In this scenario, the development and production environments share a reservation that has a mix of contracts that are used for a mix of worker pools and teams. The reservation still has one unused, 3-year term reserved worker node that can be used for other worker pools or to scale up the existing worker pools. If the production environment needs more than one more worker node, you might resize down some worker pools in development, create a worker pool that uses on-demand worker nodes, or add more contracts to the reservation. If you are concerned about a development environment using up your production environment resources, consider creating separate reservations for the different environments.
+**Reserved worker nodes that are used in the worker pools**: In this scenario, the development and production environments share a reservation that has a mix of contracts that are used for a mix of worker pools and teams. The reservation still has one unused, 3-year term reserved worker node that can be used for other worker pools or to scale up the existing worker pools. If the production environment needs more than one more worker node, you might resize down some worker pools in development, create a worker pool that uses on demand worker nodes, or add more contracts to the reservation. If you are concerned about a development environment using up your production environment resources, consider creating separate reservations for the different environments.
 
 ### Reservation usage and lifecycle
 {: #ri-usage-lifecycle}
@@ -70,9 +70,9 @@ The following workloads are good candidates to run on reserved worker nodes:
 *   Predictable workloads that have continuous usage and steady states
 *   Workloads that you want to increase high availability for by creating replicas in different zones and regions
 
-**Can I convert existing on-demand worker nodes to reserved worker nodes to save money?**
+**Can I convert existing on demand worker nodes to reserved worker nodes to save money?**
 
-No. Instead, you can create reservations and contracts for the worker nodes in your clusters. Then, create worker pools in your existing clusters that use the reserved worker nodes. Consider using labels to reschedule your existing workloads to the new reserved worker pools. Then, delete your old, on-demand worker pools.
+No. Instead, you can create reservations and contracts for the worker nodes in your clusters. Then, create worker pools in your existing clusters that use the reserved worker nodes. Consider using labels to reschedule your existing workloads to the new reserved worker pools. Then, delete your old, on demand worker pools.
 
 **How do reservations impact quotas?**
 
@@ -92,7 +92,7 @@ To avoid an unexpected deletion, scale down your worker pools before the contrac
 
 **How much is the discount? Can I combine reservations with other discounts?**
 
-The discounts vary by the flavor, location, and term of the contract, but typically users realize a significant cost savings compared to on-demand worker nodes.
+The discounts vary by the flavor, location, and term of the contract, but typically users realize a significant cost savings compared to on demand worker nodes.
 *   33% or more for 1 year terms.
 *   Up to 50% for 3 year terms.
 
@@ -149,12 +149,12 @@ Your reservation is created! Now, [use your reservation to provision worker node
 When you create a worker pool in a cluster, you can choose to use your reservation to provision the worker nodes. You can use the same reservation for multiple clusters and worker pools in the same location as the reservation.
 {: shortdesc}
 
-If you don't have enough capacity in your reservation to complete a worker pool action, such as creating, resizing, rebalancing, or adding a zone, the action is blocked. Instead, add a contract for more worker nodes to your reservation. Or, remove or scale down existing worker pools to add these worker nodes back to your reservation. You might also create the worker pool with on-demand worker nodes.
+If you don't have enough capacity in your reservation to complete a worker pool action, such as creating, resizing, rebalancing, or adding a zone, the action is blocked. Instead, add a contract for more worker nodes to your reservation. Or, remove or scale down existing worker pools to add these worker nodes back to your reservation. You might also create the worker pool with on demand worker nodes.
 {: note}
 
 Before you begin:
 * In {{site.data.keyword.cloud_notm}} IAM, make sure that you have the **Operator** platform access role for **Kubernetes Service** for the cluster to create worker pools.
-* [Create](/docs/openshift?topic=openshift-cluster-create-classic) or have an existing a classic cluster in the **same metro** as the reservation that you want to use. If you want to use worker nodes only from a reservation, you can create a cluster with zero worker nodes, or remove existing, on-demand worker pools from a cluster.
+* [Create](/docs/openshift?topic=openshift-cluster-create-classic) or have an existing a classic cluster in the **same metro** as the reservation that you want to use. If you want to use worker nodes only from a reservation, you can create a cluster with zero worker nodes, or remove existing, on demand worker pools from a cluster.
 
 To use the reservation:
 1. Log in to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.

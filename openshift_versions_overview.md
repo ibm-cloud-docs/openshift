@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift, version, update, upgrade
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Review information about the supported {{site.data.keyword.redhat_openshift_notm}} versions for {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
 
-For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the RedHat OpenShift release notes.
+For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the {{site.data.keyword.redhat_openshift_notm}} release notes.
 * [{{site.data.keyword.redhat_openshift_notm}} 4.11 release notes overview](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.10 release notes overview](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.9 release notes overview](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html){: external}
@@ -193,9 +193,9 @@ Each supported version of IBM Cloud Kubernetes Service goes through a lifecycle 
 Estimated days and versions are provided for general understanding. Actual availability and release dates are subject to change and depend on various factors, such as community updates, security patches, and technology changes between versions.
 {: note}
 
-1. **Community release**: The OpenShift Container Platform community releases a new version. IBM engineers begin a process of testing and hardening the community version in preparation to release a supported RedHat OpenShift on IBM Cloud Service version.
-2. **Latest supported version**: The version is released as the latest supported RedHat OpenShift on IBM Cloud Service version.
-3. **Default version**: The version becomes the default supported RedHat OpenShift on IBM Cloud Service version.
+1. **Community release**: The OpenShift Container Platform community releases a new version. IBM engineers begin testing and hardening the community version in preparation to release a supported {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Service version.
+2. **Latest supported version**: The version is released as the latest supported {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Service version.
+3. **Default version**: The version becomes the default supported {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Service version.
 4. **Supported version**: The version remains supported but is no longer the default version.
 5. **Deprecated**: The version is deprecated, and security patch updates might not be provided. Versions are deprecated for approximately 90 days. Approximately 45 days after deprecation, you receive a notification in the console and CLI that you have approximately 45 days remaining to update your cluster to a supported version before its current version becomes unsupported. During the deprecation period, the version is still supported and your cluster is still functional, but might require updating to a supported release to fix security vulnerabilities. For example, you can add and reload worker nodes.
 6. **Unsupported**: The version is unsupported. Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If the cluster master runs two or more versions behind the oldest supported version, you can no longer apply updates and must delete the cluster and create a new one.

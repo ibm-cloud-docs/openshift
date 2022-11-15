@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -245,7 +245,7 @@ To establish an outbound VPN connection, modify the following settings.
 1. Change `ipsec.auto` to `start`.
 2. Set `remote.gateway` to the public IP address for the on-premises VPN endpoint in the remote network.
 3. Choose one of the following options for the IP address for the cluster VPN endpoint:
-    - **Public IP address of the cluster's private gateway**: If your worker nodes are connected to a private VLAN only, then the outbound VPN request is routed through the private gateway in order to reach the internet. The public IP address of the private gateway is used for the VPN connection.
+    - **Public IP address of the cluster's private gateway**: If your worker nodes are connected to a private VLAN only, then the outbound VPN request is routed through the private gateway to reach the internet. The public IP address of the private gateway is used for the VPN connection.
     - **Public IP address of the worker node where the strongSwan pod runs**: If the worker node where the strongSwan pod runs is connected to a public VLAN, then the worker node's public IP address is used for the VPN connection.
         
         - If the strongSwan pod is deleted and rescheduled onto a different worker node in the cluster, then the public IP address of the VPN changes. The on-premises VPN endpoint of the remote network must allow the VPN connection to be established from the public IP address of any of the cluster worker nodes.

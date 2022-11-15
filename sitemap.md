@@ -3349,7 +3349,7 @@ subcollection: openshift
 
 [Setting up API key credentials so the service can access the infrastructure and other cloud services](/docs/openshift?topic=openshift-access-creds#access-creds)
 
-* [Setting up the API key in most cases](/docs/openshift?topic=openshift-access-creds#api_key_most_cases)
+* [Setting up the API key for most use cases](/docs/openshift?topic=openshift-access-creds#api_key_most_cases)
 
 * [Understanding other options than the API key](/docs/openshift?topic=openshift-access-creds#api_key_other)
 
@@ -4913,7 +4913,7 @@ subcollection: openshift
 
 * [Setting up volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand)
 
-    * [Manually expanding volumes prior to add-on version 4.2](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
+    * [Manually expanding volumes before add-on version 4.2](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
 
 * [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
 

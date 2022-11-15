@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Why am I running out of SNAT ports for egress connections from pods in my cluster?
 {: #ts-network-snat-125}
@@ -41,7 +42,7 @@ It might be possible that the 32768 - 65535 range isn't large enough. Two possib
 
 If you do want to set this port range, you must download the `calicoctl` binary, set the `KUBECONFIG` environment variable for the cluster, and run the following command where `LOWER_RANGE_LIMIT` is between `1025` and `32767`. 
 
-This change takes effect immediately, and if you do this prior to updating your cluster master to 1.25 then the update doesn't overwrite what you set.
+This change takes effect immediately, and if you do this before updating your cluster master to 1.25 then the update doesn't overwrite what you set.
 
 ```sh
 calicoctl patch felixconfiguration default --patch '{"spec":{"natPortRange": "LOWER_RANGE_LIMIT:65535"}}' 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -90,7 +91,7 @@ Technical solution:
 * Structure apps into a set of cooperative microservices that run within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy apps to container images that run in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enable on-demand scaling of compute for batch and other inventory workloads that run infrequently.
+* Enable on demand scaling of compute for batch and other inventory workloads that run infrequently.
 
 #### Step 2: Ensure global availability
 {: #uc_data-share_step2}
@@ -197,7 +198,7 @@ Technical solution:
 
 * Structure inventory analysis and mobile apps into microservices and deploy them to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Scale the compute on-demand for batch and other inventory workloads that run less frequently.
+* Scale the compute on demand for batch and other inventory workloads that run less frequently.
 
 #### Step 2: Analyze inventory and trends
 {: #uc_grocer_step2}

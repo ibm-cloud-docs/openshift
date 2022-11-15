@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -28,7 +28,7 @@ You create a cluster and run `ibmcloud oc cluster get --cluster <cluster>` to ch
 {: tsSymptoms}
 
 
-Even if the cluster is in a `normal` state, the Ingress subdomain and secret might still be in progress. The Ingress subdomain and secret creation follows a process that might take more than 15 minutes to complete:
+Even if the cluster is in a `normal` state, the Ingress subdomain and secret might still be in progress. The Ingress subdomain and secret creation might take more than 15 minutes to complete:
 {: tsCauses}
 
 **Classic clusters**:

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -67,7 +67,7 @@ For more information about worker node specifications, see [Available hardware f
 ### Compute licenses
 {: #licenses}
 
-In {{site.data.keyword.openshiftlong_notm}}, worker nodes require OpenShift Container Platform licenses to cover the use of Red Hat OpenShift Container Platform and Red Hat Enterprise Linux. OpenShift Container Platform licenses can be supplied by an [existing {{site.data.keyword.cloud_notm}} Pak entitlement](#licenses-cloud-pak) or [on-demand by {{site.data.keyword.openshiftlong_notm}}](#licenses-on-demand).
+In {{site.data.keyword.openshiftlong_notm}}, worker nodes require OpenShift Container Platform licenses to cover the use of Red Hat OpenShift Container Platform and Red Hat Enterprise Linux. OpenShift Container Platform licenses can be supplied by an [existing {{site.data.keyword.cloud_notm}} Pak entitlement](#licenses-cloud-pak) or [on demand by {{site.data.keyword.openshiftlong_notm}}](#licenses-on-demand).
 {: shortdesc}
 
 #### On-demand OCP licenses from {{site.data.keyword.openshiftlong_notm}}
