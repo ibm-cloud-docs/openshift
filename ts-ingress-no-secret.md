@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -26,7 +26,7 @@ Supported infrastructure providers
 :   VPC
 
 
-When you run `ibmcloud oc ingress status report-get -c <cluster_name_or_ID>`, one of the following messages continues to be displayed:
+When you run `ibmcloud oc ingress status-report get -c <cluster_name_or_ID>`, one of the following messages continues to be displayed:
 {: tsSymptoms}
 
 ```sh

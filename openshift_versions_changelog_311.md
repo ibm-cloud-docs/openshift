@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -162,7 +162,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | Cluster health image | v1.1.32 | v1.1.35 | Updated golang dependencies and updated base image to version 102 to fix CVEs. [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external} |
 | Key Management Service provider | v1.0.25 | v1.0.26 | Update golang dependencies, update `Go` to version to `1.17.8`, and moved to base image `102` to reduce CVE footprint and handle [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external}. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1748 | 1866 | Updated the image to resolve CVEs. Updated to use `Go` version `1.17.8`. |
-| RedHat OpenShift Control Plane | 3.11.570 | 3.11.634 | See the [Red Hat OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-634){: external} |
+| {{site.data.keyword.redhat_openshift_notm}} Control Plane | 3.11.570 | 3.11.634 | See the [Red Hat OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-634){: external} |
 | OpenVPN client | 2.5.4-r0-IKS-556 | 2.5.4-r0-IKS-579 | Updated `Go` to version `1.16.15`. |
 | OpenVPN server | 2.5.4-r0-IKS-555 | 2.5.4-r0-IKS-578 | Updated `Go` to version `1.16.15`. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 405 | 407 | Updated `Go` to version `1.16.14`.  Updated `UBI` image to version `8.5-240`. |

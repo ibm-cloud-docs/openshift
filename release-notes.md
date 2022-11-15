@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -27,6 +27,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2022
 {: #openshift-nov22}
+
+### 15 November 2022
+{: #openshift-nov1522}
+{: release-note}
+
+New Ingress status messages
+:   You can now use the **`ibmcloud oc ingress status-report get`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_get) to view your Ingress status. For more information, see [Checking the status of Ingress components](/docs/openshift?topic=openshift-ingress-status).
+
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.3` is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 ### 11 November 2022
@@ -2802,7 +2813,7 @@ New! {{site.data.keyword.cloud_notm}} HPCS Router
 {: release-note}
 
 New! Reservations to reduce classic worker node costs
-:   Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on-demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations).
+:   Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations).
 
 ### 23 November 2020
 {: #openshift-nov2320}

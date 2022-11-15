@@ -453,7 +453,6 @@ toc:
               topics:
               - ts-network-roks-subdomain-missing.md
               - ts-network-calico-node.md
-              - ts-network-calico-node.md
               - ts-network-snat-125.md
               - ts-network-egress-124.md
               - ts-network-strongswan-vpn.md

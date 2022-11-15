@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -96,7 +96,7 @@ ibmcloud oc cluster ls
 
 To take advantage of all the KMS features, encryption must be enabled on version `4.5.18_1521_openshift` or later.
 
-If KMS was enabled before this version, [update your cluster](/docs/openshift?topic=openshift-update) to at least version `4.5.18_1521_openshift` and then [reenable KMS encryption](#keyprotect) with a new root key. If you are unsure when KMS was enabled, log into the IBM Cloud console and click on your KMS instance under [Resources](https://cloud.ibm.com/resources){: external}. Find your root key and click the **Actions** icon ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") > **Key associated resources**. If a CRN number is listed for your root key, then you do not need to upgrade your cluster. 
+If KMS was enabled before this version, [update your cluster](/docs/openshift?topic=openshift-update) to at least version `4.5.18_1521_openshift` and then [reenable KMS encryption](#keyprotect) with a new root key. If you are unsure when KMS was enabled, log in to the IBM Cloud console and click on your KMS instance under [Resources](https://cloud.ibm.com/resources){: external}. Find your root key and click the **Actions** icon ![Action menu icon](../icons/action-menu-icon.svg "Action menu icon") > **Key associated resources**. If a CRN number is listed for your root key, then you do not need to upgrade your cluster. 
 {: tip}
 
 - Enable the cluster to use root keys to encrypt secrets.

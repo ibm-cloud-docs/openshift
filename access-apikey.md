@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -23,7 +23,7 @@ subcollection: openshift
 To successfully provision and work with clusters, you must ensure that your {{site.data.keyword.cloud_notm}} account is correctly set up to access {{site.data.keyword.cloud_notm}} infrastructure and other {{site.data.keyword.cloud_notm}} services that you use in each resource group and region that your clusters are in.
 {: shortdesc}
 
-## Setting up the API key in most cases
+## Setting up the API key for most use cases
 {: #api_key_most_cases}
 {: help}
 {: support}

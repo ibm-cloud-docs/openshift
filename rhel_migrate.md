@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: rhel, os, operating system
 
@@ -23,10 +23,6 @@ Supported infrastructure providers
 :   Classic
 :   VPC
 :   Satellite
-
-
-For Classic and VPC clusters, if you want to upgrade a 4.9 cluster with RHEL 7 worker nodes to a 4.10 cluster with RHEL 8 worker nodes, [upgrade your cluster to version 4.10](/docs/openshift?topic=openshift-cs_versions_410#prep-up-410) before you follow the steps to migrate your worker nodes. 
-{: important}
 
 ## Migration actions by cluster version
 {: #rhel_migrate_versions}

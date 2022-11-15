@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -94,7 +95,7 @@ Technical solution:
 * Integrate apps into a set of cooperative microservices in {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy apps to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enables on-demand scaling of compute for batch and other inventory workloads that run infrequently.
+* Enables on demand scaling of compute for batch and other inventory workloads that run infrequently.
 * Use {{site.data.keyword.messagehub_full}} to manage streaming data from IoT devices.
 
 #### Step 2: Ensure global availability

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift, clusters, delete, remove
 
@@ -88,7 +88,7 @@ Next steps:
 - **Classic clusters only**: If you kept the subnets, you can [reuse them in a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
 - **VPC clusters only**: If you have infrastructure resources that you no longer want to use, such as the VPC or subnets, remove these resources in the VPC portal.
 - If you kept the persistent storage, you can delete your storage later through the {{site.data.keyword.cloud_notm}} console for the corresponding storage service.
-- **{{site.data.keyword.satellite}} short clusters}}**: If you have hosts attached to your location that you no longer want to use, remove them. For more information see [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove).
+- ****{{site.data.keyword.satelliteshort}} clusters**:  If you have hosts attached to your location that you no longer want to use, remove them. For more information see [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove).
 
 
 

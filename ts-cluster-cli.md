@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -173,7 +174,7 @@ Error from server (Forbidden): <resource> is forbidden: User "IAM#user@email.com
 ```
 {: screen}
 
-You need to download the `admin` configuration files for your cluster in order to run commands that require the `cluster-admin` cluster role.
+You need to download the `admin` configuration files for your cluster to run commands that require the `cluster-admin` cluster role.
 {: tsCauses}
 
 

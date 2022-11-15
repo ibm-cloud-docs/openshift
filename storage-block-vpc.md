@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -1142,10 +1142,10 @@ You can only expand volumes that are mounted by an app pod.
     ```
     {: pre}
 
-### Manually expanding volumes prior to add-on version 4.2
+### Manually expanding volumes before add-on version 4.2
 {: #expanding-existing-volumes}
 
-Complete the following steps to manually expand your existing {{site.data.keyword.block_storage_is_short}} volumes that were created prior to version 4.2 of the add-on.
+Complete the following steps to manually expand your existing {{site.data.keyword.block_storage_is_short}} volumes that were created before version 4.2 of the add-on.
 {: shortdesc}
 
 You can only expand volumes that are mounted by an app pod.
