@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 subcollection: openshift
@@ -4980,7 +4980,7 @@ subcollection: openshift
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
 
-* [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs)
+* [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs-store-file-vpc)
 
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
@@ -6782,8 +6782,6 @@ subcollection: openshift
 
     * [Change log for version 5.0.4-beta_1566, released 14 July 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-beta_1556_is_block_relnote)
 
-    * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-1695_is_block_relnote)
-
     * [Change log for version 5.0.1-beta_1411, released 15 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-beta_1411_is_block_relnote)
 
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
@@ -8253,10 +8251,6 @@ subcollection: openshift
 
 
 [Why is my cluster missing the public `containers.appdomain.cloud` subdomain?](/docs/openshift?topic=openshift-roks_ts_subdomain#roks_ts_subdomain)
-
-[Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
-
-* [Workarounds for `calico-node`](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node-work)
 
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
