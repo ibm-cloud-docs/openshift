@@ -235,6 +235,8 @@ subcollection: openshift
 
     * [15 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1522)
 
+        * New Ingress status messages
+
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.3` is available.
 
     * [11 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1122)
