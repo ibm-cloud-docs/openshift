@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-16"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -178,7 +178,7 @@ Quickly deploy a new sample app that is available to requests from inside the cl
 
 The components that you deploy by completing this lesson are shown in the following diagram.
 
-![Deployment setup](images/cs_app_tutorial_mz-components1.png){: caption="Figure 1. Deployment setup" caption-side="bottom"}
+![Deployment setup](images/cs-app-components1.svg){: caption="Figure 1. Deployment setup" caption-side="bottom"}
 
 1. Create a {{site.data.keyword.redhat_openshift_notm}} project for your Hello World app.
     ```sh

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-16"
 
 keywords: openshift
 
@@ -82,7 +82,7 @@ Learn more about the key concepts of Docker.
 {: shortdesc}
 
 Image
-:   A container image is the base for every container that you want to run. Container images are built from a Dockerfile, a text file that defines how to build the image and which build artifacts to include in it, such as the app, the app's configuration, and its dependencies. Images are always built from other images, making them quick to configure. Let someone else do the bulk of the work on an image and then tweak it for your use.
+:   A container image is the base for every container that you want to run. Container images are built from a Dockerfile, a text file that defines how to build the image and which build artifacts to include in it, such as the app, the app configuration, and its dependencies. Images are always built from other images, making them quick to configure. Let someone else do the bulk of the work on an image and then tweak it for your use.
 
 Registry
 :   An image registry is a place to store, retrieve, and share container images. Images that are stored in a registry can either be publicly available (public registry) or accessible by a small group of users (private registry). {{site.data.keyword.openshiftlong_notm}} offers public images, such as `ibmliberty`, that you can use to create your first containerized app. When it comes to enterprise applications, use a private registry like the one that is provided in {{site.data.keyword.cloud_notm}} to protect your images from being used by unauthorized users.
@@ -127,10 +127,7 @@ Learn more about the key concepts of Kubernetes as illustrated in the following 
 {: shortdesc}
 
 
-
-
-
-![Deployment setup of key concepts](images/cs_app_tutorial_mz-components1.png "Deployment setup"){: caption="Figure 2. A description of key concepts for Kubernetes" caption-side="bottom"}
+![Example deployment and namespaces](images/k8-namespaces.svg "Deployment setup"){: caption="Figure 2. A description of key concepts for Kubernetes" caption-side="bottom"}
 
 
 
