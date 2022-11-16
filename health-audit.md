@@ -220,7 +220,7 @@ Forward audit logs to a resource other than {{site.data.keyword.la_short}} that 
 Before you begin, ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs).
 
 1. Create a new directory `kube-audit-forwarder` and create a file `haproxy.cfg` in it with the following contents. Do not forget to replace `<REMOTE-IP>:<REMOTE-PORT>` in the file to the IP address and port of your remote log consumer.
-    ```
+    ```sh
     global
       log stdout format raw local0 info
     defaults
