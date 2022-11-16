@@ -3,7 +3,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-16"
 
 keywords: openshift add-ons, cluster addon
 
@@ -21,7 +21,7 @@ Review the following list of supported cluster add-ons.
 
 | Name | Version | Supported Kubernetes versions | Supported OpenShift versions |
 | --- | --- | --- | --- |
-| alb-oauth-proxy | `2.0.0` (Default) | `>=1.19.0 <1.26.0` |  N/A  |
+| alb-oauth-proxy | `2.0.0` (Default) | `>=1.19.0 <1.27.0` |  N/A  |
 | cluster-autoscaler | `1.0.5`  | `>=1.20.0 <1.24.0` | `>=4.6.0 <4.11.0` |
 | cluster-autoscaler | `1.0.6` (Default) | `>=1.20.0 <1.25.0` | `>=4.6.0 <4.12.0` |
 | cluster-autoscaler | `1.0.7`  | `>=1.20.0 <1.26.0` | `>=4.7.0 <4.12.0` |
