@@ -29,6 +29,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-nov22}
 
 
+### 17 November 2022
+{: #openshift-nov1722}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on versions `4.4.13_1712` and `5.0.2_1713`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
+
+
 
 ### 15 November 2022
 {: #openshift-nov1522}

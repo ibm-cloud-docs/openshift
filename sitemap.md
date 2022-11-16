@@ -233,6 +233,10 @@ subcollection: openshift
 
 * [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
 
+    * [17 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1722)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.13_1712` and `5.0.2_1713`
+
     * [15 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1522)
 
         * New Ingress status messages
@@ -6820,6 +6824,8 @@ subcollection: openshift
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
+    * [Changelog for version 5.0.2_1713, released 17 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.2-1713_is_block_relnote)
+
     * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-1695_is_block_relnote)
 
     * [Change log for version 5.0, released 11 October 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0_is_block_relnote)
@@ -6831,6 +6837,8 @@ subcollection: openshift
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Changelog for version 4.4.13_1712, released 17 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.13_1712_is_block_relnote)
 
     * [Changelog for version 4.4.12_1700, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.12_1700_is_block_relnote)
 
