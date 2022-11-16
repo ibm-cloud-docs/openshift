@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-16"
 
 keywords: vpc, monitoring, block storage, metrics
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Debugging {{site.data.keyword.block_storage_is_short}} metrics 
@@ -125,7 +126,7 @@ After you complete the following steps, make sure to remove the resources you cr
 
     ```sh
     NAME          STATUS    ROLES    AGE     VERSION              
-    10.111.1.11   Ready     <none>   1d      v1.23+IKS            
+    10.111.1.11   Ready     <none>   1d      v1.24+IKS            
     ```
     {: screen}
 
