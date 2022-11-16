@@ -127,7 +127,7 @@ Learn more about the key concepts of Kubernetes as illustrated in the following 
 {: shortdesc}
 
 
-![Example deployment and namespaces](images/k8-namespaces.svg "Deployment setup"){: caption="Figure 2. A description of key concepts for Kubernetes" caption-side="bottom"}
+![Example deployment and namespaces](images/k8-namespace.svg "Deployment setup"){: caption="Figure 2. A description of key concepts for Kubernetes" caption-side="bottom"}
 
 
 
