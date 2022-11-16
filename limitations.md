@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -18,7 +18,7 @@ subcollection: openshift
 # Service limitations
 {: #openshift_limitations}
 
-{{site.data.keyword.openshiftlong}} and the {{site.data.keyword.redhat_openshift_notm}} open source project come with default service settings and limitations to ensure security, convenience, and basic functionality. Some of the limitations you might be able to change where noted.
+{{site.data.keyword.openshiftlong}} and the {{site.data.keyword.redhat_openshift_notm}} open source project come with default service settings and limitations to ensure security, convenience, and basic functionality. Some limitations you might be able to change where noted.
 {: shortdesc}
 
 

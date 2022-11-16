@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -485,7 +485,7 @@ This table refers to the cluster autoscaler Helm chart parameters. For add-on va
 :   Set the maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted. The default value is `10m`.
 
 `max-failing-time`
-:   Set the maximum time in minutes that the cluster autoscaler pod runs without a successfully completed action before the pod is automatically restarted. The default value is `15m`.
+:   Set the maximum time in minutes that the cluster autoscaler pod runs without a completed action before the pod is automatically restarted. The default value is `15m`.
 
 `customImageVersion`
 :   To override the default installation version, specify the version of the cluster autoscaler Helm chart that you want to install. There is no default value for this parameter.

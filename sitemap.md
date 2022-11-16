@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-16"
 
 keywords: openshift
 subcollection: openshift
@@ -5840,6 +5840,44 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-411#ibm-remediations-and-explanations-411)
 
+[{{site.data.keyword.openshiftlong_notm}} version 4.11 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_411_co#benchmarks_411_co)
+
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-cp)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-11)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-12)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-13)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-14)
+
+* [2 etcd](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-2)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-3)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-31)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-32)
+
+* [4 Worker Nodes](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-4)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-5)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-51)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-52)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-53)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-54)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-55)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-57)
+
+* [{{site.data.keyword.IBM_notm}} Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-remdiations)
+
 
 ### Version 4.10
 {: #sitemap_version_410}
@@ -8275,6 +8313,18 @@ subcollection: openshift
 [Why does strongSwan VPN connectivity fail after I add or delete worker nodes?](/docs/openshift?topic=openshift-cs_vpn_fails_worker_add#cs_vpn_fails_worker_add)
 
 [Why do OpenSSL connections to Let's Encrypt fail after 30 September 2021?](/docs/openshift?topic=openshift-ts-letsencrypt#ts-letsencrypt)
+
+[Debugging Calico components](/docs/openshift?topic=openshift-calico_log_level#calico_log_level)
+
+* [Increasing the log level for the `calico-typha` components](/docs/openshift?topic=openshift-calico_log_level#calico-increase-logging-typha)
+
+* [Increasing the log level for the `calico-cni` components](/docs/openshift?topic=openshift-calico_log_level#calico-increase-logging-cni)
+
+* [Increasing the log level for the `calico-node` components](/docs/openshift?topic=openshift-calico_log_level#calico-increase-logging-node)
+
+* [Increasing the log level for the `calico-kube-controllers` components](/docs/openshift?topic=openshift-calico_log_level#calico-increase-logging-kube-controllers)
+
+* [Gathering Calico logs](/docs/openshift?topic=openshift-calico_log_level#calico-log-gather)
 
 [Why can't I use the `ip_whitelist` annotation to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
 

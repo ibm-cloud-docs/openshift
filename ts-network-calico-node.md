@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-31"
+lastupdated: "2022-11-15"
 
 keywords: openshift, calico, node
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -49,7 +50,7 @@ After a worker update or replace, sometimes the `calico-node` pod still does not
 
 1. The VPN client pod gets moved to the new worker as it is starting.
 2. `calico-node` on the new worker starts up, but gets stuck because it makes an `apiserver` call and times out after 2 seconds.
-3. The `apiserver` call then tries to call the webhook which fails because the VPN client pod was trying to start up on the new node. The VPN node cannot successfully do so because `calico-node` hasn't started up yet.
+3. The `apiserver` call then tries to call the webhook which fails because the VPN client pod was trying to start on the new node. The VPN node cannot successfully do so because `calico-node` hasn't started up yet.
 
 In summary, the `calico-node` pod startup depends on the webhook working; the webhook depends on the VPN client pod; and the VPN client pod depends on `calico-node` starting up. The system is stuck in a circular dependency. If you are able to gather logs from a successfully deployed `calico-node` pod, you might see an error like this:
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-16"
 
 keywords: openshift, essws
 
@@ -25,7 +25,7 @@ Supported infrastructure providers
 :   VPC
 :   {{site.data.keyword.satelliteshort}}
 
-When you check the status of your cluster's Ingress components by running the **`ibmcloud oc ingress status`** command, you see an error similar to the following example.
+When you check the status of your cluster's Ingress components by running the **`ibmcloud oc ingress status-report get`** command, you see an error similar to the following example.
 {: tsSymptoms}
 
 ```sh

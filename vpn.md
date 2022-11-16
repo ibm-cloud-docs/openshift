@@ -430,7 +430,7 @@ After you deploy your Helm chart, test the VPN connectivity.
     ```
     {: pre}
 
-    Some of the tests have requirements that are optional settings in the VPN configuration. If some tests fail, the failures might be acceptable depending on whether you specified these optional settings. Refer to the following table for information about each test and why it might fail.
+    Some tests have requirements that are optional settings in the VPN configuration. If some tests fail, the failures might be acceptable depending on whether you specified these optional settings. Refer to the following table for information about each test and why it might fail.
     {: note}
 
 

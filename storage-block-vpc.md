@@ -965,7 +965,7 @@ As a cluster admin, you can choose if you want to allow each cluster user to ove
 
 **What do I need to be aware of before I start using the Kubernetes secret for my PVC settings?**
 
-Some of the PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeBindingMode` can't be set in the Kubernetes secret and must be set in the storage class. As the cluster admin, if you want to enable your cluster users to override your default settings, you must ensure that you set up enough customized storage classes that reference a generic Kubernetes secret so that your users can provision {{site.data.keyword.block_storage_is_short}} with different `reclaimPolicy`, `fstype`, and `volumeBindingMode` settings.
+Some PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeBindingMode` can't be set in the Kubernetes secret and must be set in the storage class. As the cluster admin, if you want to enable your cluster users to override your default settings, you must ensure that you set up enough customized storage classes that reference a generic Kubernetes secret so that your users can provision {{site.data.keyword.block_storage_is_short}} with different `reclaimPolicy`, `fstype`, and `volumeBindingMode` settings.
 
 ### Enabling every user to customize the default PVC settings
 {: #customize-with-secret}

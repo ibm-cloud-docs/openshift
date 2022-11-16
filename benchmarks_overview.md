@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-15"
 
 keywords: openshift
 
@@ -117,7 +117,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ```
     {: pre}
 
-4. Check that the job successfully completed.
+4. Check that the job completed.
     ```sh
     oc get pods -n ibm-kube-bench-test -l job-name=kube-bench-node
     ```

@@ -313,6 +313,7 @@ toc:
               - openshift_versions_411.md
               - openshift_versions_changelog_411.md
               - benchmarks_411.md
+              - benchmarks_411_co.md
           - topicgroup:
               label: Version 4.10
               topics:
@@ -459,6 +460,7 @@ toc:
               - ts-network-strongswan-install-new.md
               - ts-network-strongswan-network-nodes.md
               - ts-letsencrypt.md
+              - ts-calico-log-level.md
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md
           - topicgroup:

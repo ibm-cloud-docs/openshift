@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-11-16"
 
 keywords: openshift, app protocol, application protocol
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -59,7 +60,7 @@ When you create a Kubernetes `LoadBalancer` service for an app in your cluster a
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC NLB.
 
-![VPC load balancing for a cluster through the VPC NLB.](images/vpc_tutorial_lesson4_lb.png){: caption="Figure 1. VPC load balancing for a cluster through the VPC NLB" caption-side="bottom"}
+![VPC load balancing for a cluster through the VPC NLB.](/images/vpc-tutorial-4.svg){: caption="Figure 1. VPC load balancing for a cluster through the VPC NLB" caption-side="bottom"}
 
 1. A request to your app uses the external IP address that is assigned to the Kubernetes `LoadBalancer` service by the VPC NLB.
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.
