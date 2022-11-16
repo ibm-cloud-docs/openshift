@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-16"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -214,7 +214,7 @@ Before you install OpenShift Data Foundation, prepare your cluster.
     
     - Restart the kubelet.
         ```sh
-        systemctl kubelet restart
+        systemctl restart kubelet
         ```
         {: pre}
 
