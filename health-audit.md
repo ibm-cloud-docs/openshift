@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-16"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -219,37 +219,94 @@ Forward audit logs to a resource other than {{site.data.keyword.la_short}} that 
 
 Before you begin, ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs).
 
-1. Create a configuration file that is named `kube-audit-remote-private-ip.yaml`. This configuration file creates an endpoint and service for the IP address of the resource that your cluster sends logs to through the {{site.data.keyword.cloud_notm}} private network. Do not include a selector in the service.
+1. Create a new directory `kube-audit-forwarder` and create a file `haproxy.cfg` in it with the following contents. Do not forget to replace `<REMOTE-IP>:<REMOTE-PORT>` in the file to the IP address and port of your remote log consumer.
+    ```
+    global
+      log stdout format raw local0 info
+    defaults
+      mode http
+      timeout client 10s
+      timeout connect 5s
+      timeout server 10s
+      timeout http-request 10s
+      log global
+    frontend myfrontend
+      bind :3000
+      default_backend remotelogstash
+    # Use remote log consumer IP and port here
+    backend remotelogstash
+      server s1 <REMOTE-IP>:<REMOTE-PORT> check
+    ```
+    {: codeblock}
+
+If your log consumer server is enforcing secure connection (TLS), you can add your certificate files to this directory and change the backend section in `haproxy.cfg` to use these files. For more information, see the [HAProxy documentation](https://haproxy-ingress.github.io/docs/){: external}.
+{: tip}
+
+2. Create a configmap from the contents of `kube-audit-forwarder` directory.
+    ```sh
+    kubectl create configmap kube-audit-forwarder-cm --from-file=kube-audit-forwarder
+    ```
+    {: pre}
+
+3. Create a configuration file that is named `kube-audit-forwarder-remote-private-ip.yaml`. This configuration file creates a deployment and a service that forwards audit logs from the cluster to the IP address of the remote resource through the {{site.data.keyword.cloud_notm}} private network.
     ```yaml
-    apiVersion: v1
-    kind: Endpoints
+    kind: Deployment
+    apiVersion: apps/v1
     metadata:
-      name: kube-audit-remote-private-ip
-    subsets:
-      - addresses:
-          - ip: <logging_resource_private_IP>
-        ports:
-          - port: 31100
+      labels:
+        app: kube-audit-forwarder
+      name: kube-audit-forwarder
+    spec:
+      revisionHistoryLimit: 2
+      selector:
+        matchLabels:
+          app: kube-audit-forwarder
+      strategy:
+        rollingUpdate:
+          maxUnavailable: 1
+        type: RollingUpdate
+      template:
+        metadata:
+          labels:
+            app: kube-audit-forwarder
+        spec:
+          containers:
+          - image: haproxytech/haproxy-alpine:2.6
+            imagePullPolicy: IfNotPresent
+            name: haproxy
+            volumeMounts:
+            - name: config-volume
+              mountPath: /usr/local/etc/haproxy/haproxy.cfg
+              subPath: haproxy.cfg
+          volumes:
+          - name: config-volume
+            configMap:
+              name: kube-audit-forwarder-cm
     ---
     apiVersion: v1
     kind: Service
     metadata:
-      name: kube-audit-remote-private-ip
+      name: kube-audit-forwarder
     spec:
+      selector:
+        app: kube-audit-forwarder
       ports:
         - protocol: TCP
           port: 80
-          targetPort: 31100
+          targetPort: 3000
     ```
     {: codeblock}
 
-2. Create the endpoint and service.
+If you added certificate files to the `kube-audit-forwarder` in the previous step, do not forget to list those files in `volumeMounts` section as a `subPath`.
+{: tip}
+
+4. Create the deployment and service.
     ```sh
-    kubectl create -f kube-audit-remote-private-ip.yaml
+    kubectl create -f kube-audit-forwarder-remote-private-ip.yaml
     ```
     {: pre}
 
-3. Verify that the `kube-audit-remote-private-ip` service is deployed in your cluster. In the output, note the **CLUSTER-IP**.
+5. Verify that the `kube-audit-forwarder` deployment and service is deployed in your cluster.
     ```sh
     kubectl get svc
     ```
@@ -260,17 +317,61 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     ```sh
     NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
     ...
-    kube-audit-remote-private-ip  ClusterIP   10.xxx.xx.xxx   <none>        80/TCP           1m
+    kube-audit-forwarder  ClusterIP   10.xxx.xx.xxx   <none>        80/TCP           1m
     ```
     {: screen}
 
-4. Create the audit webhook to collect Kubernetes API server event logs. Add the `http://` prefix to the `CLUSTER-IP` of the service that you previously retrieved.
     ```sh
-    ibmcloud oc cluster master audit-webhook set --cluster <cluster_name_or_ID> --remote-server http://10.xxx.xx.xxx
+    kubectl get deployment
     ```
     {: pre}
 
-5. Verify that the audit webhook is created in your cluster.
+    Example output
+
+    ```sh
+    NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
+    ...
+    kube-audit-forwarder   1/1     1            1           6m27s
+    ```
+    {: screen}
+
+6. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Make sure to specify the `--admin` flag to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
+    ```sh
+    ibmcloud oc cluster config --cluster <cluster> --admin
+    ```
+    {: pre}
+    
+7. Query the `certificate-authority` of the cluster and save it into a file. {: #query-cert}
+   ```sh
+    ibmcloud oc cluster ca get -c <cluster> --output json | jq -r .caCert | base64 -D > <certificate-authority>
+    ```
+    {: pre}
+
+8. View your current config by running the `oc config view` command and review the output for the `client-certificate` and `client-key`.
+    ```sh
+    oc config view --minify
+    ```
+    {: pre}
+    
+    Example output
+    
+    ```sh
+    clusters:
+    - cluster:
+        ...
+        ...
+        client-certificate: /Users/user/.bluemix/plugins/container-service/clusters/cluster-name-a111a11a11aa1aa11a11-admin/admin.pem
+        client-key: /Users/user/.bluemix/plugins/container-service/clusters/cluster-name-a111a11a11aa1aa11a11-admin/admin-key.pem
+    ```
+    {: screen}
+
+9. Configure the audit webhook and specify the `certificate-authority`, `client-certificate`, and `client-key` that you retrieved in the steps 5-7.
+    ```sh
+    ibmcloud oc cluster master audit-webhook set --cluster <cluster> --remote-server https://127.0.0.1:2040/api/v1/namespaces/default/services/kube-audit-forwarder/proxy/post --ca-cert <certificate-authority> --client-cert <client-certificate> --client-key <client-key>
+    ```
+    {: pre}
+
+10. Verify that the audit webhook is created in your cluster.
     ```sh
     ibmcloud oc cluster master audit-webhook get --cluster <cluster_name_or_ID>
     ```
@@ -280,11 +381,12 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
     ```sh
     OK
-    Server:            http://10.xxx.xx.xxx
+    Server:            https://127.0.0.1:2040/api/v1/namespaces/default/services/kube-audit-forwarder/proxy/post
+    Policy:            default
     ```
     {: screen}
 
-6. Apply the webhook to your Kubernetes API server by refreshing the cluster master. The master might take several minutes to refresh.
+11. Apply the webhook to your Kubernetes API server by refreshing the cluster master. The master might take several minutes to refresh.
     ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
