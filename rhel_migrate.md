@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-17"
 
 keywords: rhel, os, operating system
 
@@ -30,10 +30,10 @@ Supported infrastructure providers
 If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific).
 {: important}
 
-Version 4.10 clusters
-:   After the release of RHEL 8, new Classic and VPC clusters and worker pools version 4.10 and later are created with RHEL 8 worker nodes.
-:   RHEL 7 for version 4.10 clusters becomes deprecated.
-:   Existing 4.10 clusters must be migrated to RHEL 8 before support for RHEL 7 with version 4.10 ends on 6 December 2022.
+Version 4.10+ clusters
+:   By default, clusters that run version 4.10 and later are created with RHEL 8 worker nodes.
+:   The RHEL 7 operating system is deprecated for version 4.10.
+:   Existing 4.10 clusters must be migrated to RHEL 8 before support for RHEL 7 in version 4.10 ends on 6 December 2022.
 
 Version 4.9 clusters
 :   Version 4.9 supports both RHEL 7 and 8 until end of support for 4.9. RHEL 7 remains the default version when creating new clusters.
@@ -42,7 +42,7 @@ Version 4.9 clusters
 
 Version 4.6, 4.7 and 4.8 clusters
 :   RHEL 7 is supported until end of support for these cluster versions. For more information about cluster version support, see the [Version information](/docs/openshift?topic=openshift-openshift_versions).
-:   If you want to upgrade a version 4.8 cluster to 4.9. Make sure to migrate your worker nodes to RHEL 8 after you upgrade.
+:   If you want to upgrade a version 4.8 cluster to 4.9, make sure to migrate your worker nodes to RHEL 8 after you upgrade.
 
 ## Creating RHEL 8 worker pools in the command line
 {: #rhel-migrate-create-pools-cli}
@@ -52,14 +52,14 @@ Version 4.6, 4.7 and 4.8 clusters
     **Classic**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create classic` command, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_create). For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools).
 
     ```sh
-    ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION --operating-system REDHAT_8_64 [--disable-disk-encrypt] [--label KEY1=VALUE1]
+    ibmcloud oc worker-pool create classic --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system REDHAT_8_64 
     ```
     {: pre}
 
     **VPC**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools).
 
     ```sh
-    ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system REDHAT_8_64 [--crk ROOT_KEY_ID] [--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--kms-instance KMS_INSTANCE_ID]
+    ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system REDHAT_8_64 
     ```
     {: pre}
     
