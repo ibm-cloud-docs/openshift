@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-17"
 
 keywords: openshift, version, update, upgrade
 
@@ -76,7 +76,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 4.7 (Kubernetes 1.20)
 - Release date: 09 June 2021
-- End of support: 07 December 2022
+- End of support: 18 January 2023
 - Supported operating systems: RHEL 7 (`REDHAT_7_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
@@ -116,7 +116,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 4.7 (Kubernetes 1.20)
 - Release date: 09 June 2021
-- End of support: 07 December 2022
+- End of support: 18 January 2023
 - Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 7 (`REDHAT_7_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
@@ -156,7 +156,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 4.7 (Kubernetes 1.20)
 - Release date: 09 June 2021
-- End of support: 07 December 2022
+- End of support: 18 January 2023
 - Supported operating systems: RHEL 7 (`REDHAT_7_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
