@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-16"
 
 keywords: block, add-on, changelog
 
@@ -43,6 +43,17 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
+
+### Changelog for version 5.0.2_1713, released 17 November 2022
+{: #5.0.2-1713_is_block_relnote}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.12`
+- Resolves the following CVEs: 
+    - [CVE-2016-3709](https://nvd.nist.gov/vuln/detail/CVE-2016-3709){: external}
+    - [CVE-2022-30698](https://nvd.nist.gov/vuln/detail/CVE-2022-30698){: external}
+    - [CVE-2022-30699](https://nvd.nist.gov/vuln/detail/CVE-2022-30699){: external}
+    - [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/CVE-2022-1304){: external}
+
 
 ### Change log for version 5.0.1_1695, released 9 November 2022
 {: #5.0.1-1695_is_block_relnote}
@@ -115,6 +126,16 @@ Adds snapshot support.
 
 ## Version 4.4
 {: #044_is_block}
+
+### Changelog for version 4.4.13_1712, released 17 November 2022
+{: #4.4.13_1712_is_block_relnote}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.12`
+- Resolves the following CVEs: 
+    - [CVE-2016-3709](https://nvd.nist.gov/vuln/detail/CVE-2016-3709){: external}
+    - [CVE-2022-30698](https://nvd.nist.gov/vuln/detail/CVE-2022-30698){: external}
+    - [CVE-2022-30699](https://nvd.nist.gov/vuln/detail/CVE-2022-30699){: external}
+    - [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/CVE-2022-1304){: external}
 
 ### Changelog for version 4.4.12_1700, released 9 November 2022
 {: #4.4.12_1700_is_block_relnote}

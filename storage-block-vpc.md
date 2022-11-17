@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-17"
 
 keywords: openshift
 
@@ -850,7 +850,7 @@ To create your own storage class:
     :   The region of the worker node where you want to attach storage.
 
     `tags`
-    :   In the parameters, enter a comma-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. 
+    :   In the parameters, enter a space-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. Currently only a single `tags:` field is allowed, but it can contain multiple, space-separated tags. For example `tags: "tag tag tag"`.
 
     `iops`
     :   If you entered `custom` for the `profile`, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the [{{site.data.keyword.block_storage_is_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.
@@ -1010,7 +1010,7 @@ Some PVC settings, such as the `reclaimPolicy`, `fstype`, or the `volumeBindingM
     :   In the string data section, enter the VPC zone where you want to create the {{site.data.keyword.blockstorageshort}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look at the **Worker Zones** field in your CLI output. If you don't specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.blockstorageshort}} instance.
     
     `tags`
-    :   In the string data section, enter a comma-separated list of tags to use when the PVC is created. Tags can help you find your storage instance more easily after it is created.
+    :   In the string data section, enter a space-separated list of tags to use when the PVC is created. Tags can help you find your storage instance more easily after it is created. Currently only a single `tags:` field is allowed, but it can contain multiple, space-separated tags. For example `tags: "tag tag tag"`.
     
     `resourceGroup`
     :   In the string data section, enter the resource group that you want your {{site.data.keyword.blockstorageshort}} instance to get access to. If you don't enter a resource group, the instance is automatically authorized to access resources of the resource group that your cluster belongs to. 

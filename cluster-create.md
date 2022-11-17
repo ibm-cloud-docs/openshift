@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-17"
 
 keywords: openshift, clusters
 
@@ -81,19 +81,6 @@ After you set up your account to create clusters, decide on the setup for your c
 {{site.data.keyword.redhat_openshift_notm}} clusters are available only as standard clusters. You can't get a [free](/docs/openshift?topic=openshift-faqs#faq_free) {{site.data.keyword.redhat_openshift_notm}} cluster.
 {: note}
 
-
-
-The following images walk you through choosing the setup that you want for your cluster.
-
-
-
-![Planning your cluster setup](images/cluster-plan-intro.svg "Planning your cluster setup"){: caption="Figure 1. Planning your cluster setup" caption-side="bottom"}
-
-![Setting up your cluster](images/cluster-plan-1.svg "Setting up your cluster"){: caption="Figure 2. Setting up your cluster" caption-side="bottom"}
-
-![Setting up your cluster](images/cluster-plan-2.svg "Setting up your cluster"){: caption="Figure 3. Setting up your cluster" caption-side="bottom"}
-
-![Setting up your cluster](images/cluster-plan-3.svg "Setting up your cluster"){: caption="Figure 4. Setting up your cluster" caption-side="bottom"}
 
 
 
