@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-18"
 
 keywords: openshift add-ons, cluster addon
 
@@ -27,7 +27,6 @@ Review the following list of supported cluster add-ons.
 | cluster-autoscaler | `1.1.0`  | `>=1.20.0 <1.24.0` | `>=4.6.0 <4.11.0` |
 | debug-tool | `2.0.0` (Default) | `>=1.13.0 <1.26.0` | `>=3.11.0 <4.12.0` |
 | image-key-synchronizer | `1.0.0` (Default) |  N/A  | `>=4.4.0 <4.12.0` |
-| istio | `1.13`  | `>=1.20.0 <1.24.0` |  N/A  |
 | istio | `1.14`  | `>=1.20.0 <1.26.0` |  N/A  |
 | istio | `1.15` (Default) | `>=1.21.0 <1.26.0` |  N/A  |
 | openshift-data-foundation | `4.7.0`  |  N/A  | `>=4.7.0 <4.9.0` |
