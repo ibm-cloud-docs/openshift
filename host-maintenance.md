@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-18"
 
 keywords: maintenance, host maintenance, notification, workers, offline
 
@@ -40,7 +40,7 @@ The list of impacted components may look similar to the following example. The s
         Application Load Balancer
             alb-11aa111a-1111111
     
-        IBM Kubernetes Service or {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud workers
+        IBM Kubernetes Service or Red Hat OpenShift on IBM Cloud workers
             kube-aaaa1aaa111aa11aa11a-aaaaaaaaaaa-aaaaaaa-00001a11
             kube-aaaa2aaa222aa22aa22a-aaaaaaaaaaa-aaaaaaa-00002a22
             kube-aaaa3aaa333aa33aa33a-aaaaaaaaaaa-aaaaaaa-00003a33
