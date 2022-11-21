@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -75,7 +75,7 @@ Moreover logging and monitoring for the API microservices, especially how they p
 #### Solution model
 {: #uc_data-share_model}
 
-On-demand compute, storage, and event management that runs in public cloud with access to retail inventories across the globe, as needed
+Compute, storage, and event management that run on demand in public cloud with access to retail inventories across the globe, as needed
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -91,7 +91,7 @@ Technical solution:
 * Structure apps into a set of cooperative microservices that run within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy apps to container images that run in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enable on demand scaling of compute for batch and other inventory workloads that run infrequently.
+* Enable scaling of compute resources on demand for batch and other inventory workloads that run infrequently.
 
 #### Step 2: Ensure global availability
 {: #uc_data-share_step2}
@@ -176,7 +176,7 @@ Social media analytics with {{site.data.keyword.watson}} Discovery (personality 
 
 The loyalty mobile app provides detailed personalization information, especially when customers use its social sharing features, such as posting recipes.
 
-In addition to the mobile app, the Developers are busy with building and maintaining the existing loyalty app that’s tied to traditional check-out coupons. In short, they need to focus on coding instead of managing the infrastructure. Thus, they chose {{site.data.keyword.openshiftlong_notm}} because IBM simplifies infrastructure management.
+In addition to the mobile app, the Developers are busy with building and maintaining the existing loyalty app that’s tied to traditional checkout coupons. In short, they need to focus on coding instead of managing the infrastructure. Thus, they chose {{site.data.keyword.openshiftlong_notm}} because IBM simplifies infrastructure management.
 * Managing Kubernetes master, IaaS, and operational components, such as Ingress and storage
 * Monitoring health and recovery for worker nodes
 * Providing global compute, so Developers aren't responsible for infrastructure setup in data centers
@@ -184,7 +184,7 @@ In addition to the mobile app, the Developers are busy with building and maintai
 #### Solution model
 {: #uc_grocer_model}
 
-On-demand compute, storage, and event management that runs in public cloud with access to back-end ERP systems
+Compute, storage, and event management that run on demand in public cloud with access to back-end ERP systems
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -198,7 +198,7 @@ Technical solution:
 
 * Structure inventory analysis and mobile apps into microservices and deploy them to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Scale the compute on demand for batch and other inventory workloads that run less frequently.
+* Scale compute resources on demand for batch and other inventory workloads that run less frequently.
 
 #### Step 2: Analyze inventory and trends
 {: #uc_grocer_step2}
@@ -211,7 +211,7 @@ Technical solution:
 
 * Jump-start development of mobile app with the IBM Mobile Starter Kit and other IBM Mobile services, such as {{site.data.keyword.appid_full_notm}}.
 * Promotions in the form of coupons and other entitlements are sent to users’ mobile app. The promotions were identified by using the inventory and social analysis, plus other back-end systems.
-* Storage of promotion recipes on mobile app and conversions (redeemed check-out coupons) are fed back to ERP systems for further analysis.
+* Storage of promotion recipes on mobile app and conversions (redeemed checkout coupons) are fed back to ERP systems for further analysis.
 
 #### Results
 {: #uc_grocer_results}

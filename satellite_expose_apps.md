@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-21"
 
 keywords: openshift, route, Ingress controller
 
@@ -152,7 +152,7 @@ MetalLB has two components:
     {: pre}
     
     
-10. Optional: To disable auto-assignment from an AddressPool specify `autoAssign: false` in the `spec` section. If you disable auto-assignment, an AddressPool with `metallb.universe.tf/address-pool` must be defined.
+10. Optional: To disable auto assignment from an AddressPool specify `autoAssign: false` in the `spec` section. If you disable auto assignment, an AddressPool with `metallb.universe.tf/address-pool` must be defined.
     ```yaml
     metadata:
       annotations:

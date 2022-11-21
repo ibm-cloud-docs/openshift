@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -1995,7 +1995,7 @@ Ingress changelogs
 :   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.
 
 New! The `addon options` command is now available
-:   For more information, see [addon options](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
+:   For more information, see [`addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options).
 
 
 
@@ -2825,7 +2825,7 @@ New! {{site.data.keyword.cloud_notm}} HPCS Router
 {: release-note}
 
 New! Reservations to reduce classic worker node costs
-:   Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to on demand worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations).
+:   Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations).
 
 ### 23 November 2020
 {: #openshift-nov2320}
@@ -3178,7 +3178,7 @@ New! Community Kubernetes Ingress support
 :   The Ingress ALBs in your version 3.11 cluster can now run the Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller. To use the Kubernetes Ingress image, you create your Ingress resources and ConfigMaps according to the Kubernetes Ingress format, including community Kubernetes Ingress annotations instead of custom {{site.data.keyword.openshiftlong_notm}} annotations. For more information about the differences between the {{site.data.keyword.openshiftlong_notm}} Ingress image and the Kubernetes Ingress image, see the [Choosing a supported image version](/docs/containers?topic=containers-ingress-types#alb-version-choose).
 
 New! Default {{site.data.keyword.cloudcerts_long}} instances
-:   A {{site.data.keyword.cloudcerts_long_notm}} service instance is now created by default for all new and existing standard clusters. The {{site.data.keyword.cloudcerts_short}} service instance, which is named in the format `kube-crtmgr-<cluster_ID>`, stores the TLS certificate for your cluster's default Ingress subdomain. You can also upload your own TLS certificates for custom Ingress domains to this {{site.data.keyword.cloudcerts_short}} instance and use the new [**`ibmcloud oc ingress secret`** commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create) to create secrets for these certificates in your cluster. To ensure that a {{site.data.keyword.cloudcerts_short}} instance is automatically created for your new or existing cluster, verify that the API key for the region and resource group that the cluster is created in has the correct {{site.data.keyword.cloudcerts_short}} permissions.
+:   An {{site.data.keyword.cloudcerts_long_notm}} service instance is now created by default for all new and existing standard clusters. The {{site.data.keyword.cloudcerts_short}} service instance, which is named in the format `kube-crtmgr-<cluster_ID>`, stores the TLS certificate for your cluster's default Ingress subdomain. You can also upload your own TLS certificates for custom Ingress domains to this {{site.data.keyword.cloudcerts_short}} instance and use the new [**`ibmcloud oc ingress secret`** commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create) to create secrets for these certificates in your cluster. To ensure that a {{site.data.keyword.cloudcerts_short}} instance is automatically created for your new or existing cluster, verify that the API key for the region and resource group that the cluster is created in has the correct {{site.data.keyword.cloudcerts_short}} permissions.
 
 
   

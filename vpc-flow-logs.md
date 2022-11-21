@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-18"
+lastupdated: "2022-11-21"
 
 keywords: flow logs, VPC monitoring, worker nodes, VPC, network traffic, collector
 
@@ -14,10 +14,11 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Enabling Flow Logs for VPC cluster components
 {: #vpc-flow-log}
 
-You can configure {{site.data.keyword.cloud_notm}} {{site.data.keyword.fl_full}} to gather information about the traffic entering or leaving your VPC cluster worker nodes. Flow logs are stored in a {{site.data.keyword.cos_full_notm}} instance and can be used for troubleshooting purposes, adhering to compliance regulations, and more. For more information about {{site.data.keyword.fl_full}}, see [Flow logs use cases](/docs/vpc?topic=vpc-flow-logs&interface=ui#flow-logs-use-cases).
+You can configure {{site.data.keyword.cloud_notm}} {{site.data.keyword.fl_full}} to gather information about the traffic entering or leaving your VPC cluster worker nodes. Flow logs are stored in an {{site.data.keyword.cos_full_notm}} instance and can be used for troubleshooting purposes, adhering to compliance regulations, and more. For more information about {{site.data.keyword.fl_full}}, see [Flow logs use cases](/docs/vpc?topic=vpc-flow-logs&interface=ui#flow-logs-use-cases).
 {: shortdesc}
 
 When you use {{site.data.keyword.fl_full}} with a {{site.data.keyword.redhat_openshift_notm}} VPC cluster, you can enable flow logs at the VPC level, or at the VPC subnet or VPC load balancer level. You cannot specify which worker nodes to gather flow logs for. However, you can review the flow log output to identify information that is specific to the worker nodes you want to investigate.
@@ -28,7 +29,7 @@ When you use {{site.data.keyword.fl_full}} with a {{site.data.keyword.redhat_ope
 To configure flow logs at the VPC, VPC subnet, or VPC load balancer level, see [Creating a flow log collector](/docs/vpc?topic=vpc-ordering-flow-log-collector) in the VPC documentation. 
 {: shortdesc}
 
-To enable flow logs, you must have a {{site.data.keyword.cos_full_notm}} instance with a single-region bucket that is in the same region as the VPC resource you are monitoring. 
+To enable flow logs, you must have an {{site.data.keyword.cos_full_notm}} instance with a single-region bucket that is in the same region as the VPC resource you are monitoring. 
 {: note}
 
 ## Viewing worker node flow logs
@@ -49,7 +50,7 @@ Your {{site.data.keyword.fl_full}} gathers information from the VPC, VPC subnet,
     
 2. In the {{site.data.keyword.cloud_notm}} UI, click your {{site.data.keyword.cos_full_notm}} instance in the **Resource list**.
 3. Click the bucket where your flow logs are collected.
-4. Download and uncompress the flow log object. 
+4. Download and decompress the flow log object. 
 5. Open the file and navigate through the file directory until you reach directories that begin with `instance-id=`. 
 6. Find the file directory that contains the instance ID found in the first step. The ID is included at the end of the file directory name.
     Example.
