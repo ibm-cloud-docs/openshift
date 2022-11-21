@@ -4613,7 +4613,7 @@ subcollection: openshift
 
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos)
 
-* [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin)
+* [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin-verify)
 
 [Installing the {{site.data.keyword.cos_full_notm}} plug-in on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos#storage-sat-cos)
 
@@ -4943,7 +4943,7 @@ subcollection: openshift
 
 * [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-addon-enable)
 
-* [Optional: Deploying the snapshot validation webhook](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-validation)
+* [Optional: Deploying the snapshot validation webhook](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-validation-webhook)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
 

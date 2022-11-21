@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -486,7 +486,7 @@ Now that you decided on the configuration that you want, you are ready to [creat
 
 
 ## Verifying your installation
-{: #cos-plugin verify}
+{: #cos-plugin-verify}
 
 Review the pod details to verify that the plug-in installation succeeded.
 {: shortdesc}
