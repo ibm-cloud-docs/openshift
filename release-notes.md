@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## November 2022
 {: #openshift-nov22}
 
+### 21 November 2022
+{: #openshift-nov2122}
+{: release-note}
+
+
+
+
+Worker node fix pack 4.11.13_1533_openshift, 4.10.41_1546_openshift, 4.9.51_1566_openshift, 4.8.52_1581_openshift, 4.7.60_1590_openshift
+:   For more information, see the change logs: [4.11.13_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10.41_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.51_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.52_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.60_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_47).
+
 
 ### 17 November 2022
 {: #openshift-nov1722}

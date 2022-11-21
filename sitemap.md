@@ -233,6 +233,10 @@ subcollection: openshift
 
 * [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
 
+    * [21 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2122)
+
+        * Worker node fix pack 4.11.13_1533_openshift, 4.10.41_1546_openshift, 4.9.51_1566_openshift, 4.8.52_1581_openshift, 4.7.60_1590_openshift
+
     * [17 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1722)
 
         * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.13_1712` and `5.0.2_1713`
