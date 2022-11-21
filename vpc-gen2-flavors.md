@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-11-21"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -25,10 +25,11 @@ Review the VPC Gen 2 worker node flavors by zone.
 
 
 
+
 ## au-syd-1
 {: #au-syd-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -55,7 +56,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## au-syd-2
 {: #au-syd-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -82,7 +83,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## au-syd-3
 {: #au-syd-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -109,7 +110,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## br-sao-1
 {: #br-sao-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -136,7 +137,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## br-sao-2
 {: #br-sao-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -163,7 +164,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## br-sao-3
 {: #br-sao-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -190,7 +191,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## ca-tor-1
 {: #ca-tor-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -217,7 +218,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## ca-tor-2
 {: #ca-tor-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -244,7 +245,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## ca-tor-3
 {: #ca-tor-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -271,7 +272,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## eu-de-1
 {: #eu-de-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -298,7 +299,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## eu-de-2
 {: #eu-de-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -325,7 +326,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## eu-de-3
 {: #eu-de-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -352,7 +353,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## eu-gb-1
 {: #eu-gb-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -379,7 +380,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## eu-gb-2
 {: #eu-gb-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -406,7 +407,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## eu-gb-3
 {: #eu-gb-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -433,7 +434,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## jp-osa-1
 {: #jp-osa-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -460,7 +461,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## jp-osa-2
 {: #jp-osa-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -487,7 +488,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## jp-osa-3
 {: #jp-osa-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -514,7 +515,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## jp-tok-1
 {: #jp-tok-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -541,7 +542,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## jp-tok-2
 {: #jp-tok-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -568,7 +569,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## jp-tok-3
 {: #jp-tok-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -595,7 +596,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## us-east-1
 {: #us-east-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -622,7 +623,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## us-east-2
 {: #us-east-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -649,7 +650,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## us-east-3
 {: #us-east-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -676,7 +677,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## us-south-1
 {: #us-south-1}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -703,7 +704,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## us-south-2
 {: #us-south-2}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
@@ -730,7 +731,7 @@ Review the VPC Gen 2 worker node flavors by zone.
 ## us-south-3
 {: #us-south-3}
 
-| Name | Memory | Network speed | Cores | Server type | Supported operating systems | Primary storage | Secondary storage | 
+| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Secondary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | bx2.16x64 | 64GB | 24Gbps | 16 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 
 | bx2.2x8 | 8GB | 4Gbps | 2 | virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 100, Device type: BLOCK, RAID configuration: none | Count: 0, Size: 0, Device type: , RAID configuration:  | 

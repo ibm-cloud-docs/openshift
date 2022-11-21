@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 subcollection: openshift
@@ -232,6 +232,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
+
+    * [21 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2122)
+
+        * Worker node fix pack 4.11.13_1533_openshift, 4.10.41_1546_openshift, 4.9.51_1566_openshift, 4.8.52_1581_openshift, 4.7.60_1590_openshift
 
     * [17 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1722)
 
@@ -4613,7 +4617,7 @@ subcollection: openshift
 
 * [Deciding on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos)
 
-* [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin)
+* [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin-verify)
 
 [Installing the {{site.data.keyword.cos_full_notm}} plug-in on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos#storage-sat-cos)
 
@@ -4943,7 +4947,7 @@ subcollection: openshift
 
 * [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-addon-enable)
 
-* [Optional: Deploying the snapshot validation webhook](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-validation)
+* [Optional: Deploying the snapshot validation webhook](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-validation-webhook)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
 
@@ -5786,6 +5790,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
+    * [Change log for worker node fix pack 4.11.13_1533_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41113_1533_openshift)
+
     * [Change log for worker node fix pack 4.11.12_1531_openshift, released 11 November 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41112_1531_openshift)
 
     * [Change log for worker node fix pack 4.11.12_1530_openshift, released 07 November 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41112_1530_openshift)
@@ -5902,6 +5908,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.41_1546_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41041_1546_openshift)
 
     * [Change log for worker node fix pack 4.10.39_1544_openshift, released 11 November 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41039_1544_openshift)
 
@@ -6051,6 +6059,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.51_1566_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4951_1566_openshift)
 
     * [Change log for worker node fix pack 4.9.51_1564_openshift, released 11 November 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4951_1564_openshift)
 
@@ -6217,6 +6227,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
+    * [Change log for worker node fix pack 4.8.52_1581_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4852_1581_openshift)
+
     * [Change log for worker node fix pack 4.8.52_1579_openshift, released 07 November 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4852_1579_openshift)
 
     * [Change log for master fix pack 4.8.51_1578_openshift, released 27 October 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4851_1578_openshift)
@@ -6363,6 +6375,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for worker node fix pack 4.7.60_1590_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4760_1590_openshift)
 
     * [Change log for worker node fix pack 4.7.59_1588_openshift, released 07 November 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4759_1588_openshift)
 

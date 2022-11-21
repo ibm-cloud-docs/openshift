@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -67,7 +68,7 @@ And major app upgrades take 6 - 9 months to complete.
 #### Solution model
 {: #uc_mortgage_solution_model}
 
-On-demand compute, storage, and I/O services that run in public cloud with secure access to on-premises enterprise assets as needed**
+Compute, storage, and I/O services that run on demand in public cloud with secure access to on-premises enterprise assets as needed**
 
 * Secure and scalable document storage that supports structured and unstructured document query
 * "Lift and shift" existing enterprise assets and app while they enabled the integration to some on-premises systems that won't be migrated
@@ -151,7 +152,7 @@ They need a solution that helps the Developers and their business partners:
 #### Solution model
 {: #uc_payment_tech_model}
 
-On-demand compute, DevOps tools, and AI that run in public cloud with access to back-end payment systems. Implement a CI/CD process to dramatically shorten delivery cycles.
+Compute, DevOps tools, and AI that run on demand in public cloud with access to back-end payment systems. Implement a CI/CD process to dramatically shorten delivery cycles.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}

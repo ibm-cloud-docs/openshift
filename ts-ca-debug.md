@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-21"
 
 keywords: openshift, autoscaler
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -28,7 +29,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 ## Step 1: Check the version
 {: #ca-debug-version}
 
-1. Verify that the cluster autoscaler addon is installed and ready.
+1. Verify that the cluster autoscaler add-on is installed and ready.
     ```sh
     ibmcloud oc cluster addon ls --cluster <CLUSTER_NAME>
     ```

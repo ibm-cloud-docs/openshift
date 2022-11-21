@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -62,7 +62,7 @@ Classic
 
 | Component | Description | 
 | --- | --- | 
-| Compute and worker node resources | Worker nodes can be virtual machines using either shared infrastructure or dedicated hosts, or even bare metal servers. You manage maintenance and billing activity for the worker nodes through your host infrastructure provider whether that is {{site.data.cloud_notm}}, your own on-premises hardware, or another cloud provider. You also manage billing through {{site.data.cloud_notm}}. For more information about pricing, see [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing). |
+| Compute and worker node resources | Worker nodes can be virtual machines using either shared infrastructure or dedicated hosts, or even bare metal servers. You manage maintenance and billing activity for the worker nodes through your host infrastructure provider whether that is {{site.data.keyword.cloud_notm}}, your own on-premises hardware, or another cloud provider. You also manage billing through {{site.data.keyword.cloud_notm}}. For more information about pricing, see [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing). |
 | Security | See [Security and compliance](/docs/satellite?topic=satellite-compliance). |
 | High availability | See [About high availability and recover](/docs/satellite?topic=satellite-ha). |
 | Reservations | Reservations aren't available for {{site.data.keyword.satelliteshort}}. |

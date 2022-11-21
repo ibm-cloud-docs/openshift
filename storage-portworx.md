@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: portworx, openshift
 
@@ -369,7 +369,7 @@ Follow these steps to set up encryption for your Portworx volumes.
     * **[{{site.data.keyword.keymanagementservicelong_notm}}](/docs/key-protect?topic=key-protect-provision)**
     * **[{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-provision)**
 3. Create a root key. Note the ID of the root key that you created.
-    * [Create a **{{site.data.keyword.keymanagementservicelong_notm}}** root key](/docs/key-protect?topic=key-protect-create-root-keys).
+    * [Create an **{{site.data.keyword.keymanagementservicelong_notm}}** root key](/docs/key-protect?topic=key-protect-create-root-keys).
     * [Create a **{{site.data.keyword.hscrypto}}** root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys).
 4. Retrieve the **GUID** of the service instance that you created.
     ```sh
@@ -1090,7 +1090,7 @@ Before you begin:
 - Provision and attach 320Gi of block storage to your cluster. See [Storing data on classic {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
 
 
-If you are installing PX-Backup in a newly-provisioned cluster, [you must log in to it at least once](/docs/openshift?topic=openshift-access_cluster) before beginning the installation.
+If you are installing PX-Backup in a newly provisioned cluster, [you must log in to it at least once](/docs/openshift?topic=openshift-access_cluster) before beginning the installation.
 {: important}
 
 

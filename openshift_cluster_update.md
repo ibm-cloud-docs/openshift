@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-21"
 
 keywords: openshift, version, upgrade, update
 
@@ -209,7 +209,7 @@ Set up a ConfigMap to perform a rolling update of your classic worker nodes.
 
 4. Create a config map and define the unavailability rules for your worker nodes. The following example shows four checks, the `zonecheck.json`, `regioncheck.json`, `defaultcheck.json`, and a check template. You can use these example checks to define rules for worker nodes in a specific zone (`zonecheck.json`), region (`regioncheck.json`), or for all worker nodes that don't match any of the checks that you defined in the config map (`defaultcheck.json`). Use the check template to create your own check. For every check, to identify a worker node, you must choose one of the worker node labels that you retrieved in the previous step.  
 
-    For every check, you can set only one value for `NodeSelectorKey` and `NodeSelectorValue`. If you want to set rules for more than one region, zone, or other worker node labels, create a new check. Define up to 15 checks in a config map. If you add more checks, it is not gauranteed which 15 rules will be evaluated and will cause unexpected results.
+    For every check, you can set only one value for `NodeSelectorKey` and `NodeSelectorValue`. If you want to set rules for more than one region, zone, or other worker node labels, create a new check. Define up to 15 checks in a config map. If you add more checks, only 1 worker node will be reloaded at a time until all workers requested are updated.
     {: note}
 
     Example

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: object storage, plug-in, changelog
 
@@ -64,7 +64,7 @@ Refer to the following tables for a summary of changes for each version of the [
 {: #0223_object_plugin}
 
 - Updates the UBI image to `8.7-923`
-- Resolves [CVE-2016-3709](https://nvd.nist.gov/vuln/detail/CVE-2016-3709){: external}, [CVE-2022-30698](https://nvd.nist.gov/vuln/detail/CVE-2022-30698){: external}, [CVE-2022-30699](https://nvd.nist.gov/vuln/detail/https://nvd.nist.gov/vuln/detail/){: external}, [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/https://nvd.nist.gov/vuln/detail/){: external}.
+- Resolves [CVE-2016-3709](https://nvd.nist.gov/vuln/detail/CVE-2016-3709){: external}, [CVE-2022-30698](https://nvd.nist.gov/vuln/detail/CVE-2022-30698){: external}, [CVE-2022-30699](https://nvd.nist.gov/vuln/detail/CVE-2022-30699){: external}, [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/CVE-2022-1304){: external}.
 
 
 ## Change log for version 2.2.2, released 8 November 2022

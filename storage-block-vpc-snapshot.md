@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-21"
 
 keywords: openshift, block storage, snapshot
 
@@ -91,7 +91,7 @@ Snapshots support is available for cluster version 4.9 and later and with the {{
     
     
 ## Optional: Deploying the snapshot validation webhook
-{: #vpc-snapshot-validation webhook}
+{: #vpc-snapshot-validation-webhook}
 
 Deploy the validation snapshot webhook for validating user input. For more information, see [Deploying the snapshot validation webhook](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/tree/master/deploy/kubernetes/snapshot/validation-webhook){: external}.
 

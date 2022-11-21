@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-21"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errrna
 
@@ -63,8 +63,8 @@ Review the configuration of Routes resources that have not been marked as `admit
     {: codeblock}
     
 1. Review the configuration of Route resources that are not admitted:
-    - Ensure the Route configuration is correct. See [Route configuration](https://docs.openshift.com/container-platform/latest/networking/routes/route-configuration.html){: external}.
-    - If you configured [Ingress Controller sharding](https://docs.openshift.com/container-platform/latest/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}, ensure that the labels on the Route resource or on the namespace containing the Route resource are correct.
+    - Ensure the Route configuration is correct. See [Route configuration](https://docs.openshift.com/container-platform/4.11/networking/routes/route-configuration.html){: external}.
+    - If you configured [Ingress Controller sharding](https://docs.openshift.com/container-platform/4.11/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}, ensure that the labels on the Route resource or on the namespace containing the Route resource are correct.
 1. Wait 10 to 15 minutes, then check your Routes again by running the `oc get routes -A` command.
 1. If you see a different error, repeat the troubleshooting steps. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 

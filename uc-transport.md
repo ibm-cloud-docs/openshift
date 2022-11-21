@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -46,7 +46,7 @@ Key technologies:
 {: #uc_shipping_context}
 
 * Regional differences for shipping logistics made it difficult to keep up with growing number of partners in multiple countries. An example is the unique regulations and transit logistics, where the company must maintain consistent records across borders.
-* Just-in-time data meant that the worldwide systems must be highly available to reduce lags in transit operations. Time tables for shipping terminals are highly controlled and in some cases inflexible. Web usage is growing, so instability might cause a poor user experience.
+* Just-in-time data meant that the worldwide systems must be highly available to reduce lags in transit operations. Time tables for shipping terminals are highly controlled and sometimes inflexible. Web usage is growing, so instability might cause a poor user experience.
 * Developers needed to constantly evolve apps, but traditional tools slowed their ability to deploy updates and features frequently.  
 
 #### The solution
@@ -81,7 +81,7 @@ For Developers, much of the continuous integration and delivery (CI/CD) process 
 #### Solution model
 {: #uc_shipping_model}
 
-On-demand compute, storage, and event management that run in public cloud with access to shipment data across the globe, as needed.
+Compute, storage, and event management that run on demand in public cloud with access to shipment data across the globe, as needed.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -95,7 +95,7 @@ Technical solution:
 * Integrate apps into a set of cooperative microservices in {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy apps to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enables on demand scaling of compute for batch and other inventory workloads that run infrequently.
+* Enables scaling on demand for compute for batch and other inventory workloads that run infrequently.
 * Use {{site.data.keyword.messagehub_full}} to manage streaming data from IoT devices.
 
 #### Step 2: Ensure global availability
@@ -176,7 +176,7 @@ Accelerated development is a key win for the HR Exec. The team gets started by c
 
 With {{site.data.keyword.openshiftlong_notm}}, they went from over-built hardware in a private data center to customizable compute that reduces IT operations, maintenance, and energy. To host the HR site, they could easily design Kubernetes clusters to fit their CPU, RAM, and storage needs. Another factor for less personnel costs is that IBM manages Kubernetes, so the Developers can focus on delivering better employee experience for benefits enrollment.
 
-{{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services on demand. Using industry-standard containers technology apps can be quickly developed and shared across multiple Development, Test, and Production environments. This setup provides the immediate benefit of scalability. Using Kubernetes rich set of deployment and runtime objects, the HR team can monitor and manage upgrades to apps reliably. They can also replicate and scale the apps, by using defined rules and the automated Kubernetes orchestrator.
+{{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services on-demand. Using industry-standard containers technology apps can be quickly developed and shared across multiple Development, Test, and Production environments. This setup provides the immediate benefit of scalability. Using Kubernetes rich set of deployment and runtime objects, the HR team can monitor and manage upgrades to apps reliably. They can also replicate and scale the apps, by using defined rules and the automated Kubernetes orchestrator.
 
 #### Step 1: Containers, microservices, and the Garage Method
 {: #uc_airline_step1}

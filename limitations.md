@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -237,8 +237,8 @@ The following features and operators are not supported in {{site.data.keyword.op
 * JBoss EAP
 * JBoss Web Server
 * Metering and Cost Management SaaS Service
-* OpenShift Cloud Manager(OCM) SaaS Service 
-* OpenShift Container Storage
+* OpenShift Cloud Manager(OCM) SaaS Service
+* OpenShift Data Foundation (Supported through the [cluster add-on](/docs/openshift?topic=openshift-ocs-storage-prep) or {{site.data.keyword.satelliteshort}} [template](/docs/satellite?topic=satellite-sat-storage-template-ov) only).
 * OVS and OVN SDN 
 * Performance Add-on Operator 
 * PTP Operator
@@ -247,7 +247,7 @@ The following features and operators are not supported in {{site.data.keyword.op
 * Red Hat Integration Operator 
 * Service Registry Operator 
 * Smart Gateway Operator
-* SR-IOV Network Operator 
+* SR-IOV Network Operator (Supported in {{site.data.keyword.satelliteshort}} clusters only)
 * Telemeter and Insights Connected Experience 
 * Windows Machine Config 
 

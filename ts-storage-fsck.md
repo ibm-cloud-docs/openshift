@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-11-21"
 
 keywords: openshift, fsck
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why does mounting {{site.data.keyword.blockstorageshort}} fail with an `fsck` error?
@@ -53,7 +54,7 @@ Run the folling commands to patch the PV that the pod is mounting.
     ```
     {: pre}
     
-1. Delete and recreate your app pod to retry mounting the PV. After deleting and re-creating the pod, Kubernetes retries the mount operation and the {{site.data.keyword.blockstorageshort}} driver pod tries to auto-fix the issue based on the `"ibm.io/autofix-fsckErr":"true"` annotation.
+1. Delete and recreate your app pod to retry mounting the PV. After deleting and re-creating the pod, Kubernetes retries the mount operation and the {{site.data.keyword.blockstorageshort}} driver pod tries to auto fix the issue based on the `"ibm.io/autofix-fsckErr":"true"` annotation.
 
 1. After the pod is successfully deployed and running, run the following command to edit the PV.
     ```sh

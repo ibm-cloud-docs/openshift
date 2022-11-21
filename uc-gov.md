@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -75,7 +75,7 @@ Much of the CI/CD process itself is automated with {{site.data.keyword.contdeliv
 #### Solution model
 {: #uc_data_mashup_model}
 
-On-demand compute, storage, and API tools run in the public cloud with secure access to and from on-premises data sources.
+Compute, storage, and API tools run on demand in the public cloud with secure access to and from on-premises data sources.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -139,7 +139,7 @@ Key technologies:
 * Disparate groups of Developers from the government and shipping company don’t have a unified platform where they can collaborate, which slows down deployments of updates and features.
 * Developers are spread across the globe and across organizational boundaries, which means open-source and PaaS the best option.
 * Security is a primary concern, and this concern increases the collaboration burden that impacts features and updates to the software, especially after the apps are in production.
-* Just-in-time data meant that the worldwide systems must be highly available to reduce lags in transit operations. Time tables for shipping terminals are highly controlled and in some cases inflexible. Web usage is growing, so instability might cause poor user experience.
+* Just-in-time data meant that the worldwide systems must be highly available to reduce lags in transit operations. Time tables for shipping terminals are highly controlled and sometimes inflexible. Web usage is growing, so instability might cause poor user experience.
 
 #### The solution
 {: #uc_port_solution}
@@ -166,7 +166,7 @@ Developers focus on domain problems, by using existing tools: Instead of Develop
 #### Solution model
 {: #uc_port_model}
 
-On-demand compute, storage, and Node starter kits that run in the public cloud with secure access to shipping data across the globe, as needed. Compute in clusters is tamper-proof and isolated to bare metal.  
+Compute, storage, and Node starter kits that run on demand in the public cloud with secure access to shipping data across the globe, as needed. Compute in clusters is tamper-proof and isolated to bare metal.  
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}

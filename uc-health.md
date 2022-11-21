@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -31,7 +31,7 @@ An IT Exec for a healthcare provider has business reporting and patient systems 
 ### Why {{site.data.keyword.cloud_notm}}
 {: #uc_migrate_ibmcloud}
 
-To improve patient service, the provider looked to {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.contdelivery_full}} to reduce IT spend and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently.  Yet, the provider's developers were overwhelmed with administering the hardware, network, and even the Kubernetes stack on their own. The provider also wanted to counteract increasing labor costs and a decreasing budget.
+To improve patient service, the provider looked to {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.contdelivery_full}} to reduce IT expenses and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently.  Yet, the provider's developers were overwhelmed with administering the hardware, network, and even the Kubernetes stack on their own. The provider also wanted to counteract increasing labor costs and a decreasing budget.
 
 Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
@@ -65,7 +65,7 @@ Secure patient data leads to happier patients.
 #### Solution model
 {: #uc_migrate_solution_model}
 
-On-demand compute, storage, and I/O services run in the public cloud with secure access to on-premises enterprise assets. Implement a CI/CD process and other parts of the IBM Garage Method to dramatically shorten delivery cycles.
+Compute, storage, and I/O services run on demand in the public cloud with secure access to on-premises enterprise assets. Implement a CI/CD process and other parts of the IBM Garage Method to dramatically shorten delivery cycles.
 
 #### Step 1: Secure the compute platform
 {: #uc_migrate_step1}
@@ -79,7 +79,7 @@ On-demand compute, storage, and I/O services run in the public cloud with secure
 * Migrate virtual machine images to container images that run in {{site.data.keyword.openshiftlong_notm}} in the public cloud.
 * Deploy {{site.data.keyword.icp4dfull_notm}}, so that developers have their familiar analytics tools on the cloud.
 * Provide standardized DevOps dashboards and practices through Kubernetes.
-* Enable on demand scaling of compute for batch and other back-office workloads that run infrequently.
+* Enable scaling compute resources on demand for batch and other back-office workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to on-premises DBMS.
 * Private data center / on-premises capital costs are greatly reduced and replaced with a utility computing model that scales based on workload demand.
 
@@ -92,7 +92,7 @@ On-demand compute, storage, and I/O services run in the public cloud with secure
 * Adopt the agile and iterative development practices from the IBM Garage Method to enable frequent releases of new functions, patches, and fixes without downtime.
 
 #### Technical solution
-{: #uc_migrate_solution}
+{: #uc_migrate_solution}f
 
 * {{site.data.keyword.openshiftlong_notm}} 
 * {{site.data.keyword.icp4dfull_notm}}
@@ -194,7 +194,7 @@ Developers focus on domain problems, by using existing tools: Instead of writing
 #### Solution: Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}
 {: #uc_research_the_solution}
 
-On-demand compute, storage, and Node starter kits run in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
+Compute, storage, and Node starter kits run on demand in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -209,7 +209,7 @@ Technical solution:
 * Structure apps into a set of cooperative microservices within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy research apps to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enable on demand scaling of compute for batch and other research workloads that run infrequently.
+* Enable scaling compute resources on demand for batch and other research workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to existing on-premises databases.
 
 #### Step 2: Use secure and performant compute

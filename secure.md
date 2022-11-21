@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-21"
 
 keywords: openshift
 
@@ -439,7 +439,7 @@ The key to detect malicious attacks in your cluster is the proper monitoring and
 
 **Does IBM monitor my cluster?**
 
-Every cluster master is continuously monitored by IBM to control and remediate process level Denial-Of-Service (DOS) attacks. {{site.data.keyword.openshiftlong_notm}} automatically scans every node where the master is deployed for vulnerabilities that are found in Kubernetes, Openshift, and OS-specific security fixes. If vulnerabilities are found, {{site.data.keyword.openshiftlong_notm}} automatically applies fixes and resolves vulnerabilities on behalf of the user to ensure master node protection.  
+Every cluster master is continuously monitored by IBM to control and remediate process level Denial-Of-Service (DOS) attacks. {{site.data.keyword.openshiftlong_notm}} automatically scans every node where the master is deployed for vulnerabilities that are found in Kubernetes, {{site.data.keyword.redhat_openshift_notm}}, and OS-specific security fixes. If vulnerabilities are found, {{site.data.keyword.openshiftlong_notm}} automatically applies fixes and resolves vulnerabilities on behalf of the user to ensure master node protection.  
 
 **What information is logged?**
 
