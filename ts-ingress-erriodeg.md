@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-21"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
 
@@ -60,7 +60,7 @@ oc get clusteroperator ingress
 ## One or more status conditions indicate unavailable: `LoadBalancerReady=False`
 {: #ts-ingress-erriodeg-lbr-false}
 
-1. **VPC only**: Ensure that you did not reach your LBaaS instance quota. For more information, see [Quotas and service limits](/docs/vpc?topic=vpc-quotas#load-balancer-quotas) and the `ibmcloud is load-balancers` [command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#load-balancers).
+1. **VPC only**: Ensure that you did not reach your LBaaS instance quota. For more information, see [Quotas and service limits](/docs/vpc?topic=vpc-quotas#alb-quotas) and the `ibmcloud is load-balancers` [command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#load-balancers).
 1. Ensure that your cluster masters are healthy. For more information, see [Reviewing master health](/docs/openshift?topic=openshift-debug_master#review-master-health).
 1. Refresh your cluster masters by running the `ibmcloud oc cluster master refresh` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh).
 
