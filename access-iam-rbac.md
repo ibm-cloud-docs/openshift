@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -291,18 +291,21 @@ RBAC roles and cluster roles define a set of permissions for how users can inter
 With {{site.data.keyword.cloud_notm}} IAM, you can automatically manage RBAC from {{site.data.keyword.cloud_notm}}, by assigning users [service access roles](#add_users). You might want a deeper understanding of RBAC to customize access for resources within your cluster, like service accounts.
 {: note}
 
-**What are the types of RBAC roles?**
+### What are the types of RBAC roles?
+{: #rbac-types}
 
 * A Kubernetes _role_ is scoped to resources within a specific namespace, such as a deployment or service.
 * A Kubernetes _cluster role_ is scoped to cluster-wide resources, such as worker nodes, or to namespace-scoped resources that can be found in each namespace, like pods.
 
-**What are RBAC role bindings and cluster role bindings?**
+### What are RBAC role bindings and cluster role bindings?
+{: #what-is-rbac}
 
 Role bindings apply RBAC roles or cluster roles to a specific namespace. When you use a role binding to apply a role, you give a user access to a specific resource in a specific namespace. When you use a role binding to apply a cluster role, you give a user access to namespace-scoped resources that can be found in each namespace, like pods, but only within a specific namespace.
 
 Cluster role bindings apply RBAC cluster roles to all namespaces in the cluster. When you use a cluster role binding to apply a cluster role, you give a user access to cluster-wide resources, like worker nodes, or to namespace-scoped resources in every namespace, like pods.
 
-**What do these roles look like in my cluster?**
+### What do these roles look like in my cluster?
+{: #what-do-roles-look-like}
 
 If you want users to be able to interact with Kubernetes resources from within a cluster, you must assign user access to one or more namespaces through [{{site.data.keyword.cloud_notm}} IAM service access roles](#add_users). Every user who is assigned a service access role is automatically assigned a corresponding RBAC cluster role. These RBAC cluster roles are predefined and permit users to interact with Kubernetes resources in your cluster. Additionally, a role binding is created to apply the cluster role to a specific namespace, or a cluster role binding is created to apply the cluster role to all namespaces.
 
@@ -311,19 +314,25 @@ To learn more about the actions permitted by each RBAC role, check out the [{{si
 All users of a {{site.data.keyword.redhat_openshift_notm}} cluster are added to the following {{site.data.keyword.redhat_openshift_notm}} RBAC groups by cluster version. Version 4 clusters: `basic-users`.
 {: note}
 
-**Can I create custom roles or cluster roles?**
+### Can I create custom roles or cluster roles?
+{: #create-custom-rbac-roles}
 
 The `view`, `edit`, `admin`, and `cluster-admin` cluster roles are predefined roles that are automatically created when you assign a user the corresponding {{site.data.keyword.cloud_notm}} IAM service access role. To grant other Kubernetes permissions, you can [create custom RBAC permissions](#rbac). Custom RBAC roles are in addition to and don't change or override any RBAC roles that you might have assigned with service access roles. Note that to create custom RBAC permissions, you must have the IAM **Manager** service access role that gives you the `cluster-admin` Kubernetes RBAC role. However, the other users don't need an IAM service access role if you manage your own custom Kubernetes RBAC roles.
 
 Making your own custom RBAC policies? Be sure not to edit the existing IBM role bindings that are in the cluster, or name new role bindings with the same name. Any changes to IBM-provided RBAC role bindings are overwritten periodically. Instead, create your own role bindings.
 {: tip}
 
-**Can I assign custom RBAC roles to groups of users?**
+
+
+### Can I assign custom RBAC roles to groups of users?
+{: #custom-rbac-groups}
 
 You can [manually assign users to groups](https://docs.openshift.com/container-platform/4.10/authentication/understanding-authentication.html){: external} in your cluster, and then assign roles to the group.
 
 
-**When do I need to use cluster role bindings and role bindings that are not tied to the {{site.data.keyword.cloud_notm}} IAM permissions that I set?**
+
+### When do I need to use cluster role bindings and role bindings that are not tied to the IAM permissions that I set?
+{: #when-do-i-use-custom-rbac}
 
 You might want to authorize who can create and update pods in your cluster. With [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs), you can use existing cluster role bindings that come with your cluster, or create your own.
 
@@ -495,7 +504,8 @@ You can extend your users' existing permissions by aggregating, or combining, cl
 
 For example, a user with the namespace-scoped `admin` cluster role can't use the `oc top pods` command to view pod metrics for all the pods in the namespace. You might aggregate a cluster role so that users in the `admin` cluster role are authorized to run the `top pods` command. For more information, [see the Kubernetes docs](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles){: external}.
 
-**What are some common operations that I might want to extend permissions for a default cluster role?**
+### What are some common operations that I might want to extend permissions for a default cluster role?
+{: #common-rbac-operations}
 
 Review [the operations that each default RBAC cluster role permits](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_ref) to get a good idea of what your users can do, and then compare the permitted operations to what you want them to be able to do.
 
@@ -505,8 +515,6 @@ If your users in the same cluster role encounter errors similar to the following
 Error from server (Forbidden): pods.metrics.k8s.io is forbidden: User "IAM#myname@example.com" can't list resource "pods" in API group "metrics.k8s.io" in the namespace "mynamespace"
 ```
 {: screen}
-
-**To aggregate cluster roles**:
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

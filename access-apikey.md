@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -83,7 +83,8 @@ For different ways to access the IBM Cloud infrastructure portfolio, check out t
 {{site.data.keyword.openshiftlong_notm}} accesses the IBM Cloud infrastructure portfolio and other {{site.data.keyword.cloud_notm}} services that you use for your cluster by using an [API key](/docs/account?topic=account-manapikey). The API key impersonates, or stores the credentials of, a user with access to the infrastructure and other services. {{site.data.keyword.openshiftlong_notm}} uses the API key to order resources in the service, such as new worker nodes or VLANs in IBM Cloud infrastructure.
 {: shortdesc}
 
-**What is the API key used for?**
+### What is the API key used for?
+{: #api-key-uses}
 
 The API key is used to authorize underlying actions in the following {{site.data.keyword.cloud_notm}} services.
 - **Infrastructure**, such as classic or VPC compute, networking, and storage resources for your cluster.
@@ -94,7 +95,8 @@ The API key is used to authorize underlying actions in the following {{site.data
 - **{{site.data.keyword.mon_short}}**, if you [enable the monitoring service](/docs/containers?topic=containers-health).
 - **{{site.data.keyword.at_short}}**, for sending audit events from your cluster.
 
-**How many API keys do I need?**
+### How many API keys do I need?
+{: #how-many-apikeys}
 
 You have a different API key for each region and resource group where you use {{site.data.keyword.openshiftlong_notm}}. To check if an API key is already set up for the region and resource group, run the following command.
 
@@ -103,24 +105,28 @@ ibmcloud oc api-key info --cluster <cluster_name_or_ID>
 ```
 {: pre}
 
-**How do I set up the API key?**
+### How do I set up the API key?
+{: #howto-api-key-setup}
 
 To enable all users to access the infrastructure portfolio or other services, the user whose credentials are stored in the [API key must have the correct permissions](#owner_permissions). Then, log in as the user or functional ID and perform the first admin action in a region and resource group or [reset the API key](#api_key_most_cases). For example, one of your admin users creates the first cluster in the `default` resource group in the `us-south` region. As a result, the {{site.data.keyword.cloud_notm}} IAM API key for this admin user is created in the account for this resource group and region.
 
-**What permissions does the user who sets the API key need? How do I give the user these permissions?**
+### What permissions does the user who sets the API key need? How do I give the user these permissions?
+{: #what-perms-api-key}
 
 See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions) and [Ensuring that the API key or infrastructure credentials owner has the correct permissions](#owner_permissions).
 
 To check a user's permissions, review the access policies and access groups of the user in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/iam/users){: external}, or use the `ibmcloud iam user-policies <user>` command.
 
-**If the API key is based on one user, how are other cluster users in the region and resource group affected?**
+If the API key is based on one user, how are other cluster users in the region and resource group affected?
+{: #apikey-users}
 
 Other users within the region and resource group of the account share the API key for accessing the infrastructure and other services with {{site.data.keyword.openshiftlong_notm}} clusters. When users log in to the {{site.data.keyword.cloud_notm}} account, an {{site.data.keyword.cloud_notm}} IAM token that is based on the API key is generated for the CLI session and enables infrastructure-related commands to be run in a cluster.
 
 To see the {{site.data.keyword.cloud_notm}} IAM token for a CLI session, you can run `ibmcloud iam oauth-tokens`. 
 {: tip}
 
-**If users have access to the portfolio through an {{site.data.keyword.cloud_notm}} IAM token, how do I limit which commands a user can run?**
+### If users have access to the portfolio through an {{site.data.keyword.cloud_notm}} IAM token, how do I limit which commands a user can run?
+{: #limit-apikey-scopes}
 
 After you set up access to the portfolio for users in your account, you can then control which infrastructure actions the users can perform by assigning the appropriate [platform access role](/docs/openshift?topic=openshift-users#checking-perms). By assigning {{site.data.keyword.cloud_notm}} IAM roles to users, they are limited in which commands they can run against a cluster. For example, because the API key owner has all the required infrastructure roles, all infrastructure-related commands can be run in a cluster. But, depending on the {{site.data.keyword.cloud_notm}} IAM role that is assigned to a user, the user can run only some of those infrastructure-related commands.
 
@@ -129,17 +135,20 @@ For example, if you want to create a cluster in a new region, make sure that the
 To audit the actions that users in your account run, you can use [{{site.data.keyword.cloudaccesstrailshort}}](/docs/openshift?topic=openshift-at_events) to view all cluster-related events.
 {: tip}
 
-**What if I don't want to assign the API key owner or credentials owner the Super User infrastructure role?**
+### What if I don't want to assign the API key owner or credentials owner the Super User infrastructure role?
+{: #non-superuser}
 
 For compliance, security, or billing reasons, you might not want to give the **Super User** infrastructure role to the user who sets the API key or whose credentials are set with the `ibmcloud oc credential set` command. However, if this user doesn't have the **Super User** role, then infrastructure-related actions, such as creating a cluster or reloading a worker node, can fail. Instead of using {{site.data.keyword.cloud_notm}} IAM platform access roles to control users' infrastructure access, you must [set specific IBM Cloud infrastructure permissions](#infra_access) for users.
 
-**What happens if the user who set up the API key for a region and resource group leaves the company?**
+### What happens if the user who set up the API key for a region and resource group leaves the company?
+{: #apikey-user-leaves}
 
 If the user is leaving your organization, the {{site.data.keyword.cloud_notm}} account owner can remove that user's permissions. However, before you remove a user's specific access permissions or remove a user from your account completely, you must reset the API key with another user's infrastructure credentials. Otherwise, the other users in the account might lose access to the IBM Cloud infrastructure portal and infrastructure-related commands might fail. For more information, see [Removing user permissions](/docs/openshift?topic=openshift-users#removing).
 
 Consider using a functional ID user for the API key owner instead of a personal user. In case the person leaves the team, the functional ID user remains the API key owner. Keep in mind that you can't use a service ID to set the API key.
 
-**How can I lock down my cluster if my API key becomes compromised?**
+### How can I lock down my cluster if my API key becomes compromised?
+{: #apikey-lockdown}
 
 If an API key that is set for a region and resource group in your cluster is compromised, [delete it](/docs/account?topic=account-userapikey#delete_user_key) so that no further calls can be made by using the API key as authentication. For more information about securing access to the Kubernetes API server, see the [Kubernetes API server and etcd](/docs/openshift?topic=openshift-security#apiserver) security topic.
 

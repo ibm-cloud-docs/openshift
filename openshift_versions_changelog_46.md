@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -575,7 +575,6 @@ The following table shows the changes that are in the worker node fix pack patch
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | HA proxy | 3b8663 | d38fa1 | Contains fixes for [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}. |
-{: summary="The rows are read from left to right. The first column is the changed component. The second column is the previous version number of the component. The third column is the current version number of the component. The fourth column contains a brief description of the change made to the component."}
 {: caption="Changes since version 4.6.52_1567_openshift" caption-side="bottom"}
 
 

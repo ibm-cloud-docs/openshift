@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-22"
 
 keywords: kubernetes, openshift
 
@@ -197,14 +197,15 @@ To deploy apps to specific worker nodes,
 ## Deploying an app on a GPU machine
 {: #gpu_app}
 
-If you have a [GPU machine type](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes), you can schedule mathematically intensive workloads onto the worker node. For example, you might run a 3D app that uses the Compute Unified Device Architecture (CUDA) platform to share the processing load across the GPU and CPU to increase performance.
+If you have a [GPU machine type](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes), you can accelerate the processing time required for compute intensive workloads such as AI, machine learning, inferencing and more.
 {: shortdesc}
 
-VPC Gen 2 worker nodes with vGPUs are available for allowlisted accounts only. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help). Be sure to include the data centers, the worker flavors, and the number of workers that you want use. For example `12 worker nodes in us-east-1 of flavor gx2.16x128.v100`.
+{{site.data.keyword.vpc_short}} worker nodes with GPUs are available for allowlisted accounts only. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help). Be sure to include the data centers, the VPC infrastructure profile, and the number of workers that you want use. For example `12 worker nodes in us-east-1 of VPC profile gx2-16x128xv100`.
 {: important}
 
-In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. After, you might find it useful to play around with mathematically intensive workloads such as the [TensorFlow](https://www.tensorflow.org/){: external} machine learning framework with [this Kubernetes demo](https://github.com/pachyderm/pachyderm/tree/master/examples/ml/tensorflow){: external}.
+In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. 
 
+In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. After, you might find it useful to play around with mathematically intensive workloads such as the [TensorFlow](https://www.tensorflow.org/){: external} machine learning framework with [this Kubernetes demo](https://github.com/pachyderm/pachyderm/tree/master/examples/ml/tensorflow){: external}.
 
 Before you begin
 - Create a [cluster](/docs/openshift?topic=openshift-clusters) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. Keep in mind that setting up a bare metal machine can take more than one business day to complete.

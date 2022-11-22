@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-22"
 
 keywords: openshift, benchmarks, 4.9
 
@@ -327,7 +327,6 @@ Review information from IBM on the CIS Benchmark results.
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
 | 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
-{: summary="The rows are read from left to right. The first column is the section number for the benchmark recommendation. The second column contains details on the remediation actions."}
 {: caption="Explanation and remediation" caption-side="bottom"}
 
 

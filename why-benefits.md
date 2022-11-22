@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -147,7 +148,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Service mesh | You can set up the [{{site.data.keyword.redhat_openshift_notm}} Service Mesh](https://docs.openshift.com/container-platform/4.10/service_mesh/v1x/installing-ossm.html){: external}. | You can also set up the {{site.data.keyword.redhat_openshift_notm}} Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
 {: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="bottom"}
-{: summary="The rows are read from left to right. In the first column is the characteristic that differs between standard OpenShift Container Platform installations in the second column and {{site.data.keyword.openshiftlong_notm}} clusters in the third column."}
+
 
 
 ## Operator support overview

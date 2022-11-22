@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -40,7 +40,6 @@ The Kubernetes API priority and feature gate is enabled in clusters that run {{s
 | `ibm-system-service-accounts` | Resources in the `ibm-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
 | `tigera-operator-service-accounts` | Resources in the `tigera-operator` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
 {: caption="Default flow schema and priority levels" caption-side="bottom"}
-{: summary="The rows are read from left to right. The flow schema is listed in the first column, the resources that the requests come from are listed in the second column, and the priority level is listed in the third column."}
 
 You can create your own flow schema and priorities, but don't modify the default settings. Unexpected results might occur in your cluster when you modify API request priorities.
 {: important}

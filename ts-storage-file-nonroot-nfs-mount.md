@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -14,6 +14,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -75,7 +76,7 @@ The init container starts before your app container starts. The init container c
     - UID: `1000`
     - GID: `1000`
 
-    **Example**:
+    Example Dockerfile
 
     ```yaml
     FROM openjdk:8-jdk

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -64,7 +64,6 @@ The tables below list the `ibmcloud oc` command groups. For a complete list of a
 | **Deprecated** [Init commands](#cs_init) | Initialize the IBM Cloud Kubernetes Service plug-in or specify the region where you want to create or access Kubernetes clusters. |
 | [Script commands](#script) | Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. |
 | **Beta** [Storage commands](#cs_storage) | View and modify storage resources. |
-{: summary="The rows are read from left to right. The first column is the command group. The second column is a description of the command group."}
 {: caption="{{site.data.keyword.openshiftlong_notm}} CLI command groups" caption-side="bottom"}
 
 ## `cluster` commands
