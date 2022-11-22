@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-22"
 
 keywords: openshift, disaster recovery, dr, ha, hadr
 
@@ -29,27 +29,22 @@ Use the built-in {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{
 High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
 {: shortdesc}
 
-**What level of availability do I need?**
+What level of availability do I need?
+:   You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
 
-You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
-
-**What level of availability does {{site.data.keyword.cloud_notm}} offer?**
-
-See [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).
+What level of availability does {{site.data.keyword.cloud_notm}} offer?
+:   See [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).
 
 The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
 
-**What other cluster components can I set up in highly available architecture?**
+What other cluster components can I set up in highly available architecture?
+:   See [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](#fault_domains).
 
-See [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](#fault_domains).
+Where is the service located?
+:   See [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones).
 
-**Where is the service located?**
-
-See [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones).
-
-**What am I responsible to configure disaster recovery options for?**
-
-See [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks).
+What am I responsible to configure disaster recovery options for?
+:   See [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks).
 
 ## Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}
 {: #fault_domains}
