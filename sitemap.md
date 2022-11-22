@@ -241,6 +241,10 @@ subcollection: openshift
 
         * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.13_1712` and `5.0.2_1713`
 
+    * [16 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1622)
+
+        * Master fix pack 4.7.59_1589_openshift, 4.8.52_1580_openshift, 4.9.51_1565_openshift, 4.10.39_1545_openshift, and 4.11.12_1532_openshift.
+
     * [15 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1522)
 
         * New Ingress status messages

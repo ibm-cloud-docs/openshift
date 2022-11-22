@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -46,6 +46,18 @@ Worker node fix pack 4.11.13_1533_openshift, 4.10.41_1546_openshift, 4.9.51_1566
 {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.13_1712` and `5.0.2_1713`
 :   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
+
+
+
+### 16 November 2022
+{: #openshift-nov1622}
+{: release-note}
+
+ 
+
+
+Master fix pack 4.7.59_1589_openshift, 4.8.52_1580_openshift, 4.9.51_1565_openshift, 4.10.39_1545_openshift, and 4.11.12_1532_openshift.
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47).
 
 
 
