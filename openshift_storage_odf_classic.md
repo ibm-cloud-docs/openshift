@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -737,7 +737,6 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
 | `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/oidc/token`. | `false` |
 {: caption="Classic parameter reference" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 
 ### Version 4.8 and 4.9 parameters
@@ -756,7 +755,6 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 | `autoDiscoverDevices` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
 {: caption="Classic parameter reference" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 
 ### Version 4.7 parameters
@@ -777,6 +775,5 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 | `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run `oc get nodes`. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 {: caption="Classic parameter reference" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 

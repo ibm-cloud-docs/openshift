@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-22"
 
 keywords: kubernetes, openshift
 
@@ -37,7 +37,6 @@ Learn more about the following {{site.data.keyword.IBM}}, {{site.data.keyword.cl
 | {{site.data.keyword.mon_full_notm}} | Gain operational visibility into the performance and health of your apps by deploying a {{site.data.keyword.mon_short}} agent to your worker nodes to forward metrics to {{site.data.keyword.mon_full}}. For more information, see the following docs.  \n - [Setting up {{site.data.keyword.mon_full_notm}} in a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-health-monitor).  \n - [Tutorial: Analyzing metrics for an app that is deployed in a Kubernetes cluster](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster). |
 |{{site.data.keyword.blockchainfull_notm}} Platform v2|Deploy and manage your own {{site.data.keyword.blockchainfull_notm}} Platform on {{site.data.keyword.openshiftlong_notm}}. With {{site.data.keyword.blockchainfull_notm}} Platform v2, you can host {{site.data.keyword.blockchainfull_notm}} networks or create organizations that can join other {{site.data.keyword.blockchainfull_notm}} v2 networks. For more information about how to set up {{site.data.keyword.blockchainfull_notm}} in {{site.data.keyword.openshiftlong_notm}}, see [About {{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain?topic=blockchain-get-started-ibp).|
 | Other third-party integrations | You can install many other integrations into your {{site.data.keyword.redhat_openshift_notm}} cluster, such as through the {{site.data.keyword.redhat_openshift_notm}} catalog, the [Red Hat Marketplace](https://marketplace.redhat.com/en-us/documentation/getting-started){: external}, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.redhat_openshift_notm}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for the installation to succeed. |
-{: summary="The rows are read from left to right. The first column is the service that you might integrate with your cluster. The second column is the description of the service."}
 {: caption="{{site.data.keyword.cloud_notm}} and third-party integrations for {{site.data.keyword.openshiftlong}} clusters"}
 {: summary=""}
 

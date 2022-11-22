@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-22"
 
 keywords: back up, restore, changelog, openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -27,7 +28,6 @@ Refer to the following tables for a summary of changes for each version of the [
 | -------------------- | -----------|--------------------------- |
 | 2.0.5 | Yes | 4.3 - 4.6 |
 {: caption="Back up and restore Helm chart versions" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the back up and restore Helm chart version. The second column is the version's supported state. The third column is the cluster version of your cluster that the back up and restore Helm chart version is supported for."}
 
 
 ## Change log for 1.0.5, released 17 December 2020

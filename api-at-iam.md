@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -60,7 +60,6 @@ Review the following account API methods, their corresponding actions in {{site.
 | `GET​/v2​/vpc​/getZones` | List available zones in a region. | - | - |
 | `POST​/v1​/credentials` | Set {{site.data.keyword.cloud_notm}} infrastructure account credentials for your {{site.data.keyword.openshiftlong_notm}} account. | `containers-kubernetes.cluster.create` | - |
 | `POST​/v1​/keys` | Reset the IAM API key. | `containers-kubernetes.cluster.create` | - |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Account API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -125,7 +124,6 @@ Review the following cluster API methods, their corresponding actions in {{site.
 | `PUT​/v1​/clusters​/{idOrName}​/apiserverconfigs​/auditwebhook` | Create or update an audit webhook configuration for a cluster. | `containers-kubernetes.cluster.update` | `containers-kubernetes.cluster.update`  |
 | `PUT​/v1​/clusters​/{idOrName}​/masters` | Refresh the Kubernetes master. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.cluster.update` |
 | `PUT​/v1​/clusters​/{idOrName}​/subnets​/{subnetId}` | Add an existing {{site.data.keyword.cloud_notm}} infrastructure subnet to an existing cluster. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.subnet.update`  |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Cluster API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -145,7 +143,6 @@ Review the following Ingress API methods, their corresponding actions in {{site.
 | `POST​/ingress​/v2​/secret​/updateSecret` | Update an Ingress secret for a certificate. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.update` |
 | `GET/ingress/v2/load-balancer/configuration` | Get the configuration of load balancers for Ingress ALBs. | `containers-kubernetes.cluster.read` |  |
 | `PATCH/ingress/v2/load-balancer/configuration` | Update the configuration of load balancers for Ingress ALBs. | `containers-kubernetes.cluster.operate` |  |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Ingress API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -183,7 +180,6 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 | `PUT​/v1​/alb​/clusters​/{idOrName}​/update` | Force a one-time update of all ALB pods to the latest build. | `containers-kubernetes.cluster.update` | `cluster-alb.update` |
 | `PUT​/v1​/alb​/clusters​/{idOrName}​/updatepolicy` | Enable or disable automatic updates for the Ingress ALBs in a cluster. | `containers-kubernetes.cluster.update` | `cluster-alb-policy.update` |
 | `PUT​/v1​/alb​/clusters​/{idOrName}​/updaterollback` | Roll back all ALB pods in a cluster to their previously running build. | `containers-kubernetes.cluster.update` | `cluster-alb-policy.update` |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="ALB API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -215,7 +211,6 @@ Review the following Fluentd logging configuration API methods, their correspond
 | `PUT​/v1​/logging​/{idOrName}​/loggingconfig​/{logSource}​/{id}` | Update a log forwarding configuration. | `containers-kubernetes.cluster.update` | - |
 | `PUT​/v1​/logging​/{idOrName}​/refresh` | Refresh the cluster's logging configuration. | `containers-kubernetes.cluster.update` | `containers-kubernetes.logging-config.refresh`  |
 | `PUT​/v1​/logging​/{idOrName}​/updatepolicy` | Enable or disable automatic updates for the Fluentd logging add-on in the cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.logging-autoupdate.changed`  |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Logging API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -243,7 +238,6 @@ Review the following network load balancer (NLB) domain name system (DNS) API me
 | `POST​/v2​/nlb-dns​/vpc​/ReplaceLBHostname` | Update the DNS record for an NLB subdomain by replacing the load balancer hostname. | `containers-kubernetes.cluster.update` | `cluster-lb-hostname.update` |
 | `PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/add` | Update a DNS record by adding an NLB IP address. | `containers-kubernetes.cluster.update` | `cluster-nlb-dns.update` |
 | `PUT​/v1​/nlb-dns​/clusters​/{idOrName}​/health` | Enable or disable a health check monitor for an NLB subdomain. | `containers-kubernetes.cluster.update` | `cluster-nlb-dns-monitor.update` |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="NLB DNS API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -262,7 +256,6 @@ Review the following observability logging API methods, their corresponding acti
 | `POST​/v2​/observe​/logging​/discoverAgent` | Discover a {{site.data.keyword.la_short}} agent previously deployed in the cluster. | `containers-kubernetes.cluster.create` | - |
 | `POST​/v2​/observe​/logging​/modifyConfig` | Update a {{site.data.keyword.la_short}} configuration in the cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.observe.logging.modify`  |
 | `POST​/v2​/observe​/logging​/removeConfig` | Remove a {{site.data.keyword.la_short}} configuration from a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.observe.logging.remove`  |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Observability logging API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -281,7 +274,6 @@ Review the following observability monitoring API methods, their corresponding a
 | `POST​/v2​/observe​/monitoring​/discoverAgent` | Discover a {{site.data.keyword.mon_short}} agent previously deployed in the cluster. | `containers-kubernetes.cluster.create` | - |
 | `POST​/v2​/observe​/monitoring​/modifyConfig` | Update a {{site.data.keyword.mon_short}} configuration in the cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.observe.monitoring.modify`  |
 | `POST​/v2​/observe​/monitoring​/removeConfig` | Remove a {{site.data.keyword.mon_short}} configuration from a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.observe.monitoring.remove`  |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Observability monitoring API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -299,7 +291,6 @@ Review the following access control list (ACL) API methods, their corresponding 
 | `PATCH​/v1​/acl​/{idOrName}​/add` | Add subnets to a cluster's private cloud service endpoint allowlist. | `containers-kubernetes.cluster.create` | `containers-kubernetes.network-acl.update`  |
 | `PATCH​/v1​/acl​/{idOrName}​/rm` | Remove subnets from a cluster's private cloud service endpoint allowlist. | `containers-kubernetes.cluster.create` | `containers-kubernetes.network-acl.update`  |
 | `POST​/v1​/acl​/{idOrName}​/enable` | Enables the private cloud service endpoint allowlist feature for a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.network-acl.update` |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="ACL API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -325,7 +316,6 @@ Review the following API methods, their corresponding actions in {{site.data.key
 | `POST​/v2​/satellite​/hostqueue​/removeHost` | Remove a host from an {{site.data.keyword.cloud_notm}} Satellite location or cluster. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.cluster.delete` |
 | `POST​/v2​/satellite​/hostqueue​/updateHost` | Update a host in your {{site.data.keyword.cloud_notm}} Satellite location. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.cluster.update` |
 | `POST​/v2​/satellite​/removeController` | Remove an {{site.data.keyword.cloud_notm}} Satellite Location. | `containers-kubernetes.cluster.create` | `containers-kubernetes.cluster.delete` |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="{{site.data.keyword.satelliteshort}} API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -344,7 +334,6 @@ Review the following storage API methods, their corresponding actions in {{site.
 | `GET​/v2​/storage​/getVolumes` | List storage volumes for a cluster or for the account if no cluster is provided. | `containers-kubernetes.cluster.read` | `containers-kubernetes.containers-kubernetes.storage.volume.read`  |
 | `POST​/v2​/storage​/createAttachment` | Attach a volume to a worker node. | `containers-kubernetes.cluster.update` | `containers-kubernetes.containers-kubernetes.storage.attachment.create`  |
 | `POST​/v2​/storage​/deleteAttachment` | Detach a volume from a worker node. | `containers-kubernetes.cluster.update` | `containers-kubernetes.containers-kubernetes.storage.attachment.delete`  |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Storage API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
@@ -391,7 +380,6 @@ Review the following worker node and worker pool API methods, their correspondin
 | `POST​/v2​/vpc​/createWorkerPoolZone` | Create a zone in the specified worker pool for a VPC cluster. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.account.create`  |
 | `POST​/v2​/vpc​/replaceWorker` | Replace a worker node with a new worker node. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.account.create`  |
 | `PUT​/v1​/clusters​/{idOrName}​/workers​/{workerId}` | Reboot, reload, or update a worker node for a cluster. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.worker.update`  |
-{: summary="The rows are read from left to right. The first column is the API method. The second column is a description of the method. The third column is the action that the user must have an access policy to the service in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM), if any. The fourth column is the event that is sent for the method to {{site.data.keyword.at_full_notm}} instance, if any."}
 {: caption="Worker node and worker pool API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 

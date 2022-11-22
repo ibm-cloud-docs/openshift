@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-11-22"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -43,7 +43,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | --- | --- | --- | --- |
 | Supported | 4.11 / 1.24 | 31 Aug 2022 | Mar 2024`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.11." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
+
 
 ## Preparing to update
 {: #prep-up-411}
@@ -84,7 +84,7 @@ The following table shows the actions that you must take before you [update the 
 | `LegacyServiceAccountTokenNoAutoGeneration` feature gate is enabled | For more information, review possible required actions in the `LegacyServiceAccountTokenNoAutoGeneration is on by default` section of the[OpenShift version 4.11 notable technical changes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-notable-technical-changes). |
 | Red Hat OpenShift web console redirect changed | Cluster server URL no longer redirects to the Red Hat OpenShift web console. You must add `/console` to the URL for the redirect. | 
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.11" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
+
 
 ### Update after master
 {: #411_after}
@@ -93,7 +93,7 @@ The following table shows the actions that you must take before you [update the 
 | --- | --- |
 | **Unsupported:** RHEL 7 worker nodes | Using RHEL 7 worker nodes with Red Hat OpenShift on IBM Cloud version 4.11 clusters is unsupported. After updating the cluster master, if your cluster still has RHEL 7 worker nodes, [migrate your RHEL 7 worker nodes to RHEL 8](#rhel-migrate-411). |
 {: caption="Changes to make after you update the master to Red Hat OpenShift 4.11" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the type of update. The second column is a description of the update and impacts it might have."}
+
 
 
 ## Migrating your worker nodes from RHEL 7 to RHEL 8

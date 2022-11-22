@@ -3385,6 +3385,22 @@ subcollection: openshift
 
 * [Understanding how the API key works](/docs/openshift?topic=openshift-access-creds#api_key_about)
 
+    * [What is the API key used for?](/docs/openshift?topic=openshift-access-creds#api-key-uses)
+
+    * [How many API keys do I need?](/docs/openshift?topic=openshift-access-creds#how-many-apikeys)
+
+    * [How do I set up the API key?](/docs/openshift?topic=openshift-access-creds#howto-api-key-setup)
+
+    * [What permissions does the user who sets the API key need? How do I give the user these permissions?](/docs/openshift?topic=openshift-access-creds#what-perms-api-key)
+
+    * [If users have access to the portfolio through an {{site.data.keyword.cloud_notm}} IAM token, how do I limit which commands a user can run?](/docs/openshift?topic=openshift-access-creds#limit-apikey-scopes)
+
+    * [What if I don't want to assign the API key owner or credentials owner the Super User infrastructure role?](/docs/openshift?topic=openshift-access-creds#non-superuser)
+
+    * [What happens if the user who set up the API key for a region and resource group leaves the company?](/docs/openshift?topic=openshift-access-creds#apikey-user-leaves)
+
+    * [How can I lock down my cluster if my API key becomes compromised?](/docs/openshift?topic=openshift-access-creds#apikey-lockdown)
+
 * [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions)
 
 * [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra)
@@ -3413,9 +3429,23 @@ subcollection: openshift
 
 * [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
 
+    * [What are the types of RBAC roles?](/docs/openshift?topic=openshift-users#rbac-types)
+
+    * [What are RBAC role bindings and cluster role bindings?](/docs/openshift?topic=openshift-users#what-is-rbac)
+
+    * [What do these roles look like in my cluster?](/docs/openshift?topic=openshift-users#what-do-roles-look-like)
+
+    * [Can I create custom roles or cluster roles?](/docs/openshift?topic=openshift-users#create-custom-rbac-roles)
+
+    * [Can I assign custom RBAC roles to groups of users?](/docs/openshift?topic=openshift-users#custom-rbac-groups)
+
+    * [When do I need to use cluster role bindings and role bindings that are not tied to the IAM permissions that I set?](/docs/openshift?topic=openshift-users#when-do-i-use-custom-rbac)
+
 * [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
 
 * [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
+
+    * [What are some common operations that I might want to extend permissions for a default cluster role?](/docs/openshift?topic=openshift-users#common-rbac-operations)
 
 * [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms)
 
@@ -4011,7 +4041,7 @@ subcollection: openshift
 
     * [What if I want my app configuration to use variables? How do I add these to the YAML?](/docs/openshift?topic=openshift-plan_deploy#variables)
 
-    * [How can I make sure that my app has the right resources?](/docs/openshift?topic=openshift-plan_deploy#resources)
+    * [How can I make sure that my app has the correct resources?](/docs/openshift?topic=openshift-plan_deploy#resources)
 
     * [How can I add capabilities to my app configuration?](/docs/openshift?topic=openshift-plan_deploy#capabilities)
 
@@ -5789,6 +5819,16 @@ subcollection: openshift
 
 * [Using the benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-use)
 
+    * [What does the benchmark cover?](/docs/openshift?topic=openshift-cis-benchmark#benchmark-scope)
+
+    * [What do the benchmark recommendations mean?](/docs/openshift?topic=openshift-cis-benchmark#benchmark-meaning)
+
+    * [What parts of the benchmark am I responsible for?](/docs/openshift?topic=openshift-cis-benchmark#bencmark-resp)
+
+    * [What if some part of the service fails to comply with a recommendation?](/docs/openshift?topic=openshift-cis-benchmark#bencmark-service-compliance)
+
+    * [What else can I do to increase the security and compliance of my cluster?](/docs/openshift?topic=openshift-cis-benchmark#benchmark-what-else)
+
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
 [Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison)
@@ -7102,7 +7142,7 @@ subcollection: openshift
 
 * [Change log for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
 
-[{{site.data.keyword.cloud_notm}} HPCS Router add-on changelog](/docs/openshift?topic=openshift-hpcs-router-changelog#hpcs-router-changelog)
+[{{site.data.keyword.cloud_notm}} HPCS Router add-on change log](/docs/openshift?topic=openshift-hpcs-router-changelog#hpcs-router-changelog)
 
 * [Version 4.9.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4.9.0)
 

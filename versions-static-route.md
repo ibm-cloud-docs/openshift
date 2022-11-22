@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-22"
 
 keywords: openshift, static route, add-on
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -28,7 +29,6 @@ Review the supported versions of the static route add-on. In the CLI, you can ru
 | Static route add-on version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support |
 | --- | --- | --- |
 | 1.00 | Yes | 4.5, 4.6, 4.7 |
-{: summary="The rows are read from left to right. The first column is the static route add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.redhat_openshift_notm}} version of your cluster that the static route add-on version is supported for."}
 {: caption="Supported static route add-on versions" caption-side="bottom"}
 
 ## Version 1.0.0

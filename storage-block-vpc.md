@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -744,11 +744,9 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 You can change some default PVC settings by using a customized storage class or a Kubernetes secret to create {{site.data.keyword.block_storage_is_short}} with your customized settings.
 {: shortdesc}
 
-**What is the benefit of using a secret and specifying my parameters in a customized storage class?**
-
-As a cluster admin, [create a customized storage class](#vpc-customize-storage-class) when you want all the PVCs that your cluster users create to be provisioned with a specific configuration and you don't want to enable your cluster users to override the default configuration.
-
-However, when multiple configurations are required and you don't want to create a customized storage class for every possible PVC configuration, you can create one customized storage class with the default PVC settings and a reference to a generic [Kubernetes secret](#vpc-block-storageclass-secret). If your cluster users must override the default settings of your customized storage class, they can do so by creating a Kubernetes secret that holds their custom settings.
+What is the benefit of using a secret and specifying my parameters in a customized storage class?
+:   As a cluster admin, [create a customized storage class](#vpc-customize-storage-class) when you want all the PVCs that your cluster users create to be provisioned with a specific configuration and you don't want to enable your cluster users to override the default configuration.
+:   However, when multiple configurations are required and you don't want to create a customized storage class for every possible PVC configuration, you can create one customized storage class with the default PVC settings and a reference to a generic [Kubernetes secret](#vpc-block-storageclass-secret). If your cluster users must override the default settings of your customized storage class, they can do so by creating a Kubernetes secret that holds their custom settings.
 
 When you want to set up encryption for your {{site.data.keyword.blockstorageshort}} instance, you can also use a Kubernetes secret if you want to encode the {{site.data.keyword.keymanagementserviceshort}} root key CRN to base64 instead of providing the key directly in the customized storage class.
 

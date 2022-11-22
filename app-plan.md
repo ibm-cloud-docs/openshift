@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-22"
 
 keywords: openshift, deploy
 
@@ -104,9 +104,8 @@ For more, see the following tutorials.
 | Your app uses persistent file storage with a non-root user ID that can't write to the mounted storage device. | [Adjust the security context](/docs/openshift?topic=openshift-debug_storage_file) for the app deployment so that `runAsUser` is set to `0`. |
 | Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions: \n - Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port. \n - Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc). \n - Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.10/nodes/containers/nodes-containers-port-forwarding.html){: external}. |
 | Other use cases and scenarios | Review the {{site.data.keyword.redhat_openshift_notm}} documentation for migrating databases, web framework apps, CI/CD, and other examples such as from [OCP version 3 to version 4](https://www.redhat.com/en/technologies/cloud-computing/openshift/migrating){: external}. |
-{: summary="The rows are read from left to right. The first column is the scenario that might require changes. The second column is the description of the steps that you can take to modify your app."}
 {: caption="Common scenarios that require app modifications" caption-side="bottom"}
-{: summary="The first column describes an app scenario. The second column explains the steps that you can take to address the app scenario."}
+
 
 ### Example steps for giving a deployment privileged access
 {: #openshift_move_apps_example_scc}
@@ -295,7 +294,7 @@ Secret
 Want to make your secrets even more secured? Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt new and existing secrets.
 {: tip}
 
-### How can I make sure that my app has the right resources?
+### How can I make sure that my app has the correct resources?
 {: #resources}
 
 When you [specify your app YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), you can add Kubernetes functionalities to your app configuration that help your app get the correct resources. In particular, [set resource limits and requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} for each container that is defined in your YAML file.
@@ -439,7 +438,7 @@ Rolling deployment
 :   You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version don't experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).
 
 Instantaneous switch
-:   Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the right app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.
+:   Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the correct app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.
 
 Canary or A/B deployment
 :   A more complex update strategy, a canary deployment is when you pick a percentage of users such as 5% and send them to the new app version. You collect metrics in your logging and monitoring tools on how the new app version performs, do A/B testing, and then roll out the update to more users. As with all deployments, labeling the app (such as `version: stable` and `version: canary`) is critical.

@@ -41,7 +41,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | --- | --- | --- | --- |
 | Supported | 4.6 / 1.19 | 17 Feb 2021 | Oct 27 2022 `†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.6." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the supported status, the second column is OpenShift and Kubernetes version number. The third column is the release date. The fourth column is the unsupported date."}
+
 
 ## Preparing to update
 {: #prep-up-46}

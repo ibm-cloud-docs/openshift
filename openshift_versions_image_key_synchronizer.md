@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -25,13 +25,14 @@ View information for version updates to the [{{site.data.keyword.cloud_notm}} Im
 * **Patch updates**: {{site.data.keyword.cloud_notm}} keeps all your add-on components up-to-date by automatically rolling out patch updates to the most recent version of the Image Key Synchronizer that is offered by {{site.data.keyword.openshiftlong_notm}}.
 * **Minor version updates**: To update your add-on components to the most recent minor version of the Image Key Synchronizer that is offered by {{site.data.keyword.openshiftlong_notm}}, follow the steps in [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
 
-Review the supported versions of {{site.data.keyword.openshiftlong_notm}} for each add-on version. In the CLI, you can run `ibmcloud oc cluster addon ls -c <cluster_name_or_ID>` to check the current version of your add-on, and `ibmcloud oc cluster get -c <cluster_name_or_ID>` to check the current version of your cluster.
+To view a list of add-ons and the supported {{site.data.keyword.redhat_openshift_notm}} versions, see the [supported add-on versions table](/docs/openshift?topic=openshift-supported-cluster-addon-versions) or run the following command.
 
-| Image Key Synchronizer add-on version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support |
-| -------------------------- | -----------|----------------------------------------------------- |
-| 1.0.0 | Yes | 4.6, 4.7, 4.8 |
-{: summary="The rows are read from left to right. The first column is the Image Key Synchronizer add-on version. The second column is the version's supported state. The third column is the {{site.data.keyword.redhat_openshift_notm}} version of your cluster that the add-on version is supported for."}
-{: caption="Supported Image Key Synchronizer add-on versions" caption-side="bottom"}
+```sh
+ibmcloud oc cluster addon versions --addon image-key-synchronizer
+```
+{: pre}
+
+
 
 ## Version 1.0.0
 {: #1_0_0-image-key}

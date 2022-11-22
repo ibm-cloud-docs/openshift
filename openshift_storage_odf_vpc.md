@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -566,7 +566,7 @@ You can scale your ODF configuration by increasing the `numOfOsd` setting. When 
 | 3 | 150Gi | 3 | 450Gi | 1350Gi |
 | 3 | 150Gi | 4 | 600Gi | 1800Gi |
 {: caption="Table 1. OpenShift Data Foundation scaling." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the number of worker nodes. The second column is the initial OSD size. The third column is the number of OSDs. The fourth column is the total storage capacity that is available to applications in the cluster. The fifth column is the total storage capacity of the provisioned disks."}
+
 
 ### Scaling by increasing the `numOfOsd`
 {: #odf-vpc-scaling-osd}
@@ -658,7 +658,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
 | `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/oidc/token`. | `false` |
 {: caption="VPC parameter reference" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the custom resource parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
 
 ### Version 4.8 and 4.9 clusters
 {: #odf-vpc-params-48}
@@ -673,7 +673,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `workerNodes` | **Optional**: Enter the node names for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. | N/A |
 | `clusterEncryption` | Enter `true` or `false` to enable cluster wide encryption. |
 {: caption="ODF parameter reference" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
 
 
 ### Version 4.7 clusters
@@ -691,7 +691,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `workerNodes` | **Optional**: Enter the node names for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. | N/A |
 | `clusterEncryption` | Enter `true` or `false` to enable cluster wide encryption. |
 {: caption="ODF parameter reference" caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the parameter. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
 
 
 
