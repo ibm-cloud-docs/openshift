@@ -575,7 +575,6 @@ The following table shows the changes that are in the worker node fix pack patch
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | HA proxy | 3b8663 | d38fa1 | Contains fixes for [CVE-2021-3712](https://nvd.nist.gov/vuln/detail/CVE-2021-3712){: external}. |
-
 {: caption="Changes since version 4.6.52_1567_openshift" caption-side="bottom"}
 
 
