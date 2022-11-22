@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 subcollection: openshift
@@ -2821,6 +2821,22 @@ subcollection: openshift
 
 * [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node)
 
+    * [What flavors are available to me?](/docs/openshift?topic=openshift-planning_worker_nodes#available-flavors)
+
+    * [Can I combine different flavors in a cluster?](/docs/openshift?topic=openshift-planning_worker_nodes#combine-flavors)
+
+    * [How can I change worker node flavors?](/docs/openshift?topic=openshift-planning_worker_nodes#change-flavors)
+
+    * [Are the worker nodes encrypted?](/docs/openshift?topic=openshift-planning_worker_nodes#encrypted-flavors)
+
+    * [How do I manage my worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-manage)
+
+    * [What limitations do I need to be aware of?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-limitations)
+
+    * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-master-role)
+
+    * [How can I check the operating system that my worker nodes run?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-os-check)
+
 * [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
 
     * [Planning considerations for VMs](/docs/openshift?topic=openshift-planning_worker_nodes#vm-planning)
@@ -5084,6 +5100,16 @@ subcollection: openshift
 [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#openshift_cloud_paks)
 
 * [Overview of Cloud Pak offerings](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_pak_ov)
+
+    * [Cloud Pak for Applications](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cpa)
+
+    * [Cloud Pak for Data](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cpd)
+
+    * [Cloud Pak for Integration](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cd4i)
+
+* [Cloud Pak for Security](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cp4s)
+
+* [Cloud Pak for Management](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cp4m)
 
 * [Adding IBM Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_add)
 

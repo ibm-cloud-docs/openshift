@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift, nginx, ingress controller
 
@@ -26,7 +26,7 @@ Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by crea
 This information is for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 {: note}
 
-For information about how to expose apps in {{site.data.keyword.satelliteshort}}, see Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
+For information about how to expose apps in {{site.data.keyword.satelliteshort}}, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
 {: tip}
 
 ## Prerequisites

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift, version, update, upgrade
 
@@ -62,6 +62,6 @@ The following table shows the actions that you must take before you [update the 
 | VPC clusters: App URL character length | DNS resolution is managed by the cluster's [virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe), which can resolve URLs up to 130 characters. If you expose apps in your cluster with URLs, such as the Ingress subdomain or {{site.data.keyword.redhat_openshift_notm}} routes, ensure that the URLs are 130 characters or fewer. For example, if you use an auto-generated route name in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud` that exceeds 130 characters, you might need to [create a route that uses a shorter, custom subdomain](/docs/openshift?topic=openshift-openshift_routes#routes-setup) instead. |
 | **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [OpenShift version 4.6 deprecated and removed features](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-deprecated-removed-features){: external}. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.6" caption-side="bottom"}
-{: summary="The rows are read from left to right. The type of update action is in the first column, and a description of the update action type is in the second column."}
+
 
 

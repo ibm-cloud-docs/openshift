@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift
 
@@ -28,65 +28,57 @@ subcollection: openshift
 You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps, data, integration, automation, and management across {{site.data.keyword.redhat_openshift_notm}} cloud providers.
 {: shortdesc}
 
+### Cloud Pak for Applications
+{: #cloud-pak-cpa}
+
 | Area | Description |
 | ---- | ------------ |
 | Use cases | - Run existing apps in traditional environments such as {{site.data.keyword.appserver_short}}.  \n - Modernize existing apps to newer runtimes at your own pace.  \n - Build new, cloud-native apps by using portable, open source software.  |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-applications){: external} | For more information such as postinstallation tasks and pricing. |
-{: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
-{: class="simple-tab-table"}
 {: caption="Cloud Pak for Applications" caption-side="bottom"}
-{: #cloudpak1}
-{: tab-title="Applications"}
-{: tab-group="cloudpak"}
+
+### Cloud Pak for Data
+{: #cloud-pak-cpd}
 
 | Area | Description |
 | ---- | ------------ |
 | Use cases | - Set up an end-to-end platform to collect, organize, and analyze your data.  \n - Create interactive data visualizations and analyze information for insights across data sets, without needing to code.  \n - Operationalize your data with AI and a suite of governance tools to make sure that your data is curated, useful, trusted, and ready for analysis. |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-data){: external} | For more information such as postinstallation tasks and pricing. | |
-{: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
-{: class="simple-tab-table"}
 {: caption="Cloud Pak for Data" caption-side="bottom"}
-{: #cloudpak2}
-{: tab-title="Data"}
-{: tab-group="cloudpak"}
+
+### Cloud Pak for Integration
+{: #cloud-pak-cd4i}
 
 | Area | Description |
 | ---- | ------------ |
 | Use cases | - Integrate workflows, APIs, logging, and events across multiple cloud environments, all from a unified platform.  \n - Rapidly and securely transfer data across hybrid cloud environments.  \n - Set up a multichannel gateway to expand and control access to the full range of your mobile, web app, API, SOA, B2B, and other cloud workloads.  |
 | [Catalog entry](https://cloud.ibm.com/catalog/content/ibm-cp-integration#about){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-integration){: external} | For more information such as postinstallation tasks and pricing. |
-{: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
-{: class="simple-tab-table"}
 {: caption="Cloud Pak for Integration" caption-side="bottom"}
-{: #cloudpak3}
-{: tab-title="Integration"}
-{: tab-group="cloudpak"}
+
+## Cloud Pak for Security
+{: #cloud-pak-cp4s}
 
 | Area | Description |
 | ---- | ------------ |
 | Use cases | - Synchronize teamwork and playbooks to enhance security incident response.  \n - Increase threat hunting speed with a smart query builder, intelligent threat prioritization, and federated search.  \n - Real-time data security controls and audit visibility across hybrid cloud environments.  |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak#software){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-security){: external} | For more information such as postinstallation tasks and pricing. |
-{: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
-{: class="simple-tab-table"}
 {: caption="Cloud Pak for Security" caption-side="bottom"}
-{: #cloudpak4}
-{: tab-title="Security"}
-{: tab-group="cloudpak"}
+
+
+## Cloud Pak for Management
+{: #cloud-pak-cp4m}
 
 | Area | Description |
 | ---- | ------------ |
 | Use cases | - Consistently and securely manage your apps that are deployed in Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters across multiple cloud providers.  \n - Consolidate event monitoring information across clusters in off-prem and on-prem clouds.  \n - Optimize workflows with automatic provisioning of virtual machines and other infrastructure resources across clouds providers. |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak){: external} | For included components, required cluster size, and installation. |
 | [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-management){: external} | For more information such as postinstallation tasks and pricing. |
-{: summary="The rows are read from left to right. The area of comparing the different Cloud Paks is in the first column, with the information for the Cloud Pak in the second column. You can change Cloud Paks by toggling the tabs at the beginning of the table."}
-{: class="simple-tab-table"}
 {: caption="Cloud Pak for Management" caption-side="bottom"}
-{: #cloudpak5}
-{: tab-title="Management"}
-{: tab-group="cloudpak"}
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-11-22"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -38,37 +38,41 @@ The worker node flavors and isolation levels that are available to you depend on
 
 ![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.png){: caption="Figure 1. Hardware options for worker nodes in a standard cluster" caption-side="bottom"}
 
-**What flavors are available to me?**
+### What flavors are available to me?
+{: #available-flavors}
 
 Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes. If you create a free classic cluster, your cluster is provisioned with the smallest virtual worker node flavor on shared infrastructure.
 
-
 VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) worker nodes only, and must be created in one of the supported [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). Free VPC clusters are not supported.
-
 
 VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts. Free VPC clusters are not supported.
 
 
 
-**Can I combine different flavors in a cluster?**
+### Can I combine different flavors in a cluster?
+{: #combine-flavors}
 
 Yes. To add different flavors to your cluster, you must [create another worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create). You can't resize existing worker pools to have different compute resources such as CPU or memory.
 
-**How can I change worker node flavors?**
+### How can I change worker node flavors?
+{: #change-flavors}
 
 See [updating flavors](/docs/containers?topic=containers-update#machine_type).
 
-**Are the worker nodes encrypted?**
+### Are the worker nodes encrypted?
+{: #encrypted-flavors}
 
 The secondary disk of the worker node is encrypted. For more information, see [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption#encrypt_ov). After you create a worker pool, you might notice that the worker node flavor has `.encrypted` in the name, such as `b3c.4x16.encrypted`.
 
-**How do I manage my worker nodes?**
+### How do I manage my worker nodes?
+{: #flavor-manage}
 
 Worker nodes in classic clusters are provisioned into your {{site.data.keyword.cloud_notm}} account. You can manage your worker nodes by using {{site.data.keyword.openshiftlong_notm}}, but you can also use the [classic infrastructure dashboard](https://cloud.ibm.com/classic/) in the {{site.data.keyword.cloud_notm}} console to work with your worker node directly.  
 
 Unlike classic clusters, the worker nodes of your VPC cluster are not listed in the [VPC infrastructure dashboard](https://cloud.ibm.com/vpc/overview). Instead, you manage your worker nodes with {{site.data.keyword.openshiftlong_notm}} only. However, your worker nodes might be connected to other VPC infrastructure resources, such as VPC subnets or VPC Block Storage. These resources are in the VPC infrastructure dashboard and can be managed separately from there.
 
-**What limitations do I need to be aware of?**
+### What limitations do I need to be aware of?
+{: #flavor-limitations}
 
 Kubernetes limits the maximum number of worker nodes that you can have in a cluster. Review [worker node and pod quotas](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external} for more information.
 
@@ -81,13 +85,15 @@ Want to be sure that you always have enough worker nodes to cover your workload?
 
 
 
-**Why do my worker nodes have the `master` role?**
+### Why do my worker nodes have the `master` role?
+{: #flavor-master-role}
 
 When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4).
 
 
 
-**How can I check the operating system that my worker nodes run?**
+### How can I check the operating system that my worker nodes run?
+{: #flavor-os-check}
 
 When you create a worker pool, you choose the flavor, which describes the operating system along with the compute resources of the worker nodes. Supported operating systems are RHEL 7. 
 
@@ -203,22 +209,19 @@ Physical machines are available for classic clusters only and are not supported 
 ### Planning considerations for bare metal
 {: #bm-planning}
 
-**How is bare metal different than VMs?**
-
-Bare metal gives you direct access to the physical resources on the machine, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Physical flavors have more local storage than virtual, and some have RAID to increase data availability. Local storage on the worker node is for short-term processing only, and the primary and auxiliary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
+How is bare metal different than VMs?
+:   Bare metal gives you direct access to the physical resources on the machine, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Physical flavors have more local storage than virtual, and some have RAID to increase data availability. Local storage on the worker node is for short-term processing only, and the primary and auxiliary disks are wiped when you update or reload the worker node. For persistent storage solutions, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
 
 Because you have full control over the isolation and resource consumption for your workloads, you can use bare metal machines to achieve HIPAA and PCI compliance for your environment.
 {: important}
 
-**Besides better specs for performance, can I do something with bare metal that I can't with VMs?**
-
-Yes, with bare metal worker nodes, you can use {{site.data.keyword.datashield_full}}. {{site.data.keyword.datashield_short}} is integrated with Intel® Software Guard Extensions (SGX) and Fortanix® technology so that your {{site.data.keyword.cloud_notm}} container workload code and data are protected in use. The app code and data run in CPU-hardened enclaves. CPU-hardened enclaves are trusted areas of memory on the worker node that protect critical aspects of the app, which helps to keep the code and data confidential and unmodified. If you or your company require data sensitivity due to internal policies, government regulations, or industry compliance requirements, this solution might help you to move to the cloud. Example use cases include financial and healthcare institutions, or countries with government policies that require on-premises cloud solutions.
+*Besides better specs for performance, can I do something with bare metal that I can't with VMs?
+:   Yes, with bare metal worker nodes, you can use {{site.data.keyword.datashield_full}}. {{site.data.keyword.datashield_short}} is integrated with Intel® Software Guard Extensions (SGX) and Fortanix® technology so that your {{site.data.keyword.cloud_notm}} container workload code and data are protected in use. The app code and data run in CPU-hardened enclaves. CPU-hardened enclaves are trusted areas of memory on the worker node that protect critical aspects of the app, which helps to keep the code and data confidential and unmodified. If you or your company require data sensitivity due to internal policies, government regulations, or industry compliance requirements, this solution might help you to move to the cloud. Example use cases include financial and healthcare institutions, or countries with government policies that require on-premises cloud solutions.
 
 For supported flavors, see the [{{site.data.keyword.datashield_short}} documentation](/docs/data-shield?topic=data-shield-getting-started).
 
-**Bare metal sounds awesome! What's stopping me from ordering one right now?**
-
-Bare metal servers are more expensive than virtual servers, and are best suited for high-performance apps that need more resources and host control. Bare metal worker nodes are also not available for VPC clusters.
+Bare metal sounds awesome! What's stopping me from ordering one right now?
+:   Bare metal servers are more expensive than virtual servers, and are best suited for high-performance apps that need more resources and host control. Bare metal worker nodes are also not available for VPC clusters.
 
 Bare metal servers are billed monthly. If you cancel a bare metal server before the end of the month, you are charged through the end of that month. After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.
 {: important}
@@ -249,7 +252,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 | **GPU bare metal, mg4c.32x384.2xp100**: Choose this type for mathematically intensive workloads such as high-performance computing, machine learning, deep learning, or 3D applications. This flavor has two Tesla P100 physical cards that have two GPUs per card for a total of four GPUs. Note that this Pascal GPU flavor does not support the Data Center GPU Manager because of a known issue from NVIDIA. | 32 / 384 GB | 2 TB HDD / 960 GB SSD | 10000 Mbps |
 | **Balanced bare metal, me4c.4x32**: Use for balanced workloads that require more compute resources than virtual machines offer. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 4 / 32 GB | 2 TB HDD / 2 TB HDD | 10000 Mbps |
 {: caption="Available bare metal flavors in {{site.data.keyword.openshiftlong_notm}}."}
-{: summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and auxiliary disk that are attached to the worker nodes for the flavor. The fourth column has the network speed for the worker nodes of the flavor."}
+
 
 
 
@@ -296,7 +299,7 @@ Choose a flavor, or machine type, with the right storage configuration to suppor
 | **RAM-intensive bare metal with SDS, mb4c.32x384.6x3.8tb.ssd**: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 32 / 384 GB | 2 TB HDD / 960 GB SSD | 6 disks, 3.8 TB Raw SSD (device paths: `/dev/sdc`, `/dev/sdd`, `/dev/sde`, `/dev/sdf`, `/dev/sdg`, `/dev/sdh`) | 10000 Mbps |
 | **RAM-intensive bare metal with SDS, mb4c.32x768.3.8tb.ssd**: If you need extra local storage for performance, use this disk-heavy flavor that supports software-defined storage (SDS). Maximize the RAM available to your worker nodes. This bare metal includes 2nd Generation Intel® Xeon® Scalable Processors with Intel® C620 Series chip sets for better performance for workloads such as machine learning, AI, and IoT. | 32 / 768 GB | 2 TB HDD / 960 GB SSD | 3.8 TB Raw SSD (device paths: `/dev/sdc`) | 10000 Mbps |
 {: caption="Available SDS flavors in {{site.data.keyword.openshiftlong_notm}}."}
-{: summary="The columns are read from left to right. The first column has the name and use case for the flavor. The second column has the cores and memory of the worker nodes for the flavor. The third column has the size of the primary and secondary disk that are attached to the worker nodes for the flavor. The fourth column has the information about additional SDS disks. The fifth column has the network speed for the worker nodes of the flavor."}
+
 
 
 
