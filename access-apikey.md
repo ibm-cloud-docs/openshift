@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-23"
 
 keywords: openshift
 
@@ -125,7 +125,7 @@ Other users within the region and resource group of the account share the API ke
 To see the {{site.data.keyword.cloud_notm}} IAM token for a CLI session, you can run `ibmcloud iam oauth-tokens`. 
 {: tip}
 
-### If users have access to the portfolio through an {{site.data.keyword.cloud_notm}} IAM token, how do I limit which commands a user can run?
+### How do I limit which commands a user can run?
 {: #limit-apikey-scopes}
 
 After you set up access to the portfolio for users in your account, you can then control which infrastructure actions the users can perform by assigning the appropriate [platform access role](/docs/openshift?topic=openshift-users#checking-perms). By assigning {{site.data.keyword.cloud_notm}} IAM roles to users, they are limited in which commands they can run against a cluster. For example, because the API key owner has all the required infrastructure roles, all infrastructure-related commands can be run in a cluster. But, depending on the {{site.data.keyword.cloud_notm}} IAM role that is assigned to a user, the user can run only some of those infrastructure-related commands.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-23"
 
 keywords: openshift
 subcollection: openshift
@@ -3207,6 +3207,8 @@ subcollection: openshift
 
     * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
 
+    * [What is the difference between virtual and physical machines?](/docs/openshift?topic=openshift-costs#physical-vs-virtual)
+
     * [Compute licenses](/docs/openshift?topic=openshift-costs#licenses)
 
     * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
@@ -3254,19 +3256,47 @@ subcollection: openshift
 
 * [{{site.data.keyword.redhat_openshift_notm}} API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
 
+    * [How is access to my API server granted?](/docs/openshift?topic=openshift-security#api-server-access)
+
+    * [What does {{site.data.keyword.openshiftlong_notm}} do to secure my API server and etcd data store?](/docs/openshift?topic=openshift-security#secure-api-server)
+
+    * [What else can I do to secure my API server?](/docs/openshift?topic=openshift-security#api-server-what-else)
+
     * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
 
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
+
+    * [Who owns the worker node and am I responsible to secure it?](/docs/openshift?topic=openshift-security#worker-node-owner)
+
+    * [How does my worker node setup look?](/docs/openshift?topic=openshift-security#worker-node-setup)
 
 * [Network](/docs/openshift?topic=openshift-security#network)
 
     * [Network segmentation and privacy for classic clusters](/docs/openshift?topic=openshift-security#network_segmentation)
 
+    * [What network traffic is allowed for my cluster by default?](/docs/openshift?topic=openshift-security#default-network-traffic-allowed)
+
+    * [What is network segmentation and how can I set it up for a cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
+
+    * [What else can I do to reduce the surface for external attacks?](/docs/openshift?topic=openshift-security#external-what-else)
+
+    * [What if I want to connect my cluster to an on-prem data center?](/docs/openshift?topic=openshift-security#onprem-network-setup)
+
     * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
+
+    * [What network traffic is allowed for my cluster by default?](/docs/openshift?topic=openshift-security#vpc-network-traffic-default)
+
+    * [What is network segmentation and how can I set it up for a cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
+
+    * [What else can I do to reduce the surface for external attacks?](/docs/openshift?topic=openshift-security#vpc-external-what-else)
 
     * [Securely expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
 
     * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
+
+    * [Can I use security groups to manage my cluster's network traffic?](/docs/openshift?topic=openshift-security#can-i-use-security-groups)
+
+    * [How can I do TLS termination with LoadBalancer and Ingress services?](/docs/openshift?topic=openshift-security#tls-termination-lb)
 
 * [Persistent storage](/docs/openshift?topic=openshift-security#storage)
 
@@ -3277,6 +3307,8 @@ subcollection: openshift
 * [Image and registry](/docs/openshift?topic=openshift-security#images_registry)
 
 * [Container isolation and security](/docs/openshift?topic=openshift-security#container)
+
+    * [Should I set up a single-tenant or a multi-tenant cluster?](/docs/openshift?topic=openshift-security#single-tenant-or-multi)
 
 * [Storing personal information](/docs/openshift?topic=openshift-security#pi)
 
@@ -3393,7 +3425,7 @@ subcollection: openshift
 
     * [What permissions does the user who sets the API key need? How do I give the user these permissions?](/docs/openshift?topic=openshift-access-creds#what-perms-api-key)
 
-    * [If users have access to the portfolio through an {{site.data.keyword.cloud_notm}} IAM token, how do I limit which commands a user can run?](/docs/openshift?topic=openshift-access-creds#limit-apikey-scopes)
+    * [How do I limit which commands a user can run?](/docs/openshift?topic=openshift-access-creds#limit-apikey-scopes)
 
     * [What if I don't want to assign the API key owner or credentials owner the Super User infrastructure role?](/docs/openshift?topic=openshift-access-creds#non-superuser)
 
@@ -3439,7 +3471,7 @@ subcollection: openshift
 
     * [Can I assign custom RBAC roles to groups of users?](/docs/openshift?topic=openshift-users#custom-rbac-groups)
 
-    * [When do I need to use cluster role bindings and role bindings that are not tied to the IAM permissions that I set?](/docs/openshift?topic=openshift-users#when-do-i-use-custom-rbac)
+    * [When do I need to use custom cluster role bindings and role bindings?](/docs/openshift?topic=openshift-users#when-do-i-use-custom-rbac)
 
 * [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
 

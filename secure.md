@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-11-23"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ External attacks
 :   Attackers that gain access to your cluster, deployed resources, apps, or personal information.
 
 Vulnerable deployments
-:   Known vulernabilities are exploited to gain access to the cloud environment and run malicious softawre.
+:   Known vulnerabilities are exploited to gain access to the cloud environment and run malicious softawre.
 
 Compromised or lost data
 :   Incorrect storage of sensitive data and missing encryption.
@@ -68,7 +68,8 @@ The {{site.data.keyword.redhat_openshift_notm}} API server and etcd data store a
 
 {{site.data.keyword.redhat_openshift_notm}} provides security controls and limits access to protect these components and reduce the risk of cyber attacks.
 
-**How is access to my {{site.data.keyword.redhat_openshift_notm}} API server granted?**
+### How is access to my API server granted?
+{: #api-server-access}
 
 By default, Kubernetes requires every request to go through several stages before access to the API server is granted.
 
@@ -81,7 +82,8 @@ Authorization
 Admission control
 :   Validates or mutates requests before they are processed by the {{site.data.keyword.redhat_openshift_notm}} API server. Many Kubernetes features require admission controllers to properly function.
 
-**What does {{site.data.keyword.openshiftlong_notm}} do to secure my {{site.data.keyword.redhat_openshift_notm}} API server and etcd data store?**
+### What does {{site.data.keyword.openshiftlong_notm}} do to secure my API server and etcd data store?
+{: #secure-api-server}
 
 The following image shows the default cluster security settings that address authentication, authorization, admission control, and secure connectivity between the Kubernetes master and worker nodes.
 
@@ -133,7 +135,8 @@ You can [install your own admission controllers in the cluster](https://kubernet
 If you manually installed admission controllers and you don't want to use them anymore, make sure to remove them entirely. If admission controllers are not entirely removed, they might block all actions that you want to perform on the cluster.
 {: note}
 
-**What else can I do to secure my {{site.data.keyword.redhat_openshift_notm}} API server?**
+### What else can I do to secure my API server?
+{: #api-server-what-else}
 
 You can restrict connections to the master nodes by enabling the private cloud service endpoint, and creating a subnet allowlist. This combination provides the greatest degree of isolation.. Note that your options for service endpoints vary based on your cluster's {{site.data.keyword.redhat_openshift_notm}} version and infrastructure provider. For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_basics#workeruser-master) and [VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master).
 
@@ -147,25 +150,23 @@ Revoke existing certificate authority (CA) certificates in your cluster and issu
 
 By default, certificate authority (CA) certificates are administered to secure access to various components of your cluster, such as the master API server. As you use your cluster, you might want to revoke the certificates issued by the existing CA. For example, the administrators of your team might use a certificate signing request (CSR) to manually generate certificates that are signed by the cluster's CA for worker nodes in the cluster. If an administrator leaves your organization, you can ensure that they no longer have admin access to your cluster by creating a new CA and certificates for your cluster, and removing the old CA and certificates.
 
-To rotate the CA certificates for your cluster:
-
 1. Create a CA for your cluster. Certificates that are signed by this new CA are issued for the cluster master components, and the API server is refreshed.
 
     ```sh
-    ibmcloud oc cluster ca create -c <cluster_name_or_ID>
+    ibmcloud oc cluster ca create -c CLUSTER
     ```
     {: pre}
 
 2. Ensure that your cluster's master health is normal, the API server refresh is complete, and any master updates are complete. It might take several minutes for the master API server to refresh.
 
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster CLUSTER
     ```
     {: pre}
 
 3. Check the status of the CA creation. In the output, note the timestamp in the **Action Completed** field.
     ```sh
-    ibmcloud oc cluster ca status -c <cluster_name_or_ID>
+    ibmcloud oc cluster ca status -c CLUSTER
     ```
     {: pre}
 
@@ -181,7 +182,7 @@ To rotate the CA certificates for your cluster:
 4. Download the updated Kubernetes configuration data and certificates in your cluster's `kubeconfig` file.
 
     ```sh
-    ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --network
+    ibmcloud oc cluster config -c CLUSTER --admin --network
     ```
     {: pre}
 
@@ -194,16 +195,14 @@ To rotate the CA certificates for your cluster:
 7. [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) to pick up the certificates that are signed by the new CA.
 
 8. Rotate the old certificates with the new certificates. The old CA certificates in your cluster are removed.
-
     ```sh
-    ibmcloud oc cluster ca rotate -c <cluster_name_or_ID>
+    ibmcloud oc cluster ca rotate -c CLUSTER
     ```
     {: pre}
 
 9. Check the status of the CA certificate rotation.
-
     ```sh
-    ibmcloud oc cluster ca status -c <cluster_name_or_ID>
+    ibmcloud oc cluster ca status -c CLUSTER
     ```
     {: pre}
 
@@ -224,7 +223,8 @@ To rotate the CA certificates for your cluster:
 Worker nodes carry the deployments and services that make up your app. When you host workloads in the public cloud, you want to ensure that your app is protected from being accessed, changed, or monitored by an unauthorized user or software.
 {: shortdesc}
 
-**Who owns the worker node and am I responsible to secure it?**
+### Who owns the worker node and am I responsible to secure it?
+{: #worker-node-owner}
 
 The ownership of a worker node depends on the type of cluster that you create and the infrastructure provider that you choose.
 
@@ -237,7 +237,8 @@ For more information, see [Your responsibilities by using {{site.data.keyword.op
 Use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) regularly (such as monthly) to deploy updates and security patches to the operating system and to update the {{site.data.keyword.redhat_openshift_notm}} version that your worker nodes run. When updates are available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the `ibmcloud oc clusters ls` or `ibmcloud oc workers ls --cluster <cluster_name>` commands. Worker node updates are provided by IBM as a full worker node image that includes the latest security patches. To apply the updates, the worker node must be reimaged and reloaded with the new image. Keys for the root user are automatically rotated when the worker node is reloaded.
 {: important}
 
-**How does my worker node setup look?**
+### How does my worker node setup look?
+{: #worker-node-setup}
 
 The following image shows the components that are set up for every worker node to protect your worker node from malicious attacks.
 
@@ -289,7 +290,8 @@ The classic approach to protect a company's network is to set up a firewall and 
 To protect your network and limit the range of damage that a user can do when access to a network is granted, you must make sure that your workloads are as isolated as possible and that you limit the number of apps and worker nodes that are publicly exposed.
 {: shortdesc}
 
-**What network traffic is allowed for my cluster by default?**
+### What network traffic is allowed for my cluster by default?
+{: #default-network-traffic-allowed}
 
 All containers are protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked with the following exceptions:
 - **NodePort**: The [Kubernetes NodePort range](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport){: external} is opened by default so that you can expose apps with [NodePort services](/docs/openshift?topic=openshift-nodeport). To block inbound network traffic on NodePorts in your cluster, see [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
@@ -297,7 +299,8 @@ All containers are protected by [predefined Calico network policy settings](/doc
 
 Access from the {{site.data.keyword.redhat_openshift_notm}} master to the worker node's kubelet is secured by an OpenVPN ({{site.data.keyword.redhat_openshift_notm}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.redhat_openshift_notm}} version 4.8 or later) tunnel. For more information, see the [{{site.data.keyword.openshiftlong_notm}} architecture](/docs/openshift?topic=openshift-service-architecture).
 
-**What is network segmentation and how can I set it up for a cluster?**
+### What is network segmentation and how can I set it up for a cluster?
+{: #network-segmentation-setup}
 
 Network segmentation describes the approach to divide a network into multiple subnetworks. You can group apps and related data to be accessed by a specific group in your organization. Apps that run in one subnetwork can't see or access apps in another subnetwork. Network segmentation also limits the access that is provided to an insider or third-party software and can limit the range of malicious activities.   
 
@@ -314,7 +317,8 @@ Review the following table to see your options for how to achieve network segmen
 |Support for {{site.data.keyword.cloud_notm}} network firewalls|{{site.data.keyword.openshiftlong_notm}} is compatible with all [{{site.data.keyword.cloud_notm}} firewall offerings](https://www.ibm.com/cloud/network-security){: external}. For example, you can set up a firewall with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion. For example, you might choose to set up a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) to act as your firewall and block unwanted traffic. When you set up a firewall, [you must also open up the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall) for each region so that the master and the worker nodes can communicate.|
 {: caption="Network segmentation options" caption-side="bottom"}
 
-**What else can I do to reduce the surface for external attacks?**
+### What else can I do to reduce the surface for external attacks?
+{: #external-what-else}
 
 The more apps or worker nodes that you expose publicly, the more steps you must take to prevent external malicious attacks. Review the following table to find options for how to keep apps and worker nodes private.
 
@@ -324,7 +328,8 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 |Limit public internet connectivity with edge nodes|Every worker node is configured to accept app pods and associated load balancer or ingress pods. You can label worker nodes as [edge nodes](/docs/openshift?topic=openshift-edge#edge) to force load balancer pods to be deployed to these worker nodes only. In addition, you can [taint your worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads) so that app pods can't schedule onto the edge nodes. With edge nodes, you can isolate the networking workload on fewer worker nodes in your cluster and keep other worker nodes in the cluster private.|
 {: caption="Private services and worker node options" caption-side="bottom"}
 
-**What if I want to connect my cluster to an on-prem data center?**
+### What if I want to connect my cluster to an on-prem data center?
+{: #onprem-network-setup}
 
 To connect your worker nodes and apps to an on-prem data center, you can configure a [VPN IPSec endpoint with a strongSwan service, a Virtual Router Appliance, or with a Fortigate Security Appliance](/docs/openshift?topic=openshift-vpn#vpn).
 
@@ -334,7 +339,8 @@ To connect your worker nodes and apps to an on-prem data center, you can configu
 To protect your network and limit the range of damage that a user can do when access to a network is granted, you must make sure that your workloads are as isolated as possible and that you limit the number of apps and worker nodes that are publicly exposed.
 {: shortdesc}
 
-**What network traffic is allowed for my cluster by default?**
+### What network traffic is allowed for my cluster by default?
+{: #vpc-network-traffic-default}
 
 By default, worker nodes are connected to [VPC subnets](/docs/openshift?topic=openshift-vpc-subnets) on the private network only and don't have a public network interface. All public ingress to your worker nodes is blocked. Public egress from your worker nodes is only allowed if the workers are connected to a VPC subnet that has a public gateway.
 
@@ -345,7 +351,8 @@ If you deploy apps in your cluster that must receive traffic requests from the i
 Security groups are applied to your VPC instance and VPC ALBs by defualt. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).
 {: note}
 
-**What is network segmentation and how can I set it up for a cluster?**
+### What is network segmentation and how can I set it up for a cluster?
+{: #network-segment-what-is}
 
 Network segmentation describes the approach to divide a network into multiple subnetworks. You can group apps and related data to be accessed by a specific group in your organization. Apps that run in one subnetwork can't see or access apps in another subnetwork. Network segmentation also limits the access that is provided to an insider or third-party software and can limit the range of malicious activities.  
 
@@ -355,7 +362,8 @@ VPC subnets provide a channel for connectivity among the worker nodes within the
 
 To achieve further private network segmentation between VPC subnets for your account, you can set up custom network policies with VPC access control lists (ACLs). When you create a VPC, a default ACL is created in the format `allow-all-network-acl-<VPC_ID>` for the VPC. Any subnet that you create in the VPC is attached to this ACL by default. The ACL includes an inbound rule and an outbound rule that allow all traffic between your worker nodes on a subnet and any system on the subnets in the same VPC. If you want to specify which private network traffic is permitted to the worker nodes on your VPC subnets, you can create a custom ACL for each subnet in the VPC. For example, you can [create a set of ACL rules](/docs/openshift?topic=openshift-vpc-acls) to block most inbound and outbound private network traffic of a cluster, while allowing communication that is necessary for the cluster to function.
 
-**What else can I do to reduce the surface for external attacks?**
+### What else can I do to reduce the surface for external attacks?
+{: #vpc-external-what-else}
 
 The more apps or worker nodes that you expose publicly, the more steps you must take to prevent external malicious attacks. Review the following table to find options for how to keep apps and worker nodes private.
 
@@ -364,8 +372,6 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 |Limit the number of exposed apps|By default, your apps and services that run within the cluster are not reachable over the public internet. You can choose if you want to expose your apps to the public, or if you want your apps and services be reachable on the private network only. When you keep your apps and services private, you can leverage the built-in security features to assure secured communication between worker nodes and pods. To expose services and apps to the public internet, you can leverage the [VPC load balancer and Ingress ALB support](/docs/containers?topic=containers-cs_network_planning#pattern_public_vpc) to securely make your services publicly available. Ensure that only necessary services are exposed, and revisit the list of exposed apps regularly to ensure that they are still valid. |
 |Limit public network egress to one subnet with a public gateway|If pods on your worker nodes need to connect to a public external endpoint, you can attach a public gateway to the subnet that those worker nodes are on.|
 {: caption="VPC network security options" caption-side="bottom"}
-
-**What if I want to connect my cluster to other networks, like other VPCs, an on-prem data center, or IBM Cloud classic resources?**
 
 Depending on the network that you want to connect your worker nodes to, you can [choose a VPN solution](/docs/openshift?topic=openshift-vpc-vpnaas).
 
@@ -377,8 +383,6 @@ If you want to allow incoming network traffic from the internet, you can expose 
 
 Every {{site.data.keyword.redhat_openshift_notm}} cluster is automatically set up with a {{site.data.keyword.redhat_openshift_notm}} router that is assigned a unique domain name and secured with a TLS certificate. When you expose your app by using a route, your app is assigned a URL from the {{site.data.keyword.redhat_openshift_notm}} router.
 
-**How can I create secured routes and control TLS termination?**
-
 When you create a route for your app, you can decide to create a secured (HTTPS) or unsecured (HTTP) route. For secured routes, you can decide where you want to implement the TLS termination, such as at the router or at the pod. For more information, see [Exposing apps with routes](/docs/openshift?topic=openshift-openshift_routes).
 
 ### Securely expose apps with LoadBalancer and Ingress services
@@ -387,7 +391,8 @@ When you create a route for your app, you can decide to create a secured (HTTPS)
 You can use network load balancer (NLB) and Ingress application load balancer (ALB) networking services to connect your apps to the public internet or to external private networks. Review the following optional settings for NLBs and ALBs that you can use to meet back-end app security requirements or encrypt traffic as it moves through your cluster.
 {: shortdesc}
 
-**Can I use security groups to manage my cluster's network traffic?**
+### Can I use security groups to manage my cluster's network traffic?
+{: #can-i-use-security-groups}
 
 Classic clusters: {{site.data.keyword.cloud_notm}} [security groups](/docs/security-groups?topic=security-groups-about-ibm-security-groups#about-ibm-security-groups) are applied to the network interface of a single virtual server to filter traffic at the hypervisor level. If you want to manage traffic for each worker node, you can use security groups. When you create a security group, you must allow the VRRP protocol, which {{site.data.keyword.openshiftlong_notm}} uses to manage NLB IP addresses. To uniformly manage traffic for your cluster across all your worker nodes, use [Calico and Kubernetes policies](/docs/openshift?topic=openshift-network_policies).
 
@@ -402,7 +407,8 @@ Because the worker nodes of your VPC cluster exist in a service account and are 
 
 
 
-**How can I do TLS termination with LoadBalancer and Ingress services?**
+### How can I do TLS termination with LoadBalancer and Ingress services?
+{: #tls-termination-lb}
 
 The Ingress service offers TLS termination at two points in the traffic flow:
 * [Decrypt package upon arrival](/docs/containers?topic=containers-ingress-types#alb-comm-create): By default, the Ingress ALB load balances HTTP network traffic to the apps in your cluster. To also load balance incoming HTTPS connections, you can configure the ALB to decrypt the network traffic and forward the decrypted request to the apps that are exposed in your cluster. If you use the IBM-provided Ingress subdomain, you can use the IBM-provided TLS certificate. If you use a custom domain, you can use your own TLS certificate to manage TLS termination.
@@ -437,36 +443,30 @@ You can also use an {{site.data.keyword.cloud_notm}} database service, such as [
 The key to detect malicious attacks in your cluster is the proper monitoring and logging of metrics and all the events that happen in the cluster. Monitoring and logging can also help you understand the cluster capacity and availability of resources for your app so that you can plan accordingly to protect your apps from a downtime.
 {: shortdesc}
 
-**Does IBM monitor my cluster?**
+Does IBM monitor my cluster?
+:   Every cluster master is continuously monitored by IBM to control and remediate process level Denial-Of-Service (DOS) attacks. {{site.data.keyword.openshiftlong_notm}} automatically scans every node where the master is deployed for vulnerabilities that are found in Kubernetes, {{site.data.keyword.redhat_openshift_notm}}, and OS-specific security fixes. If vulnerabilities are found, {{site.data.keyword.openshiftlong_notm}} automatically applies fixes and resolves vulnerabilities on behalf of the user to ensure master node protection.  
 
-Every cluster master is continuously monitored by IBM to control and remediate process level Denial-Of-Service (DOS) attacks. {{site.data.keyword.openshiftlong_notm}} automatically scans every node where the master is deployed for vulnerabilities that are found in Kubernetes, {{site.data.keyword.redhat_openshift_notm}}, and OS-specific security fixes. If vulnerabilities are found, {{site.data.keyword.openshiftlong_notm}} automatically applies fixes and resolves vulnerabilities on behalf of the user to ensure master node protection.  
-
-**What information is logged?**
-
-By default, {{site.data.keyword.openshiftlong_notm}} automatically collects logs for the following cluster components:
-
-- **Containers**: Logs that are written to `STDOUT` or `STDERR`.
-- **Apps**: Logs that are written to a specific path inside your app.
-- **Workers**: Logs from the Red Hat Enterprise Linux operating system that are sent to `/var/log/syslog` and `/var/log/auth.log`.
-- **{{site.data.keyword.redhat_openshift_notm}} API server**: Every cluster-related action that is sent to the {{site.data.keyword.redhat_openshift_notm}} API server is logged for auditing reasons, including the time, the user, and the affected resource. For more information, see [Kubernetes audit logs](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/){: external}. You can access these logs by using {{site.data.keyword.at_full_notm}}. For more information, see the [getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started). 
-- **Routers**: Logs inbound network traffic on routes. 
-- **Kubernetes system components**: Logs from the `kubelet`, the `kube-proxy`, and other components that run in the `kube-system` namespace.
+What information is logged?
+:   By default, {{site.data.keyword.openshiftlong_notm}} automatically collects logs for the following cluster components:
+    - **Containers**: Logs that are written to `STDOUT` or `STDERR`.
+    - **Apps**: Logs that are written to a specific path inside your app.
+    - **Workers**: Logs from the Red Hat Enterprise Linux operating system that are sent to `/var/log/syslog` and `/var/log/auth.log`.
+    - **{{site.data.keyword.redhat_openshift_notm}} API server**: Every cluster-related action that is sent to the {{site.data.keyword.redhat_openshift_notm}} API server is logged for auditing reasons, including the time, the user, and the affected resource. For more information, see [Kubernetes audit logs](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/){: external}. You can access these logs by using {{site.data.keyword.at_full_notm}}. For more information, see the [getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started). 
+    - **Routers**: Logs inbound network traffic on routes. 
+    - **Kubernetes system components**: Logs from the `kubelet`, the `kube-proxy`, and other components that run in the `kube-system` namespace.
 
 To access the logs of your cluster components, set up [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging). {{site.data.keyword.la_full_notm}} provides access to all your logs and you can aggregate logs and build your own customized views across multiple clusters.
 
-**How can I monitor the health and performance of my cluster?**
-
-You can verify the health, capacity, and performance of your apps, services, and worker nodes by monitoring your cluster components and compute resources from the {{site.data.keyword.openshiftlong_notm}} console or CLI, such as the CPU and memory usage. To view more in-depth metrics for your cluster, you can use the built-in monitoring capabilities that are based on open source technologies, such as [Prometheus and Grafana](http://docs.openshift.com/container-platform/4.10/monitoring/monitoring-overview.html){: external}. Prometheus is automatically installed when you create the cluster and you can use the tool to access real-time cluster and app metrics. Prometheus metrics are not stored persistently. To access historic metrics and to compare metrics across multiple clusters, use [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor) instead.
+How can I monitor the health and performance of my cluster?
+:   You can verify the health, capacity, and performance of your apps, services, and worker nodes by monitoring your cluster components and compute resources from the {{site.data.keyword.openshiftlong_notm}} console or CLI, such as the CPU and memory usage. To view more in-depth metrics for your cluster, you can use the built-in monitoring capabilities that are based on open source technologies, such as [Prometheus and Grafana](http://docs.openshift.com/container-platform/4.10/monitoring/monitoring-overview.html){: external}. Prometheus is automatically installed when you create the cluster and you can use the tool to access real-time cluster and app metrics. Prometheus metrics are not stored persistently. To access historic metrics and to compare metrics across multiple clusters, use [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor) instead.
 
 To set up a host-based intrusion detection system (HIDS) and security event log monitoring (SELM), install third-party tools that are designed to monitor your cluster and containerized apps to detect intrusion or misuse, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or the [Sysdig Falco project](https://sysdig.com/opensource/falco/){: external}.
 
-**How can I audit events that happen in my cluster?**
+How can I audit events that happen in my cluster?
+:   You can [set up {{site.data.keyword.cloudaccesstraillong}} in your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-at_events#at_events). For more information, view the [{{site.data.keyword.cloudaccesstrailshort}} documentation](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
-You can [set up {{site.data.keyword.cloudaccesstraillong}} in your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-at_events#at_events). For more information, view the [{{site.data.keyword.cloudaccesstrailshort}} documentation](/docs/activity-tracker?topic=activity-tracker-getting-started).
-
-**What are my options to enable trust in my cluster?**
-
-By default, {{site.data.keyword.openshiftlong_notm}} provides many features for your cluster components so that you can deploy your containerized apps in a security-rich environment. Extend your level of trust in your cluster to better ensure that what happens within your cluster is what you intended to happen. You can implement trust in your cluster in various ways, as shown in the following diagram.
+What are my options to enable trust in my cluster?
+:   By default, {{site.data.keyword.openshiftlong_notm}} provides many features for your cluster components so that you can deploy your containerized apps in a security-rich environment. Extend your level of trust in your cluster to better ensure that what happens within your cluster is what you intended to happen. You can implement trust in your cluster in various ways, as shown in the following diagram.
 
 ![Deploying containers with trusted content.](images/trusted_story.png "Deploying containers with trusted content"){: caption="Figure 1. Deploying containers with trusted content" caption-side="bottom"}
 
@@ -513,15 +513,11 @@ The following diagram presents an example request flow between the kubelet and C
 Every deployment is based on an image that holds the instructions for how to spin up the container that runs your app. These instructions include the operating system inside the container and extra software that you want to install. To protect your app, you must protect the image and establish checks to ensure the image's integrity.
 {: shortdesc}
 
-**Should I use a public or a private registry to store my images?**
+Should I use a public or a private registry to store my images?
+:   Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.openshift.com/container-platform/4.10/registry/index.html){: external} that is automatically set up in your {{site.data.keyword.redhat_openshift_notm}} cluster, and make sure to control access to the registry and the image content that can be pushed.
 
-Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.openshift.com/container-platform/4.10/registry/index.html){: external} that is automatically set up in your {{site.data.keyword.redhat_openshift_notm}} cluster, and make sure to control access to the registry and the image content that can be pushed.
-
-**Why is it important to check images against vulnerabilities?**
-
-Research shows that most malicious attacks leverage known software vulnerabilities and weak system configurations. When you deploy a container from an image, the container spins up with the OS and extra binaries that you described in the image. Just like you protect your virtual or physical machine, you must eliminate known vulnerabilities in the OS and binaries that you use inside the container to protect your app from being accessed by unauthorized users.
-
-**How can I ensure secure container images?**
+Why is it important to check images against vulnerabilities?
+:   Research shows that most malicious attacks leverage known software vulnerabilities and weak system configurations. When you deploy a container from an image, the container spins up with the OS and extra binaries that you described in the image. Just like you protect your virtual or physical machine, you must eliminate known vulnerabilities in the OS and binaries that you use inside the container to protect your app from being accessed by unauthorized users.
 
 To protect your apps, consider to address the following areas:
 
@@ -531,11 +527,7 @@ To protect your apps, consider to address the following areas:
 
 3. **Regularly scan running containers:**. Even if you deployed a container from an image that passes the vulnerability check, the operating system or binaries that run in the container might get vulnerable over time. To protect your app, you must ensure that running containers are regularly scanned so that you can detect and remediate vulnerabilities. Depending on the app, to add extra security, you can establish a job that takes down vulnerable containers after they are detected.
 
-**Can I use the built-in container registry in my {{site.data.keyword.redhat_openshift_notm}} cluster to address build automation, image and container scanning?**
-
 You can use the built-in container registry to automate the container image build process from your source code in an external source repository to your internal registry. However, images are not automatically scanned for vulnerabilities when they are pushed to the internal registry. To set up image scanning, set up a registry namespace and push your images to the managed {{site.data.keyword.registrylong_notm}} instead. 
-
-**How can {{site.data.keyword.registrylong_notm}} help me to protect my images and deployment process?**  
 
 
 ![Deploying containers with trusted content](images/oc_image_security.png "Title text that shows on hover here"){: caption="Figure 1. Deploying containers with trusted content" caption-side="bottom"})
@@ -550,9 +542,8 @@ You can use the built-in container registry to automate the container image buil
 
 
 
-**What options do I have to scan running containers for vulnerabilities?**
-
-You can install third-party solutions in your cluster, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or [StackRox](https://www.stackrox.com){: external} to scan running containers and block malicious activities when they are detected.
+What options do I have to scan running containers for vulnerabilities?
+:   You can install third-party solutions in your cluster, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or [StackRox](https://www.stackrox.com){: external} to scan running containers and block malicious activities when they are detected.
 
 
 
@@ -562,16 +553,16 @@ You can install third-party solutions in your cluster, such as [Twistlock](https
 When you run multiple apps in your cluster, you want to make sure that your workloads run isolated from each other and that you restrict the permissions of your pods within the cluster to avoid noisy neighbors or denial-of-service attacks.
 {: shortdesc}
 
-**What is a {{site.data.keyword.redhat_openshift_notm}} project and why should I use it?**
-
-{{site.data.keyword.redhat_openshift_notm}} projects are a way to virtually partition a cluster and provide isolation for your deployments and the groups of users that want to move their workload onto the cluster. With projects, you can organize resources across worker nodes and also across zones in multizone clusters.  
-
-Every cluster is set up with a set of default {{site.data.keyword.redhat_openshift_notm}} projects that include the deployments and services that are required for {{site.data.keyword.openshiftlong_notm}} to run properly and manage the cluster. For more information, see the [service architecture](/docs/openshift?topic=openshift-service-architecture). Cluster administrators automatically have access to these projects and can set up additional projects in the cluster. In addition, cluster users who are granted access to the cluster can create their own project and, as the creator of the project, can manage the project with administrator permissions. However, cluster users don't have access to other projects by default, unless they are granted access by a cluster administrator. 
+What is a {{site.data.keyword.redhat_openshift_notm}} project and why should I use it?
+:   {{site.data.keyword.redhat_openshift_notm}} projects are a way to virtually partition a cluster and provide isolation for your deployments and the groups of users that want to move their workload onto the cluster. With projects, you can organize resources across worker nodes and also across zones in multizone clusters.  
+:   Every cluster is set up with a set of default {{site.data.keyword.redhat_openshift_notm}} projects that include the deployments and services that are required for {{site.data.keyword.openshiftlong_notm}} to run properly and manage the cluster. For more information, see the [service architecture](/docs/openshift?topic=openshift-service-architecture). 
+:   Cluster administrators automatically have access to these projects and can set up additional projects in the cluster. In addition, cluster users who are granted access to the cluster can create their own project and, as the creator of the project, can manage the project with administrator permissions. However, cluster users don't have access to other projects by default, unless they are granted access by a cluster administrator. 
 
 For every project that you have in the cluster, make sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-users#rbac) to limit access to this project, control what gets deployed, and to set proper [resource quotas and limit ranges](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html){: external}.
 {: important}
 
-**Should I set up a single-tenant or a multi-tenant cluster?**
+### Should I set up a single-tenant or a multi-tenant cluster?
+{: #single-tenant-or-multi}
 
 In a single-tenant cluster, you create one cluster for every group of people that must run workloads in a cluster. Usually, this team is responsible to manage the cluster and to properly configure and secure it. Multi-tenant clusters use multiple projects to isolate tenants and their workloads.
 
@@ -595,20 +586,17 @@ Multi-tenant clusters use {{site.data.keyword.redhat_openshift_notm}} projects t
 Although single-tenant and multi-tenant clusters come with roughly the same costs, single-tenant clusters provide a higher level of isolation than the projects in a multi-tenant cluster. For better workload isolation, use single-tenant clusters.
 {: important}
 
-**How can I control pod access to other resources in the cluster?**
-
 By default, any pod has access to any other pod in the cluster. Additionally, any pod has access to any services that are exposed by the pod network, such as a metrics service, the cluster DNS, the API server, or any services that you manually create in your cluster. [Kubernetes network policies](/docs/containers?topic=containers-network_policies#isolate_services) protect pods from internal network traffic. For example, if most or all pods don't require access to specific pods or services, and you want to ensure that pods by default can't access those pods or services, you can create a Kubernetes network policy to block ingress traffic to those pods or services. Kubernetes network policies can also help you enforce workload isolation between namespaces by controlling how pods and services in different namespaces can communicate.
 
-**How can I control pod permissions?**
+How can I control pod permissions?
+:   To control pod permissions within or across projects, {{site.data.keyword.openshiftlong_notm}} uses security context constraints (SCCs). By default, every cluster is set up with [{{site.data.keyword.redhat_openshift_notm}} SCCs](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) and a set of [IBM-provided SCCs](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs) that you can assign to service accounts, pods, deployments, or projects to limit the permissions within the cluster. If you don't explicitly assign an SCC, your pods use the `restricted` SCC. {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than the default pod security policies in community Kubernetes clusters. You might need to modify an app that runs in a community Kubernetes cluster so that this app can run in {{site.data.keyword.redhat_openshift_notm}}. For more information, see [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc). 
 
-To control pod permissions within or across projects, {{site.data.keyword.openshiftlong_notm}} uses security context constraints (SCCs). By default, every cluster is set up with [{{site.data.keyword.redhat_openshift_notm}} SCCs](/docs/openshift?topic=openshift-openshift_scc#oc_sccs) and a set of [IBM-provided SCCs](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs) that you can assign to service accounts, pods, deployments, or projects to limit the permissions within the cluster. If you don't explicitly assign an SCC, your pods use the `restricted` SCC. {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than the default pod security policies in community Kubernetes clusters. You might need to modify an app that runs in a community Kubernetes cluster so that this app can run in {{site.data.keyword.redhat_openshift_notm}}. For more information, see [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc). 
+What else can I do to protect my container?
+:   Limit the number of privileged containers. Containers run as a separate Linux process on the compute host that is isolated from other processes. Although users have root access inside the container, the permissions of this user are limited outside the container to protect other Linux processes, the host file system, and host devices. Some apps require access to the host file system or advanced permissions to run properly. You can run containers in privileged mode to allow the container the same access as the processes running on the compute host.
+:   Keep in mind that privileged containers can cause huge damage to the cluster and the underlying compute host if they become compromised. Try to limit the number of containers that run in privileged mode and consider changing the configuration for your app so that the app can run without advanced permissions. 
 
-**What else can I do to protect my container?**
-
-Limit the number of privileged containers
-:   Containers run as a separate Linux process on the compute host that is isolated from other processes. Although users have root access inside the container, the permissions of this user are limited outside the container to protect other Linux processes, the host file system, and host devices. Some apps require access to the host file system or advanced permissions to run properly. You can run containers in privileged mode to allow the container the same access as the processes running on the compute host.
-:   Keep in mind that privileged containers can cause huge damage to the cluster and the underlying compute host if they become compromised. Try to limit the number of containers that run in privileged mode and consider changing the configuration for your app so that the app can run without advanced permissions. If you want to block privileged containers from running in your cluster, consider setting up custom [security context constraints](/docs/openshift?topic=openshift-openshift_scc#customize_sccs).
-    {: important}
+If you want to block privileged containers from running in your cluster, consider setting up custom [security context constraints](/docs/openshift?topic=openshift-openshift_scc#customize_sccs).
+{: important}
 
 Apply OS security settings to pods
 :   You can customize the default [security context constraints](https://docs.openshift.com/enterprise/3.0/admin_guide/manage_scc.html){: external} to control the user ID and group ID that can run inside the container, or the user ID and group ID that owns the volume mount path. Setting a specific user ID helps facilitate a least privilege model. If the security context does not specify a user, Kubernetes automatically uses the user that is specified in the container image. For more information , see [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc).

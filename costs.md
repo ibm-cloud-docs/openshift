@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-23"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -37,14 +37,13 @@ Monthly resources are billed based on the first of the month for usage in the pr
 Clusters can have two main types of worker nodes: virtual or physical (bare metal) machines. Flavor (machine type) availability and pricing varies by the zone that you deploy your cluster to.
 {: shortdesc}
 
-**When do worker nodes begin to incur charges?**
+When do worker nodes begin to incur charges?**
+:   Worker nodes begin to incur charges after they complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/containers?topic=containers-health-monitor#states).
 
-Worker nodes begin to incur charges after they complete the `provisioning` state and continue until you delete the worker nodes and they complete the `deleting` state. For more information, see [Worker node states](/docs/containers?topic=containers-health-monitor#states).
+### What is the difference between virtual and physical machines?
+{: #physical-vs-virtual}
 
-**What is the difference between virtual and physical machines?**
-
-
-**Virtual machines** feature greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price than bare-metal. However, VMs have a performance trade-off when compared to bare metal specs, such as networking Gbps, RAM and memory thresholds, and storage options. Keep in mind these factors that impact your VM costs.
+**Virtual machines** feature greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price than bare-metal. However, VMs have a performance tradeoff when compared to bare metal specs, such as networking Gbps, RAM and memory thresholds, and storage options. Keep in mind these factors that impact your VM costs.
 * **Shared vs. dedicated**: If you share the underlying hardware of the VM, the cost is lower than dedicated hardware, but the physical resources are not dedicated to your VM.
 * **Hourly billing only**: Hourly billing offers more flexibility to order and cancel VMs quickly. You are charged an hourly rate that is metered for only the time that that the worker node is provisioned. The time is not rounded up or down to the nearest hour, but is metered in minutes and charged at the hourly rate. For example, if your worker node is provisioned for 90 minutes, you are charged the hourly rate for 1.5 hours, not 2 hours.
 * **Tiered hours per month**: The [pricing](https://cloud.ibm.com/kubernetes/catalog/about#pricing){: external} is billed hourly in [graduated tiered](/docs/billing-usage?topic=billing-usage-charges#graduated_tier). As your VM remains ordered for a tier of hours within a billing month, the hourly rate that you are charged lowers. The tiers of hours are as follows:
@@ -98,7 +97,7 @@ a {{site.data.keyword.redhat_openshift_notm}} license is billed for every four v
 
 When you estimate the cost of a new cluster or worker node, the OCP licenses are included as a separate line item. The OCP licenses are also listed as separate plans in your {{site.data.keyword.cloud_notm}} bill.
 
-**How can I migrate from the old to new OCP licenses?**
+##### How can I migrate from the old to new OCP licenses?
 {: #licenses-on-demand-migrate}
 
 You can follow the same procedure to [update flavors](/docs/openshift?topic=openshift-update#machine_type) by adding new worker pools and removing the old worker pools. If you use bare metal, make sure that you use the latest series 4 flavors. Many existing bare metal flavors don't support the new OCP licenses.

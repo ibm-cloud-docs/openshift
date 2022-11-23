@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-11-23"
 
 keywords: openshift, version, upgrade, update
 
@@ -130,22 +130,19 @@ To update {{site.data.keyword.satelliteshort}} worker nodes, see [Updating hosts
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 {: shortdesc}
 
-**What happens to my apps during an update?**
+What happens to my apps during an update?
+:   If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
 
-If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
-
-**How can I control how many worker nodes go down at a time during an update or reload?**
-
-If you need all your worker nodes to be up and running, consider [resizing your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [adding stand-alone worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) to add more worker nodes. You can remove the additional worker nodes after the update is completed.
+How can I control how many worker nodes go down at a time during an update or reload?
+:   If you need all your worker nodes to be up and running, consider [resizing your worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [adding stand-alone worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add) to add more worker nodes. You can remove the additional worker nodes after the update is completed.
 
 In addition, you can create a Kubernetes config map that specifies the maximum number of worker nodes that can be unavailable at a time, such as during an update. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
 
 The Kubernetes config map rules are used for updating worker nodes only. These rules do not impact worker node reloads which means reloading happens immediately when requested.
 {: important}
 
-**What if I choose not to define a config map?**
-
-When the config map is not defined, the default is used. By default, a maximum of 20% of all your worker nodes in each cluster can be unavailable during the update process.
+What if I choose not to define a config map?
+:   When the config map is not defined, the default is used. By default, a maximum of 20% of all your worker nodes in each cluster can be unavailable during the update process.
 
 ### Prerequisites
 {: #worker-up-prereqs}
