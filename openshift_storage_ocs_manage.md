@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -356,8 +356,6 @@ Complete the following steps to remove the ODF resources from your cluster.
 
 The following steps result in data loss. Back up the data on your local volumes before you remove your ODF deployment.
 {: important}
-
-**What happens when I delete the ODF storage cluster?**
 
 When you delete the `OcsCluster` custom resource from your cluster, the following resources are deleted. Additionally, any apps that require access to the data on your local volumes might experience downtime.
     - ODF driver pods.

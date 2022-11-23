@@ -55,9 +55,8 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 ```
 {: pre}
 
-**What does the `new-app` command do?**
-
-The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.10/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
+What does the `new-app` command do?
+:   The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.10/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 
 ## Deploying apps to specific worker nodes by using labels
 {: #node_affinity}

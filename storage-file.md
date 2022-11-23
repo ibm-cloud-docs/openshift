@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-23"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -650,17 +651,14 @@ To add storage to a stateful set, you specify your storage configuration in the 
 You can't deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
 {: important}
 
-**How can I create my stateful set in a specific zone?**
+How can I create my stateful set in a specific zone?**
+:   In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
-In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
+Can I delay binding of a PV to my stateful pod until the pod is ready?
+:   Yes, you can [create a custom storage class](#file-topology) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
 
-**Can I delay binding of a PV to my stateful pod until the pod is ready?**
-
-Yes, you can [create a custom storage class](#file-topology) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
-
-**What options do I have to add {{site.data.keyword.filestorage_short}} to a stateful set?**
-
-If you want to automatically create your PVC when you create the stateful set, use [dynamic provisioning](#file_dynamic_statefulset). You can also choose to [pre-provision your PVCs or use existing PVCs](#file_static_statefulset) with your stateful set.  
+What options do I have to add {{site.data.keyword.filestorage_short}} to a stateful set?
+:   If you want to automatically create your PVC when you create the stateful set, use [dynamic provisioning](#file_dynamic_statefulset). You can also choose to [pre-provision your PVCs or use existing PVCs](#file_static_statefulset) with your stateful set.  
 
 ### Creating the PVC when you create a stateful set by using dynamic provisioning
 {: #file_dynamic_statefulset}

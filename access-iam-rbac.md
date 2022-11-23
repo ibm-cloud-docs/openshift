@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-23"
 
 keywords: openshift
 
@@ -331,7 +331,7 @@ You can [manually assign users to groups](https://docs.openshift.com/container-p
 
 
 
-### When do I need to use cluster role bindings and role bindings that are not tied to the IAM permissions that I set?
+### When do I need to use custom cluster role bindings and role bindings?
 {: #when-do-i-use-custom-rbac}
 
 You might want to authorize who can create and update pods in your cluster. With [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs), you can use existing cluster role bindings that come with your cluster, or create your own.

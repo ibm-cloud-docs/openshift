@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-23"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -57,7 +57,7 @@ RHEL 8 operating system support
 :    RHEL 8 is the only operating system supported for clusters that run version 4.11. If your 4.10 cluster has RHEL 7 worker nodes, [migrate your worker nodes](#rhel-migrate-411) to RHEL 8.
 
 Cluster autoscaler add-on
-:    The cluster autoscaler add-on does not support {{site.data.keyword.openshiftshort}} version 4.11. Do not update your cluster to version 4.11 if this add-on is installed.
+:    The cluster autoscaler add-on version 1.0.6 or newer is supported on {{site.data.keyword.openshiftshort}} version 4.11. 
 
 Portworx
 :    If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific).

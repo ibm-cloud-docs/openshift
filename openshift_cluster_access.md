@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-22"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -62,7 +62,8 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 For security reasons, first log out of the {{site.data.keyword.cloud_notm}} console and then log out of the {{site.data.keyword.redhat_openshift_notm}} web console before you close your browser. You must complete both steps in the specified order to successfully log out of the {{site.data.keyword.redhat_openshift_notm}} web console.
 {: note}   
 
-**What's next?** Try [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
+What's next?
+:   Try [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
 
 ### Connecting to the cluster from the CLI
 {: #access_oc_cli}
@@ -100,7 +101,8 @@ Choose from the following options.
         ```
         {: pre}
 
-**What's next?** Try [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli).
+What's next?
+:   Try [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli).
 
 
 
