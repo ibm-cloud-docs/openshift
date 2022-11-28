@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-28"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -239,8 +239,8 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     ```
     {: codeblock}
 
-If your log consumer server is enforcing secure connection (TLS), you can add your certificate files to this directory and change the backend section in `haproxy.cfg` to use these files. For more information, see the [HAProxy documentation](https://haproxy-ingress.github.io/docs/){: external}.
-{: tip}
+    If your log consumer server is enforcing secure connection (TLS), you can add your certificate files to this directory and change the backend section in `haproxy.cfg` to use these files. For more information, see the [HAProxy documentation](https://haproxy-ingress.github.io/docs/){: external}.
+    {: tip}
 
 2. Create a configmap from the contents of `kube-audit-forwarder` directory.
     ```sh
@@ -297,8 +297,8 @@ If your log consumer server is enforcing secure connection (TLS), you can add yo
     ```
     {: codeblock}
 
-If you added certificate files to the `kube-audit-forwarder` in the previous step, do not forget to list those files in `volumeMounts` section as a `subPath`.
-{: tip}
+    If you added certificate files to the `kube-audit-forwarder` in the previous step, do not forget to list those files in `volumeMounts` section as a `subPath`.
+    {: tip}
 
 4. Create the deployment and service.
     ```sh
@@ -341,7 +341,7 @@ If you added certificate files to the `kube-audit-forwarder` in the previous ste
     ```
     {: pre}
     
-7. Query the `certificate-authority` of the cluster and save it into a file. {: #query-cert}
+7. Query the `certificate-authority` of the cluster and save it into a file.
    ```sh
     ibmcloud oc cluster ca get -c <cluster> --output json | jq -r .caCert | base64 -D > <certificate-authority>
     ```

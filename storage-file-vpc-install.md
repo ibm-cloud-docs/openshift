@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-28"
 
 keywords: openshift
 
@@ -23,6 +23,9 @@ subcollection: openshift
 {{site.data.keyword.filestorage_vpc_short}} is available for allowlisted accounts in the Washington D.C., Dallas, Frankfurt, London, Sydney, Sao Paulo, and Tokyo regions. Contact your IBM Sales representative if you are interested in getting access.
 {: preview}
 
+{{site.data.keyword.filestorage_vpc_short}} is available in Beta. Do not use this add-on for production workloads.
+{: beta}
+
 Supported infrastructure providers
 :   VPC
 {: important}
@@ -30,7 +33,7 @@ Supported infrastructure providers
 ## Prerequisites
 {: #prereqs-store-file-vpc}
 
-1. Update the `container-service` plug in to the most recent version. You can update the plug in by running the `ibmcloud oc plugin update container-service` command. 
+1. Update the `container-service` plug in to the most recent version. You can update the plug in by running the `ibmcloud plugin update container-service` command. 
 
 
 
@@ -63,7 +66,7 @@ Supported infrastructure providers
 
     Example output
     ```sh
-      Name                   Version   Health State   Health Status   
-      vpc-file-csi-driver    1.0.0     normal         Addon Ready
+    Name                   Version   Health State   Health Status   
+    vpc-file-csi-driver    1.0.0     normal         Addon Ready
     ```
     {: pre}

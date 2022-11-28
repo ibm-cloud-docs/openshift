@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-28"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -24,52 +24,21 @@ OpenShift Data Foundation is a highly available storage solution that you can us
 Installing OpenShift Data Foundation from OperatorHub is not supported on {{site.data.keyword.Bluemix_notm}} clusters. To install ODF, complete the following steps to deploy the cluster add-on.
 {: important}
 
-**Minimum required permissions**: **Administrator** platform access role and the **Manager** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
-
-## Quick start for VPC clusters with the CLI
-{: #odf-quickstart-cli}
-{: cli}
-
-The following steps walk you through deploying ODF with the default settings. Before enabling the add-on make sure that you have a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
-{: shortdesc}
-
-To list the versions and find the current default, run `ibmcloud oc cluster addon versions`. If you have a cluster version other than the default, specify the `--version` flag. The add-on supports `n+1` cluster versions. Enable the add-on by running the following command.
-
-```sh
-ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0
-```
-{: pre}
-
-## Quick start for VPC clusters from the console
-{: #odf-quickstart-ui}
-{: ui}
-
-The following steps walk you through deploying ODF with the default settings. Before you enable the add-on, make sure that you have a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least three worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
-{: shortdesc}
-
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster you want to install ODF on from the list of available VPC clusters. 
-1. From the list of available add-ons to install, click **Install** OpenShift Data Foundation.
-1. Select the options you want for your cluster, and then click **Install**
+Minimum required permissions
+:   `Administrator` platform access role
+:   `Manager` service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
 
-**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app)
-
-If you want to override the default parameters when deploying the add-on, you can use the `--param "key=value"` format. For more information, see [Installing the add-on from the CLI](#install-odf-cli-vpc).
-{: tip}
-
-## Creating a VPC cluster for OpenShift Data Foundation
+## Prerequisites
 {: #ocs-storage-vpc}
 
-Review the following steps to deploy ODF on your VPC cluster.
+Review the following prerequisites.
 {: shortdesc}
-
-For high availability, make sure that your VPC cluster has at least 3 worker nodes, with one worker node per zone.
-{: important}
-
 
 1. [Install](/docs/openshift?topic=openshift-openshift-cli#cli_oc) or [update the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
 1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least 3 worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
-1. **Optional** [Set up an {{site.data.keyword.cos_full_notm}} service instance](#odf-create-cos) as your default backing store. You can also set up backing stores later.
+    You can deploy OpenShift Data Foundation on 3 worker nodes of 10 CPUs and 32 GB RAM, but you must taint your worker nodes to run only ODF pods. You can't run any additional app workloads or system pods on your ODF nodes when you use this setup.
+    {: important}
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #odf-create-cos}
@@ -221,7 +190,10 @@ Storage class encryption is available only for versions `4.10.0` and later of Op
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
-1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.7.0 of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. 
+    The add-on supports `n+1` cluster versions. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
+    {: important}
+    
 1. [Review the parameter reference](#odf-vpc-param-ref).
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
@@ -238,7 +210,7 @@ To install ODF in your cluster, complete the following steps.
     1. In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
     1. In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`.
     1. In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
-    1. In the **Token URL** field, enter `https://iam.cloud.ibm.com/oidc/token`.
+    1. In the **Token URL** field, enter `https://iam.cloud.ibm.com/identity/token`.
 
 1. After you enter the parameters that you want to use, click **Install**
 
@@ -253,48 +225,8 @@ To install ODF in your cluster, complete the following steps.
     ```
     {: pre}
 
-Example output
-
-```sh
-NAME                                                              READY   STATUS      RESTARTS   AGE
-csi-cephfsplugin-bl4rx                                            3/3     Running     0          172m
-csi-cephfsplugin-lsd8z                                            3/3     Running     0          172m
-csi-cephfsplugin-provisioner-5b9b669659-5ktts                     6/6     Running     0          172m
-csi-cephfsplugin-provisioner-5b9b669659-65zbk                     6/6     Running     0          172m
-csi-cephfsplugin-xlkc2                                            3/3     Running     0          172m
-csi-rbdplugin-c7tbj                                               3/3     Running     0          172m
-csi-rbdplugin-fj7q7                                               3/3     Running     0          172m
-csi-rbdplugin-provisioner-6f87685d6b-fxrpk                        6/6     Running     0          172m
-csi-rbdplugin-provisioner-6f87685d6b-vb47x                        6/6     Running     0          172m
-csi-rbdplugin-tc8hp                                               3/3     Running     0          172m
-noobaa-core-0                                                     1/1     Running     0          163m
-noobaa-db-pg-0                                                    1/1     Running     0          163m
-noobaa-default-backing-store-noobaa-pod-c83e2ade                  1/1     Running     0          161m
-noobaa-endpoint-5b97994bf7-fxknh                                  1/1     Running     0          161m
-noobaa-operator-556b5db575-f9zbf                                  1/1     Running     0          172m
-ocs-metrics-exporter-574784d58b-4mbgr                             1/1     Running     0          172m
-ocs-operator-789c6d7f95-l7682                                     1/1     Running     0          173m
-rook-ceph-crashcollector-10.241.0.6-676f9548b7-k44tk              1/1     Running     0          170m
-rook-ceph-crashcollector-10.241.128.5-55565c8679-hf8h4            1/1     Running     0          167m
-rook-ceph-crashcollector-10.241.64.9-767bc5776d-42njb             1/1     Running     0          169m
-rook-ceph-mds-ocs-storagecluster-cephfilesystem-a-85dc5665rfdrh   2/2     Running     0          162m
-rook-ceph-mds-ocs-storagecluster-cephfilesystem-b-68c779dcfknbp   2/2     Running     0          162m
-rook-ceph-mgr-a-bc7f4cb94-tzrxx                                   2/2     Running     0          165m
-rook-ceph-mon-a-6f47c4dd55-7mzbp                                  2/2     Running     0          170m
-rook-ceph-mon-b-cdf99bf6f-b2pg9                                   2/2     Running     0          169m
-rook-ceph-mon-c-59994fdd9f-b6t5c                                  2/2     Running     0          167m
-rook-ceph-operator-bdf98d48b-b5rm6                                1/1     Running     0          173m
-rook-ceph-osd-0-7659d76ff7-fnftm                                  2/2     Running     0          163m
-rook-ceph-osd-1-b4c7c9487-kngtr                                   2/2     Running     0          163m
-rook-ceph-osd-2-6c79647d6c-b5kng                                  2/2     Running     0          163m
-rook-ceph-osd-prepare-ocs-deviceset-0-data-0tjmb9-r5mkj           0/1     Completed   0          165m
-rook-ceph-osd-prepare-ocs-deviceset-1-data-0kphrw-jgx86           0/1     Completed   0          165m
-rook-ceph-osd-prepare-ocs-deviceset-2-data-05d74g-6gvpn           0/1     Completed   0          165m
-rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-784c848c8qrp   2/2     Running     0          162m
-```
-{: screen}
-
-**Next steps**: [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app).
+Next steps
+:   [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app).
     
 
 ## Installing the add-on from the CLI
@@ -309,9 +241,15 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
+1. List the `openshift-data-foundation` add-on versions. Make a note of the default version and determine the version that you want to install.
+    ```sh
+    ibmcloud ks cluster addon versions
+    ```
+    {: pre}
+
 1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
 
-1. Review the add-on options. Note that add-on options are only available for version `4.7.0` and later.
+1. Review the add-on options.
 
     ```sh
     ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.10.0
@@ -345,7 +283,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
     Example command to deploy add-on version 4.10 with the default storage cluster settings and encryption with {{site.data.keyword.hscrypto}} enabled.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.10.0 --param "odfDeploy=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/oidc/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.10.0 --param "odfDeploy=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
     ```
     {: pre}
 
@@ -656,7 +594,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
 | `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`. | `false` |
 | `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
-| `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/oidc/token`. | `false` |
+| `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/identity/token`. | `false` |
 {: caption="VPC parameter reference" caption-side="bottom"}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-28"
 
 keywords: openshift, app access
 
@@ -182,9 +182,10 @@ Misconfiguring the `node-port-addresses` might isolate your services from valid 
     ```yaml
     spec:
       kubeProxyConfig:
-        node-port-addresses:
-        - 192.0.2.0/24
-        - 198.51.100.0/24
+        proxyArguments:
+          node-port-addresses:
+          - 192.0.2.0/24
+          - 198.51.100.0/24
     ```
     {: codeblock}
     
@@ -194,7 +195,13 @@ Misconfiguring the `node-port-addresses` might isolate your services from valid 
     oc apply -f updated-network-config.yaml
     ```
     {: pre}
-    
+
+1. For cluster version 4.10.x and earlier, set the management state of the cluster network operator to `Unmanaged`.
+
+   ```sh
+    oc patch network.operator.openshift.io cluster --type=merge --patch  '{"spec": {"managementState": "Unmanaged"}}'
+   ```
+
 1. Restart the `kube-proxy` DaemonSet to apply the changes. This operation is not disruptive.
 
     ```sh
@@ -207,6 +214,12 @@ Misconfiguring the `node-port-addresses` might isolate your services from valid 
     oc get po -n openshift-kube-proxy --selector app=kube-proxy
     ```
     {: pre}
+
+1. For cluster version of 4.10.x and earlier, reset the management state of the cluster network operator to `Managed`. Note: This might restart the proxy pods again.
+
+   ```sh
+    oc patch network.operator.openshift.io cluster --type=merge --patch  '{"spec": {"managementState": "Managed"}}'
+   ```
 
 After all pods are restarted, your cluster is configured with the restricted subnets. You can repeat these steps to update or remove the subnet list as needed.
 
