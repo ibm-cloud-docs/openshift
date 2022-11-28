@@ -395,77 +395,14 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` flag when you enable the add-on.
 
-1. Review the add-on options for the version of the add-on that you want to deploy. Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes.
-
-    Add-on options for version 4.10.0.
+1. Review the add-on options for the version of the add-on that you want to deploy.
     ```sh
-    Add-on Options
-    Option                Default Value   
-    osdSize               250Gi   
-    numOfOsd              1   
-    clusterEncryption     false   
-    hpcsTokenUrl          <Please provide HPCS token URL>   
-    workerNodes           all   
-    hpcsEncryption        false   
-    hpcsBaseUrl           <Please provide HPCS Base URL>   
-    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier   
-    hpcsInstanceId        <Please provide HPCS Service ID>   
-    autoDiscoverDevices   false   
-    hpcsServiceName       <Please provide HPCS service name>   
-    hpcsSecretName        <Please provide the HPCS secret name>   
-    odfDeploy             true   
-    osdDevicePaths        <Please provide IDs of the disks to be used for OSD pods if using local disks or standard classic cluster>   
-    ocsUpgrade            false   
-    billingType           advanced 
-    ```
-    {: screen}
-
-    Add-on options for version 4.8.0.
-    
-    ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.8.0
-    ```
-    {: pre}
-    
-    ```sh
-    Add-on Options
-    Option                Default Value   
-    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier   
-    ocsUpgrade            false   
-    clusterEncryption     false   
-    billingType           advanced   
-    autoDiscoverDevices   false   
-    odfDeploy             true   
-    osdSize               250Gi   
-    osdDevicePaths        <Please provide IDs of the disks to be used for OSD pods if using local disks or standard classic cluster>   
-    numOfOsd              1   
-    workerNodes           all
-    ```
-    {: screen}
-
-    Add-on options for version 4.7.0.
-
-    ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.7.0
+    ibmcloud oc cluster addon options --addon ADDON [--version VERSION]
     ```
     {: pre}
 
-    ```sh
-    Add-on Options
-    Option                Default Value   
-    monStorageClassName   ibmc-vpc-block-metro-10iops-tier   
-    osdSize               250Gi   
-    osdDevicePaths        invalid   
-    workerNodes           all   
-    ocsUpgrade            false   
-    odfDeploy             false   
-    monSize               20Gi   
-    numOfOsd              1   
-    monDevicePaths        invalid   
-    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
-    clusterEncryption     false
-    ```
-    {: screen}
+    Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes.
+    {: note}
 
 1. Enable the `openshift-data-foundation` add-on. If you want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` flag for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
@@ -475,29 +412,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-    Example command for enabling add-on version 4.8.0 only and not creating a storage cluster.
-    ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.8.0 --param "odfDeploy=false"
-    ```
-    {: pre}
     
-    Example command for enabling add-on version 4.8.0 and deploying ODF by using automatic disk discovery.
-    ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.8.0 --param "odfDeploy=true"  --param "osdSize=1" --param "autoDiscoverDevices=true"
-    ```
-    {: pre}
-    
-    Example command for deploying add-on version 4.8.0 without automatic disk discovery and overriding the default parameters.
-    ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.8.0 --param "odfDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=localfile" --param "osdSize=1" --param "osdDevicePaths=/dev/disk/by-id/<device>"
-    ```
-    {: pre}
-
-    Example command for deploying add-on version 4.7.0 and deploying ODF while overriding the default parameters.
-    ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version 4.7.0 --param "odfDeploy=true" --param "osdSize=500Gi" --param "monStorageClassName=localfile" --param "monStorageClassName=localblock" --param "osdSize=1" --param "monSize=20Gi" --param "monDevicePaths=/dev/disk/by-id/<device>" --param "osdDevicePaths=/dev/disk/by-id/<device>"
-    ```
-    {: pre}
 
 1. Verify the add-on is in a `Ready` state.
     ```sh
