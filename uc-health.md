@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-11-28"
 
 keywords: openshift
 
@@ -52,7 +52,7 @@ Security first: With bare metal for {{site.data.keyword.openshiftlong_notm}}, th
 
 Secure patient data leads to happier patients.
 
-#### Context: Workload migration for the Healthcare Provider
+#### Workload migration for the Healthcare Provider
 {: #uc_migrate_context}
 
 * Technical debt, which is coupled with long release cycles, is hindering the provider’s business-critical patient management and reporting systems.
@@ -92,7 +92,7 @@ Compute, storage, and I/O services run on demand in the public cloud with secure
 * Adopt the agile and iterative development practices from the IBM Garage Method to enable frequent releases of new functions, patches, and fixes without downtime.
 
 #### Technical solution
-{: #uc_migrate_solution}f
+{: #uc_migrate_solution}
 
 * {{site.data.keyword.openshiftlong_notm}} 
 * {{site.data.keyword.icp4dfull_notm}}
@@ -117,7 +117,7 @@ Much of the CI/CD process itself is automated with IBM's Continuous Delivery ser
 
 * Lifting the existing monolithic VMs into cloud-hosted containers was a first step that allowed the provider to save on capital costs and begin learning modern DevOps practices. 
 * With the Cloud Pak deployed, the provider offloaded the full stack support of their data analytics tools to IBM, even the lifecycle management of those tools. Their developers were then unburdened from operations tasks and could focus on new features and updates. 
-* Rearchitecting key monolithic apps to a set fine-grained microservices greatly reduced time to delivery for patches, bug fixes, and new features.
+* Reconfiguring key monolithic apps to a set of fine-grained microservices greatly reduced delivery time for patches, bug fixes, and new features.
 * In parallel, the provider implemented simple time-boxed iterations to get a handle on the existing technical debt.
 
 ## Research nonprofit securely hosts sensitive data while it grows research with partners

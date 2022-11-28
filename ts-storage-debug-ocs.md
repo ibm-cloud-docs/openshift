@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-28"
 
 keywords: openshift, file, debug, help
 
@@ -233,7 +233,7 @@ Describe your ODF resources and review the command outputs for any error message
     ```
     {: pre}
 
-1. Describe the `ibm-storage-metrics-agent` pod and review the `Events` secetion in the oput for any error messages. 
+1. Describe the `ibm-storage-metrics-agent` pod and review the `Events` section in the output for any error messages. 
     ```sh
     oc get pods -n kube-system -l name=ibm-storage-metrics-agent
     ```

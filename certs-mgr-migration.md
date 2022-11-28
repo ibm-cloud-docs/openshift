@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-28"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 
@@ -187,7 +187,7 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
 
  **Example scenario**: You have a default, IBM-managed Ingress secret in the `default` namespace. You run the **`ibmcloud oc ingress secret create`** command and reference the CRN of the default Ingress secret to mirror the secret in the `istio-system` namespace. This new secret is not managed by IBM, but its CRN matches the CRN of the Ingress secret in the `default` namespace. Later, you set a default {{site.data.keyword.secrets-manager_short}} instance and regenerate the default Ingress secret, which changes its CRN. The CRN of the secret in the `istio-system` namespace no longer matches the CRN of the default Ingress secret, so you must update it to match. 
 
-To check whether or not a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
+To check whether a secret is managed by IBM Cloud, run `ibmcloud oc ingress secret get` to view the details of the secret. In the output, if **User Managed** is marked **false**, the secret is managed by IBM Cloud. If it is marked **true**, the secret is not managed by IBM Cloud.
 {: tip}
 
 If you do not change the CRN of your non-IBM managed secrets, they do not automatically update. In this case, you are responsible for regularly updating these secrets with the [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update) command.
@@ -256,7 +256,7 @@ Follow the steps to delete the {{site.data.keyword.cloudcerts_short}} instance. 
 ## Migrating your secrets without using {{site.data.keyword.secrets-manager_short}}
 {: #certs-mgr_alt}
 
-If you are migrating your secrets off of {{site.data.keyword.cloudcerts_short}}, but do not want to use {{site.data.keyword.secrets-manager_short}}, you can write your secrets directly to your cluster. Make sure to read the [Migration FAQ](#certs-mgr_migration_faq) section to understand how your secrets must be handled if they are not stored in a {{site.data.keyword.secrets-manager_short}} instance. 
+If you are migrating your secrets off {{site.data.keyword.cloudcerts_short}}, but do not want to use {{site.data.keyword.secrets-manager_short}}, you can write your secrets directly to your cluster. Make sure to read the [Migration FAQ](#certs-mgr_migration_faq) section to understand how your secrets must be handled if they are not stored in a {{site.data.keyword.secrets-manager_short}} instance. 
 {: shortdesc}
 
 Follow the steps to migrate your secrets without creating a {{site.data.keyword.secrets-manager_short}} instance.

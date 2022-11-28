@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-23"
+lastupdated: "2022-11-28"
 
 keywords: openshift
 
@@ -255,7 +255,7 @@ CIS-compliant RHEL image
     {: important}
 
 Continuous monitoring by Site Reliability Engineers (SREs)
-:   The image that is installed on your worker nodes is continuously monitored by IBM Site Reliability Engineers (SREs) to detect vulnerabilities and security compliance issues. To address vulnerabilities, SREs create security patches and fix packs for your worker nodes. Make sure to apply these patches when they are available to ensure a secure environment for your worker nodes and the apps that you run on top of them.
+:   The image that is installed on your worker nodes is continuously monitored by IBM Site Reliability Engineers (SREs) to detect vulnerabilities and security compliance issues. To address vulnerabilities, SREs create security patches and fix packs for your worker nodes. Make sure to apply these patches when they are available to ensure a secure environment for your worker nodes and the apps that you run on them.
 
 CIS Kubernetes worker node benchmark
 :   To configure {{site.data.keyword.openshiftlong_notm}}, IBM engineers follow relevant cybersecurity practices from the Kubernetes worker node benchmark that is published by the [Center of Internet Security (CIS)](https://www.cisecurity.org/benchmark/kubernetes/){: external}. You can review the compliance of worker nodes against [CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test) and [{{site.data.keyword.redhat_openshift_notm}} benchmark](/docs/openshift?topic=openshift-compliance-operator) standards.

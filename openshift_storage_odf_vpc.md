@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-28"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -238,7 +238,7 @@ To install ODF in your cluster, complete the following steps.
     1. In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
     1. In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`.
     1. In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
-    1. In the **Token URL** field, enter `https://iam.cloud.ibm.com/oidc/token`.
+    1. In the **Token URL** field, enter `https://iam.cloud.ibm.com/identity/token`.
 
 1. After you enter the parameters that you want to use, click **Install**
 
@@ -345,7 +345,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
     Example command to deploy add-on version 4.10 with the default storage cluster settings and encryption with {{site.data.keyword.hscrypto}} enabled.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.10.0 --param "odfDeploy=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/oidc/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.10.0 --param "odfDeploy=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
     ```
     {: pre}
 
@@ -656,7 +656,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
 | `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`. | `false` |
 | `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
-| `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/oidc/token`. | `false` |
+| `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/identity/token`. | `false` |
 {: caption="VPC parameter reference" caption-side="bottom"}
 
 
