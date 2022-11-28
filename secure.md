@@ -34,7 +34,7 @@ External attacks
 :   Attackers that gain access to your cluster, deployed resources, apps, or personal information.
 
 Vulnerable deployments
-:   Known vulnerabilities are exploited to gain access to the cloud environment and run malicious softawre.
+:   Known vulnerabilities are exploited to gain access to the cloud environment and run malicious software.
 
 Compromised or lost data
 :   Incorrect storage of sensitive data and missing encryption.
@@ -290,7 +290,7 @@ The classic approach to protect a company's network is to set up a firewall and 
 To protect your network and limit the range of damage that a user can do when access to a network is granted, you must make sure that your workloads are as isolated as possible and that you limit the number of apps and worker nodes that are publicly exposed.
 {: shortdesc}
 
-### What network traffic is allowed for my cluster by default?
+### What network traffic is allowed for my Classic cluster by default?
 {: #default-network-traffic-allowed}
 
 All containers are protected by [predefined Calico network policy settings](/docs/openshift?topic=openshift-network_policies#default_policy) that are configured on every worker node during cluster creation. By default, all outbound network traffic is allowed for all worker nodes. Inbound network traffic is blocked with the following exceptions:
@@ -339,7 +339,7 @@ To connect your worker nodes and apps to an on-prem data center, you can configu
 To protect your network and limit the range of damage that a user can do when access to a network is granted, you must make sure that your workloads are as isolated as possible and that you limit the number of apps and worker nodes that are publicly exposed.
 {: shortdesc}
 
-### What network traffic is allowed for my cluster by default?
+### What network traffic is allowed for my VPC cluster by default?
 {: #vpc-network-traffic-default}
 
 By default, worker nodes are connected to [VPC subnets](/docs/openshift?topic=openshift-vpc-subnets) on the private network only and don't have a public network interface. All public ingress to your worker nodes is blocked. Public egress from your worker nodes is only allowed if the workers are connected to a VPC subnet that has a public gateway.

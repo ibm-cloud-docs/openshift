@@ -3274,7 +3274,7 @@ subcollection: openshift
 
     * [Network segmentation and privacy for classic clusters](/docs/openshift?topic=openshift-security#network_segmentation)
 
-    * [What network traffic is allowed for my cluster by default?](/docs/openshift?topic=openshift-security#default-network-traffic-allowed)
+    * [What network traffic is allowed for my Classic cluster by default?](/docs/openshift?topic=openshift-security#default-network-traffic-allowed)
 
     * [What is network segmentation and how can I set it up for a cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
 
@@ -3284,7 +3284,7 @@ subcollection: openshift
 
     * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
 
-    * [What network traffic is allowed for my cluster by default?](/docs/openshift?topic=openshift-security#vpc-network-traffic-default)
+    * [What network traffic is allowed for my VPC cluster by default?](/docs/openshift?topic=openshift-security#vpc-network-traffic-default)
 
     * [What is network segmentation and how can I set it up for a cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
 
@@ -3633,7 +3633,7 @@ subcollection: openshift
 
     * [Getting your {{site.data.keyword.containershort}} subnet IP addresses](/docs/openshift?topic=openshift-firewall#iam_cidr_ip)
 
-[Restricting network traffic to edge worker nodes on classic infrastructure](/docs/openshift?topic=openshift-edge#edge)
+[Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge#edge)
 
 * [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
 
