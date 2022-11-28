@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-28"
 
 keywords: openshift, audit
 
@@ -75,7 +75,6 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 | `containers-kubernetes.cluster-webhook.create` | A cluster webhook, such as for Slack, is created. |
 | `containers-kubernetes.cluster-webhook.list` | Webhooks for a cluster are listed. |
 | `containers-kubernetes.version.update` | A master patch update is initiated for the cluster. Master patch updates are typically applied automatically by IBM to your cluster. |
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Cluster events" caption-side="bottom"}
 
 ## Cluster account events
@@ -105,7 +104,6 @@ The following list of account events that are related to managing your clusters 
 | `containers-kubernetes.account-worker-reservation.create` | A reservation for worker nodes is created. |
 | `containers-kubernetes.account-worker-reservation.get` | Details of a reservation are returned. |
 | `containers-kubernetes.account-worker-reservation.list` | Reservations are listed.|
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Cluster account events" caption-side="bottom"}
 
 ## Cluster add-on events
@@ -126,7 +124,6 @@ The following list of the cluster add-on events are sent to {{site.data.keyword.
 | `containers-kubernetes.cluster-addon-istio-jaeger-dashboard.start` | The Jaeger dashboard for the managed Istio add-on is started. |
 | `containers-kubernetes.cluster-addon-istio-kiali-dashboard.start` | The Kiali dashboard for the managed Istio add-on Kiali is started. |
 | `containers-kubernetes.cluster-addon-terminal.start` | **Deprecated**: Starts the Kubernetes web terminal proxy. |
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Cluster add-on events" caption-side="bottom"}
 
 ## Fluentd logging events
@@ -148,7 +145,6 @@ The following list of Fluentd logging events for a cluster are sent to {{site.da
 | `containers-kubernetes.cluster-logging-filter.delete` | A logging filter configuration is deleted from the cluster. |
 | `containers-kubernetes.cluster-logging-filter.get` | The details of a logging filter configuration are returned. |
 {: caption="Fluentd logging events" caption-side="bottom"}
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
 ## Ingress ALB events
 {: #ingress-alb-events}
@@ -172,7 +168,7 @@ The following list of Ingress application load balancer (ALB) events are sent to
 | `containers-kubernetes.cluster-alb-policy.update` | Automatic updates for the ALBs are enabled or disabled, or all ALB pods in a cluster are rolled back to their previously running build. |
 | `containers-kubernetes.alb-image.list` | Supported Ingress controller images are listed. |
 {: caption="Ingress ALB events" caption-side="bottom"}
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
 
 ## Ingress secret events
 {: #ingress-secret-events}
@@ -189,7 +185,6 @@ The following list of Ingress secret events are sent to {{site.data.keyword.at_f
 | `containers-kubernetes.cluster-ingress-secret.update` | The certificate for an Ingress secret is updated. |
 | `containers-kubernetes.cluster-ingress-secret.notify` | When the default {{site.data.keyword.cloudcerts_short}} instance is created for a cluster, the {{site.data.keyword.cloudcerts_short}} notification channel for certificate updates is created. |
 {: caption="Ingress secret events" caption-side="bottom"}
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 
 ## Observability events for logging and monitoring
 {: #at-lm}
@@ -210,7 +205,7 @@ The following list of the logging and monitoring configuration events are sent t
 | `containers-kubernetes.observe-monitoring.modify` | A {{site.data.keyword.mon_short}} configuration is updated. |
 | `containers-kubernetes.observe-monitoring.remove` | A {{site.data.keyword.mon_short}} configuration is removed from the cluster. |
 {: caption="Observability events for logging and monitoring" caption-side="bottom"}
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
 
 ## NLB DNS events
 {: #ingress-nlb-dns-events}
@@ -233,7 +228,7 @@ The following list of network load balancer (NLB) DNS events are sent to {{site.
 | `containers-kubernetes.cluster-nlb-dns.update` | A DNS record in a classic cluster is updated by adding an NLB IP address. |
 | `containers-kubernetes.cluster-nlb-dns-monitor.update` | The health check monitor for an NLB subdomain is enabled or disabled. |
 {: caption="NLB DNS events" caption-side="bottom"}
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
 
 ## Private service endpoint allowlist events
 {: #acl-events}
@@ -247,7 +242,7 @@ The following table lists the actions related to access control lists (ACLs) and
 | `containers-kubernetes.network.acl.get` | The subnet allowlist for the private cloud service endpoint of a cluster is requested.  |
 | `containers-kubernetes.network.acl.update` | The private cloud service endpoint allowlist feature for a cluster is enabled, subnets are added to the allowlist, or subnets are removed from the allowlist. |
 {: caption="ACL events" caption-side="bottom"}
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
 
 ## {{site.data.keyword.satelliteshort}} events
 {: #satellite-events}
@@ -274,7 +269,7 @@ The following table lists the actions related to storage resources and the gener
 | `containers-kubernetes.storage-odf.install` | The OpenShift Data Foundation add-on is enabled. |
 | `containers-kubernetes.storage-odf.uninstall` The OpenShift Data Foundation add-on is disabled or the cluster is deleted. |
 {: caption="Storage events" caption-side="bottom"}
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
+
 
 ## Worker node and worker pool events
 {: #worker-events}
@@ -309,7 +304,6 @@ The following list of worker node and worker pool events are sent to {{site.data
 | `containers-kubernetes.worker.reload` | A worker node is reloaded. |
 | `containers-kubernetes.worker.replace`| A worker node is removed and another worker node of the same flavor is created in the cluster. |
 | `containers-kubernetes.worker.update` | A worker node version is updated. |
-{: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Worker node and worker pool events" caption-side="bottom"}
 
 ## Viewing your cluster events
