@@ -317,7 +317,7 @@ Review the following table to see your options for how to achieve network segmen
 |Support for {{site.data.keyword.cloud_notm}} network firewalls|{{site.data.keyword.openshiftlong_notm}} is compatible with all [{{site.data.keyword.cloud_notm}} firewall offerings](https://www.ibm.com/cloud/network-security){: external}. For example, you can set up a firewall with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion. For example, you might choose to set up a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) to act as your firewall and block unwanted traffic. When you set up a firewall, [you must also open up the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall) for each region so that the master and the worker nodes can communicate.|
 {: caption="Network segmentation options" caption-side="bottom"}
 
-### What else can I do to reduce the surface for external attacks?
+### What else can I do to reduce the surface for external attacks for Classic clusters?
 {: #external-what-else}
 
 The more apps or worker nodes that you expose publicly, the more steps you must take to prevent external malicious attacks. Review the following table to find options for how to keep apps and worker nodes private.
@@ -348,7 +348,7 @@ To access default {{site.data.keyword.redhat_openshift_notm}} components such as
 
 If you deploy apps in your cluster that must receive traffic requests from the internet, you can [create a VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) to expose your apps. To allow ingress network traffic to your apps, you must configure your VPC load balancer for the ingress network traffic that you want to receive. 
 
-Security groups are applied to your VPC instance and VPC ALBs by defualt. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).
+Security groups are applied to your VPC instance and VPC ALBs by default. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).
 {: note}
 
 ### What is network segmentation and how can I set it up for a VPC cluster?
@@ -362,7 +362,7 @@ VPC subnets provide a channel for connectivity among the worker nodes within the
 
 To achieve further private network segmentation between VPC subnets for your account, you can set up custom network policies with VPC access control lists (ACLs). When you create a VPC, a default ACL is created in the format `allow-all-network-acl-<VPC_ID>` for the VPC. Any subnet that you create in the VPC is attached to this ACL by default. The ACL includes an inbound rule and an outbound rule that allow all traffic between your worker nodes on a subnet and any system on the subnets in the same VPC. If you want to specify which private network traffic is permitted to the worker nodes on your VPC subnets, you can create a custom ACL for each subnet in the VPC. For example, you can [create a set of ACL rules](/docs/openshift?topic=openshift-vpc-acls) to block most inbound and outbound private network traffic of a cluster, while allowing communication that is necessary for the cluster to function.
 
-### What else can I do to reduce the surface for external attacks?
+### What else can I do to reduce the surface for external attacks for VPC clusters?
 {: #vpc-external-what-else}
 
 The more apps or worker nodes that you expose publicly, the more steps you must take to prevent external malicious attacks. Review the following table to find options for how to keep apps and worker nodes private.

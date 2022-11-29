@@ -3278,7 +3278,7 @@ subcollection: openshift
 
     * [What is network segmentation and how can I set it up for a Classic cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
 
-    * [What else can I do to reduce the surface for external attacks?](/docs/openshift?topic=openshift-security#external-what-else)
+    * [What else can I do to reduce the surface for external attacks for Classic clusters?](/docs/openshift?topic=openshift-security#external-what-else)
 
     * [What if I want to connect my cluster to an on-prem data center?](/docs/openshift?topic=openshift-security#onprem-network-setup)
 
@@ -3288,7 +3288,7 @@ subcollection: openshift
 
     * [What is network segmentation and how can I set it up for a VPC cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
 
-    * [What else can I do to reduce the surface for external attacks?](/docs/openshift?topic=openshift-security#vpc-external-what-else)
+    * [What else can I do to reduce the surface for external attacks for VPC clusters?](/docs/openshift?topic=openshift-security#vpc-external-what-else)
 
     * [Securely expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
 
