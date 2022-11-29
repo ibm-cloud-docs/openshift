@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-29"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ As a security or compliance focal, you can use the {{site.data.keyword.openshift
 {: shortdesc}
 
 
-All of the goals for {{site.data.keyword.openshiftlong_notm}} are added to the {{site.data.keyword.cloud_notm}} Control Library profile, but can also be mapped to other profiles.
+All the goals for {{site.data.keyword.openshiftlong_notm}} are added to the {{site.data.keyword.cloud_notm}} Control Library profile, but can also be mapped to other profiles.
 {: note}
 
 To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).

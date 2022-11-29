@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-29"
 
 keywords: openshift, essef
 
@@ -48,7 +48,7 @@ Review the secrets in your cluster and update or remove them.
 
 1. Complete the steps depending on whether the secret fields are still needed or not. If the expiring secret field in the secret is still needed, ensure the corresponding secret in the {{site.data.keyword.secrets-manager_full_notm}} instance has been updated and has a new expiry date. Then, update the secret field with the new values from {{site.data.keyword.secrets-manager_full_notm}} by running the following command.
 
-    To view all of the secrets in your {{site.data.keyword.secrets-manager_full_notm}} instance, see [Accessing Secrets](/docs/secrets-manager?topic=secrets-manager-access-secrets&interface=ui#get-secret-value-ui).
+    To view all the secrets in your {{site.data.keyword.secrets-manager_full_notm}} instance, see [Accessing Secrets](/docs/secrets-manager?topic=secrets-manager-access-secrets&interface=ui#get-secret-value-ui).
     {: tip}
 
     ```sh

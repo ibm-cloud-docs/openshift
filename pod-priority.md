@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-29"
 
 keywords: openshift
 
@@ -157,7 +157,7 @@ Before you begin:
 
 To assign priority to your pods:
 
-1. Check the importance of other deployed pods so that you can choose the right priority class for your pods in relation to what already is deployed.
+1. Check the importance of other deployed pods so that you can choose the correct priority class for your pods in relation to what already is deployed.
 
     1. View the priority classes that other pods in the namespace use.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-28"
+lastupdated: "2022-11-29"
 
 keywords: openshift
 subcollection: openshift
@@ -3276,9 +3276,9 @@ subcollection: openshift
 
     * [What network traffic is allowed for my Classic cluster by default?](/docs/openshift?topic=openshift-security#default-network-traffic-allowed)
 
-    * [What is network segmentation and how can I set it up for a cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
+    * [What is network segmentation and how can I set it up for a Classic cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
 
-    * [What else can I do to reduce the surface for external attacks?](/docs/openshift?topic=openshift-security#external-what-else)
+    * [What else can I do to reduce the surface for external attacks for Classic clusters?](/docs/openshift?topic=openshift-security#external-what-else)
 
     * [What if I want to connect my cluster to an on-prem data center?](/docs/openshift?topic=openshift-security#onprem-network-setup)
 
@@ -3286,9 +3286,9 @@ subcollection: openshift
 
     * [What network traffic is allowed for my VPC cluster by default?](/docs/openshift?topic=openshift-security#vpc-network-traffic-default)
 
-    * [What is network segmentation and how can I set it up for a cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
+    * [What is network segmentation and how can I set it up for a VPC cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
 
-    * [What else can I do to reduce the surface for external attacks?](/docs/openshift?topic=openshift-security#vpc-external-what-else)
+    * [What else can I do to reduce the surface for external attacks for VPC clusters?](/docs/openshift?topic=openshift-security#vpc-external-what-else)
 
     * [Securely expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
 
@@ -3623,7 +3623,7 @@ subcollection: openshift
 
     * [Opening required ports in a private allowlist](/docs/openshift?topic=openshift-firewall#firewall_private)
 
-    * [Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes](/docs/openshift?topic=openshift-firewall#firewall_inbound)
+    * [Opening ports in a public or private allowlist for inbound traffic](/docs/openshift?topic=openshift-firewall#firewall_inbound)
 
 * [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
 
@@ -3992,9 +3992,9 @@ subcollection: openshift
 
 * [Storing images in the internal registries](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
 
-    * [VPC: Backing up your {{site.data.keyword.redhat_openshift_notm}} internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
+    * [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 
-    * [Classic: Storing images in the internal registry](/docs/openshift?topic=openshift-registry#storage_internal_registry)
+    * [Storing images in the internal registry in Classic clusters](/docs/openshift?topic=openshift-registry#storage_internal_registry)
 
     * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
 
@@ -4020,7 +4020,7 @@ subcollection: openshift
 
     * [Copying an existing image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret)
 
-    * [Creating an image pull secret with different IAM API key credentials for more control or access to images in other {{site.data.keyword.cloud_notm}} accounts](/docs/openshift?topic=openshift-registry#other_registry_accounts)
+    * [Creating an image pull secret with different IAM API key credentials](/docs/openshift?topic=openshift-registry#other_registry_accounts)
 
     * [Accessing images that are stored in other private registries](/docs/openshift?topic=openshift-registry#private_images)
 

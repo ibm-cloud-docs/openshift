@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-29"
 
 keywords: openshift, essvc
 
@@ -39,7 +39,7 @@ There are secrets in multiple namsepaces for the same domain in your cluster but
 Ensure all secrets that share the same domain have the same CRN.
 {: tsResolve}
 
-1. View all of the Ingress secrets for your cluster by running the following command.
+1. View all the Ingress secrets for your cluster by running the following command.
 
     ```sh
     ibmcloud oc ingress secret ls

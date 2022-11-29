@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-29"
 
 keywords: openshift, dedicated hosts, host pool, dedicated pool
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # VPC: Why can't I create worker nodes on dedicated hosts?
@@ -79,7 +80,7 @@ Complete the following steps to resolve the issue.
     You can also review your dedicated host resources in the [console](https://cloud.ibm.com/kubernetes/dedicated-hosts){: external}.
     {: tip}
     
-    * If there are enough resources available, [replace the worker node that failed to reprovision](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace). Note that in some cases, it is not possible to reach 100% capacity.
+    * If there are enough resources available, [replace the worker node that failed to reprovision](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace). Note that sometimes, it is impossible to reach 100% capacity.
     * If there are not enough resources on the dedciated host, reallocate your workloads to free up capacity on the host, or [create a new dedicated host in the zone](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli). 
 
 

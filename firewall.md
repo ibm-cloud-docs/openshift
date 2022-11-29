@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-29"
 
 keywords: openshift
 
@@ -257,7 +257,6 @@ This table is moving. For the latest IP lists and continued updates, see the pub
 | UK South (`lon02`, `lon04`, `lon05`, `lon06`) | `141.125.102.106`, `141.125.66.26`, `141.125.67.34`, `141.125.77.58`, `141.125.91.138`, `158.175.111.42`, `158.175.125.194`, `158.175.139.130`, `158.175.150.122`, `158.175.65.170`, `158.175.77.178`, `158.175.82.50`, `158.176.123.130`, `158.176.135.242`, `158.176.142.26`, `158.176.149.154`, `158.176.71.242`, `158.176.94.26`, `158.176.95.146`, `159.122.224.242`, `159.122.242.78` |
 | US East (`mon01`, `wdc04`, `wdc06`, `wdc07`) | `158.85.97.34`, `169.47.162.130`, `169.47.174.106`, `169.53.167.50`, `169.53.171.210`, `169.54.126.219`, `169.54.80.106`, `169.54.94.26`, `169.60.100.242`, `169.60.101.42`, `169.60.111.58`, `169.60.73.142`, `169.60.92.50`, `169.60.92.66`, `169.61.109.34`, `169.61.110.66`, `169.61.74.210`, `169.61.83.62`, `169.62.10.162`, `169.62.9.250`, `169.63.106.50`, `169.63.111.82`, `169.63.149.122`, `169.63.158.82`, `169.63.160.130`, `169.63.66.226`, `169.63.75.82`, `169.63.88.178`, `169.63.88.186`, `169.63.94.210`, `52.117.72.42`, `52.117.88.42` |
 | US South (`sjc03`, `sjc04`, `dal10`, `dal12`, `dal13`) | `50.22.129.34`, `52.116.231.210`, `52.116.254.234`, `52.116.54.122`, `52.117.197.210`, `52.117.212.34`, `52.117.215.162`, `52.117.232.194`, `52.117.240.106`, `52.117.28.138`, `67.228.97.210`, `169.45.126.154`, `169.45.67.210`, `169.45.88.98`, `169.46.110.218`, `169.46.111.122`, `169.46.16.202`, `169.46.24.210`, `169.46.27.234`, `169.46.63.250`, `169.46.68.234`, `169.46.7.238`, `169.46.89.50`, `169.47.109.34`, `169.47.115.18`, `169.47.201.194`, `169.47.209.66`, `169.47.229.90`, `169.47.232.210`, `169.47.239.34`, `169.47.242.242`, `169.47.70.10`, `169.47.71.138`, `169.48.110.250`, `169.48.143.218`, `169.48.161.242`, `169.48.226.2`, `169.48.230.146`, `169.48.244.66`, `169.57.100.18`, `169.57.13.10`, `169.57.147.58`, `169.57.151.10`, `169.57.154.98`, `169.59.219.90`, `169.59.223.194`, `169.59.230.98`, `169.60.128.2`, `169.60.170.234`, `169.61.175.106`, `169.61.177.2`, `169.61.187.58`, `169.61.228.138`, `169.61.28.66`, `169.61.29.194`, `169.61.60.130`, `169.62.166.98`, `169.62.189.26`, `169.62.206.234`, `169.62.230.114`, `169.62.82.197`, `169.62.87.170`, `169.62.97.218`, `169.63.39.66`, `169.63.47.250` |
-{: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column two."}
 {: caption="Table 1. IP addresses to open for outgoing traffic" caption-side="bottom"}
 
 #### Allow worker nodes to communicate with {{site.data.keyword.registrylong_notm}}
@@ -283,7 +282,6 @@ Previously Registry subnets (IP addresses) were published in the following table
 | Toronto | `ca.icr.io` | 
 | UK South | `uk.icr.io` Deprecated: `registry.eu-gb.bluemix.net` | 
 | US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` | 
-{: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
 {: caption="Table 2. Addresses for Container Registry traffic" caption-side="bottom"}
 
 #### Allow outgoing network traffic from worker node to IAM
@@ -355,7 +353,6 @@ This table is moving. For the latest IP lists and continued updates, see the pri
 | UK South (`lon02`,`lon04`, `lon05`, `lon06`) | `166.9.34.17`, `166.9.34.41`, `166.9.34.45`, `166.9.34.5`, `166.9.34.50`, `166.9.34.6`, `166.9.34.77`, `166.9.36.10`, `166.9.36.11`, `166.9.36.12`, `166.9.36.13`, `166.9.36.23`, `166.9.36.30`, `166.9.36.53`, `166.9.36.65`, `166.9.36.95`, `166.9.38.18`, `166.9.38.28`, `166.9.38.46`, `166.9.38.54`, `166.9.38.6`, `166.9.38.7`, `166.9.38.75`, `166.9.244.12`, `166.9.244.48`, `166.9.244.75` |
 | US East (`mon01`, `tor01`, `wdc04`, `wdc06`, `wdc07`) | `166.9.20.11`, `166.9.20.117`, `166.9.20.12`, `166.9.20.13`, `166.9.20.187`, `166.9.20.38`, `166.9.20.42`, `166.9.20.63`, `166.9.20.80`, `166.9.22.10`, `166.9.22.109`, `166.9.22.211`, `166.9.22.215`, `166.9.22.26`, `166.9.22.43`, `166.9.22.51`, `166.9.22.52`, `166.9.22.8`, `166.9.22.9`, `166.9.24.19`, `166.9.24.196`, `166.9.24.198`, `166.9.24.22`, `166.9.24.35`, `166.9.24.4`, `166.9.24.45`, `166.9.24.47`, `166.9.24.5`, `166.9.24.90`, `166.9.68.130`, `166.9.68.134`, `166.9.68.34`, `166.9.68.47`, `166.9.231.217`, `166.9.232.15`, `166.9.251.118` |
 | US South (`sao01`, `sjc03`, `sjc04`, `dal10`, `dal12`, `dal13`) | `166.9.12.140`, `166.9.12.141`, `166.9.12.142`, `166.9.12.143`, `166.9.12.144`, `166.9.12.151`, `166.9.12.193`, `166.9.12.196`, `166.9.12.26`, `166.9.12.99`, `166.9.13.31`, `166.9.13.93`, `166.9.13.94`, `166.9.14.122`, `166.9.14.125`, `166.9.14.202`, `166.9.14.204`, `166.9.14.205`, `166.9.14.95`, `166.9.15.130`, `166.9.15.69`, `166.9.15.70`, `166.9.15.71`, `166.9.15.72`, `166.9.15.73`, `166.9.15.74`, `166.9.15.75`, `166.9.15.76`, `166.9.16.113`, `166.9.16.137`, `166.9.16.149`, `166.9.16.183`, `166.9.16.184`, `166.9.16.185`, `166.9.16.38`, `166.9.16.39`, `166.9.16.5`, `166.9.17.2`, `166.9.17.35`, `166.9.17.37`, `166.9.17.39`, `166.9.48.124`, `166.9.48.171`, `166.9.48.175`, `166.9.48.240`, `166.9.48.35`, `166.9.48.50`, `166.9.48.76`, `166.9.51.104`, `166.9.51.106`, `166.9.51.16`, `166.9.51.54`, `166.9.51.74`, `166.9.58.104`, `166.9.58.11`, `166.9.58.16`, `166.9.58.170`, `166.9.58.210`, `166.9.58.64`, `166.9.58.65`, `166.9.59.125`, `166.9.59.147`, `166.9.61.15`, `166.9.61.54`, `166.9.85.114`, `166.9.88.186`, `166.9.88.196`, `166.9.88.21`, `166.9.228.8`, `166.9.229.10`, `166.9.230.9` |
-{: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the region in column one and IP addresses to match in column three."}
 {: caption="Table 3. IP addresses to open for outgoing traffic" caption-side="bottom"}
 
 #### Open ports
@@ -396,7 +393,6 @@ On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining r
 | Toronto | `private.ca.icr.io` | 166.9.76.12, 166.9.77.11, 166.9.78.11 | 166.9.247.143, 166.9.247.170, 166.9.247.207 |
 | UK South | `private.uk.icr.io` | 166.9.36.19, 166.9.38.14, 166.9.34.12 | 166.9.244.9, 166.9.244.45, 166.9.244.73 |
 | US East, US South | `private.us.icr.io` | 166.9.12.227, 166.9.15.116, 166.9.16.244 | 166.9.250.214, 166.9.250.246, 166.9.251.21 |
-{: summary="The first row in the table spans both columns. The rest of the rows should be read left to right, with the server zone in column one and IP addresses to match in column two."}
 {: caption="Table 4. IP addresses to open for Registry traffic" caption-side="bottom"}
 
 #### Optional: Set up allowlist rules for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services
@@ -407,7 +403,7 @@ To send logging and metric data, set up allowlist rules for your {{site.data.key
 - [{{site.data.keyword.la_short}} private endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_private)
 - [{{site.data.keyword.mon_short}} private endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints_monitoring)
 
-### Opening ports in a public or private allowlist for inbound traffic to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes
+### Opening ports in a public or private allowlist for inbound traffic
 {: #firewall_inbound}
 
 You can allow incoming access to NodePort, load balancer, and Ingress services, and {{site.data.keyword.redhat_openshift_notm}} routes.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-29"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -236,7 +236,7 @@ Bare metal machines are optimized for different use cases such as data-, GPU-, o
 After you create GPU bare metal worker nodes in your {{site.data.keyword.redhat_openshift_notm}} version 4 cluster, [install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
 {: note}
 
-Choose a flavor, or machine type, with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
+Choose a flavor, or machine type, with the correct storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
 * **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
 * **SSD**: A solid-state drive storage device for high-performance data.
@@ -283,7 +283,7 @@ For more storage solutions, see [Planning highly available persistent storage](/
 
 Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [bare metal](#bm) or [VM](#vm) flavors.
 
-Choose a flavor, or machine type, with the right storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
+Choose a flavor, or machine type, with the correct storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
 * **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
 * **SSD**: A solid-state drive storage device for high-performance data.

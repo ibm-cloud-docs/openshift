@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-29"
 
 keywords: openshift
 
@@ -69,7 +69,8 @@ Review the following default Calico host policies that are automatically applied
 |`allow-sys-mgmt`|Allows incoming connections for specific IBM Cloud infrastructure systems that are used to manage the worker nodes.|
 |`allow-vrrp`|Allows VRRP packets, which monitor and move virtual IP addresses between worker nodes.|
 {: caption="Default Calico host policies for each cluster"}
-{: summary="The first row in the table spans both columns. Read the rest of the rows from left to right, with the Calico policy in column one and the description in column two."}
+
+
 
 
 
@@ -211,7 +212,7 @@ To create Calico policies, use the following steps. Before you begin, [install a
     
 Note that Calico and Kubernetes network policies only block new connections, they don't interrupt connections that existed before the policy was applied. So, after applying a new or changed policy, to test that it is working and not blocking more than it should, do the following:
 
-1. Restart any pods that might be affected by the policy. Better yet, restart all pods, just in case you don't have your selector quite right and it affects more than you think it will.
+1. Restart any pods that might be affected by the policy. Better yet, restart all pods, just in case you don't have your selector correct and it affects more than you think it will.
 
 1. Run `ibmcloud ks cluster master refresh -c CLUSTER-ID` to restart your cluster master pods. This will interrupt existing connections from kubelet and other components to the master and force them to reconnect. This will show you if the new and changed policies block any necessary connections to your master components.
 
