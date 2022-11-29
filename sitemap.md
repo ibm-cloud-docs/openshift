@@ -3276,7 +3276,7 @@ subcollection: openshift
 
     * [What network traffic is allowed for my Classic cluster by default?](/docs/openshift?topic=openshift-security#default-network-traffic-allowed)
 
-    * [What is network segmentation and how can I set it up for a cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
+    * [What is network segmentation and how can I set it up for a Classic cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
 
     * [What else can I do to reduce the surface for external attacks?](/docs/openshift?topic=openshift-security#external-what-else)
 
@@ -3286,7 +3286,7 @@ subcollection: openshift
 
     * [What network traffic is allowed for my VPC cluster by default?](/docs/openshift?topic=openshift-security#vpc-network-traffic-default)
 
-    * [What is network segmentation and how can I set it up for a cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
+    * [What is network segmentation and how can I set it up for a VPC cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
 
     * [What else can I do to reduce the surface for external attacks?](/docs/openshift?topic=openshift-security#vpc-external-what-else)
 

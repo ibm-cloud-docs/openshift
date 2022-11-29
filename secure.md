@@ -299,7 +299,7 @@ All containers are protected by [predefined Calico network policy settings](/doc
 
 Access from the {{site.data.keyword.redhat_openshift_notm}} master to the worker node's kubelet is secured by an OpenVPN ({{site.data.keyword.redhat_openshift_notm}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.redhat_openshift_notm}} version 4.8 or later) tunnel. For more information, see the [{{site.data.keyword.openshiftlong_notm}} architecture](/docs/openshift?topic=openshift-service-architecture).
 
-### What is network segmentation and how can I set it up for a cluster?
+### What is network segmentation and how can I set it up for a Classic cluster?
 {: #network-segmentation-setup}
 
 Network segmentation describes the approach to divide a network into multiple subnetworks. You can group apps and related data to be accessed by a specific group in your organization. Apps that run in one subnetwork can't see or access apps in another subnetwork. Network segmentation also limits the access that is provided to an insider or third-party software and can limit the range of malicious activities.   
@@ -351,7 +351,7 @@ If you deploy apps in your cluster that must receive traffic requests from the i
 Security groups are applied to your VPC instance and VPC ALBs by defualt. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).
 {: note}
 
-### What is network segmentation and how can I set it up for a cluster?
+### What is network segmentation and how can I set it up for a VPC cluster?
 {: #network-segment-what-is}
 
 Network segmentation describes the approach to divide a network into multiple subnetworks. You can group apps and related data to be accessed by a specific group in your organization. Apps that run in one subnetwork can't see or access apps in another subnetwork. Network segmentation also limits the access that is provided to an insider or third-party software and can limit the range of malicious activities.  
