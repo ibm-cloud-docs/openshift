@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-23"
+lastupdated: "2022-11-29"
 
 keywords: openshift
 
@@ -61,11 +61,11 @@ Before you begin, verify that you're assigned the **Administrator** platform acc
 
 2. Select users individually or create an access group of users.
     - To assign roles to an individual user
-        1. In the left navigation, click the **Users** page, and then click the name of the user that you want to set permissions for. If the user isn't shown, click **Invite users** to add them to the account.
+        1. Click the **Users** page, and then click the name of the user that you want to set permissions for. If the user isn't shown, click **Invite users** to add them to the account.
         2. Click the **Access policies** tab, and then click **Assign access**. Now, the breadcrumbs on the page are **Users / Manage User**.
         3. Optional: Add the user to an access group that has access to {{site.data.keyword.openshiftlong_notm}}.
     - To assign roles to multiple users in an access group
-        1. In the left navigation, click the **Access groups** page.
+        1. Click the **Access groups** page.
         2. Click **Create** and give your group a **Name** and **Description**. Click **Create**.
         3. Click **Add users** to add people to your access group. A list of users that have access to your account is shown.
         4. Check the box next to the users that you want to add to the group. A dialog box displays.

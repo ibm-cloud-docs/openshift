@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-28"
+lastupdated: "2022-11-29"
 
 keywords: openshift
 
@@ -566,7 +566,7 @@ For every project that you have in the cluster, make sure to set up proper [RBAC
 
 In a single-tenant cluster, you create one cluster for every group of people that must run workloads in a cluster. Usually, this team is responsible to manage the cluster and to properly configure and secure it. Multi-tenant clusters use multiple projects to isolate tenants and their workloads.
 
-![Deciding between a single tenant or a multi-tenant cluster.](images/cs_single_multitenant.png "Single tenant vs. multi-tenant cluster"){: caption="Figure 1. Single tenant vs. multi-tenant cluster" caption-side="bottom"}
+![Deciding between a single tenant or a multi-tenant cluster.](images/cs_single_multitenant.png "Single tenant versus multi-tenant cluster"){: caption="Figure 1. Single tenant versus multi-tenant cluster" caption-side="bottom"}
 
 Deciding between single-tenant and multi-tenant clusters depends on the number of teams that must run workloads in a cluster, their service requirements, the size of the service, and the level of isolation that you want to achieve for your workloads.
 

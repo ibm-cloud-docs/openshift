@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-29"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -34,7 +34,7 @@ subcollection: openshift
 ## Choosing an image registry solution
 {: #openshift_registry_options}
 
-Your app's images must be stored in a container registry that your cluster can access to deploy apps into your cluster. You can choose to use the built-in registry of your {{site.data.keyword.redhat_openshift_notm}} cluster, a private registry with access restricted to select users, or a public registry. Review the following table to choose the best option for your use case.
+Your container images must be stored in a container registry that your cluster can access to deploy apps into your cluster. You can choose to use the built-in registry of your {{site.data.keyword.redhat_openshift_notm}} cluster, a private registry with access restricted to select users, or a public registry. Review the following table to choose the best option for your use case.
 {: shortdesc}
 
 Internal {{site.data.keyword.redhat_openshift_notm}} Container Registry (OCR)
@@ -85,11 +85,14 @@ Public registry
 
 - **Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters**: You can optionally choose to set up the internal registry to store data in the `emptyDir` of the worker node where the internal registry pod runs. Keep in mind that this data is not persistent, and if the pod or worker node is restarted, the stored data is deleted and unrecoverable. You might store the images locally in the `emptyDir` to increase performance if you build containers from large images regularly.
 
-### VPC: Backing up your {{site.data.keyword.redhat_openshift_notm}} internal image registry to {{site.data.keyword.cos_full_notm}}
+### Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}
 {: #cos_image_registry}
 
 Your images in your {{site.data.keyword.redhat_openshift_notm}} cluster internal registry are automatically backed up to an {{site.data.keyword.cos_full_notm}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 {: shortdesc}
+
+Supported infrastructure providers
+:   VPC
 
 The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on VPC infrastructure.
 {: note}
@@ -98,7 +101,7 @@ However, if the bucket fails to create when you create your cluster, you must ma
 
 To manually create a bucket for your internal registry, see [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create).
 
-### Classic: Storing images in the internal registry
+### Storing images in the internal registry in Classic clusters
 {: #storage_internal_registry}
 
 By default, your {{site.data.keyword.redhat_openshift_notm}} cluster's internal registry uses an [{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage) volume to store the registry images. You can review the default size of the storage volume, or update the volume size.
@@ -873,7 +876,7 @@ You can copy an image pull secret, such as the one that is automatically created
 
 5. To deploy containers, [add the image pull secret](#use_imagePullSecret) to each deployment or to the service account of the project so that any deployment in the project can pull images from the registry.
 
-### Creating an image pull secret with different IAM API key credentials for more control or access to images in other {{site.data.keyword.cloud_notm}} accounts
+### Creating an image pull secret with different IAM API key credentials
 {: #other_registry_accounts}
 
 You can assign {{site.data.keyword.cloud_notm}} IAM access policies to users or a service ID to restrict permissions to specific registry image namespaces or actions (such as `push` or `pull`). Then, create an API key and store these registry credentials in an image pull secret for your cluster.

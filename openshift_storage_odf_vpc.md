@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-28"
+lastupdated: "2022-11-29"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -37,6 +37,7 @@ Review the following prerequisites.
 
 1. [Install](/docs/openshift?topic=openshift-openshift-cli#cli_oc) or [update the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
 1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least 3 worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM.
+
     You can deploy OpenShift Data Foundation on 3 worker nodes of 10 CPUs and 32 GB RAM, but you must taint your worker nodes to run only ODF pods. You can't run any additional app workloads or system pods on your ODF nodes when you use this setup.
     {: important}
 

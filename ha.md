@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-29"
 
 keywords: openshift, disaster recovery, dr, ha, hadr
 
@@ -30,7 +30,7 @@ High availability (HA) is a core discipline in an IT infrastructure to keep your
 {: shortdesc}
 
 What level of availability do I need?
-:   You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
+:   You can achieve high availability on different levels in your IT infrastructure and within different components of your cluster. The level of availability that is correct for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
 
 What level of availability does {{site.data.keyword.cloud_notm}} offer?
 :   See [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).

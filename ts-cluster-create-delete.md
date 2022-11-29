@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-29"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -331,7 +332,7 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
 
 **To disable TOTP MFA for the account:**
 1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}. From the menu bar, select **Manage > Access (IAM)**.
-2. In the left navigation, click the **Settings** page.
+2. Click the **Settings** page.
 3. Under **Multifactor authentication**, click **Edit**.
 4. Select **None**, and click **Update**.
 
