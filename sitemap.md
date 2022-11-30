@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-29"
+lastupdated: "2022-11-30"
 
 keywords: openshift
 subcollection: openshift
@@ -232,6 +232,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
+
+    * [30 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov3022)
+
+        * Istio add-on version `1.16.0`
 
     * [21 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2122)
 
