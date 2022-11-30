@@ -237,6 +237,8 @@ subcollection: openshift
 
         * Istio add-on version `1.16.0`
 
+        * Ingress ALB change log updates
+
         * Experimental: Installing OpenShift Data Foundation on private only, air-gapped clusters
 
     * [21 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2122)

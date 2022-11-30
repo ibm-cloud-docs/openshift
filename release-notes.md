@@ -36,9 +36,14 @@ Istio add-on version `1.16.0`
 :   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1160) is available.
 
 
+Ingress ALB change log updates
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for version `1.3.1_3108_iks`.
+
+
 
 Experimental: Installing OpenShift Data Foundation on private only, air-gapped clusters
 :   For more information, see [Installing OpenShift Data Foundation on a private cluster](/docs/containers?topic=openshift-openshift-storage-odf-private).
+
 
 
 
