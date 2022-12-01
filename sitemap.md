@@ -8216,6 +8216,8 @@ subcollection: openshift
 
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
 
+* [Prerequisites](/docs/openshift?topic=openshift-debug-tool#debug-tool-prereqs)
+
 * [Enabling the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-12-01"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Why do I see `SyncLoadBalancerFailed` errors when creating a VPC cluster?
 {: #ts-loadbalancer-sync-failed}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-12-01"
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
 

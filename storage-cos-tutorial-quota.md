@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-12-01"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ completion-time: 45m
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Setting capacity quotas for apps that use {{site.data.keyword.cos_full_notm}}
 {: #storage-cos-tutorial-quota}

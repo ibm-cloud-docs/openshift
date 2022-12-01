@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
 

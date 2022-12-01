@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2022
-lastupdated: "2022-11-28"
+lastupdated: "2022-12-01"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 

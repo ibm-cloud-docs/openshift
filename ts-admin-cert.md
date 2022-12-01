@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-12-01"
 
 keywords: certificate, secret, create certificate, troubleshoot certificate, troubleshoot secret
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
