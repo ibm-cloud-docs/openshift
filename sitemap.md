@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: openshift
 subcollection: openshift
@@ -8215,8 +8215,6 @@ subcollection: openshift
 * [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help#allowlist-access-request)
 
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
-
-* [Prerequisites](/docs/openshift?topic=openshift-debug-tool#debug-tool-prereqs)
 
 * [Enabling the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
 
