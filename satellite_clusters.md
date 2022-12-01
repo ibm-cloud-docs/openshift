@@ -187,6 +187,9 @@ After you [access your cluster](/docs/openshift?topic=openshift-access_cluster#a
 ## Creating single-node clusters for resource-constrained edge locations
 {: #single-node}
 
+Creating single-node clusters is available for allowlisted accounts only. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help).
+{: important}
+
 If you are running your {{site.data.keyword.openshiftlong_notm}} cluster on {{site.data.keyword.satelliteshort}} infrastructure in a remote, resource-constrained edge location with limited resources, such as a small data center in a mobile tower, running a data plane with a smaller foot print might be beneficial for your setup. While typical {{site.data.keyword.openshiftlong_notm}} clusters require at least three worker nodes for high availability, you have the option to create a cluster that runs a single worker node. Single-node clusters have several limitations and should only be used in specific circumstances. 
 {: shortdesc}
 
