@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-12-01"
 
 keywords: openshift, strongswan, ipsec, on-prem, vpnaas, direct link
 
@@ -13,6 +13,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

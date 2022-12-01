@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: openshift
 
@@ -24,6 +24,17 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## December 2022
+{: #openshift-dec22}
+
+### 1 December 2022
+{: #openshift-dec0122}
+{: release-note}
+
+CLI version 1.0.471 change log update
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.471.
+
 
 ## November 2022
 {: #openshift-nov22}

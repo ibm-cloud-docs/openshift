@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-12-01"
 
 keywords: maintenance, host maintenance, notification, workers, offline
 

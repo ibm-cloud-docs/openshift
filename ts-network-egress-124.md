@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-12-01"
 
 keywords: openshift, egress, natportrange, 1.24
 

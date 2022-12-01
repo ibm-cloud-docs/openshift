@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: openshift
 subcollection: openshift
@@ -231,11 +231,21 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec22)
+
+    * [1 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0122)
+
+        * CLI version 1.0.471 change log update
+
 * [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
 
     * [30 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov3022)
 
         * Istio add-on version `1.16.0`
+
+        * Ingress ALB change log updates
+
+        * Experimental: Installing OpenShift Data Foundation on private only, air-gapped clusters
 
     * [21 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2122)
 
@@ -2971,6 +2981,8 @@ subcollection: openshift
 
     * [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access)
 
+* [Accessing VPC clusters through the Virtual Private Endpoint Gateway](/docs/openshift?topic=openshift-access_cluster#vpc_vpe)
+
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
 
     * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
@@ -4930,6 +4942,42 @@ subcollection: openshift
 
     * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-47)
 
+[Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#private_odf_tutorial)
+
+* [Prerequisites](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-prereq)
+
+* [Create an additional subnet in your VPC and attach a Public Gateway](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-storage-private-vm)
+
+* [Create a bastion host](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-storage-bastion)
+
+* [Reserve a floating IP and bind it to your bastion host](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-floating-ip-bind)
+
+* [Install the CLI tools](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-cli-install-bastion)
+
+* [Log in to your cluster and disable the default OperatorHub sources](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-storage-disable-operatorhub)
+
+* [Log in to your container registries](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-storage-login-registry)
+
+* [Create a namespace in {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-registry-namespace-create)
+
+* [Mirror the Operator index to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-storage-mirror-catalog)
+
+* [Create a secret to pull images from {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-storage-create-secret)
+
+* [Update the catalog source in your cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-storage-create-catalog)
+
+* [Update your image pull secret](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-update-dockerconf)
+
+* [Replace each worker node to pick up configuration changes](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-reload-workers)
+
+* [Update the `registries.conf` file on each node](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private)
+
+* [Reboot each worker node](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-reboot-workers)
+
+* [Install the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-openshift-storage-odf-private#install-odf-console-private)
+
+* [Verify OpenShift Data Foundation is running](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-verify)
+
 [Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
 [Managing your OpenShift Data Foundation deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
@@ -5679,6 +5727,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.471](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10471)
 
 * [Version 1.0.459](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10459)
 
@@ -8173,8 +8223,6 @@ subcollection: openshift
 * [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help#allowlist-access-request)
 
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
-
-* [Prerequisites](/docs/openshift?topic=openshift-debug-tool#debug-tool-prereqs)
 
 * [Enabling the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
 
