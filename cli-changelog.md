@@ -31,6 +31,15 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version 1.0.471
+{: #cli-10471}
+
+Version 1.0.471 of the CLI was released on 1 December 2022.
+:   Adds new endpoint type `vpe`(Virtual Private Endpoint) for cluster config command. 
+:   Updates the cluster get command to show VPE url.
+:   Adds `infrastructureTopology` field to cluster response.
+:   Adds JSON output to Satellite get host command.
+
 ## Version 1.0.459
 {: #cli-10459}
 

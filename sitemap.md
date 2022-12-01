@@ -231,6 +231,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec22)
+
+    * [1 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0122)
+
+        * CLI version 1.0.471 change log update
+
 * [November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov22)
 
     * [30 November 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov3022)
@@ -5722,6 +5728,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.471](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10471)
+
 * [Version 1.0.459](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10459)
 
 * [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10454)
@@ -8215,8 +8223,6 @@ subcollection: openshift
 * [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help#allowlist-access-request)
 
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
-
-* [Prerequisites](/docs/openshift?topic=openshift-debug-tool#debug-tool-prereqs)
 
 * [Enabling the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
 
