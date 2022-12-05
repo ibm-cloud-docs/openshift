@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift
 
@@ -113,9 +113,9 @@ The following image shows how the web server app is exposed to the internet by t
         run: webserver
       ports:
       - name: webserver-port
-        port: 80
         protocol: TCP
-        targetPort: 8080
+        port: 8080
+        targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
     ```
     {: codeblock}
 

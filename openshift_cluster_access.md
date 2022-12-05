@@ -219,8 +219,8 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
       type: LoadBalancer
       ports:
       - protocol: TCP
-        port: <private_service_endpoint_port>
-        targetPort: <private_service_endpoint_port>
+        port: 8080
+        targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
     ---
     kind: Endpoints
     apiVersion: v1
@@ -232,6 +232,8 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
           - ip: 172.20.0.1
         ports:
           - port: 2040
+          
+          
     ```
     {: codeblock}
 

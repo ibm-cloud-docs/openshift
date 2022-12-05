@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift
 
@@ -66,6 +66,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
           ports:
            - protocol: TCP
              port: 8080
+             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
           externalTrafficPolicy: Local
         ```
         {: screen}
@@ -90,6 +91,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
           ports:
            - protocol: TCP
              port: 8080
+             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
         ```
         {: screen}
 

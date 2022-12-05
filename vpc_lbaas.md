@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift, app protocol, application protocol
 
@@ -143,10 +143,11 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
        - name: http
          protocol: TCP
          port: 8080
-         targetPort: 8080
+         targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
        - name: https
          protocol: TCP
          port: 443
+         targetPort: 443 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
       externalTrafficPolicy: Local
     ```
     {: codeblock}
@@ -404,9 +405,11 @@ To enable your app to receive private network requests,
          protocol: TCP
          port: 8080
          targetPort: 8080
+         targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
        - name: https
          protocol: TCP
          port: 443
+         targetPort: 443 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
       externalTrafficPolicy: Local
     ```
     {: codeblock}
@@ -639,10 +642,11 @@ To enable your app to receive public or private requests,
        - name: http
          protocol: TCP
          port: 8080
-         targetPort: 8080
+         targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
        - name: https
          protocol: TCP
          port: 443
+         targetPort: 443 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
     ```
     {: codeblock}
 
