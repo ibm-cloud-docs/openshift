@@ -38,6 +38,11 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Ingress ALB version `1.2.1_3186_iks` change log updates
 :   For more information, see the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
+
+
+Worker node fix packs 4.11.13_1534_openshift, 4.10.41_1547_openshift, 4.9.51_1567_openshift, 4.8.52_1582_openshift, 4.7.60_1591_openshift
+:   For more information, see the change logs: [4.11.13_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10.41_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.51_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.52_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.60_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_47).
+
 ### 1 December 2022
 {: #openshift-dec0122}
 {: release-note}

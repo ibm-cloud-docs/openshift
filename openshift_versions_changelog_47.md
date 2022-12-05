@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -38,6 +38,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.7 change log.
 {: shortdesc}
+
+
+### Change log for worker node fix pack 4.7.60_1591_openshift, released 05 December 2022
+{: #4760_1591_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.7.60_1591_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-42898](https://nvd.nist.gov/vuln/detail/CVE-2022-42898){: external}. |
+| RHEL 8 Packages |N/A|N/A| Worker node package updates for [CVE-2022-42898](https://nvd.nist.gov/vuln/detail/CVE-2022-42898){: external}. |
+| {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
+| HAPROXY | c619f4 | 508bf6 | [CVE-2022-42898](https://nvd.nist.gov/vuln/detail/CVE-2022-42898){: external}. |
+| CUDA | fd4353 | 0ab756 | [CVE-2022-42898](https://nvd.nist.gov/vuln/detail/CVE-2022-42898){: external}. |
+{: caption="Changes since version 4.7.60_1590_openshift" caption-side="top"}
 
 
 ### Change log for worker node fix pack 4.7.60_1590_openshift, released 21 November 2022
