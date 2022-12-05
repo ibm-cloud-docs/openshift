@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift, lb2.0, nlb
 
@@ -59,6 +59,7 @@ To set up an NLB 1.0 service in a multizone cluster:
           ports:
            - protocol: TCP
              port: 8080
+             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
           loadBalancerIP: <IP_address>
         ```
         {: codeblock}
@@ -102,6 +103,7 @@ To set up an NLB 1.0 service in a multizone cluster:
           ports:
            - protocol: TCP
              port: 8080
+             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
           loadBalancerIP: 172.21.xxx.xxx
         ```
         {: codeblock}
@@ -195,6 +197,7 @@ To create an NLB 1.0 service in a single-zone cluster:
           ports:
            - protocol: TCP
              port: 8080
+             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
           loadBalancerIP: <IP_address>
         ```
         {: codeblock}
@@ -231,6 +234,7 @@ To create an NLB 1.0 service in a single-zone cluster:
           ports:
            - protocol: TCP
              port: 8080
+             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
           loadBalancerIP: 172.21.xxx.xxx
         ```
         {: codeblock}

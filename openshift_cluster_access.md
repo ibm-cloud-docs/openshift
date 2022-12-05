@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -219,8 +219,8 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
       type: LoadBalancer
       ports:
       - protocol: TCP
-        port: <private_service_endpoint_port>
-        targetPort: <private_service_endpoint_port>
+        port: 8080
+        targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
     ---
     kind: Endpoints
     apiVersion: v1
@@ -232,6 +232,8 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
           - ip: 172.20.0.1
         ports:
           - port: 2040
+          
+          
     ```
     {: codeblock}
 
@@ -503,7 +505,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
 {: shortdesc}
 
 1. Set up your {{site.data.keyword.vpc_short}} VPN and connect to your VPC through VPN.
-vpc?topic=vpc-vpn-client-to-site-overview
+
     1. Configure a [client-to-site](/docs/vpc?topic=vpc-vpn-client-to-site-overview) or [site-to-site](/docs/vpc?topic=vpc-vpn-onprem-example#configuring-onprem-gateway) VPN to your VPC. For example, you might choose to set up a client-to-site connection with an OpenVPN Client.
     2. For client-to-site VPN setups, you must specify the {{site.data.keyword.vpc_short}} Private DNS service addresses when you provision the VPN server as mentioned in the [considerations](/docs/vpc?topic=vpc-client-to-site-vpn-planning#existing-vpc-configuration-considerations). You must also create a VPN route after the VPN server is provisioned, with the destination `161.26.0.0/16` and action `translate`.
     3. For site-to-site VPN setups, you must follow the [Accessing service endpoints through VPN guide](/docs/vpc?topic=vpc-build-se-connectivity-using-vpn) and configure the {{site.data.keyword.vpc_short}} Private DNS service addresses.
@@ -631,6 +633,8 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```sh
         <token_endpoint>/oauth/token
         ```
+        : screen}
+        
     3. Log in to the cluster with the endpoint that you previously retrieved. Replace `<URL>` with the `<token_endpoint>` of the `oauth` server.
 
         Example curl request:

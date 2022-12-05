@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift
 
@@ -27,6 +27,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## December 2022
 {: #openshift-dec22}
+
+### 5 December 2022
+{: #openshift-dec0522}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.4` is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+Ingress ALB version `1.2.1_3186_iks` change log updates
+:   For more information, see the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
+
+
+
+Worker node fix packs 4.11.13_1534_openshift, 4.10.41_1547_openshift, 4.9.51_1567_openshift, 4.8.52_1582_openshift, 4.7.60_1591_openshift
+:   For more information, see the change logs: [4.11.13_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10.41_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.51_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.52_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.60_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_47).
 
 ### 1 December 2022
 {: #openshift-dec0122}
@@ -1168,7 +1183,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
-:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding {{site.data.keyword.cos_full_notm}} storage to apps](/docs/openshift?topic=openshift-storage_cos_apps), and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
+:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding {{site.data.keyword.cos_full_notm}} storage to apps](/docs/openshift?topic=openshift-storage_cos_apps),[{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-sat-cos), and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
@@ -2053,7 +2068,7 @@ New! The `addon options` command is now available
 
 
 New! Deploy OpenShift Data Foundation on VPC clusters with a single command
-:   For more information, see [Quick start for VPC](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui#odf-quickstart-ui)
+:   For more information, see [Quick start for VPC](/docs/openshift?topic=openshift-deploy-odf-vpc)
 
 New! OpenShift Container Storage is now OpenShift Data Foundation. 
 

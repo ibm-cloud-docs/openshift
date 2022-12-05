@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift, version, update, upgrade
 
@@ -27,7 +27,6 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 * [{{site.data.keyword.redhat_openshift_notm}} 4.9 release notes overview](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.8 release notes overview](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.7 release notes overview](https://docs.openshift.com/container-platform/4.7/release_notes/ocp-4-7-release-notes.html){: external}
-* [{{site.data.keyword.redhat_openshift_notm}} 4.6 release notes overview](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html){: external}
 * [Kubernetes change log](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
 ## Available {{site.data.keyword.redhat_openshift_notm}} versions
@@ -207,4 +206,4 @@ Unsupported clusters are not provided with security and patch updates and are no
 {: shortdesc}
 
 **Unsupported {{site.data.keyword.openshiftshort}} versions**: 
-:    [4.5 (Kubernetes 1.18)](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4 (Kubernetes 1.17)](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3 (Kubernetes 1.16)](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11 (Kubernetes 1.11)](/docs/openshift?topic=openshift-openshift_changelog_311).
+:    [4.6 (Kubernetes 1.19)](/docs/openshift?topic=openshift-openshift_changelog_46), [4.5 (Kubernetes 1.18)](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4 (Kubernetes 1.17)](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3 (Kubernetes 1.16)](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11 (Kubernetes 1.11)](/docs/openshift?topic=openshift-openshift_changelog_311).
