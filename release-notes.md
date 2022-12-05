@@ -35,6 +35,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.4` is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
+Ingress ALB version `1.2.1_3186_iks` change log updates
+:   For more information, see the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
+
 ### 1 December 2022
 {: #openshift-dec0122}
 {: release-note}

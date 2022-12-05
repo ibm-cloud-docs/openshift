@@ -237,6 +237,8 @@ subcollection: openshift
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.4` is available.
 
+        * Ingress ALB version `1.2.1_3186_iks` change log updates
+
     * [1 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0122)
 
         * CLI version 1.0.471 change log update
