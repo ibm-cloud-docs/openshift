@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -18,7 +18,7 @@ subcollection: openshift
 {: #openshift_changelog_46}
 
 
-View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run version 4.6. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
+Version 4.6 is unsupported. You can review the following archive of 4.6 change logs.
 {: shortdesc}
 
 ## Overview
