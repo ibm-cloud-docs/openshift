@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-06"
 
 keywords: openshift, clusters, delete, remove
 
@@ -59,7 +59,7 @@ When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}}
 
 2. Remove the cluster.
     - From the {{site.data.keyword.cloud_notm}} console
-        1. Select your cluster and click **Delete** from the **More actions...** menu.
+        1. Select your cluster and click **Delete** from the **More actions** menu.
 
     - From the {{site.data.keyword.cloud_notm}} CLI
         1. List the available clusters.

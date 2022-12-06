@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-06"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
 
@@ -53,7 +53,7 @@ Before you install OpenShift Data Foundation in your cluster, meet the following
     - Your worker node operating system must be RHEL 8.
     - 1 Virtual Private Cloud (VPC) with 3 subnets (1 per zone) with no public gateway attached.
     - 1 {{site.data.keyword.openshiftlong_notm}} cluster with at least 3 worker nodes spread evenly across 3 zones. The worker nodes must be at least 16x64.
-1. A {{site.data.keyword.registrylong_notm}} instance with at least one namespace in the same region as your cluster. If you don't have an instance of {{site.data.keyword.registrylong_notm}}, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started) to create one.
+1. An {{site.data.keyword.registrylong_notm}} instance with at least one namespace in the same region as your cluster. If you don't have an instance of {{site.data.keyword.registrylong_notm}}, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started) to create one.
 
 
 

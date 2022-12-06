@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-06"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -83,7 +83,7 @@ Before monitoring metrics for {{site.data.keyword.block_storage_is_short}} you m
 
 1. Navigate to the {{site.data.keyword.redhat_openshift_notm}} web console and select **Monitoring** and then **Metrics**. 
 
-1. Input the metric you wish to monitor in the dialog box and select **Run queries**. 
+1. Input the metric you want to monitor in the dialog box and select **Run queries**. 
     ```sh
     kubelet_volume_stats_used_bytes{persistentvolumeclaim="NAME OF PVC"} / kubelet_volume_stats_capacity_bytes{persistentvolumeclaim="NAME OF PVC"}
     ```
