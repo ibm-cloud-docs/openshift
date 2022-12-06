@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-06"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 

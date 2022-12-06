@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-02"
+lastupdated: "2022-12-06"
 
 keywords: openshift
 
@@ -1505,8 +1505,6 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
-
-
 
 ### `ibmcloud oc cluster master update`
 {: #cs_cluster_update}
@@ -7086,7 +7084,6 @@ The following example creates a {{site.data.keyword.satelliteshort}} cluster run
 ibmcloud sat cluster create satellite --name mysatcluster-coreos --location my-location --version 4.9.23_openshift --operating-system RHCOS --workers 6
 ```
 {: pre}
-
 
 ### `ibmcloud oc worker-pool create satellite`
 {: #cs_worker_pool_create_sat}

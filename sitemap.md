@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-06"
 
 keywords: openshift
 subcollection: openshift
@@ -3567,8 +3567,6 @@ subcollection: openshift
     * [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc)
 
     * [{{site.data.keyword.satelliteshort}} worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-satellite)
-
-* [Encrypting data in classic clusters by using IBM Cloud Data Shield (beta)](/docs/openshift?topic=openshift-encryption#datashield)
 
 [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc#openshift_scc)
 
