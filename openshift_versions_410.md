@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-07"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -27,7 +27,7 @@ Looking for general information about updating clusters, or information on a dif
 RHEL 8 is the default operating system for worker nodes created in version 4.10 clusters. RHEL 7 is deprecated and becomes unsupported on 6 December 2022. You must replace your RHEL 7 worker nodes with RHEL 8 worker nodes before 6 December 2022
 {: important}
 
-If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific).
+If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx).
 {: important}
 
 [Extended update support (EUS) updates](https://docs.openshift.com/container-platform/4.10/updating/preparing-eus-eus-upgrade.html){: external} are not available at this time for {{site.data.keyword.openshiftlong_notm}} version 4.10 clusters.
