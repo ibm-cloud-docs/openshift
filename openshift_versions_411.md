@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-07"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -60,7 +60,7 @@ Cluster autoscaler add-on
 :    The cluster autoscaler add-on version 1.0.6 or newer is supported on {{site.data.keyword.openshiftshort}} version 4.11. 
 
 Portworx
-:    Portworx is supported on version 4.11. However, if you have Portworx installed, you must follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific).
+:    Portworx is supported on version 4.11. However, if you have Portworx installed, you must follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx).
 
 OpenShift Data Foundation (ODF)
 :    ODF version 4.10 supports {{site.data.keyword.openshiftshort}} version 4.11 clusters. You may continue to use version 4.10 of the ODF add-on.
