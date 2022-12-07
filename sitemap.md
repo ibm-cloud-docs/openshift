@@ -4831,8 +4831,6 @@ subcollection: openshift
 
     * [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)
 
-* [Updating Portworx to a specific version](/docs/openshift?topic=openshift-portworx#px-update-specific)
-
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)

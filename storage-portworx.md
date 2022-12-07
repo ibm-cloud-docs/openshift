@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-07"
 
 keywords: portworx, openshift
 
@@ -707,9 +707,6 @@ To install Portworx:
 Beginning with version `2.12` Portworx uses an operator-based deployment model instead of the Helm based model use in version `2.11` and earlier. If you are updating from Portworx `2.11` to version `2.12`, follow the migration steps in the [Portworx documentation](https://docs.portworx.com/operations/operate-kubernetes/migrate-daemonset/){: external}.
 {: important}
 
-The following steps are for updating Portworx installations up to version `2.11`. Do not follow these steps if you want to update to version `2.12`
-{: important}
-
 If you have a private only cluster, contact Portworx for help updating your cluster. Contact Portworx support by using one of the following methods.
 
 - Sending an e-mail to `support@purestorage.com`.
@@ -721,78 +718,6 @@ If you have a private only cluster, contact Portworx for help updating your clus
 You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
 {: tip}
 {: note}
-
-If you are updating Portworx to use RHEL 8 worker nodes, see [Updating Portworx to a specific version](#px-update-specific).
-
-1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm version 3 client on your local machine.
-
-1. Update your Helm repos.
-    ```sh
-    helm repo update
-    ```
-    {: pre}
-
-1. Find release name of your Portworx Helm chart.
-    ```sh
-    helm list -A | grep portworx
-    ```
-    {: pre}
-
-    Example output
-    ```sh
-    <release_name>      default      1    2020-06-10 16:05:31.86058777 +0000 UTC    deployed    portworx-1.0.18         2.5.1    
-    ```
-    {: screen}
-
-1. Update your Portworx release with the latest version of the Helm chart.
-    ```sh
-    helm upgrade <release_name> ibm-community/portworx/
-    ```
-    {: pre}
-
-## Updating Portworx to a specific version
-{: #px-update-specific}
-
-
-1. Add the Helm repo.
-    ```sh
-    helm repo add ibm-porx https://raw.githubusercontent.com/IBM/charts/master/repo/community
-    ```
-    {: pre}
-
-1. Update your Helm repos.
-    ```sh
-    helm repo update
-    ```
-    {: pre}
-
-1. Download the values file.
-    ```sh
-    helm get values RELEASE > /tmp/values.yaml
-    ```
-    {: pre}
-
-1. Specify the image version that you want to use. 
-
-    If you are updating Portworx to work on RHEL 8 worker nodes, specify at least image version 2.11.4.
-    {: important}
-    
-    ```sh
-    vi /tmp/values.yaml 
-    ```
-    {: pre}
-
-    ```sh
-    envVars: PX_IMAGE=icr.io/ext/portworx/px-enterprise:2.11.4
-    imageVersion: 2.11.4
-    ```
-    {: screen}
-
-1. Update your Portworx release.
-    ```sh
-    helm upgrade portworx -f /tmp/values.yaml ibm-porx/portworx
-    ```
-    {: pre}
 
 
 
