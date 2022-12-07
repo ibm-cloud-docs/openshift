@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-07"
 
 keywords: openshift
 subcollection: openshift
@@ -239,7 +239,7 @@ subcollection: openshift
 
         * Ingress ALB version `1.2.1_3186_iks` change log updates
 
-        * Worker node fix packs 4.11.13_1534_openshift, 4.10.41_1547_openshift, 4.9.51_1567_openshift, 4.8.52_1582_openshift, 4.7.60_1591_openshift
+        * Worker node fix packs 4.11.13_1534_openshift, 4.10.41_1547_openshift, 4.9.52_1567_openshift, 4.8.52_1582_openshift, 4.7.60_1591_openshift
 
     * [1 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0122)
 
