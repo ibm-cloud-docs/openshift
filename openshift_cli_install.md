@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-08"
 
-keywords: openshift, oc
+keywords: openshift, oc, installing oc, openshift cli, installing oc cli
 
 subcollection: openshift
 
@@ -285,7 +285,7 @@ To launch and use the {{site.data.keyword.cloud-shell_notm}}:
 3. Access your cluster by getting the `oc login` token.
 
     1. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
-    1. In the **Actions...** drop-down list, select **Connect via CLI**.
+    1. In the **Actions** drop-down list, select **Connect via CLI**.
     1. Follow the instructions.
 
 If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm}} console, you can set the cluster context with the `--admin` flag through the CLI with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin` command.

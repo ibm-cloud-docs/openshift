@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-08"
 
 keywords: openshift, lb2.0, nlb
 
@@ -72,7 +72,7 @@ To set up an NLB 1.0 service in a multizone cluster:
         :   Annotation to specify the zone that the load balancer service deploys to. To see zones, run `ibmcloud oc zone ls`.
         
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan`
-        :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone &lt;zone&gt;`.
+        :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone <zone>`.
         
         `selector`
         :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML.
@@ -205,7 +205,7 @@ To create an NLB 1.0 service in a single-zone cluster:
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type:`
         :   Annotation to specify a `private` or `public` load balancer.
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:`
-        :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone &lt;zone&gt;`.
+        :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone <zone>`.
         `selector`
         :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML.
         

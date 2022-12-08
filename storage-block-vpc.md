@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-08"
 
 keywords: openshift
 
@@ -842,7 +842,7 @@ To create your own storage class:
     :   If you entered **true** for `parameters.encrypted`, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.blockstorageshort}} volume. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
 
     `zone`
-    :   In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster &lt;cluster_name_or_ID&gt;` and look at the **Worker Zones** field in your CLI output. If you don't specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.
+    :   In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look at the **Worker Zones** field in your CLI output. If you don't specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.
 
     `region`
     :   The region of the worker node where you want to attach storage.
@@ -889,7 +889,7 @@ To create your own storage class:
     ibmc-vpc-block-retain-5iops-tier        vpc.block.csi.ibm.io   4d21h
     ibmc-vpc-block-retain-custom            vpc.block.csi.ibm.io   4d21h
     ibmc-vpc-block-retain-general-purpose   vpc.block.csi.ibm.io   4d21h
-    &lt;custom-storageclass&gt;             vpc.block.csi.ibm.io   4m26s
+    <custom-storageclass>             vpc.block.csi.ibm.io   4m26s
     ```
     {: screen}
 

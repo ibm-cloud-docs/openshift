@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-08"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -135,7 +135,7 @@ Before you begin, gather the relevant VPC and cluster IDs.
 ## Minimum inbound and outbound requirements 
 {: #vpc-sg-inbound-outbound}
 
-The following inbound and outbound rules are covered by the default VPC security groups. Note that you can modify the randomly-named VPC security group and the cluster-level `kube-<cluster-id>` security group, but you must make sure that these rules are still met. 
+The following inbound and outbound rules are covered by the default VPC security groups. Note that you can modify the randomly named VPC security group and the cluster-level `kube-<cluster-id>` security group, but you must make sure that these rules are still met. 
 
 Modifying the `kube-<vpc-id>` security group is not recommended as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. Instead, you can [remove the default security group from the VPC ALB or VPE gateway](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
 {: important}
@@ -143,7 +143,7 @@ Modifying the `kube-<vpc-id>` security group is not recommended as doing so migh
 ### Required inbound and outbound rules for cluster workers
 {: #required-group-rules-workers}
 
-By default, traffic rules for cluster workers are covered by the randomly-named VPC security group and the `kube-<cluster-id>` cluster security group. If you modify or replace either of these security groups, make sure the following traffic rules are still allowed. 
+By default, traffic rules for cluster workers are covered by the randomly named VPC security group and the `kube-<cluster-id>` cluster security group. If you modify or replace either of these security groups, make sure the following traffic rules are still allowed. 
 {: shortdesc}
 
 #### Inbound rules
@@ -199,7 +199,7 @@ By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` securi
 ## Creating security group rules 
 {: #vpc-sg-create-rules}
 
-You can add inbound and outbound rules to the default VPC security groups. If you modify the randomly-named VPC security group and the cluster-level `kube-<cluster-id>` security group or replace the `kube-<vpc-id>` security group, you must make sure that the [minimum inbound and outbound rules](#vpc-sg-inbound-outbound) are still met. Do not modify the `kube-<vpc-id>` security group itself.
+You can add inbound and outbound rules to the default VPC security groups. If you modify the randomly named VPC security group and the cluster-level `kube-<cluster-id>` security group or replace the `kube-<vpc-id>` security group, you must make sure that the [minimum inbound and outbound rules](#vpc-sg-inbound-outbound) are still met. Do not modify the `kube-<vpc-id>` security group itself.
 {: shortdesc}
 
 ### Creating rules in the console

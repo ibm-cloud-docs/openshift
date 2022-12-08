@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-08"
 
 keywords: openshift
 
@@ -35,7 +35,7 @@ You might see the following symptoms:
 If a network error occurs while a pod writes to a volume, IBM Cloud infrastructure protects the data on the volume from getting corrupted by changing the volume to a read-only mode. Pods that use this volume can't continue to write to the volume and fail.
 {: tsCauses}
 
-Verify the plug-in version, re-create your app, and gracefully reload your worker node.
+Verify the plug-in version, re-create your app, and safely reload your worker node.
 {: tsResolve}
 
 1. Check the version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in that is installed in your cluster.
@@ -71,7 +71,7 @@ Verify the plug-in version, re-create your app, and gracefully reload your worke
         ```
         {: pre}
 
-    3. Gracefully [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+    3. Safely [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 
 
 

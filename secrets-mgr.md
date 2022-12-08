@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-08"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -41,7 +41,7 @@ Note that to have your secrets automatically updated, you must register at least
 ### What types of secrets are supported with {{site.data.keyword.secrets-manager_short}}?
 {: #secrets-mgr_about_types}
 
-{{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and Opaque secret types. With TLS secrets, you can specify one certificate CRN. With Opaque secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type, TLS is applied by default. 
+{{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and non-TLS (Opaque) secret types. With TLS secrets, you can specify one certificate CRN. With non-TLS secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type when you create a secret, TLS is applied by default. 
 
 For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
 
@@ -107,7 +107,7 @@ Follow the steps to register your {{site.data.keyword.secrets-manager_short}} in
 
     ```sh
     Name:                  my-secrets-manager-instance 
-    ID:                    crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1-111a-1111-1a1a1a1111a1::
+    ID:                    crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1-111a-1111-1a1a1a1111a1:
     GUID:                  111a1111-11a1-111a-1111-1a1a1a1111a1 
     Location:              us-south   
     Service Name:          secrets-manager   

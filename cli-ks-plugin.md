@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-08"
 
 keywords: openshift
 
@@ -4466,7 +4466,7 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster mycluster --cidr 1.1.1.1/
 ### `ibmcloud oc ingress secret create`
 {: #cs_ingress_secret_create}
 
-Create an Ingress secret in a cluster for a certificate that is stored in {{site.data.keyword.cloudcerts_long}} or {{site.data.keyword.secrets-manager_full}}.
+Create an Ingress secret in a cluster for a secret that is stored in {{site.data.keyword.cloudcerts_long}} or {{site.data.keyword.secrets-manager_full}}. This command can be used to create TLS or non-TLS secrets. 
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
@@ -4476,7 +4476,7 @@ To use the `ibmcloud oc ingress secret create` command, you must have a default 
 {: important}
 
 ```sh
-ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME [--namespace NAMESPACE] [--persist] [--type] [-q]
+ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME  [--namespace NAMESPACE] [--field CRN] [--persist] [--type] [-q]
 ```
 {: pre}
 
@@ -4497,6 +4497,12 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 
 `--name SECRET_NAME`
 :    Required: Specify a name for the secret. Make sure that you don't create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
+
+`--field CRN`
+:   Required for non-TLS secrets. Add a field to the secret. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-ingress-types#non-tls-field). This option is not supported for TLS secrets. 
+     - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types. 
+     - To specify the field name, use the named field option: `--field name=<crn>`. This option is available for arbitrary and IAM credential secret types.
+     - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types. 
 
 `--namespace NAMESPACE`
 :    Optional: Specify the project that your Ingress resource is deployed to. If your ALB runs the Kubernetes Ingress image, this value is required, because the ALB can identify secrets only in the same project as your Ingress resource. If your ALB runs the {{site.data.keyword.openshiftlong_notm}} Ingress image, and you don't specify a project, the certificate secret is created in a project called `ibm-cert-store`. A reference to this secret is then created in the `default` project, which any Ingress resource in any project can access. While processing requests, the ALB follows the reference to pick up and use the certificate secret from the `ibm-cert-store` project.
@@ -4520,7 +4526,7 @@ ibmcloud oc ingress secret create --cert-crn crn:v1:staging:public:cloudcerts:us
 ### `ibmcloud oc ingress secret field add`
 {: #cs_ingress_secret_field_add}
 
-Add a non-certificate CRN field to an Opaque secret.
+Add a non-TLS CRN field to an Opaque secret. There are three ways to specify the field type. The one you choose depends on the secret type and how you want to name the field in the non-TLS secret. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-ingress-types#non-tls-field).
 {: shortdesc}
 
 ```sh
@@ -4543,7 +4549,10 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name SECRET_NAME --fiel
 :    Required. The name of the secret to add the field to.
 
 `--field CRN`
-:    Required. The secret CRN to add to the secret. To pull in the secret without specifying the name, use `--field <crn>`. To specify the field name, use `--field name=<crn>`. To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use `--field prefix=<crn>`. You can specify more than one field at a time.
+:    Required. The secret CRN to add to the field. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-ingress-types#non-tls-field).
+     - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types. 
+     - To specify the field name, use the named field option: `--field name=<crn>`. This option is available for arbitrary and IAM credential secret types.
+     - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types. 
 
 `--namespace NAMESPACE`
 :    Required. The namespace that the secret is deployed to.
@@ -4551,9 +4560,9 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name SECRET_NAME --fiel
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
-**Example**:
+**Example to add default, named, and prefixed fields to a set of IAM credentials**:
 ```sh
-ibmcloud ks ingress secret field add --cluster a111aaa11a1aaaaaaa1 --name my-secret --namespace default --field prefix=crn:v1:staging:public:secrets-manager:eu-gb:a/1a11a1a111aa11aa111aa1a1111aa1a1:1aaa1a1a-aaaa-11aa-1a11-a11aaa1a11a1:secret:a1a11a11-111a-11a1-aa11-11aaa1a11a11
+ibmcloud oc ingress secret field add --cluster example-cluster --name example-iam-secret --namespace default  --field crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1 --field unique_iam_name=crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1 --field prefix=crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1
 ```
 {: pre}
 

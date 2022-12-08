@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-08"
 
 keywords: openshift
 
@@ -25,8 +25,11 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
 ## December 2022
 {: #openshift-dec22}
+
+
 
 ### 5 December 2022
 {: #openshift-dec0522}
@@ -34,9 +37,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.4` is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-Ingress ALB version `1.2.1_3186_iks` change log updates
-:   For more information, see the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
 
 

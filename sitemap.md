@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-08"
 
 keywords: openshift
 subcollection: openshift
@@ -236,8 +236,6 @@ subcollection: openshift
     * [5 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0522)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.4` is available.
-
-        * Ingress ALB version `1.2.1_3186_iks` change log updates
 
         * Worker node fix packs 4.11.13_1534_openshift, 4.10.41_1547_openshift, 4.9.52_1567_openshift, 4.8.52_1582_openshift, 4.7.60_1591_openshift
 
@@ -2906,9 +2904,9 @@ subcollection: openshift
 
 [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
-* [Creating a standard VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
+* [Creating VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
 
-* [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
+* [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
 
 * [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
 
@@ -8380,37 +8378,37 @@ subcollection: openshift
 
 [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-state-reference)
 
-* [Critical](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-critical)
+* [Critical state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-critical)
 
-* [Deleting](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleting)
+* [Deleting state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleting)
 
-* [Deleted](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleted)
+* [Deleted state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleted)
 
-* [Deployed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deployed)
+* [Deployed state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deployed)
 
-* [Deploying](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploying)
+* [Deploying state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploying)
 
-* [Deploy_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploy-failed)
+* [Deploy_failed state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploy-failed)
 
-* [Normal](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
+* [Normal state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
 
-* [Provisioned](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
+* [Provisioned state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
 
-* [Provisioning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioning)
+* [Provisioning state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioning)
 
-* [Provision pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-pending)
+* [Provision pending state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-pending)
 
-* [Provision_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-failed)
+* [Provision_failed state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-failed)
 
-* [Reloading](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
+* [Reloading state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
 
-* [Reloading_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
+* [Reloading_failed state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
 
-* [Reload_pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reload-pending)
+* [Reload_pending state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reload-pending)
 
-* [Unknown](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-unknown)
+* [Unknown state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-unknown)
 
-* [Warning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-warning)
+* [Warning state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-warning)
 
 [Common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues#common_worker_nodes_issues)
 
