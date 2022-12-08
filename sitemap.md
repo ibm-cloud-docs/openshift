@@ -2904,9 +2904,9 @@ subcollection: openshift
 
 [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
-* [Creating a standard VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
+* [Creating VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
 
-* [Creating standard VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
+* [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
 
 * [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
 
