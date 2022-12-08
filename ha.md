@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-08"
 
 keywords: openshift, disaster recovery, dr, ha, hadr
 
@@ -108,7 +108,7 @@ See [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_cl
 ### 5. Region availability
 {: #ha-region}
 
-Every region is set up with a highly available load balancer that is accessible from the region-specific API endpoint. The load balancer routes incoming and outgoing requests to clusters in the regional zones. The likelihood of a full regional failure is low. However, to account for this failure, you can set up multiple clusters in different regions and connect them by using an external load balancer. If an entire region fails, the cluster in the other region can take over the work load.
+Every region is set up with a highly available load balancer that is accessible from the region-specific API endpoint. The load balancer routes incoming and outgoing requests to clusters in the regional zones. The likelihood of a full regional failure is low. However, to account for this failure, you can set up multiple clusters in different regions and connect them by using an external load balancer. If an entire region fails, the cluster in the other region can take over the workload.
 
 See [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
 

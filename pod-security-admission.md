@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-08"
 
 keywords: openshift, deploy, pod security admission, pod security, security profiles
 
@@ -56,7 +56,7 @@ warn
 
 As security standards or profiles implementations change to address new features, you can configure Pod Security Admission to use a specific version of the roles. The following versions are supported.
 
-- A Kubernetes major.minor version (i.e. `v1.25`)
+- A Kubernetes major.minor version (for example, `v1.25`)
 - `latest`
 
 ## What if Pod Security Admission isn't the right choice for me?

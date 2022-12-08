@@ -8378,37 +8378,37 @@ subcollection: openshift
 
 [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-state-reference)
 
-* [Critical](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-critical)
+* [Critical state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-critical)
 
-* [Deleting](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleting)
+* [Deleting state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleting)
 
-* [Deleted](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleted)
+* [Deleted state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deleted)
 
-* [Deployed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deployed)
+* [Deployed state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deployed)
 
-* [Deploying](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploying)
+* [Deploying state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploying)
 
-* [Deploy_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploy-failed)
+* [Deploy_failed state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploy-failed)
 
-* [Normal](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
+* [Normal state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
 
-* [Provisioned](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
+* [Provisioned state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
 
-* [Provisioning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioning)
+* [Provisioning state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioning)
 
-* [Provision pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-pending)
+* [Provision pending state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-pending)
 
-* [Provision_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-failed)
+* [Provision_failed state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provision-failed)
 
-* [Reloading](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
+* [Reloading state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading)
 
-* [Reloading_failed](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
+* [Reloading_failed state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reloading-failed)
 
-* [Reload_pending](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reload-pending)
+* [Reload_pending state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-reload-pending)
 
-* [Unknown](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-unknown)
+* [Unknown state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-unknown)
 
-* [Warning](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-warning)
+* [Warning state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-warning)
 
 [Common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues#common_worker_nodes_issues)
 
