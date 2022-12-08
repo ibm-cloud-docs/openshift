@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-08"
 
 keywords: openshift
 
@@ -1279,7 +1279,7 @@ Complete the following steps to create a snapshot for your volume.
 1. Wait for the snapshot size to create. The snapshot size is successfully provisioned when the **Snapshot Size (GB)**in your CLI output changes from 0 to the size that you ordered.
 
     ```sh
-    ibmcloud sl file volume-detail &lt;volume_ID>
+    ibmcloud sl file volume-detail <volume_ID>
     ```
     {: pre}
 
