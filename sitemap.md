@@ -233,6 +233,10 @@ subcollection: openshift
 
 * [December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec22)
 
+    * [9 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0922)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.5` is available.
+
     * [5 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0522)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.4` is available.
@@ -6908,6 +6912,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.5, released 9 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0225_object_plugin)
 
 * [Change log for version 2.2.4, released 5 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0224_object_plugin)
 
