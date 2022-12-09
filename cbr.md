@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-09"
 
 keywords: cbr, context based restrictions, security
 
@@ -58,7 +58,7 @@ Cluster
 :   If you use the API, you can specify `"name": "serviceInstance","value": "CLUSTER-ID"` in the resource attributes.
 
 Region
-:   Protects {{site.data.keyword.openshiftlong_notm}} resources in a specific region. If you select a region in your CBR rule, then only traffic from resources in the network zones that you associate with the rule can interact only with resources in that region.
+:   Protects {{site.data.keyword.openshiftlong_notm}} resources in a specific region. If you select a region in your CBR rule, then only traffic from resources in the network zones that you associate with the rule can interact with resources in that region.
 :   If you use the CLI, you can specify the `--region REGION` option to protect resources in a specific region.
 :   If you use the API, you can specify `"name": "region","value": "REGION"` field in the resource attributes.
 
@@ -74,12 +74,12 @@ Resource group
 You can create CBR rules to protect the following API types for {{site.data.keyword.openshiftlong_notm}}.
 
 Cluster control plane APIs
-:   Protect access to the APIs inside your clusters, such as the APIs for creating namespaces, pods, and more. CBR rules that apply to the cluster API type control access to your cluster API server, which includes all `oc` commands to that cluster. If you select the cluster control plane APIs in your CBR rule, then only traffic from resources in the network zones that associate with that rule can interact only with the cluster control plane APIs. All other requests are blocked.
+:   Protect access to the APIs inside your clusters, such as the APIs for creating namespaces, pods, and more. CBR rules that apply to the cluster API type control access to your cluster API server, which includes all `oc` commands to that cluster. If you select the cluster control plane APIs in your CBR rule, then only traffic from resources in the network zones that associate with that rule can interact with the cluster control plane APIs. All other requests are blocked.
 :   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` type.
 :   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster"` in the `"operations"` spec.
 
 Management APIs
-:   Protect access to the APIs for provisioning and managing clusters, worker pools, and more. CBR rules that apply to the management API type control access the {{site.data.keyword.openshiftlong_notm}} APIs, which includes all `ibmcloud oc` commands calls, such as `ibmcloud oc clusters`, `ibmcloud oc cluster create`, and more. If you select the management APIs in your CBR rule, then resources in the network zone that associate with the rule can interact only with the management APIs.
+:   Protect access to the APIs for provisioning and managing clusters, worker pools, and more. CBR rules that apply to the management API type control access the {{site.data.keyword.openshiftlong_notm}} APIs, which includes all `ibmcloud oc` commands calls, such as `ibmcloud oc clusters`, `ibmcloud oc cluster create`, and more. If you select the management APIs in your CBR rule, then resources in the network zone that associate with the rule can interact with the management APIs.
 :   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:management` type.
 :   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:management"` in the `"operations"` spec.
 
@@ -311,7 +311,7 @@ The following example payload creates a rule that protects the `CLUSTER-ID` clus
 ```
 {: codeblock}
 
-The following example payload creates a rule that protects the `CLUSTER-ID` cluster. Only the resources defined in the `NETWORK-ZONE-ID` zone can access the cluster. Since the `cluster` API type is specified, resources in the `NETWORK-ZONE-ID` zone can access the cluster only through the cluster APIs over the private network.
+The following example payload creates a rule that protects the `CLUSTER-ID` cluster. Only the resources defined in the `NETWORK-ZONE-ID` zone can access the cluster. Since the `cluster` API type is specified, resources in the `NETWORK-ZONE-ID` zone can access the cluster through the cluster APIs over the private network.
 
 ```sh
 {
