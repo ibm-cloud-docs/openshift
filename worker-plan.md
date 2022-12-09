@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-09"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -215,7 +215,7 @@ How is bare metal different than VMs?
 Because you have full control over the isolation and resource consumption for your workloads, you can use bare metal machines to achieve HIPAA and PCI compliance for your environment.
 {: important}
 
-Bare metal sounds awesome! What's stopping me from ordering one right now?
+Bare metal seems awesome! What's stopping me from ordering one right now?
 :   Bare metal servers are more expensive than virtual servers, and are best suited for high-performance apps that need more resources and host control. Bare metal worker nodes are also not available for VPC clusters.
 
 Bare metal servers are billed monthly. If you cancel a bare metal server before the end of the month, you are charged through the end of that month. After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.

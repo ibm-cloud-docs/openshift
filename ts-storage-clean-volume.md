@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -50,7 +50,7 @@ Delete the storage volumes from your account.
     ```
     {: pre}
     
-    Example output for Classic Block Storage volumes. Note the volume ID in the left column and the cluster ID in the right column.
+    Example output for Classic Block Storage volumes. Note the volume ID and the cluster ID.
     ```sh
     102413596 blntvemw0j6snjt04jr0
     ```

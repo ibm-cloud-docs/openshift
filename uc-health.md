@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -65,7 +65,7 @@ Secure patient data leads to happier patients.
 #### Solution model
 {: #uc_migrate_solution_model}
 
-Compute, storage, and I/O services run on demand in the public cloud with secure access to on-premises enterprise assets. Implement a CI/CD process and other parts of the IBM Garage Method to dramatically shorten delivery cycles.
+Compute, storage, and I/O services run in the public cloud with secure access to on-premises enterprise assets. Implement a CI/CD process and other parts of the IBM Garage Method to dramatically shorten delivery cycles.
 
 #### Step 1: Secure the compute platform
 {: #uc_migrate_step1}
@@ -79,7 +79,7 @@ Compute, storage, and I/O services run on demand in the public cloud with secure
 * Migrate virtual machine images to container images that run in {{site.data.keyword.openshiftlong_notm}} in the public cloud.
 * Deploy {{site.data.keyword.icp4dfull_notm}}, so that developers have their familiar analytics tools on the cloud.
 * Provide standardized DevOps dashboards and practices through Kubernetes.
-* Enable scaling compute resources on demand for batch and other back-office workloads that run infrequently.
+* Enable scaling compute resources for batch and other back-office workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to on-premises DBMS.
 * Private data center / on-premises capital costs are greatly reduced and replaced with a utility computing model that scales based on workload demand.
 
@@ -100,11 +100,11 @@ Compute, storage, and I/O services run on demand in the public cloud with secure
 * {{site.data.keyword.SecureGatewayfull}}
 * {{site.data.keyword.appid_short_notm}}
 
-For the most sensitive workloads, the clusters can be hosted in {{site.data.keyword.openshiftlong_notm}} for Bare Metal. By using industry-standard containers technology, apps can initially be rehosted on {{site.data.keyword.openshiftlong_notm}} quickly without major architectural changes. This change provides the immediate benefit of scalability.
+For the most sensitive workloads, the clusters can be hosted in {{site.data.keyword.openshiftlong_notm}} for Bare Metal. By using industry-standard containers technology, apps can initially be re-hosted on {{site.data.keyword.openshiftlong_notm}} quickly without major architectural changes. This change provides the immediate benefit of scalability.
 
-They can replicate and scale the apps by using defined rules and the automated Kubernetes orchestrator. {{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services on demand. By using Kubernetes's deployment and runtime objects, the provider can monitor and manage upgrades to apps reliably.
+They can replicate and scale the apps by using defined rules and the automated Kubernetes orchestrator. {{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services. By using Kubernetes's deployment and runtime objects, the provider can monitor and manage upgrades to apps reliably.
 
-{{site.data.keyword.SecureGatewayfull}} is used to create a secure pipeline to on-premises databases and documents for apps that are rehosted to run in {{site.data.keyword.openshiftlong_notm}}.
+{{site.data.keyword.SecureGatewayfull}} is used to create a secure pipeline to on-premises databases and documents for apps that are re-hosted to run in {{site.data.keyword.openshiftlong_notm}}.
 
 {{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query. To minimize queries to the back-office RDBMS, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps. These choices improve the front-end app usability and performance across the apps on {{site.data.keyword.openshiftlong_notm}}.
 
@@ -194,7 +194,7 @@ Developers focus on domain problems, by using existing tools: Instead of writing
 #### Solution: Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}
 {: #uc_research_the_solution}
 
-Compute, storage, and Node starter kits run on demand in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
+Compute, storage, and Node starter kits run in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -209,10 +209,10 @@ Technical solution:
 * Structure apps into a set of cooperative microservices within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy research apps to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enable scaling compute resources on demand for batch and other research workloads that run infrequently.
+* Enable scaling compute resources for batch and other research workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to existing on-premises databases.
 
-#### Step 2: Use secure and performant compute
+#### Step 2: Use secure and performance driven compute
 {: #uc_research_step2}
 
 * ML apps that require higher-performing compute are hosted on {{site.data.keyword.openshiftlong_notm}} on Bare Metal. This ML cluster is centralized, so each regional cluster doesn't have the expense of bare metal workers; Kubernetes deployments are easier too.

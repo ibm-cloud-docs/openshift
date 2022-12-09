@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -57,7 +57,7 @@ Find the root cause by describing your PVC and reviewing the common error messag
 | Failed to find the storage with storage id 12345. | You want to create a PVC for an existing storage instance by using Kubernetes static provisioning, but the storage instance that you specified could not be found. | Follow the instructions to provision existing [file storage](/docs/openshift?topic=openshift-file_storage#existing_file) or [block storage](/docs/openshift?topic=openshift-block_storage#existing_block) in your cluster and make sure to retrieve the correct information for your existing storage instance. Then, delete the PVC and re-create the PVC. |
 | Storage type not provided, expected storage type is `Endurance` or `Performance`. | You created a custom storage class and specified a storage type that is not supported. | Update your custom storage class to specify `Endurance` or `Performance` as your storage type. To find examples for custom storage classes, see the sample custom storage classes for [file storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass) and [block storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass). | 
 {: caption="{{site.data.keyword.filestorage_short}} error messages" caption-side="bottom"}
-{: summary="The columns are read from left to right. The first column has the error message. The second column describes the error message. The third column provides steps to resolve the error."}
+
 
 
 

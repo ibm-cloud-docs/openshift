@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-09"
 
 keywords: portworx, openshift
 
@@ -51,7 +51,7 @@ Portworx aggregates available storage that is attached to your worker nodes and 
 
 Portworx also comes with additional features that you can use for your stateful apps, such as volume snapshots, volume encryption, isolation, and an integrated Storage Orchestrator for Kubernetes (Stork) to ensure optimal placement of volumes in the cluster. For more information, see the [Portworx documentation](https://docs.portworx.com/){: external}.
 
-### What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the right one for Portworx?
+### What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the correct one for Portworx?
 {: #about-px-flavors}
 
 The worker node flavor that you need depends on the infrastructure provider that you use. If you have a classic cluster, {{site.data.keyword.openshiftlong_notm}} provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. In classic clusters, Portworx offers the best performance when you use SDS worker node machines that come with 10 Gbps network speed.
@@ -564,7 +564,7 @@ Looking for instructions about how to update or remove Portworx? See [Updating P
 {: tip}
 
 Before you begin:
-- Make sure that you have the right [permissions](/docs/containers?topic=containers-clusters&interface=ui) to create {{site.data.keyword.openshiftlong_notm}} clusters.
+- Make sure that you have the correct [permissions](/docs/containers?topic=containers-clusters&interface=ui) to create {{site.data.keyword.openshiftlong_notm}} clusters.
 
 - [Create or use an existing cluster](/docs/openshift?topic=openshift-clusters).
 
@@ -1575,7 +1575,6 @@ Review the following Portworx limitations.
 | **VPC clusters** Storage volume reattachment required when updating worker nodes. | When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that is replaced, you must attach the volumes to the new worker node. You can attach storage volumes with the [API](/docs/openshift?topic=openshift-utilities#vpc_api_attach) or the [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr). Note this limitation does not apply to Portworx deployments that are using cloud drives. |
 | The Portworx experimental `InitializerConfiguration` feature is not supported. | {{site.data.keyword.openshiftlong_notm}} does not support the [Portworx experimental `InitializerConfiguration` admission controller](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/hyperconvergence/#initializer-experimental-feature-in-stork-v1-1){: external}. |
 | Private clusters | To install Portworx in a cluster that doesn't have VRF or access to private CSEs, you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, and `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group). |
-{: summary="This table contains information on limitations for Portworx on {{site.data.keyword.openshiftlong_notm}} clusters. Columns are read from left to right. In the first column is the type of limitation and in the second column is the description of the limitation."}
 {: caption="Portworx limitations"}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -60,7 +60,6 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 |Metro|Mexico City (`mex-cty`), Dallas (`dal`)|The name of a city where 1 or more data centers are located. A metro might have a multizone region, such as Dallas, or might have a single zone region, such as Mexico City. If you create a cluster in a multizone region, the Kubernetes master and worker nodes can be spread across zones for high availability.|
 |Data center (zone)|Dallas 12 (`dal12`)|A physical location of the compute, network, and storage infrastructure and related cooling and power that host cloud services and applications. In a region, clusters can be spread across data centers, or zones, in an multizone architecture for high availability. Zones are isolated from each other, which ensures no shared single point of failure.|
 {: caption="Organization of {{site.data.keyword.openshiftlong_notm}} locations."}
-{: summary="The table shows organization of {{site.data.keyword.openshiftlong_notm}} locations. Rows are to be read from the left to right, with the location type in column one, an example of the type in column two, and the description in column three."}
 
 ### Classic multizone regions
 {: #zones-mz}

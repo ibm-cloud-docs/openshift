@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: kubernetes, help, network, connectivity, webhooks
 
@@ -117,7 +117,7 @@ Complete the following steps to identify the webhook that is causing the issue. 
     ```
     {: pre}
 
-    - If the webhook is calling a service that doesn't exist, the webhook might be left over from an incomplete or improper removal of an application. In this case, look for service-specific documentation and follow the steps to uninstall the service.
+    - If the webhook is calling a service that doesn't exist, the webhook might be leftover from an incomplete or improper removal of an application. In this case, look for service-specific documentation and follow the steps to uninstall the service.
 
     - If you are unable to uninstall the service, delete the webhook configuration.
  

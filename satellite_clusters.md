@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -429,7 +429,7 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 ## How am I charged for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}?
 {: #satcluster-pricing}
 
-Review the table below for information on charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}.
+Review the table for information on charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
 ### {{site.data.keyword.redhat_openshift_notm}} clusters

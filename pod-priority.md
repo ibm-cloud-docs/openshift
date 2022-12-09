@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -35,7 +35,7 @@ Make sure that you have [set up proper user access](/docs/openshift?topic=opensh
 
 **How does priority scheduling and preemption work?** {: #priority_scheduling}
 
-In general, pending pods that have a higher priority are scheduled before lower prioritized pods. If you don't have enough resources left in your worker nodes, the {{site.data.keyword.redhat_openshift_notm}} controller can preempt (remove) pods to free up enough resources for the higher prioritized pods to be scheduled. Preemption is also affected by graceful termination periods, pod disruption budgets, and worker node affinity.
+In general, pending pods that have a higher priority are scheduled before lower prioritized pods. If you don't have enough resources remaining in your worker nodes, the {{site.data.keyword.redhat_openshift_notm}} controller can preempt (remove) pods to free up enough resources for the higher prioritized pods to be scheduled. Preemption is also affected by graceful termination periods, pod disruption budgets, and worker node affinity.
 
 If you don't specify a priority for your pod deployment, the default is set to the priority class that is set as the `globalDefault` . If you don't have a `globalDefault` priority class, the default priority for all pods is zero (`0`). By default, {{site.data.keyword.openshiftlong_notm}} does not set a `globalDefault`, so the pod default priority is zero.
 

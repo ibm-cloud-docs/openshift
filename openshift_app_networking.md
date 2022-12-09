@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift, networking
 
@@ -124,7 +124,7 @@ You can't use multiple app exposure methods for one app.
 | NLB v2.0 (+ subdomain) | DSR load balancing that exposes the app with an IP address or a subdomain. | Expose an app that might receive high levels of traffic to the public with an IP address or a subdomain that supports SSL termination.  \n 1. Complete the [prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).  \n 2. Create a public NLB 2.0 in a [single](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config) cluster.  \n 3. Optionally [register](/docs/openshift?topic=openshift-loadbalancer_hostname) a subdomain and health checks. |
 | {{site.data.keyword.redhat_openshift_notm}} version 4 clusters: Ingress controller | HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules | Implement custom routing rules and SSL termination for multiple apps. | Create an [Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public). for the default public Ingress controller. | 
 {: caption="Characteristics of public app exposure methods"}
-{: summary="This table reads left to right about the name, characteristics, use cases, and deployment steps of public network deployment patterns."}
+
 
 ### Public app networking for VPC clusters
 {: #pattern_public_vpc}
@@ -141,7 +141,7 @@ You can't use multiple app exposure methods for one app.
 | VPC load balancer | Basic load balancing that exposes the app with a hostname. | Quickly expose one app to the public with a VPC load balancer-assigned hostname. | [Create a public `LoadBalancer` service](/docs/openshift?topic=openshift-vpc-lbaas){: external} in your cluster. A multizonal VPC load balancer is automatically created in your VPC that assigns a hostname to your `LoadBalancer`service for your app. | 
 | {{site.data.keyword.redhat_openshift_notm}} version 4 clusters: Ingress | HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules. | Implement custom routing rules and SSL termination for multiple apps. | [Create an Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) for the default public Ingress controller in clusters with a public cloud service endpoint, or [create an Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller) for a custom public Ingress controller in clusters with a private cloud service endpoint only. | 
 {: caption="Characteristics of public app exposure methods"}
-{: summary="This table reads left to right about the name, characteristics, use cases, and deployment steps of public network deployment patterns."}
+
 
 
 

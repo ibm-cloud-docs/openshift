@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -36,7 +36,7 @@ Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_no
 ## {{site.data.keyword.openshiftlong_notm}} commands
 {: #cli_commands}
 
-The tables below list the `ibmcloud oc` command groups. For a complete list of all `ibmcloud oc` commands as they are structured in the CLI, see the [{{site.data.keyword.openshiftlong_notm}} CLI map](/docs/openshift?topic=openshift-icks_map).
+The following tables list the `ibmcloud oc` command groups. For a complete list of all `ibmcloud oc` commands as they are structured in the CLI, see the [{{site.data.keyword.openshiftlong_notm}} CLI map](/docs/openshift?topic=openshift-icks_map).
 {: shortdesc}
 
 | Command group | Description |

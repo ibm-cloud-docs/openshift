@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -75,7 +75,7 @@ Much of the CI/CD process itself is automated with {{site.data.keyword.contdeliv
 #### Solution model
 {: #uc_data_mashup_model}
 
-Compute, storage, and API tools run on demand in the public cloud with secure access to and from on-premises data sources.
+Compute, storage, and API tools run in the public cloud with secure access to and from on-premises data sources.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -166,7 +166,7 @@ Developers focus on domain problems, by using existing tools: Instead of Develop
 #### Solution model
 {: #uc_port_model}
 
-Compute, storage, and Node starter kits that run on demand in the public cloud with secure access to shipping data across the globe, as needed. Compute in clusters is tamper-proof and isolated to bare metal.  
+Compute, storage, and Node starter kits that run in the public cloud with secure access to shipping data across the globe, as needed. Compute in clusters is tamper-proof and isolated to bare metal.  
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}

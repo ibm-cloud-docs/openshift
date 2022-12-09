@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -66,10 +66,10 @@ For more information about worker node specifications, see [Available hardware f
 ### Compute licenses
 {: #licenses}
 
-In {{site.data.keyword.openshiftlong_notm}}, worker nodes require OpenShift Container Platform licenses to cover the use of Red Hat OpenShift Container Platform and Red Hat Enterprise Linux. OpenShift Container Platform licenses can be supplied by an [existing {{site.data.keyword.cloud_notm}} Pak entitlement](#licenses-cloud-pak) or [on demand by {{site.data.keyword.openshiftlong_notm}}](#licenses-on-demand).
+In {{site.data.keyword.openshiftlong_notm}}, worker nodes require OpenShift Container Platform licenses to cover the use of Red Hat OpenShift Container Platform and Red Hat Enterprise Linux. OpenShift Container Platform licenses can be supplied by an [existing {{site.data.keyword.cloud_notm}} Pak entitlement](#licenses-cloud-pak) or [by {{site.data.keyword.openshiftlong_notm}}](#licenses-on-demand).
 {: shortdesc}
 
-#### On-demand OCP licenses from {{site.data.keyword.openshiftlong_notm}}
+#### OCP licenses from {{site.data.keyword.openshiftlong_notm}}
 {: #licenses-on-demand}
 
 When you create worker nodes by adding a worker pool or cluster, {{site.data.keyword.openshiftlong_notm}} helps you include the purchase of OpenShift Container Platform licenses for the worker nodes. The way that these OpenShift Container Platform licenses are billed varies by the type of OpenShift Container Platform licenses that the worker nodes have.
@@ -165,10 +165,10 @@ To store images in the internal registry, {{site.data.keyword.openshiftlong_notm
 ### Storage for apps
 {: #persistent_storage}
 
-When you provision storage, you can choose the storage type and storage class that is right for your use case. Charges vary depending on the type of storage, the location, and the specs of the storage instance. Some storage solutions, such as file and block storage offer hourly and monthly rates that you can choose from.
+When you provision storage, you can choose the storage type and storage class that is correct for your use case. Charges vary depending on the type of storage, the location, and the specs of the storage instance. Some storage solutions, such as file and block storage offer hourly and monthly rates that you can choose from.
 {: shortdesc}
 
-To choose the right storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning). For more information, see:
+To choose the correct storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning). For more information, see:
 * [NFS file storage pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}
 * [Block storage pricing](https://www.ibm.com/cloud/block-storage/pricing){: external}
 * [Object storage plans](https://cloud.ibm.com/objectstorage/create#pricing){: external}

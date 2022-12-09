@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -115,7 +115,7 @@ To see if your pod is being replaced by higher priority pods:
 
 7. Repeat steps 1 to 3 for other pods in the cluster, to check what priority class they are using. If those other pods' priority class is higher than your pod, your pod is not provisioned unless there is enough resources for your pod and every pod with higher priority.
 
-8. Contact your cluster admin to add more capacity to your cluster and confirm that the right priority classes are assigned.
+8. Contact your cluster admin to add more capacity to your cluster and confirm that the correct priority classes are assigned.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift, deploy
 
@@ -373,7 +373,7 @@ Distribute pods across multiple zones or regions</dt>
     
 :   **If a zone goes down, how are pods rescheduled onto the remaining nodes in the other zones?**
     It depends on your scheduling policy that you used in the deployment. If you included [node-specific pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}, your pods are not rescheduled. If you did not, pods are created on available worker nodes in other zones, but they might not be balanced. For example, the two pods might be spread across the two available nodes, or they might both be scheduled onto one node with available capacity. Similarly, when the unavailable zone returns, pods are not automatically deleted and rebalanced across nodes. If you want the pods to be rebalanced across zones after the zone is back up, consider using the [Kubernetes descheduler](https://github.com/kubernetes-sigs/descheduler){: external}{: shortdesc}.
-    In multizone clusters, try to keep your worker node capacity at 50% per zone so that enough capacity is left to protect your cluster against a zonal failure.
+    In multizone clusters, try to keep your worker node capacity at 50% per zone so that enough capacity remains to protect your cluster against a zonal failure.
     {: tip}
     
 :   **What if I want to spread my app across regions?**

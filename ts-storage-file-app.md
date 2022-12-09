@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -51,7 +51,7 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
 | `write-permission` `don't have required permission` `can't create directory '/bitnami/mariadb/data': Permission denied` | In your deployment, you specified a non-root user to own the NFS file storage mount path. By default, non-root users don't have write permission on the volume mount path for NFS-backed storage. | See [File storage: App fails when a non-root user owns the NFS file storage mount path](/docs/openshift?topic=openshift-nonroot) |
 | After you specified a non-root user to own the NFS file storage mount path or deployed a Helm chart with a non-root user ID specified, the user can't write to the mounted storage. | The deployment or Helm chart configuration specifies the security context for the pod's `fsGroup` (group ID) and `runAsUser` (user ID) | See [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot) |
 {: caption="{{site.data.keyword.filestorage_short}} error messages" caption-side="bottom"}
-{: summary="The columns are read from left to right. The first column has the symptom or error message. The second column describes the message. The third column provides steps to resolve the error."}
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -74,7 +74,7 @@ Describe your PVC and review the common error messages.
 | `TokenManagerRetrieveError: error retrieving the token` | This error occurs when you create a PVC with IAM credentials on a cluster that does not have public outbound access.| If your cluster does not have public outbound access, [create an {{site.data.keyword.cos_full_notm}} instance that uses HMAC credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).|
 | `set-access-policy not supported for classic cluster` | This error occurs when you install the `ibm-object-storage-plugin` in a Classic cluster and set the `bucketAccessPolicy=true` flag. The `bucketAccessPolicy=true` flag is only used with VPC clusters.| [Install the plug-in](/docs/openshift?topic=openshift-storage_cos_install) and set the `bucketAccessPolicy=false` flag. |
 {: caption="Block Storage error messages" caption-side="bottom"}
-{: summary="The columns are read from left to right. The first column has the symptom or error message. The second column describes the message. The third column provides steps to resolve the error."}
+
 
 
 

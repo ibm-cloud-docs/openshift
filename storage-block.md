@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -226,7 +226,6 @@ Make sure to choose your storage configuration carefully to have enough capacity
         | Silver | 4 IOPS/GB | 20-12000 Gi|
         | Gold | 10 IOPS/GB | 20-4000 Gi |
         {: caption="Table of storage class size ranges and IOPS per gigabyte"}
-        {: summary="The columns are read from left to right. The first column has the storage class. The second column has the IOPS per gigabyte that the storage class supports. The third column has the size range in gigabytes that the storage class supports"}
 
     - **Custom storage class:** When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabytes within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 within the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100. The IOPS to gigabyte ratio also determines the type of hard disk that is provisioned for you. For example, if you are using 500Gi at 100 IOPS, your IOPS to gigabyte ratio is 0.2. Storage with a ratio of less than or equal to 0.3 is provisioned on SATA hard disks. If your ratio is greater than 0.3, then your storage is provisioned on SSD hard disks.
 
@@ -244,7 +243,6 @@ Make sure to choose your storage configuration carefully to have enough capacity
         | 8000-9999 Gi | 500-48000 IOPS |
         | 10000-12000 Gi | 1000-48000 IOPS |
         {: caption="Table of custom storage class size ranges and IOPS}
-        {: summary="The columns are read from left to right. The first column has the size range in gigabytes that you can make for a custom storage class. The second column has the IOPS range in multiples of 100 that you can make for the size range in a custom storage class.}
             
 
 5. Choose if you want to keep your data after the cluster or the persistent volume claim (PVC) is deleted.
