@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -75,7 +75,7 @@ Moreover logging and monitoring for the API microservices, especially how they p
 #### Solution model
 {: #uc_data-share_model}
 
-Compute, storage, and event management that run on demand in public cloud with access to retail inventories across the globe, as needed
+Compute, storage, and event management that run in public cloud with access to retail inventories across the globe, as needed
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -91,7 +91,7 @@ Technical solution:
 * Structure apps into a set of cooperative microservices that run within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy apps to container images that run in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enable scaling of compute resources on demand for batch and other inventory workloads that run infrequently.
+* Enable scaling of compute resources for batch and other inventory workloads that run infrequently.
 
 #### Step 2: Ensure global availability
 {: #uc_data-share_step2}
@@ -184,7 +184,7 @@ In addition to the mobile app, the Developers are busy with building and maintai
 #### Solution model
 {: #uc_grocer_model}
 
-Compute, storage, and event management that run on demand in public cloud with access to back-end ERP systems
+Compute, storage, and event management that run in public cloud with access to back-end ERP systems
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -198,7 +198,7 @@ Technical solution:
 
 * Structure inventory analysis and mobile apps into microservices and deploy them to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Scale compute resources on demand for batch and other inventory workloads that run less frequently.
+* Scale compute resources for batch and other inventory workloads that run less frequently.
 
 #### Step 2: Analyze inventory and trends
 {: #uc_grocer_step2}

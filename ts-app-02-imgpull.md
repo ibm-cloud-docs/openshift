@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -199,7 +199,7 @@ The following steps assume that the API key stores the credentials of a service 
 
         2. Re-create your deployment in the `default` {{site.data.keyword.redhat_openshift_notm}} project. If you still see an authorization error message, repeat Steps 1-5 with the new image pull secrets. If you still can't log in, [open an {{site.data.keyword.cloud_notm}} Support case](/docs/openshift?topic=openshift-get-help).
 
-    6. If the login succeeds, pull an image locally. If the command fails with an `access denied` error, the registry account is in a different {{site.data.keyword.cloud_notm}} account than the one your cluster is in. [Create an image pull secret to access images in the other account](/docs/openshift?topic=openshift-registry#other_registry_accounts). If you can pull an image to your local machine, then your API key has the right permissions, but the API setup in your cluster is not correct. 
+    6. If the login succeeds, pull an image locally. If the command fails with an `access denied` error, the registry account is in a different {{site.data.keyword.cloud_notm}} account than the one your cluster is in. [Create an image pull secret to access images in the other account](/docs/openshift?topic=openshift-registry#other_registry_accounts). If you can pull an image to your local machine, then your API key has correct permissions, but the API setup in your cluster is not correct. 
         ```sh
         docker pull <region>icr.io/<namespace>/<image>:<tag>
         ```

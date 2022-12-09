@@ -4791,7 +4791,7 @@ subcollection: openshift
 
     * [How does Portworx work?](/docs/openshift?topic=openshift-portworx#about-px-work)
 
-    * [What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the right one for Portworx?](/docs/openshift?topic=openshift-portworx#about-px-flavors)
+    * [What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the correct one for Portworx?](/docs/openshift?topic=openshift-portworx#about-px-flavors)
 
     * [What if I want to run Portworx in a classic cluster with non-SDS worker nodes?](/docs/openshift?topic=openshift-portworx#about-px-non-sds)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -68,7 +68,7 @@ And major app upgrades take 6 - 9 months to complete.
 #### Solution model
 {: #uc_mortgage_solution_model}
 
-Compute, storage, and I/O services that run on demand in public cloud with secure access to on-premises enterprise assets as needed**
+Compute, storage, and I/O services that run in public cloud with secure access to on-premises enterprise assets as needed**
 
 * Secure and scalable document storage that supports structured and unstructured document query
 * "Lift and shift" existing enterprise assets and app while they enabled the integration to some on-premises systems that won't be migrated
@@ -83,11 +83,11 @@ Compute, storage, and I/O services that run on demand in public cloud with secur
 * {{site.data.keyword.cloudant}}
 * {{site.data.keyword.SecureGateway}}
 
-{{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services on demand. Using industry-standard containers, apps can initially be rehosted on {{site.data.keyword.openshiftlong_notm}} quickly without major architectural changes.
+{{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services as needed. Using industry-standard containers, apps can initially be re-hosted on {{site.data.keyword.openshiftlong_notm}} quickly without major architectural changes.
 
 This solution provides the immediate benefit of scalability. By using Kubernetes's rich set of deployment and runtime objects, the mortgage company monitors and manages the upgrades to apps reliably. They're also able to replicate and scale the apps that use defined rules and the automated Kubernetes orchestrator.
 
-{{site.data.keyword.SecureGateway}} is used to create a secure pipeline to on-premises databases and documents for apps that are rehosted to run in {{site.data.keyword.openshiftlong_notm}}.
+{{site.data.keyword.SecureGateway}} is used to create a secure pipeline to on-premises databases and documents for apps that are re-hosted to run in {{site.data.keyword.openshiftlong_notm}}.
 
 {{site.data.keyword.cos_full_notm}} is for all raw document and data storage as they go forward. For Monte Carlo simulations, a workflow pipeline is put in place where simulation data is in structured files that are stored in {{site.data.keyword.cos_full_notm}}. A trigger to start the simulation scales compute services in {{site.data.keyword.openshiftlong_notm}} to split the data of the files into N event buckets for simulation processing. {{site.data.keyword.openshiftlong_notm}} automatically scales to N associated service executions and writes intermediate results to {{site.data.keyword.cos_full_notm}}. Those results are processed by another set of the {{site.data.keyword.openshiftlong_notm}} compute services to produce the final results.
 
@@ -152,7 +152,7 @@ They need a solution that helps the Developers and their business partners:
 #### Solution model
 {: #uc_payment_tech_model}
 
-Compute, DevOps tools, and AI that run on demand in public cloud with access to back-end payment systems. Implement a CI/CD process to dramatically shorten delivery cycles.
+Compute, DevOps tools, and AI that run in public cloud with access to back-end payment systems. Implement a CI/CD process to dramatically shorten delivery cycles.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}

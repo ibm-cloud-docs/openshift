@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -47,7 +47,7 @@ Supported infrastructure providers
 7. Click **Run**.
 
 8. Check the results of each test.
-    * If any test fails, click the information icon next to the test's name in the left column for information about how to resolve the issue.
+    * If any test fails, click the information icon next to the test's name for information about how to resolve the issue.
     * You can also use the results of tests to gather information, such as complete YAMLs, that can help you debug your cluster in the following sections.
 
 

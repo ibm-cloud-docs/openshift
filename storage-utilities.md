@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -242,7 +242,7 @@ The instructions in this topic are available for classic worker nodes only. If y
     ```
     {: pre}
 
-4. Verify that the block storage device is created and note the `id` of the volume. **Note:** If you don't see your block storage device right away, wait a few minutes. Then, run this command again.
+4. Verify that the block storage device is created and note the `id` of the volume. **Note:** If you don't see your block storage device immediately, wait a few minutes. Then, run this command again.
 
     ```sh
     ibmcloud sl block volume-list
@@ -1152,7 +1152,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 Set up alerts in {{site.data.keyword.mon_full_notm}} for your workloads that are using storage volumes. For more information see, [Alerts](/docs/monitoring?topic=monitoring-monitoring).
 {: shortdesc}
 
-When a storage volume is down, your app pods that are using storage have a low file system I/O, have network errors, or crash which causes the replica count to go down. You can set up alerts in {{site.data.keyword.mon_full_notm}} to get notified if the file system operations for your app drop below a specific threshold, if network errors occur, or if your app pods don't reach a `Ready` state.
+When a storage volume is down, your app pods that are using storage have a low file system I/O, have network errors, or crash which causes the replica count to go down. You can set up alerts in {{site.data.keyword.mon_full_notm}} to get notified if the file system operations for your app drop under a specific threshold, if network errors occur, or if your app pods don't reach a `Ready` state.
 
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to set up alerts for your storage volumes.
 
@@ -1164,7 +1164,7 @@ When a storage volume is down, your app pods that are using storage have a low f
     1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**.
     2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
     3. In the **File System Utilization** section, review the **File I/O Bandwidth by Pod** tile.
-    4. Review the file I/O bandwidth from the last day or week time window to determine the average bandwidth. You can use the average bandwidth as a threshold to set an alert for when the file I/O bandwidth is lower than the average for a certain amount of time. For example, if the average file I/O bandwidth for your app is 300B/s, you can create an alert for when the network utilization remains below 300B/s for a certain amount of time.
+    4. Review the file I/O bandwidth from the last day or week time window to determine the average bandwidth. You can use the average bandwidth as a threshold to set an alert for when the file I/O bandwidth is lower than the average for a certain amount of time. For example, if the average file I/O bandwidth for your app is 300B/s, you can create an alert for when the network utilization remains less than 300B/s for a certain amount of time.
     5. In the **File I/O Bandwidth by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**.
     6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
     7. Save your alert.
@@ -1177,7 +1177,7 @@ When a storage volume is down, your app pods that are using storage have a low f
     2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
     3. In the **Network Utilization** section, review the **Network Request Count by Pod** tile.
     4. Review the average network request count by pod from the last 1 day or 1 week time window to determine the threshold.
-    5. In the **Network Request Count by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed. For example, if the network utilization remains below the threshold for a certain amount of time, then the alert is triggered.
+    5. In the **Network Request Count by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**. Set the alert parameters based on the threshold that you observed. For example, if the network utilization remains under the threshold for a certain amount of time, then the alert is triggered.
     6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
     7. Save your alert.
     8. Repeat these steps for all the apps that are deployed in your cluster.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift, nginx, ingress controller
 
@@ -111,7 +111,7 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 If your cluster is created on classic infrastructure, or if your cluster is created on VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, you can use the default public Ingress controller to expose apps in your cluster to receive requests that are from the public network.
 {: shortdesc}
 
-**Before you begin**:
+Before you begin:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -148,7 +148,8 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 For more information about TLS certificates, see [Managing TLS certificates and secrets](#manage_certs).
 
-**To use the IBM-provided Ingress domain and TLS secret:**
+#### To use the IBM-provided Ingress domain and TLS secret
+{: #ibm-provided-domain}
 
 1. Get the IBM-provided domain and secret to use in subsequent steps. The IBM-provided TLS certificate is stored as the `Ingress secret` in the `openshift-ingress` project.
     ```sh
@@ -181,7 +182,8 @@ For more information about TLS certificates, see [Managing TLS certificates and 
         ```
         {: pre}
 
-**To use a custom domain and TLS secret:**
+#### To use a custom domain and TLS secret
+{: #custom-domain-tls}
 
 1. Prepare your custom domain.
     1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
@@ -335,7 +337,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 If your cluster is created on VPC infrastructure and you enabled only the private cloud service endpoint during cluster creation, your cluster is created with only a private Ingress controller by default. To publicly expose your apps, you must first create a public Ingress controller. Then, you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
 {: shortdesc}
 
-**Before you begin**:
+Before you begin:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -368,7 +370,8 @@ The Ingress controller load balances HTTP network traffic to the apps in your cl
 Currently, when you configure TLS termination for Ingress, only HTTPS connections are permitted.
 {: note}
 
-**Custom domain and TLS secret**:
+#### Custom domain and TLS secret
+{: #tls-and-custom-domain}
 
 1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
     If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
@@ -415,7 +418,8 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
             Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
             {: note}
 
-**IBM-provided domain and TLS secret**:
+#### IBM-provided domain and TLS secret
+{: #tls-domain-ibm-provided}
 
 1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `i00<n>` value.
     ```sh
@@ -602,7 +606,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 Expose apps that are outside your cluster to the public by including them in public Ingress load balancing. Incoming public requests on the IBM-provided or your custom domain are forwarded automatically to the external app.
 {: shortdesc}
 
-**Before you begin**:
+Before you begin:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
 * Ensure that the external app that you want to include into the cluster load balancing can be accessed by using a public IP address.
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -667,7 +671,7 @@ To expose apps that are outside of your cluster to the public:
 If your cluster is created on classic infrastructure, or if your cluster is created on VPC infrastructure and you enabled the public cloud service endpoint during cluster creation, your cluster is created with only a public Ingress controller by default. To privately expose your apps, you must first create a private Ingress controller. Then you must register your Ingress controller with a subdomain and, optionally, import your own TLS certificate.
 {: shortdesc}
 
-**Before you begin**:
+Before you begin:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -702,7 +706,8 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 
 
-**Custom domain and TLS secret, classic or VPC clusters**:
+#### Custom domain and TLS secret, classic or VPC clusters
+{: #custom-domain-classic-vpc}
 
 1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
     If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
@@ -750,7 +755,8 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
             Do not create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
             {: note}
 
-**IBM-provided domain and TLS secret, VPC clusters only**:
+#### IBM-provided domain and TLS secret, VPC clusters only
+{: #ibm-domain-tls-vpc}
 
 1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `000<n>` value.
     ```sh
@@ -945,7 +951,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 If your cluster is created on VPC infrastructure and you enabled the private cloud service endpoint only during cluster creation, you can use the default private Ingress controller to expose apps in your cluster to requests that are from the private network.
 {: shortdesc}
 
-**Before you begin**:
+Before you begin:
 * Review the Ingress [prerequisites](#ingress-roks4-prereqs).
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -980,7 +986,8 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 
 For more information about TLS certificates, see [Managing TLS certificates and secrets](#manage_certs).
 
-**To use the IBM-provided Ingress domain and TLS secret:**
+#### To use the IBM-provided Ingress domain and TLS secret
+{: #ibm-domain-ingress-private}
 
 1. Get the IBM-provided domain and secret to use in subsequent steps. The IBM-provided TLS certificate is stored as the `Ingress secret` in the `openshift-ingress` project.
     ```sh
@@ -1013,7 +1020,8 @@ For more information about TLS certificates, see [Managing TLS certificates and 
         ```
         {: pre}
 
-**To use a custom domain and TLS secret:**
+#### To use a custom domain and TLS secret
+{: #custom-domain-ingress-private}
 
 1. Prepare your custom domain.
     1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-09"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -63,7 +63,7 @@ These steps are intended for users setting up {{site.data.keyword.secrets-manage
 {: #secrets-mgr_setup_s2s}
 {: step}
 
-Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.openshiftlong_notm}} cluster requires service-to-service communication auhtorization. Follow the steps below to set up the authorization. For additional info, see [Integrations for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.openshiftlong_notm}} cluster requires service-to-service communication auhtorization. Follow the steps to set up the authorization. For additional info, see [Integrations for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 {: shortdesc}
  
 1. In the {{site.data.keyword.cloud_notm}} console, click **Manage** > **Access (IAM)**.

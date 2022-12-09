@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}
 {: #file_storage}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
 {: shortdesc}
 
 
@@ -184,7 +184,6 @@ Bronze, silver, and gold storage classes
 | Silver | 4 IOPS/GB | 20-12000 Gi |
 | Gold | 10 IOPS/GB | 20-4000 Gi |
 {: caption="Table of storage class size ranges and IOPS per gigabyte"}
-{: summary="The columns are read from left to right. The first column has the storage class. The second column has the IOPS per gigabyte for the storage class. The third column has the size range in gigabytes for the storage class."}
 
 Custom storage class
 :    When you choose this storage class, you have more control over the size and IOPS that you want. For the size, you can select any whole number of gigabyte within the allowed size range. The size that you choose determines the IOPS range that is available to you. You can choose an IOPS that is a multiple of 100 that is in the specified range. The IOPS that you choose is static and does not scale with the size of the storage. For example, if you choose 40Gi with 100 IOPS, your total IOPS remains 100.
@@ -204,7 +203,6 @@ Custom storage class
 | 8000-9999 Gi | 500-48000 IOPS |
 | 10000-12000 Gi | 1000-48000 IOPS |
 {: caption="Table of custom storage class size ranges and IOPS"}
-{: summary="The columns are read from left to right. The first column has the size range in gigabytes for the custom storage class. The second column has the IOPS range in multiples of 100 that are supported for the size range for the custom storage class."}
 
 
 ### Reclaim policy

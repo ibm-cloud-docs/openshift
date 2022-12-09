@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -81,7 +81,7 @@ For Developers, much of the continuous integration and delivery (CI/CD) process 
 #### Solution model
 {: #uc_shipping_model}
 
-Compute, storage, and event management that run on demand in public cloud with access to shipment data across the globe, as needed.
+Compute, storage, and event management that run in public cloud with access to shipment data across the globe, as needed.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -95,7 +95,7 @@ Technical solution:
 * Integrate apps into a set of cooperative microservices in {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy apps to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Enables scaling on demand for compute for batch and other inventory workloads that run infrequently.
+* Enables scaling for compute for batch and other inventory workloads that run infrequently.
 * Use {{site.data.keyword.messagehub_full}} to manage streaming data from IoT devices.
 
 #### Step 2: Ensure global availability

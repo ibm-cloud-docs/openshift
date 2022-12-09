@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-09"
 
 keywords: openshift
 
@@ -60,7 +60,7 @@ In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platf
     ```
     {: pre}
 
-3. Verify that you are in the right space by listing your service instances.
+3. Verify that you are in the correct space by listing your service instances.
     ```sh
     ibmcloud service list
     ```

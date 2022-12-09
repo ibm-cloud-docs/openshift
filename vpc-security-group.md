@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-09"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -155,7 +155,7 @@ By default, traffic rules for cluster workers are covered by the randomly named 
 | Allow incoming traffic requests to apps that run on your worker nodes. | TCP | `30000` - `32767` | Any |
 | If you require VPC VPN access or classic infrastructure access into this cluster, allow incoming traffic requests to apps that run on your worker nodes. | UDP | `30000` - `32767` | Any |
 {: caption="Required inbound rules for cluster worker security groups" caption-side="bottom"}
-{: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
+
 
 #### Outbound rules
 {: #min-outbound-rules-sg-workers}
@@ -169,7 +169,7 @@ By default, traffic rules for cluster workers are covered by the randomly named 
 | Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service. To find the IPs needed to apply this rule, see [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](#worker-node-public-service-endpoint). | TCP | 443 | Security group `kube-<cluster_ID>` |
 | Allow the worker nodes to connect to the public LoadBalancer. To find the IPs needed to apply this rule, see [Allow worker nodes to connect to the public LoadBalancer](#vpc-security-group-loadbalancer-outbound). | TCP | 443 | Security group `kube-<cluster_ID>` |
 {: caption="Required outbound rules for cluster worker security groups" caption-side="bottom"}
-{: summary="The table shows required outbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
+
 
 ### Required inbound and outbound rules for VPC ALBs
 {: #required-group-rules-alb}
@@ -184,17 +184,17 @@ By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` securi
 | --- | --- | --- | --- |
 | If you use your own security group to the LBaaS for Ingress, set port 80 to allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses. Alternatively, to allow the inbound traffic for router health checks, you can create a single rule to allow all incoming traffic on port 80. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}.
 {: caption="Required inbound rules for VPC ALB security groups" caption-side="bottom"}
-{: summary="The table shows required inbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
+
 
 #### Outbound rules
 {: #min-outbound-rules-sg-alb}
 
 | Rule purpose | Protocol | Port or Value | Destination |
 | --- | --- | --- | --- |
-| Allow the ALB to send traffic to the cluster workers on the TCP nodeport range | TCP | `30000` - `32767` | Any |
-| Allow the ALB to send traffic to the cluster workers on the UDP nodeport range | UDP | `30000` - `32767` | Any |
+| Allow the ALB to send traffic to the cluster workers on the TCP NodePort range | TCP | `30000` - `32767` | Any |
+| Allow the ALB to send traffic to the cluster workers on the UDP NodePort range | UDP | `30000` - `32767` | Any |
 {: caption="Required outbound rules for VPE and VPC ALB security groups " caption-side="bottom"}
-{: summary="The table shows required outbound connectivity rules for your VPC security group. Rows are read from the left to right, with the purpose of the rule in column one, the protocol in column two, the required ports or values for the protocol in column in three, and the source type and a brief description of the service in column two."}
+
 
 ## Creating security group rules 
 {: #vpc-sg-create-rules}
