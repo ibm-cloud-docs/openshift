@@ -29,6 +29,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## December 2022
 {: #openshift-dec22}
 
+### 9 December 2022
+{: #openshift-dec0922}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.5` is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+
 
 
 ### 5 December 2022

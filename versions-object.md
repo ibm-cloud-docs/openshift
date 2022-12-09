@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-08"
 
 keywords: object storage, plug-in, changelog
 
@@ -27,8 +27,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.5 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.4 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.3 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.3 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.2 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.1 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.0 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -60,6 +61,11 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.6 | Deprecated | 4.3 - 4.6 | x86 | 
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.5, released 9 December 2022
+{: #0225_object_plugin}
+
+- Updates the UBI image to `8.7-923.1669829893`
 
 ## Change log for version 2.2.4, released 5 December 2022
 {: #0224_object_plugin}

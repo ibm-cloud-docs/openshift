@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-09"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -35,6 +35,9 @@ If worker nodes must access public endpoints, or if you plan to enable both the 
 If you plan to enable both the public and private cloud service endpoints, you must attach a public gateway to each subnet to access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub. Additionally, a public network gateway is required when you want your cluster to access public endpoints, such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only. Make sure to review the [VPC networking basics](/docs/openshift?topic=openshift-plan_vpc_basics) to understand when a public network gateway is required and how you can set up your cluster to limit public access to one or more subnets only.
 {: note}
 
+Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).
+{: note}
+
 For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) and [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}: Subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets).
 {: tip}
 
@@ -50,7 +53,7 @@ If your VPC cluster is created with both a public and a private cloud service en
 
 
 
-## Creating VPC cluster in the console
+## Creating a VPC cluster in the console
 {: #clusters_vpcg2_ui}
 {: ui}
 
@@ -71,15 +74,12 @@ If your VPC cluster is created with both a public and a private cloud service en
     1. Review the subnet details. By default, subnets are spread evenly across zones. If you want to modify your subnets, uncheck the **Create subnet in every zone** box.
     1. If you modify your subnet details, specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets). Note that you can't change the number of IPs that a VPC subnet has later. 
     1. If you enter a specific IP range, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
-
 1. Select a standard {{site.data.keyword.cos_full_notm}} instance where a bucket is automatically created for your cluster's internal registry.
 1. Select the cluster version.
 1. **Optional**: For the **OCP entitlement** section, select an entitlement for a worker pool, if you have one.
     * Usually, select **Purchase additional licenses for this worker pool**. 
     * If you have an {{site.data.keyword.cloud_notm}} Pak with a {{site.data.keyword.redhat_openshift_notm}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. 
     * Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
-1. Select **VPC** infrastructure.
-1. From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.
 1. Configure the **Location** details for your cluster.
     1. Select the **Resource group** that you want to create your cluster in.
         * A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group.
@@ -95,9 +95,6 @@ If your VPC cluster is created with both a public and a private cloud service en
     * **Virtual - dedicated**: Your worker nodes are hosted on infrastructure that is devoted to your account. Your physical resources are completely isolated. Virtual machines are billed hourly.
 1. Set how many worker nodes to create per zone, such as **3**. You must set at least 2 worker nodes. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
 1. Select a key management service (KMS) instance and root key to encrypt the local disk for each worker node in the `default` worker pool.
-
-    Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption).
-    {: note}
 
 1. If you don't have the required infrastructure permissions to create a cluster, the **Infrastructure permissions checker** lists the missing permissions. Ask your account owner to [set up the API key](/docs/openshift?topic=openshift-access-creds) with the required permissions.
 1. Complete the **Resource details** to customize the unique cluster name and any [tags](/docs/account?topic=account-tag) that you want to use to organize your {{site.data.keyword.cloud_notm}} resources, such as the team or billing department.
@@ -271,40 +268,6 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
 
     Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. If you change the ID or domain name, the {{site.data.keyword.redhat_openshift_notm}} master cannot manage your cluster.
     {: important}
-
-7. **Optional**: If you created your cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc), you can [spread the default worker pool across zones](/docs/openshift?topic=openshift-add_workers#vpc_add_zone) to increase the cluster's availability.
-
-8. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster).
-
-9. {{site.data.keyword.redhat_openshift_notm}} version 4.4 or earlier only: To allow any traffic requests to apps that you deploy on your worker nodes, you can modify the VPC's default security group. 
-
-    If you modify the default VPC security group, you must make sure that the [minimum traffic rules](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers) are still covered.
-    {: note}
-
-    1. List your security groups. For the **VPC** that you created, note the ID of the default security group.
-        ```sh
-        ibmcloud is security-groups
-        ```
-        {: pre}
-
-        Example output with only the default security group of a randomly generated name, `preppy-swimmer-island-green-refreshment`:
-        ```sh
-        ID                                     Name                                       Rules   Network interfaces         Created                     VPC                      Resource group
-        1a111a1a-a111-11a1-a111-111111111111   preppy-swimmer-island-green-refreshment    4       -                          2019-08-12T13:24:45-04:00   <vpc_name>(bbbb222b-.)   c3c33cccc33c333ccc3c33cc3c333cc3
-        ```
-        {: screen}
-
-    2. Add a security group rule to allow inbound TCP traffic on ports 30000-32767.
-        ```sh
-        ibmcloud is security-group-rule-add <security_group_ID> inbound tcp --port-min 30000 --port-max 32767
-        ```
-        {: pre}
-
-    3. If you require VPC VPN access or classic infrastructure access into this cluster, add a security group rule to allow inbound UDP traffic on ports 30000-32767.
-        ```sh
-        ibmcloud is security-group-rule-add <security_group_ID> inbound udp --port-min 30000 --port-max 32767
-        ```
-        {: pre}
 
 Your cluster is ready for your workloads! You might also want to [add a tag to your cluster](/docs/openshift?topic=openshift-add_workers#cluster_tags), such as the team or billing department that uses the cluster, to help manage {{site.data.keyword.cloud_notm}} resources. For more ideas of what to do with your cluster, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps). 
 
