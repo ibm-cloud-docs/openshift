@@ -213,7 +213,7 @@ When you disable the OpenShift Data Foundation add-on, only the ODF operator is 
 To remove the OpenShift Data Foundation add-on from your cluster, complete the following steps.
 {: shortdesc}
 
-1. **Optional**: To remove the add-on and all ODF resources, first [remove the add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd).
+1. To remove the add-on and all ODF resources, first [remove the add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd).
 2. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to remove the OpenShift Data Foundation add-on.
 3. On the cluster **Overview** page, click **Add-ons**.
 4. On the OpenShift Data Foundation card, click **Uninstall**.
