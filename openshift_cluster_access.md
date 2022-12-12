@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-12"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -425,6 +425,9 @@ If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm
 
 If you are connected to the {{site.data.keyword.cloud_notm}} private network, you can use the {{site.data.keyword.satelliteshort}} Link endpoint that is automatically generated for your cluster. This endpoint allows you to connect through the secured Link tunnel server to the cluster's master in your location control plane. The endpoint consists of the Link tunnel server hostname and a node port, which is formatted such as `c-02.<region>.link.satellite.cloud.ibm.com:<port>`.
 {: shortdesc}
+
+To connect to your {{site.data.keyword.satelliteshort}} cluster by using the Link endpoint, for example `--endpoint link` in the CLI, you must follow the steps to set up a **Source** in your Location. This source allows access to your cluster APIs through the Link endpoint. For more information, see [Accessing your Red Hat OpenShift API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure).
+{: note}
 
 1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
 2. Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).

@@ -30,6 +30,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-dec22}
 
 
+  
+### 12 December 2022
+{: #openshift-dec1222}
+{: release-note}
+
+
+
+Changes to `cluster config` for {{site.data.keyword.satelliteshort}} clusters
+:   If you connect to your {{site.data.keyword.satelliteshort}} cluster by using the Link endpoint, for example `--endpoint link` in the CLI, you must follow the steps to set up a **Source** in your Location. This source allows access to your cluster APIs through the Link endpoint. For more information, see [Accessing your Red Hat OpenShift API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure).
+
+
+
+
 
 ### 9 December 2022
 {: #openshift-dec0922}

@@ -233,6 +233,10 @@ subcollection: openshift
 
 * [December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec22)
 
+    * [12 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1222)
+
+        * Changes to `cluster config` for {{site.data.keyword.satelliteshort}} clusters
+
     * [9 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0922)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.5` is available.
