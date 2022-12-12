@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-12"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
 
@@ -22,7 +22,6 @@ completion-time: 2h
 
 # Installing OpenShift Data Foundation on a private cluster
 {: #openshift-storage-odf-private}
-{: #private_odf_tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="openshift, vpc"}
 {: toc-completion-time="2h"}

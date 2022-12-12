@@ -4952,7 +4952,7 @@ subcollection: openshift
 
     * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-47)
 
-[Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#private_odf_tutorial)
+[Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#openshift-storage-odf-private)
 
 * [Prerequisites](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-prereq)
 

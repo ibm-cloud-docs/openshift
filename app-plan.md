@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: openshift, deploy
 
@@ -76,11 +76,6 @@ You can take some general steps to containerize your app as follows.
 1. Use the [Twelve-Factor App](https://12factor.net/){: external} as a guide for isolating dependencies, separating processes into separate services, and reducing the statefulness of your app as much as possible.
 1. Find an appropriate base image to use. You can use publicly available images from [Docker Hub](https://hub.docker.com/){: external}, [public IBM images](/docs/Registry?topic=Registry-public_images#public_images), or build and manage your own in your private {{site.data.keyword.registrylong_notm}}.
 1. Add to your Docker image only what is necessary to run the app.
-
-    Don't want to make a Dockerfile yourself? Try out the [`ibmcloud dev enable` command](/docs/cli?topic=cli-idt-cli#enable), which detects your app's programming language and builds a Dockerfile and containerization components for you.
-    {: tip}
-    
-
 1. Review the [common app modification scenarios](#openshift_move_apps_scenarios).
 1. Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
 1. Over time, refactor your app processes into microservices.
