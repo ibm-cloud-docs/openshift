@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -39,9 +39,9 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -71,9 +71,9 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -120,9 +120,9 @@ ibmcloud ob logging config delete --cluster CLUSTER --instance LOGGING_INSTANCE
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -159,9 +159,9 @@ ibmcloud ob logging config list --cluster CLUSTER
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: 
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
@@ -190,9 +190,9 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -230,9 +230,9 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -268,9 +268,9 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
@@ -300,9 +300,9 @@ ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance MONITORING_I
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -332,9 +332,9 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -381,9 +381,9 @@ ibmcloud ob monitoring config delete --cluster CLUSTER --instance MONITORING_INS
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -420,9 +420,9 @@ ibmcloud ob monitoring config list --cluster CLUSTER
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: 
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -450,9 +450,9 @@ ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster 
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -490,9 +490,9 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance MONITORING_INSTA
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -528,9 +528,9 @@ ibmcloud ob monitoring config show --cluster CLUSTER --instance MONITORING_INSTA
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: 
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.

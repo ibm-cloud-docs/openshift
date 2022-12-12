@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -89,9 +89,9 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -149,9 +149,9 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -175,9 +175,9 @@ ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -204,9 +204,9 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -230,9 +230,9 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -283,9 +283,9 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster my_cluster
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -322,9 +322,9 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -357,9 +357,9 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -386,9 +386,9 @@ ibmcloud oc get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -418,9 +418,9 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -444,9 +444,9 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -476,9 +476,9 @@ ibmcloud oc cluster addon update --addon ADD-ON_NAME --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -511,9 +511,9 @@ ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -552,9 +552,9 @@ ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -587,9 +587,9 @@ ibmcloud oc cluster ca get --cluster CLUSTER [ --output OUTPUT] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -625,9 +625,9 @@ ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -661,9 +661,9 @@ ibmcloud oc cluster ca status --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -696,9 +696,9 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service access role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform access role or only a service access role, additional constraints apply.
 * **Platform**: If you have only a platform access role, you can perform this command, but you need a [service access role](/docs/openshift?topic=openshift-users#checking-perms) or a [custom RBAC policy](/docs/openshift?topic=openshift-access-overview#role-binding) to perform Kubernetes actions in the cluster.
@@ -1028,9 +1028,9 @@ ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--output json] [-q
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1066,9 +1066,9 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1098,9 +1098,9 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1135,9 +1135,9 @@ ibmcloud oc cluster ls [--provider (classic | vpc-gen2)] [--location LOCATION] [
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1185,9 +1185,9 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUS
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1222,9 +1222,9 @@ ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster 
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1259,9 +1259,9 @@ ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster C
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1296,9 +1296,9 @@ ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUS
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1330,9 +1330,9 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1453,9 +1453,9 @@ ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1492,9 +1492,9 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1522,9 +1522,9 @@ ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1570,9 +1570,9 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**:
 *  **Operator or Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
@@ -1596,9 +1596,9 @@ ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advanc
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1640,9 +1640,9 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESP
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}} and **Developer** Cloud Foundry role
 
@@ -1686,9 +1686,9 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPA
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -1731,9 +1731,9 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAME
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}} and **Developer** Cloud Foundry role
 
@@ -2345,9 +2345,9 @@ ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR -
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2406,9 +2406,9 @@ ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--o
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2445,9 +2445,9 @@ ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--s
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2526,9 +2526,9 @@ ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2672,9 +2672,9 @@ ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--up
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
@@ -2714,9 +2714,9 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2946,9 +2946,9 @@ ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--outpu
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -2988,9 +2988,9 @@ ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3027,9 +3027,9 @@ ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3069,9 +3069,9 @@ ibmcloud oc worker-pool ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3105,9 +3105,9 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3141,9 +3141,9 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --siz
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3182,9 +3182,9 @@ ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3230,9 +3230,9 @@ ibmcloud oc worker-pool taint set --worker-pool WORKER_POOL --cluster CLUSTER --
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3272,9 +3272,9 @@ ibmcloud oc worker-pool taint rm --worker-pool WORKER_POOL --cluster CLUSTER [-f
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3308,9 +3308,9 @@ ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-q] [
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3575,9 +3575,9 @@ ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--worker-pool WORKER_POOL] [-
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3631,9 +3631,9 @@ ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3666,9 +3666,9 @@ ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3692,9 +3692,9 @@ ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3771,9 +3771,9 @@ ibmcloud oc ingress alb disable --alb ALB_ID --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3857,9 +3857,9 @@ ibmcloud oc ingress alb get --alb ALB_ID --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3895,9 +3895,9 @@ ibmcloud oc ingress alb health-checker disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3927,9 +3927,9 @@ ibmcloud oc ingress alb health-checker enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3959,9 +3959,9 @@ ibmcloud oc ingress alb health-checker get --cluster CLUSTER [--output OUTPUT] [
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -3997,9 +3997,9 @@ ibmcloud oc ingress alb ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4037,9 +4037,9 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4089,9 +4089,9 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
@@ -4117,9 +4117,9 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4161,9 +4161,9 @@ ibmcloud oc ingress instance default unset --cluster CLUSTER --crn CRN --name NA
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4199,9 +4199,9 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4237,9 +4237,9 @@ ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4275,9 +4275,9 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4316,9 +4316,9 @@ ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4353,9 +4353,9 @@ ibmcloud oc ingress lb get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4480,9 +4480,9 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4534,9 +4534,9 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name SECRET_NAME --fiel
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4577,9 +4577,9 @@ ibmcloud oc ingress secret field ls --cluster CLUSTER --name SECRET_NAME --names
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4615,9 +4615,9 @@ ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NA
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4655,9 +4655,9 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name SECRET_NAME --namespace 
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4700,9 +4700,9 @@ ibmcloud oc ingress secret ls --cluster CLUSTER [--show-deleted] [--output json]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4743,9 +4743,9 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name SECRET_NAME --namespace N
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4786,9 +4786,9 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespa
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4830,9 +4830,9 @@ ibmcloud oc ingress status-report disable --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4863,9 +4863,9 @@ ibmcloud oc ingress status-report enable --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4896,9 +4896,9 @@ ibmcloud oc ingress status-report get --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4929,9 +4929,9 @@ ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CO
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4966,9 +4966,9 @@ ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER [--output 
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4999,9 +4999,9 @@ ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code COD
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5186,9 +5186,9 @@ ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OU
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5222,9 +5222,9 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5615,9 +5615,9 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5656,9 +5656,9 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5700,9 +5700,9 @@ ibmcloud oc webhook-create --cluster CLUSTER --level LEVEL --type slack --url UR
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
@@ -5755,9 +5755,9 @@ ibmcloud oc api-key info --cluster CLUSTER [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5798,9 +5798,9 @@ ibmcloud oc api-key reset --region REGION [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -6046,9 +6046,9 @@ ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role in {{site.data.keyword.containerlong_notm}}
 
@@ -6084,9 +6084,9 @@ ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_I
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -6128,9 +6128,9 @@ ibmcloud oc kms instance ls [--output json] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role in {{site.data.keyword.containerlong_notm}}
 
@@ -6166,9 +6166,9 @@ ibmcloud oc quota ls [--provider PROVIDER] [--output json]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
@@ -6201,9 +6201,9 @@ ibmcloud oc subnets [--provider (classic | vpc-gen2)] [--vpc-id <VPC_ID> --zone 
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
@@ -6378,9 +6378,9 @@ ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -6418,9 +6418,9 @@ ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -6458,9 +6458,9 @@ ibmcloud oc messages
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -6479,9 +6479,9 @@ ibmcloud oc locations [--output json]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -6507,9 +6507,9 @@ ibmcloud oc versions [--show-version (KUBERNETES|OPENSHIFT)] [--output json] [-q
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -6560,9 +6560,9 @@ ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -6630,9 +6630,9 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -6687,9 +6687,9 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 ```
 {: pre}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: None
 
@@ -6760,9 +6760,9 @@ Create, get, list, or remove storage volume attachments.
 The `storage` commands are available in beta.
 {: beta}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 ### `ibmcloud oc storage attachment create`
 {: #cs_storage_att_cr}
@@ -6918,9 +6918,9 @@ ibmcloud oc storage attachment rm --cluster aa1111aa11aaaaa11aa1 --attachment 01
 List storage volumes for your classic clusters.
 {: shortdesc}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -6953,9 +6953,9 @@ ibmcloud oc storage volume get --volume 111111111
 Get a list of storage volumes.
 {: shortdesc}
 
-**Supported infrastructure provider**:
-* Classic
-* VPC
+Supported infrastructure providers
+:   Classic
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
