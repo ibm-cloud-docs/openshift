@@ -72,7 +72,7 @@ To create a subdomain for one or more NLB IP addresses:
     ```
     {: screen}
 
-2. Register the IP by creating a DNS subdomain. To specify multiple IP addresses, use multiple `--ip` flags.
+2. Register the IP by creating a DNS subdomain. To specify multiple IP addresses, use multiple `--ip` options.
     ```sh
     ibmcloud oc nlb-dns create classic --cluster <cluster_name_or_id> --ip <NLB_IP> --ip <NLB2_IP> 
     ```
@@ -288,7 +288,7 @@ ibmcloud oc nlb-dns rm classic --cluster <cluster_name_or_id> --ip <ip> --nlb-ho
 #### Health check monitors
 {: #health-check-config-mon}
 
-If you need to change your health monitor configuration, you can change specific settings. Include only the flags for the settings that you want to change.
+If you need to change your health monitor configuration, you can change specific settings. Include only the options for the settings that you want to change.
 ```sh
 ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --header <header> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
 ```

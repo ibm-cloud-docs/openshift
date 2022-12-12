@@ -72,7 +72,7 @@ Before you create a cluster, you must enable your account to use service endpoin
 In VPC clusters in {{site.data.keyword.openshiftlong_notm}}, you can't disable the private cloud service endpoint or set up a cluster with the public cloud service endpoint only.
 {: note}
 
-Your VPC cluster is created with both a public and a private cloud service endpoint by default. To create clusters with worker nodes that are connected to the private network only, you must enable only the private service endpoint during cluster creation. Do not enable the public service endpoint. For example, to create a VPC cluster with only a private cloud service endpoint [in the CLI](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=cli), include the `--disable-public-service-endpoint` flag. If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.
+Your VPC cluster is created with both a public and a private cloud service endpoint by default. To create clusters with worker nodes that are connected to the private network only, you must enable only the private service endpoint during cluster creation. Do not enable the public service endpoint. For example, to create a VPC cluster with only a private cloud service endpoint [in the CLI](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=cli), include the `--disable-public-service-endpoint` option. If you include this option, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.
 {: important}
 
 
@@ -122,7 +122,7 @@ To connect your cluster with your on-premises data center, you can use the {{sit
 If you plan to connect your cluster to on-premises networks, check out the following helpful information:
 {: tip}
 
-- You might have subnet conflicts with the IBM-provided default 172.30.0.0/16 range for pods and 172.21.0.0/16 range for services. You can avoid subnet conflicts when you [create a cluster from the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) by specifying a custom subnet CIDR for pods in the `--pod-subnet` option and a custom subnet CIDR for services in the `--service-subnet` flag.
+- You might have subnet conflicts with the IBM-provided default 172.30.0.0/16 range for pods and 172.21.0.0/16 range for services. You can avoid subnet conflicts when you [create a cluster from the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) by specifying a custom subnet CIDR for pods in the `--pod-subnet` option and a custom subnet CIDR for services in the `--service-subnet` option.
 - If your VPN solution preserves the source IP addresses of requests, you can [create custom static routes](/docs/openshift?topic=openshift-static-routes) to ensure that your worker nodes can route responses from your cluster back to your on-premises network.
 - Note that the `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited because they are reserved for {{site.data.keyword.openshiftlong_notm}} control plane functionality.
 
@@ -227,7 +227,7 @@ In this scenario, you run workloads in a VPC cluster. However, you want these wo
 
 To achieve this setup, you create VPC subnets in each zone where you want to deploy worker nodes. To run default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub, public gateways are required for these subnets. Then, you create a VPC cluster that uses these VPC subnets.
 
-Note that you might have subnet conflicts between the default ranges for workers nodes, pods, and services, and the subnets in your on-premises networks. When you create your VPC subnets, you can choose [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes) and then create your cluster by using these subnets. Additionally, you can specify a custom subnet CIDR for pods and services by using the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` command when you create your cluster.
+Note that you might have subnet conflicts between the default ranges for workers nodes, pods, and services, and the subnets in your on-premises networks. When you create your VPC subnets, you can choose [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes) and then create your cluster by using these subnets. Additionally, you can specify a custom subnet CIDR for pods and services by using the `--pod-subnet` and `--service-subnet` options in the `ibmcloud oc cluster create` command when you create your cluster.
 
 ### Worker-to-master and user-to-master communication
 {: #vpc-vpn-master}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-12-12"
 
 keywords: openshift, debug
 
@@ -50,7 +50,7 @@ To resolve this issue, pull an `ocp-release` image from `quay.io` and push it to
 
 1. [Tag and push the image to your private container registry](/docs/Registry?topic=Registry-getting-started).
 
-1. Retry the `oc debug` command with the `--image=icr.io` flag.
+1. Retry the `oc debug` command with the `--image=icr.io` option.
     ```sh
     oc debug node/<node-name> --image=icr.io/<namespace>/<image>:<tag>
     ```

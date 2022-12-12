@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -156,7 +156,7 @@ The following steps assume that the API key stores the credentials of a service 
     {: screen}
 
 3. Check if the image pull secret credentials are valid.
-    1. Get the image pull secret configuration. If the pod is not in the `default` project, include the `-n` flag.
+    1. Get the image pull secret configuration. If the pod is not in the `default` project, include the `-n` option.
         ```sh
         oc get secret <image_pull_secret_name> -o yaml [-n <project>]
         ```

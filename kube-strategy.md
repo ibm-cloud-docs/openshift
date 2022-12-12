@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-12"
 
 keywords: openshift, moving to openshift, openshift environment, openshift clusters, cluster sizing
 
@@ -269,7 +269,7 @@ To ensure that every team has the necessary resources to deploy services and run
 
 To organize and select your Kubernetes resources such as `pods` or `nodes`, [use Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external}. By default, {{site.data.keyword.openshiftlong_notm}} applies some labels, including `arch`, `os`, `region`, `zone`, and `machine-type`.
 
-Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge), [deploying an app to a GPU machine](/docs/containers?topic=containers-deploy_app#gpu_app), and [restricting your app workloads](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the `oc get` command with the `--show-labels` flag.
+Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge), [deploying an app to a GPU machine](/docs/containers?topic=containers-deploy_app#gpu_app), and [restricting your app workloads](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the `oc get` command with the `--show-labels` option.
 
 To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with labels or [update an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
 

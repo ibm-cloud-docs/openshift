@@ -40,7 +40,7 @@ Install the {{site.data.keyword.cloud_notm}} cluster autoscaler plug-in with a H
     ```
     {: pre}
 
-4. Decide if you want to [customize the cluster autoscaler settings](#ca_chart_values), such as the worker pools that are autoscaled, or the amount of time that the cluster autoscaler waits before scaling worker nodes up or down. You can customize your settings by using the `--set` option in the `helm install` command. Depending on the settings that you want to customize, you might need to prepare multiple `--set` flags before you can install the Helm chart. For example, you might want to autoscale your default worker pool by preparing the following `--set` flag. Note: If your default command line shell is `zsh`, start a `bash` session before running the following command.
+4. Decide if you want to [customize the cluster autoscaler settings](#ca_chart_values), such as the worker pools that are autoscaled, or the amount of time that the cluster autoscaler waits before scaling worker nodes up or down. You can customize your settings by using the `--set` option in the `helm install` command. Depending on the settings that you want to customize, you might need to prepare multiple `--set` options before you can install the Helm chart. For example, you might want to autoscale your default worker pool by preparing the following `--set` option. Note: If your default command line shell is `zsh`, start a `bash` session before running the following command.
     ```sh
     --set workerpools[0].<pool_name>.max=<number_of_workers>,workerpools[0].<pool_name>.min=<number_of_workers>,workerpools[0].<pool_name>.enabled=(true|false)
     ```

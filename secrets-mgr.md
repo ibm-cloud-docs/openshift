@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -213,7 +213,7 @@ With {{site.data.keyword.secrets-manager_short}}, you can use secret groups to c
 ## Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster
 {: #secrets-mgr_cluster_create}
 
-If you are [creating a new Classic or VPC cluster](/docs/containers?topic=containers-clusters&interface=cli) in the CLI, you have the option to include flags to register an existing {{site.data.keyword.secrets-manager_short}} instance and secret group to the cluster. Secrets in the cluster are stored in the {{site.data.keyword.secrets-manager_short}} instance and applied to the secret goup. 
+If you are [creating a new Classic or VPC cluster](/docs/containers?topic=containers-clusters&interface=cli) in the CLI, you have the option to include options to register an existing {{site.data.keyword.secrets-manager_short}} instance and secret group to the cluster. Secrets in the cluster are stored in the {{site.data.keyword.secrets-manager_short}} instance and applied to the secret goup. 
 {: shortdesc}
 
 The {{site.data.keyword.secrets-manager_short}} instance registered during cluster create does not automatically become the default {{site.data.keyword.secrets-manager_short}} instance. You must still [set the default instance](#secrets-mgr_setup_default) manually.

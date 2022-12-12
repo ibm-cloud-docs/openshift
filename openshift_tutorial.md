@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -69,7 +69,7 @@ Complete the following prerequisite steps to set up permissions and the command-
 Create a {{site.data.keyword.openshiftlong_notm}} cluster. To learn about what components are set up when you create a cluster, see the [Service architecture](/docs/openshift?topic=openshift-service-architecture). {{site.data.keyword.redhat_openshift_notm}} is available for only standard clusters. You can learn more about the price of standard clusters in the [frequently asked questions](/docs/openshift?topic=openshift-faqs#charges).
 {: shortdesc}
 
-1. Log in to the account and resource group where you want to create {{site.data.keyword.redhat_openshift_notm}} clusters. If you have a federated account, include the `--sso` flag.
+1. Log in to the account and resource group where you want to create {{site.data.keyword.redhat_openshift_notm}} clusters. If you have a federated account, include the `--sso` option.
     ```sh
     ibmcloud login [-g <resource_group>] [--sso]
     ```
@@ -193,7 +193,7 @@ If you took a break from the last lesson and started a new command line, make su
         ```
         {: screen}
 
-4. Set up a route so that you can publicly access the hello world service. By default, the hostname is in the format of `<service_name>-<project>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. If you want to customize the hostname, include the `--hostname=<hostname>` flag. **Note**: The hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. Your route does not use the Ingress subdomain.
+4. Set up a route so that you can publicly access the hello world service. By default, the hostname is in the format of `<service_name>-<project>.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud`. If you want to customize the hostname, include the `--hostname=<hostname>` option. **Note**: The hostname that is assigned to your route is different than the Ingress subdomain that is assigned by default to your cluster. Your route does not use the Ingress subdomain.
     1. Create a route for the **hello-world** service.
         ```sh
         oc create route edge --service=hello-world -n hello-world

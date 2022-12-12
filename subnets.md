@@ -88,7 +88,7 @@ Do the IP addresses for my worker nodes change?
 Can I specify subnets for pods and services in my cluster?
 :   If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods, and a custom subnet CIDR to provide the private IP addresses for services.
 
-To specify custom pod and service subnets during cluster creation, use the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` CLI command.
+To specify custom pod and service subnets during cluster creation, use the `--pod-subnet` and `--service-subnet` options in the `ibmcloud oc cluster create` CLI command.
 
 #### Pods
 {: #subnets_pods}
@@ -192,7 +192,7 @@ To create a cluster by using existing subnets:
     ```
     {: pre}
 
-    If you can't remember which zone the VLAN is in for the `--zone` flag, you can check whether the VLAN is in a certain zone by running `ibmcloud oc vlan ls --zone <zone>`.
+    If you can't remember which zone the VLAN is in for the `--zone` option, you can check whether the VLAN is in a certain zone by running `ibmcloud oc vlan ls --zone <zone>`.
     {: tip}
 
 3. Verify that the cluster was created. It can take up to 15 minutes for the worker node machines to be ordered and for the cluster to be set up and provisioned in your account.

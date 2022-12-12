@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -817,7 +817,7 @@ With the {{site.data.keyword.cloud_notm}} Backup Restore Helm chart, you can cre
 
 **What happens when I install the Helm chart?**
 
-When you install the Helm chart, a Kubernetes pod is created in your cluster that performs a one-time or periodic backup of your PVC data, or restores data from {{site.data.keyword.cos_full_notm}} to a PVC. You configure your backup or restore in the `values.yaml` file that is provided with the Helm chart or by setting flags in the `helm install` command.
+When you install the Helm chart, a Kubernetes pod is created in your cluster that performs a one-time or periodic backup of your PVC data, or restores data from {{site.data.keyword.cos_full_notm}} to a PVC. You configure your backup or restore in the `values.yaml` file that is provided with the Helm chart or by setting options in the `helm install` command.
 
 **What limitations do I need to be aware of?**
 
@@ -968,7 +968,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
         ```
         {: screen}
 
-    * Optional: Install the Helm chart by setting flags in the `helm install` command. You can name your release by specifying the `--name` parameter.
+    * Optional: Install the Helm chart by setting options in the `helm install` command. You can name your release by specifying the `--name` parameter.
         ```sh
         helm install <release_name> --set ACCESS_KEY_ID=<access_key_ID> --set SECRET_ACCESS_KEY=<secret_access_key> --set ENDPOINT=<public_bucket_endpoint> --set BUCKET_NAME=<bucket_name> --set BACKUP_NAME=<backup_name> --set PVC_NAMES[0]=<pvc_name1> --set PVC_NAMES[1]=<pvc_name2> --set CHART_TYPE=backup --set BACKUP_TYPE=<backup_type> --set SCHEDULE_TYPE=<schedule_type> --set SCHEDULE_INFO=<schedule_info> ./ibmcloud-backup-restore
         ```

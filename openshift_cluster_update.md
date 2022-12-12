@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift, version, upgrade, update
 
@@ -337,7 +337,7 @@ To update {{site.data.keyword.satelliteshort}} worker nodes, see [Updating hosts
 {: tip}
 
 * **Patch**: A worker node patch update includes security fixes. You can update the VPC worker node to the latest patch by using the `ibmcloud oc worker replace` command.
-* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one version behind the master version (`n-1`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` flag.
+* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one version behind the master version (`n-1`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` option.
 
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 
@@ -383,13 +383,13 @@ Before you update your VPC worker nodes, review the prerequisite steps.
     {: pre}
 
 4. Replace the worker node to update either the patch version or the `major.minor` version that matches the master version.
-    *  To update the worker node to the same `major.minor` version as the master, include the `--update` flag.
+    *  To update the worker node to the same `major.minor` version as the master, include the `--update` option.
         ```sh
         ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID> --update
         ```
         {: pre}
 
-    *  To update the worker node to the latest patch version at the same `major.minor` version, don't include the `--update` flag.
+    *  To update the worker node to the latest patch version at the same `major.minor` version, don't include the `--update` option.
         ```sh
         ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
         ```

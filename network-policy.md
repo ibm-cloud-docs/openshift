@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -204,7 +204,7 @@ To create Calico policies, use the following steps. Before you begin, [install a
 
 1. Define your Calico [network policy](https://projectcalico.docs.tigera.io/reference/resources/networkpolicy){: external} or [global network policy](https://projectcalico.docs.tigera.io/reference/resources/globalnetworkpolicy){: external} by creating a configuration script (`.yaml`) with Calico v3 policy syntax. These configuration files include the selectors that describe what pods, namespaces, or hosts that these policies apply to. See these [sample Calico policies](https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-advanced){: external} to help you create your own.
 
-1. Apply the policies to the cluster. If you have a Windows system, include the `--config=<filepath>/calicoctl.cfg` flag.
+1. Apply the policies to the cluster. If you have a Windows system, include the `--config=<filepath>/calicoctl.cfg` option.
     ```sh
     calicoctl apply -f policy.yaml [--config=<filepath>/calicoctl.cfg]
     ```
@@ -481,7 +481,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
 
 
 
-3. Apply the policy. If you use a Windows machine, include the `--config=<filepath>/calicoctl.cfg` flag.
+3. Apply the policy. If you use a Windows machine, include the `--config=<filepath>/calicoctl.cfg` option.
 
     ```sh
     calicoctl apply -f log-denied-packets.yaml [--config=<filepath>/calicoctl.cfg]
