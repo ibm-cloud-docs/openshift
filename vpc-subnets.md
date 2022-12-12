@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -61,7 +61,7 @@ Keep in mind the following IP address reservations.
 The default IP address range for VPC subnets is 10.0.0.0 – 10.255.255.255. For a list of IP address ranges per VPC zone, see the [VPC default address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes). {: #vpc-ip-range}
 
 If you need to create your cluster by using custom-range subnets, see the guidance for [custom address prefixes](/docs/vpc?topic=vpc-configuring-address-prefixes). However, if you use custom-range subnets for your worker nodes, you must ensure that the IP range for the worker node subnets don't overlap with your cluster's pod subnet.
-* If you specified your own pod subnet in the `--pod-subnet` flag during cluster creation, your pods are assigned IP addresses from this range.
+* If you specified your own pod subnet in the `--pod-subnet` option during cluster creation, your pods are assigned IP addresses from this range.
 * If you did not specify a custom pod subnet during cluster creation, your cluster uses the default pod subnet. In the first cluster that you create in a VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet.
 
 **How do I create subnets for classic infrastructure access?**
@@ -194,7 +194,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI to create a VPC subnet for your clu
 
 Before you begin
 
-1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` flag to log in.
+1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` option to log in.
     ```sh
     ibmcloud login -r <region> [-g <resource_group>] [--sso]
     ```
@@ -319,7 +319,7 @@ If you enable classic access when you create your VPC, [classic access default a
 ### Creating VPC subnets for classic access from the CLI
 {: #ca_subnet_cli}
 
-1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` flag to log in.
+1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` option to log in.
     ```sh
     ibmcloud login -r <region> [-g <resource_group>] [--sso]
     ```

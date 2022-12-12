@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -28,6 +28,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## December 2022
 {: #openshift-dec22}
+
+
+  
+### 12 December 2022
+{: #openshift-dec1222}
+{: release-note}
+
+
+
+Changes to `cluster config` for {{site.data.keyword.satelliteshort}} clusters
+:   If you connect to your {{site.data.keyword.satelliteshort}} cluster by using the Link endpoint, for example `--endpoint link` in the CLI, you must follow the steps to set up a **Source** in your Location. This source allows access to your cluster APIs through the Link endpoint. For more information, see [Accessing your Red Hat OpenShift API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure).
+
+
+
+
 
 ### 9 December 2022
 {: #openshift-dec0922}
@@ -2840,7 +2855,7 @@ strongSwan versions
 {: release-note}
 
 Accessing clusters
-:   Updated the steps for [accessing clusters through the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#access_private_se) to use the `--endpoint private` flag in the **`ibmcloud oc cluster config`** command.
+:   Updated the steps for [accessing clusters through the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#access_private_se) to use the `--endpoint private` option in the **`ibmcloud oc cluster config`** command.
 
 CLI changelog
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#10).

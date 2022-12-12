@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-12"
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
 
@@ -288,7 +288,7 @@ To launch and use the {{site.data.keyword.cloud-shell_notm}}:
     1. In the **Actions** drop-down list, select **Connect via CLI**.
     1. Follow the instructions.
 
-If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm}} console, you can set the cluster context with the `--admin` flag through the CLI with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin` command.
+If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm}} console, you can set the cluster context with the `--admin` option through the CLI with the `ibmcloud oc cluster config -c <cluster_name_or_ID> --admin` command.
 {: note}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -185,7 +185,7 @@ To create a cluster by using existing subnets:
     ```
     {: screen}
 
-2. [Create a cluster from the CLI](/docs/openshift?topic=openshift-cluster-create-classic) by using the VLAN ID that you identified. Include the `--no-subnet` flag to prevent a new portable public IP subnet and a new portable private IP subnet from being created automatically.
+2. [Create a cluster from the CLI](/docs/openshift?topic=openshift-cluster-create-classic) by using the VLAN ID that you identified. Include the `--no-subnet` option to prevent a new portable public IP subnet and a new portable private IP subnet from being created automatically.
 
     ```sh
     ibmcloud oc cluster create classic --zone dal10 --flavor b3c.4x16 --no-subnet --public-vlan 2234945 --private-vlan 2234947 --workers 3 --name my_cluster

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-12"
 
 keywords: rhel, os, operating system
 
@@ -47,7 +47,7 @@ Version 4.6, 4.7 and 4.8 clusters
 ## Creating RHEL 8 worker pools in the command line
 {: #rhel-migrate-create-pools-cli}
 
-1. You can use the following example commands to create a new worker pool with RHEL 8 worker nodes for your cluster type. Note that you must include the `--operating-system` flag and specify `REDHAT_8_64`. Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of RHEL 7 worker nodes that are to be replaced.
+1. You can use the following example commands to create a new worker pool with RHEL 8 worker nodes for your cluster type. Note that you must include the `--operating-system` option and specify `REDHAT_8_64`. Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of RHEL 7 worker nodes that are to be replaced.
 
     **Classic**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create classic` command, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_create). For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools).
 

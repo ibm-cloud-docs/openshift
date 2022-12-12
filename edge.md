@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -44,7 +44,7 @@ Before you begin
 
 To create an edge node worker pool,
 
-1. [Create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone if you use NLBs or for version 3.11 clusters, 3 or more workers per zone if you use ALBs. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` flag to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
+1. [Create a worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that spans all zones in your cluster and has at least two workers per zone if you use NLBs or for version 3.11 clusters, 3 or more workers per zone if you use ALBs. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` option to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
 
     If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two worker nodes per zone. You can label the worker pool with `dedicated=edge` by using the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
     {: tip}
@@ -157,7 +157,7 @@ To create an edge node worker pool,
 
 8. Using the output from the previous step, run the `ibmcloud oc ingress alb update` command for each enabled ALB. This command redeploys the ALB to an edge worker node. 
 
-    When you run this command to redeploy the ALB to an edge worker node, the ALB also updates to the latest version. If you do not want to update the ALB to the latest version, include the `--version` flag and specify the version listed under **Build** in the output from the previous step. 
+    When you run this command to redeploy the ALB to an edge worker node, the ALB also updates to the latest version. If you do not want to update the ALB to the latest version, include the `--version` option and specify the version listed under **Build** in the output from the previous step. 
     {: tip}
 
     ```sh

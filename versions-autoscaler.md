@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -74,7 +74,7 @@ ibmcloud oc cluster addon versions
 - Image tags: `1.19.1-110-0`, `1.20.0-110-0`, `1.21.0-110-0`, `1.22.0-110-0`, `1.23.0-110-0`
 - Resolves [CVE-2022-28327](https://nvd.nist.gov/vuln/detail/CVE-2022-28327){: external}, [CVE-2022-24675](https://nvd.nist.gov/vuln/detail/CVE-2022-24675){: external}, and [CVE-2022-27536](https://nvd.nist.gov/vuln/detail/CVE-2022-27536){: external}.
 - Ignores label `ibm-cloud.kubernetes.io/vpc-instance-id` for zone balancing in satellite environments.
-- Adds experimental flag `balancingIgnoreLabelsFlag`. This flag defines a node label that should be ignored when considering node group similarity. One label can be defined per flag occurrence.
+- Adds experimental option `balancingIgnoreLabelsFlag`. This option defines a node label that should be ignored when considering node group similarity. One label can be defined per option occurrence.
 
 ### Change log for patch update 1.1.0_475, released 30 March 2022
 {: #110475_ca}
@@ -176,7 +176,7 @@ ibmcloud oc cluster addon versions
 - Image tags: `1.19.1-105-0`, `1.20.0-105-0`, `1.21.0-105-0`, `1.22.0-105-0`, `1.23.0-105-0`
 - Resolves [CVE-2022-28327](https://nvd.nist.gov/vuln/detail/CVE-2022-28327){: external}, [CVE-2022-24675](https://nvd.nist.gov/vuln/detail/CVE-2022-24675){: external}, and [CVE-2022-27536](https://nvd.nist.gov/vuln/detail/CVE-2022-27536){: external}.
 - Ignores label `ibm-cloud.kubernetes.io/vpc-instance-id` for zone balancing in satellite environments.
-- Adds experimental flag `balancingIgnoreLabelsFlag`. This flag defines a node label that should be ignored when considering node group similarity. One label can be defined per flag occurrence.
+- Adds experimental option `balancingIgnoreLabelsFlag`. This option defines a node label that should be ignored when considering node group similarity. One label can be defined per option occurrence.
 
 ### Change log for patch update 1.0.5_415, released 28 February 2022
 {: #104415_ca}
@@ -415,7 +415,7 @@ Review the changes in version `1.0.1_124` of the cluster autoscaler add-on.
 
 - Image tags: `1.15.4-4`, `1.16.2-6`, `1.17.0-7`, `1.18.1-6`, and `1.19.0-1`.  
 - Supported cluster versions: 4.3 - 4.5  
-- Exposes the `--new-pod-scale-up-delay` flag in the ConfigMap.  
+- Exposes the `--new-pod-scale-up-delay` option in the ConfigMap.  
 - Adds support for Kubernetes 1.19.  
 
 ### Change log for patch update 1.0.1_114, released 10 September 2020

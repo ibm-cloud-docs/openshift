@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-12"
 
 keywords: openshift, route, Ingress controller
 
@@ -222,7 +222,7 @@ To create routes for your apps:
 
 5. Map your custom domain to the Ingress controller's IP addresses by adding the IP addresses as A records.
 
-6. Set up a route that is based on the [type of TLS termination that your app requires](/docs/openshift?topic=openshift-openshift_routes#route-types). If you don't have a custom domain, don't include the `--hostname` flag so that a route hostname is generated for you. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
+6. Set up a route that is based on the [type of TLS termination that your app requires](/docs/openshift?topic=openshift-openshift_routes#route-types). If you don't have a custom domain, don't include the `--hostname` option so that a route hostname is generated for you. If you registered a wildcard subdomain, specify a unique subdomain in each route that you create. For example, you might specify `--hostname svc1.example.com` in this route, and `--hostname svc2.example.com` in another route.
     * Simple:
         ```sh
         oc expose service <app_service_name> [--hostname <subdomain>]

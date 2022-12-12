@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift, lb2.0, nlb
 
@@ -190,7 +190,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     :   The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
 
     `--header <header>`
-    :   When `type` is `HTTP` or `HTTPS`: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones that you specify. To delete all existing headers, specify the flag with an empty value (`--header ""`).
+    :   When `type` is `HTTP` or `HTTPS`: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones that you specify. To delete all existing headers, specify the option with an empty value (`--header ""`).
 
     `--expected-body <expected-body>`
     :   When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
