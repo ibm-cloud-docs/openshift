@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -588,7 +588,7 @@ Check your access policies that are assigned by IAM platform and service access 
 #### Checking IAM platform and service access roles from the CLI
 {: #checking-iam-cli}
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
+1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` option.
     ```sh
     ibmcloud login -r [--sso]
     ```
@@ -726,7 +726,7 @@ If you are an administrator for the region and resource group, you might want to
 #### Checking infrastructure roles with the CLI
 {: #checking-infra-cli}
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
+1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` option.
     ```sh
     ibmcloud login -r [--sso]
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: kubernetes, openshift
 
@@ -65,7 +65,7 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
         ```
         {: pre}
 
-    2. Reload each classic worker node, or replace each VPC worker node. You can reload or replace multiple worker nodes by including multiple `-w` flags, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage because they are reloaded concurrently.
+    2. Reload each classic worker node, or replace each VPC worker node. You can reload or replace multiple worker nodes by including multiple `-w` options, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage because they are reloaded concurrently.
 
         **Classic**: Reload worker nodes.
         ```sh

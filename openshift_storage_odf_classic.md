@@ -404,7 +404,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes.
     {: note}
 
-1. Enable the `openshift-data-foundation` add-on. If you want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` flag. If you want to override any of the default parameters, specify the `--param "key=value"` option for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
+1. Enable the `openshift-data-foundation` add-on. If you want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` option. If you want to override any of the default parameters, specify the `--param "key=value"` option for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
     Example command for enabling add-on version 4.10.0, automatically discovering local volumes, and enabling encryption with {{site.data.keyword.hscrypto}}.
     ```sh
@@ -426,7 +426,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-1. If you enabled the add-on and set the `odfDeploy=false` flag, follow the steps to [create an ODF custom resource](#ocs-classic-deploy-crd).
+1. If you enabled the add-on and set the `odfDeploy=false` option, follow the steps to [create an ODF custom resource](#ocs-classic-deploy-crd).
 
 
 ## Installing the OpenShift Data Foundation add-on from the console

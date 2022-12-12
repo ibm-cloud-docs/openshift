@@ -192,7 +192,7 @@ To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
 1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. 
-    The add-on supports `n+1` cluster versions. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` flag.
+    The add-on supports `n+1` cluster versions. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` option.
     {: important}
     
 1. [Review the parameter reference](#odf-vpc-param-ref).

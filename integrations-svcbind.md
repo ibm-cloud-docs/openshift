@@ -137,7 +137,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     ```
     {: pre}
 
-4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` option to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` option to specify a different service access role. If you use the `--key` flag, don't include the `--role` flag.
+4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` option to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` option to specify a different service access role. If you use the `--key` option, don't include the `--role` option.
 
     If your service supports private cloud service endpoints, you can manually create the service credentials with the private cloud service endpoint, and then use the `--key` option to specify the name of your credentials.
     {: tip}

@@ -713,9 +713,9 @@ Supported infrastructure providers
 :    Optional: Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`.
 
 `--endpoint ENDPOINT_TYPE`
-:    Optional: Specify the type of endpoint to use to connect to the cluster. If you don't specify this flag, the default service endpoint for your cluster is used.
+:    Optional: Specify the type of endpoint to use to connect to the cluster. If you don't specify this option, the default service endpoint for your cluster is used.
      - `private`: If the private cloud service endpoint is enabled for your cluster, set to `private` to use the private cloud service endpoint for your cluster context. Note you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
-     - `link`: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to `link` to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this flag, you must also specify the `--admin` flag. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this option is not required because the cluster service URL is used. 
+     - `link`: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to `link` to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this option, you must also specify the `--admin` option. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this option is not required because the cluster service URL is used. 
         Before you can use the `link` endpoint type, make sure you set up the required **Source** [in your Location](/docs/satellite?topic=satellite-link-endpoint-secure).
         {: note}
         
@@ -802,17 +802,17 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 :    The CRN of the {{site.data.keyword.secrets-manager_short}} instance. To get the CRN of an instance, run [`ibmcloud oc ingress instance ls --cluster CLUSTER`](#cs_ingress_instance_ls).
 
 `--private-vlan PRIVATE_VLAN`
-:    This parameter is not available for free clusters. If this standard cluster is the first standard cluster that you create in this zone, don't include this flag. A private VLAN is created for you when the cluster is created. If you created a standard cluster before in this zone or created a private VLAN in IBM Cloud infrastructure before, you must specify that private VLAN. Private VLAN routers always begin with `bcr` (back-end router) and public VLAN routers always begin with `fcr` (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.
+:    This parameter is not available for free clusters. If this standard cluster is the first standard cluster that you create in this zone, don't include this option. A private VLAN is created for you when the cluster is created. If you created a standard cluster before in this zone or created a private VLAN in IBM Cloud infrastructure before, you must specify that private VLAN. Private VLAN routers always begin with `bcr` (back-end router) and public VLAN routers always begin with `fcr` (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.
 :    To find out whether you already have a private VLAN for a specific zone or to find the name of an existing private VLAN, run `ibmcloud oc vlan ls --zone ZONE`.
 
 `--public-vlan PUBLIC_VLAN`
-:    This parameter is not available for free clusters. If this standard cluster is the first standard cluster that you create in this zone, don't use this flag. A public VLAN is created for you when the cluster is created. If you created a standard cluster before in this zone or created a public VLAN in IBM Cloud infrastructure before, specify that public VLAN. If you want to connect your worker nodes to a private VLAN only, don't specify this option. Private VLAN routers always begin with `bcr` (back-end router) and public VLAN routers always begin with `fcr` (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.
+:    This parameter is not available for free clusters. If this standard cluster is the first standard cluster that you create in this zone, don't use this option. A public VLAN is created for you when the cluster is created. If you created a standard cluster before in this zone or created a public VLAN in IBM Cloud infrastructure before, specify that public VLAN. If you want to connect your worker nodes to a private VLAN only, don't specify this option. Private VLAN routers always begin with `bcr` (back-end router) and public VLAN routers always begin with `fcr` (front-end router). When you create a cluster and specify the public and private VLANs, the number and letter combination after those prefixes must match.
 :    To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run `ibmcloud oc vlan ls --zone ZONE`. `--private-service-endpoint`
-:    **Standard clusters in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. If you specify this flag, you must also enable the public cloud service endpoint by using the `--public-service-endpoint` flag. Note that you can't later change the cloud service endpoints.
+:    **Standard clusters in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. If you specify this option, you must also enable the public cloud service endpoint by using the `--public-service-endpoint` option. Note that you can't later change the cloud service endpoints.
      After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 
 `--public-service-endpoint`
-:    Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your command line. If you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` flag, master-worker node communication goes over the private and the public network.
+:    Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your command line. If you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` option, master-worker node communication goes over the private and the public network.
      After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 
 
@@ -869,7 +869,7 @@ ibmcloud oc cluster create classic --name my_cluster
 ```
 {: pre}
 
-**Create your first standard cluster**: The first standard cluster that is created in a zone also creates a private VLAN. Therefore, don't include the `--public-vlan` flag.
+**Create your first standard cluster**: The first standard cluster that is created in a zone also creates a private VLAN. Therefore, don't include the `--public-vlan` option.
 {: #example_cluster_create}
 
 ```sh
@@ -877,7 +877,7 @@ ibmcloud oc cluster create classic --zone dal10 --private-vlan my_private_VLAN_I
 ```
 {: pre}
 
-**Create subsequent standard clusters**: If you already created a standard cluster in this zone or created a public VLAN in IBM Cloud infrastructure before, specify that public VLAN with the `--public-vlan` flag. To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run `ibmcloud oc vlan ls --zone <zone>`.
+**Create subsequent standard clusters**: If you already created a standard cluster in this zone or created a public VLAN in IBM Cloud infrastructure before, specify that public VLAN with the `--public-vlan` option. To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run `ibmcloud oc vlan ls --zone <zone>`.
 
 ```sh
 ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID --private-vlan my_private_VLAN_ID --flavor b3c.4x16 --name my_cluster --hardware shared --workers 2
@@ -959,7 +959,7 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 
 `--disable-public-service-endpoint`
 :    To ensure that worker nodes and authorized cluster users communicate with the master through the private cloud service endpoint only, include this option to create the cluster without the public cloud service endpoint.
-     If you include this flag, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.
+     If you include this option, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.
     {: important}
 
 `--pod-subnet SUBNET`
@@ -1131,7 +1131,7 @@ ibmcloud oc cluster image-security enable --cluster my_cluster
 List all clusters in your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
 
-Clusters in all locations are returned. To filter clusters by a specific location, include the `--location` flag. For example, if you filter clusters for the `dal` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `dal10` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned. You can pass one location or a comma-separated list of locations.
+Clusters in all locations are returned. To filter clusters by a specific location, include the `--location` option. For example, if you filter clusters for the `dal` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `dal10` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned. You can pass one location or a comma-separated list of locations.
 
 ```sh
 ibmcloud oc cluster ls [--provider (classic | vpc-gen2)] [--location LOCATION] [--output json] [-q]
@@ -1153,7 +1153,7 @@ Supported infrastructure providers
 :    Filter output by a specific location. To see supported locations, run `ibmcloud oc locations`. To specify multiple locations, use one option for each location, such as `-l dal -l seo`.
 
 `--output json`
-:    Optional: Prints the command output in JSON format. **Note**: If you don't include the `--provider` flag, only classic clusters are returned.
+:    Optional: Prints the command output in JSON format. **Note**: If you don't include the `--provider` option, only classic clusters are returned.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -1200,7 +1200,7 @@ Supported infrastructure providers
 :    Required: The name or ID of the cluster.
 
 `--subnet SUBNET`
-:    Required: The subnet in CIDR format. Specify more than one subnet by using multiple repeated flags.
+:    Required: The subnet in CIDR format. Specify more than one subnet by using multiple repeated options.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -1345,7 +1345,7 @@ Supported infrastructure providers
 :    Required: The name or ID of the cluster.
 
 `--subnet SUBNET`
-:    Required: The subnet CIDR. Specify more than one subnet by using multiple repeated flags.
+:    Required: The subnet CIDR. Specify more than one subnet by using multiple repeated options.
 
 `-f`
 :    Optional: Force the command to run without user prompts.
@@ -1611,7 +1611,7 @@ Supported infrastructure providers
 :    Required: The name or ID of the cluster.
 
 `--force-delete-storage`
-:    Optional: Deletes the cluster and any persistent storage that the cluster uses. **Attention**: If you include this flag, the data that is stored in the cluster or its associated storage instances can't be recovered.
+:    Optional: Deletes the cluster and any persistent storage that the cluster uses. **Attention**: If you include this option, the data that is stored in the cluster or its associated storage instances can't be recovered.
 
 `--skip-advance-permissions-check`
 :    Optional: Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before deleting the cluster. Note that if you don't have the correct infrastructure permissions, the cluster deletion might only partially succeed, such as the IBM-managed master being removed but the worker nodes unable to be removed from your infrastructure account. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.
@@ -2544,7 +2544,7 @@ Supported infrastructure providers
 :    Optional: Use this option to force a hard restart of a worker node by cutting off power to the worker node. Use this option if the worker node is unresponsive or the worker node's container runtime is unresponsive.
 
 `-w, --worker WORKER`
-:    Specify a worker node ID. To reload multiple worker nodes, use multiple flags, such as `-w worker1_id -w worker2_id`.
+:    Specify a worker node ID. To reload multiple worker nodes, use multiple options, such as `-w worker1_id -w worker2_id`.
 
 `--skip-master-healthcheck`
 :    Skip a health check of your master before reloading or rebooting your worker nodes.
@@ -2609,7 +2609,7 @@ ibmcloud oc worker reload --cluster CLUSTER --worker WORKER_ID [--skip-master-he
 :    Required: The name or ID of the cluster.
 
 `-w, --worker WORKER`
-:    Specify a worker node ID. To reload multiple worker nodes, use multiple flags, such as `-w worker1_id -w worker2_id`.
+:    Specify a worker node ID. To reload multiple worker nodes, use multiple options, such as `-w worker1_id -w worker2_id`.
 
 `--skip-master-healthcheck`
 :    Skip a health check of your master before reloading or rebooting your worker nodes.
@@ -2636,7 +2636,7 @@ Delete a worker node and replace it with a new worker node in the same worker po
 
 The replacement worker node is created in the same zone and has the same flavor as the old worker node, but might be assigned new public or private IP addresses. You might replace a worker node if you can't reload or update the worker node, such as if it enters a troubled state.
 
-You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` flag. If you don't include the `--update` flag, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation. Remember that your worker nodes can be only up to two versions behind the master version (`n-2`).
+You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` option. If you don't include the `--update` option, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation. Remember that your worker nodes can be only up to two versions behind the master version (`n-2`).
 
 When you replace a worker node, keep in mind the following considerations.
 {: important}
@@ -2729,7 +2729,7 @@ Supported infrastructure providers
 :    Required: The name or ID of the cluster.
 
 `-w, --worker WORKER`
-:    Specify a worker node ID. To reload multiple worker nodes, use multiple flags, such as `-w worker1_id -w worker2_id`.
+:    Specify a worker node ID. To reload multiple worker nodes, use multiple options, such as `-w worker1_id -w worker2_id`.
 
 `-f`
 :    Optional: Force the command to run with no user prompts.
@@ -2774,7 +2774,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-q]
 :    Required: The name or ID of the cluster where you list available worker nodes.
 
 `-w, --worker WORKER`
-:    Specify a worker node ID. To reload multiple worker nodes, use multiple flags, such as `-w worker1_id -w worker2_id`.
+:    Specify a worker node ID. To reload multiple worker nodes, use multiple options, such as `-w worker1_id -w worker2_id`.
 
 `-f`
 :    Optional: Force the command to run with no user prompts.
@@ -2833,7 +2833,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 :    Specifies that the disk is not encrypted. The default value is `false`.
 
 `-l, --label KEY1=VALUE1`
-:    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.
+:    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple options, such as `-l key1=value1 -l key2=value2`.
 
 `--operating-system SYSTEM`
 :   Optional. The operating system of the worker nodes you want to provision in your cluster.
@@ -2903,7 +2903,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 :    Optional: Specify the ID of the VPC in which to create the worker pool's worker nodes. The value must match the VPC ID that the cluster is in. To list the cluster's VPC ID, run `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If this option is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
 
 `-l, --label KEY1=VALUE1`
-:    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.
+:    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple options, such as `-l key1=value1 -l key2=value2`.
 
 `--entitlement cloud_pak`
 :    Include this option only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
@@ -3042,7 +3042,7 @@ Supported infrastructure providers
 :    Required: The name or ID of the cluster where the worker pool is located.
 
 `--label LABEL`
-:    Required: A custom label in the format `key=value` to set for all the worker nodes in the worker pool. For multiple labels, repeat this flag. To keep any existing custom labels on the worker pool, include those labels with this flag. You can list the existing custom labels on worker nodes in the worker pool by running `ibmcloud oc worker-pool get -c <cluster_name_or_ID> --worker-pool <pool>`.
+:    Required: A custom label in the format `key=value` to set for all the worker nodes in the worker pool. For multiple labels, repeat this option. To keep any existing custom labels on the worker pool, include those labels with this option. You can list the existing custom labels on worker nodes in the worker pool by running `ibmcloud oc worker-pool get -c <cluster_name_or_ID> --worker-pool <pool>`.
 
 `-p, --worker-pool WORKER_POOL`
 :    Required: The name of the worker node pool that you want to view the details of. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.
@@ -3367,7 +3367,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER [--worker-pool WORKER
 :    Required: The name or ID of the cluster.
 
 `-p, --worker-pool WORKER_POOL`
-:    The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.
+:    The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple options, such as `-p pool1 -p pool2`.
 
 `--private-vlan PRIVATE_VLAN`
 :    The ID of the private VLAN. This value is conditional.
@@ -3422,7 +3422,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CL
 :    Required: The name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-gen2`.
 
 `-p, --worker-pool WORKER_POOL`
-:    The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.
+:    The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple options, such as `-p pool1 -p pool2`.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.
@@ -3505,7 +3505,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER  --private-vlan PRIVA
 :    Required: The name or ID of the cluster.
 
 `-p, --worker-pool WORKER_POOL`
-:    The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.
+:    The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple options, such as `-p pool1 -p pool2`.
 
 `--private-vlan PRIVATE_VLAN`
 :    The ID of the private VLAN. This value is required, whether you want to use the same or a different private VLAN than the one that you used for your other worker nodes. New worker nodes are added to the VLAN that you specify, but the VLANs for any existing worker nodes are not changed.
@@ -3593,7 +3593,7 @@ Supported infrastructure providers
 :    Required: The zone that you want to remove.
 
 `-p, --worker-pool WORKER_POOL`
-:    The name of the worker pool to remove the zone from. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`. To remove the zone from all worker pools in the cluster, don't include this flag.
+:    The name of the worker pool to remove the zone from. To specify multiple worker pools, use multiple options, such as `-p pool1 -p pool2`. To remove the zone from all worker pools in the cluster, don't include this option.
 
 `-f`
 :    Optional: Force the command to run with no user prompts.
@@ -3746,7 +3746,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE)
 :    Optional: An IP address to assign to the ALB. This IP must be on the `vlan` that you specified and must be in the same `zone` as the ALB that you want to create. This IP address must not be in use by another load balancer or ALB in the cluster. To see the IP addresses that are currently in use, run `oc get svc --all-namespaces`.
 
 `--version IMAGE_VERSION`
-:    Optional: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc ingress alb versions`. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this flag, the ALB runs the default version of the Kubernetes Ingress image type.
+:    Optional: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc ingress alb versions`. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this option, the ALB runs the default version of the Kubernetes Ingress image type.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -3835,7 +3835,7 @@ ibmcloud oc ingress alb enable classic --alb ALB_ID --cluster CLUSTER [--ip IP_A
     {: note}
 
 `--version IMAGE_VERSION`
-:    Optional: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc ingress alb versions`. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this flag, the ALB runs the default version of the same image that the ALB previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+:    Optional: The version of the image that you want the ALB to run. To list available versions, run `ibmcloud oc ingress alb versions`. To specify a version other than the default, you must first disable automatic updates by running the `ibmcloud oc ingress alb autoupdate disable` command. If you omit this option, the ALB runs the default version of the same image that the ALB previously ran: either the Kubernetes Ingress image or the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -4052,7 +4052,7 @@ Supported infrastructure providers
 :    Required: The name or ID of the cluster where you want to update the ALBs.
 
 `--alb CLUSTER`
-:    Optional: The ID of the individual ALB to update. To list ALB IDs, run `ibmcloud oc ingress alb ls -c <cluster>`. To update multiple ALBs, use multiple flags, such as `--alb ALB1_ID --alb ALB2_ID`. If you omit this flag, all ALBs in the cluster are updated.
+:    Optional: The ID of the individual ALB to update. To list ALB IDs, run `ibmcloud oc ingress alb ls -c <cluster>`. To update multiple ALBs, use multiple options, such as `--alb ALB1_ID --alb ALB2_ID`. If you omit this option, all ALBs in the cluster are updated.
 
 `--version IMAGE_VERSION`
 :    Optional: The version of the image that you want to update ALBs to.
@@ -5064,7 +5064,7 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_I
 :    Required: The name or ID of the cluster.
 
 `--ip NLB_IP`
-:    The NLB IP address(es) that you want to add to the subdomain. To see your NLB IPs, run `oc get svc`. To specify multiple IP addresses, use multiple `--ip` flags.
+:    The NLB IP address(es) that you want to add to the subdomain. To see your NLB IPs, run `oc get svc`. To specify multiple IP addresses, use multiple `--ip` options.
 
 `--nlb-host SUBDOMAIN`
 :    The subdomain that you want to add IPs to. To see existing subdomains, run `ibmcloud oc nlb-dns ls`.
@@ -5104,7 +5104,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 :    Required: The name or ID of the cluster.
 
 `--ip IP`
-:    The network load balancer IP address that you want to register. To see your NLB IP addresses, run `oc get svc`. To specify multiple IP addresses, use multiple `--ip` flags.
+:    The network load balancer IP address that you want to register. To see your NLB IP addresses, run `oc get svc`. To specify multiple IP addresses, use multiple `--ip` options.
 
 `--secret-namespace NAMESPACE`
 :    The {{site.data.keyword.redhat_openshift_notm}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you don't specify a project, the secret is automatically created in the `default` project.
@@ -5152,7 +5152,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAM
 :    Required: The name or ID of the cluster.
 
 `--lb-host VPC_ALB_HOSTNAME` | `--ip VPC_NLB_IP`
-:    For VPC application load balancers, the load balancer hostname. To see load balancer hostnames, run `oc get svc -o wide`. For VPC network load balancers, the external IP addresses. To specify multiple IP addresses, use multiple `--ip` flags. To see load balancer IP addresses, run `oc get svc -o wide`.
+:    For VPC application load balancers, the load balancer hostname. To see load balancer hostnames, run `oc get svc -o wide`. For VPC network load balancers, the external IP addresses. To specify multiple IP addresses, use multiple `--ip` options. To see load balancer IP addresses, run `oc get svc -o wide`.
 
 `--dns-type public`
 :    The DNS provider type for the subdomain registration. Currently, only `public` DNS is supported.
@@ -5256,9 +5256,9 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 Configure and optionally enable a health check monitor for an existing NLB subdomain in a cluster. When you enable a monitor for your subdomain, the monitor health checks the NLB IP in each zone and keeps the DNS lookup results updated based on these health checks.
 {: shortdesc}
 
-You can use this command to create and enable a health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` option and the flags for all settings that you want to configure.
+You can use this command to create and enable a health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` option and the options for all settings that you want to configure.
 
-To update an existing monitor, you must include all the flags for the settings that you want, including existing settings.
+To update an existing monitor, you must include all the options for the settings that you want, including existing settings.
 {: note}
 
 ```sh
@@ -6108,7 +6108,7 @@ Supported infrastructure providers
 :    Optional: The ID of the account that contains the KMS instance you want to use for local disk or secret encryption.
 
 `--public-endpoint`
-:    Optional: Specify this option to use the KMS public cloud service endpoint. If you don't include this flag, the private cloud service endpoint is used by default.
+:    Optional: Specify this option to use the KMS public cloud service endpoint. If you don't include this option, the private cloud service endpoint is used by default.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -6707,7 +6707,7 @@ Supported infrastructure providers
 
 
 To use this command to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.openshiftlong_notm}} plug-in:
-1. Run the command on a test script without the `--in-place` flag.
+1. Run the command on a test script without the `--in-place` option.
     ```sh
     ibmcloud oc script update ./mytestscript.sh
     ```
@@ -6731,7 +6731,7 @@ To use this command to prepare your automation scripts for the release of versio
     ```
     {: screen}
 
-3. To rewrite the script with the proposed updates, run the command again with the `--in-place` flag.
+3. To rewrite the script with the proposed updates, run the command again with the `--in-place` option.
     ```sh
     ibmcloud oc script update ./mytestscript.sh --in-place
     ```
@@ -7116,7 +7116,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :    Required. The name or ID of the cluster.
 
 `--host-label, -hl LABEL`
-:    Required. Enter at least one existing label that describes {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned to this worker pool. The labels that you specify must match the host labels exactly. For example, if you want a host that has 3 labels to be assigned to this worker pool, you must specify all 3 labels in 3 repeated flags. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
+:    Required. Enter at least one existing label that describes {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned to this worker pool. The labels that you specify must match the host labels exactly. For example, if you want a host that has 3 labels to be assigned to this worker pool, you must specify all 3 labels in 3 repeated options. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
 `--name POOL_NAME`
 :    Required. The name that you want to give your worker pool.
@@ -7131,7 +7131,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :    Required. The name of the zone where you want hosts to be assigned as worker nodes. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field. Note that after you create this worker pool, you can [add more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) for high availability.
 
 `-l, --label KEY1=VALUE1`
-:    Optional. Apply key-value labels to each worker node in the worker pool. Note that these worker node labels are used in the context of {{site.data.keyword.redhat_openshift_notm}} to, for example, manage workload deployment within your cluster, and are separate from the host labels that you previously applied to your {{site.data.keyword.satelliteshort}} hosts that are used for host assignment to your cluster. To specify multiple labels, use multiple flags, such as `-l key1=value1 -l key2=value2`.
+:    Optional. Apply key-value labels to each worker node in the worker pool. Note that these worker node labels are used in the context of {{site.data.keyword.redhat_openshift_notm}} to, for example, manage workload deployment within your cluster, and are separate from the host labels that you previously applied to your {{site.data.keyword.satelliteshort}} hosts that are used for host assignment to your cluster. To specify multiple labels, use multiple options, such as `-l key1=value1 -l key2=value2`.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.
@@ -7168,7 +7168,7 @@ ibmcloud oc zone add satellite --zone ZONE --cluster CLUSTER [--worker-pool WORK
 :    Required: The name or ID of the cluster.
 
 `-p, --worker-pool WORKER_POOL`
-:    The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.
+:    The name of the worker pool to add the zone to. To specify multiple worker pools, use multiple options, such as `-p pool1 -p pool2`.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.

@@ -159,7 +159,7 @@ Version 1.0.374 of the CLI was released on 24 February 2022.
 
 Version 1.0.372 of the CLI was released on 18 February 2022.
 
-:   Modifies relevant commands to accept either the `--worker-pool` or `-p` flags for worker pool options.
+:   Modifies relevant commands to accept either the `--worker-pool` or `-p` options for worker pool options.
 :   Updates JSON outputs to include additional resources, such as addons, VLANs, and subnets. 
 :   Makes `ibmcloud oc ingress` commands generally available.
 :   Updates the `ibmcloud oc ingress alb get` command output to include ALB status. 
@@ -343,7 +343,7 @@ Version 1.0.157 of the CLI was released on 24 August 2020.
 
 **Renamed commands**: The following commands are shifted to new naming categories. 
 - Shifts all existing `ibmcloud oc alb` commands into the [`ibmcloud oc ingress alb`](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands) subcategory. 
-- Changes the names of the following flags in the relevant `ibmcloud oc ingress alb` commands: `--alb-id` to `--alb`, `--secret-name` to `--name`, and `--user-ip` to `--ip`.
+- Changes the names of the following options in the relevant `ibmcloud oc ingress alb` commands: `--alb-id` to `--alb`, `--secret-name` to `--name`, and `--user-ip` to `--ip`.
 
 **Deprecated commands**: The following commands are deprecated in favor of the new commands. 
 - Deprecates the `ibmcloud oc alb cert` set of commands. 
@@ -356,12 +356,12 @@ Version 1.0.157 of the CLI was released on 24 August 2020.
 Version 1.0.143 of the CLI was released on 6 August 2020.
 
 - Adds the [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota_ls) command to list all quota and limits for cluster-related resources in your {{site.data.keyword.cloud_notm}} account. 
-- Deprecates the `--json` flag. To print a command output in JSON format, use the `--output json` option instead. 
-- Deprecates the `-s` flag. To not show the message of the day or update reminders in command output, use the `-q` option instead. 
-- Updates `ibmcloud oc cluster ls` command so that if you include the `--ouput json` option but don't include the `--provider` flag, only classic clusters are returned. 
+- Deprecates the `--json` option. To print a command output in JSON format, use the `--output json` option instead. 
+- Deprecates the `-s` option. To not show the message of the day or update reminders in command output, use the `-q` option instead. 
+- Updates `ibmcloud oc cluster ls` command so that if you include the `--ouput json` option but don't include the `--provider` option, only classic clusters are returned. 
 - Corrects the example master update command that is displayed in the output of the `ibmcloud oc cluster get` command when a master update is available. 
 - Adds information about the effects of worker node replacement in the warning message for the `ibmcloud oc worker replace` command. 
-- Standardizes the help text for flags that have a list of supported values. 
+- Standardizes the help text for options that have a list of supported values. 
 - Updates the help text in various languages.
 
 ## Version 1.0.118
@@ -428,7 +428,7 @@ Version 1.0.57 of the CLI was released on 7 May 2020.
 - Updates the macOS DNS resolver to fix network issues when you use the CLI plug-in with a VPN connection. 
 - Help documentation updates: 
     - Adds instructions for enabling or disabling an add-on to the help text for the `ibmcloud oc addon-versions` command. 
-    - Clarifies optional and required flags in option help text. 
+    - Clarifies optional and required options in option help text. 
     - Updates the help text in various languages.
 
 ## Version 1.0.28
@@ -447,9 +447,9 @@ Version 1.0.15 of the CLI was released on 24 March 2020.
 
 - Adds the [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate) and [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm) commands to help you manage secrets for NLB subdomains. 
 - Adds the optional `--worker-pool WORKER_POOL` option to `ibmcloud oc zone rm`. 
-- Deprecates the option to specify a YAML file in the `--file` option of the `ibmcloud oc cluster create` and `ibmcloud oc worker add` commands. Instead, specify values for your cluster in the supported flags for these commands. 
+- Deprecates the option to specify a YAML file in the `--file` option of the `ibmcloud oc cluster create` and `ibmcloud oc worker add` commands. Instead, specify values for your cluster in the supported options for these commands. 
 - Fixes the following bugs: 
-    - For `ibmcloud oc cluster rm`, the `--force-delete-storage` option no longer sets the `-f` flag.
+    - For `ibmcloud oc cluster rm`, the `--force-delete-storage` option no longer sets the `-f` option.
 - Updates the help text in various languages.
 
 ## Version 1.0.0
@@ -481,8 +481,8 @@ Check out the following syntax and behavior changes between each version of the 
 | Supported? | Deprecated | Deprecated | Deprecated | Default |
 | `ibmcloud oc help` output structure  \n -  Legacy: Alphabetical list of commands  \n -  Latest: Categories of commands | Legacy | Legacy | Latest | Latest |
 | Command structure  \n -  Legacy: Hyphenated structure (`ibmcloud oc cluster-get`)  \n -  Latest: Spaced structure (`ibmcloud oc cluster get`) | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
-| Positional options  \n -  Legacy: options specified by position (`cluster-get mycluster`)  \n -  Latest: options specified by flags (`cluster get --cluster mycluster`) | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
-| Repeated options  \n -  Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)  \n -  Latest: Repeated flags for each value with optional shorthand option aliases (`-p pool1 -p pool2 ...`) | Legacy | Legacy | Legacy and latest | Latest |
+| Positional options  \n -  Legacy: options specified by position (`cluster-get mycluster`)  \n -  Latest: options specified by options (`cluster get --cluster mycluster`) | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
+| Repeated options  \n -  Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)  \n -  Latest: Repeated options for each value with optional shorthand option aliases (`-p pool1 -p pool2 ...`) | Legacy | Legacy | Legacy and latest | Latest |
 | option format  \n -  Legacy: Camel-case (`--showResources`)  \n -  Latest: Dashed (`--show-resources`) | Legacy | Legacy | Legacy and latest | Latest |
 | Cluster context provided by `ibmcloud oc cluster-config`  \n -  Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.  \n -  Latest: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [last file that is set by the `KUBECONFIG` environment variable](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple). | Legacy | Legacy | Legacy | Latest |
 {: caption="Latest versions of the redesigned {{site.data.keyword.openshiftlong_notm}} plug-in" caption-side="bottom"}
@@ -609,7 +609,7 @@ Version 0.4.23 of the CLI was released on 16 September 2019.
 - Decreases startup time for the plug-in. 
 - Fixes a Go version issue for macOS users. 
 - Improves debug tracing. 
-- In `ibmcloud oc logging filter` commands, the syntax of the `--logging-config` option changes from accepting multiple values in a comma-separated list to requiring repeated flags. 
+- In `ibmcloud oc logging filter` commands, the syntax of the `--logging-config` option changes from accepting multiple values in a comma-separated list to requiring repeated options. 
 - Minor bug and security fixes. 
 - Updates message, warning, and help text.
 
@@ -625,7 +625,7 @@ Version 0.4.3 of the CLI was released on 4 September 2019.
 
 Version 0.4.1 of the CLI was released on 3 April 2019.
 
-- Sets the {{site.data.keyword.openshiftlong_notm}} plug-in to the redesigned format by default. This redesigned version includes changes such as categorical lists instead of an alphabetical list of commands in the output of `ibmcloud oc help`, spaced-structured commands instead of hyphenated-structure commands, repeated flags instead of multiple values in comma-separated lists, and more. For a full list of the changes between version `0.3` and `0.4`, see the comparison table in [Using the beta {{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta). 
+- Sets the {{site.data.keyword.openshiftlong_notm}} plug-in to the redesigned format by default. This redesigned version includes changes such as categorical lists instead of an alphabetical list of commands in the output of `ibmcloud oc help`, spaced-structured commands instead of hyphenated-structure commands, repeated options instead of multiple values in comma-separated lists, and more. For a full list of the changes between version `0.3` and `0.4`, see the comparison table in [Using the beta {{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cs_cli_changelog#changelog_beta). 
 - Adds the [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update) command to rewrite scripts that call `ibmcloud oc` commands. 
 - Improves error handling for `ibmcloud oc cluster ls`. 
 - Updates help text.
@@ -647,8 +647,8 @@ Version 0.3 of the CLI plug-in is deprecated. To update to the latest version, s
 Version 0.3.112 of the CLI was released on 19 August 2019.
 
 - With the release of the [{{site.data.keyword.containerlong_notm}} version 2 API](/docs/openshift?topic=openshift-cs_api_install#api_about), the {{site.data.keyword.cloud_notm}} CLI `kubernetes-service` plug-in supports both classic and VPC infrastructure providers. Some `ibmcloud oc` commands support only one type of infrastructure, whereas other commands include additional names or options. 
-- Adds the `--pod-subnet` and `--service-subnet` flags to the `ibmcloud oc cluster create classic` commands for standard clusters that run Kubernetes 1.15 or later. If you plan to connect your cluster to on-premises networks, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods and subnets. 
-- Enhances the `ibmcloud oc nlb-dns create` and `ibmcloud oc nlb-dns add` commands so that you can add more than one IP address at a time. For example, to create a DNS entry for multiple network load balancer IP addresses, use multiple flags such as `ibmcloud oc nlb-dns create --cluster mycluster --ip IP1 --ip IP2`.
+- Adds the `--pod-subnet` and `--service-subnet` options to the `ibmcloud oc cluster create classic` commands for standard clusters that run Kubernetes 1.15 or later. If you plan to connect your cluster to on-premises networks, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods and subnets. 
+- Enhances the `ibmcloud oc nlb-dns create` and `ibmcloud oc nlb-dns add` commands so that you can add more than one IP address at a time. For example, to create a DNS entry for multiple network load balancer IP addresses, use multiple options such as `ibmcloud oc nlb-dns create --cluster mycluster --ip IP1 --ip IP2`.
 
 #### Version 0.3.103
 {: #cli-03103}
@@ -742,7 +742,7 @@ Version 0.3.8 of the CLI was released on 30 April 2019.
 
 - Adds support for [global endpoint functionality](/docs/openshift?topic=openshift-regions-and-zones#endpoint) in version `0.3`. By default, you can now view and manage all your {{site.data.keyword.containerlong_notm}} resources in all locations. You are not required to target a region to work with resources. 
 - Adds the [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations) command to list all locations that {{site.data.keyword.containerlong_notm}} supports. 
-- Adds the `--location` option to the `cluster ls` and `zone ls` commands to filter resources by one or more locations. - Adds the `--region` option to the `credential set/unset/get`, `api-key reset`, and `vlan spanning get` commands. To run these commands, you must specify a region in the `--region` flag.
+- Adds the `--location` option to the `cluster ls` and `zone ls` commands to filter resources by one or more locations. - Adds the `--region` option to the `credential set/unset/get`, `api-key reset`, and `vlan spanning get` commands. To run these commands, you must specify a region in the `--region` option.
 
 
 ### Version 0.2
@@ -788,7 +788,7 @@ Version 0.2.95 of the CLI was released on 3 April 2019.
 Version 0.2.80 of the CLI was released on 19 March 2019.
 
 - Adds support for enabling [master-to-worker communication with service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master) in standard clusters in [VRF-enabled accounts](/docs/account?topic=account-vrf-service-endpoint#vrf). 
-- Adds the `--private-service-endpoint` and `--public-service-endpoint` flags to the [`ibmcloud oc cluster-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) command. 
+- Adds the `--private-service-endpoint` and `--public-service-endpoint` options to the [`ibmcloud oc cluster-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) command. 
 - Adds the **Public Service Endpoint URL** and **Private Service Endpoint URL** fields to the output of `ibmcloud oc cluster get`. 
 - Adds the [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable) command. 
 - Adds the [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable) command.

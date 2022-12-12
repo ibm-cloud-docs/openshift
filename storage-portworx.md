@@ -1146,7 +1146,7 @@ Before you begin:
 - [Log in to the PX-Backup console](#px-backup-ui).
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-The Kubeconfig in clusters with PX-Backup expires after 24 hours. To prevent your cluster's Kubeconfig file from expiring, set the context with your cluster using the `--admin` flag.
+The Kubeconfig in clusters with PX-Backup expires after 24 hours. To prevent your cluster's Kubeconfig file from expiring, set the context with your cluster using the `--admin` option.
 `
 ibmcloud oc cluster config --cluster <cluster_name> --admin
 `
@@ -1547,7 +1547,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: pre}
 
-3. Run the `px_logcollect.sh` script. You can collect logs from all your worker nodes, or you can specify the `--workers` option and pass the private IP addresses of the worker nodes from where you want to collect logs. If you specify the `--workers` flag, the log files are saved in the `/tmp/pxlogs/<worker_node_IP>` directory with the private IP address of each worker node as the folder name. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
+3. Run the `px_logcollect.sh` script. You can collect logs from all your worker nodes, or you can specify the `--workers` option and pass the private IP addresses of the worker nodes from where you want to collect logs. If you specify the `--workers` option, the log files are saved in the `/tmp/pxlogs/<worker_node_IP>` directory with the private IP address of each worker node as the folder name. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
 
     * **Collect the logs from all worker nodes in your cluster.**
 

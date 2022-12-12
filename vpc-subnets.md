@@ -72,7 +72,7 @@ If you enable classic access when you create your VPC, [classic access default a
 
 If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods, and a custom subnet CIDR to provide the private IP addresses for services.
 
-To specify custom pod and service subnets during cluster creation, use the `--pod-subnet` and `--service-subnet` flags in the `ibmcloud oc cluster create` CLI command.
+To specify custom pod and service subnets during cluster creation, use the `--pod-subnet` and `--service-subnet` options in the `ibmcloud oc cluster create` CLI command.
 
 To see the pod and service subnets that your cluster uses, look for the `Pod Subnet` and `Service Subnet` fields in the output of `ibmcloud oc cluster get`.
 

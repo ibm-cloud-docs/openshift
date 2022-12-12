@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -417,7 +417,7 @@ To customize classic infrastructure permissions through the CLI:
     ```
     {: pre}
 
-5. Edit the permission of the user. For the `--enable` flag, enter `true` to assign the permission or `false` to remove the permission.
+5. Edit the permission of the user. For the `--enable` option, enter `true` to assign the permission or `false` to remove the permission.
     ```sh
     ibmcloud sl user permission-edit <user_id> --permission <permission_keyname> --enable (true|false)
     ```
