@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: openshift, red hat, red hat openshift, update, upgrade
 
@@ -253,7 +253,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
     ```
     {: screen}
 
-3. Copy the configuration files in your cluster to a local directory. The `--export` flag removes cluster-specific information from the configuration files.
+3. Copy the configuration files in your cluster to a local directory. The `--export` option removes cluster-specific information from the configuration files.
     ```sh
     oc get all -o yaml --export > myconfigs.yaml
     ```

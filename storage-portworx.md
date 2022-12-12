@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: portworx, openshift
 
@@ -1157,7 +1157,7 @@ Adding a cluster:
 1. In the PX-Backup console, click **Backups**.
 2. Click **Add Cluster**.
 3. Enter the name of the cluster that you want to back up.
-4. In the CLI, get the Kubeconfig file output for your cluster. Make sure that you have set the context to your cluster with the `--admin` flag to prevent the Kubeconfig from expiring.
+4. In the CLI, get the Kubeconfig file output for your cluster. Make sure that you have set the context to your cluster with the `--admin` option to prevent the Kubeconfig from expiring.
     ```sh
     oc config view --flatten --minify
     ```
@@ -1547,7 +1547,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: pre}
 
-3. Run the `px_logcollect.sh` script. You can collect logs from all your worker nodes, or you can specify the `--workers` flag and pass the private IP addresses of the worker nodes from where you want to collect logs. If you specify the `--workers` flag, the log files are saved in the `/tmp/pxlogs/<worker_node_IP>` directory with the private IP address of each worker node as the folder name. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
+3. Run the `px_logcollect.sh` script. You can collect logs from all your worker nodes, or you can specify the `--workers` option and pass the private IP addresses of the worker nodes from where you want to collect logs. If you specify the `--workers` flag, the log files are saved in the `/tmp/pxlogs/<worker_node_IP>` directory with the private IP address of each worker node as the folder name. To get the private IP addresses of your worker nodes, run the `oc get nodes` command.
 
     * **Collect the logs from all worker nodes in your cluster.**
 

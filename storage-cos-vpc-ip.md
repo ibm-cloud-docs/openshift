@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ Minimum required permissions
 **Supported infrastructure provider**:
 * VPC
 
-1. [Follow the instructions to install the `ibmc` Helm plug-in](/docs/openshift?topic=openshift-storage_cos_install). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` flag to `true`.
+1. [Follow the instructions to install the `ibmc` Helm plug-in](/docs/openshift?topic=openshift-storage_cos_install). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` option to `true`.
 
 2. Create one `Manager` HMAC service credential and one `Writer` HMAC service credential for your {{site.data.keyword.cos_full_notm}} instance.
     * [Creating HMAC credentials from the console](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).

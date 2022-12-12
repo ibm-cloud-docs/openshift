@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -464,7 +464,7 @@ Want to learn more about how builds, image streams, and the internal registry wo
     - `<region>.icr.io/<namespace>/<image>:<tag>`: Use the **Repository** and **Tag** information that you previously retrieved to fill out the {{site.data.keyword.registrylong_notm}} region, namespace, image, and tag name of the image that you want to pull.
     - `default/<image>:<tag>`: Enter the information for the internal image stream that you create from the {{site.data.keyword.registrylong_notm}} tagged image. You create this image stream in the `default` project, which is also the project where the image stream is created if you don't specify a project. The values for `<image>:<tag>` typically match the values that you previously retrieved.</td>
     - `--reference-policy=local`: Set this value to `local` so that a copy of the image from {{site.data.keyword.registrylong_notm}} is imported into the local cache of the internal registry and made available to the cluster's projects as an image stream. If you don't include this value, the image stream refers back to {{site.data.keyword.registrylong_notm}} when you use it in your deployments and therefore requires credentials in the project.
-    - `--scheduled`: Set this optional flag to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.10/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}. 
+    - `--scheduled`: Set this optional option to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.10/openshift_images/image-streams-manage.html#images-imagestreams-import_image-streams-managing){: external}. 
 
 5. Verify that your image stream is created.
 
@@ -1224,7 +1224,7 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
     :   Required. If you have one, enter your Docker email address. If you don't have one, enter a fictional email address, such as `a@b.c`. This email is required to create a Kubernetes secret, but is not used after creation.
     
     `--dry-run=true`
-    :   Include this flag to create the secret value only, and not create and store the secret object in your cluster.
+    :   Include this option to create the secret value only, and not create and store the secret object in your cluster.
     
     `--output="jsonpath={.data.\.dockerconfigjson}"`
     :   Get only the `.dockerconfigjson` value from the data section of the Kubernetes secret.

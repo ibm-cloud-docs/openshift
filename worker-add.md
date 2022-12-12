@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-12"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -142,7 +142,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
         ```
         {: pre}
 
-1. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. Include the `--vpc-id` option if the worker pool is the first in the cluster. Optionally include the `--kms-instance` and `--crk` flags with the values you previously retrieved  and if the KMS instance resides in a different account, include the `--kms-account-id` flag as well. To attach additional security groups to the workers in the worker pool, [specify the security group IDs with the `--security-group` option](/docs/containers?topic=containers-vpc-security-group#vpc-sg-worker-pool). For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).  Note that the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
+1. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. Include the `--vpc-id` option if the worker pool is the first in the cluster. Optionally include the `--kms-instance` and `--crk` flags with the values you previously retrieved  and if the KMS instance resides in a different account, include the `--kms-account-id` option as well. To attach additional security groups to the workers in the worker pool, [specify the security group IDs with the `--security-group` option](/docs/containers?topic=containers-vpc-security-group#vpc-sg-worker-pool). For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).  Note that the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
     If you want to create your worker pool on dedicated hosts, make sure to specify the `--dedicated-host-pool` option.
     {: note}
 
@@ -227,7 +227,7 @@ If you have multiple worker pools in your cluster, add the zone to all them so t
     ```
     {: pre}
 
-1. Add the zone to your worker pool. Repeat this step for each zone that you want to add to your worker pool. If you have multiple worker pools, add the zone to all your worker pools so that your cluster is balanced in all zones. Include the `--worker-pool` flag for each worker pool.
+1. Add the zone to your worker pool. Repeat this step for each zone that you want to add to your worker pool. If you have multiple worker pools, add the zone to all your worker pools so that your cluster is balanced in all zones. Include the `--worker-pool` option for each worker pool.
 
     If you want to use different VPC subnets for different worker pools, repeat this command for each subnet and its corresponding worker pools. Any new worker nodes are added to the VPC subnets that you specify, but the VPC subnets for any existing worker nodes are not changed.
     {: tip}

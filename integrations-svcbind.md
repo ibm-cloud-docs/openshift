@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: kubernetes, openshift
 
@@ -54,7 +54,7 @@ Yes, you can use services that meet naming requirements and reuse the service cr
     ```
     {: screen}
 
-* **Service credentials**: To use your existing service credentials, specify the `--key` flag in the `ibmcloud oc cluster service bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
+* **Service credentials**: To use your existing service credentials, specify the `--key` option in the `ibmcloud oc cluster service bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
 
 ### What if I want to use service credentials that use the private cloud service endpoint?
 {: #svc-bind-private-cse}
@@ -137,9 +137,9 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     ```
     {: pre}
 
-4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` flag to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` flag to specify a different service access role. If you use the `--key` flag, don't include the `--role` flag.
+4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` option to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` option to specify a different service access role. If you use the `--key` flag, don't include the `--role` flag.
 
-    If your service supports private cloud service endpoints, you can manually create the service credentials with the private cloud service endpoint, and then use the `--key` flag to specify the name of your credentials.
+    If your service supports private cloud service endpoints, you can manually create the service credentials with the private cloud service endpoint, and then use the `--key` option to specify the name of your credentials.
     {: tip}
 
     ```sh

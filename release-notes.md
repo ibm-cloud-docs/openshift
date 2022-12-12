@@ -2855,7 +2855,7 @@ strongSwan versions
 {: release-note}
 
 Accessing clusters
-:   Updated the steps for [accessing clusters through the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#access_private_se) to use the `--endpoint private` flag in the **`ibmcloud oc cluster config`** command.
+:   Updated the steps for [accessing clusters through the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#access_private_se) to use the `--endpoint private` option in the **`ibmcloud oc cluster config`** command.
 
 CLI changelog
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#10).

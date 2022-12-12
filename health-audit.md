@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-12"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -146,7 +146,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: screen}
     
-7. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Make sure to specify the `--admin` flag to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
+7. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Make sure to specify the `--admin` option to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
     ```sh
     ibmcloud oc cluster config --cluster <cluster> --admin
     ```
@@ -335,7 +335,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     ```
     {: screen}
 
-6. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Make sure to specify the `--admin` flag to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
+6. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) Make sure to specify the `--admin` option to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
     ```sh
     ibmcloud oc cluster config --cluster <cluster> --admin
     ```

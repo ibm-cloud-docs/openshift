@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-12"
 
 keywords: openshift
 
@@ -147,7 +147,7 @@ Key technologies:
 The port and the shipping company co-develop a unified trading system to electronically submit compliance-related information  for the clearance of goods and ships once, rather than to multiple agencies. Manifest and customs apps can quickly share contents of a particular shipment and ensure that all paperwork is electronically transferred and processed by agencies for the port.
 
 So they create a partnership that is dedicated to solutions for the trade system.
-* DECLARATIONS - App to take in shipping manifests and digitally process typical customs paperwork and to flag out-of-policy items for investigation and enforcement
+* DECLARATIONS - App to take in shipping manifests and digitally process typical customs paperwork and to option out-of-policy items for investigation and enforcement
 * TARIFFS – App to calculate tariffs, submit charges electronically to shipper, and receive digital payments
 * REGULATIONS – Flexible and configurable app that feeds previous two apps with ever-changing policies and regulations that affect imports, exports, and tariff processing
 
