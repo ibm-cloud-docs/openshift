@@ -243,6 +243,12 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 
 5. Verify that the VPC NLB is created successfully in your VPC. In the output, verify that the VPC NLB has an **Operating Status** of `online` and a **Provision Status** of `active`.
     {: tip}
+    
+    The VPC NLB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
+    {: tip}
+
+     Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.redhat_openshift_notm}} automatically creates another VPC NLB for the `LoadBalancer` service.
+    {: important}
 
     ```sh
     ibmcloud is load-balancers
@@ -726,6 +732,12 @@ To enable your app to receive public or private requests,
     {: screen}
 
 5. Verify that the VPC ALB is created successfully in your VPC. In the output, verify that the VPC ALB has an **Operating Status** of `online` and a **Provision Status** of `active`.
+    
+    The VPC ALB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
+    {: tip}
+
+    Do not rename any VPC ALBs that are created automatically for `LoadBalancer` services. If you rename a VPC ALB, {{site.data.keyword.redhat_openshift_notm}} automatically creates another VPC ALB for the `LoadBalancer` service.
+    {: important}
 
     ```sh
     ibmcloud is load-balancers
