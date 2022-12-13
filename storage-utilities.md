@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-13"
 
 keywords: openshift
 
@@ -1164,7 +1164,7 @@ When a storage volume is down, your app pods that are using storage have a low f
     1. From the {{site.data.keyword.mon_full_notm}} console, click **Overview** > **Workloads**.
     2. Select the **Namespace** where your app is deployed. Find your app, click the arrow icon on your app, and select **Kubernetes Pod overview**.
     3. In the **File System Utilization** section, review the **File I/O Bandwidth by Pod** tile.
-    4. Review the file I/O bandwidth from the last day or week time window to determine the average bandwidth. You can use the average bandwidth as a threshold to set an alert for when the file I/O bandwidth is lower than the average for a certain amount of time. For example, if the average file I/O bandwidth for your app is 300B/s, you can create an alert for when the network utilization remains less than 300B/s for a certain amount of time.
+    4. Review the file I/O bandwidth from the last day or week time window to determine the average bandwidth. You can use the average bandwidth as a threshold to set an alert for when the file I/O bandwidth is less than the average for a certain amount of time. For example, if the average file I/O bandwidth for your app is 300B/s, you can create an alert for when the network utilization remains less than 300B/s for a certain amount of time.
     5. In the **File I/O Bandwidth by Pod** tile, create an alert by clicking the **Options** menu and then **Create alert**.
     6. Open the **Notification** section of the alert menu and create or select an alert notification channel.
     7. Save your alert.

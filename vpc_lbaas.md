@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-13"
 
 keywords: openshift, app protocol, application protocol
 
@@ -985,7 +985,7 @@ Review the following default settings and limitations.
 * One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all your VPC clusters in your VPC, a maximum of 50 VPC load balancers can be created. For more information, see the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas).
 * The VPC load balancer can route requests to pods that are deployed on a maximum of 50 worker nodes in a cluster.
     * If you set `externalTrafficPolicy: Cluster` in your load balancer configuration, the VPC load balancer only routes to the first 50 worker nodes that are returned in the cluster's API call to the VPC load balancer. 
-    * If you set `externalTrafficPolicy: Local` in your load balancer configuration, the VPC load balancer is only created if there are fewer than 50 worker nodes on the cluster. Instead, lower the number of worker nodes that the load balancer forwards request to by limiting the load balancer to a zone. You can include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"` annotation, or create a separate `LoadBalancer` service for each zone.
+    * If you set `externalTrafficPolicy: Local` in your load balancer configuration, the VPC load balancer is only created if there are fewer than 50 worker nodes on the cluster. Instead, reduce the number of worker nodes that the load balancer forwards request to by limiting the load balancer to a zone. You can include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"` annotation, or create a separate `LoadBalancer` service for each zone.
 * When you define the configuration YAML file for a Kubernetes `LoadBalancer` service, the following annotations and settings are not supported:
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"`
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"`

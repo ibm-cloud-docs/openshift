@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-13"
 
 keywords: openshift, roks, rhoks, rhos, limits
 
@@ -43,7 +43,7 @@ You have a few options when it comes to dealing with this.
 {: tsResolve}
 
 
-- Identify the cause of the high resource usage and make changes to lower the usage.
+- Identify the cause of the high resource usage and make changes to reduce the usage.
     - Look for applications that may be generating high load against your master. 
     - Reduce the number of resources, such as secrets, configmaps, and replicasets.  If a cluster contains a high number of resources, then the queries can cause the master to be overloaded. Use the **`kubectl get raw`** command to find the top resources by count. For example, run 
         ```sh

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-13"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -204,6 +204,9 @@ Single-node clusters lack high availability. By provisioning a single-node clust
 
 Any cluster with fewer than three worker nodes lacks high availability. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload, and that regular worker node upgrades result in your workload going offline. Additionally, if a cluster is provisioned as a single-node cluster, it can not later be converted to a standard, highly available cluster. You can add more nodes, but standard deployments do not increase in replica size and the cluster does not become highly available. 
 {: shortdesc}
+
+* OpenShift Data Foundation is not supported on single-node clusters.
+* Portworx is not supported on single-node clusters.
 
 ### Requirements
 {: #single-node-requirements}

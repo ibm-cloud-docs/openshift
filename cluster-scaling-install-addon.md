@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-13"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -220,7 +220,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 :   Set the amount of time in minutes that a worker node must be unnecessary before it can be scaled down. The default value is `10m`.
 
 `scaleDownUtilizationThreshold`
-:   Set the worker node utilization threshold. If the worker node utilization goes lower than the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity. The default value is `0.5`.
+:   Set the worker node utilization threshold. If the worker node utilization is less than the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity. The default value is `0.5`.
 
 `scanInterval`
 :  Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down. The default value is `1m`.

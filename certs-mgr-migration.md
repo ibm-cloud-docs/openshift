@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-13"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 
@@ -37,7 +37,7 @@ The steps to migrate to {{site.data.keyword.secrets-manager_short}} involves reg
 {: important}
 
 ### Step 1: Enable service-to-service communication
-{: #certs-mgr_setup_s2s }
+{: #certs-mgr_setup_s2s}
 
 Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.redhat_openshift_notm}} cluster requires service-to-service communication authorization. Follow the steps to set up the authorization. For additional info, see [Integrations for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 {: shortdesc}
