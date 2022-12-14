@@ -33,6 +33,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-dec1422}
 {: release-note}
 
+
+
 CLI version 1.0.480 change log update
 :   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.480.
   

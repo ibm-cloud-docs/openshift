@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-14"
 
 keywords: openshift, app protocol, application protocol
 
@@ -247,7 +247,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     The VPC NLB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
     {: tip}
 
-     Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.redhat_openshift_notm}} automatically creates another VPC NLB for the `LoadBalancer` service.
+     Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.openshiftlong_notm}} automatically creates another VPC NLB for the `LoadBalancer` service.
     {: important}
 
     ```sh
@@ -736,7 +736,7 @@ To enable your app to receive public or private requests,
     The VPC ALB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
     {: tip}
 
-    Do not rename any VPC ALBs that are created automatically for `LoadBalancer` services. If you rename a VPC ALB, {{site.data.keyword.redhat_openshift_notm}} automatically creates another VPC ALB for the `LoadBalancer` service.
+    Do not rename any VPC ALBs that are created automatically for `LoadBalancer` services. If you rename a VPC ALB, {{site.data.keyword.openshiftlong_notm}} automatically creates another VPC ALB for the `LoadBalancer` service.
     {: important}
 
     ```sh
@@ -864,15 +864,15 @@ Mixed protocol load balancers, which specify both UPD and TCP ports, are not cur
 
 You can specify the TCP node port for another load balancer or NodePort running in your cluster. However, if the node port resides outside of the `30000-32767` range you must [modify the VPC cluster security group `kube-<cluster-ID>` to allow incoming traffic](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to the specified port. 
 
-Note that if the specified port value is for a service that unexpectedly goes down or has its port value reconfigured, the TCP health checks will stop working until the service is back up or you reconfigure the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` annotation with a new TCP port value. To avoid this, you can specify the `kubelet` port `10250`, which is a static port value that does not experience service disruptions. However, you must [modify the VPC cluster security group `kube-<cluster-ID>`](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to accept incoming traffic from the `kubelet` port. 
+Note that if the specified port value is for a service that unexpectedly goes down or has its port value reconfigured, the TCP health checks stop working until the service is back up or you reconfigure the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` annotation with a new TCP port value. To avoid this, you can specify the `kubelet` port `10250`, which is a static port value that does not experience service disruptions. However, you must [modify the VPC cluster security group `kube-<cluster-ID>`](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to accept incoming traffic from the `kubelet` port. 
 
-Want to avoid the complexity of specifiying additional TCP ports for health checks in a UDP load balancer? Set `externalTrafficPolicy` to `Local` to use HTTP health checks, which require no additional port specifications.
+Want to avoid the complexity of specifying additional TCP ports for health checks in a UDP load balancer? Set `externalTrafficPolicy` to `Local` to use HTTP health checks, which require no additional port specifications.
 {: tip}
 
 ## Changing load balancer subnets or zones
 {: #lbaas_change_subnets}
 
-Once you have created a VPC NLB or VPC ALB, you cannot reconfigure its subnets or zones. If you want to change the subnets or zone for an exisiting VPC load balancer, you must delete, update, and reapply the corresponding Kubernetes `LoadBalancer` service.
+Once you have created a VPC NLB or VPC ALB, you cannot reconfigure its subnets or zones. If you want to change the subnets or zone for an existing VPC load balancer, you must delete, update, and reapply the corresponding Kubernetes `LoadBalancer` service.
 {: shortdesc}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
