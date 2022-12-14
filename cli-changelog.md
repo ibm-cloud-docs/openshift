@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-14"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -30,6 +30,13 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version 1.0.480
+{: #cli-10480}
+Version 1.0.480 of the CLI was released on 14 December 2022.
+:   Adjusted `ibmcloud oc flavor get` and `ibmcloud oc flavor ls` commands to show secondary storage details.
+:   Introduced Secondary Storage Configuration for `worker-pool get`.
+:   Added Ignored Errors to `ingress status-report`.
 
 ## Version 1.0.471
 {: #cli-10471}
