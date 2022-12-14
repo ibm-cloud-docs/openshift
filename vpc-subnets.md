@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-14"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
