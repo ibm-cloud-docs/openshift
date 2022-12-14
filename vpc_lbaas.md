@@ -993,7 +993,7 @@ Review the following default settings and limitations.
 * Review [known limitations for VPC ALBs](/docs/vpc?topic=vpc-lb-limitations) and [known limitations for VPC NLBs](/docs/vpc?topic=vpc-nlb-limitations).
 * Private VPC ALBs don't accept all traffic, only RFC 1918 traffic.
 * Private VPC NLBs must be created on a dedicated VPC subnet that must exist in the same VPC and location as your cluster, but the subnet can't be attached to your cluster or any worker nodes.
-* {{site.data.keyword.redhat_openshift_notm}} 4.6 or later: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} and [application protocol](https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol){: external} features are generally available in the community release, creating load balancers that use these protocols is not supported in {{site.data.keyword.containerlong_notm}} clusters.
+* {{site.data.keyword.redhat_openshift_notm}} 4.10 or later: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} is generally available in the Kubernetes community release, creating load balancers that use this protocol is not supported in {{site.data.keyword.containerlong_notm}} clusters.
 * One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all your VPC clusters in your VPC, a maximum of 50 VPC load balancers can be created. For more information, see the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas).
 * The VPC load balancer can route requests to pods that are deployed on a maximum of 50 worker nodes in a cluster.
     * If you set `externalTrafficPolicy: Cluster` in your load balancer configuration, the VPC load balancer only routes to the first 50 worker nodes that are returned in the cluster's API call to the VPC load balancer. 
@@ -1011,6 +1011,8 @@ Review the following default settings and limitations.
 * {{site.data.keyword.redhat_openshift_notm}} 4.6 or later: Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
 * VPC ALB listens on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the annotation: `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`. If you add more zones to the cluster, the VPC ALB is not updated to listen for incoming traffic on the new zone(s). The subnets and zones of the VPC ALB can't be changed once the ALB is created. Incoming traffic can be routed to all backend worker nodes in the cluster across all zones, but the VPC subnets that the VPC ALB is listening on can not be updated. The VPC NLB is limited to the VPC subnets in a single zone. It can't be configured to listen on VPC subnets located in multiple zones.
 * Disabling load balancer NodePort allocation is not supported for VPC load balancers. 
+* VPC ALBs only: Mixed protocol load balancer services are not currently supported in IBM Cloud Kubernetes Service. You cannot specify both TCP and UDP ports in your load balancer definition.
+* 4.11 or later: VPC NLBs can be set up with both UDP and TCP on the same VPC LB, but the listening port must be different.
 
 
 
