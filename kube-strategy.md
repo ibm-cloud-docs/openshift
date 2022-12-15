@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-15"
 
 keywords: openshift, moving to openshift, openshift environment, openshift clusters, cluster sizing
 
@@ -210,7 +210,7 @@ Now that you have a good estimate of your app size and the worker nodes that you
 ## Structuring your {{site.data.keyword.redhat_openshift_notm}} environment
 {: #kube_env}
 
-Your {{site.data.keyword.openshiftlong_notm}} is linked to one IBM Cloud infrastructure portfolio only. Within your account, you can create clusters that are composed of a master and various worker nodes. IBM manages the master, and you can create a mix of worker pools that pool together individual machines of the same flavor, or memory and CPU specs. Within the cluster, you can further organize resources by using namespaces and labels. Choose the right mix of cluster, flavors, and organization strategies so that you can make sure that your teams and workloads get the resources that they need.
+Your {{site.data.keyword.openshiftlong_notm}} is linked to one IBM Cloud infrastructure portfolio only. Within your account, you can create clusters that are composed of a master and various worker nodes. IBM manages the master, and you can create a mix of worker pools that pool together individual machines of the same flavor, or memory and CPU specs. Within the cluster, you can further organize resources by using namespaces and labels. Choose the best mix of cluster, flavors, and organization strategies so that you can make sure that your teams and workloads get the resources that they need.
 {: shortdesc}
 
 ### What type of cluster and flavors should I get?
@@ -250,7 +250,7 @@ To get the most out of your worker node's performance, consider the following:
 #### Provision different types of machines for a mix of computing resources
 {: #env_resources_provision_types}
 
-Everyone likes choices, right? With {{site.data.keyword.openshiftlong_notm}}, you have [a mix of flavors](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that you can deploy: from bare metal for intensive workloads to virtual machines for rapid scaling. Use labels or namespaces to organize deployments to your machines. When you create a deployment, limit it so that your app's pod deploys only on machines with the right mix of resources. For example, you might want to limit a database application to a bare metal machine with a significant amount of local disk storage like the `md1c.28x512.4x4tb`.
+Everyone likes choices, right? With {{site.data.keyword.openshiftlong_notm}}, you have [a mix of flavors](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that you can deploy: from bare metal for intensive workloads to virtual machines for rapid scaling. Use labels or namespaces to organize deployments to your machines. When you create a deployment, limit it so that your app's pod deploys only on machines with the best mix of resources. For example, you might want to limit a database application to a bare metal machine with a significant amount of local disk storage like the `md1c.28x512.4x4tb`.
 
 #### Set up multiple namespaces when you have multiple teams and projects that share the cluster
 {: #env_resources_multiple_namespaces}

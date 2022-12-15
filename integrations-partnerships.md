@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-15"
 
 keywords: kubernetes, openshift
 
@@ -19,10 +19,10 @@ subcollection: openshift
 # {{site.data.keyword.openshiftlong_notm}} partners
 {: #service-partners}
 
-IBM is dedicated to make {{site.data.keyword.openshiftlong}} the best {{site.data.keyword.redhat_openshift_notm}} service that helps you migrate, operate, and administer your containerized workloads. To provide you with all the capabilities that you need to run production workloads in the cloud, {{site.data.keyword.openshiftlong_notm}} partners with other third-party service providers to enhance your cluster with top-notch logging, monitoring, and storage tools.
+To provide you with all the capabilities that you need to run production workloads in the cloud, {{site.data.keyword.openshiftlong_notm}} partners with other third-party service providers to enhance your cluster with top-notch logging, monitoring, and storage tools.
 {: shortdesc}
 
-Review our partners and the benefits of each solution that they provide. To find other proprietary {{site.data.keyword.cloud_notm}} and third-party open source services that you can use in your cluster, see [Understanding {{site.data.keyword.cloud_notm}} and 3rd party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations).
+Review the list of partners and the benefits of each solution that they provide. To find other proprietary {{site.data.keyword.cloud_notm}} and third-party open source services that you can use in your cluster, see [Understanding {{site.data.keyword.cloud_notm}} and 3rd party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations).
 
 ## Portworx
 {: #portworx-parter}
@@ -72,7 +72,7 @@ Contact Portworx support by using one of the following methods.
 
 - Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us)
 
-- Opening an issue in the [Portworx Service Portal](https://pure1.purestorage.com/support){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
+- Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
 
 You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-15"
 
 keywords: openshift, lb2.0, nlb
 
@@ -40,7 +40,7 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
         * For type of support, select **Technical**.
         * For offering, select **Containers**.
         * For subject, enter **Public and private VLAN network question**
-    4. Add the following information to the description: "Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account.". Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
+    4. Add the following information to the description: `Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account`. Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
     5. Click **Submit**.
 
 2. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint#vrf). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.
@@ -137,7 +137,7 @@ To set up an NLB 2.0 in a multizone cluster:
 
 
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler:`
-        :   Optional: Annotation to specify the scheduling algorithm. Accepted values are `"rr"` for Round Robin (default) or `"sh"` for Source Hashing. For more information, see [2.0: Scheduling algorithms](#scheduling).
+        :   Optional: Annotation to specify the scheduling algorithm. Accepted values are `"rr"` for round-robin (default) or `"sh"` for Source Hashing. For more information, see [2.0: Scheduling algorithms](#scheduling).
 
 
         `selector`
@@ -156,7 +156,7 @@ To set up an NLB 2.0 in a multizone cluster:
         :   Set to `Local`.
 
 
-        Example configuration file to create an NLB 2.0 service in `dal12` that uses the Round Robin scheduling algorithm:
+        Example configuration file to create an NLB 2.0 service in `dal12` that uses the round-robin scheduling algorithm:
 
         ```yaml
         apiVersion: v1
@@ -290,7 +290,7 @@ To create an NLB 2.0 service in a single-zone cluster:
 
 
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler:`
-        :   Optional: Annotation to specify a scheduling algorithm. Accepted values are `"rr"` for Round Robin (default) or `"sh"` for Source Hashing. For more information, see [2.0: Scheduling algorithms](#scheduling).
+        :   Optional: Annotation to specify a scheduling algorithm. Accepted values are `"rr"` for round-robin (default) or `"sh"` for Source Hashing. For more information, see [2.0: Scheduling algorithms](#scheduling).
 
 
         `selector`
@@ -369,14 +369,14 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 ## Scheduling algorithms
 {: #scheduling}
 
-Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its Keepalived short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in {{site.data.keyword.openshiftlong_notm}}. If you don't specify a scheduling algorithm, the Round Robin algorithm is used by default. For more information, see the [Keepalived documentation](https://www.keepalived.org/doc/scheduling_algorithms.html){: external}.
-{: shortdesc}
+Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its `Keepalived` short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in {{site.data.keyword.openshiftlong_notm}}. If you don't specify a scheduling algorithm, the round-robin algorithm is used by default. For more information, see the [`Keepalived` documentation](https://www.keepalived.org/doc/scheduling_algorithms.html){: external}.
+
 
 ### Supported scheduling algorithms
 {: #scheduling_supported}
 
 Round Robin (`rr`)
-:   The NLB cycles through the list of app pods when routing connections to worker nodes, treating each app pod equally. Round Robin is the default scheduling algorithm for version 2.0 NLBs.
+:   The NLB cycles through the list of app pods when routing connections to worker nodes, treating each app pod equally. round-robin is the default scheduling algorithm for version 2.0 NLBs.
 
 Source Hashing (`sh`)
 :   The NLB generates a hash key based on the source IP address of the client request packet. The NLB then looks up the hash key in a statically assigned hash table, and routes the request to the app pod that handles hashes of that range. This algorithm ensures that requests from a particular client are always directed to the same app pod. Kubernetes uses Iptables rules, which cause requests to be sent to a random pod on the worker. To use this scheduling algorithm, you must ensure that no more than one pod of your app is deployed per worker node. For example, if each pod has the label `run=<app_name>`, add the following anti-affinity rule to the `spec` section of your app deployment:
@@ -417,7 +417,7 @@ Dynamic connection counting algorithms
 Weighted pod algorithms
 :   The following algorithms depend on weighted app pods. However, in {{site.data.keyword.openshiftlong_notm}}, all app pods are assigned equal weight for load balancing.
     - Weighted Least Connection (`wlc`)
-    - Weighted Round Robin (`wrr`)
+    - Weighted round-robin (`wrr`)
 
 
 

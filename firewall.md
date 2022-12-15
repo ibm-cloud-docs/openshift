@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-15"
 
 keywords: openshift
 
@@ -589,7 +589,7 @@ Follow the steps to obtain the correct subnet IP addresses to add to your IAM al
     ```
     {: pre}
 
-Below is an example output of subnets associated with public VLAN with ID `2761690`.
+    Example output of subnets associated with public VLAN with ID `2761690`.
 
     ```sh
     ID        identifier        type                 network_space   datacenter   vlan_id   IPs   hardware   virtual_servers  

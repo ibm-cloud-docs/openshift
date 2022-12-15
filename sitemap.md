@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-15"
 
 keywords: openshift
 subcollection: openshift
@@ -232,6 +232,16 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec22)
+
+    * [15 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1522)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.6` is available.
+
+        * Cloud Image Key Synchronizer add-on version 1.0.0_1269
+
+    * [14 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1422)
+
+        * CLI version 1.0.480 change log update
 
     * [12 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1222)
 
@@ -5738,6 +5748,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version 1.0.480](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10480)
+
 * [Version 1.0.471](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10471)
 
 * [Version 1.0.459](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10459)
@@ -6917,6 +6929,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.6, released 15 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0226_object_plugin)
+
 * [Change log for version 2.2.5, released 9 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0225_object_plugin)
 
 * [Change log for version 2.2.4, released 5 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0224_object_plugin)
@@ -7190,6 +7204,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1269, released on 15 December 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1269)
 
     * [Version 1.0.0_1200, released on 27 October 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1200)
 

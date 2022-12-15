@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-15"
 
 keywords: object storage, plug-in, changelog
 
@@ -27,8 +27,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.6 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.5 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.4 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.4 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.3 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.2 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.1 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -61,6 +62,16 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.6 | Deprecated | 4.3 - 4.6 | x86 | 
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.6, released 15 December 2022
+{: #0226_object_plugin}
+
+- Updates the `tls-cipher-suite` value to `default` in all the s3fs storage classes for all {{site.data.keyword.redhat_openshift_notm}} clusters.
+- Updates the `tls-cipher-suite` value to `AESGCM` for all Kubernetes clusters.
+- If you want to overwrite the value from `default` to any other specific `tls-cipher-suite`, annotate your PVC with `ibm.io/tls-cipher-suite: "<cipher-suite-value>"`. 
+
+Because this change affects storage classes, you must uninstall and reinstall the 2.2.6 chart so the new storage classes are created in your cluster. This change is not automatically to existing PVCs and pods. You must create new PVCs with the new storage classes for the changes to take effect.
+{: important}
 
 ## Change log for version 2.2.5, released 9 December 2022
 {: #0225_object_plugin}
