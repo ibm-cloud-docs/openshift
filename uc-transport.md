@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-15"
 
 keywords: openshift
 
@@ -196,7 +196,7 @@ With {{site.data.keyword.openshiftlong_notm}}, they went from over-built hardwar
 #### Step 3: Chatbot and personalization
 {: #uc_airline_step3}
 
-* IBM {{site.data.keyword.watson}} Assistant provides tools to quickly scaffold a chatbot that can provide the right benefits information to users.
+* IBM {{site.data.keyword.watson}} Assistant provides tools to quickly scaffold a chatbot that can provide the correct benefits information to users.
 * {{site.data.keyword.watson}} Tone Analyzer ensures that customers are satisfied with the chatbot conversations and take human intervention when necessary.
 
 #### Step 4: Deliver continuously across the globe

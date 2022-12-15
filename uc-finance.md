@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-15"
 
 keywords: openshift
 
@@ -57,12 +57,12 @@ They also accelerated their risk analysis and compliance. Their predictive and r
 * Heightened need for better financial risk management drives increases in regulatory oversight. The same needs drive the associated review in risk assessment processes and disclosure of more granular, integrated, and abundant regulatory reporting.
 * High Performance Computing Grids are the key infrastructure components for financial modeling.
 
-The problem of the company right now is scale and time to delivery.
+The problem of the company is scale and time to delivery.
 
 Their current environment is 7+ years old, on-premises, and with limited compute, storage, and I/O capacity.
 Server refreshes are costly and take a long time to complete.
 Software and app updates follow an informal process and aren't repeatable.
-The actual HPC grid is hard to program against. The API is too complex for new Developers who are brought onboard and requires non-documented knowledge.
+The actual HPC grid is hard to program against. The API is too complex for new Developers who join the team and requires non-documented knowledge.
 And major app upgrades take 6 - 9 months to complete.
 
 #### Solution model

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-15"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -62,7 +62,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     
     | Rule purpose | Allow/Deny | Protocol | Source IP or CIDR | Source Port | Destination IP or CIDR | Destination Port | Priority |
     | --- | --- | --- | --- | --- | --- | --- | -- |
-    | Allow worker nodes to be created in your cluster.  | Allow | ALL | `161.26.0.0/16` | - | Any | - | Set to top |
+    | Allow worker nodes to be created in your cluster.  | Allow | ALL | `161.26.0.0/16` | - | Any | - | Set to `top` |
     | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.  | Allow | ALL | `166.8.0.0/14` | - | Any | - | After 1 |
     | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Other subnet's CIDR | - | Any | - | After 2 |
     | Allow incoming traffic requests to apps that run on your worker nodes.  | Allow | TCP | Any | Any | Any | `30000 - 32767` | After 3 |
@@ -83,7 +83,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    
     | Rule purpose | Allow/Deny | Protocol | Source IP or CIDR | Source Port | Destination IP or CIDR | Destination Port | Priority |
     | --- | --- | --- | --- | --- | --- | --- | -- |
-    | Allow worker nodes to be created in your cluster. | Allow | ALL | Any | - | `161.26.0.0/16` | - | Set to top |
+    | Allow worker nodes to be created in your cluster. | Allow | ALL | Any | - | `161.26.0.0/16` | - | Set to `top` |
     | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint. | Allow | ALL | Any | - | `166.8.0.0/14` | - | After 1 |
     | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in all other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Any | - | Other subnet's CIDR | - | After 2 |
     | Allow incoming traffic requests to apps that run on your worker nodes. | Allow | TCP | Any | `30000 - 32767` | Any | Any | After 3 |

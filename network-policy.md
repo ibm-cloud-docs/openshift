@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-15"
 
 keywords: openshift
 
@@ -54,7 +54,7 @@ A `HostEndpoint` resource with the `ibm.role: worker_private` label is also crea
 
 These default Calico host policies allow all public outbound network traffic and allow public inbound traffic to specific cluster components, such as Kubernetes NodePort, LoadBalancer, and Ingress services. All private traffic is allowed by default by the `allow-all-private-default` policy Any other inbound network traffic from the internet to your worker nodes that isn't specified in the default policies gets blocked. The default policies don't affect pod to pod traffic.
 
-Don't remove the default policies from your cluster, because they will are recreated on the next cluster master refresh or master update. If you want to further restrict traffic, apply lower order Calico policies to block the traffic. Be sure you fully understand what you are blocking, and that the cluster components do not need the traffic you want to block.
+Don't remove the default policies from your cluster, because they are recreated on the next cluster master refresh or master update. If you want to further restrict traffic, apply lower order Calico policies to block the traffic. Be sure you fully understand what you are blocking, and that the cluster components do not need the traffic you want to block.
 {: important}
 
 Review the following default Calico host policies that are automatically applied to your cluster.
@@ -442,7 +442,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
         ```
         {: pre}
 
-2. To log all the traffic that is denied by the policy you created in the previous step, create a Calico NetworkPolicy named `log-denied-packets`. This Calico policy, shown below, uses the same pod selector as the example `access-nginx` Kubernetes policy described in step 1, however the syntax is slightly different since it is a Calico NetworkPolicy instead of a Kubernetes NetworkPolicy. Also,because all Kubernetes NetworkPolicy are evaluated by Calico as order `1000`, we add the order number `3000` to ensure it is evaluated after our Kubernetes NetworkPolicy. With these two policies in place, here is the result:
+2. To log all the traffic that is denied by the policy you created in the previous step, create a Calico NetworkPolicy named `log-denied-packets`. The following Calico policy uses the same pod selector as the example `access-nginx` Kubernetes policy described in step 1, however the syntax is slightly different since it is a Calico NetworkPolicy instead of a Kubernetes NetworkPolicy. Also,because all Kubernetes NetworkPolicy are evaluated by Calico as order `1000`, we add the order number `3000` to ensure it is evaluated after our Kubernetes NetworkPolicy. With these two policies in place, here is the result:
 
     * New connections coming in to the nginx pod are first evaluated against the Kubernetes NetworkPolicy (order `1000`). Connections coming from a pod with the `run=access` label will be immediately accepted, meaning no other policies are evaluated.
     * If the connection is coming from a pod without the `run=access` label (or from anything that isn't a pod), that Kubernetes NetworkPolicy won't do anything and Calico will next evaluate our `log-denied-packets` policy. This policy logs the packet to syslog on the worker the nginx pod is on.
