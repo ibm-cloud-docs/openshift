@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-15"
 
 keywords: openshift, nginx, ingress controller
 
@@ -1138,7 +1138,7 @@ Your Ingress resource is created in the same project as your app services, and y
 
 
 
-### Step 4: Access your app from the internet
+### Step 4: Access your app
 {: #priv-se-priv-controller-4}
 
 In a web browser, enter the URL of the app service to access.
