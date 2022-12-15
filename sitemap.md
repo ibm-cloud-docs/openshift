@@ -4487,7 +4487,7 @@ subcollection: openshift
 
     * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-3)
 
-    * [Step 4: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-4)
+    * [Step 4: Access your app](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-4)
 
 * [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-roks4#manage_certs)
 
