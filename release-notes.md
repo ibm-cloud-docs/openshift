@@ -33,6 +33,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-dec1522}
 {: release-note}
 
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.6` is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
 
 
 Cloud Image Key Synchronizer add-on version 1.0.0_1269

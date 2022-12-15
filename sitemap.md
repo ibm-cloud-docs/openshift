@@ -235,6 +235,8 @@ subcollection: openshift
 
     * [15 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1522)
 
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.6` is available.
+
         * Cloud Image Key Synchronizer add-on version 1.0.0_1269
 
     * [14 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1422)
@@ -6926,6 +6928,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.6, released 15 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0226_object_plugin)
 
 * [Change log for version 2.2.5, released 9 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0225_object_plugin)
 
