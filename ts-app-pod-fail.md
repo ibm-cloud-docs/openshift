@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-16"
 
 keywords: openshift
 
@@ -61,7 +61,7 @@ See the following sections:
     ```sh
     oc get pod <pod_name> -n <namespace> -o go-template='{{range.status.containerStatuses}}{{"Container Name: "}}{{.name}}{{"\r\nLastState: "}}{{.lastState}}{{end}}'
     ```
-4. Review the reason. For example, `OOM Killed` means "out of memory," indicating that the container is crashing because of a resource limit.
+4. Review the reason. For example, `OOM Killed` means out of memory indicating that the container is crashing because of a resource limit.
 5. Add capacity to your cluster such as by [resizing worker pools](/docs/openshift?topic=openshift-add_workers) so that the resources can be fulfilled.
 
 

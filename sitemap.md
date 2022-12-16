@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-16"
 
 keywords: openshift
 subcollection: openshift
@@ -240,6 +240,8 @@ subcollection: openshift
         * Cloud Image Key Synchronizer add-on version 1.0.0_1269
 
     * [14 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1422)
+
+        * Master fix pack `4.7.60_1592_openshift`, `4.8.54_1583_openshift`, `4.9.52_1568_openshift`, `4.10.43_1548_openshift`, and `4.11.17_1535_openshift`
 
         * CLI version 1.0.480 change log update
 
@@ -2682,7 +2684,7 @@ subcollection: openshift
 
 * [Automating cluster deployments with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api)
 
-* [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
+* [Refreshing IAM access tokens and obtaining new refresh tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI](/docs/openshift?topic=openshift-cs_api_install#cs_cli_refresh)
 
@@ -4590,7 +4592,7 @@ subcollection: openshift
 
 [Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
 
-* [Quickstart for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
+* [Quick start for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
 
 * [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
 
@@ -4606,9 +4608,9 @@ subcollection: openshift
 
 * [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
 
-    * [Step 1: Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
+    * [Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
 
-    * [Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-file_storage#existing-file-2)
+    * [Creating a persistent volume and a persistent volume claim](/docs/openshift?topic=openshift-file_storage#existing-file-2)
 
 * [Using {{site.data.keyword.filestorage_short}} in a stateful set](/docs/openshift?topic=openshift-file_storage#file_statefulset)
 
@@ -4674,7 +4676,7 @@ subcollection: openshift
 
     * [Creating the PVC by using dynamic provisioning when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
 
-    * [Static provisioning: Using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
+    * [Static provisioning by using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
 
 * [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration)
 
@@ -5045,7 +5047,7 @@ subcollection: openshift
 
 [Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
 
-* [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
+* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
 
 * [Adding {{site.data.keyword.block_storage_is_short}} to your apps](/docs/openshift?topic=openshift-vpc-block#vpc-block-add)
 
@@ -5314,27 +5316,15 @@ subcollection: openshift
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
 
 
-## Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
-{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+## Understanding high availability and disaster recovery
+{: #sitemap_understanding_high_availability_and_disaster_recovery}
 
 
-[Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#ha)
+[Understanding high availability and disaster recovery](/docs/openshift?topic=openshift-ha#ha)
 
 * [About high availability](/docs/openshift?topic=openshift-ha#ha-about)
 
 * [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#fault_domains)
-
-    * [1. Container or pod availability](/docs/openshift?topic=openshift-ha#ha-container)
-
-    * [2. Worker node availability](/docs/openshift?topic=openshift-ha#ha-worker)
-
-    * [3. Cluster availability](/docs/openshift?topic=openshift-ha#ha-cluster)
-
-    * [4. Zone availability](/docs/openshift?topic=openshift-ha#ha-zone)
-
-    * [5. Region availability](/docs/openshift?topic=openshift-ha#ha-region)
-
-    * [6. Storage availability](/docs/openshift?topic=openshift-ha#ha-storage)
 
 
 ## API reference
@@ -5964,6 +5954,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
+    * [Change log for master fix pack 4.11.17_1535_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41117_1535_openshift)
+
     * [Change log for worker node fix pack 4.11.17_1534_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41117_1534_openshift)
 
     * [Change log for worker node fix pack 4.11.13_1533_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41113_1533_openshift)
@@ -6086,6 +6078,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for master fix pack 4.10.43_1548_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41043_1548_openshift)
 
     * [Change log for worker node fix pack 4.10.43_1547_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41043_1547_openshift)
 
@@ -6241,6 +6235,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for master fix pack 4.9.52_1568_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4952_1568_openshift)
 
     * [Change log for worker node fix pack 4.9.52_1567_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4952_1567_openshift)
 
@@ -6413,6 +6409,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
+    * [Change log for master fix pack 4.8.54_1583_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4854_1583_openshift)
+
     * [Change log for worker node fix pack 4.8.54_1582_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4854_1582_openshift)
 
     * [Change log for worker node fix pack 4.8.52_1581_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4852_1581_openshift)
@@ -6565,6 +6563,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for master fix pack 4.7.60_1592_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4760_1592_openshift)
 
     * [Change log for worker node fix pack 4.7.60_1591_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4760_1591_openshift)
 
@@ -8347,7 +8347,7 @@ subcollection: openshift
 
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
 
-[Why do I see "Could not find user" when I try to access the {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
+[Why do I see a `Could not find user` error when I try to access the {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
 
 [Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 

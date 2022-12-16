@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-16"
 
 keywords: openshift
 
@@ -68,6 +68,7 @@ During a master outage, you can still run `ibmcloud oc` commands against the {{s
 
 Do not restart or reboot a worker node during a master outage. This action removes the pods from your worker node. Because the Kubernetes API server is unavailable, the pods can't be rescheduled onto other worker nodes in the cluster.
 {: important}
+
 
 
 
