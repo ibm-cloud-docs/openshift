@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-16"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -37,6 +37,30 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.10 change log.
 {: shortdesc}
+
+
+### Change log for master fix pack 4.10.43_1548_openshift, released 14 December 2022
+{: #41043_1548_openshift}
+
+The following table shows the changes that are in the master fix pack 4.10.43_1548_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.13 | v1.3.14 | Updated `Go` dependencies. Exclude ingress status from cluster status aggregation. |
+| etcd | v3.4.21 | v3.4.22 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.22){: external}. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1213 | 1257 | Updated universal base image (UBI) to resolve: [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/cve-2022-1304){: external}, [CVE-2016-3709](https://nvd.nist.gov/vuln/detail/CVE-2016-3709){: external}, [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.3 | v2.3.4 | Update `Go` to version `1.18.8` and updated universal base image (UBI) to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.13-5 | v1.23.14-2 | Updated to support the `Kubernetes 1.23.14` release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 420 | 421 | Updated universal base image (UBI) to resolve [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}. Updated `Go` to version `1.18.8` |
+| Key Management Service provider | v2.5.11 | v2.5.12 | Updated `Go` dependencies. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2110 | 2325 | Update `Go` to version `1.19.1` and update dependencies. |
+| OpenVPN Operator image | v1.4.11 | v1.4.13 | Updated the `ansible operator base image` to `v1.25.2` to resolve CVEs. |
+| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.10.0-20221104 | v4.10.0-20221205 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0+20221205){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.10.39 | 4.10.43 | See the [{{site.data.keyword.openshiftlong_notm}} Release Notes](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-43){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit | v4.10.0-20221104 | v4.10.0-20221205 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0+20221205){: external}. |
+{: caption="Changes since version 4.10.39_1545_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.10.43_1547_openshift, released 05 December 2022

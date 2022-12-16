@@ -5952,6 +5952,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
+    * [Change log for master fix pack 4.11.17_1535_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41117_1535_openshift)
+
     * [Change log for worker node fix pack 4.11.17_1534_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41117_1534_openshift)
 
     * [Change log for worker node fix pack 4.11.13_1533_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_411#41113_1533_openshift)
@@ -6074,6 +6076,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for master fix pack 4.10.43_1548_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41043_1548_openshift)
 
     * [Change log for worker node fix pack 4.10.43_1547_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41043_1547_openshift)
 
@@ -6229,6 +6233,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for master fix pack 4.9.52_1568_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4952_1568_openshift)
 
     * [Change log for worker node fix pack 4.9.52_1567_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4952_1567_openshift)
 
@@ -6401,6 +6407,8 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
+    * [Change log for master fix pack 4.8.54_1583_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4854_1583_openshift)
+
     * [Change log for worker node fix pack 4.8.54_1582_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4854_1582_openshift)
 
     * [Change log for worker node fix pack 4.8.52_1581_openshift, released 21 November 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4852_1581_openshift)
@@ -6553,6 +6561,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
+
+    * [Change log for master fix pack 4.7.60_1592_openshift, released 14 December 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4760_1592_openshift)
 
     * [Change log for worker node fix pack 4.7.60_1591_openshift, released 05 December 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4760_1591_openshift)
 
