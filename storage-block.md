@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-16"
 
 keywords: openshift
 
@@ -1012,9 +1012,8 @@ You successfully created a PV and bound it to a PVC. Then, you deployed and app 
 If you have a stateful app such as a database, you can create stateful sets that use block storage to store your app's data. Alternatively, you can use an {{site.data.keyword.cloud_notm}} database-as-a-service and store your data in the cloud.
 {: shortdesc}
 
-**What do I need to be aware of when adding block storage to a stateful set?**
-
-To add storage to a stateful set, you specify your storage configuration in the `volumeClaimTemplates` section of your stateful set YAML. The `volumeClaimTemplates` is the basis for your PVC and can include the storage class and the size or IOPS of your block storage that you want to provision. However, if you want to include labels in your `volumeClaimTemplates`, Kubernetes does not include these labels when creating the PVC. Instead, you must add the labels directly to your stateful set.
+What do I need to be aware of when adding block storage to a stateful set?
+:   To add storage to a stateful set, you specify your storage configuration in the `volumeClaimTemplates` section of your stateful set YAML. The `volumeClaimTemplates` is the basis for your PVC and can include the storage class and the size or IOPS of your block storage that you want to provision. However, if you want to include labels in your `volumeClaimTemplates`, Kubernetes does not include these labels when creating the PVC. Instead, you must add the labels directly to your stateful set.
 
 You can't deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
 {: important}
@@ -1037,261 +1036,256 @@ Use this option if you want to automatically create the PVC when you create the 
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you can't start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results.
+Complete the following steps to verify that all existing stateful sets in your cluster are fully deployed. If a stateful set is still being deployed, you can't start creating your stateful set. You must wait until all stateful sets in your cluster are fully deployed to avoid unexpected results.
 
-    1. List existing stateful sets in your cluster.
+1. List existing stateful sets in your cluster.
 
-        ```sh
-        oc get statefulset --all-namespaces
-        ```
-        {: pre}
+    ```sh
+    oc get statefulset --all-namespaces
+    ```
+    {: pre}
 
-        Example output
+    Example output
 
-        ```sh
-        NAME              DESIRED   CURRENT   AGE
-        mystatefulset     3         3         6s
-        ```
-        {: screen}
+    ```sh
+    NAME              DESIRED   CURRENT   AGE
+    mystatefulset     3         3         6s
+    ```
+    {: screen}
 
-    2. View the **Pods Status** of each stateful set to ensure that the deployment of the stateful set is finished. 
+1. View the **Pods Status** of each stateful set to ensure that the deployment of the stateful set is finished. 
 
-        ```sh
-        oc describe statefulset <statefulset_name>
-        ```
-        {: pre}
+    ```sh
+    oc describe statefulset <statefulset_name>
+    ```
+    {: pre}
 
-        Example output
+    Example output
 
-        ```sh
-        Name:               nginx
-        Namespace:          default
-        CreationTimestamp:  Fri, 05 Oct 2018 13:22:41 -0400
-        Selector:           app=nginx,billingType=hourly,region=us-south,zone=dal10
-        Labels:             app=nginx
-        billingType=hourly
-        region=us-south
-        zone=dal10
-        Annotations: oc.kubernetes.io/last-applied-configuration={"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"podManagementPolicy":"Par..."
-        Replicas:           3 desired | 3 total
-        Pods Status:        0 Running / 3 Waiting / 0 Succeeded / 0 Failed
-        Pod Template:
-        Labels:  app=nginx
-        billingType=hourly
-        region=us-south
-        zone=dal10
-        ...
-        ```
-        {: screen}
+    ```sh
+    Name:               nginx
+    Namespace:          default
+    CreationTimestamp:  Fri, 05 Oct 2018 13:22:41 -0400
+    Selector:           app=nginx,billingType=hourly,region=us-south,zone=dal10
+    Labels:             app=nginx
+    billingType=hourly
+    region=us-south
+    zone=dal10
+    Annotations: oc.kubernetes.io/last-applied-configuration={"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"nginx","namespace":"default"},"spec":{"podManagementPolicy":"Par..."
+    Replicas:           3 desired | 3 total
+    Pods Status:        0 Running / 3 Waiting / 0 Succeeded / 0 Failed
+    Pod Template:
+    Labels:  app=nginx
+    billingType=hourly
+    region=us-south
+    zone=dal10
+    ...
+    ```
+    {: screen}
 
-        A stateful set is fully deployed when the number of replicas that you find in the **Replicas** section of your CLI output equals the number of **Running** pods in the **Pods Status** section. If a stateful set is not fully deployed yet, wait until the deployment is finished before you proceed.
+    A stateful set is fully deployed when the number of replicas that you find in the **Replicas** section of your CLI output equals the number of **Running** pods in the **Pods Status** section. If a stateful set is not fully deployed yet, wait until the deployment is finished before you proceed.
 
-2. Create a configuration file for your stateful set and the service that you use to expose the stateful set.
+1. Create a configuration file for your stateful set and the service that you use to expose the stateful set.
+    The following example shows how to deploy NGINX as a stateful set with three replicas. For each replica, a 20 gigabyte block storage device is provisioned based on the specifications that are defined in the `ibmc-block-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because block storage can't be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
 
-    - **Example stateful set that specifies a zone:**
-
-        The following example shows how to deploy NGINX as a stateful set with three replicas. For each replica, a 20 gigabyte block storage device is provisioned based on the specifications that are defined in the `ibmc-block-retain-bronze` storage class. All storage devices are provisioned in the `dal10` zone. Because block storage can't be accessed from other zones, all replicas of the stateful set are also deployed onto worker nodes that are located in `dal10`.
-
-        ```yaml
-        apiVersion: v1
-        kind: Service
-        metadata:
-         name: nginx
-         labels:
+    ```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+     name: nginx
+     labels:
+    app: nginx
+    spec:
+    ports:
+    - port: 80
+        name: web
+    clusterIP: None
+    selector:
         app: nginx
-        spec:
-        ports:
-        - port: 80
-            name: web
-        clusterIP: None
-        selector:
-            app: nginx
-        ---
-        apiVersion: apps/v1
-        kind: StatefulSet
-        metadata:
-        name: nginx
-        spec:
-        serviceName: "nginx"
-        replicas: 3
-        podManagementPolicy: Parallel
-        selector:
-          matchLabels:
+    ---
+    apiVersion: apps/v1
+    kind: StatefulSet
+    metadata:
+      name: nginx
+    spec:
+      serviceName: "nginx"
+      replicas: 3
+      podManagementPolicy: Parallel
+      selector:
+        matchLabels:
+        app: nginx
+        billingType: "hourly"
+        region: "us-south" # Enter the region where your cluster is located.
+        zone: "dal10"
+    template:
+      metadata:
+      labels:
           app: nginx
           billingType: "hourly"
-          region: "us-south" # Enter the region where your cluster is located.
+          region: "us-south"
           zone: "dal10"
-        template:
-            metadata:
-            labels:
-                app: nginx
-                billingType: "hourly"
-                region: "us-south"
-                zone: "dal10"
-            spec:
-            containers:
-            - name: nginx
-                image: nginx
-                ports:
-                - containerPort: 80
-                name: web
-                volumeMounts:
-                - name: myvol
-                mountPath: /usr/share/nginx/html
-        volumeClaimTemplates:
-        - metadata:
-            name: myvol
-            spec:
-            accessModes:
-            - ReadWriteOnce
-            resources:
-                requests:
-                storage: 20Gi
-                iops: "300" #required only for performance storage
-            storageClassName: ibmc-block-retain-bronze
-        ```
-        {: codeblock}
+      spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: myvol
+        mountPath: /usr/share/nginx/html
+    volumeClaimTemplates:
+    - metadata:
+        name: myvol
+        spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+            requests:
+            storage: 20Gi
+            iops: "300" #required only for performance storage
+        storageClassName: ibmc-block-retain-bronze
+    ```
+    {: codeblock}
 
-    - **Example stateful set with anti-affinity rule and delayed block storage creation:**
+    The following example shows how to deploy NGINX as a stateful set with three replicas. The stateful set does not specify the region and zone where the block storage is created. Instead, the stateful set uses an anti-affinity rule to ensure that the pods are spread across worker nodes and zones. By defining `topologykey: failure-domain.beta.kubernetes.io/zone`, the Kubernetes scheduler can't schedule a pod on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. For each stateful set pod, two PVCs are created as defined in the `volumeClaimTemplates` section, but the creation of the block storage instances is delayed until a stateful set pod that uses the storage is scheduled. This setup is referred to as [topology-aware volume scheduling](https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/){: external}.
 
-        The following example shows how to deploy NGINX as a stateful set with three replicas. The stateful set does not specify the region and zone where the block storage is created. Instead, the stateful set uses an anti-affinity rule to ensure that the pods are spread across worker nodes and zones. By defining `topologykey: failure-domain.beta.kubernetes.io/zone`, the Kubernetes scheduler can't schedule a pod on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. For each stateful set pod, two PVCs are created as defined in the `volumeClaimTemplates` section, but the creation of the block storage instances is delayed until a stateful set pod that uses the storage is scheduled. This setup is referred to as [topology-aware volume scheduling](https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/){: external}.
-
-        ```yaml
-        apiVersion: storage.k8s.io/v1
-        kind: StorageClass
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: ibmc-block-bronze-delayed
+    parameters:
+      billingType: hourly
+      classVersion: "2"
+      fsType: ext4
+      iopsPerGB: "2"
+      sizeRange: '[20-12000]Gi'
+      type: Endurance
+    provisioner: ibm.io/ibmc-block
+    reclaimPolicy: Delete
+    volumeBindingMode: WaitForFirstConsumer
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      ports:
+      - port: 80
+        name: web
+      clusterIP: None
+      selector:
+        app: nginx
+    ---
+    apiVersion: apps/v1
+    kind: StatefulSet
+    metadata:
+      name: web
+    spec:
+      serviceName: "nginx"
+      replicas: 3
+      podManagementPolicy: "Parallel"
+      selector:
+        matchLabels:
+          app: nginx
+      template:
         metadata:
-          name: ibmc-block-bronze-delayed
-        parameters:
-          billingType: hourly
-          classVersion: "2"
-          fsType: ext4
-          iopsPerGB: "2"
-          sizeRange: '[20-12000]Gi'
-          type: Endurance
-        provisioner: ibm.io/ibmc-block
-        reclaimPolicy: Delete
-        volumeBindingMode: WaitForFirstConsumer
-        ---
-        apiVersion: v1
-        kind: Service
-        metadata:
-          name: nginx
           labels:
             app: nginx
         spec:
-          ports:
-          - port: 80
-            name: web
-          clusterIP: None
-          selector:
-            app: nginx
-        ---
-        apiVersion: apps/v1
-        kind: StatefulSet
-        metadata:
-          name: web
+          affinity:
+            podAntiAffinity:
+              preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 100
+                podAffinityTerm:
+                  labelSelector:
+                    matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                      - nginx
+                  topologyKey: failure-domain.beta.kubernetes.io/zone
+          containers:
+          - name: nginx
+            image: k8s.gcr.io/nginx-slim:0.8
+            ports:
+            - containerPort: 80
+              name: web
+            volumeMounts:
+            - name: myvol1
+              mountPath: /usr/share/nginx/html
+            - name: myvol2
+              mountPath: /tmp1
+      volumeClaimTemplates:
+      - metadata:
+          name: myvol1
         spec:
-          serviceName: "nginx"
-          replicas: 3
-          podManagementPolicy: "Parallel"
-          selector:
-            matchLabels:
-              app: nginx
-          template:
-            metadata:
-              labels:
-                app: nginx
-            spec:
-              affinity:
-                podAntiAffinity:
-                  preferredDuringSchedulingIgnoredDuringExecution:
-                  - weight: 100
-                    podAffinityTerm:
-                      labelSelector:
-                        matchExpressions:
-                        - key: app
-                          operator: In
-                          values:
-                          - nginx
-                      topologyKey: failure-domain.beta.kubernetes.io/zone
-              containers:
-              - name: nginx
-                image: k8s.gcr.io/nginx-slim:0.8
-                ports:
-                - containerPort: 80
-                  name: web
-                volumeMounts:
-                - name: myvol1
-                  mountPath: /usr/share/nginx/html
-                - name: myvol2
-                  mountPath: /tmp1
-          volumeClaimTemplates:
-          - metadata:
-              name: myvol1
-            spec:
-              accessModes:
-              - ReadWriteOnce # access mode
-              resources:
-                requests:
-                  storage: 20Gi
-              storageClassName: ibmc-block-bronze-delayed
-          - metadata:
-              name: myvol2
-            spec:
-              accessModes:
-              - ReadWriteOnce # access mode
-              resources:
-                requests:
-                  storage: 20Gi
-              storageClassName: ibmc-block-bronze-delayed
-        ```
-        {: codeblock}
+          accessModes:
+          - ReadWriteOnce # access mode
+          resources:
+            requests:
+              storage: 20Gi
+          storageClassName: ibmc-block-bronze-delayed
+      - metadata:
+          name: myvol2
+        spec:
+          accessModes:
+          - ReadWriteOnce # access mode
+          resources:
+            requests:
+              storage: 20Gi
+          storageClassName: ibmc-block-bronze-delayed
+    ```
+    {: codeblock}
 
-        `name`
-        :   Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: `<volume_name>-<statefulset_name>-<replica_number>`. 
-        
-        `serviceName`
-        :   Enter the name of the service that you want to use to expose your stateful set.
-        
-        `replicas`
-        :   Enter the number of replicas for your stateful set.
-        
-        `podManagementPolicy`
-        :   Enter the pod management policy that you want to use for your stateful set.
-            - **OrderedReady**: With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see [`OrderedReady` Pod Management](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management){: external}
-            - **Parallel**: With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. 
-        
-        `matchLabels`
-        :   In the spec selector section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the `volumeClaimTemplates` of your stateful set are not recognized by Kubernetes. Sample labels that you might want to include are: 
-            - **region** and **zone**: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you don't specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.
-            - **billingType**: Enter the billing type that you want to use for your PVCs. Choose between `hourly` or `monthly`. If you don't specify this label, all PVCs are created with an hourly billing type.
-        
-        `labels`
-        :   In the spec template metadata section, enter the same labels that you added to the `spec.selector.matchLabels` section. 
-        
-        `affinity`
-        :   In the spec template spec section, specify your anti-affinity rule to ensure that your stateful set pods are distributed across worker nodes and zones. The example shows an anti-affinity rule where the stateful set pod prefers not to be scheduled on a worker node where a pod runs that has the `app: nginx` label. The `topologykey: failure-domain.beta.kubernetes.io/zone` restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. By using this anti-affinity rule, you can achieve anti-affinity across worker nodes and zones. 
-        
-        `name`
-        :   In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the `spec.containers.volumeMount.name` section. The name that you enter here is used to create the name for your PVC in the format: `<volume_name>-<statefulset_name>-<replica_number>`. 
-        
-        `storage`
-        :   In the spec volume claim templates spec resources requests section, enter the size of the block storage in gigabytes (Gi).
-        
-        `iops`
-        :   In the spec volume claim templates spec resources requests section, if you want to provision [performance storage](#block_predefined_storageclass), enter the number of IOPS. If you use an endurance storage class and specify a number of IOPS, the number of IOPS is ignored. Instead, the IOPS that is specified in your storage class is used.
-        
-        `storageClassName`
-        :   In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run `oc get storageclasses | grep block`. If you don't specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-block` provisioner so that your stateful set is provisioned with block storage.
+    `name`
+    :   Enter a name for your stateful set. The name that you enter is used to create the name for your PVC in the format: `<volume_name>-<statefulset_name>-<replica_number>`. 
+    
+    `serviceName`
+    :   Enter the name of the service that you want to use to expose your stateful set.
+    
+    `replicas`
+    :   Enter the number of replicas for your stateful set.
+    
+    `podManagementPolicy`
+    :   Enter the pod management policy that you want to use for your stateful set.
+        - **OrderedReady**: With this option, stateful set replicas are deployed one after another. For example, if you specified three replicas, then Kubernetes creates the PVC for your first replica, waits until the PVC is bound, deploys the stateful set replica, and mounts the PVC to the replica. After the deployment is finished, the second replica is deployed. For more information about this option, see [`OrderedReady` Pod Management](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#orderedready-pod-management){: external}
+        - **Parallel**: With this option, the deployment of all stateful set replicas is started at the same time. If your app supports parallel deployment of replicas, then use this option to save deployment time for your PVCs and stateful set replicas. 
+    
+    `matchLabels`
+    :   In the spec selector section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the `volumeClaimTemplates` of your stateful set are not recognized by Kubernetes. Sample labels that you might want to include are: 
+        - **region** and **zone**: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you don't specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.
+        - **billingType**: Enter the billing type that you want to use for your PVCs. Choose between `hourly` or `monthly`. If you don't specify this label, all PVCs are created with an hourly billing type.
+    
+    `labels`
+    :   In the spec template metadata section, enter the same labels that you added to the `spec.selector.matchLabels` section. 
+    
+    `affinity`
+    :   In the spec template spec section, specify your anti-affinity rule to ensure that your stateful set pods are distributed across worker nodes and zones. The example shows an anti-affinity rule where the stateful set pod prefers not to be scheduled on a worker node where a pod runs that has the `app: nginx` label. The `topologykey: failure-domain.beta.kubernetes.io/zone` restricts this anti-affinity rule even more and prevents the pod to be scheduled on a worker node if the worker node is in the same zone as a pod that has the `app: nginx` label. By using this anti-affinity rule, you can achieve anti-affinity across worker nodes and zones. 
+    
+    `name`
+    :   In the spec volume claim templates metadata section, enter a name for your volume. Use the same name that you defined in the `spec.containers.volumeMount.name` section. The name that you enter here is used to create the name for your PVC in the format: `<volume_name>-<statefulset_name>-<replica_number>`. 
+    
+    `storage`
+    :   In the spec volume claim templates spec resources requests section, enter the size of the block storage in gigabytes (Gi).
+    
+    `iops`
+    :   In the spec volume claim templates spec resources requests section, if you want to provision [performance storage](#block_predefined_storageclass), enter the number of IOPS. If you use an endurance storage class and specify a number of IOPS, the number of IOPS is ignored. Instead, the IOPS that is specified in your storage class is used.
+    
+    `storageClassName`
+    :   In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run `oc get storageclasses | grep block`. If you don't specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-block` provisioner so that your stateful set is provisioned with block storage.
 
-3. Create your stateful set.
+1. Create your stateful set.
 
     ```sh
     oc apply -f statefulset.yaml
     ```
     {: pre}
 
-4. Wait for your stateful set to be deployed.
+1. Wait for your stateful set to be deployed.
 
     ```sh
     oc describe statefulset <statefulset_name>
@@ -1301,7 +1295,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     To see the current status of your PVCs, run `oc get pvc`. The name of your PVC is formatted as `<volume_name>-<statefulset_name>-<replica_number>`.
     {: tip}
 
-### Static provisioning: Using existing PVCs with a stateful set
+### Static provisioning by using existing PVCs with a stateful set
 {: #block_static_statefulset}
 
 You can pre-provision your PVCs before creating your stateful set or use existing PVCs with your stateful set.
@@ -1326,7 +1320,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
     Looking to create a PVC and PV for an existing storage device? Create your PVC and PV by using [static provisioning](#existing_block).
 
-2. Follow the steps in [Dynamic provisioning: Creating the PVC when you create a stateful set](#block_dynamic_statefulset) to create your stateful set. The name of your PVC follows the format `<volume_name>-<statefulset_name>-<replica_number>`. Make sure to use the following values from your PVC name in the stateful set specification:
+1. Follow the steps in [Dynamic provisioning: Creating the PVC when you create a stateful set](#block_dynamic_statefulset) to create your stateful set. The name of your PVC follows the format `<volume_name>-<statefulset_name>-<replica_number>`. Make sure to use the following values from your PVC name in the stateful set specification:
     `spec.volumeClaimTemplates.metadata.name`
     :   Enter the `<volume_name>` of your PVC name.
     
@@ -1339,37 +1333,35 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     If your PVCs are in different zones, don't include a region or zone label in your stateful set.
     {: note}
 
-3. Verify that the PVCs are used in your stateful set replica pods.
+1. Verify that the PVCs are used in your stateful set replica pods by listing the pods in your cluster. Identify the pods that belong to your stateful set.
 
-    1. List the pods in your cluster. Identify the pods that belong to your stateful set.
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-        ```sh
-        oc get pods
-        ```
-        {: pre}
+1. Verify that your existing PVC is mounted to your stateful set replica. Review the **`ClaimName`** in the **`Volumes`** section of your CLI output.
 
-    2. Verify that your existing PVC is mounted to your stateful set replica. Review the **`ClaimName`** in the **`Volumes`** section of your CLI output.
+    ```sh
+    oc describe pod <pod_name>
+    ```
+    {: pre}
 
-        ```sh
-        oc describe pod <pod_name>
-        ```
-        {: pre}
+    Example output
 
-        Example output
-
-        ```sh
-        Name:           nginx-0
-        Namespace:      default
-        Node:           10.xxx.xx.xxx/10.xxx.xx.xxx
-        Start Time:     Fri, 05 Oct 2018 13:24:59 -0400
-        ...
-        Volumes:
-        myvol:
-          Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-          ClaimName:  myvol-nginx-0
-        ...
-        ```
-        {: screen}
+    ```sh
+    Name:           nginx-0
+    Namespace:      default
+    Node:           10.xxx.xx.xxx/10.xxx.xx.xxx
+    Start Time:     Fri, 05 Oct 2018 13:24:59 -0400
+    ...
+    Volumes:
+    myvol:
+      Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+      ClaimName:  myvol-nginx-0
+    ...
+    ```
+    {: screen}
 
 
 
@@ -1976,21 +1968,17 @@ When you set up persistent storage in your cluster, you have three main componen
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.
 {: shortdesc}
 
-**Is my persistent storage deleted when I delete my cluster?**
-
-During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components.
+Is my persistent storage deleted when I delete my cluster?
+:   During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components.
 
 If you [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) storage with a storage class that sets `reclaimPolicy: Delete`, your PVC, PV, and the storage instance are automatically deleted when you delete the cluster. For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it.
 
-**How do I delete the storage when I want to keep my cluster?**
+How do I delete the storage when I want to keep my cluster?
+:   When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed.
+:   For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
 
-When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed.
-
-For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
-
-**How does the billing stop after I delete my storage?**
-
-Depending on what storage components you delete and when, the billing cycle might not stop immediately. If you delete the PVC and PV, but not the storage instance in your {{site.data.keyword.cloud_notm}} account, that instance still exists and you are charged for it.
+How does the billing stop after I delete my storage?
+:   Depending on what storage components you delete and when, the billing cycle might not stop immediately. If you delete the PVC and PV, but not the storage instance in your {{site.data.keyword.cloud_notm}} account, that instance still exists and you are charged for it.
 
 If you delete the PVC, PV, and the storage instance, the billing cycle stops depending on the `billingType` that you chose when you provisioned your storage and how you chose to delete the storage.
 
@@ -2002,17 +1990,14 @@ If you delete the PVC, PV, and the storage instance, the billing cycle stops dep
 
 - When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete` and you choose to remove the PVC, the PV and the storage instance are immediately removed. For hourly billed storage, billing stops immediately. For monthly billed storage, you are still charged for the remainder of the month. After your storage is removed and billing stops, you might still see your storage instance in the console or the CLI for up to 72 hours.
 
-**What do I need to be aware of before I delete persistent storage?**
+What do I need to be aware of before I delete persistent storage?
+:   When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).
 
-When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).
+I deleted my storage instance. Why can I still see my instance?
+:   After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
-**I deleted my storage instance. Why can I still see my instance?**
-
-After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
-
-**I deleted my cluster. How do I remove the remaining storage volumes?**
-
-See the steps in [Why am I still seeing charges for block storage devices after deleting my cluster](/docs/containers?topic=containers-ts_storage_clean_volume).
+I deleted my cluster. How do I remove the remaining storage volumes?
+:   See the steps in [Why am I still seeing charges for block storage devices after deleting my cluster](/docs/containers?topic=containers-ts_storage_clean_volume).
 
 
 ### Cleaning up persistent storage

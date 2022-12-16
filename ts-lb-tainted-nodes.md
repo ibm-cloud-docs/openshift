@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-16"
 
 keywords: openshift
 
@@ -46,7 +46,7 @@ Resolve the issue by choosing one of the following options:
 
 **Custom taints**: Remove custom taints that the `keepalived` pods don't have tolerations for. Instead, you can [label worker nodes as edge nodes, and then taint those edge nodes](/docs/openshift?topic=openshift-edge).
 
-If you complete one of the above options but the `keepalived` pods are still not scheduled, you can get more information about the `keepalived` pods:
+If you complete one of the previous options but the `keepalived` pods are still not scheduled, you can get more information about the `keepalived` pods:
 
 1. Get the `keepalived` pods.
     ```sh

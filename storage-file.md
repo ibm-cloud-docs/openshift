@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-16"
 
 keywords: openshift
 
@@ -27,10 +27,10 @@ subcollection: openshift
 Supported infrastructure providers
 :   Classic
 
-## Quickstart for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}
+## Quick start for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}
 {: #file_qs}
 
-In this quickstart guide, you create a 24Gi endurance {{site.data.keyword.filestorage_short}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
+In this quick start guide, you create a 24Gi endurance {{site.data.keyword.filestorage_short}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
 {: shortdesc}
 
 First time using {{site.data.keyword.filestorage_short}} in your cluster? Come back here once you are familiar with the [{{site.data.keyword.filestorage_short}}](#file_predefined_storageclass) configurations.
@@ -460,15 +460,14 @@ Make sure that you have at least one worker node that exists in the same zone as
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-### Step 1: Preparing your existing storage
+### Preparing your existing storage
 {: #existing-file-1}
 
 Before you can start to mount your existing storage to an app, you must retrieve all necessary information for your PV and prepare the storage to be accessible in your cluster.  
 {: shortdesc}
 
-**For storage that was provisioned with a `retain` storage class:**
-
-If you provisioned storage with a `retain` storage class and you remove the PVC, the PV and the physical storage device are not automatically removed. To reuse the storage in your cluster, you must remove the remaining PV first.
+For storage that was provisioned with a `retain` storage class.
+:   If you provisioned storage with a `retain` storage class and you remove the PVC, the PV and the physical storage device are not automatically removed. To reuse the storage in your cluster, you must remove the remaining PV first.
 
 To use existing storage in a different cluster than the one where you provisioned it, follow the steps for [storage that was created outside of the cluster](#external_storage) to add the storage to the subnet of your worker node.
 {: tip}
@@ -508,9 +507,8 @@ To use existing storage in a different cluster than the one where you provisione
 
 
 
-**For persistent storage that was provisioned outside the cluster:**
-
-If you want to use existing storage that you provisioned earlier, but never used in your cluster before, you must make the storage available in the same subnet as your worker nodes.
+For persistent storage that was provisioned outside the cluster
+:   If you want to use existing storage that you provisioned earlier, but never used in your cluster before, you must make the storage available in the same subnet as your worker nodes.
 
 1. From the [IBM Cloud infrastructure portal](https://cloud.ibm.com/classic){: external}, click **Storage**. {: #external_storage}
 2. Click **{{site.data.keyword.filestorage_short}}** and from the **Actions** menu, select **Authorize Host**.
@@ -520,7 +518,7 @@ If you want to use existing storage that you provisioned earlier, but never used
 6. Click the name of the {{site.data.keyword.filestorage_short}}.
 7. Note the `Mount Point`, the `size`, and the `Location` field. The `Mount Point` field is displayed as `<nfs_server>:<file_storage_path>`.
 
-### Step 2: Creating a persistent volume (PV) and a matching persistent volume claim (PVC)
+### Creating a persistent volume and a persistent volume claim 
 {: #existing-file-2}
 
 1. Create a storage configuration file for your PV. Include the values that you retrieved earlier.
@@ -1653,21 +1651,17 @@ When you set up persistent storage in your cluster, you have three main componen
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.
 {: shortdesc}
 
-**Is my persistent storage deleted when I delete my cluster?**
-
-During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components.
+Is my persistent storage deleted when I delete my cluster?
+:   During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components.
 
 If you [dynamically provisioned](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) storage with a storage class that sets `reclaimPolicy: Delete`, your PVC, PV, and the storage instance are automatically deleted when you delete the cluster. For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it.
 
-**How do I delete the storage when I want to keep my cluster?**
+How do I delete the storage when I want to keep my cluster?
+:   When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed.
+:   For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
 
-When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed.
-
-For storage that was [statically provisioned](/docs/openshift?topic=openshift-kube_concepts#static_provisioning), or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
-
-**How does the billing stop after I delete my storage?**
-
-Depending on what storage components you delete and when, the billing cycle might not stop immediately. If you delete the PVC and PV, but not the storage instance in your {{site.data.keyword.cloud_notm}} account, that instance still exists and you are charged for it.
+How does the billing stop after I delete my storage?
+:   Depending on what storage components you delete and when, the billing cycle might not stop immediately. If you delete the PVC and PV, but not the storage instance in your {{site.data.keyword.cloud_notm}} account, that instance still exists and you are charged for it.
 
 If you delete the PVC, PV, and the storage instance, the billing cycle stops depending on the `billingType` that you chose when you provisioned your storage and how you chose to delete the storage.
 
@@ -1679,17 +1673,14 @@ If you delete the PVC, PV, and the storage instance, the billing cycle stops dep
 
 - When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete` and you choose to remove the PVC, the PV and the storage instance are immediately removed. For hourly billed storage, billing stops immediately. For monthly billed storage, you are still charged for the remainder of the month. After your storage is removed and billing stops, you might still see your storage instance in the console or the CLI for up to 72 hours.
 
-**What do I need to be aware of before I delete persistent storage?**
+What do I need to be aware of before I delete persistent storage?
+:   When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).
 
-When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).
+I deleted my storage instance. Why can I still see my instance?
+:   After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
-**I deleted my storage instance. Why can I still see my instance?**
-
-After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
-
-**I deleted my cluster. How do I remove the remaining storage volumes?**
-
-See the steps in [Why am I still seeing charges for block storage devices after deleting my cluster](/docs/containers?topic=containers-ts_storage_clean_volume).
+I deleted my cluster. How do I remove the remaining storage volumes?
+:   See the steps in [Why am I still seeing charges for block storage devices after deleting my cluster](/docs/containers?topic=containers-ts_storage_clean_volume).
 
 
 ### Cleaning up persistent storage

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-16"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -543,12 +543,13 @@ Version 0.4.90 of the CLI was released on 19 February 2020.
 Version 0.4.66 of the CLI was released on 19 December 2019.
 
 - Adds a **Status** field to the `ibmcloud oc alb cert get` command. The previous **Status** field is now called **State**. 
-- Fixes a bug so that help text is now properly displayed for top-level commands, such as `ibmcloud oc flavors` and `ibmcloud oc subnets`.
+- Fixes a bug so that help text is now properly displayed for some commands, such as `ibmcloud oc flavors` and `ibmcloud oc subnets`.
 
 #### Version 0.4.64
 {: #cli-0464}
 
 Version 0.4.64 of the CLI was released on 11 December 2019.
+
 
 
 - Adds the `--entitlement` option to the `ibmcloud oc cluster create` and `ibmcloud oc worker-pool create` commands. Include this option only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement.

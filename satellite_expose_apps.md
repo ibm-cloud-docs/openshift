@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-16"
 
 keywords: openshift, route, Ingress controller
 
@@ -343,7 +343,7 @@ If you can't use the {{site.data.keyword.redhat_openshift_notm}} Ingress control
 
 4. Access your app by using your cluster's subdomain and the NodePort in the format `<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud:<nodeport>`. Note that if your hosts have private network connectivity only, you must be connected to the hosts' private network, such as through VPN access.
 
-5. Optional: If you don't want to access the NodePort directly, or if you must expose your apps on a specific port such as 443, you can set up your own third-party, layer 4 load balancer that is connected to your hosts' private network and forwards traffic to the NodePort. For example, you might deploy a load balancer from your hosts' cloud provider, or deploy an F5 load balancer to your on-premises network. The load balancer must be able to forward TCP and UDP traffic for ports 30000 - 32767.
+5. Optional: If you don't want to access the NodePort directly, or if you must expose your apps on a specific port such as 443, you can set up your own third-party, layer 4 load balancer that is connected to your hosts' private network and forwards traffic to the NodePort. For example, you might deploy a load balancer from your hosts' cloud provider, or deploy an F5 load balancer to your on-premises network. The load balancer must be able to forward TCP and UDP traffic for ports `30000 - 32767`.
 
 
 
