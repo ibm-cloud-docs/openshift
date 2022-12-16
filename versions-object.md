@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-16"
 
 keywords: object storage, plug-in, changelog
 
@@ -70,7 +70,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Updates the `tls-cipher-suite` value to `AESGCM` for all Kubernetes clusters.
 - If you want to overwrite the value from `default` to any other specific `tls-cipher-suite`, annotate your PVC with `ibm.io/tls-cipher-suite: "<cipher-suite-value>"`. 
 
-Because this change affects storage classes, you must uninstall and reinstall the 2.2.6 chart so the new storage classes are created in your cluster. This change is not automatically to existing PVCs and pods. You must create new PVCs with the new storage classes for the changes to take effect.
+Because this change affects storage classes, you must uninstall and reinstall the 2.2.6 chart so the new storage classes are created in your cluster. This change is not automatically applied to existing PVCs and pods. You must create new PVCs with the new storage classes for the changes to take effect.
 {: important}
 
 ## Change log for version 2.2.5, released 9 December 2022
