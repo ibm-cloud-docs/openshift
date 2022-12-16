@@ -241,6 +241,8 @@ subcollection: openshift
 
     * [14 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1422)
 
+        * Master fix pack `4.7.60_1592_openshift`, `4.8.54_1583_openshift`, `4.9.52_1568_openshift`, `4.10.43_1548_openshift`, and `4.11.17_1535_openshift`
+
         * CLI version 1.0.480 change log update
 
     * [12 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1222)

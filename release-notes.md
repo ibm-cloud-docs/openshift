@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-16"
 
 keywords: openshift
 
@@ -46,6 +46,14 @@ Cloud Image Key Synchronizer add-on version 1.0.0_1269
 ### 14 December 2022
 {: #openshift-dec1422}
 {: release-note}
+
+ 
+
+
+Master fix pack `4.7.60_1592_openshift`, `4.8.54_1583_openshift`, `4.9.52_1568_openshift`, `4.10.43_1548_openshift`, and `4.11.17_1535_openshift`
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47).
+
+
 
 
 
