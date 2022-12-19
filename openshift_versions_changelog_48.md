@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-16"
+lastupdated: "2022-12-19"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -38,6 +38,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.8 change log.
 {: shortdesc}
+
+
+### Change log for worker node fix pack 4.8.54_1584_openshift, released 19 December 2022
+{: #4854_1584_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.8.54_1584_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | 3.10.0-1160.80 | 3.10.0-1160.81 | Worker node kernel & package updates for [CVE-2022-28733](https://nvd.nist.gov/vuln/detail/CVE-2022-28733){: external}. |
+| RHEL 8 Packages |N/A|N/A|N/A|
+| {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
+{: caption="Changes since version 4.8.54_1582_openshift" caption-side="top"}
 
 
 ### Change log for master fix pack 4.8.54_1583_openshift, released 14 December 2022
