@@ -233,6 +233,10 @@ subcollection: openshift
 
 * [December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec22)
 
+    * [19 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1922)
+
+        * Worker node fix packs `4.11.18_1536_openshift`, `4.10.45_1549_openshift`, `4.9.53_1569_openshift`, `4.8.54_1584_openshift`, `4.7.60_1593_openshift`
+
     * [15 December 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1522)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.6` is available.
