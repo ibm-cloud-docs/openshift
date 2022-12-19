@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-16"
+lastupdated: "2022-12-19"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -33,6 +33,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 ## Version 1.0.480
 {: #cli-10480}
+
 Version 1.0.480 of the CLI was released on 14 December 2022.
 :   Adjusted `ibmcloud oc flavor get` and `ibmcloud oc flavor ls` commands to show secondary storage details.
 :   Introduced Secondary Storage Configuration for `worker-pool get`.
@@ -167,7 +168,7 @@ Version 1.0.374 of the CLI was released on 24 February 2022.
 Version 1.0.372 of the CLI was released on 18 February 2022.
 
 :   Modifies relevant commands to accept either the `--worker-pool` or `-p` options for worker pool options.
-:   Updates JSON outputs to include additional resources, such as addons, VLANs, and subnets. 
+:   Updates JSON outputs to include additional resources, such as add-ons, VLANs, and subnets. 
 :   Makes `ibmcloud oc ingress` commands generally available.
 :   Updates the `ibmcloud oc ingress alb get` command output to include ALB status. 
 :   Adds the new `ibmcloud oc nlb-dns get` command.

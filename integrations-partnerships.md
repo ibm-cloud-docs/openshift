@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-19"
 
 keywords: kubernetes, openshift
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # {{site.data.keyword.openshiftlong_notm}} partners
 {: #service-partners}
 
-To provide you with all the capabilities that you need to run production workloads in the cloud, {{site.data.keyword.openshiftlong_notm}} partners with other third-party service providers to enhance your cluster with top-notch logging, monitoring, and storage tools.
+To provide you with all the capabilities that you need to run production workloads in the cloud, {{site.data.keyword.openshiftlong_notm}} partners with other third-party service providers to enhance your cluster with logging, monitoring, and storage tools.
 {: shortdesc}
 
 Review the list of partners and the benefits of each solution that they provide. To find other proprietary {{site.data.keyword.cloud_notm}} and third-party open source services that you can use in your cluster, see [Understanding {{site.data.keyword.cloud_notm}} and 3rd party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations).

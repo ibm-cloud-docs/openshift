@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-12-16"
+lastupdated: "2022-12-19"
 
 keywords: openshift
 
@@ -18,7 +18,7 @@ subcollection: openshift
 # Classic infrastructure roles
 {: #classic-roles}
 
-A user with the **Super User** infrastructure access role [sets the API key for a region and resource group](/docs/openshift?topic=openshift-access-creds) so that infrastructure actions can be performed, or more rarely, [manually sets different account credentials](/docs/openshift?topic=openshift-access-creds#credentials). Then, the infrastructure actions that other users in the account can perform is authorized through {{site.data.keyword.cloud_notm}} IAM platform access roles. You don't need to edit the other users' classic infrastructure permissions. Use the following table to customize users' classic infrastructure permissions only when you can't assign **Super User** to the user who sets the API key. For instructions to assign permissions, see [Customizing infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access).
+A user with the **Super User** infrastructure access role [sets the API key for a region and resource group](/docs/openshift?topic=openshift-access-creds) so that infrastructure actions can be performed, or more rarely, [manually sets different account credentials](/docs/openshift?topic=openshift-access-creds#credentials). Then, the infrastructure actions that other users in the account can perform is authorized through {{site.data.keyword.cloud_notm}} IAM platform access roles. You don't need to edit the other users' classic infrastructure permissions. Use the following table to customize classic infrastructure permissions only when you can't assign **Super User** to the user who sets the API key. For instructions to assign permissions, see [Customizing infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access).
 {: shortdesc}
 
 

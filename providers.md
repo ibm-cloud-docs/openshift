@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-09"
+lastupdated: "2022-12-19"
 
 keywords: openshift
 
@@ -26,7 +26,7 @@ Virtual private cloud (VPC)
 
 
 {{site.data.keyword.satelliteshort}}
-:   Create your cluster on your own hardware, {{site.data.keyword.cloud_notm}} Classic or VPC, or on vritual servers in another cloud provider like AWS or Azure.
+:   Create your cluster on your own hardware, {{site.data.keyword.cloud_notm}} Classic or VPC, or on virtual servers in another cloud provider like AWS or Azure.
 
 
 Classic
@@ -71,8 +71,8 @@ Classic
 | Apps and container platform | You can create [{{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-faqs#container_platforms) to manage your containerized apps. Your app build processes don't differ because of the infrastructure provider, but how you expose the app does. For more information, see [Choosing an app exposure serivice](/docs/openshift?topic=openshift-cs_network_planning). |
 | App networking | All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods. To expose an app, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps). |
 | Storage | Bring your own storage drivers or deploy one of the supported storage templates. For more information, see [Understanding {{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-sat-storage-template-ov). | 
-| User access | You can use {{site.data.keyword.cloud_notm}} IAM access policies to authorize users to create {{site.data.keyword.cloud_notm}} infrastructure, manage your cluster, and access cluster resources. For more infomratiom, see [Mananging access overview](/docs/satellite?topic=satellite-iam). You can also further control access to your host infrastructure in policies provided by your infrastructure provider.|
-| Integrations | For cluster integrations, see [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/openshift?topic=openshift-supported_integrations). For supported {{site.data.keyword.satelliteshort}} service intergrations, see [Supported {{site.data.keyword.satelliteshort}} {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
+| User access | You can use {{site.data.keyword.cloud_notm}} IAM access policies to authorize users to create {{site.data.keyword.cloud_notm}} infrastructure, manage your cluster, and access cluster resources. For more information, see [Managing access overview](/docs/satellite?topic=satellite-iam). You can also further control access to your host infrastructure in policies provided by your infrastructure provider.|
+| Integrations | For cluster integrations, see [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/openshift?topic=openshift-supported_integrations). For supported {{site.data.keyword.satelliteshort}} service integrations, see [Supported {{site.data.keyword.satelliteshort}} {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 | Locations and versions | Clusters are managed from one of the [supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions). However, you can deploy worker nodes to your own location, an {{site.data.keyword.cloud_notm}} data center, or another cloud provider. For more information see [Understanding locations and hosts](/docs/satellite?topic=satellite-location-host). |
 | Service interface | {{site.data.keyword.satelliteshort}} are supported by the global [API](https://containers.cloud.ibm.com/global/swagger-global-api/) [{{site.data.keyword.containerlong_notm}}, the {{site.data.keyword.openshiftlong_notm}} [CLI](/docs/openshift?topic=openshift-openshift-cli) and the {{site.data.keyword.satelliteshort}} [CLI](/docs/satellite?topic=satellite-setup-cli&interface=cli). You can also manage your clusters from the [console](https://cloud.ibm.com/satellite/clusters). |
 | Service compliance | For clusters, see [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). For {{site.data.keyword.satelliteshort}}, see [Security and compliance](/docs/satellite?topic=satellite-compliance). |

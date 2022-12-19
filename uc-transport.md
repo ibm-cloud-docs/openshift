@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-19"
 
 keywords: openshift
 
@@ -21,7 +21,7 @@ subcollection: openshift
 {: #cs_uc_transport}
 
 These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} can
-take advantage of toolchains for rapid app updates and multiregion deployments across the globe. At the same time, these workloads can connect to existing back-end systems, use {{site.data.keyword.watson}} AI for personalization, and access IOT data with {{site.data.keyword.messagehub_full}}.
+take advantage of toolchains for rapid app updates and multi-region deployments across the globe. At the same time, these workloads can connect to existing back-end systems, use {{site.data.keyword.watson}} AI for personalization, and access IOT data with {{site.data.keyword.messagehub_full}}.
 {: shortdesc}
 
 ## Shipping company increases availability of worldwide systems for business partner ecosystem
@@ -52,7 +52,7 @@ Key technologies:
 #### The solution
 {: #uc_shipping_solution}
 
-The shipping company needs to cohesively manage shipping time tables, inventories, and customs paperwork. Then, they can accurately share the location of shipments, shipping contents, and delivery schedules to their customers. They’re taking the guess work out of when a good (such as an appliance, clothing, or produce) will arrive so that their shipping customers can communicate that information to their own customers.
+The shipping company needs to cohesively manage shipping time tables, inventories, and customs paperwork. Then, they can accurately share the location of shipments, shipping contents, and delivery schedules to their customers. They’re taking the guess work out of when a good (such as an appliance, clothing, or produce) arrives so that their shipping customers can communicate that information to their own customers.
 
 The solution is made up of the following primary components.
 1. Streaming data from IoT devices for each shipping container: manifests and location
@@ -172,11 +172,11 @@ Technical solution:
 * {{site.data.keyword.SecureGatewayfull}}
 * {{site.data.keyword.appid_full_notm}}
 
-Accelerated development is a key win for the HR Exec. The team gets started by containerizing their apps and putting them in the cloud. With the use of modern containers, Developers can experiment easily with Node.js SDK and push changes to Development and Test systems, which are scaled out on separate clusters. Those pushes were automated with open toolchains and {{site.data.keyword.contdelivery_full}}. No longer were updates to the HR site languishing in slow, error-prone build processes. They can deliver incremental updates to their site, daily or even more frequently.  Moreover logging and monitoring for the HR site is rapidly integrated, especially for how the site pulls personalized data from back-end benefit systems. Developers don’t waste time building complex logging systems, just to be able to troubleshoot live systems. Developers don't need to become experts in cloud security, they can enforce policy driven authentication easily by using {{site.data.keyword.appid_full_notm}}.
+Accelerated development is a key win for the HR Exec. The team gets started by containerizing their apps and putting them in the cloud. With the use of modern containers, Developers can experiment easily with Node.js SDK and push changes to Development and Test systems, which are scaled out on separate clusters. Those pushes were automated with open toolchains and {{site.data.keyword.contdelivery_full}}. No longer were updates to the HR site languishing in slow, error-prone build processes. They can deliver incremental updates to their site, daily or even more frequently. Moreover, logging and monitoring for the HR site is rapidly integrated, especially for how the site pulls personalized data from back-end benefit systems. Developers don’t waste time building complex logging systems, just to be able to troubleshoot live systems. Developers don't need to become experts in cloud security, they can enforce policy driven authentication easily by using {{site.data.keyword.appid_full_notm}}.
 
 With {{site.data.keyword.openshiftlong_notm}}, they went from over-built hardware in a private data center to customizable compute that reduces IT operations, maintenance, and energy. To host the HR site, they could easily design Kubernetes clusters to fit their CPU, RAM, and storage needs. Another factor for less personnel costs is that IBM manages Kubernetes, so the Developers can focus on delivering better employee experience for benefits enrollment.
 
-{{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services on-demand. Using industry-standard containers technology apps can be quickly developed and shared across multiple Development, Test, and Production environments. This setup provides the immediate benefit of scalability. Using Kubernetes rich set of deployment and runtime objects, the HR team can monitor and manage upgrades to apps reliably. They can also replicate and scale the apps, by using defined rules and the automated Kubernetes orchestrator.
+{{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services as needed. Using industry-standard containers technology apps can be quickly developed and shared across multiple Development, Test, and Production environments. This setup provides the immediate benefit of scalability. Using Kubernetes rich set of deployment and runtime objects, the HR team can monitor and manage upgrades to apps reliably. They can also replicate and scale the apps, by using defined rules and the automated Kubernetes orchestrator.
 
 #### Step 1: Containers, microservices, and the Garage Method
 {: #uc_airline_step1}
