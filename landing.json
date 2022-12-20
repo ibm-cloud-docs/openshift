@@ -10,7 +10,7 @@
     "section_recommended": [
       {
         "title": "See what's new",
-        "description": "Read about the latest changes to Red Hat Openshift on IBM Cloud. ",
+        "description": "Read about the latest changes to Red Hat OpenShift on IBM Cloud. ",
         "href": "/docs/openshift?topic=openshift-iks-release"
       },  
       {

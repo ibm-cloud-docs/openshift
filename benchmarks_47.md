@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-12-20"
 
 keywords: openshift, benchmarks, 4.7
 
@@ -177,8 +177,8 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 | --- | --- | --- | --- | --- | --- |
 | 4.1.1 | Ensure that the kubelet service file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.1.2 | Ensure that the kubelet service file ownership is set to `root:root`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-| 4.1.3 | Ensure that the proxy kubeconfig file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-| 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to `root:root`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
+| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
+| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to `root:root`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.1.5 | Ensure that the `kubelet.conf` file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.1.6 | Ensure that the `kubelet.conf` file ownership is set to `root:root`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 4.1.7 | Ensure that the certificate authorities file permissions are set to `644` or more restrictive. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |

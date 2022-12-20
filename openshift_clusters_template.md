@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-20"
 
 keywords: openshift, clusters
 
@@ -81,21 +81,18 @@ With the secure cluster template, you can create a cluster from the UI with {{si
 With the secure cluster template, you can create a cluster from the CLI with {{site.data.keyword.terraform-provider_full_notm}} that already has certain security integrations such as encryption, logging, and monitoring enabled by default.
 {: shortdesc}
 
-**Before you begin**:
+
 1. [Install the {{site.data.keyword.terraform-provider_full_notm}} CLI](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli).
-2. [Configure the {{site.data.keyword.terraform-provider_full_notm}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-reference).
-3. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-**Creating a secure cluster from an {{site.data.keyword.terraform-provider_full_notm}} template in the CLI**:
-
+1. [Configure the {{site.data.keyword.terraform-provider_full_notm}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-reference).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 1. Clone the [GitHub repository for {{site.data.keyword.terraform-provider_full_notm}} modules](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/){: external}.
     ```bash
     git@github.com:terraform-ibm-modules/terraform-ibm-cluster.git
     ```
     {: pre}
 
-2. Go to the `examples/secure-roks-cluster` directory, and review the [`README.md` file](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/tree/master/examples/secure-roks-cluster){: external} for more information about how to update any of the template default variables.
-3. Run the Terraform commands to initialize, plan, and apply the template. You can monitor the progress from the command line.
+1. Go to the `examples/secure-roks-cluster` directory, and review the [`README.md` file](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/tree/master/examples/secure-roks-cluster){: external} for more information about how to update any of the template default variables.
+1. Run the Terraform commands to initialize, plan, and apply the template. You can monitor the progress from the command line.
     ```bash
     terraform init
     ```
@@ -111,7 +108,7 @@ With the secure cluster template, you can create a cluster from the CLI with {{s
     ```
     {: pre}
 
-4. **Optional**: To clean up the resources that the template created, you can use a Terraform command.
+1. **Optional**: To clean up the resources that the template created, you can use a Terraform command.
     ```bash
     terraform destroy
     ```
