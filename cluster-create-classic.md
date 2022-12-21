@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-21"
 
 keywords: openshift, clusters, classic, create
 
@@ -148,7 +148,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 1. Create your standard cluster.
     ```sh
-    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> --operating system (REDHAT_7_64|REDHAT_8_64) --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt] [--sm-group GROUP] [--sm-instance INSTANCE]
+    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> [--operating-system (REDHAT_7_64|REDHAT_8_64)] --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt] [--sm-group GROUP] [--sm-instance INSTANCE]
     ```
     {: pre}
 
@@ -283,11 +283,11 @@ ibmcloud oc cluster create classic --name my_cluster --version 4.10_openshift --
 Classic cluster with an IBM Cloud Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each.
 
 ```sh
-ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.10_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.10_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> [--operating-system (REDHAT_7_64|REDHAT_8_64)]
 ```
 {: pre}
 
-Classic cluster provisioned at version 4.9 with worker nodes that run the RHEL 8 operating system. For a complete list of available RHEL versions and which cluster versions they are compatible with, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available).
+For a complete list of available RHEL versions and which cluster versions they are compatible with, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available).
 
 ```sh
 ibmcloud oc cluster create classic --name my_cluster --zone dal10 --flavor b3c.4x16 --version 4.9.28_openshift --operating-system REDHAT_8_64
