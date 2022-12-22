@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-21"
 
 keywords: portworx, openshift
 
@@ -964,8 +964,8 @@ When you update a worker node in a VPC cluster, the worker node is removed from 
 Update only one worker node at a time. When the worker node update is complete, attach your {{site.data.keyword.block_storage_is_short}} and restart the Portworx pod.
 {: important}
 
-**Supported infrastructure provider**: VPC
-
+Supported infrastructure providers
+:   VPC
 1. [Enter maintenance mode on the worker nodes that you want to update](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/troubleshooting/enter-maintenance-mode/){: external}.
 
 2. [Update your VPC worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
@@ -1146,7 +1146,7 @@ Before you begin:
 - [Log in to the PX-Backup console](#px-backup-ui).
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
 
-The Kubeconfig in clusters with PX-Backup expires after 24 hours. To prevent your cluster's Kubeconfig file from expiring, set the context with your cluster using the `--admin` option.
+The `kubeconfig` in clusters with PX-Backup expires after 24 hours. To prevent your cluster's `kubeconfig` file from expiring, set the context with your cluster using the `--admin` option.
 `
 ibmcloud oc cluster config --cluster <cluster_name> --admin
 `
@@ -1157,13 +1157,13 @@ Adding a cluster:
 1. In the PX-Backup console, click **Backups**.
 2. Click **Add Cluster**.
 3. Enter the name of the cluster that you want to back up.
-4. In the CLI, get the Kubeconfig file output for your cluster. Make sure that you have set the context to your cluster with the `--admin` option to prevent the Kubeconfig from expiring.
+4. In the CLI, get the `kubeconfig` file output for your cluster. Make sure that you have set the context to your cluster with the `--admin` option to prevent the `kubeconfig` from expiring.
     ```sh
     oc config view --flatten --minify
     ```
     {: pre}
 
-5. Copy the entire Kubeconfig CLI output and paste it into the **Kubeconfig** field in the PX-Backup console.
+5. Copy the entire `kubeconfig` CLI output and paste it into the **Kubeconfig** field in the PX-Backup console.
 6. Select **Others** as your **Kubernetes Service**.
 7. If the cluster that you want to add to the PX-Backup service does not have Portworx installed in it, [you must install Stork onto the cluster](#px-backup-stork). If you installed Portworx Enterprise in your cluster, Stork is installed by default.
 8. Click **Submit**. If your cluster is successfully added, you are redirected to the **Backups** page. Make sure that your cluster is listed.

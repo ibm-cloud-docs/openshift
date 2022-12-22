@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2022
-lastupdated: "2022-12-19"
+lastupdated: "2022-12-21"
 
 keywords: openshift
 
@@ -783,11 +783,7 @@ ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FL
 
 
 `--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster.
-     - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
-     - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
-     - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
-     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 `--version MAJOR.MINOR.PATCH`
 :    Optional: The Kubernetes version for the cluster master node. When the version is not specified, the cluster is created with the default of supported Kubernetes versions. To see available versions, run `ibmcloud oc versions`.
@@ -873,14 +869,14 @@ ibmcloud oc cluster create classic --name my_cluster
 {: #example_cluster_create}
 
 ```sh
-ibmcloud oc cluster create classic --zone dal10 --private-vlan my_private_VLAN_ID --flavor b3c.4x16 --name my_cluster --hardware shared --workers 2
+ibmcloud oc cluster create classic --zone dal10 --private-vlan my_private_VLAN_ID --flavor b3c.4x16 --name my_cluster --hardware shared --workers 2 --operating-system REDHAT_8_64
 ```
 {: pre}
 
 **Create subsequent standard clusters**: If you already created a standard cluster in this zone or created a public VLAN in IBM Cloud infrastructure before, specify that public VLAN with the `--public-vlan` option. To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run `ibmcloud oc vlan ls --zone <zone>`.
 
 ```sh
-ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID --private-vlan my_private_VLAN_ID --flavor b3c.4x16 --name my_cluster --hardware shared --workers 2
+ibmcloud oc cluster create classic --zone dal10 --public-vlan my_public_VLAN_ID --private-vlan my_private_VLAN_ID --flavor b3c.4x16 --name my_cluster --hardware shared --workers 2 --operating-system REDHAT_8_64
 ```
 {: pre}
 
@@ -906,7 +902,8 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
 ```
 {: pre}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**:
 * [**Administrator** platform access role for VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started).
@@ -942,12 +939,8 @@ ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --su
     The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. See [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group#vpc-sg-cluster) for more details before adding security groups to your cluster.
     {: important}
 
-
 `--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. 
-     - For cluster version 4.10 or later, specify `REDHAT_8_64`. 
-     - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
-     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 `--cos-instance COS_CRN`
 :    Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run `ibmcloud resource service-instances --long` and find the **ID** of your object storage instance. To create a standard object storage instance, run `ibmcloud resource service-instance-create <name> cloud-object-storage standard global` and note its **ID**.
@@ -2386,10 +2379,7 @@ Supported infrastructure providers
 
 
 `--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. 
-     - For cluster version 4.10 or later, specify `REDHAT_8_64`. 
-     - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
-     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -2826,7 +2816,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 :    Required: The name or ID of the cluster.
 
 `--flavor FLAVOR`
-:    Choose a machine type, or flavor. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (macine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.
+:    Choose a machine type, or flavor. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types). This value is required for standard clusters and is not available for free clusters.
 
 `--size-per-zone WORKERS_PER_ZONE`
 :    The number of workers to create in each zone. This value is required, and must be 2 or greater. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
@@ -2841,11 +2831,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 :    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple options, such as `-l key1=value1 -l key2=value2`.
 
 `--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster.
-    - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
-    - For cluster version 4.10, specify `REDHAT_7_64`  or `REDHAT_8_64`.
-    - For cluster version 4.9, specify `REDHAT_7_64` (default in 4.9) or `REDHAT_8_64`.
-    - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 `--entitlement cloud_pak`
 :    Include this option only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
@@ -2877,7 +2863,8 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 ```
 {: pre}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
@@ -2893,13 +2880,8 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 `--size-per-zone NUMBER_WORKERS_PER_ZONE`
 :    Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool. This value is required, and must be 2 or greater. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
 
-
 `--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. 
-     - For cluster version 4.11 or later, specify `REDHAT_8_64` (default).
-     - For cluster version 4.10 or later, specify `REDHAT_8_64` (default) or `REDHAT_7_64`.
-     - For cluster version 4.9, specify `REDHAT_7_64` (default) or `REDHAT_8_64`.
-     - For cluster versions 4.8 or earlier, specify `REDHAT_7_64`.
+:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 `--flavor FLAVOR`
 :    Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a VPC zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.
@@ -3411,7 +3393,8 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CL
 ```
 {: pre}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4402,7 +4385,8 @@ ibmcloud oc ingress lb proxy-protocol disable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -4443,7 +4427,8 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...]
 ```
 {: pre}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5151,7 +5136,8 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAM
 ```
 {: pre}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5506,7 +5492,8 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host NEW_LB_HOSTNAME --nlb-su
 ```
 {: pre}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -5589,7 +5576,8 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [ --
 ```
 {: pre}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -6834,7 +6822,8 @@ ibmcloud oc storage attachment create --cluster aa1111aa11aaaaa11aa1 --volume 11
 Get the details of a storage volume attachment in your cluster.
 {: shortdesc}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -6870,7 +6859,8 @@ ibmcloud oc storage attachment get --cluster aa1111aa11aaaaa11aa1 --attachment 0
 List the storage volume attachments for a worker node in your cluster.
 {: shortdesc}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -6904,7 +6894,8 @@ ibmcloud oc storage attachment ls --cluster aa1111aa11aaaaa11aa1 --worker kube-a
 Remove a storage volume from a worker node in your cluster.
 {: shortdesc}
 
-**Supported infrastructure provider**: VPC
+Supported infrastructure providers
+:   VPC
 
 **Minimum required permissions**: **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
@@ -7046,7 +7037,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    Required. Enter the {{site.data.keyword.openshiftlong_notm}} version that you want to run in your cluster. For a list of supported versions, run `ibmcloud oc versions`.
 
 `--enable-admin-config`
-:    Optional. Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role to manage Kubernetes resources. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
+:    Optional. Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role to manage Kubernetes resources. If you don't grant {{site.data.keyword.satelliteshort}} Config access, you can't later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters. If you want to enable access later, you can [create custom RBAC roles for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig-access).
 
 `--host-label, -hl LABEL`
 :    Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.

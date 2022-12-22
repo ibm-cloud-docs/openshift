@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-12-20"
 
 keywords: openshift
 
@@ -40,8 +40,8 @@ Review the following tables for an overview of the differences between the CIS K
 | 1.3.2 | Ensure that the `--profiling` option is set to `false`. | Ensure that controller manager healthz endpoints are protected by RBAC. | Profiling is enabled by default in OpenShift, but the profiling data is sent through the  healthz port and the port must be protected by RBAC. |
 | 1.4.1 | Ensure that the `--profiling` option is set to `false`. | Ensure that the healthz endpoints for the scheduler are protected by RBAC. | Profiling is enabled by default in OpenShift, but the profiling data is sent via healthz port and the port must be protected by RBAC. |
 | 1.4.2 | Ensure that the `--bind-address` option is set to `127.0.0.1`. | Verify that the scheduler API service is protected by authentication and authorization. | {{site.data.keyword.redhat_openshift_notm}} has different operator than vanilla kubernetes, and configuration for its security differs |
-| 4.1.3 | Ensure that the proxy kubeconfig file permissions are set to `644` or more restrictive. | **If proxy kubeconfig file exists**, ensure permissions are set to 644 or more restrictive. | In OpenShift, the file is automatically created by `sdn` controller in a secure manner. |
-| 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to `root:root`. | **If proxy kubeconfig file exists**, ensure ownership is set to `root:root` | In OpenShift, the file is automatically created by `sdn` controller in a secure manner. |
+| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to `644` or more restrictive. | **If proxy `kubeconfig` file exists**, ensure permissions are set to 644 or more restrictive. | In OpenShift, the file is automatically created by `sdn` controller in a secure manner. |
+| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to `root:root`. | **If proxy `kubeconfig` file exists**, ensure ownership is set to `root:root` | In OpenShift, the file is automatically created by `sdn` controller in a secure manner. |
 {: caption="Major difference between the CIS Kubernetes Benchmark and the {{site.data.keyword.redhat_openshift_notm}} Compliance Operator Benchmark" caption-side="bottom"}
 
 ## Minor differences
