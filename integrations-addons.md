@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-19"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: kubernetes, openshift
 
@@ -120,7 +120,7 @@ The following list of add-ons for clusters are supported in {{site.data.keyword.
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cs_cli_install#cli_web)
-- [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-config-storage-odf-local) to consistently deploy ODF across clusters in your location.)
+- [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-storage-odf-local) to consistently deploy ODF across clusters in your location.)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.

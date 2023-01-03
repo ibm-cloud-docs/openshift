@@ -493,7 +493,7 @@ Before you begin:
 
 2. Decide on the [{{site.data.keyword.blockstorageshort}} profile](/docs/vpc?topic=vpc-block-storage-profiles) that best meets the capacity and performance requirements that you have.
 
-3. [Provision a {{site.data.keyword.blockstorageshort}} volume](/docs/vpc?topic=vpc-creating-block-storage){: external}. The volume that you provision must be in the same resource group, region, and zone as the worker node.
+3. [Provision a {{site.data.keyword.blockstorageshort}} volume](/docs/vpc?topic=vpc-creating-block-storage&interface=ui#creating-block-storage-ui){: external}. The volume that you provision must be in the same resource group, region, and zone as the worker node.
 
 4. Retrieve your IAM token.
 
