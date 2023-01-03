@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-15"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog
+# {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log
 {: #image-key-synchronizer-changelog}
 
 View information for version updates to the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on](/docs/openshift?topic=openshift-images#encrypted-images) in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
