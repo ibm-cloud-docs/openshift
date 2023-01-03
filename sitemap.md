@@ -5446,6 +5446,8 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
 
+    * [Example `cluster master private-service-endpoint allowlist rm --cluster mycluster` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
+
     * [`ibmcloud oc cluster master private-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_disable)
 
     * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
@@ -5660,7 +5662,11 @@ subcollection: openshift
 
     * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 
+    * [Example `nlb-dns secret rm` command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-rm-example)
+
 * [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
+
+    * [Example `webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-example)
 
 * [`api-key` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api_key-commands)
 
@@ -8983,3 +8989,4 @@ subcollection: openshift
 * [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits)
 
 * [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_limitations#not-supported-features-table)
+
