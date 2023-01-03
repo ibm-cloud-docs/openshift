@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift
 
@@ -21,7 +21,8 @@ content-type: troubleshoot
 {: #file_app_failures}
 {: support}
 
-**Infrastructure provider**: Classic
+Infrastructure provider
+:   Classic
 
 When you mount a PVC to your pod, you might experience errors when accessing or writing to the PVC.
 {: shortdesc}

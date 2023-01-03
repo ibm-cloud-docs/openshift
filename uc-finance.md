@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-15"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift
 
@@ -71,7 +71,7 @@ And major app upgrades take 6 - 9 months to complete.
 Compute, storage, and I/O services that run in public cloud with secure access to on-premises enterprise assets as needed**
 
 * Secure and scalable document storage that supports structured and unstructured document query
-* "Lift and shift" existing enterprise assets and app while they enabled the integration to some on-premises systems that won't be migrated
+* Lift and shift existing enterprise assets and app while they enabled the integration to some on-premises systems that won't be migrated
 * Shorten time-to-deploy solutions and implement standard DevOps and monitoring processes to address bugs that affected reporting accuracy
 
 #### Detailed solution
@@ -99,7 +99,7 @@ This solution provides the immediate benefit of scalability. By using Kubernetes
 * Complex financial simulations are completed in 25% of the time than was previously possible with the existing on-premises systems.
 * Time to deployment improved from the previous 6 - 9 months to 1 - 3 weeks on average. This improvement occurs because {{site.data.keyword.openshiftlong_notm}} allows for a disciplined, controlled process for ramping up app containers and replacing them with newer versions. Reporting bugs can be fixed quickly, addressing issues, such as accuracy.
 * Regulatory reporting costs were reduced with a consistent, scalable set of storage and compute services that {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.cloudant}} bring.
-* Over time, the original apps that were initially "lifted and shifted" to the cloud were rearchitected into cooperative microservices that run on {{site.data.keyword.openshiftlong_notm}}. This action further sped up development and time to deploy and allowed more innovation due to the relative ease of experimentation. They also released innovative apps with newer versions of microservices to take advantage of market and business conditions (that is, so called situational apps and microservices).
+* Over time, the original apps that were initially moved to the cloud were restructured into cooperative microservices that run on {{site.data.keyword.openshiftlong_notm}}. This action further sped up development and time to deploy and allowed more innovation due to the relative ease of experimentation. They also released innovative apps with newer versions of microservices to take advantage of market and business conditions (that is, so called situational apps and microservices).
 
 
 ## Payment tech company streamlines developer productivity, deploying AI-enabled tools to their partners 4 times faster

@@ -1391,8 +1391,8 @@ Minimum required permissions
 :    Optional: Do not show the message of the day or update reminders.
 
 
-### Example `cluster master private-service-endpoint allowlist rm --cluster mycluster` command
-{: #cluster master private-service-endpoint allowlist rm --cluster mycluster}
+### Example `cluster master private-service-endpoint allowlist rm` command
+{: #cluster-master-private-service-endpoint-allowlist-rm}
 
 ```sh
 ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster mycluster

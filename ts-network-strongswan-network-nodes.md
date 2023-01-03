@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift
 
@@ -21,7 +21,8 @@ content-type: troubleshoot
 {: #cs_vpn_fails_worker_add}
 {: support}
 
-**Infrastructure provider**: Classic
+Infrastructure provider
+:   Classic
 
 
 You previously established a working VPN connection by using the strongSwan IPSec VPN service. However, after you added or deleted a worker node on your cluster, you experience one or more of the following symptoms:

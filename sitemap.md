@@ -5446,7 +5446,7 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
 
-    * [Example `cluster master private-service-endpoint allowlist rm --cluster mycluster` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
+    * [Example `cluster master private-service-endpoint allowlist rm` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm)
 
     * [`ibmcloud oc cluster master private-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_disable)
 

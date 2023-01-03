@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift
 
@@ -21,7 +21,8 @@ content-type: troubleshoot
 {: #cs_loadbalancer_fails}
 {: support}
 
-**Infrastructure provider**: Classic
+Infrastructure provider
+:   Classic
 
 You exposed your app by creating an NLB service in your classic cluster.
 {: tsSymptoms} 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift
 
@@ -301,7 +301,8 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
 ## Unable to create or delete worker nodes due to paid account or one time password error
 {: #cs_totp}
 
-**Infrastructure provider**: Classic
+Infrastructure provider
+:   Classic
 
 
 You can't manage worker nodes for your cluster, and you receive an error message similar to one of the following examples.
