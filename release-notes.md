@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-02"
+lastupdated: "2023-01-03"
 
 keywords: openshift
 
@@ -25,8 +25,12 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
+
 ## January 2023
 {: #openshift-jan23}
+
+
 
 ### 2 January 2023
 {: #openshift-jan0223}
@@ -1731,7 +1735,7 @@ Updated supported, deprecated, and unsupported versions for strongSwan Helm char
 
 
 
-{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog.
+{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log.
 :   [Version 1.0.0_690](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690) is released.
 
 
@@ -1904,7 +1908,7 @@ Review the release notes for August 2021.
 Review the release notes for 31 August 2021.
 {: shortdesc}
 
-Istio add-on changelog
+Istio add-on change log
 :   [Version 1.11.1](/docs/containers?topic=containers-istio-changelog#1111) of the Istio managed add-on is released.
 
 New! Sao Paulo multizone region
@@ -2366,7 +2370,7 @@ New! Toronto multizone region for VPC
 {: #openshift-april1921}
 {: release-note}
 
-Add-on changelogs
+add-on change logs
 :   Updated version changelogs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
 
 Cluster autoscaler add-on
@@ -2477,7 +2481,7 @@ Compliance operator
 {: #openshift-march3021}
 {: release-note}
 
-Add-on changelogs
+add-on change logs
 :   Added version changelogs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
 
 Master versions

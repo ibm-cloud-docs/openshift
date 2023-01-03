@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-02"
+lastupdated: "2023-01-03"
 
 keywords: openshift
 subcollection: openshift
@@ -1035,7 +1035,7 @@ subcollection: openshift
 
         * Updated supported, deprecated, and unsupported versions for strongSwan Helm chart.
 
-        * {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog.
+        * {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log.
 
         * {{site.data.keyword.cos_full_notm}} plug-in.
 
@@ -1123,7 +1123,7 @@ subcollection: openshift
 
         * Review the release notes for 31 August 2021.
 
-        * Istio add-on changelog
+        * Istio add-on change log
 
         * New! Sao Paulo multizone region
 
@@ -1359,7 +1359,7 @@ subcollection: openshift
 
     * [19 April 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april1921)
 
-        * Add-on changelogs
+        * add-on change logs
 
         * Cluster autoscaler add-on
 
@@ -1413,7 +1413,7 @@ subcollection: openshift
 
     * [30 March 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-march3021)
 
-        * Add-on changelogs
+        * add-on change logs
 
         * Master versions
 
@@ -5446,6 +5446,8 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
 
+    * [Example `cluster master private-service-endpoint allowlist rm` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm)
+
     * [`ibmcloud oc cluster master private-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_disable)
 
     * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
@@ -5660,7 +5662,11 @@ subcollection: openshift
 
     * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 
+    * [Example `nlb-dns secret rm` command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-rm-example)
+
 * [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
+
+    * [Example `webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-example)
 
 * [`api-key` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api_key-commands)
 
@@ -6859,7 +6865,7 @@ subcollection: openshift
 
     * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
-[{{site.data.keyword.block_storage_is_short}} add-on changelog](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
+[{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
@@ -7027,7 +7033,7 @@ subcollection: openshift
 
 * [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
-[Static route add-on version changelog](/docs/openshift?topic=openshift-static-route-changelog#static-route-changelog)
+[Static route add-on change log](/docs/openshift?topic=openshift-static-route-changelog#static-route-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-static-route-changelog#v100)
 
@@ -7231,7 +7237,7 @@ subcollection: openshift
 
     * [Version 4.5.0_647, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0647)
 
-[{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on changelog](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
+[{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
 
@@ -8983,3 +8989,4 @@ subcollection: openshift
 * [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits)
 
 * [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_limitations#not-supported-features-table)
+

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-21"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift dedicated hosts
 
@@ -31,7 +31,8 @@ Dedicated hosts, including those with instance storage, are available in Beta fo
 To order dedicated hosts, you must first create a host pool. Then, you can create hosts in the pool.
 {: shortdesc}
 
-**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+Minimum required permissions
+:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
 1. Review the available dedicated host flavors and make a note of the flavor class that you want to create your host pool with, for example `bx2`. Dedicated host flavors that include instance storage are indicated with the letter `d` in the fourth position of the name, for example `bx2d-2x8`. For more information about using instance storage, see [Instance storage](/docs/vpc?topic=vpc-instance-storage).
     ```sh
@@ -120,7 +121,8 @@ To remove worker nodes from a dedicated host, you must disable dedicated host pl
 {: #remove-dedicated-hosts-cli}
 
 
-**Minimum required permissions**: **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+Minimum required permissions
+:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
 
 1. List your dedicated host pools. Make a note of the dedicated hosts that you want to remove and the dedicated host pool that the hosts are in.
