@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -21,7 +21,8 @@ subcollection: openshift
 After you install the OpenShift Data Foundation add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the ODF storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying ODF storage device.
 {: shortdesc}
 
-**Minimum required permissions**: **Editor** platform access role and the **Writer** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+Minimum required permissions
+:   **Editor** platform access role and the **Writer** service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
