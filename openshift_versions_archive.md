@@ -1,8 +1,8 @@
 ---
 
 copyright:
- years: 2014, 2022
-lastupdated: "2022-12-05"
+ years: 2014, 2023
+lastupdated: "2023-01-03"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
