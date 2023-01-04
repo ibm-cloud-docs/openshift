@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, scc, security context constraint, psp
 
@@ -49,9 +49,8 @@ Annotations:        openshift.io/...
 ```
 {: screen}
 
-**Can I use Kubernetes pod security policies instead?**
-
-No. [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external} (PSPs) are originally based on {{site.data.keyword.redhat_openshift_notm}} SCCs. However, {{site.data.keyword.redhat_openshift_notm}} supports only SCCs, not PSPs.
+Can I use Kubernetes pod security policies instead?
+:   No. [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external} (PSPs) are originally based on {{site.data.keyword.redhat_openshift_notm}} SCCs. However, {{site.data.keyword.redhat_openshift_notm}} supports only SCCs, not PSPs.
 
 The default {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than the default PSPs in community Kubernetes clusters. As such, app deployments that run in community Kubernetes clusters might need to be modified to run in {{site.data.keyword.redhat_openshift_notm}}.
 

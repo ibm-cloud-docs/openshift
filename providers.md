@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-04"
 
 keywords: openshift
 
@@ -22,12 +22,10 @@ subcollection: openshift
 With {{site.data.keyword.openshiftlong}}, you can create a cluster from the following infrastructure providers. All the worker nodes in a cluster must be from the same provider. Originally, {{site.data.keyword.openshiftlong_notm}} provisioned your worker nodes in a single provider, classic infrastructure.
 
 Virtual private cloud (VPC)
-:   Create your cluster on the next generation of IBM Cloud infrastructure virtual servers.
-
+:   Create your cluster on the next generation of IBM Cloud infrastructure virtual servers in your own Virtual Private Cloud (VPC).
 
 {{site.data.keyword.satelliteshort}}
 :   Create your cluster on your own hardware, {{site.data.keyword.cloud_notm}} Classic or VPC, or on virtual servers in another cloud provider like AWS or Azure.
-
 
 Classic
 :   Create your cluster on a classic compute, networking, and storage environment in IBM Cloud infrastructure.

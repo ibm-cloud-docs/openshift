@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-21"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -40,7 +40,7 @@ With {{site.data.keyword.openshiftlong}}, you can create highly available cluste
 In the tutorial lessons, you create a standard {{site.data.keyword.openshiftlong_notm}} cluster, open the {{site.data.keyword.redhat_openshift_notm}} console, access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in a {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on a {{site.data.keyword.redhat_openshift_notm}} route so that external users can access the service.
 {: shortdesc}
 
-![OpenShift tutorial diagram.](images/roks_tutorial.png){: caption="Figure 1. OpenShift tutorial diagram" caption-side="bottom"}
+![{{site.data.keyword.redhat_openshift_notm}} tutorial diagram.](images/roks_tutorial.png){: caption="Figure 1. {{site.data.keyword.redhat_openshift_notm}} tutorial diagram" caption-side="bottom"}
 
 ## Audience
 {: #openshift_audience}

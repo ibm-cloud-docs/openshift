@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: kubernetes, openshift
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Deploying apps in OpenShift clusters
+# Deploying apps in {{site.data.keyword.redhat_openshift_notm}} clusters
 {: #deploy_app}
 
 With {{site.data.keyword.openshiftlong}} clusters, you can deploy apps from a remote file or repository such as GitHub with a single command. Also, your clusters come with various built-in services that you can use to help operate your cluster.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, version, upgrade, update
 
@@ -29,14 +29,13 @@ You must update your cluster by using the {{site.data.keyword.openshiftlong_notm
 {: #master}
 
 Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_changelog). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
-{: shortdesc}
+
 
 ### About updating the master
 {: #master-about}
 
-**How do I know when to update the master?**
-
-You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_changelog) page.
+How do I know when to update the master?
+:   You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_changelog) page.
 
 Can my worker nodes run a later version than the master?
 :   Your worker nodes can't run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can only be one version behind the master version (`n-1`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.

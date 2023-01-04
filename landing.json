@@ -1,7 +1,7 @@
 {
     "title": "Red Hat OpenShift on IBM Cloud",
     "lastupdated": "2021-09-01",
-    "introduction": "Explore the capabilities of Red Hat OpenShift on IBM Cloud and discover how you can deploy apps on highly available OpenShift clusters. ",
+    "introduction": "Explore the capabilities of Red Hat OpenShift on IBM Cloud and discover how you can deploy apps on highly available {{site.data.keyword.redhat_openshift_notm}} clusters. ",
     "section_devtools": {
       "api": "/apidocs/kubernetes", 
       "cli": "/docs/openshift?topic=openshift-kubernetes-service-cli", 
@@ -19,7 +19,7 @@
         "href": "/docs/openshift?topic=openshift-roks-overview"
       },
       {
-        "title": "Get started with OpenShift",
+        "title": "Get started with {{site.data.keyword.redhat_openshift_notm}}",
         "description": "Use the IBM Cloud console to create a cluster and deploy your first containerized app.",
         "href": "/docs/openshift?topic=openshift-getting-started"
       },

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-04"
 
 keywords: openshift
 subcollection: openshift
@@ -51,6 +51,14 @@ subcollection: openshift
 [Overview](/docs/openshift?topic=openshift-roks-overview#roks-overview)
 
 * [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-roks-overview#service-concepts)
+
+    * [What is {{site.data.keyword.openshiftlong_notm}} and how does it work?](/docs/openshift?topic=openshift-roks-overview#what-is-overview)
+
+    * [What is Kubernetes?](/docs/openshift?topic=openshift-roks-overview#what-is-kube-overview)
+
+    * [What are containers?](/docs/openshift?topic=openshift-roks-overview#what-are-containers-overview)
+
+    * [What compute host infrastructure does the service offer?](/docs/openshift?topic=openshift-roks-overview#what-compute-infra-is-offered)
 
 * [Docker containers](/docs/openshift?topic=openshift-roks-overview#docker_containers)
 
@@ -2674,7 +2682,7 @@ subcollection: openshift
 {: #sitemap_installing_the_cli_and_api}
 
 
-[Installing the OpenShift CLI](/docs/openshift?topic=openshift-openshift-cli#openshift-cli)
+[Installing the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/openshift?topic=openshift-openshift-cli#openshift-cli)
 
 * [Installing the IBM Cloud CLI and plug-ins](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps)
 
@@ -2715,7 +2723,7 @@ subcollection: openshift
 
     * [What about serverless apps?](/docs/openshift?topic=openshift-strategy#apps_serverless-strategy)
 
-    * [What knowledge and technical skills are good to have before I move my apps to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-strategy#knowledge)
+    * [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-strategy#knowledge)
 
 * [Sizing your {{site.data.keyword.redhat_openshift_notm}} cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing)
 
@@ -4185,7 +4193,7 @@ subcollection: openshift
 
     * [Default image policies](/docs/openshift?topic=openshift-images#portieris-default-policies)
 
-[Developing apps to run on OpenShift](/docs/openshift?topic=openshift-openshift_apps#openshift_apps)
+[Developing apps to run on {{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-openshift_apps#openshift_apps)
 
 * [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml)
 
@@ -4219,7 +4227,7 @@ subcollection: openshift
 
 * [Packaging apps in version 4 clusters for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize)
 
-[Deploying apps in OpenShift clusters](/docs/openshift?topic=openshift-deploy_app#deploy_app)
+[Deploying apps in {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-deploy_app#deploy_app)
 
 * [Moving your apps to {{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps)
 
@@ -4632,6 +4640,10 @@ subcollection: openshift
 
 * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version)
 
+    * [Creating a customized storage class with a specific NFS version](/docs/openshift?topic=openshift-file_storage#custom-sc-nfs-creat)
+
+    * [Changing your existing PV to use a different NFS version](/docs/openshift?topic=openshift-file_storage#changing-pv-nfs)
+
 * [Backing up and restoring data](/docs/openshift?topic=openshift-file_storage#file_backup_restore)
 
     * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
@@ -4942,7 +4954,7 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
-    * [Version 4.10 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-410)
+    * [Version 4.10 and 4.11 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-410)
 
     * [Version 4.8 and 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
@@ -4968,7 +4980,7 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
 
-    * [Version 4.10 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
+    * [Version 4.10 and 4.11 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
 
     * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
 
@@ -8395,6 +8407,10 @@ subcollection: openshift
 
 * [Unable to create or delete worker nodes due to paid account or one time password error](/docs/openshift?topic=openshift-cluster_infra_errors#cs_totp)
 
+    * [Disabling TOTP MFA for the account](/docs/openshift?topic=openshift-cluster_infra_errors#disable-totp-mfa-account)
+
+    * [Using TOTP MFA to create an infrastructure API key for {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-cluster_infra_errors#create-api-key-totp-mfa)
+
 [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create#ts_cos_bucket_cluster_create)
 
 [After logging in to my cluster, why do I see a no resources found message?](/docs/openshift?topic=openshift-rhoks_ts_not_found#rhoks_ts_not_found)
@@ -8630,6 +8646,10 @@ subcollection: openshift
 * [Fixing pod replacement by higher priority pods](/docs/openshift?topic=openshift-ts-app-pod-fail#pod-fail-higher-priority)
 
 [Why does binding a service to a cluster results in service not found error?](/docs/openshift?topic=openshift-ts-app-svc-bind-not-found#ts-app-svc-bind-not-found)
+
+* [Cluster user](/docs/openshift?topic=openshift-ts-app-svc-bind-not-found#service-bind-cluster-user)
+
+* [As the account admin](/docs/openshift?topic=openshift-ts-app-svc-bind-not-found#service-bind-account-admin)
 
 [Why does binding a service to a cluster results in service does not support service keys error?](/docs/openshift?topic=openshift-ts-app-svc-key#ts-app-svc-key)
 

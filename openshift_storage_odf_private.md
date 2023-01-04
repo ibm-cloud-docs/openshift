@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-12"
+  years: 2022, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
 
@@ -81,7 +81,7 @@ In addition to the 3 required subnets, create another subnet and attach a public
 {: #odf-cli-install-bastion}
 {: step}
 
-1. From the {{site.data.keyword.redhat_openshift_notm}} [downloads page](https://console.redhat.com/openshift/downloads), download the OpenShift command-line interface (`oc`) and the OpenShift Client (oc) mirror plug-in.
+1. From the {{site.data.keyword.redhat_openshift_notm}} [downloads page](https://console.redhat.com/openshift/downloads), download the {{site.data.keyword.redhat_openshift_notm}} command-line interface (`oc`) and the {{site.data.keyword.redhat_openshift_notm}} Client (oc) mirror plug-in.
 
 1. Copy the `oc` and the `oc-mirror` tar files to your bastion host. 
     ```sh

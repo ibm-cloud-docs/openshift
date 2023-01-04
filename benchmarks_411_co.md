@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-11-16"
+  years: 2022, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, benchmarks, 4.11, compliance operator, compliance
 
@@ -55,7 +55,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | 1.2.18|Ensure that the `--insecure-bind-address` option is not set. |Automated|1|Pass |
 | 1.2.19|Ensure that the `--insecure-port option` is set to `0`. |Automated|1|[Not checked](#co-benchmark-411-remdiations) |
 | 1.2.20|Ensure that the `--secure-port option` is not set to `0`. |Automated|1|Pass |
-| 1.2.21|Ensure that the healthz endpoint is protected by RBAC. |Automated|1|Pass |
+| 1.2.21|Ensure that the `healthz` endpoint is protected by RBAC. |Automated|1|Pass |
 | 1.2.22|Ensure that the `--audit-log-path` option is set. |Automated|1|Pass |
 | 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention. |Automated|1|[Not checked](#co-benchmark-411-remdiations) |
 | 1.2.24|Ensure that the `maximumRetainedFiles` option is set to `10` or as appropriate. |Automated|1|Pass |
@@ -78,7 +78,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 1.3.1|Ensure that garbage collection is configured as appropriate. |Manual|1|Not checked |
-| 1.3.2|Ensure that controller manager healthz endpoints are protected by RBAC. |Automated|1|Pass |
+| 1.3.2|Ensure that controller manager `healthz` endpoints are protected by RBAC. |Automated|1|Pass |
 | 1.3.3|Ensure that the `--use-service-account-credentials` option is set to `true`. |Automated|1|Pass |
 | 1.3.4|Ensure that the `--service-account-private-key-file` option is set as appropriate. |Automated|1|Pass |
 | 1.3.5|Ensure that the `--root-ca-file option` is set as appropriate. |Automated|1|Pass |
@@ -92,7 +92,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 1.4.1|Ensure that the healthz endpoints for the scheduler are protected by RBAC. |Automated|1|Pass |
+| 1.4.1|Ensure that the `healthz` endpoints for the scheduler are protected by RBAC. |Automated|1|Pass |
 | 1.4.2|Verify that the scheduler API service is protected by authentication and authorization. |Automated|1|Pass |
 {: caption="Section 1.4 Scheduler benchmark results"}
 
@@ -219,7 +219,7 @@ Review information from {{site.data.keyword.cloud_notm}} on the CIS Benchmark re
 | Section | Recommendation/Explanation |
 | --- | --- |
 | 1.2.4 | {{site.data.keyword.openshiftshort}} configures the {{site.data.keyword.cloud_notm}} IAM identity provider by default. |
-| 1.2.19 | Test will properly ignore OpenShift version 4.11 and later clusters when https://github.com/ComplianceAsCode/compliance-operator/issues/77 is fixed. |
+| 1.2.19 | Test will properly ignore {{site.data.keyword.redhat_openshift_notm}} version 4.11 and later clusters when https://github.com/ComplianceAsCode/compliance-operator/issues/77 is fixed. |
 | 1.2.23 | {{site.data.keyword.openshiftshort}} can optionally enable Kubernetes API server auditing. |
 | 1.2.33 | {{site.data.keyword.openshiftshort}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
 | 1.2.34 | {{site.data.keyword.openshiftshort}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |

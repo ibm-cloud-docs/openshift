@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-09"
+  years: 2022, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -72,7 +72,7 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | --- | --- |
-| **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.10 deprecated and removed features](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-deprecated-removed-features){: external}. |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.10 deprecated and removed features](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-deprecated-removed-features){: external}. |
 | Kubernetes API server metrics job name changed | Kubernetes API server metrics now use job `kube-apiserver` rather than `cluster-version-operator`. Update any custom metrics and alerts to use the new job name. |
 | **Deprecated**: RHEL 7 | RHEL 7 is deprecated in version 4.10. [Migrate your worker nodes to RHEL 8](#410_rhel-migrate). |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.10" caption-side="bottom"}

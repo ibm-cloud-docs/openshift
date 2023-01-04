@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-16"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: object storage, plug-in, changelog
 
@@ -273,9 +273,9 @@ Updates the following mount paths for the driver pods.
 - Enables `ReadOnlyRootFilesystem` for the plug-in and driver pods.  
 - Updates the Golang version to `v1.16.6`. 
 
-**Notes:**
-* The `ibm-object-s3fs` namespace is created during installation. Dynamic creation of namespaces is supported for Helm versions 3.2.0 and later. Before upgrading to version 2.1.3 of the `ibm-object-storage-plugin`, upgrade to Helm 3.2.0 or later.
-* If you want to install the Helm chart without using the `ibmc` plug-in, you must manually create the `ibm-object-s3fs` namespace before installing the plug-in.
+
+The `ibm-object-s3fs` namespace is created during installation. Dynamic creation of namespaces is supported for Helm versions 3.2.0 and later. Before upgrading to version 2.1.3 of the `ibm-object-storage-plugin`, upgrade to Helm 3.2.0 or later. If you want to install the Helm chart without using the `ibmc` plug-in, you must manually create the `ibm-object-s3fs` namespace before installing the plug-in.
+{: note}
 
 
 ## Change log for version 2.1.2, released 22 June 2021 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: kubernetes, openshift
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Developing apps to run on OpenShift
+# Developing apps to run on {{site.data.keyword.redhat_openshift_notm}}
 {: #openshift_apps}
 
 Develop a configuration to deploy your app workload to {{site.data.keyword.openshiftlong}}. Because Kubernetes is an extensible container orchestration platform that does not mandate a specific language or app, you can run various workloads such as stateless, stateful, and data-processing apps that are written in the language of your choice.

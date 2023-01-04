@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-04"
 
 keywords: openshift
 
@@ -1348,11 +1348,11 @@ Minimum required permissions
 :    Optional: Do not show the message of the day or update reminders.
 
 
-##### Example `cluster master private-service-endpoint allowlist add` command
-{: #cluster-master-private-service-endpoint-allowlist-add-example}
+##### Example `cluster master private-service-endpoint allowlist get` command
+{: #cluster-master-private-service-endpoint-allowlist-get-example}
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist add --cluster mycluster
+ibmcloud oc cluster master private-service-endpoint allowlist get --cluster mycluster
 ```
 {: pre}
 
@@ -4254,7 +4254,6 @@ Minimum required permissions
 :    Optional: Do not show the message of the day or update reminders.
 
 
-**Example commands:**
 * To update all ALB pods in the cluster:
     ```sh
     ibmcloud oc ingress alb update -c mycluster --version 1.1.2_2507_iks
@@ -7379,7 +7378,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 **Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.satelliteshort}}.
 
-**Command options:**
+**Command options**:
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location where you want to create the cluster. To retrieve the location ID or name, run `ibmcloud sat location ls`.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -191,10 +191,10 @@ Storage class encryption is available only for versions `4.10.0` and later of Op
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
+Version 4.11 is currently available for new clusters only. You can't upgrade a 4.10 deployment to 4.11. However, you can continue using ODF version 4.10 in your version 4.11 cluster.
+{: note}
+
 1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. 
-    The add-on supports `n+1` cluster versions. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` option.
-    {: important}
-    
 1. [Review the parameter reference](#odf-vpc-param-ref).
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
@@ -248,7 +248,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     ```
     {: pre}
 
-1. Before you enable the add-on, review the [changelog](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` option when you enable the add-on.
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` option when you enable the add-on.
 
 1. Review the add-on options.
 
@@ -579,7 +579,7 @@ Review the following limitations for deploying ODF.
 Refer to the following parameters when you use the add-on or operator in VPC clusters.
 {: shortdesc}
 
-### Version 4.10 clusters
+### Version 4.10 and 4.11 clusters
 {: #odf-vpc-params-410}
 
 | Parameter | Description | Default value |

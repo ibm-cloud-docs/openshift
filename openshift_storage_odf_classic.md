@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -436,7 +436,10 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
-1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version 4.8.0 of the add-on to an OCP 4.8 or 4.9 cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` option.
+Version 4.11 is currently available for new clusters only. You can't upgrade a 4.10 deployment to 4.11. However, you can continue using ODF version 4.10.
+{: note}
+
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions.
 1. [Review the parameter reference](#odf-classic-param-ref).
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
@@ -631,7 +634,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 Refer to the following OpenShift Data Foundation parameters when you use the add-on or operator in classic clusters.
 {: shortdesc}
 
-### Version 4.10 parameters
+### Version 4.10 and 4.11 parameters
 {: #odf-classic-params-410}
 
 | Parameter | Description | Default value |
