@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-09"
+  years: 2022, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Review information about version 4.11 of {{site.data.keyword.openshiftlong_notm}}, released 31 August 2022. This version is based on Kubernetes version 1.24. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat OpenShift on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_changelog) and the version [4.11 blog](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-4.11){: external}
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_changelog) and the version [4.11 blog](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-4.11){: external}
 {: tip}
 
 
@@ -62,7 +62,7 @@ Cluster autoscaler add-on
 Portworx
 :    Portworx is supported on version 4.11. However, if you have Portworx installed, you must follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx).
 
-OpenShift Data Foundation (ODF)
+{{site.data.keyword.redhat_openshift_notm}} Data Foundation (ODF)
 :    ODF version 4.10 supports {{site.data.keyword.openshiftshort}} version 4.11 clusters. You may continue to use version 4.10 of the ODF add-on.
 
 Extended update support (EUS)
@@ -79,9 +79,9 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | --- | --- |
-| **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.11 deprecated and removed features](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-deprecated-removed-features){: external}. |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.11 deprecated and removed features](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-deprecated-removed-features){: external}. |
 | Known Red Hat OpenShift issues | For more information about possible required actions, review [Red Hat OpenShift version 4.11 known issues](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-known-issues){: external}. |
-| `LegacyServiceAccountTokenNoAutoGeneration` feature gate is enabled | For more information, review possible required actions in the `LegacyServiceAccountTokenNoAutoGeneration is on by default` section of the[OpenShift version 4.11 notable technical changes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-notable-technical-changes). |
+| `LegacyServiceAccountTokenNoAutoGeneration` feature gate is enabled | For more information, review possible required actions in the `LegacyServiceAccountTokenNoAutoGeneration is on by default` section of the[{{site.data.keyword.redhat_openshift_notm}} version 4.11 notable technical changes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-notable-technical-changes). |
 | Red Hat OpenShift web console redirect changed | Cluster server URL no longer redirects to the Red Hat OpenShift web console. You must add `/console` to the URL for the redirect. | 
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.11" caption-side="bottom"}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-04"
 
 keywords: openshift
 
@@ -331,13 +331,17 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
 * Disable TOTP for the account, and continue to use the automatically linked infrastructure credentials for {{site.data.keyword.containerlong_notm}}.
 * Continue to use TOTP, but create an infrastructure API key that {{site.data.keyword.containerlong_notm}} can use to make direct calls to the {{site.data.keyword.cloud_notm}} infrastructure API.
 
-**To disable TOTP MFA for the account:**
+### Disabling TOTP MFA for the account
+{: #disable-totp-mfa-account}
+
 1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}. From the menu bar, select **Manage > Access (IAM)**.
 2. Click the **Settings** page.
 3. Under **Multifactor authentication**, click **Edit**.
 4. Select **None**, and click **Update**.
 
-**To use TOTP MFA and create an infrastructure API key for {{site.data.keyword.containerlong_notm}}:**
+### Using TOTP MFA to create an infrastructure API key for {{site.data.keyword.containerlong_notm}}
+{: #create-api-key-totp-mfa}
+
 1. From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** and click the name of the account owner. **Note**: If you don't use the account owner's credentials, [ensure that the user whose credentials you use has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
 2. In the **API Keys** section, find or create a classic infrastructure API key.
 3. Use the infrastructure API key to set the infrastructure API credentials for {{site.data.keyword.containerlong_notm}}. Repeat this command for each region where you create clusters.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-21"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -227,7 +227,7 @@ Set up a VPC load balancer to expose your app to external requests on the public
 
 When you create a Kubernetes `LoadBalancer` service in your cluster, a VPC load balancer is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. The following diagram illustrates how a user accesses an app's service through the VPC load balancer, even though your worker node is connected to only a private subnet.
 
-![VPC load balancing for an OpenShift cluster.](images/vpc_roks_tutorial_lesson4_lb.png "Title text that shows on hover here"){: caption="Figure 1. VPC load balancing for an OpenShift cluster" caption-side="bottom"}
+![VPC load balancing for an {{site.data.keyword.redhat_openshift_notm}} cluster.](images/vpc_roks_tutorial_lesson4_lb.png "Title text that shows on hover here"){: caption="Figure 1. VPC load balancing for an {{site.data.keyword.redhat_openshift_notm}} cluster" caption-side="bottom"}
 
 Interested in using a {{site.data.keyword.redhat_openshift_notm}} route to expose your app instead? Check out [How does a request via route get to my app in a VPC cluster?](/docs/openshift?topic=openshift-openshift_routes#route_vpc) and [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup).
 {: tip}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, route, router
 
@@ -35,7 +35,7 @@ Not sure whether to use {{site.data.keyword.redhat_openshift_notm}} routes or In
 By default, a {{site.data.keyword.redhat_openshift_notm}} Ingress controller is deployed to your cluster that functions as the ingress endpoint for external network traffic.
 {: shortdesc}
 
-You can use the OpenShift Ingress controller to create routes for your apps. Routes are assigned a publicly or privately accessible hostname from the Ingress controller subdomain that external clients can use to send requests to your app. You can choose to create unsecured or secured routes by using the TLS certificate of the Ingress controller to secure your hostname. When external request reach your hostname, the Ingress controller proxies your request and forwards it to the private IP address that your app listens on.
+You can use the {{site.data.keyword.redhat_openshift_notm}} Ingress controller to create routes for your apps. Routes are assigned a publicly or privately accessible hostname from the Ingress controller subdomain that external clients can use to send requests to your app. You can choose to create unsecured or secured routes by using the TLS certificate of the Ingress controller to secure your hostname. When external request reach your hostname, the Ingress controller proxies your request and forwards it to the private IP address that your app listens on.
 
 The type of Ingress controller that is created by default varies depending on your cluster's infrastructure provider and your service endpoint setup.
 * **Classic clusters / VPC clusters with public cloud service endpoint**: Your cluster is created with a public Ingress controller by default. The Ingress controller assigns publicly accessible routes for your apps and listens for requests to your apps on the public host network interface. When a request is received, the Ingress controller directs the request to the private IP address that the app listens on. If you want to privately expose your apps instead, you must first create a private Ingress controller, and then create private routes.

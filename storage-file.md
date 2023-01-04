@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-16"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift
 
@@ -640,9 +640,8 @@ You successfully created a PV and bound it to a PVC. Cluster users can now [moun
 If you have a stateful app such as a database, you can create stateful sets that use {{site.data.keyword.filestorage_short}} to store your app's data. Alternatively, you can use an {{site.data.keyword.cloud_notm}} database-as-a-service and store your data in the cloud.
 {: shortdesc}
 
-**What do I need to be aware of when adding {{site.data.keyword.filestorage_short}} to a stateful set?**
-
-To add storage to a stateful set, you specify your storage configuration in the `volumeClaimTemplates` section of your stateful set YAML. The `volumeClaimTemplates` is the basis for your PVC and can include the storage class and the size or IOPS of your {{site.data.keyword.filestorage_short}} that you want to provision. However, if you want to include labels in your `volumeClaimTemplates`, Kubernetes does not include these labels when creating the PVC. Instead, you must add the labels directly to your stateful set.
+What do I need to be aware of when adding {{site.data.keyword.filestorage_short}} to a stateful set?
+:   To add storage to a stateful set, you specify your storage configuration in the `volumeClaimTemplates` section of your stateful set YAML. The `volumeClaimTemplates` is the basis for your PVC and can include the storage class and the size or IOPS of your {{site.data.keyword.filestorage_short}} that you want to provision. However, if you want to include labels in your `volumeClaimTemplates`, Kubernetes does not include these labels when creating the PVC. Instead, you must add the labels directly to your stateful set.
 
 You can't deploy two stateful sets at the same time. If you try to create a stateful set before a different one is fully deployed, then the deployment of your stateful set might lead to unexpected results.
 {: important}
@@ -1135,7 +1134,8 @@ To change the default NFS version, you can either create a new storage class to 
 To apply the latest security updates and for a better performance, use the default NFS version and don't change to an older NFS version.
 {: important}
 
-**To create a customized storage class with a specific NFS version:**
+### Creating a customized storage class with a specific NFS version
+{: #custom-sc-nfs-creat}
 
 1. Create a [customized storage class](#nfs_version_class) with the NFS version that you want to provision.
 
@@ -1155,7 +1155,8 @@ To apply the latest security updates and for a better performance, use the defau
 
 4. Provision [{{site.data.keyword.filestorage_short}}](#add_file) with your customized storage class.
 
-**To change your existing PV to use a different NFS version:**
+### Changing your existing PV to use a different NFS version
+{: #changing-pv-nfs}
 
 1. Get the PV of the {{site.data.keyword.filestorage_short}} where you want to change the NFS version and note the name of the PV.
 

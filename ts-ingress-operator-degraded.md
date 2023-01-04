@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ XXX.us-south.containers.appdomain.cloud: Get "http://image-registry-openshift-im
 ```
 {: screen}
 
-**Example `nslookup` error**
+Example `nslookup` error.
 ```sh
 # nslookup XXX.XXX.databases.appdomain.cloud
 Server:        XXX.XX.X.XX

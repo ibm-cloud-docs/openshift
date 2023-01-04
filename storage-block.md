@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-16"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift
 
@@ -404,11 +404,10 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
         ```
         {: pre}
 
-**Next steps**
-Choose between the following options to create a {{site.data.keyword.blockstorageshort}} instance that encrypts data with your root key:
+15. Choose between the following options to create a {{site.data.keyword.blockstorageshort}} instance that encrypts data with your root key.
 
-* [Create a custom storage class that references your {{site.data.keyword.keymanagementserviceshort}} secret](#encrypt_custom_sc).
-* [Define the secret in a PVC and use one of the provided storage classes](#pvc_encrypt_label).
+    * [Create a custom storage class that references your {{site.data.keyword.keymanagementserviceshort}} secret](#encrypt_custom_sc).
+    * [Define the secret in a PVC and use one of the provided storage classes](#pvc_encrypt_label).
 
 
 ### Encrypting volume data by using a custom storage class

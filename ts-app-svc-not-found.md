@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift
 
@@ -43,10 +43,11 @@ To bind services to a cluster, you must have the Cloud Foundry developer user ro
 
 In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platform access to {{site.data.keyword.containerlong_notm}}. To access the service instance, you must be logged in to the space where the service instance is provisioned.
 
-
-
-**As a user in the cluster:**
+Complete the following steps based on your role.
 {: tsResolve}
+
+## Cluster user
+{: #service-bind-cluster-user}
 
 1. Log in to {{site.data.keyword.cloud_notm}}.
     ```sh
@@ -68,7 +69,8 @@ In addition, you must have the {{site.data.keyword.cloud_notm}} IAM Editor platf
 
 4. Try binding the service again. If you get the same error, then contact the account administrator and verify that you have sufficient permissions to bind services (see the following account admin steps).
 
-**As the account admin:**
+## As the account admin
+{: #service-bind-account-admin}
 
 1. Verify that the user who experiences this problem has [Editor permissions for {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-users#checking-perms).
 

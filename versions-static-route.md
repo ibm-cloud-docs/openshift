@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-04"
 
 keywords: openshift, static route, add-on
 
@@ -38,8 +38,9 @@ Review the supported versions of the static route add-on. In the CLI, you can ru
 {: #100_649}
 
 **Previous version:** 1.0.0_572 **Current version:** 1.0.0_649
-**Updates in this version:**
-- Uses `apiextensions.k8s.io/v1` instead of `apiextensions.k8s.io/v1beta1`.
+
+Updates in this version
+:   Uses `apiextensions.k8s.io/v1` instead of `apiextensions.k8s.io/v1beta1`.
 
 
 

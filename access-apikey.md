@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift
 
@@ -181,9 +181,8 @@ To ensure that all infrastructure-related actions can be completed in the cluste
 Determine whether your account has access to the IBM Cloud infrastructure portfolio and learn about how {{site.data.keyword.openshiftlong_notm}} uses the API key to access the portfolio.
 {: shortdesc}
 
-**Does the classic or VPC infrastructure provider for my cluster affect what access I need to the portfolio?**
-
-Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in classic and VPC clusters. Infrastructure resources for classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. Usually, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic {{site.data.keyword.cloud_notm}} infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles).
+Does the classic or VPC infrastructure provider for my cluster affect what access I need to the portfolio?
+:   Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in classic and VPC clusters. Infrastructure resources for classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. Usually, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic {{site.data.keyword.cloud_notm}} infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles).
 
 VPC infrastructure resources are integrated into IAM and as such, you must have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role to the [**VPC Infrastructure** service](/docs/vpc?topic=vpc-iam-getting-started) to create and list VPC resources.
 
@@ -192,9 +191,8 @@ For both [classic and VPC clusters](/docs/openshift?topic=openshift-infrastructu
 Unlike classic, VPC does not support manually setting infrastructure credentials (`ibmcloud oc credential set`) to use another IBM Cloud infrastructure account to provision worker nodes. You must use your {{site.data.keyword.cloud_notm}} account's linked infrastructure account.
 {: important}
 
-**Does my account already have access to the IBM Cloud infrastructure portfolio?**
-
-To access the IBM Cloud infrastructure portfolio, you use an {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account. If you have a different type of account, view your options in the following list.
+Does my account already have access to the IBM Cloud infrastructure portfolio?
+:   To access the IBM Cloud infrastructure portfolio, you use an {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account. If you have a different type of account, view your options in the following list.
 
 Lite accounts
 : Lite accounts can't provision clusters. To create a standard cluster, upgrade your Lite account to an {{site.data.keyword.cloud_notm}} [Pay-As-You-Go](/docs/account?topic=account-accounts#paygo) or [Subscription](/docs/account?topic=account-accounts#subscription-account) account.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-14"
+  years: 2014, 2023
+lastupdated: "2023-01-04"
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Installing the OpenShift CLI
+# Installing the {{site.data.keyword.redhat_openshift_notm}} CLI
 {: #openshift-cli}
 
 You can use the {{site.data.keyword.openshiftlong}} command line interface (CLI) plug-in (`ibmcloud oc`) to create and manage your {{site.data.keyword.redhat_openshift_notm}} cluster infrastructure, such as creating clusters and worker nodes. Then, you can use the {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) to manage the resources within your {{site.data.keyword.redhat_openshift_notm}} cluster, such as projects, pods, and deployments. To use the API, see [Setting up the API](/docs/openshift?topic=openshift-cs_api_install).
