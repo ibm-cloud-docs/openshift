@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-05"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -126,44 +126,46 @@ To set up a monitoring configuration for your cluster:
 1. Create an [{{site.data.keyword.mon_full_notm}} service instance](/docs/monitoring?topic=monitoring-provision) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
 2. Set up a monitoring configuration for your cluster. When you create the monitoring configuration, an {{site.data.keyword.redhat_openshift_notm}} project `ibm-observe` is created and a {{site.data.keyword.mon_short}} agent is deployed as a Kubernetes daemon set to all worker nodes in your cluster. This agent collects cluster and pod metrics, such as the worker node CPU and memory usage, or the amount incoming and outgoing network traffic to your pods.
 
-    - **From the console**
-        1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.mon_short}} configuration.
-        2. On the cluster **Overview** page, click **Connect**.
-        3. Select the region and the {{site.data.keyword.mon_full_notm}} service instance that you created earlier, and click **Connect**.
+    In the console.
+    
+    1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to create a {{site.data.keyword.mon_short}} configuration.
+    2. On the cluster **Overview** page, click **Connect**.
+    3. Select the region and the {{site.data.keyword.mon_full_notm}} service instance that you created earlier, and click **Connect**.
 
-    - **From the CLI**
-        1. Create the {{site.data.keyword.mon_short}} configuration. When you create the {{site.data.keyword.mon_short}} configuration, the access key that was last added is retrieved automatically. If you want to use a different access key, add the `--sysdig-access-key <access_key>` option to the command.
+    In the CLI.
+    
+    1. Create the {{site.data.keyword.mon_short}} configuration. When you create the {{site.data.keyword.mon_short}} configuration, the access key that was last added is retrieved automatically. If you want to use a different access key, add the `--sysdig-access-key <access_key>` option to the command.
 
-            To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
-            {: tip}
+        To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
+        {: tip}
 
-            ```sh
-            ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID>
-            ```
-            {: pre}
+        ```sh
+        ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID>
+        ```
+        {: pre}
 
-            Example output
-            ```sh
-            Creating configuration...
-            OK
-            ```
-            {: screen}
+        Example output
+        ```sh
+        Creating configuration...
+        OK
+        ```
+        {: screen}
 
-        2. Verify that the monitoring configuration was added to your cluster.
-            ```sh
-            ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>
-            ```
-            {: pre}
+    2. Verify that the monitoring configuration was added to your cluster.
+        ```sh
+        ibmcloud ob monitoring config list --cluster <cluster_name_or_ID>
+        ```
+        {: pre}
 
-            Example output
-            ```sh
-            Listing configurations...
+        Example output
+        ```sh
+        Listing configurations...
 
-            OK
-            Instance Name                Instance ID                            CRN   
-            IBM Cloud Monitoring-aaa     1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:sysdig:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
-            ```
-            {: screen}
+        OK
+        Instance Name                Instance ID                            CRN   
+        IBM Cloud Monitoring-aaa     1a111a1a-1111-11a1-a1aa-aaa11111a11a   crn:v1:prod:public:sysdig:us-south:a/a11111a1aaaaa11a111aa11a1aa1111a:1a111a1a-1111-11a1-a1aa-aaa11111a11a::  
+        ```
+        {: screen}
 
 3. Optional: Verify that the {{site.data.keyword.mon_short}} agent was set up successfully.
     1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).

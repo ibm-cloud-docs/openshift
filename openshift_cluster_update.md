@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-05"
 
 keywords: openshift, version, upgrade, update
 
@@ -71,7 +71,7 @@ To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _min
 2. Review any [Kubernetes helpful warnings](https://kubernetes.io/blog/2020/09/03/warnings/){: external}, such as deprecation notices.
 3. Check the add-ons and plug-ins that are installed in your cluster for any impact that might be caused by updating the cluster version.
 
-    * **Checking add-ons**
+    * Checking add-ons
         1. List the add-ons in the cluster.
             ```sh
             ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
@@ -86,7 +86,7 @@ To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _min
 
         3. If the add-on must be updated to run in the {{site.data.keyword.redhat_openshift_notm}} version that you want to update your cluster to, [update the add-on](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
 
-    * **Checking plug-ins**
+    * Checking plug-ins
         1. In the [Helm catalog](https://cloud.ibm.com/kubernetes/helm){: external}, find the plug-ins that you installed in your cluster.
         2. From the side menu, expand the **SOURCES & TAR FILE** section.
         3. Download and open the source code.
