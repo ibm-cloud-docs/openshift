@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-05"
 
 keywords: object storage, plug-in, changelog
 
@@ -27,8 +27,9 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.7 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.6 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.5 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.5 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.4 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.3 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.2 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -62,6 +63,16 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.0.6 | Deprecated | 4.3 - 4.6 | x86 | 
 | 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.7, released 5 January 2023
+{: #0227_object_plugin}
+
+- Renames `flex` StorageClasses to `Smart` StorageClasses
+- Updates GoLang to `1.18.9`
+- Resolves [CVE-2022-41717](https://nvd.nist.gov/vuln/detail/CVE-2022-41717){: external} and [CVE-2022-41720](https://nvd.nist.gov/vuln/detail/CVE-2022-41720){: external}
+
+Because this change affects storage classes, you must uninstall and reinstall the 2.2.7 chart so the new storage classes are created in your cluster. This change is not automatically applied to existing PVCs and pods. You must create new PVCs with the new storage classes for the changes to take effect.
+{: important}
 
 ## Change log for version 2.2.6, released 15 December 2022
 {: #0226_object_plugin}

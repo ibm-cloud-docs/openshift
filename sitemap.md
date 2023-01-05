@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-05"
 
 keywords: openshift
 subcollection: openshift
@@ -240,6 +240,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
+
+    * [5 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0523)
+
+        * Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.7` is available.
 
     * [2 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0223)
 
@@ -6976,6 +6982,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.7, released 5 January 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0227_object_plugin)
 
 * [Change log for version 2.2.6, released 15 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0226_object_plugin)
 
