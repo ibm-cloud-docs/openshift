@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -30,7 +30,8 @@ Keep in mind the following requirements when you use the {{site.data.keyword.clo
 
 {{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
 
-**Supported infrastructure**: Classic clusters only
+[Classic infrastructure]{: tag-classic-inf}
+
 
 The steps on this page apply to classic clusters only. On VPC clusters, the {{site.data.keyword.block_storage_is_short}} add-on is installed by default. For more information, see [Storing data on Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block).
 {: important}

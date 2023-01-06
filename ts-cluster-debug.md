@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -22,12 +22,10 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Review the options to debug your clusters and find the root causes for failures.
 {: shortdesc}
-
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 1. List your cluster and find the `State` of the cluster.
 

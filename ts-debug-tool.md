@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -22,12 +22,11 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run tests and gather pertinent information from your cluster.
 {: shortdesc}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 ## Enabling the Diagnostics and Debug Tool add-on
 {: #debug-tool-enable}

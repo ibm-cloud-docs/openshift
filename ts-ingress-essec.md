@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-01"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, essec
 
@@ -20,10 +20,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
-:   {{site.data.keyword.satelliteshort}}
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 When you check the status of your cluster's Ingress components by running the `ibmcloud oc ingress status-report get` command, you see an error similar to the following example.
 {: tsSymptoms}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -19,9 +19,7 @@ content-type: troubleshoot
 {: #vpc_lb_healthcheck}
 {: support}
 
-**Supported infrastructure provider and versions**:
-* VPC
-* {{site.data.keyword.redhat_openshift_notm}} version 4 clusters
+[Virtual Private Cloud]{: tag-vpc}
 
 
 In the [Load balancers for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/loadBalancers){: external}, you view the details of the VPC load balancer that exposes your cluster's Ingress controller.

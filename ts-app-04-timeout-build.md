@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-11-11"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -20,9 +20,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 
 You try to push an image to the [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry), but sporadically you see an error message similar to the following.
@@ -35,7 +33,6 @@ received unexpected HTTP status: 504 Gateway Time-out
 
 The default file storage device that provides the storage for the internal registry's images is initially set up with 2 IOPS and 20 GB of storage. When you push larger images, the device might time out because its IOPS is too low to support the image.
 {: tsCauses}
-
 
 [Change the size and IOPS of the existing file storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration).
 {: tsResolve}

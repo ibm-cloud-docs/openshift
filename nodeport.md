@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, app access
 
@@ -18,6 +18,8 @@ subcollection: openshift
 
 # Testing access to apps with NodePorts
 {: #nodeport}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 Make your containerized app available to internet access by using the public IP address of any worker node in a {{site.data.keyword.redhat_openshift_notm}} cluster and exposing a NodePort. Use this option for testing in {{site.data.keyword.openshiftlong}} and for short-term public access.
 {: shortdesc}
@@ -157,11 +159,6 @@ To use a NodePort,
 {: #nodeport-restrict-access}
 
 By default, NodePort services are accessible on all network interfaces that are available to the cluster, for example `0.0.0.0`. Depending on your cluster setup, you might want to limit the available network interfaces for your services, for example in {{site.data.keyword.satelliteshort}} locations where multiple networks are available to the hosts. 
-
-Supported infrastructure providers
-:   Classic
-:   VPC
-:   {{site.data.keyword.satelliteshort}}
 
 You can restrict the listening addresses for NodePort services at the cluster level. This restriction allows the cluster administrator to limit access to a specific network interface by using the IP subnet as the allowed listening address range. Complete the following steps reconfigure the `kube-proxy` component to limit the listening address range for your NodePort services.
 

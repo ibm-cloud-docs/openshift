@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-11-11"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -20,9 +20,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
 
 
 When you are running an `oc` command such as `oc get nodes` or `oc get secrets`, you see an error message similar to the following.

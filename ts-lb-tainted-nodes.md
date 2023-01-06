@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -21,8 +21,8 @@ content-type: troubleshoot
 {: #cs_source_ip_fails_lb}
 {: support}
 
-Infrastructure provider
-:   Classic
+[Classic infrastructure]{: tag-classic-inf}
+
 
 
 In a classic cluster, you enabled source IP preservation for a [version 1.0 load balancer](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip) service by changing `externalTrafficPolicy` to `Local` in the service's configuration file.

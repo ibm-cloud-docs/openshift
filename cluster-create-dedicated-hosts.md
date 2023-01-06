@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-14"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, clusters, dedicated hosts
 
@@ -19,8 +19,7 @@ subcollection: openshift
 # Creating clusters on dedicated hosts for VPC
 {: #cluster-create-dedicated-hosts}
 
-Supported infrastructure providers
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} 
 
 
 Follow the steps to create a dedicated host in a dedicated host pool. Then, provision a cluster on your dedicated host infrastructure.

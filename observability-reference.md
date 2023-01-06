@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -31,6 +31,8 @@ Looking for `ibmcloud oc` commands? See the [{{site.data.keyword.openshiftlong_n
 ### `ibmcloud ob logging agent discover`
 {: #logging_agent_discover}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Discover {{site.data.keyword.la_short}} agents that you manually installed in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, and make this logging configuration visible to the plug-in so that you can use the observability plug-in commands and functions in the {{site.data.keyword.cloud_notm}} console to manage this configuration.
 {: shortdesc}
 
@@ -39,9 +41,6 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -61,6 +60,8 @@ Supported infrastructure providers
 ### `ibmcloud ob logging config create`
 {: #logging_config_create}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Create a logging configuration for your cluster to automatically collect pod logs and send them to {{site.data.keyword.la_full_notm}}.
 {: shortdesc}
 
@@ -70,10 +71,6 @@ This command deploys a {{site.data.keyword.la_short}} agent as a Kubernetes daem
 ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE [--logdna-ingestion-key INGESTION_KEY] [--private-endpoint]  
 ```
 {: pre}
-
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -104,6 +101,8 @@ ibmcloud ob logging config create --cluster mycluster --instance mylogna
 ### `ibmcloud ob logging config delete`
 {: #logging_config_delete}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Delete a {{site.data.keyword.la_short}} configuration from your cluster.
 {: shortdesc}
 
@@ -119,10 +118,6 @@ When you delete the logging configuration, the components that are deleted depen
 ibmcloud ob logging config delete --cluster CLUSTER --instance LOGGING_INSTANCE
 ```
 {: pre}
-
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -147,6 +142,8 @@ ibmcloud ob logging config delete --cluster mycluster --instance mylogginginstan
 ### `ibmcloud ob logging config list`
 {: #logging_config_list}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 List all {{site.data.keyword.la_short}} configurations that were created for your cluster with the {{site.data.keyword.openshiftlong_notm}} observability plug-in.
 {: shortdesc}
 
@@ -158,10 +155,6 @@ To list logging configurations that you manually set up without using the {{site
 ibmcloud ob logging config list --cluster CLUSTER
 ```
 {: pre}
-
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**: 
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
@@ -179,6 +172,8 @@ Supported infrastructure providers
 ### `ibmcloud ob logging config enable public-endpoint|private-endpoint`
 {: #logging_config_enable}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Use the public or private cloud service endpoint to send data from your cluster to your {{site.data.keyword.la_short}} service instance.
 {: shortdesc}
 
@@ -190,9 +185,6 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -215,6 +207,8 @@ Supported infrastructure providers
 ### `ibmcloud ob logging config replace`
 {: #logging_config_replace}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Replace the {{site.data.keyword.la_full_notm}} service instance or ingestion key that you use in your {{site.data.keyword.la_short}} configuration.
 {: shortdesc}
 
@@ -230,9 +224,6 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance LOGGING_INSTANCE
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -257,6 +248,8 @@ Supported infrastructure providers
 ### `ibmcloud ob logging config show`
 {: #logging_config_show}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Show the details of a {{site.data.keyword.la_short}} configuration.
 {: shortdesc}
 
@@ -268,9 +261,6 @@ ibmcloud ob logging config show --cluster CLUSTER --instance LOGGING_INSTANCE
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}. 
@@ -292,6 +282,8 @@ Supported infrastructure providers
 ### `ibmcloud ob monitoring agent discover`
 {: #monitoring_agent_discover}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Discover {{site.data.keyword.mon_short}} agents that you manually installed in your cluster without using the {{site.data.keyword.openshiftlong_notm}} observability plug-in, and make this monitoring configuration visible to the plug-in so that you can use the observability plug-in commands and functionality in the {{site.data.keyword.cloud_notm}} console to manage this configuration.
 {: shortdesc}
 
@@ -300,9 +292,6 @@ ibmcloud ob monitoring agent discover --cluster CLUSTER [--instance MONITORING_I
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -322,6 +311,8 @@ Supported infrastructure providers
 ### `ibmcloud ob monitoring config create`
 {: #monitoring_config_create}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Create a monitoring configuration for your cluster to automatically collect cluster and pod metrics, and send them to {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}
 
@@ -332,9 +323,6 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -365,6 +353,8 @@ ibmcloud ob monitoring config create --cluster mycluster --instance mymonitoring
 ### `ibmcloud ob monitoring config delete`
 {: #monitoring_config_delete}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Delete a {{site.data.keyword.mon_short}} configuration from your cluster.
 {: shortdesc}
 
@@ -381,9 +371,6 @@ ibmcloud ob monitoring config delete --cluster CLUSTER --instance MONITORING_INS
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -408,6 +395,8 @@ ibmcloud ob monitoring config delete --cluster mycluster --instance mymonitoring
 ### `ibmcloud ob monitoring config list`
 {: #monitoring_config_list}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 List all {{site.data.keyword.mon_short}} configurations that were created for your cluster with the {{site.data.keyword.openshiftlong_notm}} observability plug-in.
 {: shortdesc}
 
@@ -420,9 +409,6 @@ ibmcloud ob monitoring config list --cluster CLUSTER
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**: 
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.
@@ -439,6 +425,8 @@ Supported infrastructure providers
 ### `ibmcloud ob monitoring config enable public-endpoint|private-endpoint`
 {: #monitoring_config_enable}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Use the public or private cloud service endpoint to send metrics from your cluster to your {{site.data.keyword.mon_short}} service instance.
 {: shortdesc}
 
@@ -450,9 +438,6 @@ ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster 
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -475,6 +460,8 @@ Supported infrastructure providers
 ### `ibmcloud ob monitoring config replace`
 {: #monitoring_config_replace}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Replace the {{site.data.keyword.mon_full_notm}} service instance or service access key that you use in your {{site.data.keyword.mon_short}} configuration.
 {: shortdesc}
 
@@ -490,9 +477,6 @@ ibmcloud ob logging config replace --cluster CLUSTER --instance MONITORING_INSTA
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
@@ -517,6 +501,8 @@ Supported infrastructure providers
 ### `ibmcloud ob monitoring config show`
 {: #monitoring_config_show}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Show the details of a {{site.data.keyword.mon_short}} configuration.
 {: shortdesc}
 
@@ -528,9 +514,6 @@ ibmcloud ob monitoring config show --cluster CLUSTER --instance MONITORING_INSTA
 ```
 {: pre}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 **Minimum required permissions**: 
 - **Administrator** platform access role and **Manager** service access role for the `ibm-observe` Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -13,14 +13,11 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
 # Classic clusters: Why does the master status have an ingress IP address for NLB error?
 {: #rhoks_ts_openvpn_subnet}
 {: support}
 
-Infrastructure provider
-:   Classic
+[Classic infrastructure]{: tag-classic-inf}
 
 
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>`, you see the following error message in the **Master Status** field.

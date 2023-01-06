@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -18,6 +18,8 @@ subcollection: openshift
 
 # Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles
 {: #pod-iam-identity}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 Give application pods that run in your {{site.data.keyword.openshiftlong}} cluster access to {{site.data.keyword.cloud_notm}} services by creating a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).  
 {: shortdesc}
@@ -39,12 +41,6 @@ In your cluster
 
 To use {{site.data.keyword.cloud_notm}} IAM identities for pods in your cluster, verify that you meet the prerequisites.
 {: shortdesc}
-
-Supported infrastructure providers
-
-- VPC  
-- Classic  
-- {{site.data.keyword.satelliteshort}}
 
 
 Minimum required permissions

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-14"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, app protocol, application protocol
 
@@ -99,7 +99,6 @@ Expose your app to the public or to the private network by setting up a [public]
 Expose your app to public network traffic by setting up a Kubernetes `LoadBalancer` service in each zone of your cluster. When you create the Kubernetes `LoadBalancer` service, a public Network Load Balancer for VPC (VPC NLB) that routes requests to your app is automatically created for you in your VPC outside of your cluster.
 {: shortdesc}
 
-**Before you begin**:
 * VPC NLBs can be created only in VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -112,7 +111,6 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 * When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made quickly. 
 
 
-**To enable your app to receive public requests:**
 
 1. [Deploy your app to the cluster](/docs/containers?topic=containers-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
@@ -528,8 +526,6 @@ For example, say that you have a multizone cluster, and run replicas of your app
 After you create a DNS subdomain for VPC NLBs, you can't use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC health check is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-nlb-health-checks).
 {: note}
 
-Before you begin
-
 - [Create one VPC NLB](#setup_vpc_nlb) per zone for your app. Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC NLB.
 - To use the SSL certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
 
@@ -645,7 +641,7 @@ To enable your app to receive public or private requests,
     {: codeblock}
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`
-    :   VPC and {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external}.
+    :   Virtual Private Cloud and {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later: Annotation to enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external}.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
     :   Annotation to specify a service that accepts public or private requests. If you don't include this annotation, a public `LoadBalancer` is created.

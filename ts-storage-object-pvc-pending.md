@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -22,10 +22,7 @@ content-type: troubleshoot
 {: #cos_pvc_pending}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
-
+[
 
 This troubleshooting topic applies only to {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
 {: note}

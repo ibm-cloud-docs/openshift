@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -13,15 +13,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
 # Why is the status of my OpenShift Data Foundation storage cluster stuck at `Failed to reconcile`.
 {: #ts-ocs-roks-debug}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 
 ## ODF device set creation fails due to PVC names exceeding the Kubernetes character limit
 {: #ocs-ts-sc-character-limit}

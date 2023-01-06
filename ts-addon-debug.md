@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -21,12 +21,13 @@ content-type: troubleshoot
 {: #debug_addons}
 {: support}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 As you use {{site.data.keyword.openshiftlong}}, consider these techniques for troubleshooting [managed add-ons](/docs/openshift?topic=openshift-managed-addons), such as HPCS Router.
 {: shortdesc}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+
+
 
 You can check the health state and status of a cluster add-on by running the following command.
 

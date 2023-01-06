@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-11"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -19,8 +19,7 @@ content-type: troubleshoot
 {: #ts-openshift-marketplace}
 {: support}
 
-Supported infrastructure provider
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} 
 
 
 In VPC clusters with worker nodes in a VPC subnet that doesn't have a public gateway, the pods in the `openshift-markeplace` namespace show a state of `ImagePullBackOff` and cannot reach `Running` state.

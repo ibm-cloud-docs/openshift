@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2021, 2022
-lastupdated: "2022-12-01"
+  years: 2021, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -22,9 +22,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 You experience issues with Calico components such as pods that don't deploy or intermittent networking issues. 
 {: tsSymptoms}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -168,8 +168,8 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 ## Unable to create or delete worker nodes due to incorrect account error
 {: #orphaned}
 
-Supported infrastructure provider
-:   Classic
+[Classic infrastructure]{: tag-classic-inf}
+
 
 
 You can't manage worker nodes for your cluster or view the cluster worker nodes in your classic IBM Cloud infrastructure account. However, you can update and manage other clusters in the account.
@@ -301,8 +301,8 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
 ## Unable to create or delete worker nodes due to paid account or one time password error
 {: #cs_totp}
 
-Infrastructure provider
-:   Classic
+[Classic infrastructure]{: tag-classic-inf}
+
 
 
 You can't manage worker nodes for your cluster, and you receive an error message similar to one of the following examples.

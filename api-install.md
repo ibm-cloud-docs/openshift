@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-16"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, api
 
@@ -53,7 +53,7 @@ Supported container platforms
 :    v1 API: To use the {{site.data.keyword.redhat_openshift_notm}} API to manage {{site.data.keyword.redhat_openshift_notm}} and Kubernetes resources within the cluster, such as pods or namespaces, you must log in by exchanging an {{site.data.keyword.cloud_notm}} API key for a {{site.data.keyword.redhat_openshift_notm}} access token. See [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 :    v2 API: Same as `v1`; see [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 
-Supported infrastructure providers
+Supported APIs by infrastructure type
 :    v1 API: `classic`
 :    v2 API: `vpc` and `classic`
      - The `vpc` provider is designed to support multiple VPC subproviders. The supported VPC subprovider is `vpc-gen2`, which corresponds to a VPC cluster for Generation 2 compute resources.

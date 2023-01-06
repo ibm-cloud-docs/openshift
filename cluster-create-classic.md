@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-05"
+lastupdated: "2023-01-06"
 
 keywords: openshift, clusters, classic, create
 
@@ -17,11 +17,11 @@ subcollection: openshift
 # Creating classic clusters
 {: #cluster-create-classic}
 
+[Classic infrastructure]{: tag-classic-inf}
+
+
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a fully customizable standard cluster with your choice of hardware isolation and access to features like multiple worker nodes for a highly available environment.
 {: shortdesc}
-
-Supported infrastructure providers
-:   Classic
 
 
 

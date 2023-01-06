@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -21,9 +21,7 @@ content-type: troubleshoot
 {: #cs_cluster_access}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 You are not able to find a cluster. When you run `ibmcloud oc cluster ls`, the cluster is not listed in the output.
 {: tsSymptoms}

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-06"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, clusters, delete, remove
 
@@ -19,13 +19,10 @@ subcollection: openshift
 # Removing clusters
 {: #remove}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 Clusters that are created with a billable account must be removed manually when they are not needed anymore so that those clusters are no longer consuming resources.
 {: shortdesc}
-
-Supported infrastructure providers
-:   Classic
-:   VPC
-:   {{site.data.keyword.satelliteshort}}
 
 When you delete the cluster, all worker nodes, apps, and containers are permanently deleted. This action can't be undone. Before you proceed, make sure to back up all required data and configuration files.
 {: important}

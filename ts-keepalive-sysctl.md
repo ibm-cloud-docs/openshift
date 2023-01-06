@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-01"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, keepalive, TCP
 
@@ -21,9 +21,7 @@ content-type: troubleshoot
 {: #ts-keepalive-sysctl}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 When a pod has long running TCP connections and the pod is idle for a period of time, it occasionally gets disconnected.
 {: tsSymptoms}

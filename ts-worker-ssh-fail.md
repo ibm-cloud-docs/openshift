@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -21,11 +21,7 @@ content-type: troubleshoot
 {: #cs_ssh_worker}
 {: support}
 
-
-**Infrastructure provider**:
-
-- Classic
-- VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 
 You can't access your worker node by using an SSH connection.

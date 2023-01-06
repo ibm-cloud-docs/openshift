@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-11-11"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
 
@@ -24,8 +24,7 @@ You can tune your Red Hat CoreOS worker node performance by enabling CPU Pinning
 These configurations can be beneficial for applications that have strict performance requirements. However, these customizations might cause issues with scheduling workloads.
 {: note}
 
-Supported infrastructure providers
-:   {{site.data.keyword.satelliteshort}}
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 Supported worker node operating systems
 :   Red Hat CoreOS (`RHCOS`)

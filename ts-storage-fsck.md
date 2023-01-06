@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-01"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, fsck
 
@@ -21,8 +21,8 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Supported infrastructure providers
-:   Classic
+[Classic infrastructure]{: tag-classic-inf}
+
 
 When you view pod logs for pods that are using {{site.data.keyword.blockstorageshort}}, you see an error similar to the following example.
 {: tsSymptoms}

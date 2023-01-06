@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, block storage, pod identity, trusted profiles
 
@@ -17,11 +17,10 @@ subcollection: openshift
 # Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on
 {: #storage-block-vpc-trusted-profiles}
 
+[Virtual Private Cloud]{: tag-vpc} 
+
 You can use trusted profiles to limit the access that running pods in your cluster have to other resources in your account or cluster. For more information about trusted profiles, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile).
 {: shortdesc}
-
-Supported infrastructure provider
-:   VPC
 
 ## Enabling the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-enable-trusted}

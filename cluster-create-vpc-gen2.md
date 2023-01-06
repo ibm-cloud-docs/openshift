@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-21"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -20,11 +20,10 @@ subcollection: openshift
 # Creating VPC clusters
 {: #cluster-create-vpc-gen2}
 
+[Virtual Private Cloud]{: tag-vpc} 
+
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
-
-Supported infrastructure providers
-:   VPC
 
 Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 {: important}

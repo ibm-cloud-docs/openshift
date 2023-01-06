@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -22,8 +22,9 @@ content-type: troubleshoot
 {: support}
 
 
-Infrastructure provider
-:   Classic
+
+[Classic infrastructure]{: tag-classic-inf}
+
 
 
 When you use `ibmcloud oc worker` commands with your bare metal worker node, you see a message similar to the following.

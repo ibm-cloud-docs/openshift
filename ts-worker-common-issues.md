@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -21,13 +21,10 @@ content-type: troubleshoot
 {: #common_worker_nodes_issues}
 {: support}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 Review common error messages and learn how to resolve them. Messages might begin with the prefix, `'<provider>' infrastructure exception:`, where `<provider>` identifies which infrastructure provider the worker node uses.
 {: shortdesc}
-
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 ## Account prohibited from ordering
 {: #order-prohibit}
