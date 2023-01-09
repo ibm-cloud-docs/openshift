@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-09"
 
 keywords: openshift, deploy
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # Planning app deployments
 {: #plan_deploy}
 
-Before you deploy an app to an {{site.data.keyword.openshiftlong}} cluster, decide how you want to set up your app so that your app can be accessed properly and be integrated with other services in {{site.data.keyword.cloud_notm}}.
+Before you deploy an app to a {{site.data.keyword.openshiftlong}} cluster, decide how you want to set up your app so that your app can be accessed properly and be integrated with other services in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ## Moving workloads to {{site.data.keyword.openshiftlong_notm}}
@@ -187,7 +187,7 @@ With Kubernetes, you declare many types of objects in YAML configuration files s
 ### I thought that I needed to put my app in a container. Now what's all this stuff about pods?
 {: #deploy_pods}
 
-A [pod](https://kubernetes.io/docs/concepts/workloads/pods/){: external} is the smallest deployable unit that Kubernetes can manage. You put your container (or a group of containers) into a pod and use the pod configuration file to tell the pod how to run the container and share resources with other pods. All containers that you put into a pod run in a shared context, which means that they share the same virtual or physical machine.
+A [pod](https://kubernetes.io/docs/concepts/workloads/pods/){: external} is the smallest deployable unit that Kubernetes can manage. You put your container (or a group of containers) into a pod and use the pod configuration file to tell the pod how to run the container and share resources with other pods. All containers that you put into a pod run in a shared context, which means that they share the virtual or physical machine.
 {: shortdesc}
 
 What to put in a container
@@ -196,7 +196,7 @@ What to put in a container
 What to put in a pod
 :   The containers for your app don't always have to be in the same pod. In fact, if you have a component that is stateful and difficult to scale, such as a database service, put it in a different pod that you can schedule on a worker node with more resources to handle the workload. If your containers work correctly if they run on different worker nodes, then use multiple pods. If they need to be on the same machine and scale together, group the containers into the same pod.
 
-### So if I can just use a pod, why do I need all these different types of objects?
+### So if I can use a pod, why do I need all these different types of objects?
 {: #deploy_objects}
 
 Creating a pod YAML file is easy. You can write one with just a few lines as follows.
@@ -242,7 +242,7 @@ spec:
 
 You can keep adding features, such as pod anti-affinity or resource limits, all in the same YAML file.
 
-For a more detailed explanation of different features that you can add to your deployment, take a look at [Making your app deployment YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml).
+For a more detailed explanation of different features that you can add to your deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml).
 {: tip}
 
 ### What type of Kubernetes objects can I make for my app?
@@ -257,18 +257,18 @@ The following table describes why you might create different types of Kubernetes
 
 | Object | Description |
 | --- | --- |
-| [`Pod`](https://kubernetes.io/docs/concepts/workloads/pods/){: external} | A pod is the smallest deployable unit for your workloads, and can hold a single or multiple containers. Similar to containers, pods are designed to be disposable and are often used for unit testing of app features. To avoid downtime for your app, consider deploying pods with a Kubernetes controller, such as a deployment. A deployment helps you to manage multiple pods, replicas, pod scaling, rollouts, and more. |
+| [`Pod`](https://kubernetes.io/docs/concepts/workloads/pods/){: external} | A pod is the smallest deployable unit for your workloads, and can hold a single or multiple containers. Similar to containers, pods are disposable and are often used for unit testing of app features. To avoid downtime for your app, consider deploying pods with a Kubernetes controller, such as a deployment. A deployment helps you to manage multiple pods, replicas, pod scaling, rollouts, and more. |
 | [`ReplicaSet`](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/){: external} | A replica set makes sure that multiple replicas of your pod are running, and reschedules a pod if the pod goes down. You might create a replica set to test how pod scheduling works, but to manage app updates, rollouts, and scaling, create a deployment instead. |
 | [`Deployment`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/){: external} | A deployment is a controller that manages a pod or [replica set](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/){: external} of pod templates. You can create pods or replica sets without a deployment to test app features. For a production-level setup, use deployments to manage app updates, rollouts, and scaling. |
 | [`StatefulSet`](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){: external} | Similar to deployments, a stateful set is a controller that manages a replica set of pods. Unlike deployments, a stateful set ensures that your pod has a unique network identity that maintains its state across rescheduling. When you want to run workloads in the cloud, try to [design your app to be stateless](/docs/openshift?topic=openshift-strategy#cloud_workloads) so that your service instances are independent from each other and can fail without a service interruption. However, some apps, such as databases, must be stateful. For those cases, consider to create a stateful set and use [file](/docs/openshift?topic=openshift-file_storage#file_statefulset), [block](/docs/openshift?topic=openshift-block_storage#block_statefulset), or [object](/docs/openshift?topic=openshift-storage_cos_apps#cos_statefulset) storage as the persistent storage for your stateful set. You can also install [Portworx](/docs/openshift?topic=openshift-portworx) on your bare metal worker nodes and use Portworx as a highly available software-defined storage solution to manage persistent storage for your stateful set. |
 | [`DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external} | Use a daemon set when you must run the same pod on every worker node in your cluster. Pods that are managed by a daemon set are automatically scheduled when a worker node is added to a cluster. Typical use cases include log collectors, such as `logstash` or `prometheus`, that collect logs from every worker node to provide insight into the health of a cluster or an app. |
-| [`Job`](https://kubernetes.io/docs/concepts/workloads/controllers/job/){: external} | A job ensures that one or more pods run successfully to completion. You might use a job for queues or batch jobs to support parallel processing of separate but related work items, such as a certain number of frames to render, emails to send, and files to convert. To schedule a job to run at certain times, use a [`CronJob`](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/){: external}.|
+| [`Job`](https://kubernetes.io/docs/concepts/workloads/controllers/job/){: external} | A job ensures that one or more pods run successfully to completion. You might use a job for queues or batch jobs to support parallel processing of separate but related work items, such as specific frames to render, emails to send, and files to convert. To schedule a job to run at certain times, use a [`CronJob`](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/){: external}.|
 {: caption="Types of Kubernetes workload objects that you can create." caption-side="bottom"}
 
-### What if I want my app configuration to use variables? How do I add these to the YAML?
+### What if I want my app configuration to use variables? How do I add these variables to the YAML?
 {: #variables}
 
-To add variable information to your deployments instead of hard-coding the data into the YAML file, you can use a Kubernetes [`ConfigMap`](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external} or [`Secret`](https://kubernetes.io/docs/concepts/configuration/secret/){: external} object.
+To add variable information to your deployments instead of hardcoding the data into the YAML file, you can use a Kubernetes [`ConfigMap`](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/){: external} or [`Secret`](https://kubernetes.io/docs/concepts/configuration/secret/){: external} object.
 {: shortdesc}
 
 To consume a ConfigMap or secret, you need to mount it to the pod. The ConfigMap or secret is combined with the pod just before the pod is run. You can reuse a deployment spec and image across many apps, but then swap out the customized configmaps and secrets. Secrets in particular can take up a lot of storage on the local node, so plan accordingly.
@@ -302,7 +302,7 @@ Additionally, your cluster admin might set up resource controls that can affect 
 ### How can I add capabilities to my app configuration?
 {: #capabilities}
 
-See [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml) for descriptions of what you might include in a deployment. The example includes:
+See [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml) for descriptions of what you might include in a deployment. The example includes the following options.
 * [Replica sets](/docs/openshift?topic=openshift-openshift_apps#replicaset)
 * [Labels](/docs/openshift?topic=openshift-openshift_apps#label)
 * [Affinity](/docs/openshift?topic=openshift-openshift_apps#affinity)
@@ -310,10 +310,10 @@ See [Specifying your app requirements in your YAML file](/docs/openshift?topic=o
 * [Ports](/docs/openshift?topic=openshift-openshift_apps#port)
 * [Resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq)
 * [Liveness and readiness probes](/docs/openshift?topic=openshift-openshift_apps#probe)
-* [Services](/docs/openshift?topic=openshift-openshift_apps#app-service) to expose the app service on a port
-* [Configmaps](/docs/openshift?topic=openshift-openshift_apps#configmap) to set container environment variables
-* [Secrets](/docs/openshift?topic=openshift-openshift_apps#secret) to set container environment variables
-* [Persistent volumes](/docs/openshift?topic=openshift-openshift_apps#pv) that are mounted to the container for storage
+* [Services](/docs/openshift?topic=openshift-openshift_apps#app-service) to expose the app service on a port.
+* [Configmaps](/docs/openshift?topic=openshift-openshift_apps#configmap) to set container environment variables.
+* [Secrets](/docs/openshift?topic=openshift-openshift_apps#secret) to set container environment variables.
+* [Persistent volumes](/docs/openshift?topic=openshift-openshift_apps#pv) that are mounted to the container for storage.
 
 ### How can I add IBM services to my app, such as {{site.data.keyword.watson}}?
 {: #services_ibm}
@@ -355,27 +355,26 @@ Include enough replicas for your app's workload, plus two
 :   To make your app even more highly available and more resilient to failure, consider including extra replicas than the minimum to handle the expected workload. Extra replicas can handle the workload in case a pod crashes and the replica set did not yet recover the crashed pod. For protection against two simultaneous failures, include two extra replicas. This setup is an N+2 pattern, where N is the number of replicas to handle the incoming workload and +2 is an extra two replicas. As long as your cluster has enough space, you can have as many pods as you want.
 
 Spread pods across multiple nodes (anti-affinity)
-:   When you create your deployment, each pod can be deployed to the same worker node. This is known as affinity, or co-location. To protect your app against worker node failure, you can configure your deployment to spread your pods across multiple worker nodes by using the `podAntiAffinity` option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
+:   When you create your deployment, each pod can be deployed to the same worker node. This is known as affinity, or colocation. To protect your app against worker node failure, you can configure your deployment to spread your pods across multiple worker nodes by using the `podAntiAffinity` option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
     For more information, see the Kubernetes documentation on [Assigning Pods to Nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.</p>
     For an example of affinity in an app deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml).
 
-Distribute pods across multiple zones or regions</dt>
+Distribute pods across multiple zones or regions
 :   To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb).
     When you use a replica set and specify pod anti-affinity, Kubernetes spreads your app pods across the nodes. If your nodes are in multiple zones, the pods are spread across the zones, increasing the availability of your app. If you want to limit your apps to run only in one zone, you can configure pod affinity, or create and label a worker pool in one zone. For more information, see [High availability for multizone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
     
-:   **In a multizone cluster deployment, are my app pods distributed evenly across the nodes?**
-    The pods are evenly distributed across zones, but not always across nodes. For example, if you have a cluster with one node in each of three zones and deploy a replica set of six pods, then each node gets two pods. However, if you have a cluster with two nodes in each of three zones and deploy a replica set of six pods, each zone schedules two pods, and might schedule one pod per node or might not. For more control over scheduling, you can [set pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
+In a multizone cluster deployment, are my app pods distributed evenly across the nodes?
+:   The pods are evenly distributed across zones, but not always across nodes. For example, if you have a cluster with one node in each of three zones and deploy a replica set of six pods, then each node gets two pods. However, if you have a cluster with two nodes in each of three zones and deploy a replica set of six pods, each zone schedules two pods, and might schedule one pod per node or might not. For more control over scheduling, you can [set pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
     
-:   **If a zone goes down, how are pods rescheduled onto the remaining nodes in the other zones?**
-    It depends on your scheduling policy that you used in the deployment. If you included [node-specific pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}, your pods are not rescheduled. If you did not, pods are created on available worker nodes in other zones, but they might not be balanced. For example, the two pods might be spread across the two available nodes, or they might both be scheduled onto one node with available capacity. Similarly, when the unavailable zone returns, pods are not automatically deleted and rebalanced across nodes. If you want the pods to be rebalanced across zones after the zone is back up, consider using the [Kubernetes descheduler](https://github.com/kubernetes-sigs/descheduler){: external}{: shortdesc}.
+If a zone goes down, how are pods rescheduled onto the remaining nodes in the other zones?
+:   It depends on your scheduling policy that you used in the deployment. If you included [node-specific pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}, your pods are not rescheduled. If you did not, pods are created on available worker nodes in other zones, but they might not be balanced. For example, the two pods might be spread across the two available nodes, or they might both be scheduled onto one node with available capacity. Similarly, when the unavailable zone returns, pods are not automatically deleted and rebalanced across nodes. If you want the pods to be rebalanced across zones after the zone is back up, configure the [Kubernetes descheduler](https://github.com/kubernetes-sigs/descheduler){: external}{: shortdesc}.
     In multizone clusters, try to keep your worker node capacity at 50% per zone so that enough capacity remains to protect your cluster against a zonal failure.
-    {: tip}
     
-:   **What if I want to spread my app across regions?**
-    To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for your app.
+What if I want to spread my app across regions?
+:   To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for your app.
     
-:   **What if my apps need persistent storage?**
-    Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+What if my apps need persistent storage?
+:   Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 
 ### How can I scale my app?
 {: #scale}
@@ -430,7 +429,7 @@ Annotations
 To update your app, you can choose from various strategies such as the following. You might start with a rolling deployment or instantaneous switch before you progress to a more complicated canary deployment.
 
 Rolling deployment
-:   You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version don't experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).
+:   You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are compatible with earlier version so that users who are served the `v2` app version don't experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).
 
 Instantaneous switch
 :   Also referred to as a blue-green deployment, an instantaneous switch requires double the compute resources to have two versions of an app running at once. With this approach, you can switch your users to the newer version in near real time. Make sure that you use service label selectors (such as `version: green` and `version: blue`) to make sure that requests are sent to the correct app version. You can create the new `version: green` deployment, wait until it is ready, and then delete the `version: blue` deployment. Or you can perform a [rolling update](/docs/openshift?topic=openshift-update_app#app_rolling), but set the `maxUnavailable` parameter to `0%` and the `maxSurge` parameter to `100%`.
@@ -522,7 +521,7 @@ To control access at the pod level, you can configure [security context constrai
 
 Within the app deployment YAML, you can set the security context for a pod or container. For more information, review the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}.
 
-Want to control access at the application level? To create a sign-on flow that you can update at any time without changing your app code, try using [{{site.data.keyword.appid_long_notm}}](/docs/appid?topic=appid-getting-started).
+Want to control access at the application level? To create a sign-on flow that you can update at any time without changing your app code, try integrating your app with [{{site.data.keyword.appid_long_notm}}](/docs/appid?topic=appid-getting-started).
 {: tip}
 
 ### After I deploy my app, how can I monitor its health?
