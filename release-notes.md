@@ -41,10 +41,6 @@ Cluster autoscaler add-on versions `1.0.5_898`, `1.0.6_899`, `1.0.7_900`, and `1
 {: #openshift-jan0523}
 {: release-note}
 
-
-Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
-:   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1161).
-
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.7` is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 

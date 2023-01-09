@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-09"
 
 keywords: openshift
 
@@ -1471,7 +1471,7 @@ Minimum required permissions
 
 
 #### Example `cluster master public-service-endpoint enable` command
-{: #cluster-master-public-service-endpoint enable-example}
+{: #cluster-master-public-service-endpoint-enable-example}
 
 ```sh
 ibmcloud oc cluster master public-service-endpoint enable --cluster my_cluster

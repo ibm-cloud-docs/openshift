@@ -247,8 +247,6 @@ subcollection: openshift
 
     * [5 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0523)
 
-        * Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
-
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.7` is available.
 
     * [2 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0223)
