@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-09"
 
 keywords: openshift, app protocol, application protocol
 
@@ -30,18 +30,22 @@ VPC load balancers can be created for VPC clusters only, and can't be created fo
 To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, you can optionally create a layer 4 Network Load Balancer for VPC.
 {: shortdesc}
 
+
+
 The following table describes the basic characteristics of each load balancing option.
 
 |Characteristic|Application Load Balancer for VPC|Network Load Balancer for VPC|
 |--------------|---------------------|-----------------------------|
-|Supported {{site.data.keyword.redhat_openshift_notm}} version|All versions|4.6 and later only|
+|Supported {{site.data.keyword.redhat_openshift_notm}} version|All versions|All versions|
 |Transport layer|Layer 7|Layer 4|
+|Types of load balancers|Public and private|Public and private|
 |Supported protocols|TCP|TCP, UDP|
 |Application access|Hostname|Hostname and static IP address|
 |Source IP preservation|Configurable*|Yes|
 |Improved performance with direct server return|No|Yes|
 |Multizone routing|Yes|No|
-|Types of load balancers|Public and private|Public and private|
+|Port ranges|No| Public only|
+|Security groups|Yes|Public only|
 {: caption="Load balancing options for VPC clusters"}
 
 `*` To preserve the source IP address for an Application Load Balancer for VPC, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation must be specified when the VPC ALB is initially created. This annotation is supported for VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later only.
