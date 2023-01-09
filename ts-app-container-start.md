@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -56,9 +56,7 @@ If you see either of the IP address-related messages that are listed in the symp
 {: #regitry-quota}
 {: tsResolve}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 To fix registry quota issues, [free up storage in {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_quota#registry_quota_freeup).
 {: shortdesc}
@@ -66,12 +64,10 @@ To fix registry quota issues, [free up storage in {{site.data.keyword.registrylo
 ## Fixing IP address issues
 {: #calico-ips}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 To fix IP address issues, release individual and blocks of IP addresses that were not cleanly removed from the Calico IPAM records so that they can be reused by pods in your cluster.
 {: shortdesc}
-
-**Infrastructure provider and versions**:
-* Classic
-* VPC
 
 Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_changelog). If you cluster runs a deprecated or unsupported version, first [update your cluster](/docs/containers?topic=containers-update).
 

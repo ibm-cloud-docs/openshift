@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-01"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, egress, natportrange, 1.24
 
@@ -18,8 +18,8 @@ content-type: troubleshoot
 {: support}
 
 
-Supported infrastructure providers
-:   VPC Gen 2
+
+[Virtual Private Cloud]{: tag-vpc}  Gen 2
 
 Egress connections from pods in your {{site.data.keyword.openshiftlong_notm}} version 4.11 are failing.
 {: tsCauses}

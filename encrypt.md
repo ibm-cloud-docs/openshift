@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -116,13 +116,6 @@ If KMS was enabled before this version, [update your cluster](/docs/openshift?to
 
 
 Enable a [key management service (KMS) provider](#kms) to encrypt the Kubernetes secrets in your cluster.
-
-
-
-
-**Clusters that run version 3.11**: To rotate your encryption key, repeat the [CLI](#kms_cli) or [console](#kms_ui) steps to enable KMS provider encryption with a new root key ID. The new root key is added to the cluster configuration along with the previous root key so that existing encrypted data is still protected. To encrypt your existing secrets with the new root key, you must rewrite the secrets. When you rotate a root key, you can't reuse a previous root key for the same cluster.
-{: note}
-
 
 
 ### Prerequisites

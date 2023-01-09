@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-08"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -24,19 +24,18 @@ completion-time: 45m
 {: toc-services="openshift, cloud-object-storage"}
 {: toc-completion-time="45m"}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 With {{site.data.keyword.cos_full_notm}}, you can dynamically provision buckets for apps running in your {{site.data.keyword.openshiftlong_notm}} clusters. You can also dynamically set capacity quotas on those buckets during provisioning. Quotas can help you manage the resources your workloads use while also avoiding unnecessary charges.
 {: shortdesc}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
 
 ## Objectives
 {: #storage-cos-quota-objectives}
 
 In this tutorial, you install the {{site.data.keyword.cos_short}} plug-in in your cluster and enable quotas for any persistent volume claims (PVC) created with the plug-in. 
 
-Then, you create a PVC which dynamically creates a bucket with a quota limit in your {{site.data.keyword.cos_short}} instace. 
+Then, you create a PVC which dynamically creates a bucket with a quota limit in your {{site.data.keyword.cos_short}} instance. 
 
 After that, you upload a file to your bucket and deploy a simple app to your cluster that mounts the bucket and prints the contents of that file.
 

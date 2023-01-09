@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: block, debug, help
 
@@ -21,8 +21,7 @@ content-type: troubleshoot
 {: #block_not_attached_vpc}
 {: support}
 
-Supported infrastructure provider
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} 
 
 
 When you edit a {{site.data.keyword.block_storage_is_short}} and update the `spec.resources.requests.storage` section to expand your volume, you see the following error:

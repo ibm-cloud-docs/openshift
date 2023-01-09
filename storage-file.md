@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -24,8 +24,9 @@ subcollection: openshift
 
 
 
-Supported infrastructure providers
-:   Classic
+
+[Classic infrastructure]{: tag-classic-inf}
+
 
 ## Quick start for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}
 {: #file_qs}

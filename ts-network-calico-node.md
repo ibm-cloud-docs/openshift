@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-11-29"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, calico, node
 
@@ -21,10 +21,7 @@ content-type: troubleshoot
 {: #ts-network-calico-node}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
-:   {{site.data.keyword.satelliteshort}}
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 When you update your master or worker nodes, your worker nodes enter a `NetworkUnavailable` state.
 {: tsSymptoms}

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-15"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -26,7 +26,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
 {: tip}
 
 Level of application
-:   VPC subnet
+:   Virtual Private Cloud subnet
 
 Default behavior
 :   When you create a VPC, a default ACL is created in the format `allow-all-network-acl-<VPC_ID>` for the VPC. The ACL includes an inbound rule and an outbound rule that allow all traffic to and from your subnets. Any subnet that you create in the VPC is attached to this ACL by default. ACL rules are applied in a particular order. When you allow traffic in one direction by creating an inbound or outbound rule, you must also create a rule for responses in the opposite direction because responses are not automatically permitted.

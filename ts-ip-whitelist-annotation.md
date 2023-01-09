@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-11"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -20,9 +20,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 When you use the Red Hat `ip_whitelist` annotation to allow only certain source IPs to access the {{site.data.keyword.redhat_openshift_notm}} Console, it does not work as expected.
 {: tsSymptoms}

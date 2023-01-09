@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -19,6 +19,8 @@ subcollection: openshift
 # VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}
 {: #storage_cos_vpc_ip}
 
+[Virtual Private Cloud]{: tag-vpc}
+
 You can authorize your VPC Cloud Service Endpoint source IP addresses to access your {{site.data.keyword.cos_full_notm}} bucket. When you set up authorized IP addresses, you can only access your bucket data from those IP addresses; for example, in an app pod.
 {: shortdesc}
 
@@ -26,8 +28,7 @@ Minimum required permissions
 :   **Manager** service access role for the {{site.data.keyword.openshiftlong_notm}} service.
 :   **Writer** service access role for the {{site.data.keyword.cos_full_notm}} service.
 
-**Supported infrastructure provider**:
-* VPC
+
 
 1. [Follow the instructions to install the `ibmc` Helm plug-in](/docs/openshift?topic=openshift-storage_cos_install). Make sure to install the `ibm-object-storage-plugin` and set the `bucketAccessPolicy` option to `true`.
 

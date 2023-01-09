@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-06"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -17,14 +17,10 @@ subcollection: openshift
 # Understanding OpenShift Data Foundation
 {: #ocs-storage-prep}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 [OpenShift Data Foundation](https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation){: external} is a highly available storage solution that you can use to manage persistent storage for your containerized apps.
 {: shortdesc}
-
-Supported infrastructure providers.
-
-- VPC  
-- {{site.data.keyword.satelliteshort}}  
-- Classic  
 
 What is OpenShift Data Foundation?
 :   OpenShift Data Foundation is a highly available storage solution that consists of several open source operators and technologies like [Ceph](https://docs.ceph.com/en/latest/start/intro/){: external}, [NooBaa](https://www.noobaa.io/){: external}, and [Rook](https://rook.io/){: external}. These operators allow you to provision and manage File, Block, and Object storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters. Unlike other storage solutions where you might need to configure separate drivers and operators for each type of storage, ODF is a unified solution capable of adapting or scaling to your storage needs. You can also deploy ODF on any OCP cluster.

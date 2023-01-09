@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-09"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -21,9 +21,7 @@ content-type: troubleshoot
 {: #ts_storage_clean_volume}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 You have already deleted your cluster but your account is still charged for the storage volumes associated with the cluster.
 {: tsSymptoms}

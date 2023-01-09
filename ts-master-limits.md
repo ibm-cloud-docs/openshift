@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-13"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift, roks, rhoks, rhos, limits
 
@@ -21,9 +21,7 @@ content-type: troubleshoot
 {: #master_resource_limit}
 {: support}
 
-Supported infrastructure providers
-:   Classic
-:   VPC
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 
 You see a master status similar to the following example.

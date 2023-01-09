@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -22,8 +22,8 @@ content-type: troubleshoot
 {: #cs_storage_nonroot}
 {: support}
 
-Infrastructure provider
-:   Classic
+[Classic infrastructure]{: tag-classic-inf}
+
 
 
 After you [add non-root user access to persistent storage](/docs/openshift?topic=openshift-nonroot) or deploy a Helm chart with a non-root user ID specified, the user can't write to the mounted storage.

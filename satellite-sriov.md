@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-01"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: satellite, hybrid, multicloud, sriov, nic, network
 
@@ -16,11 +16,10 @@ subcollection: openshift
 # Setting up Single Root I/O Virtualization (SR-IOV) in {{site.data.keyword.satellitelong_notm}} clusters
 {: #satellite-sriov}
 
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 Single Root I/O Virtualization (SR-IOV) allows you to share a single, supported network device with multiple pods in your {{site.data.keyword.satelliteshort}} cluster. You can enable SR-IOV in your cluster by installing and configuring the SR-IOV network operator. For more information about SR-IOV, see [About Single Root I/O Virtualization (SR-IOV) hardware networks](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/about-sriov.html){: external}.
 {: shortdesc}
-
-Supported infrastructure providers
-:   {{site.data.keyword.satelliteshort}}
 
 Supported network interface controllers
 :   The SR-IOV Network Operator can be used with supported network interface controllers (NICs) only. For more information, see [Supported NICs](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/installing-sriov-operator.html).

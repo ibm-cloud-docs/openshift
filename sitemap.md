@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-05"
+lastupdated: "2023-01-09"
 
 keywords: openshift
 subcollection: openshift
@@ -241,9 +241,11 @@ subcollection: openshift
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
 
-    * [5 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0523)
+    * [9 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0923)
 
-        * Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
+        * Cluster autoscaler add-on versions `1.0.5_898`, `1.0.6_899`, `1.0.7_900`, and `1.1.0_897`.
+
+    * [5 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0523)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.7` is available.
 
@@ -4131,11 +4133,11 @@ subcollection: openshift
 
     * [I thought that I needed to put my app in a container. Now what's all this stuff about pods?](/docs/openshift?topic=openshift-plan_deploy#deploy_pods)
 
-    * [So if I can just use a pod, why do I need all these different types of objects?](/docs/openshift?topic=openshift-plan_deploy#deploy_objects)
+    * [So if I can use a pod, why do I need all these different types of objects?](/docs/openshift?topic=openshift-plan_deploy#deploy_objects)
 
     * [What type of Kubernetes objects can I make for my app?](/docs/openshift?topic=openshift-plan_deploy#object)
 
-    * [What if I want my app configuration to use variables? How do I add these to the YAML?](/docs/openshift?topic=openshift-plan_deploy#variables)
+    * [What if I want my app configuration to use variables? How do I add these variables to the YAML?](/docs/openshift?topic=openshift-plan_deploy#variables)
 
     * [How can I make sure that my app has the correct resources?](/docs/openshift?topic=openshift-plan_deploy#resources)
 
@@ -6793,6 +6795,8 @@ subcollection: openshift
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
 
+    * [Change log for patch update 1.1.0_897, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#110897_ca)
+
     * [Change log for patch update 1.1.0_798, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#110798_ca)
 
     * [Change log for patch update 1.1.0_776, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#110776_ca)
@@ -6809,9 +6813,13 @@ subcollection: openshift
 
 * [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
 
+    * [Change log for patch update 1.0.7_900, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#107900_ca)
+
     * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_899, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#106899_ca)
 
     * [Change log for patch update 1.0.6_828, released 10 October 2022](/docs/openshift?topic=openshift-ca_changelog#106828_ca)
 
@@ -6824,6 +6832,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#106742_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_898, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#105898_ca)
 
     * [Change log for patch update 1.0.5_779, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#105779_ca)
 

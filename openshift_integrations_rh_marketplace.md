@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: kubernetes, openshift
 
@@ -20,13 +20,10 @@ subcollection: openshift
 # Setting up the {{site.data.keyword.redhat_notm}} Marketplace
 {: #rh-marketplace}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.com/en-us){: external}, you can deploy certified {{site.data.keyword.redhat_notm}} software from an operator-based catalog to your OpenShift Container Platform clusters, including {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
-
-**Supported infrastructure providers**:
-* Classic
-* VPC
-* {{site.data.keyword.satelliteshort}}
 
 **Required permissions**:
 * The IAM **Operator** platform access role for the cluster in {{site.data.keyword.containershort_notm}}.

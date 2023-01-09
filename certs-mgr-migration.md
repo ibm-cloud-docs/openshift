@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-06"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 
@@ -26,12 +26,10 @@ Support for {{site.data.keyword.cloudcerts_short}} in {{site.data.keyword.opensh
 ## Setting up your {{site.data.keyword.secrets-manager_short}} instance
 {: #certs-mgr_setup}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
 Follow the steps to set up {{site.data.keyword.secrets-manager_short}} in your cluster.
 {: shortdesc}
-
-**Supported infrastructure providers**: 
-- Classic
-- VPC
 
 The steps to migrate to {{site.data.keyword.secrets-manager_short}} involves regenerating your secrets, which is rate-limited to five times per week. Follow the steps in this document carefully, as repeating them might cause you to reach the limit before you finish the migration.
 {: important}

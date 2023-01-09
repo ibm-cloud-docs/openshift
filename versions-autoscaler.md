@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-09"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -42,6 +42,14 @@ ibmcloud oc cluster addon versions
 {: #0110_ca_addon}
 
 - Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches might be slower on this version.
+
+### Change log for patch update 1.1.0_897, released 9 January 2023
+{: #110897_ca}
+
+- Image tags: `1.19.1 110-5`, `1.20.0 110-5`, `1.21.0 110-5`, `1.22.0 110-5`, `1.23.0 110-5`.
+- Golang updated to `1.18.9`
+- Updates the `storage-secret-sidecar` image to `v1.2.14`
+- Resolves the following CVEs: [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}, [CVE-2022-41717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41717){: external}, [CVE-2022-41720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41720){: external}
 
 ### Change log for patch update 1.1.0_798, released 22 September 2022
 {: #110798_ca}
@@ -92,6 +100,14 @@ ibmcloud oc cluster addon versions
 ## Version 1.0.7
 {: #0107_ca_addon}
 
+### Change log for patch update 1.0.7_900, released 9 January 2023
+{: #107900_ca}
+
+- Image tags: `1.20.0 107-2`, `1.21.0 107-2`, `1.22.0 107-2`, `1.23.0 107-2`, `1.24.0 107-2`, `1.25.0 107-2`.
+- Golang updated to `1.18.9`
+- Updates the `storage-secret-sidecar` image to `v1.2.14`
+- Resolves the following CVEs: [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}, [CVE-2022-41717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41717){: external}, [CVE-2022-41720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41720){: external}
+
 ### Change log for patch update 1.0.7_883, released 3 November 2022
 {: #107883_ca}
 
@@ -102,6 +118,13 @@ ibmcloud oc cluster addon versions
 ## Version 1.0.6
 {: #0106_ca_addon}
 
+### Change log for patch update 1.0.6_899, released 9 January 2023
+{: #106899_ca}
+
+- Image tags: `1.19.1 106-5`, `1.20.0 106-5`, `1.21.0 106-5`, `1.22.0 106-5`, `1.23.0 106-5`, `1.24.0 106-5`.
+- Golang updated to `1.18.9`
+- Updates the `storage-secret-sidecar` image to `v1.2.14`
+- Resolves the following CVEs: [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}, [CVE-2022-41717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41717){: external}, [CVE-2022-41720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41720){: external}
 
 ### Change log for patch update 1.0.6_828, released 10 October 2022
 {: #106828_ca}
@@ -138,6 +161,14 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.0.5
 {: #0105_ca_addon}
+
+### Change log for patch update 1.0.5_898, released 9 January 2023
+{: #105898_ca}
+
+- Image tags: `1.19.1 105-6`, `1.20.0 105-6`, `1.21.0 105-6`, `1.22.0 105-6`, `1.23.0 105-6`.
+- Golang updated to `1.18.9`
+- Updates the `storage-secret-sidecar` image to `v1.2.14`
+- Resolves the following CVEs: [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}, [CVE-2022-41717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41717){: external}, [CVE-2022-41720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41720){: external}
 
 ### Change log for patch update 1.0.5_779, released 22 September 2022
 {: #105779_ca}

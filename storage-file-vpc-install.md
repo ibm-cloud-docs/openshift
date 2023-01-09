@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-15"
+  years: 2022, 2023
+lastupdated: "2023-01-06"
 
 keywords: openshift
 
@@ -17,6 +17,8 @@ subcollection: openshift
 # Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on
 {: #storage-file-vpc-install}
 
+[Virtual Private Cloud]{: tag-vpc}
+
 {{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution). For pricing information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
 {: shortdesc}
 
@@ -24,11 +26,8 @@ subcollection: openshift
 {: preview}
 
 {{site.data.keyword.filestorage_vpc_short}} is available in Beta. Do not use this add-on for production workloads.
-{: beta}
+{: beta} 
 
-Supported infrastructure providers
-:   VPC
-{: important}
 
 ## Prerequisites
 {: #prereqs-store-file-vpc}

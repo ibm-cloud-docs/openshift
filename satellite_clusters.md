@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-06"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -18,11 +18,10 @@ subcollection: openshift
 # Creating {{site.data.keyword.satelliteshort}} clusters
 {: #satellite-clusters}
 
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 You can create {{site.data.keyword.openshiftlong}} clusters in an {{site.data.keyword.satellitelong}} location, and use the hosts of your own infrastructure that you added to your location as the worker nodes for the cluster.
 {: shortdesc}
-
-Supported infrastructure providers
-:   {{site.data.keyword.satelliteshort}}
 
 ## Prerequisites
 {: #satcluster-prereqs}

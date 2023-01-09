@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-21"
+  years: 2014, 2023
+lastupdated: "2023-01-06"
 
 keywords: portworx, openshift
 
@@ -19,13 +19,10 @@ subcollection: openshift
 # Storing data on software-defined storage (SDS) with Portworx
 {: #portworx}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 [Portworx](https://portworx.com/products/portworx-enterprise//){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
-
-Supported infrastructure provider
-:   Classic
-:   VPC
-:   Satellite
 
 Supported worker node operating systems
 :   RHEL 7
@@ -958,14 +955,15 @@ To access the storage from your app, you must mount the PVC to your app.
 ## VPC: Updating worker nodes with Portworx volumes
 {: #portworx_vpc_up}
 
+[Virtual Private Cloud]{: tag-vpc} 
+
 When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that you replaced, you must attach the volumes to the new worker node.
 {: shortdesc}
 
 Update only one worker node at a time. When the worker node update is complete, attach your {{site.data.keyword.block_storage_is_short}} and restart the Portworx pod.
 {: important}
 
-Supported infrastructure providers
-:   VPC
+
 1. [Enter maintenance mode on the worker nodes that you want to update](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/troubleshooting/enter-maintenance-mode/){: external}.
 
 2. [Update your VPC worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).

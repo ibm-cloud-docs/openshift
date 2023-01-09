@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-06"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -92,11 +92,11 @@ Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters
 ### Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}
 {: #cos_image_registry}
 
+[Virtual Private Cloud]{: tag-vpc}
+
 Your images in your {{site.data.keyword.redhat_openshift_notm}} cluster internal registry are automatically backed up to an {{site.data.keyword.cos_full_notm}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 {: shortdesc}
-
-Supported infrastructure providers
-:   VPC
+ 
 
 The internal registry is backed up to {{site.data.keyword.cos_full_notm}} only for {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on VPC infrastructure.
 {: note}
