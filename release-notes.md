@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-05"
+lastupdated: "2023-01-09"
 
 keywords: openshift
 
@@ -29,6 +29,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2023
 {: #openshift-jan23}
+
+### 9 January 2023
+{: #openshift-jan0923}
+{: release-note}
+
+Cluster autoscaler add-on versions `1.0.5_898`, `1.0.6_899`, `1.0.7_900`, and `1.1.0_897`.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 5 January 2023
 {: #openshift-jan0523}

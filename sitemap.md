@@ -241,6 +241,10 @@ subcollection: openshift
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
 
+    * [9 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0923)
+
+        * Cluster autoscaler add-on versions `1.0.5_898`, `1.0.6_899`, `1.0.7_900`, and `1.1.0_897`.
+
     * [5 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0523)
 
         * Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
@@ -6793,6 +6797,8 @@ subcollection: openshift
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
 
+    * [Change log for patch update 1.1.0_897, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#110897_ca)
+
     * [Change log for patch update 1.1.0_798, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#110798_ca)
 
     * [Change log for patch update 1.1.0_776, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#110776_ca)
@@ -6809,9 +6815,13 @@ subcollection: openshift
 
 * [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
 
+    * [Change log for patch update 1.0.7_900, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#107900_ca)
+
     * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_899, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#106899_ca)
 
     * [Change log for patch update 1.0.6_828, released 10 October 2022](/docs/openshift?topic=openshift-ca_changelog#106828_ca)
 
@@ -6824,6 +6834,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#106742_ca)
 
 * [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+
+    * [Change log for patch update 1.0.5_898, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#105898_ca)
 
     * [Change log for patch update 1.0.5_779, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#105779_ca)
 
