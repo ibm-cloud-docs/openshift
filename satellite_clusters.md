@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-10"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -425,25 +425,36 @@ When you remove {{site.data.keyword.redhat_openshift_notm}} clusters or worker n
 See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
 {: shortdesc}
 
-## How am I charged for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}?
+## Pricing for clusters in {{site.data.keyword.satelliteshort}}
 {: #satcluster-pricing}
 
-Review the table for information on charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}.
+Review the table for information on charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}. For information about Location pricing, see [{{site.data.keyword.satelliteshort}} pricing](/docs/satellite?topic=satellite-sat-pricing).
 {: shortdesc}
 
-### {{site.data.keyword.redhat_openshift_notm}} clusters
-{: #pricing-services-clusters}
+Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/cloud/satellite/pricing){: external}
+{: tip}
 
-Get the benefits of a [managed {{site.data.keyword.redhat_openshift_notm}} service](/docs/openshift?topic=openshift-cs_ov#compare_ocp) on any compatible infrastructure that you want.
+| Type of charge | Clusters created after 15 November 2022 | Clusters created before 15 November 2022 | What the charge covers |
+| --- | --- | --- | --- |
+| Cluster management fee | A flat monthly fee for the cluster, charged hourly. | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.openshiftlong_notm}}, such as installation and security patch updates of OpenShift Container Platform for your worker nodes; managing your cluster with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
+| Worker node management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
+| OCP licensing fee | Per vCPU hour. You can either purchase a license during cluster creation or [bring your own](/docs/satellite?topic=satellite-faqs#byo-ocp). | Per vCPU hour. You can either purchase a license during cluster creation or [bring your own](/docs/satellite?topic=satellite-faqs#byo-ocp). |
+{: caption="Red Hat OpenShift cluster on Satellite charges." caption-side="bottom"}
+
+
+
+## Bringing your own OCP license
+{: #byo-ocp-satellite}
+
+
+
+All user clusters in your Satellite location are installed with OpenShift Container Platform, which incurs a licensing fee from Red Hat. However, you can bring your own OpenShift Container Platform license for clusters created with your on-premises infrastructure or for clusters created by using IBM Cloud Paks.
 {: shortdesc}
 
-| Type of charge | How the charge is applied | What the charge covers |
-| -------------- | ------------------------- | ---------------------- |
-| Cluster management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.openshiftlong_notm}}, such as installation and security patch updates of OpenShift Container Platform for your worker nodes; managing your cluster with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
-| {{site.data.keyword.satelliteshort}} management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
-| OCP licensing fee | Red Hat charges a fee for Red Hat Enterprise Linux and OpenShift Container Platform per 2 vCPU hour. | This charge is not included in your {{site.data.keyword.cloud_notm}} bill. Instead, you cover this charge by [bringing your own license](/docs/satellite?topic=satellite-faqs#byo-ocp). |
-{: caption="{{site.data.keyword.redhat_openshift_notm}} cluster charges." caption-side="bottom"}
 
+When you create the cluster, make sure to include your Red Hat pull secret to entitle the cluster to run OCP, either by uploading the pull secret in the console or by including the `--pull-secret` option in the `ibmcloud oc cluster create satellite` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
+
+Service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.cos_full_notm}} and do not require a license.
 
 
 

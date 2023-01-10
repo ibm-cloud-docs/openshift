@@ -2992,9 +2992,9 @@ subcollection: openshift
 
 * [Limitations for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
 
-* [How am I charged for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}?](/docs/openshift?topic=openshift-satellite-clusters#satcluster-pricing)
+* [Pricing for clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-pricing)
 
-    * [{{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-satellite-clusters#pricing-services-clusters)
+* [Bringing your own OCP license](/docs/openshift?topic=openshift-satellite-clusters#byo-ocp-satellite)
 
 [Creating a private-only cluster in VPC by using a {{site.data.keyword.bpshort}} template](/docs/openshift?topic=openshift-templates#templates)
 
@@ -7078,6 +7078,10 @@ subcollection: openshift
     * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-static-route-changelog#100_649)
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
+
+* [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+
+    * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
 
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
 
