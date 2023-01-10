@@ -245,6 +245,8 @@ subcollection: openshift
 
         * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.15_1764` and `5.0.4_1773`
 
+        * Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
+
     * [9 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0923)
 
         * Cluster autoscaler add-on versions `1.0.5_898`, `1.0.6_899`, `1.0.7_900`, and `1.1.0_897`.
