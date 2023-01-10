@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-21"
+  years: 2014, 2023
+lastupdated: "2023-01-10"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -384,7 +384,7 @@ To add a zone with worker nodes to your worker pool:
     {: tip}
 
     ```sh
-    ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> -w <pool_name> [-w <pool2_name>] --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+    ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> -p <pool_name> [-p <pool2_name>] --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
     ```
     {: pre}
 

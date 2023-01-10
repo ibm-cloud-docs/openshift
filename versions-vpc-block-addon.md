@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-10"
 
 keywords: block, add-on, changelog
 
@@ -44,7 +44,19 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
 
-### Changelog for version 5.0.2_1713, released 17 November 2022
+### Change log for version 5.0.4_1773, released 10 January 2023
+{: #5.0.4-1773_is_block_relnote}
+
+- Updates Golang to `1.18.9`.
+- Updates the `storage-secret-sidecar` image to `v1.2.14`.
+- Fixed volume tagging issue related to multiple tags.
+- Added Block storage volume health state in driver logs. Volume health gives a detailed description as mentioned in the [Managing block storage](/docs/vpc?topic=vpc-managing-block-storage&interface=ui#block-storage-vpc-health-states) doc.
+- Resolves the following CVEs:
+    - [CVE-2022-42898](https://nvd.nist.gov/vuln/detail/CVE-2022-42898){: external}
+    - [CVE-2022-41717](https://nvd.nist.gov/vuln/detail/CVE-2022-41717){: external}
+    - [CVE-2022-41720](https://nvd.nist.gov/vuln/detail/CVE-2022-41720){: external}
+
+### Change log for version 5.0.2_1713, released 17 November 2022
 {: #5.0.2-1713_is_block_relnote}
 
 - Updates the `storage-secret-sidecar` image to `v1.2.12`
@@ -127,7 +139,18 @@ Adds snapshot support.
 ## Version 4.4
 {: #044_is_block}
 
-### Changelog for version 4.4.13_1712, released 17 November 2022
+### Change log for version 4.4.15_1764, released 10 January 2023
+{: #4.4.15_1764_is_block_relnote}
+
+- Updates Golang to `1.18.9`.
+- Updates the `storage-secret-sidecar` image to `v1.2.14`.
+- Fixed volume tagging issue related to multiple tags.
+- Resolves the following CVEs:
+    - [CVE-2022-42898](https://nvd.nist.gov/vuln/detail/CVE-2022-42898){: external}
+    - [CVE-2022-41717](https://nvd.nist.gov/vuln/detail/CVE-2022-41717){: external}
+    - [CVE-2022-41720](https://nvd.nist.gov/vuln/detail/CVE-2022-41720){: external}
+
+### Change log for version 4.4.13_1712, released 17 November 2022
 {: #4.4.13_1712_is_block_relnote}
 
 - Updates the `storage-secret-sidecar` image to `v1.2.12`
@@ -137,7 +160,7 @@ Adds snapshot support.
     - [CVE-2022-30699](https://nvd.nist.gov/vuln/detail/CVE-2022-30699){: external}
     - [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/CVE-2022-1304){: external}
 
-### Changelog for version 4.4.12_1700, released 9 November 2022
+### Change log for version 4.4.12_1700, released 9 November 2022
 {: #4.4.12_1700_is_block_relnote}
 
 - Updates the `storage-secret-sidecar` image to `v1.2.10`, 

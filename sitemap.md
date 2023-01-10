@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-10"
 
 keywords: openshift
 subcollection: openshift
@@ -240,6 +240,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
+
+    * [10 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1023)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.15_1764` and `5.0.4_1773`
+
+        * Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
 
     * [9 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0923)
 
@@ -2988,9 +2994,9 @@ subcollection: openshift
 
 * [Limitations for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
 
-* [How am I charged for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}?](/docs/openshift?topic=openshift-satellite-clusters#satcluster-pricing)
+* [Pricing for clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-pricing)
 
-    * [{{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-satellite-clusters#pricing-services-clusters)
+* [Bringing your own OCP license](/docs/openshift?topic=openshift-satellite-clusters#byo-ocp-satellite)
 
 [Creating a private-only cluster in VPC by using a {{site.data.keyword.bpshort}} template](/docs/openshift?topic=openshift-templates#templates)
 
@@ -6897,7 +6903,9 @@ subcollection: openshift
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
-    * [Changelog for version 5.0.2_1713, released 17 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.2-1713_is_block_relnote)
+    * [Change log for version 5.0.4_1773, released 10 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-1773_is_block_relnote)
+
+    * [Change log for version 5.0.2_1713, released 17 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.2-1713_is_block_relnote)
 
     * [Change log for version 5.0.1_1695, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.1-1695_is_block_relnote)
 
@@ -6911,9 +6919,11 @@ subcollection: openshift
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
 
-    * [Changelog for version 4.4.13_1712, released 17 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.13_1712_is_block_relnote)
+    * [Change log for version 4.4.15_1764, released 10 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.15_1764_is_block_relnote)
 
-    * [Changelog for version 4.4.12_1700, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.12_1700_is_block_relnote)
+    * [Change log for version 4.4.13_1712, released 17 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.13_1712_is_block_relnote)
+
+    * [Change log for version 4.4.12_1700, released 9 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.12_1700_is_block_relnote)
 
     * [Change log for version 4.4.11_1614, released 23 September 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.11_1614_is_block_relnote)
 
@@ -7070,6 +7080,10 @@ subcollection: openshift
     * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-static-route-changelog#100_649)
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
+
+* [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+
+    * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
 
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
 

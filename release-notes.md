@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-10"
 
 keywords: openshift
 
@@ -29,6 +29,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2023
 {: #openshift-jan23}
+
+### 10 January 2023
+{: #openshift-jan1023}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on versions `4.4.15_1764` and `5.0.4_1773`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
+:   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1161).
 
 ### 9 January 2023
 {: #openshift-jan0923}

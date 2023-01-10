@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-16"
+  years: 2014, 2023
+lastupdated: "2023-01-10"
 
 keywords: openshift
 
@@ -848,7 +848,7 @@ To create your own storage class:
     :   The region of the worker node where you want to attach storage.
 
     `tags`
-    :   In the parameters, enter a space-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. Currently only a single `tags:` field is allowed, but it can contain multiple, space-separated tags. For example `tags: "tag tag tag"`.
+    :   In the parameters, enter a space-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. 
 
     `iops`
     :   If you entered `custom` for the `profile`, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the [{{site.data.keyword.block_storage_is_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.
