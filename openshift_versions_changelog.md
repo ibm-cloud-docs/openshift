@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-11-11"
+  years: 2014, 2023
+lastupdated: "2023-01-11"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -16,6 +16,7 @@ subcollection: openshift
 
 # Version change log
 {: #openshift_changelog}
+
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {: shortdesc}

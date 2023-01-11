@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-11"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -18,6 +18,7 @@ subcollection: openshift
 
 # Cluster autoscaler add-on change log
 {: #ca_changelog}
+
 
 View information for patch updates to the cluster autoscaler add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}

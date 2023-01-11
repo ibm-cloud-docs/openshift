@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-11"
 
 keywords: openshift, version, update, upgrade
 
@@ -55,7 +55,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
 - End of support: 25 October 2023`†`
-- Supported operating systems: RHEL 8 (`REDHAT_8_64`) (default), RHEL 7 (`REDHAT_7_64`) (deprecated) unsupported date: 6 December 2022
+- Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
@@ -95,7 +95,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
 - End of support: 25 October 2023`†`
-- Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`) (default), RHEL 7 (`REDHAT_7_64`) (deprecated) unsupported date: 6 December 2022
+- Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
@@ -135,7 +135,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
 - End of support: 25 October 2023`†`
-- Supported operating systems: RHEL 8 (`REDHAT_8_64`) (default), RHEL 7 (`REDHAT_7_64`) (deprecated) unsupported date: 6 December 2022
+- Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
@@ -162,7 +162,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 
 Unsupported versions:
-:    For infomation about unsupported versions, see the [archive](#version-archive). 
+:    For information about unsupported versions, see the [archive](#version-archive). 
 
 ## Checking a cluster's Kubernetes server version
 {: #openshift_server_version}
@@ -206,4 +206,4 @@ Unsupported clusters are not provided with security and patch updates and are no
 {: shortdesc}
 
 **Unsupported {{site.data.keyword.openshiftshort}} versions**: 
-:    [4.6 (Kubernetes 1.19)](/docs/openshift?topic=openshift-openshift_changelog_46), [4.5 (Kubernetes 1.18)](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4 (Kubernetes 1.17)](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3 (Kubernetes 1.16)](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11 (Kubernetes 1.11)](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   [4.6 (Kubernetes 1.19)](/docs/openshift?topic=openshift-openshift_changelog_46), [4.5 (Kubernetes 1.18)](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4 (Kubernetes 1.17)](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3 (Kubernetes 1.16)](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11 (Kubernetes 1.11)](/docs/openshift?topic=openshift-openshift_changelog_311).

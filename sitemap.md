@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-01-11"
 
 keywords: openshift
 subcollection: openshift
@@ -7083,7 +7083,7 @@ subcollection: openshift
 
 * [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
 
-    * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+    * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.0_odf)
 
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
 

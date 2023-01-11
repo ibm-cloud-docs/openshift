@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-01-11"
 
 keywords: block, add-on, changelog
 
@@ -18,6 +18,7 @@ subcollection: openshift
 
 # {{site.data.keyword.block_storage_is_short}} add-on change log
 {: #vpc_bs_changelog}
+
 
 View information for patch updates to the {{site.data.keyword.block_storage_is_short}} add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
