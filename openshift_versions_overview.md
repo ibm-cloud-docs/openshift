@@ -55,7 +55,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
 - End of support: 25 October 2023`†`
-- Supported operating systems: RHEL 8 (`REDHAT_8_64`) (default)
+- Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
@@ -95,7 +95,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
 - End of support: 25 October 2023`†`
-- Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`) (default)
+- Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
@@ -135,7 +135,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
 - End of support: 25 October 2023`†`
-- Supported operating systems: RHEL 8 (`REDHAT_8_64`) (default)
+- Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
