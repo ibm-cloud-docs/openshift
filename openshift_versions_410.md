@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-11"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -24,7 +24,7 @@ Review information about version 4.10 of {{site.data.keyword.openshiftlong_notm}
 Looking for general information about updating clusters, or information on a different version? See [the {{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_changelog) and the version [4.10 blog](https://cloud.redhat.com/blog/introducing-red-hat-openshift-4.10){: external}
 {: tip}
 
-RHEL 8 is the default operating system for worker nodes created in version 4.10 clusters. RHEL 7 is deprecated and becomes unsupported on 6 December 2022. You must replace your RHEL 7 worker nodes with RHEL 8 worker nodes before 6 December 2022
+RHEL 8 is the default operating system for worker nodes created in version 4.10 clusters.
 {: important}
 
 If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx).
