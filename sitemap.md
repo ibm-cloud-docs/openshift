@@ -7083,7 +7083,7 @@ subcollection: openshift
 
 * [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
 
-    * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+    * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.0_odf)
 
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
 

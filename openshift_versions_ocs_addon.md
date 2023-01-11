@@ -38,7 +38,7 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 {: #4.11_odf}
 
 ### Version 4.11.0, released 21 December 2022
-{: #4.11_odf}
+{: #4.11.0_odf}
 
 Initial release.
 
