@@ -30,39 +30,7 @@ Refer to the following tables for a summary of changes for each version of the [
 | --- | --- |--- | --- |
 | 2.2.7 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.6 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.5 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.4 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.3 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.2 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.1 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.0 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.21 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.20 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.19 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.18 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.17 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.16 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.15 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.14 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.13 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.1.12 | Deprecated | Greater than or equal to 4.3 | x86 |
-| 2.1.11 | Deprecated | Greater than or equal to 4.3 | x86 |
-| 2.1.10 | Deprecated | Greater than or equal to 4.3 | x86 |
-| 2.1.9 | Deprecated | Greater than or equal to 4.3 | x86 |
-| 2.1.8 | Deprecated | Greater than or equal to 4.3 | x86 |
-| 2.1.7 | Deprecated | Greater than or equal to 4.3 | x86 |
-| 2.1.6 | Deprecated | Greater than or equal to 4.3 | x86 |
-| 2.1.5 | Deprecated | Greater than or equal to 4.3  | x86 |
-| 2.1.4 | Deprecated | Greater than or equal to 4.3  | x86 |
-| 2.1.3 | Deprecated | Greater than or equal to 4.3  | x86 |
-| 2.1.2 | Deprecated | Greater than or equal to 4.3  | x86 |
-| 2.1.1 | Deprecated | 4.3 to 4.6 | x86 |
-| 2.1.0 | Deprecated | 4.3 to 4.6 | x86 |
-| 2.0.9 | Deprecated | 4.3 to 4.6 | x86 |
-| 2.0.8 | Deprecated | 4.3 to 4.6 | x86 |
-| 2.0.7 | Deprecated | 4.3 to 4.6 | x86 |
-| 2.0.6 | Deprecated | 4.3 - 4.6 | x86 | 
-| 2.0.5 | Deprecated | 4.3 to 4.6 | x86 |
+| 2.2.5 and earlier | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 ## Change log for version 2.2.7, released 5 January 2023
