@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-19"
+  years: 2014, 2023
+lastupdated: "2023-01-11"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -34,6 +34,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Change logs
 {: #46_changelog}
+
 
 Review the version 4.6 change log.
 {: shortdesc}

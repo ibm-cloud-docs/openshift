@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-11"
 
 keywords: back up, restore, changelog, openshift
 
@@ -18,6 +18,7 @@ subcollection: openshift
 
 # Back up and restore Helm chart 
 {: #backup_restore_changelog}
+
 
 View information for updates to the back up and restore Helm chart in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}

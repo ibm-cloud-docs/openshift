@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-19"
+  years: 2014, 2023
+lastupdated: "2023-01-11"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -18,6 +18,7 @@ subcollection: openshift
 
 # CLI change log
 {: #cs_cli_changelog}
+
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 {: shortdesc}

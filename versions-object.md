@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-05"
+lastupdated: "2023-01-11"
 
 keywords: object storage, plug-in, changelog
 
@@ -18,6 +18,7 @@ subcollection: openshift
 
 # {{site.data.keyword.cos_full_notm}} plug-in 
 {: #cos_plugin_changelog}
+
 
 View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in in your {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
