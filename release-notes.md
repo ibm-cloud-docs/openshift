@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-01-12"
 
 keywords: openshift
 
@@ -451,7 +451,7 @@ CLI change log update
 :   For more information, see [version 4.4.10_1578](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 New! vGPU worker node flavors are now available for VPC Gen 2.
-:   For more information about the available worker node flavors, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors). Worker node flavors with vGPU support are the `gx2` flavor class, for example: `gx2.16x128.2v100`.
+:   For more information about the available worker node flavors, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-flavors). Worker node flavors with vGPU support are the `gx2` flavor class, for example: `gx2.16x128.2v100`.
 
 ### 12 September 2022
 {: #openshift-sep1222}
@@ -1336,7 +1336,7 @@ Version changelog
 :   {{site.data.keyword.redhat_openshift_notm}} [4.8.28_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4828_1543), [4.7.41_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4741_1548), [4.6.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1571), [3.11.570_1620_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1620).
 
 **New!** Worker node flavor reference
-:   View a list of all available worker node flavors by zone. For more information, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-classic-flavors) or [Classic flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors).
+:   View a list of all available worker node flavors by zone. For more information, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-classic-flavors) or [Classic flavors](/docs/openshift?topic=openshift-vpc-flavors).
 
 
 

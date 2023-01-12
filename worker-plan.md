@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-15"
+  years: 2014, 2023
+lastupdated: "2023-01-12"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -191,7 +191,7 @@ Ubuntu 16 `x1c` or `x2c` worker node flavors are deprecated and no longer receiv
 
 To view a list of available VM flavors by zone, review the following pages.
 - [Classic flavors](/docs/openshift?topic=openshift-classic-flavors)
-- [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors)*
+- [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-flavors)*
 
 `*` VPC: For more information about network performance caps for virtual machines, see [VPC profiles](/docs/vpc?topic=vpc-profiles). The network speeds refer to the speeds of the worker node network interfaces. The maximum speed available to your worker nodes is `25Gbps`. Because IP in IP encapsulation is required for traffic between pods that are on different VPC worker nodes, data transfer speeds between pods on different worker nodes might be slower, about half the compute profile network speed. Overall network speeds for apps that you deploy to your cluster depend on the worker node size and application's architecture.
 

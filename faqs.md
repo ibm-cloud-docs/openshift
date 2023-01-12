@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-15"
+  years: 2014, 2023
+lastupdated: "2023-01-12"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -135,7 +135,7 @@ Some CVEs require the latest patch update for a version that you can install as 
 {: #bare_metal_gpu}
 {: faq}
 
-Certain VPC worker node flavors offer GPU support. For more information, see the [VPC flavors](/docs/openshift?topic=openshift-vpc-gen2-flavors).
+Certain VPC worker node flavors offer GPU support. For more information, see the [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
 {: tip}
 
 Yes, you can provision your worker node as a single-tenant physical bare metal server. Bare metal servers come with high-performance benefits for workloads such as data, GPU, and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have to worry about "noisy neighbors".
