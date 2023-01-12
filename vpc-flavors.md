@@ -11,8 +11,8 @@ subcollection: openshift
 
 ---
 
-# VPC Gen 2 flavors
-{: #vpc-gen2-flavors}
+# VPC flavors
+{: #vpc-flavors}
 
 Review the VPC Gen 2 worker node flavors by zone.
 
