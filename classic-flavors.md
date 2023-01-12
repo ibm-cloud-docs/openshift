@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-12"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -29,7 +29,7 @@ Review the classic worker node flavors by zone.
 ## ams03
 {: #ams03}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -60,7 +60,7 @@ Review the classic worker node flavors by zone.
 ## che01
 {: #che01}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -91,7 +91,7 @@ Review the classic worker node flavors by zone.
 ## dal10
 {: #dal10}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -128,7 +128,7 @@ Review the classic worker node flavors by zone.
 ## dal12
 {: #dal12}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -165,7 +165,7 @@ Review the classic worker node flavors by zone.
 ## dal13
 {: #dal13}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -202,7 +202,7 @@ Review the classic worker node flavors by zone.
 ## fra02
 {: #fra02}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -236,7 +236,7 @@ Review the classic worker node flavors by zone.
 ## fra04
 {: #fra04}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -270,7 +270,7 @@ Review the classic worker node flavors by zone.
 ## fra05
 {: #fra05}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -306,7 +306,7 @@ Review the classic worker node flavors by zone.
 ## lon02
 {: #lon02}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -340,7 +340,7 @@ Review the classic worker node flavors by zone.
 ## lon04
 {: #lon04}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -374,7 +374,7 @@ Review the classic worker node flavors by zone.
 ## lon05
 {: #lon05}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -408,7 +408,7 @@ Review the classic worker node flavors by zone.
 ## lon06
 {: #lon06}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -446,7 +446,7 @@ Review the classic worker node flavors by zone.
 ## mil01
 {: #mil01}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -477,7 +477,7 @@ Review the classic worker node flavors by zone.
 ## mon01
 {: #mon01}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -508,7 +508,7 @@ Review the classic worker node flavors by zone.
 ## osa21
 {: #osa21}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -545,7 +545,7 @@ Review the classic worker node flavors by zone.
 ## osa22
 {: #osa22}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -582,7 +582,7 @@ Review the classic worker node flavors by zone.
 ## osa23
 {: #osa23}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -621,7 +621,7 @@ Review the classic worker node flavors by zone.
 ## par01
 {: #par01}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -655,7 +655,7 @@ Review the classic worker node flavors by zone.
 ## sao01
 {: #sao01}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -672,7 +672,7 @@ Review the classic worker node flavors by zone.
 ## sjc03
 {: #sjc03}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -691,7 +691,7 @@ Review the classic worker node flavors by zone.
 ## sjc04
 {: #sjc04}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -722,7 +722,7 @@ Review the classic worker node flavors by zone.
 ## sng01
 {: #sng01}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -737,7 +737,7 @@ Review the classic worker node flavors by zone.
 ## syd01
 {: #syd01}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -771,7 +771,7 @@ Review the classic worker node flavors by zone.
 ## syd04
 {: #syd04}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -805,7 +805,7 @@ Review the classic worker node flavors by zone.
 ## syd05
 {: #syd05}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -839,7 +839,7 @@ Review the classic worker node flavors by zone.
 ## tok02
 {: #tok02}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -873,7 +873,7 @@ Review the classic worker node flavors by zone.
 ## tok04
 {: #tok04}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -907,7 +907,7 @@ Review the classic worker node flavors by zone.
 ## tok05
 {: #tok05}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -941,7 +941,7 @@ Review the classic worker node flavors by zone.
 ## tor01
 {: #tor01}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -975,7 +975,7 @@ Review the classic worker node flavors by zone.
 ## wdc04
 {: #wdc04}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -1009,7 +1009,7 @@ Review the classic worker node flavors by zone.
 ## wdc06
 {: #wdc06}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
@@ -1043,7 +1043,7 @@ Review the classic worker node flavors by zone.
 ## wdc07
 {: #wdc07}
 
-| Name | Memory | Network speed | Cores | OS | Server type | Primary storage | Auxiliary storage | 
+| Name | Memory | Network speed | Cores | Server type | OS | Primary storage | Auxiliary storage | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
 | b3c.16x64 | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none | 
 | b3c.16x64.300gb | 64GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 300, Device type: SSD, RAID configuration: none | 
