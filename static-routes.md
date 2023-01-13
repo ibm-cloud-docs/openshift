@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-13"
 
 keywords: openshift, vpn, on-prem, gateway, static
 
@@ -58,10 +58,9 @@ Before you begin
 To use the {{site.data.keyword.cloud_notm}} console, follow these steps.
 
 1. In your [cluster dashboard](https://cloud.ibm.com/kubernetes/clusters){: external}, click the name of the cluster where you want to install the static route add-on.
-2. Click the **Add-ons** tab.
-3. On the **Static Route** card, click **Install**.
-4. Click **Install** again.
-5. On the **Static Route** card, verify that the add-on is listed.
+1. On the **Static Route** card, click **Install**.
+1. Click **Install** again.
+1. On the **Static Route** card, verify that the add-on is listed.
 
 
 ### Enabling the static route add-on with the CLI
