@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-17"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,6 +39,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.8 change log.
 {: shortdesc}
+
+
+### Change log for worker node fix pack 4.8.55_1586_openshift, released 16 January 2023
+{: #4855_1586_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.8.55_1586_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages |N/A|N/A|N/A|
+| RHEL 8 Packages | 4.18.0-425.3.1 | 4.18.0-425.10.1 | Worker node kernel & package updates for [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){: external},[CVE-2022-2601](https://nvd.nist.gov/vuln/detail/CVE-2022-2601){: external},[CVE-2022-2964](https://nvd.nist.gov/vuln/detail/CVE-2022-2964){: external},[CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){: external},[CVE-2022-3775](https://nvd.nist.gov/vuln/detail/CVE-2022-3775){: external},[CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){: external},[CVE-2022-4139](https://nvd.nist.gov/vuln/detail/CVE-2022-4139){: external},[CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){: external},[CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){: external},[CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){: external},[CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){: external}. |
+| {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
+{: caption="Changes since version 4.8.55_1585_openshift" caption-side="top"}
 
 
 ### Change log for worker node fix pack 4.8.55_1585_openshift, released 02 January 2023

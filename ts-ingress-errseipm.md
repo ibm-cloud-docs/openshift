@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-17"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errseipm
 
@@ -38,19 +38,22 @@ The service that exposes the default Ingress Controller does not have all the ne
 Add the worker IP addresses to the external Ingress service.
 {: tsResolve}
 
-1. Run the following command and make note of your worker IP addresses in the `EXTERNAL-IP` column.
+1. Run the following command and make note of your worker IP addresses in the `INTERNAL-IP` column.
     ```sh
-    oc get nodes -o wide 
+    oc get nodes -o wide
     ```
     {: pre}
 
-1. Run the following command to edit the service. 
+1. Run the following command to edit the service.
     ```sh
     oc edit service -n openshift-ingress router-external-default
     ```
     {: pre}
 
-1. Add the IP addresses that you retreived in step 1 to the `spec.externalIPs` list.
+1. Add the IP addresses that you retrieved in step 1 to the `spec.externalIPs` list.
+
+    If your cluster has many workers, you might not want to add all the IP addresses to the list. In this case, it is sufficient to add two IP addresses per zone. To see which worker belongs to which zone, look for the value of the `topology.kubernetes.io/zone` label in the output of the **`oc get nodes -o wide --show-labels`** command.
+    {: tip}
 
 1. Wait 10 to 15 minutes, then check if the warning is resolved by running the `ibmcloud oc ingress status-report get` command.
 

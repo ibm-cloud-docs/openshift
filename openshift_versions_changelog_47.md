@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-17"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,6 +39,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.7 change log.
 {: shortdesc}
+
 
 
 ### Change log for worker node fix pack 4.7.60_1594_openshift, released 02 January 2023

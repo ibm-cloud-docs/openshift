@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-17"
 
 keywords: openshift, errdriss, secret generation failed
 
@@ -56,10 +56,11 @@ Review and update your managed subdomains.
     
 1. Check if the domain has health monitoring.
     - Get the list of the subdomain that have health monitoring enabled using the **`ibmcloud oc nlb-dns monitor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-ls).
-    - If the domain is included in the list, verify whether the backend applications are healthy.
-    - To see the health checking parameters, you can use the **`ibmcloud oc nlb-dns monitor get`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-get) command.
-    - Fix any backend or NLB-DNS health monitor configuration issues.
-    
+    - If the domain is included in the list, get the health monitor details using the **`ibmcloud oc nlb-dns monitor get`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-get) command.
+    - Verify that the health monitor configuration is correct, and that your backend applications are healthy.
+    - Ensure that you allow incoming network traffic from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}.
+    - Fix any backend, NLB-DNS health monitor configuration of firewall issues.
+
 1. Wait 10-15 minutes, then check if the warning is resolved.
 
 
