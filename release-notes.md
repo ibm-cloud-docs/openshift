@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-12"
+lastupdated: "2023-01-17"
 
 keywords: openshift
 
@@ -29,6 +29,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2023
 {: #openshift-jan23}
+
+### 17 January 2023
+{: #openshift-jan1723}
+{: release-note}
+
+
+
+Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.54_1571_openshift`, `4.8.55_1586_openshift`, `4.7.60_1594_openshift`
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47).
 
 ### 10 January 2023
 {: #openshift-jan1023}
@@ -1329,7 +1338,7 @@ Master fix pack and worker node fix pack update
 ### 31 January 2022
 {: #openshift-jan3122}
 
-Version changelog
+Version change log
 :   Fix pack update.
 
 

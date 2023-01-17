@@ -241,6 +241,10 @@ subcollection: openshift
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
 
+    * [17 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1723)
+
+        * Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.54_1571_openshift`, `4.8.55_1586_openshift`, `4.7.60_1594_openshift`
+
     * [10 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1023)
 
         * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.15_1764` and `5.0.4_1773`
@@ -855,7 +859,7 @@ subcollection: openshift
 
     * [31 January 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3122)
 
-        * Version changelog
+        * Version change log
 
         * **New!** Worker node flavor reference
 
