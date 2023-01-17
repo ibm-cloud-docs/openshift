@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-12"
+lastupdated: "2023-01-17"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -438,7 +438,7 @@ Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=bill
 | --- | --- | --- | --- |
 | Cluster management fee | A flat monthly fee for the cluster, charged hourly. | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.openshiftlong_notm}}, such as installation and security patch updates of OpenShift Container Platform for your worker nodes; managing your cluster with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
 | Worker node management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
-| OCP licensing fee | Per vCPU hour. You can either purchase a license during cluster creation or [bring your own](/docs/satellite?topic=satellite-clusters#byo-ocp-satellite). | Per vCPU hour. You can either purchase a license during cluster creation or [bring your own](/docs/satellite?topic=satellite-clusters#byo-ocp-satellite). |
+| OCP licensing fee | Per vCPU hour. You can either purchase a license during cluster creation or [bring your own](#byo-ocp-satellite). | Per vCPU hour. You can either purchase a license during cluster creation or [bring your own](#byo-ocp-satellite). |
 {: caption="Red Hat OpenShift cluster on Satellite charges." caption-side="bottom"}
 
 
