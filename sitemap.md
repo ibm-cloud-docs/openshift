@@ -241,9 +241,9 @@ subcollection: openshift
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
 
-    * [17 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1723)
+    * [16 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1723)
 
-        * Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.54_1571_openshift`, `4.8.55_1586_openshift`, `4.7.60_1594_openshift`
+        * Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.54_1571_openshift`, `4.8.55_1586_openshift`.
 
     * [10 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1023)
 
@@ -6633,8 +6633,6 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_47#openshift_changelog_overview_47)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_47#47_changelog)
-
-    * [Change log for worker node fix pack 4.7.60_1594_openshift, released 16 January 2023](/docs/openshift?topic=openshift-openshift_changelog_47#4760_1594_openshift)
 
     * [Change log for worker node fix pack 4.7.60_1594_openshift, released 02 January 2023](/docs/openshift?topic=openshift-openshift_changelog_47#4760_1594_openshift)
 
