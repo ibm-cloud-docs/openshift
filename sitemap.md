@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-17"
+lastupdated: "2023-01-18"
 
 keywords: openshift
 subcollection: openshift
@@ -2653,24 +2653,6 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
 
 
-## Scalable web application on OpenShift
-{: #sitemap_scalable-web-application-on-openshift}
-
-[Scalable web application on OpenShift](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-scalable-webapp-openshift#scalable-webapp-openshift){: external}
-
-
-## OpenShift interactive learning portal
-{: #sitemap_openshift-interactive-learning-portal}
-
-[OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
-
-
-## IBM Developer OpenShift tutorials
-{: #sitemap_ibm-developer-openshift-tutorials}
-
-[IBM Developer OpenShift tutorials](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/tutorials/){: external}
-
-
 ## Using Calico network policies to control traffic on Classic clusters
 {: #sitemap_using_calico_network_policies_to_control_traffic_on_classic_clusters}
 
@@ -3980,6 +3962,10 @@ subcollection: openshift
 {: #sitemap_satellite_clusters}
 
 
+[Customizing your network setup in {{site.data.keyword.satelliteshort}} Locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
+
+* [Restricting NodePort service access](/docs/openshift?topic=openshift-satellite-network-customization#nodeport-restrict-access)
+
 [Setting up Single Root I/O Virtualization (SR-IOV) in {{site.data.keyword.satellitelong_notm}} clusters](/docs/openshift?topic=openshift-satellite-sriov#satellite-sriov)
 
 * [Prerequisites for using SR-IOV](/docs/openshift?topic=openshift-satellite-sriov#sriov-prereqs)
@@ -4268,8 +4254,6 @@ subcollection: openshift
 * [About NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport_planning)
 
 * [Enabling access to an app by using a NodePort service](/docs/openshift?topic=openshift-nodeport#nodeport_config)
-
-* [Restricting NodePort service access](/docs/openshift?topic=openshift-nodeport#nodeport-restrict-access)
 
 [Managing the app lifecycle](/docs/openshift?topic=openshift-update_app#update_app)
 
@@ -5976,6 +5960,11 @@ subcollection: openshift
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
+
+
+### Version 4.12
+{: #sitemap_version_412}
+
 
 
 ### Version 4.11
@@ -8159,6 +8148,8 @@ subcollection: openshift
 [OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
 
 [IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
+
+[OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
 ## VPC flavors

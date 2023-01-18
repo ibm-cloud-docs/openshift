@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-18"
 
 keywords: openshift
 
@@ -166,7 +166,7 @@ Developers focus on domain problems, by using existing tools: Instead of Develop
 #### Solution model
 {: #uc_port_model}
 
-Compute, storage, and Node starter kits that run in the public cloud with secure access to shipping data across the globe, as needed. Compute in clusters is tamper-proof and isolated to bare metal.  
+Compute, storage, and apps run in the public cloud with secure access to shipping data across the globe, as needed. Compute in clusters is tamper-proof and isolated to bare metal.  
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -177,7 +177,7 @@ Technical solution:
 #### Step 1: Containerize apps, by using microservices
 {: #uc_port_step1}
 
-* Use the Node.js starter kit from IBM to jump start development.
+* Create a Node.js app or deploy an example.
 * Structure apps into a set of cooperative microservices that run within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy the manifest and shipment apps to container that run in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
@@ -202,7 +202,6 @@ Technical solution:
 #### Results
 {: #uc_port_results}
 
-* With IBM starter kits, {{site.data.keyword.openshiftlong_notm}}, and {{site.data.keyword.contdelivery_full}} tools, global Developers work together across organizations and governments. They collaboratively develop customs apps, with familiar and interoperable tools.
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequently 10 times per week.
 * Shipping customers and government officials have access to manifest data and can share customs data, while they comply with local regulations.
 * The shipping company benefits from improved logistics management in the supply chain: reduced costs and faster clearance times.

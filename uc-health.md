@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-18"
 
 keywords: openshift
 
@@ -194,7 +194,7 @@ Developers focus on domain problems, by using existing tools: Instead of writing
 #### Solution: Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}
 {: #uc_research_the_solution}
 
-Compute, storage, and Node starter kits run in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
+Compute, storage, and apps run in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
@@ -205,7 +205,7 @@ Technical solution:
 #### Step 1: Containerize apps by using microservices
 {: #uc_research_step1}
 
-* Use the Node.js starter kit from IBM to jump-start development.
+* Create a Node.js app or deploy an example.
 * Structure apps into a set of cooperative microservices within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
 * Deploy research apps to containers in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
@@ -237,7 +237,6 @@ Technical solution:
 #### Results
 {: #uc_research_results}
 
-* With starter kits, {{site.data.keyword.openshiftlong_notm}}, and IBM CI/CD tools, global Developers work across institutions and collaboratively develop research apps, with familiar and interoperable tools.
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.
 * Researchers have access to clinical data and can share clinical data, while they comply with local regulations.
 * Patients who participate in disease research feel confident that their data is secure and making a difference, when it is shared with large research teams.

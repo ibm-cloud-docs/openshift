@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-18"
 
 keywords: openshift
 
@@ -209,7 +209,6 @@ Technical solution:
 #### Step 3: Deliver promotions with mobile loyalty app
 {: #uc_grocer_step3}
 
-* Jump-start development of mobile app with the IBM Mobile Starter Kit and other IBM Mobile services, such as {{site.data.keyword.appid_full_notm}}.
 * Promotions in the form of coupons and other entitlements are sent to users’ mobile app. The promotions were identified by using the inventory and social analysis, plus other back-end systems.
 * Storage of promotion recipes on mobile app and conversions (redeemed checkout coupons) are fed back to ERP systems for further analysis.
 
