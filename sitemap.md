@@ -139,51 +139,99 @@ subcollection: openshift
 
 * [Mortgage company trims costs and accelerates regulatory compliance](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage_solution)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage_results)
 
 * [Payment tech company streamlines developer productivity, deploying AI-enabled tools to their partners 4 times faster](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech_solution)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech_results)
 
 [Healthcare use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_health#cs_uc_health)
 
 * [Healthcare provider migrates workloads from inefficient VMs to Ops-friendly containers for reporting and patient systems](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate_solution_model)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate_results)
 
 * [Research nonprofit securely hosts sensitive data while it grows research with partners](/docs/openshift?topic=openshift-cs_uc_health#uc_research)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_health#uc_research_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_health#uc_research_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_research_solution)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_research_the_solution)
+
+    * [Step 1: Containerize apps by using microservices](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step1)
+
+    * [Step 2: Use secure and performance driven compute](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step2)
+
+    * [Step 3: Ensure global availability](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step3)
+
+    * [Step 4: Data sharing](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step4)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_health#uc_research_results)
 
 [Retail use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#cs_uc_retail)
 
 * [Brick-and-mortar retailer shares data, by using APIs with global business partners to drive omnichannel sales](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share_solution)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share_results)
 
 * [Traditional grocer increases customer traffic and sales with digital insights](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer_context)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer_results)
 
 [Transportation use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_transport#cs_uc_transport)
 
 * [Shipping company increases availability of worldwide systems for business partner ecosystem](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping_solution)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping_results)
 
 * [Airline delivers innovative Human Resources (HR) benefits site in under 3 weeks](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline_solution)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline_results)
 
 [Government use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_gov#cs_uc_gov)
 
 * [Regional government improves collaboration and velocity with community Developers who combine public-private data](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_solution)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_results)
 
 * [Large public port secures exchange of port data and shipping manifests that connect public and private organizations](/docs/openshift?topic=openshift-cs_uc_gov#uc_port)
 
-    * [Why {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_ibmcloud)
+    * [Context](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_context)
+
+    * [Solution](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_solution)
+
+    * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_results)
 
 
 ## Learning paths

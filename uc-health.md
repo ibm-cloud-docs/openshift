@@ -28,19 +28,7 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} b
 An IT Exec for a healthcare provider has business reporting and patient systems on-premises. Those systems go through slow enhancement cycles, which leads to stagnant patient service levels.  
 {: shortdesc}
 
-### Why {{site.data.keyword.cloud_notm}}
-{: #uc_migrate_ibmcloud}
-
 To improve patient service, the provider looked to {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.contdelivery_full}} to reduce IT expenses and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently.  Yet, the provider's developers were overwhelmed with administering the hardware, network, and even the Kubernetes stack on their own. The provider also wanted to counteract increasing labor costs and a decreasing budget.
-
-Key technologies:
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [Horizontal scaling](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
-* [Container security and isolation](/docs/openshift?topic=openshift-security#security) 
-* [{{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/products/cloud-pak-for-data){: external}
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
-* [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
-* [Sign-on capability without changing app code by using {{site.data.keyword.appid_short_notm}}](/docs/appid?topic=appid-getting-started)
 
 They started by containerizing their SaaS systems and putting them in the cloud. From that first step, they went from over-built hardware in a private data center to customizable compute that reduces IT operations, maintenance, and energy. To host the SaaS apps, they easily designed Kubernetes clusters to fit their CPU, RAM, and storage needs. They used {{site.data.keyword.icp4dfull_notm}} to provide the familiar analytics tools from their on-prem environment.  Another factor for decreased staff costs is that IBM manages Kubernetes, so the provider can focus on delivering better customer service. 
 
@@ -52,7 +40,7 @@ Security first: With bare metal for {{site.data.keyword.openshiftlong_notm}}, th
 
 Secure patient data leads to happier patients.
 
-#### Workload migration for the Healthcare Provider
+### Context
 {: #uc_migrate_context}
 
 * Technical debt, which is coupled with long release cycles, is hindering the provider’s business-critical patient management and reporting systems.
@@ -62,7 +50,7 @@ Secure patient data leads to happier patients.
 * Security is a primary concern, and this issue is adding to the delivery burden, which causes even more delays.
 * Capital expense budgets are under tight control, and IT feels they don't have the budget or staff to create the needed testing and staging landscapes with their in-house systems.
 
-#### Solution model
+### Solution
 {: #uc_migrate_solution_model}
 
 Compute, storage, and I/O services run in the public cloud with secure access to on-premises enterprise assets. Implement a CI/CD process and other parts of the IBM Garage Method to dramatically shorten delivery cycles.
@@ -86,21 +74,19 @@ Compute, storage, and I/O services run in the public cloud with secure access to
 #### Step 3: Microservices and Garage Method
 {: #uc_migrate_step3}
 
-* Rearchitect apps into a set of cooperative microservices. That set runs within {{site.data.keyword.openshiftlong_notm}} that is based on functional areas of the app with the most quality problems.
+* Reconfigure apps into a set of cooperative microservices. That set runs within {{site.data.keyword.openshiftlong_notm}} that is based on functional areas of the app with the most quality problems.
 * Use {{site.data.keyword.cloudant}} with customer provided keys for caching data in the cloud.
 * Adopt continuous integration and delivery (CI/CD) practices so that Developers version and release a microservice on its own schedule as needed. {{site.data.keyword.contdelivery_full}} provides for workflow toolchains for CI/CD process along with image creation and vulnerability scanning of container images.
 * Adopt the agile and iterative development practices from the IBM Garage Method to enable frequent releases of new functions, patches, and fixes without downtime.
 
-#### Technical solution
-{: #uc_migrate_solution}
-
+Technical solution
 * {{site.data.keyword.openshiftlong_notm}} 
 * {{site.data.keyword.icp4dfull_notm}}
 * {{site.data.keyword.cloudant}}
 * {{site.data.keyword.SecureGatewayfull}}
 * {{site.data.keyword.appid_short_notm}}
 
-For the most sensitive workloads, the clusters can be hosted in {{site.data.keyword.openshiftlong_notm}} for Bare Metal. By using industry-standard containers technology, apps can initially be re-hosted on {{site.data.keyword.openshiftlong_notm}} quickly without major architectural changes. This change provides the immediate benefit of scalability.
+For sensitive workloads, the clusters can be hosted in {{site.data.keyword.openshiftlong_notm}} for Bare Metal. By using industry-standard containers technology, apps can initially be re-hosted on {{site.data.keyword.openshiftlong_notm}} quickly without major architectural changes. This change provides the immediate benefit of scalability.
 
 They can replicate and scale the apps by using defined rules and the automated Kubernetes orchestrator. {{site.data.keyword.openshiftlong_notm}} provides scalable compute resources and the associated DevOps dashboards to create, scale, and tear down apps and services. By using Kubernetes's deployment and runtime objects, the provider can monitor and manage upgrades to apps reliably.
 
@@ -112,7 +98,7 @@ Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough 
 
 Much of the CI/CD process itself is automated with IBM's Continuous Delivery service in the Cloud. The provider can define workflow toolchains to prepare container images, check for vulnerabilities, and deploy them to the Kubernetes cluster.
 
-#### Results
+### Results
 {: #uc_migrate_results}
 
 * Lifting the existing monolithic VMs into cloud-hosted containers was a first step that allowed the provider to save on capital costs and begin learning modern DevOps practices. 
@@ -126,28 +112,22 @@ Much of the CI/CD process itself is automated with IBM's Continuous Delivery ser
 A Development Exec for a disease research nonprofit has academic and industry researchers who can't easily share research data. Instead, their work's isolated in pockets across the globe due to regional compliance regulations and centralized databases.
 {: shortdesc}
 
-### Why {{site.data.keyword.cloud_notm}}
-{: #uc_research_ibmcloud}
+{{site.data.keyword.openshiftlong_notm}} delivers secure compute that can host sensitive and data processing on an open platform. That global platform is hosted in near-by regions. So it's tied to local regulations that inspire patients’ and researchers’ confidence that their data is both protected locally and makes a difference in better health outcomes.
 
-{{site.data.keyword.openshiftlong_notm}} delivers secure compute that can host sensitive and performant data processing on an open platform. That global platform is hosted in near-by regions. So it's tied to local regulations that inspire patients’ and researchers’ confidence that their data is both protected locally and makes a difference in better health outcomes.
-
-Key technologies:
-* [Intelligent scheduling places workloads where needed](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
-* [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
-* [Vulnerability scanning  and isolation for workloads](/docs/Registry?topic=va-va_index#va_index)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
-* [{{site.data.keyword.openwhisk}} to sanitize data and notify researchers about data structure changes](/docs/openwhisk?topic=openwhisk-pkg_cloudant)
-
-#### Context: Securely hosting and sharing disease data for Research Nonprofit
+### Context
 {: #uc_research_context}
+
+Securely hosting and sharing disease data for Research Nonprofit
 
 * Disparate groups of researchers from various institutions don’t have a unified way to share data, slowing down collaboration.
 * The security concern adds to the collaboration burden that causes even less shared research.
 * Developers and Researchers are spread across the globe and across organizational boundaries, which make PaaS and SaaS the best option for each user group.
 * Regional differences in health regulations require some data and data processing to remain within that region.
 
-#### Solution: Securely hosting and sharing disease data for Research Nonprofit
+### Solution
 {: #uc_research_solution}
+
+Securely hosting and sharing disease data for Research Nonprofit.
 
 The research nonprofit wants to aggregate cancer research data across the globe. So they create a division that is dedicated to solutions for their researchers.
 
@@ -176,9 +156,6 @@ ANALYZE
 
 :   The nonprofit also provides apps that run on non-bare metal nodes of the global cluster. The apps view and extract the aggregated data and the ML app output. These apps are accessible by a public endpoint, which is secured by the API Gateway to the world. Then, researchers and data analysts from everywhere can download data sets and do their own analysis.
 
-#### Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}
-{: #uc_research_hosting}
-
 Developers started by deploying their research-sharing SaaS apps in containers with {{site.data.keyword.openshiftlong_notm}}. They created clusters for a Development environment that allow worldwide Developers to collaboratively deploy app improvements quickly.
 
 Security first: The Development Exec chose bare metal to host the research clusters. With bare metal for {{site.data.keyword.openshiftlong_notm}}, the sensitive research workloads now have familiar isolation but within the flexibility of public cloud. Because this nonprofit also has a partnership with pharmaceutical companies, app security is crucial. Competition is fierce, and corporate espionage is possible. From that secure core, Vulnerability Advisor provides scanning.
@@ -191,8 +168,10 @@ To achieve global availability, the Dev, Test, and Production systems are deploy
 
 Developers focus on domain problems, by using existing tools: Instead of writing unique ML code, ML logic is snapped into apps, by binding {{site.data.keyword.cloud_notm}} services to clusters. Developers are also freed up from infrastructure management tasks because IBM takes care of Kubernetes and infrastructure upgrades, security, and more.
 
-#### Solution: Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}
+### Solution
 {: #uc_research_the_solution}
+
+Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}.
 
 Compute, storage, and apps run in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
 
@@ -202,7 +181,7 @@ Technical solution:
 * {{site.data.keyword.cloudant}}
 * {{site.data.keyword.SecureGatewayfull}}
 
-#### Step 1: Containerize apps by using microservices
+### Step 1: Containerize apps by using microservices
 {: #uc_research_step1}
 
 * Create a Node.js app or deploy an example.
@@ -212,20 +191,20 @@ Technical solution:
 * Enable scaling compute resources for batch and other research workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to existing on-premises databases.
 
-#### Step 2: Use secure and performance driven compute
+### Step 2: Use secure and performance driven compute
 {: #uc_research_step2}
 
 * ML apps that require higher-performing compute are hosted on {{site.data.keyword.openshiftlong_notm}} on Bare Metal. This ML cluster is centralized, so each regional cluster doesn't have the expense of bare metal workers; Kubernetes deployments are easier too.
 * Vulnerability Advisor provides image, policy, container, and packaging scanning vulnerability scanning.
 
-#### Step 3: Ensure global availability
+### Step 3: Ensure global availability
 {: #uc_research_step3}
 
 * After Developers build and test the apps in their Development and Test clusters, they use the IBM CI/CD toolchains to deploy apps into clusters across the globe.
 * Built-in HA tools in {{site.data.keyword.openshiftlong_notm}} balance the workload within each geographic region, including self-healing and load balancing.
 * With the toolchains and Helm deployment tools, the apps are also deployed to clusters across the globe, so workloads and data meet regional regulations.
 
-#### Step 4: Data sharing
+### Step 4: Data sharing
 {: #uc_research_step4}
 
 * {{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query.
@@ -234,7 +213,7 @@ Technical solution:
 * While worker apps in {{site.data.keyword.openshiftlong_notm}} analyze on-premises data and store results in {{site.data.keyword.cloudant}}, {{site.data.keyword.openwhisk}} reacts to changes and automatically sanitizes data on the incoming feeds of data.
 * Similarly, notifications of research breakthroughs in one region can be triggered through data uploads so that all researchers can take advantage of new data.
 
-#### Results
+### Results
 {: #uc_research_results}
 
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.

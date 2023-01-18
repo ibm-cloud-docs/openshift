@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-18"
 
 keywords: openshift
 
@@ -29,30 +29,16 @@ take advantage of high availability, high-performance compute, easy spin-up of c
 A Risk Management VP for a residential mortgage company processes 70 million records a day, but the on-premises system was slow and also inaccurate. IT expenses soared because hardware quickly went out of date and wasn't utilized fully. While they waited for hardware provisioning, their regulatory compliance slowed.  
 {: shortdesc}
 
-### Why {{site.data.keyword.cloud_notm}}
-{: #uc_mortgage_ibmcloud}
+### Context
+{: #uc_mortgage_context}
 
 To improve risk analysis, the company looked to {{site.data.keyword.openshiftlong_notm}} and IBM Cloud Analytic services to reduce costs, increase worldwide availability, and ultimately accelerate regulatory compliance. With {{site.data.keyword.openshiftlong_notm}} in multiple regions, their analysis apps can be containerized and deployed across the globe, improving availability and addressing local regulations. Those deployments are accelerated with familiar open source tools, already part of {{site.data.keyword.openshiftlong_notm}}.
 
-{{site.data.keyword.openshiftlong_notm}} and key technologies:
-* [Horizontal scaling](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
-* [Multiple regions for high availability](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [Container security and isolation](/docs/openshift?topic=openshift-security#security)
-* [{{site.data.keyword.cloudant}} to persist and sync data across apps](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant)
-* [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
-
-#### The solution
-{: #uc_mortgage_solution}
-
-They started by containerizing the analysis apps and putting them in the cloud. In a flash, their hardware headaches went away. They were able to easily design Kubernetes clusters to fit their high-performance CPU, RAM, storage, and security needs. And when their analysis apps change, they can add or shrink compute without huge hardware investments. With the {{site.data.keyword.openshiftlong_notm}} horizontal scaling, their apps scale with the growing number of records, resulting in faster regulatory reports. {{site.data.keyword.openshiftlong_notm}} provides elastic compute resources around the world that are secure and highly performant for full usage of modern compute resources.
+They started by containerizing the analysis apps and putting them in the cloud. In a flash, their hardware headaches went away. They were able to easily design Kubernetes clusters to fit their high-performance CPU, RAM, storage, and security needs. And when their analysis apps change, they can add or shrink compute without huge hardware investments. With the {{site.data.keyword.openshiftlong_notm}} horizontal scaling, their apps scale with the growing number of records, resulting in faster regulatory reports. {{site.data.keyword.openshiftlong_notm}} provides elastic compute resources around the world that are secure and capable.
 
 Now those apps receive high-volume data from a data warehouse on {{site.data.keyword.cloudant}}. Cloud-based storage in {{site.data.keyword.cloudant}} ensures higher availability than when it was locked in an on-premises system. Since availability is essential, the apps are deployed across global data centers: for DR and for latency too.
 
 They also accelerated their risk analysis and compliance. Their predictive and risk analytics functions, such as Monte Carlo calculations, are now constantly updated through iterative agile deployments. Container orchestration is handled by a managed Kubernetes so that operations costs are reduced too. Ultimately risk analysis for mortgages is more responsive to the fast-paced changes in the market.
-
-#### Context: Compliance and financial modeling for residential mortgages
-{: #uc_mortgage_context}
 
 * Heightened need for better financial risk management drives increases in regulatory oversight. The same needs drive the associated review in risk assessment processes and disclosure of more granular, integrated, and abundant regulatory reporting.
 * High Performance Computing Grids are the key infrastructure components for financial modeling.
@@ -65,18 +51,16 @@ Software and app updates follow an informal process and aren't repeatable.
 The actual HPC grid is hard to program against. The API is too complex for new Developers who join the team and requires non-documented knowledge.
 And major app upgrades take 6 - 9 months to complete.
 
-#### Solution model
-{: #uc_mortgage_solution_model}
+### Solution
+{: #uc_mortgage_solution}
 
-Compute, storage, and I/O services that run in public cloud with secure access to on-premises enterprise assets as needed**
+Compute, storage, and I/O services that run in public cloud with secure access to on-premises enterprise assets as needed.
 
 * Secure and scalable document storage that supports structured and unstructured document query
 * Lift and shift existing enterprise assets and app while they enabled the integration to some on-premises systems that won't be migrated
 * Shorten time-to-deploy solutions and implement standard DevOps and monitoring processes to address bugs that affected reporting accuracy
 
-#### Detailed solution
-{: #uc_mortgage_details}
-
+Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
 * {{site.data.keyword.cos_full_notm}}
 * {{site.data.keyword.sqlquery_notm}} (Spark)
@@ -93,7 +77,7 @@ This solution provides the immediate benefit of scalability. By using Kubernetes
 
 {{site.data.keyword.cloudant}} is a modern NoSQL database that is useful for many data-driven use cases: from key-value to complex document-oriented data storage and query. To manage the growing set of regulatory and management report rules, the mortgage company uses {{site.data.keyword.cloudant}} to store documents that are associated with raw regulatory data the come into the firm. Compute processes on {{site.data.keyword.openshiftlong_notm}} are triggered to compile, process, and publish the data in various reporting formats. Intermediate results common across reports are stored as {{site.data.keyword.cloudant}} documents so template-driven processes can be used to produce the necessary reports.
 
-#### Results
+### Results
 {: #uc_mortgage_results}
 
 * Complex financial simulations are completed in 25% of the time than was previously possible with the existing on-premises systems.
@@ -108,23 +92,11 @@ This solution provides the immediate benefit of scalability. By using Kubernetes
 A Development Exec has Developers that use on-premises application tools that slow down prototyping while they wait for hardware procurement.
 {: shortdesc}
 
-### Why {{site.data.keyword.cloud_notm}}
-{: #uc_payment_tech_ibmcloud}
-
 {{site.data.keyword.openshiftlong_notm}} provides spin-up of compute by using open-source standard technology. After the company moved to {{site.data.keyword.openshiftlong_notm}}, Developers have access to DevOps friendly tools, such as portable and easily shared containers.
 
 Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their  application development tools get a new face when they add on AI cloud services to apps with a click.
 
-Key technologies:
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
-* [IBM Cloud Pak for Applications](https://www.ibm.com/cloud/cloud-pak-for-applications){: external}
-* [Fraud prevention with {{site.data.keyword.watson}} AI](https://www.ibm.com/cloud/watson-studio){: external}
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
-* [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
-* [Sign-on capability without changing app code by using {{site.data.keyword.appid_short_notm}}](/docs/appid?topic=appid-getting-started)
-
-#### Context
+### Context
 {: #uc_payment_tech_context}
 
 Streamlining developer productivity and deploying AI tools to partners 4 times faster**
@@ -136,7 +108,7 @@ Streamlining developer productivity and deploying AI tools to partners 4 times f
 * Capital expense budgets are under tight control, and IT feels they don't have the budget or staff to create the testing and staging landscapes with their in-house systems.
 * Security is increasingly a primary concern, and this concern only adds to the delivery burden that all cause even more delays.
 
-#### The solution
+### Solution
 {: #uc_payment_tech_solution}
 
 The Development Exec is faced with many challenges in the dynamic payment industry. Regulations, consumer behaviors, fraud, competitors, and market infrastructures are all rapidly evolving. Fast-paced development is essential to being part of the future payment world.
@@ -148,9 +120,6 @@ They need a solution that helps the Developers and their business partners:
 * REGULATION-SPECIFIC FEATURES: each country has unique regulations so that the overall toolset might look similar but show country-specific benefits
 * DEVELOPER-FRIENDLY TOOLS that accelerate roll-out of features and bug fixes
 * FRAUD DETECTION AS A SERVICE (FDaaS) uses {{site.data.keyword.watson}} AI to keep one step ahead of frequent and growing fraudulent actions
-
-#### Solution model
-{: #uc_payment_tech_model}
 
 Compute, DevOps tools, and AI that run in public cloud with access to back-end payment systems. Implement a CI/CD process to dramatically shorten delivery cycles.
 
@@ -194,7 +163,7 @@ Security first: With bare metal for {{site.data.keyword.openshiftlong_notm}}, th
 * Deploy IBM {{site.data.keyword.watson}} for Financial Services to prevent and detect fraud.
 * Using the toolchains and Helm deployment tools, the apps are also deployed to the {{site.data.keyword.openshiftlong_notm}} clusters across the globe. Then, workloads and data meet regional regulations.
 
-#### Results
+### Results
 {: #uc_payment_tech_results}
 
 * Lifting the existing monolithic VMs into cloud-hosted containers was a first step that allowed the Development Exec to save on capital and operations costs.
