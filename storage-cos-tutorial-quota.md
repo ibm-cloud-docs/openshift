@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-19"
 
 keywords: openshift
 
@@ -54,7 +54,7 @@ Before beginning this tutorial make sure you have created or installed the follo
 {: #storage-cos-quota-credentials}
 {: step}
 
-1. Follow the steps to create a set of HMAC [service credentials for your {{site.data.keyword.cos_short}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). Note that the credentials you create must have the **Manager** role to create buckets. 
+1. Follow the steps to create a set of HMAC [service credentials for your {{site.data.keyword.cos_short}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage#gs-bucket-policy). Note that the credentials you create must have the **Manager** role to create buckets. 
 
 1. After you create a set of HMAC service credentials, review the details of your credentials and make a note of the `apikey`, `access_key_id`, and `secret_access_key`. Save these values for the next step.
 

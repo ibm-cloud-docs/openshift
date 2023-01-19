@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-19"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 # Retail use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_retail}
 
-These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} can take advantage of analytics for market insights, multiregion deployments across the globe, and inventory management with {{site.data.keyword.messagehub_full}} and object storage.
+These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} can take advantage of analytics for market insights, multi-region deployments across the globe, and inventory management with {{site.data.keyword.messagehub_full}} and object storage.
 {: shortdesc}
 
 ## Brick-and-mortar retailer shares data, by using APIs with global business partners to drive omnichannel sales
@@ -29,8 +29,6 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} c
 A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail system is closed off in an on-premises data center. The competition has global business partners to cross-sell and upsell permutations of their goods: across brick-and-mortar and online sites.  
 {: shortdesc}
 
-### Why {{site.data.keyword.cloud_notm}}
-{: #uc_data-share_ibmcloud}
 
 {{site.data.keyword.openshiftlong_notm}} provides a public-cloud ecosystem, where containers enable new business partners and other external players to co-develop apps and data, through APIs. Now that the retail system is on the public cloud, APIs also streamline data sharing and jump-start new app development. App deployments increase when Developers experiment easily, pushing changes to Development and Test systems quickly with toolchains.
 
@@ -39,7 +37,7 @@ A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail s
 * [{{site.data.keyword.cos_full}} to persist and sync data across apps](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 
-#### Context: Retailer shares data, by using APIs with global business partners to drive omnichannel sales
+### Context
 {: #uc_data-share_context}
 
 * The retailer is faced with strong competitive pressures. First, they need to mask the complexity of crossing into new products and new channels. For example, they need to expand product sophistication. At the same time, it needs to be simpler for their customers to jump across brands.
@@ -47,7 +45,7 @@ A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail s
 * Burst user events, like Black Friday, strain existing online systems, forcing the retailer to over-provision the compute infrastructure.
 * The retailer’s Developers needed to constantly evolve apps, but traditional tools slowed their ability to deploy updates and features frequently, especially when they collaborate with business partner teams.  
 
-#### The solution
+### Solution
 {: #uc_data-share_solution}
 
 A smarter shopping experience is needed to increase customer retention and gross profit margin. The retailer’s traditional sales model was suffering due to the lack of business partner inventory for cross-sales and up-sales. Their shoppers are looking for increased convenience, so that they can quickly find related items together, such as yoga pants and mats.
@@ -71,9 +69,6 @@ Thus, they chose {{site.data.keyword.openshiftlong_notm}} because IBM simplifies
 Moreover logging and monitoring for the API microservices, especially how they pull personalized data out of back-end systems, easily integrates with {{site.data.keyword.openshiftlong_notm}}. Developers don’t waste time building complex logging systems, just to be able to troubleshoot live systems.
 
 {{site.data.keyword.messagehub_full}} acts as the just-in-time events platform to bring in the rapidly changing information from the business partners’ inventory systems to {{site.data.keyword.cos_full}}.
-
-#### Solution model
-{: #uc_data-share_model}
 
 Compute, storage, and event management that run in public cloud with access to retail inventories across the globe, as needed
 
@@ -120,7 +115,7 @@ Technical solution:
 * After Developers build and test the apps in their Development and Test clusters, they use the IBM continuous integration and delivery (CI and CD) toolchains to deploy apps into clusters across the globe.
 * {{site.data.keyword.openshiftlong_notm}} provides easy roll-out and roll-back of apps; tailored apps are deployed to test campaigns through the intelligent routing and load balancing of Istio.
 
-#### Results
+### Results
 {: #uc_data-share_results}
 
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial worldwide development is fast, and updates are as frequent as 40 times a week.
@@ -134,9 +129,6 @@ Technical solution:
 A Chief Marketing Officer (CMO) needs to increase customer traffic by 20% in stores by making the stores a differentiating asset. Large retail competitors and online retailers are stealing sales. At the same time, the CMO needs to reduce inventory without markdowns because holding inventory too long locks up millions in capital.
 {: shortdesc}
 
-### Why {{site.data.keyword.cloud_notm}}
-{: #uc_grocer_ibmcloud}
-
 {{site.data.keyword.openshiftlong_notm}} provides easy spin-up of more compute, where Developers quickly add Cloud Analytics services for sales behavior insights and digital market adaptability.
 
 Key technologies:    
@@ -146,14 +138,16 @@ Key technologies:
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
 * [Inventory management with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-about#about)
 
-#### Context: Traditional grocer increases customer traffic and sales with digital insights
+### Context
 {: #uc_grocer_context}
+
+Traditional grocer increases customer traffic and sales with digital insights.
 
 * Competitive pressures from online retailers and large retail stores disrupted traditional grocery retail models. Sales are declining, evidenced by low foot traffic in physical stores.
 * Their loyalty program needs a boost in the arm with a modern take on the printed coupons at check out. So Developers must constantly evolve the related apps, but traditional tools slow their ability to deploy updates and features frequently.  
 * Certain high-value inventory isn’t moving as well as expected, but yet the “foodie” movement seems to be growing in major metropolitan markets.
 
-#### The solution
+#### Solution
 {: #uc_grocer_solution}
 
 The grocer needs an app to increase conversion and store traffic to generate new sales and build customer loyalty in a reusable cloud analytics platform. The in-store targeted experience can be an event along with a services or product vendor that attracts both loyalty and new customers based on affinity to the specific event. The store and business partner then offer incentives to come to the event as well as buying products from the store or business partner.  
@@ -181,9 +175,6 @@ In addition to the mobile app, the Developers are busy with building and maintai
 * Monitoring health and recovery for worker nodes
 * Providing global compute, so Developers aren't responsible for infrastructure setup in data centers
 
-#### Solution model
-{: #uc_grocer_model}
-
 Compute, storage, and event management that run in public cloud with access to back-end ERP systems
 
 Technical solution:
@@ -209,11 +200,10 @@ Technical solution:
 #### Step 3: Deliver promotions with mobile loyalty app
 {: #uc_grocer_step3}
 
-* Jump-start development of mobile app with the IBM Mobile Starter Kit and other IBM Mobile services, such as {{site.data.keyword.appid_full_notm}}.
 * Promotions in the form of coupons and other entitlements are sent to users’ mobile app. The promotions were identified by using the inventory and social analysis, plus other back-end systems.
 * Storage of promotion recipes on mobile app and conversions (redeemed checkout coupons) are fed back to ERP systems for further analysis.
 
-#### Results
+### Results
 {: #uc_grocer_results}
 
 * With {{site.data.keyword.openshiftlong_notm}}, microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-18"
 
 keywords: openshift, red hat, red hat openshift, odo
 
@@ -119,7 +119,7 @@ After you complete the [prerequisites](#odo-prereqs) install the CLI and select 
         ```
         {: screen}
 
-    4. Optional: If you don't have an existing Node.js app in your directory, you can download a starter kit, as shown in the following example. You can confirm the files are downloaded by running `ls` from the directory.
+    4. Optional: If you don't have an existing Node.js app in your directory, you can download a example app.
         ```sh
         ? Do you want to download a starter project Yes
         ```
@@ -174,7 +174,7 @@ You might wonder, how can the microservice be pushed to the cluster without a Do
 
 3. In the output of the previous step, copy the route for your microservice that users can access from outside the cluster.
 
-4. In a web browser, open the URL of your Node.js app. You see your app, or if you used the starter kit, a message similar to the following.
+4. In a web browser, open the URL of your Node.js app. You see your app, or if you used the example app, a message similar to the following.
     ```sh
     Hello from Node.js Starter Application!
     ```

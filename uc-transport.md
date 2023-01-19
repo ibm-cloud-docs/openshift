@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-19"
+  years: 2014, 2023
+lastupdated: "2023-01-18"
 
 keywords: openshift
 
@@ -30,9 +30,6 @@ take advantage of toolchains for rapid app updates and multi-region deployments 
 An IT Exec has worldwide shipping routing and scheduling systems that partners interact with. Partners require up-to-the-minute information from these systems that access IoT device data. But, these systems were unable to scale across the globe with sufficient HA.  
 {: shortdesc}
 
-### Why {{site.data.keyword.cloud_notm}}
-{: #uc_shipping_ibmcloud}
-
 {{site.data.keyword.openshiftlong_notm}} scales containerized apps with five 9s of availability to meet growing demands. App deployments occur 40 times daily when Developers experiment easily, pushing changes to Development and Test systems quickly. The IoT Platform makes access to IoT data easy.
 
 Key technologies:    
@@ -42,14 +39,16 @@ Key technologies:
 * [Cloud services for innovation](https://www.ibm.com/cloud/products#analytics){: external}
 * [{{site.data.keyword.messagehub_full}} to feed event data to apps](/docs/EventStreams?topic=EventStreams-about#about)
 
-#### Context: Shipping company increases availability of worldwide systems for business partner ecosystem
+### Context
 {: #uc_shipping_context}
+
+Shipping company increases availability of worldwide systems for business partner ecosystem
 
 * Regional differences for shipping logistics made it difficult to keep up with growing number of partners in multiple countries. An example is the unique regulations and transit logistics, where the company must maintain consistent records across borders.
 * Just-in-time data meant that the worldwide systems must be highly available to reduce lags in transit operations. Time tables for shipping terminals are highly controlled and sometimes inflexible. Web usage is growing, so instability might cause a poor user experience.
 * Developers needed to constantly evolve apps, but traditional tools slowed their ability to deploy updates and features frequently.  
 
-#### The solution
+### Solution
 {: #uc_shipping_solution}
 
 The shipping company needs to cohesively manage shipping time tables, inventories, and customs paperwork. Then, they can accurately share the location of shipments, shipping contents, and delivery schedules to their customers. They’re taking the guess work out of when a good (such as an appliance, clothing, or produce) arrives so that their shipping customers can communicate that information to their own customers.
@@ -77,9 +76,6 @@ To achieve global availability, the Development, Test, and Production systems we
 They also spread the workload across multizone clusters in Frankfurt to ensure that the European version of the app is available and also balances the workload efficiently. Because each region uploads unique data with the port app, the app’s clusters are hosted in regions where latency is low.
 
 For Developers, much of the continuous integration and delivery (CI/CD) process can be automated with {{site.data.keyword.contdelivery_full}}. The company can define workflow toolchains to prepare container images, check for vulnerabilities, and deploy them to the Kubernetes cluster.
-
-#### Solution model
-{: #uc_shipping_model}
 
 Compute, storage, and event management that run in public cloud with access to shipment data across the globe, as needed.
 
@@ -118,7 +114,7 @@ Technical solution:
 * After Developers build and test the apps in their Development and Test clusters, they use the IBM CI/CD toolchains to deploy apps into clusters across the globe.
 * {{site.data.keyword.openshiftlong_notm}} provides easy rollout and roll-back of apps; tailored apps are deployed to meet regional requirements through the intelligent routing and load balancing of Istio.
 
-#### Results
+### Results
 {: #uc_shipping_results}
 
 * With {{site.data.keyword.openshiftlong_notm}} and IBM CI/CD tools, regional versions of apps are hosted near to the physical devices that they gather data from.
@@ -133,19 +129,12 @@ Technical solution:
 An HR Exec (CHRO) needs a new HR benefits site with an innovative chatbot, but current Development tools and platform mean long lead times for apps to go live. This situation includes long waits for hardware procurement.
 {: shortdesc}
 
-### Why {{site.data.keyword.cloud_notm}}
-{: #uc_airline_ibmcloud}
-
 {{site.data.keyword.openshiftlong_notm}} provides easy spin-up of compute. Then, Developers can experiment easily, pushing changes to Development and Test systems quickly with open toolchains. Their traditional software development tools get a boost when they add on IBM {{site.data.keyword.watson}} Assistant. The new benefits site was created in less than 3 weeks.
 
-Key technologies:    
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-* [Chatbot service powered by {{site.data.keyword.watson}}](https://developer.ibm.com/components/watson-assistant/){: external}
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
-* [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
-
-#### Context: Rapidly building and deploying innovative HR benefits site in less than 3 weeks
+### Context
 {: #uc_airline_context}
+
+Rapidly building and deploying innovative HR benefits site in less than 3 weeks.
 
 * Employee growth and changing HR policies meant that a whole new site would be required for annual enrollment.
 * Interactive features, such as a chatbot, were expected to help communicate new HR policies to existing employees.
@@ -153,7 +142,7 @@ Key technologies:
 * The HR team faced pressure to move faster: roll out new site features quickly and post last-minute benefit changes frequently.
 * The enrollment period lasts for two weeks, and so downtime for the new app isn't tolerated.
 
-#### The solution
+### Solution
 {: #uc_airline_solution}
 
 The airline wants to design an open culture that puts people first. The HR Executive is well aware that a focus on rewarding and retaining talent impacts the airline’s profitability. Thus, the annual rollout of benefits is a key aspect of fostering an employee-centered culture.
@@ -207,7 +196,7 @@ With {{site.data.keyword.openshiftlong_notm}}, they went from over-built hardwar
 * {{site.data.keyword.openshiftlong_notm}} provides easy rollout and roll-back of apps. Tailored apps are deployed to meet regional requirements through the intelligent routing and load balancing of Istio.
 * Built-in HA tools in {{site.data.keyword.openshiftlong_notm}} balance the workload within each geographic region, including self-healing and load balancing.
 
-#### Results
+### Results
 {: #uc_airline_results}
 
 * With tools like the chatbot, the HR team proved to their workforce that innovation was part of the corporate culture, not just buzz words.
