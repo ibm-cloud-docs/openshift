@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-01-19"
 
 keywords: openshift
 subcollection: openshift
@@ -6008,11 +6008,6 @@ subcollection: openshift
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
-
-
-### Version 4.12
-{: #sitemap_version_412}
-
 
 
 ### Version 4.11

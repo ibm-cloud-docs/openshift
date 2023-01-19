@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-01-19"
 
 keywords: openshift
 
@@ -39,8 +39,6 @@ A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail s
 
 ### Context
 {: #uc_data-share_context}
-
-Retailer shares data, by using APIs with global business partners to drive omnichannel sales
 
 * The retailer is faced with strong competitive pressures. First, they need to mask the complexity of crossing into new products and new channels. For example, they need to expand product sophistication. At the same time, it needs to be simpler for their customers to jump across brands.
 * That ability to jump brand means that the retail ecosystem requires connectivity to business partners. Then, the cloud can bring new value from business partners, customers, and other external players.
