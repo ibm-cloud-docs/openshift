@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-20"
 
 keywords: openshift, nginx, ingress controller
 
@@ -125,10 +125,10 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
-    ```sh
-    oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
-    ```
-    {: pre}
+```sh
+oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+```
+{: pre}
     
 
 
@@ -351,10 +351,10 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
-    ```sh
-    oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
-    ```
-    {: pre}
+```sh
+oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+```
+{: pre}
     
 
 
@@ -685,10 +685,10 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
-    ```sh
-    oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
-    ```
-    {: pre}
+```sh
+oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+```
+{: pre}
     
 
 
@@ -965,10 +965,10 @@ Start by deploying your apps and creating Kubernetes services to expose them.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
-    ```sh
-    oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
-    ```
-    {: pre}
+```sh
+oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <namespace>
+```
+{: pre}
     
 
 ### Step 2: Select an app domain and TLS termination
