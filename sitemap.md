@@ -289,6 +289,10 @@ subcollection: openshift
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
 
+    * [23 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2323)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.8` is available.
+
     * [16 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1723)
 
         * Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.54_1571_openshift`, `4.8.55_1586_openshift`.
@@ -7048,6 +7052,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.8, released 23 January 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0228_object_plugin)
 
 * [Change log for version 2.2.7, released 5 January 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0227_object_plugin)
 

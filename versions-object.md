@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-23"
 
 keywords: object storage, plug-in, changelog
 
@@ -28,10 +28,20 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.8 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.7 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.6 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.5 and earlier | Deprecated | Greater than or equal to 4.6 | x86 |
+| 2.2.6 and earlier | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.8, released 23 January 2023
+{: #0228_object_plugin}
+
+- Updates the UBI Image to `8:8.7-1049`
+- Adds `PriorityClasses` for driver and plug-in pods
+- Updates tolerations for plug-in pod
+- Adds support for encrypting buckets with {{site.data.keyword.keymanagementservicelong_notm}} by using your root key CRN when creating buckets.
+- Resolves the following CVEs: [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/2022-43680){: external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/2022-42010){: external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/2022-42011){: external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/2022-42012){: external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/2022-3821){: external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/2022-35737){: external}, [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/2021-46848){: external}. 
+
 
 ## Change log for version 2.2.7, released 5 January 2023
 {: #0227_object_plugin}
