@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-17"
+lastupdated: "2023-01-23"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -56,8 +56,6 @@ There are two sets of CLI commands that work directly with {{site.data.keyword.s
 Follow the steps to set up {{site.data.keyword.secrets-manager_short}} in your cluster.
 {: shortdesc}
 
-These steps are intended for users setting up {{site.data.keyword.secrets-manager_short}} in new clusters or in clusters without {{site.data.keyword.cloudcerts_long_notm}}. If you are migrating your secrets from {{site.data.keyword.cloudcerts_long_notm}} to {{site.data.keyword.secrets-manager_short}}, follow the steps in the [{{site.data.keyword.cloudcerts_long_notm}} Migration doc instead](/docs/openshift?topic=openshift-certs-mgr-migration).
-{: important}
 
 ### Enable service-to-service communication
 {: #secrets-mgr_setup_s2s}

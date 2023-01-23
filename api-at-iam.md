@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-23"
 
 keywords: openshift
 
@@ -156,11 +156,11 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
 | `DELETE​/v1​/alb​/albs​/{albID}` | Disable an ALB in a classic cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.delete` |
-| `DELETE​/v1​/alb​/clusters​/{idOrName}​/albsecrets` | Delete an ALB secret that is imported from {{site.data.keyword.cloudcerts_short}} from a classic cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.delete` |
+| `DELETE​/v1​/alb​/clusters​/{idOrName}​/albsecrets` | Delete an ALB secret that is imported from {{site.data.keyword.secrets-manager_short}} from a classic cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.delete` |
 | `GET​/v1​/alb​/albs​/{albID}` | View details of an ALB in a classic cluster. | `containers-kubernetes.cluster.read` | `cluster-alb.get` |
 | `GET​/v1​/alb​/albtypes` | List the ALB types that are supported in classic clusters. | `containers-kubernetes.cluster.read` | - | |
 | `GET​/v1​/alb​/clusters​/{idOrName}`   | List all ALBs in a classic cluster. | `containers-kubernetes.cluster.read` | `cluster-alb.list` |
-| `GET​/v1​/alb​/clusters​/{idOrName}​/albsecrets` | View details of an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}} to a classic cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.list` |
+| `GET​/v1​/alb​/clusters​/{idOrName}​/albsecrets` | View details of an ALB secret that you imported from {{site.data.keyword.secrets-manager_short}} to a classic cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.list` |
 | `GET​/v1​/alb​/clusters​/{idOrName}​/updatepolicy` | Check if automatic updates for Ingress ALBs are enabled in a classic cluster. | `containers-kubernetes.cluster.update` | `cluster-alb-policy.get` |
 | `GET​/v2​/alb​/getAlb` | View details of an ALB. | `containers-kubernetes.cluster.read` | `cluster-alb.get` |
 | `GET​/v2​/alb​/getAlbImages` | List supported Ingress controller images. | `containers-kubernetes.cluster.read` | `alb-image.list` |
@@ -168,7 +168,7 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 | `GET​/v2​/alb​/getMigrationStatus` | Get the status of the Ingress migration process. | `containers-kubernetes.cluster.read` | `cluster-alb-migration-status.get` |
 | `GET​/v2​/alb​/getStatus` | Get the status of the Ingress resources in a cluster. | `containers-kubernetes.cluster.read` | `cluster-ingress-status.get` |
 | `POST​/v1​/alb​/albs` | Enable an existing ALB in a classic cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.enable` |
-| `POST​/v1​/alb​/albsecrets` | Import an ALB secret from {{site.data.keyword.cloudcerts_short}} to a cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.create` |
+| `POST​/v1​/alb​/albsecrets` | Import an ALB secret from {{site.data.keyword.secrets-manager_short}} to a cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.create` |
 | `POST​/v1​/alb​/clusters​/{idOrName}​/zone​/{zoneId}` | Create a public or private ALB in a classic cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.create` |
 | `POST​/v2​/alb​/cleanupMigration` | Clean up any Ingress resources and configmaps that are no longer needed after an Ingress migration. | `containers-kubernetes.cluster.create` | `cluster-alb-migration.cleanup` |
 | `POST​/v2​/alb​/startMigration` | Start a migration of your {{site.data.keyword.cloud_notm}} Ingress ConfigMap and Ingress resources to the Kubernetes Ingress format. | `containers-kubernetes.cluster.create` | `cluster-alb-migration.start` |
@@ -176,7 +176,7 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 | `POST​/v2​/alb​/vpc​/createAlb` | Create a public or private ALB in a VPC cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.create` |
 | `POST​/v2​/alb​/vpc​/disableAlb` | Disable an ALB in a VPC cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.delete` |
 | `POST​/v2​/alb​/vpc​/enableAlb` | Enable an existing ALB in a VPC cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.enable` |
-| `PUT​/v1​/alb​/albsecrets` | Update an ALB secret that you imported from {{site.data.keyword.cloudcerts_short}}. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.update` |
+| `PUT​/v1​/alb​/albsecrets` | Update an ALB secret that you imported from {{site.data.keyword.secrets-manager_short}}. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.update` |
 | `PUT​/v1​/alb​/clusters​/{idOrName}​/update` | Force a one-time update of all ALB pods to the latest build. | `containers-kubernetes.cluster.update` | `cluster-alb.update` |
 | `PUT​/v1​/alb​/clusters​/{idOrName}​/updatepolicy` | Enable or disable automatic updates for the Ingress ALBs in a cluster. | `containers-kubernetes.cluster.update` | `cluster-alb-policy.update` |
 | `PUT​/v1​/alb​/clusters​/{idOrName}​/updaterollback` | Roll back all ALB pods in a cluster to their previously running build. | `containers-kubernetes.cluster.update` | `cluster-alb-policy.update` |

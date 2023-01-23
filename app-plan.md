@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-23"
 
 keywords: openshift, deploy
 
@@ -81,7 +81,6 @@ You can take some general steps to containerize your app as follows.
 1. Over time, refactor your app processes into microservices.
 
 For more, see the following tutorials.
-* [Migrating an app from Cloud Foundry to a cluster](/docs/containers?topic=containers-cf_tutorial#cf_tutorial).
 * [Moving a VM-based app to Kubernetes](/docs/solution-tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes).
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-23"
 
 keywords: openshift, version, update, upgrade
 
@@ -73,13 +73,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
 
-4.7 (Kubernetes 1.20)
-- Release date: 09 June 2021
-- End of support: 18 January 2023
-- Supported operating systems: RHEL 7 (`REDHAT_7_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
-
 
 ## Clusters in Satellite locations with CoreOS enabled
 {: #os-satellite-with-coreos}
@@ -113,13 +106,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
 
-4.7 (Kubernetes 1.20)
-- Release date: 09 June 2021
-- End of support: 18 January 2023
-- Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 7 (`REDHAT_7_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
-
 
 ## Clusters in Satellite locations without CoreOS enabled
 {: #os-satellite-without-coreos}
@@ -152,13 +138,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - Supported operating systems: RHEL 7 (`REDHAT_7_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
-
-4.7 (Kubernetes 1.20)
-- Release date: 09 June 2021
-- End of support: 18 January 2023
-- Supported operating systems: RHEL 7 (`REDHAT_7_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_47)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_47)
 
 
 Unsupported versions:

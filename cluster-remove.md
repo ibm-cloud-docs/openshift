@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-23"
 
 keywords: openshift, clusters, delete, remove
 
@@ -33,8 +33,6 @@ No backups are created of your cluster or your data in your persistent storage. 
 **Classic clusters only**: When you remove a cluster, you also remove any subnets that were automatically provisioned when you created the cluster and that you created by using the `ibmcloud oc cluster subnet create` command. However, if you manually added existing subnets to your cluster by using the `ibmcloud oc cluster subnet add` command, these subnets are not removed from your IBM Cloud infrastructure account and you can reuse them in other clusters.
 {: note}
 
-When you delete your cluster, the default {{site.data.keyword.cloudcerts_short}} instance for your cluster, which is named in the format `kube-crtmgr-<cluster_ID>`, is also automatically deleted. Any certificates that are stored in the {{site.data.keyword.cloudcerts_short}} instance for your cluster are deleted when the {{site.data.keyword.cloudcerts_short}} instance is deleted.
-{: note}
 
 **Before you begin**:
 * Note your cluster ID. You might need the cluster ID to investigate and remove related IBM Cloud infrastructure resources that are not automatically deleted with your cluster.

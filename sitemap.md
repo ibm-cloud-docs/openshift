@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-01-23"
 
 keywords: openshift
 subcollection: openshift
@@ -288,6 +288,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
+
+    * [23 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2323)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.8` is available.
 
     * [16 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1723)
 
@@ -2990,6 +2994,8 @@ subcollection: openshift
 
 [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
+* [Prerequisites and notes](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-prereq)
+
 * [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
 
 * [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
@@ -4612,8 +4618,6 @@ subcollection: openshift
 * [Migrating your secrets without using {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_alt)
 
 * [Migration FAQ](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_migration_faq)
-
-* [Timeline for {{site.data.keyword.cloudcerts_short}} end of support](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_timeline)
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
@@ -7046,6 +7050,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.8, released 23 January 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0228_object_plugin)
 
 * [Change log for version 2.2.7, released 5 January 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0227_object_plugin)
 
