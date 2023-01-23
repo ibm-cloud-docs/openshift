@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-01-23"
 
 keywords: openshift add-ons, cluster addon
 
@@ -23,7 +23,7 @@ Review the following list of supported cluster add-ons.
 | alb-oauth-proxy | 2.0.0 (Default) | >=1.19.0 <1.27.0 |  N/A  |
 | cluster-autoscaler | 1.0.5  | >=1.20.0 <1.24.0 | >=4.6.0 <4.11.0 |
 | cluster-autoscaler | 1.0.6 (Default) | >=1.20.0 <1.25.0 | >=4.6.0 <4.12.0 |
-| cluster-autoscaler | 1.0.7  | >=1.20.0 <1.26.0 | >=4.7.0 <4.12.0 |
+| cluster-autoscaler | 1.0.7  | >=1.20.0 <1.26.0 | >=4.7.0 <4.13.0 |
 | cluster-autoscaler | 1.1.0  | >=1.20.0 <1.24.0 | >=4.6.0 <4.11.0 |
 | debug-tool | 2.0.0 (Default) | >=1.17.0 <1.27.0 | >=3.11.0 <4.13.0 |
 | image-key-synchronizer | 1.0.0 (Default) |  N/A  | >=4.4.0 <4.13.0 |
