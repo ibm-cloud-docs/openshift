@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-23"
 
 keywords: openshift, audit
 
@@ -183,7 +183,6 @@ The following list of Ingress secret events are sent to {{site.data.keyword.at_f
 | `containers-kubernetes.cluster-ingress-secret.create` | An Ingress secret for a certificate is created. |
 | `containers-kubernetes.cluster-ingress-secret.delete` | An Ingress secret is deleted from the cluster. |
 | `containers-kubernetes.cluster-ingress-secret.update` | The certificate for an Ingress secret is updated. |
-| `containers-kubernetes.cluster-ingress-secret.notify` | When the default {{site.data.keyword.cloudcerts_short}} instance is created for a cluster, the {{site.data.keyword.cloudcerts_short}} notification channel for certificate updates is created. |
 {: caption="Ingress secret events" caption-side="bottom"}
 
 ## Observability events for logging and monitoring

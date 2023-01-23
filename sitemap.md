@@ -4619,8 +4619,6 @@ subcollection: openshift
 
 * [Migration FAQ](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_migration_faq)
 
-* [Timeline for {{site.data.keyword.cloudcerts_short}} end of support](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_timeline)
-
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
 * [Setting up MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb)
