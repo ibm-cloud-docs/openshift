@@ -30,12 +30,25 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2023
 {: #openshift-jan23}
 
+
+### 24 January 2023
+{: #openshift-jan2423}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on versions `4.4.16_1779` and `5.0.5_1784`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+Cluster autoscaler add-on version `1.0.7_940`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+
 ### 23 January 2023
 {: #openshift-jan2323}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.8` is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
 
 ### 16 January 2023
 {: #openshift-jan1723}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-23"
 
 keywords: openshift
 
@@ -1006,7 +1006,7 @@ What do I need to be aware of before I start using the Kubernetes secret for my 
     :   In the string data section, enter the VPC zone where you want to create the {{site.data.keyword.blockstorageshort}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` and look at the **Worker Zones** field in your CLI output. If you don't specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.blockstorageshort}} instance.
     
     `tags`
-    :   In the string data section, enter a space-separated list of tags to use when the PVC is created. Tags can help you find your storage instance after it is created. 
+    :   In the string data section, enter a comma-separated list of tags to use when the PVC is created. Tags can help you find your storage instance after it is created.
     
     `resourceGroup`
     :   In the string data section, enter the resource group that you want your {{site.data.keyword.blockstorageshort}} instance to get access to. If you don't enter a resource group, the instance is automatically authorized to access resources of the resource group that your cluster belongs to. 
