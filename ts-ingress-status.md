@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-23"
 
 keywords: openshift
 
@@ -84,6 +84,7 @@ The Ingress Status reflects the overall health of the Ingress components.
 | `critical` | Some Ingress components are malfunctioning.|
 | `disabled` | Ingress status reporting is disabled. You can turn it on using the `ibmcloud oc ingress status-report enable` command.|
 | `unsupported`| Ingress status reporting is not available for unsupported cluster versions. |
+| `unknown`| The system is unable to calculate the Ingress status. |
 {: caption="Ingress statuses" caption-side="bottom"}
 
 
