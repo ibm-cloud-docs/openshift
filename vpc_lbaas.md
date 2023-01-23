@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-23"
 
 keywords: openshift, app protocol, application protocol
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# VPC: Exposing apps with load balancers for VPC
+# VPC: Exposing apps with load balancers for VPC 
 {: #vpc-lbaas}
 
 Set up a Load Balancer for VPC to expose your app on the public or private network.
@@ -134,8 +134,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
-        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp: "<tcp_port"
-    spec:
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp: "<tcp_port>"
+        spec:
       type: LoadBalancer
       selector:
         <selector_key>: <selector_value>
@@ -148,7 +148,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
          protocol: TCP
          port: 443
          targetPort: 443 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
-      externalTrafficPolicy: Local
+      externalTrafficPolicy: Local # Specify Local or Cluster.
     ```
     {: codeblock}
 
@@ -159,7 +159,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     :    Optional: Annotation to specify a service that accepts public requests. If you don't include this annotation, a public VPC NLB is created. 
     
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
-    :    Optional: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in the same zone as the VPC NLB are configured to receive traffic from the VPC NLB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored.
+    :    Optional: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in the same zone as the VPC NLB are configured to receive traffic from the VPC NLB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. 
     :    The following keys are permitted.
         - `ibm-cloud.kubernetes.io/internal-ip`
         - `ibm-cloud.kubernetes.io/machine-type`
@@ -185,7 +185,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     :   Note that if you don't specify this annotation or the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` annotation, the VPC NLB is deployed to the most optimal zone. For example, the VPC NLB is deployed only to zones in which worker nodes exist and are in the `Ready` state.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp`
-    :    Optional: Specify a TCP port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp) for more considerations before setting a port value. 
+    :    Optional: Specify a TCP port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. For more information on setting port values, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
     
     `selector`
     :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
@@ -197,8 +197,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     :   Optional: The port to which the service directs traffic.
     
     `externalTrafficPolicy`
-    :   Set to `Local` to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
-    :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. See [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp) for more details. 
+    :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
+    :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. After the incoming request arrives, the request is forwarded to a worker node that contains the app pod, which may be in a different zone. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -397,7 +397,7 @@ To enable your app to receive private network requests,
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet_ID>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp: "<tcp_port"
-    spec:
+        spec:
       type: LoadBalancer
       selector:
         <selector_key>: <selector_value>
@@ -411,7 +411,7 @@ To enable your app to receive private network requests,
          protocol: TCP
          port: 443
          targetPort: 443 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
-      externalTrafficPolicy: Local
+      externalTrafficPolicy: Local # Specify Local or Cluster. 
     ```
     {: codeblock}
 
@@ -443,7 +443,7 @@ To enable your app to receive private network requests,
         - `topology.kubernetes.io/zone`
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp`
-    :    Optional: Specify a TCP node port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp) for more considerations before setting a port value. 
+    :    Optional: Specify a TCP node port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp) for more considerations before setting a port value.
 
     `selector`
     :   The label key (`<selector_key>`) and value (`<selector_value>`) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
@@ -455,8 +455,9 @@ To enable your app to receive private network requests,
     :   Optional: The port to which the service directs traffic.
 
     `externalTrafficPolicy`
-    :   Set to `Local` to preserve the source IP address of client requests to your apps. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster.
-    :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. Once the incoming request arrives, the request is forwarded to a worker node that contains the app pod. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. See [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp) for more details. 
+    :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
+    :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. After the incoming request arrives, the request is forwarded to a worker node that contains the app pod, which may be in a different zone. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
+
 
 5. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -627,6 +628,7 @@ To enable your app to receive public or private requests,
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector: "<key>=<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"
+        spec:
    spec:
      type: LoadBalancer
      selector:
@@ -641,6 +643,7 @@ To enable your app to receive public or private requests,
          protocol: TCP
          port: 443
          targetPort: 443 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
+      externalTrafficPolicy: Local # Specify Local or Cluster. 
     ```
     {: codeblock}
 
@@ -688,6 +691,10 @@ To enable your app to receive public or private requests,
 
     `targetPort`
     :   The port to which the service directs traffic.
+
+    `externalTrafficPolicy`
+    :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
+    :   Set to `Cluster` to configure TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp). 
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -847,11 +854,11 @@ To use the TLS certificate to access your app via HTTPS, ensure that you defined
 ## Health checks for load balancers
 {: #vpc_lb_health}
 
-VPC load balancers are automatically configured with health checks. The type of health check that is configured depends on the `externalTrafficPolicy`.
+VPC load balancers are automatically configured with health checks, which you configure with the `externalTrafficPolicy` annotation. 
 {: shortdesc} 
 
 - If `externalTrafficPolicy` is set to `Cluster`, TCP health checks are applied. If you are configuring a UDP load balancer, [you must make additional port specifications](#vpc_lb_health_udp).
-- If `externalTrafficPolicy` is set to `Local`, HTTP health checks are applied. You must ensure that an app pod exists on each worker node in the same zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster.
+- If `externalTrafficPolicy` is set to `Local`, HTTP health checks are applied. You must ensure that an app pod exists on each worker node in the same zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster. Incoming traffic is delivered only to the application pod residing on that specific node. If there is no application pod on that specific node, the incoming traffic is dropped.
 
 ### Enabling TCP health checks for UDP load balancers
 {: #vpc_lb_health_udp}
@@ -997,7 +1004,7 @@ Review the following default settings and limitations.
 * One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all your VPC clusters in your VPC, a maximum of 50 VPC load balancers can be created. For more information, see the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas).
 * The VPC load balancer can route requests to pods that are deployed on a maximum of 50 worker nodes in a cluster.
     * If you set `externalTrafficPolicy: Cluster` in your load balancer configuration, the VPC load balancer only routes to the first 50 worker nodes that are returned in the cluster's API call to the VPC load balancer. 
-    * If you set `externalTrafficPolicy: Local` in your load balancer configuration, the VPC load balancer is only created if there are fewer than 50 worker nodes on the cluster. Instead, reduce the number of worker nodes that the load balancer forwards request to by limiting the load balancer to a zone. You can include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"` annotation, or create a separate `LoadBalancer` service for each zone.
+    * If you set `externalTrafficPolicy: Local` in your load balancer configuration, the VPC load balancer is created only if there are fewer than 50 worker nodes on the cluster. Instead, reduce the number of worker nodes that the load balancer forwards request to by limiting the load balancer to a zone. You can include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "<zone>"` annotation, or create a separate `LoadBalancer` service for each zone.
 * When you define the configuration YAML file for a Kubernetes `LoadBalancer` service, the following annotations and settings are not supported:
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"`
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"`
@@ -1009,7 +1016,7 @@ Review the following default settings and limitations.
 * When you delete a VPC cluster, any  VPC load balancers, which are named in the `kube-<cluster_ID>-<kubernetes_lb_service_UID>` format and are automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster, are also automatically deleted. 
 * You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
 * {{site.data.keyword.redhat_openshift_notm}} 4.6 or later: Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
-* VPC ALB listens on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the annotation: `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`. If you add more zones to the cluster, the VPC ALB is not updated to listen for incoming traffic on the new zone(s). The subnets and zones of the VPC ALB can't be changed once the ALB is created. Incoming traffic can be routed to all backend worker nodes in the cluster across all zones, but the VPC subnets that the VPC ALB is listening on can not be updated. The VPC NLB is limited to the VPC subnets in a single zone. It can't be configured to listen on VPC subnets located in multiple zones.
+* VPC ALB listens on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations. If you add more zones to the cluster, the VPC ALB is not updated to listen for incoming traffic on the new zone(s). The subnets and zones of the VPC ALB can't be changed once the ALB is created. Incoming traffic can be routed to all backend worker nodes in the cluster across all zones, but the VPC subnets that the VPC ALB is listening on can not be updated. The VPC NLB is limited to the VPC subnets in a single zone. It can't be configured to listen on VPC subnets located in multiple zones.
 * Disabling load balancer NodePort allocation is not supported for VPC load balancers. 
 * VPC ALBs only: Mixed protocol load balancer services are not currently supported in IBM Cloud Kubernetes Service. You cannot specify both TCP and UDP ports in your load balancer definition.
 * 4.11 or later: VPC NLBs can be set up with both UDP and TCP on the same VPC LB, but the listening port must be different.
