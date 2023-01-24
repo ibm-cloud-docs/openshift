@@ -169,16 +169,6 @@ subcollection: openshift
 
     * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_research_solution)
 
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_research_the_solution)
-
-    * [Step 1: Containerize apps by using microservices](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step1)
-
-    * [Step 2: Use secure and performance driven compute](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step2)
-
-    * [Step 3: Ensure global availability](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step3)
-
-    * [Step 4: Data sharing](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step4)
-
     * [Results](/docs/openshift?topic=openshift-cs_uc_health#uc_research_results)
 
 [Retail use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#cs_uc_retail)

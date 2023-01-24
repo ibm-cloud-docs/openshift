@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-01-24"
 
 keywords: block, add-on, changelog
 
@@ -50,7 +50,7 @@ Version 5.0.0 is available in for allowlisted accounts.
 
 
 - Updates the storage-secret-sidecar image to `v1.2.15`.
-- Resolves [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){:external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){:external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){:external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){:external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){:external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){:external}, and [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){:external}.
+- Resolves [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){: external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){: external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){: external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){: external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){: external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){: external}, and [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){: external}.
 
 ### Change log for version 5.0.4_1773, released 10 January 2023
 {: #5.0.4-1773_is_block_relnote}
