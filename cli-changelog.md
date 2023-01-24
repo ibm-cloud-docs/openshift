@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-24"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -32,6 +32,12 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version 1.0.487
+{: #cli-10487}
+
+Version 1.0.487 of the CLI was released on 24 January 2023.
+:   Adds the `satellite-service-endpoint allowlist` commands
+:   Updates the help text in various languages.
 ## Version 1.0.480
 {: #cli-10480}
 

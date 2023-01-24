@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-01-24"
 
 keywords: openshift
 
@@ -7270,6 +7270,171 @@ The following example creates a {{site.data.keyword.satelliteshort}} cluster run
 
 ```sh
 ibmcloud sat cluster create satellite --name mysatcluster-coreos --location my-location --version 4.9.23_openshift --operating-system RHCOS --workers 6
+```
+{: pre}
+
+### `ibmcloud oc cluster master satellite-service-endpoint allowlist add`
+{: #cluster-master-sat-allowlist-add}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
+Add a subnet to a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. Authorized requests to the cluster master that originate from the subnet are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. The allowlist must be [enabled](#cluster-master-sat-allowlist-enable) for the restrictions to apply. This command can be used only with {{site.data.keyword.satelliteshort}} clusters that are CoreOS-enabled.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
+```
+{: pre}
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform access role for {{site.data.keyword.satelliteshort}}.
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--subnet SUBNET`
+:    Required: The subnet in CIDR format. Specify more than one subnet by using multiple repeated entries.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster my-cluster --subnet 1.1.1.1/16 --subnet SUBNET 1.1.1.1/32 [-q]
+```
+{: pre}
+
+### `ibmcloud oc cluster master satellite-service-endpoint allowlist disable`
+{: #cluster-master-sat-allowlist-disable}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
+Disable the allowlist for a {{site.data.keyword.satelliteshort}} cluster. When the allowlist is disabled, authorized requests to the cluster master that originate from any subnet are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. This command can be used only with {{site.data.keyword.satelliteshort}} clusters that are CoreOS-enabled.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.satelliteshort}}.
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`--subnet SUBNET`
+:    Required: The subnet in CIDR format. Specify more than one subnet by using multiple repeated entries.
+
+`-f`
+:    Optional: Force the command to run with no user prompts.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluster my-cluster 
+```
+{: pre}
+
+### `ibmcloud oc cluster master satellite-service-endpoint allowlist enable`
+{: #cluster-master-sat-allowlist-enable}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
+Enable the allowlist for a {{site.data.keyword.satelliteshort}} cluster. When the allowlist is enabled, authorized requests to the cluster master are permitted through the {{site.data.keyword.satelliteshort}} service endpoint only if they originate from a subnet specified in the allowlist. This command can be used only with {{site.data.keyword.satelliteshort}} clusters that are CoreOS-enabled.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.satelliteshort}}.
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`-f`
+:    Optional: Force the command to run with no user prompts.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster my-cluster 
+```
+{: pre}
+
+### `ibmcloud oc cluster master satellite-service-endpoint allowlist get`
+{: #cluster-master-sat-allowlist-get}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
+Get a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. The allowlist contains the subnets from which requests to the cluster master are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. This command can be used only with {{site.data.keyword.satelliteshort}} clusters that are CoreOS-enabled.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CLUSTER [-q]
+```
+{: pre}
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform access role for {{site.data.keyword.satelliteshort}}.
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster my-cluster 
+```
+{: pre}
+
+### `ibmcloud oc cluster master satellite-service-endpoint allowlist remove`
+{: #cluster-master-sat-allowlist-remove}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
+Remove a subnet from a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. Authorized requests to the cluster master that originate from the subnet are no longer permitted through the {{site.data.keyword.satelliteshort}} service endpoint. This command can be used only with {{site.data.keyword.satelliteshort}} clusters that are CoreOS-enabled.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist remove --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-f] [-q]
+```
+{: pre}
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform access role for {{site.data.keyword.satelliteshort}}.
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required. The name or ID of the cluster.
+
+`-f`
+:    Optional: Force the command to run with no user prompts.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+**Example**:
+
+```sh
+ibmcloud oc cluster master satellite-service-endpoint allowlist remove --cluster my-cluster --subnet 1.1.1.1/16 --subnet SUBNET 1.1.1.1/32 [-q]
 ```
 {: pre}
 

@@ -281,6 +281,8 @@ subcollection: openshift
 
     * [24 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2423)
 
+        * CLI version 1.0.487 change log update
+
         * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.16_1779` and `5.0.5_1784`.
 
         * Cluster autoscaler add-on version `1.0.7_940`.
@@ -5808,6 +5810,16 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
 
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-disable)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-get)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist remove`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-remove)
+
     * [`ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
 
     * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
@@ -5815,6 +5827,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.487](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10487)
 
 * [Version 1.0.480](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10480)
 
