@@ -1,4 +1,17 @@
+---
 
+copyright:
+  years: 2014, 2023
+lastupdated: "2023-01-24"
+
+keywords: openshift, route, network, satellite
+
+subcollection: openshift
+
+---
+
+
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Customizing your network setup in {{site.data.keyword.satelliteshort}} Locations and clusters

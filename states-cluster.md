@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-24"
 
 keywords: kubernetes, worker nodes, state
 
@@ -37,6 +37,14 @@ Review the following description of the `Critical` cluster state. To view the st
 {: shortdesc}
 
 The Kubernetes master can't be reached or all worker nodes in the cluster are down. If you enabled {{site.data.keyword.keymanagementservicelong_notm}} in your cluster, the {{site.data.keyword.keymanagementserviceshort}} container might fail to encrypt or decrypt your cluster secrets. If so, you can view an error with more information when you run `oc get secrets`.
+
+## Create failed
+{: #cluster-state-create-failed}
+
+Review the following description of the `Create failed` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
+{: shortdesc}
+
+The cluster cannot be created. Delete the failed cluster and try to create another one. If the issue persists when creating additional clusters, open an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help). 
 
 ## Delete failed
 {: #cluster-state-delete-failed}

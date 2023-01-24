@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-24"
 
 keywords: block, add-on, changelog
 
@@ -44,6 +44,13 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
+
+### Change log for version 5.0.5_1784, released 24 January 2023
+{: #5.0.5-1784_is_block_relnote}
+
+
+- Updates the storage-secret-sidecar image to `v1.2.15`.
+- Resolves [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){: external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){: external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){: external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){: external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){: external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){: external}, and [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){: external}.
 
 ### Change log for version 5.0.4_1773, released 10 January 2023
 {: #5.0.4-1773_is_block_relnote}
@@ -89,7 +96,7 @@ Version 5.0.0 is available in for allowlisted accounts.
 ### Change log for version 5.0, released 11 October 2022
 {: #5.0_is_block_relnote}
 
-- Adds snapshot support for cluster Kubernetes version 1.25 and later.
+- Adds snapshot support for cluster versions 4.9 and later.
 - Makes the resource requests and limits of the `vpc-block-csi-driver` containers configurable. To view the config run `kubectl get cm -n kube-system addon-vpc-block-csi-driver-configmap -o yaml`
 - Adds the following parameters for customizing the driver.
     - `AttachDetachMinRetryGAP: "3"`: The initial retry interval for checking Attach/Detach Status. The default is 3 seconds.
@@ -139,6 +146,13 @@ Adds snapshot support.
 
 ## Version 4.4
 {: #044_is_block}
+
+### Change log for version 4.4.16_1779, released 24 January 2023
+{: #4.4.16_1779_is_block_relnote}
+
+- Updates the storage-secret-sidecar image to `v1.2.15`.
+- Resolves [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){:external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){:external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){:external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){:external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){:external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){:external}, and [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){:external}.
+
 
 ### Change log for version 4.4.15_1764, released 10 January 2023
 {: #4.4.15_1764_is_block_relnote}

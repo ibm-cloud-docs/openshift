@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-01-24"
 
 keywords: openshift
 subcollection: openshift
@@ -169,16 +169,6 @@ subcollection: openshift
 
     * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_research_solution)
 
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_research_the_solution)
-
-    * [Step 1: Containerize apps by using microservices](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step1)
-
-    * [Step 2: Use secure and performance driven compute](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step2)
-
-    * [Step 3: Ensure global availability](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step3)
-
-    * [Step 4: Data sharing](/docs/openshift?topic=openshift-cs_uc_health#uc_research_step4)
-
     * [Results](/docs/openshift?topic=openshift-cs_uc_health#uc_research_results)
 
 [Retail use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#cs_uc_retail)
@@ -288,6 +278,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
+
+    * [24 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2423)
+
+        * CLI version 1.0.487 change log update
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.16_1779` and `5.0.5_1784`.
+
+        * Cluster autoscaler add-on version `1.0.7_940`.
 
     * [23 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2323)
 
@@ -5812,6 +5810,16 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
 
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-disable)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-get)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist remove`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-remove)
+
     * [`ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
 
     * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
@@ -5819,6 +5827,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 1.0.487](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10487)
 
 * [Version 1.0.480](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10480)
 
@@ -6867,6 +6877,8 @@ subcollection: openshift
 
 * [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
 
+    * [Change log for patch update 1.0.7_940, released 24 January 2023:](/docs/openshift?topic=openshift-ca_changelog#107940_ca)
+
     * [Change log for patch update 1.0.7_900, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#107900_ca)
 
     * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
@@ -6951,6 +6963,8 @@ subcollection: openshift
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
+    * [Change log for version 5.0.5_1784, released 24 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.5-1784_is_block_relnote)
+
     * [Change log for version 5.0.4_1773, released 10 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-1773_is_block_relnote)
 
     * [Change log for version 5.0.2_1713, released 17 November 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.2-1713_is_block_relnote)
@@ -6966,6 +6980,8 @@ subcollection: openshift
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.16_1779, released 24 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.16_1779_is_block_relnote)
 
     * [Change log for version 4.4.15_1764, released 10 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.15_1764_is_block_relnote)
 
@@ -8444,6 +8460,8 @@ subcollection: openshift
 * [Aborted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-aborted)
 
 * [Critical](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-critical)
+
+* [Create failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-create-failed)
 
 * [Delete failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-delete-failed)
 

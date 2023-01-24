@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-01-23"
 
 keywords: openshift
 
@@ -155,7 +155,6 @@ They need a solution that helps the Developers and their users.
 
 Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
-* IBM {{site.data.keyword.watson}} Assistant and Tone Analyzer
 * {{site.data.keyword.contdelivery_full}}
 * IBM Logging and Monitoring
 * {{site.data.keyword.SecureGatewayfull}}
@@ -185,8 +184,8 @@ With {{site.data.keyword.openshiftlong_notm}}, they went from over-built hardwar
 #### Step 3: Chatbot and personalization
 {: #uc_airline_step3}
 
-* IBM {{site.data.keyword.watson}} Assistant provides tools to quickly scaffold a chatbot that can provide the correct benefits information to users.
-* {{site.data.keyword.watson}} Tone Analyzer ensures that customers are satisfied with the chatbot conversations and take human intervention when necessary.
+{{site.data.keyword.watson}} Assistant provides tools to quickly scaffold a chatbot that can provide the correct benefits information to users.
+
 
 #### Step 4: Deliver continuously across the globe
 {: #uc_airline_step4}

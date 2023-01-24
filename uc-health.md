@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-01-24"
 
 keywords: openshift
 
@@ -168,11 +168,6 @@ To achieve global availability, the Dev, Test, and Production systems are deploy
 
 Developers focus on domain problems, by using existing tools: Instead of writing unique ML code, ML logic is snapped into apps, by binding {{site.data.keyword.cloud_notm}} services to clusters. Developers are also freed up from infrastructure management tasks because IBM takes care of Kubernetes and infrastructure upgrades, security, and more.
 
-### Solution
-{: #uc_research_the_solution}
-
-Hosting research workloads on {{site.data.keyword.openshiftlong_notm}}.
-
 Compute, storage, and apps run in public cloud with secure access to research data across the globe, as warranted. Compute in clusters is tamper-proof and isolated to bare metal.
 
 Technical solution:
@@ -181,7 +176,7 @@ Technical solution:
 * {{site.data.keyword.cloudant}}
 * {{site.data.keyword.SecureGatewayfull}}
 
-### Step 1: Containerize apps by using microservices
+#### Step 1: Containerize apps by using microservices
 {: #uc_research_step1}
 
 * Create a Node.js app or deploy an example.
@@ -191,20 +186,20 @@ Technical solution:
 * Enable scaling compute resources for batch and other research workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to existing on-premises databases.
 
-### Step 2: Use secure and performance driven compute
+#### Step 2: Use secure and performance driven compute
 {: #uc_research_step2}
 
 * ML apps that require higher-performing compute are hosted on {{site.data.keyword.openshiftlong_notm}} on Bare Metal. This ML cluster is centralized, so each regional cluster doesn't have the expense of bare metal workers; Kubernetes deployments are easier too.
 * Vulnerability Advisor provides image, policy, container, and packaging scanning vulnerability scanning.
 
-### Step 3: Ensure global availability
+#### Step 3: Ensure global availability
 {: #uc_research_step3}
 
 * After Developers build and test the apps in their Development and Test clusters, they use the IBM CI/CD toolchains to deploy apps into clusters across the globe.
 * Built-in HA tools in {{site.data.keyword.openshiftlong_notm}} balance the workload within each geographic region, including self-healing and load balancing.
 * With the toolchains and Helm deployment tools, the apps are also deployed to clusters across the globe, so workloads and data meet regional regulations.
 
-### Step 4: Data sharing
+#### Step 4: Data sharing
 {: #uc_research_step4}
 
 * {{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query.
