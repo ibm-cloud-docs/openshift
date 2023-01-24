@@ -8457,6 +8457,8 @@ subcollection: openshift
 
 * [Critical](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-critical)
 
+* [Create failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-create-failed)
+
 * [Delete failed](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-delete-failed)
 
 * [Deleted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-deleted)
