@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-17"
+lastupdated: "2023-01-24"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -13,6 +13,8 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+Version 4.7 is unsupported. You can review the following archive of 4.7 change logs.
+{: shortdesc}
 
 
 # Version 4.7 change log
