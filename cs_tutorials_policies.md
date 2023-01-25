@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-05"
+  years: 2014, 2023
+lastupdated: "2023-01-25"
 
 keywords: openshift
 
@@ -70,7 +70,7 @@ The first lesson shows you how your app is exposed from multiple IP addresses an
 
 Start by deploying a sample web server app to use throughout the tutorial. The `echoserver` web server shows data about the connection that is made to the cluster from the client, and you can test access to the PR firm's cluster. Then, expose the app by creating a network load balancer (NLB) 1.0 service. An NLB 1.0 service makes your app available over both the NLB service IP address and the worker nodes' node ports.
 
-Want to use an Ingress application load balancer (ALB)? Instead of creating an NLB in steps 3 and 4, [create a service for the web server app](/docs/containers?topic=containers-ingress-types#alb-comm-create) and [create an Ingress resource for the web server app](/docs/containers?topic=containers-ingress-types#alb-comm-create). Then get the public IPs of your ALBs by running `ibmcloud oc ingress alb ls --cluster <cluster_name>` and use these IPs throughout the tutorial in place of the `<loadbalancer_IP>.`
+Want to use an Ingress application load balancer (ALB)? Instead of creating an NLB in steps 3 and 4, [create a service for the web server app](/docs/containers?topic=containers-managed-ingress-setup) and [create an Ingress resource for the web server app](/docs/containers?topic=containers-managed-ingress-setup#managed-ingress-steps-resource). Then get the public IPs of your ALBs by running `ibmcloud oc ingress alb ls --cluster <cluster_name>` and use these IPs throughout the tutorial in place of the `<loadbalancer_IP>.`
 {: tip}
 
 The following image shows how the web server app is exposed to the internet by the public node port and public NLB at the end of Lesson 1.

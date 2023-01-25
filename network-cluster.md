@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-25"
 
 keywords: openshift, vlan
 
@@ -210,7 +210,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
 
 9. Move networking services to the new VLANs. The networking services in your cluster are still bound to the old VLAN because their IP addresses are from a subnet on that VLAN.
     - Routers: Because routers can't be moved across VLANs, you can instead [create router services on the new VLANs and delete router services on the old VLANs](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic).
-    - Ingress ALBs ({{site.data.keyword.redhat_openshift_notm}} version 3.11 only): Because ALBs can't be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-types#migrate-alb-vlan).
+    - Ingress ALBs ({{site.data.keyword.redhat_openshift_notm}} version 3.11 only): Because ALBs can't be moved across VLANs, you can instead [create ALBs on the new VLANs and disable ALBs on the old VLANs](/docs/containers?topic=containers-ingress-alb-manage#migrate-alb-vlan).
 
 10. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
 

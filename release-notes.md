@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-01-25"
 
 keywords: openshift
 
@@ -2836,7 +2836,7 @@ New! Private service endpoint allowlists
 :   You can now control access to your private cloud service endpoint by [creating a subnet allowlist](/docs/containers?topic=containers-access_cluster#private-se-allowlist). Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.
 
 Private Kubernetes Ingress
-:   Added steps for [privately exposing apps with ALBs that run the Kubernetes Ingress image](/docs/containers?topic=containers-ingress-types#alb-comm-create-private).
+:   Added steps for [privately exposing apps with ALBs that run the Kubernetes Ingress image](/docs/containers?topic=containers-managed-ingress-setup).
 
 ### 19 January 2021
 {: #openshift-jan1921}
@@ -2870,7 +2870,7 @@ Cluster autoscaler
 {: release-note}
 
 Ingress resources
-:   Added example Ingress resource definitions that are compatible with Kubernetes version 1.19. See the example YAML file in the documentation for the [community Kubernetes Ingress setup](/docs/containers?topic=containers-ingress-types#alb-comm-create) or for the [deprecated custom {{site.data.keyword.containerlong_notm}} Ingress setup](/docs/containers?topic=containers-ingress-types#alb-comm-create).
+:   Added example Ingress resource definitions that are compatible with Kubernetes version 1.19. 
 
 Kubernetes benchmarks
 :   Added how to [run the CIS Kubernetes benchmark tests on your own worker nodes](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test). 
@@ -3376,7 +3376,7 @@ Cluster autoscaler
 :   The [cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
 
 New! Community Kubernetes Ingress support
-:   The Ingress ALBs in your version 3.11 cluster can now run the Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller. To use the Kubernetes Ingress image, you create your Ingress resources and ConfigMaps according to the Kubernetes Ingress format, including community Kubernetes Ingress annotations instead of custom {{site.data.keyword.openshiftlong_notm}} annotations. For more information about the differences between the {{site.data.keyword.openshiftlong_notm}} Ingress image and the Kubernetes Ingress image, see the [Choosing a supported image version](/docs/containers?topic=containers-ingress-types#alb-version-choose).
+:   The Ingress ALBs in your version 3.11 cluster can now run the Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller. To use the Kubernetes Ingress image, you create your Ingress resources and ConfigMaps according to the Kubernetes Ingress format, including community Kubernetes Ingress annotations instead of custom {{site.data.keyword.openshiftlong_notm}} annotations. 
 
 New! Default {{site.data.keyword.cloudcerts_long}} instances
 :   An {{site.data.keyword.cloudcerts_long_notm}} service instance is now created by default for all new and existing standard clusters. The {{site.data.keyword.cloudcerts_short}} service instance, which is named in the format `kube-crtmgr-<cluster_ID>`, stores the TLS certificate for your cluster's default Ingress subdomain. You can also upload your own TLS certificates for custom Ingress domains to this {{site.data.keyword.cloudcerts_short}} instance and use the new [**`ibmcloud oc ingress secret`** commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create) to create secrets for these certificates in your cluster. To ensure that a {{site.data.keyword.cloudcerts_short}} instance is automatically created for your new or existing cluster, verify that the API key for the region and resource group that the cluster is created in has the correct {{site.data.keyword.cloudcerts_short}} permissions.
@@ -3811,7 +3811,7 @@ Cluster and worker node quotas
 {: release-note}
 
 ALB pod scaling
-:   Added steps for scaling up your ALB processing capabilities by [increasing the number of ALB pods replicas](/docs/containers?topic=containers-ingress-types#alb_replicas).
+:   Added steps for scaling up your ALB processing capabilities by [increasing the number of ALB pods replicas](/docs/containers?topic=containers-ingress-alb-manage#alb_replicas).
 
 
 
@@ -4025,7 +4025,7 @@ Feature gates
 {: release-note}
 
 Managing Ingress ALBs
-:   Added a page for [managing the lifecycle of your ALBs](/docs/containers?topic=containers-ingress-types), including information about creating, updating, and moving ALBs.
+:   Added a page for [managing the lifecycle of your ALBs](/docs/containers?topic=containers-managed-ingress-about), including information about creating, updating, and moving ALBs.
 
 
 
@@ -4282,7 +4282,7 @@ Version changelog
 {: release-note}
 
 Exposing apps with load balancers or Ingress ALBs
-:   Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/containers?topic=containers-ingress-types).
+:   Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/containers?topic=containers-managed-ingress-about).
 
 
 
@@ -4332,7 +4332,7 @@ Gateway appliance firewalls
 :   Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) that you must open in a public gateway device firewall.
 
 Ingress ALB subdomain format
-:   [Changes are made to the Ingress subdomain](/docs/containers?topic=containers-ingress-about#ingress-resource). New clusters are assigned an Ingress subdomain in the format `cluster_name.globally_unique_account_HASH-0000.region.containers.appdomain.cloud` and an Ingress secret in the format `cluster_name.globally_unique_account_HASH-0000`. Any existing clusters that use the `cluster_name.region.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `cluster_name.region_or_zone.containers.appdomain.cloud` subdomain.
+:   [Changes are made to the Ingress subdomain](/docs/containers?topic=containers-managed-ingress-about#managed-ingress-subdomain). New clusters are assigned an Ingress subdomain in the format `cluster_name.globally_unique_account_HASH-0000.region.containers.appdomain.cloud` and an Ingress secret in the format `cluster_name.globally_unique_account_HASH-0000`. Any existing clusters that use the `cluster_name.region.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `cluster_name.region_or_zone.containers.appdomain.cloud` subdomain.
 
 
 ### 21 November 2019
