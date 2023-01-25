@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-01-25"
 
 keywords: openshift
 
@@ -4588,7 +4588,7 @@ Minimum required permissions
 :    Required: Specify a name for the secret. Make sure that you don't create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
 
 `--field CRN`
-:   Required for non-TLS secrets. Add a field to the secret. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-ingress-types#non-tls-field). This option is not supported for TLS secrets. 
+:   Required for non-TLS secrets. Add a field to the secret. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-secrets#non-tls-field). This option is not supported for TLS secrets. 
      - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types. 
      - To specify the field name, use the named field option: `--field name=<crn>`. This option is available for arbitrary and IAM credential secret types.
      - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types. 
@@ -4619,7 +4619,7 @@ ibmcloud oc ingress secret create --cert-crn crn:v1:staging:public:cloudcerts:us
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Add a non-TLS CRN field to an Opaque secret. There are three ways to specify the field type. The one you choose depends on the secret type and how you want to name the field in the non-TLS secret. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-ingress-types#non-tls-field).
+Add a non-TLS CRN field to an Opaque secret. There are three ways to specify the field type. The one you choose depends on the secret type and how you want to name the field in the non-TLS secret. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-secrets#non-tls-field).
 {: shortdesc}
 
 ```sh
@@ -4639,7 +4639,7 @@ Minimum required permissions
 :    Required. The name of the secret to add the field to.
 
 `--field CRN`
-:    Required. The secret CRN to add to the field. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-ingress-types#non-tls-field).
+:    Required. The secret CRN to add to the field. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-secrets#non-tls-field).
      - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types. 
      - To specify the field name, use the named field option: `--field name=<crn>`. This option is available for arbitrary and IAM credential secret types.
      - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types. 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-25"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -160,7 +160,7 @@ In a multizone cluster, your cluster's resources are spread across multiple zone
 2. Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
     *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview).
     *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
-    *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-ingress-about).
+    *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-managed-ingress-about).
     *   [Increasing the availability of your app](/docs/openshift?topic=openshift-openshift_apps).
 
 3. When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.

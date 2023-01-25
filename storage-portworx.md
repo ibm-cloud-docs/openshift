@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-25"
 
 keywords: portworx, openshift
 
@@ -1098,7 +1098,7 @@ For public classic clusters
 1. Log in to the PX-Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
-For private classic clusters, [expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/containers?topic=containers-ingress-types#alb-comm-create-private).
+For private classic clusters, [expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/containers?topic=containers-managed-ingress-setup).
 {: note}
 
 ### Adding a backup location to your PX-Backup service

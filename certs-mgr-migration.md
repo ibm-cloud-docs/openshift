@@ -3,7 +3,7 @@
 copyright:
 
   years: 2022, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-01-25"
 
 keywords: certificate manager, certificates, secrets, migration, secrets manager
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Migrating from {{site.data.keyword.cloudcerts_long_notm}} to {{site.data.keyword.secrets-manager_full_notm}}
 {: #certs-mgr-migration}
 
-With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates with {{site.data.keyword.secrets-manager_short}}. For a comparison between the two services and details on migrating your resources, see [Migrating certificates from Certificate Manager](/docs/secrets-manager?topic=secrets-manager-migrate-from-certificate-manager). 
+With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates with {{site.data.keyword.secrets-manager_short}}.
 {: shortdesc}
 
 Support for {{site.data.keyword.cloudcerts_short}} in {{site.data.keyword.openshiftlong_notm}} clusters is set to end in late 2022, and any remaining {{site.data.keyword.cloudcerts_short}} instances are set to be deleted on 31 Dec 2022. Secrets in deleted {{site.data.keyword.cloudcerts_short}} are written directly to the cluster. If you do not migrate your secrets and set a default {{site.data.keyword.secrets-manager_short}}, your secrets are written only to the cluster and not to any manager instance.
