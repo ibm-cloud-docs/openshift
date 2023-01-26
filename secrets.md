@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-01-25"
+lastupdated: "2023-01-26"
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
 
@@ -18,7 +18,7 @@ subcollection: containers
 Learn how you can use certificates and secrets in your cluster. 
 {: shortdesc}
 
-Consider using [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) to centrally manage and automatically update your secrets. 
+Consider using [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) to centrally manage and automatically update your secrets. 
 {: tip}
 
 ## Managing TLS certificates and secrets with Ingress
@@ -34,7 +34,7 @@ ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <crn
 ```
 {: pre}
 
-To import the certificate with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+To import the certificate with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
 {: important}
 
 To view all Ingress secrets for TLS certificates in your cluster, run the following command.
@@ -55,7 +55,7 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 
 Follow the steps to use the default TLS certificate for the IBM-provided Ingress subdomain.
 
-1. Get the name of the secret where your default TLS certificate is stored. Note that this is the secret name you specify in the `spec.tls` section of your [Ingress resource](/docs/containers?topic=containers-managed-ingress-setup#managed-ingress-steps-resource).
+1. Get the name of the secret where your default TLS certificate is stored. Note that this is the secret name you specify in the `spec.tls` section of your [Ingress resource](/docs/openshift?topic=openshift-managed-ingress-setup#managed-ingress-steps-resource).
 
     ```sh
     ibmcloud oc cluster get -c <cluster> | grep Ingress
@@ -79,7 +79,7 @@ Follow the steps to use the default TLS certificate for the IBM-provided Ingress
 
 3. Create a secret for the default TLS certificate in each namespace where your Ingress resources or apps exist. Specify the TLS certficate CRN with the `--cert-crn` command option. 
 
-    Alternatively, you can set the secret as the `defaultCertificate` in the [`ibm-ingress-deploy-config` ConfigMap](/docs/containers?topic=containers-comm-ingress-annotations#comm-customize-deploy).
+    Alternatively, you can set the secret as the `defaultCertificate` in the [`ibm-ingress-deploy-config` ConfigMap](/docs/openshift?topic=openshift-comm-ingress-annotations#comm-customize-deploy).
     {: tip}
 
     ```sh
@@ -87,7 +87,7 @@ Follow the steps to use the default TLS certificate for the IBM-provided Ingress
     ```
     {: pre}
 
-    To copy the secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+    To copy the secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
     {: important}
 
 
@@ -97,12 +97,12 @@ Follow the steps to use the default TLS certificate for the IBM-provided Ingress
 If you define a custom subdomain in your Ingress resource, you can use your own TLS certificate to manage TLS termination. You must create a Kubernetes secret to store the TLS certificate, then import this secret into each namespace where your apps exist.
 {: shortdesc}
 
-By storing custom TLS certificates in [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr), you can import your certificates directly into a Kubernetes secret in your cluster. 
+By storing custom TLS certificates in [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr), you can import your certificates directly into a Kubernetes secret in your cluster. 
 {: tip}
 
 1. Create or import a secret for the TLS certificate in the namespace where your Ingress resource exists. For example, you can import a secret from {{site.data.keyword.secrets-manager_short}} into your cluster by running the following command. Specify the TLS certificate's CRN with the `--cert-crn` command option.
 
-    To import the secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+    To import the secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
     {: important}
 
     ```sh
@@ -125,14 +125,14 @@ There are 4 types of non-TLS secrets:
 - **Username and password secrets** hold a username and password as two separate values.
 - **Key values** hold JSON values. 
 
-Learn how you can centrally manage your non-TLS secrets with [{{site.data.keyword.secrets-manager_full_notm}}](/docs/containers?topic=containers-secrets-mgr). With {{site.data.keyword.secrets-manager_short}}, you can create managed Kubernetes secrets, update your secrets automatically, create secret groups that control who has access to the secrets in your cluster, and more.
+Learn how you can centrally manage your non-TLS secrets with [{{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-secrets-mgr). With {{site.data.keyword.secrets-manager_short}}, you can create managed Kubernetes secrets, update your secrets automatically, create secret groups that control who has access to the secrets in your cluster, and more.
 {: tip} 
 
 
 ### Creating a non-TLS secret in your cluster
 {: #non-tls-create}
 
-Create a non-TLS secret by specifying the `--type Opaque` option in the **`ibmcloud oc ingress secret create`** command. With the `Opaque` type, you can include multiple non-certificate CRN values. If the `--type` option is not specified, TLS is applied by default. For more information and additional command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#alb-commands).
+Create a non-TLS secret by specifying the `--type Opaque` option in the **`ibmcloud oc ingress secret create`** command. With the `Opaque` type, you can include multiple non-certificate CRN values. If the `--type` option is not specified, TLS is applied by default. For more information and additional command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create).
 {: shortdesc}
 
 The following example command creates a non-TLS secret with the `Opaque` type specified. Non-TLS secrets require at least one secret [field](#non-tls-field-add). Note that how you specify the `--field` option varies [based on the type of secret you create](#non-tls-field-add). 
@@ -180,9 +180,9 @@ The following example output shows the secret fields and their values in the `da
 ```yaml
 apiVersion: v1
 data:
-  arbitraryFVT: YXJiaXRyYXJ5LXZhbHVl
-  userCredsFVT_password: cGFzc3dvcmQ=
-  userCredsFVT_username: dXNlcg==
+  arbitraryFVT: AAAaaAAaAAA1AAAaaAAa
+  userCredsFVT_password: aAAaa1aaaA=
+  userCredsFVT_username: aAAaaa==
 kind: Secret
 metadata:
   annotations:
@@ -192,8 +192,8 @@ metadata:
   creationTimestamp: "2022-11-08T19:45:05Z"
   name: example-secret
   namespace: default
-  resourceVersion: "119039"
-  uid: 4eac5419-2e74-458a-b8e8-62983e6d1e1e
+  resourceVersion: "111111"
+  uid: 1aaa1111-1a11-111a-a1a1-11111a1a1a1a
 type: Opaque
 ```
 {: screen}
@@ -203,7 +203,7 @@ You can also list the fields in a secret with the `ibmcloud oc ingress secret fi
 #### Adding a secret field
 {: #non-tls-field-add}
 
-Add a secret field to a non-TLS secret by running the [`ibmcloud oc ingress secret field add`](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_field_add) command with the `--field` option. You can also use this option to add fields when you create a secret with the [**`ibmcloud oc ingress secret create`**](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_create) command. This option is not supported for TLS secrets. 
+Add a secret field to a non-TLS secret by running the [`ibmcloud oc ingress secret field add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_add) command with the `--field` option. You can also use this option to add fields when you create a secret with the [**`ibmcloud oc ingress secret create`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create) command. This option is not supported for TLS secrets. 
 {: shortdesc}
 
 There are three ways to specify the `--field` option. The one you choose depends on the secret type and how you want to name the field in the secret.
@@ -239,7 +239,7 @@ data:
 #### Updating secret fields
 {: #non-tls-field-update}
 
-Run the **`ingress secret update`** command to update a secret field's values. Note that this does not update the CRN. For more information and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_update).
+Run the **`ingress secret update`** command to update a secret field's values. Note that this does not update the CRN. For more information and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update).
 {: #shortdesc}
 
 ```sh
@@ -250,7 +250,7 @@ ibmcloud oc ingress secret update --cluster example-cluster --name example-secre
 #### Removing a secret field
 {: #non-tls-field-rm}
 
-You can remove a secret field from a non-TLS secret. For more information and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_ingress_secret_field_add).
+You can remove a secret field from a non-TLS secret. For more information and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_add).
 {: shortdesc}
 
 ```sh

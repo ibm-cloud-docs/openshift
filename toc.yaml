@@ -211,6 +211,7 @@ toc:
               - openshift_ingress_qs_roks4.md
               - openshift_ingress_about_roks4.md
               - openshift_ingress_roks4.md
+              - secrets.md
               - secrets-mgr.md
               - certs-mgr-migration.md
           - satellite_expose_apps.md

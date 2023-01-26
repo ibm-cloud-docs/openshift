@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-25"
+lastupdated: "2023-01-26"
 
 keywords: openshift
 subcollection: openshift
@@ -4565,11 +4565,21 @@ subcollection: openshift
 
 * [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-roks4#manage_certs)
 
-    * [Using the default TLS certificate for the IBM-provided Ingress subdomain](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_ibm)
-
-    * [Using a TLS certificate for a custom subdomain](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_custom)
-
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
+
+[Managing TLS and non-TLS certificates and secrets](/docs/openshift?topic=openshift-secrets#secrets)
+
+* [Managing TLS certificates and secrets with Ingress](/docs/openshift?topic=openshift-secrets#tls)
+
+    * [Setting up TLS secrets for the IBM-provided Ingress subdomain](/docs/openshift?topic=openshift-secrets#tls-default)
+
+    * [Setting up TLS secrets for custom subdomains](/docs/openshift?topic=openshift-secrets#tls-custom)
+
+* [Managing non-TLS secrets](/docs/openshift?topic=openshift-secrets#non-tls)
+
+    * [Creating a non-TLS secret in your cluster](/docs/openshift?topic=openshift-secrets#non-tls-create)
+
+    * [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field)
 
 [Setting up {{site.data.keyword.secrets-manager_short}} in your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr)
 
