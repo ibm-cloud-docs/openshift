@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-27"
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
 
@@ -87,7 +87,9 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
         #!/usr/bin/env bash
         set -x
         GIGABYTES_RESERVED_MEMORY=$(echo $SYSTEM_RESERVED_MEMORY | awk -F 'Gi' '{print $1}')
-        TOTAL_NUMA_MEMORY_TO_ALLOCATE=$(echo "$GIGABYTES_RESERVED_MEMORY" "1024" | awk '{print $1 * $2 + 100}')
+        GIGABYTES_RESERVED_MEMORY_ROUNDED_UP=$(echo $GIGABYTES_RESERVED_MEMORY | awk '{print int($1+0.999)}')
+        sed -i "s/SYSTEM_RESERVED_MEMORY=.*/SYSTEM_RESERVED_MEMORY=${GIGABYTES_RESERVED_MEMORY_ROUNDED_UP}Gi/g" /etc/node-sizing.env
+        TOTAL_NUMA_MEMORY_TO_ALLOCATE=$(echo "$GIGABYTES_RESERVED_MEMORY_ROUNDED_UP" "1024" | awk '{print $1 * $2 + 100}')
         cat >/tmp/ibm-user-config.conf <<EOF
         #START USER CONFIG
         topologyManagerPolicy: <<TOPOLOGY_MANAGER_POLICY_VALUE>>
