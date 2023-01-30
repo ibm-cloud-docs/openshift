@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-12"
+  years: 2014, 2023
+lastupdated: "2023-01-30"
 
 keywords: openshift
 
@@ -37,9 +37,9 @@ Wondering which access roles to assign to your cluster users? Use the examples i
 | Use case | Example roles and scope |
 | --- | --- |
 | App auditor | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#viewer-iam-platform-role), [Reader service access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-service-access-roles). |
-| App developers | [Editor platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#editor-iam-platform-role), [Writer service access role scoped to a namespace]((/docs/openshift?topic=openshift-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles). |
+| App developers | [Editor platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#editor-iam-platform-role), [Writer service access role scoped to a namespace](/docs/openshift?topic=openshift-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles). |
 | Billing | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#viewer-iam-platform-role). |
-| Create a cluster | See [Permissions to create a cluster]((/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).|
+| Create a cluster | See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).|
 | Cluster administrator | [Administrator platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#admin-iam-platform-role), [Manager service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-iam-service-access-roles).|
 | DevOps operator | [Operator platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#operator-iam-platform-role), [Writer service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles).  |
 | Operator or site reliability engineer | [Administrator platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#admin-iam-platform-role), [Reader service access role for a cluster or region](/docs/openshift?topic=openshift-iam-service-access-roles) or [Manager service access role for all cluster namespaces](/docs/openshift?topic=openshift-iam-service-access-roles) to be able to use `kubectl top nodes,pods` commands. |
@@ -352,14 +352,11 @@ If you want to assign access to a container process that runs in pods, such as a
 To prevent breaking changes, don't change the predefined `view`, `edit`, `admin`, and `cluster-admin` cluster roles. Custom RBAC roles are in addition to and don't change or override any RBAC roles that you might have assigned with {{site.data.keyword.cloud_notm}} IAM service access roles.
 {: important}
 
-**Do I create a role or a cluster role? Do I apply it with a role binding or a cluster role binding?**
 
 - **Namespace access**: To allow a user, access group, or service account to access a resource within a specific namespace, choose one of the following combinations:
     - Create a role, and apply it with a role binding. This option is useful for controlling access to a unique resource that exists only in one namespace, like an app deployment.
     - Create a cluster role, and apply it with a role binding. This option is useful for controlling access to general resources in one namespace, like pods.
 - **Cluster-wide access**: To allow a user or an access group to access cluster-wide resources or resources in all namespaces, create a cluster role, and apply it with a cluster role binding. This option is useful for controlling access to resources that are not scoped to namespaces, like worker nodes, or resources in all namespaces in your cluster, like pods in each namespace.
-
-**Before you begin**:
 
 - Target the [Kubernetes CLI](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure) to your cluster.
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](#add_users) for all namespaces.

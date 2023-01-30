@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-12"
+lastupdated: "2023-01-30"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -114,9 +114,9 @@ The access policies that you assign users vary depending on what you want your u
 | Use case | Example roles and scope |
 | --- | --- |
 | App auditor | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#viewer-iam-platform-role), [Reader service access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-service-access-roles). |
-| App developers | [Editor platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#editor-iam-platform-role), [Writer service access role scoped to a namespace]((/docs/openshift?topic=openshift-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles). |
+| App developers | [Editor platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#editor-iam-platform-role), [Writer service access role scoped to a namespace](/docs/openshift?topic=openshift-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles). |
 | Billing | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#viewer-iam-platform-role). |
-| Create a cluster | See [Permissions to create a cluster]((/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).|
+| Create a cluster | See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).|
 | Cluster administrator | [Administrator platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#admin-iam-platform-role), [Manager service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-iam-service-access-roles).|
 | DevOps operator | [Operator platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#operator-iam-platform-role), [Writer service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-iam-service-access-roles), [Cloud Foundry developer space role](/docs/openshift?topic=openshift-cloud-foundry-roles).  |
 | Operator or site reliability engineer | [Administrator platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles#admin-iam-platform-role), [Reader service access role for a cluster or region](/docs/openshift?topic=openshift-iam-service-access-roles) or [Manager service access role for all cluster namespaces](/docs/openshift?topic=openshift-iam-service-access-roles) to be able to use `kubectl top nodes,pods` commands. |
