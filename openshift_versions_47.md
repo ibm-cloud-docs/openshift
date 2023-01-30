@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-01-30"
 
 keywords: openshift, version, update, upgrade
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 Version 4.7 is unsupported. 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-01-30"
 
 keywords: openshift
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -60,13 +61,13 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
             * [`ibmcloud oc cluster master private-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_disable)
             * [`ibmcloud oc cluster master private-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_enable)
             * [`ibmcloud oc cluster master private-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_get)
-            * [`ibmcloud oc cluster master private-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_rm)
+            * [`ibmcloud oc cluster master private-service-endpoint allowlist remove`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_rm)
         * **`ibmcloud oc cluster master satellite-service-endpoint allowlist`**: Manage the {{site.data.keyword.satelliteshort}} service endpoint allowlist for a {{site.data.keyword.satelliteshort}}cluster with CoreOS-enabled.
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add)
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-disable)
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable)
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-get)
-            * [`ibmcloud oc cluster master satellite-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-rm)
+            * [`ibmcloud oc cluster master satellite-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-remove)
         * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
     * **`cluster master public-service-endpoint`**: Manage the public service endpoint of a cluster.
         * [`ibmcloud oc cluster master public-service-endpoint disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_master_pub_se_disable)

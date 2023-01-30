@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-09"
+  years: 2014, 2023
+lastupdated: "2023-01-30"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -68,10 +68,10 @@ Can I change how scale-up and scale-down work?
 :   You can customize settings or use other Kubernetes resources to affect how scaling up and down work.
 
 Scale-up
-:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
+:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
 
 Scale-down
-:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
+:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
 
 
 Can I increase the minimum size per zone to trigger a scale up my cluster to that size?

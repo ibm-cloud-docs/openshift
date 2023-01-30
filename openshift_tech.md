@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-30"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

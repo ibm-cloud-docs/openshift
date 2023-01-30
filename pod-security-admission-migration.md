@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-01"
+  years: 2022, 2023
+lastupdated: "2023-01-30"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -16,6 +16,7 @@ completion-time: 60m
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Migrating from PSPs to Pod Security Admission

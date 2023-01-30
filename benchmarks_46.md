@@ -15,6 +15,7 @@ subcollection: openshift
 
 
 
+
 # {{site.data.keyword.openshiftlong_notm}} version 4.6 CIS Kubernetes Benchmark
 {: #cis-benchmark-46}
 
