@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-01-30"
 
 keywords: openshift
 
@@ -99,7 +99,7 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
     :   Enter the size of the {{site.data.keyword.filestorage_short}}, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your {{site.data.keyword.filestorage_short}}. Make sure to specify a size that matches the amount of data that you want to store.
     
     `storageClassName`
-    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) or [create your own storage class](/docs/containers?topic=containers-. If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`. Want to set your own default? See [Changing the default storage class](/docs/containers?topic=containers-kube_concepts#default_storageclass).
+    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) or [create your own storage class](/docs/containers?topic=containers-vpc-block#custom-sc-vpc-block). If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`. Want to set your own default? See [Changing the default storage class](/docs/containers?topic=containers-kube_concepts#default_storageclass).
 
 
 1. Create the PVC.
