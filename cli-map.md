@@ -67,7 +67,7 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-disable)
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable)
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-get)
-            * [`ibmcloud oc cluster master satellite-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-remove)
+            * [`ibmcloud oc cluster master satellite-service-endpoint allowlist remove`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-remove)
         * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
     * **`cluster master public-service-endpoint`**: Manage the public service endpoint of a cluster.
         * [`ibmcloud oc cluster master public-service-endpoint disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_master_pub_se_disable)
