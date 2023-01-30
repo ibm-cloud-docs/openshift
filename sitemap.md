@@ -280,6 +280,12 @@ subcollection: openshift
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
 
+    * [30 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3023)
+
+        * New! Optional secondary disks for worker nodes in VPC clusters.
+
+        * CLI version `1.0.489`.
+
     * [24 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2423)
 
         * CLI version 1.0.487 change log update

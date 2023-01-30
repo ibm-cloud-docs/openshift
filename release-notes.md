@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-25"
+lastupdated: "2023-01-30"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: release-note
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -29,6 +30,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2023
 {: #openshift-jan23}
+
+
+### 30 January 2023
+{: #openshift-jan3023}
+{: release-note}
+
+New! Optional secondary disks for worker nodes in VPC clusters.
+:   When you create a VPC cluster, you can specify an optional secondary disk for your worker nodes. Secondary disks are used for the container runtime and are useful in scenarios where more container storage is needed, such as running pods with large images. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).
+
+
+CLI version `1.0.489`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
 
 
 ### 24 January 2023
