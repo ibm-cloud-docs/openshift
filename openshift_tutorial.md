@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-01-30"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -16,6 +16,7 @@ completion-time: 45m
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

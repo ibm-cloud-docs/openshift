@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-01-30"
 
 keywords: openshift add-ons, cluster addon
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Supported cluster add-on versions
 {: #supported-cluster-addon-versions}

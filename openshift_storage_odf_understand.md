@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-30"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -11,6 +11,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

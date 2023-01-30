@@ -11,7 +11,7 @@
       {
         "title": "See what's new",
         "description": "Read about the latest changes to Red Hat OpenShift on IBM Cloud. ",
-        "href": "/docs/openshift?topic=openshift-iks-release"
+        "href": "/docs/openshift?topic=openshift-openshift-relnotes"
       },  
       {
         "title": "Understand Red Hat OpenShift on IBM Cloud",
@@ -19,7 +19,7 @@
         "href": "/docs/openshift?topic=openshift-roks-overview"
       },
       {
-        "title": "Get started with {{site.data.keyword.redhat_openshift_notm}}",
+        "title": "Get started with Red Hat OpenShift on IBM Cloud",
         "description": "Use the IBM Cloud console to create a cluster and deploy your first containerized app.",
         "href": "/docs/openshift?topic=openshift-getting-started"
       },

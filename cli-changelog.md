@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-01-30"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -32,12 +33,22 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version 1.0.489
+{: #cli-10489}
+
+Version 1.0.489 of the CLI was released on 30 January 2023.
+:   Adds a fix where table headings are no longer printed if the output of a command contains no results.
+:   Adds the `--secondary-storage` option to the `cluster create vpc-gen2`, `worker-pool create vpc-gen2`, and `flavor get` commands.
+
 ## Version 1.0.487
 {: #cli-10487}
 
 Version 1.0.487 of the CLI was released on 24 January 2023.
 :   Adds the `satellite-service-endpoint allowlist` commands
 :   Updates the help text in various languages.
+
+
+
 ## Version 1.0.480
 {: #cli-10480}
 
@@ -173,7 +184,6 @@ Version 1.0.374 of the CLI was released on 24 February 2022.
 {: #cli-10372}
 
 Version 1.0.372 of the CLI was released on 18 February 2022.
-
 :   Modifies relevant commands to accept either the `--worker-pool` or `-p` options for worker pool options.
 :   Updates JSON outputs to include additional resources, such as add-ons, VLANs, and subnets. 
 :   Makes `ibmcloud oc ingress` commands generally available.
@@ -186,21 +196,18 @@ Version 1.0.372 of the CLI was released on 18 February 2022.
 {: #cli-10353}
 
 Version 1.0.353 of the CLI was released on 3 December 2021.
-
 :   Updates the help text in various languages.
 
 ## Version 1.0.347
 {: #cli-10347}
 
 Version 1.0.347 of the CLI was released on 15 November 2021.
-
 :   Updates various output messages.
 
 ## Version 1.0.344
 {: #cli-10344}
 
 Version 1.0.344 of the CLI was released on 15 November 2021.
-
 :   Includes a Go version update from `1.16.7` to `1.16.10` and other fixes.
 
 ## Version 1.0.334

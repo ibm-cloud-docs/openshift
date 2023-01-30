@@ -503,8 +503,6 @@ toc:
               - ts-ingress-vpc-app.md
               - ts-ingress-roks-no-subdomain-create.md
               - ts-ingress-subdomain-dupe-name.md
-              - ts-ingress-no-secret.md
-              - ts-ingress-secret-expiry.md
               - ts-ingress-vpc-router-zone.md
               - ts-ingress-router-zone.md
               - nested-ctm.md

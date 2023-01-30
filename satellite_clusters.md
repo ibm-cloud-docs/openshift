@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-17"
+lastupdated: "2023-01-30"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 

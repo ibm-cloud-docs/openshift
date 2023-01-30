@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-01-30"
 
-keywords: openshift, nginx, ingress controller
+keywords: openshift, nginx, ingress controller, openshift ingress, ingress, exposing apps
 
 subcollection: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -1174,7 +1175,7 @@ Having trouble connecting to your app through Ingress? Try [Troubleshooting Ingr
 ## Managing TLS certificates and secrets
 {: #manage_certs}
 
-When you create a cluster, a default TLS certificate is created that you can use with the IBM-provided Ingress subdomain. You can specify the default TLS certificate, or a custom certificate that you provide, in the Ingress resource. For more information, see [Managing TLS and non-TLS certificates and secrets](https://cloud.ibm.com/docs/openshift?topic=openshift-secrets)
+When you create a cluster, a default TLS certificate is created that you can use with the IBM-provided Ingress subdomain. You can specify the default TLS certificate, or a custom certificate that you provide, in the Ingress resource. For more information, see [Managing TLS and non-TLS certificates and secrets](/docs/openshift?topic=openshift-secrets)
 {: shortdesc}
 
 ## Customizing Ingress routing with annotations

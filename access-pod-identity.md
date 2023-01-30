@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-30"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -228,7 +229,7 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
           - name: curl
             image: curlimages/curl:7.77.0
             command: ["/bin/sh"]
-            args: ["-c", "curl -s -H \"Content-Type: application/x-www-form-urlencoded\" -H \"Accept: application/json\" -d grant_type=urn:ibm:params:oauth:grant-type:cr-token -d cr_token=$(cat /var/run/secrets/tokens/sa-token) -d profile_id==<profile_id> https://iam.cloud.ibm.com/identity/token"]
+            args: ["-c", "curl -s -H \"Content-Type: application/x-www-form-urlencoded\" -H \"Accept: application/json\" -d grant_type=urn:ibm:params:oauth:grant-type:cr-token -d cr_token=$(cat /var/run/secrets/tokens/sa-token) -d profile_id=<profile_id> https://iam.cloud.ibm.com/identity/token"]
             volumeMounts:
             - mountPath: /var/run/secrets/tokens
               name: sa-token
