@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-01-31"
 
-keywords: object storage, plug-in, changelog
+keywords: object storage, plug-in, change log
 
 subcollection: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -40,7 +41,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Adds `PriorityClasses` for driver and plug-in pods
 - Updates tolerations for plug-in pod
 - Adds support for encrypting buckets with {{site.data.keyword.keymanagementservicelong_notm}} by using your root key CRN when creating buckets.
-- Resolves the following CVEs: [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/2022-43680){: external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/2022-42010){: external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/2022-42011){: external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/2022-42012){: external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/2022-3821){: external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/2022-35737){: external}, [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/2021-46848){: external}. 
+- Resolves the following CVEs: [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){: external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){: external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){: external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){: external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){: external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){: external}, [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){: external}. 
 
 
 ## Change log for version 2.2.7, released 5 January 2023
