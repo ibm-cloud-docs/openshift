@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-01-31"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -47,7 +48,7 @@ To bust bureaucracy and transform government’s relationship with its constitue
 
 * OPEN DATA – data storage where citizens, government agencies, and businesses access, share, and enhance data freely
 * OPEN APIs – a development platform where APIs are contributed by and reused with all community partners
-* OPEN INNOVATION – a set of cloud services that allow Developers to plug in innovation instead of manually coding it
+* OPEN INNOVATION – a set of cloud services that allow developers to use plug-in innovation instead of manually coding it
 
 To start, the government uses {{site.data.keyword.cos_full_notm}} to store its public data in the cloud. This storage is free to use and reuse, shareable by anyone, and subject only to attribution and share alike. Sensitive data can be sanitized before it’s pushed to the cloud. Besides that, access controls are set up so that the cloud caps new data storage, where the community can demonstrate POCs of enhanced existing free data.
 
