@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-01-31"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,6 +39,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.11 change log.
 {: shortdesc}
+
+
+### Change log for worker node fix pack 4.11.25_1541_openshift, released 30 January 2023
+{: #41125_1541_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.11.25_1541_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 8 Packages |N/A|N/A| Worker node kernel & package updates for [CVE-2022-40303](https://nvd.nist.gov/vuln/detail/CVE-2022-40303){: external},[CVE-2022-40304](https://nvd.nist.gov/vuln/detail/CVE-2022-40304){: external},[CVE-2023-22809](https://nvd.nist.gov/vuln/detail/CVE-2023-22809){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.11.22 | 4.11.25 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-25){: external}. |
+| HAPROXY | 508bf6 | 8d6ea6 | [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){: external},[CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){: external},[CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){: external},[CVE-2022-40303](https://nvd.nist.gov/vuln/detail/CVE-2022-40303){: external},[CVE-2022-40304](https://nvd.nist.gov/vuln/detail/CVE-2022-40304){: external},[CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){: external},[CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){: external},[CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){: external},[CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){: external}. |
+{: caption="Changes since version 4.11.22_1538_openshift" caption-side="top"}
 
 
 ### Change log for worker node fix pack 4.11.22_1538_openshift, released 16 January 2023

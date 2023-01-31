@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-01-31"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -12,7 +12,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
@@ -1106,5 +1105,7 @@ Review the classic worker node flavors by zone.
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| Count: 1, Size: 25, Device type: SSD, RAID configuration: none | Count: 1, Size: 100, Device type: SSD, RAID configuration: none |
 
 {: caption="Table 32. Worker node flavors for wdc07" caption-side="bottom"}
+
+
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-01-31"
 
 keywords: openshift
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -70,15 +71,15 @@ Before you begin:
 
 To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 
-1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials must be enough for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you see in your secret must have **Reader** permissions at minimum.
+1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials must be enough for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you see in your secret must have **Reader** permissions at minimum. If you want to integrate {{site.data.keyword.keymanagementserviceshort}} encryption when creating new buckets from PVCs in your cluster, you must to include the root key CRN when creating your [{{site.data.keyword.cos_full_notm}} secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Note that {{site.data.keyword.keymanagementserviceshort}} encryption can't be added to existing buckets.
 
-2. Get the **GUID** of your {{site.data.keyword.cos_full_notm}} service instance.
+1. Get the **GUID** of your {{site.data.keyword.cos_full_notm}} service instance.
     ```sh
     ibmcloud resource service-instance <service_name> | grep GUID
     ```
     {: pre}
 
-3. Create a Kubernetes secret to store your service credentials. When you create your secret, all values are automatically encoded to base64. In the following example the secret name is `cos-write-access`.
+1. Create a Kubernetes secret to store your service credentials. When you create your secret, all values are automatically encoded to base64. In the following example, the secret name is `cos-write-access`.
 
     Example `create secret` command that uses an API key.
     ```sh
@@ -92,6 +93,33 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
     ```
     {: pre}
 
+1. If you want to use {{site.data.keyword.keymanagementserviceshort}} Encryption for buckets created with {{site.data.keyword.cos_full_notm}} s3fs plug-in, include the `keyprotect root key crn` value in the secret that is used to create the PVC. 
+
+    {{site.data.keyword.keymanagementserviceshort}}encryption can be used only when you create new buckets. If the {{site.data.keyword.keymanagementserviceshort}}root key that is used for encryption is deleted, all the files in the associated buckets are inaccessible. 
+    {: important}
+    
+    1.  Create a YAML file for your {{site.data.keyword.cos_full_notm}} secret.
+        ```yaml
+        ---
+        apiVersion: v1
+        data:
+            access-key: xxx
+            secret-key: xxx
+            kp-root-key-crn: <keyprotect-root-key-crn in base64 encoded format> 
+        kind: Secret
+        metadata:
+            name: <cos-write-access> 
+        type: ibm/ibmc-s3fs
+        ```
+        {: codeblock}
+
+    1. Apply the secret to your cluster.
+        ```sh
+        kubectl apply -f <secret_name>
+        ```
+        {: pre}
+
+
     `api-key`
     :   Enter the API key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use HMAC authentication, specify the `access-key` and `secret-key` instead.
     
@@ -104,7 +132,10 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
     `service-instance-id`
     :   Enter the GUID of your {{site.data.keyword.cos_full_notm}} service instance that you retrieved earlier.
 
-4. Get the secrets in your cluster and verify the output.
+    `kp-root-key-crn`
+    :   Enter the base64 encoded {{site.data.keyword.keymanagementserviceshort}} root key CRN to use {{site.data.keyword.keymanagementserviceshort}} encryption.
+
+1. Get the secrets in your cluster and verify the output.
     ```sh
     oc get secret
     ```
@@ -124,9 +155,6 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 5. [Install the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), or if you already installed the plug-in, [decide on the configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
 
 6. **Optional**: [Add your secret to the default storage classes](/docs/openshift?topic=openshift-storage_cos_install).
-
-
-
 
 
 ## Limitations

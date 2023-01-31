@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-08"
+  years: 2014, 2023
+lastupdated: "2023-01-31"
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -31,7 +32,7 @@ Before you begin:
 
 To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
-1. Create a configuration file to define your persistent volume claim (PVC). If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-storage_cos_install), you don't need to list your secret in the PVC.
+1. Create a configuration file to define your persistent volume claim (PVC). If you add your [{{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-storage_cos_install), do not list your secret in the PVC. 
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -44,10 +45,10 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
         ibm.io/auto-delete-bucket: "<true_or_false>"
         ibm.io/bucket: "<bucket_name>"
         ibm.io/object-path: "<bucket_subdirectory>"
-        ibm.io/secret-name: "<secret_name>" 
         ibm.io/quota-limit: "true/false" # Disable or enable a quota limit for your PVC. To use this annotation you must specify the -set quotaLimit=true option during installation.
         ibm.io/endpoint: "https://<s3fs_service_endpoint>"
         ibm.io/tls-cipher-suite: "default"
+        ibm.io/secret-name: "<secret_name>" # The name of your Kubernetes secret that you created. 
         ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
         ibm.io/add-mount-param: "<option-1>,<option-2>" # s3fs mount options
         ibm.io/access-policy-allowed-ips: "XX.XXX.XX.XXX, XX.XX.XX.XXX, XX.XX.XX.XX" # A csv of allow listed IPs.
@@ -78,9 +79,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     
     `ibm.io/object-path`
     :   Optional: Enter the name of the existing subdirectory in your bucket that you want to mount. Use this option if you want to mount a subdirectory only and not the entire bucket. To mount a subdirectory, you must set `ibm.io/auto-create-bucket: "false"` and provide the name of the bucket in `ibm.io/bucket`.
-    
-    `ibm.io/secret-name`
-    :   Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials) to the default storage classes, you must not list secret in the PVC.
+  
 
     `ibm.io/quota-limit`
     :   To use this annotation, you must specify the `--set quotaLimit=true` option during installation. If you want to use this annotation, but didn't specify `--set quotaLimit=true` during installation, [re-install the helm chart](/docs/openshift?topic=openshift-storage_cos_install). 
@@ -106,6 +105,9 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you can't remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the **Class** and **Location** of your existing bucket. Then, use the appropriate [storage class](/docs/openshift?topic=openshift-storage_cos_reference).
         The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a [custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the appropriate API endpoint for your bucket.
         {: note}
+
+    `ibm.io/secret-name`
+    :   Enter the name of the secret that holds the {{site.data.keyword.cos_full_notm}} credentials that you created earlier. If you add your [{{site.data.keyword.cos_full_notm}} credentials](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials) to the default storage classes, you must not list secrets in the PVC. If you want to integrate {{site.data.keyword.keymanagementserviceshort}} encryption when creating new buckets from PVCs in your cluster, you must include the root key CRN when creating your [{{site.data.keyword.cos_full_notm}} secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Note that you cannot add {{site.data.keyword.keymanagementserviceshort}} encryption to existing buckets.
         
     `secret-namespace`
     :   By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.

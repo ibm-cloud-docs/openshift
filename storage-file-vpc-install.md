@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-01-31"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on
@@ -32,8 +33,7 @@ subcollection: openshift
 ## Prerequisites
 {: #prereqs-store-file-vpc}
 
-1. Update the `container-service` plug in to the most recent version. You can update the plug in by running the `ibmcloud plugin update container-service` command. 
-
+1. Update the `container-service` plug-in to the most recent version. You can update the plug-in by running the **`ibmcloud plugin update container-service`** command. 
 
 
 1. Get a list of the add-on versions and decide which version to install for your cluster version.

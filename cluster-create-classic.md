@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-01-31"
 
 keywords: openshift, clusters, classic, create
 
@@ -73,6 +73,7 @@ Create your single zone or multizone classic {{site.data.keyword.redhat_openshif
     - [Activity tracking]{: tag-green} Enable the [activity tracking](/docs/activity-tracker?topic=activity-tracker-getting-started) option. From the drop down menu under **Instance**, choose an exisiting instance or **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created. 
     - [Logging]{: tag-dark-teal} Enable the [logging](/docs/log-analysis?topic=log-analysis-getting-started) option. From the drop down **Platform instance** menu, choose a platform instance. From the drop down **Application instance**, choose an exisiting application instance or chooose **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created. 
     - [Monitoring]{: tag-magenta} Enable the [monitoring](/docs/monitoring?topic=monitoring-getting-started) option. From the drop down **Platform instance** menu, choose a platform instance. From the drop down **Application instance**, choose an exisiting application instance or chooose **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created.
+    - [Secrets Manager]{: tag-teal} Enable [Secrets Manager](/docs/containers?topic=containers-certs-mgr-migration). From the **Secrets Manager instance** drop down menu, choose an existing instance that you want to register to the cluster. If no instances are available, [create one](/docs/containers?topic=containers-secrets-mgr). If you want to apply a secret group, choose one from the **Secrets Manager group** drop down menu.
 
 10. In the **Summary** pane, review your order summary and then click **Create**. A worker pool is created with the number of workers that you specified. You can see the progress of the worker node deployment in the **Worker nodes** tab.
     - Your cluster might take some time to provision the {{site.data.keyword.redhat_openshift_notm}} master and all worker nodes and enter a **Normal** state. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress  secrets or registry image pull secrets, might still be in process. Before you continue, wait until the cluster is ready by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.
