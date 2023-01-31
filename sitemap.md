@@ -282,6 +282,8 @@ subcollection: openshift
 
     * [30 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3023)
 
+        * Worker node fix packs `4.8.57_1588_openshift`, `4.9.54_1574_openshift`, `4.10.50_1554_openshift`, and `4.11.25_1541_openshift`.
+
         * New! Optional secondary disks for worker nodes in VPC clusters.
 
         * CLI version `1.0.489`.

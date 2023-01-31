@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-01-31"
 
 keywords: openshift
 
@@ -31,10 +31,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2023
 {: #openshift-jan23}
 
-
 ### 30 January 2023
 {: #openshift-jan3023}
 {: release-note}
+
+
+
+Worker node fix packs `4.8.57_1588_openshift`, `4.9.54_1574_openshift`, `4.10.50_1554_openshift`, and `4.11.25_1541_openshift`.
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48).
 
 New! Optional secondary disks for worker nodes in VPC clusters.
 :   When you create a VPC cluster, you can specify an optional secondary disk for your worker nodes. Secondary disks are used for the container runtime and are useful in scenarios where more container storage is needed, such as running pods with large images. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).
@@ -1006,7 +1010,7 @@ CIS Kubernetes Benchmark
 :   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.10.
 
 Cluster security groups
-:   You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group#vpc-sg-cluster).
+:   You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group).
 
 ### 27 April 2022
 {: #openshift-apr2722}
@@ -3249,7 +3253,7 @@ CLI changelog
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Ingress secret expiration synchronization
-:   Added a troubleshooting topic for when [Ingress secret expiration dates are out of sync or are not updated](/docs/openshift?topic=openshift-sync_cert_dates).
+:   Added a troubleshooting topic for when Ingress secret expiration dates are out of sync or are not updated.
 
 
 
