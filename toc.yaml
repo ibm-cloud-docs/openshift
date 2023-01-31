@@ -328,12 +328,6 @@ toc:
               - openshift_versions_48.md
               - openshift_versions_changelog_48.md
               - benchmarks_48.md
-          - topicgroup:
-              label: Version 4.7
-              topics:
-              - openshift_versions_47.md
-              - openshift_versions_changelog_47.md
-              - benchmarks_47.md
       - topicgroup:
           label: Add-on version history
           topics:
@@ -349,6 +343,12 @@ toc:
       - topicgroup:
           label: Archived version history
           topics:
+          - topicgroup:
+              label: Version 4.7
+              topics:
+              - openshift_versions_47.md
+              - openshift_versions_changelog_47.md
+              - benchmarks_47.md
           - topicgroup:
               label: Version 4.6 
               topics:

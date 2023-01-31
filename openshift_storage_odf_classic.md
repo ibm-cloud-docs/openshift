@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-01-31"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -117,7 +117,7 @@ Storage class encryption is available only for versions `4.10.0` and later of Op
 
 1. List your namespaces to determine whether you have an `openshift-storage` namespace. If you don't have an `openshift-storage` namespace, create it.
     ```sh
-    oc get namespaces | openshift-storage
+    oc get namespaces | grep openshift-storage
     ```
     {: pre}
 
