@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-02-01"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -38,17 +38,27 @@ With {{site.data.keyword.secrets-manager_short}}, you can:
 Note that to have your secrets automatically updated, you must register at least one {{site.data.keyword.secrets-manager_short}} instance to your cluster. For more information, see [Registering your {{site.data.keyword.secrets-manager_short}} instance to your cluster](#secrets-mgr_setup_register).
 {: note}
 
-### What types of secrets are supported with {{site.data.keyword.secrets-manager_short}}?
-{: #secrets-mgr_about_types}
+## {{site.data.keyword.secrets-manager_short}} FAQ
+{: #secrets-mgr_migration_faq}
 
-{{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and non-TLS (Opaque) secret types. With TLS secrets, you can specify one certificate CRN. With non-TLS secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type when you create a secret, TLS is applied by default. 
+Keep the following points in mind when using {{site.data.keyword.secrets-manager_short}}.
+{: shortdesc}
 
-For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
+What types of secrets are supported with {{site.data.keyword.secrets-manager_short}}?
+:   {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and non-TLS (Opaque) secret types. With TLS secrets, you can specify one certificate CRN. With non-TLS secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type when you create a secret, TLS is applied by default. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
 
-### What is the difference between the `ibmcloud oc ingress instance` CLI commands and the `ibmcloud oc ingress secret` CLI commands?
-{: #secrets-mgr_about_cli}
+Are secrets that are stored in a registered {{site.data.keyword.secrets-manager_short}} instance automatically updated?
+:   Yes. If you have a {{site.data.keyword.secrets-manager_short}} instance registered to your cluster, the secrets on the cluster are automatically updated with the values from {{site.data.keyword.secrets-manager_short}} once a day. These updates are made using the value of the the secret from the corresponding CRN.
 
-There are two sets of CLI commands that work directly with {{site.data.keyword.secrets-manager_short}} instances in {{site.data.keyword.openshiftlong_notm}}: the `ibmcloud oc ingress secret` commands and the `ibmcloud oc ingress instance` commands. The `ibmcloud oc ingress instance` commands are used to manage your {{site.data.keyword.secrets-manager_short}} instances. The `ibmcloud oc ingress secret` commands are used to manage your Ingress secrets that are stored in a {{site.data.keyword.secrets-manager_short}} instance or secrets that are written directly to the cluster. 
+Are my secrets automatically updated if I do not create and register a {{site.data.keyword.secrets-manager_short}} instance?
+:   If you do not have a {{site.data.keyword.secrets-manager_short}} instance registered to your cluster, your default Ingress secrets continue to update automatically every 90 days and are applied to your cluster. However, any secrets you created that *reference* the default Ingress secret are not automatically updated. 
+:   **Example scenario**: You have a default Ingress certificate in the `default` namespace. You run the **`ibmcloud oc ingress secret create`** command and reference the CRN of the default Ingress certificate to mirror the certificate in the `istio-system` namespace. Without a {{site.data.keyword.secrets-manager_short}} instance, the default Ingress certificate in the `default` namespace automatically updates. However, you are responsible for regularly updating the certificate in the `istio-system` namespace with the `**kubectl**` commands or another rotation method. 
+
+I created secrets that reference the default Ingress certificate, but I have not created and registered a {{site.data.keyword.secrets-manager_short}} instance and have not migrated my secrets from {{site.data.keyword.cloudcerts_short}}. How do I manage my secrets?
+:   If you don't register a {{site.data.keyword.secrets-manager_short}} instance, {{site.data.keyword.openshiftlong_notm}} only automatically updates the default Ingress secret. You are responsible for managing any other secrets by using **`kubectl`** commands or another rotation method. If you have any secrets that reference the default Ingress certificate, you should remove them by using **`ibmcloud ks ingress secret rm`**.
+
+What is the difference between the `ibmcloud oc ingress instance` CLI commands and the `ibmcloud oc ingress secret` CLI commands?
+:   There are two sets of CLI commands that work directly with {{site.data.keyword.secrets-manager_short}} instances in {{site.data.keyword.openshiftlong_notm}}: the `ibmcloud oc ingress secret` commands and the `ibmcloud oc ingress instance` commands. The `ibmcloud oc ingress instance` commands are used to manage your {{site.data.keyword.secrets-manager_short}} instances. The `ibmcloud oc ingress secret` commands are used to manage your Ingress secrets that are stored in a {{site.data.keyword.secrets-manager_short}} instance or secrets that are written directly to the cluster. 
 
 ## Setting up your {{site.data.keyword.secrets-manager_short}} instance
 {: #secrets-mgr_setup}
@@ -220,6 +230,15 @@ The {{site.data.keyword.secrets-manager_short}} instance registered during clust
 If you [create a cluster](/docs/containers?topic=containers-clusters&interface=cli) in the CLI with the [`ibmcloud oc cluster create classic`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`ibmcloud oc cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2), you can specify a {{site.data.keyword.secrets-manager_short}} instance or secret group with the following command options:
 - `--sm-instance`: Use this option to register a {{site.data.keyword.secrets-manager_short}} instance to the cluster by specifying the instance CRN. To find the CRN of a {{site.data.keyword.secrets-manager_short}} instance, run `ibmcloud resource service-instance <name_of_instance>` or navigate to your resource list in the UI and click on the instance.
 - `--sm-group`: Use this option to specify the ID of the secret group. To find the secret group ID, run `ibmcloud secrets-manager secret-groups`.
-    
+
+If you create a cluster in the UI, follow these steps to specify a {{site.data.keyword.secrets-manager_short}} instance or secret group:
+1. In the **Integrations** section of the cluster create page, select the option to enable **Secrets Manager**.
+2. From the **Secrets Manager instance** drop down menu, select the instance you want to register to the cluster. If no instances are available, [create one](#secrets-mgr_setup_create). 
+3. From the **Secrets Manager group** drop down menu, select the secret group you want to apply. 
+4. Create the cluster. 
+5. Check that the {{site.data.keyword.secrets-manager_short}} instance is registered to the cluster.
+    1. When you cluster is fully provisioned, click on the cluster to view the cluster details. Under **Integrations**, find the **Secrets Manager** heading and click **Manage**. 
+    2. In the side panel, check that correct instance is listed under **Registered Secrets Manager instances**.
+    3. To register additional instances to the cluster, click **Register instances**.
     
     
