@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-01"
 
 keywords: openshift
 subcollection: openshift
@@ -4421,7 +4421,17 @@ subcollection: openshift
 
     * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 
+* [Persistent VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_persist)
+
+* [Moving a VPC load balancer from one cluster to another](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move)
+
+    * [Detatching a VPC load balancer from a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_detach)
+
+    * [Attaching a VPC load balancer to a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_attach)
+
 * [Health checks for load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health)
+
+    * [Customizing health checks for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_custom)
 
     * [Enabling TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_udp)
 
@@ -4596,9 +4606,7 @@ subcollection: openshift
 
     * [What functionality can I gain with {{site.data.keyword.secrets-manager_short}}?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_functionality)
 
-    * [What types of secrets are supported with {{site.data.keyword.secrets-manager_short}}?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_types)
-
-    * [What is the difference between the `ibmcloud oc ingress instance` CLI commands and the `ibmcloud oc ingress secret` CLI commands?](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about_cli)
+* [{{site.data.keyword.secrets-manager_short}} FAQ](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_migration_faq)
 
 * [Setting up your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_setup)
 
