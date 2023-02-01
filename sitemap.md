@@ -282,6 +282,14 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
+
+    * [01 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0123)
+
+        * Persistent VPC load balancers
+
+        * Customized VPC load balancer health checks
+
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
 
     * [30 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3023)

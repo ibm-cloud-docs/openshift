@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+## February 2023
+{: #openshift-feb23}
+
+
+
+### 01 February 2023
+{: #openshift-feb0123}
+{: release-note}
+
+
 
 Persistent VPC load balancers
 :   You can now create a [persistent VPC load balancer](/docs/containers?topic=containers-vpc-lbaas#vpc_lb_persist) that remains available even after your cluster is deleted. 
