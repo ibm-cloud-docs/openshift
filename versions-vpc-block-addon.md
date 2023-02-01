@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-02-01"
 
 keywords: block, add-on, changelog
 
@@ -16,7 +16,8 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.block_storage_is_short}} add-on change log
+
+# {{site.data.keyword.block_storage_is_short}} add-on change log 
 {: #vpc_bs_changelog}
 
 
@@ -151,7 +152,7 @@ Adds snapshot support.
 {: #4.4.16_1779_is_block_relnote}
 
 - Updates the storage-secret-sidecar image to `v1.2.15`.
-- Resolves [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){:external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){:external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){:external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){:external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){:external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){:external}, and [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){:external}.
+- Resolves [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){: external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){: external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){: external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){: external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){: external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){: external}, and [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){: external}.
 
 
 ### Change log for version 4.4.15_1764, released 10 January 2023
