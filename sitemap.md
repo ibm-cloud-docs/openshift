@@ -4421,7 +4421,17 @@ subcollection: openshift
 
     * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 
+* [Persistent VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_persist)
+
+* [Moving a VPC load balancer from one cluster to another](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move)
+
+    * [Detatching a VPC load balancer from a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_detach)
+
+    * [Attaching a VPC load balancer to a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_attach)
+
 * [Health checks for load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health)
+
+    * [Customizing health checks for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_custom)
 
     * [Enabling TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_udp)
 
