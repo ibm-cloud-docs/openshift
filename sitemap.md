@@ -4600,6 +4600,8 @@ subcollection: openshift
 
     * [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field)
 
+* [Secrets FAQ](/docs/openshift?topic=openshift-secrets#secrets-faq)
+
 [Setting up {{site.data.keyword.secrets-manager_short}} in your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr)
 
 * [About {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_about)
