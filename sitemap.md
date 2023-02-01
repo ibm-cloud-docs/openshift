@@ -36,9 +36,13 @@ subcollection: openshift
 
 [Getting started with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-getting-started#getting-started)
 
-* [Creating a classic {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+* [Creating a classic {{site.data.keyword.redhat_openshift_notm}} cluster in the console](/docs/openshift?topic=openshift-getting-started#clusters_gs)
 
-* [Creating a VPC cluster](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
+* [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
+
+* [Creating classic clusters in the {{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-getting-started#clusters_gs_classic_cli)
+
+* [Creating VPC clusters in the CLI](/docs/openshift?topic=openshift-getting-started#clusters_gs_vpc_cli)
 
 * [Deploying an app with the {{site.data.keyword.redhat_openshift_notm}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
 
@@ -277,6 +281,14 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
+
+    * [01 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0123)
+
+        * Persistent VPC load balancers
+
+        * Customized VPC load balancer health checks
 
 * [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
 
@@ -4599,6 +4611,8 @@ subcollection: openshift
     * [Creating a non-TLS secret in your cluster](/docs/openshift?topic=openshift-secrets#non-tls-create)
 
     * [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field)
+
+* [Secrets FAQ](/docs/openshift?topic=openshift-secrets#secrets-faq)
 
 [Setting up {{site.data.keyword.secrets-manager_short}} in your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr)
 
