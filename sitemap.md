@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-02"
 
 keywords: openshift
 subcollection: openshift
@@ -283,6 +283,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
+
+    * [02 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0223)
+
+        * Istio add-on `1.14` 
 
     * [01 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0123)
 

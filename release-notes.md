@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-02"
 
 keywords: openshift
 
@@ -31,7 +31,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2023
 {: #openshift-feb23}
 
+### 02 February 2023
+{: #openshift-feb0223}
+{: release-note}
 
+Istio add-on `1.14` 
+:   Version `1.14` of the managed Istio add-on is no longer supported. For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#v114).
 
 ### 01 February 2023
 {: #openshift-feb0123}
