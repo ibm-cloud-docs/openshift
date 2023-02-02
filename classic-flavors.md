@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-02"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -19,6 +19,8 @@ subcollection: openshift
 {: #classic-flavors}
 
 Review the classic worker node flavors by zone.
+
+
 
 
 
