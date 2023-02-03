@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-02"
+lastupdated: "2023-02-03"
 
 keywords: openshift
 
@@ -56,6 +56,11 @@ Customized VPC load balancer health checks
 ### 30 January 2023
 {: #openshift-jan3023}
 {: release-note}
+
+
+
+Master fix packs `4.8.57_1587_openshift`, `4.9.54_1573_openshift`, `4.10.47_1553_openshift`, and `4.11.25_1540_openshift`.
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48).
 
 
 
