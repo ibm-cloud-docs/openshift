@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-03"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -38,6 +38,30 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.9 change log.
 {: shortdesc}
+
+
+### Change log for master fix pack 4.9.54_1573_openshift, released 30 January 2023
+{: #4954_1573_openshift}
+
+The following table shows the changes that are in the master fix pack 4.9.54_1573_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.22.5 | v3.23.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.23/release-notes/#v3235){: external}. |
+| Calico Operator | v1.25.13 | v1.27.17 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.17){: external}. |
+| Cluster health image | v1.3.14 | v1.3.15 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1257 | 1280 | Publish s390x image. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.4 | v2.3.6 | Updated `UBI images` to `8.7-1031` |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.16-1 | v1.22.17-2 | Updated to support the `Kubernetes 1.22.17` release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 421 | 425 | Fixes for Fixing [CVE-2022-40303](https://nvd.nist.gov/vuln/detail/CVE-2022-40303){: external} and [CVE-2022-40304](https://nvd.nist.gov/vuln/detail/CVE-2022-40303){: external}. |
+| Key Management Service provider | v2.5.12 | v2.5.13 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
+| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.9.0-20221205 | v4.9.0-20230123 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20230123){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.9.52 | 4.9.54 | See the [{{site.data.keyword.openshiftlong_notm}} Release Notes](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-54){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.9.0-20221205 | v4.9.0-20230123 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20230123){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | 4.9.0+20221205 | 4.9.0+20230123 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20230123){: external}. |
+{: caption="Changes since version 4.9.52_1568_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.9.54_1574_openshift, released 30 January 2023
