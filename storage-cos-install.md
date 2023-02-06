@@ -21,7 +21,7 @@ subcollection: openshift
 Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
 {: shortdesc}
 
-If you are migrating from RHEL 7 to RHEL 8, you must uninstall and then reinstall the plug-in version 2.2.6 or later. Then, recreate your PVC and workload pods.
+If you are migrating from RHEL 7 to RHEL 8, you must uninstall and then reinstall the plug-in version `2.2.6` or later. If you are upgrading from a chart version before `2.2.5`, you must uninstall and reinstall the plug-in and then re-create your PVCs and pods or the upgrade will fail.
 {: important}
 
 Prequisites
@@ -186,9 +186,6 @@ helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname=
 
 You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the most recent version.
 {: shortdesc}
-
-If you are upgrading from an older chart version before `2.2.5`, uninstall and reinstall the plug-in and re-create the PVC, pods, and storage classes or the upgrade will fail.
-{: note}
 
 1. Get the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release and the version of the plug-in in your cluster.
 
