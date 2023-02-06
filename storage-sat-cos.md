@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-06"
 
 keywords: COS, cloud object storage, satellite storage, object storage, satellite, satellite configurations,
 
@@ -107,6 +107,7 @@ You can deploy the {{site.data.keyword.cos_full_notm}} Helm chart to only a sing
 
 ### Installing the plug-in from the console
 {: #sat-storage-cos-install-console}
+{: ui}
 
 Complete the following steps to install the {{site.data.keyword.cos_full_notm}} Helm chart from the console.
 
@@ -179,7 +180,52 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
     ibmc-s3fs-cos-perf   ibm.io/ibmc-s3fs   Delete          Immediate           false                  2m23s
     ```
     {: pre}
-    
+
+### Installing the plug-in from the CLI
+{: #sat-storage-cos-install-cli}
+{: cli}
+
+1. Run the following commmand to install the {{site.data.keyword.cos_full_notm}} plug-in. 
+
+    ```sh
+    helm install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set provider="SATELLITE" --set workerOS="redhat" --set platform="openshift" --set kube-driver-path="DRIVER-PATH" --set license=true --set cos.endpoint="ENDPOINT" --set cos.storageClass="us-smart" --namespace "ibm-object-s3fs"
+    ```
+    {: pre}
+
+    Release name
+    :   Enter `ibm-object-storage-plugin`.
+
+    Service Provider
+    :   Enter `SATELLITE`.
+
+    Container Platform
+    :   The platform of the worker nodes. To retrieve this parameter, run `kubectl get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/os'`.
+    :   If the output is `REDHAT_8_64` or `OPENSHIFT` for example, enter `"redhat"` for the worker OS and `"openshift"` for the platform.
+
+    Kube driver
+    :   The driver path for the `kubelet`. To find this parameter value, run `kubectl get nodes -o yaml | grep 'node\.openshift\.io/os_id'`. 
+    :   If the output has `rhel`, enter `"/usr/libexec/kubernetes"`. 
+    :   If the output has `rhcos`, enter `"/etc/kubernetes"`. 
+
+    License
+    :   Enable this setting as `true`.
+
+    COS endpoint
+    :   Enter the s3 endpoint that you want to use. 
+    :   Example {{site.data.keyword.cos_full_notm}} endpoint: `https://s3.us.cloud-object-storage.appdomain.cloud`.
+    :   Example AWS `eu-west-1` endpoint: `https://s3.eu-west-1.amazonaws.com`.
+
+    Storage class
+    :   Enter the storage class that you want to use. 
+    :   Example {{site.data.keyword.cos_full_notm}} storage class: `us-smart`. For more information, see [Location constraints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-classes#classes-locationconstraint).
+
+    Example Command for REDHAT_8_64 hosts in `us-east` using smart storage classes
+
+    ```sh
+    helm install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set provider="SATELLITE" --set workerOS="redhat" --set platform="openshift" --set kube-driver-path="/usr/libexec/kubernetes" --set license=true --set cos.endpoint="https://s3.us.cloud-object-storage.appdomain.cloud" --set cos.storageClass="us-smart" --namespace "ibm-object-s3fs"
+    ```
+    {: pre}
+ 
 
 ## Creating a secret that uses your s3 credentials
 {: #sat-storage-cos-secret}
@@ -189,16 +235,16 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
     - For AWS, see [AWS s3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/MakingRequests.html){: external}.
     - For {{site.data.keyword.cos_full_notm}}, see [Creating service credentials](/docs/containers?topic=containers-storage-cos-understand#create_cos_secret).
     
-2. Encode your access key and secret key to base64.
+1. Encode your access key and secret key to base64.
     ```sh
     echo "access-key" | base64
     echo "secret-key" | base64
     ```
     {: pre}
     
-3. Create a secret configuration file called `secret.yaml` that uses the credentials that you retrieved earlier. 
+1. Create a secret configuration file called `secret.yaml` that uses the credentials that you retrieved earlier. 
     
-    ```sh
+    ```yaml
     apiVersion: v1
     metadata:
       name: my-secret
@@ -210,7 +256,7 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
     ```
     {: codeblock}
     
-4. Create the secret in your cluster.
+1. Create the secret in your cluster.
     ```sh
     kubectl apply -f secret.yaml
     ```
@@ -257,8 +303,14 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
     :   Enter the name of the storage class you want to use.
     :   For AWS, enter `Standard`.
     :   For {{site.data.keyword.cos_full_notm}}, enter `ibm-s3fs-cos` or `ibm-s3fs-cos-perf`.
+
+1. Create the PVC in your cluster.
+    ```sh
+    kubectl apply -f PVCNAME.yaml
+    ```
+    {: pre}
     
-2. Deploy an app pod that uses the PVC you created earlier.
+1. Deploy an app pod that uses the PVC you created earlier.
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -284,6 +336,11 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
                 mountPath: /mount-path # The mount path for your app. 
    ```
     
+1. Create the pod in your cluster.
+    ```sh
+    kubectl apply -f cos-pod.yaml
+    ```
+    {: pre}
     
 ### Upgrading the Object Storage plug-in
 {: #sat-storage-cos-upgrade}
@@ -318,17 +375,15 @@ helm upgrade ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin  --se
 
 
 
-
-
 ## Uninstalling the plug-in and Helm chart
 {: #sat-storage-cos-rm}
 
-Complete the following steps to remove the Helm chart from your cluster.
+1. Complete the following steps to remove the Helm chart from your cluster.
 
-```sh
-helm uninstall <release_name> -n <namespace>
-```
-{: pre}
+    ```sh
+    helm uninstall <release_name> -n <namespace>
+    ```
+    {: pre}
 
 
 

@@ -4870,6 +4870,8 @@ subcollection: openshift
 
     * [Installing the plug-in from the console](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-console)
 
+    * [Installing the plug-in from the CLI](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-cli)
+
 * [Creating a secret that uses your s3 credentials](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-secret)
 
 * [Deploying an app that uses object storage](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-app)
