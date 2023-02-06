@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-02-06"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -68,7 +69,7 @@ Verify that no VPC security groups are blocking traffic to your cluster and that
     If you want to remove the load balancing setup for an app in your VPC cluster, delete the Kubernetes `LoadBalancer` service by running `oc delete svc <kubernetes_lb_service_name>`. The VPC load balancer that is associated with the Kubernetes `LoadBalancer` service is automatically deleted from your VPC.
     {: tip}
 
-3. If the load balancer exists, [view the VPC security groups that are attached to it](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-view). If you have made any modifications to the `kube-<vpc-id>` security group, which is automatically attached to the load balancer, set the original rules back in the security group.
+3. If the load balancer exists, [view the VPC security groups that are attached to it](/docs/openshift?topic=openshift-vpc-security-group). If you have made any modifications to the `kube-<vpc-id>` security group, which is automatically attached to the load balancer, set the original rules back in the security group.
 
     - If the VPC load balancer is listed and you have not modified any attached security groups, it might not be responsive for the following reasons:
         * Its DNS entry might still be registering. When a VPC load balancer is created, the hostname is registered through a public DNS. Sometimes, it can take several minutes for this DNS entry to be replicated to the specific DNS that your client is using. You can either wait for the hostname to be registered in your DNS, or access the VPC load balancer directly by using one of its IP addresses. To find the VPC load balancer IP addresses, run `ibmcloud is lb <LB_ID>` and look for the **Public IPs** field.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-06"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -204,7 +205,7 @@ To create an ACL for each subnet that your cluster is attached to,
 
 6. Create rules to allow inbound traffic from and outbound traffic to the `161.26.0.0/16` and `166.8.0.0/14` {{site.data.keyword.cloud_notm}} private subnets. The `161.26.0.0/16` rules allow you to create worker nodes in your cluster. The `166.8.0.0/14` rules allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.
 
-    Need to connect your worker nodes to {{site.data.keyword.cloud_notm}} services that support only public cloud service endpoints? [Attach a public gateway to the subnet](https://cloud.ibm.com/kubernetes/clusters) so that worker nodes can connect to a public endpoint outside of your cluster. Then, create inbound and outbound rules to allow ingress from and egress to the services' public cloud service endpoints.
+    Need to connect your worker nodes to {{site.data.keyword.cloud_notm}} services that support only public cloud service endpoints? [Attach a public gateway to the subnet](https://cloud.ibm.com/kubernetes/clusters){: external} so that worker nodes can connect to a public endpoint outside of your cluster. Then, create inbound and outbound rules to allow ingress from and egress to the services' public cloud service endpoints.
     {: tip}
 
     ```sh
