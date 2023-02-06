@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-06"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errseipm
 
@@ -15,7 +15,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an ERRSEIPM error?
+# Why does the Ingress status show an `ERRSEIPM` error?
 {: #ts-ingress-errseipm}
 {: troubleshoot}
 {: support}

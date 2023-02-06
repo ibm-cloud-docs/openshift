@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-06"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, external service missing, erresnf
 
@@ -16,7 +16,7 @@ content-type: troubleshoot
 
 
 
-# Why is the Ingress external service missing from my cluster?
+# Why does the Ingress status show an `ERRESNF` error?
 {: #ts-ingress-erresnf}
 {: troubleshoot}
 {: support}

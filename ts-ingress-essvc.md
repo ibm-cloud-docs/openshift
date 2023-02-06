@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-06"
 
 keywords: openshift, essvc
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why does the Ingress status show an ESSVC error?
@@ -26,7 +27,7 @@ When you check the status of your cluster's Ingress components by running the `i
 {: tsSymptoms}
 
 ```sh
-CRN does not match default secret with the same domain (ESSVC).
+The CRN does not match the default secret with the same domain (ESSVC).
 ```
 {: screen}
 

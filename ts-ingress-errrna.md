@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-06"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errrna
 
@@ -15,7 +15,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an ERRRNA error?
+# Why does the Ingress status show an `ERRRNA` error?
 {: #ts-ingress-errrna}
 {: troubleshoot}
 {: support}
@@ -29,7 +29,7 @@ When you check the status of your cluster's Ingress components by running the `i
 {: tsSymptoms}
 
 ```sh
-One or more route not admitted (ERRRNA).
+One or more routes not admitted (ERRRNA).
 ```
 {: screen}
 

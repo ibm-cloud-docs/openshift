@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-06"
 
 keywords: openshift, errdsia, nlb-dns, dns add, dns remove
 
@@ -15,7 +15,8 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Why does the Ingress status show an ERRDSIA error?
+
+# Why does the Ingress status show an `ERRDSIA` error?
 {: #ts-ingress-errdsia}
 {: troubleshoot}
 {: support}

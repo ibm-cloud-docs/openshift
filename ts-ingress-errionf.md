@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-06"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator missing
 
@@ -16,7 +16,7 @@ content-type: troubleshoot
 
 
 
-# Why do I get an error that the Ingress Operator is missing from my cluster?
+# Why does the Ingress status show an `ERRIONF` error?
 {: #ts-ingress-errionf}
 {: troubleshoot}
 {: support}

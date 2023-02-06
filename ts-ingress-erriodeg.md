@@ -15,7 +15,7 @@ content-type: troubleshoot
 
 
 
-# Why is the Ingress Operator in a degraded state?
+# Why does the Ingress status show an `ERRIODEF` error?
 {: #ts-ingress-erriodeg}
 {: troubleshoot}
 {: support}

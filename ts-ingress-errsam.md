@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-06"
 
 keywords: openshift, errsam, loadbalancer service missing
 
@@ -16,7 +16,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an ERRSAM error?
+# Why does the Ingress status show an `ERRSAM` error?
 {: #ts-ingress-errsam}
 {: troubleshoot}
 {: support}
