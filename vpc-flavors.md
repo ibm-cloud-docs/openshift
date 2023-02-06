@@ -20,7 +20,7 @@ subcollection: openshift
 # VPC flavors
 {: #vpc-flavors}
 
-Review the VPC Gen 2 worker node flavors by zone.
+Review the VPC Gen 2 worker node flavors by metro.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-06"
 
 keywords: openshift
 subcollection: openshift
@@ -3797,11 +3797,9 @@ subcollection: openshift
 
     * [Security groups applied to VPE gateways and VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-vpe-alb)
 
-* [Viewing the VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-view)
+* [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cli)
 
-    * [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cli)
-
-    * [Viewing the default VPC security groups in the UI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-ui)
+* [Viewing the default VPC security groups in the UI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-ui)
 
 * [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-inbound-outbound)
 
@@ -4099,8 +4097,6 @@ subcollection: openshift
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
 
     * [Considerations and prerequisites](/docs/openshift?topic=openshift-health-audit#prereqs-apiserver-logs)
-
-    * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
 
     * [Forwarding Kubernetes API audit logs to a resource in the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv)
 
@@ -4871,6 +4867,8 @@ subcollection: openshift
 * [Installing Helm and adding the `ibm-helm` Helm repo](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-helm-deploy)
 
     * [Installing the plug-in from the console](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-console)
+
+    * [Installing the plug-in from the CLI](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-cli)
 
 * [Creating a secret that uses your s3 credentials](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-secret)
 

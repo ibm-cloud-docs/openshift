@@ -18,7 +18,7 @@ subcollection: openshift
 # Classic flavors
 {: #classic-flavors}
 
-Review the classic worker node flavors by zone.
+Review the classic worker node flavors by metro.
 
 
 
