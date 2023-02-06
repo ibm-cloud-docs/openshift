@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-06"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
 
@@ -53,7 +53,7 @@ oc get clusteroperator ingress
 ## One or more status conditions indicate unavailable: `DeploymentAvailable=False`
 {: #ts-ingress-erriodeg-da-false}
 
-1. Ensure that you cluster has at least two workers. For more information, see [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers).
+1. Ensure that your cluster has at least two workers. For more information, see [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers).
 1. Ensure that your cluster workers are healthy, otherwise Ingress Controller pods cannot be scheduled. For more information, see [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
 
 ## One or more status conditions indicate unavailable: `LoadBalancerReady=False`
@@ -68,12 +68,19 @@ oc get clusteroperator ingress
 
 1. Ensure that the correct LoadBalancer service address is registered for your Ingress subdomain.
     1. Run the `ibmcloud oc cluster get` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get) to see your Ingress subdomain.
-    1. Run the `ibmcloud oc nlb-dns get` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-get) to see the the registered addresses.
+    1. Run the `ibmcloud oc nlb-dns get` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-get) to see the registered addresses.
     1. Run the `oc get services -n openshift-ingress` command to get the actual load balancer addresses.
     1. Compare the registered and actual addresses and update the subdomain if it differs.
         **VPC**: Run the `ibmcloud oc nlb-dns replace` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-replace) to replace the current address.
         **Classic**: Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
-        
+        **Satellite**: The actual addresses depends on your configuration: if you expose your worker nodes with an external load balancer, register the load balancer addresses, otherwise register the IP addresses assigned to the the `router-external-default` service in the `openshift-ingress` namespace (use the `oc get services -n openshift-ingress router-external-default -o yaml` command to retrieve the addresses). Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
+
+1. **VPC only**: Ensure that your VPC subnets have public gateways attached. For more information, see [Creating a Red Hat OpenShift cluster in your Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial) and [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw)
+    1. Run the `ibmcloud is public-gateways` to see your public gateways.
+    1. Run the `ibmcloud is subnets` to see your subnets.
+    1. For every subnet run the `ibmcloud is subnet <subnet-id>` to check whenever it has a public gateway.
+        1. If your subnet does not have a public gateway attached, you need to attach one. For more information, see [Creating public gateways](/docs/vpc?topic=vpc-create-public-gateways&interface=cli)
+
 1. Ensure that no firewall rules block the canary traffic.
     **VPC**: canary traffic originates from one of the worker nodes, flows through a VPC Public Gateway and arrives to the public side of the VPC Load Balancer instance. Configure your VPC Security Groups to allow this communication. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).
     **Classic**: canary traffic originates from the public IP address of one of the worker nodes and arrives to the public IP address of your classic load balancers. Configure your network policies to allow this communication. For more information, see [Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies).
