@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-06"
 
 keywords: openshift
 
@@ -21,11 +21,12 @@ subcollection: openshift
 Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
 {: shortdesc}
 
-Looking for instructions for how to update or remove the {{site.data.keyword.cos_full_notm}} plug-in? See [Updating the plug-in](#update_cos_plugin) and [Removing the plug-in](#remove_cos_plugin).
-{: tip}
+If you are migrating from RHEL 7 to RHEL 8, you must uninstall and then reinstall the plug-in version 2.2.6 or later. Then, recreate your PVC and workload pods.
+{: important}
 
-The {{site.data.keyword.cos_full_notm}} plug-in requires at least 0.2 vCPU and 128 MB of memory.
-{: note}
+Prequisites
+:   The {{site.data.keyword.cos_full_notm}} plug-in requires at least 0.2 vCPU and 128 MB of memory.
+
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -106,29 +107,8 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 /Users/<user_name>/Library/helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
         {: tip}
 
-        Example output
 
-        ```sh
-        helm version: v3.2.4+g0ad800e
-        Install or upgrade Helm charts in IBM K8S Service(IKS) and IBM Cloud Private(ICP)
-        Usage:
-            helm ibmc [command]
-        Available Commands:
-            install           Install a Helm chart
-            upgrade           Upgrade the release to a new version of the Helm chart
-        Available Flags:
-            -h, --help        (Optional) This text.
-            -u, --update      (Optional) Update this plugin to the latest version
-        Example Usage:
-            Install: helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin
-            Upgrade: helm ibmc upgrade [RELEASE] ibm-helm/ibm-object-storage-plugin
-        Note:
-            1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
-            2. It is always recommended to have 'kubectl' client up-to-date.
-        ```
-        {: screen}
-
-1. Optional: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in can access all Kubernetes secrets in your cluster.
+1. **Optional**: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in can access all Kubernetes secrets in your cluster.
     1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
     2. [Store your {{site.data.keyword.cos_full_notm}} service credentials in a Kubernetes secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)).
     3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.
@@ -166,12 +146,12 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
 1. Install the `ibm-object-storage-plugin` in your cluster. When you install the plug-in, pre-defined storage classes are added to your cluster. If you completed the previous step for limiting the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials and you are still targeting the `templates` directory, change directories to your working directory. To set a limit on how much storage is available for the bucket, set the `--set quotaLimit=true` **VPC clusters only**: To enable authorized IPs on VPC, set the `--set bucketAccessPolicy=true` option.
 
-If you are migrating from RHEL 7 to RHEL 8, you must uninstall and then reinstall the plug-in and recreate your PVC and workload pods.
-
 If you don't set the `--set quotaLimit=true` option during installation, you can't set quotas for your PVCs.
 {: note}
 
-Example `helm ibmc install` command for OS X and Linux.
+
+Example `helm ibmc install` commands for OS X and Linux
+
 
 ```sh
 helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] 
@@ -207,7 +187,7 @@ helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname=
 You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the most recent version.
 {: shortdesc}
 
-If you are upgrading from an older chart version before `2.2.7`, uninstall and reinstall the plug-in and re-create the PVC, pods, and storage classes or the upgrade will fail.
+If you are upgrading from an older chart version before `2.2.5`, uninstall and reinstall the plug-in and re-create the PVC, pods, and storage classes or the upgrade will fail.
 {: note}
 
 1. Get the name of your {{site.data.keyword.cos_full_notm}} plug-in Helm release and the version of the plug-in in your cluster.

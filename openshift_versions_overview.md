@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-06"
 
 keywords: openshift, version, update, upgrade
 
@@ -166,7 +166,7 @@ Kubernetes Version: v1.24.2
 ## Release lifecycle
 {: #openshift_release_history}
 
-Each supported version of IBM Cloud Kubernetes Service goes through a lifecycle of testing, development, general release, support, deprecation, and becoming unsupported. Review the descriptions of each phase of a version's lifecycle. 
+Each supported version of {{site.data.keyword.redhat_openshift_notm}} goes through a lifecycle of testing, development, general release, support, deprecation, and becoming unsupported. Review the descriptions of each phase of a version's lifecycle. 
 {: shortdesc}
 
 Estimated days and versions are provided for general understanding. Actual availability and release dates are subject to change and depend on various factors, such as community updates, security patches, and technology changes between versions.
@@ -178,6 +178,16 @@ Estimated days and versions are provided for general understanding. Actual avail
 4. **Supported version**: The version remains supported but is no longer the default version.
 5. **Deprecated**: The version is deprecated, and security patch updates might not be provided. Versions are deprecated for approximately 90 days. Approximately 45 days after deprecation, you receive a notification in the console and CLI that you have approximately 45 days remaining to update your cluster to a supported version before its current version becomes unsupported. During the deprecation period, the version is still supported and your cluster is still functional, but might require updating to a supported release to fix security vulnerabilities. For example, you can add and reload worker nodes.
 6. **Unsupported**: The version is unsupported. Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If the cluster master runs two or more versions behind the oldest supported version, you can no longer apply updates and must delete the cluster and create a new one.
+
+
+
+IBM provides bi-weekly worker node fix packs. It is IBM's goal to remediate detected, legitimate vulnerabilities within a time period appropriate for the risks they represent. To ensure the quality and stability of the release, fix packs might be delayed.
+
+For {{site.data.keyword.redhat_openshift_notm}}, fix packs are applied to the latest minor release and patch for the targeted operating system. 
+    - For RHEL8 that is 8.7. 
+    - For RHEL7 (deprecated) that is 7.9.
+
+To keep your nodes secure, you must install worker node fix packs in a timely manner. You can subscribe to notifications to be alerted when a new update is available.
 
 ## Archive
 {: #version-archive}
