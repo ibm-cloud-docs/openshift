@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-07"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -23,7 +23,7 @@ subcollection: openshift
 The following versions are no longer supported for {{site.data.keyword.openshiftlong}}. You can review the archive of the change logs.
 {: shortdesc}
 
-Unsupported versions: [4.6 (Kubernetes 1.19)](/docs/openshift?topic=openshift-openshift_changelog_46), [4.5 (Kubernetes 1.18)](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4 (Kubernetes 1.17)](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3 (Kubernetes 1.16)](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11 (Kubernetes 1.11)](/docs/openshift?topic=openshift-openshift_changelog_311).
+Unsupported versions: [Archived version history](/docs/openshift?topic=openshift-sitemap#sitemap_archived_version_history)
 
 Looking for the change logs of supported versions? See [{{site.data.keyword.redhat_openshift_notm}} version change log](/docs/openshift?topic=openshift-openshift_changelog).
 {: tip}
