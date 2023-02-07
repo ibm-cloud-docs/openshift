@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-15"
+  years: 2014, 2023
+lastupdated: "2023-02-07"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -130,7 +131,6 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | --- | --- | --- |
 | Multizone-capable | No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. |No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. | 
 | Supported in VPC clusters | No | Yes |
-| Supported OpenShift versions | 3.11, 4.3 - 4.6 | 3.11, 4.3 - 4.6 |
 | Ideal data types | All | All | 
 | Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads | 
 | Access | Via file system on mounted volume | Via file system on mounted volume|
@@ -141,8 +141,8 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Resiliency| Medium as specific to a data center. File storage server is clustered by IBM with redundant networking.| Medium as specific to a data center. Block storage server is clustered by IBM with redundant networking. | 
 | Availability | Medium as specific to a data center. | Medium as specific to a data center. |
 | Scalability | Difficult to extend beyond the data center. You can't change an existing storage tier. | Difficult to extend beyond the data center. You can't change an existing storage tier. |
-| Encryption | At rest |   \n **Classic Block Storage**: Encryption at rest.   \n - **VPC Block Storage**: Encryption in transit with Key Protect.|
-| Backup and recovery | Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers. |   \n **Classic Block Storage**: Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers.  \n - **VPC Block Storage**: Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} command. |
+| Encryption | At rest |   \n **Classic Block Storage**: Encryption at rest.   \n **VPC Block Storage**: Encryption in transit with Key Protect. |
+| Backup and recovery | Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers. |   \n **Classic Block Storage**: Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers.  \n **VPC Block Storage**: Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} command. |
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. | Stateful sets, backing storage when you run your own database, or high-performance access for single pods. | 
 | Non-ideal use cases| Multizone clusters or geographically distributed data | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. | 
 {: caption="Persistent storage options for single zone clusters"}
@@ -170,26 +170,30 @@ The {{site.data.keyword.cos_full_notm}} plug-in uses s3fs to manage your Object 
 ![High availability options for persistent storage in a multizone cluster](images/cs_storage_options_multizone.png){: caption="Figure 1. High availability options for persistent storage in a multizone cluster" caption-side="bottom"}
 
 
-| Characteristics | Object Storage | SDS (Portworx) | {{site.data.keyword.cloud_notm}} Databases|
-| --- | --- | --- | --- |
-| Multizone-capable | Yes | Yes | Yes |
-| Supported in VPC clusters| Yes | Yes | Yes |
-| Supported OpenShift versions |  3.11, 4.3 - 4.6 |  3.11, 4.3 - 4.6 |  3.11, 4.3 - 4.6 |
-| Ideal data types | Semi-structured and unstructured data | All | Depends on the DBaaS |
-| Data usage pattern | Read-intensive workloads. Few or no write operations. | Write-intensive workloads. Random read and write operation. Sequential read and write operations | Read-write-intensive workloads |
-| Access | Via file system on mounted volume (plug-in) or via REST API from your app | Via file system on mounted volume or NFS client access to the volume. | Via REST API from your app. | 
-| Supported Kubernetes access writes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) | All | N/A as accessed from the app directly. | 
-| Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
-| Consistency| Eventual | Strong | Depends on the DBaaS | 
-| Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High | 
-| Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only. | High when set up with replication across three zones. Medium, when you store data in a single zone only. | Depends on the DBaaS and your setup. |
-| Availability | High due to the distribution across zones or regions. | High when you replicate data across three worker nodes in different zones. | High if you set up multiple instances. |
-| Scalability | Scales automatically | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. | Scales automatically | 
-| Encryption | In transit and at rest | Bring your own key to protect your data in transit and at rest with {{site.data.keyword.keymanagementservicelong_notm}}. | At rest |
-| Backup and recovery| Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](http://www.ibm.com/support/customer/csol/terms/?id=i126-7857&lc=en){: external}.  You can also use the  Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} command to copy data to and from pod and containers. | Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/){: external}. You can also use the  Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} command to copy data to and from pod and containers. | Depends on the DBaaS | 
-| Common use cases | Multizone clusters. Geographically distributed data. Static big data. Static multimedia content | Web apps | Backups | Archives | Stateful sets. Geographically distributed data. Common storage solution when you run apps across multiple cloud providers. Backing storage when you run your own database. High-performance access for single pods. Shared storage access across multiple pods and worker nodes. | Multizone clusters, relational and non-relational databases, or geographically distributed data. | 
-| Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. | N/A | App that is designed to write to a file system. | 
+
+| Characteristics | Object Storage | SDS (Portworx) | {{site.data.keyword.cloud_notm}} Databases| OpenShift Data Foundation |
+| --- | --- | --- | --- | --- |
+| Multizone-capable | Yes | Yes | Yes | Yes |
+| Supported in VPC clusters| Yes | Yes | Yes | Yes |
+| Ideal data types | Semi-structured and unstructured data. | All | Depends on the DBaaS | All |
+| Data usage pattern | Read-intensive workloads. Few or no write operations. | Write-intensive workloads. Random read and write operation. Sequential read and write operations. | Read-write-intensive workloads. | Write-intensive workloads. Random read and write operation. Sequential read and write operations. |
+| Access | Via file system on mounted volume (plug-in) or via REST API from your app. | Via file system on mounted volume or NFS client access to the volume. | Via REST API from your app. | Via file system on mounted volume or via REST API from your app. |
+| Supported write access levels |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) | All | N/A as accessed from the app directly. | All |
+| Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. | Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/dynamic-provisioning/#using-dynamic-provisioning){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from. | High if deployed to the same data center as your app. | Close to bare metal performance for sequential read and write operations when you use SDS machines. Create a storage layer based on the storage class performance (IOPs) that you need. |
+| Consistency| Eventual | Strong | Depends on the DBaaS | Strong |
+| Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High | Very high as three copies of your data are always maintained. |
+| Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only. | High when set up with replication across three zones. Medium, when you store data in a single zone only. | Depends on the DBaaS and your setup. | High when set up with replication across three zones. Medium, when you store data in a single zone only. |
+| Availability | High due to the distribution across zones or regions. | High when you replicate data across three worker nodes in different zones. | High if you set up multiple instances. | High when you replicate data across three worker nodes in different zones. |
+| Scalability | Scales automatically | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. | Scales automatically | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. |
+| Encryption | In transit and at rest | Bring your own key to protect your data in transit and at rest with {{site.data.keyword.keymanagementservicelong_notm}} or HPCS. | At rest | Bring your own key with {{site.data.keyword.keymanagementservicelong_notm}} or HPCS. In-transit and at rest. |
+| Backup and recovery| Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](http://www.ibm.com/support/customer/csol/terms/?id=i126-7857&lc=en){: external}.  You can also use the  Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} command to copy data to and from pod and containers. | Use local or cloud snapshots to [save the current state of a volume](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/){: external}. You can also use the Kubernetes [`oc cp`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#cp){: external} command to copy data to and from pod and containers. | Depends on the DBaaS | Use local or cloud snapshots to save the current state of a volume. |
+| Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. | N/A | App that is designed to write to a file system. | N/A |
 {: caption: Persistent storage options for multizone clusters"}
+
+
+
+
+
 
 
 
