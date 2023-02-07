@@ -8831,11 +8831,11 @@ subcollection: openshift
 
 [Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain_dns_marshal#ingress_subdomain_dns_marshal)
 
-[Why do I get an error that the Ingress Operator is missing from my cluster?](/docs/openshift?topic=openshift-ts-ingress-errionf#ts-ingress-errionf)
+[Why does the Ingress status show an `ERRIONF` error?](/docs/openshift?topic=openshift-ts-ingress-errionf#ts-ingress-errionf)
 
-[Why is the Ingress external service missing from my cluster?](/docs/openshift?topic=openshift-ts-ingress-erresnf#ts-ingress-erresnf)
+[Why does the Ingress status show an `ERRESNF` error?](/docs/openshift?topic=openshift-ts-ingress-erresnf#ts-ingress-erresnf)
 
-[Why is the Ingress Operator in a degraded state?](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg)
+[Why does the Ingress status show an `ERRIODEF` error?](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg)
 
 * [One or more status conditions indicate unavailable: `DeploymentAvailable=False`](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-da-false)
 
@@ -8845,17 +8845,17 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-next)
 
-[Why does the Ingress status show an ERRSEIPM error?](/docs/openshift?topic=openshift-ts-ingress-errseipm#ts-ingress-errseipm)
+[Why does the Ingress status show an `ERRSEIPM` error?](/docs/openshift?topic=openshift-ts-ingress-errseipm#ts-ingress-errseipm)
 
-[Why does the Ingress status show an ERRSAM error?](/docs/openshift?topic=openshift-ts-ingress-errsam#ts-ingress-errsam)
+[Why does the Ingress status show an `ERRSAM` error?](/docs/openshift?topic=openshift-ts-ingress-errsam#ts-ingress-errsam)
 
-[Why does the Ingress status show an ERRRNA error?](/docs/openshift?topic=openshift-ts-ingress-errrna#ts-ingress-errrna)
+[Why does the Ingress status show an `ERRRNA` error?](/docs/openshift?topic=openshift-ts-ingress-errrna#ts-ingress-errrna)
 
-[Why does the Ingress status show an ERRDSIA error?](/docs/openshift?topic=openshift-ts-ingress-errdsia#ts-ingress-errdsia)
+[Why does the Ingress status show an `ERRDSIA` error?](/docs/openshift?topic=openshift-ts-ingress-errdsia#ts-ingress-errdsia)
 
-[Why does the Ingress status show an ERRDSISS error?](/docs/openshift?topic=openshift-ts-ingress-errdsiss#ts-ingress-errdsiss)
+[Why does the Ingress status show an `ERRDSISS` error?](/docs/openshift?topic=openshift-ts-ingress-errdsiss#ts-ingress-errdsiss)
 
-[Why does the Ingress status show an ERRDRISS error?](/docs/openshift?topic=openshift-ts-ingress-errdriss#ts-ingress-errdriss)
+[Why does the Ingress status show an `ERRDRISS` error?](/docs/openshift?topic=openshift-ts-ingress-errdriss#ts-ingress-errdriss)
 
 [Why does the Ingress status show an ESSSMI error?](/docs/openshift?topic=openshift-ts-ingress-esssmi#ts-ingress-esssmi)
 

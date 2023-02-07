@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-06"
 
 keywords: openshift, essws
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why does the Ingress status show an ESSWS error?
@@ -26,7 +27,7 @@ When you check the status of your cluster's Ingress components by running the **
 {: tsSymptoms}
 
 ```sh
-Secret status shows a warning (ESSWS).
+The secret status shows a warning (ESSWS).
 ```
 {: screen}
 

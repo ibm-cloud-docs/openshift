@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-17"
+lastupdated: "2023-02-06"
 
 keywords: openshift, errdriss, secret generation failed
 
@@ -15,7 +15,8 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Why does the Ingress status show an ERRDRISS error?
+
+# Why does the Ingress status show an `ERRDRISS` error?
 {: #ts-ingress-errdriss}
 {: troubleshoot}
 {: support}

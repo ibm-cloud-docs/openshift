@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-06"
 
 keywords: openshift, essef
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why does the Ingress status show an ESSEF error?
@@ -26,7 +27,7 @@ When you check the status of your cluster's Ingress components by running the `i
 {: tsSymptoms}
 
 ```sh
-Field for opaque secret expired or will expire soon (ESSEF).
+The Opaque secret field expired or will expire soon (ESSEF).
 ```
 {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-06"
 
 keywords: openshift, esssmg
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why does the Ingress status show an ESSSMG error?
@@ -26,7 +27,7 @@ When you check the status of your cluster's Ingress components by running the `i
 {: tsSymptoms}
 
 ```sh
-Could not access Secrets Manager instance group, verify default group is accessible and exists within instance (ESSSMG).
+Could not the secret group (ESSSMG).
 ```
 {: screen}
 
