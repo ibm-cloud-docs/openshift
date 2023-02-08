@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-08"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -347,7 +347,7 @@ You can configure the internal image registry in your {{site.data.keyword.satell
             s3:
             bucket: my_bucket
             region: us-east
-            regionEndpoint: i11aa11a1a1a11a11-1a11a1aaa1a1a1a1a-c000.us-east.satellite.appdomian.cloud:11111
+            regionEndpoint: https://i11aa11a1a1a11a11-1a11a1aaa1a1a1a1a-c000.us-east.satellite.appdomian.cloud:11111
             virtualHostedStyle: false
           storageManaged: true
         ```

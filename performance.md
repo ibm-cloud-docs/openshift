@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-08"
 
 keywords: openshift, kernel
 
@@ -26,6 +26,12 @@ If you have specific performance optimization requirements, you can change the d
 If you choose to change the default settings, you are doing so at your own risk. You are responsible for running tests against any changed settings and for any potential disruptions caused by the changed settings in your environment.
 {: important}
 
+
+Instead of tuning worker node performance with `MachineConfig` files in {{site.data.keyword.redhat_openshift_notm}}, you can modify the host with a `daemonset` file. For more information, see [Changing the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu) or [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance).
+{: note}
+
+
+
 ## Default worker node settings
 {: #worker-default}
 
@@ -35,7 +41,7 @@ By default, your worker nodes have the operating system and compute hardware of 
 ### Customizing the operating system
 {: #worker-default-os}
 
-The following operating systems are available for worker nodes: **RHEL 7**. Your cluster can't mix operating systems or use different operating systems.
+You can find a list of supported operating systems by cluster version in the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). Your cluster can't mix operating systems or use different operating systems.
 {: shortdesc}
 
 To optimize your worker nodes, consider the following information.
@@ -43,8 +49,8 @@ To optimize your worker nodes, consider the following information.
 * **Temporary modifications**: If you log in to a pod or use some other process to modify a worker node setting, the modifications are temporary. Worker node lifecycle operations, such as autorecovery, reloading, updating, or replacing a worker node, change any modifications back to the default settings.
 * **Persistent modifications**: For modifications to persist across worker node lifecycle operations, create a daemon set that uses an init container. For more information, see [Modifying default worker node settings to optimize performance](#worker).
 
-    Modifications to the operating system are not supported. If you modify the default settings, you are responsible for debugging and resolving the issues that might occur.
-    {: important}
+Modifications to the operating system are not supported. If you modify the default settings, you are responsible for debugging and resolving the issues that might occur.
+{: important}
 
 ### Hardware changes
 {: #worker-default-hw}
@@ -232,7 +238,7 @@ Allow privileged `initContainers` in the `test-ns` namespace:
 
 Deploy the following example `initContainer`. Remember to change the `containers:` section to your own application containers. The `initContainer` then sets the `sysctl` settings for all the regular containers in the pod because they all share the same network namespace.
 
-    ```
+    ```sh
     kubectl apply -f - << EOF
     apiVersion: apps/v1
     kind: Deployment
@@ -267,8 +273,8 @@ Deploy the following example `initContainer`. Remember to change the `containers
             image: us.icr.io/armada-master/alpine:latest
             command: ["sleep", "2592000"]
       EOF
-      ```
-      {: pre}
+    ```
+    {: pre}
       
 
 

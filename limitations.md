@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-08"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -237,6 +237,11 @@ The following features and operators are not supported in {{site.data.keyword.op
 * Gatekeeper Operator 
 * JBoss EAP
 * JBoss Web Server
+* MachineConfigs
+
+Instead of tuning worker node performance with `MachineConfig` files in {{site.data.keyword.redhat_openshift_notm}}, you can modify the host with a `daemonset` file. For more information, see [Changing the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu) or [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance).
+{: note}
+
 * Metering and Cost Management SaaS Service
 * OpenShift Cloud Manager(OCM) SaaS Service
 * OpenShift Data Foundation (Supported through the [cluster add-on](/docs/openshift?topic=openshift-ocs-storage-prep) or {{site.data.keyword.satelliteshort}} [template](/docs/satellite?topic=satellite-storage-template-ov) only).

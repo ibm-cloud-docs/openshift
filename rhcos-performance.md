@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-08"
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
 
@@ -19,16 +19,17 @@ subcollection: openshift
 # Tuning performance for Red Hat CoreOS worker nodes
 {: #rhcos-performance}
 
-You can tune your Red Hat CoreOS worker node performance by enabling CPU Pinning, non-uniform memory access (NUMA), and huge pages configurations.
-{: shortdesc}
-
-These configurations can be beneficial for applications that have strict performance requirements. However, these customizations might cause issues with scheduling workloads.
-{: note}
-
 [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 Supported worker node operating systems
 :   Red Hat CoreOS (`RHCOS`)
+
+You can tune your Red Hat CoreOS worker node performance by enabling CPU Pinning, non-uniform memory access (NUMA), and huge pages configurations. These configurations can be beneficial for applications that have strict performance requirements. However, these customizations might cause issues with scheduling workloads.
+{: shortdesc}
+
+Instead of tuning worker node performance with `MachineConfig` files in {{site.data.keyword.redhat_openshift_notm}}, you can modify the host with a `daemonset` file. For more information, see [Changing the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu) or [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance).
+{: note} 
+
 
 ## Deploying the Node Feature Discovery Operator
 {: #rhcos-node-feature-discovery}
