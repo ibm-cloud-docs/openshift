@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-08"
 
 keywords: openshift
 subcollection: openshift
@@ -284,11 +284,15 @@ subcollection: openshift
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
 
-    * [02 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0223)
+    * [8 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0823)
+
+        * Cloud Image Key Synchronizer add-on version `1.0.0_1329`.
+
+    * [2 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0223)
 
         * Istio add-on `1.14` 
 
-    * [01 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0123)
+    * [1 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0123)
 
         * Persistent VPC load balancers
 
@@ -7226,6 +7230,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1329, released on 8 February 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1329)
 
     * [Version 1.0.0_1269, released on 15 December 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1269)
 

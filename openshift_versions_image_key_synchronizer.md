@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-08"
 
 keywords: openshift
 
@@ -40,6 +40,11 @@ ibmcloud oc cluster addon versions --addon image-key-synchronizer
 
 Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
 {: shortdesc}
+
+### Version 1.0.0_1329, released on 8 February 2022
+{: #1_0_1329}
+
+- Updates `go` version to 1.19.5.
 
 ### Version 1.0.0_1269, released on 15 December 2022
 {: #1_0_1269}

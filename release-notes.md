@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-08"
 
 keywords: openshift
 
@@ -31,14 +31,23 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2023
 {: #openshift-feb23}
 
-### 02 February 2023
+### 8 February 2023
+{: #openshift-feb0823}
+{: release-note}
+
+Cloud Image Key Synchronizer add-on version `1.0.0_1329`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+
+
+
+### 2 February 2023
 {: #openshift-feb0223}
 {: release-note}
 
 Istio add-on `1.14` 
 :   Version `1.14` of the managed Istio add-on is no longer supported. For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#v114).
 
-### 01 February 2023
+### 1 February 2023
 {: #openshift-feb0123}
 {: release-note}
 
