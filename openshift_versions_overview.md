@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-07"
 
 keywords: openshift, version, update, upgrade
 
@@ -196,4 +196,4 @@ Unsupported clusters are not provided with security and patch updates and are no
 {: shortdesc}
 
 **Unsupported {{site.data.keyword.openshiftshort}} versions**: 
-:   [4.6 (Kubernetes 1.19)](/docs/openshift?topic=openshift-openshift_changelog_46), [4.5 (Kubernetes 1.18)](/docs/openshift?topic=openshift-changelog_archive#version-45), [4.4 (Kubernetes 1.17)](/docs/openshift?topic=openshift-changelog_archive#version-44), [4.3 (Kubernetes 1.16)](/docs/openshift?topic=openshift-changelog_archive#version-43), [3.11 (Kubernetes 1.11)](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   [Archived version history](/docs/openshift?topic=openshift-sitemap#sitemap_archived_version_history)
