@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-08"
 
 keywords: openshift
 
@@ -689,7 +689,7 @@ If you want to clean up the blocklist and the log policies:
 {: #whats_next}
 
 - Read more about [controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies).
-- For more example Calico network policies that control traffic to and from your cluster, you can check out the [stars policy demo](https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-demo/kubernetes-demo){: external} and the [advanced network policy](https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-advanced){: external}.
+- For more example Calico network policies that control traffic to and from your cluster, you can check out the [Calico tutorials](https://www.tigera.io/tutorials/){: external}.
 
 
 

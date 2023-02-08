@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-08"
 
 keywords: openshift
 
@@ -40,7 +40,7 @@ Calico network policies
 
 Calico enforces these policies, including any Kubernetes network policies, by setting up Iptables rules serve as a firewall for the worker node to define the characteristics that the network traffic must meet to be forwarded to the targeted resource.
 
-In OpenShift Container Platform version 4, Calico is based on the Kubernetes data-store driver. For more information, see the [Calico documentation](https://projectcalico.docs.tigera.io/getting-started/kubernetes/hardway/the-calico-datastore){: external}.
+In OpenShift Container Platform version 4, Calico is based on the Kubernetes data-store driver. For more information, see the [Calico documentation](https://docs.tigera.io/calico/latest/getting-started/kubernetes/hardway/the-calico-datastore){: external}.
 
 
 ## Default Calico network policies
@@ -168,13 +168,13 @@ Before you begin, [install and configure the Calico CLI, and set the context for
 
 1. View all the Calico network policies that were created for the cluster. This list includes policies that might not apply to any pods or hosts yet. For a Calico policy to be enforced, a Kubernetes pod or Calico `HostEndpoint` must exist that matches the selector that in the Calico network policy.
 
-    [Network policies](https://projectcalico.docs.tigera.io/reference/resources/networkpolicy){: external} are scoped to specific namespaces:
+    [Network policies](https://docs.tigera.io/calico/latest/reference/resources/networkpolicy){: external} are scoped to specific namespaces:
     ```sh
     calicoctl get NetworkPolicy --all-namespaces -o wide
     ```
     {: pre}
 
-    [Global network policies](https://projectcalico.docs.tigera.io/reference/resources/globalnetworkpolicy){: external} are not scoped to specific namespaces:
+    [Global network policies](https://docs.tigera.io/calico/latest/reference/resources/globalnetworkpolicy){: external} are not scoped to specific namespaces:
     ```sh
     calicoctl get GlobalNetworkPolicy -o wide
     ```
@@ -203,7 +203,7 @@ To create Kubernetes network policies, see the [Kubernetes network policy docume
 
 To create Calico policies, use the following steps. Before you begin, [install and configure the Calico CLI, and set the context for your cluster to run Calico commands](#cli_install).
 
-1. Define your Calico [network policy](https://projectcalico.docs.tigera.io/reference/resources/networkpolicy){: external} or [global network policy](https://projectcalico.docs.tigera.io/reference/resources/globalnetworkpolicy){: external} by creating a configuration script (`.yaml`) with Calico v3 policy syntax. These configuration files include the selectors that describe what pods, namespaces, or hosts that these policies apply to. See these [sample Calico policies](https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-advanced){: external} to help you create your own.
+1. Define your Calico [network policy](https://docs.tigera.io/calico/latest/reference/resources/networkpolicy){: external} or [global network policy](https://docs.tigera.io/calico/latest/reference/resources/globalnetworkpolicy){: external} by creating a configuration script (`.yaml`) with Calico v3 policy syntax. These configuration files include the selectors that describe what pods, namespaces, or hosts that these policies apply to.
 
 1. Apply the policies to the cluster. If you have a Windows system, include the `--config=<filepath>/calicoctl.cfg` option.
     ```sh
@@ -236,10 +236,7 @@ Some common uses for Calico pre-DNAT network policies:
 - Block traffic from certain source IP addresses or CIDRs
 - Allow traffic from only certain source IP addresses or CIDRs, and block all other traffic
 
-To see how to allow or block source IP addresses, try the [Using Calico network policies to block traffic tutorial](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial). 
-
-For example Kubernetes network policies that control traffic that control traffic to and from your cluster, you can check out the [stars policy demo](https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-demo/kubernetes-demo){: external} and the [advanced network policy](https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-advanced){: external}.
-{: tip}
+To see how to allow or block source IP addresses, try the [Using Calico network policies to block traffic tutorial](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial).
 
 ## Example Calico policies to restrict public or private network traffic
 {: #isolate_workers_public}
