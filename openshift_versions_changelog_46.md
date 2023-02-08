@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-08"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -603,7 +603,7 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.17.5 | v3.17.6 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
+| Calico | v3.17.5 | v3.17.6 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
 | Calico Operator | v1.13.9 | v1.13.11 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.13.11){: external}. |
 | Cluster health image | v1.2.18 | v1.2.20 | Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
 | Gateway-enabled cluster controller | 1567 | 1586 | Updated Alpine base image to the latest `3.14` version to resolve CVEs. Updated to use `Go` version `1.16.10`. |
@@ -743,7 +743,7 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.17.2 | v3.17.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
+| Calico | v3.17.2 | v3.17.5 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
 | Calico Operator | v1.13.4 | v1.13.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.13.9){: external}. |
 | Gateway-enabled cluster controller | 1444 | 1510 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711){: external} and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712){: external}. |
 | {{site.data.keyword.IBM_notm}} Cloud Block Storage plug-in and driver | v2.0.9 | v2.1.1 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
@@ -1197,7 +1197,7 @@ The following table shows the changes that are in the version updates for the `4
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| Calico | v3.16.5 | v3.17.2 | See the [Calico release notes](https://projectcalico.docs.tigera.io/releases){: external}. |
+| Calico | v3.16.5 | v3.17.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
 | Calico Operator | v1.10.9 | v1.13.4 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.13.4){: external}. |
 | Cluster health image | v1.2.6 | v1.2.8 | Updated to use `Go` version 1.15.7. Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 | Gateway-enabled cluster controller | 1195 | 1232 | Updated to use `Go` version 1.15.7. |
