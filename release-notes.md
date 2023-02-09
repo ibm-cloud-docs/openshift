@@ -31,6 +31,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2023
 {: #openshift-feb23}
 
+### 9 February 2023
+{: #openshift-feb0923}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on version `5.1`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
 ### 8 February 2023
 {: #openshift-feb0823}
 {: release-note}
