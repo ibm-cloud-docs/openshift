@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-09"
 
 keywords: openshift
 subcollection: openshift
@@ -283,6 +283,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
+
+    * [9 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0923)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `5.1`.
 
     * [8 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0823)
 
@@ -6840,6 +6844,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
 [{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
+
+    * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
