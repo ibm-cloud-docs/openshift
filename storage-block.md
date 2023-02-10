@@ -641,7 +641,7 @@ To add block storage:
         `storageClassName`
         :   In the spec section, enter the name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). If you don't specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`.
 
-    If you want to use a customized storage class, create your PVC with the corresponding storage class name, a valid IOPS, and size. Want to set your own default? See [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).  
+    If you want to use a customized storage class, create your PVC with the corresponding storage class name, a valid IOPS, and size. 
     {: tip}
 
 2. Create the PVC.
