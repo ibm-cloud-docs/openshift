@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-10"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -648,7 +649,7 @@ You can't deploy two stateful sets at the same time. If you try to create a stat
 {: important}
 
 How can I create my stateful set in a specific zone?**
-:   In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
+:   In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](#custom-sc-nfs-creat) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
 Can I delay binding of a PV to my stateful pod until the pod is ready?
 :   Yes, you can [create a custom storage class](#file-topology) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
@@ -1455,7 +1456,7 @@ You can create a customized storage class and use the storage class in your PVC.
 
 {{site.data.keyword.openshiftlong_notm}} provides [pre-defined storage classes](#file_storageclass_reference) to provision {{site.data.keyword.filestorage_short}} with a particular tier and configuration. Sometimes, you might want to provision storage with a different configuration that is not covered in the pre-defined storage classes. You can use the examples in this topic to find sample customized storage classes.
 
-To create your customized storage class, see [Customizing a storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass). Then, [use your customized storage class in your PVC](#add_file).
+To create your customized storage class, see [Customizing a storage class](#custom-sc-nfs-creat). Then, [use your customized storage class in your PVC](#add_file).
 
 ### Creating topology-aware storage
 {: #file-topology}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-10"
 
 keywords: openshift
 
@@ -463,7 +463,7 @@ You can provision encrypted {{site.data.keyword.blockstorageshort}} by creating 
 
 The following steps show how you can reference your {{site.data.keyword.keymanagementserviceshort}} credentials in your PVC to create an encrypted {{site.data.keyword.blockstorageshort}} instance. To create multiple encrypted volumes without specifying the {{site.data.keyword.keymanagementserviceshort}} credentials in each PVC, you can [create a custom, encrypted storage class](#encrypt_custom_sc).
 
-1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes don't meet your app requirements, you can create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
+1. Review the provided [{{site.data.keyword.blockstorageshort}} storage classes](#block_storageclass_reference) to determine which storage class best meets your app requirements. If the provided storage classes don't meet your app requirements, you can create your own [customized storage class](#block_custom_storageclass).
 
 2. Create a PVC configuration file that is named `pvc.yaml` and that references the Kubernetes secret where you stored the {{site.data.keyword.keymanagementserviceshort}} service credentials. To create this secret, see [Setting up encryption for {{site.data.keyword.blockstorageshort}}](#block_encryption_setup).
 
@@ -1021,7 +1021,7 @@ You can't deploy two stateful sets at the same time. If you try to create a stat
 
 
 How can I create my stateful set in a specific zone?
-:   In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
+:   In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](#block_custom_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
 Can I delay binding of a PV to my stateful pod until the pod is ready?
 :   Yes, you can [create a custom storage class](#topology_yaml) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
@@ -1769,7 +1769,7 @@ You can create a customized storage class and use the storage class in your PVC.
 
 {{site.data.keyword.openshiftlong_notm}} provides [pre-defined storage classes](#block_storageclass_reference) to provision block storage with a particular tier and configuration. Sometimes, you might want to provision storage with a different configuration that is not covered in the pre-defined storage classes. You can use the examples in this topic to find sample customized storage classes.
 
-To create your customized storage class, see [Customizing a storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass). Then, [use your customized storage class in your PVC](#add_block).
+To create your customized storage class, see [Customizing a storage class](#block_custom_storageclass). Then, [use your customized storage class in your PVC](#add_block).
 
 ### Creating topology-aware storage
 {: #topology_yaml}

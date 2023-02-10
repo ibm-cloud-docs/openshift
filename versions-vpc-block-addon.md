@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-10"
 
 keywords: block, add-on, changelog
 
@@ -40,6 +40,9 @@ ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
 
+## Version 5.1
+{: #051_is_block}
+
 ### Change log for version 5.1, released 9 February 2023
 {: #5.1_is_block_relnote}
 
@@ -48,11 +51,11 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 - Improves the resize method when creating a volume from a snapshot.
 - Updates the Kubernetes dependency to `1.25`.
 - Adds support for configuring the log level for sidecars from the configmap.
-- Makes the ` ibmc-vpcblock-snapshot` class the default `Volumesnapshotclass`.
+- Makes the `ibmc-vpcblock-snapshot` class the default `Volumesnapshotclass`.
 - Adds the `priorityClass` in the deployment file for controller and node pods.
 - Updates the driver to read the node instance ID from the node spec provider ID instead of node labels.
 - Fixes a bug in volume expansion for raw block volumes.
-- Removes `preStop` hook for `csi-driver-registrar`.
+- Removes the `preStop` hook for the `csi-driver-registrar`.
 
 ## Version 5.0
 {: #050_is_block}

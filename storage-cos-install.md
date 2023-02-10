@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-10"
 
 keywords: openshift
 
@@ -436,7 +436,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests.
     
     `ibm.io/object-store-endpoint`
-    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must [create a custom storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass) and use the API endpoint for your bucket.
+    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must create a custom storage class and use the API endpoint for your bucket.
     
     `ibm.io/object-store-storage-class`
     :   The name of the storage class.
@@ -454,7 +454,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     :   The TLS cipher suite that must be used when a connection to {{site.data.keyword.cos_full_notm}} is established via the HTTPS endpoint. The value for the cipher suite must follow the [OpenSSL format](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html){: external}. If your worker nodes run an Ubuntu operating system, your storage classes are set up to use the `AESGCM`cipher suite by default. For worker nodes that run a Red Hat operating system, the `ecdhe_rsa_aes_128_gcm_sha_256` cipher suite is used by default.
 
 
-    For more information about each storage class, see the [storage class reference](/docs/openshift?topic=openshift-storage_cos_reference). If you want to change any of the pre-set values, create your own [customized storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass).
+    For more information about each storage class, see the [storage class reference](/docs/openshift?topic=openshift-storage_cos_reference). If you want to change any of the pre-set values, create your own customized storage class.
     {: tip}
 
 5. Decide on a name for your bucket. The name of a bucket must be unique in {{site.data.keyword.cos_full_notm}}. You can also choose to automatically create a name for your bucket by the {{site.data.keyword.cos_full_notm}} plug-in. To organize data in a bucket, you can create subdirectories.
