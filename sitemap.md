@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-10"
 
 keywords: openshift
 subcollection: openshift
@@ -283,6 +283,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
+
+    * [10 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1023)
+
+        * New troubleshooting doc for how to recover after deleting a portable subnet in Classic clusters.
 
     * [9 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0923)
 
@@ -4705,11 +4709,7 @@ subcollection: openshift
 
 * [Storage classes](/docs/openshift?topic=openshift-kube_concepts#storageclasses)
 
-    * [Customizing a storage class](/docs/openshift?topic=openshift-kube_concepts#customized_storageclass)
-
-    * [Changing or updating to a different storage class](/docs/openshift?topic=openshift-kube_concepts#update_storageclass)
-
-    * [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass)
+* [Next steps](/docs/openshift?topic=openshift-kube_concepts#next-steps-storage)
 
 [Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
 
@@ -6844,6 +6844,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
 [{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
+
+* [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 

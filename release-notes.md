@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-10"
 
 keywords: openshift
 
@@ -31,12 +31,26 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2023
 {: #openshift-feb23}
 
+
+### 10 February 2023
+{: #openshift-feb1023}
+{: release-note}
+
+
+New troubleshooting doc for how to recover after deleting a portable subnet in Classic clusters.
+:   For more information, see [I deleted a portable subnet and now my Classic cluster my Load Balancers are failing. How do I recover?](/docs/openshift?topic=openshift-ts-network-subnet-recover).
+
+
+
+
 ### 9 February 2023
 {: #openshift-feb0923}
 {: release-note}
 
+
 {{site.data.keyword.block_storage_is_short}} add-on version `5.1`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
 
 ### 8 February 2023
 {: #openshift-feb0823}
@@ -1598,7 +1612,7 @@ Master fix pack update
  
 
 Worker node fix pack update
-:   Changelog documentation is available for version [`4.8.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4822_1538), [`4.7.38_1543_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4738_1543), [`4.6.49_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4649_1566), and [`3.11.542_1615_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1615).
+:   Changelog documentation is available for version [`4.8.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4822_1538), [`4.7.38_1543_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4738_1543), [`4.6.49_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4649_1566), and [`3.11.542_1615_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 
 

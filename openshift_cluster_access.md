@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-10"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -126,7 +126,7 @@ If you enabled only the private cloud service endpoint during cluster creation, 
 {: note}
 
 1. Set up your {{site.data.keyword.vpc_short}} VPN and connect to your private network through the VPN.
-    1. [Configure a VPN gateway on your local machine](/docs/vpc?topic=vpc-vpn-onprem-example#configuring-onprem-gateway). For example, you might choose to set up StrongSwan on your machine.
+    1. [Configure a VPN gateway on your local machine](/docs/vpc?topic=vpc-vpn-onprem-example). For example, you might choose to set up StrongSwan on your machine.
     2. [Create a VPN gateway in your VPC, and create the connection between the VPC VPN gateway and your local VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway#vpn-create-ui). In the **New VPN connection for VPC** section, add the `166.8.0.0/14` subnet to the **Local subnets** field. If you have a multizone cluster, repeat this step to configure a VPC gateway on a subnet in each zone where you have worker nodes.
     3. Verify that you are connected to the private network through your {{site.data.keyword.vpc_short}} VPN connection.
 
@@ -510,7 +510,7 @@ Making your location and cluster subdomains available outside of your hosts' pri
 
 1. Set up your {{site.data.keyword.vpc_short}} VPN and connect to your VPC through VPN.
 
-    1. Configure a [client-to-site](/docs/vpc?topic=vpc-vpn-client-to-site-overview) or [site-to-site](/docs/vpc?topic=vpc-vpn-onprem-example#configuring-onprem-gateway) VPN to your VPC. For example, you might choose to set up a client-to-site connection with an OpenVPN Client.
+    1. Configure a [client-to-site](/docs/vpc?topic=vpc-vpn-client-to-site-overview) or [site-to-site](/docs/vpc?topic=vpc-vpn-onprem-example) VPN to your VPC. For example, you might choose to set up a client-to-site connection with an OpenVPN Client.
     2. For client-to-site VPN setups, you must specify the {{site.data.keyword.vpc_short}} Private DNS service addresses when you provision the VPN server as mentioned in the [considerations](/docs/vpc?topic=vpc-client-to-site-vpn-planning#existing-vpc-configuration-considerations). You must also create a VPN route after the VPN server is provisioned, with the destination `161.26.0.0/16` and action `translate`.
     3. For site-to-site VPN setups, you must follow the [Accessing service endpoints through VPN guide](/docs/vpc?topic=vpc-build-se-connectivity-using-vpn) and configure the {{site.data.keyword.vpc_short}} Private DNS service addresses.
     4. Verify that you are connected to the VPC through your {{site.data.keyword.vpc_short}} VPN connection.

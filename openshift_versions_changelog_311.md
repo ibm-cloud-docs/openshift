@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-10"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -1298,7 +1298,7 @@ The following table shows the changes that are in the master fix pack update `3.
 
 | Component | Location | Previous | Current | Description |
 | --------- | -------- | ------- | -------- | ----------- |
-| Calico | Master | v3.8.6 | v3.8.9 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
+| Calico | Master | v3.8.6 | v3.8.9 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
 | Cluster health image | Master | v1.1.5 | v1.1.8 | Additional status information is included when an add-on health state is `critical`. Improved performance when handling cluster status updates. |
 | Cluster master operations | Master | N/A | N/A | Cluster master operations such as `refresh` or `update` are now canceled if a broken [Kubernetes admission webhook](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} is detected. |
 | etcd | Master | v3.3.20 | v3.3.22 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.3.22){: external}. |
@@ -1544,7 +1544,7 @@ The following table shows the changes that are in the patch `3.11.161_1538_opens
 | Cluster master HA Proxy | 1.8.21-alpine | 1.8.23-alpine | See the [HA proxy release notes](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Update resolves [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551){: external}. |
 | etcd | v3.3.17 | v3.3.18 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.3.18){: external}. Update resolves [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.6-200 | v1.15.7-229 | Updated to support the Kubernetes 1.15.7 release.|
-| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 354 | 357 | Made the `ibmc-block-gold` storage class the default storage class for new clusters only. The default storage class for existing clusters is unchanged. If you want to set your own default, see [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass). Added the following storage classes: `ibmc-file-bronze-gid`, `ibmc-file-silver-gid`, and `ibmc-file-gold-gid`. Fixed bugs in support of [non-root user access to an NFS file share](/docs/openshift?topic=openshift-debug_storage_file){: external}. Resolved [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551){: external}. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 354 | 357 | Made the `ibmc-block-gold` storage class the default storage class for new clusters only. The default storage class for existing clusters is unchanged. Added the following storage classes: `ibmc-file-bronze-gid`, `ibmc-file-silver-gid`, and `ibmc-file-gold-gid`. Fixed bugs in support of [non-root user access to an NFS file share](/docs/openshift?topic=openshift-debug_storage_file){: external}. Resolved [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551){: external}. |
 | Key Management Service provider | 270 | 277 | Updated the {{site.data.keyword.keymanagementservicelong_notm}} Go client. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 159 | 169 | Updated image for [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 3.11.154 | 3.11.161 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-161){: external}. |
