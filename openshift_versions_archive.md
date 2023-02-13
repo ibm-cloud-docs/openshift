@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-13"
 
 keywords: openshift, changelog, version, unsupported, supported, deprecated
 
@@ -1694,7 +1694,7 @@ The following table shows the changes that are in the master fix pack update `4.
 
 | Component | Location | Previous | Current | Description |
 | --------- | -------- | ------- | -------- | ----------- |
-| Calico | Master | v3.8.6 | v3.12.0 | See the [Calico release notes](https://projectcalico.docs.tigera.io/release-notes/){: external}. In addition, the Calico configuration was updated to use the [Kubernetes API datastore driver](https://docs.tigera.io/calico/latest/getting-started/kubernetes/hardway/the-calico-datastore){: external}. |
+| Calico | Master | v3.8.6 | v3.12.0 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. In addition, the Calico configuration was updated to use the [Kubernetes API datastore driver](https://docs.tigera.io/calico/3.25/getting-started/kubernetes/hardway/the-calico-datastore){: external}. |
 | Calico operator | Master | N/A | v1.1.1 | **New!:** Added the Calico operator to manage the lifecycle of the Calico installation. See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.1.1){: external}. |
 | CRI-O | Worker | 1.11 | 1.16.4 | See the [CRI-O release notes](https://github.com/cri-o/cri-o/releases/tag/v1.16.4){: external}. |
 | etcd | Master | v3.3.18 | v3.4.3 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.3){: external}. |
