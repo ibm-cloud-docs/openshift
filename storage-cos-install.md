@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-13"
 
 keywords: openshift
 
@@ -154,12 +154,15 @@ Example `helm ibmc install` commands for OS X and Linux
 
 
 ```sh
-helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] 
+helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] [--set allowCrossNsSecret=true/false]
 ```
 {: pre}
 
 `quotaLimit`
-:   A quota limit sets the maximum amount of storage (in bytes) available for a bucket. If you set this option to `true`, then when you create PVCs, the quota on buckets created by those PVCs is equal to the 
+:   A quota limit sets the maximum amount of storage (in bytes) available for a bucket. If you set this option to `true`, then when you create PVCs, the quota on buckets created by those PVCs is equal to the PVC size. 
+
+`allowCrossNsSecret`
+:   By default, the plug-in searches for the Kubernetes secret in namespaces other than the PVC namespace. If you set this option to `false` the plug-in searches for the Kubernetes secret in only the PVC namespace.
 
 Example `helm install` command for Windows.
 
