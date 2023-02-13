@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-13"
 
 keywords: object storage, plug-in, change log
 
@@ -29,10 +29,19 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.9 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.8 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.7 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.7 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.6 and earlier | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.9, released 13 February 2023
+{: #0229_object_plugin}
+
+- Adds support for the `--set allowCrossNsSecret=true/false` option when you install the {{site.data.keyword.cos_full_notm}} plug-in. For more information, see [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install).
+- Adds support for `Wasabi` and `AWS` s3 providers on {{site.data.keyword.satelliteshort}} clusters.
+- On {{site.data.keyword.satelliteshort}} clusters, the `object store endpoint` is now auto-populated based on the `cos.storageClass` and `s3provider` options.
+
 
 ## Change log for version 2.2.8, released 23 January 2023
 {: #0228_object_plugin}
