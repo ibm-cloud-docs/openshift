@@ -45,6 +45,13 @@ Istio add-on `1.15.5` and `1.16.2`
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.9` is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
+
+
+Worker node fix packs `4.8.57_1589_openshift`, `4.9.54_1575_openshift`, `4.10.51_1555_openshift`, and `4.11.26_1542_openshift`.
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), and [4.11](/docs/openshift?topic=openshift-openshift_changelog_411).
+
+
+
 ### 10 February 2023
 {: #openshift-feb1023}
 {: release-note}

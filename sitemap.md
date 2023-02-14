@@ -292,6 +292,8 @@ subcollection: openshift
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.9` is available.
 
+        * Worker node fix packs `4.8.57_1589_openshift`, `4.9.54_1575_openshift`, `4.10.51_1555_openshift`, and `4.11.26_1542_openshift`.
+
     * [10 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1023)
 
         * New troubleshooting doc for how to recover after deleting a portable subnet in Classic clusters.
