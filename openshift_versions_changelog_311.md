@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-14"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -352,7 +352,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 ### Change log for worker node fix pack 3.11.542_1612_openshift, released 22 November 2021
-{: #311542_1612_openshift}
+{: #311542_1612}
 
 The following table shows the changes that are in the worker node fix pack patch update `3.11.542_1612_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}

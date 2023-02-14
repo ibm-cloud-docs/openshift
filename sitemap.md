@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-14"
 
 keywords: openshift
 subcollection: openshift
@@ -4057,6 +4057,10 @@ subcollection: openshift
 
 [Customizing your network setup in {{site.data.keyword.satelliteshort}} Locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
 
+* [Defining custom network interfaces when creating your Location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
+
+* [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
+
 * [Restricting NodePort service access](/docs/openshift?topic=openshift-satellite-network-customization#nodeport-restrict-access)
 
 [Setting up Single Root I/O Virtualization (SR-IOV) in {{site.data.keyword.satellitelong_notm}} clusters](/docs/openshift?topic=openshift-satellite-sriov#satellite-sriov)
@@ -7739,7 +7743,7 @@ subcollection: openshift
 
     * [Change log for worker node fix pack 3.11.542_1615_openshift, released 6 December 2021](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1615_openshift)
 
-    * [Change log for worker node fix pack 3.11.542_1612_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1612_openshift)
+    * [Change log for worker node fix pack 3.11.542_1612_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1612)
 
     * [Change log for master fix pack 3.11.542_1611_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1611)
 

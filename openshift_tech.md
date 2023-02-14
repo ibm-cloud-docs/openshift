@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-14"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -175,7 +175,7 @@ Projects
 :   The [samples operator](https://docs.openshift.com/container-platform/4.10/openshift_images/configuring-samples-operator.html){: external} manages select image streams and templates that come with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. You can deploy these templates from the [**Developer** perspective in the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console).
 
 `openshift-cluster-storage-operator`
-:   The cluster storage operator makes sure that a default storage class is set. To review or change the default {{site.data.keyword.cloud_notm}} storage class, see [Changing the default storage class](/docs/openshift?topic=openshift-kube_concepts#default_storageclass).
+:   The cluster storage operator makes sure that a default storage class is set.
 
 `openshift-console`, `openshift-console-operator`
 :   The {{site.data.keyword.redhat_openshift_notm}} web console is a user-friendly, web-based interface that you can use to manage the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes resources that run in your cluster. You can also use the console to display an `oc login` token to authenticate to your cluster from a CLI. For more information, see [Navigating the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console).
