@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-14"
 
 keywords: openshift
 
@@ -126,7 +126,7 @@ Get started using storage in your cluster by reviewing the following docs.
 - [{{site.date.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 - [{{site.data.keyword.filestorage_short}} for Classic clusters](/docs/openshift?topic=openshift-file_storage)
 - [{{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-install)
-- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-)
+- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep)
 - [Portworx](/docs/openshift?topic=openshift-portworx)
 

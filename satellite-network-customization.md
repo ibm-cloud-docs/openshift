@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2023
-lastupdated: "2023-01-30"
+  years: 2023, 2023
+lastupdated: "2023-02-14"
 
 keywords: openshift, route, network, satellite
 
@@ -18,12 +18,39 @@ subcollection: openshift
 # Customizing your network setup in {{site.data.keyword.satelliteshort}} Locations and clusters
 {: #satellite-network-customization}
 
-There are several features that you can use to customize your {{site.data.keyword.satelliteshort}} network setup to better isolate and segment the services and workloads running in your location. Review the following sections for more information.
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite} [Red Hat CoreOS]{: tag-red}
+
+There are several features that you can use to customize your {{site.data.keyword.satelliteshort}} network setup to better isolate and segment the services and workloads running in your location. Review the following sections for more information. These customizations are available only for Red Hat CoreOS-enabled locations.
+
+Depending on the networking customizations you want to apply, you might need to specify certain options in the CLI when creating your Location, when creating your cluster, or after you have set up your Location and cluster. The following tags indicate when to apply the customizations.
+
+- [During Location creation]{: tag-teal}: These customizations must be applied from the CLI during Location creation.
+- [After Location and cluster creation]{: tag-dark-teal}: These customizations can be applied after creating your Location and clusters.
 
 
+## Defining custom network interfaces when creating your Location
+{: #sat-network-custom-pod-network}
+
+[During Location creation]{: tag-teal}
+
+When you create your Location in the CLI, you can define the following parameters to customize networking in your Location. For more information, see the [**`ibmcloud sat location create`**](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command reference.
+
+You can specify the `--pod-subnet` option to specify a custom subnet CIDR to provide private IP addresses for pods. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. The subnet must be at least `/23` or larger. The default value is `172.16.0.0/16`.
+
+You can also specify the `--service-subnet` option to specify a custom subnet CIDR to provide private IP addresses for services. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. The subnet must be at least `/24` or larger. The default value is `172.20.0.0/16`.
+
+## Limiting access to your {{site.data.keyword.satelliteshort}} cluster
+{: #sat-network-custom-pod-network}
+
+[After Location and cluster creation]{: tag-dark-teal}
+
+
+After you create your Location and cluster, you can use the [**`ibmcloud ks cluster master satellite-service-endpoint allowlist add`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add) command to add a subnet to a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. Authorized requests to the cluster master that originate from the subnet are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. The allowlist must be [enabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable) for the restrictions to apply.
 
 ## Restricting NodePort service access
 {: #nodeport-restrict-access}
+
+[After Location and cluster creation]{: tag-dark-teal}
 
 By default, NodePort services are accessible on all network interfaces that are available to the cluster, for example `0.0.0.0`. 
 

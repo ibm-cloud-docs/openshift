@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-14"
 
 keywords: openshift
 
@@ -31,6 +31,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2023
 {: #openshift-feb23}
 
+### 14 February 2023
+{: #openshift-feb1423}
+{: release-note}
+
+Istio add-on `1.15.5` and `1.16.2`
+:   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1162).
 
 ### 13 February 2023
 {: #openshift-feb1323}
@@ -38,6 +44,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.9` is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+
+
+Worker node fix packs `4.8.57_1589_openshift`, `4.9.54_1575_openshift`, `4.10.51_1555_openshift`, and `4.11.26_1542_openshift`.
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), and [4.11](/docs/openshift?topic=openshift-openshift_changelog_411).
+
+
 
 ### 10 February 2023
 {: #openshift-feb1023}
@@ -2893,7 +2906,7 @@ Unsupported: Kubernetes version 1.16
 :   Clusters that run Kubernetes version 1.16 are unsupported as of 31 January 2021. To continue receiving important security updates and support, you must [update the cluster to a supported version](/docs/containers?topic=containers-cs_versions#prep-up) immediately.
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.5.28_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4528_1528), [`4.4.31_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1532), [`4.3.40_1553_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1553), and [`3.11.374_1579_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311374_1579).
+:   Worker node fix pack update change log documentation is available for version [`4.5.28_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4528_1528), [`4.4.31_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1532), [`4.3.40_1553_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1553), and [`3.11.374_1579_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 ## January 2021
 {: #openshift-jan21}
@@ -3030,7 +3043,7 @@ Encrypted images
 
 Master versions
 :   Master fix pack update change log documentation is available.
-:   [`4.5.18_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4518_1523), [`4.4.29_1527_openshift`](/docs/openshift?topic=openshift-changelog_archive#4429_1527), [`4.3.40_1548_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1548), and [`3.11.318_1575_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311318_1575).
+:   [`4.5.18_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4518_1523), [`4.4.29_1527_openshift`](/docs/openshift?topic=openshift-changelog_archive#4429_1527), [`4.3.40_1548_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1548), and [`3.11.318_1575_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
 
 ### 11 December 2020
 {: #openshift-dec1120}

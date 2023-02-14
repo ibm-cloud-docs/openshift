@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-14"
 
 keywords: openshift
 
@@ -14,6 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
+
 # Adding {{site.data.keyword.filestorage_vpc_short}} to apps
 {: #storage-file-vpc-apps}
 
@@ -22,7 +23,7 @@ subcollection: openshift
 
 Every storage class specifies the type of {{site.data.keyword.filestorage_short}} that you provision, including available size, IOPS, file system, and the retention policy.  
 
-After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](/docs/vpc?topic=vpc-file-storage-profiles#fs-tiers){: external} if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must [create a new storage instance and copy the data](/docs/openshift?topic=openshift-kube_concepts#update_storageclass) from the old storage instance to your new one.
+After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](/docs/vpc?topic=vpc-file-storage-profiles#fs-tiers){: external} if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
 {: important}
 
 
@@ -99,7 +100,7 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
     :   Enter the size of the {{site.data.keyword.filestorage_short}}, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your {{site.data.keyword.filestorage_short}}. Make sure to specify a size that matches the amount of data that you want to store.
     
     `storageClassName`
-    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) or [create your own storage class](/docs/containers?topic=containers-vpc-block#custom-sc-vpc-block). If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`. Want to set your own default? See [Changing the default storage class](/docs/containers?topic=containers-kube_concepts#default_storageclass).
+    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) or [create your own storage class](/docs/containers?topic=containers-vpc-block#custom-sc-vpc-block). If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`.
 
 
 1. Create the PVC.
