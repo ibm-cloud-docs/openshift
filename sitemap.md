@@ -284,6 +284,10 @@ subcollection: openshift
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
 
+    * [14 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1423)
+
+        * Istio add-on `1.15.5` and `1.16.2`
+
     * [13 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1323)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.9` is available.

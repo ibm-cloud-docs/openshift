@@ -31,6 +31,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2023
 {: #openshift-feb23}
 
+### 14 February 2023
+{: #openshift-feb1423}
+{: release-note}
+
+Istio add-on `1.15.5` and `1.16.2`
+:   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1162).
 
 ### 13 February 2023
 {: #openshift-feb1323}
