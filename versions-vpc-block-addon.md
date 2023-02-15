@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-15"
 
 keywords: block, add-on, changelog
 
@@ -55,13 +55,21 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 - Adds the `priorityClass` in the deployment file for controller and node pods.
 - Updates the driver to read the node instance ID from the node spec provider ID instead of node labels.
 - Fixes a bug in volume expansion for raw block volumes.
-- Removes the `preStop` hook for the `csi-driver-registrar`.
+- Removes the `preStop` hook for the `csi-driver-registrar`. 
 
 ## Version 5.0
 {: #050_is_block}
 
 Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
+
+
+### Change log for version 5.0.6_1820, released 15 February 2023
+{: #5.0.6-1820_is_block_relnote}
+
+
+- Adds the `priorityClass` in the deployment file for controller and node pods.
+- Removes the `preStop` hook for the `csi-driver-registrar`.
 
 
 ### Change log for version 5.0.5_1784, released 24 January 2023

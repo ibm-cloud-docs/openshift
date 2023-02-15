@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-15"
 
 keywords: openshift
 subcollection: openshift
@@ -283,6 +283,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
+
+    * [15 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1523)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `5.0.6_1820`.
 
     * [14 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1423)
 
@@ -6873,6 +6877,8 @@ subcollection: openshift
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
 
+    * [Change log for version 5.0.6_1820, released 15 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.6-1820_is_block_relnote)
+
     * [Change log for version 5.0.5_1784, released 24 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.5-1784_is_block_relnote)
 
     * [Change log for version 5.0.4_1773, released 10 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.4-1773_is_block_relnote)
@@ -8710,6 +8716,8 @@ subcollection: openshift
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
 
 * [Workarounds for `calico-node`](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node-work)
+
+[I deleted a portable subnet and now my Classic cluster my Load Balancers are failing. How do I recover?](/docs/openshift?topic=openshift-ts-network-subnet-recover#ts-network-subnet-recover)
 
 [Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125#ts-network-snat-125)
 
