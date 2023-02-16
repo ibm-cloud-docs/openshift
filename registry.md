@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-16"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -53,7 +53,7 @@ Private registry
     - Local image caching for faster builds via the internal registry.
     - Deployments in other projects can see the image stream so that you don't have to copy pull secrets to each project.
     - Sharing images across multiple clusters without needing to push images to multiple registries.
-    - [Automatically scanning](/docs/Registry?topic=va-va_index) the vulnerability of images.
+    - [Automatically scanning](/docs/Registry?topic=Registry-va_index) the vulnerability of images.
     - Controlling access through [{{site.data.keyword.cloud_notm}} IAM policies](/docs/Registry?topic=Registry-user) and [separate regional registries](/docs/Registry?topic=Registry-registry_overview#registry_regions).
     - [Retaining images](/docs/Registry?topic=Registry-registry_retention) without requiring storage space in your cluster or an attached storage device. You can also set policies to manage the quantity of images to prevent them from taking up too much space.
     - Version 4 clusters on VPC infrastructure: Using the private registry service endpoint so that clusters that use only a private cloud service endpoint can still access the registry.

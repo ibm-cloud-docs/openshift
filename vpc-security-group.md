@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-16"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -56,7 +56,7 @@ Do not modify the rules in the`kube-<cluster-ID>` security group as doing so mig
 ### Security groups applied to VPE gateways and VPC ALBs
 {: #vpc-sg-vpe-alb}
 
-Do not modify the rules in the `kube-<vpc-id>` security group as doing so might cause disruptions in network connectivity between the workers of the cluster and the control cluster. However, you can [remove the default security group from the VPC ALB](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
+Do not modify the rules in the `kube-<vpc-id>` security group as doing so might cause disruptions in network connectivity between the workers of the cluster and the control cluster. However, you can [remove the default security group from the VPC ALB](/docs/vpc?topic=vpc-vpc-reference#security-group-target-remove) and [replace it with a security group](/docs/vpc?topic=vpc-vpc-reference#security-group-target-add) that you create and manage. 
 
 
 | Security group type | Name | Details |
@@ -136,7 +136,7 @@ Follow the steps to view details about the VPC security groups.
 
 The following inbound and outbound rules are covered by the default VPC security groups. Note that you can modify the randomly named VPC security group and the cluster-level `kube-<cluster-id>` security group, but you must make sure that these rules are still met. 
 
-Modifying the `kube-<vpc-id>` security group is not recommended as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. Instead, you can [remove the default security group from the VPC ALB or VPE gateway](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
+Modifying the `kube-<vpc-id>` security group is not recommended as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. Instead, you can [remove the default security group from the VPC ALB or VPE gateway](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
 {: important}
 
 ### Required inbound and outbound rules for cluster workers
@@ -173,7 +173,7 @@ By default, traffic rules for cluster workers are covered by the randomly named 
 ### Required inbound and outbound rules for VPC ALBs
 {: #required-group-rules-alb}
 
-By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` security group. Note that you should not modify this security group as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. However, you can [remove the security group](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) from your ALB and [replace it](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) with one that you create and manage. If you do so, you must make sure that the following traffic rules are still covered. 
+By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` security group. Note that you should not modify this security group as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. However, you can [remove the security group](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) from your ALB and [replace it](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) with one that you create and manage. If you do so, you must make sure that the following traffic rules are still covered. 
 {: shortdesc}
 
 #### Inbound rules
@@ -265,14 +265,14 @@ Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules t
     ```
     {: pre}
 
-    * To create inbound traffic rules, use the [`ibmcloud is security-group-rule-add <sg> inbound` command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
+    * To create inbound traffic rules, use the [`ibmcloud is security-group-rule-add <sg> inbound` command](/docs/vpc?topic=vpc-vpc-reference#security-group-rule-add).
         ```sh
         ibmcloud is security-group-rule-add $sg inbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
         ```
         {: pre}
         
         
-    * To create outbound traffic rules, use the [`ibmcloud is security-group-rule-add <sg> outbound` command](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#security-group-rule-add).
+    * To create outbound traffic rules, use the [`ibmcloud is security-group-rule-add <sg> outbound` command](/docs/vpc?topic=vpc-vpc-reference#security-group-rule-add).
 
         ```sh
         ibmcloud is security-group-rule-add $sg outbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]

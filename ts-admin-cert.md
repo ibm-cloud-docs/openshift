@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2022
-lastupdated: "2022-12-01"
+  years: 2022, 2023
+lastupdated: "2023-02-16"
 
 keywords: certificate, secret, create certificate, troubleshoot certificate, troubleshoot secret
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -41,7 +42,7 @@ To complete the following tasks, you must have the **Administrator** IAM access 
 
 1. Log in to the CLI. 
 
-2. [Remove the user's IAM access permissions](/docs/account?topic=cli-ibmcloud_commands_iam).
+2. [Remove the user's IAM access permissions](/docs/cli?topic=cli-ibmcloud_commands_iam).
 
 3. Set the context for your cluster. Include the `--admin` option.
 

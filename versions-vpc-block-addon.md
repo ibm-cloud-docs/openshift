@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-16"
 
 keywords: block, add-on, changelog
 
@@ -64,12 +64,6 @@ Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
 
 
-### Change log for version 5.0.6_1820, released 15 February 2023
-{: #5.0.6-1820_is_block_relnote}
-
-
-- Adds the `priorityClass` in the deployment file for controller and node pods.
-- Removes the `preStop` hook for the `csi-driver-registrar`.
 
 
 ### Change log for version 5.0.5_1784, released 24 January 2023
