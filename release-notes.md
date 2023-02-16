@@ -299,7 +299,7 @@ Ingress ALB change log updates
 
 
 Experimental: Installing OpenShift Data Foundation on private only, air-gapped clusters
-:   For more information, see [Installing OpenShift Data Foundation on a private cluster](/docs/containers?topic=openshift-openshift-storage-odf-private).
+:   For more information, see [Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private).
 
 
 
@@ -813,7 +813,7 @@ CLI change log update
 
 
 Compliance Operator benchmarks
-:   Compliance operator benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} versions [4.9](/docs/containers?topic=openshift-benchmarks_49_co) and [4.10](/docs/containers?topic=openshift-benchmarks_410_co). For a comparison of the benchmark results, see [Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/containers?topic=openshift-benchmark-comparison).
+:   Compliance operator benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} versions [4.9](/docs/openshift?topic=openshift-benchmarks_49_co) and [4.10](/docs/openshift?topic=openshift-benchmarks_410_co). For a comparison of the benchmark results, see [Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/openshift?topic=openshift-benchmark-comparison).
 
 
 ### 11 July 2022
@@ -1088,7 +1088,7 @@ CIS Kubernetes Benchmark
 :   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.10.
 
 Cluster security groups
-:   You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-cluster).
+:   You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-cluster-workers).
 
 ### 27 April 2022
 {: #openshift-apr2722}
@@ -1728,7 +1728,7 @@ Worker node fix pack update
 {: release-note}
 
 HPCS Router add-on
-:   Version 4.8.0_997 of the [HPCS Router add-on](/docs/containers?topic=openshift-hpcs-router-changelog) is released.
+:   Version 4.8.0_997 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) is released.
 
 
 

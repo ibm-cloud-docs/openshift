@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-16"
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
 
@@ -94,7 +94,7 @@ For reference information about these CLIs, see the documentation for those tool
 
 -   [`ibmcloud` commands](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_cli)
 -   [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli)
--   [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
+-   [`ibmcloud cr` commands](/docs/Registry?topic=Registry-containerregcli)
 
 
 

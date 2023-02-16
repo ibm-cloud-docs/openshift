@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-02-16"
 
 keywords: openshift
 
@@ -16,6 +16,7 @@ completion-time: 45m
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Setting capacity quotas for apps that use {{site.data.keyword.cos_full_notm}}
@@ -274,5 +275,5 @@ In this tutorial, you installed the {{site.data.keyword.cos_short}} plug-in in y
 {: #storage-cos-quota-next}
 
 
-- Set up the [{{site.data.keyword.cos_short}} CLI](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli) to point to your bucket.
+- Set up the [{{site.data.keyword.cos_short}} CLI](/docs/cloud-object-storage-cli-plugin?topic=cloud-object-storage-cli-plugin-ic-cos-cli) to point to your bucket.
 - Use the {{site.data.keyword.cos_short}} SDKs to [add storage to your apps](/docs/cloud-object-storage?topic=cloud-object-storage-sdk-gs).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-02-16"
 
 keywords: openshift
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -42,7 +43,7 @@ Billing
 :   Monthly
 
 Pricing
-:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
+:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create){: external}.
 
 
 ## Vault
@@ -67,7 +68,7 @@ Billing
 :   Monthly
 
 Pricing
-:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
+:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create){: external}.
 
 ## Cold
 {: #cold}
@@ -92,7 +93,7 @@ Billing
 :   Monthly
 
 Pricing
-:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
+:   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create){: external}.
 
 ## Flex
 {: #flex}
@@ -118,6 +119,6 @@ Billing
 :   Monthly
 
 Pricing
-:  Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
+:  Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create){: external}.
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-16"
 
 keywords: openshift
 
@@ -37,7 +37,7 @@ Follow these steps to create an {{site.data.keyword.cos_full_notm}} service inst
 
 1. Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/objectstorage/create).
 2. Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
-3. Review the [plan options](https://cloud.ibm.com/objectstorage/create#pricing){: external} for pricing information and select a plan.
+3. Review the [plan options](https://cloud.ibm.com/objectstorage/create){: external} for pricing information and select a plan.
 4. Click **Create**. The service details page opens.
 5. To continue to set up {{site.data.keyword.cos_short}} to use with your cluster, see [Creating service credentials](#service_credentials).
 

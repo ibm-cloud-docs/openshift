@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-16"
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
 
@@ -96,7 +96,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   Enter a comma-separated list of IPs that can access your volumes. For example, `ibm.io/access-policy-allowed-ips: "XX.XXX.XX.XXX, XX.XX.XX.XXX, XX.XX.XX.XX`.
     
     `storage`
-    :   In the spec resources requests section, enter a size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create#pricing){: external}. If you enabled quotas when you installed the plug-in , the quota for your bucket is equal to this size.
+    :   In the spec resources requests section, enter a size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create){: external}. If you enabled quotas when you installed the plug-in , the quota for your bucket is equal to this size.
     
     `storageClassName`
     :   Choose between the following options.
@@ -443,4 +443,4 @@ To deploy a stateful set that uses object storage:
 :   In the spec volume claim templates spec section, enter the same storage class that you entered in the `spec.volumeClaimTemplates.metadata.annotations.volume.beta.kubernetes.io/storage-class` section of your stateful set YAML.
 
 `storage`
-:   In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create#pricing){: external}.
+:   In the spec volume claim templates spec resource requests section, enter a fictitious size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The size is required by Kubernetes, but not respected in {{site.data.keyword.cos_full_notm}}. You can enter any size that you want. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create){: external}.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-16"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -693,7 +693,7 @@ To set up a Virtual Router Appliance,
 
 1. [Order a VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started).
 
-2. [Configure the private VLAN on the VRA](/docs/virtual-router-appliance?topic=gateway-appliance-managing-vlans-and-gateway-appliances).
+2. [Configure the private VLAN on the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-managing-vlans-and-gateway-appliances).
 
 3. To enable a VPN connection by using the VRA, [configure VRRP on the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-working-with-high-availability-and-vrrp#high-availability-vpn-with-vrrp).
 

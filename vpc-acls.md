@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-16"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -234,7 +234,7 @@ To create an ACL for each subnet that your cluster is attached to,
 
 9. Optional: If you must allow other traffic to or from your worker nodes on this subnet, add rules for that traffic.
 
-    When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference#network-acl-rule-add).
+    When you refer to the VPC subnet that your worker nodes are on, you must use `0.0.0.0/0`. For more tips on how to create your rule, see the [VPC CLI reference documentation](/docs/vpc?topic=vpc-vpc-reference#network-acl-rule-add).
     {: note}
 
     ```sh
