@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-16"
 
 keywords: openshift
 
@@ -64,8 +64,8 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 1. Choose the file storage `type`, `IOPS`, `reclaim policy`, and `billing` that you want to use.
 
 
-## Deploying an app that uses {{site.data.keyword.filestorage_short}}
-{: #vpc_add_file}
+## Deploying an app that uses {{site.data.keyword.filestorage_short}} with dynamic provisioning
+{: #vpc_add_file_dynamic}
 
 Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
@@ -84,7 +84,7 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
           storage: 10Gi
       storageClassName: ibmc-vpc-file-5iops-tier
     ```
-    {: codeblock}
+      {: codeblock}
     
 
     `name`
@@ -168,9 +168,9 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
           volumes:
           - name: <volume_name>
             persistentVolumeClaim:
-              claimName: <pvc_name>
+              claimName: PVC-NAME
     ```
-    {: codeblock}
+      {: codeblock}
 
     `metadata.labels.app`
     :   In the metadata section, enter a label for the deployment.
@@ -229,4 +229,137 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
 
 
 
+
+## Deploying an app that uses {{site.data.keyword.filestorage_short}} with static provisioning
+{: #vpc_add_file_static}
+
+Create a persistent volume claim (PVC) to [statically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster. 
+
+Before you can create a persistent volume (PV), you have to retreive details about your file share.
+
+1. Get the ID for your file share.
+    ```sh
+    ibmcloud is shares
+    ```
+    {: pre}
+
+1. Get the `share-target`. 
+    ```sh
+    ibmcloud is share-targets SHARE-ID
+    ```
+    {: pre}
+
+1. Get the `nfsServerPath`, also called the `Mount Path`. 
+    ```sh
+    ibmcloud is share-target SHARE-ID SHARE-TARGET-ID
+    ```
+    {: pre}
+
+1. Create a PV configuration file called `static-file-share.yaml` that references your file share. 
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+    name: static-file-share
+    spec:
+    mountOptions:
+      - hard
+      - nfsvers=4.1
+      - sec=sys
+    accessModes:
+    - ReadWriteMany
+    capacity:
+      storage: 10Gi
+    csi:
+      volumeAttributes:
+        nfsServerPath:  NFS-SERVER-PATH
+      driver: vpc.file.csi.ibm.io
+      volumeHandle: FILE-SHARE-ID:SHARE-TARGET-ID
+    ```
+    {: codeblock}
+
+1. Create the PV.
+    ```sh
+    oc apply -f static-file-share.yaml
+    ```
+    {: pre}
+
+1. To mount the storage to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
+    ```yaml
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: pvc-static
+      spec:
+        accessModes:
+        - ReadWriteMany
+        resources:
+          requests:
+            storage: 10Gi
+        storageClassName: "" #Leave the storage class blank.
+    ```
+    {: codeblock}
+
+1. Create the PVC to bind your PV.
+    ```sh
+    oc apply -f pvc-static
+    ```
+    {: pre}
+
+1. Attach your fileshare to the desired application pod. 
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: testpod
+      labels:
+        app: testpod
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: testpod
+      template:
+        metadata:
+          labels:
+            app: testpod
+        spec:
+          containers:
+          - image: IMAGE
+            name: CONTAINER-NAME
+            volumeMounts:
+            - mountPath: /myvol  
+              name: pvc-name 
+          volumes:
+          - name: pvc-name 
+            persistentVolumeClaim:
+              claimName: pvc-static # The name of the PVC that you created earlier
+    ```
+    {: codeblock}
+
+    `spec.containers.image`
+    :   The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
     
+    `spec.containers.name`
+    :   The name of the container that you want to deploy to your cluster.
+    
+    `spec.containers.volumeMounts.mountPath`
+    :   Enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+    
+    `volumeMounts.name`
+    :   Enter the name of the volume to mount to your pod.
+    
+    `volume.name`
+    :   Enter the name of the volume to mount to your pod. Typically this name is the same as 
+    `volumeMounts.name`.
+    
+    `volumes.persistentVolumeClaim.claimName`
+    :   Enter the name of the PVC that binds the PV that you want to use.
+
+
+
+
+
+
+
+

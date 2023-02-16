@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-02-16"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -474,12 +475,6 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 
 You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted. Existing volumes and data are not impacted.
 {: shortdesc}
-
-
-
-As of 28 February 2022, version 4.2 of the {{site.data.keyword.block_storage_is_short}} add-on is the default version. If you are using an earlier version of the add-on, update to the latest version. To update the add-on, disable the add-on and then re-enable it. You might see a warning that resources or data might be deleted, however, note that existing volumes and data are not impacted.
-{: important}
-
 
 
 
