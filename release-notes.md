@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-16"
 
 keywords: openshift
 
@@ -30,14 +30,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2023
 {: #openshift-feb23}
-
-### 15 February 2023
-{: #openshift-feb1523}
-{: release-note}
-
-{{site.data.keyword.block_storage_is_short}} add-on version `5.0.6_1820`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
-
 
 
 ### 14 February 2023
