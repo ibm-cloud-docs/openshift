@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-17"
 
 keywords: object storage, plug-in, change log
 
@@ -40,7 +40,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 - Adds support for the `--set allowCrossNsSecret=true/false` option when you install the {{site.data.keyword.cos_full_notm}} plug-in. For more information, see [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install).
 - Adds support for `Wasabi` and `AWS` s3 providers on {{site.data.keyword.satelliteshort}} clusters.
-- On {{site.data.keyword.satelliteshort}} clusters, the `object store endpoint` is now auto-populated based on the `cos.storageClass` and `s3provider` options.
+- On {{site.data.keyword.satelliteshort}} clusters, the `object store endpoint` is now auto populated based on the `cos.storageClass` and `s3provider` options.
 
 
 ## Change log for version 2.2.8, released 23 January 2023

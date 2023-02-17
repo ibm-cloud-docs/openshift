@@ -2,11 +2,11 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-17"
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
 
-subcollection: containers
+subcollection: openshift
 
 ---
 
