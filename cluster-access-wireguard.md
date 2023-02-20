@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-20"
 
 keywords: access, wireguard, private, ,openshift
 
@@ -27,7 +27,7 @@ You can use the WireGuard VPN to securely connect to {{site.data.keyword.redhat_
 
 Before you begin, make sure that you have an {{site.data.keyword.redhat_openshift_notm}} cluster with a private-only network connection and that the cluster is assigned a private service endpoint.
 
-1. Create a virtual server instance (VSI) that is connected to the same private network that your {{site.data.keyword.redhat_openshift_notm}} cluster runs in. This VSI serves as a jumpbox for your cluster. For example, if you have a private VPC cluster, make sure that you create the VSI in the same VPC. For more information about creating the VSI, consult your infrastructure provider's documentation. The VSI must meet the following specifications:
+1. Create a virtual server instance (VSI) that is connected to the same private network that your {{site.data.keyword.redhat_openshift_notm}} cluster runs in. This VSI serves as a jump box for your cluster. For example, if you have a private VPC cluster, make sure that you create the VSI in the same VPC. For more information about creating the VSI, consult your infrastructure provider's documentation. The VSI must meet the following specifications:
     - The VSI must have a minimum of 2 vCPUs, 8 GB memory, and 25 GB of disk space.
     - The VSI must run an operating system that is supported by WireGuard. For example, the steps in this topic were tested on an Ubuntu VSI.
     - You must create an SSH key that is stored on the VSI so that you can connect to your VSI via SSH.
@@ -239,10 +239,10 @@ Before you begin, make sure that you have an {{site.data.keyword.redhat_openshif
         Do not change the `PrivateKey` field, which can alter your WireGuard client private key and make the tunnel that you created unusable.
         {: important}
 
-        In the `Peer` section, enter the following information:
+        In the `Peer` section, enter the following information.
         - `PublicKey`: The WireGuard server public key that you created earlier.
         - `AllowedIPs`: The IP address CIDRs of worker nodes, Ingress subdomain, the private service endpoint URL, and the WireGuard server that you retrieved earlier, separated by commas.
-        - `Endpoint`: The public IP address of the jumpbox VSI.  
+        - `Endpoint`: The public IP address of the jump box VSI.  
 
         ```sh
         Address = 192.168.3.217/32
@@ -254,7 +254,7 @@ Before you begin, make sure that you have an {{site.data.keyword.redhat_openshif
         ```
         {: codeblock}
 
-        Your final client configuration looks similar to the following:
+        Your final client configuration looks similar to the following example.
         
         ```sh
         [Interface]

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-20"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -247,7 +247,7 @@ This topic applies only to the cluster autoscaler Helm chart.
 {: important}
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2. To review the changelog of chart versions, [download the source code `tar` file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
+2. To review the change log of chart versions, [download the source code `tar` file](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibm-iks-cluster-autoscaler) and open the `RELEASENOTES.MD` file.
 
 ### Upgrading the cluster autoscaler release version
 {: #ca_helm_up_general}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 keywords: openshift, deploy
 
@@ -47,7 +47,7 @@ Stateful apps
 Check out the [Twelve-Factor App](https://12factor.net/){: external}, a language-neutral methodology for considering how to develop your app across 12 factors, summarized as follows.
 {: shortdesc}
 
-1. **Codebase**: Use a single codebase in a version control system for your deployments. When you pull an image for your container deployment, specify a tested image tag instead of using `latest`.
+1. **Code base**: Use a single code base in a version control system for your deployments. When you pull an image for your container deployment, specify a tested image tag instead of using `latest`.
 2. **Dependencies**: Explicitly declare and isolate external dependencies.
 3. **Configuration**: Store deployment-specific configuration in environment variables, not in the code.
 4. **Backing services**: Treat backing services, such as data stores or message queues, as attached or replaceable resources.

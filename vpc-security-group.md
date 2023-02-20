@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -43,7 +43,7 @@ If you modify the default VPC security groups, you must, at minimum, include the
 ### Security groups applied to cluster workers
 {: #vpc-sg-cluster-workers}
 
-Do not modify the rules in the`kube-<cluster-ID>` security group as doing so might cause disruptions in network connectivity between the workers of the cluster and the control cluster. However, if you don't want the `kube-<cluster-ID>`, you can instead add your own security groups during [cluster creation](#vpc-sg-cluster).
+Do not modify the rules in the`kube-<cluster-ID>` security group as doing so might cause disruptions in network connectivity between the workers of the cluster and the control cluster. However, if you don't want the `kube-<cluster-ID>`, you can instead add your own security groups during [cluster creation](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).
 
 
 | Security group type | Name | Details |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 keywords: openshift network
 
@@ -156,7 +156,7 @@ When you deploy an app in your cluster, you might want to make the app accessibl
 
 To allow private network traffic requests from outside the cluster to your apps, you can use private Kubernetes networking services, such as creating [`LoadBalancer` services](/docs/openshift?topic=openshift-vpc-lbaas). For example, when you create a Kubernetes `LoadBalancer` service in your cluster, a load balancer for VPC is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. For VPC ALBs, a [security group](/docs/openshift?topic=openshift-vpc-security-group), named in the form of `kube-<vpc-id>`, is automatically attached to your ALB instance.
 
-The `kube-<vpc-id>` security group that is attached to your VPC ALB is the same security group used for the private VPE gateway that communicates with the Kubernetes master. Do not modify this security group, as doing so might result in disruptions to the network connectivty between the cluster and the Kubernetes master. Instead, you can [remove the security group from the VPC ALB](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
+The `kube-<vpc-id>` security group that is attached to your VPC ALB is the same security group used for the private VPE gateway that communicates with the Kubernetes master. Do not modify this security group, as doing so might result in disruptions to the network connectivity between the cluster and the Kubernetes master. Instead, you can [remove the security group from the VPC ALB](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
 {: important}
 
 
@@ -170,7 +170,7 @@ To make your apps accessible from the public internet, you can use public networ
 
 You can use public Kubernetes networking services, such as creating [`LoadBalancer` services](/docs/openshift?topic=openshift-vpc-lbaas). For example, when you create a Kubernetes `LoadBalancer` service in your cluster, a load balancer for VPC is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. For VPC ALBs, a [security group](/docs/openshift?topic=openshift-vpc-security-group), named in the form of `kube-<vpc-id>`, is automatically attached to your ALB instance.
 
-The `kube-<vpc-id>` security group that is attached to your VPC ALB is the same security group used for the private VPE gateway that communicates with the Kubernetes master. Do not modify this security group, as doing so might result in disruptions to the network connectivty between the cluster and the Kubernetes master. Instead, you can [remove the security group from the VPC ALB](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
+The `kube-<vpc-id>` security group that is attached to your VPC ALB is the same security group used for the private VPE gateway that communicates with the Kubernetes master. Do not modify this security group, as doing so might result in disruptions to the network connectivity between the cluster and the Kubernetes master. Instead, you can [remove the security group from the VPC ALB](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) and [replace it with a security group](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) that you create and manage. 
 {: important}
 
 ## Example scenarios for VPC cluster network setups
