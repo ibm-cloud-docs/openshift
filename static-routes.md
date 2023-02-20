@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-13"
+lastupdated: "2023-02-20"
 
 keywords: openshift, vpn, on-prem, gateway, static
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -32,7 +33,7 @@ For example, you might use a VPN to connect your cluster to an on-premises data 
 
 When an on-premises service sends a request to an app in your cluster, the worker node that your app pod is on drops the response due to reverse path filtering (RPF). RPF is a Linux kernel feature that drops any responses to IP addresses that are not listed in the worker node's routing tables. The response is dropped because the on-premises IP address that was preserved in the request is not routable by the worker node.
 
-In this case, you can create a static route so that when a request's source IP address is from one of your on-premises subnets, the response is sent to the VPN gateway IP address instead. By adding this static route to the worker nodes' routing tables, you ensure the following:
+In this case, you can create a static route so that when a source IP address from a request is from one of your on-premises subnets, the response is sent to the VPN gateway IP address instead. By adding this static route to the worker nodes' routing tables, you ensure the following:
 * Response packets are not dropped due to RPF, because a routing rule that points to the on-premises IP address exists.
 * Response packets are successfully routed first through the VPN gateway IP address, and then re-routed to your on-premises IP address.
 

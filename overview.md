@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-20"
 
 keywords: openshift
 
@@ -125,7 +125,7 @@ Ready to gain deeper knowledge of Docker? [Learn how Docker and {{site.data.keyw
 
 ![Kubernetes certification badge](images/certified-kubernetes-color.svg "Deployment setup"){: caption="Figure 1. This badge indicates Kubernetes certification for IBM Cloud Container Service." caption-side="bottom"}
 
-The open source project that is named Kubernetes combines running a containerized infrastructure with production workloads, open source contributions, and Docker container management tools. The Kubernetes infrastructure provides an isolated and secure app platform for managing containers that is portable, extensible, and self-healing in case of failovers. For more information, see [What is Kubernetes?](https://www.ibm.com/topics/kubernetes){: external}.
+The open source project that is named Kubernetes combines running a containerized infrastructure with production workloads, open source contributions, and Docker container management tools. The Kubernetes infrastructure provides an isolated and secure app platform for managing containers that is portable, extensible, and self-healing in case of a failover. For more information, see [What is Kubernetes?](https://www.ibm.com/topics/kubernetes){: external}.
 {: shortdesc}
 
 

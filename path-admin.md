@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-20"
 
 keywords: openshift, red hat, red hat openshift, admin
 
@@ -52,7 +52,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
 
 1. **Firewall**: If you have corporate firewalls, make sure that you [open the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#corporate) to work with {{site.data.keyword.openshiftlong_notm}}.
 2. **CLI and API**:
-    1. [Set up the CLIs](/docs/openshift?topic=openshift-openshift-cli) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog).
+    1. [Set up the CLIs](/docs/openshift?topic=openshift-openshift-cli) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
     2. Optionally set up [automated deployments with the API](/docs/openshift?topic=openshift-cs_api_install). As you work with your cluster, refer to the [IBM Cloud Kubernetes Service API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external} and [Community Kubernetes API reference](https://kubernetes.io/docs/reference/){: external}.
 3. **Cluster deployment**:
     1. [Create the cluster](/docs/openshift?topic=openshift-clusters).
@@ -177,8 +177,8 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
 - **Autoscaling**: [Automatically increase or decrease the number of worker nodes](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) based on the sizing needs of your scheduled workloads.
 - **Updating**: Keep your environment up-to-date by frequently [updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update). While you update, refer to these version reference pages:
     - [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
-    - [Version changelog](/docs/openshift?topic=openshift-openshift_changelog)
-    - [Fluentd and Ingress ALB changelog](/docs/containers?topic=containers-cluster-add-ons-changelog)
+    - [Version change log](/docs/openshift?topic=openshift-openshift_changelog)
+    - [Fluentd and Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog)
 - **Removing**: [Remove clusters and clean up related resources](/docs/openshift?topic=openshift-remove).
 
 
