@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -1337,7 +1337,7 @@ With Kubernetes version 1.22 or later, you can use containerd configuration file
 
 Use the example YAML file to define a daemonset that runs on all worker nodes to set or update a containerd registry host configuration and mount to the corresponding containerd registry path.
 
-The example sets the following registry host configuration for dockerhub. This registry host configuration is already provided and automatically configured during the worker provisioning phase. The init container initializes `hosts.toml` on every worker node after deployment and after worker nodes reload or restart. 
+The example sets the following registry host configuration for dockerhub. This registry host configuration is already provided and automatically configured during the worker provisioning phase. The `init` container initializes `hosts.toml` on every worker node after deployment and after worker nodes reload or restart. 
 
 ```sh
 server = "https://docker.io"

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-20"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -80,7 +80,7 @@ Complete the following steps to find any pods that are using PSPs other than `ib
 
 One difference between Pod Security Admission and `PodSecurityPolicies` is that Pod Security Admission is validating while the `PodSecurityPolicies` can be mutating.  This makes it important that pods use the `ibm-privileged-psp`, which is not a mutating PSP, before you upgrade. Because both Pod Security Admission and the `ibm-privileged-psp` are validating, pods work the same under either one.
 
-For example, if a pod is currently running under `ibm-restricted-psp`, it might set the `fsGroup` and `supplementalGroups` to `1` in the pod `securityContext` section, based on the `MustRunAs` range in the PSP. In other words, the `ibm-restricted-psp` can change the pod `securityContext`. Such changes are visible as a difference between the securityContext of the running pod and the securityContext in the pod template of the deployment or similar resource that creates the pod. The `ibm-privileged-psp` is not mutating, so a pod running under it might run with different groups and might not be able to access data stored in an existing PVC.
+For example, if a pod is currently running under `ibm-restricted-psp`, it might set the `fsGroup` and `supplementalGroups` to `1` in the pod `securityContext` section, based on the `MustRunAs` range in the PSP. In other words, the `ibm-restricted-psp` can change the pod `securityContext`. Such changes are visible as a difference between the `securityContext` of the running pod and the `securityContext` in the pod template of the deployment or similar resource that creates the pod. The `ibm-privileged-psp` is not mutating, so a pod running under it might run with different groups and might not be able to access data stored in an existing PVC.
 
 1. Get the details of all pods and check their PSPs.
 
@@ -89,7 +89,7 @@ For example, if a pod is currently running under `ibm-restricted-psp`, it might 
     ```
     {: pre}
     
-1. Review the command output for any PSPs that are not `ibm-privileged-psp`. If your pods are using a different PSP, you must update your application to use the `ibm-privileged-psp` before upgraing your cluster. If no other PSPs are listed, you can continue with the upgrade.
+1. Review the command output for any PSPs that are not `ibm-privileged-psp`. If your pods are using a different PSP, you must update your application to use the `ibm-privileged-psp` before upgrading your cluster. If no other PSPs are listed, you can continue with the upgrade.
 
 Upgrading to 1.25 is not recommended if the output lists a PSP other than the `ibm-privileged-psp` PSP.
 {: important}

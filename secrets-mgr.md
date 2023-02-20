@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-20"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -32,7 +32,7 @@ With {{site.data.keyword.secrets-manager_short}}, you can:
 - Create managed Kubernetes secrets with Ingress TLS certificates included.
 - Create Kubernetes secrets of any type by using the CRN of any {{site.data.keyword.secrets-manager_short}} instance you own.
 - Automatically update your secrets in your cluster on a regular basis.
-- Track the experation dates of your certificates from the {{site.data.keyword.cloud_notm}} console.
+- Track the expiration dates of your certificates from the {{site.data.keyword.cloud_notm}} console.
 - Control who has access to your secrets by creating secret groups for approved users.
 
 Note that to have your secrets automatically updated, you must register at least one {{site.data.keyword.secrets-manager_short}} instance to your cluster. For more information, see [Registering your {{site.data.keyword.secrets-manager_short}} instance to your cluster](#secrets-mgr_setup_register).
@@ -71,7 +71,7 @@ Follow the steps to set up {{site.data.keyword.secrets-manager_short}} in your c
 {: #secrets-mgr_setup_s2s}
 {: step}
 
-Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.openshiftlong_notm}} cluster requires service-to-service communication auhtorization. Follow the steps to set up the authorization. For additional info, see [Integrations for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
+Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.keyword.openshiftlong_notm}} cluster requires service-to-service communication authorization. Follow the steps to set up the authorization. For additional info, see [Integrations for {{site.data.keyword.secrets-manager_short}}](/docs/secrets-manager?topic=secrets-manager-integrations#create-authorization).
 {: shortdesc}
  
 1. In the {{site.data.keyword.cloud_notm}} console, click **Manage** > **Access (IAM)**.
@@ -221,7 +221,7 @@ With {{site.data.keyword.secrets-manager_short}}, you can use secret groups to c
 ## Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster
 {: #secrets-mgr_cluster_create}
 
-If you are [creating a new Classic or VPC cluster](/docs/containers?topic=containers-clusters&interface=cli), you can register an existing {{site.data.keyword.secrets-manager_short}} instance and secret group to the cluster during creation. Secrets in the cluster are stored in the {{site.data.keyword.secrets-manager_short}} instance and applied to the secret goup. 
+If you are [creating a new Classic or VPC cluster](/docs/containers?topic=containers-clusters&interface=cli), you can register an existing {{site.data.keyword.secrets-manager_short}} instance and secret group to the cluster during creation. Secrets in the cluster are stored in the {{site.data.keyword.secrets-manager_short}} instance and applied to the secret group. 
 {: shortdesc}
 
 The {{site.data.keyword.secrets-manager_short}} instance registered during cluster create does not automatically become the default {{site.data.keyword.secrets-manager_short}} instance. You must still [set the default instance](#secrets-mgr_setup_default) manually.

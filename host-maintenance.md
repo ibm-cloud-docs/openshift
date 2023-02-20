@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-20"
 
 keywords: maintenance, host maintenance, notification, workers, offline
 
@@ -23,7 +23,7 @@ subcollection: openshift
 ## Identifying your affected workers
 {: #worker-maintenance-list}
 
-If your workers are scheduled to undergo maintenance, you recieve a notification before the maintenance window begins. A list of the workers that are affected is included in the notification. 
+If your workers are scheduled to undergo maintenance, you receive a notification before the maintenance window begins. A list of the workers that are affected is included in the notification. 
 {: shortdesc}
 
 The list of impacted components may look similar to the following example. The steps documented here apply to the workers listed in the **IBM Kubernetes Service or {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Workers** section.
@@ -80,7 +80,7 @@ Follow the steps to reboot the worker before the maintenance period begins.
     ```
     {: pre}
 
-4. Uncordon the worker.
+4. Mark the worker as schedulable.
     ```sh
     oc uncordon <worker_id>
     ```
@@ -112,7 +112,7 @@ For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
     ```
     {: pre}
 
-4. Uncordon the worker.
+4. Mark the worker as schedulable.
     ```sh
     oc uncordon <worker_id>
     ```

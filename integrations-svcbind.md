@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-20"
 
 keywords: kubernetes, openshift
 
@@ -49,7 +49,7 @@ Want to make your secrets even more secured? Ask your cluster admin to [enable a
 
 Yes, you can use services that meet naming requirements and reuse the service credentials.
 
-* **Naming**: Make sure that the service name is in the following regex format. Example permitted names are `myservice` or `example.com`. Unallowed characters include spaces and underscores.
+* **Naming**: Make sure that the service name is in the following regex format. Example permitted names are `myservice` or `example.com`. Characters that are not allowed include spaces and underscores.
     ```sh
     [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
     ```
@@ -97,7 +97,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
 
     * Some {{site.data.keyword.cloud_notm}} services are available only in select regions. You can bind a service to your cluster only if the service is available in the same region as your cluster. In addition, if you want to create a service instance in the Washington DC zone, you must use the CLI.
     * **For IAM-enabled services**: You must create the service instance in the same resource group as your cluster. A service can be created in only one resource group that you can't change afterward.
-    * Make sure that the service name is in the following regex format. Example permitted names are `myservice` or `example.com`. Unallowed characters include spaces and underscores.
+    * Make sure that the service name is in the following regex format. Example permitted names are `myservice` or `example.com`. Characters that are not allowed include spaces and underscores.
         ```sh
         [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*
         ```
