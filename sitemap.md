@@ -5533,7 +5533,7 @@ subcollection: openshift
 
 * [ibmcloud oc api](/docs/openshift?topic=openshift-icks_map#icks_map_api)
 
-* [ibmcloud oc init](/docs/openshift?topic=openshift-icks_map#icks_map_init)
+* [ibmcloud oc `init`](/docs/openshift?topic=openshift-icks_map#icks_map_init)
 
 * [ibmcloud oc script](/docs/openshift?topic=openshift-icks_map#icks_map_script)
 

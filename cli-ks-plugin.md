@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 keywords: openshift
 
@@ -62,7 +62,7 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 | [Messages commands](#cs_messages) | View the current user messages. |
 | [Versions commands](#cs_versions_command) | List the container platform versions that are available for IBM Cloud Kubernetes Service clusters. |
 | **Deprecated** [API commands](#cs_cli_api) | View or target the API endpoint and API version for the service. |
-| **Deprecated** [Init commands](#cs_init) | Initialize the IBM Cloud Kubernetes Service plug-in or specify the region where you want to create or access Kubernetes clusters. |
+| **Deprecated** [`init` commands](#cs_init) | Initialize the IBM Cloud Kubernetes Service plug-in or specify the region where you want to create or access Kubernetes clusters. |
 | [Script commands](#script) | Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. |
 | **Beta** [Storage commands](#cs_storage) | View and modify storage resources. |
 {: caption="{{site.data.keyword.openshiftlong_notm}} CLI command groups" caption-side="bottom"}
@@ -2615,7 +2615,7 @@ Reload the configurations for a Classic worker node. To reload a worker node in 
 
 A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). The worker node public and private IP address remain the same after the reload operation.
 
-Reloading a worker node applies patch version updates to your worker node, but not major or minor updates. To see the changes from one patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation.
+Reloading a worker node applies patch version updates to your worker node, but not major or minor updates. To see the changes from one patch version to the next, review the [Version change log](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 {: tip}
 
 Before you reload your worker node, make sure that you have enough capacity in other worker nodes to reschedule the pods on the worker node. Rescheduling pods helps to avoid downtime for your app or data corruption on your worker node.
@@ -2682,7 +2682,7 @@ Delete a worker node and replace it with a new worker node in the same worker po
 
 The replacement worker node is created in the same zone and has the same flavor as the old worker node, but might be assigned new public or private IP addresses. You might replace a worker node if you can't reload or update the worker node, such as if it enters a troubled state.
 
-You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` option. If you don't include the `--update` option, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version changelog](/docs/openshift?topic=openshift-openshift_changelog) documentation. Remember that your worker nodes can be only up to two versions behind the master version (`n-2`).
+You can also use this command to update the Kubernetes version of the worker node to match the major and minor version of the Kubernetes master by including the `--update` option. If you don't include the `--update` option, patch version updates are applied to your worker node, but not major or minor updates. To see the changes from one major, minor, or patch version to the next, review the [Version change log](/docs/openshift?topic=openshift-openshift_changelog) documentation. Remember that your worker nodes can be only up to two versions behind the master version (`n-2`).
 
 When you replace a worker node, keep in mind the following considerations.
 {: important}
@@ -3699,7 +3699,7 @@ ibmcloud oc zone rm --zone dal10 --cluster my_cluster
 View and configure Ingress application load balancers (ALBs).
 {: shortdesc}
 
-In CLI version 1.0.157 and later, the `ibmcloud oc alb` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress alb` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+In CLI version 1.0.157 and later, the `ibmcloud oc alb` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress alb` subcategory. For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: important}
 
 ### `ibmcloud oc ingress alb autoupdate disable`
@@ -4568,7 +4568,7 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster mycluster --cidr 1.1.1.1/
 Create an Ingress secret in a cluster for a certificate that is stored in {{site.data.keyword.secrets-manager_full}}. This command can be used to create TLS or non-TLS secrets. 
 {: shortdesc}
 
-The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: note}
 
 To use the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manage them with `oc` commands. 
@@ -4748,7 +4748,7 @@ ibmcloud oc ingress secret field rm --cluster a11a11a11a111a1a111a --name my-sec
 View information about Ingress secrets in your cluster, including secrets stored in {{site.data.keyword.secrets-manager_full}}.
 {: shortdesc}
 
-The previous alias for this command, `ibmcloud oc ingress alb cert get`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+The previous alias for this command, `ibmcloud oc ingress alb cert get`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: note}
 
 ```sh
@@ -4838,7 +4838,7 @@ ibmcloud oc ingress secret ls --cluster my_cluster
 Delete an Ingress secret from your cluster. If you created a secret for a certificate from {{site.data.keyword.secrets-manager_short}}, only the secret in the cluster is deleted and the certificate remains in your  {{site.data.keyword.secrets-manager_short}} instance.
 {: shortdesc}
 
-The previous alias for this command, `ibmcloud oc ingress alb cert rm`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog#10).
+The previous alias for this command, `ibmcloud oc ingress alb cert rm`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: note}
 
 ```sh
@@ -4883,7 +4883,7 @@ ibmcloud oc ingress secret rm --cluster my_cluster --name my_alb_secret --namesp
 Update an Ingress secret for a certificate that is not hosted in the default {{site.data.keyword.secrets-manager_short}} instance that was created for your cluster.
 {: shortdesc}
 
-Any changes that you make to a certificate in the default {{site.data.keyword.secrets-manager_short}} instance in your cluster are automatically reflected in the secret in your cluster. If you make changes to a certificate that is not hosted in your cluster's{{site.data.keyword.secrets-manager_short}} instance, you must use this command to update the secret in your cluster the pick up the certificate changes.
+Any changes that you make to a certificate in the default {{site.data.keyword.secrets-manager_short}} instance in your cluster are automatically reflected in the secret in your cluster. If you make changes to a certificate that is not hosted in your cluster {{site.data.keyword.secrets-manager_short}} instance, you must use this command to update the secret in your cluster the pick up the certificate changes.
 
 ```sh
 ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [--cert-crn CRN] [-q]
