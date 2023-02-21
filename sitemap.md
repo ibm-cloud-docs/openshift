@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 subcollection: openshift
@@ -4469,7 +4469,7 @@ subcollection: openshift
 
 * [Moving a VPC load balancer from one cluster to another](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move)
 
-    * [Detatching a VPC load balancer from a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_detach)
+    * [Detaching a VPC load balancer from a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_detach)
 
     * [Attaching a VPC load balancer to a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_attach)
 
@@ -4795,7 +4795,7 @@ subcollection: openshift
 
 [Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
 
-* [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
+* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
 
 * [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
 
@@ -5266,7 +5266,7 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
 
-    * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+    * [Labeling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
 
     * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
 
@@ -9007,7 +9007,7 @@ subcollection: openshift
 
 [Why does mounting {{site.data.keyword.blockstorageshort}} fail with an `fsck` error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
 
-[Why can't I delete my {{site.data.keyword.block_storage_is_short}} `volumesnapshot` resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
+[Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 
 [Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-snapshotfails#ts-storage-snapshotfails)
 

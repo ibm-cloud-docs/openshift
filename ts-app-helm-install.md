@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -56,7 +57,7 @@ To troubleshoot your Helm chart:
     ```
     {: pre}
 
-3. Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the reinstallation, you add and update the {{site.data.keyword.cloud_notm}} Helm repositories. For more information, see [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3).
+3. Reinstall the Helm version that matches a supported version of the Helm chart that you want to install. As part of the installation, add and update the {{site.data.keyword.cloud_notm}} Helm repositories. For more information, see [Installing Helm v3 in your cluster](/docs/openshift?topic=openshift-helm#install_v3).
 
 Now, you can follow the instructions in the Helm chart `README` to install the Helm chart in your cluster.
 

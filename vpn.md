@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-21"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -72,7 +72,7 @@ Before using the strongSwan Helm chart, review the following considerations and 
 - The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
 - The strongSwan Helm chart requires NAT traversal to be enabled by the remote VPN endpoint. NAT traversal requires UDP port 4500 in addition to the default IPSec UDP port of 500. Both UDP ports need to be allowed through any firewall that is configured.
 - The strongSwan Helm chart does not support route-based IPSec VPNs.
-- The strongSwan Helm chart supports IPSec VPNs that use preshared keys, but does not support IPSec VPNs that require certificates.
+- The strongSwan Helm chart supports IPSec VPNs that use pre-shared keys, but does not support IPSec VPNs that require certificates.
 - The strongSwan Helm chart does not allow multiple clusters and other IaaS resources to share a single VPN connection.
 - The strongSwan Helm chart runs as a Kubernetes pod inside of the cluster. The VPN performance is affected by the memory and network usage of Kubernetes and other pods that are running in the cluster. If you have a performance-critical environment, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
 - The strongSwan Helm chart runs a single VPN pod as the IPSec tunnel endpoint. If the pod fails, the cluster restarts the pod. However, you might experience a short down time while the new pod starts and the VPN connection is re-established. If you require faster error recovery or a more elaborate high availability solution, consider using a VPN solution that runs outside of the cluster on dedicated hardware.
@@ -652,7 +652,7 @@ Review the supported versions of the strongSwan Helm chart. Typically, a chart v
 - **Deprecated**: 2.7.1, 2.7.0, 2.6.9, 2.6.8, 2.6.7
 - **Unsupported**: 2.6.6 and earlier
 
-For release dates and changelogs for each strongSwan Helm chart version, run `helm show readme iks-charts/strongswan` and look for the `Version History` section.
+For release dates and change logs for each strongSwan Helm chart version, run `helm show readme iks-charts/strongswan` and look for the `Version History` section.
 
 To upgrade your strongSwan Helm chart to the latest version, use the **`helm upgrade`** command.
 

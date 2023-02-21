@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -17,6 +17,7 @@ subcollection: openshift
 
 
 
+
 # Retail use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_retail}
 
@@ -26,7 +27,7 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} c
 ## Brick-and-mortar retailer shares data, by using APIs with global business partners to drive omnichannel sales
 {: #uc_data-share}
 
-A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail system is closed off in an on-premises data center. The competition has global business partners to cross-sell and upsell permutations of their goods: across brick-and-mortar and online sites.  
+A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail system is closed off in an on-premises data center. The competition has global business partners to cross-sell and up sell permutations of their goods: across brick-and-mortar and online sites.  
 {: shortdesc}
 
 
@@ -152,7 +153,7 @@ Traditional grocer increases customer traffic and sales with digital insights.
 
 The grocer needs an app to increase conversion and store traffic to generate new sales and build customer loyalty in a reusable cloud analytics platform. The in-store targeted experience can be an event along with a services or product vendor that attracts both loyalty and new customers based on affinity to the specific event. The store and business partner then offer incentives to come to the event as well as buying products from the store or business partner.  
 
-After the event, customers are guided to purchasing the necessary products, so they can repeat the demonstrated activity on their own in the future. The targeted customer experience is measured with incentive redemption and new loyalty customer signups. The combination of a hyper-personalized marketing event and a tool to track in-store purchases can carry the targeted experience all the way through to product purchase. All these actions result in higher traffic and conversions.
+After the event, customers are guided to purchasing the necessary products, so they can repeat the demonstrated activity on their own in the future. The targeted customer experience is measured with incentive redemption and new loyalty customer sign-ups. The combination of a hyper-personalized marketing event and a tool to track in-store purchases can carry the targeted experience all the way through to product purchase. All these actions result in higher traffic and conversions.
 
 As an example event, a local chef is brought into the store to show how to make a gourmet meal. The store provides an incentive to drive attendance. For example they provide a free appetizer at the chef's restaurant and an extra incentive to buy the ingredients for the demonstrated meal (for example, $20 off $150 cart).
 

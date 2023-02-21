@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -142,7 +142,7 @@ VLAN spanning
 :   If you can't or don't want to enable VRF, [enable VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-access-creds#infra_access), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Note that you can't enable the private cloud service endpoint if you choose to enable VLAN spanning instead of a VRF.
 
 How does VRF or VLAN spanning affect network segmentation?
-:   When VRF or VLAN spanning is enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with workers. You can isolate your cluster from other systems on the private network by applying [Calico private network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers). {{site.data.keyword.openshiftlong_notm}} is also compatible with all [IBM Cloud infrastructure firewallferings](https://www.ibm.com/cloud/network-security){: external}. You can set up a firewall, such as a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra), with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion.
+:   When VRF or VLAN spanning is enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with workers. You can isolate your cluster from other systems on the private network by applying [Calico private network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers). {{site.data.keyword.openshiftlong_notm}} is also compatible with all [IBM Cloud infrastructure firewall offerings](https://www.ibm.com/cloud/network-security){: external}. You can set up a firewall, such as a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra), with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion.
 
 
 

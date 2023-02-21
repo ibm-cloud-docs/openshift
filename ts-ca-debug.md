@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-02-21"
 
 keywords: openshift, autoscaler
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -42,7 +43,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: screen}
 
-2. Compare the version that runs in your cluster against the latest version in Cluster autoscaler add-on [changelog](/docs/openshift?topic=openshift-ca_changelog).
+2. Compare the version that runs in your cluster against the latest version in Cluster autoscaler add-on [change log](/docs/openshift?topic=openshift-ca_changelog).
 3. If your version is outdated, deploy the latest cluster autoscaler version to your cluster.
 
 **Deprecated** You can install the cluster autoscaler Helm chart, but the helm chart is deprecated and becomes unsupported tentatively 15 September 2020. You can't install the add-on and the Helm chart in the same cluster at the same time. 
@@ -98,8 +99,8 @@ oc describe cm -n kube-system cluster-autoscaler-status
 
 * **`status`**: Review the status message for more troubleshooting information, if any.
 * **`Health`**: Review the overall health of the cluster autoscaler for any errors or failures.
-* **`ScaleUp`**: Review the status of scaleup activity. In general, if the number of worker nodes that are ready and registered match, the scaleup has `NoActivity` because your worker pool has enough worker nodes.
-* **`ScaleDown`**: Review the status of scaledown activity. If the cluster autoscaler identifies `NoCandidates`, your worker pool is not scaled down because none of the worker nodes can be removed without taking away requested resources from your workloads.
+* **`ScaleUp`**: Review the status of scale up activity. In general, if the number of worker nodes that are ready and registered match, the scale up has `NoActivity` because your worker pool has enough worker nodes.
+* **`ScaleDown`**: Review the status of scale down activity. If the cluster autoscaler identifies `NoCandidates`, your worker pool is not scaled down because none of the worker nodes can be removed without taking away requested resources from your workloads.
 * **`Events`**: Review the events for more troubleshooting information, if any.
 
 Example of a healthy cluster autoscaler status

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-21"
 
 keywords: kubernetes, help, network, connectivity, webhooks
 
@@ -38,7 +38,7 @@ error creating namespace "test": Internal error occurred: admission plugin "Muta
 Failing webhooks might also cause problems similar to the following issues.
 
 - You can't create or modify pods, secrets, or namespaces.
-- You can't add worker nodes to a cluster or create a secret that holds the LUKS encrytion key.
+- You can't add worker nodes to a cluster or create a secret that holds the LUKS encryption key.
 - You can't patch, update, or upgrade and the underlying failure is related to creating resources in the cluster.
 
 

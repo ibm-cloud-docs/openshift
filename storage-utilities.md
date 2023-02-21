@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-04"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -876,7 +877,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
     ```
     {: pre}
 
-2. Open the `values.yaml` file in the nano command line editor.
+2. Open the `values.yaml` file in the `nano` command line editor.
     ```sh
     nano ibmcloud-backup-restore/values.yaml
     ```

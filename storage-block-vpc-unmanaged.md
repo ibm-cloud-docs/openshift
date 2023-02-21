@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-21"
 
 keywords: openshift, block storage
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -38,7 +39,7 @@ To use the {{site.data.keyword.block_storage_is_short}} driver, complete the fol
 * [Create your storage secret](#vpc-block-create-storage-secret).
 * [Create an image pull secret that uses your IAM credentials](#vpc-block-create-storage-secret).
 
-### Labelling your worker nodes
+### Labeling your worker nodes
 {: #vpc-block-label-um}
 
 Before you can deploy the {{site.data.keyword.block_storage_is_short}} driver, you must prepare your worker nodes by adding the required labels.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-21"
 
 keywords: openshift, block storage, pod identity, trusted profiles
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on
@@ -87,12 +88,12 @@ You can use trusted profiles to limit the access that running pods in your clust
 1. Follow the steps to [create a trusted profile](/docs/account?topic=account-create-trusted-profile&interface=ui). In the **Conditions** for the profile, be sure to specify the following access.
 
     * Allow access when **Service account** equals `ibm-vpc-block-controller-sa`.
-    * Allow acccess when **Namespace** equals `kube-system`.
+    * Allow access when **Namespace** equals `kube-system`.
 
     You can create the trusted profile for specific clusters or for all current and future clusters.
     {: note}
     
-    Make sure to give the truted profile the following access.
+    Make sure to give the trusted profile the following access.
     
     * **Resource group** - Viewer
     * **Service access** - Reader and Writer

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-21"
 
 keywords: openshift, essvc
 
@@ -31,7 +31,7 @@ The CRN does not match the default secret with the same domain (ESSVC).
 ```
 {: screen}
 
-There are secrets in multiple namsepaces for the same domain in your cluster but they reference different {{site.data.keyword.secrets-manager_full_notm}} CRNs.
+There are secrets in multiple namespaces for the same domain in your cluster but they reference different {{site.data.keyword.secrets-manager_full_notm}} CRNs.
 {: tsCauses}
 
 Ensure all secrets that share the same domain have the same CRN.

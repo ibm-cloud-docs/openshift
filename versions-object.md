@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-02-21"
 
 keywords: object storage, plug-in, change log
 
@@ -109,7 +109,7 @@ Because this change affects storage classes, you must uninstall and reinstall th
 
 - Updates the UBI image to `8.6-902.1661794353`
 - Resolves [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external}, [CVE-2022-32208](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208){: external}, [CVE-2022-2526](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2526){: external}.
-- Cloudpak certification renewed for the plugin
+- Cloud pak certification renewed for the plug-in
 
 ## Change log for version 2.1.21, released 24 August 2022
 {: #02121_object_plugin}
@@ -143,14 +143,14 @@ Updates the following mount paths for the driver pods.
 {: #02117_object_plugin}
 
 - Updates the UBI to `8.6-751.1655117800`
-- Updates `s3fs-fuse` fix a segfault issue.
+- Updates `s3fs-fuse` fix a `segfault` issue.
 - Adds support to configure ephemeral storage of plug-in and driver pods.
 
 ## Change log for version 2.1.16, released 25 May 2022
 {: #02116_object_plugin}
 
 - Updates the UBI to `8.6-751`
-- Added support for adding ips via pvc annotation for `configBucketAccess`
+- Added support for adding `ips` by using PVC annotation for `configBucketAccess`
 - Added support for `crftoken` to be fetched from `storage-secret-store`
 
 ## Change log for version 2.1.15, released 6 May 2022
@@ -166,7 +166,7 @@ Updates the following mount paths for the driver pods.
 - Updates the UBI to `8.5-240.1648458092` 
 - Resolves [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}
 - Added support for two stable versions of s3fs fuse in one chart release
-- Added support for quota-limit option for COS buckets via s3fs plugin
+- Added support for quota-limit option for COS buckets by using s3fs plug-in
 - Includes the `ibmc` plug-in version `2.0.8`
 
 ## Change log for version 2.1.13, released 24 March 2022
@@ -199,7 +199,7 @@ Updates the following mount paths for the driver pods.
 {: #02110_object_plugin}
 
 
-- Updates the univeral base image (UBI) to `ubi-minimal:8.5-230`.
+- Updates the universal base image (UBI) to `ubi-minimal:8.5-230`.
 - Resolves the following CVEs: [CVE-2021-3538](https://nvd.nist.gov/vuln/detail/CVE-2021-3538){: external}, [CVE-2018-14632](https://nvd.nist.gov/vuln/detail/CVE-2018-14632){: external}, [CVE-2020-26160](https://nvd.nist.gov/vuln/detail/CVE-2020-26160){: external}.
 - Fixes a bug where the `kubernetes.io/secret/res-conf-apikey` was present in some logs.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-21"
 
 keywords: openshift, fsck
 
@@ -38,7 +38,7 @@ The disk is corrupted.
 {: tsCauses}
 
 
-Run the folling commands to patch the PV that the pod is mounting.
+Run the following commands to patch the PV that the pod is mounting.
 {: tsResolve}
 
 
@@ -55,7 +55,7 @@ Run the folling commands to patch the PV that the pod is mounting.
     ```
     {: pre}
     
-1. Delete and recreate your app pod to retry mounting the PV. After deleting and re-creating the pod, Kubernetes retries the mount operation and the {{site.data.keyword.blockstorageshort}} driver pod tries to auto fix the issue based on the `"ibm.io/autofix-fsckErr":"true"` annotation.
+1. Delete and re-create your app pod to retry mounting the PV. After deleting and re-creating the pod, Kubernetes retries the mount operation and the {{site.data.keyword.blockstorageshort}} driver pod tries to auto fix the issue based on the `"ibm.io/autofix-fsckErr":"true"` annotation.
 
 1. After the pod is successfully deployed and running, run the following command to edit the PV.
     ```sh

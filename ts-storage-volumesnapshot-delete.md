@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-21"
 
 keywords: openshift, storage, snapshot
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 
 
 
-# Why can't I delete my {{site.data.keyword.block_storage_is_short}} `volumesnapshot` resources?
+# Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?
 {: #ts-storage-volumesnapshotdelete}
 {: support}
 

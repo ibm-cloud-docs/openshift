@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-12"
+lastupdated: "2023-02-21"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -319,7 +320,7 @@ To review how much compute resources are currently used on your worker node, run
 | Next 4 GB (5 - 8 GB) | 20% of memory | 0.8 GB | 0.8 GB|
 | Next 8 GB (9 - 16 GB) | 10% of memory | 0.8 GB | 0.8 GB|
 | Next 112 GB (17 - 128 GB) | 6% of memory | N/A | 6.72 GB|
-| Remaining GBs (129 GB+) | 2% of memory | N/A | 2.54 GB|
+| Remaining GB (129 GB+) | 2% of memory | N/A | 2.54 GB|
 | Additional reserve for [`kubelet` eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/){: external} | 100 MB | 100 MB (flat amount) | 100 MB (flat amount)|
 | **Total reserved** | **(varies)** | **2.7 GB of 16 GB total** | **11.96 GB of 256 GB total**|
 {: class="simple-tab-table"}

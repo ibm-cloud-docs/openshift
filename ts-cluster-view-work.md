@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -112,7 +113,7 @@ To check your user access permissions:
 4. Depending on your access policies, choose one of the following options. 
 
     - If you have access to the cluster and to the resource group that the cluster is in:
-        1. Target the resource group. **Note**: You can't work with clusters in other resource groups until you untarget this resource group.
+        1. Target the resource group. **Note**: You can't work with clusters in other resource groups until you change this resource group.
             ```sh
             ibmcloud target -g <resource_group>
             ```
@@ -125,7 +126,7 @@ To check your user access permissions:
             {: pre}
 
     - If you have access to the cluster but not to the resource group that the cluster is in:
-        1. Do not target a resource group. If you already targeted a resource group, untarget it:
+        1. Do not target a resource group. If you already targeted a resource group, remove the target.
             ```sh
             ibmcloud target --unset-resource-group
             ```
@@ -139,7 +140,7 @@ To check your user access permissions:
 
     - If you don't have access to the cluster:
         1. Ask your account owner to assign an [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) to you for that cluster.
-        2. Do not target a resource group. If you already targeted a resource group, untarget it:
+        2. Do not target a resource group. If you already targeted a resource group, remove the target.
             ```sh
             ibmcloud target --unset-resource-group
             ```

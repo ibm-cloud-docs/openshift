@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -53,7 +53,7 @@ Before you begin, [Create your object storage service instance](#create_cos_serv
 5. Optional: In **Add Inline Configuration Parameters (Optional)**, enter `{"HMAC":true}` to create more HMAC credentials for the {{site.data.keyword.cos_full_notm}} service. HMAC authentication adds an extra layer of security to the OAuth2 authentication by preventing the misuse of expired or randomly created OAuth2 tokens.
 6. Click **Add**. Your new credentials are in the **Service Credentials** table.
 7. Click **View credentials**.
-8. Make note of the **apikey** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **cos_hmac_keys** section, note the **access_key_id** and the **secret_access_key**.
+8. Make note of the **`apikey`** to use OAuth2 tokens to authenticate with the {{site.data.keyword.cos_full_notm}} service. For HMAC authentication, in the **`cos_hmac_keys`** section, note the **`access_key_id`** and the **`secret_access_key`**.
 9. [Store your service credentials in a Kubernetes secret inside the cluster](#create_cos_secret) to enable access to your {{site.data.keyword.cos_full_notm}} service instance.
 
 
@@ -71,7 +71,7 @@ Before you begin:
 
 To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 
-1. Retrieve the **apikey**, or the **access_key_id** and the **secret_access_key** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials must be enough for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you see in your secret must have **Reader** permissions at minimum. If you want to integrate {{site.data.keyword.keymanagementserviceshort}} encryption when creating new buckets from PVCs in your cluster, you must to include the root key CRN when creating your [{{site.data.keyword.cos_full_notm}} secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Note that {{site.data.keyword.keymanagementserviceshort}} encryption can't be added to existing buckets.
+1. Retrieve the **`apikey`**, or the **`access_key_id`** and the **`secret_access_key`** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials must be enough for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you see in your secret must have **Reader** permissions at minimum. If you want to integrate {{site.data.keyword.keymanagementserviceshort}} encryption when creating new buckets from PVCs in your cluster, you must to include the root key CRN when creating your [{{site.data.keyword.cos_full_notm}} secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Note that {{site.data.keyword.keymanagementserviceshort}} encryption can't be added to existing buckets.
 
 1. Get the **GUID** of your {{site.data.keyword.cos_full_notm}} service instance.
     ```sh
@@ -95,7 +95,7 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 
 1. If you want to use {{site.data.keyword.keymanagementserviceshort}} Encryption for buckets created with {{site.data.keyword.cos_full_notm}} s3fs plug-in, include the `keyprotect root key crn` value in the secret that is used to create the PVC. 
 
-    {{site.data.keyword.keymanagementserviceshort}}encryption can be used only when you create new buckets. If the {{site.data.keyword.keymanagementserviceshort}}root key that is used for encryption is deleted, all the files in the associated buckets are inaccessible. 
+    {{site.data.keyword.keymanagementserviceshort}} encryption can be used only when you create new buckets. If the {{site.data.keyword.keymanagementserviceshort}} root key that is used for encryption is deleted, all the files in the associated buckets are inaccessible. 
     {: important}
     
     1.  Create a YAML file for your {{site.data.keyword.cos_full_notm}} secret.
