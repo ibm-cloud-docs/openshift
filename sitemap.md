@@ -284,6 +284,10 @@ subcollection: openshift
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
 
+    * [21 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2123)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.10`.
+
     * [17 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1723)
 
         * Cluster autoscaler add-on version `1.0.7_944`.
@@ -6984,6 +6988,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.10, released 21 February 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02210_object_plugin)
 
 * [Change log for version 2.2.9, released 13 February 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0229_object_plugin)
 

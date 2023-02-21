@@ -29,11 +29,22 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.10 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.9 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.8 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.8 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.7 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.6 and earlier | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+
+## Change log for version 2.2.10, released 21 February 2023
+{: #02210_object_plugin}
+
+- Updates the UBI Image to `8.7-1049.1675784874`.
+- Updates the default values for `CPU request` and `CPU limit` to `100m` and `500m` respectively.
+- Updates the default values for `Memory request` and `Memory limit1` to `128Mi` and `500Mi` respectively.
+- Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
+
 
 ## Change log for version 2.2.9, released 13 February 2023
 {: #0229_object_plugin}
