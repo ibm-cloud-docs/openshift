@@ -7105,7 +7105,7 @@ subcollection: openshift
 
     * [Version 4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.2_odf)
 
-    * [Version 4.9.1, released 23 Febraury 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
+    * [Version 4.9.1, released 23 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
 
     * [Version 4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.0_odf)
 
@@ -8041,7 +8041,7 @@ subcollection: openshift
 
     * [Change log for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-changelog_archive#4513_1515)
 
-* [Version 4.4 changelog (unsupported as of 31 May 2021)](/docs/openshift?topic=openshift-changelog_archive#version-44)
+* [Version 4.4 change log (unsupported as of 31 May 2021)](/docs/openshift?topic=openshift-changelog_archive#version-44)
 
     * [Change log for worker node fix pack 4.4.33_1544_openshift, released 24 May 2021](/docs/openshift?topic=openshift-changelog_archive#4433_1544)
 
@@ -8113,7 +8113,7 @@ subcollection: openshift
 
     * [Change log for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-changelog_archive#4411_1511)
 
-* [Version 4.3 changelog (unsupported as of 7 March 2021)](/docs/openshift?topic=openshift-changelog_archive#version-43)
+* [Version 4.3 change log (unsupported as of 7 March 2021)](/docs/openshift?topic=openshift-changelog_archive#version-43)
 
     * [Change log for worker node fix pack 4.3.40_1555_openshift, released 1 March 2021](/docs/openshift?topic=openshift-changelog_archive#4340_1555_worker)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -75,7 +75,7 @@ Classic
 | Locations and versions | Clusters are managed from one of the [supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions). However, you can deploy worker nodes to your own location, an {{site.data.keyword.cloud_notm}} data center, or another cloud provider. For more information see [Understanding locations and hosts](/docs/satellite?topic=satellite-location-host). |
 | Service interface | {{site.data.keyword.satelliteshort}} are supported by the global [API](https://containers.cloud.ibm.com/global/swagger-global-api/) [{{site.data.keyword.containerlong_notm}}, the {{site.data.keyword.openshiftlong_notm}} [CLI](/docs/openshift?topic=openshift-openshift-cli) and the {{site.data.keyword.satelliteshort}} [CLI](/docs/satellite?topic=satellite-setup-cli&interface=cli). You can also manage your clusters from the [console](https://cloud.ibm.com/satellite/clusters). |
 | Service compliance | For clusters, see [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). For {{site.data.keyword.satelliteshort}}, see [Security and compliance](/docs/satellite?topic=satellite-compliance). |
-| Service limitations | See [Limiations, default settings, and usage requirements](/docs/satellite?topic=satellite-requirements). |
+| Service limitations | See [Limitations, default settings, and usage requirements](/docs/satellite?topic=satellite-requirements). |
 {: caption="Table 2. Satellite infrastructure overview." caption-side="bottom"}
 
 
@@ -91,7 +91,7 @@ Classic
 | Reservations | [Create a reservation](/docs/openshift?topic=openshift-reservations) with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to regular worker node costs. | 
 | Cluster administration | Classic clusters support the entire set of `v1` API operations, such as resizing worker pools, reloading worker nodes, and updating masters and worker nodes across major, minor, and patch versions. When you delete a cluster, you can choose to remove any attached subnet or storage instances. | 
 | Cluster networking | Your worker nodes are provisioned on private VLANs that provide private IP addresses to communicate on the private IBM Cloud infrastructure network. For communication on the public network, you can also provision the worker nodes on a public VLAN. Communication to the cluster master can be on the public or private cloud service endpoint. For more information, see [Understanding cluster network basics](/docs/openshift?topic=openshift-plan_clusters). |
-| Apps and container platform | You can choose to create [community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-faqs#container_platforms) to manage your containerized apps. Your app build processes don't differ because of the infrastructure provider, but how you expose the app does. For more information, see [Choosing an app exposure serivice](/docs/openshift?topic=openshift-cs_network_planning). |
+| Apps and container platform | You can choose to create [community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-faqs#container_platforms) to manage your containerized apps. Your app build processes don't differ because of the infrastructure provider, but how you expose the app does. For more information, see [Choosing an app exposure service](/docs/openshift?topic=openshift-cs_network_planning). |
 | App networking | All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range and are routed between worker nodes on the worker node private IP address of the private VLAN. To expose the app on the public network, your cluster must have worker nodes on the public VLAN. Then, you can create a NodePort, LoadBalancer (NLB), or Ingress (ALB) service. For more information, see [Planning in-cluster and external networking for apps](/docs/openshift?topic=openshift-cs_network_planning).
 | Storage | You can choose from non-persistent and persistent storage solutions such as file, block, object, and software-defined storage. For more information, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning). |
 | User access | To create classic infrastructure clusters, you must set up [infrastructure credentials](/docs/openshift?topic=openshift-access-creds) for each region and resource group. To let users manage the cluster, use [{{site.data.keyword.cloud_notm}} IAM platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles). To grant users access to cluster resources, use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles), which correspond with Kubernetes RBAC roles. |

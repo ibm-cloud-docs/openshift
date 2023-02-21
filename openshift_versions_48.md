@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-21"
 
 keywords: openshift, version, update, upgrade
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # 4.8 version information and update actions
 {: #cs_versions_48}
 
-Review information about version 4.8 of {{site.data.keyword.openshiftlong_notm}}, released 29 Sep 2021. This version is based on Kubernetes version 1.21. 
+Review information about version 4.8 of {{site.data.keyword.openshiftlong_notm}}, released 29 Sept 2021. This version is based on Kubernetes version 1.21. 
 {: shortdesc}
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat OpenShift on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_changelog).

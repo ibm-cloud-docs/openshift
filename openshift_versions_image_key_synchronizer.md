@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -50,7 +50,7 @@ Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Imag
 {: #1_0_1269}
 
 - Updates `go` version to 1.19.4.
-- Addes security context changes.
+- Adds security context changes.
 
 ### Version 1.0.0_1200, released on 27 October 2022
 {: #1_0_1200}

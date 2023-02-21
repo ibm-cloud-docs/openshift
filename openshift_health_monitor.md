@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-21"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -79,8 +79,8 @@ The following metrics can be monitored for {{site.data.keyword.openshiftlong}} c
 Want to set up storage monitoring alerts for platforms such as email or Slack? See [Sending notifications to external systems](https://docs.openshift.com/container-platform/4.10/monitoring/managing-alerts.html#sending-notifications-to-external-systems_managing-alerts){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
 {: tip}
 
-Before monitoring metrics for {{site.data.keyword.block_storage_is_short}} you must have a cluster with the {{site.data.keyword.block_storage_is_short}} add-on enabled and you must have a {{site.data.keyword.block_storage_is_short}} volume attached to a worker node. {{site.data.keyword.openshiftlong}} Storage Metrics are only populated for mounted storage volumes.
-{: note}
+Before monitoring metrics for {{site.data.keyword.block_storage_is_short}}, you must have a cluster with the {{site.data.keyword.block_storage_is_short}} add-on enabled and you must have a {{site.data.keyword.block_storage_is_short}} volume attached to a worker node. {{site.data.keyword.openshiftlong}} Storage Metrics are populated only for mounted storage volumes.
+
 
 1. Navigate to the {{site.data.keyword.redhat_openshift_notm}} web console and select **Monitoring** and then **Metrics**. 
 
@@ -91,11 +91,12 @@ Before monitoring metrics for {{site.data.keyword.block_storage_is_short}} you m
     {: pre}
 
     Example output
-  
-    | endpoint | instance | job | metrics_path | namespace | node | persistentvolumeclaim | prometheus | service | Value |
-    | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-    | https-metrics | 11.111.1.1:10250 | kubelet | /metrics | default | 11.111.1.1 | PVC-NAME | openshift-monitoring/k8s | kubelet | 0.003596851526321722 | 
-    {: caption="Table 1. Example output for monitoring metrics " caption-side="bottom"}
+    
+    ```sh
+    endpoint       instance      job     metrics_path  namespace  node         persistentvolumeclaim  prometheus               service  value 
+    https-metrics  11.111.1.1:XX kubelet /metrics      default    11.111.1.1   PVC-NAME               openshift-monitoring/k8s kubelet  0.003596851526321722
+    ```
+    {: screen}
 
 For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.10/monitoring/monitoring-overview.html){: external}.
 

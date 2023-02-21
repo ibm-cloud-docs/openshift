@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-21"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -216,7 +216,7 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 The following features and operators are not supported in {{site.data.keyword.openshiftlong_notm}}.
 
 * 3scale 
-* 3scale APIcast 
+* 3scale `APIcast`
 * Advanced Cluster Management
 * Advanced Cluster Security 
 * AMQ Broker 
@@ -249,7 +249,7 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 * Performance Add-on Operator 
 * PTP Operator
 * Quay Operator
-* Red Hat OpenStack Platform Kuryr Integration
+* Red Hat OpenStack Platform `Kuryr` Integration
 * Red Hat Integration Operator 
 * Service Registry Operator 
 * Smart Gateway Operator

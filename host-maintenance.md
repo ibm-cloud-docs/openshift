@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: maintenance, host maintenance, notification, workers, offline
 
@@ -80,7 +80,7 @@ Follow the steps to reboot the worker before the maintenance period begins.
     ```
     {: pre}
 
-4. Mark the worker as schedulable.
+4. Mark the worker as available to be scheduled.
     ```sh
     oc uncordon <worker_id>
     ```
@@ -112,7 +112,7 @@ For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
     ```
     {: pre}
 
-4. Mark the worker as schedulable.
+4. Mark the worker as available to be scheduled.
     ```sh
     oc uncordon <worker_id>
     ```

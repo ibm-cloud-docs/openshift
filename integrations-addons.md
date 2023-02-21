@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-21"
 
 keywords: kubernetes, openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 # Adding services by using managed add-ons
 {: #managed-addons}
 
-Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such asthe Diagnostics and Debug Tool, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
+Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such as the Diagnostics and Debug Tool, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
 The managed add-ons that you can install in your cluster depend on the type of cluster, the container platform, and the infrastructure provider that you choose.

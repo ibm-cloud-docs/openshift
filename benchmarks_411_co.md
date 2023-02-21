@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-21"
 
 keywords: openshift, benchmarks, 4.11, compliance operator, compliance
 
@@ -207,7 +207,7 @@ to perform automated check for worker node configuration.
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.7.1|Create administrative boundaries between resources by using namespaces. |Manual|1|Not checked |
-| 5.7.2|Ensure that the seccomp profile is set to `docker/default` in your pod definitions. |Manual|2|Not checked |
+| 5.7.2|Ensure that the `seccomp` profile is set to `docker/default` in your pod definitions. |Manual|2|Not checked |
 | 5.7.3|Apply security context to your pods and containers. |Manual|2|Not checked |
 | 5.7.4|Do not use the default namespace. |Automated|2|Not checked |
 {: caption="Section 5.7 General policies benchmark results"}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -205,7 +205,7 @@ Setting up cross-account encryption by using a KMS in a different account is sup
     After the KMS provider is enabled in the cluster, all cluster secrets are automatically encrypted.
     {: note}
 
-1. **Clusters that run version 3.11**: Exising secrets are not automatically encrypted and need to be rewritten to be encrypted.
+1. **Clusters that run version 3.11**: Existing secrets are not automatically encrypted and need to be rewritten to be encrypted.
     1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
     1. With `cluster-admin` access, rewrite the secrets.
         ```sh
@@ -249,7 +249,7 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
     After the KMS provider is enabled in the cluster, all cluster secrets are automatically encrypted.
     {: note}
 
-1. **Clusters that run version 3.11**: Exising secrets are not automatically encrypted and need to be rewritten to be encrypted.
+1. **Clusters that run version 3.11**: Existing secrets are not automatically encrypted and need to be rewritten to be encrypted.
     1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
     2. With `cluster-admin` access, rewrite the secrets.
         ```sh
@@ -399,7 +399,7 @@ The encryption for the disks of the worker nodes in your worker pool are now man
 ### {{site.data.keyword.satelliteshort}} worker nodes
 {: #worker-encryption-satellite}
 
-**{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unecrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a Kubernetes secret in your cluster. When you reload or update your worker nodes, the LUKS keys are rotated.
+**{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unencrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a Kubernetes secret in your cluster. When you reload or update your worker nodes, the LUKS keys are rotated.
 
 
 You can't manage the encryption of the LUKS key with your own KMS provider because KMS provider integration is not supported.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -260,7 +260,7 @@ If you deployed ODF by using a CRD, you can update your ODF deployment by editin
     ```
     {: pre}
 
-1. Edit the ocscluster and set the `OcsUpgrade` parameter to `true`.
+1. Edit the `OcsCluster` and set the `OcsUpgrade` parameter to `true`.
     ```yaml
     ...
     spec:
