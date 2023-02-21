@@ -43,6 +43,11 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 5.1
 {: #051_is_block}
 
+### Change log for version 5.1.2_1828, released 21 February 2023
+{: #5.1.2-1828_is_block_relnote}
+
+- Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
+
 ### Change log for version 5.1, released 9 February 2023
 {: #5.1_is_block_relnote}
 
@@ -63,6 +68,12 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
 
+### Change log for version 5.0.7_1836, released 21 February 2023
+{: #5.0.7-1836_is_block_relnote}
+
+- Added `priorityClass` in the deployment file for controller and node pods.
+- Removed `preStop hook` for the `csi-driver-registrar`.
+- Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
 
 
 
@@ -167,6 +178,11 @@ Adds snapshot support.
 
 ## Version 4.4
 {: #044_is_block}
+
+### Change log for version 4.4.17_1829, released 21 February 2023
+{: #4.4.17_1829_is_block_relnote}
+
+- Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
 
 ### Change log for version 4.4.16_1779, released 24 January 2023
 {: #4.4.16_1779_is_block_relnote}

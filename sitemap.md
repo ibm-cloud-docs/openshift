@@ -288,6 +288,8 @@ subcollection: openshift
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.10`.
 
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
+
     * [17 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1723)
 
         * Cluster autoscaler add-on version `1.0.7_944`.
@@ -6883,9 +6885,13 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.2_1828, released 21 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.2-1828_is_block_relnote)
+
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.7_1836, released 21 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.7-1836_is_block_relnote)
 
     * [Change log for version 5.0.5_1784, released 24 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.5-1784_is_block_relnote)
 
@@ -6904,6 +6910,8 @@ subcollection: openshift
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.17_1829, released 21 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.17_1829_is_block_relnote)
 
     * [Change log for version 4.4.16_1779, released 24 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.16_1779_is_block_relnote)
 
