@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-21"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, external service missing, erresnf
 
@@ -84,7 +84,7 @@ Check the external service and create it if it doesn't exist.
     ```
     {: codeblock}
     
-1. Add the external IP addresses of your worker nodes that you retreived earlier in the `spec.externalIPs` list.
+1. Add the external IP addresses of your worker nodes that you retrieved earlier in the `spec.externalIPs` list.
 
 1. Create the service.
     ```sh

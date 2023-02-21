@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-21"
 
 keywords: COS, cloud object storage, satellite storage, object storage, satellite, satellite configurations,
 
@@ -185,7 +185,7 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
 {: #sat-storage-cos-install-cli}
 {: cli}
 
-1. Run the following commmand to install the {{site.data.keyword.cos_full_notm}} plug-in. 
+1. Run the following command to install the {{site.data.keyword.cos_full_notm}} plug-in. 
 
     ```sh
     helm install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set provider="SATELLITE" --set workerOS="redhat" --set platform="openshift" --set kube-driver-path="DRIVER-PATH" --set license=true --set cos.endpoint="ENDPOINT" --set cos.storageClass="us-smart" --namespace "ibm-object-s3fs"
