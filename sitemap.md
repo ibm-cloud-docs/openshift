@@ -4169,6 +4169,8 @@ subcollection: openshift
 
     * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
 
+* [Removing the internal image registry](/docs/openshift?topic=openshift-registry#remove-image-registry)
+
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 
 * [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
