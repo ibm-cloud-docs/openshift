@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-21"
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
 
@@ -184,7 +184,7 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
     :   Enter the number of huge pages that you want to allocate. For example: `2048`. If you don't want to enable huge pages, enter `0`. The more huge pages you allocate, the less overall memory is available to your applications.
     
     `TOPOLOGY_MANAGER_POLICY_VALUE`
-    :   Enter the topology manager policies that you want to use. The `best-effort` topology is recommened to ensure maximum scheduling availability. However, you can use other topologies for more strict requirements validation while reducing workload scheduling availability. For more information, see [Topology manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/){: external}. 
+    :   Enter the topology manager policies that you want to use. The `best-effort` topology is recommended to ensure maximum scheduling availability. However, you can use other topologies for more strict requirements validation while reducing workload scheduling availability. For more information, see [Topology manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/){: external}. 
     
     You can edit the `nodeSelector` section to only apply the configuration to a subset of your worker nodes.
     {: tip}

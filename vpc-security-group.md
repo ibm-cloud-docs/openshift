@@ -167,7 +167,6 @@ By default, traffic rules for cluster workers are covered by the randomly named 
 | Allow outbound traffic to be sent to the Virtual private endpoint gateway which is used to talk to the Kubernetes master. | ALL | - | Virtual private endpoint gateway IP addresses. The Virtual private endpoint gateway is assigned an IP address from a VPC subnet in each of the zones where your cluster has a worker node. For example, if the cluster spans 3 zones, there are up to 3 IP addresses assigned to each Virtual private endpoint gateway. To find the Virtual private endpoint gateway IPs:  \n 1. Go to the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}.  \n 2. Click **Virtual private endpoint gateways**, then select the **Region** where you cluster is located.  \n 3. Find your cluster, then click the IP addresses in the **IP Address** column to copy them. |
 | Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service. To find the IPs needed to apply this rule, see [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](#worker-node-public-service-endpoint). | TCP | OAuth port | OAuth IP addresses |
 | Allow the worker nodes to connect to the Ingress LoadBalancer. To find the IPs needed to apply this rule, see [Allow worker nodes to connect to the Ingress LoadBalancer](#vpc-security-group-loadbalancer-outbound). | TCP | 443 | Ingress load balancer IPs |
-
 {: caption="Required outbound rules for cluster worker security groups" caption-side="bottom"}
 
 

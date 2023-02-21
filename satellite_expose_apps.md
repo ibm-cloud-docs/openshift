@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-21"
 
 keywords: openshift, route, Ingress controller
 
@@ -111,7 +111,7 @@ MetalLB has two components:
    {: pre}
    
    
-7. Enable MetalLB. You can optionally limit the scope of nodes on which MetalLB speakers will be deployed by using a nodeSelector. For example, you might want to deploy MetalLB only to a worker pool where the dedicated subnet for the external IPs are available.
+7. Enable MetalLB. You can optionally limit the scope of nodes on which MetalLB speakers are deployed by using a `nodeSelector` value. For example, you might want to deploy MetalLB only to a worker pool where the dedicated subnet for the external IPs are available.
    ```sh
    cat << EOF | oc apply -f -
    apiVersion: metallb.io/v1beta1
