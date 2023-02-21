@@ -598,7 +598,7 @@ The following table shows the changes that are in the master fix pack 4.9.28_153
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.21.4 | v3.21.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.21/release-notes/#v3215){: external}. |
+| Calico | v3.21.4 | v3.21.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.21/release-notes/.#v3215){: external}. |
 | Calico Operator | v1.23.5 | v1.23.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.7){: external}. |
 | Cluster health image | v1.3.5 | v1.3.6 | Updated `Go` to version `1.17.9` and also updated the dependencies. Update `registry base image` version to `103`. |
 | Gateway-enabled cluster controller | 1669 | 1680 | Updated metadata for a rotated key. |

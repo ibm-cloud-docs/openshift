@@ -4075,7 +4075,7 @@ subcollection: openshift
 
 * [Defining custom network interfaces when creating your Location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
 
-* [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
+* [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-limit)
 
 * [Restricting NodePort service access](/docs/openshift?topic=openshift-satellite-network-customization#nodeport-restrict-access)
 

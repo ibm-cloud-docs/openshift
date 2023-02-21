@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-21"
 
 keywords: openshift, route, network, satellite
 
@@ -40,7 +40,7 @@ You can specify the `--pod-subnet` option to specify a custom subnet CIDR to pro
 You can also specify the `--service-subnet` option to specify a custom subnet CIDR to provide private IP addresses for services. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. The subnet must be at least `/24` or larger. The default value is `172.20.0.0/16`.
 
 ## Limiting access to your {{site.data.keyword.satelliteshort}} cluster
-{: #sat-network-custom-pod-network}
+{: #sat-network-custom-pod-network-limit}
 
 [After Location and cluster creation]{: tag-dark-teal}
 

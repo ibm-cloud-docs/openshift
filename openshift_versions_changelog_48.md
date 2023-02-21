@@ -333,7 +333,7 @@ The following table shows the changes that are in the master fix pack 4.8.47_157
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.21.5 | v3.21.6 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.21/release-notes/#v3216){: external}. Updated the Calico custom resource definitions to include `preserveUnknownFields: false`. |
+| Calico | v3.21.5 | v3.21.6 | See the [Calico release notes](https://docs.tigera.io/archive/v3.21/release-notes/.#v3216){: external}. Updated the Calico custom resource definitions to include `preserveUnknownFields: false`. |
 | Calico Operator | v1.23.7 | v1.23.8 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.8){: external}. |
 | Cluster health image | v1.3.9 | v1.3.10 | Updated `Go` dependencies and to `Go` version `1.18.5`. |
 | Gateway-enabled cluster controller | 1792 | 1823 | Updated to `Go` version `1.17.13`. |
@@ -569,7 +569,7 @@ The following table shows the changes that are in the master fix pack 4.8.36_155
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.20.4 | v3.21.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.21/release-notes/#v3215){: external}. |
+| Calico | v3.20.4 | v3.21.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.21/release-notes/.#v3215){: external}. |
 | Calico Operator | v1.20.6 | v1.23.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.7){: external}. |
 | Cluster health image | v1.3.5 | v1.3.6 | Updated `Go` to version `1.17.9` and also updated the dependencies. Update `registry base image` version to `103`. |
 | Gateway-enabled cluster controller | 1669 | 1680 | Updated metadata for a rotated key. |
@@ -664,7 +664,7 @@ The following table shows the changes that are in the worker node fix pack 4.8.3
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.20.3 | v3.20.4 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.20/release-notes/#v3204){: external}. |
+| Calico | v3.20.3 | v3.20.4 | See the [Calico release notes](https://docs.tigera.io/archive/v3.20/release-notes/.#v3204){: external}. |
 | Calico Operator | v1.20.5 | v1.20.6 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.20.6){: external}. |
 | Cluster health image | v1.2.21 | v1.3.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Adds Golang dependency updates. |
 | Gateway-enabled cluster controller | 1586 | 1653 | Updated to use `Go` version `1.17.7` and updated `Go` modules to fix CVEs. |
