@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-21"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -25,6 +25,9 @@ When you have consistent computing needs over time of at least one year, create 
 
 Reservations are available only for classic infrastructure worker nodes in multizone regions (MZRs). Also note that you can't enable the cluster autoscaler add-on on worker pools that use reservations.
 {: important}
+
+Reservations are available only for allowlisted accounts. For more information, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help#allowlist-access-request).
+{: preview}
 
 ## Understanding reservations
 {: #ri-about}

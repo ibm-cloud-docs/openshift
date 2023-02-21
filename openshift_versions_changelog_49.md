@@ -2,9 +2,9 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-21"
 
-keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
+keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
 subcollection: openshift
 
@@ -68,7 +68,7 @@ The following table shows the changes that are in the master fix pack 4.9.54_157
 | Calico Operator | v1.25.13 | v1.27.17 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.17){: external}. |
 | Cluster health image | v1.3.14 | v1.3.15 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1257 | 1280 | Publish s390x image. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.4 | v2.3.6 | Updated `UBI images` to `8.7-1031` |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.4 | v2.3.6 | Updated universal base image (UBI) to `8.7-1031` |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.16-1 | v1.22.17-2 | Updated to support the `Kubernetes 1.22.17` release. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 421 | 425 | Fixes for Fixing [CVE-2022-40303](https://nvd.nist.gov/vuln/detail/CVE-2022-40303){: external} and [CVE-2022-40304](https://nvd.nist.gov/vuln/detail/CVE-2022-40303){: external}. |
 | Key Management Service provider | v2.5.12 | v2.5.13 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
@@ -200,7 +200,7 @@ The following table shows the changes that are in the master fix pack 4.9.51_156
 | --- | --- | --- | --- |
 | Calico | v3.22.4 | v3.22.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.22/release-notes/#v3225){: external}. |
 | Calico Operator | v1.25.11 | v1.25.13 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.13){: external}. |
-| Cluster health image | v1.3.12 | v1.3.13 | Updated Go dependencies, golangci-lint, gosec, and to `Go` version 1.19.3. Updated base image version to 116. |
+| Cluster health image | v1.3.12 | v1.3.13 | Updated Go dependencies, `golangci-lint`, `gosec`, and to `Go` version 1.19.3. Updated base image version to 116. |
 | etcd | v3.4.18 | v3.4.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.21){: external}. |
 | Gateway-enabled cluster controller | 1823 | 1902 | `Go` module updates. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1096 | 1213 | Updated image to fix the following CVEs: [CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external}, [CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external}, [CVE-2022-3515](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3515){: external}, [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}, [CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external}, [CVE-2022-32149](https://nvd.nist.gov/vuln/detail/CVE-2022-32149){: external}. |
@@ -496,7 +496,7 @@ The following table shows the changes that are in the master fix pack 4.9.37_154
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.4 | v2.2.6 | Bug fixes for the driver installation. Block plugin base images were updated to `ubi`: `8.6-751.1655117800` for CVE-2022-1271 |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.4 | v2.2.6 | Bug fixes for the driver installation. Block plug-in base images were updated to universal base image (UBI) `8.6-751.1655117800` for CVE-2022-1271 |
 | Calico | v3.21.5 | v3.22.2 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.22/release-notes/#v3222){: external}. |
 | Calico Operator | v1.23.7 | v1.25.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.7){: external}. |
 | Cluster health image | v1.3.7 | v1.3.8 | Updated `Go` to version `1.17.11` and also updated the dependencies. |
@@ -546,7 +546,7 @@ The following table shows the changes that are in the master fix pack 4.9.33_154
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.3.6 | v1.3.7 | Updated `Go` to version `1.17.10` and also updated the dependencies. Update registry base image version to `104` |
-| {{site.data.keyword.IBM_notm}} Calico extension | 954 | 980 | Updated to use `Go` version `1.17.10`. Updated minimal UBI to version `8.5`. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 954 | 980 | Updated to use `Go` version `1.17.10`. Updated minimal universal base image (UBI) to version `8.5`. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.2 | v2.2.4 | Updated universal base image (UBI) to version `8.6-751` to resolve CVEs. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.8-7 | v1.22.10-1 | Updated to support the Kubernetes `1.22.10` release. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 408 | 410 | Updated universal base image (UBI) to version `8.6-751` to resolve CVEs. |
@@ -598,12 +598,12 @@ The following table shows the changes that are in the master fix pack 4.9.28_153
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.21.4 | v3.21.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.21/release-notes/#v3215){: external}. |
+| Calico | v3.21.4 | v3.21.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.21/release-notes/.#v3215){: external}. |
 | Calico Operator | v1.23.5 | v1.23.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.7){: external}. |
 | Cluster health image | v1.3.5 | v1.3.6 | Updated `Go` to version `1.17.9` and also updated the dependencies. Update `registry base image` version to `103`. |
 | Gateway-enabled cluster controller | 1669 | 1680 | Updated metadata for a rotated key. |
-| {{site.data.keyword.IBM_notm}} Calico extension | 950 | 954 | Updated to latest UBI-minimal image to resolve [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}, [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}, [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}, [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}, and [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.1 | v2.2.2 | Updated `ubi images` to `8.5-240.1648458092` |
+| {{site.data.keyword.IBM_notm}} Calico extension | 950 | 954 | Updated to latest minimal universal base image (UBI) to resolve [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}, [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}, [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}, [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}, and [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.1 | v2.2.2 | Updated universal base image (UBI) to `8.5-240.1648458092` |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.8-3 | v1.22.8-7 | Updated `vpcctl` to the `3003` binary image. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 407 | 408 | Fixed [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778){: external}. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 6c43ef1 | 8c8c82b | Updated `Go` to version `1.17.8` |
@@ -650,13 +650,13 @@ The following table shows the changes that are in the worker node fix pack 4.9.2
 | --- | --- | --- | --- |
 | Cluster health image | v1.3.3 | v1.3.5 | Update golang dependencies.  Update image to version 102 to fix CVEs [CVE-2021-3999](https://access.redhat.com/security/cve/cve-2021-3999){: external}, [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external} |
 | IBM Calico extension | 929 | 950 | Updated to use `Go` version `1.17.8`. Updated universal base image (UBI) to resolve CVEs. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.1.7 | v2.2.1 | Bug fixes for driver installation issues.  Updated ubi images to `8.5-240` and updated `Go` to version to `1.16.15`.  Fixes for CVEs. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.1.7 | v2.2.1 | Bug fixes for driver installation issues.  Updated universal base image (UBI) to `8.5-240` and updated `Go` to version to `1.16.15`.  Fixes for CVEs. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.7-2 | v1.22.8-3 | Updated to support the Kubernetes 1.22.8 release and to use Go version 1.16.15. |
-| {{site.data.keyword.cloud_notm}} File Storage plug-in and monitor | 405 | 407 | Updated `Go` to version `1.16.14`.  Updated `UBI` image to version `8.5-240`. |
+| {{site.data.keyword.cloud_notm}} File Storage plug-in and monitor | 405 | 407 | Updated `Go` to version `1.16.14`.  Updated universal base image (UBI) to version `8.5-240`. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 0fc9949 | 6c43ef1 | Upgraded `Go` packages to resolve vulnerabilities |
 | Gateway-enabled cluster controller | 1653 | 1669 | Updated to use `Go` version `1.17.8`. |
 | Key Management Service provider | v2.5.2 | v2.5.3 | Updated to use `Go` version `1.17.8`. Updated golang dependencies.  Fixed CVE [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external} |
-| Load balancer and Load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1747 | 1899 | Revert setting gratuitous arp on LBv1.  Updated the image to resolve CVEs. Updated to use `Go` version `1.17.8`. |
+| Load balancer and Load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1747 | 1899 | Revert setting gratuitous `ARP` on LBv1.  Updated the image to resolve CVEs. Updated to use `Go` version `1.17.8`. |
 | Red Hat OpenShift | 4.9.21 | 4.9.25 | See the [Red Hat OpenShift release notes](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-25){: external} |
 | Red hat OpenShift Control Plane Operator | v4.9.0-20220222 | v4.9.0-20220322 | See the [Red Hat OpenShift on {{site.data.keyword.cloud_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20220322){: external}. |
 | Red Hat OpenShift on {{site.data.keyword.cloud_notm}} Metrics Server | v4.9.0-20220222 | v4.9.0-20220322 | See the [Red Hat OpenShift on {{site.data.keyword.cloud_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0+20220322){: external}. |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-21"
 
 keywords: block, add-on, changelog
 
@@ -43,6 +43,11 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 5.1
 {: #051_is_block}
 
+### Change log for version 5.1.2_1828, released 21 February 2023
+{: #5.1.2-1828_is_block_relnote}
+
+- Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
+
 ### Change log for version 5.1, released 9 February 2023
 {: #5.1_is_block_relnote}
 
@@ -63,6 +68,12 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 Version 5.0.0 is available in for allowlisted accounts.
 {: preview}
 
+### Change log for version 5.0.7_1836, released 21 February 2023
+{: #5.0.7-1836_is_block_relnote}
+
+- Added `priorityClass` in the deployment file for controller and node pods.
+- Removed `preStop hook` for the `csi-driver-registrar`.
+- Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
 
 
 
@@ -122,8 +133,8 @@ Version 5.0.0 is available in for allowlisted accounts.
 - Adds the following parameters for customizing the driver.
     - `AttachDetachMinRetryGAP: "3"`: The initial retry interval for checking Attach/Detach Status. The default is 3 seconds.
     - `AttachDetachMinRetryAttempt: "3"`: The number of attempts for AttachDetachMinRetryGAP. The default is 3 retries for 3 seconds retry gap.
-    - `AttachDetachMaxRetryAttempt: "46"`: Total number of retries for checking Attach/Detach Status. Default is 46 times i.e ~7 mins (3 secs * 3 times + 6 secs * 6 times + 10 secs * 10 times).
-    - `AttacherWorkerThreads: "15"`: The number of goroutines for processing VolumeAttachments.
+    - `AttachDetachMaxRetryAttempt: "46"`: Total number of retries for checking Attach/Detach Status. Default is 46 times. For example,  ~7 minutes (3 secs * 3 times + 6 secs * 6 times + 10 secs * 10 times).
+    - `AttacherWorkerThreads: "15"`: The number of `goroutines` for processing VolumeAttachments.
     - `AttacherKubeAPIBurst: "10"`: The number of requests to the Kubernetes API server, exceeding the QPS, that can be sent at any given time
     - `AttacherKubeAPIQPS: "5.0"`: The number of requests per second sent by a Kubernetes client to the Kubernetes API server.
 - Disables the `handle-volume-inuse-error` option as this is applies to CSI drivers that support offline expansion only.
@@ -167,6 +178,11 @@ Adds snapshot support.
 
 ## Version 4.4
 {: #044_is_block}
+
+### Change log for version 4.4.17_1829, released 21 February 2023
+{: #4.4.17_1829_is_block_relnote}
+
+- Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
 
 ### Change log for version 4.4.16_1779, released 24 January 2023
 {: #4.4.16_1779_is_block_relnote}
@@ -325,7 +341,7 @@ Adds snapshot support.
 - Updates the `storage-secret-sidecar` image to `v1.1.10`
 - Fixes Volume provisioning failure when in StorageClass Region is provided without zone info
 - Fixes an issue where volume creation fails if only `failure-domain.beta.kubernetes.io/zone` is given in `allowedTopologies`
-- `Region` support is now *DEPRECATED* in the storage class. Providing "region" detail in storage classes is deprecated in this release, this will not cause any issues with either existing PVC or new PVC. For now the default behaviour is to get the region detail from the node label only which is now mandatory for all cases.
+- `Region` support is now *DEPRECATED* in the storage class. Providing "region" detail in storage classes is deprecated in this release, this will not cause any issues with either existing PVC or new PVC. For now the default behavior is to get the region detail from the node label only which is now mandatory for all cases.
 
 ## Version 4.2
 {: #042_is_block}
@@ -549,7 +565,7 @@ Review the changes in version `3.0.1` of the {{site.data.keyword.block_storage_i
 ### Change log for version 3.0.1, released 15 July 2021
 {: #301_init}
 
-Review the changelog for version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the change log for version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
 
 Volume expansion in version `3.0.1` is available in beta for allowlisted accounts. Don't use this feature for production workloads.
 {: beta}

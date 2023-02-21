@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -235,7 +235,7 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
 
 Create a persistent volume claim (PVC) to [statically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster. 
 
-Before you can create a persistent volume (PV), you have to retreive details about your file share.
+Before you can create a persistent volume (PV), you have to retrieve details about your file share.
 
 1. Get the ID for your file share.
     ```sh

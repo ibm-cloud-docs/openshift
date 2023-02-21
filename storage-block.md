@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -39,7 +39,7 @@ The steps on this page apply to classic clusters only. On VPC clusters, the {{si
 
 
 
-## Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}
+## Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}
 {: #block_qs}
 
 In this quickstart guide, you create a 24Gi silver tier {{site.data.keyword.blockstorageshort}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
@@ -1259,7 +1259,7 @@ Complete the following steps to verify that all existing stateful sets in your c
     `matchLabels`
     :   In the spec selector section, enter all labels that you want to include in your stateful set and your PVC. Labels that you include in the `volumeClaimTemplates` of your stateful set are not recognized by Kubernetes. Sample labels that you might want to include are: 
         - **region** and **zone**: If you want all your stateful set replicas and PVCs to be created in one specific zone, add both labels. You can also specify the zone and region in the storage class that you use. If you don't specify a zone and region and you have a multizone cluster, the zone in which your storage is provisioned is selected on a round-robin basis to balance volume requests evenly across all zones.
-        - **billingType**: Enter the billing type that you want to use for your PVCs. Choose between `hourly` or `monthly`. If you don't specify this label, all PVCs are created with an hourly billing type.
+        - **`billingType`**: Enter the billing type that you want to use for your PVCs. Choose between `hourly` or `monthly`. If you don't specify this label, all PVCs are created with an hourly billing type.
     
     `labels`
     :   In the spec template metadata section, enter the same labels that you added to the `spec.selector.matchLabels` section. 

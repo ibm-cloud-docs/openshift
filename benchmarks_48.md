@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-21"
 
 keywords: openshift, benchmarks, 4.8
 
@@ -280,7 +280,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.6.1 | Create administrative boundaries between resources using namespaces. | Not Scored | 1 | Pass | Shared |
-| 5.6.2 | Ensure that the seccomp profile is set to docker/default in your pod definitions. | Not Scored | 2 | [Fail](#cis-benchmark-remediations-48) | Shared |
+| 5.6.2 | Ensure that the `seccomp` profile is set to docker/default in your pod definitions. | Not Scored | 2 | [Fail](#cis-benchmark-remediations-48) | Shared |
 | 5.6.3 | Apply Security Context to Your Pods and Containers. | Not Scored | 2 | [Fail](#cis-benchmark-remediations-48) | Shared |
 | 5.6.4 | The default namespace should not be used. | Scored | 2 | Pass | Shared |
 {: caption="Section 5.6 General policies benchmark results" caption-side="bottom"}
@@ -327,8 +327,8 @@ Review information from IBM on the CIS Benchmark results.
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
 | 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
-| 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
+| 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 {: caption="Explanation and remediation" caption-side="bottom"}
 
 

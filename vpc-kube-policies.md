@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-02-21"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -99,7 +100,7 @@ Traffic can now flow from the front end to the back end, and from the back end t
 The following scenario demonstrates how to manage traffic between app microservices across multiple namespaces.
 {: shortdesc}
 
-Services that are owned by different subteams need to communicate, but the services are deployed in different namespaces within the same cluster. The Accounts team deploys front end, back end, and database services for the app Srv1 in the accounts namespace. The Finance team deploys front end, back end, and database services for the app Srv2 in the finance namespace. Both teams label each service with the `app: Srv1` or `app: Srv2` label and the `tier: frontend`, `tier: backend`, or `tier: db` label. They also label the namespaces with the `usage: accounts` or `usage: finance` label.
+Services that are owned by different sub teams need to communicate, but the services are deployed in different namespaces within the same cluster. The Accounts team deploys front end, back end, and database services for the app Srv1 in the accounts namespace. The Finance team deploys front end, back end, and database services for the app Srv2 in the finance namespace. Both teams label each service with the `app: Srv1` or `app: Srv2` label and the `tier: frontend`, `tier: backend`, or `tier: db` label. They also label the namespaces with the `usage: accounts` or `usage: finance` label.
 
 ![Use a network policy to manage cross-namepspace traffic.](images/cs_network_policy_multi_ns.png){: caption="Figure 2. Use a network policy to manage cross-namespace traffic" caption-side="bottom"}
 

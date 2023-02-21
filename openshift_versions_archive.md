@@ -2,9 +2,9 @@
 
 copyright:
  years: 2014, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-21"
 
-keywords: openshift, changelog, version, unsupported, supported, deprecated
+keywords: openshift, change log, version, unsupported, supported, deprecated
 
 subcollection: openshift
 
@@ -126,7 +126,7 @@ The following table shows the changes that are in the worker node fix pack patch
 | Registry endpoints | Added ability to access all global registries for private service enabled clusters through the public domain. Added zonal public registry endpoints for clusters with both private and public service endpoints enabled. |
 | Read only disk self healing | For VPC Gen2 workers. Added automation to recover from disks going read only. |
 | RHEL 7 Packages | 3.10.0-1160.31.1 | 3.10.0-1160.36.2 | Updated worker node images & Kernel with package updates: [CVE-2019-20934](https://nvd.nist.gov/vuln/detail/CVE-2019-20934){: external}, [CVE-2020-11668](https://nvd.nist.gov/vuln/detail/CVE-2020-11668){: external}, [CVE-2021-33033](https://nvd.nist.gov/vuln/detail/CVE-2021-33033){: external}, [CVE-2021-33034](https://nvd.nist.gov/vuln/detail/CVE-2021-33034){: external}, [CVE-2021-33909](https://nvd.nist.gov/vuln/detail/CVE-2021-33909){: external}. |
-| OpenShift Container Platform | 4.6.38 |4.6.40 | See [changelogs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-40){: external}. |
+| OpenShift Container Platform | 4.6.38 |4.6.40 | See [change logs](https://docs.openshift.com/container-platform/4.6/release_notes/ocp-4-6-release-notes.html#ocp-4-6-40){: external}. |
 {: caption="Changes since version 4.5.41_1545_openshift" caption-side="bottom"}
 
 ### Change log for fix pack 4.5.41_1546_openshift, released 27 July 2021
@@ -453,7 +453,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.0.0 | v2.0.1 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.18.14-1 | v1.18.15-3 | Updated to support the Kubernetes 1.18.15 release and to implement additional IBM security controls. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 384 | 385 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
-| Key Management Service provider | v2.2.2 | v2.2.3 | Fixed bug to ignore conflict errors during KMS secret reencryption. Updated to use `Go` version 1.15.5. Updated image to implement additional IBM security controls and for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external}. |
+| Key Management Service provider | v2.2.2 | v2.2.3 | Fixed bug to ignore conflict errors during KMS secret re-encryption. Updated to use `Go` version 1.15.5. Updated image to implement additional IBM security controls and for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external}. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1004 | 1078 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | N/A | N/A | Updated to implement additional IBM security controls. |
 | {{site.data.keyword.redhat_openshift_notm}} Control Plane Operator | v4.5.0-20201210 | v4.5.0-20210112 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20210112){: external}. Updated to implement additional IBM security controls. |
@@ -641,16 +641,16 @@ The following table shows the changes that are in the `4.5.13_1515_openshift` ve
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 208 | 234 | Improved startup performance of version 2.0 private network load balancers (NLBs). Updated to use `Go` version 1.15.2. |
 | {{site.data.keyword.redhat_openshift_notm}} Control Plane Operator | v4.4.0-20200821 | v4.5.0-20201009 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.4.20 | 4.5.13 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.5/release_notes/ocp-4-5-release-notes.html#ocp-4-5-13){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} configuration | N/A | N/A | New version 4.5 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
+| {{site.data.keyword.redhat_openshift_notm}} configuration | N/A | N/A | New version 4.5 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxy for version 4.5 clusters that were updated from a previous version, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
 | OpenVPN Operator image | v1.0.8 | v1.0.9 | Updated to improve OpenVPN availability. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | N/A | v4.5.0-20201009 | **New!**: {{site.data.keyword.openshiftlong_notm}} now provides custom cluster metrics. See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.4.0+20200821 | 4.5.0+20201009 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.5.0+20201009){: external}. |
 {: caption="Changes since version 4.4.20_1518_openshift" caption-side="bottom"}
 
-## Version 4.4 changelog (unsupported as of 31 May 2021)
+## Version 4.4 change log (unsupported as of 31 May 2021)
 {: #version-44}
 
-Version 4.4 is unsupported. You can review the following archive of the 4.4 changelogs.
+Version 4.4 is unsupported. You can review the following archive of the 4.4 change logs.
 {: shortdesc}
 
 ### Change log for worker node fix pack 4.4.33_1544_openshift, released 24 May 2021
@@ -848,7 +848,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.0.0 | v2.0.1 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.16-1 | v1.17.17-1 | Updated to support the Kubernetes 1.17.17 release. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 384 | 385 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
-| Key Management Service provider | v2.2.2 | v2.2.3 | Fixed bug to ignore conflict errors during KMS secret reencryption. Updated to use `Go` version 1.15.5. Updated image to implement additional IBM security controls and for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external}. |
+| Key Management Service provider | v2.2.2 | v2.2.3 | Fixed bug to ignore conflict errors during KMS secret re-encryption. Updated to use `Go` version 1.15.5. Updated image to implement additional IBM security controls and for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external}. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1004 | 1078 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} Control Plane Operator | v4.4.0-20201210 | v4.4.0-20210112 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20210112){: external}. |
 | OpenVPN Operator image | v1.0.12 | v1.1.0 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external}. |
@@ -1004,7 +1004,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.12-1 | v1.17.13-1 | Updated to support the Kubernetes 1.17.13 release. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 4b47693 | 31c794a | Updated to use `Go` version 1.15.2. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.4.20 | 4.4.27 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-27){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} configuration | N/A | N/A | New version 4.4 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for existing version 4.4 clusters, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
+| {{site.data.keyword.redhat_openshift_notm}} configuration | N/A | N/A | New version 4.4 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxy for existing version 4.4 clusters, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
 | OpenVPN Operator image | v1.0.8 | v1.0.9 | Updated to improve OpenVPN availability. |
 {: caption="Changes since version 4.4.20_1518_openshift" caption-side="bottom"}
 
@@ -1083,7 +1083,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Master proxy | 1.8.25-384f42 | 1.8.26-561f1a | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. |
+| Master proxy | 1.8.25-384f42 | 1.8.26-561f1a | See the [HAProxy change logs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.4.16 | 4.4.18 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-4-18){: external}.|
 | RHEL 7 packages | 3.10.0-1127.18.2.el7 | 3.10.0-1127.19.1.el7 | Updated worker node image with kernel and package updates. |
 {: caption="Changes since version 4.4.16_1513_openshift" caption-side="bottom"}
@@ -1119,7 +1119,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Kubernetes configuration | N/A | N/A | The Kubernetes API server audit policy configuration is updated to include auditing of all API groups except `apiregistration.k8s.io` and `coordination.k8s.io`. |
 | {{site.data.keyword.redhat_openshift_notm}} Control Plane Operator | v4.4.0-20200615 | v4.4.0-20200805 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200805){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.4.11 | 4.4.16 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-16){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} toolkit |  v4.4.0+20200615 | v4.4.0+20200805| See the [{{site.data.keyword.openshiftlong_notm}}toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200805){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit |  v4.4.0+20200615 | v4.4.0+20200805| See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200805){: external}. |
 | OpenVPN Operator image | v1.0.6 | v1.0.7 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external}. |
 {: caption="Changes since version 4.4.11_1511_openshift" caption-side="bottom"}
 
@@ -1155,8 +1155,8 @@ The following table shows the changes that are in the `4.4.11_1511_openshift` ve
 
 | Component | Location | Previous | Current | Description |
 | --- | --- | --- | --- | --- |
-| CRI-O | Worker | 1.16.6 | 1.17.4 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.17.4){: external}. |
-| Master Proxy | Worker | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
+| CRI-O | Worker | 1.16.6 | 1.17.4 | See the [CRI-O change logs](https://github.com/cri-o/cri-o/releases/tag/v1.17.4){: external}. |
+| Master Proxy | Worker | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy change logs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
 | Key Management Service provider | Master | N/A | v1.0.0 | **New!**: {{site.data.keyword.openshiftlong_notm}} version 4.4 clusters now support [Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms). |
 | {{site.data.keyword.redhat_openshift_notm}} Control Plane Operator | Master | v4.3.0-20200615 | v4.4.0-20200615 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200615){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | Both | Master 4.3.28  \n Worker 4.3.29 | 4.4.11 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.4/release_notes/ocp-4-4-release-notes.html#ocp-4-4-11){: external}. |
@@ -1164,10 +1164,10 @@ The following table shows the changes that are in the `4.4.11_1511_openshift` ve
 | {{site.data.keyword.openshiftlong_notm}} toolkit | Master | 4.3.0+20200615 | 4.4.0+20200615 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.4.0+20200615){: external}. |
 {: caption="Changes since version 4.3.28_1532_openshift" caption-side="bottom"}
 
-## Version 4.3 changelog (unsupported as of 7 March 2021)
+## Version 4.3 change log (unsupported as of 7 March 2021)
 {: #version-43}
 
-Version 4.3 is unsupported. You can review the following archive of the 4.3 changelogs.
+Version 4.3 is unsupported. You can review the following archive of the 4.3 change logs.
 {: shortdesc}
 
 ### Change log for worker node fix pack 4.3.40_1555_openshift, released 1 March 2021
@@ -1378,7 +1378,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.17.12-1 | v1.17.13-1 | Updated to support the Kubernetes 1.17.13 release. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 4b47693 | 31c794a | Updated to use `Go` version 1.15.2. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.3.35 | 4.3.38 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-38){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} configuration | N/A | N/A | New version 4.3 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxying for existing version 4.3 clusters, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
+| {{site.data.keyword.redhat_openshift_notm}} configuration | N/A | N/A | New version 4.3 clusters that run on the VPC infrastructure provider and use {{site.data.keyword.cos_full_notm}} now proxy container image traffic through the internal registry pods directly to the {{site.data.keyword.cos_short}} endpoints. To configure this proxy for existing version 4.3 clusters, see [the troubleshooting topic](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push). |
 | OpenVPN Operator image | v1.0.8 | v1.0.9 | Updated to improve OpenVPN availability. |
 {: caption="Changes since version 4.3.35_1539_openshift" caption-side="bottom"}
 
@@ -1454,7 +1454,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Master proxy | 1.8.25-384f42 | 1.8.26-561f1a | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. |
+| Master proxy | 1.8.25-384f42 | 1.8.26-561f1a | See the [HAProxy change logs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.3.31 | 4.3.33 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-33){: external}.|
 | RHEL 7 packages |  3.10.0-1127.18.2.el7 | 3.10.0-1127.19.1.el7 | Updated worker node image with kernel and package updates. |
 {: caption="Changes since version 4.3.31_1534_openshift" caption-side="bottom"}
@@ -1488,7 +1488,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Kubernetes configuration | N/A | N/A | The Kubernetes API server audit policy configuration is updated to include auditing of all API groups except `apiregistration.k8s.io` and `coordination.k8s.io`. |
 | {{site.data.keyword.redhat_openshift_notm}} Control Plane Operator | v4.3.0-20200615 | v4.3.0-20200709 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.3.0+20200709){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.3.28 | 4.3.31 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-31){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} toolkit | v4.3.0+20200615 | v4.3.0+20200709 | See the [{{site.data.keyword.openshiftlong_notm}}toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.3.0+20200709){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} toolkit | v4.3.0+20200615 | v4.3.0+20200709 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.3.0+20200709){: external}. |
 | OpenVPN Operator image | v1.0.6 | v1.0.7 | Updated image for [CVE-2020-12049](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12049){: external}. |
 {: caption="Changes since version 4.3.29_1533_openshift" caption-side="bottom"}
 
@@ -1540,7 +1540,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Master Proxy | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy changelogs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
+| Master Proxy | 2.0.15-afe432 | 1.8.25-384f42 | See the [HAProxy change logs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Fixes a connection leak that happens when HAProxy is under high load. |
 | RHEL 7 Packages |  N/A | N/A | Updated worker node images with package updates for [CVE-2020-12049](https://nvd.nist.gov/vuln/detail/CVE-2020-12049){: external}.|
 | {{site.data.keyword.redhat_openshift_notm}} | 4.3.27 | 4.3.29 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-29){: external}. |
 {: caption="Changes since version 4.3.27_1528_openshift" caption-side="bottom"}
@@ -1553,7 +1553,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Master Proxy | 1.8.25-30b675 | 2.0.15-afe432 | See the [HAProxy changelogs](https://www.haproxy.org/download/2.0/src/CHANGELOG){: external}. |
+| Master Proxy | 1.8.25-30b675 | 2.0.15-afe432 | See the [HAProxy change logs](https://www.haproxy.org/download/2.0/src/CHANGELOG){: external}. |
 | RHEL 7 Packages | 3.10.0-1127.10.1.el7 | 3.10.0-1127.13.1.el7 | Updated worker node images with kernel package updates for [CVE-2020-10749](https://nvd.nist.gov/vuln/detail/CVE-2020-10749){: external}, [CVE-2020-1702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1702){: external}, [CVE-2016-8867](https://nvd.nist.gov/vuln/detail/CVE-2016-8867){: external}, [CVE-2020-14298](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14298){: external}, [CVE-2020-14300](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14300){: external}, [CVE-2020-12888](https://nvd.nist.gov/vuln/detail/CVE-2020-12888){: external}, [CVE-2020-11868](https://nvd.nist.gov/vuln/detail/CVE-2020-11868){: external}, and [CVE-2020-13817](https://nvd.nist.gov/vuln/detail/CVE-2020-13817){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.3.25 | 4.3.27 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-27){: external}. |
 | Worker node `drain` automation | N/A | N/A | Fixes a race condition that can cause worker node `drain` automation to fail. |
@@ -1568,7 +1568,7 @@ The following table shows the changes that are in the master fix pack update `4.
 | Component | Location | Previous | Current | Description |
 | --------- | -------- | ------- | -------- | ----------- |
 | Cluster health image | Master | v1.1.7 | v1.1.8 | Improved performance when handling cluster status updates. |
-| CRI-O | Worker | 1.16.5 | 1.16.6 | See [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.16.6){: external}. |
+| CRI-O | Worker | 1.16.5 | 1.16.6 | See [CRI-O change logs](https://github.com/cri-o/cri-o/releases/tag/v1.16.6){: external}. |
 | Gateway-enabled cluster controller | Master | N/A | N/A | Added missing Calico `deny-public-nodeport` global network policy for gateway-enabled clusters. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | Master | v1.17.6-4 | v1.17.7-1 | Updated to support the Kubernetes 1.17.7 release. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | Master | N/A | 08ce50e | **New!**: Added a control plane operator to synchronize [{{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) service access roles](/docs/openshift?topic=openshift-iam-service-access-roles) with Kubernetes role-based access control (RBAC) roles. |
@@ -1668,7 +1668,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| CRI-O | 1.16.5 | 1.16.6 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.16.6){: external}. |
+| CRI-O | 1.16.5 | 1.16.6 | See the [CRI-O change logs](https://github.com/cri-o/cri-o/releases/tag/v1.16.6){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.3.13 | 4.3.18 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-18){: external}. |
 {: caption="Changes since version 4.3.13_1521_openshift" caption-side="bottom"}
 
@@ -1680,7 +1680,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| CRI-O | 1.16.4 | 1.16.5 | See the [CRI-O changelogs](https://github.com/cri-o/cri-o/releases/tag/v1.16.5){: external}. |
+| CRI-O | 1.16.4 | 1.16.5 | See the [CRI-O change logs](https://github.com/cri-o/cri-o/releases/tag/v1.16.5){: external}. |
 | HA proxy | 1.8.25-30b675 | 1.8.25-adb65d | Update addresses [CVE-2020-1967](https://nvd.nist.gov/vuln/detail/CVE-2020-1967){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 4.3.10 | 4.3.13 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-13){: external}. |
 | RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2019-19921](https://nvd.nist.gov/vuln/detail/CVE-2019-19921){: external}. |
@@ -1694,12 +1694,12 @@ The following table shows the changes that are in the master fix pack update `4.
 
 | Component | Location | Previous | Current | Description |
 | --------- | -------- | ------- | -------- | ----------- |
-| Calico | Master | v3.8.6 | v3.12.0 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. In addition, the Calico configuration was updated to use the [Kubernetes API datastore driver](https://docs.tigera.io/calico/3.25/getting-started/kubernetes/hardway/the-calico-datastore){: external}. |
+| Calico | Master | v3.8.6 | v3.12.0 | See the [Calico release notes](https://docs.tigera.io/calico/3.25/release-notes/){: external}. In addition, the Calico configuration was updated to use the [Kubernetes API datastore driver](https://docs.tigera.io/calico/3.25/getting-started/kubernetes/hardway/the-calico-datastore){: external}. |
 | Calico operator | Master | N/A | v1.1.1 | **New!:** Added the Calico operator to manage the lifecycle of the Calico installation. See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.1.1){: external}. |
 | CRI-O | Worker | 1.11 | 1.16.4 | See the [CRI-O release notes](https://github.com/cri-o/cri-o/releases/tag/v1.16.4){: external}. |
 | etcd | Master | v3.3.18 | v3.4.3 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.3){: external}. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | Master | 1.15.4 | 1.16 | Updated to `Go` version 1.13.8 and to set container resource requests and limits. |
-| IBM Calico extension | Master | N/A | 320 | **New!:** Added a Calico node init container that creates Calico private host endpoints for worker nodes. |
+| IBM Calico extension | Master | N/A | 320 | **New!:** Added a Calico node `init` container that creates Calico private host endpoints for worker nodes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | Master | v1.15.10-252 | v1.17.4-3 | The {{site.data.keyword.cloud_notm}} Controller Manager component replaces the {{site.data.keyword.cloud_notm}} Provider component by moving the {{site.data.keyword.cloud_notm}} controllers from the Kubernetes [kube-controller-manager](https://kubernetes.io/docs/concepts/overview/components/#kube-controller-manager){: external} to the [cloud-controller-manager](https://kubernetes.io/docs/concepts/overview/components/#cloud-controller-manager){: external}) component. The {{site.data.keyword.cloud_notm}} Controller Manager is updated to support the Kubernetes 1.17.4 release, to use `distroless/static` base image version `c6d59815`, `Go` version 1.13.8, and `calicoctl` version 3.12.1. Finally, the {{site.data.keyword.cloud_notm}} Controller Manager updated version 1.0 and 2.0 network load balancers (NLBs) to prefer scheduling NLB pods on worker nodes that don't currently run any NLB pods. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | Master | 169 | 177 | Version 2.0 network load balancers (NLBs) were updated to fix problems with long-lived network connections to endpoints that failed readiness probes. |
 | {{site.data.keyword.redhat_openshift_notm}} | Master | 3.11.170 | 4.3.12 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html){: external}. |

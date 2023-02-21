@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -51,7 +52,7 @@ The debug pod is deployed with an interactive shell so that you can access the w
     ```
     {: pre}
 
-2. Create a debug pod that has host access. When the pod is created, the pod's interactive shell is automatically opened. If the `oc debug node` command fails, continue to option 2. The Docker alpine image here is used as an example. If the worker node dosen't have public network access, you can maintain a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
+2. Create a debug pod that has host access. When the pod is created, the pod's interactive shell is automatically opened. If the `oc debug node` command fails, continue to option 2. The Docker alpine image here is used as an example. If the worker node doesn't have public network access, you can maintain a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
     ```sh
     oc debug node/<NODE_NAME>
     ```
@@ -82,7 +83,7 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
     {: pre}
 
 
-3. Create a debug pod on the worker node. The Docker alpine image here is used as an example. If the worker node dosen't have public network access, you can maintain a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
+3. Create a debug pod on the worker node. The Docker alpine image here is used as an example. If the worker node doesn't have public network access, you can maintain a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
 
     ```yaml
     kubectl apply -f - << EOF
@@ -196,7 +197,7 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
     ```
     {: pre}
 
-3. Create the following YAML file for a debug pod, and save the file as `enable-ssh.yaml`. Replace `<NODE_NAME>` with the worker node name and replace the example `value` for `SSH_PUBLIC_KEY` with your public SSH key. The Docker alpine image here is used as an example. If the worker node dosen't have public network access, you can maintain a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
+3. Create the following YAML file for a debug pod, and save the file as `enable-ssh.yaml`. Replace `<NODE_NAME>` with the worker node name and replace the example `value` for `SSH_PUBLIC_KEY` with your public SSH key. The Docker alpine image here is used as an example. If the worker node doesn't have public network access, you can maintain a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
 
     ```yaml
     apiVersion: v1

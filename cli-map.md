@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -62,7 +62,7 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
             * [`ibmcloud oc cluster master private-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_enable)
             * [`ibmcloud oc cluster master private-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_get)
             * [`ibmcloud oc cluster master private-service-endpoint allowlist remove`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_rm)
-        * **`ibmcloud oc cluster master satellite-service-endpoint allowlist`**: Manage the {{site.data.keyword.satelliteshort}} service endpoint allowlist for a {{site.data.keyword.satelliteshort}}cluster with CoreOS-enabled.
+        * **`ibmcloud oc cluster master satellite-service-endpoint allowlist`**: Manage the {{site.data.keyword.satelliteshort}} service endpoint allowlist for a {{site.data.keyword.satelliteshort}} cluster with CoreOS-enabled.
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add)
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-disable)
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable)

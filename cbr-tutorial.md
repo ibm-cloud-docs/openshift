@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-21"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 
@@ -154,7 +154,7 @@ In this scenario, you allow different IP addresses or CIDRs to access the public
 
 Similar to the previous scenario, in this scenario you allow different IP addresses to access the respective public or private service endpoint for {{site.data.keyword.openshiftlong_notm}} clusters. However, in this scenario, access is further restricted by specific API types for the `cluster` and `management` APIs. For more information about the API types, see [Protecting specific APIs](/docs/containers?topic=containers-cbr&interface=cli#protect-api-types-cbr).
 
-1. Create four network zones, one for each of the IP addresses you want to allow to access either the public or private `cluster` APIs or the public or private `management` apis. Note that you can include multiple IP addresses or CIDRs, separated by a comma, that you want to allow to access your clusters. 
+1. Create four network zones, one for each of the IP addresses you want to allow to access either the public or private `cluster` APIs or the public or private `management` APIs. Note that you can include multiple IP addresses or CIDRs, separated by a comma, that you want to allow to access your clusters. 
 
     ```sh
     ibmcloud cbr zone-create --addresses 1.2.3.4,12.12.12.0/24 --description "Allowed Public IP Addresses for IKS and ROKS APIs" --name "public-mgmt-zone"

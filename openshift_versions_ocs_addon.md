@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-21"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -90,7 +90,7 @@ UBI update.
 
 Use PVC for mon on VPC.
 
-### Version 4.9.1, released 23 Febraury 2022
+### Version 4.9.1, released 23 February 2022
 {: #4.9.1_odf}
 
 Updates the UBI.
@@ -141,7 +141,7 @@ Updates Golang to 1.16.9.
 ### Version 4.7.14, released 25 October 2021
 {: #4.7.14_odf}
 
-Updateds Golang to 1.16.9.
+Updates Golang to 1.16.9.
 
 ### Version 4.7.13, released 13 October 2021
 {: #4.7.13_odf}
@@ -163,7 +163,7 @@ Includes an NC check fix.
 ### Version 4.7.10, released 15 September 2021
 {: #4.7.10_odf}
 
-Adds a fix for multiple operatorgroups. 
+Adds a fix for multiple operator groups. 
 
 
 ### Version 4.7.9, released 06 September 2021

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-02-21"
 
 keywords: openshift, app protocol, application protocol
 
@@ -971,7 +971,7 @@ You are responsible for deleting persistent VPC load balancers when they are no 
 [Persistent VPC load balancers](#vpc_lb_persist) can be detached from one VPC cluster and then attached to another. The new cluster must be within the same VPC as the original cluster.
 {: shortdesc}
 
-### Detatching a VPC load balancer from a cluster
+### Detaching a VPC load balancer from a cluster
 {: #vpc_lb_move_detach}
 
 VPC load balancers are linked to the Kubernetes `LoadBalancer` service definition that they were created with. To detach a persistent VPC load balancer from a cluster, you must break the link with the `LoadBalancer` service by [renaming the VPC load balancer](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference#load-balancer-update), or by removing the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation from the original `LoadBalancer` service definition. You can also detach a persistent VPC load balancer from a cluster by [deleting the cluster](/docs/containers?topic=containers-remove).

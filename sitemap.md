@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 subcollection: openshift
@@ -283,6 +283,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
+
+    * [21 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2123)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.10`.
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
 
     * [17 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1723)
 
@@ -3857,7 +3863,7 @@ subcollection: openshift
 
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
-* [Allow worker nodes to connect to the public LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
+* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
 
 [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 
@@ -4069,7 +4075,7 @@ subcollection: openshift
 
 * [Defining custom network interfaces when creating your Location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
 
-* [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
+* [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-limit)
 
 * [Restricting NodePort service access](/docs/openshift?topic=openshift-satellite-network-customization#nodeport-restrict-access)
 
@@ -4164,6 +4170,8 @@ subcollection: openshift
     * [Storing images in the internal registry in Classic clusters](/docs/openshift?topic=openshift-registry#storage_internal_registry)
 
     * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
+
+* [Removing the internal image registry](/docs/openshift?topic=openshift-registry#remove-image-registry)
 
 * [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
 
@@ -4469,7 +4477,7 @@ subcollection: openshift
 
 * [Moving a VPC load balancer from one cluster to another](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move)
 
-    * [Detatching a VPC load balancer from a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_detach)
+    * [Detaching a VPC load balancer from a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_detach)
 
     * [Attaching a VPC load balancer to a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_attach)
 
@@ -4795,7 +4803,7 @@ subcollection: openshift
 
 [Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
 
-* [Quickstart for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
+* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
 
 * [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
 
@@ -5266,7 +5274,7 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
 
-    * [Labelling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+    * [Labeling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
 
     * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
 
@@ -6877,9 +6885,13 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.2_1828, released 21 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.2-1828_is_block_relnote)
+
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.7_1836, released 21 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.7-1836_is_block_relnote)
 
     * [Change log for version 5.0.5_1784, released 24 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.5-1784_is_block_relnote)
 
@@ -6898,6 +6910,8 @@ subcollection: openshift
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.0-beta_1125_is_block_relnote)
 
 * [Version 4.4](/docs/openshift?topic=openshift-vpc_bs_changelog#044_is_block)
+
+    * [Change log for version 4.4.17_1829, released 21 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.17_1829_is_block_relnote)
 
     * [Change log for version 4.4.16_1779, released 24 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#4.4.16_1779_is_block_relnote)
 
@@ -6984,6 +6998,8 @@ subcollection: openshift
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.10, released 21 February 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02210_object_plugin)
 
 * [Change log for version 2.2.9, released 13 February 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0229_object_plugin)
 
@@ -7089,7 +7105,7 @@ subcollection: openshift
 
     * [Version 4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.2_odf)
 
-    * [Version 4.9.1, released 23 Febraury 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
+    * [Version 4.9.1, released 23 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
 
     * [Version 4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.0_odf)
 
@@ -8025,7 +8041,7 @@ subcollection: openshift
 
     * [Change log for 4.5.13_1515_openshift, released 13 October 2020](/docs/openshift?topic=openshift-changelog_archive#4513_1515)
 
-* [Version 4.4 changelog (unsupported as of 31 May 2021)](/docs/openshift?topic=openshift-changelog_archive#version-44)
+* [Version 4.4 change log (unsupported as of 31 May 2021)](/docs/openshift?topic=openshift-changelog_archive#version-44)
 
     * [Change log for worker node fix pack 4.4.33_1544_openshift, released 24 May 2021](/docs/openshift?topic=openshift-changelog_archive#4433_1544)
 
@@ -8097,7 +8113,7 @@ subcollection: openshift
 
     * [Change log for 4.4.11_1511_openshift, released 21 July 2020](/docs/openshift?topic=openshift-changelog_archive#4411_1511)
 
-* [Version 4.3 changelog (unsupported as of 7 March 2021)](/docs/openshift?topic=openshift-changelog_archive#version-43)
+* [Version 4.3 change log (unsupported as of 7 March 2021)](/docs/openshift?topic=openshift-changelog_archive#version-43)
 
     * [Change log for worker node fix pack 4.3.40_1555_openshift, released 1 March 2021](/docs/openshift?topic=openshift-changelog_archive#4340_1555_worker)
 
@@ -9007,7 +9023,7 @@ subcollection: openshift
 
 [Why does mounting {{site.data.keyword.blockstorageshort}} fail with an `fsck` error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
 
-[Why can't I delete my {{site.data.keyword.block_storage_is_short}} `volumesnapshot` resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
+[Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 
 [Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-snapshotfails#ts-storage-snapshotfails)
 

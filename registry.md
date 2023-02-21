@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -117,19 +117,11 @@ By default, your {{site.data.keyword.redhat_openshift_notm}} cluster's internal 
 
 To view volume details including the storage class and size, you can describe the persistent volume claim.
 
-Version 4
-
 ```sh
 oc describe pvc -n openshift-image-registry image-registry-storage
 ```
 {: pre}
 
-Version 3
-
-```sh
-oc describe pvc registry-backing -n default
-```
-{: pre}
 
 #### Changing volume details
 {: #change_volume_details_registry}
@@ -236,6 +228,35 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
         <myimage>  nginx  ...
         ```
         {: screen}
+
+
+## Removing the internal image registry
+{: #remove-image-registry}
+
+If you don't want to use the internal image registry, you can complete the following steps to remove it.
+
+1. Save a copy of your internal registry configurations.
+    ```sh
+    oc get configs.imageregistry.operator.openshift.io cluster -o yaml > configs.yaml
+    ```
+    {: pre}
+
+1. Run the following patch command to change the management state of the image registry to `Removed`.
+    ```sh
+    kubectl patch configs.imageregistry.operator.openshift.io cluster -p '{"spec":{"managementState":"Removed"}}' --type='merge'
+    ```
+    {: pre}
+
+1. After changing the management state, the image registry service and pods are removed from the `openshift-image-registry` namespace in your cluster. You can run the following commands to verify they were removed. 
+    ```sh
+    oc get pods -n openshift-image-registry
+    ```
+    {: pre}
+
+    ```sh
+    oc get svc -n openshift-image-registry
+    ```
+    {: pre}
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: access, wireguard, private, ,openshift
 
@@ -149,7 +149,7 @@ Before you begin, make sure that you have an {{site.data.keyword.redhat_openshif
         ```
         {: codeblock}
 
-    3. Save your changes and exit the nano editor.
+    3. Save your changes and exit the `nano` editor.
     4. Change the permissions to your WireGuard configuration and server key file.
         ```sh
         chmod 600 /etc/wireguard/wg0.conf /etc/wireguard/keys/server.key

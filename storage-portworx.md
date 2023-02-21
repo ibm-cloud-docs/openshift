@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-25"
+lastupdated: "2023-02-21"
 
 keywords: portworx, openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -53,7 +54,7 @@ Portworx also comes with additional features that you can use for your stateful 
 
 The worker node flavor that you need depends on the infrastructure provider that you use. If you have a classic cluster, {{site.data.keyword.openshiftlong_notm}} provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. In classic clusters, Portworx offers the best performance when you use SDS worker node machines that come with 10 Gbps network speed.
 
-In VPC clusters, make sure to select a [virtual server flavor](/docs/vpc?topic=vpc-profiles) that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}. The flavor that you choose must have a network speed of 10 Gpbs or more for optimal performance. None of the VPC flavors are set up with raw and unformatted block storage devices. To successfully install and run Portworx, you must [manually attach block storage devices](/docs/openshift?topic=openshift-utilities#vpc_api_attach) to each of your worker nodes first.
+In VPC clusters, make sure to select a [virtual server flavor](/docs/vpc?topic=vpc-profiles) that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}. The flavor that you choose must have a network speed of 10 GBPS or more for optimal performance. None of the VPC flavors are set up with raw and unformatted block storage devices. To successfully install and run Portworx, you must [manually attach block storage devices](/docs/openshift?topic=openshift-utilities#vpc_api_attach) to each of your worker nodes first.
 
 ### What if I want to run Portworx in a classic cluster with non-SDS worker nodes?
 {: #about-px-non-sds}
@@ -1027,7 +1028,7 @@ If you are installing PX-Backup in a newly provisioned cluster, [you must log in
 8. Enter the name of the {{site.data.keyword.redhat_openshift_notm}} project where you want to install your PX-Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.redhat_openshift_notm}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
 9. Select an existing storage class in your cluster to provision persistent volumes for the PX-Backup service. The service uses this storage to store service metadata and is not used to back up your apps and data. [Your apps and data are backed up to an {{site.data.keyword.cos_full_notm}} service instance](#px-backup-storage).
 10. Click **Create** to begin the PX-Backup installation. The installation may take a few minutes to complete.
-11. [Verify that your PX-Backup service is installed corrrectly](#px-backup-verify).
+11. [Verify that your PX-Backup service is installed correctly](#px-backup-verify).
 
 
 ### Verifying your PX-Backup installation
@@ -1111,7 +1112,7 @@ Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if
 
 1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
 2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
-3. Expand your credentials in the service credentials table. Note the **access_key_id** and the **secret_access_key** in the **cos_hmac_keys** section.
+3. Expand your credentials in the service credentials table. Note the **`access_key_id`** and the **`secret_access_key`** in the **`cos_hmac_keys`** section.
 4. [Create a storage bucket in your {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 5. Click on your bucket and note its location.
 6. Open the bucket configuration page and note the endpoint that you must use to connect to your {{site.data.keyword.cos_full_notm}} instance.
@@ -1119,12 +1120,12 @@ Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if
     - If you installed PX-Backup on a private VPC cluster, note the **direct** endpoint.
     - For all other cluster types, note the **public** endpoint.
 7. In the PX-Backup console, click **Backups**.
-8. Click **Settings**>**Cloud Settings**.
+8. Click **Settings>Cloud Settings**.
 9. Create a cloud account to specify your {{site.data.keyword.cos_full_notm}} instance as the backup location where your data and apps are stored.
     1. For the cloud provider, choose **AWS / S3 Compliant Object Store**.
     2. Enter a name for your cloud account.
-    3. Enter the **access_key_id** that you retrieved earlier.
-    4. Enter the **secret_access_key** that you retrieved earlier.
+    3. Enter the **`access_key_id`** that you retrieved earlier.
+    4. Enter the **`secret_access_key`** that you retrieved earlier.
     5. Click **Add+** and return to the **Cloud Settings** page.
 10. In the **Backup Locations** section, add your {{site.data.keyword.cos_full_notm}} bucket as the backup location for your PX-Backup service.
     1. Enter a name for your backup location.
@@ -1161,7 +1162,7 @@ Adding a cluster:
     ```
     {: pre}
 
-5. Copy the entire `kubeconfig` CLI output and paste it into the **Kubeconfig** field in the PX-Backup console.
+5. Copy the entire `kubeconfig` CLI output and paste it into the **`Kubeconfig`** field in the PX-Backup console.
 6. Select **Others** as your **Kubernetes Service**.
 7. If the cluster that you want to add to the PX-Backup service does not have Portworx installed in it, [you must install Stork onto the cluster](#px-backup-stork). If you installed Portworx Enterprise in your cluster, Stork is installed by default.
 8. Click **Submit**. If your cluster is successfully added, you are redirected to the **Backups** page. Make sure that your cluster is listed.

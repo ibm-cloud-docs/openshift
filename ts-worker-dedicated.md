@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-02-21"
 
 keywords: openshift, dedicated hosts, host pool, dedicated pool
 
@@ -13,6 +13,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -81,7 +82,7 @@ Complete the following steps to resolve the issue.
     {: tip}
     
     * If there are enough resources available, [replace the worker node that failed to reprovision](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace). Note that sometimes, it is impossible to reach 100% capacity.
-    * If there are not enough resources on the dedciated host, reallocate your workloads to free up capacity on the host, or [create a new dedicated host in the zone](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli). 
+    * If there are not enough resources on the dedicated host, reallocate your workloads to free up capacity on the host, or [create a new dedicated host in the zone](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli). 
 
 
 

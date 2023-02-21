@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift, kernel
 
@@ -70,7 +70,7 @@ To change the compute hardware, such as the CPU and memory per worker node, choo
 
 You can use the node tuning operator to tune worker node performance by creating custom profiles. For more information, see the {{site.data.keyword.redhat_notm}} [Node Tuning Operator](https://docs.openshift.com/container-platform/4.7/scalability_and_performance/using-node-tuning-operator.html){: external} docs.
 
-{{site.data.keyword.redhat_notm}} SRE is not responsible for the tuning and performance management of nodes that are customized with the Node Tuning Operator (NTO). If changes made by the NTO cause the worker nodes to be unschedulable or unresponsive, then revert the changes made by using the NTO.
+{{site.data.keyword.redhat_notm}} SRE is not responsible for the tuning and performance management of nodes that are customized with the Node Tuning Operator (NTO). If changes made by the NTO cause the worker nodes to be unavailable for scheduling or unresponsive, then revert the changes made by using the NTO.
 {: important}
     
 1. Save the following example `Tuned` resource to a file called `tuned-node.yaml` and include the specifications you want to use for your worker nodes. Note that you can use the `recommend` method to apply the settings to your worker nodes by using node labels. In this example, the profile is called `tuned-node` and applies to worker nodes with the label `label: node-role.kubernetes.io/master` label.
@@ -111,7 +111,7 @@ You can use the node tuning operator to tune worker node performance by creating
     ```
     {: pre}
     
-The `oc debug` pods do not have access to retrieve worker node tuned profile settings. To retreive or verify the updated worker node settings, you must be logged into a pod that has `hostIPC: true`.
+The `oc debug` pods do not have access to retrieve worker node tuned profile settings. To retrieve or verify the updated worker node settings, you must be logged into a pod that has `hostIPC: true`.
 {: note}
 
 

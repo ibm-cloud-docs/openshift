@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} b
 An Open-Government Data Program Executive needs to share public data with the community and private sector, but the data is locked in an on-premises monolithic system.  
 {: shortdesc}
 
-With {{site.data.keyword.openshiftlong_notm}}, the Exec delivers the transformative value of combined public-private data. Likewise, the service provides the public cloud platform to refactor and expose microservices from monolithic on-premises apps. Also, the public cloud allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools.
+With {{site.data.keyword.openshiftlong_notm}}, the Exec delivers the value of combined public-private data. Likewise, the service provides the public cloud platform to refactor and expose microservices from monolithic on-premises apps. Also, the public cloud allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools.
 
 ### Context
 {: #uc_data_mashup_context}

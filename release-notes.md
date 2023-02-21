@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift
 
@@ -30,6 +30,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2023
 {: #openshift-feb23}
+
+### 21 February 2023
+{: #openshift-feb2123}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.10`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+{{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
   

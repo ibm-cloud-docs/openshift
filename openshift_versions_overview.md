@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-02-21"
 
 keywords: openshift, version, update, upgrade
 
@@ -181,13 +181,13 @@ Estimated days and versions are provided for general understanding. Actual avail
 
 
 
-IBM provides bi-weekly worker node fix packs. IBM's goal is to remediate detected, legitimate vulnerabilities within a time period appropriate for the risks they represent. To ensure the quality and stability of the release, fix packs might be delayed.
+IBM provides bi-weekly worker node fix packs. IBM's goal is to remediate detected, legitimate vulnerabilities within a timeframe appropriate for the risks they represent. To ensure the quality and stability of the release, fix packs might be delayed.
 
 For {{site.data.keyword.redhat_openshift_notm}}, fix packs are applied to the latest minor release and patch for the targeted operating system. 
     - For RHEL8 that is 8.7. 
     - For RHEL7 (deprecated) that is 7.9.
 
-To keep your nodes secure, you must install worker node fix packs in a timely manner. You can subscribe to notifications to be alerted when a new update is available.
+To keep your nodes secure, you must install worker node fix packs as soon as possible. You can subscribe to notifications to be alerted when a new update is available.
 
 ## Archive
 {: #version-archive}

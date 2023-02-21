@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-21"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -78,7 +78,7 @@ Replicas
 :   The [Kubernetes scheduler](https://github.com/openshift/cluster-kube-scheduler-operator){: external} watches for newly created pods and decides where to deploy them based on capacity, performance needs, policy constraints, anti-affinity specifications, and workload requirements. If no worker node can be found that matches the requirements, the pod is not deployed in the cluster.
 
 `manifests-bootstrapper`
-:   The manifests boot strapper job sets up the master with the required certificates to join as the master node of the cluster.
+:   The `manifests-boot-strapper` job sets up the master with the required certificates to join as the master node of the cluster.
 
 `oauth-openshift`
 :   The built-in OAuth server is automatically set up to integrate with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). You can't add other supported identity providers to the cluster. For more information about how to authenticate with the cluster via IAM, see [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-access_cluster).
