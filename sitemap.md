@@ -3863,7 +3863,7 @@ subcollection: openshift
 
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
-* [Allow worker nodes to connect to the public LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
+* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
 
 [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-21"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -165,8 +165,9 @@ By default, traffic rules for cluster workers are covered by the randomly named 
 | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints. | ALL | - | CIDR block `166.8.0.0/14` | 
 | Allow all worker nodes in this cluster to communicate with each other. | ALL | - | Security group `kube-<cluster_ID>` |
 | Allow outbound traffic to be sent to the Virtual private endpoint gateway which is used to talk to the Kubernetes master. | ALL | - | Virtual private endpoint gateway IP addresses. The Virtual private endpoint gateway is assigned an IP address from a VPC subnet in each of the zones where your cluster has a worker node. For example, if the cluster spans 3 zones, there are up to 3 IP addresses assigned to each Virtual private endpoint gateway. To find the Virtual private endpoint gateway IPs:  \n 1. Go to the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}.  \n 2. Click **Virtual private endpoint gateways**, then select the **Region** where you cluster is located.  \n 3. Find your cluster, then click the IP addresses in the **IP Address** column to copy them. |
-| Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service. To find the IPs needed to apply this rule, see [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](#worker-node-public-service-endpoint). | TCP | 443 | Security group `kube-<cluster_ID>` |
-| Allow the worker nodes to connect to the public LoadBalancer. To find the IPs needed to apply this rule, see [Allow worker nodes to connect to the public LoadBalancer](#vpc-security-group-loadbalancer-outbound). | TCP | 443 | Security group `kube-<cluster_ID>` |
+| Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service. To find the IPs needed to apply this rule, see [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](#worker-node-public-service-endpoint). | TCP | OAuth port | OAuth IP addresses |
+| Allow the worker nodes to connect to the Ingress LoadBalancer. To find the IPs needed to apply this rule, see [Allow worker nodes to connect to the Ingress LoadBalancer](#vpc-security-group-loadbalancer-outbound). | TCP | 443 | Ingress load balancer IPs |
+
 {: caption="Required outbound rules for cluster worker security groups" caption-side="bottom"}
 
 
@@ -181,7 +182,8 @@ By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` securi
 
 | Rule purpose | Protocol | Port or Value | Source |
 | --- | --- | --- | --- |
-| If you use your own security group to the LBaaS for Ingress, set port 80 to allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses. Alternatively, to allow the inbound traffic for router health checks, you can create a single rule to allow all incoming traffic on port 80. | TCP | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}.
+| If you use your own security group for the LBaaS for Ingress and you expose any applications in your cluster with Ingress, you must allow TCP protocol to ports 443 or 80, or both. You can allow access for all clients, or you can allow only certain source IPs or subnets to access these applications. Note that this requirement also applies if you want to use the Openshift Console, which is exposed by the cluster's default Ingress instance and router. To allow access for the Openshift Console, you must allow TCP protocol to port 443 from all sources, or from specific source IP addresses or subnets. | TCP | `80 or 443` | All sources, or specific source IP addresses or subnets |
+| If you use your own security group for any LBaaS instances that you use to expose other applications, then within that security group you must allow any intended sources to access the appropriate ports and protocols. | TCP, UDP, or both | LBaaS ports | Any sources, or specific source IPs or subnets |
 {: caption="Required inbound rules for VPC ALB security groups" caption-side="bottom"}
 
 
@@ -192,6 +194,7 @@ By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` securi
 | --- | --- | --- | --- |
 | Allow the ALB to send traffic to the cluster workers on the TCP NodePort range | TCP | `30000` - `32767` | Any |
 | Allow the ALB to send traffic to the cluster workers on the UDP NodePort range | UDP | `30000` - `32767` | Any |
+| If you use your own security group for the LBaaS for Ingress, you must allow TCP traffic from cluster worker nodes to port 443. If you do not already allow all TCP traffic port to 443, such as if you filter traffic by source IP, then allowing traffic from cluster worker nodes is the minimum requirement for the Red Hat OpenShift console operator and Ingress health checks to succeed. | TCP | 443 | Security group `kube-<cluster_ID>` |
 {: caption="Required outbound rules for VPE and VPC ALB security groups " caption-side="bottom"}
 
 
@@ -469,11 +472,11 @@ Required for VPC clusters with a public service endpoint.
     {: screen}
 
 
-## Allow worker nodes to connect to the public LoadBalancer
+## Allow worker nodes to connect to the Ingress LoadBalancer
 {: #vpc-security-group-loadbalancer-outbound}
 
-Required for VPC clusters with a public service endpoint.
-{: important}
+Follow the steps to allow worker nodes to connect to the Ingress LoadBalancer.
+{: shortdesc}
 
 1. Get the `EXTERNAL-IP` of the LoadBalancer service.
 
@@ -501,7 +504,7 @@ Required for VPC clusters with a public service endpoint.
     ```
     {: pre}
     
-If the {{site.data.keyword.redhat_openshift_notm}} Ingress or console operators fail their health checks, you can repeat these steps to see if the LoadBalancer IPs changed. Note that these IPs might change after updating your cluster master. While rare, if the amount of traffic to your LoadBalancers varies widely, these IPs might change to handle the increased or decreased load.
+If the Ingress or console operators fail their health checks, you can repeat these steps to see if the LoadBalancer IP addresses changed. While rare, if the amount of traffic to your LoadBalancers varies widely, these IP addresses might change to handle the increased or decreased load.
 {: tip}
     
 
