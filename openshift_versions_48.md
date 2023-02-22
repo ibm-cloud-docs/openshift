@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: openshift, version, update, upgrade
 
@@ -42,6 +42,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | --- | --- | --- | --- |
 | Supported | 4.8 / 1.21 | 29 September 2021 | 29 March 2023`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.8." caption-side="bottom"}
+
 
 
 ## Preparing to update
