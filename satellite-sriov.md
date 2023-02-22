@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-22"
 
 keywords: satellite, hybrid, multicloud, sriov, nic, network
 
@@ -29,7 +29,7 @@ Supported network interface controllers
 {: #sriov-prereqs}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up your location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+1. [Set up your location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 1. [Attach more hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to use as worker nodes in your cluster. The hosts that you want to use as worker nodes must have a [Supported NIC](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/installing-sriov-operator.html){: exteral}.
 
 ## Installing the SR-IOV network operator

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-22"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -37,7 +37,7 @@ Before you can create clusters in {{site.data.keyword.satellitelong_notm}}, you 
     * You can automatically provision the hosts for your location. With this option, you create a custom role, or service ID, with your cloud provider credentials. This service ID is used to automatically provision virtual machines in your cloud provider. Once the VMs are provisioned and attached to your location, you can assign them to {{site.data.keyword.satellitelong_notm}} control plane or to the cloud services you want to use. To get started, see the [Automating your location set up with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
     * You can manually provision hosts either in your on-premises data center or in a public cloud. If you choose to manually provision the hosts for your location, make sure that your hosts meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and that you allow the [required outbound network access](/docs/satellite?topic=satellite-reqs-host-network). 
 1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations).
-1. Attach your hosts to your location and [set up your location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+1. Attach your hosts to your location and [set up your location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 1. [Attach at least 3 additional hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to use as the worker nodes for your {{site.data.keyword.openshiftlong_notm}} cluster.
 
 

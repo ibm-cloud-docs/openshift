@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -66,7 +66,7 @@ The following table shows the changes that are in the master fix pack 4.8.55_158
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.22.5 | v3.23.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.23/release-notes/#v3235){: external}. |
+| Calico | v3.22.5 | v3.23.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.23/release-notes/#v3235){: external}. |
 | Calico Operator | v1.25.13 | v1.27.17 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.17){: external}. |
 | Cluster health image | v1.3.14 | v1.3.15 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1257 | 1280 | Publish s390x image. |
@@ -198,7 +198,7 @@ The following table shows the changes that are in the master fix pack 4.8.52_158
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.21.6 | v3.22.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.22/release-notes/#v3225){: external}. |
+| Calico | v3.21.6 | v3.22.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.22/release-notes/#v3225){: external}. |
 | Calico Operator | v1.23.8 | v1.25.13 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.13){: external}. |
 | Cluster health image | v1.3.12 | v1.3.13 | Updated Go dependencies, `golangci-lint`, `gosec`, and to `Go` version 1.19.3. Updated base image version to 116. |
 | etcd | v3.4.18 | v3.4.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.21){: external}. |

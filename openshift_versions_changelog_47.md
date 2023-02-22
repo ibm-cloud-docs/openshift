@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -602,7 +602,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.4
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.19.3 | v3.19.4 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.19/release-notes/#v3194){: external}. |
+| Calico | v3.19.3 | v3.19.4 | See the [Calico release notes](https://docs.tigera.io/archive/v3.19/release-notes/#v3194){: external}. |
 | Calico Operator | v1.17.8 | v1.17.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.9){: external}. |
 | Cluster health image | v1.2.21 | v1.3.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Golang dependency updates. |
 | Gateway-enabled cluster controller | 1586 | 1653 | Updated to use `Go` version `1.17.7` and updated `Go` modules to fix CVEs. |
