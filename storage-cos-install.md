@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: openshift
 
@@ -24,7 +24,7 @@ Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set
 If you are migrating from RHEL 7 to RHEL 8, you must uninstall and then reinstall the plug-in version `2.2.6` or later. If you are upgrading from a chart version before `2.2.5`, you must uninstall and reinstall the plug-in and then re-create your PVCs and pods or the upgrade will fail.
 {: important}
 
-Prequisites
+Prerequisites
 :   The {{site.data.keyword.cos_full_notm}} plug-in requires at least 0.2 vCPU and 128 MB of memory.
 
 

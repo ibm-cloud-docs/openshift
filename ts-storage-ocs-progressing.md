@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-12-01"
+  years: 2021, 2023
+lastupdated: "2023-02-21"
 
 keywords: openshift, storage
 
@@ -67,7 +67,7 @@ Error: Cloud credentials secret "ibm-cloud-cos-creds" is not ready yet
 ```
 {: screen}
 
-You want to use {{site.data.keyword.cos_full_notm}} as a backingstore for your ODF cluster, but the credentials specified in the `ibm-cloud-cos-creds` secret are invalid. 
+You want to use {{site.data.keyword.cos_full_notm}} as a backing store for your ODF cluster, but the credentials specified in the `ibm-cloud-cos-creds` secret are invalid. 
 
 Verify your {{site.data.keyword.cos_short}} credentials and [update the Kubernetes secret for your {{site.data.keyword.cos_short}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
 

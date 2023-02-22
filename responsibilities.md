@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-19"
+  years: 2014, 2023
+lastupdated: "2023-02-22"
 
 keywords: openshift, responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -41,7 +42,7 @@ If you use other {{site.data.keyword.cloud_notm}} products such as {{site.data.k
 | App networking | [Shared](#incident-and-ops) | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | IBM |
 | Cluster networking | [Shared](#incident-and-ops) | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | IBM |
 | Cluster version | {{site.data.keyword.IBM_notm}} | [Shared](#change-management) | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
-| Worker nodes | [Shared](#incident-and-ops) | [Shared](#change-management) | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
+| Worker nodes | [Shared](#incident-and-ops) | [Shared](#change-management) | {{site.data.keyword.IBM_notm}} | [Shared](#security-compliance) | {{site.data.keyword.IBM_notm}} |
 | Master | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
 | Service | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
 | Virtual storage | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} | {{site.data.keyword.IBM_notm}} |
@@ -110,7 +111,8 @@ IBM is responsible for the security and compliance of {{site.data.keyword.opensh
 
 | Resource | IBM responsibilities | Your responsibilities |
 | -------- | -------------------- | --------------------- |
-| General | - Maintain controls commensurate to [various industry compliance standards](/docs/containers?topic=containers-update#update), such as PCI DSS. Compliance to industry standards varies depending on the infrastructure provider of the cluster, such as classic or VPC. \n - Monitor, isolate, and recover the cluster master. \n - Provide highly available replicas of the Kubernetes master API server, etcd, scheduler, and controller manager components to protect against a master outage. \n - Monitor and report the health of the master and worker nodes in the various interfaces. \n - Automatically apply master security patch updates, and provide worker node security patch updates. \n - Enable certain security settings, such as encrypted disks on worker nodes \n - Disable certain insecure actions for worker nodes, such as not permitting users to SSH into the host. \n - Encrypt communication between the master and worker nodes with TLS. \n - Provide CIS-compliant Linux images for worker node operating systems. \n - Continuously monitor master and worker node images to detect vulnerability and security compliance issues. \n - Provision worker nodes with two local SSD, AES 256-bit encrypted data partitions. \n - Provide options for cluster network connectivity, such as public and private cloud service endpoints. \n - Provide options for compute isolation, such as dedicated virtual machines or bare metal. \n - Integrate Kubernetes role-based access control (RBAC) with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). | - Set up and maintain security and regulation compliance for your apps and data. For example, choose how to set up your [cluster network](/docs/openshift?topic=openshift-plan_clusters), [protect sensitive information](/docs/openshift?topic=openshift-encryption) such as with {{site.data.keyword.keymanagementservicelong_notm}} encryption, and configure further [security settings](/docs/openshift?topic=openshift-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/openshift?topic=openshift-firewall#firewall). \n - As part of your incident and operations management responsibilities for the worker nodes, apply the provided security patch updates.  |
+| General | - Maintain controls commensurate to [various industry compliance standards](/docs/containers?topic=containers-update#update), such as PCI DSS. Compliance to industry standards varies depending on the infrastructure provider of the cluster, such as classic or VPC. \n - Monitor, isolate, and recover the cluster master. \n - Provide highly available replicas of the Kubernetes master API server, etcd, scheduler, and controller manager components to protect against a master outage. \n - Provide options for cluster network connectivity, such as public and private cloud service endpoints. \n - Provide options for compute isolation, such as dedicated virtual machines or bare metal. \n - Integrate Kubernetes role-based access control (RBAC) with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). | - Set up and maintain security and regulation compliance for your apps and data. For example, choose how to set up your [cluster network](/docs/openshift?topic=openshift-plan_clusters), [protect sensitive information](/docs/openshift?topic=openshift-encryption) such as with {{site.data.keyword.keymanagementservicelong_notm}} encryption, and configure further [security settings](/docs/openshift?topic=openshift-security#security) to meet your workload's security and compliance needs. If applicable, configure your [firewall](/docs/openshift?topic=openshift-firewall#firewall).  |
+| Worker nodes | - Monitor and report the health of the master and worker nodes in the various interfaces.  \n - Automatically apply master security patch updates, and provide worker node security patch updates. \n - Enable certain security settings, such as encrypted disks on worker nodes \n - Disable certain insecure actions for worker nodes, such as not permitting users to SSH into the host. \n - Encrypt communication between the master and worker nodes with TLS. \n - Provide CIS-compliant Linux images for worker node operating systems. \n - Continuously monitor master and worker node images to detect vulnerability and security compliance issues. \n - Provision worker nodes with two local SSD, AES 256-bit encrypted data partitions. | As part of your incident and operations management responsibilities for the worker nodes, apply the provided security patch updates. |
 {: caption="Table 5. Responsibilities for security and regulation compliance" caption-side="bottom"}
 
 

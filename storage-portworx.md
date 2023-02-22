@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: portworx, openshift
 
@@ -88,7 +88,7 @@ You can also choose to use only a subset of worker nodes for your Portworx stora
 
 Yes. If you want to install Portworx in a private cluster, your {{site.data.keyword.cloud_notm}} account must be set up with [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) and access to private cloud service endpoints for {{site.data.keyword.cloud_notm}} services. 
 
-If you want to install Portworx in a cluster that doesn't have VRF or access to private CSEs, you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group).
+If you want to install Portworx in a cluster that doesn't have VRF or access to private cloud service endpoints (CSEs), you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group).
 {: important}
 
 
@@ -173,7 +173,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 {: #px-create-satellite-volumes}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. Create VMs in your cloud provider or set up on-premises hosts that have at least 16 vCPU and 64 GB and enough storage to be attached to your location plus additional storage volumes for app data, the Portwox journal, and KVDB. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
+1. Create VMs in your cloud provider or set up on-premises hosts that have at least 16 vCPU and 64 GB and enough storage to be attached to your location plus additional storage volumes for app data, the Portworx journal, and KVDB. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
 1. If you want to use [journal devices](https://docs.portworx.com/install-with-other/operate-and-maintain/performance-and-tuning/tuning/){: external}, choose from the following options.
     - Attach an additional 3 GB disk to at least 3 worker nodes in your cluster and find the device path. To find the device path after you attach the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select a device on a worker node where you want Portworx to create the journal.
@@ -1573,7 +1573,7 @@ Review the following Portworx limitations.
 | **Classic clusters** Pod restart required when adding worker nodes. | Because Portworx runs as a DaemonSet in your cluster, existing worker nodes are automatically inspected for raw block storage and added to the Portworx data layer when you deploy Portworx. If you add or update worker nodes to your cluster and add raw block storage to those workers, restart the Portworx pods on the new or updated worker nodes so that your storage volumes are detected by the DaemonSet. |
 | **VPC clusters** Storage volume reattachment required when updating worker nodes. | When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that is replaced, you must attach the volumes to the new worker node. You can attach storage volumes with the [API](/docs/openshift?topic=openshift-utilities#vpc_api_attach) or the [CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr). Note this limitation does not apply to Portworx deployments that are using cloud drives. |
 | The Portworx experimental `InitializerConfiguration` feature is not supported. | {{site.data.keyword.openshiftlong_notm}} does not support the [Portworx experimental `InitializerConfiguration` admission controller](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/hyperconvergence/#initializer-experimental-feature-in-stork-v1-1){: external}. |
-| Private clusters | To install Portworx in a cluster that doesn't have VRF or access to private CSEs, you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, and `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group). |
+| Private clusters | To install Portworx in a cluster that doesn't have VRF or access to private cloud service endpoints (CSEs), you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, and `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group). |
 {: caption="Portworx limitations"}
 
 

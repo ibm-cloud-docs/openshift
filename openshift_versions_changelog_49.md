@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
@@ -64,7 +64,7 @@ The following table shows the changes that are in the master fix pack 4.9.54_157
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.22.5 | v3.23.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.23/release-notes/#v3235){: external}. |
+| Calico | v3.22.5 | v3.23.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.23/release-notes/#v3235){: external}. |
 | Calico Operator | v1.25.13 | v1.27.17 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.17){: external}. |
 | Cluster health image | v1.3.14 | v1.3.15 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1257 | 1280 | Publish s390x image. |
@@ -198,7 +198,7 @@ The following table shows the changes that are in the master fix pack 4.9.51_156
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.22.4 | v3.22.5 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.22/release-notes/#v3225){: external}. |
+| Calico | v3.22.4 | v3.22.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.22/release-notes/#v3225){: external}. |
 | Calico Operator | v1.25.11 | v1.25.13 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.13){: external}. |
 | Cluster health image | v1.3.12 | v1.3.13 | Updated Go dependencies, `golangci-lint`, `gosec`, and to `Go` version 1.19.3. Updated base image version to 116. |
 | etcd | v3.4.18 | v3.4.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.21){: external}. |
@@ -359,7 +359,7 @@ The following table shows the changes that are in the master fix pack 4.9.46_155
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.22.2 | v3.22.4 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.22/release-notes/#v3224){: external}. Updated the Calico custom resource definitions to include `preserveUnknownFields: false`. |
+| Calico | v3.22.2 | v3.22.4 | See the [Calico release notes](https://docs.tigera.io/archive/v3.22/release-notes/#v3224){: external}. Updated the Calico custom resource definitions to include `preserveUnknownFields: false`. |
 | Calico Operator | v1.25.7 | v1.25.11 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.11){: external}. |
 | Cluster health image | v1.3.9 | v1.3.10 | Updated `Go` dependencies and to `Go` version `1.18.5`. |
 | Gateway-enabled cluster controller | 1792 | 1823 | Updated to `Go` version `1.17.13`. |
@@ -496,8 +496,9 @@ The following table shows the changes that are in the master fix pack 4.9.37_154
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.4 | v2.2.6 | Bug fixes for the driver installation. Block plug-in base images were updated to universal base image (UBI) `8.6-751.1655117800` for CVE-2022-1271 |
-| Calico | v3.21.5 | v3.22.2 | See the [Calico release notes](https://projectcalico.docs.tigera.io/archive/v3.22/release-notes/#v3222){: external}. |
+
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.4 | v2.2.6 | Bug fixes for the driver installation. Block plugin base images were updated to `ubi`: `8.6-751.1655117800` for CVE-2022-1271 |
+| Calico | v3.21.5 | v3.22.2 | See the [Calico release notes](https://docs.tigera.io/archive/v3.22/release-notes/#v3222){: external}. |
 | Calico Operator | v1.23.7 | v1.25.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.7){: external}. |
 | Cluster health image | v1.3.7 | v1.3.8 | Updated `Go` to version `1.17.11` and also updated the dependencies. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.10-1 | v1.22.10-3 | Update prometheus/client_golang@v1.11.0 to `v1.11.1`. |
