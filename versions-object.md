@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: object storage, plug-in, change log
 
@@ -120,7 +120,7 @@ Because this change affects storage classes, you must uninstall and reinstall th
 
 - Updates the UBI image to `8.6-902.1661794353`
 - Resolves [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external}, [CVE-2022-32208](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208){: external}, [CVE-2022-2526](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2526){: external}.
-- Cloud pak certification renewed for the plug-in
+- Cloud Pak certification renewed for the plug-in
 
 ## Change log for version 2.1.21, released 24 August 2022
 {: #02121_object_plugin}

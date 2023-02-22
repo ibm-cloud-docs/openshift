@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: openshift
 
@@ -132,7 +132,7 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
     
     
     
-    To get logs or other file from a worker node, use the kubectl cp command in the following format. The following example gets the `/var/log/messages` file from the host file system of the worker node.
+    To get logs or other file from a worker node, use the `**kubectl cp**` command in the following format. The following example gets the `/var/log/messages` file from the host file system of the worker node.
     
     ```sh
     oc cp default/debug-${NODE}:/host/var/log/messages ./messages

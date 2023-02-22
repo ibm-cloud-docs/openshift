@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-15"
+  years: 2014, 2023
+lastupdated: "2023-02-22"
 
 keywords: openshift
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -140,7 +141,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Storage | You must set up persistent volumes to be backed up by a storage provider. OpenShift Data Foundation is available. | IBM automatically sets up storage providers such as {{site.data.keyword.cloud_notm}} File and Block. OpenShift Data Foundation is available. For supported storage options, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning). |
 | Image registry | The cluster is set up with an internal registry to pull images. If your cluster has public network access, you can pull images automatically from Docker Hub. To pull images from other registries, you must set up image pull secrets. You set up the internal registry to back up images to a cloud storage provider. Stored images are not available across clusters. | The internal registry is set up to back up images automatically to a bucket in your {{site.data.keyword.cos_full_notm}} instance. Your cluster has image pull secrets automatically set up to pull images from default registries, including {{site.data.keyword.registrylong_notm}}. You can also set up the internal registry to work with {{site.data.keyword.registrylong_notm}}, which your cluster is also automatically set up to pull images from. For more information, see [Setting up an image registry](/docs/openshift?topic=openshift-registry). |
 | Operators and OperatorHub | OpenShift Container Platform sets up many operators to manage default components for the cluster. You can also use the OperatorHub to install other operators such as from 3rd-party providers. | IBM sets up many of the same operators as OCP to manage default component for the cluster. However, because IBM manages the master and provides you with {{site.data.keyword.cloud_notm}} APIs to manage your cloud infrastructure, some operators, such as the machine set operator and other components as noted in this table, are not set up or configurable. You can also use the OperatorHub to [install other operators](/docs/openshift?topic=openshift-operators) such as from 3rd-party providers. Note that operators that you install or create are not supported by IBM, and might come with their own support terms and pricing.|
-| Projects, builds, and apps | OpenShift Container Platform provides tools such as projects, build configs, and the internal registry that you can use to deploy your apps while following a cloud-native, continuous integration and continuous delivery (CI/CD) methodology. | {{site.data.keyword.openshiftlong_notm}} clusters come with all the same configurable project and build components as OCP clusters. You can also choose to integrate your cluster with {{site.data.keyword.cloud_notm}} services like [{{site.data.keyword.contdelivery_short}}](/docs/openshift?topic=openshift-cicd). |
+| Projects, builds, and apps | OpenShift Container Platform provides tools such as projects, build configurations, and the internal registry that you can use to deploy your apps while following a cloud-native, continuous integration and continuous delivery (CI/CD) methodology. | {{site.data.keyword.openshiftlong_notm}} clusters come with all the same configurable project and build components as OCP clusters. You can also choose to integrate your cluster with {{site.data.keyword.cloud_notm}} services like [{{site.data.keyword.contdelivery_short}}](/docs/openshift?topic=openshift-cicd). |
 | Cluster health | You can also set up logging, monitoring, and metering tools by installing and configuring various operators. These solutions are cluster-specific and not highly available unless you back them up. | Your clusters feature one-click integrations with {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} for enterprise-grade, persistent monitoring and logging solutions across clusters. You can also install the logging and monitoring operators as with standard OCP, but you might have to adjust the configuration settings. For more information, see [Logging and monitoring cluster health](/docs/openshift?topic=openshift-health). |
 | Migrating clusters | You can use the cluster migrator operator to migrate clusters from one major version to another. Migration requires separate clusters; you can't update a cluster from one major version to another. Various open source tools might be used, but are not officially supported. | As with standard OpenShift Container Platform, you can't update a cluster from one major version to another. If you use a third-party open source tool such as the [cluster migrator operator](https://github.com/migtools/mig-operator){: external}, the tool is not supported by IBM and might have limitations such as the migration UI being unavailable. |
 | Container-native virtualization | You can set up [container-native virtualization add-on](https://docs.openshift.com/container-platform/4.10/virt/about-virt.html){: external} on bare metal machines, but not on virtual machines. Container-native virtualization is not supported by IBM. If you experience issues, you are responsible for resolving the issues and any impact to your workloads. |
@@ -154,7 +155,7 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 ## Operator support overview
 {: #operator-support-comparison}
 
-Review the following operator support table. To receive support on the for the following operators, [open a support case](/docs/openshift?topic=openshift-get-help#help-support). Note that depending on the operator or feature, your request might be forwared by IBM support to Red Hat support.
+Review the following operator support table. To receive support on the for the following operators, [open a support case](/docs/openshift?topic=openshift-get-help#help-support). Note that depending on the operator or feature, your request might be forwarded by IBM support to Red Hat support.
 {: note}
 
 | Feature or Operator | Support provided by | 

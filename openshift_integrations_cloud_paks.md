@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: openshift
 
@@ -172,7 +172,7 @@ Depending on the Cloud Pak, you get licensed IBM and open source software bundle
 * **IBM products**: Cloud Paks extend licensed IBM software and middleware from [IBM Marketplace](https://www.ibm.com/products){: external}, and integrate these products with your cluster to modernize, optimize, and run hybrid cloud workloads.
 * **Open-source software**: Cloud Paks might also include open source components for cloud-native and portable hybrid cloud solutions. Typically, open source software is unmanaged and you are responsible to keep your components up-to-date and secure. However, Cloud Paks help you consistently manage the entire lifecycle of the Cloud Pak components and the workloads that you run with them. Because the open source software is bundled together with the Cloud Pak, you get the benefits of IBM support and integration with select {{site.data.keyword.cloud_notm}} features such as billing.
 
-To see the components of each Cloud Pak, consult the [Cloud Pak's documentation](#oc_cloud_pak_ov).
+To see the components of each Cloud Pak, consult the [Cloud Pak documentation](#oc_cloud_pak_ov).
 
 ### What else do I need to know to use Cloud Paks?
 {: #cloud_paks_other}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-22"
 
 keywords: openshift, errsam, loadbalancer service missing
 
@@ -36,7 +36,7 @@ The load balancer service address is missing (ERRSAM).
 ```
 {: screen}
 
-The load balancer service that exposes your Ingress Contoller doesn't have an address assigned.
+The load balancer service that exposes your Ingress Controller doesn't have an address assigned.
 {: tsCauses}
 
 Complete the following steps to troubleshoot the issue.

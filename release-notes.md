@@ -4143,7 +4143,7 @@ Feature gates
 {: release-note}
 
 Managing Ingress ALBs
-:   Added a page for [managing the lifecycle of your ALBs](/docs/containers?topic=containers-managed-ingress-about), including information about creating, updating, and moving ALBs.
+:   Added a page for [managing the life cycle of your ALBs](/docs/containers?topic=containers-managed-ingress-about), including information about creating, updating, and moving ALBs.
 
 
 
@@ -4191,7 +4191,7 @@ Developing and deploying apps
     - [Building containers from images](/docs/openshift?topic=openshift-images)
     - [Developing Kubernetes-native apps](/docs/containers?topic=containers-app)
     - [Deploying Kubernetes-native apps in clusters](/docs/containers?topic=containers-deploy_app)
-    - [Managing the app lifecycle](/docs/openshift?topic=openshift-update_app)
+    - [Managing the app life cycle](/docs/openshift?topic=openshift-update_app)
 
 Learning paths
 :   Curated learning paths for [administrators](/docs/openshift?topic=openshift-learning-path-admin) and [developers](/docs/openshift?topic=openshift-learning-path-dev) are now available to help guide you through your {{site.data.keyword.openshiftlong_notm}} experience.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-22"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -324,7 +324,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     ```
     {: pre}
 
-1. Verify that worker nodes provision in the zone that you added. Your worker nodes are ready when the status changes from **provision_pending** to **normal**.
+1. Verify that worker nodes provision in the zone that you added. Your worker nodes are ready when the status changes from `provision_pending` to `normal`.
     ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
     ```
