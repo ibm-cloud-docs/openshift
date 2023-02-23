@@ -302,6 +302,11 @@ toc:
           - benchmarks_overview.md
           - benchmark-comparison.md
           - topicgroup:
+              label: Version 4.12
+              topics:
+              
+              - benchmarks_412.md
+          - topicgroup:
               label: Version 4.11
               topics:
               - openshift_versions_411.md

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-23"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -691,7 +691,7 @@ All public and private network traffic that enters or exits the cluster VLANs is
 
 To set up a Virtual Router Appliance,
 
-1. [Order a VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-getting-started).
+1. [Order a VRA](/docs/virtual-router-appliance).
 
 2. [Configure the private VLAN on the VRA](/docs/virtual-router-appliance?topic=virtual-router-appliance-managing-vlans-and-gateway-appliances).
 
