@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-23"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
@@ -496,7 +496,6 @@ The following table shows the changes that are in the master fix pack 4.9.37_154
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.4 | v2.2.6 | Bug fixes for the driver installation. Block plugin base images were updated to `ubi`: `8.6-751.1655117800` for CVE-2022-1271 |
 | Calico | v3.21.5 | v3.22.2 | See the [Calico release notes](https://docs.tigera.io/archive/v3.22/release-notes/#v3222){: external}. |
 | Calico Operator | v1.23.7 | v1.25.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.7){: external}. |
