@@ -54,15 +54,7 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
     * **`cluster master audit-webhook`**: View and modify the audit webhook configuration for a cluster's Kubernetes API server.
         * [`ibmcloud oc cluster master audit-webhook get`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_config_get) 
         * [`ibmcloud oc cluster master audit-webhook set`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_config_set) 
-        * [`ibmcloud oc cluster master audit-webhook unset`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_config_unset) 
-    * **`cluster master pod-security`**: View and modify your Pod Security configurations.
-        * [`ibmcloud oc cluster master pod-security get`](/docs/containers?topic=containers-kubernetes-service-cli#cluster-master-pod-security-get)
-        * [`ibmcloud oc cluster master pod-security set`](/docs/containers?topic=containers-kubernetes-service-cli#cluster-master-pod-security-set)
-        * [`ibmcloud oc cluster master pod-security unset`](/docs/containers?topic=containers-kubernetes-service-cli#cluster-master-pod-security-unset)
-        * **`ibmcloud oc cluster master pod-security policy`**: View and modify the deprecated Pod Security policy configuration in supported clusters.
-            * [`ibmcloud oc cluster master pod-security policy disable`](/docs/containers?topic=containers-kubernetes-service-cli#cluster-master-pod-security-policy-disable)
-            * [`ibmcloud oc cluster master pod-security policy enable`](/docs/containers?topic=containers-kubernetes-service-cli#cluster-master-pod-policy-enable)
-            * [`ibmcloud oc cluster master pod-security policy get`](/docs/containers?topic=containers-kubernetes-service-cli#cluster-master-pod-security-policy-get)
+        * [`ibmcloud oc cluster master audit-webhook unset`](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_config_unset)
     * **`cluster master private-service-endpoint`**: Manage the private service endpoint of a cluster.
         * **`ibmcloud oc cluster master private-service-endpoint allowlist`**: Manage the private service endpoint allowlist.
             * [`ibmcloud oc cluster master private-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist_add)
