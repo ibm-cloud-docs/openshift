@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-02-24"
 
 keywords: openshift
 subcollection: openshift
@@ -8714,7 +8714,7 @@ subcollection: openshift
 
 [VPC: Why can't I create worker nodes on dedicated hosts?](/docs/openshift?topic=openshift-ts-worker-dedicated#ts-worker-dedicated)
 
-[VPC: Why doesn't replacing a worker node create a worker node?](/docs/openshift?topic=openshift-auto-rebalance-off#auto-rebalance-off)
+[Why doesn't replacing a worker node create a worker node?](/docs/openshift?topic=openshift-auto-rebalance-off#auto-rebalance-off)
 
 [Classic: Why is the bare metal instance ID inconsistent with worker records?](/docs/openshift?topic=openshift-bm_machine_id#bm_machine_id)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-24"
 
 keywords: openshift, version, update, upgrade
 
@@ -43,6 +43,9 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | Supported | 4.8 / 1.21 | 29 September 2021 | 29 March 2023`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.8." caption-side="bottom"}
 
+
+Version 4.8 of {{site.data.keyword.openshiftlong_notm}} becomes unsupported on 12 April 2023. Update your cluster to at least [version 4.9](/docs/openshift?topic=openshift-cs_versions_49) as soon as possible.
+{: deprecated}
 
 
 ## Preparing to update
