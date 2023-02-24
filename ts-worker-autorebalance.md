@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2022
-lastupdated: "2022-12-01"
+  years: 2014, 2023
+lastupdated: "2023-02-24"
 
 keywords: openshift
 
@@ -17,13 +17,13 @@ content-type: troubleshoot
 
 
 
-# VPC: Why doesn't replacing a worker node create a worker node?
+
+# Why doesn't replacing a worker node create a worker node?
 {: #auto-rebalance-off}
 {: support}
 
-**Infrastructure provider**: 
-VPC
-Classic
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 
 When you [replace a worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [update a VPC worker node](/docs/containers?topic=containers-update#vpc_worker_node), a worker node is not automatically added back to your cluster.
