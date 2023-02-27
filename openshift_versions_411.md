@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-27"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -26,10 +26,10 @@ Looking for general information about updating clusters, or information on a dif
 {: tip}
 
 
-![This badge indicates Kubernetes version 1.24 certification for {{site.data.keyword.containerlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.24 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.24 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.24 certification badge" caption-side="bottom"}
 
 
-{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.24 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+{{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.24 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 ## Release timeline 
 {: #release_timeline_411}
@@ -93,6 +93,7 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | --- | --- |
 | **Unsupported:** RHEL 7 worker nodes | Using RHEL 7 worker nodes with Red Hat OpenShift on IBM Cloud version 4.11 clusters is unsupported. After updating the cluster master, if your cluster still has RHEL 7 worker nodes, [migrate your RHEL 7 worker nodes to RHEL 8](#rhel-migrate-411). |
+| Updated default container network `sysctls` | New containers running on the pod network have the following `sysctl` tuning applied by default: `net.ipv4.tcp_keepalive_intvl=15`, `net.ipv4.tcp_keepalive_probes=6` and `net.ipv4.tcp_keepalive_time=40`. If your apps rely on the previous defaults, you must update your app deployment to customize the `sysctls`. For more information, see [Optimizing network keepalive sysctl settings](/docs/openshift?topic=openshift-kernel#keepalive-iks). |
 {: caption="Changes to make after you update the master to Red Hat OpenShift 4.11" caption-side="bottom"}
 
 

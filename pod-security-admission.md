@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-27"
 
 keywords: openshift, deploy, pod security admission, pod security, security profiles
 
@@ -96,7 +96,7 @@ Do not remove or change the labels for these namespaces or any of the `openshift
 {: #pod-security-configure}
 
 
-You can configure the pod security behavior at the namespace level with predefined pod security labels. For more information about configuration steps, see [Controlling pod security admission synchronization](https://docs.openshift.com/container-platform/4.11/authentication/understanding-and-managing-pod-security-admission.html#security-context-constraints-psa-opting_understanding-and-managing-pod-security-admission){: external} in the Red Hat OpenShift documentation. 
+You can configure the pod security behavior at the namespace level with predefined pod security labels. For more information about configuration, see [Controlling pod security admission synchronization](https://docs.openshift.com/container-platform/4.11/authentication/understanding-and-managing-pod-security-admission.html#security-context-constraints-psa-opting_understanding-and-managing-pod-security-admission){: external} in the Red Hat OpenShift documentation. Note that the steps vary for each cluster version, so make sure you are viewing the steps for the correct version. 
 
 For more information about configuring `apiserver` logs for {{site.data.keyword.openshiftshort}}, see [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server).
 {: tip}

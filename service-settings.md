@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-27"
 
 keywords: openshift
 
@@ -33,6 +33,9 @@ Review the feature gates that are applied to all master and worker node componen
 
 
 
+
+4.12
+:   Community feature gates applied.
 
 4.11
 :   Community feature gates applied. 

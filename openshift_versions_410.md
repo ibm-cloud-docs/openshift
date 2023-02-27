@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-27"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -38,9 +38,9 @@ Gateway-enabled clusters on Classic infrastructure are deprecated and will be un
 {: note}
 
 
-![This badge indicates Kubernetes version 1.23 certification for {{site.data.keyword.containerlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.23 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.23 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.23 certification badge" caption-side="bottom"}
 
-{{site.data.keyword.containerlong_notm}} is a Certified Kubernetes product for version 1.23 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+{{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.23 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 
 
