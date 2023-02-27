@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2022, 2023
+  years: 2023, 2023
 lastupdated: "2023-02-27"
 
-keywords: openshift, version, update, upgrade, 4.11, update openshift
+keywords: openshift, version, update, upgrade, 4.12, update openshift
 
 subcollection: openshift
 

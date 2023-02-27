@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2022, 2023
+  years: 2023, 2023
 lastupdated: "2023-02-27"
 
-keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
+keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
 
 subcollection: openshift
 

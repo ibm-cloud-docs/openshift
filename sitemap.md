@@ -284,6 +284,12 @@ subcollection: openshift
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
 
+    * [27 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2323)
+
+        * New! {{site.data.keyword.openshiftlong_notm}} 4.12
+
+        * Master fix pack and worker node fix pack update
+
     * [21 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2123)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.10`.
