@@ -304,7 +304,8 @@ toc:
           - topicgroup:
               label: Version 4.12
               topics:
-              
+              - openshift_versions_412.md
+              - openshift_versions_changelog_412.md
               - benchmarks_412.md
           - topicgroup:
               label: Version 4.11
