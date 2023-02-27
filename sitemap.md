@@ -6129,7 +6129,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
 
-    * [Change log for master fix pack 4.12.2_1527_{{site.data.keyword.openshiftshort}}and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4122_1527_openshift_4.12.2_1526_openshift)
+    * [Change log for master fix pack 4.12.2_1527_{{site.data.keyword.openshiftshort}} and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4122_1527_openshift_4.12.2_1526_openshift)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.12 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-412#cis-benchmark-412)
 
