@@ -284,7 +284,7 @@ subcollection: openshift
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
 
-    * [27 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2323)
+    * [27 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2723)
 
         * New! {{site.data.keyword.openshiftlong_notm}} 4.12
 

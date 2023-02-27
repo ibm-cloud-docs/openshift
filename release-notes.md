@@ -34,7 +34,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 ### 27 February 2023
-{: #openshift-feb2323}
+{: #openshift-feb2723}
 {: release-note}
 
 New! {{site.data.keyword.openshiftlong_notm}} 4.12
