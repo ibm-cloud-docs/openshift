@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-02-27"
 
 keywords: openshift, audit
 
@@ -54,8 +54,6 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 | `containers-kubernetes.cluster-kms.enable` | A key management service (KMS) provider is enabled for a cluster. |
 | `containers-kubernetes.cluster-master.refresh` | A cluster master refresh is requested. |
 | `containers-kubernetes.cluster-master.update` | A cluster master update is requested. |
-| `containers-kubernetes.cluster-masterlogs.retrieve` | The status for the most recent collection of master logs for the cluster is returned. |
-| `containers-kubernetes.cluster-masterlogs.status` | A collection of master logs for the cluster is requested. |
 | `containers-kubernetes.cluster-private-service-endpoint.disable` | The private cloud service endpoint for a cluster is disabled. |
 | `containers-kubernetes.cluster-private-service-endpoint.enable` | The private cloud service endpoint for a cluster is enabled. |
 | `containers-kubernetes.cluster-public-service-endpoint.disable` | The public cloud service endpoint for a cluster is disabled. |
@@ -121,9 +119,6 @@ The following list of the cluster add-on events are sent to {{site.data.keyword.
 | `containers-kubernetes.cluster-addon.update` | A cluster add-on is updated. |
 | `containers-kubernetes.cluster-addon-dashboard.start` | The Kubernetes dashboard proxy is started. |
 | `containers-kubernetes.cluster-addon-debugtool-dashboard.start` | The diagnostics and debug tool add-on dashboard is started. |
-| `containers-kubernetes.cluster-addon-istio-grafana-dashboard.start` | The Grafana dashboard for the managed Istio add-on is started. |
-| `containers-kubernetes.cluster-addon-istio-jaeger-dashboard.start` | The Jaeger dashboard for the managed Istio add-on is started. |
-| `containers-kubernetes.cluster-addon-istio-kiali-dashboard.start` | The Kiali dashboard for the managed Istio add-on Kiali is started. |
 | `containers-kubernetes.cluster-addon-terminal.start` | **Deprecated**: Starts the Kubernetes web terminal proxy. |
 {: caption="Cluster add-on events" caption-side="bottom"}
 
@@ -141,7 +136,7 @@ The following list of Fluentd logging events for a cluster are sent to {{site.da
 | `containers-kubernetes.cluster-logging-config.delete` | A logging configuration is deleted from the cluster.|
 | `containers-kubernetes.cluster-logging-config.get` | The details of a logging configuration for the cluster are returned. |
 | `containers-kubernetes.cluster-logging-config.refresh` | The logging configuration for the cluster is refreshed. |
-| `containers-kubernetes.cluster-logging-config.update` | A logging filter configuration for the cluster is updated. |
+| `containers-kubernetes.cluster-logging-config.update` | A logging configuration for the cluster is updated. |
 | `containers-kubernetes.cluster-logging-filter.create` | A logging filter configuration for the cluster is created. |
 | `containers-kubernetes.cluster-logging-filter.delete` | A logging filter configuration is deleted from the cluster. |
 | `containers-kubernetes.cluster-logging-filter.get` | The details of a logging filter configuration are returned. |
