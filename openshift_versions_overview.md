@@ -116,7 +116,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 4.8 (Kubernetes 1.21)
 - Release date: 29 September 2021
-- End of support: 08 April 2023
+- End of support: 27 April 2023
 - Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 7 (`REDHAT_7_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
@@ -156,7 +156,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 4.8 (Kubernetes 1.21)
 - Release date: 29 September 2021
-- End of support: 08 April 2023
+- End of support: 27 April 2023
 - Supported operating systems: RHEL 7 (`REDHAT_7_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
