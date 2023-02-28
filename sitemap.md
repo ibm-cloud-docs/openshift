@@ -290,6 +290,8 @@ subcollection: openshift
 
         * Master fix pack and worker node fix pack update
 
+        * Worker node fix packs `4.8.57_1590_openshift`, `4.9.56_1576_openshift`, `4.10.52_1556_openshift`, `4.11.28_1543_openshift`, and `4.12.4_1528_openshift`.
+
     * [21 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2123)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.10`.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-02-28"
 
 keywords: openshift, version, update, upgrade, 4.12, update openshift
 
@@ -22,7 +22,7 @@ subcollection: openshift
 Review information about version 4.12 of {{site.data.keyword.openshiftlong_notm}}, released 23 Feb 2023. This version is based on Kubernetes version 1.25. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_changelog) and the version [4.12 blog](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-4.12){: external}.
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_changelog) and the version [4.12 blog](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-4.12-blog){: external}.
 {: tip}
 
 ![This badge indicates Kubernetes version 1.25 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.25 certification badge" caption-side="bottom"}
