@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-02-28"
 
 keywords: openshift
 subcollection: openshift
@@ -6129,6 +6129,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
 
+    * [Change log for worker node fix pack 4.12.4_1528_openshift, released 27 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4124_1528_openshift)
+
     * [Change log for master fix pack 4.12.2_1527_{{site.data.keyword.openshiftshort}} and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4122_1527_openshift_4.12.2_1526_openshift)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.12 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-412#cis-benchmark-412)
@@ -6195,6 +6197,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.28_1543_openshift, released 27 February 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41128_1543_openshift)
 
     * [Change log for worker node fix pack 4.11.26_1542_openshift, released 13 February 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41126_1542_openshift)
 
@@ -6332,6 +6336,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.52_1556_openshift, released 27 February 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41052_1556_openshift)
 
     * [Change log for worker node fix pack 4.10.51_1555_openshift, released 13 February 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41051_1555_openshift)
 
@@ -6501,6 +6507,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.56_1576_openshift, released 27 February 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4956_1576_openshift)
 
     * [Change log for worker node fix pack 4.9.54_1575_openshift, released 13 February 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4954_1575_openshift)
 
@@ -6686,6 +6694,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
+
+    * [Change log for worker node fix pack 4.8.57_1590_openshift, released 27 February 2023](/docs/openshift?topic=openshift-openshift_changelog_48#4857_1590_openshift)
 
     * [Change log for worker node fix pack 4.8.57_1589_openshift, released 13 February 2023](/docs/openshift?topic=openshift-openshift_changelog_48#4857_1589_openshift)
 
