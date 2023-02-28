@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-02-28"
 
 keywords: openshift
 
@@ -37,11 +37,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-feb2723}
 {: release-note}
 
+
+
 New! {{site.data.keyword.openshiftlong_notm}} 4.12
 :   You can create or [update clusters to version 4.12](/docs/openshift?topic=openshift-openshift_changelog_412). With {{site.data.keyword.openshiftlong_notm}} version 4.12, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
 
 Master fix pack and worker node fix pack update
 :   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_412) are available.
+  
+Worker node fix packs `4.8.57_1590_openshift`, `4.9.56_1576_openshift`, `4.10.52_1556_openshift`, `4.11.28_1543_openshift`, and `4.12.4_1528_openshift`.
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
 
 
 
