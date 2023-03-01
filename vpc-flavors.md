@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-03-01"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -31,7 +31,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 
 
 
-## au-syd
+## `au-syd`
 {: #au-syd}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |
@@ -59,7 +59,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: caption="Table 1. Worker node flavors for au-syd" caption-side="bottom"}
 
 
-## br-sao
+## `br-sao`
 {: #br-sao}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |
@@ -87,7 +87,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: caption="Table 2. Worker node flavors for br-sao" caption-side="bottom"}
 
 
-## ca-tor
+## `ca-tor`
 {: #ca-tor}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |
@@ -115,7 +115,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: caption="Table 3. Worker node flavors for ca-tor" caption-side="bottom"}
 
 
-## eu-de
+## `eu-de`
 {: #eu-de}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |
@@ -143,7 +143,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: caption="Table 4. Worker node flavors for eu-de" caption-side="bottom"}
 
 
-## eu-gb
+## `eu-gb`
 {: #eu-gb}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |
@@ -171,7 +171,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: caption="Table 5. Worker node flavors for eu-gb" caption-side="bottom"}
 
 
-## jp-osa
+## `jp-osa`
 {: #jp-osa}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |
@@ -199,7 +199,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: caption="Table 6. Worker node flavors for jp-osa" caption-side="bottom"}
 
 
-## jp-tok
+## `jp-tok`
 {: #jp-tok}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |
@@ -227,7 +227,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: caption="Table 7. Worker node flavors for jp-tok" caption-side="bottom"}
 
 
-## us-east
+## `us-east`
 {: #us-east}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |
@@ -255,7 +255,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: caption="Table 8. Worker node flavors for us-east" caption-side="bottom"}
 
 
-## us-south
+## `us-south`
 {: #us-south}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage | Secondary storage options |

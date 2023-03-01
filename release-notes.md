@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-01"
 
 keywords: openshift
 
@@ -26,6 +26,19 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
+## March 2023
+{: #openshift-mar23}
+
+### 1 March 2023
+{: #openshift-mar0123}
+{: release-note}
+
+CLI version `1.0.498`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+Cloud Image Key Synchronizer add-on version `1.0.0_1362`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
 
 
 ## February 2023

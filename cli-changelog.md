@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-01"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -32,6 +32,16 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.498
+{: #cli-10498}
+
+Version 1.0.498 of the CLI was released on 1 March 2023.
+:   Adds the `ibmcloud oc cluster master pod-security get` command.
+:   Updates the `golang` version to resolve [CVE-2022-41723](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2022-41723){: external}.
+:   Adds an `Architecture` field to the `ibmcloud oc flavor get` command output.
+:   Improves formatting of the `ibmcloud oc ingress secret ls` command output.
+:   When the `ibmcloud oc cluster config` command returns, you can run `kubectl` or `oc` commands immediately without a waiting period.
 
 ## Version 1.0.489
 {: #cli-10489}

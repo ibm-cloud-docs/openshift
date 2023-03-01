@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-01"
 
 keywords: openshift
 
@@ -1152,6 +1152,213 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 {: pre}
 
 
+
+### `ibmcloud oc cluster master pod-security get`
+{: #cluster-master-pod-security-get}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+View the pod security admission configuration for a cluster's Kubernetes API server.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master pod-security get --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `cluster master pod-security get` command
+{: #cluster-master-pod-security-get-example}
+
+```sh
+ibmcloud oc cluster master pod-security get --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc cluster master pod-security policy disable`
+{: #cluster-master-pod-security-policy-disable}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Disable the pod security policy for a cluster's Kubernetes API server.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `cluster master pod-security policy disable` command
+{: #cluster-master-pod-security-policy-disable-example}
+
+```sh
+ibmcloud oc cluster master pod-security policy disable --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc cluster master pod-security policy enable`
+{: #cluster-master-pod-security-policy-enable}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Enable the pod security policy for a cluster's Kubernetes API server. Note that pod security policies are not available in clusters that run version 1.25 or later. 
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `cluster master pod-security policy enable` command
+{: #cluster-master-pod-security-policy-enable-example}
+
+```sh
+ibmcloud oc cluster master pod-security policy enable --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc cluster master pod-security policy get`
+{: #cluster-master-pod-security-policy-get}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+View the pod security policy configuration for a cluster's Kubernetes API server. Note that pod security policies are not available in clusters that run version 1.25 or later. 
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master pod-security policy get --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `cluster master pod-security policy get` command
+{: #cluster-master-pod-security-policy-get-example}
+
+```sh
+ibmcloud oc cluster master pod-security policy get --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc cluster master pod-security set`
+{: #cluster-master-pod-security-set}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Set and enable the [pod security admission](/docs/containers?topic=containers-pod-security-admission&interface=ui) for a cluster's Kubernetes API server.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master pod-security set --cluster CLUSTER [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `cluster master pod-security set` command
+{: #cluster-master-pod-security-set-example}
+
+```sh
+ibmcloud oc cluster master pod-security set --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc cluster master pod-security unset`
+{: #cluster-master-pod-security-unset}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Remove the [pod security admission](/docs/containers?topic=containers-pod-security-admission&interface=ui) configuration for a cluster's Kubernetes API server.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster master pod-security unset --cluster CLUSTER [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `cluster master pod-security set` command
+{: #cluster-master-pod-security-set-example}
+
+```sh
+ibmcloud oc cluster master pod-security set --cluster mycluster
+```
+{: pre}
 
 ### `ibmcloud oc cluster master private-service-endpoint allowlist`
 {: #cs_master_pse_allowlist}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-03-01"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -29,7 +29,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## ams
+## `ams`
 {: #ams}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -61,7 +61,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 1. Worker node flavors for ams" caption-side="bottom"}
 
 
-## che
+## `che`
 {: #che}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -93,7 +93,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 2. Worker node flavors for che" caption-side="bottom"}
 
 
-## dal
+## `dal`
 {: #dal}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -131,7 +131,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 3. Worker node flavors for dal" caption-side="bottom"}
 
 
-## fra
+## `fra`
 {: #fra}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -168,7 +168,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## lon
+## `lon`
 {: #lon}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -207,7 +207,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## mil
+## `mil`
 {: #mil}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -239,7 +239,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 6. Worker node flavors for mil" caption-side="bottom"}
 
 
-## mon
+## `mon`
 {: #mon}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -271,7 +271,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 7. Worker node flavors for mon" caption-side="bottom"}
 
 
-## osa
+## `osa`
 {: #osa}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -311,7 +311,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## par
+## `par`
 {: #par}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -346,7 +346,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 9. Worker node flavors for par" caption-side="bottom"}
 
 
-## sao
+## `sao`
 {: #sao}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -364,7 +364,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## sjc
+## `sjc`
 {: #sjc}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -384,7 +384,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 11. Worker node flavors for sjc" caption-side="bottom"}
 
 
-## sng
+## `sng`
 {: #sng}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -400,7 +400,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 12. Worker node flavors for sng" caption-side="bottom"}
 
 
-## syd
+## `syd`
 {: #syd}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -435,7 +435,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 13. Worker node flavors for syd" caption-side="bottom"}
 
 
-## tok
+## `tok`
 {: #tok}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -470,7 +470,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 14. Worker node flavors for tok" caption-side="bottom"}
 
 
-## tor
+## `tor`
 {: #tor}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |
@@ -505,7 +505,7 @@ Review the classic worker node flavors by metro.
 {: caption="Table 15. Worker node flavors for tor" caption-side="bottom"}
 
 
-## wdc
+## `wdc`
 {: #wdc}
 
 | Name | Memory | Network speed | Cores | Type | OS | Primary storage | Secondary storage |

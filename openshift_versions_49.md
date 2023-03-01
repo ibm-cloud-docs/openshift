@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-03-01"
 
 keywords: openshift, version, update, upgrade
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# 4.9 version information and update actions
+# 4.9 version information and update actions (Deprecated)
 {: #cs_versions_49}
 
 Review information about version 4.9 of {{site.data.keyword.openshiftlong_notm}}, released 09 Feb 2022. This version is based on Kubernetes version 1.22. 
@@ -40,7 +40,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.9 / 1.22 | 09 Feb 2022 | 12 July 2023`†` |
+| Supported | 4.9 / 1.22 | 09 Feb 2022 | 26 July 2023`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.9." caption-side="bottom"}
 
 ## Preparing to update

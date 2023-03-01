@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-01"
 
 keywords: openshift
 subcollection: openshift
@@ -281,6 +281,14 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
+
+    * [1 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0123)
+
+        * CLI version `1.0.498`.
+
+        * Cloud Image Key Synchronizer add-on version `1.0.0_1362`.
 
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
 
@@ -5597,6 +5605,18 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
 
+    * [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get)
+
+    * [`ibmcloud oc cluster master pod-security policy disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable)
+
+    * [`ibmcloud oc cluster master pod-security policy enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-enable)
+
+    * [`ibmcloud oc cluster master pod-security policy get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-get)
+
+    * [`ibmcloud oc cluster master pod-security set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set)
+
+    * [`ibmcloud oc cluster master pod-security unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-unset)
+
     * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
 
     * [Example `cluster master private-service-endpoint allowlist rm` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm)
@@ -5917,6 +5937,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.498](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10498)
+
 * [Version 1.0.489](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10489)
 
 * [Version 1.0.487](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10487)
@@ -6133,7 +6155,7 @@ subcollection: openshift
 
     * [Change log for worker node fix pack 4.12.4_1528_openshift, released 27 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4124_1528_openshift)
 
-    * [Change log for master fix pack 4.12.2_1527_{{site.data.keyword.openshiftshort}} and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4122_1527_openshift_4.12.2_1526_openshift)
+    * [Change log for master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4122_1527_openshift_4.12.2_1526_openshift)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.12 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-412#cis-benchmark-412)
 
@@ -6494,7 +6516,7 @@ subcollection: openshift
 {: #sitemap_version_49}
 
 
-[4.9 version information and update actions](/docs/openshift?topic=openshift-cs_versions_49#cs_versions_49)
+[4.9 version information and update actions (Deprecated)](/docs/openshift?topic=openshift-cs_versions_49#cs_versions_49)
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_49#release_timeline_49)
 
@@ -6683,7 +6705,7 @@ subcollection: openshift
 {: #sitemap_version_48}
 
 
-[4.8 version information and update actions](/docs/openshift?topic=openshift-cs_versions_48#cs_versions_48)
+[4.8 version information and update actions (Deprecated)](/docs/openshift?topic=openshift-cs_versions_48#cs_versions_48)
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_48#release_timeline_48)
 
@@ -7365,6 +7387,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1362, released on 1 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1362)
 
     * [Version 1.0.0_1329, released on 8 February 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1329)
 
@@ -8427,23 +8451,23 @@ subcollection: openshift
 
 [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
-* [au-syd](/docs/openshift?topic=openshift-vpc-flavors#au-syd)
+* [`au-syd`](/docs/openshift?topic=openshift-vpc-flavors#au-syd)
 
-* [br-sao](/docs/openshift?topic=openshift-vpc-flavors#br-sao)
+* [`br-sao`](/docs/openshift?topic=openshift-vpc-flavors#br-sao)
 
-* [ca-tor](/docs/openshift?topic=openshift-vpc-flavors#ca-tor)
+* [`ca-tor`](/docs/openshift?topic=openshift-vpc-flavors#ca-tor)
 
-* [eu-de](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
+* [`eu-de`](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
 
-* [eu-gb](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
+* [`eu-gb`](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
 
-* [jp-osa](/docs/openshift?topic=openshift-vpc-flavors#jp-osa)
+* [`jp-osa`](/docs/openshift?topic=openshift-vpc-flavors#jp-osa)
 
-* [jp-tok](/docs/openshift?topic=openshift-vpc-flavors#jp-tok)
+* [`jp-tok`](/docs/openshift?topic=openshift-vpc-flavors#jp-tok)
 
-* [us-east](/docs/openshift?topic=openshift-vpc-flavors#us-east)
+* [`us-east`](/docs/openshift?topic=openshift-vpc-flavors#us-east)
 
-* [us-south](/docs/openshift?topic=openshift-vpc-flavors#us-south)
+* [`us-south`](/docs/openshift?topic=openshift-vpc-flavors#us-south)
 
 
 ## Classic flavors
@@ -8452,37 +8476,37 @@ subcollection: openshift
 
 [Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
 
-* [ams](/docs/openshift?topic=openshift-classic-flavors#ams)
+* [`ams`](/docs/openshift?topic=openshift-classic-flavors#ams)
 
-* [che](/docs/openshift?topic=openshift-classic-flavors#che)
+* [`che`](/docs/openshift?topic=openshift-classic-flavors#che)
 
-* [dal](/docs/openshift?topic=openshift-classic-flavors#dal)
+* [`dal`](/docs/openshift?topic=openshift-classic-flavors#dal)
 
-* [fra](/docs/openshift?topic=openshift-classic-flavors#fra)
+* [`fra`](/docs/openshift?topic=openshift-classic-flavors#fra)
 
-* [lon](/docs/openshift?topic=openshift-classic-flavors#lon)
+* [`lon`](/docs/openshift?topic=openshift-classic-flavors#lon)
 
-* [mil](/docs/openshift?topic=openshift-classic-flavors#mil)
+* [`mil`](/docs/openshift?topic=openshift-classic-flavors#mil)
 
-* [mon](/docs/openshift?topic=openshift-classic-flavors#mon)
+* [`mon`](/docs/openshift?topic=openshift-classic-flavors#mon)
 
-* [osa](/docs/openshift?topic=openshift-classic-flavors#osa)
+* [`osa`](/docs/openshift?topic=openshift-classic-flavors#osa)
 
-* [par](/docs/openshift?topic=openshift-classic-flavors#par)
+* [`par`](/docs/openshift?topic=openshift-classic-flavors#par)
 
-* [sao](/docs/openshift?topic=openshift-classic-flavors#sao)
+* [`sao`](/docs/openshift?topic=openshift-classic-flavors#sao)
 
-* [sjc](/docs/openshift?topic=openshift-classic-flavors#sjc)
+* [`sjc`](/docs/openshift?topic=openshift-classic-flavors#sjc)
 
-* [sng](/docs/openshift?topic=openshift-classic-flavors#sng)
+* [`sng`](/docs/openshift?topic=openshift-classic-flavors#sng)
 
-* [syd](/docs/openshift?topic=openshift-classic-flavors#syd)
+* [`syd`](/docs/openshift?topic=openshift-classic-flavors#syd)
 
-* [tok](/docs/openshift?topic=openshift-classic-flavors#tok)
+* [`tok`](/docs/openshift?topic=openshift-classic-flavors#tok)
 
-* [tor](/docs/openshift?topic=openshift-classic-flavors#tor)
+* [`tor`](/docs/openshift?topic=openshift-classic-flavors#tor)
 
-* [wdc](/docs/openshift?topic=openshift-classic-flavors#wdc)
+* [`wdc`](/docs/openshift?topic=openshift-classic-flavors#wdc)
 
 
 ## FAQs
