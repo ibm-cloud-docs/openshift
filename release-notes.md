@@ -34,8 +34,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-mar0123}
 {: release-note}
 
-CLI version `1.0.498`
+CLI version `1.0.498`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+Cloud Image Key Synchronizer add-on version `1.0.0_1362`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+
 
 ## February 2023
 {: #openshift-feb23}
