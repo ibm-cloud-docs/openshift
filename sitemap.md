@@ -282,6 +282,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
+
+    * [1 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0123)
+
+        * CLI version `1.0.498`
+
 * [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
 
     * [27 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2723)
@@ -5597,6 +5603,18 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
 
+    * [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get)
+
+    * [`ibmcloud oc cluster master pod-security policy disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable)
+
+    * [`ibmcloud oc cluster master pod-security policy enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-enable)
+
+    * [`ibmcloud oc cluster master pod-security policy get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-get)
+
+    * [`ibmcloud oc cluster master pod-security set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set)
+
+    * [`ibmcloud oc cluster master pod-security unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-unset)
+
     * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
 
     * [Example `cluster master private-service-endpoint allowlist rm` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm)
@@ -5916,6 +5934,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.498](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10498)
 
 * [Version 1.0.489](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10489)
 
