@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-01"
 
 keywords: openshift
 
@@ -35,8 +35,7 @@ Use the list to find CIS Kubernetes Benchmark results for available versions.
 - [Version 4.10](/docs/openshift?topic=openshift-cis-benchmark-410)
 - [Version 4.9](/docs/openshift?topic=openshift-cis-benchmark-49)
 - [Version 4.8](/docs/openshift?topic=openshift-cis-benchmark-48)
-- [Version 4.7](/docs/openshift?topic=openshift-cis-benchmark-47)
-- [Version 4.6](/docs/openshift?topic=openshift-cis-benchmark-46)
+
 
 
 

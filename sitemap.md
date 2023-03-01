@@ -6155,7 +6155,7 @@ subcollection: openshift
 
     * [Change log for worker node fix pack 4.12.4_1528_openshift, released 27 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4124_1528_openshift)
 
-    * [Change log for master fix pack 4.12.2_1527_{{site.data.keyword.openshiftshort}} and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4122_1527_openshift_4.12.2_1526_openshift)
+    * [Change log for master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4122_1527_openshift_4.12.2_1526_openshift)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.12 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-412#cis-benchmark-412)
 
@@ -6516,7 +6516,7 @@ subcollection: openshift
 {: #sitemap_version_49}
 
 
-[4.9 version information and update actions](/docs/openshift?topic=openshift-cs_versions_49#cs_versions_49)
+[4.9 version information and update actions (Deprecated)](/docs/openshift?topic=openshift-cs_versions_49#cs_versions_49)
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_49#release_timeline_49)
 
@@ -6705,7 +6705,7 @@ subcollection: openshift
 {: #sitemap_version_48}
 
 
-[4.8 version information and update actions](/docs/openshift?topic=openshift-cs_versions_48#cs_versions_48)
+[4.8 version information and update actions (Deprecated)](/docs/openshift?topic=openshift-cs_versions_48#cs_versions_48)
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_48#release_timeline_48)
 

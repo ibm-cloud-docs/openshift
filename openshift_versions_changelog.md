@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-01"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -37,15 +37,15 @@ Review the change logs in the following list.
 **Supported versions**:
 - [4.11 change log](/docs/openshift?topic=openshift-openshift_changelog_411)
 - [4.10 change log](/docs/openshift?topic=openshift-openshift_changelog_410)
-- [4.9 change log](/docs/openshift?topic=openshift-openshift_changelog_49)
-- [4.8 change log](/docs/openshift?topic=openshift-openshift_changelog_48)
-- [4.7 change log](/docs/openshift?topic=openshift-openshift_changelog_47)
-- [4.6 change log](/docs/openshift?topic=openshift-openshift_changelog_46)
 
 **Deprecated versions**:
+- [4.9 change log](/docs/openshift?topic=openshift-openshift_changelog_49)
+- [4.8 change log](/docs/openshift?topic=openshift-openshift_changelog_48)
 - [3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311) 
 
 **Unsupported versions**: 
-- [Archived change logs](/docs/openshift?topic=openshift-changelog_archive)
+- [4.7 change log](/docs/openshift?topic=openshift-openshift_changelog_47)
+- [4.6 change log](/docs/openshift?topic=openshift-openshift_changelog_46)
+- [4.5, 4.4, and 4.3 change logs](/docs/openshift?topic=openshift-changelog_archive)
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-03-01"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -55,7 +55,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.10 / 1.23 | 27 April 2022 | October 2023`†` |
+| Supported | 4.10 / 1.23 | 27 April 2022 | 8 November 2023`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.10." caption-side="bottom"}
 
 ## Preparing to update
