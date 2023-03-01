@@ -8451,23 +8451,23 @@ subcollection: openshift
 
 [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
-* [au-syd](/docs/openshift?topic=openshift-vpc-flavors#au-syd)
+* [`au-syd`](/docs/openshift?topic=openshift-vpc-flavors#au-syd)
 
-* [br-sao](/docs/openshift?topic=openshift-vpc-flavors#br-sao)
+* [`br-sao`](/docs/openshift?topic=openshift-vpc-flavors#br-sao)
 
-* [ca-tor](/docs/openshift?topic=openshift-vpc-flavors#ca-tor)
+* [`ca-tor`](/docs/openshift?topic=openshift-vpc-flavors#ca-tor)
 
-* [eu-de](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
+* [`eu-de`](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
 
-* [eu-gb](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
+* [`eu-gb`](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
 
-* [jp-osa](/docs/openshift?topic=openshift-vpc-flavors#jp-osa)
+* [`jp-osa`](/docs/openshift?topic=openshift-vpc-flavors#jp-osa)
 
-* [jp-tok](/docs/openshift?topic=openshift-vpc-flavors#jp-tok)
+* [`jp-tok`](/docs/openshift?topic=openshift-vpc-flavors#jp-tok)
 
-* [us-east](/docs/openshift?topic=openshift-vpc-flavors#us-east)
+* [`us-east`](/docs/openshift?topic=openshift-vpc-flavors#us-east)
 
-* [us-south](/docs/openshift?topic=openshift-vpc-flavors#us-south)
+* [`us-south`](/docs/openshift?topic=openshift-vpc-flavors#us-south)
 
 
 ## Classic flavors
@@ -8476,37 +8476,37 @@ subcollection: openshift
 
 [Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
 
-* [ams](/docs/openshift?topic=openshift-classic-flavors#ams)
+* [`ams`](/docs/openshift?topic=openshift-classic-flavors#ams)
 
-* [che](/docs/openshift?topic=openshift-classic-flavors#che)
+* [`che`](/docs/openshift?topic=openshift-classic-flavors#che)
 
-* [dal](/docs/openshift?topic=openshift-classic-flavors#dal)
+* [`dal`](/docs/openshift?topic=openshift-classic-flavors#dal)
 
-* [fra](/docs/openshift?topic=openshift-classic-flavors#fra)
+* [`fra`](/docs/openshift?topic=openshift-classic-flavors#fra)
 
-* [lon](/docs/openshift?topic=openshift-classic-flavors#lon)
+* [`lon`](/docs/openshift?topic=openshift-classic-flavors#lon)
 
-* [mil](/docs/openshift?topic=openshift-classic-flavors#mil)
+* [`mil`](/docs/openshift?topic=openshift-classic-flavors#mil)
 
-* [mon](/docs/openshift?topic=openshift-classic-flavors#mon)
+* [`mon`](/docs/openshift?topic=openshift-classic-flavors#mon)
 
-* [osa](/docs/openshift?topic=openshift-classic-flavors#osa)
+* [`osa`](/docs/openshift?topic=openshift-classic-flavors#osa)
 
-* [par](/docs/openshift?topic=openshift-classic-flavors#par)
+* [`par`](/docs/openshift?topic=openshift-classic-flavors#par)
 
-* [sao](/docs/openshift?topic=openshift-classic-flavors#sao)
+* [`sao`](/docs/openshift?topic=openshift-classic-flavors#sao)
 
-* [sjc](/docs/openshift?topic=openshift-classic-flavors#sjc)
+* [`sjc`](/docs/openshift?topic=openshift-classic-flavors#sjc)
 
-* [sng](/docs/openshift?topic=openshift-classic-flavors#sng)
+* [`sng`](/docs/openshift?topic=openshift-classic-flavors#sng)
 
-* [syd](/docs/openshift?topic=openshift-classic-flavors#syd)
+* [`syd`](/docs/openshift?topic=openshift-classic-flavors#syd)
 
-* [tok](/docs/openshift?topic=openshift-classic-flavors#tok)
+* [`tok`](/docs/openshift?topic=openshift-classic-flavors#tok)
 
-* [tor](/docs/openshift?topic=openshift-classic-flavors#tor)
+* [`tor`](/docs/openshift?topic=openshift-classic-flavors#tor)
 
-* [wdc](/docs/openshift?topic=openshift-classic-flavors#wdc)
+* [`wdc`](/docs/openshift?topic=openshift-classic-flavors#wdc)
 
 
 ## FAQs
