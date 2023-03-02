@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-02"
 
 keywords: block, add-on, changelog
 
@@ -65,8 +65,6 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 5.0
 {: #050_is_block}
 
-Version 5.0.0 is available in for allowlisted accounts.
-{: preview}
 
 ### Change log for version 5.0.7_1836, released 21 February 2023
 {: #5.0.7-1836_is_block_relnote}
