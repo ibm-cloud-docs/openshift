@@ -20,21 +20,15 @@
     "need a red hat openshift cluster for free"
   ],
   "charges": [
-    "how much is Openshift",
     "openshift pricing",
     "how much does Red Hat Openshift cost",
-    "What is provisioning price for OpenShift on IBM Cloud",
     "estimate the costs for Openshift",
-    "How much cost each openshift cluster",
-    "how much for a openshift cluster",
-    "fee of openshift",
     "cost for a cluster for Red Hat Openshift",
     "cost estimator for Openshift",
     "what is the pricing structure for Redhat Openshift",
     "pricing for openshift",
     "how do you charge for Redhat Openshift",
-    "Red Hat Openshift cost estimate",
-    "cost calulator for Openshift"
+    "Red Hat Openshift cost estimate"
   ],
   "faq_access": [
     "roles to I need to access openshift cluster?",
@@ -55,19 +49,6 @@
     "how do I add users to my openshift cluster",
     "Granting users access to openshift cluster through IAM",
     "permissions needed to create openshift clusters"
-  ],
-    "smallest_cluster": [  
-    "Create redhat classic cluster",
-    "want to create redhat classic clusters",
-    "Create a cluster in Red Hat OpenShift",
-    "Creating a standard Red Hat classic cluster",
-    "create an OpenShift Classic Cluster",
-    "I have to create OpenShift Classic Cluster",
-    "get Red Hat classic cluster",
-    "How to create my open shift cluster",
-    "creating OpenShift cluster registered with Red Hat",
-    "Create ROKS VPC cluster",
-    "ROKS cluster creation"
   ],
   "cs_cluster_access": [
     "unable to view or work with the Openshift cluster",
