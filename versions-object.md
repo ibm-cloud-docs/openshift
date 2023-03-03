@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-03-03"
 
 keywords: object storage, plug-in, change log
 
@@ -29,6 +29,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.11 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.10 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.9 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.8 | Deprecated | Greater than or equal to 4.6 | x86 |
@@ -36,6 +37,14 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.2.6 and earlier | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
+
+## Change log for version 2.2.11, released 03 March 2023
+{: #02211_object_plugin}
+
+- Updates Golang to `1.19.6`.
+- Updates the UBI Image to `8.7-1085`.
+- Updates s3fs fuse to [`d1388ff`](https://github.com/s3fs-fuse/s3fs-fuse/commit/d1388ff446b74e82483f8a09b1d576cd958d4d64){: external}.
+- Resolves the following CVEs: [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external},[CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external},[CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external},[CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external},[CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external},[CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external},[CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external}.
 
 ## Change log for version 2.2.10, released 21 February 2023
 {: #02210_object_plugin}

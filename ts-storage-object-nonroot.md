@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-03-03"
 
 keywords: openshift
 
@@ -14,6 +14,7 @@ content-type: troubleshoot
 
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 
@@ -188,7 +189,7 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
 1. Mount the PVC to the app with the non-root user.
 
 
-Define the non-root user as `runAsUser` without setting `fsGroup` in your deployment YAML at the same time. Setting `fsGroup` triggers the {{site.data.keyword.cos_full_notm}} plug-in to update the group permissions for all files in a bucket when the pod is deployed. Updating the permissions is a write operation and might prevent your pod from getting into a `Running` state.
+Set `runAsUser` and `fsGroup` to the same values in your deployment YAML.
 {: important}
 
 After you set the correct file permissions in your {{site.data.keyword.cos_full_notm}} service instance, don't upload files by using the console or the REST API. Use the {{site.data.keyword.cos_full_notm}} plug-in to add files to your service instance.
