@@ -4469,13 +4469,11 @@ subcollection: openshift
 
 * [Exposing an app by using a VPC load balancer in a VPC cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_vpc)
 
-[VPC: Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
+[Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
 
-* [About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_about)
+* [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
 
-    * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
-
-    * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
+* [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
 
 * [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-03"
 
 keywords: openshift, lb2.0, nlb, app protocol, application protocol
 
@@ -93,8 +93,6 @@ The following diagram shows how a network load balancer (NLB) 1.0 directs commun
 
 4. When the app returns a response packet, it uses the IP address of the worker node where the NLB that forwarded the client request exists. The NLB then sends the response packet to the client.
 
-
-
 ## Components and architecture of an NLB 2.0
 {: #planning_ipvs}
 
@@ -140,7 +138,4 @@ The following diagram shows how version 2.0 NLBs in each zone direct traffic fro
 5. Worker 10.73.14.26 unpacks the IPIP encapsulating packet, and then unpacks the client request packet. The client request packet is forwarded to the app pod on that worker node.
 
 6. Worker 10.73.14.26 then uses the source IP address from the original request packet, the client IP, to return the app pod's response packet directly to the client.
-
-
-
 
