@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-03"
 
 keywords: openshift
 
@@ -22,18 +22,20 @@ subcollection: openshift
 
 With {{site.data.keyword.openshiftlong}}, you can create a cluster from the following infrastructure providers. All the worker nodes in a cluster must be from the same provider. Originally, {{site.data.keyword.openshiftlong_notm}} provisioned your worker nodes in a single provider, classic infrastructure.
 
-Virtual private cloud (VPC)
+[Virtual Private Cloud]{: tag-vpc}
 :   Create your cluster on the next generation of IBM Cloud infrastructure virtual servers in your own Virtual Private Cloud (VPC).
 
-{{site.data.keyword.satelliteshort}}
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 :   Create your cluster on your own hardware, {{site.data.keyword.cloud_notm}} Classic or VPC, or on virtual servers in another cloud provider like AWS or Azure.
 
-Classic
+[Classic infrastructure]{: tag-classic-inf} 
 :   Create your cluster on a classic compute, networking, and storage environment in IBM Cloud infrastructure.
 
 
 ## Virtual Private Cloud (VPC)
 {: #vpc-gen2-infra-overview}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 | Component | Description | 
 | --- | --- | 
@@ -59,6 +61,8 @@ Classic
 ## {{site.data.keyword.satelliteshort}}
 {: #satellite-infra-overview}
 
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 | Component | Description | 
 | --- | --- | 
 | Compute and worker node resources | Worker nodes can be virtual machines using either shared infrastructure or dedicated hosts, or even bare metal servers. You manage maintenance and billing activity for the worker nodes through your host infrastructure provider whether that is {{site.data.keyword.cloud_notm}}, your own on-premises hardware, or another cloud provider. You also manage billing through {{site.data.keyword.cloud_notm}}. For more information about pricing, see [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing). |
@@ -82,6 +86,8 @@ Classic
 
 ## Classic
 {: #classic-infra-overview}
+
+[Classic infrastructure]{: tag-classic-inf} 
 
 | Component | Description | 
 | --- | --- | 

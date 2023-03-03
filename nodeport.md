@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-03"
 
 keywords: openshift, app access
 
@@ -36,7 +36,7 @@ When you expose your app by creating a Kubernetes service of type NodePort, a No
 
 The following diagram shows how communication is directed from the internet to an app when a NodePort service is configured.
 
-![Expose an app in {{site.data.keyword.containerlong_notm}} by using NodePort](images/cs_nodeport_planning.png "Expose an app by using NodePort"){: caption="Figure 1. Expose an app by using NodePort" caption-side="bottom"}
+![Expose an app in {{site.data.keyword.containerlong_notm}} by using NodePort](images/nodeport.svg "Expose an app by using NodePort"){: caption="Figure 1. Expose an app by using NodePort" caption-side="bottom"}
 
 1. A request is sent to your app by using the public IP address of your worker node and the NodePort on the worker node.
 

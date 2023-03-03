@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-03"
 
 keywords: openshift, app protocol, application protocol
 
@@ -17,19 +17,18 @@ subcollection: openshift
 
 
 
-# VPC: Exposing apps with load balancers for VPC 
+# Exposing apps with load balancers for VPC 
 {: #vpc-lbaas}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 Set up a Load Balancer for VPC to expose your app on the public or private network.
 {: shortdesc}
 
 VPC load balancers can be created for VPC clusters only, and can't be created for classic clusters. To load balance in classic clusters, see [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about).
 
-## About VPC load balancing in {{site.data.keyword.openshiftlong_notm}}
-{: #lbaas_about}
+To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. You can optionally create a layer 4 Network Load Balancer for VPC.
 
-To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, you can optionally create a layer 4 Network Load Balancer for VPC.
-{: shortdesc}
 
 
 
@@ -51,7 +50,7 @@ The following table describes the basic characteristics of each load balancing o
 
 `*` To preserve the source IP address for an Application Load Balancer for VPC, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation must be specified when the VPC ALB is initially created. This annotation is supported for VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later only.
 
-### Network Load Balancer for VPC
+## Network Load Balancer for VPC
 {: #nlb_vpc}
 
 In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) (VPC NLB) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
@@ -65,13 +64,13 @@ When you create a Kubernetes `LoadBalancer` service for an app in your cluster a
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC NLB.
 
-![VPC load balancing for a cluster through the VPC NLB.](/images/vpc-tutorial-4.svg){: caption="Figure 1. VPC load balancing for a cluster through the VPC NLB" caption-side="bottom"}
+![Load balancing for a cluster through the VPC NLB.](/images/vpc-nlb-sz.svg){: caption="Figure 1. VPC load balancing for a cluster through the VPC NLB" caption-side="bottom"}
 
 1. A request to your app uses the external IP address that is assigned to the Kubernetes `LoadBalancer` service by the VPC NLB.
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.
 3. If app instances are deployed to multiple worker nodes in the cluster, the VPC NLB routes the requests between the app pods on various worker nodes within the same zone.
 
-### Application Load Balancer for VPC
+## Application Load Balancer for VPC
 {: #lb_vpc}
 
 Set up a layer-7, multizone [Application Load Balancer for VPC](/docs/vpc?topic=vpc-load-balancers) (VPC ALB) to serve as the external entry point for incoming requests to an app in your cluster.
@@ -86,7 +85,7 @@ By default, when you create a Kubernetes `LoadBalancer` service for an app in yo
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC ALB.
 
-![VPC load balancing for a cluster through the VPC ALB.](images/vpc_alb.png){: caption="Figure 1. VPC load balancing for a cluster through the VPC ALB" caption-side="bottom"}
+![Load balancing for a cluster through the VPC ALB.](images/vpc-alb-mz.svg){: caption="Figure 1. Load balancing for a cluster through the VPC ALB" caption-side="bottom"}
 
 1. A request to your app uses the hostname that is assigned to the Kubernetes `LoadBalancer` service by the VPC ALB, such as `1234abcd-<region>.lb.appdomain.cloud`.
 2. The request is automatically forwarded by the VPC ALB to one of the node ports on the worker node, and then to the private IP address of the app pod.
