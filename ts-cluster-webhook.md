@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-03-06"
 
 keywords: openshift
 
@@ -17,12 +17,15 @@ content-type: troubleshoot
 
 
 
-# Why do cluster operations fail due to a broken webhook?
+
+# Why do cluster master operations fail due to a broken webhook?
 {: #webhooks_update}
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+This troubleshooting topic is not for general webhook troubleshooting. See [Debugging webhooks](/docs/openshift?topic=openshift-ts-webhook-debug) for webhook problems not related to updating the cluster master.
+{: note}
 
 During a master operation such as updating your cluster version, the cluster had a broken webhook application.
 {: tsSymptoms}
@@ -30,7 +33,7 @@ During a master operation such as updating your cluster version, the cluster had
 Now, master operations can't complete. You see an error similar to the following:
 
 ```sh
-can't complete cluster master operations because the cluster has a broken webhook application. For more information, see the troubleshooting docs: 'https://ibm.biz/master_webhook'
+Cannot complete cluster master operations because the cluster has a broken webhook application. For more information, see the troubleshooting docs: 'https://ibm.biz/master_webhook'
 ```
 {: screen}
 
@@ -141,9 +144,14 @@ Identify and restore the resource that causes the broken webhook.
         ```
         {: pre}
 
-    4. If the service does not have any backing resources, or if troubleshooting the pods does not resolve the issue, remove the webhook.
+    4. If the service does not have any backing resources, or if troubleshooting the pods does not resolve the issue, remove the mutating or validating webhook configuration identified earlier.
         ```sh
-        oc delete mutatingwebhook <name>
+        oc delete validatingwebhookconfiguration NAME
+        ```
+        {: pre}
+
+        ```sh
+        oc delete mutatingwebhookconfiguration NAME
         ```
         {: pre}
 
