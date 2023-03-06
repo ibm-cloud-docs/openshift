@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-06"
 
 keywords: openshift
 
@@ -172,7 +172,7 @@ Before you begin:
 
 To configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services:
 
-1. [Design your pod configuration file](/docs/containers?topic=containers-app) to use [service account token volume projection](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection){: external}. 
+1. Design your pod configuration file to use [service account token volume projection](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection){: external}. 
     1. In the `containers` section, mount the identity token in the `volumeMounts` section.
         ```yaml
         ...
@@ -182,7 +182,7 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
         ```
         {: codeblock}
 
-    2. In the `volumes` section, set up the service account token volume projection.
+    1. In the `volumes` section, set up the service account token volume projection.
 
         Modify the `expirationSeconds` field to control how long the token is valid for. To retrieve IAM tokens, the service account token expiration must be 1 hour or less.
         {: tip}
@@ -201,7 +201,7 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
         ```
         {: codeblock}
 
-2. Design your app to exchange the service account projected token for an IAM token that you can use for subsequent API calls to {{site.data.keyword.cloud_notm}} services. Review the following example authentication request. Replace `${profile_id}`: Replace with the ID of the trusted profile that the cluster is linked to. To list available profile IDs, you or the account administrator can use the `ic iam tps` command, the `GET 'https://iam.cloud.ibm.com/v1/profiles/?account_id=<account_id>'`, or you can view the trusted profiles in the [IAM console](https://cloud.ibm.com/iam/trusted-profiles/){: external}.
+1. Design your app to exchange the service account projected token for an IAM token that you can use for subsequent API calls to {{site.data.keyword.cloud_notm}} services. Review the following example authentication request. Replace `${profile_id}` with the ID of the trusted profile that the cluster is linked to. To list available profile IDs, you or the account administrator can use the `ibmcloud iam tps` command, the `GET 'https://iam.cloud.ibm.com/v1/profiles/?account_id=<account_id>'`, or you can view the trusted profiles in the [IAM console](https://cloud.ibm.com/iam/trusted-profiles/){: external}.
 
     ```sh
     curl -s -X POST \
@@ -214,7 +214,7 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
     ```
     {: codeblock}
 
-3. Before you deploy your app, try an example Kubernetes job to test the token exchange. In the following Kubernetes job, a `curl` pod makes an API request to {{site.data.keyword.cloud_notm}} IAM to verify that the cluster's public key is exchanged for an IAM access token. Your app might call other {{site.data.keyword.cloud_notm}} services that the trusted profile authorizes.
+1. Before your app is deployed, try the following example Kubernetes job to test the token exchange. In the following Kubernetes job, a `curl` pod makes an API request to {{site.data.keyword.cloud_notm}} IAM to verify that the cluster's public key is exchanged for an IAM access token. Your app might call other {{site.data.keyword.cloud_notm}} services that the trusted profile authorizes.
 
     ```yaml
     apiVersion: batch/v1
@@ -246,24 +246,19 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
     ```
     {: codeblock}
 
-4. Use the exchanged token to authenticate subsequent requests to {{site.data.keyword.cloud_notm}} services, such as by storing the token as a variable that is reused in the rest of your code.
-5. [Deploy your app](/docs/containers?topic=containers-deploy_app).
-6. Check that your pod is running.
+1. Deploy the job.
     ```sh
-    oc get pods -n <namespace>
+    kubectl apply -f exchange-job.yaml
     ```
     {: pre}
 
-7. Check the logs of your pod to verify that an `access_token` is successfully returned. If not, look for an `errorCode` with troubleshooting information.
+1. Review the job details to verify it was successful.
     ```sh
-    oc logs <pod>
+    oc describe job token-exchange-job
     ```
     {: pre}
 
-8. Optional: Log in to the pod and verify that you get a successful API request from an {{site.data.keyword.cloud_notm}} service by using the `$TOKEN` that you retrieved in the logs. The following example returns a list of classic clusters and requires the **Viewer** platform access role to **Kubernetes Service**.
-    ```sh
-    curl -X GET https://containers.cloud.ibm.com/global/v2/classic/getClusters -H "Authorization: Bearer $TOKEN"
-    ```
-    {: pre}
+1. Review the output for the `job completed` and `succeeded` messages to verify the job was a success.
 
+1. If the job succeeded, check your {{site.data.keyword.cloudaccesstrailshort}} global events in Frankfurt to verify the log line with details on the Trusted Profile request. If the job failed, review your configuration and try again.
 
