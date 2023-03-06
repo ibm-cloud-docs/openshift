@@ -189,7 +189,7 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 | `DELETE​/v1​/alb​/albs​/{albID}` | Disable an ALB in a classic cluster. | `containers-kubernetes.cluster.update` | `cluster-alb.delete` |
 | `DELETE​/v1​/alb​/clusters​/{idOrName}​/albsecrets` | Delete an ALB secret that is imported from {{site.data.keyword.secrets-manager_short}} from a classic cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.delete` |
 | `GET​/v1​/alb​/albs​/{albID}` | View details of an ALB in a classic cluster. | `containers-kubernetes.cluster.read` | `cluster-alb.get` |
-| `GET​/v1​/alb​/albtypes` | List the ALB types that are supported in classic clusters. | `containers-kubernetes.cluster.read` | N/A | |
+| `GET​/v1​/alb​/albtypes` | List the ALB types that are supported in classic clusters. | `containers-kubernetes.cluster.read` | N/A | 
 | `GET​/v1​/alb​/clusters​/{idOrName}`   | List all ALBs in a classic cluster. | `containers-kubernetes.cluster.read` | `cluster-alb.list` |
 | `GET​/v1​/alb​/clusters​/{idOrName}​/albsecrets` | View details of an ALB secret that you imported from {{site.data.keyword.secrets-manager_short}} to a classic cluster. | `containers-kubernetes.cluster.create` | `cluster-ingress-secret.list` |
 | `GET​/v1​/alb​/clusters​/{idOrName}​/updatepolicy` | Check if automatic updates for Ingress ALBs are enabled in a classic cluster. | `containers-kubernetes.cluster.update` | `cluster-alb-policy.get` |
