@@ -8333,11 +8333,19 @@ subcollection: openshift
 
 * [Account](/docs/openshift?topic=openshift-api-at-iam#ks-account)
 
+* [Certificate authority](/docs/openshift?topic=openshift-api-at-iam#ks-ca-api)
+
 * [Cluster](/docs/openshift?topic=openshift-api-at-iam#ks-cluster)
+
+* [Image security](/docs/openshift?topic=openshift-api-at-iam#image-security)
 
 * [Ingress](/docs/openshift?topic=openshift-api-at-iam#ks-ingress)
 
 * [Ingress ALB](/docs/openshift?topic=openshift-api-at-iam#ks-alb)
+
+* [Ingress load balancer](/docs/openshift?topic=openshift-api-at-iam#api-ingress-loadbalancer)
+
+* [Ingress status](/docs/openshift?topic=openshift-api-at-iam#api-ingress-status)
 
 * [Fluentd logging](/docs/openshift?topic=openshift-api-at-iam#ks-logging)
 
