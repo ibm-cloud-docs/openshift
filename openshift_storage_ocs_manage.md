@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-06"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -53,7 +53,7 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
 1. Enable the add-on.
 
     ```sh
-    ibmcloud koc cluster addon enable openshift-data-foundation --cluster <version> --version <version>
+    ibmcloud oc cluster addon enable openshift-data-foundation --cluster <version> --version <version>
     ```
     {: pre}
 
@@ -104,7 +104,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     
 1. Drain the node to remove all the pods. When you drain the worker node, the pods move to the other worker nodes ensuring there is no downtime. Draining also ensures that there is no disruption of the pod disruption budget. 
     ```sh
-    oc adm drain NODE_NAME --force --delete-local-data --ignore-daemonsets
+    oc adm drain NODE_NAME --force --delete-emptydir-data --ignore-daemonsets
     ```
     {: pre}
     

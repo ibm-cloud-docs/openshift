@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-06"
 
 keywords: openshift, version, upgrade, update
 
@@ -446,7 +446,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     
 1. Drain the node to remove all the pods. When you drain the worker node, the pods move to the other worker nodes ensuring there is no downtime. Draining also ensures that there is no disruption of the pod disruption budget. 
     ```sh
-    oc adm drain NODE_NAME --force --delete-local-data --ignore-daemonsets
+    oc adm drain NODE_NAME --force --delete-emptydir-data --ignore-daemonsets
     ```
     {: pre}
     
