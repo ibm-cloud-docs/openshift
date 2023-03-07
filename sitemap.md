@@ -286,6 +286,8 @@ subcollection: openshift
 
     * [7 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0723)
 
+        * Cluster autoscaler add-on version `1.0.6_955` and `1.0.7_956`.
+
         * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
 
     * [3 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0323)
@@ -6894,7 +6896,9 @@ subcollection: openshift
 
 * [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
 
-    * [Change log for patch update 1.0.7_944, released 17 February 2023:](/docs/openshift?topic=openshift-ca_changelog#107944_ca)
+    * [Change log for patch update 1.0.7_956, released 7 March 2023](/docs/openshift?topic=openshift-ca_changelog#107956_ca)
+
+    * [Change log for patch update 1.0.7_944, released 17 February 2023](/docs/openshift?topic=openshift-ca_changelog#107944_ca)
 
     * [Change log for patch update 1.0.7_940, released 24 January 2023:](/docs/openshift?topic=openshift-ca_changelog#107940_ca)
 
@@ -6903,6 +6907,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_955, released 7 March 2023](/docs/openshift?topic=openshift-ca_changelog#106955_ca)
 
     * [Change log for patch update 1.0.6_899, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#106899_ca)
 
