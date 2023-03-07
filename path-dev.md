@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-07"
 
 keywords: openshift, red hat, red hat openshift, dev
 
@@ -154,8 +154,8 @@ Need help? Check out [Troubleshooting Ingress](/docs/containers?topic=containers
 {: #dev_storage}
 
 1. **Storage basics**: Start by understanding the [basics of Kubernetes storage](/docs/openshift?topic=openshift-kube_concepts).
-2. **Requirements**: Determine your [requirements for a storage solution](/docs/openshift?topic=openshift-storage_planning).
-3. **Choose a solution**: Using your storage requirements, choose a storage solution by comparing [non-persistent](/docs/openshift?topic=openshift-storage_planning#non_persistent_overview), [single-zone persistent](/docs/openshift?topic=openshift-storage_planning#single_zone_persistent_storage), or [multizone persistent](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview) storage.
+2. **Requirements**: Determine your [requirements for a storage solution](/docs/openshift?topic=openshift-storage-plan).
+3. **Choose a solution**: Using your storage requirements, choose a storage solution by comparing [your options](/docs/openshift?topic=openshift-storage-plan).
 
 Need help? Check out the troubleshooting page for your persistent storage solution.
 {: tip}

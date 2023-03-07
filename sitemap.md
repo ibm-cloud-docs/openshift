@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-07"
 
 keywords: openshift
 subcollection: openshift
@@ -283,6 +283,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
+
+    * [7 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0723)
+
+        * Worker node fix packs `4.8.57_1593_openshift`, `4.9.56_1579_openshift`, `4.10.52_1558_openshift`, `4.11.28_1546_openshift`, and `4.12.4_1530_openshift`.
+
+        * Cluster autoscaler add-on version `1.0.6_955` and `1.0.7_956`.
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
 
     * [3 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0323)
 
@@ -4733,16 +4741,6 @@ subcollection: openshift
 {: #sitemap_storing_data_on_persistent_storage}
 
 
-[Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning)
-
-* [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution)
-
-* [Comparison of non-persistent storage options](/docs/openshift?topic=openshift-storage_planning#non_persistent_overview)
-
-* [Comparison of persistent storage options for single zone clusters](/docs/openshift?topic=openshift-storage_planning#single_zone_persistent_storage)
-
-* [Comparison of persistent storage options for multizone clusters](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview)
-
 [Understanding Kubernetes storage basics](/docs/openshift?topic=openshift-kube_concepts#kube_concepts)
 
 * [Persistent volumes and persistent volume claims](/docs/openshift?topic=openshift-kube_concepts#pvc_pv)
@@ -6900,7 +6898,9 @@ subcollection: openshift
 
 * [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
 
-    * [Change log for patch update 1.0.7_944, released 17 February 2023:](/docs/openshift?topic=openshift-ca_changelog#107944_ca)
+    * [Change log for patch update 1.0.7_956, released 7 March 2023](/docs/openshift?topic=openshift-ca_changelog#107956_ca)
+
+    * [Change log for patch update 1.0.7_944, released 17 February 2023](/docs/openshift?topic=openshift-ca_changelog#107944_ca)
 
     * [Change log for patch update 1.0.7_940, released 24 January 2023:](/docs/openshift?topic=openshift-ca_changelog#107940_ca)
 
@@ -6909,6 +6909,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_955, released 7 March 2023](/docs/openshift?topic=openshift-ca_changelog#106955_ca)
 
     * [Change log for patch update 1.0.6_899, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#106899_ca)
 
@@ -6988,11 +6990,15 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.4_1852, released 07 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.4_1852_is_block_relnote)
+
     * [Change log for version 5.1.2_1828, released 21 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.2-1828_is_block_relnote)
 
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.8_1841, released 07 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.8_1841_is_block_relnote)
 
     * [Change log for version 5.0.7_1836, released 21 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.7-1836_is_block_relnote)
 

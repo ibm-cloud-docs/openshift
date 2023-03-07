@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-03-07"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -102,7 +102,15 @@ ibmcloud oc cluster addon versions
 ## Version 1.0.7
 {: #0107_ca_addon}
 
-### Change log for patch update 1.0.7_944, released 17 February 2023:
+### Change log for patch update 1.0.7_956, released 7 March 2023
+{: #107956_ca}
+
+- Image tags: `1.20.0 107-3`, `1.21.0 107-3`,  `1.22.0 107-3`, `1.23.0 107-3`, `1.24.0 107-3`, and `1.25.0 107-3`.
+- Updates the `golang` version to `1.19.6`.
+- Updates the `storage-secret-sidecar` image to `v1.2.18`.
+- Resolves the following CVEs: [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external}, [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, and [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-408975){: external}.
+
+### Change log for patch update 1.0.7_944, released 17 February 2023
 {: #107944_ca}
 
 - Image tags: `1.20.0 107-2`, `1.21.0 107-2`,  `1.22.0 107-2`, `1.23.0 107-2`, `1.24.0 107-2`, and `1.25.0 107-2`.
@@ -133,6 +141,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.0.6
 {: #0106_ca_addon}
+
+### Change log for patch update 1.0.6_955, released 7 March 2023
+{: #106955_ca}
+
+- Image tags: `1.19.1 106-6`, `1.20.0 106-6`,  `1.21.0 106-6`, `1.22.0 106-6`, `1.23.0 106-6`, and `1.24.0 106-6`.
+- Updates the `golang` version to `1.19.6`.
+- Resolves the following CVEs: [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external}, [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, and [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-408975){: external}.
 
 ### Change log for patch update 1.0.6_899, released 9 January 2023
 {: #106899_ca}

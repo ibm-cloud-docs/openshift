@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-07"
 
 keywords: openshift, deploy
 
@@ -52,7 +52,7 @@ Check out the [Twelve-Factor App](https://12factor.net/){: external}, a language
 3. **Configuration**: Store deployment-specific configuration in environment variables, not in the code.
 4. **Backing services**: Treat backing services, such as data stores or message queues, as attached or replaceable resources.
 5. **App stages**: Build in distinct stages such as `build`, `release`, `run`, with strict separate among them.
-6. **Processes**: Run as one or more stateless processes that share nothing and use [persistent storage](/docs/openshift?topic=openshift-storage_planning) for saving data.
+6. **Processes**: Run as one or more stateless processes that share nothing and use [persistent storage](/docs/openshift?topic=openshift-storage-plan) for saving data.
 7. **Port binding**: Port bindings are self-contained and provide a service endpoint on well-defined host and port.
 8. **Concurrency**: Manage and scale your app through process instances such as replicas and horizontal scaling. Set resource requests and limits for your deployments. Note that Calico network policies can't limit bandwidth.
 9. **Disposability**: Design your app to be disposable, with minimal startup, graceful shutdown, and toleration for abrupt process terminations. Remember, containers, pods, and even worker nodes are meant to be disposable, so plan your app accordingly.
