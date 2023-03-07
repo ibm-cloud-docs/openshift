@@ -286,6 +286,8 @@ subcollection: openshift
 
     * [7 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0723)
 
+        * Worker node fix packs `4.8.57_1593_openshift`, `4.9.56_1579_openshift`, `4.10.52_1558_openshift`, `4.11.28_1546_openshift`, and `4.12.4_1530_openshift`.
+
         * Cluster autoscaler add-on version `1.0.6_955` and `1.0.7_956`.
 
         * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
