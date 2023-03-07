@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-07"
 
 keywords: block, add-on, changelog
 
@@ -43,6 +43,14 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 5.1
 {: #051_is_block}
 
+### Change log for version 5.1.4_1852, released 07 March 2023
+{: #5.1.4_1852_is_block_relnote}
+
+- Upgrades Kubernetes packages to version `1.26`.
+- Updates the storage-secret-sidecar image to `v1.2.18`.
+- Resolves the following CVEs:
+    - [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external}.
+
 ### Change log for version 5.1.2_1828, released 21 February 2023
 {: #5.1.2-1828_is_block_relnote}
 
@@ -64,6 +72,13 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 5.0
 {: #050_is_block}
+
+### Change log for version 5.0.8_1841, released 07 March 2023
+{: #5.0.8_1841_is_block_relnote}
+
+- Updates the storage-secret-sidecar image to `v1.2.18`.
+- Resolves the following CVEs:
+    - [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external}.
 
 
 ### Change log for version 5.0.7_1836, released 21 February 2023
