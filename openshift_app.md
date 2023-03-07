@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-07"
 
 keywords: kubernetes, openshift
 
@@ -415,7 +415,7 @@ Persistent volumes (PVs) interface with physical storage to provide persistent d
 
 The following example shows how you can add persistent storage to your app. To provision persistent storage, you create a persistent volume claim (PVC) to describe the type and size of file storage that you want to have. After you create the PVC, the persistent volume and the physical storage are automatically created by using [dynamic provisioning](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning). By referencing the PVC in your deployment YAML, the storage is automatically mounted to your app pod. When the container in your pod writes data to the `/test` mount path directory, data is stored on the NFS file storage instance.
 * For more information, see [Understanding Kubernetes storage basics](/docs/openshift?topic=openshift-kube_concepts#kube_concepts).
-* For options on other types of storage that you can provision, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning).
+* For options on other types of storage that you can provision, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage-plan).
 
 ```yaml
 apiVersion: apps/v1

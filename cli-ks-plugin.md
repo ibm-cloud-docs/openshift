@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-07"
 
 keywords: openshift
 
@@ -2820,7 +2820,7 @@ ibmcloud oc worker reboot --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 Reload the configurations for a Classic worker node. To reload a worker node in a VPC cluster, use the [**`ibmcloud oc worker replace`** command](#cli_worker_replace) instead.
 {: shortdesc}
 
-A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview). The worker node public and private IP address remain the same after the reload operation.
+A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage-plan). The worker node public and private IP address remain the same after the reload operation.
 
 Reloading a worker node applies patch version updates to your worker node, but not major or minor updates. To see the changes from one patch version to the next, review the [Version change log](/docs/openshift?topic=openshift-openshift_changelog) documentation.
 {: tip}

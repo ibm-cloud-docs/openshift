@@ -4737,16 +4737,6 @@ subcollection: openshift
 {: #sitemap_storing_data_on_persistent_storage}
 
 
-[Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning#storage_planning)
-
-* [Choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution)
-
-* [Comparison of non-persistent storage options](/docs/openshift?topic=openshift-storage_planning#non_persistent_overview)
-
-* [Comparison of persistent storage options for single zone clusters](/docs/openshift?topic=openshift-storage_planning#single_zone_persistent_storage)
-
-* [Comparison of persistent storage options for multizone clusters](/docs/openshift?topic=openshift-storage_planning#persistent_storage_overview)
-
 [Understanding Kubernetes storage basics](/docs/openshift?topic=openshift-kube_concepts#kube_concepts)
 
 * [Persistent volumes and persistent volume claims](/docs/openshift?topic=openshift-kube_concepts#pvc_pv)

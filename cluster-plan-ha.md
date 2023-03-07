@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-07"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -96,7 +96,7 @@ To convert a single zone cluster to a multizone cluster, your cluster must be se
 ### Do my apps automatically spread across zones?
 {: #multizone-apps-faq}
 
-It depends on how you set up the app. See [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps) and [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage_planning).
+It depends on how you set up the app. See [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps) and [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage-plan).
 
 ## Multiple public clusters connected with a global load balancer
 {: #multiple-clusters-glb}
