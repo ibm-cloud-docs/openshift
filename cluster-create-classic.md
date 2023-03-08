@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-08"
 
 keywords: openshift, clusters, classic, create
 
@@ -39,7 +39,7 @@ Create your single zone or multizone classic {{site.data.keyword.redhat_openshif
 1. Complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters&interface=ui) and decide on your cluster setup.
 2. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster environment.
-    1. From the {{site.data.keyword.redhat_openshift_notm}} drop-down list, select the version that you want to use in your cluster, such as 4.10.47.
+    1. From the {{site.data.keyword.redhat_openshift_notm}} drop-down list, select the version that you want to use in your cluster, such as 4.10.52.
     1. **Optional**: For the **OCP entitlement** section, you can select an entitlement for a worker pool, if you have one. Usually, leave the value set to **Purchase additional licenses for this worker pool**. If you have an {{site.data.keyword.cloud_notm}} Pak with a {{site.data.keyword.redhat_openshift_notm}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
 4. Configure the **Location** details for your cluster.
     1. Select the **Resource group** that you want to create your cluster in.
@@ -228,7 +228,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     When the provisioning of your {{site.data.keyword.redhat_openshift_notm}} master is completed, the **State** of your cluster changes to `normal`. After your {{site.data.keyword.redhat_openshift_notm}} master is ready, the provisioning of your worker nodes is initiated.
     ```sh
     NAME         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.10.47_1544_openshift      Default             classic
+    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.10.52_1544_openshift      Default             classic
     ```
     {: screen}
 

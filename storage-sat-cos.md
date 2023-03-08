@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-08"
 
 keywords: COS, cloud object storage, satellite storage, object storage, satellite, satellite configurations,
 
@@ -188,7 +188,7 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
 1. Run the following command to install the {{site.data.keyword.cos_full_notm}} plug-in. 
 
     ```sh
-    helm install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set provider="SATELLITE" --set workerOS="redhat" --set platform="openshift" --set kube-driver-path="DRIVER-PATH" --set license=true --set cos.endpoint="ENDPOINT" --set cos.storageClass="us-smart" --namespace "ibm-object-s3fs"
+    helm install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set provider="SATELLITE" --set workerOS="redhat" --set platform="openshift" --set kubeDriver="DRIVER-PATH" --set license=true --set cos.endpoint="ENDPOINT" --set cos.storageClass="us-smart" --namespace "ibm-object-s3fs"
     ```
     {: pre}
 
@@ -222,7 +222,7 @@ Complete the following steps to install the {{site.data.keyword.cos_full_notm}} 
     Example Command for REDHAT_8_64 hosts in `us-east` using smart storage classes
 
     ```sh
-    helm install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set provider="SATELLITE" --set workerOS="redhat" --set platform="openshift" --set kube-driver-path="/usr/libexec/kubernetes" --set license=true --set cos.endpoint="https://s3.us.cloud-object-storage.appdomain.cloud" --set cos.storageClass="us-smart" --namespace "ibm-object-s3fs"
+    helm install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set provider="SATELLITE" --set workerOS="redhat" --set platform="openshift" --set kubeDriver="/usr/libexec/kubernetes" --set license=true --set cos.endpoint="https://s3.us.cloud-object-storage.appdomain.cloud" --set cos.storageClass="us-smart" --namespace "ibm-object-s3fs"
     ```
     {: pre}
  
@@ -357,7 +357,7 @@ helm upgrade ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin  --se
 :   The operating system of the worker nodes. To retrieve this parameter, run `kubectl get nodes -o yaml | grep 'ibm-cloud\.kubernetes\.io/os'`. 
 :   If the output is `REDHAT_8_64` for example, enter `"redhat"` for the worker OS and `"openshift"` for the `platform`.
 
-`kube-driver-path`
+`kubeDriver`
 :   The driver path for the `kubelet`. To retrieve this parameter, run `kubectl get nodes -o yaml | grep 'node\.openshift\.io/os_id'`. 
 :   If the output has `rhel`, enter `"/usr/libexec/kubernetes"`. 
 :   If the output has `rhcos`, enter `"/etc/kubernetes"`.
