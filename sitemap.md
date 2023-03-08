@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-08"
 
 keywords: openshift
 subcollection: openshift
@@ -4740,6 +4740,30 @@ subcollection: openshift
 ## Storing data on persistent storage
 {: #sitemap_storing_data_on_persistent_storage}
 
+
+[Planning for storage](/docs/openshift?topic=openshift-storage-plan#storage-plan)
+
+* [Non-persistent storage](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
+
+* [Persistent storage for single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
+
+    * [Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-classic-file)
+
+    * [Classic {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-classic-block)
+
+    * [{{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-vpc-file)
+
+    * [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-vpc-block)
+
+* [Persistent storage options for multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
+
+    * [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-cos)
+
+    * [Portworx](/docs/openshift?topic=openshift-storage-plan#storage-plan-portworx)
+
+    * [Databases](/docs/openshift?topic=openshift-storage-plan#storage-plan-databases)
+
+    * [OpenShift Data Foundation](/docs/openshift?topic=openshift-storage-plan#storage-plan-odf)
 
 [Understanding Kubernetes storage basics](/docs/openshift?topic=openshift-kube_concepts#kube_concepts)
 

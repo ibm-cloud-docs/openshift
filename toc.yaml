@@ -218,7 +218,7 @@ toc:
       - topicgroup:
           label: Storing data on persistent storage
           topics: 
-          - storage-plan).md
+          - storage-plan.md
           - storage-basics.md
           - storage-file.md
           - storage-block.md
