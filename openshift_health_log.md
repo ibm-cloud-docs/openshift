@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-09"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -58,10 +58,6 @@ API server logs: {{site.data.keyword.la_full_notm}}
     - Highly available, scalable, and compliant with industry security standards.
     - Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.
     - Flexible plans, including a free `Lite` option.
-  
-    To get started, see [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit).  
-    Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}} is not supported for version 3.11 clusters.
-    {: note}
   
 Built-in {{site.data.keyword.redhat_openshift_notm}} audit logging tools
 :   API audit logging to monitor user-initiated activities is currently not supported.
