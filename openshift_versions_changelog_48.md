@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-14"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -40,6 +40,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.8 change log.
 {: shortdesc}
+
+
+### Change log for worker node fix pack 4.8.57_1594_openshift, released 13 March 2023
+{: #4857_1594_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.8.57_1594_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 7 Packages | 3.10.0-1160.83.1 | 3.10.0-1160.87.1 | Worker node kernel & package updates for [CVE-2018-13405](https://nvd.nist.gov/vuln/detail/CVE-2018-13405){: external}, [CVE-2021-4037](https://nvd.nist.gov/vuln/detail/CVE-2021-4037){: external}, [CVE-2022-2639](https://nvd.nist.gov/vuln/detail/CVE-2022-2639){: external}, [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}, [CVE-2022-42703](https://nvd.nist.gov/vuln/detail/CVE-2022-42703){: external}, [CVE-2022-4378](https://nvd.nist.gov/vuln/detail/CVE-2022-4378){: external}. |
+| RHEL 8 Packages |N/A|N/A| Worker node package updates for [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}. |
+| {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
+{: caption="Changes since version 4.8.57_1590_openshift" caption-side="bottom"}
 
 
 ### Change log for master fix pack 4.8.57_1593_openshift, released 2 March 2023
