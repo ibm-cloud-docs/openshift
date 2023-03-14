@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-14"
 
 keywords: openshift, nginx, ingress controller, openshift ingress, ingress, exposing apps
 
@@ -516,12 +516,14 @@ Ingress resources define the routing rules that the Ingress controller uses to r
         http:
           paths:
           - path: /<app1_path>
+            pathType: Prefix
             backend:
                 service:
                   name: <app1_service>
                   port:
                     number: 80
           - path: /<app2_path>
+            pathType: Prefix
             backend:
                 service:
                   name: <app2_service>
@@ -541,6 +543,9 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     `path`
     :    Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
     :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+
+    `pathType`
+    :   The URL path matching method. Supported values are `ImplementationSpecific`, `Exact`, or `Prefix`. For more information about and examples of each path type, see the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types){: external}.
 
     `name`
     :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
@@ -859,12 +864,14 @@ Ingress resources define the routing rules that the Ingress controller uses to r
         http:
           paths:
           - path: /<app1_path>
+            pathType: Prefix
             backend:
                 service:
                     name: <app1_service>
                     port:
                         number: 80
           - path: /<app2_path>
+            pathType: Prefix
             backend:
                 serivce:
                   name: <app2_service>
@@ -885,6 +892,9 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     `path`
     :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
     :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+
+    `pathType`
+    :   The URL path matching method. Supported values are `ImplementationSpecific`, `Exact`, or `Prefix`. For more information about and examples of each path type, see the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types){: external}.
 
     `serviceName`
     :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
@@ -1087,12 +1097,14 @@ Ingress resources define the routing rules that the Ingress controller uses to r
         http:
           paths:
           - path: /<app1_path>
+            pathType: Prefix
             backend:
                 service:
                   name: <app1_service>
                   port:
                     number: 80
           - path: /<app2_path>
+            pathType: Prefix
             backend:
                 service:
                   name: <app2_service>
@@ -1114,6 +1126,9 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     `path`
     :   Replace `<app_path>` with a slash or the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
     :    Examples: For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+
+    `pathType`
+    :   The URL path matching method. Supported values are `ImplementationSpecific`, `Exact`, or `Prefix`. For more information about and examples of each path type, see the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types){: external}.
 
     `name`
     :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
