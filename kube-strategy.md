@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-15"
 
 keywords: openshift, moving to openshift, openshift environment, openshift clusters, cluster sizing
 
@@ -102,7 +102,7 @@ The cluster admin persona must have a broad knowledge that includes compute, net
 What are an app developer's main tasks and technical skills?
 :   As a developer, you design, create, secure, deploy, test, run, and monitor cloud-native, containerized apps in an {{site.data.keyword.redhat_openshift_notm}} cluster. To create and run these apps, you must be familiar with the concept of microservices, the [12-factor app](/docs/openshift?topic=openshift-plan_deploy#12factor) guidelines, [Docker and containerization principles](https://www.docker.com/){: external}, and available [{{site.data.keyword.redhat_openshift_notm}} deployment options](/docs/openshift?topic=openshift-plan_deploy).
 
-{{site.data.keyword.redhat_openshift_notm}} and {{site.data.keyword.openshiftlong_notm}} provide multiple options for how to [expose an app and keep an app private](/docs/containers?topic=containers-cs_network_planning), [add persistent storage](/docs/openshift?topic=openshift-), [integrate other services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations), and how you can [secure your workloads and protect sensitive data](/docs/openshift?topic=openshift-security#container). Before you move your app to a cluster in {{site.data.keyword.openshiftlong_notm}}, verify that you can run your app as a containerized app on the supported RHEL 7  or RHEL 8 operating system and that {{site.data.keyword.redhat_openshift_notm}} and {{site.data.keyword.openshiftlong_notm}} provide the capabilities that your workload needs.
+{{site.data.keyword.redhat_openshift_notm}} and {{site.data.keyword.openshiftlong_notm}} provide multiple options for how to [expose an app and keep an app private](/docs/containers?topic=containers-cs_network_planning), [add persistent storage](/docs/openshift?topic=openshift-storage-plan), [integrate other services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations), and how you can [secure your workloads and protect sensitive data](/docs/openshift?topic=openshift-security#container). Before you move your app to a cluster in {{site.data.keyword.openshiftlong_notm}}, verify that you can run your app as a containerized app on the supported RHEL 7  or RHEL 8 operating system and that {{site.data.keyword.redhat_openshift_notm}} and {{site.data.keyword.openshiftlong_notm}} provide the capabilities that your workload needs.
 
 Do cluster administrators and developers interact with each other?
 :   Yes. Cluster administrators and developers must interact frequently so that cluster administrators understand workload requirements to provide this capability in the cluster, and so that developers know about available limitations, integrations, and security principles that they must consider in their app development process.

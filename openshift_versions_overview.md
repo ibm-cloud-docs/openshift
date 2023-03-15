@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-15"
 
 keywords: openshift, version, update, upgrade
 
@@ -55,14 +55,14 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 4.11 (Kubernetes 1.24)
 - Release date: 31 August 2022
-- End of support: 6 March 2024`†`
+- End of support: 06 March 2024`†`
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_411)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_411)
 
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
-- End of support: 8 November 2023`†`
+- End of support: 08 November 2023`†`
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
@@ -95,14 +95,14 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 4.11 (Kubernetes 1.24)
 - Release date: 31 August 2022
-- End of support: 6 March 2024`†`
+- End of support: 06 March 2024`†`
 - Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_411)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_411)
 
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
-- End of support: 8 November 2023`†`
+- End of support: 08 November 2023`†`
 - Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
@@ -135,14 +135,14 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 4.11 (Kubernetes 1.24)
 - Release date: 31 August 2022
-- End of support: 6 March 2024`†`
+- End of support: 06 March 2024`†`
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_411)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_411)
 
 **Default**: 4.10 (Kubernetes 1.23)
 - Release date: 27 April 2022
-- End of support: 8 November 2023`†`
+- End of support: 08 November 2023`†`
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
@@ -184,21 +184,38 @@ Kubernetes Version: v1.24.2
 ```
 {: screen}
 
-## Release lifecycle
-{: #openshift_release_history}
 
-Each supported version of {{site.data.keyword.redhat_openshift_notm}} goes through a lifecycle of testing, development, general release, support, deprecation, and becoming unsupported. Review the descriptions of each phase of a version's lifecycle. 
-{: shortdesc}
+## Release lifecycle
+{: #release_lifecycle}
+
+Each supported version of {{site.data.keyword.openshiftlong_notm}} goes through a lifecycle of testing, development, general release, support, deprecation, and becoming unsupported. Review the descriptions of each phase of a version's lifecycle. 
 
 Estimated days and versions are provided for general understanding. Actual availability and release dates are subject to change and depend on various factors, such as community updates, security patches, and technology changes between versions.
 {: note}
 
-1. **Community release**: The OpenShift Container Platform community releases a new version. IBM engineers begin testing and hardening the community version in preparation to release a supported {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Service version.
-2. **Latest supported version**: The version is released as the latest supported {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Service version.
-3. **Default version**: The version becomes the default supported {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Service version.
-4. **Supported version**: The version remains supported but is no longer the default version.
-5. **Deprecated**: The version is deprecated, and security patch updates might not be provided. Versions are deprecated for approximately 90 days. Approximately 45 days after deprecation, you receive a notification in the console and CLI that you have approximately 45 days remaining to update your cluster to a supported version before its current version becomes unsupported. During the deprecation period, the version is still supported and your cluster is still functional, but might require updating to a supported release to fix security vulnerabilities. For example, you can add and reload worker nodes.
-6. **Unsupported**: The version is unsupported. Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If the cluster master runs two or more versions behind the oldest supported version, you can no longer apply updates and must delete the cluster and create a new one.
+1. **Community release**: The community releases the new version. IBM engineers begin testing and hardening the community version in preparation to release a supported {{site.data.keyword.openshiftlong_notm}} version.
+2. **Supported version lifecycle**:
+    Development release
+    :   Release is under development and might be available as a Beta to select customers. IBM provides best effort support for the release.
+
+    General availability
+    :   Release is generally available (GA). IBM provides full support for the release. IBM provides a tentative target date for the release to be unsupported. Release will become the default version used during cluster creation once there are minimal restrictions and a reasonable adoption rate for the release.
+
+    Maintenance
+    :   Release has entered maintenance support as defined by Red Hat support. IBM provides maintenance support for OpenShift based on Red Hat policy. IBM provides full support otherwise.
+
+    Extended support
+    :   Release has entered extended support as defined by Red Hat. IBM provides extended support for OpenShift based on Red Hat policy. IBM provides full support otherwise.
+
+3. **Deprecated version**: The version is deprecated. IBM provides an updated unsupported target date for the release. An unsupported countdown to this date will be provided at least 45 days before the release becomes unsupported. IBM provides minimal support for the release in alignment with Red Hat support. This support phase is generally the final phase before the release becomes unsupported and overrides the maintenance and extended support phases should there be any overlap. Security patch updates might not be provided. During the deprecation period, the version is still supported and your cluster is still functional, but might require updating to a supported release to fix security vulnerabilities. For example, by adding or reloading worker nodes.
+
+4. **Unsupported version**: The version is unsupported. IBM only provides support to upgrade to a supported release. The version is unsupported. Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If the cluster master runs two or more versions behind the oldest supported version, you can no longer apply updates and must delete the cluster and create a new one. 
+
+5. **Archived**: The version is unsupported with no upgrade path. IBM provides no support. IBM reserves the right to shut down the control planes for such clusters.
+
+
+
+
 
 
 
