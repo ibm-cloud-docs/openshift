@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-14"
+lastupdated: "2023-03-15"
 
 keywords: openshift
 subcollection: openshift
@@ -6136,7 +6136,7 @@ subcollection: openshift
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
-* [Release lifecycle](/docs/openshift?topic=openshift-openshift_versions#openshift_release_history)
+* [Release lifecycle](/docs/openshift?topic=openshift-openshift_versions#release_lifecycle)
 
 * [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
 
