@@ -35,8 +35,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
 
 
-New! Version 4.12.0 of the OpenShift Data Foundation add-on is available.
+Cluster autoscaler add-on version `1.1.0_978`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+
+  
+New! OpenShift Data Foundation add-on version `4.12.0`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+  
+
 
 
 ### 14 March 2023

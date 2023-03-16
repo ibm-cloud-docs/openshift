@@ -286,7 +286,9 @@ subcollection: openshift
 
     * [16 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1623)
 
-        * New! Version 4.12.0 of the OpenShift Data Foundation add-on is available.
+        * Cluster autoscaler add-on version `1.1.0_978`.
+
+        * New! OpenShift Data Foundation add-on version `4.12.0`.
 
     * [14 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1423)
 
@@ -6935,6 +6937,8 @@ subcollection: openshift
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_978, released 16 March 2023](/docs/openshift?topic=openshift-ca_changelog#110978_ca)
 
     * [Change log for patch update 1.1.0_897, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#110897_ca)
 
