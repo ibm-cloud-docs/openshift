@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-14"
+lastupdated: "2023-03-16"
 
 keywords: openshift
 
@@ -29,6 +29,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2023
 {: #openshift-mar23}
+
+### 16 March 2023
+{: #openshift-mar1623}
+{: release-note}
+
+
+Cluster autoscaler add-on version `1.1.0_978`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+
+  
+New! OpenShift Data Foundation add-on version `4.12.0`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+  
 
 
 

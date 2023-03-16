@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-16"
 
 keywords: openshift
 subcollection: openshift
@@ -283,6 +283,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
+
+    * [16 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1623)
+
+        * Cluster autoscaler add-on version `1.1.0_978`.
+
+        * New! OpenShift Data Foundation add-on version `4.12.0`.
 
     * [14 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1423)
 
@@ -6932,6 +6938,8 @@ subcollection: openshift
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
 
+    * [Change log for patch update 1.1.0_978, released 16 March 2023](/docs/openshift?topic=openshift-ca_changelog#110978_ca)
+
     * [Change log for patch update 1.1.0_897, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#110897_ca)
 
     * [Change log for patch update 1.1.0_798, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#110798_ca)
@@ -7250,11 +7258,41 @@ subcollection: openshift
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 
+* [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+
+    * [Version 4.12.0, released 16 March 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.0_odf)
+
 * [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+
+    * [Version 4.11.4, released 14 February 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.4_odf)
+
+    * [Version 4.11.3, released 18 January 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.3_odf)
+
+    * [Version 4.11.2, released 03 January 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.2_odf)
 
     * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.0_odf)
 
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
+
+    * [Version 4.10.14, released 17 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.14_odf)
+
+    * [Version 4.10.12, released 02 November 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.12_odf)
+
+    * [Version 4.10.11, released 16 September 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.11_odf)
+
+    * [Version 4.10.10, released 01 September 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.10_odf)
+
+    * [Version 4.10.9, released 12 August 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.9_odf)
+
+    * [Version 4.10.7, released 02 August 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.7_odf)
+
+    * [Version 4.10.6, released 12 July 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.6_odf)
+
+    * [Version 4.10.5, released 7 July 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.5_odf)
+
+    * [Version 4.10.4, released 22 June 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.4_odf)
+
+    * [Version 4.10.3, released 13 June 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.3_odf)
 
     * [Version 4.10.2, released 23 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.2_odf)
 
