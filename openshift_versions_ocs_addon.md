@@ -44,6 +44,21 @@ Initial release.
 ## Version 4.11
 {: #4.11_odf}
 
+### Version 4.11.4, released 14 February 2023
+{: #4.11.4_odf}
+
+Updates the UBI image to version `8.7-1049.1675784874`.
+
+### Version 4.11.3, released 18 January 2023
+{: #4.11.3_odf}
+
+Updates the UBI image to version `8.7-1049`.
+
+### Version 4.11.2, released 03 January 2023
+{: #4.11.2_odf}
+
+Updates Golang to `1.18.9`.
+
 ### Version 4.11.0, released 21 December 2022
 {: #4.11.0_odf}
 
@@ -51,6 +66,60 @@ Initial release.
 
 ## Version 4.10
 {: #4.10_odf}
+
+### Version 4.10.14, released 17 November 2023
+{: #4.10.14_odf}
+
+Updates the UBI.
+
+### Version 4.10.12, released 02 November 2022
+{: #4.10.12_odf}
+
+Updates the UBI.
+
+### Version 4.10.11, released 16 September 2022
+{: #4.10.11_odf}
+
+- Updates Golang.
+- Updates the UBI.
+
+### Version 4.10.10, released 01 September 2022
+{: #4.10.10_odf}
+
+Updates the UBI.
+
+### Version 4.10.9, released 12 August 2022
+{: #4.10.9_odf}
+
+- Updates Golang.
+- Updates the UBI.
+
+
+### Version 4.10.7, released 02 August 2022
+{: #4.10.7_odf}
+
+Adds standalone OCS operator.
+
+### Version 4.10.6, released 12 July 2022
+{: #4.10.6_odf}
+
+Updates the UBI.
+
+### Version 4.10.5, released 7 July 2022
+{: #4.10.5_odf}
+
+- Updates GoLang update.
+- Incldues bug fixes.
+
+### Version 4.10.4, released 22 June 2022
+{: #4.10.4_odf}
+
+Updates the UBI.
+
+### Version 4.10.3, released 13 June 2022
+{: #4.10.3_odf}
+
+Includes bug fixes.
 
 ### Version 4.10.2, released 23 May 2022
 {: #4.10.2_odf}

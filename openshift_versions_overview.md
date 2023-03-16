@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-16"
 
 keywords: openshift, version, update, upgrade
 
@@ -195,6 +195,7 @@ Estimated days and versions are provided for general understanding. Actual avail
 
 1. **Community release**: The community releases the new version. IBM engineers begin testing and hardening the community version in preparation to release a supported {{site.data.keyword.openshiftlong_notm}} version.
 2. **Supported version lifecycle**:
+    
     Development release
     :   Release is under development and might be available as a Beta to select customers. IBM provides best effort support for the release.
 
