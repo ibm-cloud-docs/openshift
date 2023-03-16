@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-16"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -33,7 +33,13 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ```
 {: pre}
 
+## Version 4.12
+{: #4.12_odf}
 
+### Version 4.12.0, released 16 March 2023
+{: #4.12.0_odf}
+
+Initial release.
 
 ## Version 4.11
 {: #4.11_odf}
