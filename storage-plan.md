@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-20"
 
 keywords: openshift
 
@@ -177,7 +177,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Availability | Medium as specific to a data center. | Medium as specific to a data center. |
 | Scalability | Difficult to extend beyond the data center. You can't change an existing storage tier. | Difficult to extend beyond the data center. You can't change an existing storage tier. |
 | Encryption | None |
-| Backup and recovery | kubectl cp |
+| Backup and recovery | Run `kubectl cp`. |
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. |
 | Non-ideal use cases | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. |
 {: caption="File Storage for VPC characteristics"}

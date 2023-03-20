@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-03-20"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -109,7 +109,7 @@ Updates the UBI.
 {: #4.10.5_odf}
 
 - Updates GoLang update.
-- Incldues bug fixes.
+- Includes bug fixes.
 
 ### Version 4.10.4, released 22 June 2022
 {: #4.10.4_odf}
