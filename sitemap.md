@@ -6407,7 +6407,7 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
 
-    * [Change log for worker node fix pack 4.10.52_1559_openshift, released 13 March 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41052_1559_openshift)
+    * [Change log for worker node fix pack 4.10.53_1559_openshift, released 13 March 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41052_1559_openshift)
 
     * [Change log for master fix pack 4.10.52_1558_openshift, released 2 March 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41052_1558_openshift)
 

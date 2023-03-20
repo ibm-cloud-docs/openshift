@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-20"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -41,16 +41,16 @@ Review the version 4.10 change log.
 {: shortdesc}
 
 
-### Change log for worker node fix pack 4.10.52_1559_openshift, released 13 March 2023
+### Change log for worker node fix pack 4.10.53_1559_openshift, released 13 March 2023
 {: #41052_1559_openshift}
 
-The following table shows the changes that are in the worker node fix pack 4.10.52_1559_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack 4.10.53_1559_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 8 Packages |N/A|N/A| Worker node package updates for [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}. |
-| {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
+| {{site.data.keyword.openshiftshort}}. | 4.10.52 | 4.10.53 |  See the [change logs](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-53){: external} |
 {: caption="Changes since version 4.10.52_1556_openshift" caption-side="bottom"}
 
 
