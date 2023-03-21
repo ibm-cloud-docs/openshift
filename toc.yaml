@@ -424,6 +424,7 @@ toc:
               - ts-cluster-no-vpc.md
               - ts-cluster-icr-pull-img.md
               - ts-cluster-webhook.md
+              - ts-delete-webhooks.md
               - ts-cluster-portieris.md
               - ts-cluster-pending.md
               - ts-cluster-view-work.md
@@ -436,6 +437,7 @@ toc:
               - ts-worker-debug-kube-api.md
               - states-workers.md
               - ts-worker-common-issues.md
+              - ts-critical-notready.md
               - ts-worker-dedicated.md
               - ts-worker-autorebalance.md
               - ts-worker-bm-instance-id.md

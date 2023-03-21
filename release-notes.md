@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-03-21"
 
 keywords: openshift
 
@@ -29,6 +29,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2023
 {: #openshift-mar23}
+
+### 21 March 2023
+{: #openshift-mar2123}
+{: release-note}
+
+Cluster autoscaler add-on version `1.0.7_988` and `1.0.8_987`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+=======
+New troubleshooting steps for workers in `Critical` or `NotReady` state. 
+:   For more information, see [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/containers?topic=containers-ts-critical-notready).
+
+### 20 March 2023
+{: #openshift-mar2023}
+{: release-note}
+
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.12`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 16 March 2023
 {: #openshift-mar1623}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-03-21"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -108,6 +108,13 @@ ibmcloud oc cluster addon versions
 ## Version 1.0.8
 {: #0108_ca_addon}
 
+### Change log for patch update 1.0.8_987, released 21 March 2023
+{: #108987_ca}
+
+- Image tags: `1.20.0 108-0`, `1.21.0 108-0`, `1.22.0 108-0`, `1.23.0 108-0`, `1.24.0 108-0`, `1.25.0 108-0`, and `1.26.0 108-0`.
+- Resolves [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}.
+- Updates the `storage-secret-sidecar` image to `v1.2.19`.
+
 ### Change log for patch update 1.0.8_968, released 9 March 2023
 {: #108968_ca}
 
@@ -117,6 +124,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.0.7
 {: #0107_ca_addon}
+
+### Change log for patch update 1.0.7_988, released 21 March 2023
+{: #107988_ca}
+
+- Image tags: `1.20.0 107-3`, `1.21.0 107-3`,  `1.22.0 107-3`, `1.23.0 107-3`, `1.24.0 107-3`, and `1.25.0 107-3`.
+- Resolves [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}.
+- Updates the `storage-secret-sidecar` image to `v1.2.19`.
 
 ### Change log for patch update 1.0.7_956, released 7 March 2023
 {: #107956_ca}
