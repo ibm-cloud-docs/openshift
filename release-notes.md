@@ -34,6 +34,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-mar2123}
 {: release-note}
 
+Cluster autoscaler add-on version `1.0.7_988` and `1.0.8_987`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+=======
 New troubleshooting steps for workers in `Critical` or `NotReady` state. 
 :   For more information, see [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/containers?topic=containers-ts-critical-notready).
 
