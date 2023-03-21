@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-21"
 
 keywords: kubernetes, worker nodes, state
 
@@ -30,44 +30,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
 
-A worker node can go into a `Critical` state for many reasons: 
-- You initiated a reboot for your worker node without cordoning and draining your worker node. Rebooting a worker node can cause data corruption in `containerd`, `kubelet`, `kube-proxy`, and `calico`.
-- The pods that are deployed to your worker node don't use proper resource limits for [memory](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/){: external} and [CPU](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/){: external}. If you set none or excessive resource limits, pods can consume all available resources, leaving no resources for other pods to run on this worker node. This overcommitment of workload causes the worker node to fail.
-    1. List the pods that run on your worker node and review the CPU and memory usage, requests and limits. 
-        ```bash
-        oc describe node <worker_private_IP>
-        ```
-        {: pre}
-
-    2. For pods that consume a lot of memory and CPU resources, check if you set proper resource limits for memory and CPU.
-        ```bash
-        oc get pods <pod_name> -n <namespace> -o json
-        ```
-        {: pre}
-
-    3. Optional: Remove the resource-intensive pods to free up compute resources on your worker node.
-        ```bash
-        oc delete pod <pod_name>
-        ```
-        {: pre}
-        
-        ```bash
-        oc delete deployment <deployment_name>
-        ```
-        {: pre}
-
-- `containerd`, `kubelet`, or `calico` went into an unrecoverable state after it ran hundreds or thousands of containers over time.
-- You set up a Virtual Router Appliance for your worker node that went down and cut off the communication between your worker node and the Kubernetes master. 
-- Current networking issues in {{site.data.keyword.containerlong_notm}} or IBM Cloud infrastructure that causes the communication between your worker node and the Kubernetes master to fail.
-- Your worker node ran out of capacity. Check the **Status** of the worker node to see whether it shows **Out of disk** or **Out of memory**. If your worker node is out of capacity, consider to either reduce the workload on your worker node or add a worker node to your cluster to help load balance the workload.
-- The device was powered off from the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources){: external}. Open the resource list and find your worker node ID in the **Devices** list. In the action menu, click **Power On**.
-- Often, [reloading](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) your worker node can solve the problem. When you reload your worker node, the latest [patch version](/docs/containers?topic=containers-cs_versions#update_types) is applied to your worker node. The major and minor version is not changed. Before you reload your worker node, make sure to cordon and drain your worker node to ensure that the existing pods are terminated safely and rescheduled onto remaining worker nodes. If reloading the worker node does not resolve the issue, go to the next step to continue troubleshooting your worker node.
-        
-
-
-
-
-
+A worker node can go into a `Critical` state for many reasons. See [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/containers?topic=containers-ts-critical-notready) for more information and troubleshooting steps. 
 
 ## `Deleting` state
 {: #worker-node-deleting}

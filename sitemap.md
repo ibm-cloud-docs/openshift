@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-21"
 
 keywords: openshift
 subcollection: openshift
@@ -283,6 +283,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
+
+    * [21 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2123)
+
+        * New troubleshooting steps for workers in `Critical` or `NotReady` state. 
+
+    * [20 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2023)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.12`.
 
     * [16 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1623)
 
@@ -2742,7 +2750,7 @@ subcollection: openshift
 
 
 ## Creating {{site.data.keyword.openshiftlong_notm}} clusters
-{: #sitemap_creating__clusters}
+{: #sitemap_creating_clusters}
 
 
 [Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
@@ -2765,7 +2773,7 @@ subcollection: openshift
 
 
 ## Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
-{: #sitemap_creating_a__cluster_in_your_virtual_private_cloud_vpc}
+{: #sitemap_creating_a_cluster_in_your_virtual_private_cloud_vpc}
 
 
 [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
@@ -3072,7 +3080,7 @@ subcollection: openshift
 
 
 ## Creating clusters
-{: #sitemap_creating_clusters}
+{: #sitemap_creating_clusters1}
 
 
 [Preparing to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
@@ -3854,7 +3862,7 @@ subcollection: openshift
 
 
 ### Controlling traffic with ACLs, security groups, and network policies
-{: #sitemap_controlling_traffic_with_acls,_security_groups,_and_network_policies}
+{: #sitemap_controlling_traffic_with_acls_security_groups_and_network_policies}
 
 
 [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
@@ -5409,7 +5417,7 @@ subcollection: openshift
 
 
 ## Enhancing your cluster with Cloud Paks, Operators, and integrations
-{: #sitemap_enhancing_your_cluster_with_cloud_paks,_operators,_and_integrations}
+{: #sitemap_enhancing_your_cluster_with_cloud_paks_operators_and_integrations}
 
 
 [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners#service-partners)
@@ -8536,7 +8544,7 @@ subcollection: openshift
 
 
 ## Default service settings for {{site.data.keyword.redhat_openshift_notm}} components
-{: #sitemap_default_service_settings_for__components}
+{: #sitemap_default_service_settings_for_components}
 
 
 [Default service settings for {{site.data.keyword.redhat_openshift_notm}} components](/docs/openshift?topic=openshift-service-settings#service-settings)
@@ -8797,6 +8805,8 @@ subcollection: openshift
 
 [Why do cluster master operations fail due to a broken webhook?](/docs/openshift?topic=openshift-webhooks_update#webhooks_update)
 
+[Deleting webhooks from a cluster](/docs/openshift?topic=openshift-ts-delete-webhooks#ts-delete-webhooks)
+
 [Why is my Portieris cluster image security enforcement installation canceled?](/docs/openshift?topic=openshift-portieris_enable#portieris_enable)
 
 [Why does my cluster stay in a pending state?](/docs/openshift?topic=openshift-cs_cluster_pending#cs_cluster_pending)
@@ -8879,6 +8889,30 @@ subcollection: openshift
 * [Hard reboot](/docs/openshift?topic=openshift-common_worker_nodes_issues#hard-reboot)
 
 * [Instance can't be found](/docs/openshift?topic=openshift-common_worker_nodes_issues#instance-not-found)
+
+[Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready)
+
+* [Before you begin](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-before)
+
+    * [Worker node notifications and maintenance](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-notifs)
+
+    * [Common causes](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-common)
+
+* [Troubleshooting steps](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps)
+
+    * [If one or some worker nodes are affected](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-some)
+
+    * [If all worker nodes in a single zone, subnet, or VLAN are affected](/docs/openshift?topic=openshift-ts-critical-notready#if-all-worker-nodes-in-a-single-zone-subnet-or-vlan-are-affected)
+
+    * [If all worker nodes in a cluster are affected](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-all)
+
+    * [If worker nodes switch between normal and critical states](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-switch)
+
+* [Gathering data for a support case](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-gather)
+
+    * [Before you begin](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-gather-before)
+
+    * [Gathering data](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-gather-steps)
 
 [VPC: Why can't I create worker nodes on dedicated hosts?](/docs/openshift?topic=openshift-ts-worker-dedicated#ts-worker-dedicated)
 
