@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-03-22"
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 
@@ -213,5 +213,6 @@ Follow the steps to gather the relevant worker node data.
         - `mount | grep -i "(ro"`       # to rule out disk read-only issue.  NOTE: tmpfs being ro is fine
         - `touch /this`                 # to rule out disk read-only issue
 5. [Open a support ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} and attach all of the outputs saved in the previous steps.
+
 
 
