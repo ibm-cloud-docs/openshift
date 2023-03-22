@@ -3967,10 +3967,6 @@ subcollection: openshift
 
 [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator#compliance-operator)
 
-* [Installing the compliance operator with the tailored profile](/docs/openshift?topic=openshift-compliance-operator#comp-op-install)
-
-* [What's next?](/docs/openshift?topic=openshift-compliance-operator#comp-op-next)
-
 
 ## Managing the cluster network
 {: #sitemap_managing_the_cluster_network}

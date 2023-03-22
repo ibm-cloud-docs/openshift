@@ -2765,7 +2765,7 @@ New! image security add-on
 {: release-note}
 
 Compliance operator
-:   Review how you can use the compliance operator from Red Hat with a [tailored profile specific to {{site.data.keyword.openshiftlong_notm}} worker nodes](/docs/openshift?topic=openshift-compliance-operator).
+:   Review how you can use the compliance operator from Red Hat with a tailored profile specific to {{site.data.keyword.openshiftlong_notm}} worker nodes.
 
 
 
