@@ -288,8 +288,6 @@ subcollection: openshift
 
         * Cluster autoscaler add-on version `1.0.7_988` and `1.0.8_987`.
 
-        * =======
-
         * New troubleshooting steps for workers in `Critical` or `NotReady` state. 
 
     * [20 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2023)
@@ -8912,7 +8910,7 @@ subcollection: openshift
 
     * [If one or some worker nodes are affected](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-some)
 
-    * [If all worker nodes in a single zone, subnet, or VLAN are affected](/docs/openshift?topic=openshift-ts-critical-notready#if-all-worker-nodes-in-a-single-zone-subnet-or-vlan-are-affected)
+    * [If all worker nodes in a single zone, subnet, or VLAN are affected](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-zone)
 
     * [If all worker nodes in a cluster are affected](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-all)
 
