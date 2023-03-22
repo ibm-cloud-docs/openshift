@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-22"
 
 keywords: openshift, version, upgrade, update
 
@@ -193,7 +193,7 @@ Set up a ConfigMap to perform a rolling update of your classic worker nodes.
                     publicVLAN=2299012
     Annotations:        node.alpha.kubernetes.io/ttl=0
                     volumes.kubernetes.io/controller-managed-attach-detach=true
-    CreationTimestamp:  Tue, 03 Apr 2018 15:26:17 -0400
+    CreationTimestamp:  Tue, 03 Apr 2022 15:26:17 -0400
     Taints:             <none>
     Unschedulable:      false
     ```

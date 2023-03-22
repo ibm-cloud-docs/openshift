@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-22"
 
 keywords: openshift
 
@@ -149,7 +149,7 @@ You can upgrade the existing {{site.data.keyword.cloud_notm}} Block Storage Atta
     Example output
     
     ```sh
-    <helm_chart_name>    1           Wed Aug  1 14:55:15 2018    DEPLOYED    ibm-block-storage-attacher-1.0.0    default
+    <helm_chart_name>    1           Wed Aug  1 14:55:15 2022    DEPLOYED    ibm-block-storage-attacher-1.0.0    default
     ```
     {: screen}
 
@@ -176,7 +176,7 @@ If you don't want to provision and use the {{site.data.keyword.cloud_notm}} Bloc
     Example output
     
     ```sh
-    <helm_chart_name>    1           Wed Aug  1 14:55:15 2018    DEPLOYED    ibm-block-storage-attacher-1.0.0    default
+    <helm_chart_name>    1           Wed Aug  1 14:55:15 2022    DEPLOYED    ibm-block-storage-attacher-1.0.0    default
     ```
     {: screen}
 
