@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-22"
 
 keywords: object storage, plug-in, change log
 
@@ -29,6 +29,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.12 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.11 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.10 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.9 | Yes | Greater than or equal to 4.6 | x86 |
@@ -37,6 +38,12 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.2.6 and earlier | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
+
+## Change log for version 2.2.12, released 20 March 2023
+{: #02212_object_plugin}
+
+- Updates Golang to `1.19.7`
+- Resolves the following CVEs: [CVE-2023-24532](https://nvd.nist.gov/vuln/detail/CVE-2023-24532){: external}, [CVE-2022-41722](https://nvd.nist.gov/vuln/detail/CVE-2022-41722){: external}, [CVE-2022-41725](https://nvd.nist.gov/vuln/detail/CVE-2022-41725){: external}, [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}.
 
 ## Change log for version 2.2.11, released 03 March 2023
 {: #02211_object_plugin}

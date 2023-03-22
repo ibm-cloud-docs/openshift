@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-03-22"
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 
@@ -78,7 +78,7 @@ If only some, but not all, of the worker nodes in your cluster are in a `Critica
 4. If the previous steps do not solve the issue, [reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers one at a time. 
 
 ### If all worker nodes in a single zone, subnet, or VLAN are affected
-{: ts-critical-notready-steps-zone}
+{: #ts-critical-notready-steps-zone}
 
 If all worker nodes in a single zone, subnet, or VLAN are in a `Critical` or `NotReady` state, but all other worker nodes in the cluster are functioning normally, there might be an issue with a networking component. Follow the steps in [If all worker nodes in a cluster are affected](#ts-critical-notready-steps-all), especially to the steps regarding any networking components that may affect the zone, subnet or VLAN, such as firewall or gateway rules, ACLs or custom routes, or Calico and Kubernetes network policies.
 
@@ -213,5 +213,6 @@ Follow the steps to gather the relevant worker node data.
         - `mount | grep -i "(ro"`       # to rule out disk read-only issue.  NOTE: tmpfs being ro is fine
         - `touch /this`                 # to rule out disk read-only issue
 5. [Open a support ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} and attach all of the outputs saved in the previous steps.
+
 
 

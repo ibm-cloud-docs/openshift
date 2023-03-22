@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-03-22"
 
 keywords: kubernetes, worker nodes, state
 
@@ -173,6 +173,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 {: shortdesc}
 
 A `Warning` state means that your worker node is reaching the limit for memory or disk space. You can either reduce workload on your worker node or add a worker node to your cluster to help load balance the workload.
+
 
 
 

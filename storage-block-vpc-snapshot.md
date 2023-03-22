@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-06"
+lastupdated: "2023-03-22"
 
 keywords: openshift, block storage, snapshot
 
@@ -12,6 +12,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on

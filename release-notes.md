@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-03-22"
 
 keywords: openshift
 
@@ -36,7 +36,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Cluster autoscaler add-on version `1.0.7_988` and `1.0.8_987`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
-=======
+
+
 New troubleshooting steps for workers in `Critical` or `NotReady` state. 
 :   For more information, see [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/containers?topic=containers-ts-critical-notready).
 
@@ -2764,7 +2765,7 @@ New! image security add-on
 {: release-note}
 
 Compliance operator
-:   Review how you can use the compliance operator from Red Hat with a [tailored profile specific to {{site.data.keyword.openshiftlong_notm}} worker nodes](/docs/openshift?topic=openshift-compliance-operator).
+:   Review how you can use the compliance operator from Red Hat with a tailored profile specific to {{site.data.keyword.openshiftlong_notm}} worker nodes.
 
 
 

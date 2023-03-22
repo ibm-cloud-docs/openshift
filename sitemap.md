@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-03-22"
 
 keywords: openshift
 subcollection: openshift
@@ -287,8 +287,6 @@ subcollection: openshift
     * [21 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2123)
 
         * Cluster autoscaler add-on version `1.0.7_988` and `1.0.8_987`.
-
-        * =======
 
         * New troubleshooting steps for workers in `Critical` or `NotReady` state. 
 
@@ -3969,10 +3967,6 @@ subcollection: openshift
 
 [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator#compliance-operator)
 
-* [Installing the compliance operator with the tailored profile](/docs/openshift?topic=openshift-compliance-operator#comp-op-install)
-
-* [What's next?](/docs/openshift?topic=openshift-compliance-operator#comp-op-next)
-
 
 ## Managing the cluster network
 {: #sitemap_managing_the_cluster_network}
@@ -7188,6 +7182,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.12, released 20 March 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02212_object_plugin)
+
 * [Change log for version 2.2.11, released 03 March 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02211_object_plugin)
 
 * [Change log for version 2.2.10, released 21 February 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02210_object_plugin)
@@ -8910,7 +8906,7 @@ subcollection: openshift
 
     * [If one or some worker nodes are affected](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-some)
 
-    * [If all worker nodes in a single zone, subnet, or VLAN are affected](/docs/openshift?topic=openshift-ts-critical-notready#if-all-worker-nodes-in-a-single-zone-subnet-or-vlan-are-affected)
+    * [If all worker nodes in a single zone, subnet, or VLAN are affected](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-zone)
 
     * [If all worker nodes in a cluster are affected](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps-all)
 

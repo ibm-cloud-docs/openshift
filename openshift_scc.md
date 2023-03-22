@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-22"
 
 keywords: openshift, scc, security context constraint, psp
 
@@ -61,9 +61,6 @@ The default {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than t
 
 To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.10/authentication/managing-security-context-constraints.html){: external}. You can also add users or groups to the default security context constraints.
 {: shortdesc}
-
-Make sure that you use the [`oc` CLI or `kubectl` version 1.12 CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc) to interact with these resources, such as `oc get scc`. The `kubectl` CLI version 1.11 CLI has a bug that yields an error when you run commands against {{site.data.keyword.redhat_openshift_notm}}-specific resources, such as `kubectl get scc`.
-{: important}
 
 
 ## Default {{site.data.keyword.redhat_openshift_notm}} security context constraints

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-22"
 
 keywords: openshift
 
@@ -1066,7 +1066,7 @@ Complete the following steps to verify that all existing stateful sets in your c
     ```sh
     Name:               nginx
     Namespace:          default
-    CreationTimestamp:  Fri, 05 Oct 2018 13:22:41 -0400
+    CreationTimestamp:  Fri, 05 Oct 2022 13:22:41 -0400
     Selector:           app=nginx,billingType=hourly,region=us-south,zone=dal10
     Labels:             app=nginx
     billingType=hourly
@@ -1354,7 +1354,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     Name:           nginx-0
     Namespace:      default
     Node:           10.xxx.xx.xxx/10.xxx.xx.xxx
-    Start Time:     Fri, 05 Oct 2018 13:24:59 -0400
+    Start Time:     Fri, 05 Oct 2022 13:24:59 -0400
     ...
     Volumes:
     myvol:
