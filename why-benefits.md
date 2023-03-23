@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-23"
 
 keywords: openshift
 
@@ -24,6 +24,9 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/cloud/openshift){: external} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
 {: shortdesc}
+
+To see a list of the cluster operators that are supported by default, you can run the **`oc get co`** command.
+{: tip}
 
 
 
@@ -149,69 +152,6 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Service mesh | You can set up the [{{site.data.keyword.redhat_openshift_notm}} Service Mesh](https://docs.openshift.com/container-platform/4.10/service_mesh/v1x/installing-ossm.html){: external}. | You can also set up the {{site.data.keyword.redhat_openshift_notm}} Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-openshift-cli) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
 {: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="bottom"}
-
-
-
-## Operator support overview
-{: #operator-support-comparison}
-
-Review the following operator support table. To receive support on the for the following operators, [open a support case](/docs/openshift?topic=openshift-get-help#help-support). Note that depending on the operator or feature, your request might be forwarded by IBM support to Red Hat support.
-{: note}
-
-| Feature or Operator | Support provided by | 
-| --- | --- | 
-| CRIO Runtime | {{site.data.keyword.cloud_notm}} |
-| `kubectl` and `oc` command line | {{site.data.keyword.cloud_notm}} |
-| Operator Lifecycle Manager (OLM) | {{site.data.keyword.cloud_notm}} |
-| Administrator web console | {{site.data.keyword.cloud_notm}} |
-| OpenShift Virtualization Operator | Red Hat |
-| Compliance Operator | {{site.data.keyword.cloud_notm}} |
-| Klusterlet | Red Hat |
-| Kube Descheduler Operator | Red Hat |
-| Local Storage Operator | Red Hat |
-| Node Feature Discovery | Red Hat |
-| Service Telemetry Operator | Red Hat |
-| Vertical Pod Autoscaler | Red Hat |
-| Cluster Monitoring (Prometheus) | {{site.data.keyword.cloud_notm}} |
-| Log Forwarding (with fluentd) | Red Hat |
-| HAProxy Ingress Controller | {{site.data.keyword.cloud_notm}} |
-| Ingress Cluster-wide Firewall | Red Hat |
-| Egress Pod and Namespace Granular Control | {{site.data.keyword.cloud_notm}} |
-| Ingress Non-Standard Ports | {{site.data.keyword.cloud_notm}} |
-| Multus and Available Multus plug-ins | {{site.data.keyword.cloud_notm}} |
-| Network Policies | {{site.data.keyword.cloud_notm}} |
-|Embedded Registry| {{site.data.keyword.cloud_notm}} |
-| Helm | {{site.data.keyword.cloud_notm}} |
-| User Workload Monitoring | Red Hat |
-| Red Hat OpenShift Logging Operator | Red Hat |
-| OpenShift Elasticsearch Operator | Red Hat |
-| Developer Web Console | {{site.data.keyword.cloud_notm}} | 
-| Developer Application Catalog | {{site.data.keyword.cloud_notm}} |
-| Source to Image and Builder Automation (Tekton) | Red Hat |
-| OpenShift Service Mesh Operator | Red Hat |
-| Service Binding Operator | Red Hat |
-| OpenShift Serverless Operator | Red Hat |
-| Web Terminal Operator | Red Hat |
-| Jenkins Operator | Red Hat |
-| Red Hat OpenShift Pipelines Operator | OpenShift Pipelines Operator | Red Hat |
-| Embedded Component of IBM Cloud Pak and RHT MW Bundles | Red Hat |
-| Red Hat OpenShift GitOps | Red Hat |
-| Red Hat CodeReady Workspaces | Red Hat |
-| Red Hat CodeReady Containers | Red Hat |
-| Quay Bridge Operator | Red Hat |
-| Quay Container Security | Red Hat |
-| Red Hat OpenShift distributed tracing platform | Red Hat |
-| Red Hat OpenShift Kiali | Red Hat |
-| Migration Toolkit for Containers Operator | Red Hat |
-| Red Hat JBoss Web Server | Red Hat | 
-| Red Hat Build of Quarkus | Red Hat |
-| Kourier Ingress Controller | Red Hat |
-| OpenShift Do (`odo`) | Red Hat |
-| Source to Image and Tekton Builders | Red Hat |
-| OpenShift Serverless FaaS | Red Hat |
-| IDE Integrations | Red Hat |
-{: caption="Operator support overview" caption-side="bottom"}
-
 
 
 
