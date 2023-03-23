@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-23"
 
 keywords: openshift
 subcollection: openshift
@@ -84,8 +84,6 @@ subcollection: openshift
 * [Comparison between {{site.data.keyword.redhat_openshift_notm}} and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
 
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
-
-* [Operator support overview](/docs/openshift?topic=openshift-cs_ov#operator-support-comparison)
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers)
 

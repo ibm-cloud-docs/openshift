@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-23"
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 
@@ -15,7 +15,7 @@ subcollection: openshift
 # Troubleshooting worker nodes in `Critical` or `NotReady` state
 {: #ts-critical-notready}
 
-Cluster worker nodes go into a `Critical` or `NotReady` state when they stop communicating with the cluster master. When this occurs, your worker nodes are marked as `Critical` in the {{site.data.keyword.cloud_notm}} UI or when you run `{{icks}} worker` commands, and as `NotReady` in the Red Hat OpenShiftdashboards and when you run `oc get nodes`. There are several reasons why communication stops between worker nodes and the cluster master. Follow these steps to troubleshoot worker nodes in these states. 
+Cluster worker nodes go into a `Critical` or `NotReady` state when they stop communicating with the cluster master. When this occurs, your worker nodes are marked as `Critical` in the {{site.data.keyword.cloud_notm}} UI or when you run `ibmcloud oc worker` commands, and as `NotReady` in the Red Hat OpenShift dashboards and when you run `oc get nodes`. There are several reasons why communication stops between worker nodes and the cluster master. Follow these steps to troubleshoot worker nodes in these states. 
 {: shortdesc}
 
 ## Before you begin
