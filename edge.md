@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-24"
 
 keywords: openshift
 
@@ -19,6 +19,8 @@ subcollection: openshift
 
 # Restricting network traffic to edge worker nodes
 {: #edge}
+
+[Classic clusters]{: tag-classic-inf}
 
 Edge worker nodes can improve the security of your {{site.data.keyword.openshiftlong}} cluster by allowing fewer worker nodes by isolating the networking workload.
 {: shortdesc}

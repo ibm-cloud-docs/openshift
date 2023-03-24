@@ -3804,7 +3804,12 @@ subcollection: openshift
 {: #sitemap_securing_the_cluster_network}
 
 
-[Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies#network_policies)
+
+### Controlling traffic in Classic clusters
+{: #sitemap_controlling_traffic_in_classic_clusters}
+
+
+[Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies#network_policies)
 
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
 
@@ -3826,7 +3831,7 @@ subcollection: openshift
 
 * [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
 
-[Classic: Opening required ports and IP addresses in your allowlist](/docs/openshift?topic=openshift-firewall#firewall)
+[Opening required ports and IP addresses in your allowlist](/docs/openshift?topic=openshift-firewall#firewall)
 
 * [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-firewall#corporate)
 
@@ -3861,8 +3866,8 @@ subcollection: openshift
 * [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
 
 
-### Controlling traffic with ACLs, security groups, and network policies
-{: #sitemap_controlling_traffic_with_acls_security_groups_and_network_policies}
+### Controlling traffic in VPC clusters with ACLs, security groups, and network policies
+{: #sitemap_controlling_traffic_in_vpc_clusters_with_acls_security_groups_and_network_policies}
 
 
 [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
@@ -3927,7 +3932,7 @@ subcollection: openshift
 
 * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
 
-[VPC: Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
+[Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
 * [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
 

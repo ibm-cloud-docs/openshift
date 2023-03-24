@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-24"
 
 keywords: flow logs, VPC monitoring, worker nodes, VPC, network traffic, collector
 
@@ -18,6 +18,8 @@ subcollection: openshift
 
 # Enabling Flow Logs for VPC cluster components
 {: #vpc-flow-log}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 You can configure {{site.data.keyword.cloud_notm}} {{site.data.keyword.fl_full}} to gather information about the traffic entering or leaving your VPC cluster worker nodes. Flow logs are stored in an {{site.data.keyword.cos_full_notm}} instance and can be used for troubleshooting purposes, adhering to compliance regulations, and more. For more information about {{site.data.keyword.fl_full}}, see [Flow logs use cases](/docs/vpc?topic=vpc-flow-logs&interface=ui#flow-logs-use-cases).
 {: shortdesc}

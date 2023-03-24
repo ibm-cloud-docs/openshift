@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-24"
 
 keywords: openshift, firewall, ips
 
@@ -17,8 +17,10 @@ subcollection: openshift
 
 
 
-# VPC: Opening required ports and IP addresses in other network allowlists
+# Opening required ports and IP addresses in other network allowlists
 {: #vpc-firewall}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 This allowlist information is specific to VPC clusters. For allowlist information for classic clusters, see [Opening required ports and IP addresses in your allowlist for classic clusters](/docs/openshift?topic=openshift-firewall).
 {: note}

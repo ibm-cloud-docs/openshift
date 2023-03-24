@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-24"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -19,6 +19,8 @@ subcollection: openshift
 
 # Controlling traffic between pods with Kubernetes policies
 {: #vpc-kube-policies}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 You can use Kubernetes policies to control network traffic between pods in your cluster and to isolate app microservices from each other within a namespace or across namespaces.
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-03-24"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -20,6 +20,8 @@ subcollection: openshift
 
 # Configuring VPC subnets
 {: #vpc-subnets}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} VPC cluster.
 {: shortdesc}

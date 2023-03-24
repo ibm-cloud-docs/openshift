@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 keywords: openshift
 
@@ -16,8 +16,10 @@ subcollection: openshift
 
 
 
-# Classic: Opening required ports and IP addresses in your allowlist
+# Opening required ports and IP addresses in your allowlist
 {: #firewall}
+
+[Classic clusters]{: tag-classic-inf}
 
 This allowlist information is specific to classic clusters. For VPC clusters, see [Opening required ports and IP addresses in your allowlist for VPC clusters](/docs/openshift?topic=openshift-vpc-firewall).
 {: note}
