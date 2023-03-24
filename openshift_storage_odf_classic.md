@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-03-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -227,88 +227,8 @@ Before you install OpenShift Data Foundation, prepare your cluster.
 1. Repeat the previous steps to wipe the file system for each worker node that you want to use in your ODF deployment.    
     
 
-#### Updating the cluster role bindings
-{: #odf-classic-cr-binding-47}
-
-**Version 4.7 clusters only**. If you have a cluster version 4.7 or earlier, complete the following steps to update the cluster role bindings. If you have a cluster version 4.8 or later, see [Getting your device details](#odf-classic-get-devices).
-{: important}
-
-1. Update the `clusterRole` and `ClusterRoleBindings` for each worker node in your cluster. Edit the `system:node` cluster role to have `get, create, update, delete, list` access for the `volumeattachments.storage.k8s.io` resource.
-    ```sh
-    oc edit clusterrole system:node
-    ```
-    {: pre}
-
-    Example updated `system:node` cluster role configuration file.
-    ```yaml
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRole
-    metadata:
-        annotations:
-          rbac.authorization.kubernetes.io/autoupdate: "true"
-    creationTimestamp: "2020-07-20T18:52:59Z"
-    labels:
-      kubernetes.io/bootstrapping: rbac-defaults
-    name: system:node
-    resourceVersion: "60"
-    selfLink: /apis/rbac.authorization.k8s.io/v1/clusterroles/system%3Anode
-    uid: 1111111a-aa11-1111-1aa1-11a111111a1a
-    rules:
-    - apiGroups:
-      - storage.k8s.io
-      resources:
-      - volumeattachments
-      verbs:
-      - get
-      - create
-      - update
-      - delete
-      - list
-    ```
-    {: codeblock}
-
-1. Save and close the file to apply your changes.
-
-1. Edit the cluster role binding `system:node` to add `subjects`.
-    ```sh
-    oc edit clusterrolebinding system:node
-    ```
-    {: pre}
-
-    Example updated `system:node` ClusterRoleBinding configuration file with `subjects`.
-    ```yaml
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRoleBinding
-    metadata:
-      annotations:
-        rbac.authorization.kubernetes.io/autoupdate: "true"
-    creationTimestamp: "2020-07-20T18:53:00Z"
-    labels:
-      kubernetes.io/bootstrapping: rbac-defaults
-    name: system:node
-    resourceVersion: "5202"
-    selfLink: /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/system%3Anode
-    uid: aaaa1a11-1111-1111-1111-a1a11a111a11
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole
-      name: system:node
-    subjects:
-    - apiGroup: rbac.authorization.k8s.io
-      kind: Group
-      name: system:nodes
-    ```
-    {: codeblock}
-
-1. Save and close the file to apply your changes.
-
-1. [Get your local device details](#odf-classic-get-devices).
-
 ### Getting your device details
 {: #odf-classic-get-devices}
-
-**Required for add-on version 4.7**. You must specify the disk paths or disk IDs for the volumes that you want to use when you deploy the ODF add-on. Complete the following steps to retrieve your storage device details.
-{: important}
 
 **Optional for add-on version 4.8 and later**. You can use automatic disk discovery to find available devices for ODF. However, if you want to manually specify storage devices for ODF, complete the following steps to retrieve your storage device details.
 {: important}
@@ -394,7 +314,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Review the [parameter reference](#odf-classic-param-ref). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` option for each parameter that you want to override.
 
-1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.7.0` of the add-on to an OCP 4.7 or 4.8 cluster. If you have a cluster version other than the default, you must specify the `--version` option when you enable the add-on.
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.10.0` of the add-on to an OCP 4.9 or 4.11 cluster. If you have a cluster version other than the default, you must specify the `--version` option when you enable the add-on.
 
 1. Review the add-on options for the version of the add-on that you want to deploy.
     ```sh
@@ -676,23 +596,6 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 {: caption="Classic parameter reference" caption-side="bottom"}
 
 
-### Version 4.7 parameters
-{: #odf-classic-params-47}
 
-| Parameter | Description | Default value |
-| --- | --- | --- |
-| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
-| `monStorageClassName` | Enter `localfile`. | N/A |
-| `monDevicePaths` | Enter a comma separated list of the disk-by-id paths for the storage devices that you want to use for the monitor (MON) pods. The devices that you specify must have at least `20GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, don't include spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
-| `monSize` | Enter a size for your monitoring storage devices. Example: `20Gi`. | N/A |
-| `osdStorageClassName` | Enter `localblock`. | N/A |
-| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize` multiplied by the `numOfOsd`. | N/A |
-| `osdDevicePath` | Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`,`/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. |
-| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
-| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
-| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run `oc get nodes`. | N/A |
-| `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
-{: caption="Classic parameter reference" caption-side="bottom"}
 
 

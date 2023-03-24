@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-24"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -23,7 +23,6 @@ subcollection: openshift
 {: #ocs-manage-deployment}
 
 
-
 Review the following topics to manage your OpenShift Data Foundation deployment.
 {: shortdesc}
 
@@ -31,10 +30,9 @@ Review the following topics to manage your OpenShift Data Foundation deployment.
 ## Updating the add-on
 {: #odf-addon-update}
 
-The ODF add-on supports `n+1` cluster versions. For example, if you have version `4.7.0` of the add-on, it is supported on cluster versions `4.7` to `4.8`.
+The ODF add-on supports `n+1` cluster versions. For example, if you have version `4.10.0` of the add-on, it is supported on cluster versions `4.9` to `4.11`.
 {: shortdesc}
 
-To update the OpenShift Data Foundation in your cluster, disable the add-on and then re-enable the add-on with the following commands.
 
 1. Check the existing version.
     ```sh
@@ -57,14 +55,50 @@ To update the OpenShift Data Foundation in your cluster, disable the add-on and 
     ```
     {: pre}
 
+
+1. Get the name of you ODF storage cluster
+    ```sh
+    oc get ocscluster
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    NAME             AGE
+    ocscluster-vpc   19d
+    ```
+    {: screen}
+
+1. Run the following command to edit your `OcsCluster`.
+    ```sh
+    oc edit ocscluster <ocs-cluster-name>
+    ```
+    {: pre}
+
+1. Edit the `OcsCluster` and set the `OcsUpgrade` parameter to `true`.
+    ```yaml
+    ...
+    spec:
+        billingType: hourly
+    monSize: 20Gi
+    monStorageClassName: ibmc-vpc-block-10iops-tier
+    numOfOsd: 1
+    ocsUpgrade: true
+    osdSize: 100Gi
+    osdStorageClassName: ibmc-vpc-block-10iops-tier
+    status:
+        storageClusterStatus: Decreasing the capacity not allowed
+    ```
+    {: codeblock}
+
+1. Save and close the `OcsCluster` to reapply it to your cluster.
     
-    
-## Updating VPC worker nodes that use OpenShift Data Foundation
-{: #odf-vpc-update-worker}
+## Updating worker nodes that use OpenShift Data Foundation
+{: #odf-update-worker}
 
 
 
-For VPC Gen2 clusters with a storage solution such as OpenShift Data Foundation or Portworx, you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
+For clusters with a storage solution such as OpenShift Data Foundation or Portworx, you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
@@ -88,6 +122,18 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     10.241.64.4    Ready    master,worker   22d    v1.21.6+bb8d50a
     ```
     {: screen}
+
+1. Identify the monitor pod and OSDs that are running in the node that you want to replace.
+    ```sh
+    oc get pods -n openshift-storage -o wide | grep -i <node_name>
+    ```
+    {: pre}
+
+1. Scale down the deployments that you found in the previous step. For example the `rook-ceph-mon` and `rook-ceph-osd` deployments.
+    ```sh
+    oc scale deployment rook-ceph-mon-DEPLOYMENT_NAME --replicas=0 -n openshift-storage
+    ```
+    {: pre}
 
 1.  Cordon the node. Cordoning the node prevents any pods from being scheduled on this node.
     ```sh
@@ -140,20 +186,27 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     kube-c85ra07w091uv4nid9ug-vpcoc-default-00000352   10.241.64.4    bx2.4x16   normal   Ready    us-east-2   4.8.29_1544_openshift*
     ```
     {: pre}
-    
-1. Replace one worker node at a time by using the `worker replace` [command](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). For more information, see [Updating VPC Gen 2 worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
-    ```sh
-    ibmcloud oc worker replace -c CLUSTER --worker kube-***
-    ```
-    {: pre}
-    
-    Example output
-    ```sh
-    The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
-    Replace worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288? [y/N]> y
-    Deleting worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288 and creating a new worker node in cluster
-    ```
-    {: screen}
+
+    **Classic Clusters**: Update one worker node at a time by using the  `worker update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_update). 
+
+        ```sh
+        ibmcloud ks worker update --cluster CLUSTER --worker WORKER_ID 
+        ```
+        {: pre}
+
+    **VPC Clusters**: Replace one worker node at a time by using the  `worker replace` [command](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). For more information, see [Updating VPC Gen 2 worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
+        ```sh
+        ibmcloud oc worker replace -c CLUSTER --worker kube-***
+        ```
+        {: pre}
+        
+        Example output
+        ```sh
+        The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
+        Replace worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288? [y/N]> y
+        Deleting worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288 and creating a new worker node in cluster
+        ```
+        {: screen}
     
 1. Wait for the replacement node to get provisioned, then list your worker nodes. Note that this process might take 20 minutes or more.
     ```sh
@@ -171,7 +224,64 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: screen}
 
-1. If you specified worker nodes in your OpenShift Data Foundation configuration, update the `ocscluster` CRD to include the new name. If you did not limit your configuration to only certain worker nodes, you do not need to update `ocscluster`.
+1. Navigate to the openshift-storage project.
+    ```sh
+    oc project openshift-storage
+    ```
+    {: pre}
+
+1. Remove the failed OSD from the cluster. You can specify multiple failed OSDs if required:
+    ```sh
+    oc process -n openshift-storage ocs-osd-removal \ -p FAILED_OSD_IDS=<failed_osd_id> | oc create -f <failed_osd_id_1>,<failed_osd_id_2>, <failed_osd_id_3>
+    ```
+    {: pre}
+
+    The `FORCE_OSD_REMOVAL` value must be changed to true in clusters that only have three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
+    {: note}
+
+1. Verify that the OSD was removed successfully by checking the status of the ocs-osd-removal-job pod.
+    ```sh
+    oc get pod -l job-name=ocs-osd-removal-job -n openshift-storage
+    ```
+    {: pre}
+
+1. Verify that the OSD removal is completed.
+    ```sh
+    oc logs -l job-name=ocs-osd-removal-job -n openshift-storage --tail=-1 | egrep -i 'completed removal'
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    2023-03-10 06:50:04.501511 I | cephosd: completed removal of OSD 0
+    ```
+    {: screen}
+
+
+    1. For clusters using local storage configurations identify the Persistent Volume (PV) associated with the Persistent Volume Claim (PVC).
+        ```sh
+        oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
+        ```
+        {: pre}
+
+        Example output:
+        ```sh
+        PV_NAME 1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
+        ```
+        {: screen}
+
+    1. If there is a PV in Released state, delete it:
+        ```sh
+        oc delete pv <persistent_volume>
+        ```
+        {: pre}
+    
+
+1. If you limited your ODF deployment to a subset of worker nodes by specifying node names during installation, you must update the `ocscluster` CRD to include the new name. 
+    If you did not limit your configuration to only certain worker nodes, you do not need to update `ocscluster`.
+    {: important}
+    
     ```sh
     oc edit ocscluster 
     ```
@@ -185,6 +295,32 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: pre}
 
+1. Identify the crashcollector pod deployment.
+    ```sh
+    oc get deployment --selector=app=rook-ceph-crashcollector,node_name=<failed_node_name> -n openshift-storage
+    ```
+    {: pre}
+
+1. If there is an existing crash collector deployment, delete it.
+    ```sh
+    oc delete deployment --selector=app=rook-ceph-crashcollector,node_name=<failed_node_name> -n openshift-storage
+    ```
+    {: pre}
+
+1. Delete the ocs-osd-removal-job. 
+    ```sh
+    oc delete -n openshift-storage job ocs-osd-removal-job
+    ```
+    {: pre}
+
+    Example output:
+    ```sh
+    job.batch "ocs-osd-removal-job" deleted
+    ```
+    {: screen}
+    
+    
+
 
 ## Removing the OpenShift Data Foundation add-on from your cluster
 {: #ocs-addon-rm}
@@ -194,93 +330,6 @@ You can remove ODF add-on from your cluster by using the [{{site.data.keyword.re
 
 When you disable the OpenShift Data Foundation add-on, only the ODF operator is removed from your cluster. Your existing workloads remain, but you can't create more ODF workloads. You also can't delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all your ODF resources and data, see [Removing ODF from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd). If you removed the add-on and can't delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
 {: note}
-
-### Uninstalling the OpenShift Data Foundation add-on from the console
-{: #ocs-addon-rm-console}
-{: ui}
-
-To remove the OpenShift Data Foundation add-on from your cluster, complete the following steps.
-{: shortdesc}
-
-If you want to remove all ODF resources and data from your cluster, [remove the CRDs](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd) before uninstalling the add-on.
-{: important}
-
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to remove the OpenShift Data Foundation add-on.
-1. On the cluster **Overview** page, click **Add-ons**.
-1. On the OpenShift Data Foundation card, click **Uninstall**.
-
-### Uninstalling the OpenShift Data Foundation add-on from the CLI
-{: #ocs-addon-rm-cli}
-{: cli}
-
-You can uninstall the OpenShift Data Foundation add-on from your cluster by using the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
-{: shortdesc}
-
-If you want to remove all ODF resources and data from your cluster, [remove the CRDs](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd) before uninstalling the add-on.
-{: important}
-
-1. Uninstall the add-on.
-    ```sh
-    ibmcloud oc cluster addon disable openshift-container-storage -c <cluster_name>
-    ```
-    {: pre}
-
-1. Verify that the add-on is removed.
-    ```sh
-    ibmcloud oc cluster addon ls -c <cluster_name>
-    ```
-    {: pre}
-
-
-
-## VPC: Updating the ODF operator from your CRD
-{: #ocs-addon-up-vpc}
-
-If you deployed ODF by using a CRD, you can update your ODF deployment by editing the `OcsCluster` custom resource in your cluster.
-{: shortdesc}
-
-[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-1. Get the name of you ODF storage cluster
-    ```sh
-    oc get ocscluster
-    ```
-    {: pre}
-
-    Example output
-    ```sh
-    NAME             AGE
-    ocscluster-vpc   19d
-    ```
-    {: screen}
-
-1. Run the following command to edit your `OcsCluster`.
-    ```sh
-    oc edit ocscluster <ocs-cluster-name>
-    ```
-    {: pre}
-
-1. Edit the `OcsCluster` and set the `OcsUpgrade` parameter to `true`.
-    ```yaml
-    ...
-    spec:
-        billingType: hourly
-    monSize: 20Gi
-    monStorageClassName: ibmc-vpc-block-10iops-tier
-    numOfOsd: 1
-    ocsUpgrade: true
-    osdSize: 100Gi
-    osdStorageClassName: ibmc-vpc-block-10iops-tier
-    status:
-        storageClusterStatus: Decreasing the capacity not allowed
-    ```
-    {: codeblock}
-
-1. Save and close the `OcsCluster` to reapply it to your cluster.
-
-
-
-
 
 ## Removing ODF from your apps
 {: #ocs-remove-apps-storage}
@@ -515,11 +564,55 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
     
 1. After deleting your PVCs and PVs, you also need to delete the storage volumes from your account. To locate and remove unused storage volumes in your account, see [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/containers?topic=containers-ts_storage_clean_volume).
 
+### Uninstalling the OpenShift Data Foundation add-on from the console
+{: #ocs-addon-rm-console}
+{: ui}
+
+To remove the OpenShift Data Foundation add-on from your cluster, complete the following steps.
+{: shortdesc}
+
+If you want to remove all ODF resources and data from your cluster, [remove the CRDs](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd) before uninstalling the add-on.
+{: important}
+
+1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to remove the OpenShift Data Foundation add-on.
+1. On the cluster **Overview** page, click **Add-ons**.
+1. On the OpenShift Data Foundation card, click **Uninstall**.
+
+### Uninstalling the OpenShift Data Foundation add-on from the CLI
+{: #ocs-addon-rm-cli}
+{: cli}
+
+You can uninstall the OpenShift Data Foundation add-on from your cluster by using the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
+{: shortdesc}
+
+If you want to remove all ODF resources and data from your cluster, [remove the CRDs](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd) before uninstalling the add-on.
+{: important}
+
+1. Uninstall the add-on.
+    ```sh
+    ibmcloud oc cluster addon disable openshift-container-storage -c <cluster_name>
+    ```
+    {: pre}
+
+1. Verify that the add-on is removed.
+    ```sh
+    ibmcloud oc cluster addon ls -c <cluster_name>
+    ```
+    {: pre}
+
+
 ## Troubleshooting ODF
 {: #odf-troubleshooting-gather}
 
 To gather the information to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.10/support/gathering-cluster-data.html).
 {: shortdesc}
+
+Example command:
+
+```sh
+oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:latest --dest-dir=ocs_mustgather
+```
+{: pre}
 
 You can use the Rook community toolbox to debug issues with your Ceph cluster. For more information, see the [Rook documentation](https://rook.io/docs/rook/v1.3/ceph-toolbox.html){: external}.
 {: tip}

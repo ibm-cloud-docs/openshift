@@ -5147,8 +5147,6 @@ subcollection: openshift
 
     * [Version 4.8 and 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
-    * [Version 4.7 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
-
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
 * [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-plan)
@@ -5172,8 +5170,6 @@ subcollection: openshift
     * [Version 4.10 and 4.11 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
 
     * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
-
-    * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-47)
 
 [Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#openshift-storage-odf-private)
 
@@ -5217,15 +5213,9 @@ subcollection: openshift
 
 * [Updating the add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update)
 
-* [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-vpc-update-worker)
+* [Updating worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-update-worker)
 
 * [Removing the OpenShift Data Foundation add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm)
-
-    * [Uninstalling the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-console)
-
-    * [Uninstalling the OpenShift Data Foundation add-on from the CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-cli)
-
-* [VPC: Updating the ODF operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
 
 * [Removing ODF from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
 
@@ -5234,6 +5224,10 @@ subcollection: openshift
 * [Cleaning up your ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
 
     * [Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup)
+
+    * [Uninstalling the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-console)
+
+    * [Uninstalling the OpenShift Data Foundation add-on from the CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-cli)
 
 * [Troubleshooting ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-troubleshooting-gather)
 
