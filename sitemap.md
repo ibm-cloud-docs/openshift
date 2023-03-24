@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 keywords: openshift
 subcollection: openshift
@@ -3804,7 +3804,12 @@ subcollection: openshift
 {: #sitemap_securing_the_cluster_network}
 
 
-[Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies#network_policies)
+
+### Controlling traffic in Classic clusters
+{: #sitemap_controlling_traffic_in_classic_clusters}
+
+
+[Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies#network_policies)
 
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
 
@@ -3826,7 +3831,7 @@ subcollection: openshift
 
 * [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
 
-[Classic: Opening required ports and IP addresses in your allowlist](/docs/openshift?topic=openshift-firewall#firewall)
+[Opening required ports and IP addresses in your allowlist](/docs/openshift?topic=openshift-firewall#firewall)
 
 * [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-firewall#corporate)
 
@@ -3861,8 +3866,8 @@ subcollection: openshift
 * [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
 
 
-### Controlling traffic with ACLs, security groups, and network policies
-{: #sitemap_controlling_traffic_with_acls_security_groups_and_network_policies}
+### Controlling traffic in VPC clusters with ACLs, security groups, and network policies
+{: #sitemap_controlling_traffic_in_vpc_clusters_with_acls_security_groups_and_network_policies}
 
 
 [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
@@ -3927,7 +3932,7 @@ subcollection: openshift
 
 * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
 
-[VPC: Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
+[Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
 * [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
 
@@ -5147,8 +5152,6 @@ subcollection: openshift
 
     * [Version 4.8 and 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
-    * [Version 4.7 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-47)
-
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
 * [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-plan)
@@ -5172,8 +5175,6 @@ subcollection: openshift
     * [Version 4.10 and 4.11 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
 
     * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
-
-    * [Version 4.7 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-47)
 
 [Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#openshift-storage-odf-private)
 
@@ -5217,15 +5218,9 @@ subcollection: openshift
 
 * [Updating the add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update)
 
-* [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-vpc-update-worker)
+* [Updating worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-update-worker)
 
 * [Removing the OpenShift Data Foundation add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm)
-
-    * [Uninstalling the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-console)
-
-    * [Uninstalling the OpenShift Data Foundation add-on from the CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-cli)
-
-* [VPC: Updating the ODF operator from your CRD](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-up-vpc)
 
 * [Removing ODF from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
 
@@ -5234,6 +5229,10 @@ subcollection: openshift
 * [Cleaning up your ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
 
     * [Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup)
+
+    * [Uninstalling the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-console)
+
+    * [Uninstalling the OpenShift Data Foundation add-on from the CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-cli)
 
 * [Troubleshooting ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-troubleshooting-gather)
 

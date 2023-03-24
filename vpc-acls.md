@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-03-24"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -19,6 +19,8 @@ subcollection: openshift
 
 # Controlling traffic with ACLs
 {: #vpc-acls}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 Control inbound and outbound traffic to your cluster by creating and applying access control lists (ACLs) to each subnet that your cluster is attached to. Note that these steps outline the minimum ACL rules that are required for basic cluster functionality. You might need to create additional ACL rules based on your use case.
 {: shortdesc}

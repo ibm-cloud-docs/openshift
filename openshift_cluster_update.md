@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-24"
 
 keywords: openshift, version, upgrade, update
 
@@ -406,7 +406,7 @@ If you are running Portworx in your VPC cluster, you must [manually attach your 
 
 
 
-For VPC Gen2 clusters with a storage solution such as OpenShift Data Foundation or Portworx, you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
+For clusters with a storage solution such as OpenShift Data Foundation or Portworx, you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
@@ -430,6 +430,18 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     10.241.64.4    Ready    master,worker   22d    v1.21.6+bb8d50a
     ```
     {: screen}
+
+1. Identify the monitor pod and OSDs that are running in the node that you want to replace.
+    ```sh
+    oc get pods -n openshift-storage -o wide | grep -i <node_name>
+    ```
+    {: pre}
+
+1. Scale down the deployments that you found in the previous step. For example the `rook-ceph-mon` and `rook-ceph-osd` deployments.
+    ```sh
+    oc scale deployment rook-ceph-mon-DEPLOYMENT_NAME --replicas=0 -n openshift-storage
+    ```
+    {: pre}
 
 1.  Cordon the node. Cordoning the node prevents any pods from being scheduled on this node.
     ```sh
@@ -482,20 +494,27 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     kube-c85ra07w091uv4nid9ug-vpcoc-default-00000352   10.241.64.4    bx2.4x16   normal   Ready    us-east-2   4.8.29_1544_openshift*
     ```
     {: pre}
-    
-1. Replace one worker node at a time by using the `worker replace` [command](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). For more information, see [Updating VPC Gen 2 worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
-    ```sh
-    ibmcloud oc worker replace -c CLUSTER --worker kube-***
-    ```
-    {: pre}
-    
-    Example output
-    ```sh
-    The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
-    Replace worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288? [y/N]> y
-    Deleting worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288 and creating a new worker node in cluster
-    ```
-    {: screen}
+
+    **Classic Clusters**: Update one worker node at a time by using the  `worker update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_update). 
+
+        ```sh
+        ibmcloud ks worker update --cluster CLUSTER --worker WORKER_ID 
+        ```
+        {: pre}
+
+    **VPC Clusters**: Replace one worker node at a time by using the  `worker replace` [command](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). For more information, see [Updating VPC Gen 2 worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
+        ```sh
+        ibmcloud oc worker replace -c CLUSTER --worker kube-***
+        ```
+        {: pre}
+        
+        Example output
+        ```sh
+        The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
+        Replace worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288? [y/N]> y
+        Deleting worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288 and creating a new worker node in cluster
+        ```
+        {: screen}
     
 1. Wait for the replacement node to get provisioned, then list your worker nodes. Note that this process might take 20 minutes or more.
     ```sh
@@ -513,7 +532,64 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: screen}
 
-1. If you specified worker nodes in your OpenShift Data Foundation configuration, update the `ocscluster` CRD to include the new name. If you did not limit your configuration to only certain worker nodes, you do not need to update `ocscluster`.
+1. Navigate to the openshift-storage project.
+    ```sh
+    oc project openshift-storage
+    ```
+    {: pre}
+
+1. Remove the failed OSD from the cluster. You can specify multiple failed OSDs if required:
+    ```sh
+    oc process -n openshift-storage ocs-osd-removal \ -p FAILED_OSD_IDS=<failed_osd_id> | oc create -f <failed_osd_id_1>,<failed_osd_id_2>, <failed_osd_id_3>
+    ```
+    {: pre}
+
+    The `FORCE_OSD_REMOVAL` value must be changed to true in clusters that only have three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
+    {: note}
+
+1. Verify that the OSD was removed successfully by checking the status of the ocs-osd-removal-job pod.
+    ```sh
+    oc get pod -l job-name=ocs-osd-removal-job -n openshift-storage
+    ```
+    {: pre}
+
+1. Verify that the OSD removal is completed.
+    ```sh
+    oc logs -l job-name=ocs-osd-removal-job -n openshift-storage --tail=-1 | egrep -i 'completed removal'
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    2023-03-10 06:50:04.501511 I | cephosd: completed removal of OSD 0
+    ```
+    {: screen}
+
+
+    1. For clusters using local storage configurations identify the Persistent Volume (PV) associated with the Persistent Volume Claim (PVC).
+        ```sh
+        oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
+        ```
+        {: pre}
+
+        Example output:
+        ```sh
+        PV_NAME 1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
+        ```
+        {: screen}
+
+    1. If there is a PV in Released state, delete it:
+        ```sh
+        oc delete pv <persistent_volume>
+        ```
+        {: pre}
+    
+
+1. If you limited your ODF deployment to a subset of worker nodes by specifying node names during installation, you must update the `ocscluster` CRD to include the new name. 
+    If you did not limit your configuration to only certain worker nodes, you do not need to update `ocscluster`.
+    {: important}
+    
     ```sh
     oc edit ocscluster 
     ```
@@ -525,7 +601,33 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     oc get ocscluster
     oc get pods -n openshift-storage
     ```
-    {: pre}    
+    {: pre}
+
+1. Identify the crashcollector pod deployment.
+    ```sh
+    oc get deployment --selector=app=rook-ceph-crashcollector,node_name=<failed_node_name> -n openshift-storage
+    ```
+    {: pre}
+
+1. If there is an existing crash collector deployment, delete it.
+    ```sh
+    oc delete deployment --selector=app=rook-ceph-crashcollector,node_name=<failed_node_name> -n openshift-storage
+    ```
+    {: pre}
+
+1. Delete the ocs-osd-removal-job. 
+    ```sh
+    oc delete -n openshift-storage job ocs-osd-removal-job
+    ```
+    {: pre}
+
+    Example output:
+    ```sh
+    job.batch "ocs-osd-removal-job" deleted
+    ```
+    {: screen}
+    
+        
 
 ### Updating VPC worker nodes in the console
 {: #vpc_worker_ui}

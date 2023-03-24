@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-24"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -19,6 +19,8 @@ subcollection: openshift
 
 # Overview of network security options
 {: #vpc-network-policy}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 This information is specific to VPC clusters. For network policy information for classic clusters, see [Classic: Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies).
 {: note}
