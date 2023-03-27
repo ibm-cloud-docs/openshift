@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-03-27"
 
 keywords: openshift
 
@@ -1445,7 +1445,8 @@ Cluster autoscaler
 
 
 OpenShift Data Foundation
-:   [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-vpc-update-worker).
+:   [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment).
+
 
 
 ### 8 March 2022

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-27"
 
 keywords: openshift
 
@@ -39,7 +39,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Hard disk | SSD|
 | Reclaim policy | `ibmc-vpc-file-3iops-tier`: Delete  \n `ibmc-vpc-file-retain-3iops-tier`: Retain |
 | Billing | Hourly|
-| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
+| Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
 {: class="simple-tab-table"}
 {: caption="3 IOPS" caption-side="bottom"}
 {: #simpletabtable1-file-vpc-sc-ref}
@@ -56,7 +56,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Hard disk | SSD|
 | Reclaim policy | `ibmc-vpc-file-5iops-tier`: Delete  \n `ibmc-vpc-file-retain-5iops-tier`: Retain |
 | Billing | Hourly|
-| Pricing | [Pricing information](https://www.ibm.com/cloud/virtual-servers/pricing){: external} |
+| Pricing | [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs.){: external} |
 {: class="simple-tab-table"}
 {: caption="5 IOPS" caption-side="bottom"}
 {: #simpletabtable2-file-vpc-sc-ref}
@@ -73,7 +73,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Hard disk | SSD|
 | Reclaim policy | `ibmc-vpc-file-10iops-tier`: Delete  \n `ibmc-vpc-file-retain-10iops-tier`: Retain   \n |
 | Billing | Hourly|
-| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
+| Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
 {: class="simple-tab-table"}
 {: caption="10 IOPS Tier" caption-side="bottom"}
 {: #simpletabtable3-file-vpc-sc-ref}

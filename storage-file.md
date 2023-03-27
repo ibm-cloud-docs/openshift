@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-27"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 # Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}
 {: #file_storage}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://www.ibm.com/cloud/file-storage/pricing){: external}.
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/cloud-storage/file/order){: external}.
 {: shortdesc}
 
 
@@ -220,7 +220,7 @@ Choose if you want to keep your data after the cluster or the persistent volume 
 ### Billing type
 {: #file-billing}
 
-Choose hourly or monthly. Review the [pricing](https://www.ibm.com/cloud/file-storage/pricing){: external} for more information. 
+Choose hourly or monthly. Review the [pricing](https://cloud.ibm.com/cloud-storage/file/order){: external} for more information. 
 {: shortdesc}
 
 
@@ -1387,7 +1387,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Reclaim policy | `ibmc-file-bronze`: Delete  \n `ibmc-file-retain-bronze`: Retain   \n `ibmc-file-bronze-gid:` Delete|
 | Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the `ibmc-file-bronze-gid` storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
 | Billing | Hourly|
-| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
+| Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
 {: class="simple-tab-table"}
 {: caption="Bronze" caption-side="bottom"}
 {: #simpletabtable1}
@@ -1405,7 +1405,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Reclaim policy | `ibmc-file-silver`: Delete  \n `ibmc-file-retain-silver`: Retain   \n `ibmc-file-silver-gid:` Delete |
 | Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the `ibmc-file-bronze-gid` storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
 | Billing | Hourly|
-| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
+| Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
 {: class="simple-tab-table"}
 {: caption="Silver" caption-side="bottom"}
 {: #simpletabtable2}
@@ -1423,7 +1423,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Reclaim policy | `ibmc-file-gold`: Delete  \n `ibmc-file-retain-gold`: Retain   \n `ibmc-file-gold-gid:` Delete |
 | Supplemental group ID | The supplemental group ID 65531 is automatically set when you use the `ibmc-file-bronze-gid` storage class to allow non-root users access to your file storage instance. For more information about how to use this storage class or set custom group IDs, see [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot).  |
 | Billing | Hourly|
-| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
+| Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
 {: class="simple-tab-table"}
 {: caption="Gold" caption-side="bottom"}
 {: #simpletabtable3}
@@ -1439,7 +1439,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Hard disk | The IOPS to gigabyte ratio determines the type of hard disk that is provisioned. To determine your IOPS to gigabyte ratio, you divide the IOPS by the size of your storage.   \n Example: You chose 500Gi of storage with 100 IOPS. Your ratio is 0.2 (100 IOPS/500Gi).   \n **Overview of hard disk types per ratio:** - Less than or equal to 0.3: SATA  \n - Greater than 0.3: SSD|
 | Reclaim policy | `ibmc-file-custom`: Delete  \n `ibmc-file-retain-custom`: Retain |
 | Billing | Hourly|
-| Pricing | [Pricing information](https://www.ibm.com/cloud/file-storage/pricing){: external}|
+| Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
 {: class="simple-tab-table"}
 {: tab-title="Custom"}
 {: caption="Custom" caption-side="bottom"}
