@@ -1445,7 +1445,8 @@ Cluster autoscaler
 
 
 OpenShift Data Foundation
-:   [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-update-worker).
+:   [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment).
+
 
 
 ### 8 March 2022
