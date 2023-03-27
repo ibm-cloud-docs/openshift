@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-27"
 
 keywords: openshift
 
@@ -101,7 +101,7 @@ First, check for and release individual IP addresses that were not cleanly remov
     ```
     {: screen}
 
-4. Release IP addresses from the Calico IPAM that were previously assigned to a pod endpoint. Note that after you lock the data store in the following steps, existing pods continue to run, but any pods that are created remain in the `ContainerCreating` state and can't start until you unlock the data store. This data store lock ensures that the IPAM records are not modified while you release IP addresses. For more information, see the [Calico open source documentation](https://docs.tigera.io/calico/3.25/reference/calicoctl/ipam/check){: external}.
+4. Release IP addresses from the Calico IPAM that were previously assigned to a pod endpoint. Note that after you lock the data store in the following steps, existing pods continue to run, but any pods that are created remain in the `ContainerCreating` state and can't start until you unlock the data store. This data store lock ensures that the IPAM records are not modified while you release IP addresses. For more information, see the [Calico open source documentation](https://docs.tigera.io/calico/latest/reference/calicoctl/ipam/check){: external}.
 
     1. Lock the data store for the Calico IPAM records.
         ```sh
