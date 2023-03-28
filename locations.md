@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-28"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -90,24 +90,16 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
-| Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
 | Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |
-| Asia Pacific | Japan | Osaka | osa21, osa22, osa23 | `jp-osa` |
-| Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |
 | Europe | France | Paris | par01 | EU Central (`eu-central`, `eu-de`) |
-| Europe | Germany | Frankfurt | fra02, fra04, fra05 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Italy | Milan | mil01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | The Netherlands | Amsterdam | ams03 | EU Central (`eu-central`, `eu-de`) |
 | Europe | United Kingdom | London | lon04, lon05, lon06 | UK South (`uk-south`, `eu-gb`) |
 | North America | Canada | Montreal | mon01 | US East (`us-east`) |
 | North America | Canada | Toronto | tor01 | US East (`us-east`) |
-| North America | United States | Dallas | dal10, dal12, dal13 | US South (`us-south`) |
-| North America | United States | San Jose | sjc03, sjc04 | US South (`us-south`) |
-| North America | United States | Washington, D.C. | wdc04, wdc06, wdc07 | US East (`us-east`) |
 | South America | Brazil | São Paulo | sao01 | US South (`us-south`) |
 {: caption="Available single zone data center locations for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
-
 
 
 
@@ -138,11 +130,11 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 In a single zone cluster, your cluster's resources remain in the data center (zone) in which the cluster is deployed, but management operations might be routed through a regional endpoint.
 {: shortdesc}
 
-1. Your cluster's resources, including the master and worker nodes, are in the same zone that you deployed the cluster to. When you initiate local container orchestration actions, such as `oc` commands, the information is exchanged between your master and worker nodes within the same zone.
+Your cluster's resources, including the master and worker nodes, are in the same zone that you deployed the cluster to. When you initiate local container orchestration actions, such as `oc` commands, the information is exchanged between your master and worker nodes within the same zone.
 
-2. If you set up other cluster resources, such as storage, networking, compute, or apps running in pods, the resources and their data remain in the zone that you deployed your cluster to.
+If you set up other cluster resources, such as storage, networking, compute, or apps running in pods, the resources and their data remain in the zone that you deployed your cluster to.
 
-3. When you initiate cluster management actions, such as using `ibmcloud oc` commands, basic information about the cluster (such as name, ID, user, the command) is routed through a regional endpoint via the global endpoint. Regional endpoints are located in the nearest multizone region, such as `mon01` to Washington, D.C.
+When you initiate cluster management actions, such as running **`ibmcloud oc`** commands, basic information about the cluster such as name, ID, user, the command is routed through a regional endpoint and the global endpoint. Regional endpoints are located in the nearest multizone region, such as `mon01` to Washington, D.C.
 
 ### Resources in a multizone cluster
 {: #regions_multizone}
@@ -150,15 +142,15 @@ In a single zone cluster, your cluster's resources remain in the data center (zo
 In a multizone cluster, your cluster's resources are spread across multiple zones for higher availability.
 {: shortdesc}
 
-1. Worker nodes are spread across multiple zones in the metro location to provide more availability for your cluster. The Kubernetes master replicas are also spread across zones. When you initiate local container orchestration actions, such as `oc` commands, the information is exchanged between your master and worker nodes through the global endpoint.
+Worker nodes are spread across multiple zones in the metro location to provide more availability for your cluster. The Kubernetes master replicas are also spread across zones. When you initiate local container orchestration actions, such as **`oc`** commands, the information is exchanged between your master and worker nodes through the global endpoint.
 
-2. Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
-    *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage-plan).
-    *   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
-    *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-managed-ingress-about).
-    *   [Increasing the availability of your app](/docs/openshift?topic=openshift-openshift_apps).
+Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
+*   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage-plan).
+*   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
+*   [Managing network traffic by using Ingress](/docs/containers?topic=containers-managed-ingress-about).
+*   [Increasing the availability of your app](/docs/openshift?topic=openshift-openshift_apps).
 
-3. When you initiate cluster management actions, such as using [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster (such as name, ID, user, the command) is routed through the global endpoint.
+When you initiate cluster management actions, such as running [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli), basic information about the cluster, such as name, ID, user, the command is routed through the global endpoint.
 
 
 
