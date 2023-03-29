@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-03-29"
 
 keywords: openshift
 
@@ -30,6 +30,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2023
 {: #openshift-mar23}
 
+### 29 March 2023
+{: #openshift-mar2923}
+{: release-note}
+
+
+
+{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.9_1862` and `5.1.5_1857`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+Cluster autoscaler add-on versions `1.0.7_988` and `1.0.8_987`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
 ### 28 March 2023
 {: #openshift-mar2823}
 {: release-note}
@@ -45,10 +57,6 @@ Worker node fix packs `4.8.57_1597_openshift`, `4.9.57_1584_openshift`, `4.10.54
 ### 21 March 2023
 {: #openshift-mar2123}
 {: release-note}
-
-Cluster autoscaler add-on version `1.0.7_988` and `1.0.8_987`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
-
 
 New troubleshooting steps for workers in `Critical` or `NotReady` state. 
 :   For more information, see [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/containers?topic=containers-ts-critical-notready).
@@ -730,7 +738,8 @@ CLI change log update
 :   For more information, see [version 4.4.10_1578](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 New! vGPU worker node flavors are now available for VPC Gen 2.
-:   For more information about the available worker node flavors, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-flavors). Worker node flavors with vGPU support are the `gx2` flavor class, for example: `gx2.16x128.2v100`.
+:   For more information about the available worker node flavors, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-flavors). Worker node flavors with vGPU support are the `gx2` flavor class, for example: `gx2.16x128.2v100`. {{site.data.keyword.vpc_short}} worker nodes with GPUs are available for allowlisted accounts only. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help). Be sure to include the data centers, the VPC infrastructure profile, and the number of workers that you want use. For example `12 worker nodes in us-east-1 of VPC profile gx2-16x128xv100`.
+
 
 ### 12 September 2022
 {: #openshift-sep1222}
@@ -2431,7 +2440,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.7.16_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4716_1522), [`4.6.34_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4634_1546), [`4.5.40_1542_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1542)and [`3.11.452_1593_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311452_1593).

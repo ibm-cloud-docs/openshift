@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-29"
 
 keywords: openshift, version, update, upgrade, 4.12, update openshift
 
@@ -52,13 +52,10 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 **Before you update**: Review the following list of considerations and limitations before you update your cluster to version 4.11. Some entries are relevant to specific add-ons. To check if you have an add-on enabled in your cluster, run `ibmcloud oc cluster addon ls`. 
 
 Calico BGP password
-:   When you upgrade your cluster to version 4.12, a [BGP password](https://docs.tigera.io/calico/3.25/reference/resources/bgppeer#bgppassword){: external} is automatically configured for Calico. This might disrupt pod networking for several seconds while the BGP password configuration is applied. 
+:   When you upgrade your cluster to version 4.12, a [BGP password](https://docs.tigera.io/calico/latest/reference/resources/bgppeer#bgppassword){: external} is automatically configured for Calico. This might disrupt pod networking for several seconds while the BGP password configuration is applied. 
 
 CoreOS
 :   Red Hat CoreOS-enabled IBM Cloud Satellite locations are not currently supported on clusters that run version 4.12.
-
-Portworx
-:   [Portworx](/docs/openshift?topic=openshift-portworx) is not currently supported on clusters that run version 4.12. Do not update you cluster to version 4.12 if Portworx is installed.
 
 ### Update before master
 {: #412_before}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-14"
+lastupdated: "2023-03-29"
 
 keywords: openshift, nginx, ingress controller, openshift ingress, ingress, exposing apps
 
@@ -187,7 +187,7 @@ For more information about TLS certificates, see [Managing TLS certificates and 
 {: #custom-domain-tls}
 
 1. Prepare your custom domain.
-    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
+    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to and 130 characters or fewer.
     2. Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.
@@ -374,7 +374,7 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 #### Custom domain and TLS secret
 {: #tls-and-custom-domain}
 
-1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
+1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 130 characters or fewer.
     If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
     {: tip}
 
@@ -715,7 +715,7 @@ Currently, when you configure TLS termination for Ingress, only HTTPS connection
 #### Custom domain and TLS secret, classic or VPC clusters
 {: #custom-domain-classic-vpc}
 
-1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
+1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). Note that domains are limited to 130 characters or fewer.
     If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
     {: tip}
 
@@ -1035,7 +1035,7 @@ For more information about TLS certificates, see [Managing TLS certificates and 
 {: #custom-domain-ingress-private}
 
 1. Prepare your custom domain.
-    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 255 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, and 130 characters or fewer in {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
+    1. Work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started) to register your custom domain. If you want to use different subdomains for your apps, register the custom domain as a wildcard domain, such as `*.custom_domain.net`. Note that domains are limited to 130 characters or fewer.
     2. Define an alias for your custom domain by specifying the IBM-provided domain as a Canonical Name record (CNAME). To find the IBM-provided Ingress domain, run `ibmcloud oc cluster get --cluster <cluster_name>` and look for the **Ingress subdomain** field.
 
 2. If you want to configure TLS termination, prepare your custom TLS secret.

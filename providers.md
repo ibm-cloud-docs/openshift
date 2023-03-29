@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-29"
 
 keywords: openshift
 
@@ -25,8 +25,12 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster from the foll
 [Virtual Private Cloud]{: tag-vpc}
 :   Create your cluster on the next generation of IBM Cloud infrastructure virtual servers in your own Virtual Private Cloud (VPC).
 
+
+
 [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 :   Create your cluster on your own hardware, {{site.data.keyword.cloud_notm}} Classic or VPC, or on virtual servers in another cloud provider like AWS or Azure.
+
+
 
 [Classic infrastructure]{: tag-classic-inf} 
 :   Create your cluster on a classic compute, networking, and storage environment in IBM Cloud infrastructure.
@@ -39,7 +43,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster from the foll
 
 | Component | Description | 
 | --- | --- | 
-| Compute and worker node resources | Worker nodes are created as virtual machines using either shared infrastructure or dedicated hosts. Unlike classic clusters, VPC cluster worker nodes on shared hardware don't appear in your infrastructure portal or a separate infrastructure bill. Instead, you manage all maintenance and billing activity for the worker nodes through {{site.data.keyword.openshiftlong_notm}}. Your worker node instances are connected to certain VPC instances that do reside in your infrastructure account, such as the VPC subnet or storage volumes. For dedicated hosts, the dedicated host price covers the vCPU, memory and any [instance storage](/docs/vpc?topic=vpc-instance-storage) to be used by any workers placed on the host. |
+| Compute and worker node resources | Worker nodes are created as virtual machines using either shared infrastructure or dedicated hosts. Unlike classic clusters, VPC cluster worker nodes on shared hardware don't appear in your infrastructure portal or a separate infrastructure bill. Instead, you manage all maintenance and billing activity for the worker nodes through {{site.data.keyword.openshiftlong_notm}}. Your worker node instances are connected to certain VPC instances that do reside in your infrastructure account, such as the VPC subnet or storage volumes. For dedicated hosts, the dedicated host price covers the vCPU, memory and any instance storage to be used by any workers placed on the host. For dedicated hosts, the dedicated host price covers the vCPU, memory and any [instance storage](/docs/vpc?topic=vpc-instance-storage) to be used by any workers placed on the host. |
 | Security | Clusters on shared hardware run in an isolated environment in the public cloud. Clusters on dedicated hosts do not run in a shared environment, instead only your clusters are present on your hosts. Network access control lists protect the subnets that provide the floating IPs for your worker nodes. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-about-vpc).|
 | High availability | The master includes three replicas for high availability. Further, if you create your cluster in a multizone metro, the master replicas are spread across zones and you can also spread your worker pools across zones. For more information, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha). |
 | Reservations | Reservations aren't available for VPC. |
