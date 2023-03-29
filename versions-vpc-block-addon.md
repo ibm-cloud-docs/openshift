@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-29"
 
 keywords: block, add-on, changelog
 
@@ -43,6 +43,12 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 5.1
 {: #051_is_block}
 
+### Change log for version 5.1.5_1857, released 29 March 2023
+{: #5.1.5_1857_is_block_relnote}
+
+- Updates the storage-secret-sidecar image to `v1.2.19`.
+- Resolves [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}
+
 ### Change log for version 5.1.4_1852, released 07 March 2023
 {: #5.1.4_1852_is_block_relnote}
 
@@ -72,6 +78,14 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 5.0
 {: #050_is_block}
+
+
+### Change log for version 5.0.9_1862, released 29 March 2023
+{: #5.0.9_1862_is_block_relnote}
+
+- Updates the storage-secret-sidecar image to `v1.2.19`.
+- Resolves [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}
+
 
 ### Change log for version 5.0.8_1841, released 07 March 2023
 {: #5.0.8_1841_is_block_relnote}
