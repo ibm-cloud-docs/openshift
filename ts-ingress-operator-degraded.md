@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-29"
 
 keywords: openshift
 
@@ -54,7 +54,7 @@ The fix for [bug 1953097](https://bugzilla.redhat.com/show_bug.cgi?id=1970140){:
 Update your cluster master and worker nodes.
 {: tsResolve}
 
-1. [Update your cluster master](/docs/openshift?topic=openshift-update#master). For 4.6 clusters, update your master to version `4.6.38_openshift` or later. For 4.7 clusters, update your master to version `4.7.19_openshift` or later.
+1. [Update your cluster master](/docs/openshift?topic=openshift-update#master).
     ```sh
     ibmcloud oc cluster master update --cluster <clusterID> --version <4.6.38_openshift|4.7.19_openshift>
     ```
@@ -66,7 +66,7 @@ Update your cluster master and worker nodes.
     ```
     {: pre}
 
-1. [Update your worker nodes](/docs/openshift?topic=openshift-update#master). For 4.6 clusters, update your worker nodes to version `4.6.38_openshift` or later. For 4.7 clusters, update your worker nodes to version `4.7.19_openshift` or later.
+1. [Update your worker nodes](/docs/openshift?topic=openshift-update#master).
 
 1. Get the details of the `openshift-dns` configmap and review the `bufsize` by running the following command. 
     ```sh
