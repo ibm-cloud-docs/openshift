@@ -37,6 +37,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.9_1862` and `5.1.5_1857`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
+Cluster autoscaler add-on versions `1.0.7_988` and `1.0.8_987`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
 ### 28 March 2023
 {: #openshift-mar2823}
 {: release-note}
@@ -52,10 +55,6 @@ Worker node fix packs `4.8.57_1597_openshift`, `4.9.57_1584_openshift`, `4.10.54
 ### 21 March 2023
 {: #openshift-mar2123}
 {: release-note}
-
-Cluster autoscaler add-on version `1.0.7_988` and `1.0.8_987`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
-
 
 New troubleshooting steps for workers in `Critical` or `NotReady` state. 
 :   For more information, see [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/containers?topic=containers-ts-critical-notready).
