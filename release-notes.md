@@ -2438,7 +2438,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.7.16_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4716_1522), [`4.6.34_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4634_1546), [`4.5.40_1542_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1542)and [`3.11.452_1593_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311452_1593).

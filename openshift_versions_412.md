@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-29"
 
 keywords: openshift, version, update, upgrade, 4.12, update openshift
 
@@ -56,9 +56,6 @@ Calico BGP password
 
 CoreOS
 :   Red Hat CoreOS-enabled IBM Cloud Satellite locations are not currently supported on clusters that run version 4.12.
-
-Portworx
-:   [Portworx](/docs/openshift?topic=openshift-portworx) is not currently supported on clusters that run version 4.12. Do not update you cluster to version 4.12 if Portworx is installed.
 
 ### Update before master
 {: #412_before}
