@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-30"
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 
@@ -102,18 +102,18 @@ Some of the following steps are specific to a specialized area, such as networki
 1. If you recently added any components to your cluster, remove them. If you made changes to any existing components in your cluster, revert the changes. Then, check the status of your worker nodes to see if the new components or changes were causing the issue. 
 1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/containers?topic=containers-ts-delete-webhooks) that were added to the cluster after it was created.
 1. Remove and regenerate any custom Docker pull secrets, which, if misconfigured, can prevent worker nodes from pulling images from Docker registries. 
-        1. Run the `ibmcloud oc delete secret -n openshift pull-secret` and `ibmcloud oc delete secret -n openshift-config pull-secret` commands to delete the custom Docker pull secrets.
-            ```sh
-            ibmcloud oc delete secret -n openshift pull-secret
-            ```
-            {: pre}
+    1. Run the `ibmcloud oc delete secret -n openshift pull-secret` and `ibmcloud oc delete secret -n openshift-config pull-secret` commands to delete the custom Docker pull secrets.
+        ```sh
+        ibmcloud oc delete secret -n openshift pull-secret
+        ```
+        {: pre}
 
-            ```sh
-            ibmcloud oc delete secret -n openshift-config pull-secret
-            ```
-            {: pre}
+        ```sh
+        ibmcloud oc delete secret -n openshift-config pull-secret
+        ```
+        {: pre}
 
-        1. Wait for the cluster to regenerate the custom Docker pull secrets. Any misconfigurations are no longer present in the regenerated pull secrets.
+    1. Wait for the cluster to regenerate the custom Docker pull secrets. Any misconfigurations are no longer present in the regenerated pull secrets.
 1. Check the status of your worker nodes. If they are in a `Normal` state, add back any deleted components and reinstitute any reverted changes, one by one, until you can determine which configuration or component caused the worker node disruption. 
 1. If the issue is still not resolved, follow the steps to [gather your worker node data](#ts-critical-notready-gather) and open a support ticket. 
 
