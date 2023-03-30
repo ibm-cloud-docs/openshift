@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-03-30"
 
 keywords: openshift, audit
 
@@ -14,9 +14,6 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
-
-
 # {{site.data.keyword.at_full_notm}} events
 {: #at_events}
 
@@ -24,11 +21,6 @@ You can view, manage, and audit user-initiated activities in your {{site.data.ke
 {: shortdesc}
 
 {{site.data.keyword.openshiftlong_notm}} automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
-
-
-Currently, {{site.data.keyword.openshiftlong_notm}} clusters running in Washington, D.C. (`us-east`) send logs to {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} instances in Dallas (`us-south`). On 10 June 2022, {{site.data.keyword.openshiftlong_notm}} clusters running in Washington, D.C. (`us-east`) begin sending logs to {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} instances in the same region, Washington, D.C. (`us-east`). If you have clusters in Washington, D.C. (`us-east`), and you already have instances of {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} in the same region, no action is needed. If you have clusters in Washington, D.C. (`us-east`), and **do not** have instances of {{site.data.keyword.at_full_notm}} and {{site.data.keyword.loganalysisshort}} in the same region, you must create instances of {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} in  Washington, D.C. (`us-east`). On 10 June 2022, logs of clusters in  Washington, D.C. (`us-east`) automatically show up in {{site.data.keyword.loganalysisshort}} and {{site.data.keyword.at_full_notm}} instances in the same region. If you want to export {{site.data.keyword.at_full_notm}} events, see [Exporting {{site.data.keyword.at_full_notm}} events](/docs/activity-tracker?topic=activity-tracker-export). If you want to export logs, see [Exporting logs](/docs/log-analysis?topic=log-analysis-export).
-{: important}
-
 
 
 ## Cluster events
@@ -49,7 +41,10 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 | `containers-kubernetes.cluster-audit-webhook.get` | Audit webhooks for a cluster are listed. |
 | `containers-kubernetes.cluster-audit-webhook.update` | A cluster audit webhook for forwarding master API server audit logs is updated. |
 | `containers-kubernetes.cluster-ca-certificate.create` | A certificate authority (CA) for a cluster is created. |
+| `containers-kubernetes.cluster-ca-certificate.get` | A certificate authority (CA) for a cluster is retrieved. |
 | `containers-kubernetes.cluster-ca-certificate.rotate` | The certificate authority (CA) for a cluster is rotated. |
+| `containers-kubernetes.image-security.enable` | Image security is enabled. |
+| `containers-kubernetes.image-security.disable` | Image security is disabled. |
 | `containers-kubernetes.cluster-key-state.update` | The root key in the key management service (KMS) provider that the cluster uses is updated, such as a root key being enabled, disabled, or rotated in a key management service (KMS) provider.|
 | `containers-kubernetes.cluster-kms.enable` | A key management service (KMS) provider is enabled for a cluster. |
 | `containers-kubernetes.cluster-master.refresh` | A cluster master refresh is requested. |
@@ -61,6 +56,7 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 | `containers-kubernetes.cluster-pull-secret.enable` | An image pull secret to {{site.data.keyword.registrylong_notm}} is created in the `default` project of the cluster. |
 | `containers-kubernetes.cluster-rbac.apply` | {{site.data.keyword.cloud_notm}} IAM service access roles are synchronized with Kubernetes RBAC roles in the cluster. This event commonly happens while retrieving the Kubernetes configuration file (`kubeconfig`) for a cluster (the `containers-kubernetes.cluster.config` event). |
 | `containers-kubernetes.cluster-rbac.update` | The {{site.data.keyword.cloud_notm}} IAM service access roles are synchronized with Kubernetes RBAC roles in the cluster. This event commonly happens after you update the service access role for a user in IAM. |
+| `containers-kubernetes.cluster-rbac.status` | The status of the RBAC roles in the cluster is retrieved. |
 | `containers-kubernetes.cluster-service.bind` | An {{site.data.keyword.cloud_notm}} service is bound to the cluster.|
 | `containers-kubernetes.cluster-service.list` | The {{site.data.keyword.cloud_notm}} services that are bound to a cluster are listed. The list might be filtered by the cluster project.|
 | `containers-kubernetes.cluster-service.unbind` | An {{site.data.keyword.cloud_notm}} service is removed from the cluster. |
@@ -142,6 +138,7 @@ The following list of Fluentd logging events for a cluster are sent to {{site.da
 | `containers-kubernetes.cluster-logging-filter.get` | The details of a logging filter configuration are returned. |
 {: caption="Fluentd logging events" caption-side="bottom"}
 
+
 ## Ingress ALB events
 {: #ingress-alb-events}
 
@@ -150,10 +147,20 @@ The following list of Ingress application load balancer (ALB) events are sent to
 
 |Action|Description|
 |------|-----------|
+| `containers-kubernetes.cluster-ingress-instance.create` | An Ingress instance is created. |
+| `containers-kubernetes.cluster-ingress-instance.delete` | An Ingress instance is delete.|
+| `containers-kubernetes.cluster-ingress-instance.update` | An Ingress instance is update. |
+| `containers-kubernetes.cluster-ingress-instance.list` | Ingress instances are lists. |
+| `containers-kubernetes.cluster-ingress-instance.get` | An Ingress instance is retreived. |
+| `containers-kubernetes.cluster-ingress-status-state.set` | The state of the Ingress status is set. |
+| `containers-kubernetes.cluster-ignored-ingress-status-errors.add` | An Ingress status error is added to the ignore list. |
+| `containers-kubernetes.cluster-ignored-ingress-status-errors.remove` | An Ingress status error is removed from the ignore list. |
 | `containers-kubernetes.cluster-alb.create` | A public or private ALB is created in the cluster. |
 | `containers-kubernetes.cluster-alb.delete` | An ALB is disabled. |
 | `containers-kubernetes.cluster-alb.enable` | An existing ALB is enabled in a cluster. |
 | `containers-kubernetes.cluster-alb.get` | Details of an ALB are viewed. |
+| `containers-kubernetes.cluster-alb-healthcheck.get` | Details of an ALB healthcheck are viewed. |
+| `containers-kubernetes.cluster-alb-healthcheck.set` | Details of an ALB healthcheck are viewed. |
 | `containers-kubernetes.cluster-alb.list` | ALBs in a cluster are listed. |
 | `containers-kubernetes.cluster-alb.update` | ALB pods are updated. |
 | `containers-kubernetes.cluster-alb-policy.get` | The status of automatic updates for Ingress ALBs is viewed. |
@@ -179,6 +186,8 @@ The following list of Ingress secret events are sent to {{site.data.keyword.at_f
 | `containers-kubernetes.cluster-ingress-secret.create` | An Ingress secret for a certificate is created. |
 | `containers-kubernetes.cluster-ingress-secret.delete` | An Ingress secret is deleted from the cluster. |
 | `containers-kubernetes.cluster-ingress-secret.update` | The certificate for an Ingress secret is updated. |
+| `containers-kubernetes.cluster-ingress-secret-field.add` | A field in an Ingress secret is added. |
+| `containers-kubernetes.cluster-ingress-secret-field.remove` | A field in an Ingress secret is removed. |
 {: caption="Ingress secret events" caption-side="bottom"}
 
 ## Observability events for logging and monitoring
