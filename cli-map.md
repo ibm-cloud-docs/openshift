@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-03-30"
 
 keywords: openshift
 
@@ -358,6 +358,9 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
 {: shortdesc}
 
 * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
+
+
+
 
 ## ibmcloud oc storage 
 {: #icks_map_storage}

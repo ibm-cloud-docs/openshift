@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-30"
 
 keywords: openshift
 
@@ -7137,6 +7137,9 @@ To use this command to prepare your automation scripts for the release of versio
     ibmcloud plugin update kubernetes-service
     ```
     {: pre}
+
+
+
 
 
 
