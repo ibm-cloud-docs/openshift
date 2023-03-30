@@ -1720,9 +1720,9 @@ Minimum required permissions
 ### `ibmcloud oc cluster master update`
 {: #cs_cluster_update}
 
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Update the Kubernetes master to the default API version. During the update, you can't access or change the cluster. Worker nodes, apps, and resources that were deployed by the user are not modified and continue to run.
+Update the Kubernetes master and API server to the default version. During the update, you can't access or change the cluster. Worker nodes, apps, and resources that were deployed are not modified and continue to run. 
 {: shortdesc}
 
 You might need to change your YAML files for future deployments. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
