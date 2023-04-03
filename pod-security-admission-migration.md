@@ -26,7 +26,7 @@ completion-time: 60m
 {: toc-completion-time="60m"}
 
 
-[Pod Security admission](docs/containers?topic=containers-pod-security-admission&interface=ui) replaces Pod Security policies (PSPs) in clusters that run version 1.25 or later. Depending on your PSP configuration, you might need to take certain actions before upgrading your cluster from version 1.24 to 1.25.
+[Pod Security admission](/docs/containers?topic=containers-pod-security-admission&interface=ui) replaces Pod Security policies (PSPs) in clusters that run version 1.25 or later. Depending on your PSP configuration, you might need to take certain actions before upgrading your cluster from version 1.24 to 1.25.
 {: shortdesc}
 
 Your cluster must meet certain PSP configuration requirements before you can upgrade from version 1.24 to 1.25. If your cluster does not meet these requirements, the upgrade is blocked. Complete the following steps to check for any custom PSPs and remove them.
