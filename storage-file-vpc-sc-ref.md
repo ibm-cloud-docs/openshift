@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-04-03"
 
 keywords: openshift
 
@@ -56,7 +56,7 @@ Storage classes that have `retain` in the title have a reclaim policy of **Retai
 | Hard disk | SSD|
 | Reclaim policy | `ibmc-vpc-file-5iops-tier`: Delete  \n `ibmc-vpc-file-retain-5iops-tier`: Retain |
 | Billing | Hourly|
-| Pricing | [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs.){: external} |
+| Pricing | [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs){: external} |
 {: class="simple-tab-table"}
 {: caption="5 IOPS" caption-side="bottom"}
 {: #simpletabtable2-file-vpc-sc-ref}

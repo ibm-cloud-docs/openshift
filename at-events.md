@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-04-03"
 
 keywords: openshift, audit
 
@@ -151,7 +151,7 @@ The following list of Ingress application load balancer (ALB) events are sent to
 | `containers-kubernetes.cluster-ingress-instance.delete` | An Ingress instance is delete.|
 | `containers-kubernetes.cluster-ingress-instance.update` | An Ingress instance is update. |
 | `containers-kubernetes.cluster-ingress-instance.list` | Ingress instances are lists. |
-| `containers-kubernetes.cluster-ingress-instance.get` | An Ingress instance is retreived. |
+| `containers-kubernetes.cluster-ingress-instance.get` | An Ingress instance is retrieved. |
 | `containers-kubernetes.cluster-ingress-status-state.set` | The state of the Ingress status is set. |
 | `containers-kubernetes.cluster-ignored-ingress-status-errors.add` | An Ingress status error is added to the ignore list. |
 | `containers-kubernetes.cluster-ignored-ingress-status-errors.remove` | An Ingress status error is removed from the ignore list. |

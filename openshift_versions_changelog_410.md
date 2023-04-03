@@ -51,7 +51,7 @@ The following table shows the changes that are in the master fix pack 4.10.53_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.3.16 | v1.3.17 | Updated `Go` to version `1.19.7` and updated dependencies. |
-| etcd | v3.4.23 | v3.4.24 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.24){: external}. |
+| etcd | v3.4.23 | v3.4.24 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.24){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1308-amd64 | 1366-amd64 | Updated to resolve [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.7 | v2.4.0 | Removed ExpandInUsePersistentVolumes feature gate. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.16-11 | v1.23.17-5 | Updated to support the `Kubernetes 1.23.17` release. |
