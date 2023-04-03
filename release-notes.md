@@ -34,6 +34,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-apr0323}
 {: release-note}
 
+Pod Security admission 
+:   You might need to check your Pod Security set up when you upgrade your cluster from version 1.24 to 1.25. For more information, see [Migrating from PSPs to Pod Security admission](/docs/containers?topic=containers-pod-security-admission-migration&interface=ui).
+
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 

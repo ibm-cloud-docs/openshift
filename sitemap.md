@@ -284,6 +284,8 @@ subcollection: openshift
 
     * [03 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0323)
 
+        * Pod Security admission 
+
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`.
 
 * [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
