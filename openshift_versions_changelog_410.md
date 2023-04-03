@@ -41,6 +41,29 @@ Review the version 4.10 change log.
 {: shortdesc}
 
 
+### Change log for master fix pack 4.10.53_1561_openshift, released 28 March 2023
+{: #41053_1561_openshift}
+
+The following table shows the changes that are in the master fix pack 4.10.53_1561_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.16 | v1.3.17 | Updated `Go` to version `1.19.7` and updated dependencies. |
+| etcd | v3.4.23 | v3.4.24 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.24){: external}. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1308-amd64 | 1366-amd64 | Updated to resolve [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.7 | v2.4.0 | Removed ExpandInUsePersistentVolumes feature gate. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.16-11 | v1.23.17-5 | Updated to support the `Kubernetes 1.23.17` release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 427 | 429 | Updated universal base image (UBI) to resolve CVEs. Updated `Go` to version `1.19.6` and updated dependencies. |
+| Key Management Service provider | v2.6.3 | v2.6.4 | Updated `Go` to version `1.19.7` and updated dependencies. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2383 | 2420 | Updated the image to resolve CVEs. |
+| OpenVPN Operator image | v1.4.20 | v1.4.22 | Updated `ansible-operator` to `v1.28.0` to fix CVEs. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.10.52 | 4.10.53 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-53){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.10.0-20230220 | v4.10.0-20230314 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0+20230314){: external}. |
+{: caption="Changes since version 4.10.52_1558_openshift" caption-side="bottom"}
+
+
 ### Change log for worker node fix pack 4.10.54_1562_openshift, released 27 March 2023
 {: #41054_1562_openshift}
 
