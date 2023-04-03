@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-04-03"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -189,26 +189,26 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
     **Classic Clusters**: Update one worker node at a time by using the  `worker update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_update). 
 
-        ```sh
-        ibmcloud ks worker update --cluster CLUSTER --worker WORKER_ID 
-        ```
-        {: pre}
+    ```sh
+    ibmcloud ks worker update --cluster CLUSTER --worker WORKER_ID 
+    ```
+    {: pre}
 
     **VPC Clusters**: Replace one worker node at a time by using the  `worker replace` [command](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). For more information, see [Updating VPC Gen 2 worker nodes](/docs/containers?topic=containers-update#vpc_worker_node).
-        ```sh
-        ibmcloud oc worker replace -c CLUSTER --worker kube-***
-        ```
-        {: pre}
+    ```sh
+    ibmcloud oc worker replace -c CLUSTER --worker kube-***
+    ```
+    {: pre}
         
-        Example output
-        ```sh
-        The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
-        Replace worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288? [y/N]> y
-        Deleting worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288 and creating a new worker node in cluster
-        ```
-        {: screen}
+    Example output
+    ```sh
+    The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
+    Replace worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288? [y/N]> y
+    Deleting worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288 and creating a new worker node in cluster
+    ```
+    {: screen}
     
-1. Wait for the replacement node to get provisioned, then list your worker nodes. Note that this process might take 20 minutes or more.
+1. Wait for the replacement node to be provisioned and then list your worker nodes. Note that this process might take 20 minutes or more.
     ```sh
     oc get nodes
     ```

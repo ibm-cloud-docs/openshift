@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-03"
 
 keywords: openshift
 
@@ -27,6 +27,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
+## April 2023
+{: #openshift-apr23}
+
+### 03 April 2023
+{: #openshift-apr0323}
+{: release-note}
+
+Pod Security admission 
+:   You might need to check your Pod Security set up when you upgrade your cluster from version 1.24 to 1.25. For more information, see [Migrating from PSPs to Pod Security admission](/docs/containers?topic=containers-pod-security-admission-migration&interface=ui).
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
 ## March 2023
 {: #openshift-mar23}
 
@@ -47,6 +60,9 @@ Cluster autoscaler add-on versions `1.0.7_988` and `1.0.8_987`.
 {: release-note}
 
 
+  
+Master fix packs `4.8.57_1596_openshift`, `4.9.57_1583_openshift`, `4.10.53_1561_openshift`, `4.11.31_1548_openshift`, and `4.12.7_1534_openshift`.
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
 
 Worker node fix packs `4.8.57_1597_openshift`, `4.9.57_1584_openshift`, `4.10.54_1562_openshift`, `4.11.32_1549_openshift`, and `4.12.8_1535_openshift`.
 :   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
