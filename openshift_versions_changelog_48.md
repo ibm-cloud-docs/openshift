@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-04-03"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -92,8 +92,8 @@ The following table shows the changes that are in the master fix pack 4.8.57_159
 | OpenVPN server | 2.5.6-r1-IKS-647 | 2.5.8-r0-IKS-673-amd64 | Remediate [CVE-2023-0286](https://nvd.nist.gov/vuln/detail/CVE-2023-0286){: external}, [CVE-2022-4304](https://nvd.nist.gov/vuln/detail/CVE-2022-4304){: external}, [CVE-2022-4450](https://nvd.nist.gov/vuln/detail/CVE-2022-4450){: external}, [CVE-2023-0215](https://nvd.nist.gov/vuln/detail/CVE-2023-0215){: external}. |
 | OpenVPN Operator image | v1.4.13 | v1.4.20 | Update `ansible-operator` to `v1.26.1` to fix CVEs. |
 | Portieris admission controller | v0.12.6 | v0.13.3 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.3){: external}. |
-| Red Hat {{site.data.keyword.openshiftshort}}. | 4.8.55 | 4.8.57 | See the [Red Hat {{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-57){: external}. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20230123 | v4.8.0-20230220 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20230220){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.8.55 | 4.8.57 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-57){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20230123 | v4.8.0-20230220 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20230220){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.8.0-20230123 | v4.8.0-20230220 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20230220){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20230123 | 4.8.0+20230220 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20230220){: external}. |
 {: caption="Changes since version 4.8.55_1587_openshift" caption-side="bottom"}
@@ -145,7 +145,7 @@ The following table shows the changes that are in the master fix pack 4.8.55_158
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.4 | v2.3.6 | Updated universal base image (UBI) to `8.7-1031` |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 421 | 425 | Fixes for Fixing [CVE-2022-40303](https://nvd.nist.gov/vuln/detail/CVE-2022-40303){: external} and [CVE-2022-40304](https://nvd.nist.gov/vuln/detail/CVE-2022-40303){: external}. |
 | Key Management Service provider | v2.5.12 | v2.5.13 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20221205 | v4.8.0-20230123 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20230123){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20221205 | v4.8.0-20230123 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20230123){: external}. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.8.54 | 4.8.55 | See the [{{site.data.keyword.openshiftlong_notm}} Release Notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-55){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.8.0-20221205 | v4.8.0-20230123 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20230123){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20221205 | 4.8.0+20230123 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20230123){: external}. |
@@ -226,7 +226,7 @@ The following table shows the changes that are in the master fix pack 4.8.54_158
 | Key Management Service provider | v2.5.11 | v2.5.12 | Updated `Go` dependencies. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2110 | 2325 | Update `Go` to version `1.19.1` and update dependencies. |
 | OpenVPN Operator image | v1.4.11 | v1.4.13 | Updated the `ansible operator base image` to `v1.25.2` to resolve CVEs. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20221104 | v4.8.0-20221205 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20221205){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20221104 | v4.8.0-20221205 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20221205){: external}. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.8.52 | 4.8.54 | See the [{{site.data.keyword.openshiftlong_notm}} Release Notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-54){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit | v4.8.0-20221104 | v4.8.0-20221205 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20221205){: external}. |
 {: caption="Changes since version 4.8.52_1580_openshift" caption-side="bottom"}
@@ -281,7 +281,7 @@ The following table shows the changes that are in the master fix pack 4.8.52_158
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 416 | 420 | Updated universal base image (UBI) to version `8.7-923` to resolve CVEs. |
 | Key Management Service provider | v2.5.10 | v2.5.11 | Updated `Go` dependencies and to `Go` version `1.19.3`. |
 | OpenVPN Operator image | v1.4.10 | v1.4.11 | Updated `ansible operator base image` to `v1.24.0` to resolve CVEs. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20220920 | v4.8.0-20221104 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20221104){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20220920 | v4.8.0-20221104 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20221104){: external}. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.8.51 | 4.8.52 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-52){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit | v4.8.0-20220920 | v4.8.0-20221104 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20221104){: external}. |
 {: caption="Changes since version 4.8.51_1578_openshift" caption-side="bottom"}
@@ -363,7 +363,7 @@ The following table shows the changes that are in the master fix pack 4.8.49_157
 | {{site.data.keyword.openshiftshort}} | 4.8.47 | 4.8.49 | See the [{{site.data.keyword.openshiftshort}} Release Notes](https://docs.openshift.com/container-platform/4.8/release_notes/ocp-4-8-release-notes.html#ocp-4-8-49){: external}. |
 | OpenVPN Operator image | v1.4.8 | v1.4.9 | Updated ansible operator base image to `v1.23.0` to resolve CVEs. |
 | Key Management Service Provider | v2.5.8 | v2.5.9 | Updated `Go` dependencies and to `Go` version `1.18.6`. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20220816 | v4.8.0-20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220920){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20220816 | v4.8.0-20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220920){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.8.0-20220816 | v4.8.0-20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220920){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20220816 | 4.8.0+20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220920){: external}. |
 {: caption="Changes since version 4.8.471571openshift" caption-side="bottom"}
@@ -421,7 +421,7 @@ The following table shows the changes that are in the master fix pack 4.8.47_157
 | OpenVPN Operator image | v1.4.7 | v1.4.8 | Updated Ansible operator base image to version `v1.22.2` to resolve CVEs. |
 | OpenVPN server | 2.5.6-r1-IKS-628 | 2.5.6-r1-IKS-647 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external} and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |
 | Portieris admission controller | v0.12.5 | v0.12.6 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.12.6){: external}. |
-| Red Hat {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20220712 | v4.8.0-20220816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20220816){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.8.0-20220712 | v4.8.0-20220816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20220816){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.8.0-20220712 | v4.8.0-20220816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0%2B20220816){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.8.0+20220712 | 4.8.0+20220816 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.8.0+20220816){: external}. |
 {: caption="Changes since version 4.8.46_1566_openshift" caption-side="bottom"}
