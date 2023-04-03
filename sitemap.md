@@ -296,6 +296,8 @@ subcollection: openshift
 
     * [28 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2823)
 
+        * Master fix packs `4.8.57_1596_openshift`, `4.9.57_1583_openshift`, `4.10.53_1561_openshift`, `4.11.31_1548_openshift`, and `4.12.7_1534_openshift`.
+
         * Worker node fix packs `4.8.57_1597_openshift`, `4.9.57_1584_openshift`, `4.10.54_1562_openshift`, `4.11.32_1549_openshift`, and `4.12.8_1535_openshift`.
 
     * [21 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2123)

@@ -57,6 +57,9 @@ Cluster autoscaler add-on versions `1.0.7_988` and `1.0.8_987`.
 {: release-note}
 
 
+  
+Master fix packs `4.8.57_1596_openshift`, `4.9.57_1583_openshift`, `4.10.53_1561_openshift`, `4.11.31_1548_openshift`, and `4.12.7_1534_openshift`.
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
 
 Worker node fix packs `4.8.57_1597_openshift`, `4.9.57_1584_openshift`, `4.10.54_1562_openshift`, `4.11.32_1549_openshift`, and `4.12.8_1535_openshift`.
 :   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
