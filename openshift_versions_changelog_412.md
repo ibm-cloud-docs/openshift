@@ -33,6 +33,28 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 
+### Change log for master fix pack 4.12.7_1534_openshift, released 28 March 2023
+{: #4127_1534_openshift}
+
+The following table shows the changes that are in the master fix pack 4.12.7_1534_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.16 | v1.3.17 | Updated `Go` to version `1.19.7` and updated dependencies. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1308-amd64 | 1366-amd64 | Updated to resolve [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.7 | v2.4.0 | Removed ExpandInUsePersistentVolumes feature gate. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.6-10 | v1.25.8-1 | Updated to support the `Kubernetes 1.25.8` release. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 427 | 429 | Updated universal base image (UBI) to resolve CVEs. Updated `Go` to version `1.19.6` and updated dependencies. |
+| Key Management Service provider | v2.6.3 | v2.6.4 | Updated `Go` to version `1.19.7` and updated dependencies. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2383 | 2420 | Updated the image to resolve CVEs. |
+| OpenVPN Operator image | v1.5.3 | v1.4.22 | Updated `ansible-operator` to `v1.28.0` to fix CVEs. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.3 | 4.12.7 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-7){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.12.0-20230220 | v4.12.0-20230314 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.12.0+20230314){: external}. |
+{: caption="Changes since version 4.12.3_1530_openshift" caption-side="bottom"}
+
+
 ### Change log for worker node fix pack 4.12.8_1535_openshift, released 27 March 2023
 {: #4128_1535_openshift}
 

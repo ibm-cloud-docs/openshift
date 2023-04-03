@@ -6208,6 +6208,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
 
+    * [Change log for master fix pack 4.12.7_1534_openshift, released 28 March 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4127_1534_openshift)
+
     * [Change log for worker node fix pack 4.12.8_1535_openshift, released 27 March 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4128_1535_openshift)
 
     * [Change log for worker node fix pack 4.12.6_1531_openshift, released 13 March 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4126_1531_openshift)
