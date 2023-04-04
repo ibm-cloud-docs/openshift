@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-04-03"
+lastupdated: "2023-04-04"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -30,7 +30,7 @@ completion-time: 60m
 {: shortdesc}
 
 Your cluster must meet certain PSP configuration requirements before you can upgrade from version 1.24 to 1.25. If your cluster does not meet these requirements, the upgrade is blocked. Complete the following steps to check for any custom PSPs and remove them.
-- **If you have not customized or altered PSPs in your cluster** you can likely upgrade your cluster. However, it is recommended that you review the requirements to make sure that you do not need to modify your PSP configuration before you upgrade your cluster. 
+- **If you have not customized or altered PSPs in your cluster**, you can likely upgrade your cluster. However, it is recommended that you review the requirements to make sure that you do not need to modify your PSP configuration before you upgrade your cluster. 
 - **If you have customized or altered PSPs in your cluster**, including creating your own PSPs, installing applications that create PSPs, or changing cluster role bindings to restrict the use of certain PSPs, you **must** modify your setup to meet the requirements for upgrading your cluster. 
 
 Before you begin, review the information under [Decide whether Pod Security admission is right for you](https://kubernetes.io/docs/tasks/configure-pod-container/migrate-from-psp/){: external} in the Kubernetes documentation to familiarize yourself with the differences between PSPs and Pod Security admission. 
@@ -46,11 +46,11 @@ You can upgrade your cluster if your cluster setup meets the following requireme
 * The `privileged-psp-user` cluster role binding uses the default configuration.
 * The `restricted-psp-user` cluster role binding uses the default configuration.
 * Only the following PSPs provided by {{site.data.keyword.cloud_notm}} are present, and no additional PSPs are configured.
-  * `ibm-privileged-psp`
-  * `ibm-anyuid-psp`
-  * `ibm-anyuid-hostpath-psp`
-  * `ibm-anyuid-hostaccess-psp`
-  * `ibm-restricted-psp`
+    * `ibm-privileged-psp`
+    * `ibm-anyuid-psp`
+    * `ibm-anyuid-hostpath-psp`
+    * `ibm-anyuid-hostaccess-psp`
+    * `ibm-restricted-psp`
 
 If your cluster meets these requirements, your pods use a PSP that allows privileged pods. However, meeting these requirements does not mean that all of your pods are privileged. 
 
@@ -219,18 +219,19 @@ Several of the following Pod Security migration steps include links to sections 
 {: #psa-migration-enable-124}
 {: step}
 
- Enable Pod Security admission in your 1.24 cluster. This command updates the cluster master to use the new Pod Security admission configuration. It may take a few minutes for the cluster master to update.
+Enable Pod Security admission in your 1.24 cluster. This command updates the cluster master to use the new Pod Security admission configuration. It may take a few minutes for the cluster master to update.
 
-  ```sh
-  ibmcloud oc cluster master pod-security set --cluster <CLUSTER>
-  ```
-  {: pre}
+```sh
+ibmcloud oc cluster master pod-security set --cluster <CLUSTER>
+```
+{: pre}
 
 ### Review namespace permissions
 {: #psa-migration-namespace-perm}
 {: step}
 
 Review the namespace permissions in the external Kubernetes documentation. If your Kubernetes permissions are managed by IAM service roles, the `Manager` service role is required to create or edit namespaces and to set pod security labels.
+
 - [1. Review namespace permissions](https://kubernetes.io/docs/tasks/configure-pod-container/migrate-from-psp/#review-namespace-permissions){: external}
   
 ### Simplify and standardize PSPs
@@ -238,6 +239,7 @@ Review the namespace permissions in the external Kubernetes documentation. If yo
 {: step}
 
 Clean up your Pod Security configuration by following the steps in the external Kubernetes documentation. Do **not** modify or delete any of the following PSPs: `ibm-privileged-psp`, `ibm-anyuid-psp`, `ibm-anyuid-hostpath-psp`, `ibm-anyuid-hostaccess-psp` and `ibm-restricted-psp`.
+
 - [2. Simplify & standardize PodSecurityPolicies](https://kubernetes.io/docs/tasks/configure-pod-container/migrate-from-psp/#simplify-psps){: external}
 
 ### Update the namespaces in your cluster
@@ -260,6 +262,7 @@ In step **3.d. Bypass PodSecurity Policy** of the external documentation linked 
 {: step}
 
 Review the information in the external Kubernetes documentation to ensure that the Pod Security profile is applied to any new namespaces that are created in your cluster.
+
 - [4. Review namespace creation processes ](https://kubernetes.io/docs/tasks/configure-pod-container/migrate-from-psp/#review-namespace-creation-process){: external}
 
 ### Optional. Disable the PSP feature in the cluster
