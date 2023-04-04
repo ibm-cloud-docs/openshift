@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-04-04"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -65,7 +65,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 ### Classic multizone regions
 {: #zones-mz}
 
-**Classic multizone**: If you create a classic cluster in a multizone region, the replicas of your highly available Kubernetes master are automatically spread across the data centers (zones). You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
+If you create a classic cluster in a multizone region, the replicas of your highly available Kubernetes master are automatically spread across the data centers (zones). You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
 {: shortdesc}
 
 | Geography |  Country  | Metro | Data center |  Previous region  |
@@ -84,11 +84,13 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 ### Classic single zone regions
 {: #zones-sz}
 
-**Classic single zone**: If you create a classic cluster in a single zone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
+If you create a classic cluster in a single zone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
 {: shortdesc}
 
+Classic single zone clusters are managed from the regional endpoint located in the nearest region that supports classic multizone, such as `mon01` to `us-east` or `sao01` to `us-south`.
 
-| Geography |  Country  | Metro | Data center |  Previous region  |
+
+| Geography |  Country  | Metro | Data center |  Managed from region  |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |
@@ -106,7 +108,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 ### VPC multizone regions
 {: #zones-vpc}
 
-**VPC regions and zones**: VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
+VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
 {: shortdesc}
 
 | Geography |  Country  | Metro | Region | Zone | Location |
@@ -134,7 +136,9 @@ Your cluster's resources, including the master and worker nodes, are in the same
 
 If you set up other cluster resources, such as storage, networking, compute, or apps running in pods, the resources and their data remain in the zone that you deployed your cluster to.
 
-When you initiate cluster management actions, such as running **`ibmcloud oc`** commands, basic information about the cluster such as name, ID, user, the command is routed through a regional endpoint and the global endpoint. Regional endpoints are located in the nearest multizone region, such as `mon01` to Washington, D.C.
+When you initiate cluster management actions, such as running **`ibmcloud oc`** commands, basic information about the cluster such as name, ID, user, the command is routed through a regional endpoint and the global endpoint. 
+
+
 
 ### Resources in a multizone cluster
 {: #regions_multizone}

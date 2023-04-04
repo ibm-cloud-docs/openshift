@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-03"
+lastupdated: "2023-04-04"
 
 keywords: openshift
 subcollection: openshift
@@ -282,7 +282,7 @@ subcollection: openshift
 
 * [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
 
-    * [03 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0323)
+    * [3 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0323)
 
         * Pod Security admission 
 
