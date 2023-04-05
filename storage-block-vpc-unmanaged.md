@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-04-05"
 
 keywords: openshift, block storage
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters
+# Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters
 {: #vpc-block-storage-driver-unmanaged}
 
 The following documentation covers the steps to deploy the {{site.data.keyword.block_storage_is_short}} driver on unmanaged OpenShift Container Platform clusters in IBM Cloud. This process is unsupported and any issues with the steps or the driver must be recreated in a {{site.data.keyword.redhat_openshift_notm}} cluster to receive support.
@@ -25,7 +25,7 @@ The following documentation covers the steps to deploy the {{site.data.keyword.b
 
 [Virtual Private Cloud]{: tag-vpc}
 
-Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block) for more information.
+Want to use {{site.data.keyword.block_storage_is_short}} in an {{site.data.keyword.containerlong_notm}} or {{site.data.keyword.openshiftlong_notm}} cluster? See [Setting up Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block) for more information.
 {: tip}
  
 ## Prerequisites

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-03"
+lastupdated: "2023-04-05"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Storing data on {{site.data.keyword.block_storage_is_short}}
+# Setting up {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block}
 
 [{{site.data.keyword.block_storage_is_short}}](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption) provides hypervisor-mounted, high-performance data storage for your virtual server instances that you can provision within a VPC.

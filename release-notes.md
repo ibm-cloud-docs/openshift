@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-04"
+lastupdated: "2023-04-05"
 
 keywords: openshift
 
@@ -1591,7 +1591,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
-:   For more information, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding {{site.data.keyword.cos_full_notm}} storage to apps](/docs/openshift?topic=openshift-storage_cos_apps),[{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-sat-cos), and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
+:   For more information, see [Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding {{site.data.keyword.cos_full_notm}} storage to apps](/docs/openshift?topic=openshift-storage_cos_apps),[{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-sat-cos), and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
@@ -2789,7 +2789,7 @@ Cluster autoscaler add-on
 :   [Patch update `3.0.0_521`](/docs/openshift?topic=openshift-vpc_bs_changelog) of the {{site.data.keyword.block_storage_is_short}} add-on is available.
 
 {{site.data.keyword.block_storage_is_short}} driver
-:   Added steps to install the `vpc-block-csi-driver` on unmanaged clusters. For more information, see [Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged).
+:   Added steps to install the `vpc-block-csi-driver` on unmanaged clusters. For more information, see [Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged).
 
 New! image security add-on
 :   In clusters that run version 4.5 or later, you can (/docs/openshift?topic=openshift-images#portieris-image-sec)install the container image security enforcement add-onto set up the (https://github.com/IBM/portieris){: external} Portieris project in your cluster.

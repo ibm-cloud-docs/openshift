@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-04"
+lastupdated: "2023-04-05"
 
 keywords: openshift
 subcollection: openshift
@@ -4778,8 +4778,8 @@ subcollection: openshift
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
-## Storing data on persistent storage
-{: #sitemap_storing_data_on_persistent_storage}
+## Setting up storage
+{: #sitemap_setting_up_storage}
 
 
 [Planning for storage](/docs/openshift?topic=openshift-storage-plan#storage-plan)
@@ -4818,7 +4818,7 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-kube_concepts#next-steps-storage)
 
-[Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
+[Setting up classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
 
@@ -4882,7 +4882,7 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
 
-[Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
+[Setting up classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
 
@@ -4949,11 +4949,11 @@ subcollection: openshift
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
 
 
-### Storing data on IBM Cloud Object Storage
-{: #sitemap_storing_data_on_ibm_cloud_object_storage}
+### Setting up IBM Cloud Object Storage
+{: #sitemap_setting_up_ibm_cloud_object_storage}
 
 
-[Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
+[Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
 
 * [Creating your object storage service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service)
 
@@ -5033,7 +5033,7 @@ subcollection: openshift
 
 * [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
 
-[Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx#portworx)
+[Setting up software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx#portworx)
 
 * [About Portworx](/docs/openshift?topic=openshift-portworx#about-portworx)
 
@@ -5126,8 +5126,8 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 
-### Storing data on OpenShift Data Foundation
-{: #sitemap_storing_data_on_openshift_data_foundation}
+### Setting up OpenShift Data Foundation
+{: #sitemap_setting_up_openshift_data_foundation}
 
 
 [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-storage-prep)
@@ -5269,11 +5269,11 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
 
-### Storing data on Block Storage for VPC
-{: #sitemap_storing_data_on_block_storage_for_vpc}
+### Setting up Block Storage for VPC
+{: #sitemap_setting_up_block_storage_for_vpc}
 
 
-[Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
+[Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
 
@@ -5345,7 +5345,7 @@ subcollection: openshift
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#secret-create-truted-profile)
 
-[Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
+[Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
 
@@ -5368,8 +5368,8 @@ subcollection: openshift
     * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
 
-### Storing data on IBM Cloud File Storage for VPC
-{: #sitemap_storing_data_on_ibm_cloud_file_storage_for_vpc}
+### Setting up IBM Cloud File Storage for VPC
+{: #sitemap_setting_up_ibm_cloud_file_storage_for_vpc}
 
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)

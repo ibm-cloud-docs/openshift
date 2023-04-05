@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-04-05"
 
 keywords: portworx, openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Storing data on software-defined storage (SDS) with Portworx
+# Setting up software-defined storage (SDS) with Portworx
 {: #portworx}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
@@ -1011,7 +1011,7 @@ Install PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster in your 
 Before you begin:
 - Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/start-here-installation/){: external}. 
 - [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).
-- Provision and attach 320Gi of block storage to your cluster. See [Storing data on classic {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Storing data on Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
+- Provision and attach 320Gi of block storage to your cluster. See [Setting up classic {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Setting up Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
 
 
 If you are installing PX-Backup in a newly provisioned cluster, [you must log in to it at least once](/docs/openshift?topic=openshift-access_cluster) before beginning the installation.

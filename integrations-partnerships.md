@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-04-05"
 
 keywords: kubernetes, openshift
 
@@ -57,7 +57,7 @@ If you have a classic {{site.data.keyword.openshiftlong_notm}} cluster, you can 
 
 Portworx is installed by using a [Helm chart](/docs/openshift?topic=openshift-portworx#install_portworx). When you install the Helm chart, Portworx automatically analyzes the local persistent storage that is available in your cluster and adds the storage to the Portworx storage layer. To add storage from your Portworx storage layer to your apps, you must use [Kubernetes persistent volume claims](/docs/openshift?topic=openshift-portworx#add_portworx_storage).
 
-For more information about how to install and use Portworx with {{site.data.keyword.openshiftlong_notm}}, see [Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
+For more information about how to install and use Portworx with {{site.data.keyword.openshiftlong_notm}}, see [Setting up software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
 
 ### Billing and support
 {: #portworx-billing-support}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-04-05"
 
 keywords: openshift
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Storing data on {{site.data.keyword.cos_full_notm}}
+# Setting up {{site.data.keyword.cos_full_notm}}
 {: #storage-cos-understand}
 
 [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) is persistent, highly available storage that you can mount to your apps. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud {{site.data.keyword.cos_short}} buckets to pods in your cluster. Information stored with {{site.data.keyword.cos_full_notm}} is encrypted in transit and at rest, dispersed across many geographic locations, and accessed over HTTP by using a REST API.
