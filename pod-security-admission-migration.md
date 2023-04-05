@@ -244,7 +244,7 @@ In step **3.d. Bypass PodSecurity Policy** of the external documentation linked 
 
 Review the information in the external Kubernetes documentation to ensure that the Pod Security profile is applied to any new namespaces that are created in your cluster.
 
-- [Review namespace creation processes ](https://kubernetes.io/docs/tasks/configure-pod-container/migrate-from-psp/#review-namespace-creation-process){: external}
+- [Review namespace creation processes](https://kubernetes.io/docs/tasks/configure-pod-container/migrate-from-psp/#review-namespace-creation-process){: external}
 
 
 ### Step 6: Optional. Disable the PSP feature in the cluster
