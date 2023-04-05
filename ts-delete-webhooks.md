@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-04-05"
 
 keywords: delete webhooks, webhooks, mutating, validating, troubleshooting webhooks
 
@@ -60,7 +60,7 @@ Some troubleshooting and debugging steps might require you to temporarily remove
     - `prometheusrules.openshift.io`
     - `snapshot.storage.k8s.io`
 
-    Any validating wehbook that **is** included in this list should **not** be deleted in the following steps. 
+    Any validating webhook that **is** included in this list should **not** be deleted in the following steps. 
     {: important}
 
 1. For each validating webhook that is **not** included in the previous list, copy the component YAML file and delete the webhook.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-04-05"
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 
@@ -21,7 +21,7 @@ Cluster worker nodes go into a `Critical` or `NotReady` state when they stop com
 ## Before you begin
 {: #ts-critical-notready-before}
 
-Before you begin troubleshooting your worker node issues, check for {{site.data.keyword.cloud_notm}} notifications regarding maintenance or known problems that might affect your workers. Then, check the most [common causes](#ts-critical-notready-common) of worker node issues. If this does not resolve or address your problem, continue on with the troubleshooting steps. 
+Before you begin troubleshooting your worker node issues, check for {{site.data.keyword.cloud_notm}} notifications regarding maintenance or known problems that might affect your workers. Then, check the most [common causes](#ts-critical-notready-common) of worker node issues. If this does not resolve or address your problem, continue with the troubleshooting steps. 
 
 ### Worker node notifications and maintenance
 {: #ts-critical-notready-notifs}
@@ -40,11 +40,11 @@ There are several reasons why communication stops between worker nodes and the c
 
 The worker was deleted, reloaded, updated, replaced, or rebooted
 :   Worker nodes might temporarily show a `Critical` or `NotReady` state when they are deleted, reloaded, updated, or replaced. If any of these actions have been initiated on your worker node, whether manually or as part of an automation setup such as cluster autoscaler, wait until the actions are complete. Then, check the status of your worker nodes again. If any workers remain in the `Critical` or `NotReady` state, [reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers. 
-:   A worker node might end up in a `Critical` or `NotReady` state if it was rebooted without first being cordoned and drained. If this is the case, [reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected worker. If the issue persists, contine with the troubleshooting steps. 
+:   A worker node might end up in a `Critical` or `NotReady` state if it was rebooted without first being cordoned and drained. If this is the case, [reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected worker. If the issue persists, continue with the troubleshooting steps. 
 :   If a worker node was reloaded or replaced and initially works correctly, but then after some time goes back into a `Critical` or `NotReady` state, then it is likely that some workload or component on the worker is causing the issue. See [Debugging worker nodes](/docs/containers?topic=containers-debug-kube-nodes) to isolate the problem workload.
 
 The worker node was unintentionally powered down
-:   [Classic clusters]{: tag-classic-inf} In the [IBM Cloud console resource list](https://cloud.ibm.com/resources){: external}, worker nodes on classic infrastructure are classified as **compute resources**, or virtual machines. In some cases, a user might not realize that these resources function as cluster worker nodes, and might unintentionally power the worker nodes down. Worker nodes that are powered down might show up in the `Critical` or `NotReady` state. Ensure that the affected worker nodes are not powered down. 
+:   [Classic clusters]{: tag-classic-inf} In the [IBM Cloud console resource list](https://cloud.ibm.com/resources){: external}, worker nodes on classic infrastructure are classified as **compute resources**, or virtual machines. Sometimes a user might not realize that these resources function as cluster worker nodes, and might unintentionally power the worker nodes down. Worker nodes that are powered down might show up in the `Critical` or `NotReady` state. Ensure that the affected worker nodes are not powered down. 
 
 
 ## Troubleshooting steps
@@ -69,7 +69,7 @@ If only some, but not all, of the worker nodes in your cluster are in a `Critica
 
 2. In the output, check the **Conditions** section to determine if the node is experiencing any memory, disk or PID issues. This information might indicate that the node is running low on that type of resource. This situation might occur for one of the following reasons:
     - Memory or CPU exhaustion caused by a lack of proper requests and limits on your pods.
-    - Worker disks are full, sometimes as a result of large pod logs or pod output to the node itself.
+    - Worker disks are full, sometimes because of large pod logs or pod output to the node itself.
     - Slow memory leaks that build up over time, which can cause problems for workers that have not been updated in over a month.
     - Bugs and crashes that affect the Linux kernel.
 
@@ -88,7 +88,7 @@ If you checked your networking components and still cannot resolve the issue, [g
 ### If all worker nodes in a cluster are affected 
 {: #ts-critical-notready-steps-all}
 
-If all of the worker nodes in your cluster show `Critical`or `NotReady` at the same time, there might be a problem with either the cluster `apiserver` or the networking path between the workers and the `apiserver`. Follow these troubleshooting steps to determine the cause and resolve the issue.
+If all the worker nodes in your cluster show `Critical`or `NotReady` at the same time, there might be a problem with either the cluster `apiserver` or the networking path between the workers and the `apiserver`. Follow these troubleshooting steps to determine the cause and resolve the issue.
 
 Some of the following steps are specific to a specialized area, such as networking or automation. Consult with the relevant administrator or team in your organization before completing these steps. 
 {: note}
@@ -113,8 +113,8 @@ Some of the following steps are specific to a specialized area, such as networki
         ```
         {: pre}
 
-    1. Wait for the cluster to regenerate the custom Docker pull secrets. Any misconfigurations are no longer present in the regenerated pull secrets.
-1. Check the status of your worker nodes. If they are in a `Normal` state, add back any deleted components and reinstitute any reverted changes, one by one, until you can determine which configuration or component caused the worker node disruption. 
+    1. Wait for the cluster to regenerate the custom Docker pull secrets. Any misconfigured components are no longer present in the regenerated pull secrets.
+1. Check the status of your worker nodes. If they are in a `Normal` state, add back any deleted components and re-create any reverted changes, one by one, until you can determine which configuration or component caused the worker node disruption. 
 1. If the issue is still not resolved, follow the steps to [gather your worker node data](#ts-critical-notready-gather) and open a support ticket. 
 
 
@@ -210,9 +210,9 @@ Follow the steps to gather the relevant worker node data.
         - `vmstat`                      # Dump memory usage information
         - `lshw`                        # Dump hardware information
         - `last -Fxn2 shutdown reboot`  # determine if last restart was graceful or not
-        - `mount | grep -i "(ro"`       # to rule out disk read-only issue.  NOTE: tmpfs being ro is fine
+        - `mount | grep -i "(ro"`       # to rule out disk read-only issue.  NOTE: `tmpfs` being `ro` is fine
         - `touch /this`                 # to rule out disk read-only issue
-5. [Open a support ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} and attach all of the outputs saved in the previous steps.
+5. [Open a support ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} and attach all the outputs saved in the previous steps.
 
 
 
