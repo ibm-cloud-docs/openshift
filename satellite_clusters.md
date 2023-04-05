@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-04-05"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -262,7 +262,7 @@ You can configure the internal image registry in your {{site.data.keyword.satell
         3. Select a pricing plan and a service name.
         4. Choose the resource group where your {{site.data.keyword.satelliteshort}} components are stored.
         5. Click create. Note that it might take several minutes for your instance to provision.
-2. Create a bucket to use when you set up your image registry. Your bucket must be configured with regional resiliency. For more information on creating bucket, see [Storing data on {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage-cos-understand).
+2. Create a bucket to use when you set up your image registry. Your bucket must be configured with regional resiliency. For more information on creating bucket, see [Setting up {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage-cos-understand).
     1. Click on your {{site.data.keyword.cos_short}} instance.
     2. Click **Create a bucket**.
     3. Select the option to **Customize your bucket**.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-04-05"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}
+# Setting up classic IBM Cloud {{site.data.keyword.blockstorageshort}}
 {: #block_storage}
 
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out whether {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For more information about pricing, see [Pricing](https://www.ibm.com/cloud/block-storage/pricing){: external}.
@@ -34,7 +34,7 @@ Keep in mind the following requirements when you use the {{site.data.keyword.clo
 [Classic infrastructure]{: tag-classic-inf}
 
 
-The steps on this page apply to classic clusters only. On VPC clusters, the {{site.data.keyword.block_storage_is_short}} add-on is installed by default. For more information, see [Storing data on Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block).
+The steps on this page apply to classic clusters only. On VPC clusters, the {{site.data.keyword.block_storage_is_short}} add-on is installed by default. For more information, see [Setting up Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block).
 {: important}
 
 

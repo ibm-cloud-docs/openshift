@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-04-05"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}
+# Setting up classic IBM Cloud {{site.data.keyword.filestorage_short}}
 {: #file_storage}
 
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/cloud-storage/file/order){: external}.

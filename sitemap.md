@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-04"
+lastupdated: "2023-04-05"
 
 keywords: openshift
 subcollection: openshift
@@ -281,6 +281,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
+
+    * [5 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0523)
+
+        * Cluster autoscaler add-on versions `1.0.6_1010`, `1.0.7_1021`, and `1.0.8_1016`.
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.10_1869` and `5.1.6_1872`.
 
     * [3 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0323)
 
@@ -4778,8 +4784,8 @@ subcollection: openshift
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
-## Storing data on persistent storage
-{: #sitemap_storing_data_on_persistent_storage}
+## Setting up storage
+{: #sitemap_setting_up_storage}
 
 
 [Planning for storage](/docs/openshift?topic=openshift-storage-plan#storage-plan)
@@ -4818,7 +4824,7 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-kube_concepts#next-steps-storage)
 
-[Storing data on classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
+[Setting up classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
 
@@ -4882,7 +4888,7 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
 
-[Storing data on classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
+[Setting up classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
 
@@ -4949,11 +4955,11 @@ subcollection: openshift
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
 
 
-### Storing data on IBM Cloud Object Storage
-{: #sitemap_storing_data_on_ibm_cloud_object_storage}
+### Setting up IBM Cloud Object Storage
+{: #sitemap_setting_up_ibm_cloud_object_storage}
 
 
-[Storing data on {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
+[Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
 
 * [Creating your object storage service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service)
 
@@ -5033,7 +5039,7 @@ subcollection: openshift
 
 * [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
 
-[Storing data on software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx#portworx)
+[Setting up software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx#portworx)
 
 * [About Portworx](/docs/openshift?topic=openshift-portworx#about-portworx)
 
@@ -5126,8 +5132,8 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
 
 
-### Storing data on OpenShift Data Foundation
-{: #sitemap_storing_data_on_openshift_data_foundation}
+### Setting up OpenShift Data Foundation
+{: #sitemap_setting_up_openshift_data_foundation}
 
 
 [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-storage-prep)
@@ -5269,11 +5275,11 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
 
-### Storing data on Block Storage for VPC
-{: #sitemap_storing_data_on_block_storage_for_vpc}
+### Setting up Block Storage for VPC
+{: #sitemap_setting_up_block_storage_for_vpc}
 
 
-[Storing data on {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
+[Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
 
@@ -5345,7 +5351,7 @@ subcollection: openshift
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#secret-create-truted-profile)
 
-[Storing data on {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
+[Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
 
@@ -5368,8 +5374,8 @@ subcollection: openshift
     * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
 
-### Storing data on IBM Cloud File Storage for VPC
-{: #sitemap_storing_data_on_ibm_cloud_file_storage_for_vpc}
+### Setting up IBM Cloud File Storage for VPC
+{: #sitemap_setting_up_ibm_cloud_file_storage_for_vpc}
 
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
@@ -6999,11 +7005,15 @@ subcollection: openshift
 
 * [Version 1.0.8](/docs/openshift?topic=openshift-ca_changelog#0108_ca_addon)
 
+    * [Change log for patch update 1.0.8_1016, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1081016_ca)
+
     * [Change log for patch update 1.0.8_987, released 29 March 2023](/docs/openshift?topic=openshift-ca_changelog#108987_ca)
 
     * [Change log for patch update 1.0.8_968, released 9 March 2023](/docs/openshift?topic=openshift-ca_changelog#108968_ca)
 
 * [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
+
+    * [Change log for patch update 1.0.7_1021, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1071021_ca)
 
     * [Change log for patch update 1.0.7_988, released 29 March 2023](/docs/openshift?topic=openshift-ca_changelog#107988_ca)
 
@@ -7018,6 +7028,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_1010, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1061010_ca)
 
     * [Change log for patch update 1.0.6_955, released 7 March 2023](/docs/openshift?topic=openshift-ca_changelog#106955_ca)
 
@@ -7099,6 +7111,8 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.6_1872, released 05 April 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.6_1872_is_block_relnote)
+
     * [Change log for version 5.1.5_1857, released 29 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.5_1857_is_block_relnote)
 
     * [Change log for version 5.1.4_1852, released 07 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.4_1852_is_block_relnote)
@@ -7108,6 +7122,8 @@ subcollection: openshift
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.10_1869, released 05 April 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.10_1869_is_block_relnote)
 
     * [Change log for version 5.0.9_1862, released 29 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.9_1862_is_block_relnote)
 

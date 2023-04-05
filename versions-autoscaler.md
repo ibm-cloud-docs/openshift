@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-05"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -108,6 +108,15 @@ ibmcloud oc cluster addon versions
 ## Version 1.0.8
 {: #0108_ca_addon}
 
+### Change log for patch update 1.0.8_1016, released 5 April 2023
+{: #1081016_ca}
+
+- Image tags: `1.20.0 108-1`, `1.21.0 108-1`, `1.22.0 108-1`, `1.23.0 108-1`, `1.24.0 108-1`, `1.25.0 108-1`, and `1.26.0 108-1`.
+- Updates the `storage-secret-sidecar` image to `v1.2.20`.
+- Updates the `golang` version to `1.19.7`.
+- Resolves an issue where `cluster-autoscaler` stops retrying requests that return HTTP 401 codes.
+- Logging improvements.
+
 ### Change log for patch update 1.0.8_987, released 29 March 2023
 {: #108987_ca}
 
@@ -124,6 +133,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.0.7
 {: #0107_ca_addon}
+
+### Change log for patch update 1.0.7_1021, released 5 April 2023
+{: #1071021_ca}
+
+- Image tags: `1.20.0 107-4`, `1.21.0 107-4`,  `1.22.0 107-4`, `1.23.0 107-4`, `1.24.0 107-4`, and `1.25.0 107-4`.
+- Updates the `storage-secret-sidecar` image to `v1.2.20`.
+- Updates the `golang` version to `1.19.7`.
 
 ### Change log for patch update 1.0.7_988, released 29 March 2023
 {: #107988_ca}
@@ -171,6 +187,12 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.0.6
 {: #0106_ca_addon}
+
+### Change log for patch update 1.0.6_1010, released 5 April 2023
+{: #1061010_ca}
+
+- Image tags: `1.19.1 106-7`, `1.20.0 106-7`,  `1.21.0 106-7`, `1.22.0 106-7`, `1.23.0 106-7`, and `1.24.0 106-7`.
+- Updates the `golang` version to `1.19.7`.
 
 ### Change log for patch update 1.0.6_955, released 7 March 2023
 {: #106955_ca}

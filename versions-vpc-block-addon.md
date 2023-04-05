@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-05"
 
 keywords: block, add-on, changelog
 
@@ -43,6 +43,15 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 5.1
 {: #051_is_block}
 
+### Change log for version 5.1.6_1872, released 05 April 2023
+{: #5.1.6_1872_is_block_relnote}
+
+- Updates the storage-secret-sidecar image to `v1.2.20`.
+- Updates Golang to `v1.19.7`.
+- Updates the UBI image to `8.7-1085.1679482090`
+- Resolves the following CVEs:
+    - [CVE-2022-4304](https://nvd.nist.gov/vuln/detail/CVE-2022-4304){: external}, [CVE-2022-4450](https://nvd.nist.gov/vuln/detail/CVE-2022-2250){: external}, [CVE-2023-0215](https://nvd.nist.gov/vuln/detail/CVE-2023-0215){: external}, and [CVE-2023-0286](https://nvd.nist.gov/vuln/detail/CVE-2023-0286){: external}
+
 ### Change log for version 5.1.5_1857, released 29 March 2023
 {: #5.1.5_1857_is_block_relnote}
 
@@ -78,6 +87,16 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 5.0
 {: #050_is_block}
+
+
+### Change log for version 5.0.10_1869, released 05 April 2023
+{: #5.0.10_1869_is_block_relnote}
+
+- Updates the storage-secret-sidecar image to `v1.2.20`.
+- Updates Golang to `v1.19.7`.
+- Updates the UBI image to `8.7-1085.1679482090`
+- Resolves the following CVEs:
+    - [CVE-2022-4304](https://nvd.nist.gov/vuln/detail/CVE-2022-4304){: external}, [CVE-2022-4450](https://nvd.nist.gov/vuln/detail/CVE-2022-2250){: external}, [CVE-2023-0215](https://nvd.nist.gov/vuln/detail/CVE-2023-0215){: external}, and [CVE-2023-0286](https://nvd.nist.gov/vuln/detail/CVE-2023-0286){: external}
 
 
 ### Change log for version 5.0.9_1862, released 29 March 2023
