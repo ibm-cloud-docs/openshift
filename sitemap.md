@@ -282,6 +282,10 @@ subcollection: openshift
 
 * [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
 
+    * [5 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0523)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.10_1869` and `5.1.6_1872`.
+
     * [3 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0323)
 
         * Pod Security admission 
@@ -7099,6 +7103,8 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.6_1872, released 05 April 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.6_1872_is_block_relnote)
+
     * [Change log for version 5.1.5_1857, released 29 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.5_1857_is_block_relnote)
 
     * [Change log for version 5.1.4_1852, released 07 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.4_1852_is_block_relnote)
@@ -7108,6 +7114,8 @@ subcollection: openshift
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.10_1869, released 05 April 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.10_1869_is_block_relnote)
 
     * [Change log for version 5.0.9_1862, released 29 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.9_1862_is_block_relnote)
 
