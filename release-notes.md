@@ -34,6 +34,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-apr0523}
 {: release-note}
 
+Cluster autoscaler add-on versions `1.0.6_1010`, `1.0.7_1021`, and `1.0.8_1016`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.10_1869` and `5.1.6_1872`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
