@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-03"
+lastupdated: "2023-04-06"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -75,6 +75,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 | RHEL 8 Packages |N/A|N/A|N/A|
 | {{site.data.keyword.openshiftshort}}. | 4.10.53 | 4.10.54 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-54){: external}. |
 | Haproxy | af5031 | 8398d1 | [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}. |
+| CRI-O configuration | N/A | N/A | CRI-O configuration now sets container network `sysctl` tuning for `net.ipv4.tcp_keepalive_intvl` to `15`, `net.ipv4.tcp_keepalive_probes` to `6` and `net.ipv4.tcp_keepalive_time` to `40`. |
 {: caption="Changes since version 4.10.53_1559_openshift" caption-side="bottom"}
 
 
