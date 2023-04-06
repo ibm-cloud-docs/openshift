@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-06"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -13,8 +13,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
-# Migrating from PSPs to Pod Security admission
+# Migrating from PSPs to Pod Security Admission
 {: #pod-security-admission-migration}
 
 [Pod Security admission](/docs/containers?topic=containers-pod-security-admission&interface=ui) replaces Pod Security policies (PSPs) in clusters that run version 1.25 or later. Depending on your PSP configuration, you might need to take certain actions before upgrading your cluster from version 1.24 to 1.25.

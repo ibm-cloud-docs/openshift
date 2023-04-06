@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-04-06"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -93,7 +93,6 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | --- | --- |
 | **Unsupported:** RHEL 7 worker nodes | Using RHEL 7 worker nodes with Red Hat OpenShift on IBM Cloud version 4.11 clusters is unsupported. After updating the cluster master, if your cluster still has RHEL 7 worker nodes, [migrate your RHEL 7 worker nodes to RHEL 8](#rhel-migrate-411). |
-| Updated default container network `sysctls` | New containers running on the pod network have the following `sysctl` tuning applied by default: `net.ipv4.tcp_keepalive_intvl=15`, `net.ipv4.tcp_keepalive_probes=6` and `net.ipv4.tcp_keepalive_time=40`. If your apps rely on the previous defaults, you must update your app deployment to customize the `sysctls`. For more information, see [Optimizing network keepalive sysctl settings](/docs/openshift?topic=openshift-kernel#keepalive-iks). |
 {: caption="Changes to make after you update the master to Red Hat OpenShift 4.11" caption-side="bottom"}
 
 
