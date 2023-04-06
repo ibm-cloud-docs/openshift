@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-06"
 
 keywords: openshift
 
@@ -4405,6 +4405,464 @@ Minimum required permissions
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
+
+
+### `ibmcloud oc ingress domain create`
+{: #ingress-domain-create}
+
+Create an Ingress domain for a cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--default] [--domain DOMAIN] [--hostname HOSTNAME] [--ip IP] [--output OUTPUT] [--domain-provider PROVIDER] [-q] [--secret-namespace NAMESPACE] [--domain-zone ZONE]
+```
+{: pre}
+
+Minimum required permissions
+:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where you want to create the domain.
+
+`--crn CRN`
+:    Required for {{site.data.keyword.cis_full_notm}} domains. The CRN for the {{site.data.keyword.cis_full_notm}} instance.
+
+`--is-default`
+:    Optional. Include this option to set the relevant domain as the default domain for the cluster. 
+
+`--domain DOMAIN`
+:    The Ingress domain. You can specify an existing domain, or create a new one. For provider specific information on specifying domains, see [Creating your own Ingress domain](/docs/containers?topic=containers-ingress-domains).
+
+`--hostname HOSTNAME`
+:    Optional. For VPC clusters. The hostname to register for the domain. 
+
+`--ip IP`
+:    Optional. The IP addresses to register for the domain. 
+
+`--output OUTPUT`
+:    Optional: Prints the command output in JSON format.
+
+`--domain-provider PROVIDER`
+:    Optional. The external DNS provider type. Available options are `akamai-ext`, `cloudflare-ext`, or `cis-ext`. If no provider is specified, a domain is created with the IBM-managed internal provider.
+
+`--secret-namespace NAMESPACE`
+:    Optional. The namespace that the TLS secret is created in. If no namespace is specified, the secret is created in the `default` namespace.
+
+`--domain-zone ZONE`
+:    Optional. The ZoneID for your {{site.data.keyword.cis_full_notm}} instance. This is a GUID value.
+
+
+#### Example `ingress domain create` command
+{: #ingress-domain-create-example}
+
+This example command creates a domain registered with the {{site.data.keyword.cloud_notm}} internal provider. For examples to create domains with different providers, see [Creating your own Ingress domain](/docs/containers?topic=containers-ingress-domains).
+
+```sh
+ibmcloud oc ingress domain create --cluster my-cluster --domain exampledomain
+```
+{: pre}
+
+### `ibmcloud oc ingress domain credential get`
+{: #ingress-domain-credential-get}
+
+View the details of the external domain provider credentials that have been added to your cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain credential get --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where the credential is applied. 
+
+`--output OUPUT`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain credential` command
+{: #ingress-domain-credential-get-example}
+
+```sh
+ibmcloud oc ingress domain credential get --cluster mycluster 
+```
+{: pre}
+
+### `ibmcloud oc ingress domain credential rm`
+{: #ingress-domain-credential-rm}
+
+Remove external domain provider credentials from the cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain credential rm --cluster CLUSTER [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where the credential is applied. 
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain credential rm` command
+{: #ingress-domain-credential-rm-example}
+
+```sh
+ibmcloud oc ingress domain credential rm --cluster mycluster
+```
+{: pre}
+
+### `ibmcloud oc ingress domain credential set akamai`
+{: #ingress-domain-credential-set-akamai}
+
+Add external Akamai domain credentials to your cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain credential set akamai --cluster CLUSTER [--access-token TOKEN] [--client-secret SECRET] [--client-token TOKEN] [--host HOST] [-q] [--domain-zone ZONE]
+```
+{: pre}
+
+Minimum required permissions
+:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where you want to add the credentials. 
+
+`--access-token TOKEN`
+:    The access token for the Akamai API Client credentials. This token is provided by Akamai. 
+
+`--client-secret SECRET`
+:    The client secret for the Akamai API Client credentials. This secret is provided by Akamai. 
+
+`--client-token TOKEN`
+:    The client token for the Akamai API Client credentials. This token is provided by Akamai. 
+
+`--host HOST`
+:    The host for the Akamai API Client credentials. 
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+`--domain-zone ZONE`
+:    The DNS zone that exists in your external account and is specified in the Akamai credentials. Specify the full zone name, such as `example.external.adppdomain.cloud`.
+
+#### Example `ingress domain credential set akamai` command
+{: #ingress-domain-credential-set-akamai-example}
+
+```sh
+ibmcloud oc ingress domain credential set akamai --cluster mycluster [--access-token TOKEN] [--client-secret SECRET] [--client-token TOKEN] [--host HOST] [-q] [--domain-zone ZONE]
+```
+{: pre}
+
+### `ibmcloud oc ingress domain credential set cloudflare`
+{: #ingress-domain-credential-set-cloudflare}
+
+Add external Cloudflare domain credentials to your cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain credential set cloudflare --cluster CLUSTER [-q] [--token TOKEN] [--domain-zone ZONE]
+```
+{: pre}
+
+Minimum required permissions
+:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where you want to add the credentials. 
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+`--token TOKEN`
+:    The access token for Cloudflare credentials. This token is provided by Cloudflare. 
+
+`--domain-zone ZONE`
+:   The DNS zone that exists in your external account and is specified in your Cloudflare credentials. This value is a GUID.
+
+#### Example `ingress domain credential set cloudflare` command
+{: #ingress-domain-credential-set-cloudflare-example}
+
+```sh
+ibmcloud oc ingress domain credential set akamai --cluster mycluster [--access-token TOKEN] [--client-secret SECRET] [--client-token TOKEN] [--host HOST] [-q] [--domain-zone ZONE]
+```
+{: pre}
+
+### `ibmcloud oc ingress domain default replace`
+{: #ingress-domain-default-replace}
+
+Change a cluster's default Ingress domain.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where the domain is applied.
+
+`--domain DOMAIN`
+:   Required. The domain that you want to specify as the new default domain for the cluster. You must specify an existing domain. 
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain default replace` command
+{: #ingress-domain-default-replace-example}
+
+```sh
+ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q]
+```
+{: pre}
+
+### `ibmcloud oc ingress domain get`
+{: #ingress-domain-get}
+
+View the details of an Ingress domain.
+{: shortdesc}
+
+```sh 
+ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where the domain is applied.
+
+`--domain DOMAIN`
+:    Required. The domain that you want to view details for. 
+
+`--output OUTPUT`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain get` command
+{: #ingress-domain-get-example}
+
+```sh 
+ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
+```
+{: pre}
+
+
+### `ibmcloud oc ingress domain ls`
+{: #ingress-domain-ls}
+
+List all Ingress domains for a cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output OUTPUT`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain ls` command
+{: #ingress-domain-ls-example}
+
+```sh
+ibmcloud oc ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+### `ibmcloud oc ingress domain rm`
+{: #ingress-domain-rm}
+
+Remove an Ingress domain from a cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where the domain is applied.
+
+`--domain DOMAIN`
+:    Required. The domain that you want to remove from the cluster. You cannot specify the default domain. If you want to remove the domain that is currently set as the default for your cluster, you must first [replace the default](#ingress-domain-default-replace) with another domain. 
+
+`-f`
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain rm` command
+{: #ingress-domain-rm-example}
+
+```sh
+ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
+```
+{: pre}
+
+### `ibmcloud oc ingress domain secret regenerate`
+{: #ingress-domain-secret-regenerate}
+
+Regenerate the certificate for an Ingress domain. Run this command to generate a new token in your DNS provider and apply it to your cluster
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where the domain is applied.
+
+`--domain DOMAIN`
+:    Required. The domain you want to regenerate. 
+
+`--output OUTPUT`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain secret regenerate` command
+{: #ingress-domain-secret-regenerate-example}
+
+```sh
+ibmcloud oc ingress domain secret regenerate --cluster mycluster --domain exampledomain [--output OUTPUT] [-q]
+```
+{: pre}
+
+### `ibmcloud oc ingress domain secret rm`
+{: #ingress-domain-secret-rm}
+
+Delete the secret for an Ingress domain and prevent future renewal of the certificate.
+{: shortdesc} 
+
+```sh
+ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where the domain is applied.
+
+`--domain DOMAIN`
+:    Required. The domain you want to remove the secret from. 
+
+`-f`
+
+`--output OUTPUT`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain secret rm` command
+{: #ingress-domain-secret-rm-example}
+
+```sh
+ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--output OUTPUT] [-q]
+```
+{: pre}
+
+### `ibmcloud oc ingress domain update`
+{: #ingress-domain-update}
+
+Update an Ingress domain for a cluster to change the hostnames or IP addresses associated with the domain.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname HOSTNAME] [--ip IP] [-q]
+```
+{: pre}
+
+Note that when you add IP addresses or hostnames, you must include any IPs or hostnames that are currently registered to the domain. The domain updates with the exact values specified, so any current IP addresses or hostnames are overwritten if they are not included. For example, if `52.137.182.166` is currently registered to your domain and you want to add `52.137.182.270`, you must specify `--ip 52.137.182.166, 52.137.182.270` in the command.
+{: important}
+
+Minimum required permissions
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster where the domain is applied.
+
+`--domain DOMAIN`
+:    Required. The domain you want to update. 
+
+`--hostname HOSTNAME`
+:    For VPC clusters. The hostname to register for the domain. 
+
+`--ip IP`
+:    The IP addresses to register for the domain. The IP addresses passed in fully replace those that are currently associated with the domain. If you want to keep the current IP addresses, you must include them. Specifying this flag with no values unregisters the current IP addresses from the domain.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress domain update` command
+{: #ingress-domain-update-example}
+
+```sh
+ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname HOSTNAME] [--ip IP] [-q]
+```
+{: pre}
+
+
 
 ### `ibmcloud oc ingress instance default set`
 {: #cs_ingress_instance_default_set}

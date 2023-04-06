@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-06"
 
 keywords: openshift
 subcollection: openshift
@@ -4711,6 +4711,44 @@ subcollection: openshift
 
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
+[Creating your own Ingress domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains)
+
+* [Setting up domains with the {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-int)
+
+* [Setting up domains with {{site.data.keyword.cis_full_notm}}](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis)
+
+    * [Set up service-to-service authorization](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis-s2s)
+
+    * [Create a domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis-create)
+
+* [Setting up domains from other external providers](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-external)
+
+    * [Set up credentials for your provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred)
+
+    * [Create a domain, or add an existing domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-create)
+
+* [Managing domains](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage)
+
+    * [Viewing domains in a cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-view)
+
+    * [Removing a domain from a cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-rm)
+
+    * [Updating a domain's IP addresses or hostname](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-update)
+
+    * [Changing a cluster's default domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-default)
+
+* [Managing external provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-creds)
+
+    * [Viewing external provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-creds-view)
+
+    * [Removing external provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-creds-rm)
+
+* [Managing domain secrets](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets)
+
+    * [Regenerating the certificate for an Ingress domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets-regen)
+
+    * [Delete an Ingress domain secret](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets-rm)
+
 [Managing TLS and non-TLS certificates and secrets](/docs/openshift?topic=openshift-secrets#secrets)
 
 * [Managing TLS certificates and secrets with Ingress](/docs/openshift?topic=openshift-secrets#tls)
@@ -5821,6 +5859,30 @@ subcollection: openshift
     * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
 
     * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
+
+    * [`ibmcloud oc ingress domain create`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-create)
+
+    * [`ibmcloud oc ingress domain credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-credential-get)
+
+    * [`ibmcloud oc ingress domain credential rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-credential-rm)
+
+    * [`ibmcloud oc ingress domain credential set akamai`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-credential-set-akamai)
+
+    * [`ibmcloud oc ingress domain credential set cloudflare`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-credential-set-cloudflare)
+
+    * [`ibmcloud oc ingress domain default replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace)
+
+    * [`ibmcloud oc ingress domain get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-get)
+
+    * [`ibmcloud oc ingress domain ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls)
+
+    * [`ibmcloud oc ingress domain rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm)
+
+    * [`ibmcloud oc ingress domain secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate)
+
+    * [`ibmcloud oc ingress domain secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm)
+
+    * [`ibmcloud oc ingress domain update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update)
 
     * [`ibmcloud oc ingress instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
 
