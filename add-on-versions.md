@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-03-10"
+lastupdated: "2023-04-07"
 
 keywords: openshift add-ons, cluster addon
 
@@ -21,13 +21,12 @@ Review the following list of supported cluster add-ons.
 | Name | Version | Supported Kubernetes versions | Supported Red Hat OpenShift versions |
 | --- | --- | --- | --- |
 | alb-oauth-proxy | 2.0.0 (Default) | >=1.19.0 <1.27.0 |  N/A  |
-| cluster-autoscaler | 1.0.6 (Default) | >=1.20.0 <1.25.0 | >=4.6.0 <4.12.0 |
-| cluster-autoscaler | 1.0.7  | >=1.20.0 <1.26.0 | >=4.7.0 <4.13.0 |
+| cluster-autoscaler | 1.0.6  | >=1.20.0 <1.25.0 | >=4.6.0 <4.12.0 |
+| cluster-autoscaler | 1.0.7 (Default) | >=1.20.0 <1.26.0 | >=4.7.0 <4.13.0 |
 | cluster-autoscaler | 1.0.8  | >=1.23.0 <1.27.0 | >=4.8.0 <4.13.0 |
 | cluster-autoscaler | 1.1.0  | >=1.20.0 <1.24.0 | >=4.6.0 <4.11.0 |
 | debug-tool | 2.0.0 (Default) | >=1.17.0 <1.27.0 | >=3.11.0 <4.13.0 |
 | image-key-synchronizer | 1.0.0 (Default) |  N/A  | >=4.4.0 <4.13.0 |
-| istio | 1.15  | >=1.21.0 <1.26.0 |  N/A  |
 | istio | 1.16 (Default) | >=1.23.0 <1.27.0 |  N/A  |
 | istio | 1.17  | >=1.23.0 <1.27.0 |  N/A  |
 | openshift-data-foundation | 4.8.0  |  N/A  | >=4.8.0 <4.10.0 |
