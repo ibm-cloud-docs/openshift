@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-06"
+lastupdated: "2023-04-07"
 
 keywords: openshift
 
@@ -164,7 +164,7 @@ This command is only required when creating an external domain with the Akamai p
 #### Add Cloudflare credentials
 {: #ingress-domains-ext-cred-cf}
 
-[Cloudlfare]{: tag-red} Run the command to add Cloudflare provider credentials to your cluster. 
+[Cloudflare]{: tag-red} Run the command to add Cloudflare provider credentials to your cluster. 
 
 Note that registering credentials for Cloudflare requires the following permissions in your external Cloudflare account: `Zone Settings: Read`, `Zone: Read`, `DNS: Read`, `Zone: Edit`, `DNS: Edit`, `API Tokens: Read`.
 {: note}
