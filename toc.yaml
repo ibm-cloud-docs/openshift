@@ -526,6 +526,7 @@ toc:
               - ts-ingress-errseipm.md
               - ts-ingress-errsam.md
               - ts-ingress-errrna.md
+              - ts-ingress-errdsaiss.md
               - ts-ingress-errdsia.md
               - ts-ingress-errdsiss.md
               - ts-ingress-errdriss.md
@@ -536,6 +537,7 @@ toc:
               - ts-ingress-essef.md
               - ts-ingress-essws.md
               - ts-ingress-essdne.md
+              - ts-ingress-errdsaiss.md
           - topicgroup:
               label: File Storage
               topics:
