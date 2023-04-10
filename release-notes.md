@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-10"
 
 keywords: openshift
 
@@ -49,8 +49,8 @@ Cluster autoscaler add-on versions `1.0.6_1010`, `1.0.7_1021`, and `1.0.8_1016`.
 Pod Security admission 
 :   You might need to check your Pod Security set up when you upgrade your cluster from version 1.24 to 1.25. For more information, see [Migrating from PSPs to Pod Security admission](/docs/containers?topic=containers-pod-security-admission-migration&interface=ui).
 
-{{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`
+:   **Important** Because there are changes to the storage classes installed with the plug-in, you must uninstall and reinstall the plug-in when you update to version `2.2.13` to get the latest storage class configurations. For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ## March 2023
 {: #openshift-mar23}

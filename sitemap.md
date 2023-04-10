@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-07"
+lastupdated: "2023-04-10"
 
 keywords: openshift
 subcollection: openshift
@@ -292,7 +292,7 @@ subcollection: openshift
 
         * Pod Security admission 
 
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`.
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`
 
 * [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
 
@@ -9287,6 +9287,8 @@ subcollection: openshift
 
 [Why does the Ingress status show an `ERRRNA` error?](/docs/openshift?topic=openshift-ts-ingress-errrna#ts-ingress-errrna)
 
+[Why does the Ingress status show an `ERRDSAISS` error?](/docs/openshift?topic=openshift-ts-ingress-errdsaiss#ts-ingress-errdsaiss)
+
 [Why does the Ingress status show an `ERRDSIA` error?](/docs/openshift?topic=openshift-ts-ingress-errdsia#ts-ingress-errdsia)
 
 [Why does the Ingress status show an `ERRDSISS` error?](/docs/openshift?topic=openshift-ts-ingress-errdsiss#ts-ingress-errdsiss)
@@ -9306,6 +9308,8 @@ subcollection: openshift
 [Why does the Ingress status show an ESSWS error?](/docs/openshift?topic=openshift-ts-ingress-essws#ts-ingress-essws)
 
 [Why does the Ingress status show an ESSDNE error?](/docs/openshift?topic=openshift-ts-ingress-essdne#ts-ingress-essdne)
+
+[Why does the Ingress status show an `ERRDSAISS` error?](/docs/openshift?topic=openshift-ts-ingress-errdsaiss#ts-ingress-errdsaiss)
 
 
 ### File Storage
