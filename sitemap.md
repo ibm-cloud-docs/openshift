@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-07"
+lastupdated: "2023-04-10"
 
 keywords: openshift
 subcollection: openshift
@@ -292,7 +292,7 @@ subcollection: openshift
 
         * Pod Security admission 
 
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`.
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`
 
 * [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
 
