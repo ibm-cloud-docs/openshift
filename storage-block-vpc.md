@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-11"
 
 keywords: openshift
 
@@ -828,7 +828,7 @@ To create your own storage class:
     :   Enter the profile that you selected in the previous step, or enter `custom` to use a custom IOPs value. To find supported storage sizes for a specific profile, see [Tiered IOPS profile](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range.
         
     `csi.storage.k8s.io/fstype`
-        :   In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choose `xfs`, `ext3`, or `ext4`. The default value is `ext4` and is used if you don't specify a file system.
+        :   In the parameters, enter the file system for your {{site.data.keyword.blockstorageshort}} instance. Choose `xfs`, `ext3`, or `ext4`. If you want to modify the ownership or permissions of your volume you must specify the `csi.storage.k8s.io/fstype` in your custom storage class and your PVC must have `ReadWriteOnce` as the `accessMode`. The {{site.data.keyword.block_storage_is_short}} driver uses the `ReadWriteOnceWithFSType` `fsGroupPolicy`. For more information, see [CSI driver documentation](https://kubernetes-csi.github.io/docs/support-fsgroup.html#csi-driver-fsgroup-support){: external}.
 
     `encrypted`
     :   In the parameters, enter `true` to create a storage class that sets up encryption for your {{site.data.keyword.blockstorageshort}} volume. If you set this option to `true`, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameterencryptionKey`. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).

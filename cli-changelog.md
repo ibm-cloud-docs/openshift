@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-04-11"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -32,6 +32,14 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.510 
+{: #cli-10510}
+
+Version 1.0.510 of the CLI was released on 11 April 2023.
+:   Adds support for Pod Security admission.
+:   Resolved an issue about config file race conditions.
+:   Updates the `ibmcloud oc ingress domain create` command output to return the full qualified domain.
 
 ## Version v1.0.498
 {: #cli-10498}
