@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-10"
+lastupdated: "2023-04-11"
 
 keywords: openshift
 
@@ -29,6 +29,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## April 2023
 {: #openshift-apr23}
+
+### 11 April 2023
+{: #openshift-apr1123}
+{: release-note}
+
+CLI version `1.0.510`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 5 April 2023
 {: #openshift-apr0523}
