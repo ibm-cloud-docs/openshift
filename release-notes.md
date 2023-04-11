@@ -37,6 +37,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 CLI version `1.0.510`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
+Worker node fix packs `4.8.57_1598_openshift`, `4.9.59_1585_openshift`, `4.10.55_1563_openshift`, `4.11.34_1550_openshift`, and `4.12.10_1536_openshift`.
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+
 ### 5 April 2023
 {: #openshift-apr0523}
 {: release-note}
