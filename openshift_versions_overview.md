@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-07"
+lastupdated: "2023-04-12"
 
 keywords: openshift, version, update, upgrade
 
@@ -178,8 +178,8 @@ oc version
 
 Example output
 ```sh
-Client Version: 4.10.3
-Server Version: 4.10.12
+Client Version: 4.11.3
+Server Version: 4.11.12
 Kubernetes Version: v1.24.2
 ```
 {: screen}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-04-12"
 
 keywords: openshift, scc, security context constraint, psp
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # Configuring security context constraints
 {: #openshift_scc}
 
-With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.10/authentication/managing-security-context-constraints.html){: external}.
+With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.11/authentication/managing-security-context-constraints.html){: external}.
 {: shortdesc}
 
 Why do I set security context constraints?
@@ -59,7 +59,7 @@ The default {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than t
 ## Customizing security context constraints
 {: #customize_sccs}
 
-To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.10/authentication/managing-security-context-constraints.html){: external}. You can also add users or groups to the default security context constraints.
+To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.11/authentication/managing-security-context-constraints.html){: external}. You can also add users or groups to the default security context constraints.
 {: shortdesc}
 
 
