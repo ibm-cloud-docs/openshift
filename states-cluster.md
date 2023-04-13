@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-04-13"
 
 keywords: kubernetes, worker nodes, state
 
@@ -121,7 +121,7 @@ A request to create the cluster and order the infrastructure for the Kubernetes 
 Review the following description of the `Updating` cluster state. To view the state of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 {: shortdesc}
 
-The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you can't access or change the cluster. Worker nodes, apps, and resources that the user deployed aren't modified and continue to run. Wait for the update to complete to review the health of your cluster.
+The Kubernetes API server that runs in your Kubernetes master is being updated to a new Kubernetes API version. During the update, you can still access and change the cluster. However, you cannot initiate concurrent master operations, such as enabling API server auditing. Worker nodes, apps, and resources that the user deployed aren't modified and continue to run. Wait for the update to complete to review the health of your cluster.
 
 ## Unsupported
 {: #cluster-state-unsupported}
