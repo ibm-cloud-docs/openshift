@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-14"
 
 keywords: openshift
 
@@ -172,7 +172,7 @@ Minimum required permissions
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Disable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.redhat_openshift_notm}} version 4.7 or higher.
+Disable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on.
 {: shortdesc}
 
 ```sh
@@ -294,7 +294,7 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster my_cluster
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Enable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on for {{site.data.keyword.redhat_openshift_notm}} version 4.7 or higher.
+Enable the [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) add-on.
 {: shortdesc}
 
 ```sh

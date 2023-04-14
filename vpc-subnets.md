@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-04-14"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -53,7 +53,7 @@ When you [create your VPC subnet](https://cloud.ibm.com/vpc/provision/network){:
 
 Keep in mind the following IP address reservations.
 - 5 IP addresses are [reserved by VPC](/docs/vpc?topic=vpc-about-networking-for-vpc#addresses-reserved-by-the-system) from each subnet by default.
-- {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later: 1 IP address from one subnet in each zone where your cluster has worker nodes is required for the [virtual private endpoints (VPE) gateway](#vpc_basics_vpe).
+- 1 IP address from one subnet in each zone where your cluster has worker nodes is required for the [virtual private endpoints (VPE) gateway](#vpc_basics_vpe).
 - 1 IP address is required per worker node in your cluster.
 - 1 IP address is required each time that you update or replace a worker node. These IP addresses are eventually reclaimed and available for reuse.
 - 2 IP addresses are used each time that you create a public or private load balancer. If you have a multizone cluster, these 2 IP addresses are spread across zones, so the subnet might not have an IP address reserved.
@@ -130,7 +130,7 @@ Within one VPC, you can create only one public gateway per zone, but that public
 ### Virtual private endpoints (VPE)
 {: #vpc_basics_vpe}
 
-In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, worker nodes can communicate with the Kubernetes master through the cluster's [virtual private endpoint (VPE)](/docs/vpc?topic=vpc-about-vpe).
+Worker nodes can communicate with the Kubernetes master through the cluster's [virtual private endpoint (VPE)](/docs/vpc?topic=vpc-about-vpe).
 {: shortdesc}
 
 A VPE is a virtual IP address that is bound to an endpoint gateway. One VPE gateway resource is created per cluster in your VPC. One IP address from one subnet in each zone where your cluster has worker nodes is automatically used for the VPE gateway, and the worker nodes in this zone use this IP address to communicate with the Kubernetes master. To view the VPE gateway details for your cluster, open the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/endpointGateways){: external} and look for the VPE gateway in the format `iks-<cluster_ID>`.

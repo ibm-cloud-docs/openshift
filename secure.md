@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-14"
 
 keywords: openshift
 
@@ -100,7 +100,7 @@ Fully managed and dedicated {{site.data.keyword.redhat_openshift_notm}} master
     - **openshift-api:** Serves as the main entry point for all cluster management requests from the worker node to the {{site.data.keyword.redhat_openshift_notm}} master. The API server validates and processes requests that change the state of cluster resources, such as pods or services, and stores this state in the etcd data store. 
     - **openshift-controller:** Watches for newly created pods and decides where to deploy them based on capacity, performance needs, policy constraints, anti-affinity specifications, and workload requirements. If no worker node can be found that matches the requirements, the pod is not deployed in the cluster. The controller also watches the state of cluster resources, such as replica sets. When the state of a resource changes, for example if a pod in a replica set goes down, the controller manager initiates correcting actions to achieve the required state. 
     - **cloud-controller-manager:** The cloud controller manager manages cloud provider-specific components such as the {{site.data.keyword.cloud_notm}} load balancer.
-    - **OpenVPN ({{site.data.keyword.redhat_openshift_notm}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.redhat_openshift_notm}} version 4.8 or later):** {{site.data.keyword.openshiftlong_notm}}-specific component to provide secured network connectivity for all {{site.data.keyword.redhat_openshift_notm}} master to worker node communication. The OpenVPN server works with the OpenVPN client to securely connect the master to the worker node. This connection supports `apiserver proxy` requests to your pods and services, and `oc` `exec`, `attach`, and `logs` requests to the kubelet. The connection from the worker nodes to the master is automatically secured with TLS certificates.
+    - **Konnectivity:** {{site.data.keyword.openshiftlong_notm}}-specific component to provide secured network connectivity for all {{site.data.keyword.redhat_openshift_notm}} master to worker node communication. The Konnectivity server works with the Konnectivity agent to securely connect the master to the worker node. This connection supports `apiserver proxy` requests to your pods and services, and `oc` `exec`, `attach`, and `logs` requests to the kubelet. The connection from the worker nodes to the master is automatically secured with TLS certificates.
 
 Continuous monitoring by IBM Site Reliability Engineers (SREs)
 :   The {{site.data.keyword.redhat_openshift_notm}} master, including all the master components, compute, networking, and storage resources are continuously monitored by IBM Site Reliability Engineers (SREs). The SREs apply the latest security standards, detect and remediate malicious activities, and work to ensure reliability and availability of {{site.data.keyword.openshiftlong_notm}}.
@@ -114,8 +114,8 @@ Secure communication via TLS
     Need to revoke existing certificates and create new certificates for your cluster? Check out [Rotating CA certificates in your cluster](#cert-rotate).
     {: tip}
     
-OpenVPN ({{site.data.keyword.redhat_openshift_notm}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.redhat_openshift_notm}} version 4.8 or later) connectivity to worker nodes
-:   Although Kubernetes secures the communication between the master and worker nodes by using the `https` protocol, no authentication is provided on the worker node by default. To secure this communication, {{site.data.keyword.openshiftlong_notm}} automatically sets up an OpenVPN connection between the {{site.data.keyword.redhat_openshift_notm}} master and the worker node when the cluster is created.
+Connectivity to worker nodes
+:   Although Kubernetes secures the communication between the master and worker nodes by using the `https` protocol, no authentication is provided on the worker node by default. To secure this communication, {{site.data.keyword.openshiftlong_notm}} automatically sets up an Konnectivity connection between the {{site.data.keyword.redhat_openshift_notm}} master and the worker node when the cluster is created.
 
 Fine-grained access control
 :   As the account administrator you can [grant access to other users for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-users#users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.openshiftlong_notm}}, and all the resources in your account. Setting up proper user roles and permissions is key to limiting who can access your resources and to limiting the damage that a user can do when legitimate permissions are misused. You can select from the following pre-defined user roles that determine the set of actions that the user can perform: 
@@ -298,7 +298,7 @@ All containers are protected by [predefined Calico network policy settings](/doc
 - **NodePort**: The [Kubernetes NodePort range](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport){: external} is opened by default so that you can expose apps with [NodePort services](/docs/openshift?topic=openshift-nodeport). To block inbound network traffic on NodePorts in your cluster, see [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 - **IBM monitoring ports**: By default, IBM opens a few ports on your cluster so that network traffic can be monitored by IBM and for IBM to automatically install security updates for the {{site.data.keyword.redhat_openshift_notm}} master.
 
-Access from the {{site.data.keyword.redhat_openshift_notm}} master to the worker node's kubelet is secured by an OpenVPN ({{site.data.keyword.redhat_openshift_notm}} version 4.7 or earlier) or Konnectivity ({{site.data.keyword.redhat_openshift_notm}} version 4.8 or later) tunnel. For more information, see the [{{site.data.keyword.openshiftlong_notm}} architecture](/docs/openshift?topic=openshift-service-architecture).
+Access from the {{site.data.keyword.redhat_openshift_notm}} master to the worker node's kubelet is secured by a Konnectivity tunnel. For more information, see the [{{site.data.keyword.openshiftlong_notm}} architecture](/docs/openshift?topic=openshift-service-architecture).
 
 ### What is network segmentation and how can I set it up for a Classic cluster?
 {: #network-segmentation-setup}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-14"
 
 keywords: openshift
 
@@ -3025,7 +3025,7 @@ CLI change log
 {: release-note}
 
 VPE
-:   In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, worker node communication to the Kubernetes master is now established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe).
+:   Worker node communication to the Kubernetes master is now established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe).
 
 ### 22 February 2021
 {: #openshift-feb2221}

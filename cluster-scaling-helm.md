@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-04-14"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -283,7 +283,7 @@ Before you begin, see the [Prerequisites](#ca_helm_up_prereqs).
     Example output
 
     ```sh
-    myhelmchart     1           Mon Jan  7 14:47:44 2019    DEPLOYED    ibm-iks-cluster-autoscaler-1.0.1      kube-system
+    myhelmchart     1           Mon Jan  7 14:47:44 2022    DEPLOYED    ibm-iks-cluster-autoscaler-1.0.1      kube-system
     ```
     {: screen}
 
