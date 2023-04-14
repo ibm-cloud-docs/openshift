@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-04-14"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -19,11 +19,6 @@ subcollection: openshift
 {: #classic-flavors}
 
 Review the classic worker node flavors by metro.
-
-
-
-
-
 
 
 
@@ -58,7 +53,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 1. Worker node flavors for ams" caption-side="bottom"}
+{: caption="Table 1. Worker node flavors for Amsterdam." caption-side="bottom"}
+
 
 
 ## `che`
@@ -90,7 +86,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 2. Worker node flavors for che" caption-side="bottom"}
+{: caption="Table 2. Worker node flavors for Chennai." caption-side="bottom"}
+
 
 
 ## `dal`
@@ -128,7 +125,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 3. Worker node flavors for dal" caption-side="bottom"}
+{: caption="Table 3. Worker node flavors for Dallas." caption-side="bottom"}
+
 
 
 ## `fra`
@@ -163,8 +161,7 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 4. Worker node flavors for fra" caption-side="bottom"}
-
+{: caption="Table 4. Worker node flavors for France." caption-side="bottom"}
 
 
 
@@ -200,10 +197,7 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 5. Worker node flavors for lon" caption-side="bottom"}
-
-
-
+{: caption="Table 5. Worker node flavors for London." caption-side="bottom"}
 
 
 
@@ -236,7 +230,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 6. Worker node flavors for mil" caption-side="bottom"}
+{: caption="Table 6. Worker node flavors for Milan." caption-side="bottom"}
+
 
 
 ## `mon`
@@ -268,7 +263,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 7. Worker node flavors for mon" caption-side="bottom"}
+{: caption="Table 7. Worker node flavors for Montreal." caption-side="bottom"}
+
 
 
 ## `osa`
@@ -306,8 +302,7 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 8. Worker node flavors for osa" caption-side="bottom"}
-
+{: caption="Table 8. Worker node flavors for Osaka." caption-side="bottom"}
 
 
 
@@ -343,7 +338,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 9. Worker node flavors for par" caption-side="bottom"}
+{: caption="Table 9. Worker node flavors for Paris." caption-side="bottom"}
+
 
 
 ## `sao`
@@ -359,8 +355,7 @@ Review the classic worker node flavors by metro.
 | b3c.8x32 | 32GB | 1000Mbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | m3c.4x32 | 32GB | 1000Mbps | 4 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 10. Worker node flavors for sao" caption-side="bottom"}
-
+{: caption="Table 10. Worker node flavors for South America." caption-side="bottom"}
 
 
 
@@ -381,7 +376,8 @@ Review the classic worker node flavors by metro.
 | c3c.32x64 | 64GB | 1000Mbps | 32 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | m3c.4x32 | 32GB | 1000Mbps | 4 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 11. Worker node flavors for sjc" caption-side="bottom"}
+{: caption="Table 11. Worker node flavors for San Jose." caption-side="bottom"}
+
 
 
 ## `sng`
@@ -397,7 +393,8 @@ Review the classic worker node flavors by metro.
 | c3c.16x32 | 32GB | 1000Mbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | m3c.4x32 | 32GB | 1000Mbps | 4 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 12. Worker node flavors for sng" caption-side="bottom"}
+{: caption="Table 12. Worker node flavors for Singapore." caption-side="bottom"}
+
 
 
 ## `syd`
@@ -432,7 +429,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 13. Worker node flavors for syd" caption-side="bottom"}
+{: caption="Table 13. Worker node flavors for Sydney." caption-side="bottom"}
+
 
 
 ## `tok`
@@ -467,7 +465,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 14. Worker node flavors for tok" caption-side="bottom"}
+{: caption="Table 14. Worker node flavors for Tokyo." caption-side="bottom"}
+
 
 
 ## `tor`
@@ -502,7 +501,8 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 15. Worker node flavors for tor" caption-side="bottom"}
+{: caption="Table 15. Worker node flavors for Toronto." caption-side="bottom"}
+
 
 
 ## `wdc`
@@ -537,7 +537,9 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 384GB | 10000Mbps | 32 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 384GB | 10000Mbps | 48 | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 4GB | 1000Mbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 16. Worker node flavors for wdc" caption-side="bottom"}
+{: caption="Table 16. Worker node flavors for Washington DC." caption-side="bottom"}
+
+
 
 
 
