@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-04-14"
 
 keywords: openshift
 
@@ -240,8 +240,6 @@ Follow the steps to review your infrastructure credentials and determine why you
 ## Unable to create or delete worker nodes due to endpoints error
 {: #vpe-ts}
 
-**Infrastructure provider**: VPC {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later
-
 
 You can't manage worker nodes for your cluster, and you receive an error message similar to one of the following.
 {: tsSymptoms}
@@ -257,7 +255,7 @@ Pending endpoint gateway creation
 {: screen}
 
 
-In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, worker nodes can communicate with the Kubernetes master through the cluster's virtual private endpoint (VPE).
+Worker nodes can communicate with the Kubernetes master through the cluster's virtual private endpoint (VPE).
 {: tsCauses}
 
 One VPE gateway resource is created per cluster in your VPC. If the VPE gateway for your cluster is not correctly created in your VPC, the VPE gateway is deleted from your VPC, or the IP address that is reserved for the VPE is deleted from your VPC subnet, worker nodes lose connectivity with the Kubernetes master.

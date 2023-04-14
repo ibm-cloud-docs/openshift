@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-14"
 
 keywords: openshift
 
@@ -1422,7 +1422,7 @@ For questions about billing and to find the steps for how to use the {{site.data
     Conditions:
     Type                      Status  LastProbeTime                     LastTransitionTime                Reason  Message
     ----                      ------  -----------------                 ------------------                ------  -------
-    FileSystemResizePending   True    Mon, 01 Jan 0001 00:00:00 +0000   Thu, 25 Apr 2019 15:52:49 -0400           Waiting for user to (re-)start a pod to finish file system resize of volume on node.
+    FileSystemResizePending   True    Mon, 01 Jan 0001 00:00:00 +0000   Thu, 25 Apr 2022 15:52:49 -0400           Waiting for user to (re-)start a pod to finish file system resize of volume on node.
     ```
     {: screen}
 

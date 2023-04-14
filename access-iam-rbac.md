@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-14"
 
 keywords: openshift
 
@@ -312,7 +312,7 @@ If you want users to be able to interact with Kubernetes resources from within a
 
 To learn more about the actions permitted by each RBAC role, check out the [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles) reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_ref).
 
-All users of a {{site.data.keyword.redhat_openshift_notm}} cluster are added to the following {{site.data.keyword.redhat_openshift_notm}} RBAC groups by cluster version. Version 4 clusters: `basic-users`.
+All users of a {{site.data.keyword.redhat_openshift_notm}} cluster are added to the `basic-users` RBAC group.
 {: note}
 
 ### Can I create custom roles or cluster roles?

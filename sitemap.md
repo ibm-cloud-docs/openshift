@@ -8089,8 +8089,6 @@ subcollection: openshift
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_311#release_timeline_311)
 
-    * [Why is the deprecated version 3.11 supported longer than more recent versions like 4.6?](/docs/openshift?topic=openshift-cs_versions_311#311_deprecated)
-
 [Version 3.11 change log](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_311)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_311#openshift_changelog_overview_311)

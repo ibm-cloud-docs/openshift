@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-04-14"
 
 keywords: rhel, os, operating system
 
@@ -38,7 +38,7 @@ Version 4.9 clusters
 :   If you want to upgrade a 4.9 cluster to 4.10, make sure to migrate your worker nodes from RHEL 7 to RHEL 8 before you upgrade.
 :   For more information about updating to 4.9, see the [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49).
 
-Version 4.6, 4.7 and 4.8 clusters
+Version 4.8 clusters
 :   RHEL 7 is supported until end of support for these cluster versions. For more information about cluster version support, see the [Version information](/docs/openshift?topic=openshift-openshift_versions).
 :   If you want to upgrade a version 4.8 cluster to 4.9, make sure to migrate your worker nodes to RHEL 8 after you upgrade.
 

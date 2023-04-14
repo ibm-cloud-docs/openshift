@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-04-14"
 
 keywords: openshift
 
@@ -52,9 +52,6 @@ Requests can't be routed to your app in the following situations:
 
 Verify that no VPC security groups are blocking traffic to your cluster and that the VPC load balancer is available.
 {: tsResolve}
-
-
-1. {{site.data.keyword.redhat_openshift_notm}} version 4.4 or earlier only: [Allow traffic requests that are routed by the VPC load balancer to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
 
 2. Verify that the VPC load balancer for the Kubernetes `LoadBalancer` service exists. In the output, look for the VPC load balancer that is formatted `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. You can get the Kubernetes `LoadBalancer` service UID by running `oc get svc <service_name> -o yaml`.
     ```sh

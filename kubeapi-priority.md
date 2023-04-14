@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-04-14"
 
 keywords: openshift
 
@@ -23,9 +23,6 @@ Your {{site.data.keyword.openshiftlong}} clusters have default settings in place
 {: shortdesc}
 
 For example, you might have a user or namespace that runs your critical apps in prod. You can create a flow schema and priority so that your critical apps have a higher priority for the API server to fulfill their requests than other apps in the cluster.
-
-The Kubernetes API priority and feature gate is enabled in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later.
-{: note}
 
 ## Reviewing default flow schema and priority levels
 {: #kubeapi-default-priority}
