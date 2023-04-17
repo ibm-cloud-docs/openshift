@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-17"
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
 
@@ -42,7 +42,7 @@ The [{{site.data.keyword.redhat_openshift_notm}} Ingress operator](https://docs.
 
 Ingress controllers are managed by the Ingress operator. During cluster creation, the default Ingress controller is registered with the default Ingress subdomain for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. When you register your app with this subdomain by creating an Route resource, the Ingress controller ensures that requests to your app through this subdomain are properly proxied to your app pods. To see the default Ingress controller in your cluster, run `oc describe ingresscontroller/default -n openshift-ingress-operator`.
 
-If you want to register your app with a different domain, you can [create a custom Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-2) that implements routing rules for a custom domain instead.
+If you want to register your app with a different domain, you can [create a custom Ingress controller](/docs/openshift?topic=openshift-ingress-about-roks4&interface=ui#ingress-controller) that implements routing rules for a custom domain instead.
 
 ### Ingress controller
 {: #ingress-controller}
@@ -199,7 +199,7 @@ To load balance incoming HTTPS connections to your subdomain, you can configure 
 
 When you configure the public Ingress controller, you choose the domain that your apps are accessible through. If you use the IBM-provided domain, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`, you can use the default TLS certificate that is created for the Ingress subdomain. If you set up a CNAME record to map a custom domain to the IBM-provided domain, you can provide your own TLS certificate for your custom domain.
 
-For more information about TLS certificates, see [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-roks4#manage_certs).
+For more information about TLS certificates, see [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-secrets&interface=ui).
 
 
 

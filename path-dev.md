@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-04-17"
 
 keywords: openshift, red hat, red hat openshift, dev
 
@@ -143,7 +143,7 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
             2. [Register a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname) for the NLB.
         - VPC clusters: Set up a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas).
 
-    - Ingress: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public) or the [private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private).
+    - Ingress: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-public-expose&interface=ui) or the [private network](/docs/openshift?topic=openshift-ingress-private-expose&interface=ui).
 
     - Routes: [Create a route to expose your app on a subdomain.](/docs/openshift?topic=openshift-openshift_routes)
 

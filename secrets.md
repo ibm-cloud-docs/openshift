@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-04-17"
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
 
@@ -56,7 +56,7 @@ The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_
 
 Follow the steps to use the default TLS certificate for the IBM-provided Ingress subdomain.
 
-1. Get the name of the secret where your default TLS certificate is stored. Note that this is the secret name you specify in the `spec.tls` section of your [Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3).
+1. Get the name of the secret where your default TLS certificate is stored. Note that this is the secret name you specify in the `spec.tls` section of your Ingress resource.
 
     ```sh
     ibmcloud oc cluster get -c <cluster> | grep Ingress
