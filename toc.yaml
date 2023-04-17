@@ -238,7 +238,7 @@ toc:
               - storage-cos-apps.md
               - storage-cos-tutorial-quota.md
               - storage-cos-vpc-ip.md
-              - storage-cos-reference.md
+              - storage-cos-reference.md 
           - storage-portworx.md
           - topicgroup:
               label: Setting up OpenShift Data Foundation
