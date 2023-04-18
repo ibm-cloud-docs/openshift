@@ -214,10 +214,13 @@ toc:
               - openshift_ingress_qs_roks4.md
               - openshift_ingress_about_roks4.md
               - openshift_ingress_roks4.md
+              - openshift_ingress_public.md
+              - openshift_ingress_private.md
               - ingress-domains.md
               - secrets.md
               - secrets-mgr.md
               - certs-mgr-migration.md
+
           - satellite_expose_apps.md
       - topicgroup:
           label: Setting up storage
@@ -235,7 +238,7 @@ toc:
               - storage-cos-apps.md
               - storage-cos-tutorial-quota.md
               - storage-cos-vpc-ip.md
-              - storage-cos-reference.md
+              - storage-cos-reference.md 
           - storage-portworx.md
           - topicgroup:
               label: Setting up OpenShift Data Foundation

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-18"
 
 keywords: openshift
 subcollection: openshift
@@ -4655,9 +4655,7 @@ subcollection: openshift
 
 * [How can I enable TLS certificates?](/docs/openshift?topic=openshift-ingress-about-roks4#certs)
 
-[Setting up Ingress](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4)
-
-* [Prerequisites](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-prereqs)
+[Planning your Ingress setup](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4)
 
 * [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects)
 
@@ -4667,55 +4665,61 @@ subcollection: openshift
 
     * [Multiple domains within a project](/docs/openshift?topic=openshift-ingress-roks4#multi-domains-project)
 
-* [Publicly exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public)
-
-    * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-1)
-
-    * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-2)
-
-    * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3)
-
-    * [Step 4: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-4)
-
-* [Publicly exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller)
-
-    * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-1)
-
-    * [Step 2: Register a subdomain and TLS certificate](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-2)
-
-    * [Step 3: Create and configure a public Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-3)
-
-    * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-4)
-
-    * [Step 5: Access your app from the internet](/docs/openshift?topic=openshift-ingress-roks4#priv-se-pub-controller-5)
-
-* [Publicly exposing apps that are outside your cluster](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-external)
-
-* [Privately exposing apps in classic clusters or in VPC clusters with a public cloud service endpoint](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private)
-
-    * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-1)
-
-    * [Step 2: Register a subdomain and TLS certificate](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-2)
-
-    * [Step 3: Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-3)
-
-    * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-4)
-
-    * [Step 5: Access your app from your private network](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private-5)
-
-* [Privately exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller)
-
-    * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-1)
-
-    * [Step 2: Select an app domain and TLS termination](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-2)
-
-    * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-3)
-
-    * [Step 4: Access your app](/docs/openshift?topic=openshift-ingress-roks4#priv-se-priv-controller-4)
-
-* [Managing TLS certificates and secrets](/docs/openshift?topic=openshift-ingress-roks4#manage_certs)
-
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
+
+[Publicly exposing apps with Ingress](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-expose)
+
+* [Prerequisites](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-prereqs)
+
+* [Publicly exposing apps in clusters with a public cloud service endpoint](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-se)
+
+    * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-se-1)
+
+    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-public-expose#managed-ingress-steps-tls)
+
+    * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-se-3)
+
+    * [Step 4: Access your app from the internet](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-se-4)
+
+* [Publicly exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-expose-vpc-private-se)
+
+    * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-vpc-1)
+
+    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-public-expose#managed-ingress-steps-tls)
+
+    * [Step 3: Create and configure a public Ingress controller](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-vpc-3)
+
+    * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-vpc-4)
+
+    * [Step 5: Access your app from the internet](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-vpc-5)
+
+* [Publicly exposing apps that are outside your cluster](/docs/openshift?topic=openshift-ingress-public-expose#ingress-roks4-external)
+
+[Privately exposing apps with Ingress](/docs/openshift?topic=openshift-ingress-private-expose#ingress-private-expose)
+
+* [Prerequisites](/docs/openshift?topic=openshift-ingress-private-expose#ingress-private-prereqs)
+
+* [Privately exposing apps with a public cloud service endpoint](/docs/openshift?topic=openshift-ingress-private-expose#ingress-private-se)
+
+    * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-private-expose#ingress-private-se-1)
+
+    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-private-expose#ingress-private-tls)
+
+    * [Step 3: Create and configure a private Ingress controller](/docs/openshift?topic=openshift-ingress-private-expose#ingress-private-se-3)
+
+    * [Step 4: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-private-expose#ingress-private-se-4)
+
+    * [Step 5: Access your app from your private network](/docs/openshift?topic=openshift-ingress-private-expose#ingress-private-se-5)
+
+* [Privately exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller)
+
+    * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller-1)
+
+    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-private-expose#managed-ingress-steps-tls)
+
+    * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller-3)
+
+    * [Step 4: Access your app](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller-4)
 
 [Creating your own Ingress domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains)
 

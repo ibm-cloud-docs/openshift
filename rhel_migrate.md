@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-17"
 
 keywords: rhel, os, operating system
 
@@ -21,6 +21,9 @@ subcollection: openshift
 
 With the release of RHEL 8, the use of RHEL 7 worker nodes is deprecated in clusters that run version 4.10 and is not supported in clusters that run 4.11 or greater. You cannot upgrade RHEL 7 worker nodes to RHEL 8. Instead, you must provision a new worker pool and then delete the previous worker pool. In versions 4.10 and later, worker nodes in the new worker pool run RHEL 8 by default. 
 {: shortdesc}
+
+To find your worker node operating system, run the **`ibmcloud oc worker-pools -c CLUSTER`** command.
+{: tip}
 
 ## Migration actions by cluster version
 {: #rhel_migrate_versions}

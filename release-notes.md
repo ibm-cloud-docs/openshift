@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-17"
 
 keywords: openshift
 
@@ -4193,7 +4193,7 @@ Gateway appliance firewalls
 
 
 New! Private Ingress and routes
-:   In version 4.3 clusters, you can now create [private Ingress controllers](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-private) and [private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43) to expose your apps on the private network only.
+:   In version 4.3 clusters, you can now create [private Ingress controllers](/docs/openshift?topic=openshift-ingress-private-expose&interface=ui) and [private routes](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43) to expose your apps on the private network only.
 
 
 
@@ -4297,7 +4297,7 @@ Sizing workloads
 
 
 Enabling TLS for Ingress, {{site.data.keyword.redhat_openshift_notm}} version 4.3 only
-:   If you use a custom domain and want to enable TLS for Ingress, you must [add a TLS section to each Ingress resource](/docs/openshift?topic=openshift-ingress-roks4#ingress-roks4-public-3) instead of specifying the certificate in the configuration file for the custom Ingress controller.
+:   If you use a custom domain and want to enable TLS for Ingress, you must [add a TLS section to each Ingress resource](/docs/openshift?topic=openshift-secrets&interface=ui) instead of specifying the certificate in the configuration file for the custom Ingress controller.
 
 
 
