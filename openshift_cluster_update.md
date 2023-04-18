@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: openshift, version, upgrade, update
 
@@ -58,7 +58,7 @@ Can I roll back the update?
 What process can I follow to update the master?
 :   The following diagram shows the process that you can take to update your master.
 
-![Master update process diagram](/images/updating-master.svg){: caption="Figure 1. Updating Kubernetes master process diagram" caption-side="bottom"}
+![Master update process diagram](/images/updating-master2.svg){: caption="Figure 1. Updating Kubernetes master process diagram" caption-side="bottom"}
 {: #update_master}
 
 ### Steps to update the cluster master
