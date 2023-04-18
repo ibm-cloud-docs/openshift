@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-18"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -220,8 +220,8 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
       type: LoadBalancer
       ports:
       - protocol: TCP
-        port: 8080
-        targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
+        port: <private_service_endpoint_port>
+        targetPort: <private_service_endpoint_port>
     ---
     kind: Endpoints
     apiVersion: v1
