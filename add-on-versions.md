@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-04-07"
+lastupdated: "2023-04-18"
 
 keywords: openshift add-ons, cluster addon
 
@@ -35,8 +35,8 @@ Review the following list of supported cluster add-ons.
 | openshift-data-foundation | 4.11.0  |  N/A  | >=4.11.0 <4.13.0 |
 | openshift-data-foundation | 4.12.0  |  N/A  | >=4.12.0 <4.13.0 |
 | static-route | 1.0.0 (Default) | >=1.19.0 <1.27.0 | >=4.5.0 <4.13.0 |
-| vpc-block-csi-driver | 5.0 (Default) | >=1.22.0 <1.27.0 | >=4.8.0 <4.13.0 |
-| vpc-block-csi-driver | 5.1  | >=1.22.0 <1.27.0 | >=4.9.0 <4.13.0 |
+| vpc-block-csi-driver | 5.0 (Default) | >=1.22.0 <1.28.0 | >=4.8.0 <4.13.0 |
+| vpc-block-csi-driver | 5.1  | >=1.22.0 <1.28.0 | >=4.9.0 <4.13.0 |
 {: caption="Table 1. Supported add-on versions" caption-side="bottom"}
 
 
