@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-04-20"
 
 keywords: openshift
 subcollection: openshift
@@ -6269,7 +6269,7 @@ subcollection: openshift
 
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
-[Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison)
+[Comparing the CIS Kubernetes and the Compliance Operator benchmarks](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison)
 
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 

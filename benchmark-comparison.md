@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-04-20"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Comparing the CIS Kubernetes and the compliance operator benchmarks
+# Comparing the CIS Kubernetes and the Compliance Operator benchmarks
 {: #benchmark-comparison}
 
 Review the following tables for an overview of the differences between the CIS Kubernetes and the compliance operator benchmarks.
@@ -26,7 +26,7 @@ Review the following tables for an overview of the differences between the CIS K
 ## Major differences
 {: #benchmark-comparison-major}
 
-| Section | CIS Kubernetes Benchmark| Compliance Operator Benchmark| Description |
+| Section | CIS Kubernetes benchmark | Compliance Operator benchmark | Description |
 | ---| --- | --- | --- |
 | 1.2.1 | Ensure that the `--anonymous-auth` option is set to `false`. | Ensure that anonymous requests are authorized. | Different approaches to achieve the same purpose. |
 | 1.2.10 | Ensure that the admission control plug-in `EventRateLimit` is set. | Ensure that the `APIPriorityAndFairness` feature gate is enabled. | Different approaches to achieve the same purpose.|
@@ -48,7 +48,7 @@ Review the following tables for an overview of the differences between the CIS K
 ## Minor differences
 {: #benchmark-comparison-minor}
 
-| Section | CIS Kubernetes Benchmark| CIS Kubernetes Benchmark| Description |
+| Section | CIS Kubernetes benchmark| Compliance Operator benchmark | Description |
 | ---| --- | --- | --- |
 | 1.1.19 | Ensure that the Kubernetes PKI directory and file ownership is set to `root:root`. | Ensure that the {{site.data.keyword.redhat_openshift_notm}} PKI directory and file ownership is set to `root:root`. | Kubernetes > {{site.data.keyword.redhat_openshift_notm}} |
 | 1.1.20 | Ensure that the Kubernetes PKI certificate file permissions are set to `644` or more restrictive. | Ensure that the {{site.data.keyword.redhat_openshift_notm}} PKI certificate file permissions are set to 644 or more restrictive | Kubernetes > {{site.data.keyword.redhat_openshift_notm}} |
