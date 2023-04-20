@@ -8816,6 +8816,8 @@ subcollection: openshift
 
 * [What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
 
+* [Can I downgrade my cluster to a previous version?](/docs/openshift?topic=openshift-faqs#downgrade)
+
 
 ## Troubleshooting
 {: #sitemap_troubleshooting}

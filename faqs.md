@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-04-20"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -244,4 +244,9 @@ See the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pag
 
 See [Managing costs for your clusters](/docs/openshift?topic=openshift-costs).
 
+## Can I downgrade my cluster to a previous version?
+{: #downgrade}
+{: faq}
+
+No, you cannot downgrade your cluster to a previous version.
 
