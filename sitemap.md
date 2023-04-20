@@ -4675,7 +4675,7 @@ subcollection: openshift
 
     * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-se-1)
 
-    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-public-expose#managed-ingress-steps-tls)
+    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-public-expose#managed-ingress-steps-tls-public)
 
     * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-se-3)
 
@@ -4715,7 +4715,7 @@ subcollection: openshift
 
     * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller-1)
 
-    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-private-expose#managed-ingress-steps-tls)
+    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-private-expose#managed-ingress-steps-tls-private)
 
     * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller-3)
 
@@ -9332,8 +9332,6 @@ subcollection: openshift
 [Why does the Ingress status show an ESSWS error?](/docs/openshift?topic=openshift-ts-ingress-essws#ts-ingress-essws)
 
 [Why does the Ingress status show an ESSDNE error?](/docs/openshift?topic=openshift-ts-ingress-essdne#ts-ingress-essdne)
-
-[Why does the Ingress status show an `ERRDSAISS` error?](/docs/openshift?topic=openshift-ts-ingress-errdsaiss#ts-ingress-errdsaiss)
 
 
 ### File Storage

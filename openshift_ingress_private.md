@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-04-20"
 
 keywords: ingress, expose apps, privately expose, private ingress, ingress vpc
 
@@ -284,7 +284,7 @@ oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <n
 
 
 ### Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets
-{: #managed-ingress-steps-tls}
+{: #managed-ingress-steps-tls-private}
 
 Your TLS certificate must be stored as a Kubernetes secret in each namespace where your apps exist.
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-04-20"
 
 keywords: openshift, clusters
 
@@ -125,7 +125,7 @@ The {{site.data.keyword.bpshort}} template helps with the initial creation. Afte
 
 To access your cluster, you must [set up a VPN connection](/docs/openshift?topic=openshift-cluster-access-wireguard). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
 
-To fully [remove](/docs/containers?topic=containers-remove) your cluster and the resources created by the secure cluster template, make sure to [destroy your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-workspace-setup#del-workspace). Removing the cluster and not removing the workspace in {{site.data.keyword.bpshort}} doesn't remove all the resources this template deploys.
+To fully [remove](/docs/containers?topic=containers-remove) your cluster and the resources created by the secure cluster template, make sure to [destroy your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-sch-delete-wks&interface=ui). Removing the cluster and not removing the workspace in {{site.data.keyword.bpshort}} doesn't remove all the resources this template deploys.
 
 
 Note that by default, a public gateway is not attached to a secure cluster. If your application requires public internet access, you must add a public gateway to the VPC subnets of your secure cluster. For more information, see [public gateways](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw).
