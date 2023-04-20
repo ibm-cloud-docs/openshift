@@ -5288,7 +5288,9 @@ subcollection: openshift
 
 [Managing your OpenShift Data Foundation deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
-* [Updating the add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update)
+* [Updating the add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update-console)
+
+* [Updating the add-on from the CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update-cli)
 
 * [Updating worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-update-worker)
 

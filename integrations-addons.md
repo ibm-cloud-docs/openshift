@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-04-20"
 
 keywords: kubernetes, openshift
 
@@ -58,7 +58,7 @@ Review the following links for specific update steps for each add-on.
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
-- [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment&interface=ui#odf-addon-update)
+- [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment)
    
 
 
