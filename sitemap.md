@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-04-20"
 
 keywords: openshift
 subcollection: openshift
@@ -4675,7 +4675,7 @@ subcollection: openshift
 
     * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-se-1)
 
-    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-public-expose#managed-ingress-steps-tls)
+    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-public-expose#managed-ingress-steps-tls-public)
 
     * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-se-3)
 
@@ -4715,7 +4715,7 @@ subcollection: openshift
 
     * [Step 1: Deploy apps and create app services](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller-1)
 
-    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-private-expose#managed-ingress-steps-tls)
+    * [Step 2: Set up TLS termination with TLS certificates and Kubernetes secrets](/docs/openshift?topic=openshift-ingress-private-expose#managed-ingress-steps-tls-private)
 
     * [Step 3: Create the Ingress resource](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller-3)
 
@@ -5288,7 +5288,9 @@ subcollection: openshift
 
 [Managing your OpenShift Data Foundation deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
-* [Updating the add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update)
+* [Updating the add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update-console)
+
+* [Updating the add-on from the CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-update-cli)
 
 * [Updating worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-update-worker)
 
@@ -6269,7 +6271,7 @@ subcollection: openshift
 
 * [Running the worker node CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-worker-test)
 
-[Comparing the CIS Kubernetes and the compliance operator benchmarks](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison)
+[Comparing the CIS Kubernetes and the Compliance Operator benchmarks](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison)
 
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
@@ -8816,6 +8818,8 @@ subcollection: openshift
 
 * [What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
 
+* [Can I downgrade my cluster to a previous version?](/docs/openshift?topic=openshift-faqs#downgrade)
+
 
 ## Troubleshooting
 {: #sitemap_troubleshooting}
@@ -9328,8 +9332,6 @@ subcollection: openshift
 [Why does the Ingress status show an ESSWS error?](/docs/openshift?topic=openshift-ts-ingress-essws#ts-ingress-essws)
 
 [Why does the Ingress status show an ESSDNE error?](/docs/openshift?topic=openshift-ts-ingress-essdne#ts-ingress-essdne)
-
-[Why does the Ingress status show an `ERRDSAISS` error?](/docs/openshift?topic=openshift-ts-ingress-errdsaiss#ts-ingress-errdsaiss)
 
 
 ### File Storage

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-19"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -164,6 +164,8 @@ If you took a break from the last lesson and started a new command line, make su
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```
     {: pre}
+    
+    A warning message might be displayed in the output, but it does not affect this example.
 
 3. Verify that the sample Hello World app components are created.
     1. List the **hello-world** services and note the service name. Your app listens for traffic on these internal cluster IP addresses unless you create a route for the service so that the Ingress controller can forward external traffic requests to the app.
@@ -214,7 +216,7 @@ If you took a break from the last lesson and started a new command line, make su
         ```
         {: screen}
 
-5. Access your app. Be sure to append `https://` to your route hostname.
+5. Access your app. Be sure to append `https://` to your route hostname. It might take a minute before the exposed service is visible. If the app cannot be accessed immediately, wait a minute and try the curl command again.
     ```sh
     curl https://hello-world-hello-world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud
     ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-04"
+lastupdated: "2023-04-19"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -68,6 +68,7 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 If you create a classic cluster in a multizone region, the replicas of your highly available Kubernetes master are automatically spread across the data centers (zones). You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
 {: shortdesc}
 
+
 | Geography |  Country  | Metro | Data center |  Previous region  |
 |-----|-----|-----|-----|-----|
 | Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
@@ -81,6 +82,7 @@ If you create a classic cluster in a multizone region, the replicas of your high
 
 
 
+
 ### Classic single zone regions
 {: #zones-sz}
 
@@ -88,7 +90,6 @@ If you create a classic cluster in a single zone region, you can create multiple
 {: shortdesc}
 
 Classic single zone clusters are managed from the regional endpoint located in the nearest region that supports classic multizone, such as `mon01` to `us-east` or `sao01` to `us-south`.
-
 
 | Geography |  Country  | Metro | Data center |  Managed from region  |
 |-----|-----|-----|-----|-----|
@@ -104,12 +105,12 @@ Classic single zone clusters are managed from the regional endpoint located in t
 {: caption="Available single zone data center locations for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
 
 
-
 ### VPC multizone regions
 {: #zones-vpc}
 
 VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
 {: shortdesc}
+
 
 | Geography |  Country  | Metro | Region | Zone | Location |
 |---|---|---|---|---| --- |
@@ -123,6 +124,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | North America | United States | Washington DC | us-east | us-east-1  \n us-east-2  \n us-east-3 | Washington DC 1  \n Washington DC 2  \n Washington DC 3|
 | South America | Brazil | `†` São Paulo | br-sao | br-sao-1  \n br-sao-2  \n br-sao-3 | São Paulo 1  \n São Paulo 2  \n São Paulo 3|
 {: caption="Available multizone metro locations for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
+  
 
 `†` **Toronto and São Paulo multizone regions**: Toronto and São Paulo are available as multizone regions for clusters on VPC infrastructure only.
 

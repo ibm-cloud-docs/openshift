@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-07"
+lastupdated: "2023-04-20"
 
 keywords: openshift
 
@@ -282,9 +282,9 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN
 ### Updating a domain's IP addresses or hostname
 {: #ingress-domains-manage-update}
 
-You can update a domain's registered IP addresses (for classic clusters) or hostname (for VPC clusters) after the domain is created or added to the cluster. This command also updates the 
+You can update a domain's registered IP addresses (for classic clusters) or hostname (for VPC clusters) after the domain is created or added to the cluster. This command updates all the resources in your cluster with the specified IP addresses or hostnames and changes your app URLs. 
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-update).
+For more information and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-update).
 
 Note that when you add IP addresses or hostnames, you must include any IPs or hostnames that are currently registered to the domain. The domain updates with the exact values specified, so any current IP addresses or hostnames are overwritten if they are not included. For example, if `52.137.182.166` is currently registered to your domain and you want to add `52.137.182.270`, you must specify `--ip 52.137.182.166, 52.137.182.270` in the command.
 {: important}

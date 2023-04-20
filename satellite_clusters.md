@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-20"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -432,7 +432,7 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 Review the table for information on charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}. For information about Location pricing, see [{{site.data.keyword.satelliteshort}} pricing](/docs/satellite?topic=satellite-sat-pricing).
 {: shortdesc}
 
-Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/cloud/satellite/pricing){: external}
+Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/cloud/satellite/overview){: external}
 {: tip}
 
 | Type of charge | Clusters created after 15 November 2022 | Clusters created before 15 November 2022 | What the charge covers |

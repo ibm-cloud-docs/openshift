@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-19"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -80,18 +80,24 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
     * **Virtual - dedicated**: Your worker nodes are hosted on infrastructure that is devoted to your account. Your physical resources are completely isolated. Virtual machines are billed hourly.
 1. **Optional**: If the flavor that you want to use has a configurable secondary disk, you can modify the secondary disk by clicking the **Edit** icon ![Edit icon](../icons/edit-tagging.svg "Edit"). Select the storage disks that you want to add to your worker nodes and then click **Apply**. To view a list of VPC worker node flavors and their storage options, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
 1. Set how many worker nodes to create per zone, such as **3**. You must set at least 2 worker nodes. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
-
+1. Enable [boot volume encryption](/docs/containers?topic=containers-encryption#worker-encryption-vpc). From the drop down menus, select a key management service (KMS) instance and root key to encrypt the local disk for each worker node in the `default` worker pool. If you choose not to enable this option when you create your cluster, you can enable it later.
 
 1. Configure your cluster with a private or a public and a private cloud service endpoint by setting the **Master service endpoint**. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master).
+
+1. Configure [Secrets Manager](/docs/containers?topic=containers-secrets-mgr&interface=ui) for your cluster's Ingress instance. From the **Secrets Manager instance** drop down menu, choose an existing instance that you want to register to the cluster. If no instances are available, [create one](/docs/containers?topic=containers-secrets-mgr). If you want to apply a secret group, choose one from the **Secrets Manager group** drop down menu. If you choose not to enable this option when creating your cluster, you can enable it later. 
+
 
 1. If you don't have the required infrastructure permissions to create a cluster, the **Infrastructure permissions checker** lists the missing permissions. Ask your account owner to [set up the API key](/docs/openshift?topic=openshift-access-creds) with the required permissions.
 1. Complete the **Resource details** to customize the unique cluster name and any [tags](/docs/account?topic=account-tag) that you want to use to organize your {{site.data.keyword.cloud_notm}} resources, such as the team or billing department.
 1. Enable any integrations that you want to include on your cluster.
+
+    Some of the following integrations are automatically enabled if you have an existing platform instance of that integration. In this case, you cannot disable the integration. If you want to use an integration and you have only an existing application instance of that integration, the integration is disabled by default and you must manually enable it. 
+    {: note}
+
     - [Activity tracking]{: tag-green} Enable the [activity tracking](/docs/activity-tracker?topic=activity-tracker-getting-started) option. From the drop down menu under **Instance**, choose an existing instance or **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created. If you disable this integration and want to enable it later, see [Getting started with Activity Tracker](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step2).
     - [Logging]{: tag-dark-teal} Enable the [logging](/docs/log-analysis?topic=log-analysis-getting-started) option. From the drop down **Platform instance** menu, choose a platform instance. From the drop down **Application instance**, choose an existing application instance or choose **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created. If you disable this integration and want to enable it later, see [Logging for clusters](/docs/openshift?topic=openshift-health&interface=ui).
     - [Monitoring]{: tag-magenta} Enable the [monitoring](/docs/monitoring?topic=monitoring-getting-started) option. From the drop down **Platform instance** menu, choose a platform instance. From the drop down **Application instance**, choose an existing application instance or choose **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created. If you disable this integration and want to enable it later, see [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor&interface=ui).
-    - [Boot volume encryption]{: tag-blue} Enable [boot volume encryption](/docs/containers?topic=containers-encryption#worker-encryption-vpc). From the drop down menus, select a key management service (KMS) instance and root key to encrypt the local disk for each worker node in the `default` worker pool. 
-    - [Secrets Manager]{: tag-teal} Enable [Secrets Manager](/docs/secrets-manager). From the **Secrets Manager instance** drop down menu, choose an existing instance that you want to register to the cluster. If no instances are available, [create one](/docs/containers?topic=containers-secrets-mgr). If you want to apply a secret group, choose one from the **Secrets Manager group** drop down menu. If you disable this integration and want to enable it later, see [About Secrets Manager](/docs/openshift?topic=openshift-secrets-mgr&interface=ui#secrets-mgr_setup).
+ 
 
 
 1. In the **Summary** pane, review the order summary and then click **Create**. A worker pool is created with the number of workers that you specified. You can see the progress of the worker node deployment in the **Worker nodes** tab.
