@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-21"
 
 keywords: portworx, openshift
 
@@ -63,9 +63,6 @@ You can install Portworx on non-SDS worker node flavors, but you might not get t
 
 For classic clusters, virtual machines have only 1000 Mbps of networking speed, which is not sufficient to run production workloads with Portworx. Instead, provision Portworx on bare metal machines for the best performance.
 {: important}
-
-If your classic cluster has deprecated Ubuntu 16 x1c or x2c worker node flavors, update your cluster to have [Ubuntu 18 x3c worker nodes](/docs/containers?topic=containers-update#machine_type).
-{: tip}
 
 ### How can I make sure that my data is stored highly available?
 {: #about-px-ha}
