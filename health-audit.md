@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-04-24"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -81,7 +81,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
 2. Create a configmap from the contents of `kube-audit-forwarder` directory.
     ```sh
-    kubectl create configmap kube-audit-forwarder-cm --from-file=kube-audit-forwarder
+    kubectl create namespace ibm-kube-audit; kubectl create configmap -n ibm-kube-audit kube-audit-forwarder-cm --from-file=kube-audit-forwarder
     ```
     {: pre}
 
@@ -93,6 +93,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
       labels:
         app: kube-audit-forwarder
       name: kube-audit-forwarder
+      namespace: ibm-kube-audit
     spec:
       revisionHistoryLimit: 2
       selector:
@@ -124,6 +125,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     kind: Service
     metadata:
       name: kube-audit-forwarder
+      namespace: ibm-kube-audit
     spec:
       selector:
         app: kube-audit-forwarder
@@ -131,6 +133,35 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
         - protocol: TCP
           port: 80
           targetPort: 3000
+    ---
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: kube-audit-forwarder
+      namespace: ibm-kube-audit
+    spec:
+      podSelector:
+        matchLabels:
+          app: kube-audit-forwarder
+      policyTypes:
+      - Ingress
+      ingress:
+      - ports:
+        - protocol: TCP
+          port: 3000
+        from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+          podSelector:
+            matchLabels:
+              k8s-app: konnectivity-agent
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+          podSelector:
+            matchLabels:
+              app: vpn
     ```
     {: codeblock}
 
@@ -145,7 +176,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
 5. Verify that the `kube-audit-forwarder` deployment and service is deployed in your cluster.
     ```sh
-    kubectl get svc
+    kubectl get svc -n ibm-kube-audit
     ```
     {: pre}
 
@@ -159,7 +190,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     {: screen}
 
     ```sh
-    kubectl get deployment
+    kubectl get deployment -n ibm-kube-audit
     ```
     {: pre}
 
@@ -204,7 +235,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
 9. Configure the audit webhook and specify the `certificate-authority`, `client-certificate`, and `client-key` that you retrieved in the steps 5-7.
     ```sh
-    ibmcloud oc cluster master audit-webhook set --cluster <cluster> --remote-server https://127.0.0.1:2040/api/v1/namespaces/default/services/kube-audit-forwarder/proxy/post --ca-cert <certificate-authority> --client-cert <client-certificate> --client-key <client-key>
+    ibmcloud oc cluster master audit-webhook set --cluster <cluster> --remote-server https://127.0.0.1:2040/api/v1/namespaces/ibm-kube-audit/services/kube-audit-forwarder/proxy/post --ca-cert <certificate-authority> --client-cert <client-certificate> --client-key <client-key>
     ```
     {: pre}
 
@@ -218,7 +249,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
     ```sh
     OK
-    Server:            https://127.0.0.1:2040/api/v1/namespaces/default/services/kube-audit-forwarder/proxy/post
+    Server:            https://127.0.0.1:2040/api/v1/namespaces/ibm-kube-audit/services/kube-audit-forwarder/proxy/post
     Policy:            default
     ```
     {: screen}

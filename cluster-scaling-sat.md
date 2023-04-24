@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-04-21"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -94,7 +94,7 @@ How do I set up autoscaling in my {{site.data.keyword.satelliteshort}} cluster
     type: Opaque
     stringData:
       ca_iam_api_key: "<iam_api_key>" # Enter your IAM API key
-      private_container_api_route: "API ROUTE" # Enter the Destination IP of the openshift-api Link endpoint for your Satellite loction. For example: https://i43fb00XXX-XXXX6bf59a8XXX-ce00.us-east.satellite.appdomain.cloud
+      container_api_route: "API ROUTE" # Enter the Destination IP of the openshift-api Link endpoint for your Satellite loction. For example: https://i43fb00XXX-XXXX6bf59a8XXX-ce00.us-east.satellite.appdomain.cloud
     ```
     {: codeblock}
     
