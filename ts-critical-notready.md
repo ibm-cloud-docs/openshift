@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-25"
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 
@@ -18,30 +18,21 @@ subcollection: openshift
 Cluster worker nodes go into a `Critical` or `NotReady` state when they stop communicating with the cluster master. When this occurs, your worker nodes are marked as `Critical` in the {{site.data.keyword.cloud_notm}} UI or when you run `ibmcloud oc worker` commands, and as `NotReady` in the Red Hat OpenShift dashboards and when you run `oc get nodes`. There are several reasons why communication stops between worker nodes and the cluster master. Follow these steps to troubleshoot worker nodes in these states. 
 {: shortdesc}
 
-## Before you begin
-{: #ts-critical-notready-before}
+Check the {{site.data.keyword.cloud_notm}} [health and status dashboard](/docs/containers?topic=containers-debug_worker_nodes&interface=ui#worker-debug-notifs) for any notifications or manintenance updates that might be relevant to your worker nodes. These notifications or updates might help determine the cause of the worker node failures.
+{: important}
 
-Before you begin troubleshooting your worker node issues, check for {{site.data.keyword.cloud_notm}} notifications regarding maintenance or known problems that might affect your workers. Then, check the most [common causes](#ts-critical-notready-common) of worker node issues. If this does not resolve or address your problem, continue with the troubleshooting steps. 
 
-### Worker node notifications and maintenance
-{: #ts-critical-notready-notifs}
-
-1. [Classic clusters]{: tag-classic-inf} Check the [health dashboard](https://cloud.ibm.com/gen1/infrastructure/health-dashboard){: external} for any {{site.data.keyword.cloud_notm}} emergency maintenance notifications that might affect classic worker nodes in your account. Depending on the nature of the maintenance notification, you might need to reboot or reload your worker nodes. 
-1. Check the {{site.data.keyword.cloud_notm}} [status dashboard](https://cloud.ibm.com/status){: external} for any known problems that might affect your worker nodes or cluster. If any of the following components show an error status, that component might be the cause of your worker node disruptions. 
-    - For all clusters, check the **Kubernetes Service** and **Container Registry** components.
-    - For Red Hat Openshift clusters, check the **Red Hat OpenShift on IBM Cloud** component.
-    - For VPC clusters, check the **Virtual Private Cloud**, **Virtual Private Endpoint** and **Virtual Server for VPC** components.
-    - For Classic clusters, check the **Classic Infrastructure Provisioning** and **Virtual Servers** components.
-
-### Common causes
+## Check the common causes of worker node failures
 {: #ts-critical-notready-common}
 
 There are several reasons why communication stops between worker nodes and the cluster master. Check whether the following common issues are causing the disruption.
 
 The worker was deleted, reloaded, updated, replaced, or rebooted
 :   Worker nodes might temporarily show a `Critical` or `NotReady` state when they are deleted, reloaded, updated, or replaced. If any of these actions have been initiated on your worker node, whether manually or as part of an automation setup such as cluster autoscaler, wait until the actions are complete. Then, check the status of your worker nodes again. If any workers remain in the `Critical` or `NotReady` state, [reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers. 
-:   A worker node might end up in a `Critical` or `NotReady` state if it was rebooted without first being cordoned and drained. If this is the case, [reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected worker. If the issue persists, continue with the troubleshooting steps. 
 :   If a worker node was reloaded or replaced and initially works correctly, but then after some time goes back into a `Critical` or `NotReady` state, then it is likely that some workload or component on the worker is causing the issue. See [Debugging worker nodes](/docs/containers?topic=containers-debug-kube-nodes) to isolate the problem workload.
+
+A worker node might end up in a `Critical` or `NotReady` state if it was rebooted without first being cordoned and drained. If this is the case, waiting for the reboot to complete does not resolve the issue. [Reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected worker. If the issue persists, continue with the troubleshooting steps. 
+{: note}
 
 The worker node was unintentionally powered down
 :   [Classic clusters]{: tag-classic-inf} In the [IBM Cloud console resource list](https://cloud.ibm.com/resources){: external}, worker nodes on classic infrastructure are classified as **compute resources**, or virtual machines. Sometimes a user might not realize that these resources function as cluster worker nodes, and might unintentionally power the worker nodes down. Worker nodes that are powered down might show up in the `Critical` or `NotReady` state. Ensure that the affected worker nodes are not powered down. 

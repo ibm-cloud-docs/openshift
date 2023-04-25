@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-04-25"
 
 keywords: openshift
 
@@ -28,6 +28,18 @@ content-type: troubleshoot
 Review the options to debug your worker nodes and find the root causes for failures.
 {: shortdesc}
 
+
+## Check worker node notifications and maintenance updates
+{: #worker-debug-notifs}
+
+Check the {{site.data.keyword.cloud_notm}} health and status dashboard for any notifications or manintenance updates that might be relevant to your worker nodes. These notifications or updates might help determine the cause of the worker node failures.
+
+1. [Classic clusters]{: tag-classic-inf} Check the [health dashboard](https://cloud.ibm.com/gen1/infrastructure/health-dashboard){: external} for any {{site.data.keyword.cloud_notm}} emergency maintenance notifications that might affect classic worker nodes in your account. Depending on the nature of the maintenance notification, you might need to reboot or reload your worker nodes. 
+1. Check the {{site.data.keyword.cloud_notm}} [status dashboard](https://cloud.ibm.com/status){: external} for any known problems that might affect your worker nodes or cluster. If any of the following components show an error status, that component might be the cause of your worker node disruptions. 
+    - For all clusters, check the **Kubernetes Service** and **Container Registry** components.
+    - For Red Hat Openshift clusters, check the **Red Hat OpenShift on IBM Cloud** component.
+    - For VPC clusters, check the **Virtual Private Cloud**, **Virtual Private Endpoint** and **Virtual Server for VPC** components.
+    - For Classic clusters, check the **Classic Infrastructure Provisioning** and **Virtual Servers** components.
 
 
 ## Quick steps to resolve worker node issues

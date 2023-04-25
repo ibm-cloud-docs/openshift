@@ -8985,6 +8985,8 @@ subcollection: openshift
 
 [Debugging worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes#debug_worker_nodes)
 
+* [Check worker node notifications and maintenance updates](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-notifs)
+
 * [Quick steps to resolve worker node issues](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-quick)
 
 * [Debugging your worker node](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-steps)
@@ -9053,11 +9055,7 @@ subcollection: openshift
 
 [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready)
 
-* [Before you begin](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-before)
-
-    * [Worker node notifications and maintenance](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-notifs)
-
-    * [Common causes](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-common)
+* [Check the common causes of worker node failures](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-common)
 
 * [Troubleshooting steps](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps)
 
