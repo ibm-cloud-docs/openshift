@@ -4154,11 +4154,11 @@ subcollection: openshift
 
 [Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
 
-* [Defining custom subnets when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
+* [Defining custom subnets when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-subnet)
 
-* [Defining the pod network interface when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
+* [Defining the pod network interface when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-location)
 
-* [Defining the pod network interface when creating your cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
+* [Defining the pod network interface when creating your cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-cluster)
 
 * [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-limit)
 

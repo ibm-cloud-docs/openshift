@@ -33,7 +33,7 @@ Depending on the networking customizations you want to apply, you might need to 
 
 
 ## Defining custom subnets when creating your location
-{: #sat-network-custom-pod-network}
+{: #sat-network-custom-subnet}
 
 [During location creation]{: tag-teal}
 
@@ -45,7 +45,7 @@ You can also specify the `--service-subnet` option to specify a custom subnet CI
 
 
 ## Defining the pod network interface when creating your location
-{: #sat-network-custom-pod-network}
+{: #sat-network-custom-pod-network-location}
 
 [During location creation]{: tag-teal}
 
@@ -60,7 +60,7 @@ For more information, see the [**`ibmcloud sat location create`**](/docs/satelli
 
 
 ## Defining the pod network interface when creating your cluster
-{: #sat-network-custom-pod-network}
+{: #sat-network-custom-pod-network-cluster}
 
 [During cluster creation]{: tag-dark-teal}
 

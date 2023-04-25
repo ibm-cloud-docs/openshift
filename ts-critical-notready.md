@@ -18,7 +18,7 @@ subcollection: openshift
 Cluster worker nodes go into a `Critical` or `NotReady` state when they stop communicating with the cluster master. When this occurs, your worker nodes are marked as `Critical` in the {{site.data.keyword.cloud_notm}} UI or when you run `ibmcloud oc worker` commands, and as `NotReady` in the Red Hat OpenShift dashboards and when you run `oc get nodes`. There are several reasons why communication stops between worker nodes and the cluster master. Follow these steps to troubleshoot worker nodes in these states. 
 {: shortdesc}
 
-Check the {{site.data.keyword.cloud_notm}} [health and status dashboard](/docs/containers?topic=containers-debug_worker_nodes&interface=ui#worker-debug-notifs) for any notifications or manintenance updates that might be relevant to your worker nodes. These notifications or updates might help determine the cause of the worker node failures.
+Check the {{site.data.keyword.cloud_notm}} health and status dashboard for any notifications or manintenance updates that might be relevant to your worker nodes. These notifications or updates might help determine the cause of the worker node failures.
 {: important}
 
 
