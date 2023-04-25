@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-04-25"
 
 keywords: openshift, route, network, satellite
 
@@ -15,44 +15,78 @@ subcollection: openshift
 
 
 
-# Customizing your network setup in {{site.data.keyword.satelliteshort}} Locations and clusters
+# Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters
 {: #satellite-network-customization}
 
 [{{site.data.keyword.satelliteshort}}]{: tag-satellite} [Red Hat CoreOS]{: tag-red}
 
-There are several features that you can use to customize your {{site.data.keyword.satelliteshort}} network setup to better isolate and segment the services and workloads running in your location. Review the following sections for more information. These customizations are available only for Red Hat CoreOS-enabled locations.
+There are several features that you can use to customize your {{site.data.keyword.satelliteshort}} network setup to better isolate and segment the services and workloads running in your location. Review the following sections for more information. 
 
-Depending on the networking customizations you want to apply, you might need to specify certain options in the CLI when creating your Location, when creating your cluster, or after you have set up your Location and cluster. The following tags indicate when to apply the customizations.
+These customizations are available only for Red Hat CoreOS-enabled locations.
+{: important}
 
-- [During Location creation]{: tag-teal}: These customizations must be applied from the CLI during Location creation.
-- [After Location and cluster creation]{: tag-dark-teal}: These customizations can be applied after creating your Location and clusters.
+Depending on the networking customizations you want to apply, you might need to specify certain options in the CLI when creating your location, when creating your cluster, or after you have set up your location and cluster. The following tags indicate when to apply the customizations.
+
+- [During location creation]{: tag-teal}: These customizations must be applied from the CLI during location creation.
+- [During cluster creation]{: tag-dark-teal}: These customizations can be applied from the CLI during cluster creation.
+- [After location and cluster creation]{: tag-green}: These customizations can be applied after creating your location and clusters.
 
 
-## Defining custom network interfaces when creating your Location
+## Defining custom subnets when creating your location
 {: #sat-network-custom-pod-network}
 
-[During Location creation]{: tag-teal}
+[During location creation]{: tag-teal}
 
-When you create your Location in the CLI, you can define the following parameters to customize networking in your Location. For more information, see the [**`ibmcloud sat location create`**](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command reference.
+When you create your location in the CLI, you can define the following parameters to customize networking in your location. For more information, see the [**`ibmcloud sat location create`**](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command reference.
 
 You can specify the `--pod-subnet` option to specify a custom subnet CIDR to provide private IP addresses for pods. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. The subnet must be at least `/23` or larger. The default value is `172.16.0.0/16`.
 
 You can also specify the `--service-subnet` option to specify a custom subnet CIDR to provide private IP addresses for services. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. The subnet must be at least `/24` or larger. The default value is `172.20.0.0/16`.
 
+
+## Defining the pod network interface when creating your location
+{: #sat-network-custom-pod-network}
+
+[During location creation]{: tag-teal}
+
+When you create your location in the CLI, you can define the `--pod-network-interface` to set the pod network interface. The available methods are `can-reach` and `interface`.
+
+- To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. If the network interface can reach the provided URL or IP address, this option is used. For example, use `can-reach=www.exampleurl.com` for specifying a URL and `can-reach=172.19.0.0` for specifying an IP address.
+- To choose an interface with a Regex string, specify `interface=<regex_string>`; for example, `interface=eth.*`.
+
+
+For more information, see the [**`ibmcloud sat location create`**](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command reference.
+
+
+
+## Defining the pod network interface when creating your cluster
+{: #sat-network-custom-pod-network}
+
+[During cluster creation]{: tag-dark-teal}
+
+
+When you create your cluster in the CLI, you can define the `--pod-network-interface` to set the pod network interface. The available methods are `can-reach` and `interface`.
+
+- To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. If the network interface can reach the provided URL or IP address, this option is used. For example, use `can-reach=www.exampleurl.com` for specifying a URL and `can-reach=172.19.0.0` for specifying an IP address.
+- To choose an interface with a Regex string, specify `interface=<regex_string>`; for example, `interface=eth.*`.
+
+
+For more information, see the [**`ibmcloud oc cluster create satellite`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite) command reference.
+
 ## Limiting access to your {{site.data.keyword.satelliteshort}} cluster
 {: #sat-network-custom-pod-network-limit}
 
-[After Location and cluster creation]{: tag-dark-teal}
+[After location and cluster creation]{: tag-green}
 
 
-After you create your Location and cluster, you can use the [**`ibmcloud ks cluster master satellite-service-endpoint allowlist add`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add) command to add a subnet to a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. Authorized requests to the cluster master that originate from the subnet are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. The allowlist must be [enabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable) for the restrictions to apply.
+After you create your location and cluster, you can use the [**`ibmcloud ks cluster master satellite-service-endpoint allowlist add`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add) command to add a subnet to a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. Authorized requests to the cluster master that originate from the subnet are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. The allowlist must be [enabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable) for the restrictions to apply.
 
 ## Restricting NodePort service access
 {: #nodeport-restrict-access}
 
-[After Location and cluster creation]{: tag-dark-teal}
+[After location and cluster creation]{: tag-green}
 
-By default, NodePort services are accessible on all network interfaces that are available to the cluster, for example `0.0.0.0`. 
+By default, NodePort services are accessible on all network interfaces that are available to the cluster, for example `0.0.0.0`.
 
 However, in {{site.data.keyword.satelliteshort}} locations where multiple networks are available to the hosts, you can limit the available network interfaces for your services. 
 
@@ -67,7 +101,7 @@ Incorrectly configuring the `node-port-addresses` might isolate your services fr
 1. Prepare your planned source subnet CIDR list that you want to allow to access the NodePort Services.
 1. Run the following command to get the `network.operator.openshift.io` configuration and save a copy in case you need to revert the changes.
     ```sh
-    oc get network.operator.openshift.io cluster -o yaml
+    kubectl get network.operator.openshift.io cluster -o yaml
     ```
     {: pre}
     
