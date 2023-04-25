@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-04-25"
 
 keywords: openshift
 subcollection: openshift
@@ -4152,9 +4152,13 @@ subcollection: openshift
 {: #sitemap_satellite_clusters}
 
 
-[Customizing your network setup in {{site.data.keyword.satelliteshort}} Locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
+[Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
 
-* [Defining custom network interfaces when creating your Location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network)
+* [Defining custom subnets when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-subnet)
+
+* [Defining the pod network interface when creating your location](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-location)
+
+* [Defining the pod network interface when creating your cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-cluster)
 
 * [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-limit)
 
@@ -8981,6 +8985,8 @@ subcollection: openshift
 
 [Debugging worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes#debug_worker_nodes)
 
+* [Check worker node notifications and maintenance updates](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-notifs)
+
 * [Quick steps to resolve worker node issues](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-quick)
 
 * [Debugging your worker node](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-steps)
@@ -9049,11 +9055,7 @@ subcollection: openshift
 
 [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready)
 
-* [Before you begin](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-before)
-
-    * [Worker node notifications and maintenance](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-notifs)
-
-    * [Common causes](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-common)
+* [Check the common causes of worker node failures](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-common)
 
 * [Troubleshooting steps](/docs/openshift?topic=openshift-ts-critical-notready#ts-critical-notready-steps)
 
