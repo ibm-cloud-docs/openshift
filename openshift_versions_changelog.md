@@ -35,6 +35,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the change logs in the following list. 
 
 **Supported versions**:
+- [4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 - [4.11 change log](/docs/openshift?topic=openshift-openshift_changelog_411)
 - [4.10 change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
