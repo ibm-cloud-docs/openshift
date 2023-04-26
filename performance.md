@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-26"
 
 keywords: openshift, kernel
 
@@ -420,16 +420,13 @@ If you must use `hostPorts`, don't disable the port map plug-in.
 
 
 
-### Disabling the port map plug-in
-{: #calico-portmap-43}
-
 1. Edit the `default` Calico installation resource.
     ```sh
     oc edit installation default -n calico-system
     ```
     {: pre}
 
-2. In the `spec.calicoNetwork` section, change the value of `hostPorts` to `Disabled`.
+1. In the `spec.calicoNetwork` section, change the value of `hostPorts` to `Disabled`.
     ```yaml
     ...
     spec:
@@ -451,4 +448,8 @@ If you must use `hostPorts`, don't disable the port map plug-in.
     ```
     {: screen}
 
-3. Save and close the file. Your changes are automatically applied.
+1. Save and close the file. Your changes are automatically applied.
+
+
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-04-26"
 
 keywords: openshift
 subcollection: openshift
@@ -3434,8 +3434,6 @@ subcollection: openshift
     * [Updating the Calico installation](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
 
 * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
-
-    * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap-43)
 
 [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance)
 
