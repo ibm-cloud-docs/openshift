@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-04-06"
+lastupdated: "2023-04-26"
 
 keywords: openshift, deploy, migrating psps to pod security, pod security admission, migrate to pod security admission
 
@@ -42,7 +42,7 @@ You can upgrade your cluster if your cluster setup meets the following requireme
     * `ibm-anyuid-hostaccess-psp`
     * `ibm-restricted-psp`
 
-If your cluster meets these requirements, your pods use a PSP that allows privileged pods. However, meeting these requirements does not mean that all of your pods are privileged. 
+If your cluster meets these requirements, your pods use a PSP that allows privileged pods. However, meeting these requirements does not mean that all your pods are privileged. 
 
 If you created your own PSPs, installed applications that create PSPs, or changed the cluster role bindings to restrict use of the `ibm-privileged-psp`, you must modify your setup to meet the listed requirements before you can upgrade your cluster. If you use third-party security policy admission controllers, your cluster can still meet these requirements as long as all controllers function properly within the PSP configuration. 
 

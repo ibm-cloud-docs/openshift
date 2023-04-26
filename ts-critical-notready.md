@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-04-26"
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 
@@ -18,7 +18,7 @@ subcollection: openshift
 Cluster worker nodes go into a `Critical` or `NotReady` state when they stop communicating with the cluster master. When this occurs, your worker nodes are marked as `Critical` in the {{site.data.keyword.cloud_notm}} UI or when you run `ibmcloud oc worker` commands, and as `NotReady` in the Red Hat OpenShift dashboards and when you run `oc get nodes`. There are several reasons why communication stops between worker nodes and the cluster master. Follow these steps to troubleshoot worker nodes in these states. 
 {: shortdesc}
 
-Check the {{site.data.keyword.cloud_notm}} health and status dashboard for any notifications or manintenance updates that might be relevant to your worker nodes. These notifications or updates might help determine the cause of the worker node failures.
+Check the {{site.data.keyword.cloud_notm}} health and status dashboard for any notifications or maintenance updates that might be relevant to your worker nodes. These notifications or updates might help determine the cause of the worker node failures.
 {: important}
 
 
@@ -81,11 +81,11 @@ If you checked your networking components and still cannot resolve the issue, [g
 
 If all the worker nodes in your cluster show `Critical`or `NotReady` at the same time, there might be a problem with either the cluster `apiserver` or the networking path between the workers and the `apiserver`. Follow these troubleshooting steps to determine the cause and resolve the issue.
 
-Some of the following steps are specific to a specialized area, such as networking or automation. Consult with the relevant administrator or team in your organization before completing these steps. 
+Some steps are specific to a specialized area, such as networking or automation. Consult with the relevant administrator or team in your organization before completing these steps. 
 {: note}
 
 1. Check if there were any recent changes to your cluster, environment, or account that might impact your worker nodes. If so, revert the changes and then check the worker node status to determine if the changes caused the issue.
-    - For classic clusters, check any firewall or gateway, such as Virtual Router Appliance, Vyatta, Juniper or pfSense that manages traffic for cluster workers. Look for changes or issues that might drop or redirect traffic from cluster workers. 
+    - For classic clusters, check any firewall or gateway, such as Virtual Router Appliance, Vyatta, or Juniper that manages traffic for cluster workers. Look for changes or issues that might drop or redirect traffic from cluster workers. 
     - For VPC clusters, check if any changes were made to the default security group and ACLs on the VPC or the worker nodes. If any modifications were made, ensure that you are allowing all necessary traffic from the cluster worker nodes to the cluster master, container registry, and other critical services. For more information, see [Controlling Traffic with VPC Security Groups](/docs/containers?topic=containers-vpc-security-group&interface=ui) and [Controlling traffic with ACLs](/docs/containers?topic=containers-vpc-acls&interface=ui).
     - For VPC clusters, check any custom routing rules for changes that might be blocking traffic from the cluster `apiserver`.
     - Check any Calico or Kubernetes network policies that are applied to the cluster and make sure that they do not block traffic from the worker node to the cluster `apiservice`, container registry, or other critical services. 
