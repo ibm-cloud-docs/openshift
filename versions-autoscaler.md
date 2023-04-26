@@ -47,7 +47,7 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 {: preview}
 
 ### Change log for patch update 1.1.0_1060, released 26 April 2023
-{: #110978_ca}
+{: #111060_ca}
 
 - Image tags: `1.19.1 110-8`, `1.20.0 110-8`, `1.21.0 110-8`, `1.22.0 110-8`, `1.23.0 110-8`.
 - Updates `golang` version to `1.19.8`.

@@ -7091,7 +7091,7 @@ subcollection: openshift
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
 
-    * [Change log for patch update 1.1.0_1060, released 26 April 2023](/docs/openshift?topic=openshift-ca_changelog#110978_ca)
+    * [Change log for patch update 1.1.0_1060, released 26 April 2023](/docs/openshift?topic=openshift-ca_changelog#111060_ca)
 
     * [Change log for patch update 1.1.0_978, released 16 March 2023](/docs/openshift?topic=openshift-ca_changelog#110978_ca)
 
