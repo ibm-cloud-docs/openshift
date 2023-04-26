@@ -282,6 +282,14 @@ subcollection: openshift
 
 * [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
 
+    * [26 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2623)
+
+        * Cluster autoscaler add-on version `1.1.0_1060`.
+
+    * [24 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2423)
+
+        * Worker node fix packs `4.8.57_1600_openshift`, `4.9.59_1587_openshift`, `4.10.57_1565_openshift`, `4.11.37_1553_openshift`, and `4.12.13_1539_openshift`.
+
     * [11 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1123)
 
         * CLI version `1.0.510`.
@@ -7082,6 +7090,8 @@ subcollection: openshift
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_1060, released 26 April 2023](/docs/openshift?topic=openshift-ca_changelog#110978_ca)
 
     * [Change log for patch update 1.1.0_978, released 16 March 2023](/docs/openshift?topic=openshift-ca_changelog#110978_ca)
 
