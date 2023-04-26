@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-04-26"
 
 keywords: openshift
 
@@ -232,7 +232,7 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 | `POST/v2/alb/setIngressClusterHealthcheck` | Set the in-cluster Ingress health checker. | `containers-kubernetes.cluster.operate` | `cluster-alb-healthcheck.set` |
 | `POST/v2/alb/setIngressStatusState` | Set the state of the Ingress status. | `containers-kubernetes.cluster.update` | `cluster-ingress-status-state.set` |
 | `POST/v2/alb/addIgnoredIngressStatusErrors` | Ignore specific ingress status errors in Ingress status reporting.  | `containers-kubernetes.cluster.update` | `cluster-ignored-ingress-status-errors.add` |
-| `DELETE/v2/alb/removeIgnoredIngressStatusErrors` | Unignore specific status errors in Ingress status reporting. | `containers-kubernetes.cluster.update` | `cluster-ignored-ingress-status-errors.remove` |
+| `DELETE/v2/alb/removeIgnoredIngressStatusErrors` | Stop ignoring specific status errors in Ingress status reporting. | `containers-kubernetes.cluster.update` | `cluster-ignored-ingress-status-errors.remove` |
 {: caption="Ingress status API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 

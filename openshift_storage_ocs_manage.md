@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-04-26"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -298,13 +298,13 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: pre}
 
-1. Identify the crashcollector pod deployment.
+1. Identify the `crashcollector` pod deployment.
     ```sh
     oc get deployment --selector=app=rook-ceph-crashcollector,node_name=<failed_node_name> -n openshift-storage
     ```
     {: pre}
 
-1. If there is an existing crash collector deployment, delete it.
+1. If there is an existing `crashcollector` deployment, delete it.
     ```sh
     oc delete deployment --selector=app=rook-ceph-crashcollector,node_name=<failed_node_name> -n openshift-storage
     ```
