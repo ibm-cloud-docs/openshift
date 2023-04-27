@@ -41,7 +41,7 @@ keyword:
   openshift_412_unsupported_certainty:
     tentative
   openshift_412_kube_version:
-    1.25
+    "1.25"
   
   openshift_411_release_date:
     31 August 2022
