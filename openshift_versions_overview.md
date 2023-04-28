@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-04-28"
 
 keywords: openshift, version, update, upgrade
 
@@ -74,13 +74,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
 
-4.8 (Kubernetes 1.21)
-- Release date: 29 September 2021
-- End of support: 27 April 2023
-- Supported operating systems: RHEL 7 (`REDHAT_7_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
-
 
 ## Clusters in Satellite locations with CoreOS enabled
 {: #os-satellite-with-coreos}
@@ -114,13 +107,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
 
-4.8 (Kubernetes 1.21)
-- Release date: 29 September 2021
-- End of support: 27 April 2023
-- Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 7 (`REDHAT_7_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
-
 
 ## Clusters in Satellite locations without CoreOS enabled
 {: #os-satellite-without-coreos}
@@ -153,13 +139,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`), RHEL 7 (`REDHAT_7_64`) (default)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
-
-4.8 (Kubernetes 1.21)
-- Release date: 29 September 2021
-- End of support: 27 April 2023
-- Supported operating systems: RHEL 7 (`REDHAT_7_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_48)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_48)
 
 
 Unsupported versions:
