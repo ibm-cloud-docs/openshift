@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-05-02"
 
 keywords: openshift, disconnect, airgap, olm, mirror
 
@@ -52,7 +52,7 @@ You can disable and mirror the OperatorHub catalog source images by following th
 {: shortdesc}
 
 To understand why you might disable and mirror the catalog, consider the following scenarios.
-- For private clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later: The Red Hat-provided OperatorHub source images require access to the `registry.redhat.io` and `quay.io` registries. If your cluster runs on a restricted network, such as in a VPC without a public gateway or classic worker nodes on only a private VLAN, these images are not accessible
+- For private clusters: The Red Hat-provided OperatorHub source images require access to the `registry.redhat.io` and `quay.io` registries. If your cluster runs on a restricted network, such as in a VPC without a public gateway or classic worker nodes on only a private VLAN, these images are not accessible
 - You want to restrict the catalog content that is available to your cluster users in OperatorHub.
 
 Before you begin

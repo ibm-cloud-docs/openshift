@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-05-02"
 
 keywords: openshift, nginx, ingress controller
 
@@ -46,8 +46,6 @@ This quick start is for clusters that run {{site.data.keyword.redhat_openshift_n
     {: screen}
 
 3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (`/`) only.
-
-    * For {{site.data.keyword.redhat_openshift_notm}} 4.6 or later, use `networking.k8s.io/v1`.
 
         ```yaml
         apiVersion: networking.k8s.io/v1

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-28"
+lastupdated: "2023-05-02"
 
 keywords: openshift
 subcollection: openshift
@@ -279,6 +279,14 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
+
+    * [2 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0223)
+
+        * Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.14`
 
 * [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
 
@@ -5258,6 +5266,8 @@ subcollection: openshift
 
     * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
 
+* [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic#odf-limitations-classic)
+
 [Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#openshift-storage-odf-private)
 
 * [Prerequisites](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-prereq)
@@ -7345,6 +7355,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.14, released 02 May 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02214_object_plugin)
+
 * [Change log for version 2.2.13, released 03 April 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02213_object_plugin)
 
 * [Change log for version 2.2.12, released 20 March 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02212_object_plugin)
@@ -7668,6 +7680,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1523, released on 2 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1523)
 
     * [Version 1.0.0_1362, released on 1 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1362)
 
