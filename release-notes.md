@@ -26,6 +26,18 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+## May 2023
+{: #openshift-may23}
+
+
+
+### 2 May 2023
+{: #openshift-may0223}
+{: release-note}
+
+Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+
 
 ## May 2023
 {: #openshift-may23}

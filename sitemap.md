@@ -284,6 +284,12 @@ subcollection: openshift
 
     * [2 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0223)
 
+        * Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
+
+* [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
+
+    * [2 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0223)
+
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.14`
 
 * [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
@@ -7676,6 +7682,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1523, released on 2 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1523)
 
     * [Version 1.0.0_1362, released on 1 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1362)
 
