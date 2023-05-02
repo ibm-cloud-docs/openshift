@@ -5266,6 +5266,8 @@ subcollection: openshift
 
     * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
 
+* [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic#odf-limitations-classic)
+
 [Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#openshift-storage-odf-private)
 
 * [Prerequisites](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-prereq)

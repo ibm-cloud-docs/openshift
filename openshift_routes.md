@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-05-02"
 
 keywords: openshift, route, router
 
@@ -180,7 +180,7 @@ If your cluster is created on classic infrastructure, or if your cluster is crea
     ```
     {: pre}
 
-1. Choose a domain for your app. **Version 4.6 and later**: Note that route URLs must be 130 characters or fewer **IBM-provided domain**: If you don't need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
+1. Choose a domain for your app. Note that route URLs must be 130 characters or fewer **IBM-provided domain**: If you don't need to use a custom domain, a route hostname is generated for you in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`. **Custom domain**: To specify a custom domain, work with your DNS provider or [{{site.data.keyword.cis_full}}](https://cloud.ibm.com/catalog/services/internet-services).
 
     1. Get the public IP address for the public Ingress controller service in each zone in the **EXTERNAL-IP** column. Note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in zones that you subsequently add to your cluster have names such as `router-dal12`.
         ```sh

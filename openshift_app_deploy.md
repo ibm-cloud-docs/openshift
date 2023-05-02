@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-05-02"
 
 keywords: kubernetes, openshift
 
@@ -210,12 +210,11 @@ In the following steps, you learn how to deploy workloads that require the GPU. 
 Before you begin
 - Create a [cluster](/docs/openshift?topic=openshift-clusters) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. Keep in mind that setting up a bare metal machine can take more than one business day to complete.
 - Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
+- [Install the NVIDIA GPU operator for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#operator-install-guide){: external}.
 - [Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
 
     You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.redhat_openshift_notm}} cluster version. Do not install the operators through another method, such as a Helm chart.
     {: important}
-
-- **Version 4.6 clusters**: Make sure that your worker nodes are updated to at least version `4.6.25_1541_openshift`. When you create an instance of the `ClusterPolicy` for the GPU operator, you must enter `450.80.02` for the **Driver Config** version.
 
 To run a workload on a GPU machine,
 

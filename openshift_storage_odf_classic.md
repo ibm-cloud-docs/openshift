@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-05-02"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -188,6 +188,9 @@ Storage class encryption is available only for versions `4.10.0` and later of Op
 Before you install OpenShift Data Foundation, prepare your cluster.
 {: shortdesc}
 
+You can't use the OpenShift Data Foundation 
+{: important}
+
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 
@@ -205,7 +208,7 @@ Before you install OpenShift Data Foundation, prepare your cluster.
         ```
         {: pre}
         
-    - **4.8 and later**: Edit the `/etc/kubernetes/kubelet.conf` file and change the value of the `EnableControllerAttachDetach` parameter to `true`.
+    - Edit the `/etc/kubernetes/kubelet.conf` file and change the value of the `EnableControllerAttachDetach` parameter to `true`.
         ```sh
         nano /etc/kubernetes/kubelet.conf
         ```
@@ -224,7 +227,7 @@ Before you install OpenShift Data Foundation, prepare your cluster.
         exit
         ```
 
-1. Repeat the previous steps to wipe the file system for each worker node that you want to use in your ODF deployment.    
+1. Repeat the previous steps to wipe the file system for each worker node that you want to use in your ODF deployment.
     
 
 ### Getting your device details
@@ -490,6 +493,12 @@ Refer to the following OpenShift Data Foundation parameters when you use the add
 {: caption="Classic parameter reference" caption-side="bottom"}
 
 
+
+## Limitations
+{: #odf-limitations-classic}
+
+
+You can't use both the `ibmcloud-block-storage-plugin` and the ODF add-on at the same time. To install ODF, you must first edit the `/etc/kubernetes/kubelet.conf` file and change the value of the `EnableControllerAttachDetach` parameter to `true` which changes the default volume attachment behavior for the cluster. This means you can't dynamically provision volumes by using the `ibmc-block-*` storage classes. Instead, you must create volumes by using the [ODF storage classes](/docs/openshift?topic=openshift-ocs-sc-ref).
 
 
 
