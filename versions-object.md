@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-10"
+lastupdated: "2023-05-02"
 
 keywords: object storage, plug-in, change log
 
@@ -29,11 +29,17 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.14 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.13 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.12 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.11 and earlier | Deprecated | Greater than or equal to 4.6 | x86 |
+| 2.2.12 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
+## Change log for version 2.2.14, released 02 May 2023
+{: #02214_object_plugin}
+
+- Updates the UBI image to `8.7-1107`
+- Updates Golang to `1.19.8`
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external},[CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external},[CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}
 
 ## Change log for version 2.2.13, released 03 April 2023
 {: #02213_object_plugin}
