@@ -53,7 +53,7 @@ Verify your bucket details and storage class and recreate your PVC.
 1. Review the **Class** and **Location** information for your existing bucket.
 1. Choose the appropriate [storage class](/docs/openshift?topic=openshift-storage_cos_reference).
 1. Make sure that you provide the correct name of your existing bucket.
-1. Update the PVC yaml with `ibm.io/endpoint: <regional-endpoint>`value.
+1. Update the PVC yaml with `ibm.io/endpoint: <regional-endpoint>` value.
 
 
 
