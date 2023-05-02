@@ -39,12 +39,6 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
 
 
-## May 2023
-{: #openshift-may23}
-
-### 2 May 2023
-{: #openshift-may0223}
-
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.14`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
