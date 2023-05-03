@@ -19,7 +19,7 @@ subcollection: openshift
 
 
 # Setting up the Portworx key-value store
-{: #storage-portworx-kv-store}
+{: #storage_portworx_kv_store}
 
 
 ## Setting up a key-value store for Portworx metadata

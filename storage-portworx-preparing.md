@@ -14,7 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Preparing your cluster for Portworx
-{: #storage-portworx-preparing}
+{: #storage_portworx_preparing}
 
 If you want to build your Portworx storage layer on non-SDS worker nodes in your classic cluster must add raw, unformatted, and unmounted block storage to your worker nodes first. For VPC clusters, you can either attach storage before installing Portworx or allow Portworx to dynamically create Cloud Drives by using the {{site.data.keyword.block_storage_is_short}} driver during installation.
 {: shortdesc}

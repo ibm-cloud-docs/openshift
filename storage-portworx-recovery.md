@@ -15,7 +15,7 @@ subcollection: openshift
 
 
 ## Setting up disaster recovery with Portworx
-{: #storage-portworx-recovery}
+{: #storage_portworx_recovery}
 
 You can configure disaster recovery for your data that you store in your {{site.data.keyword.redhat_openshift_notm}} clusters by using Portworx. When one of your clusters becomes unavailable, Portworx automatically fails over to another cluster so that you can still access your data.  
 {: shortdesc}

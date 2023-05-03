@@ -252,7 +252,7 @@ toc:
               - storage-portworx-recovery.md
               - storage-portworx-backup.md
               - storage-portworx-removing.md
-              - storage-portworx-support.md 
+              - storage-portworx-support.md
           - topicgroup:
               label: Setting up OpenShift Data Foundation
               topics:

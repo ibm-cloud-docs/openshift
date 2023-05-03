@@ -15,7 +15,7 @@ subcollection: openshift
 
 
 ## Backing up and restoring apps and data with PX-Backup
-{: #storage-portworx-backup}
+{: #storage_portworx_backup}
 
 PX-Backup is a Portworx proprietary backup solution that is compatible with any {{site.data.keyword.openshiftlong_notm}} cluster. You can use PX-Backup to back up and restore {{site.data.keyword.openshiftlong_notm}} resources, apps and data across multiple clusters. For more information on PX-Backup, see [Understanding PX-Backup](https://backup.docs.portworx.com/understand/){: external}.
 {: shortdesc}
