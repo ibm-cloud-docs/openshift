@@ -14,7 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Understanding encryption for Portworx
-{: #storage-portworx-encryption}
+{: #storage_portworx_encryption}
 
 ## Encryption overview
 {: #px_encryption}

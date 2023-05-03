@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 ## Planning your Portworx setup
-{: #storage-portworx-plan}
+{: #storage_portworx_plan}
 
 Before you create your cluster and install Portworx, review the following planning steps.
 {: shortdesc}

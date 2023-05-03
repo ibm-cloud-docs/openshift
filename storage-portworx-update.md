@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 # Updating Portworx in your cluster
-{: #storage-portworx-update}
+{: #storage_portworx_update}
 
 Beginning with version `2.12` Portworx uses an operator-based deployment model instead of the Helm based model use in version `2.11` and earlier. If you are updating from Portworx `2.11` to version `2.12`, follow the migration steps in the [Portworx documentation](https://docs.portworx.com/operations/operate-kubernetes/migrate-daemonset/){: external}.
 {: important}

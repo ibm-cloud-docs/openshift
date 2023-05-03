@@ -15,7 +15,7 @@ subcollection: openshift
 
 
 ## Cleaning up your Portworx volumes and cluster
-{: #storage-portworx-removing}
+{: #storage_portworx_removing}
 
 Remove a [Portworx volume](#remove_pvc_apps_volumes), a [storage node](#remove_storage_node_cluster-px), or the [entire Portworx cluster](#remove_storage_node_cluster-px) if you don't need it anymore.
 {: shortdesc}
