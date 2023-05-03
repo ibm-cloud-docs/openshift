@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-05-03"
 
 keywords: openshift, errdsia, nlb-dns, dns add, dns remove
 
@@ -43,25 +43,22 @@ Normally, the NLB-DNS subdomains should hold IP addresses or load balancer hostn
 Identify and update any NLB-DNS subdomains that have incorrect addresses registered.
 {: tsResolve}
 
-1. Get the list of the managed domains using the **`ibmcloud oc nlb-dns ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls).
+1. Get the list of the managed domains using the **`ibmcloud oc ingress domain ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls).
 
-1. Get the list of LoadBalancer services from your cluster:
+1. Get the list of LoadBalancer services from your cluster.
     ```sh
     oc get services -A | grep LoadBalancer
     ```
     {: pre}
     
-1. Compare the outputs and identify NLB-DNS subdomains that have incorrect addresses registered.
+1. Compare the outputs of the two previous commands and identify the subdomains that have incorrect addresses registered.
 
-1. If you no longer need a specific NLB-DNS subdomain, you can use the **`ibmcloud oc nlb-dns rm`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm) to unregister the addresses.
+1. If you no longer need a specific domain, you can use the **`ibmcloud oc ingress domain rm`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm) to remove it.
 
-1. If you need the subdomain, you can update the addresses using the following commands.
-
-    For subdomains that have IP addresses registered.
-    :   Remove all invalid addresses using the **`ibmcloud oc nlb-dns rm`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the correct IP addresses by using the **`ibmcloud oc nlb-dns add`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
+1. If you still need the domain, you can update the registered addresses for the domain by using the **`ibmcloud oc ingress domain update`** [command](/docs/containers?topic=containers-kubernetes-service-cli#ingress-domain-update) command.
     
-    For subdomains that have load balancer hostnames.
-    :   Run the **`ibmcloud oc nlb-dns replace`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-replace) to update the subdomain with the correct load balancer hostname.
+    Note that you must include all addresses you want to be registered as the update operation replaces the currently registered addresses. For example, if `52.137.182.166` is currently registered to your domain and you want to add `52.137.182.270`, you must specify `--ip 52.137.182.166 --ip 52.137.182.270` in the command.
+    {: important}
     
 1. Wait a 15-30 minutes, then check if the warning is resolved.
 
