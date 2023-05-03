@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-05-03"
 
 keywords: openshift
 
@@ -219,7 +219,7 @@ Review the options to debug persistent storage and find the root causes for fail
     ```
     {: pre}
 
-3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx).
+3. If a more recent version is available, install this version. For instructions, see [Updating Portworx in your cluster](/docs/openshift?topic=openshift-storage-portworx-update).
 
 
 ## OpenShift Data Foundation 

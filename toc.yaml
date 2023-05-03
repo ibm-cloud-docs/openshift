@@ -239,7 +239,20 @@ toc:
               - storage-cos-tutorial-quota.md
               - storage-cos-vpc-ip.md
               - storage-cos-reference.md 
-          - storage-portworx.md
+          - topicgroup:
+              label: Setting up Portworx
+              topics: 
+              - storage-portworx-about.md
+              - storage-portworx-plan.md
+              - storage-portworx-preparing.md
+              - storage-portworx-kv-store.md
+              - storage-portworx-encryption.md
+              - storage-portworx-deploy.md
+              - storage-portworx-update.md
+              - storage-portworx-recovery.md
+              - storage-portworx-backup.md
+              - storage-portworx-removing.md
+              - storage-portworx-support.md 
           - topicgroup:
               label: Setting up OpenShift Data Foundation
               topics:

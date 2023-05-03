@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-02"
+lastupdated: "2023-05-03"
 
 keywords: openshift
 subcollection: openshift
@@ -5105,97 +5105,104 @@ subcollection: openshift
 
 * [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
 
-[Setting up software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx#portworx)
 
-* [About Portworx](/docs/openshift?topic=openshift-portworx#about-portworx)
+### Setting up Portworx
+{: #sitemap_setting_up_portworx}
 
-    * [What is software-defined storage (SDS)?](/docs/openshift?topic=openshift-portworx#about-px-sds)
 
-    * [How does Portworx work?](/docs/openshift?topic=openshift-portworx#about-px-work)
+[About Portworx](/docs/openshift?topic=openshift-storage_portworx_about#storage_portworx_about)
 
-    * [What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the correct one for Portworx?](/docs/openshift?topic=openshift-portworx#about-px-flavors)
+* [What is software-defined storage (SDS)?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-sds)
 
-    * [What if I want to run Portworx in a classic cluster with non-SDS worker nodes?](/docs/openshift?topic=openshift-portworx#about-px-non-sds)
+    * [How does Portworx work?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-work)
 
-    * [How can I make sure that my data is stored highly available?](/docs/openshift?topic=openshift-portworx#about-px-ha)
+    * [What are the requirements to run Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-requirments)
 
-    * [What volume topology offers the best performance for my pods?](/docs/openshift?topic=openshift-portworx#about-px-topology)
+    * [How can I make sure that my data is stored highly available?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-ha)
 
-    * [Can I install Portworx in a private cluster?](/docs/openshift?topic=openshift-portworx#about-px-private)
+    * [What volume topology offers the best performance for my pods?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-topology)
 
-    * [What's next?](/docs/openshift?topic=openshift-portworx#about-px-next)
+    * [Can I install Portworx in a private cluster?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-private)
 
-* [Planning your Portworx setup](/docs/openshift?topic=openshift-portworx#portworx_planning)
+* [What's next?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
 
-* [Creating raw, unformatted, and unmounted block storage for VPC and non-SDS classic worker nodes](/docs/openshift?topic=openshift-portworx#create_block_storage)
+* [Planning your Portworx setup](/docs/openshift?topic=openshift-storage-portworx-plan#storage-portworx-plan)
 
-    * [Classic clusters](/docs/openshift?topic=openshift-portworx#px-create-classic-volumes)
+* [Limitations](/docs/openshift?topic=openshift-storage-portworx-plan#portworx_limitations)
 
-    * [VPC clusters](/docs/openshift?topic=openshift-portworx#px-create-vpc-volumes)
+* [Overview of the Portworx lifecycle](/docs/openshift?topic=openshift-storage-portworx-plan#portowrx_lifecycle)
 
-    * [Satellite clusters](/docs/openshift?topic=openshift-portworx#px-create-satellite-volumes)
+    * [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-storage-portworx-plan#px_create_km_secret)
 
-* [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-portworx#portworx_database)
+[Preparing your cluster for Portworx](/docs/openshift?topic=openshift-storage-portworx-preparing#storage-portworx-preparing)
 
-    * [Using the Portworx key-value database](/docs/openshift?topic=openshift-portworx#portworx-kvdb)
+    * [Classic clusters](/docs/openshift?topic=openshift-storage-portworx-preparing#px-create-classic-volumes)
 
-    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-portworx#databases-for-etcd)
+    * [VPC clusters](/docs/openshift?topic=openshift-storage-portworx-preparing#px-create-vpc-volumes)
 
-* [Setting up volume encryption](/docs/openshift?topic=openshift-portworx#encrypt_volumes)
+    * [Satellite clusters](/docs/openshift?topic=openshift-storage-portworx-preparing#px-create-satellite-volumes)
 
-    * [Portworx per-volume encryption workflow](/docs/openshift?topic=openshift-portworx#px_encryption)
+[Setting up the Portworx key-value store](/docs/openshift?topic=openshift-storage-portworx-kv-store#storage-portworx-kv-store)
 
-    * [Portworx per-volume decryption workflow](/docs/openshift?topic=openshift-portworx#decryption)
+* [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-storage-portworx-kv-store#portworx_database)
 
-    * [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-portworx#setup_encryption)
+    * [Using the Portworx key-value database](/docs/openshift?topic=openshift-storage-portworx-kv-store#portworx-kvdb)
 
-    * [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-portworx#px_create_km_secret)
+    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage-portworx-kv-store#optional-setting-up-a-databases-for-etcd-service-instance)
 
-* [Installing Portworx in your cluster](/docs/openshift?topic=openshift-portworx#install_portworx)
+[Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage-portworx-encryption#storage-portworx-encryption)
 
-    * [Updating Portworx in your cluster](/docs/openshift?topic=openshift-portworx#update_portworx)
+* [Encryption overview](/docs/openshift?topic=openshift-storage-portworx-encryption#px_encryption)
 
-* [Creating a Portworx volume](/docs/openshift?topic=openshift-portworx#add_portworx_storage)
+* [Decryption overview](/docs/openshift?topic=openshift-storage-portworx-encryption#decryption-ov)
 
-* [Mounting the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc)
+* [Setting up volume encryption](/docs/openshift?topic=openshift-storage-portworx-encryption#storage-portworx-volume-encryption)
 
-* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-portworx#portworx_vpc_up)
+    * [Getting your KMS instance and credentials](/docs/openshift?topic=openshift-storage-portworx-encryption#storage-portworx-credentials)
 
-* [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup)
+[Installing Portworx in your cluster](/docs/openshift?topic=openshift-storage-portworx-deploy#storage-portworx-deploy)
 
-    * [Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-portworx#px-backup-install)
+* [Creating a Portworx volume](/docs/openshift?topic=openshift-storage-portworx-deploy#add_portworx_storage)
 
-    * [Verifying your PX-Backup installation](/docs/openshift?topic=openshift-portworx#px-backup-verify)
+* [Mounting the volume to your app](/docs/openshift?topic=openshift-storage-portworx-deploy#mount_pvc)
 
-    * [Logging in to the PX-Backup console](/docs/openshift?topic=openshift-portworx#px-backup-ui)
+[Updating Portworx in your cluster](/docs/openshift?topic=openshift-storage-portworx-update#storage-portworx-update)
 
-    * [Adding a backup location to your PX-Backup service](/docs/openshift?topic=openshift-portworx#px-backup-storage)
+* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage-portworx-update#portworx_vpc_up)
 
-    * [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your PX-Backup service](/docs/openshift?topic=openshift-portworx#px-backup-cluster)
+* [Exploring other Portworx features](/docs/openshift?topic=openshift-storage-portworx-update#features)
 
-    * [Backing up and restoring cluster data with PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup-and-restore)
+* [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage-portworx-recovery#storage-portworx-recovery)
 
-    * [Upgrading PX-Backup](/docs/openshift?topic=openshift-portworx#px-backup-upgrade)
+* [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-storage-portworx-backup#storage-portworx-backup)
 
-* [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-portworx#px-dr)
+    * [Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-storage-portworx-backup#px-backup-install)
 
-* [Exploring other Portworx features](/docs/openshift?topic=openshift-portworx#features)
+    * [Verifying your PX-Backup installation](/docs/openshift?topic=openshift-storage-portworx-backup#px-backup-verify)
 
-* [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-portworx#portworx_cleanup)
+    * [Logging in to the PX-Backup console](/docs/openshift?topic=openshift-storage-portworx-backup#px-backup-ui)
 
-    * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-portworx#remove_pvc_apps_volumes)
+    * [Adding a backup location to your PX-Backup service](/docs/openshift?topic=openshift-storage-portworx-backup#px-backup-storage)
 
-    * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-portworx#remove_storage_node_cluster-px)
+    * [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your PX-Backup service](/docs/openshift?topic=openshift-storage-portworx-backup#px-backup-cluster)
 
-    * [Removing the Portworx DaemonSet](/docs/openshift?topic=openshift-portworx#remove_px_daemonset)
+    * [Backing up and restoring cluster data with PX-Backup](/docs/openshift?topic=openshift-storage-portworx-backup#px-backup-and-restore)
 
-    * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-portworx#remove_portworx)
+    * [Upgrading PX-Backup](/docs/openshift?topic=openshift-storage-portworx-backup#px-backup-upgrade)
 
-* [Getting help and support](/docs/openshift?topic=openshift-portworx#portworx_help_sup)
+* [Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-storage-portworx-removing#storage-portworx-removing)
 
-    * [Gathering logs](/docs/openshift?topic=openshift-portworx#portworx_logs)
+    * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-storage-portworx-removing#remove_pvc_apps_volumes)
 
-* [Limitations](/docs/openshift?topic=openshift-portworx#portworx_limitations)
+    * [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-storage-portworx-removing#remove_storage_node_cluster-px)
+
+    * [Removing the Portworx DaemonSet](/docs/openshift?topic=openshift-storage-portworx-removing#remove_px_daemonset)
+
+    * [Removing Portworx from your cluster](/docs/openshift?topic=openshift-storage-portworx-removing#remove_portworx)
+
+* [Getting help and support](/docs/openshift?topic=openshift-storage-portworx-support#storage-portworx-support)
+
+    * [Gathering logs](/docs/openshift?topic=openshift-storage-portworx-support#portworx_logs)
 
 
 ### Setting up OpenShift Data Foundation
