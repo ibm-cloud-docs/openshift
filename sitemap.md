@@ -5116,9 +5116,7 @@ subcollection: openshift
 
     * [How does Portworx work?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-work)
 
-    * [What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the correct one for Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-flavors)
-
-    * [What if I want to run Portworx in a classic cluster with non-SDS worker nodes?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-non-sds)
+    * [What are the requirements to run Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-requirments)
 
     * [How can I make sure that my data is stored highly available?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-ha)
 
@@ -5131,6 +5129,8 @@ subcollection: openshift
 * [Planning your Portworx setup](/docs/openshift?topic=openshift-storage-portworx-plan#storage-portworx-plan)
 
 * [Limitations](/docs/openshift?topic=openshift-storage-portworx-plan#portworx_limitations)
+
+* [Overview of the Portworx lifecycle](/docs/openshift?topic=openshift-storage-portworx-plan#portowrx_lifecycle)
 
     * [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-storage-portworx-plan#px_create_km_secret)
 
@@ -5148,7 +5148,7 @@ subcollection: openshift
 
     * [Using the Portworx key-value database](/docs/openshift?topic=openshift-storage-portworx-kv-store#portworx-kvdb)
 
-    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage-portworx-kv-store#databases-for-etcd)
+    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage-portworx-kv-store#optional-setting-up-a-databases-for-etcd-service-instance)
 
 [Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage-portworx-encryption#storage-portworx-encryption)
 

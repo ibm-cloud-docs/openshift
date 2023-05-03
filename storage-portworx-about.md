@@ -28,24 +28,17 @@ An SDS solution abstracts storage devices of various types, sizes, or from diffe
 ### How does Portworx work?
 {: #about-px-work}
 
-Portworx aggregates available storage that is attached to your worker nodes and creates a unified persistent storage layer for containerized databases or other stateful apps that you want to run in the cluster. By using volume replication of each container-level volume across multiple worker nodes, Portworx ensures data persistence and data accessibility across zones.
+As a software defined storage solution, Portworx aggregates available storage that is attached to your worker nodes and creates a unified persistent storage layer for containerized databases or other stateful apps that you want to run in the cluster. By using volume replication of each container-level volume across multiple worker nodes, Portworx ensures data persistence and data accessibility across zones.
 
 Portworx also comes with additional features that you can use for your stateful apps, such as volume snapshots, volume encryption, isolation, and an integrated Storage Orchestrator for Kubernetes (Stork) to ensure optimal placement of volumes in the cluster. For more information, see the [Portworx documentation](https://docs.portworx.com/){: external}.
 
-### What worker node flavor in {{site.data.keyword.openshiftlong_notm}} is the correct one for Portworx?
-{: #about-px-flavors}
+### What are the requirements to run Portworx?
+{: #about-px-requirments}
 
-The worker node flavor that you need depends on the infrastructure provider that you use. If you have a classic cluster, {{site.data.keyword.openshiftlong_notm}} provides bare metal worker node flavors that are optimized for [software-defined storage (SDS) usage](/docs/openshift?topic=openshift-planning_worker_nodes#sds). These flavors also come with one or more raw, unformatted, and unmounted local disks that you can use for your Portworx storage layer. In classic clusters, Portworx offers the best performance when you use SDS worker node machines that come with 10 Gbps network speed.
+Review the requirements to [install Portworx](https://docs.portworx.com/install-portworx/prerequisites/){: external}.
 
-In VPC clusters, make sure to select a [virtual server flavor](/docs/vpc?topic=vpc-profiles) that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}. The flavor that you choose must have a network speed of 10 GBPS or more for optimal performance. None of the VPC flavors are set up with raw and unformatted block storage devices. To successfully install and run Portworx, you must [manually attach block storage devices](/docs/openshift?topic=openshift-utilities#vpc_api_attach) to each of your worker nodes first.
-
-### What if I want to run Portworx in a classic cluster with non-SDS worker nodes?
-{: #about-px-non-sds}
-
-You can install Portworx on non-SDS worker node flavors, but you might not get the performance benefits that your app requires. Non-SDS worker nodes can be virtual or bare metal. If you want to use virtual machines, use a worker node flavor of `b3c.16x64` or better. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` don't provide the required resources for Portworx to work properly. Bare metal machines come with sufficient compute resources and network speed for Portworx, but you must [add raw, unformatted, and unmounted block storage](#create_block_storage) before you can use these machines.
-
-For classic clusters, virtual machines have only 1000 Mbps of networking speed, which is not sufficient to run production workloads with Portworx. Instead, provision Portworx on bare metal machines for the best performance.
-{: important}
+For production environments, choose one of the [sds worker node flavors](/docs/openshifttopic=openshift-planning_worker_nodes#sds-table) for best performance. 
+{: tip}
 
 ### How can I make sure that my data is stored highly available?
 {: #about-px-ha}
@@ -75,7 +68,7 @@ If you want to install Portworx in a cluster that doesn't have VRF or access to 
 ## What's next?
 {: #about-px-next}
 
-All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](#create_block_storage) to each worker node. After your cluster is prepared, [install Portworx](#install_portworx) in your cluster and create your first hyper-converged storage cluster.
+All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](/docs/openshift?topic=openshift-utilities#manual_block) to each worker node. After your cluster is prepared, [install Portworx](/docs/openshift?topic=openshift-storage-install-portworx) in your cluster and create your first hyper-converged storage cluster.
 
 
 

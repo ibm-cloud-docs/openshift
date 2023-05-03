@@ -23,23 +23,10 @@ Before you create your cluster and install Portworx, review the following planni
 
 - [ ] Decide where you want to store the Portworx metadata. You can use KVDB or an external Database instance. For more information, see [Understanding the key-value store](/docs/openshift?topic=openshift-storage-portworx-kv-store). To learn more about what the key value does, see the [Portworx documentation](https://docs.portworx.com/concepts/internal-kvdb/).
 - [ ] Decide whether you want encryption. You can use {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementservicelong_notm}}. For more information, see [Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage-portworx-encryption).
-- [ ] Decide whether you want to use journal devices. Journal devices allow you to log in directly to worker node on a local disk.
+- [ ] Decide whether you want to use journal devices. Journal devices allow Portworx to write logs directly to a local disk on your worker node.
 - [ ] **VPC or Satellite clusters only** - Decide whether you want to use cloud drives. Cloud drives allow you to dynamically provision the Portworx volumes. If you don’t want to use cloud drives, you must manually attach volumes to worker nodes.
 - [ ] Review the [Limitations](#portworx_limitations).
 
-1. Create a [multizone cluster](/docs/openshift?topic=openshift-clusters).
-    1. Infrastructure provider: For Satellite clusters, make sure to add block storage volumes to your hosts before attaching them to your location. If you use classic infrastructure, you must choose a bare metal flavor for the worker nodes. For classic clusters, virtual machines have only 1000 Mbps of networking speed, which is not sufficient to run production workloads with Portworx. Instead, provision Portworx on bare metal machines for the best performance.
-    2. Worker node flavor: Choose an SDS or bare metal flavor. If you want to use virtual machines, use a worker node with 16 vCPU and 64 GB memory or more, such as `b3c.16x64`. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` don't provide the required resources for Portworx to work properly.
-    3. Minimum number of workers: Two worker nodes per zone across three zones, for a minimum total of six worker nodes.
-1. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](#create_block_storage).
-1. For production workloads, create an [external Databases for etcd](#portworx_database) instance for your Portworx metadata key-value store.
-1. **Optional** [Set up encryption](#setup_encryption).
-1. [Install Portworx](#install_portworx).
-1. Maintain the lifecycle of your Portworx deployment in your cluster.
-    1. When you update worker nodes in [VPC](#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
-        * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr).
-        * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
-    2. To remove a Portworx volume, storage node, or the entire Portworx cluster, see [Portworx cleanup](#portworx_cleanup).
 
 ## Limitations
 {: #portworx_limitations}
@@ -54,14 +41,17 @@ Review the following Portworx limitations.
 | Private clusters | To install Portworx in a cluster that doesn't have VRF or access to private cloud service endpoints (CSEs), you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, and `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group). |
 {: caption="Portworx limitations"}
 
+## Overview of the Portworx lifecycle
+{: #portowrx_lifecycle}
+
 1. Create a [multizone cluster](/docs/openshift?topic=openshift-clusters).
     1. Infrastructure provider: For Satellite clusters, make sure to add block storage volumes to your hosts before attaching them to your location. If you use classic infrastructure, you must choose a bare metal flavor for the worker nodes. For classic clusters, virtual machines have only 1000 Mbps of networking speed, which is not sufficient to run production workloads with Portworx. Instead, provision Portworx on bare metal machines for the best performance.
     2. Worker node flavor: Choose an SDS or bare metal flavor. If you want to use virtual machines, use a worker node with 16 vCPU and 64 GB memory or more, such as `b3c.16x64`. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` don't provide the required resources for Portworx to work properly.
     3. Minimum number of workers: Two worker nodes per zone across three zones, for a minimum total of six worker nodes.
-1. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](#create_block_storage).
+1. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-utilities#manual_block).
 1. For production workloads, create an [external Databases for etcd](#portworx_database) instance for your Portworx metadata key-value store.
-1. **Optional** [Set up encryption](#setup_encryption).
-1. [Install Portworx](#install_portworx).
+1. **Optional** [Set up encryption](/docs/openshift?topic=openshift-storage-portworx-encyrption).
+1. [Install Portworx](/docs/openshift?topic=openshift-storage-install-portworx).
 1. Maintain the lifecycle of your Portworx deployment in your cluster.
     1. When you update worker nodes in [VPC](#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
         * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr).
@@ -72,7 +62,7 @@ Review the following Portworx limitations.
 ### Creating a secret to store the KMS credentials
 {: #px_create_km_secret}
 
-**Before you begin:** [Set up encryption](#setup_encryption)
+**Before you begin:** [Set up encryption](/docs/openshift?topic=openshift-storage-portworx-encyrption)
 
 1. Encode the credentials that you retrieved in the previous section to base64 and note all the base64 encoded values. Repeat this command for each parameter to retrieve the base64 encoded value.
     ```sh
