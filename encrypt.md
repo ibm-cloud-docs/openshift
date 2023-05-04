@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -404,8 +404,6 @@ The encryption for the disks of the worker nodes in your worker pool are now man
 
 You can't manage the encryption of the LUKS key with your own KMS provider because KMS provider integration is not supported.
 {: important}
-
-
 
 
 

@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-05-04"
 
-keywords: openshift
+keywords: openshift, compliance operator, benchmark comparison
 
 subcollection: openshift
 

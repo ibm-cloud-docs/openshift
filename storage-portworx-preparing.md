@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: portworx, openshift
 
@@ -27,7 +27,7 @@ Portworx supports block storage only. Worker nodes that mount file or object sto
 Keep in mind that the networking of non-SDS worker nodes in classic clusters is not optimized for Portworx and might not offer the performance benefits that your app requires.
 {: note}
 
-### Classic clusters
+## Classic clusters
 {: #px-create-classic-volumes}
 
 1. [Install the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in](/docs/openshift?topic=openshift-utilities#block_storage_attacher).
@@ -42,7 +42,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 5. [Attach the block storage](/docs/openshift?topic=openshift-utilities#attach_block) to your worker nodes.
 6. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
 
-### VPC clusters
+## VPC clusters
 {: #px-create-vpc-volumes}
 
 1. Follow the [steps](/docs/openshift?topic=openshift-utilities#vpc_cli_attach) to create the {{site.data.keyword.block_storage_is_short}} instances and attach these to each worker node that you want to add to the Portworx storage layer. For highly available data storage, Portworx requires at least 3 worker nodes with raw and unformatted block storage.
@@ -56,7 +56,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 
 
 
-### Satellite clusters
+## Satellite clusters
 {: #px-create-satellite-volumes}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).

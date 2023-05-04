@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-19"
+lastupdated: "2023-05-04"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -68,17 +68,17 @@ The following image is used as an example to explain how {{site.data.keyword.ope
 If you create a classic cluster in a multizone region, the replicas of your highly available Kubernetes master are automatically spread across the data centers (zones). You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
 {: shortdesc}
 
-
-| Geography |  Country  | Metro | Data center |  Previous region  |
-|-----|-----|-----|-----|-----|
-| Asia Pacific | Australia | Sydney | syd01, syd04, syd05 | AP South (`ap-south`, `au-syd`) |
-| Asia Pacific | Japan | Osaka | osa21, osa22, osa23 | - |
-| Asia Pacific | Japan | Tokyo | tok02, tok04, tok05 | AP North (`ap-north`, `jp-tok`) |
-| Europe | Germany | Frankfurt | fra02, fra04, fra05 | EU Central (`eu-central`, `eu-de`) |
-| Europe | United Kingdom | London | lon04, lon05, lon06 | UK South (`uk-south`, `eu-gb`) |
-| North America | United States | Dallas | dal10, dal12, dal13 | US South (`us-south`) |
-| North America | United States | Washington, D.C. | wdc04, wdc06, wdc07 | US East (`us-east`) |
+| Geography | Country | Metro | Region | Zones |
+| --- | --- | --- | --- | --- |
+| Asia Pacific | Australia | Sydney | au-syd | syd01, syd04, syd05 |
+| Asia Pacific | Japan | Osaka | jp-osa | osa21, osa22, osa23 |
+| Asia Pacific | Japan | Tokyo | jp-tok | tok02, tok04, tok05 |
+| Europe | Germany | Frankfurt | de-fra | fra02, fra04, fra05 |
+| Europe | United Kingdom | London | uk-lon | lon02, lon04, lon05, lon06 |
+| North America | United States | Dallas | us-dal | dal10, dal12, dal13 |
+| North America | United States | Washington DC | us-wdc | wdc04, wdc06, wdc07 |
 {: caption="Available multizone metro locations for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
+
 
 
 
@@ -91,18 +91,18 @@ If you create a classic cluster in a single zone region, you can create multiple
 
 Classic single zone clusters are managed from the regional endpoint located in the nearest region that supports classic multizone, such as `mon01` to `us-east` or `sao01` to `us-south`.
 
-| Geography |  Country  | Metro | Data center |  Managed from region  |
-|-----|-----|-----|-----|-----|
-| Asia Pacific | India | Chennai | che01 | AP North (`ap-north`, `jp-tok`) |
-| Asia Pacific | Singapore | Singapore | sng01 | AP North (`ap-north`, `jp-tok`) |
-| Europe | France | Paris | par01 | EU Central (`eu-central`, `eu-de`) |
-| Europe | Italy | Milan | mil01 | EU Central (`eu-central`, `eu-de`) |
-| Europe | The Netherlands | Amsterdam | ams03 | EU Central (`eu-central`, `eu-de`) |
-| Europe | United Kingdom | London | lon04, lon05, lon06 | UK South (`uk-south`, `eu-gb`) |
-| North America | Canada | Montreal | mon01 | US East (`us-east`) |
-| North America | Canada | Toronto | tor01 | US East (`us-east`) |
-| South America | Brazil | São Paulo | sao01 | US South (`us-south`) |
+| Geography | Country | Metro | Region | Zone | Managed from region |
+| --- | --- | --- | --- | --- | --- |
+| Asia Pacific | India | Chennai | in-che | che01 | AP North (`ap-north`, `jp-tok`) |
+| Asia Pacific | Singapore | Singapore | sng-sng-mtr | sng01 | AP North (`ap-north`, `jp-tok`) |
+| Europe | Italy | Milan | it-mil | mil01 | EU Central (`eu-central`, `eu-de`) |
+| Europe | Netherlands | Amsterdam | nl-ams | ams03 | EU Central (`eu-central`, `eu-de`) |
+| North America | Canada | Montreal | ca-mon | mon01 | US East (`us-east`) |
+| North America | Canada | Toronto | ca-tor | tor01 | US East (`us-east`) |
+| North America | United States | San Jose | us-sjc | sjc03, sjc04 | US South (`us-south`) |
+| South America | Brazil | Sao Paulo | br-sao | sao01 | US South (`us-south`) |
 {: caption="Available single zone data center locations for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
+
 
 
 ### VPC multizone regions
@@ -111,20 +111,19 @@ Classic single zone clusters are managed from the regional endpoint located in t
 VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
 {: shortdesc}
 
-
-| Geography |  Country  | Metro | Region | Zone | Location |
-|---|---|---|---|---| --- |
-| Asia Pacific | Australia | Sydney | au-syd | au-syd-1  \n au-syd-2  \n au-syd-3 | Sydney 1  \n  Sydney 2  \n  Sydney 3|
-| Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1  \n jp-osa-2  \n jp-osa-3 | Osaka 1  \n Osaka 2  \n Osaka 3|
-| Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1  \n jp-tok-2  \n jp-tok-3 | Tokyo 1  \n Tokyo 2  \n Tokyo 3|
-| Europe | Germany | Frankfurt | eu-de | eu-de-1  \n eu-de-2  \n eu-de-3 | Frankfurt 1  \n Frankfurt 2  \n Frankfurt 3|
-| Europe | United Kingdom | London | eu-gb | eu-gb-1  \n eu-gb-2  \n eu-gb-3 | London 1  \n London 2  \n London 3|
-| North America | Canada | `†` Toronto | ca-tor | ca-tor-1  \n ca-tor-2  \n ca-tor-3 | Toronto 1  \n Toronto 2  \n Toronto 3|
-| North America | United States | Dallas | us-south | us-south-1  \n us-south-2  \n us-south-3 | Dallas 1  \n Dallas 2  \n Dallas 3|
-| North America | United States | Washington DC | us-east | us-east-1  \n us-east-2  \n us-east-3 | Washington DC 1  \n Washington DC 2  \n Washington DC 3|
-| South America | Brazil | `†` São Paulo | br-sao | br-sao-1  \n br-sao-2  \n br-sao-3 | São Paulo 1  \n São Paulo 2  \n São Paulo 3|
+| Geography | Country | Metro | Region | Zones |
+| --- | --- | --- | --- | --- |
+| Asia Pacific | Australia | Sydney | au-syd | au-syd-1, au-syd-2, au-syd-3 |
+| Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1, jp-osa-2, jp-osa-3 |
+| Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1, jp-tok-2, jp-tok-3 |
+| Europe | Germany | Frankfurt | eu-de | eu-de-1, eu-de-2, eu-de-3 |
+| Europe | United Kingdom | London | eu-gb | eu-gb-1, eu-gb-2, eu-gb-3 |
+| North America | Canada | `†` Toronto | ca-tor | ca-tor-1, ca-tor-2, ca-tor-3 |
+| North America | United States | Dallas | us-south | us-south-1, us-south-2, us-south-3 |
+| South America | Brazil | `†` São Paulo | br-sao | br-sao-1, br-sao-2, br-sao-3 |
 {: caption="Available multizone metro locations for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
-  
+
+
 
 `†` **Toronto and São Paulo multizone regions**: Toronto and São Paulo are available as multizone regions for clusters on VPC infrastructure only.
 

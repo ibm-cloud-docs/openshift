@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: portworx, openshift
 
@@ -15,7 +15,7 @@ subcollection: openshift
 
 
 
-## Planning your Portworx setup
+# Planning your Portworx setup
 {: #storage_portworx_plan}
 
 Before you create your cluster and install Portworx, review the following planning steps.
@@ -59,7 +59,7 @@ Review the following Portworx limitations.
     2. To remove a Portworx volume, storage node, or the entire Portworx cluster, see [Portworx cleanup](#portworx_cleanup).
 
 
-### Creating a secret to store the KMS credentials
+## Creating a secret to store the KMS credentials
 {: #px_create_km_secret}
 
 **Before you begin:** [Set up encryption](/docs/openshift?topic=openshift-storage-portworx-encyrption)

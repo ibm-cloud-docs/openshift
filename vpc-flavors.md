@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-05-04"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -45,6 +45,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 | cx2.8x16 | 16GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.16x128 | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
+| mx2.16x128.2000gb | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | 2000GB BLOCK | N/A|
 | mx2.2x16 | 16GB | 4Gbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | mx2.32x256 | 256GB | 25Gbps | 32 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.48x384 | 384GB | 25Gbps | 48 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -103,6 +104,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 | cx2.8x16 | 16GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.16x128 | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
+| mx2.16x128.2000gb | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | 2000GB BLOCK | N/A|
 | mx2.2x16 | 16GB | 4Gbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | mx2.32x256 | 256GB | 25Gbps | 32 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.48x384 | 384GB | 25Gbps | 48 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -132,6 +134,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 | cx2.8x16 | 16GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.16x128 | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
+| mx2.16x128.2000gb | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | 2000GB BLOCK | N/A|
 | mx2.2x16 | 16GB | 4Gbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | mx2.32x256 | 256GB | 25Gbps | 32 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.48x384 | 384GB | 25Gbps | 48 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -139,6 +142,10 @@ Review the VPC Gen 2 worker node flavors by metro.
 | mx2.64x512 | 512GB | 25Gbps | 64 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.8x64 | 64GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 {: caption="Table 4. Worker node flavors for Europe." caption-side="bottom"}
+
+
+
+
 
 
 
@@ -161,6 +168,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 | cx2.8x16 | 16GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.16x128 | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
+| mx2.16x128.2000gb | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | 2000GB BLOCK | N/A|
 | mx2.2x16 | 16GB | 4Gbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | mx2.32x256 | 256GB | 25Gbps | 32 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.48x384 | 384GB | 25Gbps | 48 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -219,6 +227,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 | cx2.8x16 | 16GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.16x128 | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
+| mx2.16x128.2000gb | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | 2000GB BLOCK | N/A|
 | mx2.2x16 | 16GB | 4Gbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | mx2.32x256 | 256GB | 25Gbps | 32 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.48x384 | 384GB | 25Gbps | 48 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -248,6 +257,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 | cx2.8x16 | 16GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.16x128 | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
+| mx2.16x128.2000gb | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | 2000GB BLOCK | N/A|
 | mx2.2x16 | 16GB | 4Gbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | mx2.32x256 | 256GB | 25Gbps | 32 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.48x384 | 384GB | 25Gbps | 48 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -277,6 +287,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 | cx2.8x16 | 16GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.128x1024 | 1024GB | 25Gbps | 128 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.16x128 | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
+| mx2.16x128.2000gb | 128GB | 24Gbps | 16 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | 2000GB BLOCK | N/A|
 | mx2.2x16 | 16GB | 4Gbps | 2 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | mx2.32x256 | 256GB | 25Gbps | 32 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.48x384 | 384GB | 25Gbps | 48 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
