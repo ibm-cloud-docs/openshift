@@ -8767,8 +8767,6 @@ subcollection: openshift
 
 * [`eu-de`](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
 
-* [`eu-fr`](/docs/openshift?topic=openshift-vpc-flavors#eu-fr)
-
 * [`eu-gb`](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
 
 * [`jp-osa`](/docs/openshift?topic=openshift-vpc-flavors#jp-osa)
