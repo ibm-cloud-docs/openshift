@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: portworx, openshift
 
@@ -37,7 +37,7 @@ To set up your key-value store, choose between the following options.
 - [Automatically set up a key-value database (KVDB) during the Portworx installation](/docs/openshift?topic=openshift-storage-portworx-kv-store).
 - [Set up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage-portworx-kv-store).
 
-### Using the Portworx key-value database
+## Using the Portworx key-value database
 {: #portworx-kvdb}
 
 Automatically set up a key-value database (KVDB) during the Portworx installation that uses the space on the additional local disks that are attached to your worker nodes.

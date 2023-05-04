@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: portworx, openshift
 
@@ -14,7 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-## Getting help and support
+# Getting help and support
 {: #storage_portworx_support}
 
 Contact Portworx support by using one of the following methods.
@@ -28,7 +28,7 @@ Contact Portworx support by using one of the following methods.
 You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
 {: tip}
 
-### Gathering logs
+## Gathering logs
 {: #portworx_logs}
 
 You can use the following script to collect log information from your Portworx cluster.

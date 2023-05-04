@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: portworx, openshift
 
@@ -14,13 +14,13 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-## Cleaning up your Portworx volumes and cluster
+# Cleaning up your Portworx volumes and cluster
 {: #storage_portworx_removing}
 
 Remove a [Portworx volume](#remove_pvc_apps_volumes), a [storage node](#remove_storage_node_cluster-px), or the [entire Portworx cluster](#remove_storage_node_cluster-px) if you don't need it anymore.
 {: shortdesc}
 
-### Removing Portworx volumes from apps
+## Removing Portworx volumes from apps
 {: #remove_pvc_apps_volumes}
 
 When you added storage from your Portworx cluster to your app, you have three main components: the Kubernetes persistent volume claim (PVC) that requested the storage, the Kubernetes persistent volume (PV) that is mounted to your pod and described in the PVC, and the Portworx volume that blocks space on the physical disks of your Portworx cluster. To remove storage from your app, you must remove all components.
@@ -117,7 +117,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
     ```
     {: pre}
 
-### Removing a worker node from your Portworx cluster or the entire Portworx cluster
+## Removing a worker node from your Portworx cluster or the entire Portworx cluster
 {: #remove_storage_node_cluster-px}
 
 You can exclude worker nodes from your Portworx cluster or remove the entire Portworx cluster if you don't want to use Portworx anymore.
@@ -130,7 +130,7 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 - **Remove the Portworx DaemonSet**: When you remove the Portworx DaemonSet, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx DaemonSet and containers by using the same configuration files. For more information, see [Removing the Portworx DaemonSet](#remove_px_daemonset).
 - **Remove Portworx from your cluster:** If you want to remove Portworx and all your data from your cluster, follow the steps to [remove Portworx](/docs/openshift?topic=openshift-storage-portworx-removing) from your cluster.
 
-### Removing the Portworx DaemonSet
+## Removing the Portworx DaemonSet
 {: #remove_px_daemonset}
 
 When you remove the Portworx DaemonSet, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx DaemonSet and containers by using the same configuration files.
@@ -158,7 +158,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 
 
-### Removing Portworx from your cluster
+## Removing Portworx from your cluster
 {: #remove_portworx}
 
 If you don't want to use Portworx in your cluster, you can uninstall the Helm chart and delete your Portworx instance.

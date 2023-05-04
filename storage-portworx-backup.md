@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: portworx, openshift
 
@@ -14,7 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-## Backing up and restoring apps and data with PX-Backup
+# Backing up and restoring apps and data with PX-Backup
 {: #storage_portworx_backup}
 
 PX-Backup is a Portworx proprietary backup solution that is compatible with any {{site.data.keyword.openshiftlong_notm}} cluster. You can use PX-Backup to back up and restore {{site.data.keyword.openshiftlong_notm}} resources, apps and data across multiple clusters. For more information on PX-Backup, see [Understanding PX-Backup](https://backup.docs.portworx.com/understand/){: external}.
@@ -23,7 +23,7 @@ PX-Backup is a Portworx proprietary backup solution that is compatible with any 
 To back up the data in your persistent volumes, you must have a storage class that supports snapshots in your cluster. Clusters with Portworx Enterprise have storage classes available that support snapshots by default. However, for clusters that don't have Portworx Enterprise, you must have a storage classes with snapshot support to back up your persistent volume data. The {{site.data.keyword.block_storage_is_short}} driver, {{site.data.keyword.blockstorageshort}} driver, and the {{site.data.keyword.filestorage_short}} driver don't have storage classes that support snapshots. If you have workloads that use these drivers, you can use PX-Backup to back up your apps, but not the data in the persistent volumes. For more information see [Backing up and restoring cluster data with PX-Backup](#px-backup-and-restore).
 {: important}
 
-### Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster
+## Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster
 {: #px-backup-install}
 
 Install PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster in your {{site.data.keyword.cloud_notm}} account. After you install PX-backup on one cluster in your account, you can use it to back up or restore data and apps for any cluster in that same account.
@@ -52,7 +52,7 @@ If you are installing PX-Backup in a newly provisioned cluster, [you must log in
 11. [Verify that your PX-Backup service is installed correctly](#px-backup-verify).
 
 
-### Verifying your PX-Backup installation
+## Verifying your PX-Backup installation
 {: #px-backup-verify}
 
 Verify that PX-Backup is correctly installed on your cluster.
@@ -95,7 +95,7 @@ From the CLI
         {: screen}
 
 
-### Logging in to the PX-Backup console
+## Logging in to the PX-Backup console
 {: #px-backup-ui}
 
 Access the PX-Backup console through the URL supplied in the {{site.data.keyword.openshiftlong_notm}} dashboard for the cluster where you installed the service.
@@ -123,7 +123,7 @@ For public classic clusters
 For private classic clusters, [expose the **px-backup-ui** service on your private cluster to access the PX-Backup console](/docs/containers?topic=containers-managed-ingress-setup).
 {: note}
 
-### Adding a backup location to your PX-Backup service
+## Adding a backup location to your PX-Backup service
 {: #px-backup-storage}
 
 Create an {{site.data.keyword.cos_full_notm}} instance and bucket, and add them as a backup location to your PX-Backup service.
@@ -156,7 +156,7 @@ Before you begin, [log in to the PX-Backup console](#px-backup-ui). Note that if
     5. In the **Endpoint** field, enter the endpoint for your bucket that you retrieved earlier.
     6. Click **Add+** to create the backup location.
 
-### Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your PX-Backup service
+## Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your PX-Backup service
 {: #px-backup-cluster}
 
 Add the {{site.data.keyword.openshiftlong_notm}} cluster that you want to back up with PX-Backup. You can select any cluster in your account, including the cluster where you installed PX-Backup.
@@ -190,7 +190,7 @@ Adding a cluster:
 9. [Back up data from your cluster](#px-backup-and-restore).
 10. Repeat these steps to add more clusters to your PX-Backup service.
 
-#### Installing Stork on a non-Portworx cluster
+## Installing Stork on a non-Portworx cluster
 {: #px-backup-stork}
 
 If a cluster that you want to back up with PX-Backup does not have Portworx Enterprise installed on it, you must install Stork on to the cluster before adding it to your PX-Backup service.
@@ -235,7 +235,7 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
 
 
 
-### Backing up and restoring cluster data with PX-Backup
+## Backing up and restoring cluster data with PX-Backup
 {: #px-backup-and-restore}
 
 

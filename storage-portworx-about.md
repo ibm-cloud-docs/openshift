@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: portworx, openshift
 
@@ -25,14 +25,14 @@ Review frequently asked questions to learn more about Portworx and how Portworx 
 
 An SDS solution abstracts storage devices of various types, sizes, or from different vendors that are attached to the worker nodes in your cluster. Worker nodes with available storage on hard disks are added as a node to a storage cluster. In this cluster, the physical storage is virtualized and presented as a virtual storage pool to the user. The storage cluster is managed by the SDS software. If data must be stored on the storage cluster, the SDS software decides where to store the data for highest availability. Your virtual storage comes with a common set of capabilities and services that you can leverage without caring about the actual underlying storage architecture.
 
-### How does Portworx work?
+## How does Portworx work?
 {: #about-px-work}
 
 As a software defined storage solution, Portworx aggregates available storage that is attached to your worker nodes and creates a unified persistent storage layer for containerized databases or other stateful apps that you want to run in the cluster. By using volume replication of each container-level volume across multiple worker nodes, Portworx ensures data persistence and data accessibility across zones.
 
 Portworx also comes with additional features that you can use for your stateful apps, such as volume snapshots, volume encryption, isolation, and an integrated Storage Orchestrator for Kubernetes (Stork) to ensure optimal placement of volumes in the cluster. For more information, see the [Portworx documentation](https://docs.portworx.com/){: external}.
 
-### What are the requirements to run Portworx?
+## What are the requirements to run Portworx?
 {: #about-px-requirments}
 
 Review the requirements to [install Portworx](https://docs.portworx.com/install-portworx/prerequisites/){: external}.
@@ -40,12 +40,12 @@ Review the requirements to [install Portworx](https://docs.portworx.com/install-
 For production environments, choose one of the [sds worker node flavors](/docs/openshifttopic=openshift-planning_worker_nodes#sds-table) for best performance. 
 {: tip}
 
-### How can I make sure that my data is stored highly available?
+## How can I make sure that my data is stored highly available?
 {: #about-px-ha}
 
 You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) and replicate your volumes across worker nodes in 3 or more zones.
 
-### What volume topology offers the best performance for my pods?
+## What volume topology offers the best performance for my pods?
 {: #about-px-topology}
 
 One of the biggest challenges when you run stateful apps in a cluster is to make sure that your container can be rescheduled onto another host if the container or the entire host fails. In Docker, when a container must be rescheduled onto a different host, the volume does not move to the new host. Portworx can be configured to run `hyper-converged` to ensure that your compute resources and the storage are always placed onto the same worker node. When your app must be rescheduled, Portworx moves your app to a worker node where one of your volume replicas resides to ensure local-disk access speed and best performance for your stateful app. Running `hyper-converged` offers the best performance for your pods, but requires storage to be available on all worker nodes in your cluster.
@@ -56,7 +56,7 @@ You can also choose to use only a subset of worker nodes for your Portworx stora
 {: note}
 
 
-### Can I install Portworx in a private cluster?
+## Can I install Portworx in a private cluster?
 {: #about-px-private}
 
 Yes. If you want to install Portworx in a private cluster, your {{site.data.keyword.cloud_notm}} account must be set up with [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) and access to private cloud service endpoints for {{site.data.keyword.cloud_notm}} services. 
