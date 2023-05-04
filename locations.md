@@ -113,14 +113,14 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 
 | Geography | Country | Metro | Region | Zones |
 | --- | --- | --- | --- | --- |
-| Asia Pacific | Australia | Sydney | au-syd | au-syd-1 ,  au-syd-2 ,  au-syd-3 |
-| Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1 ,  jp-osa-2 ,  jp-osa-3 |
-| Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1 ,  jp-tok-2 ,  jp-tok-3 |
-| Europe | Germany | Frankfurt | eu-de | eu-de-1 ,  eu-de-2 ,  eu-de-3 |
-| Europe | United Kingdom | London | eu-gb | eu-gb-1 ,  eu-gb-2 ,  eu-gb-3 |
-| North America | Canada | `†` Toronto | ca-tor | ca-tor-1 ,  ca-tor-2 ,  ca-tor-3 |
-| North America | United States | Dallas | us-south | us-south-1 ,  us-south-2 ,  us-south-3 |
-| South America | Brazil | `†` São Paulo | br-sao | br-sao-1 ,  br-sao-2 ,  br-sao-3 |
+| Asia Pacific | Australia | Sydney | au-syd | au-syd-1, au-syd-2, au-syd-3 |
+| Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1, jp-osa-2, jp-osa-3 |
+| Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1, jp-tok-2, jp-tok-3 |
+| Europe | Germany | Frankfurt | eu-de | eu-de-1, eu-de-2, eu-de-3 |
+| Europe | United Kingdom | London | eu-gb | eu-gb-1, eu-gb-2, eu-gb-3 |
+| North America | Canada | `†` Toronto | ca-tor | ca-tor-1, ca-tor-2, ca-tor-3 |
+| North America | United States | Dallas | us-south | us-south-1, us-south-2, us-south-3 |
+| South America | Brazil | `†` São Paulo | br-sao | br-sao-1, br-sao-2, br-sao-3 |
 {: caption="Available multizone metro locations for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
 
 
