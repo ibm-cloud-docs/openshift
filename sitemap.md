@@ -6276,10 +6276,6 @@ subcollection: openshift
 
 * [Archive](/docs/openshift?topic=openshift-openshift_versions#version-archive)
 
-[Version change log](/docs/openshift?topic=openshift-openshift_changelog#openshift_changelog)
-
-* [Version change logs](/docs/openshift?topic=openshift-openshift_changelog#change-logs-by-version-roks)
-
 [CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark)
 
 * [Available benchmark versions](/docs/openshift?topic=openshift-cis-benchmark#cis-benchmark-versions)
