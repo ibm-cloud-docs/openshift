@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-04"
 
 keywords: openshift
 subcollection: openshift
@@ -8766,6 +8766,8 @@ subcollection: openshift
 * [`ca-tor`](/docs/openshift?topic=openshift-vpc-flavors#ca-tor)
 
 * [`eu-de`](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
+
+* [`eu-fr`](/docs/openshift?topic=openshift-vpc-flavors#eu-fr)
 
 * [`eu-gb`](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
 
