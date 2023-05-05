@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-05"
 
 keywords: openshift
 
@@ -4631,7 +4631,7 @@ Exposing apps with load balancers or Ingress ALBs
 
 
 Use the internal KVDB in Portworx
-:   Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-storage-portworx-kv-store).
+:   Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-storage_portworx_kv_store).
 
 ## November 2019
 {: #openshift-nov19}

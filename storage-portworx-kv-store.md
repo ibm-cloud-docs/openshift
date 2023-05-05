@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-05"
 
 keywords: portworx, openshift
 
@@ -28,14 +28,14 @@ subcollection: openshift
 Decide on the key-value store that you want to use to store Portworx metadata.
 {: shortdesc}
 
-Before you begin, review the [Planning your Portworx setup section](#portworx_planning).
+Before you begin, review the [Planning your Portworx setup section](/docs/openshift?topic=openshift-storage_portworx_plan).
 {: important}
 
 The Portworx key-value store serves as the single source of truth for your Portworx cluster. If the key-value store is not available, then you can't work with your Portworx cluster to access or store your data. Existing data is not changed or removed when the Portworx database is unavailable.
 
 To set up your key-value store, choose between the following options.
-- [Automatically set up a key-value database (KVDB) during the Portworx installation](/docs/openshift?topic=openshift-storage-portworx-kv-store).
-- [Set up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage-portworx-kv-store).
+- [Automatically set up a key-value database (KVDB) during the Portworx installation](/docs/openshift?topic=openshift-storage_portworx_kv_store).
+- [Set up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store).
 
 ## Using the Portworx key-value database
 {: #portworx-kvdb}
@@ -45,13 +45,13 @@ Automatically set up a key-value database (KVDB) during the Portworx installatio
 
 You can keep the Portworx metadata inside your cluster and store it along with the operational data that you plan to store with Portworx by using the internal key-value database (KVDB) that is included in Portworx. For general information about the internal Portworx KVDB, see the [Portworx documentation](https://docs.portworx.com/concepts/internal-kvdb/){: external}.
 
-To set up the internal Portworx KDVB, follow the steps in [Installing Portworx in your cluster](/docs/openshift?topic=openshift-storage-install-portworx).
+To set up the internal Portworx KDVB, follow the steps in [Installing Portworx in your cluster](/docs/openshift?topic=openshift-storage-portworx-deploy).
 
 If you plan to use the internal KVDB, make sure that your cluster has a minimum of 3 worker nodes with additional local block storage so that the KVDB can be set up for high availability. Your data is automatically replicated across these 3 worker nodes and you can choose to scale this deployment to replicate data across up to 25 worker nodes.
 {: note}
 
 ### Optional: Setting up a Databases for etcd service instance
-{: /docs/openshift?topic=openshift-storage-portworx-kv-store}
+{: /docs/openshift?topic=openshift-storage_portworx_kv_store}
 
 If you want to use an external database service for your Portworx cluster metadata and keep the metadata separate from the operational data that you plan to store with Portworx, set up a [Databases for etcd](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started) service instance in your cluster.
 {: shortdesc}
@@ -79,7 +79,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
     2. Click **New credentials**.
     3. Enter a name for your service credentials and click **Add**.
 
-4. Retrieve your service credentials and certificate.{: /docs/openshift?topic=openshift-storage-portworx-kv-store}
+4. Retrieve your service credentials and certificate.{: /docs/openshift?topic=openshift-storage_portworx_kv_store}
     1. From the navigation on the service details page, select **Service credentials**.
     2. Find the credentials that you want to use, and from the **Actions** column in the service credentials table, click **View credentials**.
     3. Find the `grp.authentication` section of your service credentials and note the **`username`** and **`password`**.
@@ -140,7 +140,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
         ```
         {: pre}
 
-7. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](/docs/openshift?topic=openshift-storage-portworx-encyrption). If you don't want to set up {{site.data.keyword.keymanagementservicelong_notm}} encryption for your volumes, continue with [installing Portworx in your cluster](/docs/openshift?topic=openshift-storage-install-portworx).
+7. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](/docs/openshift?topic=openshift-storage-portworx-encyrption). If you don't want to set up {{site.data.keyword.keymanagementservicelong_notm}} encryption for your volumes, continue with [installing Portworx in your cluster](/docs/openshift?topic=openshift-storage-portworx-deploy).
 
 
 

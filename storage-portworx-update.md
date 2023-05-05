@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-05"
 
 keywords: portworx, openshift
 
@@ -29,7 +29,7 @@ If you have a private only cluster, contact Portworx for help updating your clus
 
 - Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
 
-You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+You can also [gather logging information](/docs/openshift?topic=openshift-storage-portworx-about_logs) before opening a support ticket.
 {: tip}
 {: note}
 
@@ -69,7 +69,7 @@ Update only one worker node at a time. When the worker node update is complete, 
     ```
     {: pre}
 
-7. [Mount the volume to your app](/docs/openshift?topic=openshift-portworx#mount_pvc).
+7. [Mount the volume to your app](/docs/openshift?topic=openshift-storage-portworx-deploy#mount_pvc).
 
 
 

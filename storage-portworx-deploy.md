@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-05"
 
 keywords: portworx, openshift
 
@@ -19,7 +19,7 @@ subcollection: openshift
 Provision a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog. After you create the service instance, the latest Portworx enterprise edition (`px-enterprise`) is installed on your cluster by using Helm. In addition, [Stork](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/stork/){: external} is also installed on your {{site.data.keyword.openshiftlong_notm}} cluster. Stork is the Portworx storage scheduler. With Stork, you can co-locate pods with their data and create and restore snapshots of Portworx volumes.
 {: shortdesc}
 
-Looking for instructions about how to update or remove Portworx? See [Updating Portworx](/docs/openshift?topic=openshift-storage-portworx-update) and [Removing Portworx](/docs/openshift?topic=openshift-storage-portworx-removing).
+Looking for instructions about how to update or remove Portworx? See [Updating Portworx](/docs/openshift?topic=openshift-storage_portworx_update) and [Removing Portworx](/docs/openshift?topic=openshift-storage_portworx_removing).
 {: tip}
 
 Before you begin:
@@ -29,13 +29,13 @@ Before you begin:
 
 - If you want to use non-SDS worker nodes in a classic cluster [add a block storage device to your worker node](/docs/openshift?topic=openshift-utilities#manual_block).
 
-- Choose if you want to [use the internal Portworx key-value database (KVDB)](/docs/openshift?topic=openshift-storage-portworx-kv-store) or [create a Databases for etcd service instance](/docs/openshift?topic=openshift-storage-portworx-kv-store) to store the Portworx configuration and metadata.
+- Choose if you want to [use the internal Portworx key-value database (KVDB)](/docs/openshift?topic=openshift-storage_portworx_kv_store) or [create a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store) to store the Portworx configuration and metadata.
 
 - Decide whether you want to encrypt your Portworx volumes. To encrypt your volumes, you must [set up an {{site.data.keyword.keymanagementservicelong_notm}} or a {{site.data.keyword.hscrypto}} instance and store your service information in a Kubernetes secret](/docs/openshift?topic=openshift-storage-portworx-encyrption).
 
 - Make sure that you [copied the image pull secrets from the `default` to the `kube-system` project](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) so that you can pull images from {{site.data.keyword.registryshort}}. Make sure that you [add the image pull secrets to the Kubernetes service account](/docs/openshift?topic=openshift-registry#store_imagePullSecret) of the `kube-system` project.
 
-- Decide if you want to include your cluster in a Portworx disaster recovery configuration. For more information, see [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage-portworx-recover).
+- Decide if you want to include your cluster in a Portworx disaster recovery configuration. For more information, see [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery).
 
 - If you attached a separate device for the Portworx journal, make sure that you retrieve the device path by running `lsblk` while logged into your worker node.
 
@@ -65,7 +65,7 @@ To install Portworx:
     1. From the **Portworx metadata key-value store** drop down, choose the type of key-value store that you want to use to store Portworx metadata. Select **Portworx KVDB** to automatically create a key-value store during the Portworx installation, or select **Databases for etcd** if you want to use an existing Databases for etcd instance. If you choose **Databases for etcd**, the **Etcd API endpoints** and **Etcd secret name** fields appear.
     1. **Namespace**: Enter the namespace where you want to deploy the Portworx resources.
     1. **Required for Databases for etcd only**: Enter the information of your Databases for etcd service instance.
-        1. [Retrieve the etcd endpoint, and the name of the Kubernetes secret](/docs/openshift?topic=openshift-storage-portworx-kv-store) that you created for your Databases for etcd service instance.
+        1. [Retrieve the etcd endpoint, and the name of the Kubernetes secret](/docs/openshift?topic=openshift-storage_portworx_kv_store) that you created for your Databases for etcd service instance.
         2. In the **Etcd API endpoints** field, enter the API endpoint of your Databases for etcd service instance that you retrieved earlier. Make sure to enter the endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (`;`).
         3. In the **Etcd secret name** field, enter the name of the Kubernetes secret that you created in your cluster to store the Databases for etcd service credentials.
     1. From the **Kubernetes or OpenShift cluster name** drop down list, select the cluster where you want to install Portworx. If your cluster is not listed, make sure that you select the correct {{site.data.keyword.cloud_notm}} region. If the region is correct, verify that you have the correct [permissions](/docs/containers?topic=containers-clusters&interface=ui) to view and work with your cluster. Make sure that you select a cluster that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
