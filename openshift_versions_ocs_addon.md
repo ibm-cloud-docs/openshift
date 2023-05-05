@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-05-05"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -36,6 +36,14 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ## Version 4.12
 {: #4.12_odf}
 
+### Version 4.12.4, release 05 May 2023
+{: #4.12.4_odf}
+
+- LSO channel updated
+- Golang updated to `1.19.8`.
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
+
+
 ### Version 4.12.0, released 16 March 2023
 {: #4.12.0_odf}
 
@@ -43,6 +51,13 @@ Initial release.
 
 ## Version 4.11
 {: #4.11_odf}
+
+### Version 4.11.10, release 05 May 2023
+{: #4.11.10_odf}
+
+- LSO channel updated
+- Golang updated to `1.19.8`.
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
 ### Version 4.11.4, released 14 February 2023
 {: #4.11.4_odf}
@@ -66,6 +81,12 @@ Initial release.
 
 ## Version 4.10
 {: #4.10_odf}
+
+### Version 4.10.24, release 05 May 2023
+{: #4.10.24_odf}
+
+- Golang updated to `1.19.8`.
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
 ### Version 4.10.14, released 17 November 2023
 {: #4.10.14_odf}
@@ -142,6 +163,12 @@ Initial release.
 ## Version 4.9
 {: #4.9_odf}
 
+### Version 4.9.26, release 05 May 2023
+{: #4.9.26_odf}
+
+- Golang updated to `1.19.8`.
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
+
 ### Version 4.9.5, release 20 May 2022
 {: #4.9.5_odf}
 
@@ -178,6 +205,12 @@ Initial release.
 
 ## Version 4.8
 {: #4.8_odf}
+
+### Version 4.8.31, release 05 May 2023
+{: #4.12.4_odf}
+
+- Golang updated to `1.19.8`.
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
 ### Version 4.8.4, release 17 January 2022
 {: #4.8.4_odf}

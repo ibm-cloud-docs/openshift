@@ -29,6 +29,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2023
 {: #openshift-may23}
 
+### 5 May 2023
+{: #openshift-may0523}
+{: release-note}
+
+
+  
+New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+  
+
+
 
 
 
