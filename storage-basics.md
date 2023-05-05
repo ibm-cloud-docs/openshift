@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-05-05"
 
 keywords: openshift
 
@@ -47,7 +47,7 @@ Persistent volume (PV)
 :    A PV is a virtual storage instance that is added as a volume to the cluster. The PV points to a physical storage device in your IBM Cloud infrastructure account and abstracts the API that is used to communicate with the storage device. To mount a PV to an app, you must have a matching PVC. Mounted PVs appear as a folder inside the container's file system.
 
 Physical storage
-:    A physical storage instance that you can use to persist your data. Examples of physical storage in {{site.data.keyword.cloud_notm}} include [{{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage), [Block Storage](/docs/openshift?topic=openshift-block_storage#block_storage), [Object Storage](/docs/openshift?topic=openshift-storage-cos-understand), and local worker node storage that you can use as SDS storage with [Portworx](/docs/openshift?topic=openshift-portworx#portworx). {{site.data.keyword.cloud_notm}} provides high availability for physical storage instances. However, data that is stored on a physical storage instance is not backed up automatically. Depending on the type of storage that you use, different methods exist to set up backup and restore solutions.
+:    A physical storage instance that you can use to persist your data. Examples of physical storage in {{site.data.keyword.cloud_notm}} include [{{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage), [Block Storage](/docs/openshift?topic=openshift-block_storage#block_storage), [Object Storage](/docs/openshift?topic=openshift-storage-cos-understand), and local worker node storage that you can use as SDS storage with [Portworx](/docs/openshift?topic=openshift-storage-portworx-about). {{site.data.keyword.cloud_notm}} provides high availability for physical storage instances. However, data that is stored on a physical storage instance is not backed up automatically. Depending on the type of storage that you use, different methods exist to set up backup and restore solutions.
 
 For more information about how to create and use PVCs, PVs, and the physical storage device, see the following topics.
 - [Dynamic provisioning](#dynamic_provisioning)

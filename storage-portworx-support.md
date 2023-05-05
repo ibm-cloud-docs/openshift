@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-05"
 
 keywords: portworx, openshift
 
@@ -25,7 +25,7 @@ Contact Portworx support by using one of the following methods.
 
 - Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
 
-You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+You can also [gather logging information](/docs/openshift?topic=openshift-storage-portworx-about_logs) before opening a support ticket.
 {: tip}
 
 ## Gathering logs
@@ -65,7 +65,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         ```
         {: pre}
 
-4. Review the log files locally. If you can't resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-portworx#portworx_help_sup) and provide the log information that you collected.
+4. Review the log files locally. If you can't resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-storage-portworx-support) and provide the log information that you collected.
 
 
 

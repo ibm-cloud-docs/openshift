@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-05-05"
 
 keywords: openshift, version, update, upgrade
 
@@ -23,7 +23,7 @@ Version 4.7 is unsupported.
 Review information about version 4.7 of {{site.data.keyword.openshiftlong_notm}}, released 09 Jun 2021. This version is based on Kubernetes version 1.20. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat OpenShift on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_changelog).
+Looking for general information about updating clusters, or information on a different version? See [Red Hat OpenShift on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
 ![This badge indicates Kubernetes version 1.20 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.20 certification badge" caption-side="bottom"}

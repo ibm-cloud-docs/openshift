@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-05"
 
 keywords: portworx, openshift
 
@@ -21,8 +21,8 @@ subcollection: openshift
 Before you create your cluster and install Portworx, review the following planning steps.
 {: shortdesc}
 
-- [ ] Decide where you want to store the Portworx metadata. You can use KVDB or an external Database instance. For more information, see [Understanding the key-value store](/docs/openshift?topic=openshift-storage-portworx-kv-store). To learn more about what the key value does, see the [Portworx documentation](https://docs.portworx.com/concepts/internal-kvdb/).
-- [ ] Decide whether you want encryption. You can use {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementservicelong_notm}}. For more information, see [Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage-portworx-encryption).
+- [ ] Decide where you want to store the Portworx metadata. You can use KVDB or an external Database instance. For more information, see [Understanding the key-value store](/docs/openshift?topic=openshift-storage_portworx_kv_store). To learn more about what the key value does, see the [Portworx documentation](https://docs.portworx.com/concepts/internal-kvdb/).
+- [ ] Decide whether you want encryption. You can use {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementservicelong_notm}}. For more information, see [Understanding encryption for Portworx]/docs/openshift?topic=openshift-storage_portworx_encryption.
 - [ ] Decide whether you want to use journal devices. Journal devices allow Portworx to write logs directly to a local disk on your worker node.
 - [ ] **VPC or Satellite clusters only** - Decide whether you want to use cloud drives. Cloud drives allow you to dynamically provision the Portworx volumes. If you don’t want to use cloud drives, you must manually attach volumes to worker nodes.
 - [ ] Review the [Limitations](#portworx_limitations).
@@ -49,14 +49,14 @@ Review the following Portworx limitations.
     2. Worker node flavor: Choose an SDS or bare metal flavor. If you want to use virtual machines, use a worker node with 16 vCPU and 64 GB memory or more, such as `b3c.16x64`. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` don't provide the required resources for Portworx to work properly.
     3. Minimum number of workers: Two worker nodes per zone across three zones, for a minimum total of six worker nodes.
 1. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-utilities#manual_block).
-1. For production workloads, create an [external Databases for etcd](#portworx_database) instance for your Portworx metadata key-value store.
+1. For production workloads, create an [external Databases for etcd](/docs/openshift?topic=openshift-storage_portworx_kv_store) instance for your Portworx metadata key-value store.
 1. **Optional** [Set up encryption](/docs/openshift?topic=openshift-storage-portworx-encyrption).
-1. [Install Portworx](/docs/openshift?topic=openshift-storage-install-portworx).
+1. [Install Portworx](/docs/openshift?topic=openshift-storage-portworx-deploy).
 1. Maintain the lifecycle of your Portworx deployment in your cluster.
-    1. When you update worker nodes in [VPC](#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
+    1. When you update worker nodes in [VPC](/docs/openshift?topic=openshift-storage-portworx#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
         * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr).
         * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
-    2. To remove a Portworx volume, storage node, or the entire Portworx cluster, see [Portworx cleanup](#portworx_cleanup).
+    2. To remove a Portworx volume, storage node, or the entire Portworx cluster, see [Portworx cleanup](/docs/openshift?topic=openshift-storage_portworx_remove).
 
 
 ## Creating a secret to store the KMS credentials
@@ -121,7 +121,7 @@ Review the following Portworx limitations.
         ```
         {: pre}
 
-4. If you set up encryption before your installed Portworx, you can now [install Portworx in your cluster](#add_portworx_storage). To add encryption to your cluster after you installed Portworx, update the Portworx DaemonSet to add `"-secret_type"` and `"ibm-kp"` as additional options to the Portworx container definition.
+4. If you set up encryption before your installed Portworx, you can now [install Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_deploy). To add encryption to your cluster after you installed Portworx, update the Portworx DaemonSet to add `"-secret_type"` and `"ibm-kp"` as additional options to the Portworx container definition.
     1. Update the Portworx DaemonSet.
         ```sh
         oc edit daemonset portworx -n kube-system

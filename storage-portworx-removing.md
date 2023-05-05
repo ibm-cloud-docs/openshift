@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-05"
 
 keywords: portworx, openshift
 
@@ -128,7 +128,7 @@ Removing your Portworx cluster removes all the data from your Portworx cluster. 
 
 - **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes](https://docs.portworx.com/portworx-install-with-kubernetes/operate-and-maintain-on-kubernetes/uninstall/decommission-a-node/){: external}.
 - **Remove the Portworx DaemonSet**: When you remove the Portworx DaemonSet, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx DaemonSet and containers by using the same configuration files. For more information, see [Removing the Portworx DaemonSet](#remove_px_daemonset).
-- **Remove Portworx from your cluster:** If you want to remove Portworx and all your data from your cluster, follow the steps to [remove Portworx](/docs/openshift?topic=openshift-storage-portworx-removing) from your cluster.
+- **Remove Portworx from your cluster:** If you want to remove Portworx and all your data from your cluster, follow the steps to [remove Portworx](/docs/openshift?topic=openshift-storage_portworx_removing) from your cluster.
 
 ## Removing the Portworx DaemonSet
 {: #remove_px_daemonset}
@@ -164,7 +164,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 If you don't want to use Portworx in your cluster, you can uninstall the Helm chart and delete your Portworx instance.
 {: shortdesc}
 
-The following steps walk you through deleting the Portworx Helm chart from your cluster and deleting your Portworx instance. If you want to clean up your Portworx installation by removing your volumes from your apps, removing individual worker nodes from Portworx, or if you want to completely remove Portworx and all your volumes and data, see [Cleaning up your Portworx cluster](#portworx_cleanup).
+The following steps walk you through deleting the Portworx Helm chart from your cluster and deleting your Portworx instance. If you want to clean up your Portworx installation by removing your volumes from your apps, removing individual worker nodes from Portworx, or if you want to completely remove Portworx and all your volumes and data, see [Cleaning up your Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_remove).
 {: note}
 
 The following commands result in data loss.

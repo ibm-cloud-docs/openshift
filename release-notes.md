@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-05"
 
 keywords: openshift
 
@@ -28,6 +28,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2023
 {: #openshift-may23}
+
+### 5 May 2023
+{: #openshift-may0523}
+{: release-note}
+
+
+  
+New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+  
+
 
 
 
@@ -63,7 +74,7 @@ Cluster autoscaler add-on version `1.1.0_1060`.
 
 
 Worker node fix packs `4.8.57_1600_openshift`, `4.9.59_1587_openshift`, `4.10.57_1565_openshift`, `4.11.37_1553_openshift`, and `4.12.13_1539_openshift`.
-:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 
 
@@ -79,7 +90,7 @@ CLI version `1.0.510`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Worker node fix packs `4.8.57_1598_openshift`, `4.9.59_1585_openshift`, `4.10.55_1563_openshift`, `4.11.34_1550_openshift`, and `4.12.10_1536_openshift`.
-:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 ### 5 April 2023
 {: #openshift-apr0523}
@@ -125,10 +136,10 @@ Cluster autoscaler add-on versions `1.0.7_988` and `1.0.8_987`.
 
   
 Master fix packs `4.8.57_1596_openshift`, `4.9.57_1583_openshift`, `4.10.53_1561_openshift`, `4.11.31_1548_openshift`, and `4.12.7_1534_openshift`.
-:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 Worker node fix packs `4.8.57_1597_openshift`, `4.9.57_1584_openshift`, `4.10.54_1562_openshift`, `4.11.32_1549_openshift`, and `4.12.8_1535_openshift`.
-:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 
 
@@ -171,7 +182,7 @@ New! OpenShift Data Foundation add-on version `4.12.0`.
 
   
 Worker node fix packs `4.8.57_1594_openshift`, `4.9.57_1580_openshift`, `4.10.52_1559_openshift`, `4.11.30_1547_openshift`, and `4.12.6_1531_openshift`.
-:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 
 
@@ -193,7 +204,7 @@ Cluster autoscaler add-on version `1.0.8_968`
 
   
 Worker node fix packs `4.8.57_1593_openshift`, `4.9.56_1579_openshift`, `4.10.52_1558_openshift`, `4.11.28_1546_openshift`, and `4.12.4_1530_openshift`.
-:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 Cluster autoscaler add-on version `1.0.6_955` and `1.0.7_956`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
@@ -235,13 +246,13 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1362`.
 
 
 New! {{site.data.keyword.openshiftlong_notm}} 4.12
-:   You can create or [update clusters to version 4.12](/docs/openshift?topic=openshift-openshift_changelog_412). With {{site.data.keyword.openshiftlong_notm}} version 4.12, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
+:   You can create or [update clusters to version 4.12](/docs/openshift?topic=openshift-openshift_versions_412). With {{site.data.keyword.openshiftlong_notm}} version 4.12, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
 
 Master fix pack and worker node fix pack update
-:   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_412) are available.
+:   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift](/docs/openshift?topic=openshift-openshift_versions_412) are available.
   
 Worker node fix packs `4.8.57_1590_openshift`, `4.9.56_1576_openshift`, `4.10.52_1556_openshift`, `4.11.28_1543_openshift`, and `4.12.4_1528_openshift`.
-:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 
 
@@ -285,7 +296,7 @@ Istio add-on `1.15.5` and `1.16.2`
 
 
 Worker node fix packs `4.8.57_1589_openshift`, `4.9.54_1575_openshift`, `4.10.51_1555_openshift`, and `4.11.26_1542_openshift`.
-:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), and [4.11](/docs/openshift?topic=openshift-openshift_changelog_411).
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), and [4.11](/docs/openshift?topic=openshift-openshift_versions_411).
 
 
 
@@ -347,12 +358,12 @@ Customized VPC load balancer health checks
 
 
 Master fix packs `4.8.57_1587_openshift`, `4.9.54_1573_openshift`, `4.10.47_1553_openshift`, and `4.11.25_1540_openshift`.
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410),[4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.8](/docs/openshift?topic=openshift-openshift_versions_48).
 
 
 
 Worker node fix packs `4.8.57_1588_openshift`, `4.9.54_1574_openshift`, `4.10.50_1554_openshift`, and `4.11.25_1541_openshift`.
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410),[4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.8](/docs/openshift?topic=openshift-openshift_versions_48).
 
 New! Optional secondary disks for worker nodes in VPC clusters.
 :   When you create a VPC cluster, you can specify an optional secondary disk for your worker nodes. Secondary disks are used for the container runtime and are useful in scenarios where more container storage is needed, such as running pods with large images. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).
@@ -394,7 +405,7 @@ Cluster autoscaler add-on version `1.0.7_940`.
 
 
 Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.54_1571_openshift`, `4.8.55_1586_openshift`.
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410),[4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.8](/docs/openshift?topic=openshift-openshift_versions_48).
 
 ### 10 January 2023
 {: #openshift-jan1023}
@@ -430,7 +441,7 @@ Cluster autoscaler add-on versions `1.0.5_898`, `1.0.6_899`, `1.0.7_900`, and `1
 
 
 Worker node fix packs `4.11.20_1537_openshift`, `4.10.45_1550_openshift`, `4.9.53_1570_openshift`, `4.8.55_1585_openshift`, `4.7.60_1594_openshift`
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410),[4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.7](/docs/openshift?topic=openshift-openshift_versions_47).
 
 ## December 2022
 {: #openshift-dec22}
@@ -442,7 +453,7 @@ Worker node fix packs `4.11.20_1537_openshift`, `4.10.45_1550_openshift`, `4.9.5
 
 
 Worker node fix packs `4.11.18_1536_openshift`, `4.10.45_1549_openshift`, `4.9.53_1569_openshift`, `4.8.54_1584_openshift`, `4.7.60_1593_openshift`
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410),[4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.7](/docs/openshift?topic=openshift-openshift_versions_47).
 
 ### 15 December 2022
 {: #openshift-dec1522}
@@ -466,7 +477,7 @@ Cloud Image Key Synchronizer add-on version 1.0.0_1269
 
 
 Master fix pack `4.7.60_1592_openshift`, `4.8.54_1583_openshift`, `4.9.52_1568_openshift`, `4.10.43_1548_openshift`, and `4.11.17_1535_openshift`
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.7](/docs/openshift?topic=openshift-openshift_versions_47).
 
 
 
@@ -508,7 +519,7 @@ Changes to `cluster config` for {{site.data.keyword.satelliteshort}} clusters
 
 
 Worker node fix packs 4.11.13_1534_openshift, 4.10.41_1547_openshift, 4.9.52_1567_openshift, 4.8.52_1582_openshift, 4.7.60_1591_openshift
-:   For more information, see the change logs: [4.11.13_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10.41_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.52_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.52_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.60_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_47).
+:   For more information, see the change logs: [4.11.13_1534_openshift](/docs/openshift?topic=openshift-openshift_versions_411), [4.10.41_1547_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.52_1567_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.52_1582_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.60_1591_openshift](/docs/openshift?topic=openshift-openshift_versions_47).
 
 ### 1 December 2022
 {: #openshift-dec0122}
@@ -549,7 +560,7 @@ Experimental: Installing OpenShift Data Foundation on private only, air-gapped c
 
 
 Worker node fix pack 4.11.13_1533_openshift, 4.10.41_1546_openshift, 4.9.51_1566_openshift, 4.8.52_1581_openshift, 4.7.60_1590_openshift
-:   For more information, see the change logs: [4.11.13_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10.41_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.51_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.52_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.60_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_47).
+:   For more information, see the change logs: [4.11.13_1533_openshift](/docs/openshift?topic=openshift-openshift_versions_411), [4.10.41_1546_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.51_1566_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.52_1581_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.60_1590_openshift](/docs/openshift?topic=openshift-openshift_versions_47).
 
 
 ### 17 November 2022
@@ -570,7 +581,7 @@ Worker node fix pack 4.11.13_1533_openshift, 4.10.41_1546_openshift, 4.9.51_1566
 
 
 Master fix pack 4.7.59_1589_openshift, 4.8.52_1580_openshift, 4.9.51_1565_openshift, 4.10.39_1545_openshift, and 4.11.12_1532_openshift.
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.7](/docs/openshift?topic=openshift-openshift_versions_47).
 
 
 
@@ -597,7 +608,7 @@ New Ingress status messages
 
 
 Worker node fix pack 4.11.12_1531_openshift, 4.10.39_1544_openshift, 4.9.51_1564_openshift
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410),[4.9](/docs/openshift?topic=openshift-openshift_versions_49).
 
 
 
@@ -634,7 +645,7 @@ Istio add-on version `1.15.3`
 
 
 Worker node fix pack 4.11.12_1530_openshift, 4.10.39_1543_openshift, 4.9.51_1563_openshift, 4.8.52_1579_openshift, 4.7.59_1588_openshift, 4.6.61_1603_openshift
-:   For more information, see the change logs: [4.11.12_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10.39_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.51_1563_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.52_1579_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.59_1588_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.61_1603_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   For more information, see the change logs: [4.11.12_1530_openshift](/docs/openshift?topic=openshift-openshift_versions_411), [4.10.39_1543_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.51_1563_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.52_1579_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.59_1588_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.61_1603_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 ### 3 November 2022
 {: #openshift-nov0322}
@@ -659,10 +670,10 @@ Cluster autoscaler add-on version `1.0.7_883`.
 
 
 Master fix pack 4.6.61_1605_openshift, 4.7.59_1587_openshift, 4.8.51_1578_openshift, 4.9.49_1561_openshift, 4.10.36_1541_openshift, and 4.11.8_1528_openshift.
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.7](/docs/openshift?topic=openshift-openshift_versions_47), [4.6](/docs/openshift?topic=openshift-openshift_versions_46).
 
 Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, and 4.9.50_1562_openshift
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), and [4.9](/docs/openshift?topic=openshift-openshift_changelog_49).
+:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_versions_411), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), and [4.9](/docs/openshift?topic=openshift-openshift_versions_49).
 
 Cloud Image Key Synchronizer add-on version 1.0.0_1200
 :   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
@@ -677,7 +688,7 @@ Cloud Image Key Synchronizer add-on version 1.0.0_1200
 
 
 Worker node fix pack 4.11.9_1526_openshift, 4.10.37_1539_openshift, 4.9.50_1559_openshift, 4.8.51_1576_openshift, 4.7.59_1585_openshift, 4.6.61_1603_openshift
-:   For more information, see the change logs: [4.11.9_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10.37_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.50_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.51_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.59_1585_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.61_1603_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   For more information, see the change logs: [4.11.9_1526_openshift](/docs/openshift?topic=openshift-openshift_versions_411), [4.10.37_1539_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.50_1559_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.51_1576_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.59_1585_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.61_1603_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 ### 25 October 2022
 {: #openshift-oct2522}
@@ -718,7 +729,7 @@ Istio add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.35_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.49_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.50_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.59_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.61_1602_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.35_1538_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.49_1558_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.50_1575_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.59_1584_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.61_1602_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 Cluster autoscaler add-on version `1.0.6_828`.
 :   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
@@ -764,7 +775,7 @@ New! Enabling Flow logs for VPC components
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.33_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.48_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.50_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.59_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.61_1601_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.33_1537_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.48_1557_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.50_1574_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.59_1583_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.61_1601_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 
 
@@ -848,7 +859,7 @@ CLI change log update
 
 Master fix pack update
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.26_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.46_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.47_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.56_1580_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1598_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.26_1534_openshift](/docs/openshift?topic=openshift-openshift_versions_410), [4.9.46_1554_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.47_1571_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.56_1580_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.60_1598_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 New! Pod security admission
 :    Versions 4.11 and later include support for Kubernetes [pod security admission](/docs/openshift?topic=openshift-pod-security-admission). 
@@ -870,7 +881,7 @@ Cluster autoscaler add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.28_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.46_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.47_1570_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.56_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1596_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.28_1533_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.46_1553_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.47_1570_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.56_1578_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.60_1596_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 ### 26 August 2022
 {: #openshift-aug2622}
@@ -915,7 +926,7 @@ Cluster autoscaler add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.26_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.45_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.47_1568_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.55_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1594_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.26_1530_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.45_1550_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.47_1568_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.55_1576_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.60_1594_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 Istio add-on
 :   Version [`1.14.3`](/docs/containers?topic=containers-istio-changelog#1143) and [`1.13.7`](/docs/containers?topic=containers-istio-changelog#1137) is available.
@@ -953,7 +964,7 @@ New! {{site.data.keyword.filestorage_vpc_full_notm}} CSI Driver (Beta)
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.24_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.43_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.46_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.55_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.60_1593_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.24_1529_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.43_1549_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.46_1567_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.55_1575_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.60_1593_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 
 ## July 2022
@@ -973,7 +984,7 @@ Worker node fix pack
 
 Master fix pack update
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.22_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.42_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.46_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.53_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1592_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.22_1528_openshift](/docs/openshift?topic=openshift-openshift_versions_410), [4.9.42_1548_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.46_1566_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.53_1574_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.59_1592_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 
 ### 22 July 2022
@@ -982,7 +993,7 @@ Master fix pack update
 
 
 Version change log
-:   Change log added for master fix pack [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_410).
+:   Change log added for master fix pack [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_versions_410).
 
 
 
@@ -1013,7 +1024,7 @@ Node Tuning Operator
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.21_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.42_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.46_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.54_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.21_1527_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.42_1547_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.46_1565_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.54_1572_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.59_1591_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 ### 15 July 2022
 {: #openshift-july1522}
@@ -1058,7 +1069,7 @@ Compliance Operator benchmarks
 {: release-note}
 
 Worker node fix pack
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.20_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.44_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.20_1526_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.40_1546_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.44_1564_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.53_1571_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.59_1590_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 
 
@@ -1080,7 +1091,7 @@ Cloud Image Key Synchronizer add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.20_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.40_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.45_1561_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.53_1570_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.59_1589_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.20_1525_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.40_1545_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.45_1561_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.53_1570_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.59_1589_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 ## June 2022
 {: #openshift-jun22}
@@ -1132,7 +1143,7 @@ New! Portworx Cloud Drive support
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.18_1523_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.38_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.42_1561_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.53_1568_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), and [4.6.58_1587_openshift](/docs/openshift?topic=openshift-openshift_changelog_46).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.18_1523_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.38_1543_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.42_1561_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.53_1568_openshift](/docs/openshift?topic=openshift-openshift_versions_47), and [4.6.58_1587_openshift](/docs/openshift?topic=openshift-openshift_versions_46).
 
 ### 17 June 2022
 {: #openshift-jun1722}
@@ -1199,10 +1210,10 @@ CLI change log update
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.16_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.36_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.42_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.51_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.58_1585_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.705_1634_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.16_1521_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.36_1541_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.42_1559_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.51_1566_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.58_1585_openshift](/docs/openshift?topic=openshift-openshift_versions_46), [3.11.705_1634_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 Version 3.11 is unsupported
-:   Update your cluster to a supported as soon as possible. For more information, see the 3.11 [release information](/docs/openshift?topic=openshift-cs_versions_311) and [change log](/docs/openshift?topic=openshift-openshift_changelog_311). For more information about the supported releases, see the [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+:   Update your cluster to a supported as soon as possible. For more information, see the 3.11 [release information](/docs/openshift?topic=openshift-cs_versions_311) and [change log](/docs/openshift?topic=openshift-openshift_versions_311). For more information about the supported releases, see the [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 
 
@@ -1211,7 +1222,7 @@ Version 3.11 is unsupported
 {: release-note}
 
 Master fix pack update
-:   {{site.data.keyword.openshiftlong_notm}} [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_410), [4.9.33_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1558_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), and [3.11.705_1633_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.openshiftlong_notm}} [4.10.15_1520_openshift](/docs/openshift?topic=openshift-openshift_versions_410), [4.9.33_1540_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.39_1558_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.50_1565_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.57_1584_openshift](/docs/openshift?topic=openshift-openshift_versions_46), and [3.11.705_1633_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 
 
@@ -1246,7 +1257,7 @@ CLI change log update
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.14_1519_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.33_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.50_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1583_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.685_1632_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.14_1519_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.33_1539_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.39_1557_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.50_1564_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.57_1583_openshift](/docs/openshift?topic=openshift-openshift_versions_46), [3.11.685_1632_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 {{site.data.keyword.registrylong_notm}} private IP address changes beginning 23 June 2022
 :   The IP addresses for permitting worker nodes to communicate with {{site.data.keyword.registrylong_notm}} are changing on 23 June 2022. For more information, see [Update IAM restricted IP address lists by 23 June 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network) and [Permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-firewall#firewall_private_container_registry).
@@ -1283,7 +1294,7 @@ ALB OAuth Proxy add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.10.12_1517_openshift](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9.31_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.39_1556_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.49_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.57_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.685_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.10.12_1517_openshift](/docs/openshift?topic=openshift-openshift_versions_410),[4.9.31_1538_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.39_1556_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.49_1566_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.57_1582_openshift](/docs/openshift?topic=openshift-openshift_versions_46), [3.11.685_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 
 ### 6 May 2022
@@ -1319,7 +1330,7 @@ CLI change log update
 
 
 Certified Kubernetes
-:   Version [4.10](/docs/openshift?topic=openshift-openshift_changelog_410) release is now certified.
+:   Version [4.10](/docs/openshift?topic=openshift-openshift_versions_410) release is now certified.
 
 CIS Kubernetes Benchmark
 :   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.10.
@@ -1332,13 +1343,13 @@ Cluster security groups
 {: release-note}
 
 New! {{site.data.keyword.openshiftlong_notm}} 4.10
-:   You can create or [update clusters to version 4.10](/docs/openshift?topic=openshift-openshift_changelog_410). With {{site.data.keyword.openshiftlong_notm}} version 4.10, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
+:   You can create or [update clusters to version 4.10](/docs/openshift?topic=openshift-openshift_versions_410). With {{site.data.keyword.openshiftlong_notm}} version 4.10, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
 
 Master fix pack update
-:   {{site.data.keyword.openshiftlong_notm}} [4.10.9_1515_openshift](/docs/openshift?topic=openshift-openshift_changelog_410).
+:   {{site.data.keyword.openshiftlong_notm}} [4.10.9_1515_openshift](/docs/openshift?topic=openshift-openshift_versions_410).
 
 Worker node fix pack update
-:   {{site.data.keyword.openshiftlong_notm}} [4.10.10_1516_openshift](/docs/openshift?topic=openshift-openshift_changelog_410).
+:   {{site.data.keyword.openshiftlong_notm}} [4.10.10_1516_openshift](/docs/openshift?topic=openshift-openshift_versions_410).
 
 
 
@@ -1355,7 +1366,7 @@ CLI change log update
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.29_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.37_1555_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.49_1562_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.664_1630_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.29_1537_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.37_1555_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.49_1562_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.56_1581_openshift](/docs/openshift?topic=openshift-openshift_versions_46), [3.11.664_1630_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 
 
@@ -1401,7 +1412,7 @@ Cloud Image Key Synchronizer add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.26_1535_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.35_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.46_1560_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1579_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.664_1628_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.26_1535_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.35_1553_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.46_1560_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.56_1579_openshift](/docs/openshift?topic=openshift-openshift_versions_46), [3.11.664_1628_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 
 
@@ -1415,7 +1426,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.openshiftlong_notm}} default version update.
-:   [4.9](/docs/openshift?topic=openshift-openshift_changelog) is now the default version.
+:   [4.9](/docs/openshift?topic=openshift-openshift_versions) is now the default version.
 
 CLI change log update
 :   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.394.
@@ -1426,7 +1437,7 @@ CLI change log update
 Master fix pack update
 
 
-:   {{site.data.keyword.openshiftlong_notm}} [4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_48)
+:   {{site.data.keyword.openshiftlong_notm}} [4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_versions_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_versions_48)
 
 
 
@@ -1442,7 +1453,7 @@ Master fix pack update
 Cluster autoscaler add-on
 :   Version [1.1.0_475](/docs/openshift?topic=openshift-ca_changelog) is available.
 
-:   {{site.data.keyword.openshiftlong_notm}} [4.7.45_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1626_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.openshiftlong_notm}} [4.7.45_1559_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.56_1578_openshift](/docs/openshift?topic=openshift-openshift_versions_46), [3.11.634_1626_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 ### 28 March 2022
 {: #openshift-mar2822}
@@ -1450,7 +1461,7 @@ Cluster autoscaler add-on
 
 Worker node fix pack update.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.25_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.35_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.45_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1577_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1627_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.25_1533_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.35_1550_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.45_1557_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.56_1577_openshift](/docs/openshift?topic=openshift-openshift_versions_46), [3.11.634_1627_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 ### 24 March 2022
 {: #openshift-mar2422}
@@ -1506,7 +1517,7 @@ CLI change log update
 
 Worker node fix pack update.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.23_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.32_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.44_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.55_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.23_1530_openshift](/docs/openshift?topic=openshift-openshift_versions_49), [4.8.32_1548_openshift](/docs/openshift?topic=openshift-openshift_versions_48), [4.7.44_1554_openshift](/docs/openshift?topic=openshift-openshift_versions_47), [4.6.55_1575_openshift](/docs/openshift?topic=openshift-openshift_versions_46), [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_versions_311).
 
 
 
@@ -1553,7 +1564,7 @@ OpenShift Data Foundation
 
 Master fix pack update.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.21_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4921_1528), [4.8.31_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4831_1546), [4.7.43_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4743_1552), [4.6.48_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4648_1573), [3.11.570_1623_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1623).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.21_1528_openshift](/docs/openshift?topic=openshift-openshift_versions_49#4921_1528), [4.8.31_1546_openshift](/docs/openshift?topic=openshift-openshift_versions_48#4831_1546), [4.7.43_1552_openshift](/docs/openshift?topic=openshift-openshift_versions_47#4743_1552), [4.6.48_1573_openshift](/docs/openshift?topic=openshift-openshift_versions_46#4648_1573), [3.11.570_1623_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311570_1623).
 
 
 
@@ -1586,7 +1597,7 @@ Cloud Image Key Synchronizer add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.22_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4922_1529), [4.8.32_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4832_1547), [4.7.42_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4742_1553), [4.6.53_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1572), and [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1621).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.22_1529_openshift](/docs/openshift?topic=openshift-openshift_versions_49#4922_1529), [4.8.32_1547_openshift](/docs/openshift?topic=openshift-openshift_versions_48#4832_1547), [4.7.42_1553_openshift](/docs/openshift?topic=openshift-openshift_versions_47#4742_1553), [4.6.53_1574_openshift](/docs/openshift?topic=openshift-openshift_versions_46#4653_1572), and [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311570_1621).
 
 
 ### 24 February 2022
@@ -1648,7 +1659,7 @@ HPCS Router add-on
 
 Worker node fix pack
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.19_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4919_1526), [4.8.29_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4829_1544), [4.7.42_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4742_1549), [4.6.53_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1572), and [3.11.570_1621_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1621).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.9.19_1526_openshift](/docs/openshift?topic=openshift-openshift_versions_49#4919_1526), [4.8.29_1544_openshift](/docs/openshift?topic=openshift-openshift_versions_48#4829_1544), [4.7.42_1549_openshift](/docs/openshift?topic=openshift-openshift_versions_47#4742_1549), [4.6.53_1572_openshift](/docs/openshift?topic=openshift-openshift_versions_46#4653_1572), and [3.11.570_1621_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311570_1621).
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
@@ -1665,7 +1676,7 @@ Worker node fix pack
 
 
 Certified Kubernetes
-:   Version [4.9](/docs/openshift?topic=openshift-openshift_changelog_49) release is now certified.
+:   Version [4.9](/docs/openshift?topic=openshift-openshift_versions_49) release is now certified.
 
 
 
@@ -1679,10 +1690,10 @@ Certified Kubernetes
 
 
 New! OpenShift 4.9
-:   You can create or [update clusters to OpenShift version 4.9](/docs/openshift?topic=openshift-openshift_changelog_49). With OpenShift 4.9, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
+:   You can create or [update clusters to OpenShift version 4.9](/docs/openshift?topic=openshift-openshift_versions_49). With OpenShift 4.9, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
 
 Master fix pack and worker node fix pack update
-:   Change log documentation is available for OpenShift version [`4.9.17_1525_openshift` and `4.9.17_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog_49#4917_1525).
+:   Change log documentation is available for OpenShift version [`4.9.17_1525_openshift` and `4.9.17_1523_openshift`](/docs/openshift?topic=openshift-openshift_versions_49#4917_1525).
 
 
 
@@ -1701,7 +1712,7 @@ Version change log
 :   Fix pack update.
 
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.8.28_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4828_1543), [4.7.41_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4741_1548), [4.6.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1571), [3.11.570_1620_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1620).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.8.28_1543_openshift](/docs/openshift?topic=openshift-openshift_versions_48#4828_1543), [4.7.41_1548_openshift](/docs/openshift?topic=openshift-openshift_versions_47#4741_1548), [4.6.53_1571_openshift](/docs/openshift?topic=openshift-openshift_versions_46#4653_1571), [3.11.570_1620_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311570_1620).
 
 **New!** Worker node flavor reference
 :   View a list of all available worker node flavors by zone. For more information, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-classic-flavors) or [Classic flavors](/docs/openshift?topic=openshift-vpc-flavors).
@@ -1787,7 +1798,7 @@ Review the release notes for January 2022.
 Worker node fix pack update.
 
 
-:   {{site.data.keyword.redhat_openshift_notm}} [4.8.26_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4826_1541), [4.7.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1546), [4.6.53_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1569), [3.11.570_1618_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1618).
+:   {{site.data.keyword.redhat_openshift_notm}} [4.8.26_1541_openshift](/docs/openshift?topic=openshift-openshift_versions_48#4826_1541), [4.7.40_1546_openshift](/docs/openshift?topic=openshift-openshift_versions_47#4740_1546), [4.6.53_1569_openshift](/docs/openshift?topic=openshift-openshift_versions_46#4653_1569), [3.11.570_1618_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311570_1618).
 
 ### 17 January 2022
 {: #openshift-jan1722}
@@ -1831,7 +1842,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 Worker node fix pack update
-:   Change log documentation is available for worker node versions [`4.8.24_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4824_1540),[`4.7.40_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1545), [`4.6.52_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4652_1568), and [`3.11.570_1617_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1617).
+:   Change log documentation is available for worker node versions [`4.8.24_1540_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4824_1540),[`4.7.40_1545_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4740_1545), [`4.6.52_1568_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4652_1568), and [`3.11.570_1617_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311570_1617).
 
 ## December 2021
 {: #openshift-dec21}
@@ -1846,7 +1857,7 @@ Review the release notes for December 2021.
 
 
 Worker node fix pack update
-:   Change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} version [`4.8.24_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4824_1539_openshift), [`4.7.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1544_openshift), [`4.6.52_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4652_1567_openshift), and [`3.11.570_1616_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1616_openshift).
+:   Change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} version [`4.8.24_1539_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4824_1539_openshift), [`4.7.40_1544_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4740_1544_openshift), [`4.6.52_1567_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4652_1567_openshift), and [`3.11.570_1616_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311570_1616_openshift).
 
 
 
@@ -1860,7 +1871,7 @@ Worker node fix pack update
  
 
 Master fix pack update
-:   Change log documentation is available for version [`4.8.21_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4821_1537), [`4.7.37_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4737_1542), [`4.6.47_1565_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4647_1565), and [`3.11.542_1614_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1614).
+:   Change log documentation is available for version [`4.8.21_1537_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4821_1537), [`4.7.37_1542_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4737_1542), [`4.6.47_1565_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4647_1565), and [`3.11.542_1614_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311542_1614).
 
 
 
@@ -1871,7 +1882,7 @@ Master fix pack update
  
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.8.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4822_1538), [`4.7.38_1543_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4738_1543), [`4.6.49_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4649_1566), and [`3.11.542_1615_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   Change log documentation is available for version [`4.8.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4822_1538), [`4.7.38_1543_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4738_1543), [`4.6.49_1566_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4649_1566), and [`3.11.542_1615_openshift`](/docs/openshift?topic=openshift-openshift_versions_311).
 
 
 
@@ -1882,7 +1893,7 @@ Worker node fix pack update
 
 
 {{site.data.keyword.openshiftlong_notm}} default version update.
-:   [4.8](/docs/openshift?topic=openshift-openshift_changelog) is now the default version.
+:   [4.8](/docs/openshift?topic=openshift-openshift_versions) is now the default version.
 
 
 
@@ -1918,7 +1929,7 @@ Container service CLI
 {: release-note}
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.8.20_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4820_1536), [`4.7.36_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4737_1540), [`4.6.49_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4649_1564), and [`3.11.542_1612_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1612).
+:   Change log documentation is available for version [`4.8.20_1536_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4820_1536), [`4.7.36_1540_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4737_1540), [`4.6.49_1564_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4649_1564), and [`3.11.542_1612_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311542_1612).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 4.0.3_793](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
@@ -1957,7 +1968,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.8.18_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4818_1535), [`4.7.36_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4736_1539), [`4.6.47_1563_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4647_1563), and [`3.11.542_1611_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1611).
+:   Change log documentation is available for version [`4.8.18_1535_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4818_1535), [`4.7.36_1539_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4736_1539), [`4.6.47_1563_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4647_1563), and [`3.11.542_1611_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311542_1611).
 
 
   
@@ -1983,14 +1994,14 @@ CLI change log
 {: release-note}
 
 Master fix pack updates
-:   Change log documentation is available for version [`4.8.14_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4814_1531),[`4.7.33_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4733_1536), [`4.6.47_1560_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4647_1560), and [`3.11.524_1608_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311524_1608).
+:   Change log documentation is available for version [`4.8.14_1531_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4814_1531),[`4.7.33_1536_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4733_1536), [`4.6.47_1560_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4647_1560), and [`3.11.524_1608_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311524_1608).
 
 ### 10 November 2021
 {: #openshift-nov1021}
 {: release-note}
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.8.18_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4818_1533),[`4.7.36_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4736_1538), [`4.6.49_1562_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4649_1562), and [`3.11.542_1610_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311542_1610).
+:   Change log documentation is available for version [`4.8.18_1533_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4818_1533),[`4.7.36_1538_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4736_1538), [`4.6.49_1562_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4649_1562), and [`3.11.542_1610_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311542_1610).
 
 
 
@@ -2044,7 +2055,7 @@ CLI change log
 {: release-note}
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.8.15_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4815_1532),[`4.7.34_1537_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4734_1537), [`4.6.48_1561_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4648_1561), and [`3.11.524_1609_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311524_1609).
+:   Change log documentation is available for version [`4.8.15_1532_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#4815_1532),[`4.7.34_1537_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4734_1537), [`4.6.48_1561_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4648_1561), and [`3.11.524_1609_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311524_1609).
 
 ### 22 October 2021
 {: #openshift-oct2221}
@@ -2092,12 +2103,12 @@ CLI change log
 
 
 Unsupported {{site.data.keyword.redhat_openshift_notm}} version 4.5
-:   {{site.data.keyword.redhat_openshift_notm}} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_changelog) immediately.
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.5 is unsupported. To continue receiving important security updates and support, you must [update your cluster to a supported version](/docs/openshift?topic=openshift-openshift_versions) immediately.
 
 
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.8.13_1528_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#48131528_openshift),[`4.7.32_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4732_1534_openshift), [`4.6.46_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4646_1558_openshift), and [`3.11.524_1606_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311524_1606_openshift).
+:   Change log documentation is available for version [`4.8.13_1528_openshift`](/docs/openshift?topic=openshift-openshift_versions_48#48131528_openshift),[`4.7.32_1534_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4732_1534_openshift), [`4.6.46_1558_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4646_1558_openshift), and [`3.11.524_1606_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311524_1606_openshift).
 
 ### 7 October 2021
 {: #openshift-oct721}
@@ -2150,13 +2161,13 @@ Review the release notes for September 2021.
 
 
 New! OpenShift 4.8
-:   You can create or [update clusters to OpenShift version 4.8](/docs/openshift?topic=openshift-openshift_changelog). With OpenShift 4.8, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, [see the blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-48-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+:   You can create or [update clusters to OpenShift version 4.8](/docs/openshift?topic=openshift-openshift_versions). With OpenShift 4.8, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, [see the blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-48-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
 Deprecated and unsupported OpenShift versions
-:   With the release of OpenShift 4.8, clusters that run version 4.5 remain deprecated, with a tentative unsupported date of 10 Oct 2021. Clusters that run versions 4.3 or 4.4 are unsupported. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_changelog) as soon as possible.
+:   With the release of OpenShift 4.8, clusters that run version 4.5 remain deprecated, with a tentative unsupported date of 10 Oct 2021. Clusters that run versions 4.3 or 4.4 are unsupported. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
 
 Master fix pack and worker node fix pack update
-:   Change log documentation is available for OpenShift version [`4.8.11_1526_openshift` and `4.8.12_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48).
+:   Change log documentation is available for OpenShift version [`4.8.11_1526_openshift` and `4.8.12_1527_openshift`](/docs/openshift?topic=openshift-openshift_versions_48).
 
 
 
@@ -2167,11 +2178,11 @@ Master fix pack and worker node fix pack update
 {: release-note}
 
 Master fix pack update
-:   Change log documentation is available for version [`4.7.30_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4730_1532),[`4.6.44_1556_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4644_1556), [`4.5.41_1552_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1552), and [`3.11.521_1604_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311521_1604).
+:   Change log documentation is available for version [`4.7.30_1532_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4730_1532),[`4.6.44_1556_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4644_1556), [`4.5.41_1552_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1552), and [`3.11.521_1604_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311521_1604).
 
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4645_1557), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4731_1533), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311521_1605).
+:   Change log documentation is available for version [`4.5.41_1553_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1553),[`4.6.45_1557_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4645_1557), [`4.7.31_1533_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4731_1533), and [`3.11.521_1605_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311521_1605).
 
 ### 23 September 2021
 {: #openshift-sep2321}
@@ -2251,7 +2262,7 @@ Istio add-on change log
 {: release-note}
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.5.41_1551_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1551),[`4.6.44_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4644_1555), [`4.7.29_1531_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4729_1531), and [`3.11.501_1603_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311501_1603).
+:   Change log documentation is available for version [`4.5.41_1551_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1551),[`4.6.44_1555_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4644_1555), [`4.7.29_1531_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4729_1531), and [`3.11.501_1603_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311501_1603).
 
 ### 9 September 2021
 {: #openshift-sep921}
@@ -2320,7 +2331,7 @@ Review the release notes for 30 August 2021.
 
 
 Worker node fix pack update
-:   Change log documentation is available for version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311501_1602).
+:   Change log documentation is available for version [`4.6.43_1554_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4643_1554), [`4.7.24_1530_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4724_1530), and [`3.11.501_1602_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311501_1602).
 
 
 
@@ -2335,7 +2346,7 @@ New! Create a cluster with a template
 :   Version `2.1.3` is [released](/docs/openshift?topic=openshift-cos_plugin_changelog).
 Master fix pack update change log documentation
 
-:   Master fix pack update change log documentation is available for version [`4.7.23_1529_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4723_1529), [`4.6.42_1553_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4642_1553), [`4.5.41_1549_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1549), and [`3.11.487_1601_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311487_1601).
+:   Master fix pack update change log documentation is available for version [`4.7.23_1529_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4723_1529), [`4.6.42_1553_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4642_1553), [`4.5.41_1549_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1549), and [`3.11.487_1601_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311487_1601).
 
 ### 23 August 2021
 {: #openshift-aug2321}
@@ -2398,7 +2409,7 @@ Ingress change logs
 :   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1434_iks` and `0.45.0_1435_iks`. Version `0.35.0` is now unsupported. 
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.7.21_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4721_1527), [`4.6.40_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4640_1551), [`4.5.41_1547_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1547), and [`3.11.465_1599_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311465_1599).
+:   Worker node fix pack update change log documentation is available for version [`4.7.21_1527_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4721_1527), [`4.6.40_1551_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4640_1551), [`4.5.41_1547_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1547), and [`3.11.465_1599_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311465_1599).
 
 ## July 2021
 {: #openshift-jul21} 
@@ -2411,7 +2422,7 @@ New! IAM trusted profile support
 :   Link your cluster to a trusted profile in IAM so that the pods in your cluster can authenticate with IAM to use other {{site.data.keyword.cloud_notm}} services.
 
 Master versions
-:   Master fix pack update change log documentation is available for version [`4.7.19_1526_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4719_1526), [`4.6.38_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4638_1550), [`4.5.41_1546_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1546), and [`3.11.439_1598_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311439_1598).
+:   Master fix pack update change log documentation is available for version [`4.7.19_1526_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4719_1526), [`4.6.38_1550_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4638_1550), [`4.5.41_1546_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1546), and [`3.11.439_1598_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311439_1598).
 
 ### 26 July 2021
 {: #openshift-july2621}
@@ -2440,7 +2451,7 @@ Image key synchronizer
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.7.19_1525_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4719_1525), [`4.6.38_1549_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4638_1549), [`4.5.41_1545_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1545), and [`3.11.465_1596_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311465_1596).
+:   Worker node fix pack update change log documentation is available for version [`4.7.19_1525_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4719_1525), [`4.6.38_1549_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4638_1549), [`4.5.41_1545_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1545), and [`3.11.465_1596_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311465_1596).
 
 
 
@@ -2470,7 +2481,7 @@ Ingress change logs
 :   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.7.18_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4718_1524), [`4.6.36_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4636_1548), [`4.5.40_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1544), and [`3.11.462_1595_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311462_1595).
+:   Worker node fix pack update change log documentation is available for version [`4.7.18_1524_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4718_1524), [`4.6.36_1548_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4636_1548), [`4.5.40_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1544), and [`3.11.462_1595_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311462_1595).
 
 ### 2 July 2021
 {: #openshift-july0221}
@@ -2498,7 +2509,7 @@ From 07 to 31 July 2021, the DNS provider is changed from Cloudflare to Akamai f
 {: release-note}
 
 Master versions
-:   Master fix pack update change log documentation is available for version [`4.7.16_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4716_1523), [`4.6.34_1547_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4634_1547), [`4.5.40_1543_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1543), and [`3.11.439_1594_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311439_1594).
+:   Master fix pack update change log documentation is available for version [`4.7.16_1523_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4716_1523), [`4.6.34_1547_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4634_1547), [`4.5.40_1543_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1543), and [`3.11.439_1594_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311439_1594).
 
 ### 24 June 2021
 {: #openshift-june2421}
@@ -2522,7 +2533,7 @@ Cluster autoscaler add-on
 :   Version `2.1.2` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.7.16_1522_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4716_1522), [`4.6.34_1546_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4634_1546), [`4.5.40_1542_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1542)and [`3.11.452_1593_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311452_1593).
+:   Worker node fix pack update change log documentation is available for version [`4.7.16_1522_openshift`](/docs/openshift?topic=openshift-openshift_versions_47#4716_1522), [`4.6.34_1546_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4634_1546), [`4.5.40_1542_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1542)and [`3.11.452_1593_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311452_1593).
 
 ### 21 June 2021
 {: #openshift-june2121}
@@ -2568,10 +2579,10 @@ New! Private VPC NLB
 
 
 New! {{site.data.keyword.redhat_openshift_notm}} 4.7
-:   You can create or [update](/docs/openshift?topic=openshift-openshift_changelog) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.redhat_openshift_notm}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/openshift?topic=openshift-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.redhat_openshift_notm}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/openshift?topic=openshift-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
 Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.5
-:   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.7, clusters that run version 4.5 are deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_changelog) as soon as possible.
+:   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.7, clusters that run version 4.5 are deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
 
 
 
@@ -2588,7 +2599,7 @@ Expanded Troubleshooting
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.6.31_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4631_1545), [`4.5.40_1541_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1541), and [`3.11.439_1592_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311439_1592).
+:   Worker node fix pack update change log documentation is available for version [`4.6.31_1545_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4631_1545), [`4.5.40_1541_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1541), and [`3.11.439_1592_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311439_1592).
 
 ### 3 June 2021
 {: #openshift-june0321}
@@ -2644,10 +2655,10 @@ Version 0.45.0 of the Kubernetes Ingress image
 
 
 Master versions
-:   Master fix pack update change log documentation is available for version [`4.6.28_1543_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4628_1543), [`4.5.39_1539_openshift`](/docs/openshift?topic=openshift-changelog_archive#4539_1539), [`4.4.33_1543_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1543), and [`3.11.420_1590_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311420_1590).
+:   Master fix pack update change log documentation is available for version [`4.6.28_1543_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4628_1543), [`4.5.39_1539_openshift`](/docs/openshift?topic=openshift-changelog_archive#4539_1539), [`4.4.33_1543_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1543), and [`3.11.420_1590_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311420_1590).
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.6.29_1544_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4629_1544), [`4.5.39_1540_openshift`](/docs/openshift?topic=openshift-changelog_archive#4539_1540), [`4.4.33_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1544), and [`3.11.439_1591_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311439_1591).
+:   Worker node fix pack update change log documentation is available for version [`4.6.29_1544_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4629_1544), [`4.5.39_1540_openshift`](/docs/openshift?topic=openshift-changelog_archive#4539_1540), [`4.4.33_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1544), and [`3.11.439_1591_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311439_1591).
 
 ### 17 May 2021
 {: #openshift-may1721}
@@ -2681,7 +2692,7 @@ Cluster autoscaler add-on
 :   [Version `2.0.9`](/docs/openshift?topic=openshift-cos_plugin_changelog) of the {{site.data.keyword.cos_full_notm}} plug-in is available.
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.6.27_1542_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4627_1542), [`4.5.38_1538_openshift`](/docs/openshift?topic=openshift-changelog_archive#4538_1538), [`4.4.33_1541_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1541), and [`3.11.420_1588_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311420_1588).
+:   Worker node fix pack update change log documentation is available for version [`4.6.27_1542_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4627_1542), [`4.5.38_1538_openshift`](/docs/openshift?topic=openshift-changelog_archive#4538_1538), [`4.4.33_1541_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1541), and [`3.11.420_1588_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311420_1588).
 
 ### 4 May 2021
 {: #openshift-may0421}
@@ -2719,7 +2730,7 @@ Image key synchronizer
 {: release-note}
 
 Master versions
-:   Master fix pack update change log documentation is available for version [`4.6.23_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4623_1540), [`4.5.37_1536_openshift`](/docs/openshift?topic=openshift-changelog_archive#4537_1536), [`4.4.33_1539_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1539), and [`3.11.420_1586_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311420_1586).
+:   Master fix pack update change log documentation is available for version [`4.6.23_1540_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4623_1540), [`4.5.37_1536_openshift`](/docs/openshift?topic=openshift-changelog_archive#4537_1536), [`4.4.33_1539_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1539), and [`3.11.420_1586_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311420_1586).
 
 ### 26 April 2021
 {: #openshift-april2621}
@@ -2739,7 +2750,7 @@ VPC NLB
 :   Adds steps for [registering a VPC network load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns).
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.6.25_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4625_1541), [`4.5.37_1537_openshift`](/docs/openshift?topic=openshift-changelog_archive#4537_1537), [`4.4.33_1540_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1540), and [`3.11.420_1587_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311420_1587).
+:   Worker node fix pack update change log documentation is available for version [`4.6.25_1541_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4625_1541), [`4.5.37_1537_openshift`](/docs/openshift?topic=openshift-changelog_archive#4537_1537), [`4.4.33_1540_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1540), and [`3.11.420_1587_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311420_1587).
 
 
   
@@ -2817,7 +2828,7 @@ Accessing VPC clusters
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.6.23_1539_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4623_1539), [`4.5.35_1535_openshift`](/docs/openshift?topic=openshift-changelog_archive#4535_1535), [`4.4.33_1538_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1538), and [`3.11.404_1585_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311404_1585).
+:   Worker node fix pack update change log documentation is available for version [`4.6.23_1539_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4623_1539), [`4.5.35_1535_openshift`](/docs/openshift?topic=openshift-changelog_archive#4535_1535), [`4.4.33_1538_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1538), and [`3.11.404_1585_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311404_1585).
 
 
 
@@ -2835,7 +2846,7 @@ Deprecated data centers for classic clusters
 
   
 Master versions
-:   Master fix pack update change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} version [`4.6.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4622_1538).
+:   Master fix pack update change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} version [`4.6.22_1538_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4622_1538).
 
 
 
@@ -2878,14 +2889,14 @@ add-on change logs
 :   Added version change logs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
 
 Master versions
-:   Master fix pack update change log documentation is available for version [`4.6.21_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4621_1535), [`4.5.35_1533_openshift`](/docs/openshift?topic=openshift-changelog_archive#4535_1533), [`4.4.33_1536_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1536), and [`3.11.394_1583_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311394_1583).
+:   Master fix pack update change log documentation is available for version [`4.6.21_1535_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4621_1535), [`4.5.35_1533_openshift`](/docs/openshift?topic=openshift-changelog_archive#4535_1533), [`4.4.33_1536_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1536), and [`3.11.394_1583_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311394_1583).
 
 ### 29 March 2021
 {: #openshift-march2921}
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.6.22_1536_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4622_1536), [`4.5.35_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4535_1534), [`4.4.33_1537_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1537), and [`3.11.404_1584_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311404_1584).
+:   Worker node fix pack update change log documentation is available for version [`4.6.22_1536_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4622_1536), [`4.5.35_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4535_1534), [`4.4.33_1537_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1537), and [`3.11.404_1584_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311404_1584).
 
 ### 25 March 2021
 {: #openshift-march2521}
@@ -2980,7 +2991,7 @@ Ingress ALB change log
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.6.20_1534_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4620_1534), [`4.5.33_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4533_1532), [`4.4.33_1535_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1535), and [`3.11.394_1582_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311394_1582).
+:   Worker node fix pack update change log documentation is available for version [`4.6.20_1534_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4620_1534), [`4.5.33_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4533_1532), [`4.4.33_1535_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1535), and [`3.11.394_1582_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311394_1582).
 
 
 
@@ -2998,7 +3009,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 Unsupported version
-:   {{site.data.keyword.redhat_openshift_notm}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_changelog), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-changelog_archive) as soon as possible.
+:   {{site.data.keyword.redhat_openshift_notm}} version 4.3 is unsupported. Update your cluster to [version 4.4](/docs/openshift?topic=openshift-openshift_versions), and then to a supported version such as [4.5](/docs/openshift?topic=openshift-changelog_archive) as soon as possible.
 
 
 
@@ -3027,7 +3038,7 @@ Exposing apps in {{site.data.keyword.satelliteshort}} clusters
 
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.6.18_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4618_1533), [`4.5.31_1531_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1531), [`4.4.33_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1534_worker), [`4.3.40_1555_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1555_worker), and [`3.11.380_1581_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311380_1581_worker).
+:   Worker node fix pack update change log documentation is available for version [`4.6.18_1533_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4618_1533), [`4.5.31_1531_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1531), [`4.4.33_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1534_worker), [`4.3.40_1555_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1555_worker), and [`3.11.380_1581_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311380_1581_worker).
 
 ## February 2021
 {: #openshift-feb21}
@@ -3037,7 +3048,7 @@ Worker node versions
 {: release-note}
 
 Master versions
-:   Master fix pack update change log documentation is available for version [`4.6.17_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4617_1533) and [`4.5.31_1531_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1531_master).
+:   Master fix pack update change log documentation is available for version [`4.6.17_1533_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4617_1533) and [`4.5.31_1531_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1531_master).
 
 ### 26 February 2021
 {: #openshift-feb2621}
@@ -3069,14 +3080,14 @@ VPE
 {: release-note}
 
 Master versions
-:   Master fix pack update change log documentation is available for version [`4.6.16_1532_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4616_1532), [`4.5.31_1530_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1530), [`4.4.33_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1534), [`4.3.40_1555_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1555), and [`3.11.380_1581_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311380_1581).
+:   Master fix pack update change log documentation is available for version [`4.6.16_1532_openshift`](/docs/openshift?topic=openshift-openshift_versions_46#4616_1532), [`4.5.31_1530_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1530), [`4.4.33_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4433_1534), [`4.3.40_1555_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1555), and [`3.11.380_1581_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311380_1581).
 
 ### 20 February 2021
 {: #openshift-feb2021}
 {: release-note}
 
 Certified Kubernetes
-:   Version [4.6 (Kubernetes 1.19)](/docs/openshift?topic=openshift-openshift_changelog) release is now certified.
+:   Version [4.6 (Kubernetes 1.19)](/docs/openshift?topic=openshift-openshift_versions) release is now certified.
 
 ### 17 February 2021
 {: #openshift-feb1721}
@@ -3085,7 +3096,7 @@ Certified Kubernetes
 
  
 New! {{site.data.keyword.redhat_openshift_notm}} 4.6
-:   You can create or [update](/docs/openshift?topic=openshift-openshift_changelog) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.6, which includes Kubernetes 1.19. With {{site.data.keyword.redhat_openshift_notm}} 4.6, you get the latest stable enhancements from the community. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-46-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.6, which includes Kubernetes 1.19. With {{site.data.keyword.redhat_openshift_notm}} 4.6, you get the latest stable enhancements from the community. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-46-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
 Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.4
 :   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.6, clusters that run version 4.4 are deprecated, with an unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](/docs/openshift?topic=openshift-changelog_archive) as soon as possible.
@@ -3100,7 +3111,7 @@ New! Osaka multizone region
 :   You can now create classic or VPC clusters in the Osaka, Japan (`jp-osa`) [location](/docs/openshift?topic=openshift-regions-and-zones).
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.5.31_1529_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1529), (/docs/openshift?topic=openshift-changelog_archive#4433_1533)`4.4.33_1533_openshift`, (/docs/openshift?topic=openshift-changelog_archive#4340_1554)`4.3.40_1554_openshift`, and [`3.11.380_1580_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311380_1580).
+:   Worker node fix pack update change log documentation is available for version [`4.5.31_1529_openshift`](/docs/openshift?topic=openshift-changelog_archive#4531_1529), (/docs/openshift?topic=openshift-changelog_archive#4433_1533)`4.4.33_1533_openshift`, (/docs/openshift?topic=openshift-changelog_archive#4340_1554)`4.3.40_1554_openshift`, and [`3.11.380_1580_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311380_1580).
 
 ### 12 February 2021
 {: #openshift-feb1221}
@@ -3145,7 +3156,7 @@ Unsupported: Kubernetes version 1.16
 :   Clusters that run Kubernetes version 1.16 are unsupported as of 31 January 2021. To continue receiving important security updates and support, you must [update the cluster to a supported version](/docs/containers?topic=containers-cs_versions#prep-up) immediately.
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.5.28_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4528_1528), [`4.4.31_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1532), [`4.3.40_1553_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1553), and [`3.11.374_1579_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   Worker node fix pack update change log documentation is available for version [`4.5.28_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4528_1528), [`4.4.31_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1532), [`4.3.40_1553_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1553), and [`3.11.374_1579_openshift`](/docs/openshift?topic=openshift-openshift_versions_311).
 
 ## January 2021
 {: #openshift-jan21}
@@ -3182,7 +3193,7 @@ Ingress ALB change log
 :   Updated the [`nginx-ingress` build to 2424](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 Master versions
-:   Master fix pack update change log documentation is available for version [`4.5.24_1527_openshift`](/docs/openshift?topic=openshift-changelog_archive#4524_1527), [`4.4.31_1531_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1531), [`4.3.40_1552_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1552), and [`3.11.346_1578_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311346_1578_master).
+:   Master fix pack update change log documentation is available for version [`4.5.24_1527_openshift`](/docs/openshift?topic=openshift-changelog_archive#4524_1527), [`4.4.31_1531_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1531), [`4.3.40_1552_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1552), and [`3.11.346_1578_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311346_1578_master).
 
 ### 18 January 2021
 {: #openshift-jan1821}
@@ -3192,7 +3203,7 @@ Knative add-on is unsupported
 :   The Knative add-on is automatically removed from your cluster. Instead, use the [Knative open source project](https://knative.dev/docs/install/){: external} or [{{site.data.keyword.codeenginefull}}](/docs/codeengine?topic=codeengine-getting-started), which includes Knative's open-source capabilities.
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available for version [`4.5.24_1526_openshift`](/docs/openshift?topic=openshift-changelog_archive#4524_1526), [`4.4.31_1530_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1530), [`4.3.40_1551_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1551), and [`3.11.346_1578_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311346_1578).
+:   Worker node fix pack update change log documentation is available for version [`4.5.24_1526_openshift`](/docs/openshift?topic=openshift-changelog_archive#4524_1526), [`4.4.31_1530_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1530), [`4.3.40_1551_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1551), and [`3.11.346_1578_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311346_1578).
 
 ### 14 January 2021
 {: #openshift-jan1421}
@@ -3222,7 +3233,7 @@ Removal of data center support
 
 Master versions
 :   Master fix pack update change log documentation is available.
-:   [`4.5.24_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4524_1525), [`4.4.31_1529_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1529), [`4.3.40_1550_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1550), and [`3.11.346_1577_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311346_1577).
+:   [`4.5.24_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4524_1525), [`4.4.31_1529_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1529), [`4.3.40_1550_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1550), and [`3.11.346_1577_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311346_1577).
 
 ## December 2020
 {: #openshift-dec20}
@@ -3236,7 +3247,7 @@ Gateway firewalls and Calico policies
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.
-:   [`4.5.22_1524_openshift`](/docs/openshift?topic=openshift-changelog_archive#4522_1524), [`4.4.31_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1528), [`4.3.40_1549_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1549), and [`3.11.346_1576_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311346_1576_master).
+:   [`4.5.22_1524_openshift`](/docs/openshift?topic=openshift-changelog_archive#4522_1524), [`4.4.31_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1528), [`4.3.40_1549_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1549), and [`3.11.346_1576_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311346_1576_master).
 
 
 
@@ -3282,7 +3293,7 @@ Encrypted images
 
 Master versions
 :   Master fix pack update change log documentation is available.
-:   [`4.5.18_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4518_1523), [`4.4.29_1527_openshift`](/docs/openshift?topic=openshift-changelog_archive#4429_1527), [`4.3.40_1548_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1548), and [`3.11.318_1575_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
+:   [`4.5.18_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4518_1523), [`4.4.29_1527_openshift`](/docs/openshift?topic=openshift-changelog_archive#4429_1527), [`4.3.40_1548_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1548), and [`3.11.318_1575_openshift`](/docs/openshift?topic=openshift-openshift_versions_311).
 
 ### 11 December 2020
 {: #openshift-dec1120}
@@ -3323,7 +3334,7 @@ Helm version 2 unsupported
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.21_1522_openshift`](/docs/openshift?topic=openshift-changelog_archive#4521_1522), [`4.4.31_1526_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1526), [`4.3.40_1547_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1547), and [`3.11.318_1574_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311318_1574)..
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.21_1522_openshift`](/docs/openshift?topic=openshift-changelog_archive#4521_1522), [`4.4.31_1526_openshift`](/docs/openshift?topic=openshift-changelog_archive#4431_1526), [`4.3.40_1547_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1547), and [`3.11.318_1574_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311318_1574)..
 
 ### 3 December 2020
 {: #openshift-dec0320}
@@ -3370,7 +3381,7 @@ New! Reservations to reduce classic worker node costs
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.19_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive#4519_1521), [`4.4.30_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4430_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1546_worker), and [`3.11.313.318_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311318_1573).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.19_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive#4519_1521), [`4.4.30_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4430_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1546_worker), and [`3.11.313.318_1573_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311318_1573).
 
 ### 20 November 2020
 {: #openshift-nov2020}
@@ -3414,7 +3425,7 @@ New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
 
   
 Master versions
-:   Master fix pack update change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} [`4.5.18_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive#4518_1521), [`4.4.29_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4429_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1546), and [`3.11.306_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311306_1573_master).
+:   Master fix pack update change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} [`4.5.18_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive#4518_1521), [`4.4.29_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4429_1525), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1546), and [`3.11.306_1573_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311306_1573_master).
 
 ### 13 November 2020
 {: #openshift-nov1320}
@@ -3436,7 +3447,7 @@ New! Reduced and hourly billing is available for OCP licenses
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.17_1519_openshift`](/docs/openshift?topic=openshift-changelog_archive#4517_1519), [`4.4.29_1524_openshift`](/docs/openshift?topic=openshift-changelog_archive#4429_1524), [`4.3.40_1545_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1545), and [`3.11.306_1572_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311306_1572).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.17_1519_openshift`](/docs/openshift?topic=openshift-changelog_archive#4517_1519), [`4.4.29_1524_openshift`](/docs/openshift?topic=openshift-changelog_archive#4429_1524), [`4.3.40_1545_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1545), and [`3.11.306_1572_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311306_1572).
 
 ### 5 November 2020
 {: #openshift-nov0520}
@@ -3489,12 +3500,12 @@ Version 4 Ingress
 Master versions
 :   Master fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-changelog_archive#4515_1518), [`4.4.27_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4427_1523), [`4.3.38_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4338_1544), and [`3.11.286_1571_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311286_1571).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-changelog_archive#4515_1518), [`4.4.27_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4427_1523), [`4.3.38_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4338_1544), and [`3.11.286_1571_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311286_1571).
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-changelog_archive#4515_1518_worker), [`4.4.27_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4427_1523_worker), [`4.3.40_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1544), and [`3.11.306_1571_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311306_1571).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-changelog_archive#4515_1518_worker), [`4.4.27_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4427_1523_worker), [`4.3.40_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4340_1544), and [`3.11.306_1571_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311306_1571).
 
 ### 22 October 2020
 {: #openshift-oct2220}
@@ -3529,7 +3540,7 @@ New! Certified {{site.data.keyword.redhat_openshift_notm}} version 4.5
 :   You can now create clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5. To update an existing cluster, see the [Version 4.5 preparation actions](/docs/openshift?topic=openshift-changelog_archive). The {{site.data.keyword.redhat_openshift_notm}} 4.5 release is also certified for Kubernetes 1.18.
 
 Deprecated: {{site.data.keyword.redhat_openshift_notm}} version 4.3
-:   With the release of version 4.5, clusters that run version 4.3 are deprecated. Update your clusters to at least [version 4.4](/docs/openshift?topic=openshift-openshift_changelog) today.
+:   With the release of version 4.5, clusters that run version 4.3 are deprecated. Update your clusters to at least [version 4.4](/docs/openshift?topic=openshift-openshift_versions) today.
 
 
 
@@ -3552,7 +3563,7 @@ VPC security groups
 Versions
 :   Worker node fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.26_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive#4426_1521), [`4.3.38_1542_openshift`](/docs/openshift?topic=openshift-changelog_archive#4338_1542), and [`3.11.286_1570_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311286_1570).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.26_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive#4426_1521), [`4.3.38_1542_openshift`](/docs/openshift?topic=openshift-changelog_archive#4338_1542), and [`3.11.286_1570_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311286_1570).
 
 ### 8 October 2020
 {: #openshift-oct0820}
@@ -3598,7 +3609,7 @@ Ingress ALB change log
 {: release-note}
 
 Versions
-:   Worker node fix pack update change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} [`4.4.23_1520_openshift`](/docs/openshift?topic=openshift-changelog_archive#4423_1520), [`4.3.38_1541_openshift`](/docs/openshift?topic=openshift-changelog_archive#4338_1541), and [`3.11.286_1569_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311286_1569).
+:   Worker node fix pack update change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} [`4.4.23_1520_openshift`](/docs/openshift?topic=openshift-changelog_archive#4423_1520), [`4.3.38_1541_openshift`](/docs/openshift?topic=openshift-changelog_archive#4338_1541), and [`3.11.286_1569_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311286_1569).
 
 
 
@@ -3616,7 +3627,7 @@ Gateway firewalls and Calico policies
 Versions
 :   Worker node fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.23_1519_openshift`](/docs/openshift?topic=openshift-changelog_archive#4423_1519), [`4.3.38_1540_openshift`](/docs/openshift?topic=openshift-changelog_archive#4338_1540), and [`3.11.286_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311286_1568).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.23_1519_openshift`](/docs/openshift?topic=openshift-changelog_archive#4423_1519), [`4.3.38_1540_openshift`](/docs/openshift?topic=openshift-changelog_archive#4338_1540), and [`3.11.286_1568_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311286_1568).
 
 ### 24 September 2020
 {: #openshift-sept2420}
@@ -3653,14 +3664,14 @@ Unsupported: Kubernetes version 1.15
 Versions
 :   Master fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.20_1518_openshift`](/docs/openshift?topic=openshift-changelog_archive#4420_1518), [`4.3.35_1539_openshift`](/docs/openshift?topic=openshift-changelog_archive#4335_1539), and [`3.11.272_1567_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311272_1567).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.20_1518_openshift`](/docs/openshift?topic=openshift-changelog_archive#4420_1518), [`4.3.35_1539_openshift`](/docs/openshift?topic=openshift-changelog_archive#4335_1539), and [`3.11.272_1567_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311272_1567).
 
 
 
 Versions
 :   Worker node fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.20_1517_openshift`](/docs/openshift?topic=openshift-changelog_archive#4420_1517), [`4.3.35_1538_openshift`](/docs/openshift?topic=openshift-changelog_archive#4335_1538), and [`3.11.272_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311272_1566).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.20_1517_openshift`](/docs/openshift?topic=openshift-changelog_archive#4420_1517), [`4.3.35_1538_openshift`](/docs/openshift?topic=openshift-changelog_archive#4335_1538), and [`3.11.272_1566_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311272_1566).
 
 
 
@@ -3684,7 +3695,7 @@ CA certificate rotation
 Versions
 :   Worker node fix pack update change log documentation is available. 
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.18_1516_openshift`](/docs/openshift?topic=openshift-changelog_archive#4418_1516), [`4.3.33_1537_openshift`](/docs/openshift?topic=openshift-changelog_archive#4333_1537), and [`3.11.272_1565_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311272_1565).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.18_1516_openshift`](/docs/openshift?topic=openshift-changelog_archive#4418_1516), [`4.3.33_1537_openshift`](/docs/openshift?topic=openshift-changelog_archive#4333_1537), and [`3.11.272_1565_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311272_1565).
 
 ### 27 August 2020
 {: #openshift-aug2720}
@@ -3735,7 +3746,7 @@ Versions
 Versions
 :   Master fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-changelog_archive#4416_1513_master), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4331_1534_master), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311248_1564_master).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-changelog_archive#4416_1513_master), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4331_1534_master), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311248_1564_master).
 
 ### 17 August 2020
 {: #openshift-aug1720}
@@ -3747,7 +3758,7 @@ Locations
 Versions
 :   Worker node fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-changelog_archive#4416_1513), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4331_1534), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311248_1564)..
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.16_1513_openshift`](/docs/openshift?topic=openshift-changelog_archive#4416_1513), [`4.3.31_1534_openshift`](/docs/openshift?topic=openshift-changelog_archive#4331_1534), and [`3.11.248_1564_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311248_1564)..
 
 
 
@@ -3777,7 +3788,7 @@ Gateway appliance firewalls
 Versions
 :   Worker node fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.14_1512_openshift`](/docs/openshift?topic=openshift-changelog_archive#4414_1512), [`4.3.29_1533_openshift`](/docs/openshift?topic=openshift-changelog_archive#4329_1533), and [`3.11.248_1561_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311248_1561).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.14_1512_openshift`](/docs/openshift?topic=openshift-changelog_archive#4414_1512), [`4.3.29_1533_openshift`](/docs/openshift?topic=openshift-changelog_archive#4329_1533), and [`3.11.248_1561_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311248_1561).
 
 ## July 2020
 {: #openshift-july20}
@@ -3809,7 +3820,7 @@ Minimum cluster size
 Versions
 :   Master fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`3.11.232_1560_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311232_1560).
+:   {{site.data.keyword.redhat_openshift_notm}} [`3.11.232_1560_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311232_1560).
 
 
 
@@ -3823,7 +3834,7 @@ Worker node replacement
 {: release-note}
 
 New! {{site.data.keyword.redhat_openshift_notm}} version 4.4 clusters
-:   You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_changelog) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-changelog_archive). With {{site.data.keyword.redhat_openshift_notm}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+:   You can now [create](/docs/openshift?topic=openshift-clusters) clusters or [update](/docs/openshift?topic=openshift-openshift_versions) existing version 4.3 clusters to [version `4.4.11_1511_openshift`](/docs/openshift?topic=openshift-changelog_archive). With {{site.data.keyword.redhat_openshift_notm}} 4.4, you get access to Kubernetes version 1.17 APIs that enable features such as [key management service (KMS)](/docs/openshift?topic=openshift-encryption#keyprotect) integration. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/openshift-version-44-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
 
 
 
@@ -3834,12 +3845,12 @@ New! {{site.data.keyword.redhat_openshift_notm}} version 4.4 clusters
 Master versions
 :   Master fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.28_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4328_1532) and [`3.11.232_1559_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311232_1559).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.28_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4328_1532) and [`3.11.232_1559_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311232_1559).
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.29_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4329_1532) and [`3.11.232_1558_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311232_1558).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.29_1532_openshift`](/docs/openshift?topic=openshift-changelog_archive#4329_1532) and [`3.11.232_1558_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311232_1558).
 
 
 
@@ -3871,7 +3882,7 @@ CLI change log
 Version change logs
 :   Worker node fix pack update change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.27_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4327_1528) and [`3.11.232_1555_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311232_1555).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.27_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive#4327_1528) and [`3.11.232_1555_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311232_1555).
 
 ### 2 July 2020
 {: #openshift-july0220}
@@ -3924,7 +3935,7 @@ New! {{site.data.keyword.openshiftlong_notm}} observability plug-in
 Version change logs
 :   Change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1522_openshift` master and `4.3.25_1527_openshift` worker node](/docs/openshift?topic=openshift-changelog_archive#4323_1527_master) and [`3.11.219_1554_openshift` master and `3.11.232_1554_openshift` worker node](/docs/openshift?topic=openshift-openshift_changelog_311#311219_1554_master) fix pack patch updates.
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1522_openshift` master and `4.3.25_1527_openshift` worker node](/docs/openshift?topic=openshift-changelog_archive#4323_1527_master) and [`3.11.219_1554_openshift` master and `3.11.232_1554_openshift` worker node](/docs/openshift?topic=openshift-openshift_versions_311#311219_1554_master) fix pack patch updates.
 
 ### 18 June 2020
 {: #openshift-june1820}
@@ -3976,7 +3987,7 @@ New! Static routes add-on
 Version change logs
 :   Worker node change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.23_1524_openshift`](/docs/openshift?topic=openshift-changelog_archive#4323_1524) and [`3.11.219_1552_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311219_1552).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.23_1524_openshift`](/docs/openshift?topic=openshift-changelog_archive#4323_1524) and [`3.11.219_1552_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311219_1552).
 
 ### 4 June 2020
 {: #openshift-june0420}
@@ -3998,7 +4009,7 @@ VPC network security
 
   
 Version 3.11 is deprecated
-:   Clusters that run {{site.data.keyword.redhat_openshift_notm}} version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_changelog).
+:   Clusters that run {{site.data.keyword.redhat_openshift_notm}} version 3.11 are deprecated and become unsupported June 2022 (date subject to change). For more information, see [Release history](/docs/openshift?topic=openshift-openshift_versions).
 
 VPC ACLs
 :   Added required rules for using VPC load balancers to steps for [Creating access control lists (ACLs) to control traffic to and from your VPC cluster](/docs/openshift?topic=openshift-vpc-acls).
@@ -4041,7 +4052,7 @@ Tuning Calico
 Version change logs
 :   Master and worker node change log documentation is available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.21_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4321_1523) for worker nodes, [`4.3.19_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4319_1523) for masters, and [`3.11.216_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311216_1551).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.21_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4321_1523) for worker nodes, [`4.3.19_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive#4319_1523) for masters, and [`3.11.216_1551_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311216_1551).
 
 
 
@@ -4109,7 +4120,7 @@ Version change logs
 
 
 Version change logs
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-changelog_archive#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311216_1550).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1522_openshift`](/docs/openshift?topic=openshift-changelog_archive#4314_1522) and [`3.11.216_1550_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311216_1550).
 
 
 
@@ -4160,7 +4171,7 @@ Ingress ALB change log
 
 Version change logs
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1521_openshift`(/docs/openshift?topic=openshift-changelog_archive#4313_1521) and [`3.11.200_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311200_1549).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1521_openshift`(/docs/openshift?topic=openshift-changelog_archive#4313_1521) and [`3.11.200_1548_openshift`](/docs/openshift?topic=openshift-openshift_versions_311#311200_1549).
 
 ### 24 April 2020
 {: #openshift-april2420}
@@ -4170,7 +4181,7 @@ Global pull secret
 :   Added how to [update the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).
 
 {{site.data.keyword.redhat_openshift_notm}} 4.3
-:   [{{site.data.keyword.redhat_openshift_notm}} version 4.3](/docs/openshift?topic=openshift-openshift_changelog) is now the default version.
+:   [{{site.data.keyword.redhat_openshift_notm}} version 4.3](/docs/openshift?topic=openshift-openshift_versions) is now the default version.
 
 
 
@@ -4180,7 +4191,7 @@ Global pull secret
 
 Version change logs
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.200_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311200_1548).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.200_1548_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311200_1548).
 
 ### 22 April 2020
 {: #openshift-april2220}
@@ -4237,7 +4248,7 @@ New! Private Ingress and routes
 Version change logs
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.200_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311200_1546_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.200_1546_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311200_1546_worker).
 
 ### 6 April 2020
 {: #openshift-april0620}
@@ -4258,7 +4269,7 @@ CLI change log
 Version change logs
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.188_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311188_1545_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.188_1545_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311188_1545_worker).
 
 File storage classes
 :   Added `gid` file storage classes to specify a supplemental group ID that you can assign to a non-root user ID so that the non-root user can read and write to the file storage instance. For more information, see the storage class [reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference). 
@@ -4341,7 +4352,7 @@ Enabling TLS for Ingress, {{site.data.keyword.redhat_openshift_notm}} version 4.
 Version change logs
 :   Master and worker node patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.170_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311170_1544).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.170_1544_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311170_1544).
 
 ### 12 March 2020
 {: #openshift-mar1220}
@@ -4382,7 +4393,7 @@ Ingress ALB change log
 Version change logs
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.170_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311170_1543_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.170_1543_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311170_1543_worker).
 
 ## February 2020
 {: #openshift-feb20}
@@ -4429,7 +4440,7 @@ Firewall subnets
 {: release-note}
 
 Version change logs
-:   {{site.data.keyword.redhat_openshift_notm}} master fix pack for [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311161_1542_master).
+:   {{site.data.keyword.redhat_openshift_notm}} master fix pack for [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311161_1542_master).
 
 
 
@@ -4442,7 +4453,7 @@ Version change logs
 Version change logs
 :   Master and worker node patch updates.
 
-:   {{site.data.keyword.redhat_openshift_notm}} worker fix pack [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311161_1542_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} worker fix pack [3.11.161_1542_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311161_1542_worker).
 
 
 
@@ -4453,7 +4464,7 @@ Version change logs
 
 
 New! {{site.data.keyword.redhat_openshift_notm}} 4.3
-:   {{site.data.keyword.redhat_openshift_notm}} 4.3 is now available as a beta. During the beta, the {{site.data.keyword.redhat_openshift_notm}} license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you can't update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_changelog).
+:   {{site.data.keyword.redhat_openshift_notm}} 4.3 is now available as a beta. During the beta, the {{site.data.keyword.redhat_openshift_notm}} license fee is waived. Any 4.3 beta clusters that you create remain for only 30 days after the beta ends and version 4.3 becomes generally available. Also, you can't update 3.11 clusters to 4.3 clusters. For more information, review the [version release topic](/docs/openshift?topic=openshift-openshift_versions).
 
 
 
@@ -4489,7 +4500,7 @@ VPC security groups
 
 Version change log
 
-:   {{site.data.keyword.redhat_openshift_notm}} master fix pack [3.11.161_1539_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311161_1539) and worker fix pack [3.11.161_1540_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311161_1540).
+:   {{site.data.keyword.redhat_openshift_notm}} master fix pack [3.11.161_1539_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311161_1539) and worker fix pack [3.11.161_1540_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311161_1540).
 
 
 
@@ -4539,7 +4550,7 @@ Ingress ALB change log
 Version change log
 :   Patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311161_1538).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.161_1538_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311161_1538).
 
 
 
@@ -4557,7 +4568,7 @@ Ingress ALB change log
 Version change log
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311154_1536).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.157_1537_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311154_1536).
 
 ## December 2019
 {: #openshift-dec19}
@@ -4576,7 +4587,7 @@ Ingress ALB change log
 Version change log
 :   Master patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311154_1536).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1536_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311154_1536).
 
 
 
@@ -4611,7 +4622,7 @@ Configuring VPC subnets
 Version change log
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311154_1534_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1534_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311154_1534_worker).
 
 ### 4 December 2019
 {: #openshift-dec0419}
@@ -4631,7 +4642,7 @@ Exposing apps with load balancers or Ingress ALBs
 
 
 Use the internal KVDB in Portworx
-:   Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-storage-portworx-kv-store).
+:   Automatically set up a key-value database (KVDB) during the Portworx installation to store your Portworx metadata. For more information, see [Using the Portworx KVDB](/docs/openshift?topic=openshift-storage_portworx_kv_store).
 
 ## November 2019
 {: #openshift-nov19}
@@ -4655,7 +4666,7 @@ New! Reservations and limits for PIDs
 Version change log
 :   Worker node patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311154_1533_worker).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311154_1533_worker).
 
 ### 22 November 2019
 {: #openshift-nov2219}
@@ -4681,7 +4692,7 @@ Ingress ALB change log
 Version change log
 :   Master patch updates are available.
 
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311154_1533).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.154_1533_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311154_1533).
 
 
 ### 19 November 2019
@@ -4730,7 +4741,7 @@ Using {{site.data.keyword.registrylong_notm}}
 Version change log
 :   Worker node patch updates are available.
 :   
-:   {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311153_1530).
+:   {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1530_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311153_1530).
 
 
 ### 7 November 2019
@@ -4775,7 +4786,7 @@ Refreshed {{site.data.keyword.openshiftlong_notm}} docs
 {: release-note}
 
 Version change logs
-:   Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-115_changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-114_changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-113_changelog#11312_1540), [1.12.10_1570](/docs/containers?topic=containers-112_changelog#11210_1570), and {{site.data.keyword.redhat_openshift_notm}} [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311153_1529).
+:   Worker node patch updates are available for Kubernetes [1.15.5_1521](/docs/containers?topic=containers-115_changelog#1155_1521), [1.14.8_1537](/docs/containers?topic=containers-114_changelog#1148_1537), [1.13.12_1540](/docs/containers?topic=containers-113_changelog#11312_1540), [1.12.10_1570](/docs/containers?topic=containers-112_changelog#11210_1570), and {{site.data.keyword.redhat_openshift_notm}} [3.11.153_1529_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311153_1529).
 
 
 
@@ -4807,7 +4818,7 @@ Ingress annotations
 {: release-note}
 
 Version change logs
-:   Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-115_changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-114_changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-113_changelog#11312_1539), and {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311146_1528).
+:   Master patch updates are available for Kubernetes [1.15.5_1520](/docs/containers?topic=containers-115_changelog#1155_1520), [1.14.8_1536](/docs/containers?topic=containers-114_changelog#1148_1536), [1.13.12_1539](/docs/containers?topic=containers-113_changelog#11312_1539), and {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1528_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311146_1528).
 
 
 
@@ -4832,7 +4843,7 @@ Let's Encrypt rate limits for Ingress
 :   Added troubleshooting steps for when no subdomain or secret is generated for the Ingress ALB when you create or delete clusters of the same name.
 
 Version change logs
-:   Worker node patch updates are available for Kubernetes [1.15.4_1519](/docs/containers?topic=containers-115_changelog#1154_1519_worker), [1.14.7_1535](/docs/containers?topic=containers-114_changelog#1147_1535_worker), [1.13.11_1538](/docs/containers?topic=containers-113_changelog#11311_1538_worker), [1.12.10_1569](/docs/containers?topic=containers-112_changelog#11210_1569_worker), and {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1527_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311146_1527).
+:   Worker node patch updates are available for Kubernetes [1.15.4_1519](/docs/containers?topic=containers-115_changelog#1154_1519_worker), [1.14.7_1535](/docs/containers?topic=containers-114_changelog#1147_1535_worker), [1.13.11_1538](/docs/containers?topic=containers-113_changelog#11311_1538_worker), [1.12.10_1569](/docs/containers?topic=containers-112_changelog#11210_1569_worker), and {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1527_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311146_1527).
 
 
 
@@ -4841,7 +4852,7 @@ Version change logs
 {: release-note}
     
 Version change log
-:   Master fix pack updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311146_1526).
+:   Master fix pack updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1526_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311146_1526).
 
 Software-defined storage with Portworx
 :   You can now install Portworx on your {{site.data.keyword.redhat_openshift_notm}} cluster as a highly available data management platform for your containerized apps. For more information, see [Storing data software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
@@ -4861,7 +4872,7 @@ DevOps toolchain
 
 
 Version change log
-:   Patch updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1525_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311146_1525).
+:   Patch updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1525_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311146_1525).
 
 
     
@@ -4945,7 +4956,7 @@ New! Melbourne, Australia `mel01` single zone location for {{site.data.keyword.r
 
 
 Version change log
-:   Master fix pack updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311141_1524).
+:   Master fix pack updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.141_1524_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311141_1524).
 
 
     
@@ -5026,7 +5037,7 @@ New! {{site.data.keyword.openshiftlong_notm}} plug-in version `0.4`
 :   Updated the {{site.data.keyword.containerlong_notm}} CLI plug-in change log page for multiple changes in the [release of version 0.4.1](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Version change log
-:   Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-115_changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-114_changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-113_changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-112_changelog#11210_1566_worker), and {{site.data.keyword.redhat_openshift_notm}} [3.11.135_1523](/docs/openshift?topic=openshift-openshift_changelog_311#311135_1523_worker).
+:   Worker node patch updates are available for Kubernetes [1.15.3_1516](/docs/containers?topic=containers-115_changelog#1153_1516_worker), [1.14.6_1532](/docs/containers?topic=containers-114_changelog#1146_1532_worker), [1.13.10_1535](/docs/containers?topic=containers-113_changelog#11310_1535_worker), [1.12.10_1566](/docs/containers?topic=containers-112_changelog#11210_1566_worker), and {{site.data.keyword.redhat_openshift_notm}} [3.11.135_1523](/docs/openshift?topic=openshift-openshift_versions_311#311135_1523_worker).
 
 ## August 2019
 {: #openshift-aug19}
@@ -5059,7 +5070,7 @@ CLI change log
 
 
 Version change log
-:   Change log added for master fix pack [3.11.135_1522_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311135_1522).
+:   Change log added for master fix pack [3.11.135_1522_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311135_1522).
 
 
     
@@ -5112,7 +5123,7 @@ Ingress ALB change log
 
 
 Version change log
-:   Change log added for master fix pack [3.11.135_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311135_1521_master).
+:   Change log added for master fix pack [3.11.135_1521_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311135_1521_master).
 
 
 
@@ -5123,7 +5134,7 @@ Version change log
 
 
 Version change log
-:   Change logs added for master fix pack [3.11.135_1520_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311135_1520_master).
+:   Change logs added for master fix pack [3.11.135_1520_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311135_1520_master).
 
 
 
@@ -5147,7 +5158,7 @@ CLI change log
 
 
 Version change log
-:   Change logs added for worker node patch [3.11.129_1518_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311129_1518_worker).
+:   Change logs added for worker node patch [3.11.129_1518_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311129_1518_worker).
 
 
 ### 2 August 2019
@@ -5155,7 +5166,7 @@ Version change log
 {: release-note}
 
 Version change log
-:   Change logs added for [3.11.129_1517_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311129_1517).
+:   Change logs added for [3.11.129_1517_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311129_1517).
 
 ### 1 August 2019
 {: #openshift-aug0119}

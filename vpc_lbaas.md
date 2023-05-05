@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-05-05"
 
 keywords: openshift, app protocol, application protocol
 
@@ -48,15 +48,12 @@ The following table describes the basic characteristics of each load balancing o
 |Security groups|Yes|Public only|
 {: caption="Load balancing options for VPC clusters"}
 
-`*` To preserve the source IP address for an Application Load Balancer for VPC, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation must be specified when the VPC ALB is initially created.
-{: note}
-
 
 
 ## Network Load Balancer for VPC
 {: #nlb_vpc}
 
-In VPC clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.6 or later, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) (VPC NLB) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
+In VPC clusters, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) (VPC NLB) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
 {: shortdesc}
 
 VPC NLBs provide several advantages, such as providing higher throughput and better performance by utilizing direct server return (DSR). With DSR, the worker node can send app response packets directly to the client IP address and skip the VPC NLB, decreasing the amount of traffic that the VPC NLB must handle. Additionally, the VPC NLB supports source IP address preservation on all client requests by default.

@@ -234,7 +234,6 @@ toc:
               topics:
               - storage-cos-understand.md
               - storage-cos-install.md
-              - storage-sat-cos.md
               - storage-cos-apps.md
               - storage-cos-tutorial-quota.md
               - storage-cos-vpc-ip.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-05"
 
 keywords: openshift
 subcollection: openshift
@@ -281,6 +281,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
+
+    * [5 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0523)
+
+        * New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
 
     * [2 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0223)
 
@@ -5045,26 +5049,6 @@ subcollection: openshift
 
 * [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin-verify)
 
-[Installing the {{site.data.keyword.cos_full_notm}} plug-in on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos#storage-sat-cos)
-
-* [Setting up your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-pre)
-
-* [Retrieving the configuration parameters](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-params)
-
-* [Installing Helm and adding the `ibm-helm` Helm repo](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-helm-deploy)
-
-    * [Installing the plug-in from the console](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-console)
-
-    * [Installing the plug-in from the CLI](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-cli)
-
-* [Creating a secret that uses your s3 credentials](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-secret)
-
-* [Deploying an app that uses object storage](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-app)
-
-    * [Upgrading the Object Storage plug-in](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-upgrade)
-
-* [Uninstalling the plug-in and Helm chart](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-rm)
-
 [Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps)
@@ -7454,9 +7438,13 @@ subcollection: openshift
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
 
+    * [Version 4.12.4, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.4_odf)
+
     * [Version 4.12.0, released 16 March 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.0_odf)
 
 * [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+
+    * [Version 4.11.10, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.10_odf)
 
     * [Version 4.11.4, released 14 February 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.4_odf)
 
@@ -7467,6 +7455,8 @@ subcollection: openshift
     * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.0_odf)
 
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
+
+    * [Version 4.10.24, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.24_odf)
 
     * [Version 4.10.14, released 17 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.14_odf)
 
@@ -7496,6 +7486,8 @@ subcollection: openshift
 
 * [Version 4.9](/docs/openshift?topic=openshift-odf_addon_changelog#4.9_odf)
 
+    * [Version 4.9.26, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.26_odf)
+
     * [Version 4.9.5, release 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.5_odf)
 
     * [Version 4.9.4, released 13 April 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.4_odf)
@@ -7509,6 +7501,8 @@ subcollection: openshift
     * [Version 4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.0_odf)
 
 * [Version 4.8](/docs/openshift?topic=openshift-odf_addon_changelog#4.8_odf)
+
+    * [Version 4.8.31, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.4_odf)
 
     * [Version 4.8.4, release 17 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.4_odf)
 

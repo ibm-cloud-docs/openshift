@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-05"
 
 keywords: kubernetes, openshift
 
@@ -55,7 +55,7 @@ Review the following table to find a list of key benefits that you can get by us
 If you have a classic {{site.data.keyword.openshiftlong_notm}} cluster, you can choose worker node flavors that are optimized for SDS usage and that come with one or more raw, unformatted, and unmounted local disks that you can use to store your data. Portworx offers best performance when you use [SDS worker node machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds) that come with 10Gbps network speed. However, you can install Portworx on non-SDS worker node flavors in classic clusters, but you might not get the performance benefits that your app requires.
 {: shortdesc}
 
-Portworx is installed by using a [Helm chart](/docs/openshift?topic=openshift-portworx/docs/openshift?topic=openshift-storage-install-portworx). When you install the Helm chart, Portworx automatically analyzes the local persistent storage that is available in your cluster and adds the storage to the Portworx storage layer. To add storage from your Portworx storage layer to your apps, you must use [Kubernetes persistent volume claims](/docs/openshift?topic=openshift-portworx#add_portworx_storage).
+Portworx is installed by using a [Helm chart](/docs/openshift?topic=openshift-portworx/docs/openshift?topic=openshift-storage-portworx-deploy). When you install the Helm chart, Portworx automatically analyzes the local persistent storage that is available in your cluster and adds the storage to the Portworx storage layer. To add storage from your Portworx storage layer to your apps, you must use [Kubernetes persistent volume claims](/docs/openshift?topic=openshift-storage-portworx-deploy).
 
 For more information about how to install and use Portworx with {{site.data.keyword.openshiftlong_notm}}, see [Setting up software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
 
@@ -73,7 +73,7 @@ Contact Portworx support by using one of the following methods.
 
 - Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
 
-You can also [gather logging information](/docs/containers?topic=containers-portworx#portworx_logs) before opening a support ticket.
+You can also [gather logging information](/docs/openshift?topic=openshift-storage-portworx-about_logs) before opening a support ticket.
 {: tip}
 
 

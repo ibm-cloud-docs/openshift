@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-21"
+lastupdated: "2023-05-05"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -265,7 +265,7 @@ Because you have full control over the isolation and resource consumption for yo
 {: important}
 
 You typically use SDS machines in the following cases:
-*  If you use an SDS add-on such as [Portworx](/docs/openshift?topic=openshift-portworx#portworx), use an SDS machine.
+*  If you use an SDS add-on such as [Portworx](/docs/openshift?topic=openshift-storage-portworx-about), use an SDS machine.
 *  If your app is a [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){: external} that requires local storage, you can use SDS machines and provision [Kubernetes local persistent volumes](https://kubernetes.io/docs/concepts/storage/volumes/#local){: external}.
 *  If you have custom apps that require additional raw local storage.
 

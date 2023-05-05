@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-05"
 
 keywords: portworx, openshift
 
@@ -40,7 +40,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
     - Attach an additional disk to at least 3 worker nodes to use for key value database (KVDB). [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select one of the block storage devices that you added earlier and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
 5. [Attach the block storage](/docs/openshift?topic=openshift-utilities#attach_block) to your worker nodes.
-6. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
+6. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-storage_portworx_kv_store).
 
 ## VPC clusters
 {: #px-create-vpc-volumes}
@@ -52,7 +52,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 3. If you want to use a specific device for the internal Portworx KVDB, choose from the following options.
     - Attach an additional disk to at least 3 worker nodes use for the KVDB. [Manually add](/docs/openshift?topic=openshift-utilities#manual_block) a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select one of the block storage devices that you added earlier to use for the KVDB and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
-4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
+4. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-storage_portworx_kv_store).
 
 
 
@@ -67,7 +67,7 @@ Keep in mind that the networking of non-SDS worker nodes in classic clusters is 
 1. If you want to use a specific device for the internal Portworx KVDB, choose from the following options.
     - Attach an additional disk to at least 3 worker nodes use for the KVDB, add a 3 GB block storage device to at least 3 worker nodes in your cluster and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
     - Select one of the block storage devices that you added earlier to use for the KVDB and find the device path. To find the device path after attaching the disk, log in to your worker node with `oc debug <node>` and run `lsblk` to list the devices on that node.
-1. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](#portworx_database).
+1. Continue with your Portworx setup by [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-storage_portworx_kv_store).
 
 
 
