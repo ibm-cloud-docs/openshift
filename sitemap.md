@@ -5045,26 +5045,6 @@ subcollection: openshift
 
 * [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin-verify)
 
-[Installing the {{site.data.keyword.cos_full_notm}} plug-in on {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos#storage-sat-cos)
-
-* [Setting up your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-pre)
-
-* [Retrieving the configuration parameters](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-params)
-
-* [Installing Helm and adding the `ibm-helm` Helm repo](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-helm-deploy)
-
-    * [Installing the plug-in from the console](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-console)
-
-    * [Installing the plug-in from the CLI](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-install-cli)
-
-* [Creating a secret that uses your s3 credentials](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-secret)
-
-* [Deploying an app that uses object storage](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-app)
-
-    * [Upgrading the Object Storage plug-in](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-upgrade)
-
-* [Uninstalling the plug-in and Helm chart](/docs/openshift?topic=openshift-storage-sat-cos#sat-storage-cos-rm)
-
 [Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps)

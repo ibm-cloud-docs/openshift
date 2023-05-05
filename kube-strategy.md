@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-05-05"
 
 keywords: openshift, moving to openshift, openshift environment, openshift clusters, cluster sizing
 
@@ -273,7 +273,7 @@ To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic
 ### How can I keep my cluster in a supported state?
 {: #updating_kube}
 
-Make sure that your cluster always runs a [supported {{site.data.keyword.redhat_openshift_notm}} version](/docs/openshift?topic=openshift-openshift_changelog). When a new {{site.data.keyword.redhat_openshift_notm}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/containers?topic=containers-update#master) and [worker nodes](/docs/containers?topic=containers-update#worker_node).
+Make sure that your cluster always runs a [supported {{site.data.keyword.redhat_openshift_notm}} version](/docs/openshift?topic=openshift-openshift_versions). When a new {{site.data.keyword.redhat_openshift_notm}} minor version is released, an older version is shortly deprecated after and then becomes unsupported. For more information, see [Updating the master](/docs/containers?topic=containers-update#master) and [worker nodes](/docs/containers?topic=containers-update#worker_node).
 
 
 ## Making your resources highly available
