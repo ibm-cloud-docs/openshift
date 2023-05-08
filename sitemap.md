@@ -9366,6 +9366,8 @@ subcollection: openshift
 
 [Why does the Ingress status show an ESSSMI error?](/docs/openshift?topic=openshift-ts-ingress-esssmi#ts-ingress-esssmi)
 
+[Why does the Ingress status show an `ESSSMINF` error?](/docs/openshift?topic=openshift-ts-ingress-esssminf#ts-ingress-esssminf)
+
 [Why does the Ingress status show an ESSSMG error?](/docs/openshift?topic=openshift-ts-ingress-esssmg#ts-ingress-esssmg)
 
 [Why does the Ingress status show an ESSVC error?](/docs/openshift?topic=openshift-ts-ingress-essvc#ts-ingress-essvc)
