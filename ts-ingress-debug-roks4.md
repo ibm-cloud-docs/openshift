@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-08"
 
 keywords: openshift
 
@@ -79,10 +79,10 @@ Start by checking for errors in your app deployment and the Ingress resource dep
     {: screen}
 
 3. Check the Ingress resource configuration file.
-    ```sh
-    oc get ingress -o yaml
-    ```
-    {: pre}
+        ```sh
+        oc get ingress -o yaml
+        ```
+        {: pre}
 
     1. Ensure that you define a host in only one Ingress resource. If one host is defined in multiple Ingress resources, the Ingress controller might not forward traffic properly and you might experience errors.
 

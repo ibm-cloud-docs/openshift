@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-08"
 
 keywords: portworx, openshift
 
@@ -51,7 +51,8 @@ If you plan to use the internal KVDB, make sure that your cluster has a minimum 
 {: note}
 
 ### Optional: Setting up a Databases for etcd service instance
-{: /docs/openshift?topic=openshift-storage_portworx_kv_store}
+{: #portworx-kv-db}
+
 
 If you want to use an external database service for your Portworx cluster metadata and keep the metadata separate from the operational data that you plan to store with Portworx, set up a [Databases for etcd](/docs/databases-for-etcd?topic=databases-for-etcd-getting-started) service instance in your cluster.
 {: shortdesc}

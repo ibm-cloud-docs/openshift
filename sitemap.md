@@ -5132,7 +5132,7 @@ subcollection: openshift
 
 * [Using the Portworx key-value database](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kvdb)
 
-    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store#optional-setting-up-a-databases-for-etcd-service-instance)
+    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kv-db)
 
 [Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage_portworx_encryption#storage_portworx_encryption)
 
