@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-08"
 
 keywords: openshift
 subcollection: openshift
@@ -9328,7 +9328,7 @@ subcollection: openshift
 
 [Why does the Ingress status show an `ERRESNF` error?](/docs/openshift?topic=openshift-ts-ingress-erresnf#ts-ingress-erresnf)
 
-[Why does the Ingress status show an `ERRIODEF` error?](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg)
+[Why does the Ingress status show an `ERRIODEG` error?](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg)
 
 * [One or more status conditions indicate unavailable: `DeploymentAvailable=False`](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-da-false)
 
