@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-08"
 
 keywords: portworx, openshift
 
@@ -21,17 +21,6 @@ subcollection: openshift
 Beginning with version `2.12` Portworx uses an operator-based deployment model instead of the Helm based model use in version `2.11` and earlier. If you are updating from Portworx `2.11` to version `2.12`, follow the migration steps in the [Portworx documentation](https://docs.portworx.com/operations/operate-kubernetes/migrate-daemonset/){: external}.
 {: important}
 
-If you have a private only cluster, contact Portworx for help updating your cluster. Contact Portworx support by using one of the following methods.
-
-- Sending an e-mail to `support@purestorage.com`.
-
-- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us)
-
-- Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
-
-You can also [gather logging information](/docs/openshift?topic=openshift-storage-portworx-about_logs) before opening a support ticket.
-{: tip}
-{: note}
 
 ## VPC: Updating worker nodes with Portworx volumes
 {: #portworx_vpc_up}
@@ -71,7 +60,16 @@ Update only one worker node at a time. When the worker node update is complete, 
 
 7. [Mount the volume to your app](/docs/openshift?topic=openshift-storage-portworx-deploy#mount_pvc).
 
+## Migrating Red Hat Enterprise Linux versions 
+{: #px-rhel-migrate}
 
+When you migrate from RHEL 7 to RHEL 8, follow the steps to update your [worker nodes](/docs/openshift?topic=openshift-rhel_migrate). 
+
+[If you are re-attaching drives, you must attach raw {{site.data.keyword.block_storage_is_short}} to your worker nodes.](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
+
+
+If you are using cloud drives, you do not need to reattach storage to your worker nodes. 
+{: important}
 
 ## Exploring other Portworx features
 {: #features}

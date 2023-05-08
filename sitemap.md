@@ -5162,6 +5162,8 @@ subcollection: openshift
 
 * [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up)
 
+* [Migrating Red Hat Enterprise Linux versions](/docs/openshift?topic=openshift-storage_portworx_update#px-rhel-migrate)
+
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-storage_portworx_update#features)
 
 [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery#storage_portworx_recovery)

@@ -15,9 +15,6 @@ subcollection: openshift
 
 
 
-
-
-
 # Setting up the Portworx key-value store
 {: #storage_portworx_kv_store}
 
