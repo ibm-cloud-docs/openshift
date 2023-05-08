@@ -30,6 +30,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-may23}
 
 
+### 9 May 2023
+{: #openshift-may0923}
+{: release-note}
+
+
+
+
+
 
 ### 5 May 2023
 {: #openshift-may0523}
@@ -45,13 +53,17 @@ New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `
 
 
 
-
 ### 2 May 2023
 {: #openshift-may0223}
 {: release-note}
 
+
+
 Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+  
+Master fix pack `4.12.13_1540_openshift`.
+:   For more information, see the [change logs for 4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.14`
@@ -60,6 +72,15 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
 ## April 2023
 {: #openshift-apr23}
 
+
+### 27 April 2023
+{: #openshift-apr2723}
+{: release-note}
+
+
+  
+Master fix packs `4.8.57_1600_openshift`, `4.9.59_1587_openshift`, `4.10.56_1565_openshift`, `4.11.35_1552_openshift`, and `4.12.11_1538_openshift`.
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 
 ### 26 April 2023

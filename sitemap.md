@@ -282,6 +282,8 @@ subcollection: openshift
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
 
+    * [9 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0923)
+
     * [5 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0523)
 
         * New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
@@ -290,9 +292,15 @@ subcollection: openshift
 
         * Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
 
+        * Master fix pack `4.12.13_1540_openshift`.
+
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.14`
 
 * [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
+
+    * [27 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2723)
+
+        * Master fix packs `4.8.57_1600_openshift`, `4.9.59_1587_openshift`, `4.10.56_1565_openshift`, `4.11.35_1552_openshift`, and `4.12.11_1538_openshift`.
 
     * [26 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2623)
 
@@ -7514,7 +7522,7 @@ subcollection: openshift
 
 * [Version 4.8](/docs/openshift?topic=openshift-odf_addon_changelog#4.8_odf)
 
-    * [Version 4.8.31, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.4_odf)
+    * [Version 4.8.31, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.31_odf)
 
     * [Version 4.8.4, release 17 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.4_odf)
 
