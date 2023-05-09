@@ -38,7 +38,7 @@ When you provision Portworx and set up encryption, you receive an error similar 
 The endpoint that you entered in your Kubernetes secret is incorrect. If the KMS endpoint is entered incorrectly, Portworx can't access the KMS provider that you configured.
 {: tsCauses}
 
-For more information about enabling encryption on your Portworx volumes, see [Setting up encryption](/docs/openshift?topic=openshift-storage_portworx_encyrption).
+For more information about enabling encryption on your Portworx volumes, see [Setting up encryption](/docs/openshift?topic=openshift-storage_portworx_encryption).
 
 
 Edit your Kubernetes secret to include the correct endpoint for your KMS provider.

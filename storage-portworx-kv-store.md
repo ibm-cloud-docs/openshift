@@ -138,7 +138,7 @@ Databases for etcd is a managed etcd service that securely stores and replicates
         ```
         {: pre}
 
-7. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](/docs/openshift?topic=openshift-storage_portworx_encyrption). If you don't want to set up {{site.data.keyword.keymanagementservicelong_notm}} encryption for your volumes, continue with [installing Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_deploy).
+7. Choose if you want to [set up encryption for your volumes with {{site.data.keyword.keymanagementservicelong_notm}}](/docs/openshift?topic=openshift-storage_portworx_encryption). If you don't want to set up {{site.data.keyword.keymanagementservicelong_notm}} encryption for your volumes, continue with [installing Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_deploy).
 
 
 
