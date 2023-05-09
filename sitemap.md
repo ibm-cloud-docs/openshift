@@ -3155,6 +3155,8 @@ subcollection: openshift
 
 * [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster_create_classic)
 
+* [Creating a single-zone classic cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-classic#cluster_classic_tf)
+
 [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
 * [Prerequisites and notes](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-prereq)
@@ -3164,6 +3166,8 @@ subcollection: openshift
 * [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
 
 * [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
+
+* [Creating VPC clusters with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_tf)
 
 [Creating clusters on dedicated hosts for VPC](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
 
