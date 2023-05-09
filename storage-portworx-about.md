@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-09"
 
 keywords: portworx, openshift
 
@@ -68,7 +68,7 @@ If you want to install Portworx in a cluster that doesn't have VRF or access to 
 ## What's next?
 {: #about-px-next}
 
-All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](/docs/openshift?topic=openshift-utilities#manual_block) to each worker node. After your cluster is prepared, [install Portworx](/docs/openshift?topic=openshift-storage-portworx-deploy) in your cluster and create your first hyper-converged storage cluster.
+All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](/docs/openshift?topic=openshift-utilities#manual_block) to each worker node. After your cluster is prepared, [install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy) in your cluster and create your first hyper-converged storage cluster.
 
 
 

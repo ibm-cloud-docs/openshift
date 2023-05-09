@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-09"
 
 keywords: storage, back up, restore
 
@@ -29,7 +29,7 @@ If you have not provisioned storage, review the [Kubernetes storage basics](/doc
 * [Block Storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore)
 * [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
 * [{{site.data.keyword.cos_short}}](/docs/openshift?topic=openshift-storage-cos-understand)
-* [Portworx disaster recovery](/docs/openshift?topic=openshift-storage_portworx_recoveryy)
+* [Portworx disaster recovery](/docs/openshift?topic=openshift-storage_portworx_recovery)
 
 
 

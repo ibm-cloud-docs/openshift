@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-09"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -28,7 +28,7 @@ Looking for general information about updating clusters, or information on a dif
 RHEL 8 is the only operating system for worker nodes created in version 4.10 clusters.
 {: important}
 
-If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx).
+If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-storage_portworx_about).
 {: important}
 
 Gateway-enabled clusters on Classic infrastructure are deprecated and will be unsupported soon. The end of support dates are linked directly to the end of support of {{site.data.keyword.openshiftlong_notm}} version 4.9. Gateway-enabled clusters are not supported on version 4.10 and later. If your cluster is gateway-enabled cluster, plan to create a new cluster before support ends. If you need similar functionality, consider creating a cluster on VPC infrastructure.

@@ -61,7 +61,8 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 
 2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform access role and the **Manager** service access role for {{site.data.keyword.openshiftlong_notm}}. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
 3. Verify that you entered the `etcd` API endpoint for your Databases for etcd service instance in the correct format.  
-    1. [Retrieve the Databases for etcd endpoint](/docs/openshift?topic=openshift-storage_portworx_kv_store).
+
+    1. [Retrieve the Databases for etcd endpoint](/docs/openshift?topic=openshift-storage-portworx-kv-store).
     2. Add the etcd endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (;).
 
         Example endpoint:
@@ -92,7 +93,7 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 {: shortdesc}
 
 1. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
-2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-storage_portworx_preparing) to your cluster so that Portworx can include the disks into the Portworx storage layer.
+2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-utilities#manual_block) to your cluster so that Portworx can include the disks into the Portworx storage layer.
 3. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters).
 
 ## Step 3: Reach out to Portworx and IBM

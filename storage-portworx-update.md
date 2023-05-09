@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-05-09"
 
 keywords: portworx, openshift
 
@@ -58,7 +58,7 @@ Update only one worker node at a time. When the worker node update is complete, 
     ```
     {: pre}
 
-7. [Mount the volume to your app](/docs/openshift?topic=openshift-storage-portworx-deploy#mount_pvc).
+7. [Mount the volume to your app](/docs/openshift?topic=openshift-storage_portworx_deploy#mount_pvc).
 
 ## Migrating Red Hat Enterprise Linux versions 
 {: #px-rhel-migrate}

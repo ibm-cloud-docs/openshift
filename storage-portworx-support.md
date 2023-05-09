@@ -63,7 +63,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         ```
         {: pre}
 
-4. Review the log files locally. If you can't resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-storage-portworx-support) and provide the log information that you collected.
+4. Review the log files locally. If you can't resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-storage_portworx_support) and provide the log information that you collected.
 
 
 
