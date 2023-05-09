@@ -119,6 +119,8 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
 
 
+
+
 ## Clusters in Satellite locations without CoreOS enabled
 {: #os-satellite-without-coreos}
 
