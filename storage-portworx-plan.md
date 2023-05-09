@@ -50,7 +50,7 @@ Review the following Portworx limitations.
     3. Minimum number of workers: Two worker nodes per zone across three zones, for a minimum total of six worker nodes.
 1. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-utilities#manual_block).
 1. For production workloads, create an [external Databases for etcd](/docs/openshift?topic=openshift-storage_portworx_kv_store) instance for your Portworx metadata key-value store.
-1. **Optional** [Set up encryption](/docs/openshift?topic=openshift-storage_portworx_encyrption).
+1. **Optional** [Set up encryption](/docs/openshift?topic=openshift-storage_portworx_encryption).
 1. [Install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy).
 1. Maintain the lifecycle of your Portworx deployment in your cluster.
     1. When you update worker nodes in [VPC](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
@@ -62,7 +62,7 @@ Review the following Portworx limitations.
 ## Creating a secret to store the KMS credentials
 {: #px_create_km_secret}
 
-**Before you begin:** [Set up encryption](/docs/openshift?topic=openshift-storage_portworx_encyrption)
+**Before you begin:** [Set up encryption](/docs/openshift?topic=openshift-storage_portworx_encryption)
 
 1. Encode the credentials that you retrieved in the previous section to base64 and note all the base64 encoded values. Repeat this command for each parameter to retrieve the base64 encoded value.
     ```sh

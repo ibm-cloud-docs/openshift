@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-05-09"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -208,7 +208,7 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
 5. Verify that the internal registry stores data to the `emptyDir` of the worker node.
     1. [Access the registry directly from the cluster](https://docs.openshift.com/container-platform/4.11/registry/accessing-the-registry.html#registry-accessing-directly_accessing-the-registry){: external}, using the worker node that you previously retrieved. Follow the steps to push a test image to the internal registry.
 
-        To complete these steps in the {{site.data.keyword.redhat_openshift_notm}} documentation, you need the `podman` CLI tool. Your worker nodes might not have this CLI tool by default. See the [Podman installation guide](https://podman.io/getting-started/installation.html){: external} for the available RHEL versions.
+        To complete these steps in the {{site.data.keyword.redhat_openshift_notm}} documentation, you need the `podman` CLI tool. Your worker nodes might not have this CLI tool by default. See the [Podman installation guide](https://podman.io/get-started){: external} for the available RHEL versions.
         {: tip}
 
     2. Navigate to the internal registry pod folder that saves to the `emptyDir`. For `<pod_uid>`, use the pod **UID** that you retrieved earlier.

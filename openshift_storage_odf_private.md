@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-05-09"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
 
@@ -125,7 +125,7 @@ In addition to the 3 required subnets, create another subnet and attach a public
     ```
     {: pre}
     
-1. Install [Podman](https://podman.io/getting-started/installation){: external}.
+1. Install [Podman](https://podman.io/get-started){: external}.
     
 
 ## Log in to your cluster and disable the default OperatorHub sources

@@ -307,7 +307,7 @@ To update worker nodes from the console:
 4. From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
 5. From the action bar, click **Update**.
 
-If you have Portworx installed in your cluster, you must restart the Portworx pods on updated worker nodes. For more information, see [Portworx limitations](/docs/openshift?topic=openshift-storage_portworx_about#portworx_limitations).
+If you have Portworx installed in your cluster, you must restart the Portworx pods on updated worker nodes. For more information, see [Portworx limitations](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations).
 
 
 
