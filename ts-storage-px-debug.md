@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-05-09"
 
 keywords: openshift
 
@@ -61,7 +61,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 
 2. Verify that the {{site.data.keyword.cloud_notm}} API key that you entered has sufficient permissions to work with your cluster. You must be assigned the **Editor** platform access role and the **Manager** service access role for {{site.data.keyword.openshiftlong_notm}}. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
 3. Verify that you entered the `etcd` API endpoint for your Databases for etcd service instance in the correct format.  
-    1. [Retrieve the Databases for etcd endpoint](/docs/openshift?topic=openshift-portworx/docs/openshift?topic=openshift-storage_portworx_kv_store).
+    1. [Retrieve the Databases for etcd endpoint](/docs/openshift?topic=openshift-storage_portworx_kv_store).
     2. Add the etcd endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (;).
 
         Example endpoint:
@@ -80,7 +80,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 
     3. Make sure that the username, password, and certificate are stored as a base64 encoded value in your Kubernetes secret.
     4. Verify that you entered the correct name of the secret in the {{site.data.keyword.cloud_notm}} catalog.
-5. If you chose to set up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}, make sure that you created an instance of {{site.data.keyword.keymanagementservicelong_notm}} in your {{site.data.keyword.cloud_notm}} account and that you stored the credentials to access your instance in a Kubernetes secret in the `portworx` project of your cluster. For more information, see [Enabling per-volume encryption for your Portworx volumes]/docs/openshift?topic=openshift-storage_portworx_encryption.
+5. If you chose to set up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}, make sure that you created an instance of {{site.data.keyword.keymanagementservicelong_notm}} in your {{site.data.keyword.cloud_notm}} account and that you stored the credentials to access your instance in a Kubernetes secret in the `portworx` project of your cluster. For more information, see [Enabling per-volume encryption for your Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_encryption).
     1. Make sure that the API key of your service ID, and the {{site.data.keyword.keymanagementservicelong_notm}} instance ID, root key, and API endpoint are stored as base64 values in the Kubernetes secret of your cluster.
     2. Make sure that you named your secret `px-ibm`.
     3. Make sure that you created the secret in the `portworx` project of your cluster.
@@ -92,7 +92,7 @@ If you entered the correct information on the {{site.data.keyword.cloud_notm}} c
 {: shortdesc}
 
 1. Verify that the cluster that you want to use meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
-2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-portworx/docs/openshift?topic=openshift-utilities#manual_block) to your cluster so that Portworx can include the disks into the Portworx storage layer.
+2. If you want to use a virtual machine cluster, make sure that you [added raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-storage_portworx_preparing) to your cluster so that Portworx can include the disks into the Portworx storage layer.
 3. Verify that your cluster is set up with public network connectivity. For more information, see [Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_clusters).
 
 ## Step 3: Reach out to Portworx and IBM
@@ -102,9 +102,10 @@ Contact Portworx support by using one of the following methods.
 
 - Sending an e-mail to `support@purestorage.com`.
 
-- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us)
+- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us).
 
-- Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}
+- Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}.
+
 
 
 

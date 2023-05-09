@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-05-09"
 
 keywords: openshift
 
@@ -1155,7 +1155,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 New! Portworx Cloud Drive support
-:   You can now dynamically provision storage for Portworx during installation by using Portworx Cloud Drives. For more information, see [Getting started with Portworx](/docs/openshift?topic=openshift-portworx).
+:   You can now dynamically provision storage for Portworx during installation by using Portworx Cloud Drives. For more information, see [About Portworx](/docs/openshift?topic=openshift-storage_portworx_about).
 
 
 
@@ -2704,7 +2704,7 @@ VPC cluster healthchecks
 {: release-note}
 
 New! PX-Backup is now available
-:   For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx).
+:   For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup).
 
 
 
@@ -4878,7 +4878,7 @@ Version change log
 :   Master fix pack updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1526_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311146_1526).
 
 Software-defined storage with Portworx
-:   You can now install Portworx on your {{site.data.keyword.redhat_openshift_notm}} cluster as a highly available data management platform for your containerized apps. For more information, see [Storing data software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
+:   You can now install Portworx on your {{site.data.keyword.redhat_openshift_notm}} cluster as a highly available data management platform for your containerized apps. For more information, see [Storing data software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-storage_portworx_about).
 
 
 
