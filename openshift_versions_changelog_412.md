@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-05-09"
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -42,7 +42,7 @@ The following table shows the changes that are in the master fix pack 4.12.13_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| etcd | v3.5.7 | v3.5.8 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.8){: external}. |
+| etcd | v3.5.7 | v3.5.8 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.8){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.9-1 | v1.25.9-2 | Update `Go` dependencies |
 | {{site.data.keyword.openshiftshort}}. | 4.12.11 | 4.12.13 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-13){: external}. |
 {: caption="Changes since version 4.12.11_1538_openshift" caption-side="bottom"}

@@ -1506,7 +1506,7 @@ Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported la
 :   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 Ingress ALB change log updates
-:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
 
 
 
@@ -1516,7 +1516,7 @@ Ingress ALB change log updates
 {: release-note}
 
 CLI change log update
-:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.384.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.384.
 
 ### 17 March 2022
 {: #openshift-mar1722}
@@ -1559,7 +1559,7 @@ Cluster autoscaler
 :   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat).
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   **Beta**: Install the {{site.data.keyword.cos_full_notm}} plug-in on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-storage-sat-cos).
+:   **Beta**: Install the {{site.data.keyword.cos_full_notm}} plug-in on {{site.data.keyword.satelliteshort}} clusters.
 
 
 
@@ -1680,7 +1680,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.cos_full_notm}} doc restructuring. 
-:   For more information, see [Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding {{site.data.keyword.cos_full_notm}} storage to apps](/docs/openshift?topic=openshift-storage_cos_apps),[{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-sat-cos), and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
+:   For more information, see [Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding {{site.data.keyword.cos_full_notm}} storage to apps](/docs/openshift?topic=openshift-storage_cos_apps),{{site.data.keyword.cos_full_notm}}, and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
@@ -2086,7 +2086,7 @@ Worker node fix pack update
 {: release-note}
 
 Ingress ALB change log updates
-:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
 
 ### 18 October 2021
 {: #openshift-oct1821}
@@ -2373,7 +2373,7 @@ Registry token update
 :   Registry tokens are no longer accepted for authentication in {{site.data.keyword.registrylong_notm}}. Update your clusters to use {{site.data.keyword.cloud_notm}} IAM authentication. For more information, see [Accessing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access). For more information about Registry token deprecation, see [IBM Cloud Container Registry Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
 
 Ingress change logs
-:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1541_iks`, `0.47.0_1540_iks`, and `0.43.0_1539_iks`. Version `0.45.0_1482_iks` is removed.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1541_iks`, `0.47.0_1540_iks`, and `0.43.0_1539_iks`. Version `0.45.0_1482_iks` is removed.
 
  
 
@@ -2399,7 +2399,7 @@ Worker node versions
 {: release-note}
 
 Ingress change logs
-:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1465_iks`, `0.47.0_1480_iks`, and `0.45.0_1482_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1465_iks`, `0.47.0_1480_iks`, and `0.45.0_1482_iks`.
 
 
 
@@ -2423,7 +2423,7 @@ CLI change log
 {: release-note}
 
 Ingress change logs
-:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1434_iks` and `0.45.0_1435_iks`. Version `0.35.0` is now unsupported. 
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1434_iks` and `0.45.0_1435_iks`. Version `0.35.0` is now unsupported. 
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.7.21_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4721_1527), [`4.6.40_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4640_1551), [`4.5.41_1547_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1547), and [`3.11.465_1599_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311465_1599).
@@ -2495,7 +2495,7 @@ OpenShift Data Foundation
 {: release-note}
 
 Ingress change logs
-:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.7.18_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4718_1524), [`4.6.36_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4636_1548), [`4.5.40_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1544), and [`3.11.462_1595_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311462_1595).
@@ -2557,7 +2557,7 @@ Worker node versions
 {: release-note}
 
 Ingress change logs
-:   Updated the [Ingress ALB change log(/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.
 
 New! The `addon options` command is now available
 :   For more information, see [`addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options).
