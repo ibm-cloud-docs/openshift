@@ -6734,7 +6734,7 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
 
-    * [Change log for master fix pack 4.9.59_1587_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1587_openshift)
+    * [Change log for master fix pack 4.9.59_1587_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1587M_openshift)
 
     * [Change log for worker node fix pack 4.9.59_1587_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1587_openshift)
 
@@ -6935,7 +6935,7 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
 
-    * [Change log for master fix pack 4.8.57_1600_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_48#4857_1600_openshift)
+    * [Change log for master fix pack 4.8.57_1600_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_48#4857_1600M_openshift)
 
     * [Change log for worker node fix pack 4.8.57_1600_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_48#4857_1600_openshift)
 
