@@ -282,8 +282,6 @@ subcollection: openshift
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
 
-    * [9 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0923)
-
     * [5 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0523)
 
         * New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
