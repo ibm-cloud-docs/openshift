@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-05-08"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
 
@@ -15,7 +15,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an `ERRIODEF` error?
+# Why does the Ingress status show an `ERRIODEG` error?
 {: #ts-ingress-erriodeg}
 {: troubleshoot}
 {: support}

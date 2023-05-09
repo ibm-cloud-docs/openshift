@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-09"
 
 keywords: portworx, openshift
 
@@ -50,19 +50,19 @@ Review the following Portworx limitations.
     3. Minimum number of workers: Two worker nodes per zone across three zones, for a minimum total of six worker nodes.
 1. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-utilities#manual_block).
 1. For production workloads, create an [external Databases for etcd](/docs/openshift?topic=openshift-storage_portworx_kv_store) instance for your Portworx metadata key-value store.
-1. **Optional** [Set up encryption](/docs/openshift?topic=openshift-storage-portworx-encyrption).
-1. [Install Portworx](/docs/openshift?topic=openshift-storage-portworx-deploy).
+1. **Optional** [Set up encryption](/docs/openshift?topic=openshift-storage_portworx_encyrption).
+1. [Install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy).
 1. Maintain the lifecycle of your Portworx deployment in your cluster.
-    1. When you update worker nodes in [VPC](/docs/openshift?topic=openshift-storage-portworx#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
+    1. When you update worker nodes in [VPC](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up) clusters, you must take additional steps to re-attach your Portworx volumes. You can attach your storage volumes by using the API or CLI.
         * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr).
         * [Attaching {{site.data.keyword.block_storage_is_short}} volumes with the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
-    2. To remove a Portworx volume, storage node, or the entire Portworx cluster, see [Portworx cleanup](/docs/openshift?topic=openshift-storage_portworx_remove).
+    2. To remove a Portworx volume, storage node, or the entire Portworx cluster, see [Portworx cleanup](/docs/openshift?topic=openshift-storage_portworx_removing).
 
 
 ## Creating a secret to store the KMS credentials
 {: #px_create_km_secret}
 
-**Before you begin:** [Set up encryption](/docs/openshift?topic=openshift-storage-portworx-encyrption)
+**Before you begin:** [Set up encryption](/docs/openshift?topic=openshift-storage_portworx_encyrption)
 
 1. Encode the credentials that you retrieved in the previous section to base64 and note all the base64 encoded values. Repeat this command for each parameter to retrieve the base64 encoded value.
     ```sh

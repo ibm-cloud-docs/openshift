@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-09"
 
 keywords: openshift, nginx, ingress controller, openshift ingress, ingress, exposing apps
 
@@ -82,6 +82,7 @@ Within an individual project, you can use one domain to access all the apps in t
 
 The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain. If you want to use a wildcard custom domain, you must register the custom domain as a wildcard domain such as `*.custom_domain.net`, and to use TLS, you must get a wildcard certificate.
 {: note}
+
 ## Customizing Ingress routing with annotations
 {: #annotations-roks4}
 

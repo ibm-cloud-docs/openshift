@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-09"
 
 keywords: openshift
 subcollection: openshift
@@ -282,6 +282,8 @@ subcollection: openshift
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
 
+    * [9 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0923)
+
     * [5 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0523)
 
         * New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
@@ -290,9 +292,15 @@ subcollection: openshift
 
         * Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
 
+        * Master fix pack `4.12.13_1540_openshift`.
+
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.14`
 
 * [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
+
+    * [27 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2723)
+
+        * Master fix packs `4.8.57_1600_openshift`, `4.9.59_1587_openshift`, `4.10.56_1565_openshift`, `4.11.35_1552_openshift`, and `4.12.11_1538_openshift`.
 
     * [26 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2623)
 
@@ -5132,7 +5140,7 @@ subcollection: openshift
 
 * [Using the Portworx key-value database](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kvdb)
 
-    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store#optional-setting-up-a-databases-for-etcd-service-instance)
+    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kv-db)
 
 [Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage_portworx_encryption#storage_portworx_encryption)
 
@@ -5153,6 +5161,8 @@ subcollection: openshift
 [Updating Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_update#storage_portworx_update)
 
 * [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up)
+
+* [Migrating Red Hat Enterprise Linux versions](/docs/openshift?topic=openshift-storage_portworx_update#px-rhel-migrate)
 
 * [Exploring other Portworx features](/docs/openshift?topic=openshift-storage_portworx_update#features)
 
@@ -6303,6 +6313,10 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
 
+    * [Change log for master fix pack 4.12.13_1540_openshift, released 2 May 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41213_1540_openshift)
+
+    * [Change log for master fix pack 4.12.11_1538_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41211_1538_openshift)
+
     * [Change log for worker node fix pack 4.12.13_1539_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41213_1539_openshift)
 
     * [Change log for worker node fix pack 4.12.10_1536_openshift, released 11 April 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41210_1536_openshift)
@@ -6383,6 +6397,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for master fix pack 4.11.35_1552_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41135_1552_openshift)
 
     * [Change log for worker node fix pack 4.11.37_1553_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41137_1553_openshift)
 
@@ -6534,6 +6550,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for master fix pack 4.10.56_1565_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41056_1565_openshift)
 
     * [Change log for worker node fix pack 4.10.57_1565_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41057_1565_openshift)
 
@@ -6717,6 +6735,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for master fix pack 4.9.59_1587_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1587_openshift)
 
     * [Change log for worker node fix pack 4.9.59_1587_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1587_openshift)
 
@@ -6916,6 +6936,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_48#openshift_changelog_overview_48)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_48#48_changelog)
+
+    * [Change log for master fix pack 4.8.57_1600_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_48#4857_1600_openshift)
 
     * [Change log for worker node fix pack 4.8.57_1600_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_48#4857_1600_openshift)
 
@@ -7502,7 +7524,7 @@ subcollection: openshift
 
 * [Version 4.8](/docs/openshift?topic=openshift-odf_addon_changelog#4.8_odf)
 
-    * [Version 4.8.31, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.4_odf)
+    * [Version 4.8.31, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.31_odf)
 
     * [Version 4.8.4, release 17 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.4_odf)
 
@@ -9328,7 +9350,7 @@ subcollection: openshift
 
 [Why does the Ingress status show an `ERRESNF` error?](/docs/openshift?topic=openshift-ts-ingress-erresnf#ts-ingress-erresnf)
 
-[Why does the Ingress status show an `ERRIODEF` error?](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg)
+[Why does the Ingress status show an `ERRIODEG` error?](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg)
 
 * [One or more status conditions indicate unavailable: `DeploymentAvailable=False`](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-da-false)
 
@@ -9353,6 +9375,8 @@ subcollection: openshift
 [Why does the Ingress status show an `ERRDRISS` error?](/docs/openshift?topic=openshift-ts-ingress-errdriss#ts-ingress-errdriss)
 
 [Why does the Ingress status show an ESSSMI error?](/docs/openshift?topic=openshift-ts-ingress-esssmi#ts-ingress-esssmi)
+
+[Why does the Ingress status show an `ESSSMINF` error?](/docs/openshift?topic=openshift-ts-ingress-esssminf#ts-ingress-esssminf)
 
 [Why does the Ingress status show an ESSSMG error?](/docs/openshift?topic=openshift-ts-ingress-esssmg#ts-ingress-esssmg)
 

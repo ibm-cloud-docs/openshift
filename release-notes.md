@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-09"
 
 keywords: openshift
 
@@ -29,6 +29,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2023
 {: #openshift-may23}
 
+
+### 9 May 2023
+{: #openshift-may0923}
+{: release-note}
+
+
+
+
+
+
 ### 5 May 2023
 {: #openshift-may0523}
 {: release-note}
@@ -43,13 +53,17 @@ New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `
 
 
 
-
 ### 2 May 2023
 {: #openshift-may0223}
 {: release-note}
 
+
+
 Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+  
+Master fix pack `4.12.13_1540_openshift`.
+:   For more information, see the [change logs for 4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.14`
@@ -58,6 +72,15 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
 ## April 2023
 {: #openshift-apr23}
 
+
+### 27 April 2023
+{: #openshift-apr2723}
+{: release-note}
+
+
+  
+Master fix packs `4.8.57_1600_openshift`, `4.9.59_1587_openshift`, `4.10.56_1565_openshift`, `4.11.35_1552_openshift`, and `4.12.11_1538_openshift`.
+:   For more information, see the change logs: [4.8](/docs/openshift?topic=openshift-openshift_versions_48), [4.9](/docs/openshift?topic=openshift-openshift_versions_49), [4.10](/docs/openshift?topic=openshift-openshift_versions_410), [4.11](/docs/openshift?topic=openshift-openshift_versions_411), and [4.12](/docs/openshift?topic=openshift-openshift_versions_412).
 
 
 ### 26 April 2023
@@ -1132,7 +1155,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 New! Portworx Cloud Drive support
-:   You can now dynamically provision storage for Portworx during installation by using Portworx Cloud Drives. For more information, see [Getting started with Portworx](/docs/openshift?topic=openshift-portworx).
+:   You can now dynamically provision storage for Portworx during installation by using Portworx Cloud Drives. For more information, see [About Portworx](/docs/openshift?topic=openshift-storage_portworx_about).
 
 
 
@@ -2681,7 +2704,7 @@ VPC cluster healthchecks
 {: release-note}
 
 New! PX-Backup is now available
-:   For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-portworx).
+:   For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup).
 
 
 
@@ -4855,7 +4878,7 @@ Version change log
 :   Master fix pack updates are available for {{site.data.keyword.redhat_openshift_notm}} [3.11.146_1526_openshift](/docs/openshift?topic=openshift-openshift_versions_311#311146_1526).
 
 Software-defined storage with Portworx
-:   You can now install Portworx on your {{site.data.keyword.redhat_openshift_notm}} cluster as a highly available data management platform for your containerized apps. For more information, see [Storing data software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-portworx).
+:   You can now install Portworx on your {{site.data.keyword.redhat_openshift_notm}} cluster as a highly available data management platform for your containerized apps. For more information, see [Storing data software-defined storage (SDS) with Portworx](/docs/openshift?topic=openshift-storage_portworx_about).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-09"
 
 keywords: openshift, version, upgrade, update
 
@@ -307,7 +307,7 @@ To update worker nodes from the console:
 4. From the **Worker Nodes** tab, select the checkbox for each worker node that you want to update. An action bar is displayed over the table header row.
 5. From the action bar, click **Update**.
 
-If you have Portworx installed in your cluster, you must restart the Portworx pods on updated worker nodes. For more information, see [Portworx limitations](/docs/openshift?topic=openshift-storage-portworx-about#portworx_limitations).
+If you have Portworx installed in your cluster, you must restart the Portworx pods on updated worker nodes. For more information, see [Portworx limitations](/docs/openshift?topic=openshift-storage_portworx_about#portworx_limitations).
 
 
 
@@ -320,7 +320,7 @@ You notice that an update is available for your worker nodes in a [VPC infrastru
  Applies to only VPC clusters. Have a classic cluster? See [Updating classic worker nodes](#worker_node) instead.
 {: note}
 
-If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage-portworx-about#vpc_up).
+If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up).
 {: important}
 
 
@@ -398,7 +398,7 @@ Complete the following steps to update your worker nodes by using the CLI.
 5. Repeat these steps for each worker node that you must update.
 6. Optional: After the replaced worker nodes are in a **Ready** status, [resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to meet the cluster capacity that you want.
 
-If you are running Portworx in your VPC cluster, you must [manually attach your {{site.data.keyword.block_storage_is_short}} volume to your new worker node.](/docs/openshift?topic=openshift-storage-portworx#portworx_vpc_up)
+If you are running Portworx in your VPC cluster, you must [manually attach your {{site.data.keyword.block_storage_is_short}} volume to your new worker node.](/docs/openshift?topic=openshift-storage_portworx_update)
 {: note}
 
 ### Updating VPC Gen2 worker nodes that use software-defined storage

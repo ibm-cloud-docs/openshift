@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-09"
 
 keywords: rhel, os, operating system
 
@@ -28,7 +28,7 @@ To find your worker node operating system, run the **`ibmcloud oc worker-pools -
 ## Migration actions by cluster version
 {: #rhel_migrate_versions}
 
-If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-portworx).
+If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-storage_portworx_about).
 {: important}
 
 Version 4.10+ clusters

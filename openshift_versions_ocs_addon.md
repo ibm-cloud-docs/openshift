@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-08"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -207,7 +207,7 @@ Initial release.
 {: #4.8_odf}
 
 ### Version 4.8.31, release 05 May 2023
-{: #4.12.4_odf}
+{: #4.8.31_odf}
 
 - Golang updated to `1.19.8`.
 - Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
