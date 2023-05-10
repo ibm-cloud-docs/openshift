@@ -68,6 +68,20 @@ The following table shows the changes that are in the master fix pack 4.11.35_15
 {: caption="Changes since version 4.11.31_1548_openshift" caption-side="bottom"}
 
 
+### Change log for worker node fix pack 4.11.39_1554_openshift, released 24 April 2023
+{: #41139_1554_openshift}
+
+The following table shows the changes that are in the worker node fix pack 4.11.39_1554_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 8 Packages |N/A|N/A|N/A|
+| {{site.data.keyword.openshiftshort}}. | 4.11.37 | 4.11.39 | See [change logs](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-39){: external}. |
+| Haproxy |N/A|N/A|N/A|
+{: caption="Changes since version 4.11.37_1553_openshift" caption-side="bottom"}
+
+
 ### Change log for worker node fix pack 4.11.37_1553_openshift, released 24 April 2023
 {: #41137_1553_openshift}
 

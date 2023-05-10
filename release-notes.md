@@ -38,6 +38,15 @@ Create Classic and VPC clusters with Terraform
 
 
 
+### 9 May 2023
+{: #openshift-may0923}
+{: release-note}
+
+
+
+Worker node fix packs `4.9.59_1588_openshift`, `4.10.59_1566_openshift`, `4.11.39_1554_openshift`, and `4.12.15_1542_openshift`.
+:   For more information, see the change logs: [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+
 
 
 ### 5 May 2023
