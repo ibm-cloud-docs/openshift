@@ -282,6 +282,10 @@ subcollection: openshift
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
 
+    * [10 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1023)
+
+        * Create Classic and VPC clusters with Terraform
+
     * [5 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0523)
 
         * New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
@@ -3167,7 +3171,7 @@ subcollection: openshift
 
 * [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
 
-* [Creating VPC clusters with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_tf)
+* [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_tf)
 
 [Creating clusters on dedicated hosts for VPC](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
 

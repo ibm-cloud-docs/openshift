@@ -294,7 +294,7 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor
 
 
 
-## Creating VPC clusters with Terraform
+## Creating a VPC cluster with Terraform
 {: #cluster_vpcg2_tf}
 {: terraform}
 
