@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-05-10"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -41,8 +41,8 @@ Review the version 4.11 change log.
 {: shortdesc}
 
 
-### Change log for master fix pack 4.11.35_1552_openshift, released 27 April 2023
-{: #41135_1552_openshift}
+### Change log for master fix pack 4.11.35_1553_openshift, released 27 April 2023
+{: #41135_1553_openshift}
 
 The following table shows the changes that are in the master fix pack 4.11.35_1552_openshift. Master patch updates are applied automatically. 
 

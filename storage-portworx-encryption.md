@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-10"
 
 keywords: portworx, openshift
 
@@ -70,7 +70,7 @@ If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or 
 
 1. [Retrieve the Key Management public endpoint URL](/docs/hs-crypto?topic=hs-crypto-regions#service-endpoints). Make sure that you note your endpoint in the correct format; for example, `https://api.us-south.hs-crypto.cloud.ibm.com:<port>`. For more information, see the [{{site.data.keyword.hscrypto}} API documentation](https://cloud.ibm.com/apidocs/hs-crypto#getinstance){: external}.
 
-#### Setting up volume encyrption with {{site.data.keyword.keymanagementservicelong_notm}}
+#### Setting up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}
 {: #storage-portowrx-encryption-kms}
 
 1. [Create a service instance](/docs/key-protect?topic=key-protect-provision#provision-overview).

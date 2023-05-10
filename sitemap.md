@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-10"
 
 keywords: openshift
 subcollection: openshift
@@ -281,6 +281,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
+
+    * [10 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1023)
+
+        * Create Classic and VPC clusters with Terraform
 
     * [5 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0523)
 
@@ -3155,6 +3159,8 @@ subcollection: openshift
 
 * [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster_create_classic)
 
+* [Creating a single-zone classic cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-classic#cluster_classic_tf)
+
 [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
 * [Prerequisites and notes](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-prereq)
@@ -3164,6 +3170,8 @@ subcollection: openshift
 * [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
 
 * [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
+
+* [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_tf)
 
 [Creating clusters on dedicated hosts for VPC](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
 
@@ -6311,9 +6319,9 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
 
-    * [Change log for master fix pack 4.12.13_1540_openshift, released 2 May 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41213_1540_openshift)
+    * [Change log for master fix pack 4.12.13_1541_openshift, released 2 May 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41213_1541_openshift)
 
-    * [Change log for master fix pack 4.12.11_1538_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41211_1538_openshift)
+    * [Change log for master fix pack 4.12.11_1539_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41211_1539_openshift)
 
     * [Change log for worker node fix pack 4.12.13_1539_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41213_1539_openshift)
 
@@ -6396,7 +6404,7 @@ subcollection: openshift
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
-    * [Change log for master fix pack 4.11.35_1552_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41135_1552_openshift)
+    * [Change log for master fix pack 4.11.35_1553_openshift, released 27 April 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41135_1553_openshift)
 
     * [Change log for worker node fix pack 4.11.37_1553_openshift, released 24 April 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41137_1553_openshift)
 

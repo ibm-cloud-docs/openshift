@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-27"
+lastupdated: "2023-05-10"
 
 keywords: openshift, clusters, classic, create
 
@@ -310,3 +310,102 @@ For a classic multizone cluster, after you created the cluster in a [multizone m
 ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
 ```
 {: pre}
+
+
+## Creating a single-zone classic cluster with Terraform
+{: #cluster_classic_tf}
+{: terraform}
+
+Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent provisioning of {{site.data.keyword.cloud_notm}} platform infrastructure and resources, including classic clusters. To create a classic cluster with Terraform, you first create a Terraform configuration file that declares the type of cluster resource you want to create. Then, you apply the Terraform configuration file. For more information on Terraform, see [About Terraform on {{site.data.keyword.cloud_notm}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about).
+
+**Before you begin:**
+* [Install the Terraform CLI and the {{site.data.keyword.cloud_notm}} Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#tf_installation).
+* Make sure you have an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key). 
+
+
+
+1. Create a Terraform provider file. Save the file in your Terraform directory. For more information, see the [Terraform IBM Cloud Provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external}. 
+
+    Example Terraform provider file. 
+
+    ```sh
+    terraform {
+    required_providers {
+        ibm = {
+        source = "IBM-Cloud/ibm"
+        version = "1.53.0"
+        }
+    }
+    }
+
+    provider "ibm" {
+    region = "us-south"
+    ibmcloud_api_key = "<api-key>"
+    }
+    ```
+    {: pre}
+
+2. Create a Terraform configuration file for a classic cluster. Save the file in your Terraform directory. The following example configuration creates a classic cluster with a single zone and three worker nodes. For more information and cluster configuration options, see the [Terraform `ibm_container_cluster`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} documentation. 
+
+    Example Terraform configuration file. 
+    ```sh
+    resource "ibm_container_cluster" "testacc_cluster" {
+    name            = "test-classic"
+    datacenter      = "dal10"
+    machine_type    = "b3c.4x16"
+    hardware        = "shared"
+    public_vlan_id  = "<vlan_id>"
+    private_vlan_id = "<vlan_id"
+    subnet_id       = ["<subnet_id>"]
+
+    default_pool_size = 3
+    }
+    ```
+    {: pre}
+
+    `name`
+    :   The name of the cluster.
+
+    `datacenter`
+    :   The zone to create the cluster in. To see available zones, run `ibmcloud oc zones --provider classic`.
+
+    `machine_type`
+    :   The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors&interface=ui).
+
+    `hardware`
+    :   The level of hardware isolation for your worker nodes. Use `dedicated` to have available physical resources dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. This option is available for virtual machine worker nodes flavors only. 
+
+    `public_vlan_id` and `private_vlan_id`
+    :   Optional. The ID of the public or private VLAN that you want to use for your worker nodes. To find available VLANs and subnets, run `ibmcloud oc vlans --zone <zone>`.
+
+    `subnet_id`
+    :   Optional. The ID of an existing subnet that you want to use for your worker nodes. To find existing subnets, run `ibmcloud oc subnets --provider classic --zone <zone>`.
+
+    `default_pool_size`
+    :   The number of worker nodes that you want to add to the default worker pool. 
+
+3. In the CLI, navigate to your Terraform directory.
+    ```sh
+    cd <terraform_directory>
+    ```
+    {: pre}
+
+4. Run the commands to initialize and plan your Terraform actions. Review the plan output to make sure the correct actions are performed. 
+
+    ```sh
+    terraform init
+    ```
+    {: pre}
+
+    ```sh
+    terraform plan
+    ```
+    {: pre}
+
+5. Apply the Terraform files to create the cluster. Then, navigate to the IBM Cloud console to check that the cluster is provisioning.
+    ```sh
+    terraform apply
+    ```
+    {: pre}
+    
+    

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-27"
+lastupdated: "2023-05-10"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -294,3 +294,101 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor
 
 
 
+## Creating a VPC cluster with Terraform
+{: #cluster_vpcg2_tf}
+{: terraform}
+
+
+Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent provisioning of {{site.data.keyword.cloud_notm}} platform infrastructure and resources, including VPC clusters. To create a VPC cluster with Terraform, you first create a Terraform configuration file that declares the type of cluster resource you want to create. Then, you apply the Terraform configuration file. For more information on Terraform, see [About Terraform on {{site.data.keyword.cloud_notm}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about).
+
+**Before you begin:**
+* [Install the Terraform CLI and the {{site.data.keyword.cloud_notm}} Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#tf_installation).
+* Make sure you have an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key). 
+
+1. Create a Terraform provider file. Save the file in your Terraform directory. For more information, see the [Terraform IBM Cloud Provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external}. 
+
+    Example Terraform provider file. 
+
+    ```sh
+    terraform {
+    required_providers {
+        ibm = {
+        source = "IBM-Cloud/ibm"
+        version = "1.53.0"
+        }
+    }
+    }
+
+    provider "ibm" {
+    region = "us-south"
+    ibmcloud_api_key = "<api-key>"
+    }
+    ```
+    {: pre}
+
+2. Create a Terraform configuration file for a VPC cluster. Save the file in your Terraform directory. For more information and cluster configuration options, see the [Terraform `ibm_container_cluster`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} documentation. 
+
+    Example Terraform configuration file. 
+    ```sh
+    resource "ibm_container_vpc_cluster" "cluster" {
+    name              = "tf-vpc"
+    vpc_id            = "<vpc_id>"
+    flavor            = "bx2.16x64"
+    worker_count      = "3"
+    resource_group_id = "<resource_group_id>"
+    zones {
+        subnet_id = "<subnet_id>"
+        name      = "us-south-1"
+        }
+    }
+    ```
+    {: pre}
+
+    `name`
+    :   Required. The name of the cluster.
+
+    `vpc_id`
+    :   Required. The ID of the VPC that you want to use for your cluster. To list available VPCs, run `ibmcloud is vpcs`.
+
+    `flavor`
+    :   Required. The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors&interface=ui).
+
+    `worker_count`
+    :   The number of worker nodes that you want to add to the default worker pool. 
+    
+    `resource_group_id`
+    :   The ID of the resource group. To see available resource groups, run `ibmcloud resource groups`. If no value is provided, the default resource group is used.
+
+    `zones`
+    :   A nested block that describes the zones of the VPC cluster's default worker pool.
+    :   - `subnet_id`: Required. The ID of the VPC subnet that you want to use for your worker nodes. To find existing subnets, run `ibmcloud oc subnets --provider classic --zone <zone>`.
+    :   - `name`: Required. The zone name for the default worker pool. To see available zones, run `ibmcloud oc zones --provider vpc-gen2`.
+
+
+
+3. In the CLI, navigate to your Terraform directory.
+    ```sh
+    cd <terraform_directory>
+    ```
+    {: pre}
+
+4. Run the commands to initialize and plan your Terraform actions. Review the plan output to make sure the correct actions are performed. 
+
+    ```sh
+    terraform init
+    ```
+    {: pre}
+
+    ```sh
+    terraform plan
+    ```
+    {: pre}
+
+5. Apply the Terraform files to create the cluster. Then, navigate to the IBM Cloud console to check that the cluster is provisioning.
+    ```sh
+    terraform apply
+    ```
+    {: pre}
+    
+    
+    

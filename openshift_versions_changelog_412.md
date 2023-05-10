@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-10"
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -33,8 +33,8 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 
-### Change log for master fix pack 4.12.13_1540_openshift, released 2 May 2023
-{: #41213_1540_openshift}
+### Change log for master fix pack 4.12.13_1541_openshift, released 2 May 2023
+{: #41213_1541_openshift}
 
 The following table shows the changes that are in the master fix pack 4.12.13_1540_openshift. Master patch updates are applied automatically. 
 
@@ -48,8 +48,8 @@ The following table shows the changes that are in the master fix pack 4.12.13_15
 {: caption="Changes since version 4.12.11_1538_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.11_1538_openshift, released 27 April 2023
-{: #41211_1538_openshift}
+### Change log for master fix pack 4.12.11_1539_openshift, released 27 April 2023
+{: #41211_1539_openshift}
 
 The following table shows the changes that are in the master fix pack 4.12.11_1538_openshift. Master patch updates are applied automatically. 
 
