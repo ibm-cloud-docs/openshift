@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-10"
 
 keywords: portworx, openshift
 
@@ -37,7 +37,7 @@ Portworx also comes with additional features that you can use for your stateful 
 
 Review the requirements to [install Portworx](https://docs.portworx.com/install-portworx/prerequisites/){: external}.
 
-For production environments, choose one of the [sds worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table) for best performance. 
+For production environments, choose one of the [SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table) for best performance. 
 {: tip}
 
 ## How can I make sure that my data is stored highly available?

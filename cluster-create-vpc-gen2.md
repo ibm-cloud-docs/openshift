@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-10"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -326,7 +326,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     ```
     {: pre}
 
-2. Create a Terraform configuration file for a VPC cluster. Save the file in your Terraform directory. For more information and cluster configuration options, see the [Terraform ibm_container_cluster](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} documentation. 
+2. Create a Terraform configuration file for a VPC cluster. Save the file in your Terraform directory. For more information and cluster configuration options, see the [Terraform `ibm_container_cluster`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} documentation. 
 
     Example Terraform configuration file. 
     ```sh

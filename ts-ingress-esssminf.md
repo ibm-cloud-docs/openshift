@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-05-10"
 
 keywords: containers, ingress, troubleshoot ingress, secrets manager missing, esssminf
 
@@ -45,7 +45,7 @@ Check that the {{site.data.keyword.secrets-manager_short}} instances registered 
     ```
     {: pre}
 
-2. List the resources in your account and check that the {{site.data.keyword.secrets-manager_short}} instances regsitered to your cluster also exist in your account. 
+2. List the resources in your account and check that the {{site.data.keyword.secrets-manager_short}} instances registered to your cluster also exist in your account. 
     ```sh
     ibmcloud resource service-instances
     ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-10"
 
 keywords: openshift, clusters, classic, create
 
@@ -345,7 +345,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     ```
     {: pre}
 
-2. Create a Terraform configuration file for a classic cluster. Save the file in your Terraform directory. The following example configuration creates a classic cluster with a single zone and three worker nodes. For more information and cluster configuration options, see the [Terraform ibm_container_cluster](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} documentation. 
+2. Create a Terraform configuration file for a classic cluster. Save the file in your Terraform directory. The following example configuration creates a classic cluster with a single zone and three worker nodes. For more information and cluster configuration options, see the [Terraform `ibm_container_cluster`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} documentation. 
 
     Example Terraform configuration file. 
     ```sh
@@ -376,7 +376,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     :   The level of hardware isolation for your worker nodes. Use `dedicated` to have available physical resources dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. This option is available for virtual machine worker nodes flavors only. 
 
     `public_vlan_id` and `private_vlan_id`
-    :   Optional. The ID of the public or private VLAN that you want to use for your worker nodes. To find available VLANs and subnets, run `{{icks}} vlans --zone <zone>`.
+    :   Optional. The ID of the public or private VLAN that you want to use for your worker nodes. To find available VLANs and subnets, run `ibmcloud oc vlans --zone <zone>`.
 
     `subnet_id`
     :   Optional. The ID of an existing subnet that you want to use for your worker nodes. To find existing subnets, run `ibmcloud oc subnets --provider classic --zone <zone>`.
