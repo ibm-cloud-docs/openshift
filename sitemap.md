@@ -286,6 +286,10 @@ subcollection: openshift
 
         * Create Classic and VPC clusters with Terraform
 
+    * [9 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0923)
+
+        * Worker node fix packs `4.9.59_1588_openshift`, `4.10.59_1566_openshift`, `4.11.39_1554_openshift`, and `4.12.15_1542_openshift`.
+
     * [5 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0523)
 
         * New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
