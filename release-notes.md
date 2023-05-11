@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-05-11"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
 
 Create Classic and VPC clusters with Terraform
-:   For more information, see [Creating a single-zone classic cluster with Terraform](/docs/containers?topic=containers-cluster-create-classic&interface=tf#cluster_classic_tf) and [Creating a VPC cluster with Terraform](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=tf#cluster_vpcg2_tf).
+:   For more information, see [Creating a single-zone classic cluster with Terraform](https://cloud.ibm.com/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform) and [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform).
 
 
 

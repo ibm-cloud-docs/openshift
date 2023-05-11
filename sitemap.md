@@ -8900,7 +8900,7 @@ subcollection: openshift
 {: #sitemap_troubleshooting}
 
 
-[Getting help](/docs/openshift?topic=openshift-get-help#get-help)
+[Getting help and support for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-get-help#get-help)
 
 * [General ways to resolve cluster issues](/docs/openshift?topic=openshift-get-help#help-general)
 
