@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-11"
 
 keywords: openshift, version, update, upgrade
 
@@ -55,7 +55,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 
 
-## {{site.data.keyword.openshiftlong_notm}} clusters
+### {{site.data.keyword.openshiftlong_notm}} clusters
 {: #os-openshift}
 
 
@@ -88,7 +88,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
 
 
-## Clusters in Satellite locations with CoreOS enabled
+### Clusters in Satellite locations with CoreOS enabled
 {: #os-satellite-with-coreos}
 
 
@@ -121,9 +121,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
 
 
-
-
-## Clusters in Satellite locations without CoreOS enabled
+### Clusters in Satellite locations without CoreOS enabled
 {: #os-satellite-without-coreos}
 
 
@@ -154,8 +152,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`), RHEL 7 (`REDHAT_7_64`) (default)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
-
-
 
 
 Unsupported versions:

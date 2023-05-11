@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-05-11"
 
 keywords: openshift
 subcollection: openshift
@@ -6270,11 +6270,11 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-* [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+    * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
-* [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
+    * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
 
-* [Clusters in Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos)
+    * [Clusters in Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos)
 
 * [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
