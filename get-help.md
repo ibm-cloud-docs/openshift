@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-11"
 
 keywords: red hat openshift, openshift container platform, red hat, red hat cluster, openshift, containers, clusters
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Getting help
+# Getting help and support for {{site.data.keyword.openshiftlong_notm}}
 {: #get-help}
 
 Still having issues with your cluster? Review different ways to get help and support for your {{site.data.keyword.openshiftlong_notm}} clusters. For any questions or feedback, post in Slack.
