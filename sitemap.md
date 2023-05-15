@@ -282,6 +282,14 @@ subcollection: openshift
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
 
+    * [15 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1523)
+
+        * Cluster autoscaler add-on versions `1.0.6_1077`, `1.0.7_1076`, `1.0.8_1078`, and `1.1.0_1066`.
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1-beta`
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.12_1963` and `5.1.8_1970`.
+
     * [10 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1023)
 
         * Create Classic and VPC clusters with Terraform
@@ -6947,6 +6955,8 @@ subcollection: openshift
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
 
+    * [Change log for patch update 1.1.0_1066, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#111066_ca)
+
     * [Change log for patch update 1.1.0_1060, released 26 April 2023](/docs/openshift?topic=openshift-ca_changelog#111060_ca)
 
     * [Change log for patch update 1.1.0_978, released 16 March 2023](/docs/openshift?topic=openshift-ca_changelog#110978_ca)
@@ -6969,6 +6979,8 @@ subcollection: openshift
 
 * [Version 1.0.8](/docs/openshift?topic=openshift-ca_changelog#0108_ca_addon)
 
+    * [Change log for patch update 1.0.8_1078, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#1081078_ca)
+
     * [Change log for patch update 1.0.8_1016, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1081016_ca)
 
     * [Change log for patch update 1.0.8_987, released 29 March 2023](/docs/openshift?topic=openshift-ca_changelog#108987_ca)
@@ -6976,6 +6988,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.8_968, released 9 March 2023](/docs/openshift?topic=openshift-ca_changelog#108968_ca)
 
 * [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
+
+    * [Change log for patch update 1.0.7_1076, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#1071076_ca)
 
     * [Change log for patch update 1.0.7_1021, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1071021_ca)
 
@@ -6992,6 +7006,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
 
 * [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+
+    * [Change log for patch update 1.0.6_1077, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#1061077_ca)
 
     * [Change log for patch update 1.0.6_1010, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1061010_ca)
 
@@ -7075,6 +7091,8 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.8_1970, released 15 May 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.8_1970_is_block_relnote)
+
     * [Change log for version 5.1.6_1872, released 05 April 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.6_1872_is_block_relnote)
 
     * [Change log for version 5.1.5_1857, released 29 March 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.5_1857_is_block_relnote)
@@ -7086,6 +7104,8 @@ subcollection: openshift
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.12_1963, released 15 May 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.12_1963_is_block_relnote)
 
     * [Change log for version 5.0.10_1869, released 05 April 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.10_1869_is_block_relnote)
 
@@ -7198,6 +7218,12 @@ subcollection: openshift
 * [Archive](/docs/openshift?topic=openshift-vpc_bs_changelog#unsupported_versions)
 
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
+
+[{{site.data.keyword.filestorage_vpc_full_notm}} add-on change log](/docs/openshift?topic=openshift-versions-vpc-file-addon#versions-vpc-file-addon)
+
+* [Version 1.1](/docs/openshift?topic=openshift-versions-vpc-file-addon#011_is_file)
+
+    * [Change log for version 1.1-beta, released 15 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 

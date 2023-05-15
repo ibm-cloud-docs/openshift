@@ -352,6 +352,7 @@ toc:
           - add-on-versions.md 
           - versions-autoscaler.md
           - versions-vpc-block-addon.md
+          - versions-vpc-file-addon.md
           - versions-object.md
           - versions-static-route.md
           - openshift_versions_ocs_addon.md
