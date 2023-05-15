@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-05-15"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -45,6 +45,11 @@ ibmcloud oc cluster addon versions
 
 Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches might be slower on this version.
 {: preview}
+
+### Change log for patch update 1.1.0_1066, released 15 May 2023
+{: #111066_ca}
+- Image tags: `1.21.0 110-9`, `1.22.0 110-9`, `1.23.0 110-9`, `1.24.0 110-9`, `1.25.0 110-9`
+- Resolves issues while reading secrets. 
 
 ### Change log for patch update 1.1.0_1060, released 26 April 2023
 {: #111060_ca}
@@ -116,6 +121,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 ## Version 1.0.8
 {: #0108_ca_addon}
 
+### Change log for patch update 1.0.8_1078, released 15 May 2023
+{: #1081078_ca}
+
+- Image tags: `1.20.0 108-2`, `1.21.0 108-2`, `1.22.0 108-2`, `1.23.0 108-2`, `1.24.0 108-2`, `1.25.0 108-2`, `1.26.0 108-2`.
+- Updates `storage-secret-sidecar` image to `v1.2.21`.
+- Golang updated to `1.19.8`.
+
 ### Change log for patch update 1.0.8_1016, released 5 April 2023
 {: #1081016_ca}
 
@@ -141,6 +153,15 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.7
 {: #0107_ca_addon}
+
+### Change log for patch update 1.0.7_1076, released 15 May 2023
+{: #1071076_ca}
+
+- Image tags: `1.20.0 107-5`, `1.21.0 107-5`, `1.22.0 107-5`, `1.23.0 107-5`, `1.24.0 107-5`,`1.25.0 107-5`.
+- Updates the `storage-secret-sidecar` image to `v1.2.21`
+- Golang updated to `1.19.8`.
+- Fixes issue where `cluster-autoscaler` stops retrying requests return `HTTP401` code.
+
 
 ### Change log for patch update 1.0.7_1021, released 5 April 2023
 {: #1071021_ca}
@@ -195,6 +216,14 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.6
 {: #0106_ca_addon}
+
+### Change log for patch update 1.0.6_1077, released 15 May 2023
+{: #1061077_ca}
+
+- Image tags: `1.19.1 106-8`, `1.20.0 106-8`, `1.21.0 106-8`, `1.22.0 106-8`, `1.23.0 106-8`, `1.24.0 106-8`.
+- Updates the `storage-secret-sidecar` image to `v1.2.21`
+- Golang updated to `1.19.8`.
+- Fixes issue where `cluster-autoscaler` stops retrying requests return `HTTP401` code.
 
 ### Change log for patch update 1.0.6_1010, released 5 April 2023
 {: #1061010_ca}

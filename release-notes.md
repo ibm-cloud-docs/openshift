@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-11"
+lastupdated: "2023-05-15"
 
 keywords: openshift
 
@@ -28,6 +28,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2023
 {: #openshift-may23}
+
+### 15 May 2023
+{: #openshift-may1523}
+{: release-note}
+
+Cluster autoscaler add-on versions `1.0.6_1077`, `1.0.7_1076`, `1.0.8_1078`, and `1.1.0_1066`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1-beta`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon). 
+
+{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.12_1963` and `5.1.8_1970`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
 
 ### 10 May 2023
 {: #openshift-may1023}
@@ -1359,7 +1373,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 CLI change log update
-:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.404.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.404.
 
 
 Certified Kubernetes
@@ -1639,7 +1653,7 @@ Worker node fix pack
 
 
 Container service CLI 
-:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.374.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.374.
 
 
 
@@ -1662,7 +1676,7 @@ Cluster autoscaler
 {: release-note}
 
 Container service CLI 
-:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.372.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.372.
 
 
 ### 17 February 2022
@@ -1795,7 +1809,7 @@ Cloud Image Key Synchronizer add-on
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 ### 20 January 2022
@@ -1838,7 +1852,7 @@ Worker node fix pack update.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   Version `2.1.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 
@@ -1943,7 +1957,7 @@ Review the release notes for November 2021.
 {: release-note}
 
 Container service CLI 
-:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.347.
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.347.
 
 
 
@@ -2020,7 +2034,7 @@ HPCS Router add-on
 {: release-note}
 
 CLI change log
-:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.344. 
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.344. 
 
 ### 12 November 2021
 {: #openshift-nov1221}
@@ -2081,7 +2095,7 @@ Istio add-on change log
 {: release-note}
 
 CLI change log
-:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.334. 
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.334. 
 
 ### 25 October 2021
 {: #openshift-oct2521}
@@ -2127,7 +2141,7 @@ OpenShift Data Foundation
 {: release-note}
 
 CLI change log
-:   The [CLI change log(/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.331. 
+:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.331. 
 
 ### 11 October 2021
 {: #openshift-oct1121}
@@ -2406,7 +2420,7 @@ Image key synchronizer
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available. For more information, see [Version change log(/docs/containers?topic=containers-changelog).
+:   Worker node fix pack update change log documentation is available. For more information, see [Version change log](/docs/containers?topic=containers-changelog).
 
 
 
@@ -2502,7 +2516,7 @@ OpenShift Data Foundation doc restructuring.
 {: release-note}
 
 OpenShift Data Foundation
-:   As of 10 July 2021, version `0.0.2` of the OpenShift Container Storage add-on is deprecated and becomes unsupported on 24 July 2021. Add-on versions `4.6.0` and `4.7.0` are now available. If you have version `0.0.2` of the add-on installed in your cluster, update the add-on to a supported version. For more information, see the [change log(/docs/openshift?topic=openshift-odf_addon_changelog).
+:   As of 10 July 2021, version `0.0.2` of the OpenShift Container Storage add-on is deprecated and becomes unsupported on 24 July 2021. Add-on versions `4.6.0` and `4.7.0` are now available. If you have version `0.0.2` of the add-on installed in your cluster, update the add-on to a supported version. For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
 
 
 
@@ -2639,7 +2653,7 @@ Worker node versions
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 2 June 2021
 {: #openshift-june0221}
@@ -2814,7 +2828,7 @@ Cluster autoscaler add-on
 :   [Patch update `1.0.2_256`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   Version `2.0.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 
@@ -3033,7 +3047,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler add-on
-:   Version 1.0.2 of the cluster autoscaler add-on is released. For more information, see the [cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog).
+:   Version 1.0.2 of the cluster autoscaler add-on is released. For more information, see the [cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 
 
@@ -3088,7 +3102,7 @@ Master versions
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on
-:   Version `3.0.0` of the {{site.data.keyword.block_storage_is_short}} add-on is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log(/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   Version `3.0.0` of the {{site.data.keyword.block_storage_is_short}} add-on is released. Update your clusters to use the latest version. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
 
@@ -3199,7 +3213,7 @@ Worker node versions
 {: release-note}
 
 Block Storage for VPC add-on
-:   Block Storage for VPC add-on patch update `2.0.3_471` is released. For more information, see the [Block Storage for VPC add-on change log(/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   Block Storage for VPC add-on patch update `2.0.3_471` is released. For more information, see the [Block Storage for VPC add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
 
@@ -3243,7 +3257,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler
-:   Cluster autoscaler add-on patch update `1.0.1_210` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_210` is released. For more information, see the [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 12 January 2021
 {: #openshift-jan1221}
@@ -3292,7 +3306,7 @@ CLI change log
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 {{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.6` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log(/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   Version `2.0.6` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 17 December 2020
 {: #openshift-dec1720}
@@ -3302,7 +3316,7 @@ Audit documentation
 :   Reorganized information about the configuration and forwarding of Kubernetes API server and worker node [audit logs](/docs/openshift?topic=openshift-health-audit).
 
 Back up and restore
-:   Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart change log(/docs/openshift?topic=openshift-backup_restore_changelog).
+:   Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart change log](/docs/openshift?topic=openshift-backup_restore_changelog).
 
 
 
@@ -3311,7 +3325,7 @@ Back up and restore
 {: release-note}
 
 Cluster autoscaler
-:   Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 14 December 2020
 {: #openshift-dec1420}
@@ -3333,7 +3347,7 @@ Master versions
 {: release-note}
 
 Storage add-ons
-:   Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log(/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 strongSwan versions
 :   Added information about which [strongSwan Helm chart versions](/docs/containers?topic=containers-116_changelog#11615_1554) are supported.
@@ -3374,7 +3388,7 @@ Worker node versions
 {: release-note}
 
 Cluster autoscaler add-on
-:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on change log(/docs/openshift?topic=openshift-ca_changelog).
+:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 
 
@@ -3440,7 +3454,7 @@ CLI change log
 
 
 New! {{site.data.keyword.block_storage_is_short}} change log
-:   Added a [change log(/docs/openshift?topic=openshift-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.
+:   Added a [change log](/docs/openshift?topic=openshift-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.
 
 ### 16 November 2020
 {: #openshift-nov1620}
@@ -4204,7 +4218,7 @@ Ingress ALB change log
 
 Version change logs
 
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1521_openshift`(/docs/openshift?topic=openshift-changelog_archive#4313_1521) and [`3.11.200_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311200_1549).
+:   {{site.data.keyword.redhat_openshift_notm}} [`4.3.13_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive#4313_1521) and [`3.11.200_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311200_1549).
 
 ### 24 April 2020
 {: #openshift-april2420}
@@ -4767,7 +4781,7 @@ Using {{site.data.keyword.registrylong_notm}}
     - [Understanding how to authorize your cluster to pull images from a registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth).
     - [Copying the `default-region-icr-io` secrets](/docs/openshift?topic=openshift-registry#copy_imagePullSecret) from the `default` project to the project that you want to pull images from.
     - [Creating your own image pull secret](/docs/openshift?topic=openshift-registry#other_registry_accounts).
-    - [Adding the image pull secret to your deployment configuration or to the project service account[(/docs/openshift?topic=openshift-registry#use_imagePullSecret).
+    - [Adding the image pull secret to your deployment configuration or to the project service account](/docs/openshift?topic=openshift-registry#use_imagePullSecret).
     
 
 
@@ -5393,7 +5407,7 @@ Ingress ALB change log
 {: release-note}
 
 Fluentd change log
-:   Added a [Fluentd version change log(/docs/containers?topic=containers-cluster-add-ons-changelog#fluentd_changelog).
+:   Added a [Fluentd version change log](/docs/containers?topic=containers-cluster-add-ons-changelog#fluentd_changelog).
 
 Ingress ALB change log
 :   Updated the [ALB `nginx-ingress` image to build 470](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).

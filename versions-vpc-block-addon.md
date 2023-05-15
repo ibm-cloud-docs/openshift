@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-05-15"
 
 keywords: block, add-on, changelog
 
@@ -42,6 +42,16 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.8_1970, released 15 May 2023
+{: #5.1.8_1970_is_block_relnote}
+
+- Updates UBI image to `8.7-1107` 
+- Updates Golang to `1.19.8`
+- Users must determine token exchange URL based on cluster provider. For {{site.data.keyword.satelliteshort}} clusters, always use the provided token exchange URL. If the URL is not provided, use public IAM endpoint.
+- Resolves the following CVEs: 
+    - [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537), [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}
+
 
 ### Change log for version 5.1.6_1872, released 05 April 2023
 {: #5.1.6_1872_is_block_relnote}
@@ -88,6 +98,14 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 5.0
 {: #050_is_block}
 
+### Change log for version 5.0.12_1963, released 15 May 2023
+{: #5.0.12_1963_is_block_relnote}
+
+- Updates UBI image to `8.7-1107` 
+- Updates Golang to `1.19.8`
+- Users must determine token exchange URL based on cluster provider. For {{site.data.keyword.satelliteshort}} clusters, always use the provided token exchange URL. If the URL is not provided, use public IAM endpoint.
+- Resolves the following CVEs: 
+    - [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537), [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}
 
 ### Change log for version 5.0.10_1869, released 05 April 2023
 {: #5.0.10_1869_is_block_relnote}
