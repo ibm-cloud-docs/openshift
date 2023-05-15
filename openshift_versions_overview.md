@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-11"
+lastupdated: "2023-05-15"
 
 keywords: openshift, version, update, upgrade
 
@@ -45,6 +45,9 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. Note that different {{site.data.keyword.redhat_openshift_notm}} versions might support different RHEL versions. 
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
+{: note}
+
+RHEL 7 is deprecated and becomes unsupported soon. For migration actions by cluster version, see [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate).
 {: important}
 
 
