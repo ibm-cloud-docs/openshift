@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-16"
 
 keywords: openshift
 subcollection: openshift
@@ -4205,6 +4205,8 @@ subcollection: openshift
 * [Defining the pod network interface when creating your cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-cluster)
 
 * [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-limit)
+
+* [Creating network policies by using Calico host endpoints](/docs/openshift?topic=openshift-satellite-network-customization#custom-network-policies-hostendpoints)
 
 * [Restricting NodePort service access](/docs/openshift?topic=openshift-satellite-network-customization#nodeport-restrict-access)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-05-16"
 
 keywords: openshift
 
@@ -30,8 +30,6 @@ Commonly used components include the following. If these components fail, review
 * **OperatorHub** in the `openshift-marketplace` project
 * **Internal registry** in the `openshift-image-registry` project
 
-Some components, such as the OperatorHub, are available only in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4, or run in different projects in version 3.11. You can still troubleshoot {{site.data.keyword.redhat_openshift_notm}} components in 3.11 clusters, but the project and resource names might vary.
-{: note}
 
 ## Step 1: Check your account setup
 {: #oc-debug-acct}

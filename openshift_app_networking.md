@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-05-16"
 
 keywords: openshift, networking
 
@@ -69,21 +69,6 @@ The following table compares the features of each app exposure method.
 |Consistent hybrid multicloud deployment| | | |Yes|
 {: #roks-net-compare-43}
 {: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} clusters." caption-side="bottom"}
-
-
-
-
-|Characteristics|NodePort|NLB|Route|
-|---------------|--------|---|-----|
-|Stable external IP| |Yes|Yes|
-|External hostname|Yes|Yes|Yes|
-|HTTP(S) load balancing| |Yes*|Yes|
-|TLS termination| | |Yes|
-|Custom routing rules| | |Yes|
-|Multiple apps per route or service| | |Yes|
-|Consistent hybrid multicloud deployment| | |Yes|
-{: #roks-net-compare-311}
-{: caption="Comparison of external networking for apps in {{site.data.keyword.redhat_openshift_notm}} version 3.11 clusters." caption-side="bottom"}
 
 
 
@@ -193,8 +178,6 @@ Check out the following methods for private app networking:
 To make an app available over a private network only in a VPC cluster, choose a load balancing deployment pattern based on your cluster's service endpoint setup: public and private cloud service endpoint, or private cloud service endpoint only. For each service endpoint setup, the following table describes each possible app exposure method, why you might use it, and how to set it up.
 {: shortdesc}
 
-Only version 4 clusters can be created on VPC infrastructure. The following methods don't apply to version 3.11 clusters, which can be created on classic infrastructure only.You can't use multiple app exposure methods for one app.
-{: note}
 
 |Name|Load-balancing method|Use case|Implementation|
 |----|---------------------|--------|--------------|

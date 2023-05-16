@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-16"
 
 keywords: openshift
 
@@ -1722,7 +1722,7 @@ Minimum required permissions
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Update the Kubernetes master and API server to the default version. During the update, you can't access or change the cluster. Worker nodes, apps, and resources that were deployed are not modified and continue to run. 
+Update the Kubernetes master and API server. During the update, you can't access or change the cluster. Worker nodes, apps, and resources that were deployed are not modified and continue to run. 
 {: shortdesc}
 
 You might need to change your YAML files for future deployments. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
@@ -4451,7 +4451,7 @@ Minimum required permissions
 :    Optional. The namespace that the TLS secret is created in. If no namespace is specified, the secret is created in the `default` namespace.
 
 `--domain-zone ZONE`
-:    Optional. The ZoneID for your {{site.data.keyword.cis_full_notm}} instance. This is a GUID value.
+:    Optional. The Domain ID for your {{site.data.keyword.cis_full_notm}} instance. This is a GUID value.
 
 
 #### Example `ingress domain create` command

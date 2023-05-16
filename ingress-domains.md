@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-05-16"
 
 keywords: openshift
 
@@ -109,7 +109,7 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--is-default] [
 :    Optional. The namespace that the domain TLS secret is created in. If no namespace is specified, the secret is created in the `default` namespace.
 
 `--domain-zone ZONE`
-:    Optional. The ZoneID for your {{site.data.keyword.cis_full_notm}} instance. This is a GUID value.
+:    Optional. The Domain ID for your {{site.data.keyword.cis_full_notm}} instance. This is a GUID value.
 
 
 ## Setting up domains from other external providers

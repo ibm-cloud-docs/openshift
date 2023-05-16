@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-05-16"
 
 keywords: openshift
 
@@ -348,19 +348,6 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     calicoctl apply -f deny-all-private-default.yaml
     ```
     {: pre}
-
-1. **{{site.data.keyword.redhat_openshift_notm}} version 3.11 clusters only**: Set up private host endpoints for your worker nodes. When your worker nodes have private host endpoints, the policies that you apply can target the worker node private interface (eth0) and the pod network of a cluster.
-    1. Open the `generic-privatehostendpoint.yaml` policy.
-    1. Replace `<worker_name>` with the name of a worker node. Note that some worker nodes must follow a different naming structure for Calico policies. You must use the name that is returned when you run `calicoctl get nodes --config=<filepath>/calicoctl.cfg`.
-    1. Replace `<worker-node-private-ip>` with the private IP address for the worker node. To see your worker nodes' private IP addresses, run `ibmcloud oc worker ls --cluster <my_cluster>`.
-    1. For each worker node in your cluster, repeat these steps in a separate entry in the file. Note that each time you add a worker node to a cluster, you must update the host endpoints file with the new entries.
-    1. Save the policy.
-    1. Apply the policy.
-
-        ```sh
-        calicoctl apply -f generic-privatehostendpoint.yaml
-        ```
-        {: pre}
 
 1. Optional: To allow your workers and pods to access {{site.data.keyword.registrylong_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, you must manually add the subnets for those services to this policy.
 
