@@ -3802,6 +3802,12 @@ subcollection: openshift
 
 * [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-pod)
 
+[Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
+
+* [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster by using Terraform](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-create)
+
+* [Assigning IAM user access to {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-IAM)
+
 
 ## Securing cluster workloads
 {: #sitemap_securing_cluster_workloads}
