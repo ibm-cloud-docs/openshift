@@ -122,6 +122,7 @@ toc:
           - access-apikey.md
           - access-iam-rbac.md
           - access-pod-identity.md
+          - terraform-cluster-access.md
       - topicgroup:
           label: Securing cluster workloads
           topics:

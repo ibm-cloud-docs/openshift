@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-16"
 
 keywords: openshift
 subcollection: openshift
@@ -281,6 +281,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
+
+    * [16 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1623)
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.0`.
 
     * [15 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1523)
 
@@ -3802,6 +3806,12 @@ subcollection: openshift
 
 * [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-pod)
 
+[Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
+
+* [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster by using Terraform](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-create)
+
+* [Assigning IAM user access to {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-IAM)
+
 
 ## Securing cluster workloads
 {: #sitemap_securing_cluster_workloads}
@@ -4205,6 +4215,8 @@ subcollection: openshift
 * [Defining the pod network interface when creating your cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-cluster)
 
 * [Limiting access to your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-network-customization#sat-network-custom-pod-network-limit)
+
+* [Creating network policies by using Calico host endpoints](/docs/openshift?topic=openshift-satellite-network-customization#custom-network-policies-hostendpoints)
 
 * [Restricting NodePort service access](/docs/openshift?topic=openshift-satellite-network-customization#nodeport-restrict-access)
 
@@ -6117,6 +6129,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.516](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10516)
+
 * [Version v1.0.510](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10510)
 
 * [Version v1.0.498](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10498)
@@ -7224,6 +7238,10 @@ subcollection: openshift
 * [Version 1.1](/docs/openshift?topic=openshift-versions-vpc-file-addon#011_is_file)
 
     * [Change log for version 1.1-beta, released 15 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1_is_file_relnote)
+
+* [Version 1.0](/docs/openshift?topic=openshift-versions-vpc-file-addon#01_is_file)
+
+    * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 

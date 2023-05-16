@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-25"
+lastupdated: "2023-05-16"
 
 keywords: openshift, route, network, satellite
 
@@ -80,6 +80,27 @@ For more information, see the [**`ibmcloud oc cluster create satellite`**](/docs
 
 
 After you create your location and cluster, you can use the [**`ibmcloud ks cluster master satellite-service-endpoint allowlist add`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add) command to add a subnet to a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. Authorized requests to the cluster master that originate from the subnet are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. The allowlist must be [enabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable) for the restrictions to apply.
+
+
+## Creating network policies by using Calico host endpoints
+{: #custom-network-policies-hostendpoints}
+
+[After location and cluster creation]{: tag-green}
+
+If you create a {{site.data.keyword.satelliteshort}} cluster at version 4.12 and later, there are Calico `Hostendpoint` instances that are deployed to the cluster for every worker node’s network interface.
+
+You can use these `Hostendpoint` instances to define global network policies with the help of the `“ibm-cloud.kubernetes.io/interface-name: <network_interface_name>”` label that is added to each `Hostendpoint` instance.
+
+In addition to this label, all of the worker node’s labels are added for additional customization options.
+
+These `Hostendpoints` have the `“projectcalico-default-allow"` profile, which means these `Hostendpoints` may change the previously expected behavior when you update to 4.12.
+{: important}
+
+Before updating to 4.12, make sure all the previously expected networking rules, policies, `Hostendpoints` work the same after the update as well.
+
+For more information, see the [Calico documentation](https://docs.tigera.io/calico/latest/reference/resources/hostendpoint){: external}.
+
+
 
 ## Restricting NodePort service access
 {: #nodeport-restrict-access}

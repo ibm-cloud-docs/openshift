@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-16"
 
 keywords: file, add-on, changelog
 
@@ -53,7 +53,16 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 - Controller pods are now deployed as `Deployment`, in previous releases pods were deployed as `Satefulsets`.
 - Adds the `priorityClass` in the deployment file for controller and node pods.
 
+## Version 1.0
+{: #01_is_file}
 
+
+### Change log for version 1.0, released 16 May 2023
+{: #1.0_is_file_relnote}
+
+- Updates the UBI image to `8.7-1107`.
+- Updates Golang to `1.19.8`.
+- Resolves the following CVEs: [CVE-2023-2453](https://nvd.nist.gov/vuln/detail/CVE-2023-2453){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/2023-24538){: external}.
 
 
 

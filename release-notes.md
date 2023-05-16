@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-16"
 
 keywords: openshift
 
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2023
 {: #openshift-may23}
+
+### 16 May 2023
+{: #openshift-may1623}
+{: release-note}
+
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.0`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
 
 ### 15 May 2023
 {: #openshift-may1523}

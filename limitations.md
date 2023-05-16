@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-05-16"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -211,14 +211,13 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 
 The following features and operators are not supported in {{site.data.keyword.openshiftlong_notm}}.
 
-* 3scale 
-* 3scale `APIcast`
-* Advanced Cluster Management
-* Advanced Cluster Security 
-* AMQ Broker 
+Instead of tuning worker node performance with `MachineConfig` files in {{site.data.keyword.redhat_openshift_notm}}, you can modify the host with a `daemonset` file. For more information, see [Changing the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu) or [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance).
+{: note}
+
+* AMQ Broker
 * AMQ Broker LTS
-* AMQ Interconnect 
-* AMQ Online 
+* AMQ Interconnect
+* AMQ Online
 * AMQ Streams
 * Ansible Automation Platform Resource Operator
 * API Designer
@@ -227,39 +226,27 @@ The following features and operators are not supported in {{site.data.keyword.op
 * Cost management Operator
 * Data Grid Operator
 * Device Manager
-* File Integrity Operator 
+* File Integrity Operator
 * Fuse Console
-* Fuse Online 
-* Gatekeeper Operator 
+* Fuse Online
+* Gatekeeper Operator
 * JBoss EAP
 * JBoss Web Server
 * MachineConfigs
-
-Instead of tuning worker node performance with `MachineConfig` files in {{site.data.keyword.redhat_openshift_notm}}, you can modify the host with a `daemonset` file. For more information, see [Changing the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu) or [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance).
-{: note}
-
 * Metering and Cost Management SaaS Service
-* OpenShift Cloud Manager(OCM) SaaS Service
-* OpenShift Data Foundation (Supported through the [cluster add-on](/docs/openshift?topic=openshift-ocs-storage-prep) or {{site.data.keyword.satelliteshort}} [template](/docs/satellite?topic=satellite-storage-template-ov) only).
-* OVS and OVN SDN 
-* Performance Add-on Operator 
+* OpenShift Cloud Manager (OCM) SaaS Service
+* OpenShift Data Foundation: Supported through the [cluster add-on](/docs/openshift?topic=openshift-ocs-storage-prep) for Classic and VPC clusters or through the {{site.data.keyword.satelliteshort}} [template](/docs/satellite?topic=satellite-storage-template-ov) for {{site.data.keyword.satelliteshort}} clusters.
+* OVS and OVN SDN
+* Performance Add-on Operator
 * PTP Operator
 * Quay Operator
 * Red Hat OpenStack Platform `Kuryr` Integration
-* Red Hat Integration Operator 
-* Service Registry Operator 
+* Red Hat Integration Operator
+* Service Registry Operator
 * Smart Gateway Operator
-* SR-IOV Network Operator (Supported in {{site.data.keyword.satelliteshort}} clusters only)
-* Telemeter and Insights Connected Experience 
-* Windows Machine Config 
-
-
-
-
-
-
-
-
+* SR-IOV Network Operator: Supported in {{site.data.keyword.satelliteshort}} clusters only.
+* Telemeter and Insights Connected Experience
+* Windows Machine Config: Worker nodes with Windows operating systems are not supported.
 
 
 
