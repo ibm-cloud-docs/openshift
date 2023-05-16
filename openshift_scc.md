@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-05-16"
 
 keywords: openshift, scc, security context constraint, psp
 
@@ -33,7 +33,7 @@ Are any SCCs set by default?
 :   By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard set of [{{site.data.keyword.redhat_openshift_notm}} SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
 
 What SCCs are applied to my resources by default?
-:   If you don't specify a security context, the {{site.data.keyword.redhat_openshift_notm}} `restricted` security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
+:   If you don't specify a security context, the {{site.data.keyword.redhat_openshift_notm}} `restricted` (or `restricted-v2` in 4.11 and later) security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.
 
 ```sh
 oc describe pod <pod_name>
@@ -59,8 +59,14 @@ The default {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than t
 ## Customizing security context constraints
 {: #customize_sccs}
 
-To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.11/authentication/managing-security-context-constraints.html){: external}. You can also add users or groups to the default security context constraints.
+To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.11/authentication/managing-security-context-constraints.html){: external}. You can also authorize users or groups to the default security context constraints by using role-based access control such as `clusterroles`, `clusterrolebindings`, `roles`, and `rolebindings`. You can also use the `oc adm policy` subcommands, such as `oc adm policy add-scc-to-user`, to manage these settings. The oc version is the same as that of the cluster being managed.
 {: shortdesc}
+
+Guidelines for assigning access to SCCs:
+- Authorize specific service accounts to the SCC that is to be used by pods running under that service account.
+- If a service account needs access to multiple SCCs, consider creating additional service accounts so that all pods running under a service account are expected to use the same SCC.
+- Do not authorize all users or all service accounts to use any SCC other than the `restricted` (4.10 and earlier) or `restricted-v2` (4.11 and later) SCCs.
+- Do not change SCC authorization for service accounts in the `openshift-*` namespaces. {{site.data.keyword.redhat_openshift_notm}} components are designed to run under specific SCCs and might not operate properly under a different SCC.
 
 
 ## Default {{site.data.keyword.redhat_openshift_notm}} security context constraints
@@ -82,6 +88,9 @@ Do not edit existing {{site.data.keyword.redhat_openshift_notm}} or IBM SCCs set
 | `nonroot`| Denies access similar to the `restricted` SCC, but allows users to run with any non-root UID. Either the user or the manifest of the container runtime must specify the UID.|
 | `privileged`| Allows access to all privileged and host features and the ability to run as any user, any group, any `fsGroup` setting, and with any SELinux context. \n  \n **Important**: Grant this SCC for only cluster administration that requires the most access possible. |
 | `restricted`| Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This is the most restrictive SCC, and it is used by default for authenticated users.|
+| `hostnetwork-v2`| Similar to the `hostnetwork` SCC, but modified to minimize differences from the Pod Security Standards `Restricted` profile. |
+| `nonroot-v2`| Similar to the `nonroot` SCC, but modified to minimize differences from the Pod Security Standards `Restricted` profile. |
+| `restricted-v2`| Similar to the `restricted` SCC, but modified to satisfy the Pod Security Standards `Restricted` profile. |
 {: caption="Default {{site.data.keyword.redhat_openshift_notm}} security context constraints" caption-side="bottom"}
 
 
