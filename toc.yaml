@@ -215,7 +215,6 @@ toc:
               - openshift_ingress_qs_roks4.md
               - openshift_ingress_about_roks4.md
               - openshift_ingress_roks4.md
-              - openshift_ingress_configure.md
               - openshift_ingress_public.md
               - openshift_ingress_private.md
               - ingress-domains.md

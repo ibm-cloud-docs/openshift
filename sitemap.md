@@ -4725,15 +4725,7 @@ subcollection: openshift
 
     * [Multiple domains within a project](/docs/openshift?topic=openshift-ingress-roks4#multi-domains-project)
 
-[Configuring Ingress](/docs/openshift?topic=openshift-ingress-configure#ingress-configure)
-
-* [Preserving the source IP address](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-source-ip)
-
-    * [Enabling the PROXY protocol](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-enable-proxy)
-
-    * [Disabling PROXY protocol](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-disable-proxy)
-
-* [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-annotations)
+* [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
 
 [Publicly exposing apps with Ingress](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-expose)
 
