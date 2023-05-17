@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-05-17"
 
 keywords: openshift
 
@@ -359,6 +359,16 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
 
 * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
 
+
+
+
+## ibmcloud oc security-group
+{: #icks_map_security_group}
+
+[Reset or sync security group settings](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group)
+
+* [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_reset)
+* [`ibmcloud oc security-group sync`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_sync)
 
 
 
