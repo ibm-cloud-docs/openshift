@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-05-17"
 
 keywords: openshift, lb2.0, nlb
 
@@ -92,11 +92,11 @@ To set up an NLB 1.0 service in a multizone cluster:
         apiVersion: v1
         kind: Service
         metadata:
-        name: myloadbalancer
-        annotations:
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "dal12"
-          service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "2234945"
+          name: myloadbalancer
+          annotations:
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: private
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "dal12"
+            service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "2234945"
         spec:
           type: LoadBalancer
           selector:
