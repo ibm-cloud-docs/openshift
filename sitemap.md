@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-17"
 
 keywords: openshift
 subcollection: openshift
@@ -4725,7 +4725,15 @@ subcollection: openshift
 
     * [Multiple domains within a project](/docs/openshift?topic=openshift-ingress-roks4#multi-domains-project)
 
-* [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4)
+[Configuring Ingress](/docs/openshift?topic=openshift-ingress-configure#ingress-configure)
+
+* [Preserving the source IP address](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-source-ip)
+
+    * [Enabling the PROXY protocol](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-enable-proxy)
+
+    * [Disabling PROXY protocol](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-disable-proxy)
+
+* [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-annotations)
 
 [Publicly exposing apps with Ingress](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-expose)
 
@@ -5729,6 +5737,8 @@ subcollection: openshift
 
 * [ibmcloud oc script](/docs/openshift?topic=openshift-icks_map#icks_map_script)
 
+* [ibmcloud oc security-group](/docs/openshift?topic=openshift-icks_map#icks_map_security_group)
+
 * [ibmcloud oc storage](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
 
 [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
@@ -6092,6 +6102,12 @@ subcollection: openshift
 * [`script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script)
 
     * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
+
+* [`security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group)
+
+    * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_reset)
+
+    * [`ibmcloud oc security-group sync`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_sync)
 
 * [Beta: `storage` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage)
 
