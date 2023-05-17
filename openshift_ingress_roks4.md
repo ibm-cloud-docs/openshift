@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-17"
 
 keywords: openshift, nginx, ingress controller, openshift ingress, ingress, exposing apps
 

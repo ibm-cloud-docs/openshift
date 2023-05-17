@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-17"
 
 keywords: openshift
 
@@ -7597,6 +7597,76 @@ To use this command to prepare your automation scripts for the release of versio
     {: pre}
 
 
+
+## `security-group` commands
+{: #security_group}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Reset or sync a security group to the [default traffic rules](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
+{: shortdesc}
+
+### `ibmcloud oc security-group reset`
+{: #security_group_reset}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+[Deletes all existing security group rules and reapplies the default rules](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
+{: shortdesc}
+
+```sh
+ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP [-f] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   None
+
+**Command options**:
+
+`--cluster CLUSTER`
+:    Required: Specify the cluster name or ID. To list available clusters, run `ibmcloud oc cluster ls`.
+
+`--security-group GROUP_ID`
+:    Required: Specify the security group ID. 
+
+**Example**: 
+
+```sh
+ibmcloud oc security-group reset --cluster mycluster --security-group mygroup
+```
+{: pre}
+
+### `ibmcloud oc security-group sync`
+{: #security_group_sync}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Reapplies the [default security group rules](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-inbound-outbound) to add any missing rules. Does not delete preexisting rules.
+{: shortdesc}
+
+```sh
+ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   None
+
+**Command options**:
+
+`--cluster CLUSTER`
+:    Required: Specify the cluster name or ID. To list available clusters, run `ibmcloud oc cluster ls`.
+
+`--security-group GROUP_ID`
+:    Required: Specify the security group ID. 
+
+**Example**: 
+
+```sh
+ibmcloud oc security-group sync --cluster mycluster --security-group mygroup 
+```
+{: pre}
 
 
 
