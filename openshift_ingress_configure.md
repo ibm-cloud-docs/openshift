@@ -43,13 +43,13 @@ By default, the Ingress controller receives connections that contain only the so
 
     ```yaml
     endpointPublishingStrategy:
-    loadBalancer:
+      loadBalancer:
         providerParameters:
-        type: IBM
-        ibm:
+          type: IBM
+          ibm:
             protocol: PROXY
-        scope: External
-    type: LoadBalancerService
+            scope: External
+      type: LoadBalancerService
     ```
     {: pre}
 
@@ -70,13 +70,13 @@ By default, the Ingress controller receives connections that contain only the so
 
     ```yaml
     endpointPublishingStrategy:
-    loadBalancer:
+      loadBalancer:
         providerParameters:
-        type: IBM
-        ibm:
+          type: IBM
+          ibm:
             protocol: TCP
         scope: External
-    type: LoadBalancerService
+      type: LoadBalancerService
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-18"
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
 
@@ -88,7 +88,7 @@ One Route resource is required for each project where you have apps that you wan
 
 For more information, see [Planning networking for single or multiple projects](/docs/openshift?topic=openshift-ingress-roks4#multiple_projects).
 
-If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](/docs/openshift?topic=openshift-ingress-roks4#annotations-roks4) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Route resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
+If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-annotations) that manages traffic for your app. These supported annotations are in the format `haproxy.router.openshift.io/<annotation>`  or `router.openshift.io/<annotation>`. Note that {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Route resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
 {: important}
 
 
