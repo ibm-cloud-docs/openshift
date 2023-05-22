@@ -5478,6 +5478,10 @@ subcollection: openshift
 
     * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
+[Removing {{site.data.keyword.block_storage_is_short}} from your cluster](/docs/openshift?topic=openshift-storage-block-vpc-remove#storage-block-vpc-remove)
+
+* [Cleaning up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-block-vpc-remove#cleaning-up-block-vpc)
+
 
 ### Setting up IBM Cloud File Storage for VPC
 {: #sitemap_setting_up_ibm_cloud_file_storage_for_vpc}
