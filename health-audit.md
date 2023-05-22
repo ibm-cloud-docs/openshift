@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-05-22"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -53,6 +53,9 @@ To get started, follow the instructions to send Kubernetes API audit logs [to a 
 
 Forward audit logs to a resource other than {{site.data.keyword.la_short}} that is outside of your cluster and accessible in the {{site.data.keyword.cloud_notm}} private network.
 {: shortdesc}
+
+The following example uses the `haproxytech/haproxy-alpine:2.6` image to forward logs. Do not use this image in production environments.
+{: important}
 
 Before you begin, ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs).
 
