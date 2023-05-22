@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-05-22"
 
 keywords: openshift
 subcollection: openshift
@@ -5433,12 +5433,6 @@ subcollection: openshift
     * [Custom](/docs/openshift?topic=openshift-vpc-block#custom-sc-vpc-block)
 
     * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
-
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup_block_vpc)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-vpc-block#storage_delete_options_block_vpc)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
 
 [Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 

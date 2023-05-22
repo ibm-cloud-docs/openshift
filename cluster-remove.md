@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-22"
 
 keywords: openshift, clusters, delete, remove
 
@@ -41,7 +41,7 @@ No backups are created of your cluster or your data in your persistent storage. 
 * If you want to delete the data in your persistent storage, review the delete options for the type of storage that you use.
     * [File storage](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
     * [Block storage](/docs/openshift?topic=openshift-block_storage#cleanup_block) for classic clusters
-    * [Block storage](/docs/openshift?topic=openshift-vpc-block#cleanup_block_vpc) for VPC clusters
+    * [Block storage](/docs/openshift?topic=openshift-storage-block-vpc-remove) for VPC clusters
     * [Object storage](/docs/cloud-object-storage?topic=cloud-object-storage-deleting-multiple-objects-patterns)
     * [Portworx](/docs/openshift?topic=openshift-storage_portworx_removing)
 
