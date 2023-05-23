@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-23"
 
 keywords: openshift
 
@@ -28,6 +28,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2023
 {: #openshift-may23}
+
+
 
 ### 16 May 2023
 {: #openshift-may1623}
@@ -55,7 +57,7 @@ Cluster autoscaler add-on versions `1.0.6_1077`, `1.0.7_1076`, `1.0.8_1078`, and
 {: release-note}
 
 Create Classic and VPC clusters with Terraform
-:   For more information, see [Creating a single-zone classic cluster with Terraform](https://cloud.ibm.com/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform) and [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform).
+:   For more information, see [Creating a single-zone classic cluster with Terraform](https://cloud.ibm.com/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster_classic_tf) and [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster_vpcg2_tf).
 
 
 
@@ -4778,7 +4780,7 @@ Exposing apps that are external to your cluster by using Ingress
 
 
 {{site.data.keyword.redhat_openshift_notm}} overview
-:   Added an [{{site.data.keyword.redhat_openshift_notm}} overview page](/docs/openshift?topic=openshift-roks-overview).
+:   Added an [{{site.data.keyword.redhat_openshift_notm}} overview page](/docs/openshift?topic=openshift-overview).
 
 Setting pod priority
 :   Added a [pod priority page](/docs/openshift?topic=openshift-pod_priority).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-05-23"
 
 keywords: openshift
 subcollection: openshift
@@ -53,29 +53,19 @@ subcollection: openshift
 {: #sitemap_about}
 
 
-[Overview](/docs/openshift?topic=openshift-roks-overview#roks-overview)
+[Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-overview#overview)
 
-* [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-roks-overview#service-concepts)
+* [What is {{site.data.keyword.openshiftlong_notm}} and how does it work?](/docs/openshift?topic=openshift-overview#what-is-overview)
 
-    * [What is {{site.data.keyword.openshiftlong_notm}} and how does it work?](/docs/openshift?topic=openshift-roks-overview#what-is-overview)
+* [What is Kubernetes?](/docs/openshift?topic=openshift-overview#what-is-kube-overview)
 
-    * [What is Kubernetes?](/docs/openshift?topic=openshift-roks-overview#what-is-kube-overview)
+* [What are containers?](/docs/openshift?topic=openshift-overview#what-are-containers-overview)
 
-    * [What are containers?](/docs/openshift?topic=openshift-roks-overview#what-are-containers-overview)
+* [What is {{site.data.keyword.redhat_openshift_notm}}?](/docs/openshift?topic=openshift-overview#what-is-openshift-overview)
 
-    * [What compute host infrastructure does the service offer?](/docs/openshift?topic=openshift-roks-overview#what-compute-infra-is-offered)
+* [What compute host infrastructure does the service offer?](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered)
 
-* [Docker containers](/docs/openshift?topic=openshift-roks-overview#docker_containers)
-
-    * [Key concepts](/docs/openshift?topic=openshift-roks-overview#docker-concepts)
-
-    * [Benefits](/docs/openshift?topic=openshift-roks-overview#docker-benefits)
-
-* [Kubernetes clusters](/docs/openshift?topic=openshift-roks-overview#kubernetes_basics)
-
-    * [Key concepts](/docs/openshift?topic=openshift-roks-overview#kubernetes-concepts)
-
-    * [Related resources](/docs/openshift?topic=openshift-roks-overview#kubernetes-resources)
+* [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
 
 [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov#cs_ov)
 
@@ -5434,12 +5424,6 @@ subcollection: openshift
 
     * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
 
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-vpc-block#cleanup_block_vpc)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-vpc-block#storage_delete_options_block_vpc)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-vpc-block#storage_remove_block_vpc)
-
 [Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
 * [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-addon-enable)
@@ -5483,6 +5467,10 @@ subcollection: openshift
     * [RHEL or CentOS ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
 
     * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
+[Removing {{site.data.keyword.block_storage_is_short}} from your cluster](/docs/openshift?topic=openshift-storage-block-vpc-remove#storage-block-vpc-remove)
+
+* [Cleaning up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-block-vpc-remove#cleaning-up-block-vpc)
 
 
 ### Setting up IBM Cloud File Storage for VPC
