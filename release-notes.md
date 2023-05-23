@@ -4780,7 +4780,7 @@ Exposing apps that are external to your cluster by using Ingress
 
 
 {{site.data.keyword.redhat_openshift_notm}} overview
-:   Added an [{{site.data.keyword.redhat_openshift_notm}} overview page](/docs/openshift?topic=openshift-roks-overview).
+:   Added an [{{site.data.keyword.redhat_openshift_notm}} overview page](/docs/openshift?topic=openshift-overview).
 
 Setting pod priority
 :   Added a [pod priority page](/docs/openshift?topic=openshift-pod_priority).

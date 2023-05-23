@@ -53,29 +53,19 @@ subcollection: openshift
 {: #sitemap_about}
 
 
-[Overview](/docs/openshift?topic=openshift-roks-overview#roks-overview)
+[Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-overview#overview)
 
-* [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-roks-overview#service-concepts)
+* [What is {{site.data.keyword.openshiftlong_notm}} and how does it work?](/docs/openshift?topic=openshift-overview#what-is-overview)
 
-    * [What is {{site.data.keyword.openshiftlong_notm}} and how does it work?](/docs/openshift?topic=openshift-roks-overview#what-is-overview)
+* [What is Kubernetes?](/docs/openshift?topic=openshift-overview#what-is-kube-overview)
 
-    * [What is Kubernetes?](/docs/openshift?topic=openshift-roks-overview#what-is-kube-overview)
+* [What are containers?](/docs/openshift?topic=openshift-overview#what-are-containers-overview)
 
-    * [What are containers?](/docs/openshift?topic=openshift-roks-overview#what-are-containers-overview)
+* [What is {{site.data.keyword.redhat_openshift_notm}}?](/docs/openshift?topic=openshift-overview#what-is-openshift-overview)
 
-    * [What compute host infrastructure does the service offer?](/docs/openshift?topic=openshift-roks-overview#what-compute-infra-is-offered)
+* [What compute host infrastructure does the service offer?](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered)
 
-* [Docker containers](/docs/openshift?topic=openshift-roks-overview#docker_containers)
-
-    * [Key concepts](/docs/openshift?topic=openshift-roks-overview#docker-concepts)
-
-    * [Benefits](/docs/openshift?topic=openshift-roks-overview#docker-benefits)
-
-* [Kubernetes clusters](/docs/openshift?topic=openshift-roks-overview#kubernetes_basics)
-
-    * [Key concepts](/docs/openshift?topic=openshift-roks-overview#kubernetes-concepts)
-
-    * [Related resources](/docs/openshift?topic=openshift-roks-overview#kubernetes-resources)
+* [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
 
 [Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov#cs_ov)
 
