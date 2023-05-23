@@ -57,7 +57,7 @@ Cluster autoscaler add-on versions `1.0.6_1077`, `1.0.7_1076`, `1.0.8_1078`, and
 {: release-note}
 
 Create Classic and VPC clusters with Terraform
-:   For more information, see [Creating a single-zone classic cluster with Terraform](https://cloud.ibm.com/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform) and [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform).
+:   For more information, see [Creating a single-zone classic cluster with Terraform](https://cloud.ibm.com/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster_classic_tf) and [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster_vpcg2_tf).
 
 
 
