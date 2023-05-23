@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-23"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -48,6 +48,7 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ### Change log for patch update 1.1.0_1066, released 15 May 2023
 {: #111066_ca}
+
 - Image tags: `1.21.0 110-9`, `1.22.0 110-9`, `1.23.0 110-9`, `1.24.0 110-9`, `1.25.0 110-9`
 - Resolves issues while reading secrets. 
 
