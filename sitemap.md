@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
 
+    * [24 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2423)
+
+        * Worker node fix packs `4.9.59_1590_openshift`, `4.10.59_1569_openshift`, `4.11.40_1556_openshift`, and `4.12.16_1544_openshift`.
+
     * [16 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1623)
 
         * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.0`.

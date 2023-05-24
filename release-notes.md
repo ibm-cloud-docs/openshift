@@ -32,6 +32,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 24 May 2023
+{: #openshift-may2423}
+{: release-note}
+
+
+
+Worker node fix packs `4.9.59_1590_openshift`, `4.10.59_1569_openshift`, `4.11.40_1556_openshift`, and `4.12.16_1544_openshift`.
+:   For more information, see the change logs: [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
+
 
 
 ### 16 May 2023
