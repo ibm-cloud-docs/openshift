@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2022
-lastupdated: "2022-10-05"
+  years: 2014, 2023
+lastupdated: "2023-05-24"
 
 ---
 
@@ -14,11 +14,11 @@ lastupdated: "2022-10-05"
 ![Logo](images/logo-red-hat-openshift-on-ibm-cloud-light.svg)
 
 
-# Source files for customer-facing documentation
+# Source files for Red Hat OpenShift on IBM Cloud documentation
 
+[Broken link](/docs/containers?topic=containers-brokenLink)
 
-
-Customer-facing documentation: /docs/containers?topic=containers-getting-started#getting-started
+https://cloud.ibm.com/docs/openshift
 
 
 
