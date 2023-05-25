@@ -9296,6 +9296,8 @@ subcollection: openshift
 
 [Why does my pod with long running TCP connections get disconnected?](/docs/openshift?topic=openshift-ts-keepalive-sysctl#ts-keepalive-sysctl)
 
+[Why are DNS lookups from certain pods so slow?](/docs/openshift?topic=openshift-ts-slow-dns-lookup#ts-slow-dns-lookup)
+
 
 ### Apps and services
 {: #sitemap_apps_and_services}

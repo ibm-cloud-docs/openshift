@@ -491,6 +491,7 @@ toc:
               - ts-calico-log-level.md
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md
+              - ts-slow-dns-lookup.md
           - topicgroup:
               label: Apps and services
               topics:
