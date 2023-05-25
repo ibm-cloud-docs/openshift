@@ -358,7 +358,7 @@ The cluster `kube-<cluster-id>` security group is applied.
 ### If you want the cluster security group and your own additional security groups
 {: #cluster-customer-sgs} 
 
-[Cluster security group]{: tag-green} [Your own security groups]{: tag-warm-grey}
+[Cluster security group]{: tag-green} [Your own security groups]{: tag-warm-gray}
 
 When you create the cluster, specify `--cluster-security-group cluster` and up to four additional security groups that you own. You must include a separate `--cluster-security-group` option for each individual security group you want to add. Note that at maximum of five security groups can be applied to workers, including the security groups that are applied by default. 
 
@@ -375,7 +375,7 @@ The following security groups are applied:
 ### If you only want your own security groups 
 {: #customer-sgs-only}
 
-[Your own security groups]{: tag-warm-grey}
+[Your own security groups]{: tag-warm-gray}
 
 When you create the cluster, specify up to five security groups that you own. You must include a separate `--cluster-security-group` option for each individual security group you want to add. 
 
