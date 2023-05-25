@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
 
+    * [25 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2523)
+
+        * CLI version `1.0.523`.
+
     * [24 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2423)
 
         * Worker node fix packs `4.9.59_1590_openshift`, `4.10.59_1569_openshift`, `4.11.40_1556_openshift`, and `4.12.16_1544_openshift`.
@@ -6139,6 +6143,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.523](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10523)
+
 * [Version v1.0.516](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10516)
 
 * [Version v1.0.510](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10510)
@@ -9295,6 +9301,8 @@ subcollection: openshift
 [Why can't I use the `ip_whitelist` annotation to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
 
 [Why does my pod with long running TCP connections get disconnected?](/docs/openshift?topic=openshift-ts-keepalive-sysctl#ts-keepalive-sysctl)
+
+[Why are DNS lookups from certain pods so slow?](/docs/openshift?topic=openshift-ts-slow-dns-lookup#ts-slow-dns-lookup)
 
 
 ### Apps and services
