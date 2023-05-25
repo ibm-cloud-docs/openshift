@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-05-25"
 
 keywords: openshift
 subcollection: openshift
@@ -5273,9 +5273,11 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
+    * [Version 4.12 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-412)
+
     * [Version 4.10 and 4.11 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-410)
 
-    * [Version 4.8 and 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
+    * [Version 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
@@ -5299,7 +5301,7 @@ subcollection: openshift
 
     * [Version 4.10 and 4.11 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
 
-    * [Version 4.8 and 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
+    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
 
 * [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic#odf-limitations-classic)
 
