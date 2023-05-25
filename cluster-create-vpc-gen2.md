@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-05-25"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -274,7 +274,7 @@ VPC Gen 2 cluster flavors with instance storage are available for allowlisted ac
 {: note}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.11_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.11_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
