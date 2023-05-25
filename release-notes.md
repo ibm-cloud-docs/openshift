@@ -31,6 +31,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 25 May 2023
+{: #openshift-may2523}
+{: release-note}
+
+CLI version `1.0.523`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
 ### 24 May 2023
 {: #openshift-may2423}
 {: release-note}
