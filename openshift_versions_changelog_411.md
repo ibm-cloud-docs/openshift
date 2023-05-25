@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-05-25"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -381,7 +381,7 @@ The following table shows the changes that are in the master fix pack 4.11.12_15
 | Key Management Service provider | v2.5.10 | v2.5.11 | Updated `Go` dependencies and to `Go` version `1.19.3`. |
 | OpenVPN Operator image | v1.4.10 | v1.4.11 | Updated `ansible operator base image` to `v1.24.0` to resolve CVEs. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.11.0-20221004 | v4.11.0-20221104 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20221104){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.11.8 | 4.11.12 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-12){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.11.8 | 4.11.12 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-12){: external}. Updated to resolve [CVE-2022-3172](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3172){: external}. For more information, see the [Security bulletin](https://www.ibm.com/support/pages/node/6997115){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit| v4.11.0-20221004 | v4.11.0-20221104 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20221104){: external}. |
 {: caption="Changes since version 4.11.8_1528_openshift" caption-side="bottom"}
 

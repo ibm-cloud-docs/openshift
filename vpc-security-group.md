@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-05-25"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -321,6 +321,8 @@ The security groups applied to a cluster cannot be changed once the cluster is c
 ### If you only want the default VPC and cluster security groups and no additional security groups
 {: #default-sgs-only}
 
+[VPC security group]{: tag-blue} [Cluster security group]{: tag-green}
+
 Note that this is the default behavior at cluster create time.
 {: note}
 
@@ -340,6 +342,8 @@ The following security groups are applied:
 ### If you only want the cluster security group and not the default VPC security group
 {: #cluster-sg-only}
 
+[Cluster security group]{: tag-green}
+
 When you create the cluster specify `--cluster-security-group cluster`. Do not specify any additional security groups.
 
 Example command to create a VPC cluster with only the `kube-<cluster-id>` cluster security group:
@@ -353,6 +357,8 @@ The cluster `kube-<cluster-id>` security group is applied.
  
 ### If you want the cluster security group and your own additional security groups
 {: #cluster-customer-sgs} 
+
+[Cluster security group]{: tag-green} [Your own security groups]{: tag-warm-grey}
 
 When you create the cluster, specify `--cluster-security-group cluster` and up to four additional security groups that you own. You must include a separate `--cluster-security-group` option for each individual security group you want to add. Note that at maximum of five security groups can be applied to workers, including the security groups that are applied by default. 
 
@@ -368,6 +374,8 @@ The following security groups are applied:
 
 ### If you only want your own security groups 
 {: #customer-sgs-only}
+
+[Your own security groups]{: tag-warm-grey}
 
 When you create the cluster, specify up to five security groups that you own. You must include a separate `--cluster-security-group` option for each individual security group you want to add. 
 

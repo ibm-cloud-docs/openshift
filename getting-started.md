@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-27"
+lastupdated: "2023-05-25"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -156,7 +156,7 @@ Review the sample commands for creating classic clusters in the CLI. For more de
 Create a VPC cluster with three worker nodes.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.11_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor b2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.11_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
