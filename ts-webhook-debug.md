@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-05-26"
 
 keywords: kubernetes, help, network, connectivity, webhooks
 
@@ -64,51 +64,38 @@ Complete the following steps to identify the webhook that is causing the issue. 
 1. Run the following command to get the VPN pod logs. If you can't get the VPN logs, follow the steps to [Debug common CLI issues](/docs/openshift?topic=openshift-ts_clis) and return to this page when you are able to retrieve the logs. If the command succeeds and you can get the logs, the VPN tunnel is working and you can continue to the next step.
 
 
-1. Review your webhook configurations.
 
-    1. Describe your admission control webhooks and save the output to a file called `webhooks.txt`.
-        ```sh
-        kubectl describe mutatingwebhookconfigurations,validatingwebhookconfigurations > webhooks.txt
-        ```
-        {: pre}
+1. Describe your admission control webhooks and save the output to a file called `webhooks.txt`.
+    ```sh
+    kubectl describe mutatingwebhookconfigurations,validatingwebhookconfigurations > webhooks.txt
+    ```
+    {: pre}
 
-    1. Review the `webhooks.txt` file for error messages. Webhook related error messages from an application, including oc, can help to identify the webhook.
+1. Review the `webhooks.txt` file for error messages. Webhook related error messages from an application, including oc, can help to identify the webhook.
 
-1. Review the apiserver logs.
-    1. Run the **`ibmcloud oc logging collect`** [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_collect) and review the output.
+1. Review the apiserver metrics for rejection type, count, and the rejection code. You can get a snapshot of the metrics by using the following command.
+    ```sh
+    kubectl get --raw /metrics | grep apiserver_admission_webhook_rejection_count
+    ```
+    {: pre}
+    
+    ```sh
+    apiserver_admission_webhook_rejection_count{error_type="calling_webhook_error",name="check-ignore-label.gatekeeper.sh",operation="UPDATE",rejection_code="0",type="validating"} 16
+    ```
+    {: pre}
 
-    1. Look for log output similar to the following example and make a note of the webhooks.
-        ```sh
-        Failed calling webhook, failing open
-        Failed calling webhook, failing closed
-        rejected by webhook
-        ```
-        {: screen}
+    A `rejection_code` value of 0 indicates an error occurred when calling the webhook. A non-zero `rejection_code` value indicates the webhook rejected the request.
+    {: note}
 
-1. Review the apiserver metrics for rejection type, count, and the rejection code.
-    1. You can get a snapshot of the metrics by using the following command.
-        ```sh
-        kubectl get --raw /metrics | grep apiserver_admission_webhook_rejection_count
-        ```
-        {: pre}
-        
-        ```sh
-        apiserver_admission_webhook_rejection_count{error_type="calling_webhook_error",name="check-ignore-label.gatekeeper.sh",operation="UPDATE",rejection_code="0",type="validating"} 16
-        ```
-        {: pre}
-
-        A `rejection_code` value of 0 indicates an error occurred when calling the webhook. A non-zero `rejection_code` value indicates the webhook rejected the request.
-        {: note}
-
-        There are 3 apiserver instances. The oc command gets metrics from one of them and reflects the activity there. Each apiserver returns different data. Instances that have not processed the failing requests might not return this metric.
-        {: important}
+    There are 3 apiserver instances. The oc command gets metrics from one of them and reflects the activity there. Each apiserver returns different data. Instances that have not processed the failing requests might not return this metric.
+    {: important}
 
 
 1. Review the command output from the previous steps and look for webhook descriptions to identify the specific `MutatingWebhookConfiguration` or `ValidatingWebhookConfiguration` value. If the errors, logs, or metrics do not help, review the webhook descriptions that you retrieved earlier. Each webhook configuration has a set of rules that specify the kinds of resources and actions the webhook is called for. This information can be used to identify the webhook(s) that might be involved.
 
-    1. If there is an error calling the webhook, review the documentation for that service for product-specific debuggging steps.
+    - If there is an error calling the webhook, review the documentation for that service for product-specific debuggging steps.
 
-    1. If the webhook is rejecting the requests, look at the policies and configuration options for the webhook. It might be possible to adjust them to allow the request. Or, the request might be violating the policies and the request or the application making the request need to be changed. For more information, see [What are the best practices for using webhooks](/docs/openshift?topic=openshift-access_webhooks#webhook-best-practice).
+    - If the webhook is rejecting the requests, look at the policies and configuration options for the webhook. It might be possible to adjust them to allow the request. Or, the request might be violating the policies and the request or the application making the request need to be changed. For more information, see [What are the best practices for using webhooks](/docs/openshift?topic=openshift-access_webhooks#webhook-best-practice).
 
 
 ## Reviewing the service that the webhook is calling
@@ -162,47 +149,44 @@ Complete the following steps to identify the webhook that is causing the issue. 
 ## Disabling or removing a webhook
 {: #webhook-disable-rm}
 
-1. Temporarily ignore connection and timeouts by setting the failure policy to `Ignore`. 
-    1. Edit the webhook by running the following commands.
-        ```sh
-        kubectl edit validatingwebhookconfiguration NAME
-        ```
-        {: pre}
-        
-        ```sh
-        kubectl edit mutatingwebhookconfiguration NAME
-        ```
-        {: pre}
+1. Temporarily ignore connection and timeouts by setting the failure policy to `Ignore`. Edit the webhook by running the following commands.
+    ```sh
+    kubectl edit validatingwebhookconfiguration NAME
+    ```
+    {: pre}
+    
+    ```sh
+    kubectl edit mutatingwebhookconfiguration NAME
+    ```
+    {: pre}
 
-    1. Search for `failurePolicy` and change the value to `Ignore`.
+1. Search for `failurePolicy` and change the value to `Ignore`.
 
-    1. Save the configuration and exit the editor. If adjusting the failure policy doesn't resolve the issue, repeat the previous steps and change the value back to `Fail`.
+1. Save the configuration and exit the editor. If adjusting the failure policy doesn't resolve the issue, repeat the previous steps and change the value back to `Fail`.
 
-1. Temporarily remove the webhook.
+1. Temporarily remove the webhook. Save the existing webhook configuration to a file before deleting it.
+    ```sh
+    kubectl get validatingwebhookconfiguration NAME -o yaml > webhook-config.yaml
+    ```
+    {: pre}
 
-    1. Save the existing webhook configuration to a file before deleting it.
-        ```sh
-        kubectl get validatingwebhookconfiguration NAME -o yaml > webhook-config.yaml
-        ```
-        {: pre}
+    ```sh
+    kubectl get mutatingwebhookconfiguration NAME -o yaml > webhook-config.yaml
+    ```
+    {: pre}
 
-        ```sh
-        kubectl get mutatingwebhookconfiguration NAME -o yaml > webhook-config.yaml
-        ```
-        {: pre}
+1. Delete the webhook configuration.
+    ```sh
+    kubectl delete validatingwebhookconfiguration NAME
+    ```
+    {: pre}
 
-    1. Delete the webhook configuration.
-        ```sh
-        kubectl delete validatingwebhookconfiguration NAME
-        ```
-        {: pre}
+    ```sh
+    kubectl delete mutatingwebhookconfiguration NAME
+    ```
+    {: pre}
 
-        ```sh
-        kubectl delete mutatingwebhookconfiguration NAME
-        ```
-        {: pre}
-
-1. Wait a few minutes, then retry the `kubectl` commands that were failing to see if the problem is resolved. 
+1. Wait a few minutes, then retry the `kubectl` commands that were failing to see if the problem is resolved.
 
 1. Recreate the webhook.
     ```sh
