@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-26"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -142,10 +142,6 @@ Review the VPC Gen 2 worker node flavors by metro.
 | mx2.64x512 | 512GB | 25Gbps | 64 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | mx2.8x64 | 64GB | 16Gbps | 8 | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 {: caption="Table 4. Worker node flavors for Europe." caption-side="bottom"}
-
-
-
-
 
 
 
