@@ -2,12 +2,11 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-05-26"
 
 keywords: ingress, expose apps, publicly expose, public ingress, ingress vpc
 
-subcollection: containers
-
+subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}

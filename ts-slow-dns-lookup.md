@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-05-26"
 
 keywords: openshift, dns
 
@@ -39,18 +39,19 @@ You can resolve this issue in one of the following ways.
 {: tsResolve}
 
 - (Preferred) Use a base image for your container that does not have this problem, such as Alpine 3.18. You can also replace Alpine with [ubi-minimal](https://hub.docker.com/r/redhat/ubi8-minimal){: external}.
-- Add `options single-request-reopen` or `options single-request` options to the client pod's `/etc/resolv.conf` file. For example, use the following `postStart` command to add these options to your pod. These options tell the DNS client to send out only one request (A or AAAA) at a time, and avoids the problem where two responses come back at nearly the same time. 
-  ```yaml
-          lifecycle:
-          postStart:
-            exec:
-              command:
-              - /bin/sh
-              - -c 
-              - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
+- Add `options single-request-reopen` or `options single-request` options to the client pod's `/etc/resolv.conf` file. For example, use the following `postStart` command to add these options to your pod. These options tell the DNS client to send out only one request (A or AAAA) at a time, and avoids the problem where two responses come back at nearly the same time.
 
-  ```
-  {: codeblock}
+```yaml
+  lifecycle:
+  postStart:
+    exec:
+      command:
+      - /bin/sh
+      - -c 
+      - "/bin/echo 'options single-request-reopen' >> /etc/resolv.conf"
+
+```
+{: codeblock}
   
 
 
