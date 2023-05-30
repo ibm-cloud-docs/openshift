@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-05-30"
 
 keywords: ingress, configure ingress, annotations, customize ingress, ingress controller, source IP
 
@@ -51,7 +51,7 @@ By default, the Ingress controller receives connections that contain only the so
             scope: External
       type: LoadBalancerService
     ```
-    {: pre}
+    {: codeblock}
 
 3. Save and apply the resource.
 
@@ -78,7 +78,8 @@ By default, the Ingress controller receives connections that contain only the so
         scope: External
       type: LoadBalancerService
     ```
-    {: pre}
+    {: codeblock}
+
 
 3. Save and apply the resource.
 
