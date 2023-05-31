@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-05-31"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
@@ -38,6 +38,27 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.9 change log.
 {: shortdesc}
+
+
+### Change log for master fix pack 4.9.59_1591_openshift, released 25 May 2023
+{: #4959_1591_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.9.59_1591_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.19 | v1.3.20 | Updated `Go` to version `1.19.9` and updated dependencies. Updated the base image. Resolved addon health bugs. |
+| etcd | v3.4.24 | v3.4.25 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.25){: external}. |
+| Gateway-enabled cluster controller | 2024 | 2106 | Updated to resolve CVEs. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.17-8 | v1.22.17-9 | Key rotation. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 778ef2b | 4e2f346 | Make armada-rbac-sync FIPS compliant |
+| Key Management Service provider | v2.6.5 | v2.6.6 | Updated `Go` to version `1.19.9` and updated dependencies. |
+| Portieris admission controller | v0.13.4 | v0.13.5 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.5){: external}. |
+| OpenVPN client | 2.6.4-r0-IKS-27 | 2.5.8-r0-IKS-674 | Reverted to previous version. |
+| OpenVPN server | 2.6.4-r0-IKS-26 | 2.5.8-r0-IKS-673 | Reverted to previous version. |
+{: caption="Changes since version 4.9.59_1587_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.9.59_1590_openshift, released 23 May 2023
