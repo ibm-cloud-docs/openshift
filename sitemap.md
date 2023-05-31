@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
 
+    * [31 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may3123)
+
+        * Master fix packs `4.9.59_1591_openshift`, `4.10.59_1570_openshift`, `4.11.39_1557_openshift`, and `4.12.16_1545_openshift`.
+
     * [25 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2523)
 
         * CLI version `1.0.523`.

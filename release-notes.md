@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-05-31"
 
 keywords: openshift
 
@@ -29,7 +29,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2023
 {: #openshift-may23}
 
+### 31 May 2023
+{: #openshift-may3123}
+{: release-note}
 
+
+  
+Master fix packs `4.9.59_1591_openshift`, `4.10.59_1570_openshift`, `4.11.39_1557_openshift`, and `4.12.16_1545_openshift`.
+:   For more information, see the change logs: [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), and [4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
 
 ### 25 May 2023
 {: #openshift-may2523}
