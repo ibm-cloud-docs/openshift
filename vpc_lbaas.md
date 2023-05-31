@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-05-30"
 
 keywords: openshift, app protocol, application protocol
 
@@ -307,17 +307,11 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 ### Setting up an NLB using port range
 {: #nlb-setup-portrange}
 
-Before you begin
-
-* **Important**: Complete the [NLB 2.0 prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).
-* You must have an available portable public or private IP address to assign to the NLB service. For more information, see [Configuring subnets for clusters](/docs/openshift?topic=openshift-subnets).
-* Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
-* When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made quickly. 
 
 
 Port ranges are supported for  public NLBs only. You can use a comma separated list of port ranges, but typically only a range is specified. If you use the `ibm-load-balancer-cloud-provider-vpc-port-range` annotation, you must include a listening port value that matches the minimum port in the range. 
 
-You can create an NLB that uses a port range by using the following example. Note that no selector or backend pods are associated with the port range load balancer service. Instead, you must create additional NodePort services with port values in the range that is defined by the load balancer service.
+You can create an NLB that uses a port range by using the following example. The selector and backend pods must be associated with the port range load balancer service so that health checks return success and data will be delivered to the ports in the port range. Instead, you must create additional NodePort services with port values in the range that is defined by the load balancer service.
 
 1. Save the following example `LoadBalancer` configuration as a file called `loadbalancer.yaml`.
 
@@ -330,10 +324,14 @@ You can create an NLB that uses a port range by using the following example. Not
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-port-range: 30000-30010
       name: nlb-port-range
     spec:
+      externalTrafficPolicy: Cluster
       ports:
-      - port: 30000
-        nodePort: 30011
+      - port: 30000 # Must match min from the port range 
         protocol: TCP
+        nodePort: 30011 # Can be port in range or not
+        targetPort: 8080
+      selector:
+        app: echo-server  # Must be valid for health checks to work
       type: LoadBalancer
     ```
     {: codeblock}
@@ -369,6 +367,17 @@ You can create an NLB that uses a port range by using the following example. Not
     oc apply -f nodeport.yaml
     ```
     {: pre}
+
+1. To access a port that is in the range provided by NLB.
+    ```sh
+    curl https://<public ip assigned to NLB>:30003
+    ```
+    {: pre}
+
+    - `30003` = Is a node port in the range that will respond to request
+    - Other ports in the range do not respond unless additional node port services are created.
+
+
 
 ### Setting up a private VPC NLB
 {: #setup_vpc_nlb_priv}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-05-31"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
+
+    * [31 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may3123)
+
+        * Master fix packs `4.9.59_1591_openshift`, `4.10.59_1570_openshift`, `4.11.39_1557_openshift`, and `4.12.16_1545_openshift`.
 
     * [25 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2523)
 
@@ -2867,50 +2871,6 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 
-## Developing in clusters with the OpenShift Do CLI
-{: #sitemap_developing_in_clusters_with_the_openshift_do_cli}
-
-
-[Developing in clusters with the OpenShift Do CLI](/docs/openshift?topic=openshift-odo-tutorial#odo-tutorial)
-
-* [Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
-
-* [Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
-
-* [Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
-
-* [Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
-
-* [Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
-
-* [What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
-
-
-## Using Calico network policies to control traffic on Classic clusters
-{: #sitemap_using_calico_network_policies_to_control_traffic_on_classic_clusters}
-
-
-[Using Calico network policies to control traffic on Classic clusters](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial)
-
-* [Objectives](/docs/openshift?topic=openshift-policy_tutorial#policies_objectives)
-
-* [Audience](/docs/openshift?topic=openshift-policy_tutorial#policies_audience)
-
-* [Prerequisites](/docs/openshift?topic=openshift-policy_tutorial#policies_prereqs)
-
-* [Deploy an app and expose it by using an NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson1)
-
-* [Block all incoming traffic to all node ports](/docs/openshift?topic=openshift-policy_tutorial#lesson2)
-
-* [Allow incoming traffic from a specific IP to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson3)
-
-* [Deny incoming traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson4)
-
-* [Logging blocked traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson5)
-
-* [What's next?](/docs/openshift?topic=openshift-policy_tutorial#whats_next)
-
-
 ## Installing the CLI and API
 {: #sitemap_installing_the_cli_and_api}
 
@@ -3891,6 +3851,26 @@ subcollection: openshift
 {: #sitemap_controlling_traffic_in_classic_clusters}
 
 
+[Using Calico network policies to control traffic on Classic clusters](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial)
+
+* [Objectives](/docs/openshift?topic=openshift-policy_tutorial#policies_objectives)
+
+* [Audience](/docs/openshift?topic=openshift-policy_tutorial#policies_audience)
+
+* [Prerequisites](/docs/openshift?topic=openshift-policy_tutorial#policies_prereqs)
+
+* [Deploy an app and expose it by using an NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson1)
+
+* [Block all incoming traffic to all node ports](/docs/openshift?topic=openshift-policy_tutorial#lesson2)
+
+* [Allow incoming traffic from a specific IP to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson3)
+
+* [Deny incoming traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson4)
+
+* [Logging blocked traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson5)
+
+* [What's next?](/docs/openshift?topic=openshift-policy_tutorial#whats_next)
+
 [Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies#network_policies)
 
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
@@ -4518,6 +4498,20 @@ subcollection: openshift
 * [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-update_app#app_cicd)
 
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
+
+[Developing in clusters with the OpenShift Do CLI](/docs/openshift?topic=openshift-odo-tutorial#odo-tutorial)
+
+* [Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
+
+* [Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
+
+* [Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
+
+* [Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
+
+* [Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
+
+* [What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
 
 
 ## Exposing apps
@@ -5217,6 +5211,8 @@ subcollection: openshift
 * [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your PX-Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
+
+* [Backing up data across regions with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-cross-region)
 
 * [Backing up and restoring cluster data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-and-restore)
 
@@ -6361,6 +6357,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
 
+    * [Change log for master fix pack 4.12.16_1545_openshift, released 25 May 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41216_1545_openshift_M)
+
     * [Change log for worker node fix pack 4.12.16_1544_openshift, released 23 May 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41216_1544_openshift_W)
 
     * [Change log for master fix pack 4.12.13_1541_openshift, released 2 May 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41213_1541_openshift)
@@ -6449,6 +6447,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for master fix pack 4.11.39_1557_openshift, released 25 May 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41139_1557_openshift_M)
 
     * [Change log for worker node fix pack 4.11.40_1556_openshift, released 23 May 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41140_1556_openshift_W)
 
@@ -6606,6 +6606,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for master fix pack 4.10.59_1570_openshift, released 25 May 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41059_1570_openshift_M)
 
     * [Change log for worker node fix pack 4.10.59_1569_openshift, released 23 May 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41059_1569_openshift_W)
 
@@ -6795,6 +6797,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for master fix pack 4.9.59_1591_openshift, released 25 May 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1591_openshift_M)
 
     * [Change log for worker node fix pack 4.9.59_1590_openshift, released 23 May 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1590_openshift_W)
 

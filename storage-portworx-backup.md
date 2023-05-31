@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-31"
 
 keywords: portworx, openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 PX-Backup is a Portworx proprietary backup solution that is compatible with any {{site.data.keyword.openshiftlong_notm}} cluster. You can use PX-Backup to back up and restore {{site.data.keyword.openshiftlong_notm}} resources, apps and data across multiple clusters. For more information on PX-Backup, see [Understanding PX-Backup](https://backup.docs.portworx.com/understand/){: external}.
 {: shortdesc}
 
-To back up the data in your persistent volumes, you must have a storage class that supports snapshots in your cluster. Clusters with Portworx Enterprise have storage classes available that support snapshots by default. However, for clusters that don't have Portworx Enterprise, you must have a storage classes with snapshot support to back up your persistent volume data. The {{site.data.keyword.block_storage_is_short}} driver, {{site.data.keyword.blockstorageshort}} driver, and the {{site.data.keyword.filestorage_short}} driver don't have storage classes that support snapshots. If you have workloads that use these drivers, you can use PX-Backup to back up your apps, but not the data in the persistent volumes. For more information see [Backing up and restoring cluster data with PX-Backup](#px-backup-and-restore).
+To back up the data in your persistent volumes, you must have a storage class that supports snapshots in your cluster. Clusters with Portworx Enterprise have storage classes available that support snapshots by default. However, for clusters that don't have Portworx Enterprise, you must have a storage classes with snapshot support to back up your persistent volume data. The {{site.data.keyword.blockstorageshort}} driver, and the {{site.data.keyword.filestorage_short}} driver don't have storage classes that support snapshots. If you have workloads that use these drivers, you can use PX-Backup to back up your apps, but not the data in the persistent volumes. For more information see [Backing up and restoring cluster data with PX-Backup](#px-backup-and-restore).
 {: important}
 
 ## Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster
@@ -233,6 +233,11 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
     ```
     {: screen}
 
+
+## Backing up data across regions with PX-Backup
+{: #px-cross-region}
+
+The PX-Backup driver does not support cross region backups for AWS and Azure cloud providers by default. To enable cross-region backup support, refer to the [Cross Region PX-Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/create-backup/cross-region-backup-restore/){: external}
 
 
 ## Backing up and restoring cluster data with PX-Backup

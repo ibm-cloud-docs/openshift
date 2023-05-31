@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-05-31"
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -31,6 +31,25 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for master fix pack 4.12.16_1545_openshift, released 25 May 2023
+{: #41216_1545_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.12.16_1545_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.19 | v1.3.20 | Updated `Go` to version `1.19.9` and updated dependencies. Updated the base image. Resolved addon health bugs. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.9-2 | v1.25.9-7 | Updated support of the Kubernetes 1.25.9 release. Updated Go dependencies. Key rotation. |
+| Key Management Service provider | v2.6.5 | v2.6.6 | Updated `Go` to version `1.19.9` and updated dependencies. |
+| OpenVPN client | 2.6.4-r0-IKS-27 | 2.5.8-r0-IKS-674 | Reverted to previous version. |
+| OpenVPN server | 2.6.4-r0-IKS-26 | 2.5.8-r0-IKS-673 | Reverted to previous version. |
+| Portieris admission controller | v0.13.4 | v0.13.5 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.5){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.13 | 4.12.16 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-16){: external}. |
+{: caption="Changes since version 4.12.13_1541_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.12.16_1544_openshift, released 23 May 2023

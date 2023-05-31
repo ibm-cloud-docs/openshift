@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-30"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -399,7 +399,7 @@ The encryption for the disks of the worker nodes in your worker pool are now man
 ### {{site.data.keyword.satelliteshort}} worker nodes
 {: #worker-encryption-satellite}
 
-**{{site.data.keyword.satelliteshort}}**: The primary mounted disk that contains the kernel images to boot your worker node is unencrypted. The secondary unmounted disk that hosts the container file system and locally pulled images is AES 256-bit encrypted with an IBM-managed LUKS encryption key that is unique to the worker node and stored as a Kubernetes secret in your cluster. When you reload or update your worker nodes, the LUKS keys are rotated.
+**{{site.data.keyword.satelliteshort}}**: The encryption of the OS disk and secondary disk is managed at the IAAS layer of the platform Satellite is deployed on. The encryption of persistent storage volumes utilized within the cluster is managed at the persistent storage plug-in level and backing storage device level. For more information about encryption for storage devices or plug-ins, see the device provider documentation or the storage plug-in documentation.
 
 
 You can't manage the encryption of the LUKS key with your own KMS provider because KMS provider integration is not supported.
