@@ -2867,50 +2867,6 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 
-## Developing in clusters with the OpenShift Do CLI
-{: #sitemap_developing_in_clusters_with_the_openshift_do_cli}
-
-
-[Developing in clusters with the OpenShift Do CLI](/docs/openshift?topic=openshift-odo-tutorial#odo-tutorial)
-
-* [Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
-
-* [Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
-
-* [Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
-
-* [Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
-
-* [Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
-
-* [What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
-
-
-## Using Calico network policies to control traffic on Classic clusters
-{: #sitemap_using_calico_network_policies_to_control_traffic_on_classic_clusters}
-
-
-[Using Calico network policies to control traffic on Classic clusters](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial)
-
-* [Objectives](/docs/openshift?topic=openshift-policy_tutorial#policies_objectives)
-
-* [Audience](/docs/openshift?topic=openshift-policy_tutorial#policies_audience)
-
-* [Prerequisites](/docs/openshift?topic=openshift-policy_tutorial#policies_prereqs)
-
-* [Deploy an app and expose it by using an NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson1)
-
-* [Block all incoming traffic to all node ports](/docs/openshift?topic=openshift-policy_tutorial#lesson2)
-
-* [Allow incoming traffic from a specific IP to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson3)
-
-* [Deny incoming traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson4)
-
-* [Logging blocked traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson5)
-
-* [What's next?](/docs/openshift?topic=openshift-policy_tutorial#whats_next)
-
-
 ## Installing the CLI and API
 {: #sitemap_installing_the_cli_and_api}
 
@@ -3891,6 +3847,26 @@ subcollection: openshift
 {: #sitemap_controlling_traffic_in_classic_clusters}
 
 
+[Using Calico network policies to control traffic on Classic clusters](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial)
+
+* [Objectives](/docs/openshift?topic=openshift-policy_tutorial#policies_objectives)
+
+* [Audience](/docs/openshift?topic=openshift-policy_tutorial#policies_audience)
+
+* [Prerequisites](/docs/openshift?topic=openshift-policy_tutorial#policies_prereqs)
+
+* [Deploy an app and expose it by using an NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson1)
+
+* [Block all incoming traffic to all node ports](/docs/openshift?topic=openshift-policy_tutorial#lesson2)
+
+* [Allow incoming traffic from a specific IP to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson3)
+
+* [Deny incoming traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson4)
+
+* [Logging blocked traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson5)
+
+* [What's next?](/docs/openshift?topic=openshift-policy_tutorial#whats_next)
+
 [Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies#network_policies)
 
 * [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
@@ -4518,6 +4494,20 @@ subcollection: openshift
 * [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-update_app#app_cicd)
 
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
+
+[Developing in clusters with the OpenShift Do CLI](/docs/openshift?topic=openshift-odo-tutorial#odo-tutorial)
+
+* [Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
+
+* [Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
+
+* [Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
+
+* [Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
+
+* [Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
+
+* [What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
 
 
 ## Exposing apps

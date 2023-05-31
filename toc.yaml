@@ -46,8 +46,6 @@ toc:
           href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
       - openshift_tutorial.md
       - openshift_tutorial_vpc.md
-      - tutorial-odo.md
-      - cs_tutorials_policies.md
   - navgroup: 
       id: howto
       topics:
@@ -137,6 +135,7 @@ toc:
           - topicgroup: 
               label: Controlling traffic in Classic clusters
               topics:
+              - cs_tutorials_policies.md
               - network-policy.md
               - firewall.md
               - edge.md
@@ -192,6 +191,7 @@ toc:
           - openshift_app_deploy.md
           - nodeport.md
           - app-update.md
+          - tutorial-odo.md
       - topicgroup:
           label: Exposing apps
           topics:
