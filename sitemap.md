@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-30"
+lastupdated: "2023-05-31"
 
 keywords: openshift
 subcollection: openshift
@@ -5217,6 +5217,8 @@ subcollection: openshift
 * [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your PX-Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
+
+* [Backing up data across regions with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-cross-region)
 
 * [Backing up and restoring cluster data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-and-restore)
 
