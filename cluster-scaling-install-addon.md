@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-06-01"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -158,7 +158,9 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 :   Specify how the cluster autoscaler determines which worker pool to scale if you have multiple worker pools. The default value is `random`.
 :  `random`: Selects randomly between `most-pods` and `least-waste`.
 :   `most-pods`: Selects the worker pool that is able to schedule the most pods when scaling up. Use this method if you are using `nodeSelector` to make sure that pods land on specific worker nodes.
-:   `least-waste`: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected. 
+:   `least-waste`: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected.
+
+:   
 
 `ignoreDaemonSetsUtilization`
 :   When set to `true`, the cluster autoscaler ignores DaemonSet pods when it calculates resource utilization for scale-down. The default value is `false`.
@@ -185,7 +187,7 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 :   Set the maximum amount of time that worker nodes can be tainted or untainted with `PreferNoSchedule` at the same time. The default value is `10m`.
 
 `maxFailingTime`
-:   Set the maximum time in minutes that the cluster autoscaler pod runs without a completed action before the pod is automatically restarted.`15m`| 
+:   Set the maximum time in minutes that the cluster autoscaler pod runs without a completed action before the pod is automatically restarted. The default is `15m`.
 
 `maxInactivity`
 :   Set the maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted. The default value is `10m`.
@@ -193,14 +195,45 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 `maxNodeProvisionTime`
 :   Set the maximum amount of time in minutes that a worker node can take to begin provisioning before the cluster autoscaler cancels the scale-up request. The default value is `120m`.
 
+`maxNodeGroupBinpackingDuration`
+:    Maximum time in seconds spent in bin packing simulation for each worker-pool. The default value is `10s`.
+
+`maxNodesPerScaleUp`
+:   Maximum number of nodes that can be added in a single scale up. This is intended strictly for optimizing autoscaler algorithm latency and should not be used as a rate limit for scale-up. The default value is `1000`.
+
 `maxRetryGap`
-:   Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler. The default value is `3600`.
+:   Set the maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler. The default value is `60`.
+
+`parallelDrain`
+:   Set to `true` to allow parallel draining of nodes. The default value is `false`.
+
+`maxScaleDownParallelism`
+:   Maximum number of nodes, both empty and still needing to be drained, that can be deleted in parallel. The default value is `10`.
+
+
+`maxDrainParallelism`
+:   Maximum number of nodes that still need to be drained that can be drained and deleted in parallel. The default value is `1`.
+
+`nodeDeletionBatcherInterval`
+:   How long in minutes that the autoscaler can gather nodes to delete them in batch. The default value is `0m`.
+
+`nodeDeleteDelayAfterTaint`
+:   How long in seconds to wait before deleting a node after tainting it. The default value is `5s`.
+
+`enforceNodeGroupMinSize`
+:   Set this value to `true` to scale up the worker pool to the configured min size if needed. The default value is `false`.
 
 `resourcesLimitsCPU`
 :  Set the maximum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod can consume. The default value is `600m`.
 
 `resourcesLimitsMemory`
 :   Set the maximum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod can consume. The default value is `600Mi`.
+
+`coresTotal`
+:   Minimum and maximum number of cores in the cluster. Cluster autoscaler does not scale the cluster beyond these numbers. The default value is `0:320000`.
+
+`memoryTotal`
+:   Minimum and maximum amount of memory in gigabytes for the cluster. Cluster autoscaler does not scale the cluster beyond these numbers. The default value is `0:6400000`.
 
 `resourcesRequestsCPU`
 :   Set the minimum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod starts with. The default value is `200m`.
@@ -211,17 +244,53 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 `retryAttempts`
 :   Set the maximum number of attempts to retry after failing to connect to the service API. Use this parameter and the `maxRetryGap` parameter to adjust the retry window for the cluster autoscaler. The default value is 64.
 
+`logLevel`
+:   Set the log level for the autoscaler. Logging levels are `info`, `debug`, `warning`, `error`. The default value is `info`.
+
 `scaleDownDelayAfterAdd`
 :   Set the amount of time after scale up that scale down evaluation resumes. The default value for `scaleDownDelayAfterAdd` is 10 minutes. The default value is `10m`.
 
 `scaleDownDelayAfterDelete`
 :   Set the amount of time after node deletion that scale down evaluation resumes. The default value for `scaleDownDelayAfterDelete` is the same as the `scan-interval` which is `1m`. The default value is `1m`.
 
+`scaleDownDelayAfterFailure`
+:   Set the amount of time in minutes that the autoscaler must wait after a failure. The default value is `3m`.
+
+`maxEmptyBulkDelete`
+:   Maximum number of empty nodes that can be deleted by the autoscaler at the same time. The default value is `10`.
+
+`maxGracefulTerminationSec`
+:   Maximum number of seconds the autoscaler waits for pod to end when it scales down a node. The default value is `600`.
+
+`maxTotalUnreadyPercentage`
+:   Maximum percentage of unready nodes in the cluster. After this value is exceeded, the autoscaler stops operations. The default value is `45`.
+
+`okTotalUnreadyCount`
+:   Number of allowed unready nodes, irrespective of the `maxTotalUnreadyPercentage` value. The default value is `3`.
+
+`unremovableNodeRecheckTimeout`
+:   The timeout in minutes before the autoscaler rechecks a node that couldn't be removed in earlier attempt. The default value is `5m`.
+
 `scaleDownUnneededTime`
 :   Set the amount of time in minutes that a worker node must be unnecessary before it can be scaled down. The default value is `10m`.
 
 `scaleDownUtilizationThreshold`
 :   Set the worker node utilization threshold. If the worker node utilization is less than the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity. The default value is `0.5`.
+
+`scaleDownUnreadyTime`
+:   Set the amount of time in minutes that autoscaler must wait before an unready node is considered for scale down. The default value is `20m`.
+
+`scaleDownNonEmptyCandidatesCount`
+:   Set the maximum number of non-empty nodes considered in one iteration as candidates for scale down with drain. The default value is `30`.
+
+`scaleDownCandidatesPoolRatio`
+:   A ratio of nodes that are considered as additional non-empty candidates for scale down when some candidates from previous iteration are no longer valid. The default value is `0.1`.
+
+`scaleDownCandidatesPoolMinCount`
+:   Minimum number of nodes that are considered as additional non-empty candidates for scale down when some candidates from previous iterations are no longer valid. The default value is `50`.
+
+`scaleDownEnabled`
+:   When set to `false`, the autoscaler does not perform scale down. The default value is `true`.
 
 `scanInterval`
 :  Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down. The default value is `1m`.
@@ -231,6 +300,20 @@ This table refers to the cluster autoscaler add-on parameters. For Helm chart va
 
 `skipNodesWithSystemPods`
 :  When set to `true`, worker nodes that have `kube-system` pods are not scaled down. Do not set the value to `false` because scaling down `kube-system` pods might have unexpected results. The default value is `true`.
+
+`expendablePodsPriorityCutoff`
+:   Pods with priority below cutoff are expendable. They can be removed without consideration during scale down and they don't cause scale up. Pods with null priority (PodPriority disabled) are non-expendable. The default value is `-10`.
+
+`minReplicaCount`
+:   Minimum number of replicas that a replicaSet or replication controller must allow to be deleted during scale down. The default value is `0`.
+
+`newPodScaleUpDelay`
+:   Pods newer than this value in seconds are not considered for scale-up. Can be increased for individual pods through the `cluster-autoscaler.kubernetes.io/pod-scale-up-delay` annotation. The default value is `0s`.
+
+`balancingIgnoreLabel[1-5]`
+:   Apart from the fixed node labels, the autoscaler can ignore an additional 5 node labels during zone balancing. Example: `balancingIgnoreLabel1:key=value`.
+
+
 
 `workerPoolsConfig.json`
 :   The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone. The default value is `false`
