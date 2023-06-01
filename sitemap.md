@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-31"
+lastupdated: "2023-06-01"
 
 keywords: openshift
 subcollection: openshift
@@ -4252,6 +4252,8 @@ subcollection: openshift
 * [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server)
 
     * [Considerations and prerequisites](/docs/openshift?topic=openshift-health-audit#prereqs-apiserver-logs)
+
+    * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
 
     * [Forwarding Kubernetes API audit logs to a resource in the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv)
 
