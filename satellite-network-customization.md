@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-06-02"
 
 keywords: openshift, route, network, satellite
 
@@ -91,7 +91,7 @@ If you create a {{site.data.keyword.satelliteshort}} cluster at version 4.12 and
 
 You can use these `Hostendpoint` instances to define global network policies with the help of the `“ibm-cloud.kubernetes.io/interface-name: <network_interface_name>”` label that is added to each `Hostendpoint` instance.
 
-In addition to this label, all of the worker node’s labels are added for additional customization options.
+In addition to this label, all the worker node’s labels are added for additional customization options.
 
 These `Hostendpoints` have the `“projectcalico-default-allow"` profile, which means these `Hostendpoints` may change the previously expected behavior when you update to 4.12.
 {: important}

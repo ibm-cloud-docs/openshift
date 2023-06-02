@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-31"
+lastupdated: "2023-06-02"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
@@ -49,7 +49,7 @@ The following table shows the changes that are in the master fix pack 4.9.59_159
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Cluster health image | v1.3.19 | v1.3.20 | Updated `Go` to version `1.19.9` and updated dependencies. Updated the base image. Resolved addon health bugs. |
+| Cluster health image | v1.3.19 | v1.3.20 | Updated `Go` to version `1.19.9` and updated dependencies. Updated the base image. Resolved add-on health bugs. |
 | etcd | v3.4.24 | v3.4.25 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.25){: external}. |
 | Gateway-enabled cluster controller | 2024 | 2106 | Updated to resolve CVEs. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.22.17-8 | v1.22.17-9 | Key rotation. |

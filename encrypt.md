@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-30"
+lastupdated: "2023-06-02"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -115,6 +115,7 @@ If KMS was enabled before this version, [update your cluster](/docs/openshift?to
 ## Encrypting the Kubernetes secrets by using a KMS provider
 {: #keyprotect}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
 
 Enable a [key management service (KMS) provider](#kms) to encrypt the Kubernetes secrets in your cluster.
 
@@ -140,10 +141,9 @@ Setting up cross-account encryption by using a KMS in a different account is sup
     * Ensure that the API key owner of the [API key](/docs/openshift?topic=openshift-access-creds#api_key_about) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider. For more information on granting access in IAM to the KMS provider, see the [{{site.data.keyword.keymanagementserviceshort}} user access documentation](/docs/key-protect?topic=key-protect-manage-access) or [{{site.data.keyword.hscrypto}} user access documentation](/docs/hs-crypto?topic=hs-crypto-manage-access#platform-mgmt-roles).
         * For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service access roles for your KMS provider.
         * If you plan to use an existing KMS instance and root key, you need at least the **Viewer** platform and **Reader** service access roles for your KMS provider.
-    * **For clusters that run {{site.data.keyword.redhat_openshift_notm}} 4.4.16_1513_openshift or later**: An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster can't use all the [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
+    * An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster can't use all the [{{site.data.keyword.keymanagementserviceshort}} features](#kms-keyprotect-features).
     {: note}
 
-4. Consider [updating your cluster](/docs/openshift?topic=openshift-update) to at least version `4.5.18_1521_openshift` to get the latest features.
 5. Enable KMS encryption.
 
 ### Enabling KMS encryption for the cluster through the CLI
@@ -205,14 +205,6 @@ Setting up cross-account encryption by using a KMS in a different account is sup
     After the KMS provider is enabled in the cluster, all cluster secrets are automatically encrypted.
     {: note}
 
-1. **Clusters that run version 3.11**: Existing secrets are not automatically encrypted and need to be rewritten to be encrypted.
-    1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
-    1. With `cluster-admin` access, rewrite the secrets.
-        ```sh
-        kubectl get secrets --all-namespaces -o json | kubectl replace -f -
-        ```
-        {: pre}
-
 1. Optional: [Verify that your secrets are encrypted](#verify_kms).
 
 Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and can't be recovered. When you rotate a root key, you can't reuse a previous root key for the same cluster. Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.
@@ -268,7 +260,10 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 To rotate the root key that is used to encrypt your cluster, you can repeat the steps to enable KMS encryption from the [CLI](#kms_cli) or [console](#kms_ui). When you rotate a root key, you can't reuse a previous root key for the same cluster.
 
 
-Additionally, if your cluster runs version `4.5.18_1521_openshift` or later, you can [rotate the root key](/docs/key-protect?topic=key-protect-rotate-keys) from your KMS instance. This action automatically re-enables KMS in your cluster with the new root key.
+You can [rotate the root key](/docs/key-protect?topic=key-protect-rotate-keys) from your KMS instance. This action automatically re-enables KMS in your cluster with the new root key. To manually rotate your keys, see your KMS provider docs.
+
+* {{site.data.keyword.keymanagementservicefull}}: See [Rotating your keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#get-started-next-steps-best-practices-key-rotate).
+* {{site.data.keyword.hscrypto}}: See [Rotating root keys manually](/docs/hs-crypto?topic=hs-crypto-rotate-keys).
 
 ## Verifying secret encryption
 {: #verify_kms}
@@ -277,7 +272,7 @@ After you enable a KMS provider in your {{site.data.keyword.openshiftlong_notm}}
 
 
 Before you begin
-- Consider [updating your cluster](/docs/containers?topic=containers-update) to at least {{site.data.keyword.redhat_openshift_notm}} version `4.5`. If you don't update your cluster to this version, changes to the root key are not reported in the cluster health status and take longer to take effect in your cluster.
+
 - Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform and **Manager** service access role for the cluster.
 
 To verify secret encryption by disabling a root key
@@ -296,10 +291,8 @@ To verify secret encryption by disabling a root key
     {: pre}
 
 4. In your KMS instance, [disable the root key](/docs/key-protect?topic=key-protect-disable-keys) that is used to encrypt your cluster. If you encrypted your cluster with a KMS and CRK from a different account, the CRK can only be disabled from the account where it is located.
-5. Wait for the cluster to detect the change to your root key.
 
-    In clusters that run a version earlier than `4.5`, you might need to wait for an hour or longer.
-    {: note}
+5. Wait for the cluster to detect the change to your root key.
 
 6. Try to list your secrets. You get a timeout error because you can no longer connect to your cluster. If you try to set the context for your cluster by running `ibmcloud oc cluster config`, the command fails.
     ```sh
