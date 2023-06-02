@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-31"
+lastupdated: "2023-06-02"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -50,7 +50,7 @@ The following table shows the changes that are in the master fix pack 4.10.59_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Cluster health image | v1.3.19 | v1.3.20 | Updated `Go` to version `1.19.9` and updated dependencies. Updated the base image. Resolved addon health bugs. |
+| Cluster health image | v1.3.19 | v1.3.20 | Updated `Go` to version `1.19.9` and updated dependencies. Updated the base image. Resolved add-on health bugs. |
 | etcd | v3.4.24 | v3.4.25 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.25){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.17-10 | v1.23.17-16 | Updated support of the Kubernetes 1.23.17 release. Updated Go dependencies. Key rotation. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 778ef2b | 4e2f346 | Make armada-rbac-sync FIPS compliant |

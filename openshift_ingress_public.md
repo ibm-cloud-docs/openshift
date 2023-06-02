@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-06-02"
 
 keywords: ingress, expose apps, publicly expose, public ingress, ingress vpc
 
@@ -208,7 +208,7 @@ Your TLS certificate must be stored as a Kubernetes secret in each namespace whe
 {: shortdesc}
 
 #### TLS secrets for custom Ingress domains
-{: #ingress-private-tls-custom}
+{: #ingress-private-tls-custom-public}
 
 To use a domain that you created yourself, such as a domain that is registered with an external provider, see [Setting up TLS secrets for custom subdomains](/docs/containers?topic=containers-secrets#tls-custom).
 {: shortdesc}
