@@ -5220,7 +5220,7 @@ subcollection: openshift
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
 
-* [Backing up data across regions with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-cross-region)
+* [Creating a backup with the `kmpd` command](/docs/openshift?topic=openshift-storage_portworx_backup#px-kdmp)
 
 * [Backing up and restoring cluster data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-and-restore)
 

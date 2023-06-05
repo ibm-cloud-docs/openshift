@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-31"
+lastupdated: "2023-06-05"
 
 keywords: portworx, openshift
 
@@ -234,11 +234,23 @@ If a cluster that you want to back up with PX-Backup does not have Portworx Ente
     {: screen}
 
 
-## Backing up data across regions with PX-Backup
-{: #px-cross-region}
+## Creating a backup with the `kmpd` command
+{: #px-kdmp}
 
-The PX-Backup driver does not support cross region backups for AWS and Azure cloud providers by default. To enable cross-region backup support, refer to the [Cross Region PX-Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/create-backup/cross-region-backup-restore/){: external}
+1. [Install Px-Backup in your cluster](#px-backup-install).
+1. Edit the `kdmp-config` ConfigMap in the `kube-system` namespace of your cluster.
+    ```sh
+    kubectl edit cm kdmp-config -n kube-system
+    ```
+    {: pre}
+    
+1. Add the following parameter to the data section.
+    ```sh
+    BACKUP_TYPE: "Generic"
+    ```
+    {: pre}
 
+1. Follow the [PX-Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/){: external} to create a backup.
 
 ## Backing up and restoring cluster data with PX-Backup
 {: #px-backup-and-restore}
