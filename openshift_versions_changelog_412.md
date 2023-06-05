@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-06-05"
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -31,6 +31,20 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for worker node fix pack 4.12.19_1546_openshift, released 5 June 2023
+{: #41219_1546_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.12.19_1546_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.12.16 | 4.12.19 | see [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-19){: external}. |
+| RHEL 7 Packages |N/A|N/A|N/A|
+| RHEL 8 Packages | 4.18.0-477.10.1.el8_8 | 4.18.0-477.13.1.el8_8 | Worker node kernel & package updates for [CVE-2023-22490](https://nvd.nist.gov/vuln/detail/CVE-2023-22490){: external},[CVE-2023-23946](https://nvd.nist.gov/vuln/detail/CVE-2023-23946){: external},[CVE-2023-25652](https://nvd.nist.gov/vuln/detail/CVE-2023-25652){: external},[CVE-2023-25815](https://nvd.nist.gov/vuln/detail/CVE-2023-25815){: external},[CVE-2023-29007](https://nvd.nist.gov/vuln/detail/CVE-2023-29007){: external},[CVE-2023-32233](https://nvd.nist.gov/vuln/detail/CVE-2023-32233){: external}. |
+{: caption="Changes since version 4.12.16_1544_openshift" caption-side="bottom"}
 
 
 ### Change log for master fix pack 4.12.16_1545_openshift, released 25 May 2023
