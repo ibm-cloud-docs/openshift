@@ -204,9 +204,9 @@ To allow access for a specific cluster:
 If corporate network policies prevent access from your local system to public endpoints via proxies or allowlists, to run `calicoctl` commands, you must allow TCP access for the Calico commands.
 {: shortdesc}
 
-Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`oc` commands]().
+Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`oc` commands](#firewall_kubectl).
 
-1. Retrieve the IP address from the master URL that you used to allow the [`oc` commands]().
+1. Retrieve the IP address from the master URL that you used to allow the [`oc` commands](#firewall_kubectl).
 
 2. Get the port for etcd.
 
