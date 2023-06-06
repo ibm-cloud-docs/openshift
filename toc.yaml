@@ -52,8 +52,11 @@ toc:
       - topicgroup:
           label: Installing the CLI and API
           topics:
-          - openshift_cli_install.md
+          - include: ../cloud-docs/cli/ibmcloud/install.md
+          - include: ../cloud-docs/cli/ibmcloud/extend_cli.md
+          - cli-install.md
           - api-install.md
+          - include: ../cloud-docs/cli/ibmcloud/uninstall_cli.md
       - topicgroup:
           label: Planning your cluster environment
           topics:
@@ -191,7 +194,6 @@ toc:
           - openshift_app_deploy.md
           - nodeport.md
           - app-update.md
-          - tutorial-odo.md
       - topicgroup:
           label: Exposing apps
           topics:

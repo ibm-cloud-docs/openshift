@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-06-06"
 
 keywords: openshift, vlan
 
@@ -66,7 +66,7 @@ The private cloud service endpoint makes your Kubernetes master privately access
     {: pre}
 
 7. If the cluster is in an environment behind a firewall:
-    - [Allow your authorized cluster users to run `kubectl` commands to access the master through the private cloud service endpoint.](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+    - [Allow your authorized cluster users to run `kubectl` commands to access the master through the private cloud service endpoint.](/docs/openshift?topic=openshift-firewall)
     - [Allow outbound network traffic to the private IPs](/docs/openshift?topic=openshift-firewall#firewall_outbound) for infrastructure resources and for the {{site.data.keyword.cloud_notm}} services that you plan to use.
 
 

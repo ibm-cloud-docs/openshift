@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-06-06"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -421,6 +421,9 @@ To add a zone with worker nodes to your worker pool:
     Resource Group Name:            Default
     ```
     {: screen}
+
+
+
 
 
 

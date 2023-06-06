@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-06-06"
 
 keywords: kubernetes, openshift
 
@@ -623,7 +623,7 @@ spec:
 ```
 {: codeblock}
 
-## Packaging apps in version 4 clusters for reuse in multiple environments with Kustomize
+## Packaging apps for reuse in multiple environments with Kustomize
 {: #kustomize}
 
 As part of a [twelve-factor](https://12factor.net/){: external}, cloud-native app, you want to maintain `dev-to-prod` parity by setting up a continuous development and delivery pipeline that uses a common, version-controlled code base source. In your code base repositories, you store your Kubernetes resource configuration manifest files, often in YAML format. You can use the Kubernetes project [Kustomize](https://kustomize.io/){: external} both to standardize and customize your deployments across multiple environments.

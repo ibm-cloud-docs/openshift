@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-06-06"
 
 keywords: openshift
 
@@ -37,7 +37,8 @@ Review these situations in which you might need to open specific ports and IP ad
 {: #corporate}
 
 If corporate network policies prevent access from your local system to public endpoints via proxies or allowlists, you must allow access to run [`ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands](#firewall_bx), [`oc` commands](#firewall_kubectl), and [`calicoctl` commands](#firewall_calicoctl) from your local system.
-{: shortdesc}
+
+
 
 ### Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist
 {: #firewall_bx}
@@ -203,9 +204,9 @@ To allow access for a specific cluster:
 If corporate network policies prevent access from your local system to public endpoints via proxies or allowlists, to run `calicoctl` commands, you must allow TCP access for the Calico commands.
 {: shortdesc}
 
-Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`oc` commands](#firewall_kubectl).
+Before you begin, allow access to run [`ibmcloud` commands](#firewall_bx) and [`oc` commands]().
 
-1. Retrieve the IP address from the master URL that you used to allow the [`oc` commands](#firewall_kubectl).
+1. Retrieve the IP address from the master URL that you used to allow the [`oc` commands]().
 
 2. Get the port for etcd.
 
