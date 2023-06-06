@@ -52,11 +52,11 @@ toc:
       - topicgroup:
           label: Installing the CLI and API
           topics:
-          - include: ../cloud-docs/cli/ibmcloud/install.md
-          - include: ../cloud-docs/cli/ibmcloud/extend_cli.md
+          - include: ../cloud-docs/cli/reference/ibmcloud/download_cli.md
+          - include: ../cloud-docs/cli/reference/ibmcloud/extend_cli.md
           - cli-install.md
           - api-install.md
-          - include: ../cloud-docs/cli/ibmcloud/uninstall_cli.md
+          - include: ../cloud-docs/cli/reference/ibmcloud/uninstall_cli.md
       - topicgroup:
           label: Planning your cluster environment
           topics:
