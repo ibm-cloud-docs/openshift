@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-06-06"
 
 keywords: openshift
 
@@ -159,7 +159,7 @@ Review the options to debug persistent storage and find the root causes for fail
         {: screen}
 
         The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
-    2. If the `kubectl` CLI versions on your local machine and your cluster don't match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cs_cli_install#kubectl).
+    2. If the `kubectl` CLI versions on your local machine and your cluster don't match, either [update your cluster](/docs/containers?topic=containers-update) or [install a different CLI version on your local machine](/docs/containers?topic=containers-cli-install.
 
 
 1. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).

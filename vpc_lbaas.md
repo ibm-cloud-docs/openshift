@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-30"
+lastupdated: "2023-06-06"
 
 keywords: openshift, app protocol, application protocol
 
@@ -711,6 +711,7 @@ To enable your app to receive public or private requests,
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout: "<value>"
    spec:
      type: LoadBalancer
      selector:
@@ -801,7 +802,10 @@ To enable your app to receive public or private requests,
 
     `externalTrafficPolicy`
     :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
-    :   Set to `Cluster` to configure TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp). 
+    :   Set to `Cluster` to configure TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout`
+    :   Optional. The idle connection timeout of the listener in seconds. The default is `50`. The minimum is `50`. The maximum is `7200`.
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh

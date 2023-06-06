@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-05"
+lastupdated: "2023-06-06"
 
 keywords: openshift
 
@@ -28,6 +28,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2023
 {: #openshift-jun23}
+
+
 
 ### June 5
 {: #openshift-jun523}

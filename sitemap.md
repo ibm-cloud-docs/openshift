@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-05"
+lastupdated: "2023-06-06"
 
 keywords: openshift
 subcollection: openshift
@@ -2881,19 +2881,37 @@ subcollection: openshift
 {: #sitemap_installing_the_cli_and_api}
 
 
-[Installing the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/openshift?topic=openshift-openshift-cli#openshift-cli)
+[Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-install-ibmcloud-cli#install-ibmcloud-cli)
 
-* [Installing the IBM Cloud CLI and plug-ins](/docs/openshift?topic=openshift-openshift-cli#cs_cli_install_steps)
+* [Before you begin](/docs/openshift?topic=openshift-install-ibmcloud-cli#before-download-cli)
 
-* [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc)
+* [Installing with an installer](/docs/openshift?topic=openshift-install-ibmcloud-cli#ibmcloud-cli-installer)
 
-* [Updating the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade)
+* [Installing from the shell](/docs/openshift?topic=openshift-install-ibmcloud-cli#shell_install)
 
-* [Installing the `odo` CLI for developers](/docs/openshift?topic=openshift-openshift-cli#cli-odo-install)
+* [Installing to a custom directory](/docs/openshift?topic=openshift-install-ibmcloud-cli#install-custom-dir)
 
-* [Uninstalling the CLI](/docs/openshift?topic=openshift-openshift-cli#cs_cli_uninstall)
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-install-ibmcloud-cli#update-ibmcloud-cli)
 
-* [Using the {{site.data.keyword.cloud-shell_notm}} in your web browser](/docs/openshift?topic=openshift-openshift-cli#cloud-shell)
+[Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/openshift?topic=openshift-plug-ins#plug-ins)
+
+* [Before you begin](/docs/openshift?topic=openshift-plug-ins#cli-before-you-begin)
+
+* [Searching for a plug-in](/docs/openshift?topic=openshift-plug-ins#cli-search-plugin)
+
+* [Installing a plug-in from the {{site.data.keyword.cloud_notm}} CLI repository](/docs/openshift?topic=openshift-plug-ins#install-from-repo)
+
+    * [Installing a specific plug-in](/docs/openshift?topic=openshift-plug-ins#cli-install-plugin)
+
+    * [Installing all plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-all)
+
+    * [Installing multiple plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-multiple)
+
+* [Confirming installed plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-view)
+
+* [Related information](/docs/openshift?topic=openshift-plug-ins#cli-install-relinfo)
+
+[Installing the OpenShift CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
 
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_install)
 
@@ -2904,6 +2922,12 @@ subcollection: openshift
 * [Refreshing IAM access tokens and obtaining new refresh tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI](/docs/openshift?topic=openshift-cs_api_install#cs_cli_refresh)
+
+[Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
+
+* [Uninstalling on Windows](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-windows)
+
+* [Uninstalling on Linux and macOS](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
 
 
 ## Planning your cluster environment
@@ -3340,9 +3364,15 @@ subcollection: openshift
 
 [Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
 
+* [Enabling the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-enable-console)
+
+* [Enabling the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-enable-CLI)
+
 * [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon)
 
-* [Removing the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca-addon-rm)
+* [Removing the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-console)
+
+* [Removing the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-cli)
 
 * [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca_addon_ref)
 
@@ -4469,7 +4499,7 @@ subcollection: openshift
 
 * [Complete example deployment YAML](/docs/openshift?topic=openshift-openshift_apps#yaml-example)
 
-* [Packaging apps in version 4 clusters for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize)
+* [Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize)
 
 [Deploying apps in {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-deploy_app#deploy_app)
 
@@ -4506,20 +4536,6 @@ subcollection: openshift
 * [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-update_app#app_cicd)
 
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
-
-[Developing in clusters with the OpenShift Do CLI](/docs/openshift?topic=openshift-odo-tutorial#odo-tutorial)
-
-* [Objectives](/docs/openshift?topic=openshift-odo-tutorial#odo-objectives)
-
-* [Audience](/docs/openshift?topic=openshift-odo-tutorial#odo-audience)
-
-* [Prerequisites](/docs/openshift?topic=openshift-odo-tutorial#odo-prereqs)
-
-* [Create a microservice](/docs/openshift?topic=openshift-odo-tutorial#odo-new-microservice)
-
-* [Push a microservice to the cluster](/docs/openshift?topic=openshift-odo-tutorial#odo-push-microservice)
-
-* [What's next?](/docs/openshift?topic=openshift-odo-tutorial#odo-next-steps)
 
 
 ## Exposing apps
