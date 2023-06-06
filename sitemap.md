@@ -2881,6 +2881,36 @@ subcollection: openshift
 {: #sitemap_installing_the_cli_and_api}
 
 
+[Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-install-ibmcloud-cli#install-ibmcloud-cli)
+
+* [Before you begin](/docs/openshift?topic=openshift-install-ibmcloud-cli#before-download-cli)
+
+* [Installing with an installer](/docs/openshift?topic=openshift-install-ibmcloud-cli#ibmcloud-cli-installer)
+
+* [Installing from the shell](/docs/openshift?topic=openshift-install-ibmcloud-cli#shell_install)
+
+* [Installing to a custom directory](/docs/openshift?topic=openshift-install-ibmcloud-cli#install-custom-dir)
+
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-install-ibmcloud-cli#update-ibmcloud-cli)
+
+[Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/openshift?topic=openshift-plug-ins#plug-ins)
+
+* [Before you begin](/docs/openshift?topic=openshift-plug-ins#cli-before-you-begin)
+
+* [Searching for a plug-in](/docs/openshift?topic=openshift-plug-ins#cli-search-plugin)
+
+* [Installing a plug-in from the {{site.data.keyword.cloud_notm}} CLI repository](/docs/openshift?topic=openshift-plug-ins#install-from-repo)
+
+    * [Installing a specific plug-in](/docs/openshift?topic=openshift-plug-ins#cli-install-plugin)
+
+    * [Installing all plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-all)
+
+    * [Installing multiple plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-multiple)
+
+* [Confirming installed plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-view)
+
+* [Related information](/docs/openshift?topic=openshift-plug-ins#cli-install-relinfo)
+
 [Installing the OpenShift CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
 
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_install)
@@ -2892,6 +2922,12 @@ subcollection: openshift
 * [Refreshing IAM access tokens and obtaining new refresh tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI](/docs/openshift?topic=openshift-cs_api_install#cs_cli_refresh)
+
+[Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
+
+* [Uninstalling on Windows](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-windows)
+
+* [Uninstalling on Linux and macOS](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
 
 
 ## Planning your cluster environment
