@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-22"
+lastupdated: "2023-06-07"
 
 keywords: openshift, block storage
 
@@ -46,7 +46,7 @@ Before you can deploy the {{site.data.keyword.block_storage_is_short}} driver, y
 {: shortdesc}
 
 
-Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
 
 1. Retrieve the following details of your VPC instance. These parameters are used to apply labels to your worker nodes.
 

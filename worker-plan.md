@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-06"
+lastupdated: "2023-06-07"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -97,7 +97,7 @@ When you run `oc get nodes` or `oc describe node <worker_node>`, you might see t
 When you create a worker pool, you choose the flavor, which describes the operating system along with the compute resources of the worker nodes. Supported operating systems are RHEL 7. 
 
 You can also log in to your cluster to check the operating system of the worker nodes.
-1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
 2. List your worker nodes.
     ```sh
     oc get nodes

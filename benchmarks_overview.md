@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-06-07"
 
 keywords: openshift
 
@@ -94,7 +94,7 @@ To review the results of the CIS Kubernetes benchmark for Section 4: Worker node
 These steps apply to clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later only.
 {: note}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
 
 1. Create a project for the resources to run the benchmark.
     ```sh

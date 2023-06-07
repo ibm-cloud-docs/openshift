@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-06-07"
 
 keywords: openshift, block storage, snapshot
 
@@ -36,7 +36,7 @@ Snapshots support is available for cluster version 4.9 and later and with the {{
 ## Enabling the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-enable}
 
-1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
 
 1. Get the version number of the `vpc-block-csi-driver` add-on in your cluster.
     ```sh

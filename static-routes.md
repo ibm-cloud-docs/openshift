@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-06-07"
 
 keywords: openshift, vpn, on-prem, gateway, static
 
@@ -69,7 +69,7 @@ To use the {{site.data.keyword.cloud_notm}} console, follow these steps.
 
 To use the CLI, follow these steps.
 
-1. [Target the CLI to your cluster](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure).
+1. [Target the CLI to your cluster](/docs/containers?topic=containers-cli-install#cs_cli_configure).
 
 2. Enable the `static-route` add-on.
 

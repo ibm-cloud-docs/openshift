@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-06-07"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -118,6 +118,8 @@ If KMS was enabled before this version, [update your cluster](/docs/openshift?to
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
 
 Enable a [key management service (KMS) provider](#kms) to encrypt the Kubernetes secrets in your cluster.
+
+
 
 
 ### Prerequisites
@@ -242,7 +244,7 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
     {: note}
 
 1. **Clusters that run version 3.11**: Existing secrets are not automatically encrypted and need to be rewritten to be encrypted.
-    1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+    1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
     2. With `cluster-admin` access, rewrite the secrets.
         ```sh
         kubectl get secrets --all-namespaces -o json | kubectl replace -f -
