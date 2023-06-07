@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -431,7 +431,7 @@ The security groups applied to the workers in the worker pool are a combination 
 Required for VPC clusters with a public service endpoint.
 {: important}
 
-[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
 1. Get the URL used to connect to the oauth service in the form `https://cXXX-e.<region>.containers.cloud.ibm.com:<PORT>`. Make a note of the region and port.
 
     ```sh

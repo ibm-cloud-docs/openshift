@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-07"
 
 keywords: openshift
 
@@ -755,7 +755,7 @@ Before you begin:
 You can remove storage from your worker node by using the `ibmcloud oc storage attachment rm` command.
 {: shortdesc}
 
-[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
 
 1. List your storage volumes and note the ID of the volume that you want to remove.
     ```sh

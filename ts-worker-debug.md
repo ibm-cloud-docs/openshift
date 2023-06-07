@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-06-07"
 
 keywords: openshift
 
@@ -49,7 +49,7 @@ If your worker node is not functioning as expected, you can follow these steps t
 {: shortdesc}
 
 1. [Update your cluster and worker nodes to the latest version](/docs/containers?topic=containers-update#update).
-2. [Update your command line tools](/docs/containers?topic=containers-cs_cli_install#cs_cli_upgrade).
+2. [Update your command line tools](/docs/containers?topic=containers-cli-install#cs_cli_upgrade).
 3. [Run tests in the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool). 
 
 

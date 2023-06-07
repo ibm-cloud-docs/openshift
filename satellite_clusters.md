@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-06-07"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -288,7 +288,7 @@ You can configure the internal image registry in your {{site.data.keyword.satell
         {: screen}
         
 4. In the CLI, create a secret with the service credentials you created and saved.
-    1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+    1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
     2. Create the secret.
         ```sh
         oc create secret generic image-registry-private-configuration-user --from-literal=REGISTRY_STORAGE_S3_ACCESSKEY=<access_key_id> --from-literal=REGISTRY_STORAGE_S3_SECRETKEY=<secret_access_key> --namespace openshift-image-registry

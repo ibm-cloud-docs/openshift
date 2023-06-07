@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -266,7 +266,7 @@ Version 1.0.331 of the CLI was released on 12 October 2021.
 Version 1.0.312 of the CLI was released on 9 August 2021.
 
 - Removes the `ibmcloud oc nlb-dns monitor status` command. Checking the health of individual IP addresses, which was previously supported by the Cloudflare DNS provider, is not supported by the Akamai DNS provider. Instead, you can check the overall health of a subdomain by using the `ibmcloud oc nlb-dns monitor ls` command. For more information on the migration to Akamai for all `containers.appdomain.cloud`, `containers.mybluemix.net`, and `containers.cloud.ibm.com` domains, see the [migration announcement](https://cloud.ibm.com/notifications?selected=1621697674798){: external}.
-- Removes the `ibmcloud oc cluster addon enable kube-terminal` command. The Kubernetes web terminal add-on became unsupported on 1 July 2021. Instead, use the [IBM Cloud Shell])/docs/containers?topic=containers-cs_cli_install#cloud-shell).
+- Removes the `ibmcloud oc cluster addon enable kube-terminal` command. The Kubernetes web terminal add-on became unsupported on 1 July 2021. Instead, use the [IBM Cloud Shell])/docs/containers?topic=containers-cli-install#cloud-shell).
 
 - Adds CLI support for the [OpenShift Data Foundation storage add-on](/docs/openshift?topic=openshift-ocs-manage-deployment).
 - Makes the `ibmcloud oc cluster addon update` feature available to all users.
@@ -539,7 +539,7 @@ Check out the following syntax and behavior changes between each version of the 
 | Positional options  \n -  Legacy: options specified by position (`cluster-get mycluster`)  \n -  Latest: options specified by options (`cluster get --cluster mycluster`) | Legacy and latest | Legacy and latest | Legacy and latest | Latest |
 | Repeated options  \n -  Legacy: Comma-delineated values (`--worker-pools pool1,pool2,pool3 ...`)  \n -  Latest: Repeated options for each value with optional shorthand option aliases (`-p pool1 -p pool2 ...`) | Legacy | Legacy | Legacy and latest | Latest |
 | option format  \n -  Legacy: Camel-case (`--showResources`)  \n -  Latest: Dashed (`--show-resources`) | Legacy | Legacy | Legacy and latest | Latest |
-| Cluster context provided by `ibmcloud oc cluster-config`  \n -  Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.  \n -  Latest: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [last file that is set by the `KUBECONFIG` environment variable](/docs/containers?topic=containers-cs_cli_install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cs_cli_install#cli_config_multiple). | Legacy | Legacy | Legacy | Latest |
+| Cluster context provided by `ibmcloud oc cluster-config`  \n -  Legacy: Provides a command that you must copy and paste to set the new `kubeconfig` file as your current `KUBECONFIG` environment variable. You must set your environment variable before you can interact with your cluster.  \n -  Latest: Appends the new `kubeconfig` file to your existing `kubeconfig` file in `~/.kube/config` or the [last file that is set by the `KUBECONFIG` environment variable](/docs/containers?topic=containers-cli-install#cli_temp_kubeconfig). After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly [change the context to other clusters in the Kubernetes context](/docs/containers?topic=containers-cli-install#cli_config_multiple). | Legacy | Legacy | Legacy | Latest |
 {: caption="Latest versions of the redesigned {{site.data.keyword.openshiftlong_notm}} plug-in" caption-side="bottom"}
 
 ### Version 0.4

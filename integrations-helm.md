@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-06-07"
 
 keywords: kubernetes, openshift
 
@@ -56,7 +56,7 @@ Helm charts from the **iks-charts**, **ibm-charts**, and, if licensed, **entitle
 Set up Helm v3 and the {{site.data.keyword.cloud_notm}} Helm repositories in your cluster.
 {: shortdesc}
 
-Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cs_cli_install#cs_cli_configure)
+Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
 
 1. Install the latest release of the version 3 [Helm CLI](https://github.com/helm/helm/releases){: external} on your local machine.
 
