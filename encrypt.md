@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-06-07"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -118,6 +118,8 @@ If KMS was enabled before this version, [update your cluster](/docs/openshift?to
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
 
 Enable a [key management service (KMS) provider](#kms) to encrypt the Kubernetes secrets in your cluster.
+
+
 
 
 ### Prerequisites
