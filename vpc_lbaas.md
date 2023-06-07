@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-06"
+lastupdated: "2023-06-07"
 
 keywords: openshift, app protocol, application protocol
 
@@ -85,7 +85,7 @@ By default, when you create a Kubernetes `LoadBalancer` service for an app in yo
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC ALB.
 
-![Load balancing for a cluster through the VPC ALB.](images/vpc-alb-mz.svg){: caption="Figure 1. Load balancing for a cluster through the VPC ALB" caption-side="bottom"}
+![Load balancing for a cluster through the VPC ALB.](images/vpc-alb-mz.svg){: caption="Figure 2. Load balancing for a cluster through the VPC ALB" caption-side="bottom"}
 
 1. A request to your app uses the hostname that is assigned to the Kubernetes `LoadBalancer` service by the VPC ALB, such as `1234abcd-<region>.lb.appdomain.cloud`.
 2. The request is automatically forwarded by the VPC ALB to one of the node ports on the worker node, and then to the private IP address of the app pod.
@@ -309,9 +309,20 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 
 
 
-Port ranges are supported for  public NLBs only. You can use a comma separated list of port ranges, but typically only a range is specified. If you use the `ibm-load-balancer-cloud-provider-vpc-port-range` annotation, you must include a listening port value that matches the minimum port in the range. 
+Port ranges can be used in  public NLBs when there is a need to host a service from a single host name that has multiple backend applications, each listening on a separate port number. In order to use port ranges in your Kubernetes cluster, some manual configuration must be performed. First, the `ibm-load-balancer-cloud-provider-vpc-port-range` option must be set.  It can include one or multiple ranges, each delimited by a comma. The `spec.ports.port` value must also be set to the minimum value in the port range.
 
-You can create an NLB that uses a port range by using the following example. The selector and backend pods must be associated with the port range load balancer service so that health checks return success and data will be delivered to the ports in the port range. Instead, you must create additional NodePort services with port values in the range that is defined by the load balancer service.
+In the following example, a port range of `30000-30010` is used.
+
+
+Nodeport services must be manually created for each deployment in which the NLB service forwards the request. The port number of each of these Nodeport services must be within the port range that is configured in the NLB service.
+
+In the following example diagram, a Nodeport service with port 30000 is created for Deployment 1 while a Nodeport service with port 30001 is created for Deployment 2.
+
+The user makes a request to port 30001 of the NLB containing the port range. This request is directed to the VPC NLB service that directs the request to the Nodeport service in the cluster that is also listening on port 30001, which in this case is for Deployment 2. The Nodeport service then directs the request to the target port of the selected pods of Deployment 2.
+
+![VPC NLB that uses port range.](/images/nlb-port-range.svg){: caption="Figure 3. VPC NLB with port range" caption-side="bottom"}
+
+Create an NLB that uses a port range by using the following example. The selector and backend pods must be associated with the port range load balancer service so that health checks return success and data is delivered to the ports in the port range. To use port range, you must create additional NodePort services that have port values in the range that is defined by the load balancer service.
 
 1. Save the following example `LoadBalancer` configuration as a file called `loadbalancer.yaml`.
 
@@ -374,7 +385,7 @@ You can create an NLB that uses a port range by using the following example. The
     ```
     {: pre}
 
-    - `30003` = Is a node port in the range that will respond to request
+    - `30003` = Is a node port in the range that responds to request
     - Other ports in the range do not respond unless additional node port services are created.
 
 
