@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-06-08"
 
 keywords: openshift, red hat, red hat openshift, update, upgrade
 
@@ -230,7 +230,7 @@ When you use a [version control system such as Git](/docs/openshift?topic=opensh
 
 Before you begin, you need two clusters and the **Manager** [service access role](/docs/openshift?topic=openshift-users#checking-perms) for all projects in both clusters so that you can copy all the resources from one cluster and deploy them to another.
 
-1. [Target](/docs/openshift?topic=openshift-access_cluster) the cluster that you want to copy resources from.
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. List all the configuration files in your cluster and verify that you want to copy these configurations.
     ```sh
     oc get all
@@ -260,7 +260,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
     ```
     {: pre}
 
-4. [Target](/docs/openshift?topic=openshift-access_cluster) the cluster that you want to copy the resources to, such as a production-ready standard cluster.
+4. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 5. Optional: If your  cluster used multiple projects, create the same projects in the standard cluster and [copy the image pull secret to each project](/docs/openshift?topic=openshift-registry#copy_imagePullSecret).
 6. Deploy the copied configuration files to your cluster. If a configuration file has specific information that can't be applied, you might need to update the configuration file and reapply.
     ```sh

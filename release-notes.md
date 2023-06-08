@@ -2763,7 +2763,7 @@ Worker node versions
 {: release-note}
 
 Deprecated: Kubernetes web terminal.
-:   The Kubernetes web terminal add-on is deprecated and becomes unsupported 1 July 2021. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/containers?topic=containers-cli-install#cloud-shell).
+:   The Kubernetes web terminal add-on is deprecated and becomes unsupported 1 July 2021. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/cloud-shell?topic=cloud-shell-shell-ui).
 
 
 

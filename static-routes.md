@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift, vpn, on-prem, gateway, static
 
@@ -69,16 +69,14 @@ To use the {{site.data.keyword.cloud_notm}} console, follow these steps.
 
 To use the CLI, follow these steps.
 
-1. [Target the CLI to your cluster](/docs/containers?topic=containers-cli-install#cs_cli_configure).
-
-2. Enable the `static-route` add-on.
+1. Enable the `static-route` add-on.
 
     ```sh
     ibmcloud oc cluster addon enable static-route --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-3. Verify that the static route add-on has a status of `Addon Ready`.
+1. Verify that the static route add-on has a status of `Addon Ready`.
 
     ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>

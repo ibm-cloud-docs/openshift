@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift
 
@@ -359,7 +359,7 @@ To prevent breaking changes, don't change the predefined `view`, `edit`, `admin`
     - Create a cluster role, and apply it with a role binding. This option is useful for controlling access to general resources in one namespace, like pods.
 - **Cluster-wide access**: To allow a user or an access group to access cluster-wide resources or resources in all namespaces, create a cluster role, and apply it with a cluster role binding. This option is useful for controlling access to resources that are not scoped to namespaces, like worker nodes, or resources in all namespaces in your cluster, like pods in each namespace.
 
-- Target the [Kubernetes CLI](/docs/containers?topic=containers-cli-install#cs_cli_configure) to your cluster.
+- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 - Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](#add_users) for all namespaces.
 - To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one [{{site.data.keyword.cloud_notm}} IAM platform access role](#add_users) at the {{site.data.keyword.openshiftlong_notm}} service level.
 
@@ -549,7 +549,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: pre}
 
-3. Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/containers?topic=containers-cli-install#cs_cli_configure) and test the action, such as `oc top pods`.
+3. Follow up with users that have the `admin` cluster role. Ask them to [refresh their cluster configuration](/docs/containers?topic=containers-access_cluster) and test the action, such as `oc top pods`.
 
 
 ## Checking user permissions

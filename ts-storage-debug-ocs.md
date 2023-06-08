@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-06-08"
 
 keywords: openshift, file, debug, help
 
@@ -165,7 +165,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
     The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
 
-2. If the `oc` CLI versions on your local machine and your cluster don't match, either [update your cluster](/docs/openshift?topic=openshift-update) or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-openshift-cli#cs_cli_upgrade).
+2. If the `oc` CLI versions on your local machine and your cluster don't match, either update your cluster or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-cli-install).
 
 ## Debugging your ODF resources 
 {: #debug_storage_ocs_cluster}
