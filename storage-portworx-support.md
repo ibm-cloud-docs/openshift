@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: portworx, openshift
 
@@ -31,6 +31,7 @@ Contact Portworx support by using one of the following methods.
 
 You can use the following script to collect log information from your Portworx cluster.
 {: shortdesc}
+
 
 The following script collects Portworx logs from your cluster and saves them on your local machine in the `/tmp/pxlogs` directory.
 
@@ -63,7 +64,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         ```
         {: pre}
 
-4. Review the log files locally. If you can't resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-storage_portworx_support) and provide the log information that you collected.
+4. Review the log files locally. If you can't resolve your issue by reviewing the logs, [open a support ticket](/docs/openshift?topic=openshift-get-help) and provide the log information that you collected.
 
 
 
