@@ -26,7 +26,7 @@ Refer to these commands to create and manage **both community Kubernetes or {{si
 {: shortdesc}
 
 * **Community Kubernetes**: [Install the Kubernetes CLI plug-in](/docs/containers?topic=containers-cli-install).
-* **OpenShift**: [Install the {{site.data.keyword.redhat_openshift_notm}} CLI plug-in](/docs/openshift?topic=openshift-openshift-cli).
+* **OpenShift**: [Install the {{site.data.keyword.redhat_openshift_notm}} CLI plug-in](/docs/openshift?topic=openshift-cli-install).
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 

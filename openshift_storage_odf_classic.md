@@ -36,7 +36,7 @@ To install OpenShift Data Foundation on classic clusters, you must enable [VRF](
 {: important}
 
 
-1. [Install](/docs/openshift?topic=openshift-openshift-cli) or update the `oc` CLI
+1. [Install](/docs/openshift?topic=openshift-cli-install) or update the `oc` CLI
 1. If you don't have virtual route forwarding (VRF) enabled in your account, enable [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf).
     1. After you have enabled VRF, enable [Service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint). 
 1. [Review the SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table).

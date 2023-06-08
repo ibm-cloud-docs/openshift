@@ -25,7 +25,7 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 {: shortdesc}
 
 
-Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-openshift-cli), which uses the `ibmcloud oc` alias.
+Refer to the following change logs for a summary of changes for each version of the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install), which uses the `ibmcloud oc` alias.
   
 ## Version 1.0
 {: #10}

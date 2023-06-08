@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-06-08"
 
 keywords: openshift, red hat, red hat openshift, dev
 
@@ -32,7 +32,7 @@ Following a curated learning path to deploy highly available containerized apps 
 Begin working with your cluster by setting up the CLI and accessing the cluster.
 {: shortdesc}
 
-1. **CLI setup**: [Set up the CLIs](/docs/openshift?topic=openshift-openshift-cli) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+1. **CLI setup**: [Set up the CLIs](/docs/openshift?topic=openshift-cli-install) that are necessary to create and work with clusters. As you work with your cluster, refer to the [command reference](/docs/openshift?topic=openshift-kubernetes-service-cli) and keep track of CLI version updates with the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 2. **User permissions**: Ensure that your cluster administrator gives you the proper [{{site.data.keyword.cloud_notm}} IAM role](/docs/openshift?topic=openshift-learning-path-admin#admin_secure) to access the cluster.
 3. **Cluster access**: [Access your cluster through the public or private cloud service endpoint](/docs/containers?topic=containers-access_cluster).
 

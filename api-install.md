@@ -20,7 +20,7 @@ subcollection: openshift
 # Setting up the API
 {: #cs_api_install}
 
-{{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-openshift-cli).
+{{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-cli-install).
 {: shortdesc}
 
 ## About the API

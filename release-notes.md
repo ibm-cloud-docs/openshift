@@ -4704,7 +4704,7 @@ CLI change log
 
   
 CLI installation
-:   Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-openshift-cli).
+:   Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-cli-install).
 
 
 

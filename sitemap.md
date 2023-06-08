@@ -2909,6 +2909,8 @@ subcollection: openshift
 
 * [Confirming installed plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-view)
 
+* [Updating installed plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-update-plugin)
+
 * [Related information](/docs/openshift?topic=openshift-plug-ins#cli-install-relinfo)
 
 [Installing the OpenShift CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
