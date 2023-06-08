@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift
 subcollection: openshift
@@ -272,7 +272,7 @@ subcollection: openshift
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
 
-    * [June 5](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun523)
+    * [5 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun523)
 
         * Worker node fix packs `4.9.59_1592_openshift`, `4.10.60_1571_openshift`, `4.11.42_1558_openshift`, and `4.12.19_1546_openshift`.
 
