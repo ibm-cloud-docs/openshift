@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift
 
@@ -91,7 +91,7 @@ The user's infrastructure permissions are most commonly stored as an [API key](/
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
 {: tsResolve}
 
-Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure).
+Before you begin, [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster).
 
 1. Identify what user credentials are used for the region and resource group's infrastructure permissions.
     1. Check the API key for a region and resource group of the cluster.

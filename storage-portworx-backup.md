@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: portworx, openshift
 
@@ -164,7 +164,7 @@ Add the {{site.data.keyword.openshiftlong_notm}} cluster that you want to back u
 
 Before you begin:
 - [Log in to the PX-Backup console](#px-backup-ui).
-- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
+- [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
 The `kubeconfig` in clusters with PX-Backup expires after 24 hours. To prevent your cluster's `kubeconfig` file from expiring, set the context with your cluster using the `--admin` option.
 `

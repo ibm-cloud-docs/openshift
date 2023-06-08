@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift, api
 
@@ -20,7 +20,7 @@ subcollection: openshift
 # Setting up the API
 {: #cs_api_install}
 
-{{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-openshift-cli).
+{{site.data.keyword.openshiftlong}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}}, so that you can use the same methods to consistently create and manage your community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters. To use the CLI, see [Setting up the CLI](/docs/openshift?topic=openshift-cli-install).
 {: shortdesc}
 
 ## About the API
@@ -339,7 +339,7 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
 ## Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI
 {: #cs_cli_refresh}
 
-You can use the command line to [set the cluster context](/docs/containers?topic=containers-cli-install#cs_cli_configure), download the `kubeconfig` file for your {{site.data.keyword.redhat_openshift_notm}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
+You can use the command line to [set the cluster context](/docs/containers?topic=containers-access_cluster), download the `kubeconfig` file for your {{site.data.keyword.redhat_openshift_notm}} cluster, and generate an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) ID token and a refresh token to provide authentication.
 {: shortdesc}
 
 You can use [{{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/overview){: external} to change the default expiration times for your tokens and sessions.

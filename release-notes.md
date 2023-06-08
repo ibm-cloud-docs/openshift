@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift
 
@@ -31,7 +31,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-### June 5
+
+
+### 5 June 2023
 {: #openshift-jun523}
 {: release-note}
 
@@ -2761,7 +2763,7 @@ Worker node versions
 {: release-note}
 
 Deprecated: Kubernetes web terminal.
-:   The Kubernetes web terminal add-on is deprecated and becomes unsupported 1 July 2021. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/containers?topic=containers-cli-install#cloud-shell).
+:   The Kubernetes web terminal add-on is deprecated and becomes unsupported 1 July 2021. Instead, use the [{{site.data.keyword.cloud-shell_notm}}](/docs/cloud-shell?topic=cloud-shell-shell-ui).
 
 
 
@@ -4702,7 +4704,7 @@ CLI change log
 
   
 CLI installation
-:   Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-openshift-cli).
+:   Updated the link to download the [`oc` CLI client](/docs/openshift?topic=openshift-cli-install).
 
 
 

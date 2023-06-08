@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-06-08"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -196,11 +196,8 @@ ibmcloud login -a https://cloud.ibm.com -g <nondefault_resource_group_name>
 When you log in to {{site.data.keyword.cloud_notm}}, you can access the {{site.data.keyword.containershort_notm}}. To help you get started, check out the following resources for using the {{site.data.keyword.openshiftlong_notm}} CLI and API.
 {: shortdesc}
 
-
-
-**{{site.data.keyword.openshiftlong_notm}} CLI**:
-
-[Set up your CLI to use the `ibmcloud oc` plug-in](/docs/openshift?topic=openshift-openshift-cli). By default, you are logged in to the global {{site.data.keyword.openshiftlong_notm}} endpoint, `https://containers.cloud.ibm.com`.
+[Install the IBM Cloud CLI](/docs/containers?topic=containers-install-ibmcloud-cli)
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 When you use the new global functionality in the {{site.data.keyword.openshiftlong_notm}} CLI, consider the following changes from the legacy region-based functionality.
 

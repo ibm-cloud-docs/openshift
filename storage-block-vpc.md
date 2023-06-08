@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift
 
@@ -1085,7 +1085,7 @@ To provision volumes that support expansion, you must use storage class that has
 You can only expand volumes that are mounted by an app pod.
 {: note}
 
-[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 1. If you are not using version `4.2` or later of the add-on, [update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
 
 1. [Create a PVC](#vpc_block_qs) that uses a storage class that supports volume expansion.

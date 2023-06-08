@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -285,7 +285,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: screen}
     
-7. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure) Make sure to specify the `--admin` option to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
+7. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster) Make sure to specify the `--admin` option to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
     ```sh
     ibmcloud oc cluster config --cluster <cluster> --admin
     ```
@@ -509,7 +509,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     ```
     {: screen}
 
-6. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure) Make sure to specify the `--admin` option to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
+6. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster) Make sure to specify the `--admin` option to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
     ```sh
     ibmcloud oc cluster config --cluster <cluster> --admin
     ```
@@ -617,7 +617,7 @@ By default, {{site.data.keyword.openshiftlong_notm}} generates and sends events 
 
 To view the alert:
 
-[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-cli-install#cs_cli_configure)
+[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
 1. From the {{site.data.keyword.openshiftshort}}, select the **Administrator** view.
 1. Click **Observe** > **Alerting** > **AuditWebhookError**.
