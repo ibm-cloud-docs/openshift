@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-08"
 
 keywords: openshift
 
@@ -158,7 +158,7 @@ The following image shows how the web server app is exposed to the internet by t
         Server values:
             server_version=nginx: 1.13.3 - lua: 10008
         Request Information:
-            client_address=1.1.1.1
+            client_address=10.176.XX.XX
             method=GET
             real path=/
             query=
