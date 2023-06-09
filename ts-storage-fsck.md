@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-06-09"
 
-keywords: openshift, fsck
+keywords: openshift, fsck, file system check
 
 subcollection: openshift
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does mounting {{site.data.keyword.blockstorageshort}} fail with an `fsck` error?
+# Why does mounting {{site.data.keyword.blockstorageshort}} fail with a file system check error?
 {: #ts-storage-fsck}
 {: troubleshoot}
 {: support}
