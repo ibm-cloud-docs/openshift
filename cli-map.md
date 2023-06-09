@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-06-09"
 
 keywords: openshift
 
@@ -201,8 +201,6 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
     * [`ibmcloud oc logging autoupdate disable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_autoupdate_disable)
     * [`ibmcloud oc logging autoupdate enable`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_autoupdate_enable)
     * [`ibmcloud oc logging autoupdate get`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_autoupdate_get)
-* [`ibmcloud oc logging collect`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_collect)
-* [`ibmcloud oc logging collect-status`](/docs/containers?topic=containers-kubernetes-service-cli#cs_log_collect_status)
 * **`logging config`**: View or modify log forwarding configurations for a cluster.
     * [`ibmcloud oc logging config create`](/docs/containers?topic=containers-kubernetes-service-cli#cs_logging_create)
     * [`ibmcloud oc logging config get`](/docs/containers?topic=containers-kubernetes-service-cli#cs_logging_get)
