@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-09"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
+
+    * [9 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun923)
+
+        * New! OpenShift Data Foundation add-on versions `4.12.5`, `4.11.11`, `4.10.26`, and `4.9.28`.
 
     * [5 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun523)
 
@@ -7401,11 +7405,15 @@ subcollection: openshift
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
 
+    * [Version 4.12.5, release 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.5_odf)
+
     * [Version 4.12.4, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.4_odf)
 
     * [Version 4.12.0, released 16 March 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.0_odf)
 
 * [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+
+    * [Version 4.11.11, release 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.11_odf)
 
     * [Version 4.11.10, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.10_odf)
 
@@ -7418,6 +7426,8 @@ subcollection: openshift
     * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.0_odf)
 
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
+
+    * [Version 4.10.26 release 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.26_odf)
 
     * [Version 4.10.24, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.24_odf)
 
@@ -7448,6 +7458,8 @@ subcollection: openshift
     * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.0_odf)
 
 * [Version 4.9](/docs/openshift?topic=openshift-odf_addon_changelog#4.9_odf)
+
+    * [Version 4.9.28, release 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.28_odf)
 
     * [Version 4.9.26, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.26_odf)
 
@@ -9602,7 +9614,7 @@ subcollection: openshift
 
 [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume#ts_storage_clean_volume)
 
-[Why does mounting {{site.data.keyword.blockstorageshort}} fail with an `fsck` error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
+[Why does mounting {{site.data.keyword.blockstorageshort}} fail with a file system check error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
 
 [Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 
@@ -9633,7 +9645,7 @@ subcollection: openshift
 
 [Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails#cos_access_bucket_fails)
 
-[Why does installing the Object storage `ibmc` Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails#cos_helm_fails)
+[Why does installing the Object storage Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails#cos_helm_fails)
 
 [Why can't non-root users access files?](/docs/openshift?topic=openshift-cos_nonroot_access#cos_nonroot_access)
 

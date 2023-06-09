@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-06-09"
 
 keywords: openshift
 
@@ -24,6 +24,11 @@ Every user who is assigned an {{site.data.keyword.cloud_notm}} IAM service acces
 
 Looking for which Kubernetes actions each service access role grants through RBAC? See [Kubernetes resource permissions per RBAC role](#rbac_ref). To learn more about RBAC roles, see [Assigning RBAC permissions](/docs/openshift?topic=openshift-access-overview#role-binding) and [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate). For the username details, see [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](#iam-issuer-users).
 {: tip}
+
+See the IAM Policy Management [API reference](https://cloud.ibm.com/apidocs/iam-policy-management#list-roles){: external} for more information on managing IAM roles with the API.
+{: tip}
+
+
 
 The following table shows the Kubernetes resource permissions that are granted by each service access role and its corresponding RBAC role.
 

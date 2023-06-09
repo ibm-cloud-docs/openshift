@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-06-09"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -36,10 +36,18 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ## Version 4.12
 {: #4.12_odf}
 
+
+### Version 4.12.5, release 09 June 2023
+{: #4.12.5_odf}
+
+- Golang updated to `1.19.9`.
+- Updates the UBI image to `8.8-860`.
+
+
 ### Version 4.12.4, release 05 May 2023
 {: #4.12.4_odf}
 
-- LSO channel updated
+- LSO channel updated.
 - Golang updated to `1.19.8`.
 - Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
@@ -52,10 +60,16 @@ Initial release.
 ## Version 4.11
 {: #4.11_odf}
 
+### Version 4.11.11, release 09 June 2023
+{: #4.11.11_odf}
+
+- Golang updated to `1.19.9`.
+- Updates the UBI image to `8.8-860`.
+
 ### Version 4.11.10, release 05 May 2023
 {: #4.11.10_odf}
 
-- LSO channel updated
+- LSO channel updated.
 - Golang updated to `1.19.8`.
 - Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
@@ -81,6 +95,12 @@ Initial release.
 
 ## Version 4.10
 {: #4.10_odf}
+
+### Version 4.10.26 release 09 June 2023
+{: #4.10.26_odf}
+
+- Golang updated to `1.19.9`.
+- Updates the UBI image to `8.8-860`.
 
 ### Version 4.10.24, release 05 May 2023
 {: #4.10.24_odf}
@@ -162,6 +182,12 @@ Initial release.
 
 ## Version 4.9
 {: #4.9_odf}
+
+### Version 4.9.28, release 09 June 2023
+{: #4.9.28_odf}
+
+- Golang updated to `1.19.9`
+- Updates the UBI image to `8.8-860`
 
 ### Version 4.9.26, release 05 May 2023
 {: #4.9.26_odf}

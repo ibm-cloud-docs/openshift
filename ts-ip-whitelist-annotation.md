@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-06-09"
 
-keywords: openshift
+keywords: openshift, ip_whitelist, annotation
 
 subcollection: openshift
 content-type: troubleshoot
