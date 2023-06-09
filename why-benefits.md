@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-09"
 
 keywords: openshift
 
@@ -22,7 +22,7 @@ subcollection: openshift
 
 
 
-[{{site.data.keyword.openshiftlong}}](https://www.ibm.com/cloud/openshift){: external} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
+[{{site.data.keyword.openshiftlong}}](https://www.ibm.com/products/openshift){: external} is an {{site.data.keyword.cloud_notm}} service, where IBM sets up and helps you manage a cluster of worker nodes that come installed with the OpenShift Container Platform container orchestration software.
 {: shortdesc}
 
 To see a list of the cluster operators that are supported by default, you can run the **`oc get co`** command.

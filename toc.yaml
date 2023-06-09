@@ -9,7 +9,7 @@ toc:
     label: Red Hat OpenShift on IBM Cloud
     version: 2
     console-page: /kubernetes/overview?platformType=openshift
-    product-page: https://www.ibm.com/cloud/openshift
+    product-page: https://www.ibm.com/products/openshift
   entries:
   - navgroup: 
       id: learn
@@ -224,7 +224,6 @@ toc:
               - secrets.md
               - secrets-mgr.md
               - certs-mgr-migration.md
-
           - satellite_expose_apps.md
       - topicgroup:
           label: Setting up storage
@@ -421,7 +420,6 @@ toc:
               href: https://developers.redhat.com/learn
       - vpc-flavors.md
       - classic-flavors.md
-
   - navgroup:
       id: help
       topics:
