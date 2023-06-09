@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-09"
 
 keywords: openshift
 
@@ -541,7 +541,7 @@ You can use the built-in container registry to automate the container image buil
 
 
 What options do I have to scan running containers for vulnerabilities?
-:   You can install third-party solutions in your cluster, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or [StackRox](https://www.stackrox.com){: external} to scan running containers and block malicious activities when they are detected.
+:   You can install third-party solutions in your cluster, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or [StackRox](https://www.redhat.com/en/technologies/cloud-computing/openshift/advanced-cluster-security-kubernetes){: external} to scan running containers and block malicious activities when they are detected.
 
 
 
