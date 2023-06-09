@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-06-09"
 
 keywords: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 # Understanding {{site.data.keyword.openshiftlong_notm}}
 {: #overview}
 
-Learn more about [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/cloud/openshift){: external}, its capabilities, and the options that are available to you to customize the cluster to your needs.
+Learn more about [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/products/openshift){: external}, its capabilities, and the options that are available to you to customize the cluster to your needs.
 {: shortdesc}
 
 
