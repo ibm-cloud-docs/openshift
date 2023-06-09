@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-09"
 
 keywords: openshift
 
@@ -28,6 +28,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2023
 {: #openshift-jun23}
+
+### 9 June 2023
+{: #openshift-jun923}
+{: release-note}
+
+
+
+  
+New! OpenShift Data Foundation add-on versions `4.12.5`, `4.11.11`, `4.10.26`, and `4.9.28`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+  
+
 
 
 
