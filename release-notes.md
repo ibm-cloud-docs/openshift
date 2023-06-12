@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-09"
+lastupdated: "2023-06-12"
 
 keywords: openshift
 
@@ -3287,7 +3287,7 @@ Block Storage for VPC add-on
 
 
 New! {{site.data.keyword.redhat_openshift_notm}} Do (`odo`) CLI tutorial
-:   Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the [Developing on clusters with the {{site.data.keyword.redhat_openshift_notm}} Do CLI](/docs/openshift?topic=openshift-odo-tutorial) tutorial for a quick guide on using `odo` to package and push your apps to your cluster.
+:   Looking to develop apps without using `kubectl` system admin commands or YAML configuration files? Check out the Developing on clusters with the {{site.data.keyword.redhat_openshift_notm}} Do CLI tutorial for a quick guide on using `odo` to package and push your apps to your cluster.
 
 New! Private service endpoint allowlists
 :   You can now control access to your private cloud service endpoint by [creating a subnet allowlist](/docs/containers?topic=containers-access_cluster#private-se-allowlist). Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.

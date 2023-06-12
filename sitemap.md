@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-09"
+lastupdated: "2023-06-12"
 
 keywords: openshift
 subcollection: openshift
@@ -6818,7 +6818,7 @@ subcollection: openshift
 {: #sitemap_version_49}
 
 
-[4.9 version information and update actions (Deprecated)](/docs/openshift?topic=openshift-cs_versions_49#cs_versions_49)
+[4.9 version information and update actions](/docs/openshift?topic=openshift-cs_versions_49#cs_versions_49)
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_49#release_timeline_49)
 
