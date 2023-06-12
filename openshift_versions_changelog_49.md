@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-06"
+lastupdated: "2023-06-12"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
@@ -12,14 +12,13 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
-
 # {{site.data.keyword.redhat_openshift_notm}} version 4.9 change log
 {: #openshift_changelog_49}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run version 4.9. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {: shortdesc}
+
+
 
 ## Overview
 {: #openshift_changelog_overview_49}
