@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-13"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -85,7 +85,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 Use the {{site.data.keyword.satelliteshort}} CLI to create your {{site.data.keyword.redhat_openshift_notm}} clusters on your {{site.data.keyword.satelliteshort}} infrastructure.
 {: shortdesc}
 
-Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in](/docs/satellite?topic=satellite-setup-cli).
+Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in](/docs/satellite?topic=satellite-install-ibmcloud-cli).
 
 To create the cluster in a {{site.data.keyword.satelliteshort}} location, you must use {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later. 
 {: note}
