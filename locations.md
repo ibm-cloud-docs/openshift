@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-13"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -94,7 +94,7 @@ Classic single zone clusters are managed from the regional endpoint located in t
 | Geography | Country | Metro | Region | Zone | Managed from region |
 | --- | --- | --- | --- | --- | --- |
 | Asia Pacific | India | Chennai | in-che | che01 | AP North (`ap-north`, `jp-tok`) |
-| Asia Pacific | Singapore | Singapore | sng-sng-mtr | sng01 | AP North (`ap-north`, `jp-tok`) |
+| Asia Pacific | Singapore | Singapore | sng-mtr | sng01 | AP North (`ap-north`, `jp-tok`) |
 | Europe | Italy | Milan | it-mil | mil01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Netherlands | Amsterdam | nl-ams | ams03 | EU Central (`eu-central`, `eu-de`) |
 | North America | Canada | Montreal | ca-mon | mon01 | US East (`us-east`) |
@@ -120,6 +120,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | Europe | United Kingdom | London | eu-gb | eu-gb-1, eu-gb-2, eu-gb-3 |
 | North America | Canada | `†` Toronto | ca-tor | ca-tor-1, ca-tor-2, ca-tor-3 |
 | North America | United States | Dallas | us-south | us-south-1, us-south-2, us-south-3 |
+| North America | United States | Washington DC | us-east | us-east-1, us-east-2, us-east-3 |
 | South America | Brazil | `†` São Paulo | br-sao | br-sao-1, br-sao-2, br-sao-3 |
 {: caption="Available multizone metro locations for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
 
