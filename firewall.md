@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-06"
+lastupdated: "2023-06-14"
 
 keywords: openshift
 
@@ -269,11 +269,12 @@ This table is moving. For the latest IP lists and continued updates, see the pub
 To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} [regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
 {: shortdesc}
 
+
 Previously Registry subnets (IP addresses) were published in the following table. As of 17 August 2021, the Registry subnets are no longer published. When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any allowlist restrictions that are based on IP addresses in place. If you have any concerns about opening your allowlist, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private IBM Cloud network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
 {: important}
 
-- `TCP port 443 FROM <each_worker_node_publicIP> TO us.icr.io`
-- `TCP port 443 FROM <each_worker_node_publicIP> TO registry.ng.bluemix.net`
+In addition to the following regional subdomains, you must also allow traffic from your worker nodes to port `443` on all subdomains of `icr.io` in case of redirection to other subdomains for delivery optimization. You must allow: `TCP port 443 FROM <each_worker_node_publicIP> TO *.icr.io`. If you use the deprecated domain names, you must allow those too.
+
 
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  |
 |---------------|-------------| 
