@@ -22,7 +22,7 @@ subcollection: openshift
 Review information about version 4.13 of {{site.data.keyword.openshiftlong_notm}}, released {{site.data.keyword.openshift_413_release_date}}. This version is based on Kubernetes version {{site.data.keyword.openshift_413_kube_version}}. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.13 blog](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-4.13-blog){: external}.
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.13 blog](https://www.redhat.com/en/blog/red-hat-openshift-413-now-available){: external}.
 {: tip}
 
 
