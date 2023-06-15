@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-06-15"
 
 keywords: openshift
 
@@ -28,6 +28,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2023
 {: #openshift-jun23}
+
+
+
+### 15 June 2023
+{: #openshift-jun1523}
+{: release-note} 
+
+Cloud Image Key Synchronizer add-on version `1.0.0_1633`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+  
+
 
 
 
