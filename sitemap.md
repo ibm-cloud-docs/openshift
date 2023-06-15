@@ -280,6 +280,8 @@ subcollection: openshift
 
         * New! {{site.data.keyword.openshiftlong_notm}} 4.13
 
+        * New! Red Hat OpenShift console access for cluster version 4.13
+
         * Master fix pack and worker node fix pack update
 
         * Remote health monitoring

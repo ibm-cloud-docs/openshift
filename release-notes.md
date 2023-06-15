@@ -46,6 +46,9 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1633`.
 New! {{site.data.keyword.openshiftlong_notm}} 4.13
 :   You can create or [update clusters to version 4.13](/docs/openshift?topic=openshift-openshift_changelog_413). With {{site.data.keyword.openshiftlong_notm}} version 4.13, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
 
+New! Red Hat OpenShift console access for cluster version 4.13
+:   For clusters that run version 4.13, the Red Hat OpenShift console is accessible via the virtual private endpoint (VPE) gateway URL. For more information, see [Accessing VPC clusters through the VPE gateway](/docs/containers?topic=containers-access_cluster#vpc_vpe).
+
 Master fix pack and worker node fix pack update
 :   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_413) are available.
 
