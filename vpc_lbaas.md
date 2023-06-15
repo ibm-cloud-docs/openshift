@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-15"
 
 keywords: openshift, app protocol, application protocol
 
@@ -721,7 +721,7 @@ To enable your app to receive public or private requests,
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path: "<url_path>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
-        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout: "<value>"
    spec:
      type: LoadBalancer
@@ -797,10 +797,13 @@ To enable your app to receive public or private requests,
     :   Optional. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout`
-    :   Optional. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay`, which is set to `5` by default. 
+    :   Optional. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay`, which is set to `5` by default.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries`
     :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout`
+    :   Optional. The idle connection timeout of the listener in seconds. The default is `50`. The minimum is `50`. The maximum is `7200`.
     
     `selector`
     :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
@@ -814,9 +817,6 @@ To enable your app to receive public or private requests,
     `externalTrafficPolicy`
     :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
     :   Set to `Cluster` to configure TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
-
-    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout`
-    :   Optional. The idle connection timeout of the listener in seconds. The default is `50`. The minimum is `50`. The maximum is `7200`.
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh

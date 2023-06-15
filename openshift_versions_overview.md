@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-06-15"
 
 keywords: openshift, version, update, upgrade
 
@@ -61,7 +61,14 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 {: #os-openshift}
 
 
-**Latest**: 4.12 (Kubernetes 1.25)
+**Latest**: 4.13
+- Release date: None
+- End of support: None
+- Supported operating systems: RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_413)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+
+4.12 (Kubernetes 1.25)
 - Release date: 23 February 2023
 - End of support: 26 February 2025`†`
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`)
@@ -84,7 +91,7 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 
 4.9 (Kubernetes 1.22)
 - Release date: 09 February 2022
-- End of support: 30 August 2023`†`
+- End of support: 30 July 2023
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`), RHEL 7 (`REDHAT_7_64`) (default)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
@@ -94,7 +101,14 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 {: #os-satellite-with-coreos}
 
 
-**Latest**: 4.12 (Kubernetes 1.25)
+**Latest**: 4.13
+- Release date: None
+- End of support: None
+- Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_413)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+
+4.12 (Kubernetes 1.25)
 - Release date: 23 February 2023
 - End of support: 26 February 2025`†`
 - Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
@@ -117,7 +131,7 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 
 4.9 (Kubernetes 1.22)
 - Release date: 09 February 2022
-- End of support: 30 August 2023`†`
+- End of support: 30 July 2023
 - Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`), RHEL 7 (`REDHAT_7_64`) (default)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)
@@ -127,7 +141,14 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 {: #os-satellite-without-coreos}
 
 
-**Latest**: 4.12 (Kubernetes 1.25)
+**Latest**: 4.13
+- Release date: None
+- End of support: None
+- Supported operating systems: RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_413)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+
+4.12 (Kubernetes 1.25)
 - Release date: 23 February 2023
 - End of support: 26 February 2025`†`
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`)
@@ -150,7 +171,7 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 
 4.9 (Kubernetes 1.22)
 - Release date: 09 February 2022
-- End of support: 30 August 2023`†`
+- End of support: 30 July 2023
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`), RHEL 7 (`REDHAT_7_64`) (default)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_49)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_49)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-15"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -119,8 +119,6 @@ Want to set up a VPN to connect to your cluster from your local machine? Check o
 The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the private cloud service endpoint if authorized cluster users are in your {{site.data.keyword.cloud_notm}} private network or are connected to the private network, such as through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example). However, communication with the Kubernetes master over the private cloud service endpoint must go through the `166.X.X.X` IP address range, which you must configure in your VPN gateway and connection setup.
 {: shortdesc}
 
-If you enabled only the private cloud service endpoint during cluster creation, the private cloud service endpoint is used by default to access {{site.data.keyword.redhat_openshift_notm}} components such as the {{site.data.keyword.redhat_openshift_notm}} web console or OperatorHub. You must be connected to the private VPC network, such as through a VPN connection, to access these components or run `kubectl` commands on your cluster.
-{: note}
 
 1. Set up your {{site.data.keyword.vpc_short}} VPN and connect to your private network through the VPN.
     1. [Configure a VPN gateway on your local machine](/docs/vpc?topic=vpc-vpn-onprem-example). For example, you might choose to set up StrongSwan on your machine.
@@ -504,6 +502,10 @@ Making your location and cluster subdomains available outside of your hosts' pri
 
 [Virtual Private Endpoint Gateway](/docs/vpc?topic=vpc-about-vpe) is created for VPC clusters automatically. The Kubernetes master is accessible through this Virtual Private Endpoint gateway if authorized cluster users are connected to the same VPC where the cluster is deployed, such as through a [{{site.data.keyword.vpc_short}} VPN](/docs/vpc?topic=vpc-vpn-overview). In this case, the `kubeconfig` is configured with the Virtual Private Endpoint (VPE) URL which is a private DNS name and can be resolved only by the {{site.data.keyword.vpc_short}} Private DNS service. The {{site.data.keyword.vpc_short}} Private DNS server addresses are `161.26.0.7` and `161.26.0.8`.
 {: shortdesc}
+
+For clusters that run version 4.13 or later: If you enabled only the private cloud service endpoint during cluster creation, the virtual private endpoint of your VPC is used by default to access {{site.data.keyword.redhat_openshift_notm}} components such as the {{site.data.keyword.redhat_openshift_notm}} web console or OperatorHub. You must be connected to the private VPC network, such as through a VPN connection, to access these components or run `kubectl` commands on your cluster. Note that to access the console through the VPE, you must be able to access `cloud.ibm.com`, which requires public connectivity.
+{: note}
+
 
 1. Set up your {{site.data.keyword.vpc_short}} VPN and connect to your VPC through VPN.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-15"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -42,7 +42,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.11 / 1.24 | 31 Aug 2022 | 6 Mar 2024`†` |
+| Supported | 4.11 / {{site.data.keyword.openshift_411_kube_version}} | {{site.data.keyword.openshift_411_release_date}} | {{site.data.keyword.openshift_411_unsupported_date}}`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.11." caption-side="bottom"}
 
 

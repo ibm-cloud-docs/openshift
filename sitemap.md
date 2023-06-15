@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-15"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,20 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
+
+    * [15 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1523)
+
+        * Cloud Image Key Synchronizer add-on version `1.0.0_1633`.
+
+    * [14 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1423)
+
+        * New! {{site.data.keyword.openshiftlong_notm}} 4.13
+
+        * New! Red Hat OpenShift console access for cluster version 4.13
+
+        * Master fix pack and worker node fix pack update
+
+        * Remote health monitoring
 
     * [9 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun923)
 
@@ -5698,6 +5712,17 @@ subcollection: openshift
 * [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#fault_domains)
 
 
+## Understanding remote health monitoring
+{: #sitemap_understanding_remote_health_monitoring}
+
+
+[Understanding remote health monitoring](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out#remote-health-monitoring-opt-out)
+
+* [Understanding the impacts of opting out](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out#remote-health-impacts)
+
+* [Opting out of remote health reporting](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out#remote-health-opt-out)
+
+
 ## API reference
 {: #sitemap_api_reference}
 
@@ -6369,6 +6394,25 @@ subcollection: openshift
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
+
+
+### Version 4.13
+{: #sitemap_version_413}
+
+
+[4.13 version information and update actions](/docs/openshift?topic=openshift-cs_versions_413#cs_versions_413)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_413#release_timeline_413)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_413#prep-up-413)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_413#413_before)
+
+[Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift, released 14 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4.13.0_1522_openshiftM_4.13.1_1521_openshiftW)
 
 
 ### Version 4.12
@@ -7655,11 +7699,13 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
 
-    * [Version 1.0.0_1523, released on 2 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1523)
+    * [Version 1.0.0_1633, released on 15 June 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1633)
 
-    * [Version 1.0.0_1362, released on 1 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1362)
+    * [Version 1.0.0_1523, released on 2 May 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1523)
 
-    * [Version 1.0.0_1329, released on 8 February 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1329)
+    * [Version 1.0.0_1362, released on 1 March 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1362)
+
+    * [Version 1.0.0_1329, released on 8 February 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1329)
 
     * [Version 1.0.0_1269, released on 15 December 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1269)
 

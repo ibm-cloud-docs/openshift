@@ -295,6 +295,7 @@ toc:
           - integrations-helm.md
           - integrations-svcbind.md
       - ha.md
+      - remote-health-monitoring-opt-out.md
   - navgroup: 
       id: reference
       topics:
@@ -323,6 +324,11 @@ toc:
           - openshift_versions_overview.md
           - benchmarks_overview.md
           - benchmark-comparison.md
+          - topicgroup:
+              label: Version 4.13
+              topics:
+              - openshift_versions_413.md
+              - openshift_versions_changelog_413.md
           - topicgroup:
               label: Version 4.12
               topics:
