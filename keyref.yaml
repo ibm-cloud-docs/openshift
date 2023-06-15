@@ -41,6 +41,15 @@ keyword:
   kubernetes_122_unsupported_certainty:
     tentative
 
+  openshift_413_release_date:
+    14 June 2023
+  openshift_413_unsupported_date:
+    26 February 2025
+  openshift_413_unsupported_certainty:
+    tentative
+  openshift_413_kube_version:
+    "1.26"
+
   openshift_412_release_date:
     23 February 2023
   openshift_412_unsupported_date:
@@ -62,7 +71,7 @@ keyword:
   openshift_410_release_date:
     27 April 2022
   openshift_410_unsupported_date:
-    08 November 2023
+    29 November 2023
   openshift_410_unsupported_certainty:
     tentative
   openshift_410_kube_version:

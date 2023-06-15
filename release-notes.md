@@ -37,7 +37,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1633`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
-  
+
+
+### 14 June 2023
+{: #openshift-jun1423}
+{: release-note}
+
+New! {{site.data.keyword.openshiftlong_notm}} 4.13
+:   You can create or [update clusters to version 4.13](/docs/openshift?topic=openshift-openshift_changelog_413). With {{site.data.keyword.openshiftlong_notm}} version 4.13, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
+
+Master fix pack and worker node fix pack update
+:   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_413) are available.
+
+Remote health monitoring
+:   {{site.data.keyword.openshiftlong_notm}} clusters are connected to [remote health monitoring](https://docs.openshift.com/container-platform/4.13/support/remote_health_monitoring/about-remote-health-monitoring.html) by default. This means clusters report health and usage data to Red Hat unless you opt out. With connected clusters, IBM Cloud is better positioned to support customers when there are issues specific to Red Hat which impact them. Additionally, remote health reporting gives Red Hat insights into how clusters are impacted by product upgrades. If you do not want to send cluster data to Red Hat, you must opt out. For more information, see [Understanding remote health monitoring](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out).
+
+
 
 
 
@@ -47,8 +62,6 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1633`.
 {: release-note}
 
 
-
-  
 New! OpenShift Data Foundation add-on versions `4.12.5`, `4.11.11`, `4.10.26`, and `4.9.28`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
   

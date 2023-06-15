@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-06-15"
 
 keywords: openshift, version, update, upgrade, 4.12, update openshift
 
@@ -40,7 +40,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.12 / 1.25 | 23 Feb 2023 | 26 Feb 2025`†` |
+| Supported | 4.12 / {{site.data.keyword.openshift_412_kube_version}} | {{site.data.keyword.openshift_412_release_date}} | {{site.data.keyword.openshift_412_unsupported_date}}`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.12." caption-side="bottom"}
 
 ## Preparing to update
