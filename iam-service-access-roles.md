@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-09"
+lastupdated: "2023-06-16"
 
 keywords: openshift
 
@@ -29,6 +29,7 @@ See the IAM Policy Management [API reference](https://cloud.ibm.com/apidocs/iam-
 {: tip}
 
 
+{{../account/iam-service-roles.md#containers-kubernetes-roles}}
 
 The following table shows the Kubernetes resource permissions that are granted by each service access role and its corresponding RBAC role.
 
@@ -126,5 +127,7 @@ You might use this information if you build automation tooling within the cluste
 
 `*`: An example of lowercase is `user.name@company.com`. An example of camel case is `User.Name@company.com`.
 {: note}
+
+
 
 
