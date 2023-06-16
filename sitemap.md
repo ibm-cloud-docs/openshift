@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-06-16"
 
 keywords: openshift
 subcollection: openshift
@@ -8866,15 +8866,7 @@ subcollection: openshift
 
 [IAM platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
 
-* [No role defined](/docs/openshift?topic=openshift-iam-platform-access-roles#no-iam-platform-role)
-
-* [Viewer](/docs/openshift?topic=openshift-iam-platform-access-roles#viewer-iam-platform-role)
-
-* [Editor](/docs/openshift?topic=openshift-iam-platform-access-roles#editor-iam-platform-role)
-
-* [Operator](/docs/openshift?topic=openshift-iam-platform-access-roles#operator-iam-platform-role)
-
-* [Administrator](/docs/openshift?topic=openshift-iam-platform-access-roles#admin-iam-platform-role)
+* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#kubernetes-service)
 
 [IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles)
 
