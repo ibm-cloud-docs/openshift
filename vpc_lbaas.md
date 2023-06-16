@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-06-16"
 
 keywords: openshift, app protocol, application protocol
 
@@ -309,7 +309,7 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 
 
 
-Port ranges can be used in  public NLBs when there is a need to host a service from a single host name that has multiple backend applications, each listening on a separate port number. In order to use port ranges in your Kubernetes cluster, some manual configuration must be performed. First, the `ibm-load-balancer-cloud-provider-vpc-port-range` option must be set.  It can include one or multiple ranges, each delimited by a comma. The `spec.ports.port` value must also be set to the minimum value in the port range.
+Port ranges can be used in  public NLBs when there is a need to host a service from a single host name that has multiple backend applications, each listening on a separate port number. To use port ranges in your Kubernetes cluster, some manual configuration must be performed. First, the `ibm-load-balancer-cloud-provider-vpc-port-range` option must be set.  It can include one or multiple ranges, each delimited by a comma. The `spec.ports.port` value must also be set to the minimum value in the port range.
 
 In the following example, a port range of `30000-30010` is used.
 

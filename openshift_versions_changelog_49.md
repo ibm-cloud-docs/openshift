@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-06-16"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
@@ -19,6 +19,8 @@ View information of version changes for major, minor, and patch updates that are
 {: shortdesc}
 
 
+Version 4.9 becomes unsupported on 30 August 2023. Update your cluster to at least [version 4.10](/docs/openshift?topic=openshift-cs_versions_410&interface=ui) as soon as possible.
+{: deprecated}
 
 ## Overview
 {: #openshift_changelog_overview_49}
