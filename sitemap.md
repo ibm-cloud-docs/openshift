@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-19"
 
 keywords: openshift
 subcollection: openshift
@@ -8901,6 +8901,8 @@ subcollection: openshift
 * [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#kubernetes-service)
 
 [IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles)
+
+* [Kubernetes service access roles and corresponding RBAC roles](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_service)
 
 * [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_ref)
 

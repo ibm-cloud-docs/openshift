@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-19"
 
 keywords: openshift, version, update, upgrade
 
@@ -32,6 +32,8 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the {{site.data.keyword.redhat_openshift_notm}} release notes.
+
+* [{{site.data.keyword.redhat_openshift_notm}} 4.13 release notes overview](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.12 release notes overview](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.11 release notes overview](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html){: external}
 * [{{site.data.keyword.redhat_openshift_notm}} 4.10 release notes overview](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html){: external}
@@ -129,7 +131,7 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
-4.9 (Kubernetes 1.22)
+**Deprecated**: 4.9 (Kubernetes 1.22)
 - Release date: 09 February 2022
 - End of support: 30 August 2023
 - Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`), RHEL 7 (`REDHAT_7_64`) (default)
@@ -169,7 +171,7 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 
-4.9 (Kubernetes 1.22)
+**Deprecated**: 4.9 (Kubernetes 1.22)
 - Release date: 09 February 2022
 - End of support: 30 August 2023
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`), RHEL 7 (`REDHAT_7_64`) (default)
