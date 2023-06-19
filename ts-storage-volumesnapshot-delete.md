@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-06-19"
 
 keywords: openshift, storage, snapshot
 
@@ -35,24 +35,24 @@ There are [finalizers](https://kubernetes.io/docs/concepts/overview/working-with
 Remove the finalizers and continue deleting the resources.
 {: tsResolve}
 
-1. Edit your `volumesnapshot` or `volumesnapshotcontents` and remove the `finalizers`. Note that the finalizers might be different for each resource.
+1. Delete the resources.
     ```sh
-    kubectl edit volumesnapshot VOLUMESNAPSHOT
+    kubectl delete volumesnapshot VOLUMESNAPSHOT
+    ```
+    {: pre}
+
+1. Remove the `finalizers` section from the `volumesnapshot` resource.
+    ```sh
+    kubectl patch volumesnapshot/VOLUMESNAPSHOT --type json --patch='[ { "op": "remove", "path": "/metadata/finalizers" } ]'
     ```
     {: pre}
     
+1. Remove the `finalizers` section from the `volumesnapshotcontents` resource.
     ```sh
-    kubectl edit volumesnapshotcontents VOLUMESNAPSHOTcontents
+    kubectl patch volumesnapshotcontent/snapcontent-VOLUMESNAPSHOTCONTENT --type json --patch='[ { "op": "remove", "path": "/metadata/finalizers" } ]'
     ```
     {: pre}
     
-1. Remove the `finalizers` section, then save and close the file.
-    ```yaml
-    finalizers:
-           - snapshot.storage.kubernetes.io/volumesnapshot-bound-protection
-    ```
-    {: screen}
-    
-1. Try deleting the resources you want to remove again.
 
 1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+

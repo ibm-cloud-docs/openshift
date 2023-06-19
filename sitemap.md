@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-19"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
+
+    * [19 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1923)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.15`
 
     * [15 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1523)
 
@@ -7387,6 +7391,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.15, released 19 June 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02215_object_plugin)
+
 * [Change log for version 2.2.14, released 02 May 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02214_object_plugin)
 
 * [Change log for version 2.2.13, released 03 April 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02213_object_plugin)
@@ -8901,6 +8907,8 @@ subcollection: openshift
 * [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#kubernetes-service)
 
 [IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles)
+
+* [Kubernetes service access roles and corresponding RBAC roles](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_service)
 
 * [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_ref)
 

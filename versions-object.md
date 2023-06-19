@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-02"
+lastupdated: "2023-06-19"
 
 keywords: object storage, plug-in, change log
 
@@ -34,12 +34,19 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.2.12 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
+## Change log for version 2.2.15, released 19 June 2023
+{: #02215_object_plugin}
+
+- Updates UBI image to `8.8-860` to fix CVEs: `CVE-2022-43552`, `CVE-2022-3204`, `CVE-2023-27535`, `CVE-2022-36227`, and `CVE-2022-35252`.
+- Updates Golang to 1.19.10 to fix CVEs: `CVE-2023-29403`, `CVE-2023-29404`, `CVE-2023-29405`, `CVE-2023-29402`, `CVE-2023-29400`, `CVE-2023-24540`, and `CVE-2023-24539`.
+- Resolves the following CVEs: [CVE-2023-29401](https://nvd.nist.gov/vuln/detail/CVE-2023-29401){: external},[CVE-2023-26125](https://nvd.nist.gov/vuln/detail/CVE-2023-26125){: external}, and CVE-2022-3172].
+
 ## Change log for version 2.2.14, released 02 May 2023
 {: #02214_object_plugin}
 
-- Updates the UBI image to `8.7-1107`
-- Updates Golang to `1.19.8`
-- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external},[CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external},[CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}
+- Updates the UBI image to `8.7-1107`.
+- Updates Golang to `1.19.8`.
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external},[CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external},[CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
 ## Change log for version 2.2.13, released 03 April 2023
 {: #02213_object_plugin}
@@ -54,7 +61,7 @@ Because this update affects regional storage classes, you must uninstall and rei
 ## Change log for version 2.2.12, released 20 March 2023
 {: #02212_object_plugin}
 
-- Updates Golang to `1.19.7`
+- Updates Golang to `1.19.7`.
 - Resolves the following CVEs: [CVE-2023-24532](https://nvd.nist.gov/vuln/detail/CVE-2023-24532){: external}, [CVE-2022-41722](https://nvd.nist.gov/vuln/detail/CVE-2022-41722){: external}, [CVE-2022-41725](https://nvd.nist.gov/vuln/detail/CVE-2022-41725){: external}, [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}.
 
 ## Change log for version 2.2.11, released 03 March 2023
