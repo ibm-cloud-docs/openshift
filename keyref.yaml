@@ -112,6 +112,16 @@ keyword:
     "1.19"
 
 
+  satellite_413_release_date:
+    14 June 2023
+  satellite_413_unsupported_date:
+    26 February 2025
+  satellite_413_unsupported_certainty:
+    tentative
+  satellite_413_kube_version:
+    "1.26"
+
+
   satellite_412_release_date:
     23 February 2023
   satellite_412_unsupported_date:
