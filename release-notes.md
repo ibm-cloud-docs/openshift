@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-06-20"
 
 keywords: openshift
 
@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2023
 {: #openshift-jun23}
+
+### 20 June 2023
+{: #openshift-jun2023}
+{: release-note} 
+
+
+Worker node fix pack updates
+:   {{site.data.keyword.openshiftlong_notm}} worker node fix pack updates are available for versions [4.13](/docs/openshift?topic=openshift-openshift_changelog_413), [4.12](/docs/openshift?topic=openshift-openshift_changelog_412), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410) and [4.9](/docs/openshift?topic=openshift-openshift_changelog_49).
+
+
 
 ### 19 June 2023
 {: #openshift-jun1923}

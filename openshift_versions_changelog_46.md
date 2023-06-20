@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-06-20"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -169,7 +169,7 @@ The following table shows the changes that are in the worker node fix pack 4.6.6
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-2526](https://nvd.nist.gov/vuln/detail/CVE-2022-2526){: external}. |
 | {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
-| HAPROXY | 6514a2 | c1634f | [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external},[CVE-2022-32208](https://nvd.nist.gov/vuln/detail/CVE-2022-32208){: external}
+| HAPROXY | 6514a2 | c1634f | [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external}, [CVE-2022-32208](https://nvd.nist.gov/vuln/detail/CVE-2022-32208){: external}
 {: caption="Changes since version 4.6.60_1594_openshift" caption-side="bottom"}
 
 ### Change log for worker node fix pack 4.6.60_1594_openshift, released 16 August 2022
@@ -180,7 +180,7 @@ The following table shows the changes that are in the worker node fix pack 4.6.6
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| RHEL 7 Packages | 3.10.0-1160.71.1 | 3.10.0-1160.76.1 | Worker node package updates for [CVE-2022-0005](https://nvd.nist.gov/vuln/detail/CVE-2022-0005){: external},[CVE-2022-21123](https://nvd.nist.gov/vuln/detail/CVE-2022-21123){: external},[CVE-2022-21125](https://nvd.nist.gov/vuln/detail/CVE-2022-21125){: external},[CVE-2022-21127](https://nvd.nist.gov/vuln/detail/CVE-2022-21127){: external},[CVE-2022-21131](https://nvd.nist.gov/vuln/detail/CVE-2022-21131){: external},[CVE-2022-21136](https://nvd.nist.gov/vuln/detail/CVE-2022-21136){: external},[CVE-2022-21151](https://nvd.nist.gov/vuln/detail/CVE-2022-21151){: external},[CVE-2022-21166](https://nvd.nist.gov/vuln/detail/CVE-2022-21166){: external}. |
+| RHEL 7 Packages | 3.10.0-1160.71.1 | 3.10.0-1160.76.1 | Worker node package updates for [CVE-2022-0005](https://nvd.nist.gov/vuln/detail/CVE-2022-0005){: external}, [CVE-2022-21123](https://nvd.nist.gov/vuln/detail/CVE-2022-21123){: external}, [CVE-2022-21125](https://nvd.nist.gov/vuln/detail/CVE-2022-21125){: external}, [CVE-2022-21127](https://nvd.nist.gov/vuln/detail/CVE-2022-21127){: external}, [CVE-2022-21131](https://nvd.nist.gov/vuln/detail/CVE-2022-21131){: external}, [CVE-2022-21136](https://nvd.nist.gov/vuln/detail/CVE-2022-21136){: external}, [CVE-2022-21151](https://nvd.nist.gov/vuln/detail/CVE-2022-21151){: external}, [CVE-2022-21166](https://nvd.nist.gov/vuln/detail/CVE-2022-21166){: external}. |
 | {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
 {: caption="Changes since version 4.6.60_1593_openshift" caption-side="bottom"}
 
@@ -231,7 +231,7 @@ The following table shows the changes that are in the worker node fix pack 4.6.5
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| RHEL 7 Packages | 3.10.0-1160.66.1 | 3.10.0-1160.71.1 | Worker node package updates for [CVE-2020-26116](https://nvd.nist.gov/vuln/detail/CVE-2020-26116){: external},[CVE-2020-26137](https://nvd.nist.gov/vuln/detail/CVE-2020-26137){: external},[CVE-2021-3177](https://nvd.nist.gov/vuln/detail/CVE-2021-3177){: external},[CVE-2022-0391](https://nvd.nist.gov/vuln/detail/CVE-2022-0391){: external},[CVE-2022-1729](https://nvd.nist.gov/vuln/detail/CVE-2022-1729){: external},[CVE-2022-1966](https://nvd.nist.gov/vuln/detail/CVE-2022-1966){: external}. |
+| RHEL 7 Packages | 3.10.0-1160.66.1 | 3.10.0-1160.71.1 | Worker node package updates for [CVE-2020-26116](https://nvd.nist.gov/vuln/detail/CVE-2020-26116){: external}, [CVE-2020-26137](https://nvd.nist.gov/vuln/detail/CVE-2020-26137){: external}, [CVE-2021-3177](https://nvd.nist.gov/vuln/detail/CVE-2021-3177){: external}, [CVE-2022-0391](https://nvd.nist.gov/vuln/detail/CVE-2022-0391){: external}, [CVE-2022-1729](https://nvd.nist.gov/vuln/detail/CVE-2022-1729){: external}, [CVE-2022-1966](https://nvd.nist.gov/vuln/detail/CVE-2022-1966){: external}. |
 | {{site.data.keyword.openshiftshort}} |N/A|N/A|N/A|
 {: caption="Changes since version 4.6.59_1590_openshift" caption-side="bottom"}
 

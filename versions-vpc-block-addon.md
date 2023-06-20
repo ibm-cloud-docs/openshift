@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-06-20"
 
 keywords: block, add-on, changelog
 
@@ -39,7 +39,7 @@ ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
 
 To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
-Before you migrate from a `4.x` release to a `5.x` release, you must not have any volume snapshots in `failure` state. For more information, see [Why can't I delete my Block Storage for VPC volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete).
+Before you migrate to a `5.x` release from a previous release, you must not have any volume snapshots in `failure` state. For more information, see [Why can't I delete my Block Storage for VPC volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete).
 {: important}
 
 
@@ -418,7 +418,7 @@ Adds snapshot support.
 {: #426_1161_is_block_relnote}
 
 - Updates armada-storage-secret to `v1.1.10`
-- Resolves the following CVEs: [CVE-2021-3634](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3634){: external},[CVE-2021-3737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3737){: external},[CVE-2021-4189](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4189){: external}.
+- Resolves the following CVEs: [CVE-2021-3634](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3634){: external}, [CVE-2021-3737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3737){: external}, [CVE-2021-4189](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4189){: external}.
 
 
 ### Change log for version 4.2.5_1106, released 12 May 2022
