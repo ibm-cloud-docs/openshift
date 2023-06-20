@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-06-20"
 
 keywords: object storage, plug-in, change log
 
@@ -37,9 +37,9 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Change log for version 2.2.15, released 19 June 2023
 {: #02215_object_plugin}
 
-- Updates UBI image to `8.8-860` to fix CVEs: `CVE-2022-43552`, `CVE-2022-3204`, `CVE-2023-27535`, `CVE-2022-36227`, and `CVE-2022-35252`.
-- Updates Golang to 1.19.10 to fix CVEs: `CVE-2023-29403`, `CVE-2023-29404`, `CVE-2023-29405`, `CVE-2023-29402`, `CVE-2023-29400`, `CVE-2023-24540`, and `CVE-2023-24539`.
-- Resolves the following CVEs: [CVE-2023-29401](https://nvd.nist.gov/vuln/detail/CVE-2023-29401){: external},[CVE-2023-26125](https://nvd.nist.gov/vuln/detail/CVE-2023-26125){: external}, and CVE-2022-3172].
+- Updates UBI image to `8.8-860` to fix CVEs: CVE-2022-43552, CVE-2022-3204, CVE-2023-27535, CVE-2022-36227, and CVE-2022-35252.
+- Updates Golang to `1.19.10` to fix CVEs: CVE-2023-29403, CVE-2023-29404, CVE-2023-29405, CVE-2023-29402, CVE-2023-29400, CVE-2023-24540, and CVE-2023-24539.
+- Resolves the following CVEs: [CVE-2023-29401](https://nvd.nist.gov/vuln/detail/CVE-2023-29401){: external},[CVE-2023-26125](https://nvd.nist.gov/vuln/detail/CVE-2023-26125){: external}, and CVE-2022-3172.
 
 ## Change log for version 2.2.14, released 02 May 2023
 {: #02214_object_plugin}
