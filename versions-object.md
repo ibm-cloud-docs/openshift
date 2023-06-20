@@ -39,14 +39,14 @@ Refer to the following tables for a summary of changes for each version of the [
 
 - Updates UBI image to `8.8-860` to fix CVEs: CVE-2022-43552, CVE-2022-3204, CVE-2023-27535, CVE-2022-36227, and CVE-2022-35252.
 - Updates Golang to `1.19.10` to fix CVEs: CVE-2023-29403, CVE-2023-29404, CVE-2023-29405, CVE-2023-29402, CVE-2023-29400, CVE-2023-24540, and CVE-2023-24539.
-- Resolves the following CVEs: [CVE-2023-29401](https://nvd.nist.gov/vuln/detail/CVE-2023-29401){: external},[CVE-2023-26125](https://nvd.nist.gov/vuln/detail/CVE-2023-26125){: external}, and CVE-2022-3172.
+- Resolves the following CVEs: [CVE-2023-29401](https://nvd.nist.gov/vuln/detail/CVE-2023-29401){: external}, [CVE-2023-26125](https://nvd.nist.gov/vuln/detail/CVE-2023-26125){: external}, and CVE-2022-3172.
 
 ## Change log for version 2.2.14, released 02 May 2023
 {: #02214_object_plugin}
 
 - Updates the UBI image to `8.7-1107`.
 - Updates Golang to `1.19.8`.
-- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external},[CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external},[CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
 ## Change log for version 2.2.13, released 03 April 2023
 {: #02213_object_plugin}
@@ -70,7 +70,7 @@ Because this update affects regional storage classes, you must uninstall and rei
 - Updates Golang to `1.19.6`.
 - Updates the UBI Image to `8.7-1085`.
 - Updates s3fs fuse to [`d1388ff`](https://github.com/s3fs-fuse/s3fs-fuse/commit/d1388ff446b74e82483f8a09b1d576cd958d4d64){: external}.
-- Resolves the following CVEs: [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external},[CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external},[CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external},[CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external},[CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external},[CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external},[CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external}.
+- Resolves the following CVEs: [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external}, [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external}.
 
 ## Change log for version 2.2.10, released 21 February 2023
 {: #02210_object_plugin}
@@ -128,7 +128,7 @@ Because this change affects storage classes, you must uninstall and reinstall th
 {: #0224_object_plugin}
 
 - Updates Golang to `1.18.8`
-- Resolves [CVE-2022-41715](https://nvd.nist.gov/vuln/detail/CVE-2022-41715){: external},[CVE-2022-2879](https://nvd.nist.gov/vuln/detail/CVE-2022-2879){: external},[CVE-2022-2880](https://nvd.nist.gov/vuln/detail/CVE-2022-2880){: external}
+- Resolves [CVE-2022-41715](https://nvd.nist.gov/vuln/detail/CVE-2022-41715){: external}, [CVE-2022-2879](https://nvd.nist.gov/vuln/detail/CVE-2022-2879){: external}, [CVE-2022-2880](https://nvd.nist.gov/vuln/detail/CVE-2022-2880){: external}
 
 ## Change log for version 2.2.3, released 15 November 2022
 {: #0223_object_plugin}
