@@ -104,8 +104,8 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 
 
 **Latest**: 4.13
-- Release date: None
-- End of support: None
+- Release date: 14 June 2023
+- End of support: 26 February 2025`†`
 - Supported operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_413)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_413)
@@ -144,8 +144,8 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 
 
 **Latest**: 4.13
-- Release date: None
-- End of support: None
+- Release date: 14 June 2023
+- End of support: 26 February 2025`†`
 - Supported operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_413)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_413)
