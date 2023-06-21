@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-06-21"
 
 keywords: openshift
 subcollection: openshift
@@ -5399,7 +5399,7 @@ subcollection: openshift
 
 * [Determine which worker nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-classic#determine-worker-nodes-classic)
 
-* [Scale down [{odf_long}]](/docs/openshift?topic=openshift-openshift-storage-update-classic#scale-down-odf-classic)
+* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#scale-down-odf-classic)
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-classic#cordon-drain-worker-node-classic)
 
@@ -5419,7 +5419,7 @@ subcollection: openshift
 
 * [Determine which worker nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-worker-nodes-vpc)
 
-* [Scale down [{odf_long}]](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
+* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
 
@@ -5516,11 +5516,7 @@ subcollection: openshift
 
 [Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
-* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-addon-enable)
-
-* [Optional: Deploying the snapshot validation webhook](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-validation-webhook)
-
-* [Creating a deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
+* [Creating an app deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
 
 * [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
 

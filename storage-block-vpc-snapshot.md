@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-21"
 
 keywords: openshift, block storage, snapshot
 
@@ -18,52 +18,29 @@ subcollection: openshift
 # Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-volume-snapshot}
 
+[Virtual Private Cloud]{: tag-vpc} 
+
 {{site.data.keyword.block_storage_is_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. For more information, see [How snapshots work](/docs/vpc?topic=vpc-snapshots-vpc-about).
 {: shortdesc}
 
 If you want to see an example scenario using snapshots to back up a WordPress app, see [Point in time backup and restore of a stateful application](https://w3.ibm.com/w3publisher/isl-cloud-platform/blogs/5ef8f200-0e27-11ed-a874-c7aca9398345){: example}.
 {: tip}
 
-[Virtual Private Cloud]{: tag-vpc} 
+
+    
+Deploy the snapshot validation webhook to validate user input. For more information, see [Deploying the snapshot validation webhook](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/tree/master/deploy/kubernetes/snapshot/validation-webhook){: external}.
+{: tip}
 
 
-The following steps cover setting up snapshots for {{site.data.keyword.block_storage_is_short}} volumes by using the cluster add-on.
-{: note}
+## Creating an app deployment
+{: #vpc-snapshot-deployment}
 
-Snapshots support is available for cluster version 4.9 and later and with the {{site.data.keyword.block_storage_is_short}} add-on version 5.0 and later.
-{: important}
-
-## Enabling the {{site.data.keyword.block_storage_is_short}} add-on
-{: #vpc-addon-enable}
+Create an example Persistent Volume Claim (PVC) and deploy a pod that references that claim. 
+{: shortdesc}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
-1. Get the version number of the `vpc-block-csi-driver` add-on in your cluster.
-    ```sh
-    ibmcloud oc cluster addon ls --cluster CLUSTER
-    ```
-    {: pre}
-
-
-1. Disable the add-on and then enable version 5.0 or later. 
-    ```sh
-    ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER-ID
-    ```
-    {: pre}
-
-    ```sh
-    ibmcloud oc cluster addon enable vpc-block-csi-driver --version 5.0 --cluster CLUSTER-ID
-    ```
-    {: pre}
-
-    Example output.
-    ```sh
-    Enabling add-on vpc-block-csi-driver(5.0) for cluster CLUSTER-ID
-    The add-on might take several minutes to deploy and become ready for use.
-    ```
-    {: screen}
-
-1. Verify that the add-on state is `normal` and the status is `ready`.
+1. Verify that the add-on state is `normal` and the status is `Ready`.
     
     ```sh
     ibmcloud oc cluster addon ls --cluster CLUSTER-ID
@@ -75,7 +52,6 @@ Snapshots support is available for cluster version 4.9 and later and with the {{
     vpc-block-csi-driver   5.0   normal         Addon Ready. For more info: http://ibm.biz/addon-state (H1500)   
     ```
     {: screen}
-
     
 1. Verify that the driver pods are deployed and the status is `Running`.
     ```sh
@@ -91,19 +67,6 @@ Snapshots support is available for cluster version 4.9 and later and with the {{
     ibm-vpc-block-csi-node-cmh2h                          4/4     Running   0          77s
     ```
     {: screen}
-    
-    
-## Optional: Deploying the snapshot validation webhook
-{: #vpc-snapshot-validation-webhook}
-
-Deploy the validation snapshot webhook for validating user input. For more information, see [Deploying the snapshot validation webhook](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/tree/master/deploy/kubernetes/snapshot/validation-webhook){: external}.
-
-
-## Creating a deployment
-{: #vpc-snapshot-deployment}
-
-Create an example Persistent Volume Claim (PVC) and deploy a pod that references that claim. 
-{: shortdesc}
 
 1. Create a PVC that uses the following yaml. 
 
