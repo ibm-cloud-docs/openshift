@@ -316,6 +316,109 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     ```
     {: screen}
     
+## Customizing snapshots
+{: #vpc-customize-snapshot}
+
+You can edit the add-on configmap for finer control your volume snapshots. First, make sure you have the latest configmap, then update the values based on your environment.
+
+1. Save the current configmap from your cluster to your local machine.
+    ```sh
+    kubectl get cm -n kube-system addon-vpc-block-csi-driver-configmap -o yaml >> snapshotconfigmap.yaml
+    ```
+    {: pre}
+
+1. Review the [configmap settings](#vpc-block-configmap-settings) and add any missing values to the `data` section.
+
+1. Add any new parameters to your configmap. If you have previously customized the configmap, make sure to preserve your customizations when adding the new parameters. 
+
+1. Save the file and apply your changes. 
+    ```sh
+    kubectl apply -f snapshotconfigmap.yaml
+    ```
+    {: pre}
+
+
+### `addon-vpc-block-csi-driver-configmap` default settings
+{: #vpc-block-configmap-settings}
+
+```yaml
+    data:
+      IsVolumeSnapshotClassDefault: "true"
+      IsStorageClassDefault: "true"
+      AttachDetachMinRetryGAP: "3"              #Initial retry interval for checking Attach/Detach Status. Default 3 seconds
+      AttachDetachMinRetryAttempt: "3"          #Number of attempts for AttachDetachMinRetryGAP. Default is 3 retries for 3 seconds retry gap.
+      AttachDetachMaxRetryAttempt: "46"         #Total number of retries for for checking Attach/Detach Status. Default is 46 times i.e ~7 mins (3 secs * 3 times + 6 secs * 6 times + 10 secs * 10 times)
+      AttacherWorkerThreads: "15"               #The number of goroutines for processing VolumeAttachments
+      AttacherKubeAPIBurst: "10"                #The number of requests to the Kubernetes API server, exceeding the QPS, that can be sent at any given time
+      AttacherKubeAPIQPS: "5.0"                 #The number of requests per second sent by a Kubernetes client to the Kubernetes API server.
+      #Requested resources per container
+      CSIDriverRegistrarCPURequest: "10m"       #container:csi-driver-registrar, resource-type: cpu-request
+      CSIDriverRegistrarMemoryRequest: "20Mi"   #container:csi-driver-registrar,  resource-type: memory-request
+      NodeDriverMemoryRequest: "30m"            #container:iks-vpc-block-node-driver, resource-type: cpu-request
+      NodeDriverCPURequest: "75Mi"              #container:iks-vpc-block-node-driver, resource-type: memory-request
+      LivenessProbeCPURequest: "5m"             #container:liveness-probe, resource-type: cpu-request
+      LivenessProbeMemoryRequest: "10Mi"        #container:liveness-probe, resource-type: memory-request
+      SecretSidecarCPURequest: "10m"            #container:storage-secret-sidecar, resource-type: cpu-request
+      SecretSidecarMemoryRequest: "20Mi"        #container:storage-secret-sidecar, resource-type: memory-request
+      CSIProvisionerCPURequest: "20m"           #container:csi-provisioner, resource-type: cpu-request
+      CSIProvisionerMemoryRequest: "40Mi"       #container:csi-provisioner, resource-type: memory-request
+      CSIAttacherCPURequest: "15m"              #container:csi-attacher, resource-type: cpu-request
+      CSIAttacherMemoryRequest: "30Mi"          #container:csi-attacher, resource-type: memory-request
+      CSIResizerCPURequest: "20m"               #container:csi-resizer, resource-type: cpu-request
+      CSIResizerMemoryRequest: "40Mi"           #container:csi-resizer, resource-type: memory-request
+      BlockDriverCPURequest: "75m"              #container:iks-vpc-block-driver, resource-type: cpu-request
+      BlockDriverMemoryRequest: "150Mi"         #container:iks-vpc-block-driver, resource-type: memory-request
+      CSISnapshotterCPURequest: "20m"           #container:csi-snapshotter, resource-type: cpu-request
+      CSISnapshotterMemoryRequest: "40Mi"       #container:csi-snapshotter, resource-type: memory-request
+      #Resource Limits per container
+      CSIDriverRegistrarCPULimit: "40m"         #container:csi-driver-registrar, resource-type: cpu-limit
+      CSIDriverRegistrarMemoryLimit: "80Mi"     #container:csi-driver-registrar, resource-type: memory-limit
+      NodeDriverCPULimit: "120m"                #container:iks-vpc-block-node-driver, resource-type: cpu-limit
+      NodeDriverMemoryLimit: "300Mi"            #container:iks-vpc-block-node-driver, resource-type: memory-limit
+      LivenessProbeCPULimit: "20m"              #container:liveness-probe, resource-type: cpu-limit
+      LivenessProbeMemoryLimit: "40Mi"          #container:liveness-probe, resource-type: memory-limit
+      SecretSidecarCPULimit: "40m"              #container:storage-secret-sidecar, resource-type: cpu-limit
+      SecretSidecarMemoryLimit: "80Mi"          #container:storage-secret-sidecar, resource-type: memory-limit
+      CSIProvisionerCPULimit: "80m"             #container:csi-provisioner, resource-type: cpu-limit
+      CSIProvisionerMemoryLimit: "160Mi"        #container:csi-provisioner, resource-type: memory-limit
+      CSIAttacherCPULimits: "60m"               #container:csi-attacher, resource-type: cpu-limit
+      CSIAttacherMemoryLimit: "120Mi"           #container:csi-attacher, resource-type: memory-limit
+      CSIResizerCPULimit: "80m"                 #container:csi-resizer, resource-type: cpu-limit
+      CSIResizerMemoryLimit: "160Mi"            #container:csi-resizer, resource-type: memory-limit
+      BlockDriverCPULimit: "300m"               #container:iks-vpc-block-driver, resource-type: cpu-limit
+      BlockDriverMemoryLimit: "600Mi"           #container:iks-vpc-block-driver, resource-type: memory-limit
+      CSISnapshotterCPULimit: "80m"             #container:csi-snapshotter, resource-type: cpu-limit
+      CSISnapshotterMemoryLimit: "160Mi"        #container:csi-snapshotter, resource-type: memory-limit
+      CSISnapshotterRetryIntervalStart: "1s"    #container:csi-snapshotter, Initial retry interval of failed volume snapshot creation or deletion.
+      CSISnapshotterRetryIntervalMax: "300s"    #container:csi-snapshotter, Maximum retry interval of failed volume snapshot creation or deletion.
+      CSISidecarLogLevel: "5"                   #container:csi-snapshotter, glog/klog log level
+      IsSnapshotEnabled : "true"		#container: iks-vpc-block-driver
+      CustomSnapshotCreateDelay: "300"		#container: iks-vpc-block-driver
+```
+{: codeblock}
+
+
+
+## Turning off snapshots
+{: #vpc-turn-off-snapshots}
+
+By default, snapshot functionality is enabled when using the {{site.data.keyword.block_storage_is_short}}. This functionality can be turned off in the configmap `addon-vpc-block-csi-driver-configmap` in the `kube-system` namespace by changing the `IsSnapshotEnabled` to `false`. Note that with this change in the configmap, any snapshots that are created fail with the message: "CreateSnapshot functionality is disabled." 
+
+
+1. Save the current configmap from your cluster to your local machine.
+    ```sh
+    kubectl get cm -n kube-system addon-vpc-block-csi-driver-configmap -o yaml >> snapshotconfigmap.yaml
+    ```
+    {: pre}
+
+1. Edit the `IsSnapshotEnabled` parameter to `false`.
+
+1. Save the file and apply your changes. 
+    ```sh
+    kubectl apply -f snapshotconfigmap.yaml
+    ```
+    {: pre}
+
     
 ## Troubleshooting snapshots
 {: #ts-snapshot-vpc-block-addon-next}

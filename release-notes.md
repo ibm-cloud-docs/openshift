@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-06-21"
 
 keywords: openshift
 
@@ -28,6 +28,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2023
 {: #openshift-jun23}
+
+### 21 June 2023
+{: #openshift-jun2123}
+{: release-note} 
+
+{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.16_127` and `5.1.11_126`.
+:   This patch introduces two new variables to the `addon-vpc-block-csi-driver-configmap`. To get the latest snapshot configmap values users must add the new values to the existing configmap and apply the changes. For more information, see [Customizing snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-customize-snapshot) and [the add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
 
 ### 20 June 2023
 {: #openshift-jun2023}
