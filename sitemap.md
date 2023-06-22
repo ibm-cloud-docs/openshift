@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
 
+    * [22 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2223)
+
+        * Certified Kubernetes
+
     * [21 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2123)
 
         * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.16_127` and `5.1.11_126`.

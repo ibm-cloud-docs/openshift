@@ -30,6 +30,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-jun23}
 
 
+### 22 June 2023
+{: #openshift-jun2223}
+{: release-note} 
+
+
+
+Certified Kubernetes
+:   Version [4.13](/docs/openshift?topic=openshift-openshift_changelog_413) release is now certified.
+
+
+
+
+
 
 ### 21 June 2023
 {: #openshift-jun2123}
