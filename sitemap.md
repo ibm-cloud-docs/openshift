@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-21"
+lastupdated: "2023-06-22"
 
 keywords: openshift
 subcollection: openshift
@@ -5327,11 +5327,9 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
-    * [Version 4.12 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-412)
+    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-412)
 
-    * [Version 4.10 and 4.11 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-410)
-
-    * [Version 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
+    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
@@ -5353,7 +5351,7 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
 
-    * [Version 4.10 and 4.11 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
+    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
 
     * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
 
@@ -5397,7 +5395,7 @@ subcollection: openshift
 
 [Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
-[Updating worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
+[Updating Classic worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
 
 * [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-cluster-master-classic)
 

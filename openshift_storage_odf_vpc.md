@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -550,7 +550,7 @@ Review the following limitations for deploying ODF.
 Refer to the following parameters when you use the add-on or operator in VPC clusters.
 {: shortdesc}
 
-### Version 4.12 clusters
+### Version 4.10, 4.11, and 4.12 parameters
 {: #odf-vpc-params-412}
 
 | Parameter | Description | Default value |
@@ -573,27 +573,8 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `ignore-noobaa` | Enter `true` if you do not want to deploy MultiCloud Object Gateway. | `false` |
 {: caption="VPC parameter reference" caption-side="bottom"}
 
-### Version 4.10 and 4.11 clusters
-{: #odf-vpc-params-410}
 
-| Parameter | Description | Default value |
-| --- | --- | --- |
-| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that's based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
-| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize` multiplied by the `numOfOsd`. | N/A |
-| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the `numOfOsd` value. For example, if you enter `1`, ODF provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
-| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your ODF deployment. | `advanced` |
-| `ocsUpgrade` | Enter `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Enter the node names for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. | N/A |
-| `clusterEncryption` | Enter `true` or `false` to enable cluster wide encryption. |
-| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
-| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
-| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`. | `false` |
-| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
-| `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/identity/token`. | `false` |
-{: caption="VPC parameter reference" caption-side="bottom"}
-
-
-### Version 4.9 clusters
+### Version 4.9 parameters
 {: #odf-vpc-params-48}
 
 | Parameter | Description | Default value |
