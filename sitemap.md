@@ -5395,7 +5395,7 @@ subcollection: openshift
 
 [Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
-[Updating Classic worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
+[Updating worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
 
 * [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-cluster-master-classic)
 

@@ -4,7 +4,7 @@ copyright:
   years: 2023, 2023
 lastupdated: "2023-06-22"
 
-keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
+keywords: openshift, openshift data foundation, openshift container storage, ocs
 
 subcollection: openshift
 
@@ -20,16 +20,14 @@ completion-time: 60m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Updating Classic worker nodes that use OpenShift Data Foundation
+# Updating worker nodes that use OpenShift Data Foundation
 {: #openshift-storage-update-classic}
 {: toc-content-type="tutorial"}
 {: toc-services="openshift"}
 {: toc-completion-time="60m"}
 
-[Classic infrastructure]{: tag-classic-inf}
 
-
-For Classic clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
+For clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
 The following tutorial covers both major and minor updates. Each step is flagged with [Major]{: tag-red} or [Minor]{: tag-blue}. 
@@ -101,9 +99,12 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     
 1. Scale down the deployments that you found in the previous step. 
     ```sh
-    oc scale deployment rook-ceph-mon-c --replicas=0 -n openshift-storage
-    oc scale deployment rook-ceph-osd-2 --replicas=0 -n openshift-storage
-    oc scale deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME --replicas=0 -n openshift-storage
+    oc scale deployment rook-ceph-mon-DEPLOYMENT_NAME --replicas=0 -n openshift-storage
+    ```
+    {: pre}
+
+    ```sh
+    oc scale deployment rook-ceph-osd-DEPLOYMENT_NAME --replicas=0 -n openshift-storage
     ```
     {: pre}
     
@@ -206,17 +207,17 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 1. Identify the Persistent Volume (PV) associated with the Persistent Volume Claim (PVC).
 
-    ```sh
-    oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
-    ```
-    {: pre}
+        ```sh
+        oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
+        ```
+        {: pre}
 
-    Example output
+        Example output
 
-    ```sh
-    PV_NAME 1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
-    ```
-    {: screen}
+        ```sh
+        PV_NAME 1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
+        ```
+        {: screen}
 
 1. If there is a PV in Released state, delete it.
     ```sh
