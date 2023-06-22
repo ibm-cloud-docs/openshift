@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -85,7 +85,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: screen}
 
-## Scale down [{odf_long}]
+## Scale down OpenShift Data Foundation
 {: #scale-down-odf-classic}
 {: step}
 
@@ -212,18 +212,18 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
         ```
         {: pre}
 
-        Example output:
+        Example output
 
         ```sh
         PV_NAME 1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
         ```
         {: screen}
 
-    1. If there is a PV in Released state, delete it.
-        ```sh
-        oc delete pv PERSISTENT-VOLUME
-        ```
-        {: pre}
+1. If there is a PV in Released state, delete it.
+    ```sh
+    oc delete pv PERSISTENT-VOLUME
+    ```
+    {: pre}
 
 ## Clean up the `openshift-storage` project
 {: #cleanup-os-storage-classic}

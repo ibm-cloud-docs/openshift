@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-06-22"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
+
+    * [21 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2123)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.16_127` and `5.1.11_126`.
 
     * [20 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2023)
 
@@ -5323,11 +5327,9 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
-    * [Version 4.12 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-412)
+    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-412)
 
-    * [Version 4.10 and 4.11 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-410)
-
-    * [Version 4.9 clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
+    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
 [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
@@ -5349,7 +5351,7 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
 
-    * [Version 4.10 and 4.11 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
+    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
 
     * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
 
@@ -5399,7 +5401,7 @@ subcollection: openshift
 
 * [Determine which worker nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-classic#determine-worker-nodes-classic)
 
-* [Scale down [{odf_long}]](/docs/openshift?topic=openshift-openshift-storage-update-classic#scale-down-odf-classic)
+* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#scale-down-odf-classic)
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-classic#cordon-drain-worker-node-classic)
 
@@ -5419,7 +5421,7 @@ subcollection: openshift
 
 * [Determine which worker nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-worker-nodes-vpc)
 
-* [Scale down [{odf_long}]](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
+* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
 
@@ -5516,15 +5518,17 @@ subcollection: openshift
 
 [Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
-* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-addon-enable)
-
-* [Optional: Deploying the snapshot validation webhook](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-validation-webhook)
-
-* [Creating a deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
+* [Creating an app deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
 
 * [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
 
 * [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
+
+* [Customizing snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-customize-snapshot)
+
+    * [`addon-vpc-block-csi-driver-configmap` default settings](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-block-configmap-settings)
+
+* [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-turn-off-snapshots)
 
 * [Troubleshooting snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#ts-snapshot-vpc-block-addon-next)
 
@@ -7265,6 +7269,8 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.11_126, released 21 June 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.11_126_is_block_relnote)
+
     * [Change log for version 5.1.8_1970, released 15 May 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.8_1970_is_block_relnote)
 
     * [Change log for version 5.1.6_1872, released 05 April 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.6_1872_is_block_relnote)
@@ -7278,6 +7284,8 @@ subcollection: openshift
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.16_127, released 21 June 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.16_127_is_block_relnote)
 
     * [Change log for version 5.0.12_1963, released 15 May 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.12_1963_is_block_relnote)
 

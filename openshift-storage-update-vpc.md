@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-22"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
 
@@ -85,7 +85,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: screen}
 
-## Scale down [{odf_long}]
+## Scale down OpenShift Data Foundation
 {: #scale-down-odf-vpc}
 {: step}
 
