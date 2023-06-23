@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-06-23"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -118,6 +118,22 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 - Image tags: `1.19.1-11`, `1.20.0-11`, `1.21.0-7`, `1.22.0-5`, `1.23.0-2`
 - Adds Beta support for {{site.data.keyword.satelliteshort}} clusters in allowlisted accounts.
+
+
+## Version 1.0.9
+{: #0109_ca_addon}
+
+### Change log for patch update 1.0.9_44, released 22 June 2023
+{: #10944_ca}
+
+
+- Adds support for cluster version 1.27.
+- Adds the `scaleDownUnreadyEnabled`, `maxNodesPerScaleup`, `maxNodegroupBinpackingDuration`, `kubeClientBurst`, and `kubeClientQPS` parameters.
+- Updates the `storage-secret-sidecar` image to `v1.2.24`.
+- Updates Golang to `1.19.10` for `iks-cluster-autoscaler` `1.22-1.26` and Golang version `1.20.5` for `iks-cluster-autoscaler 1.27`.
+- Image tags: `1.22.0 109-0`, `1.23.0 109-0`, `1.24.0 109-0`, `1.25.0 109-0`, `1.26.1 109-0`, `1.27.2 109-0`.
+
+
 
 ## Version 1.0.8
 {: #0108_ca_addon}

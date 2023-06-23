@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-06-23"
 
 keywords: openshift
 subcollection: openshift
@@ -273,6 +273,8 @@ subcollection: openshift
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
 
     * [22 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2223)
+
+        * Cluster autoscaler add-on version `1.0.9_44`.
 
         * Certified Kubernetes
 
@@ -2915,39 +2917,19 @@ subcollection: openshift
 {: #sitemap_installing_the_cli_and_api}
 
 
-[Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-install-ibmcloud-cli#install-ibmcloud-cli)
+[Installing the CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
 
-* [Before you begin](/docs/openshift?topic=openshift-install-ibmcloud-cli#before-download-cli)
+* [Understanding the CLI tools](/docs/openshift?topic=openshift-cli-install#cli-understand)
 
-* [Installing with an installer](/docs/openshift?topic=openshift-install-ibmcloud-cli#ibmcloud-cli-installer)
+* [Run the installation command](/docs/openshift?topic=openshift-cli-install#run-the-installation-command)
 
-* [Installing from the shell](/docs/openshift?topic=openshift-install-ibmcloud-cli#shell_install)
+* [Install the `oc` CLI](/docs/openshift?topic=openshift-cli-install#install-kubectl-cli)
 
-* [Installing to a custom directory](/docs/openshift?topic=openshift-install-ibmcloud-cli#install-custom-dir)
+[Updating the CLI](/docs/openshift?topic=openshift-cli-update#cli-update)
 
-* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-install-ibmcloud-cli#update-ibmcloud-cli)
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-cli-update#updating-the--cli)
 
-[Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/openshift?topic=openshift-plug-ins#plug-ins)
-
-* [Before you begin](/docs/openshift?topic=openshift-plug-ins#cli-before-you-begin)
-
-* [Searching for a plug-in](/docs/openshift?topic=openshift-plug-ins#cli-search-plugin)
-
-* [Installing a plug-in from the {{site.data.keyword.cloud_notm}} CLI repository](/docs/openshift?topic=openshift-plug-ins#install-from-repo)
-
-    * [Installing a specific plug-in](/docs/openshift?topic=openshift-plug-ins#cli-install-plugin)
-
-    * [Installing all plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-all)
-
-    * [Installing multiple plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-multiple)
-
-* [Confirming installed plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-install-view)
-
-* [Updating installed plug-ins](/docs/openshift?topic=openshift-plug-ins#cli-update-plugin)
-
-* [Related information](/docs/openshift?topic=openshift-plug-ins#cli-install-relinfo)
-
-[Installing the OpenShift CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
+* [Updating installed plug-ins](/docs/openshift?topic=openshift-cli-update#updating-installed-plug-ins)
 
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_install)
 
@@ -7158,6 +7140,10 @@ subcollection: openshift
     * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-ca_changelog#110475_ca)
 
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
+
+* [Version 1.0.9](/docs/openshift?topic=openshift-ca_changelog#0109_ca_addon)
+
+    * [Change log for patch update 1.0.9_44, released 22 June 2023](/docs/openshift?topic=openshift-ca_changelog#10944_ca)
 
 * [Version 1.0.8](/docs/openshift?topic=openshift-ca_changelog#0108_ca_addon)
 
