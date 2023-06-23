@@ -33,7 +33,7 @@ You can use the following tools to manage your {{site.data.keyword.openshiftlong
 | CLI | Description |
 | --- | --- |
 | `ibmcloud` | You can use the `ibmcloud` CLI to login to your account, add users, manage your catalogs and more. |
-| `container-service` or `ks` plug-in | After installing the `ibmcloud` CLI, you can use the `ks` plug-in to create and manage {{site.data.keyword.openshiftlong_notm}} clusters as well as {{site.data.keyword.satelliteshort}} hosts and Locations. |
+| `ks` plug-in | After installing the `ibmcloud` CLI, you can use the `ks` plug-in to create and manage {{site.data.keyword.openshiftlong_notm}} clusters as well as {{site.data.keyword.satelliteshort}} hosts and Locations. |
 | `oc` | You can use the `oc` CLI to manage resources within your clusters like pods, deployments, and more. |
 {: caption="Table 1: CLI tools" caption-side="bottom"}
 
@@ -52,7 +52,7 @@ ibmcloud plugin install ks
 {: pre}
 
 
-## Install the `oc` CLI
+## Install the {{site.data.keyword.redhat_openshift_notm}} CLI
 {: #install-kubectl-cli}
 {: step}
 

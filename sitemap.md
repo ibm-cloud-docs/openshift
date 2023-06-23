@@ -2923,7 +2923,7 @@ subcollection: openshift
 
 * [Run the installation command](/docs/openshift?topic=openshift-cli-install#run-the-installation-command)
 
-* [Install the `oc` CLI](/docs/openshift?topic=openshift-cli-install#install-kubectl-cli)
+* [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/openshift?topic=openshift-cli-install#install-kubectl-cli)
 
 [Updating the CLI](/docs/openshift?topic=openshift-cli-update#cli-update)
 
