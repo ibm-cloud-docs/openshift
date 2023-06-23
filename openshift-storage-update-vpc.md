@@ -2,15 +2,15 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-06-23"
 
-keywords: openshift, openshift data foundation, openshift container storage, ocs, vpc
+keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
 
 subcollection: openshift
 
 
 content-type: tutorial
-services: openshift
+services: openshift, vpc
 account-plan: paid
 completion-time: 60m
 
@@ -23,11 +23,13 @@ completion-time: 60m
 # Updating VPC worker nodes that use OpenShift Data Foundation
 {: #openshift-storage-update-vpc}
 {: toc-content-type="tutorial"}
-{: toc-services="openshift"}
+{: toc-services="openshift,vpc"}
 {: toc-completion-time="60m"}
 
+[Virtual Private Cloud]{: tag-vpc}
 
-For clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
+
+For VPC clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
 The following tutorial covers both major and minor updates. Each step is flagged with [Major]{: tag-red} or [Minor]{: tag-blue}. 
@@ -62,13 +64,13 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     
 1. Wait until the master update finishes. 
 
-## Determine which worker nodes you want to update
-{: #determine-worker-nodes-vpc}
+## Determine which storage nodes you want to update
+{: #determine-storage-nodes-vpc}
 {: step}
 
 [Major]{: tag-red} [Minor]{: tag-blue}
 
-1. List your worker nodes by using `oc get nodes` and determine which worker nodes you want to update.
+1. List your worker nodes by using `oc get nodes` and determine which storage nodes you want to update.
 
     ```sh
     oc get nodes
@@ -98,15 +100,16 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     {: pre}
     
 1. Scale down the deployments that you found in the previous step. 
+
     ```sh
-    oc scale deployment rook-ceph-mon-DEPLOYMENT_NAME --replicas=0 -n openshift-storage
+    oc scale deployment rook-ceph-mon-c --replicas=0 -n openshift-storage
+    deployment.apps/rook-ceph-mon-c scaled
+    oc scale deployment rook-ceph-osd-2 --replicas=0 -n openshift-storage
+    deployment.apps/rook-ceph-osd-2 scaled
+    oc scale deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME --replicas=0 -n openshift-storage
     ```
     {: pre}
 
-    ```sh
-    oc scale deployment rook-ceph-osd-DEPLOYMENT_NAME --replicas=0 -n openshift-storage
-    ```
-    {: pre}
     
 ## Cordon and drain the worker node
 {: #cordon-drain-worker-node-vpc}
@@ -151,8 +154,8 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     
 1. Wait until draining finishes, then complete the following steps to replace the worker node. 
 
-## Replace the worker node
-{: #replace-worker-node-vpc}
+## Upgrade the worker node
+{: #upgrade-worker-node-vpc}
 {: step}
 
 [Major]{: tag-red} [Minor]{: tag-blue}
@@ -204,7 +207,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: screen}
 
-## Clean up the `openshift-storage` project
+## Clean up the resources from the old node
 {: #cleanup-os-storage-vpc}
 {: step}
 
@@ -218,7 +221,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 1. Remove the failed OSD from the cluster. You can specify multiple failed OSDs if required:
     ```sh
-    oc process -n openshift-storage ocs-osd-removal \ -p FAILED_OSD_IDS=<failed_osd_id> | oc create -f OSD-ID,OSD-ID, OSD-ID
+    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> | oc create -f OSD-ID,OSD-ID, OSD-ID
     ```
     {: pre}
 
@@ -244,8 +247,8 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: screen}
 
-## Update your `ocscluster` resource
-{: #update-ocs-resource-vpc}
+## Add the new storage node
+{: #add-storage-node-vpc}
 {: step}
 
 [Major]{: tag-red} [Minor]{: tag-blue}
@@ -259,11 +262,34 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: pre}
 
-1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify the OSD persistent volumes are created and that all pods are in a `Running` state.
+1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify the new persistent volumes are created and that all pods are in a `Running` state.
     ```sh
     oc get pv
     oc get ocscluster
     oc get pods -n openshift-storage
+    ```
+    {: pre}
+
+1. Verify that all other required OpenShift Data Foundation pods are in Running state.
+    ```sh
+    oc get pod -n openshift-storage | grep mon
+    ```
+    {: pre}
+    
+    Example output:
+    ```sh
+    rook-ceph-mon-a-cd575c89b-b6k66         2/2     Running
+    0          38m
+    rook-ceph-mon-b-6776bc469b-tzzt8        2/2     Running
+    0          38m
+    rook-ceph-mon-d-5ff5d488b5-7v8xh        2/2     Running
+    0          4m8s
+    ```
+    {: screen}
+
+1. Verify that new OSD pods are running on the replacement node:
+    ```sh
+    oc get pods -o wide -n openshift-storage| egrep -i <new_node_name> | egrep osd
     ```
     {: pre}
 
@@ -272,6 +298,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     oc get deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME -n openshift-storage
     ```
     {: pre}
+
 
 1. If there is an existing `crashcollector` deployment, delete it.
     ```sh
@@ -317,7 +344,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: pre}
 
-## Update your `ocscluster` resource
+## Update your cluster resource
 {: #update-ocs-resource-yaml-vpc}
 {: step}
 

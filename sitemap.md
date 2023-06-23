@@ -5381,7 +5381,7 @@ subcollection: openshift
 
 [Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
-[Updating worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
+[Updating Classic worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
 
 * [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-cluster-master-classic)
 
@@ -5393,33 +5393,33 @@ subcollection: openshift
 
 * [Update the worker node](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-worker-node-classic)
 
-* [Clean up the `openshift-storage` project](/docs/openshift?topic=openshift-openshift-storage-update-classic#cleanup-os-storage-classic)
+* [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-classic#cleanup-os-storage-classic)
 
-* [Update your `ocscluster` resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-classic)
+* [Add the new storage node](/docs/openshift?topic=openshift-openshift-storage-update-classic#add-storage-node-classic)
 
 * [Update the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-add-on-classic)
 
-* [Update your `ocscluster` resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-yaml-classic)
+* [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-yaml-classic)
 
 [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
 
 * [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-cluster-master-vpc)
 
-* [Determine which worker nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-worker-nodes-vpc)
+* [Determine which storage nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
 
 * [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
 
-* [Replace the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#replace-worker-node-vpc)
+* [Upgrade the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
 
-* [Clean up the `openshift-storage` project](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-os-storage-vpc)
+* [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-os-storage-vpc)
 
-* [Update your `ocscluster` resource](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-resource-vpc)
+* [Add the new storage node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#add-storage-node-vpc)
 
 * [Update the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-add-on-vpc)
 
-* [Update your `ocscluster` resource](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-resource-yaml-vpc)
+* [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-resource-yaml-vpc)
 
 [Managing your OpenShift Data Foundation deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
