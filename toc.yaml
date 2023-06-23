@@ -52,9 +52,8 @@ toc:
       - topicgroup:
           label: Installing the CLI and API
           topics:
-          - include: ../cli/reference/ibmcloud/download_cli.md
-          - include: ../cli/reference/ibmcloud/extend_cli.md
           - cli-install.md
+          - cli-update.md
           - api-install.md
           - include: ../cli/reference/ibmcloud/uninstall_cli.md
       - topicgroup:

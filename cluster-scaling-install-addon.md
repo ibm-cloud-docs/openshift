@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-09"
+lastupdated: "2023-06-23"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -192,6 +192,8 @@ Before disabling the add-on, [edit the autoscaler ConfigMap](/docs/openshift?top
 | `scaleDownDelayAfterAdd` | The amount of time after scale up that scale down evaluation resumes. The default value for `scaleDownDelayAfterAdd` is 10 minutes. | `10m` |
 | `scaleDownDelayAfterDelete` | The amount of time after node deletion that scale down evaluation resumes. The default value for `scaleDownDelayAfterDelete` is the same as the `scan-interval` which is `1m` | `1m` |
 | `scaleDownDelayAfterFailure` | The amount of time in minutes that the autoscaler must wait after a failure. | `3m` |
+| `kubeClientBurst` | Allowed burst for the Kubernetes client. | `300` |
+| `kubeClientQPS` | The QPS value for Kubernetes client. How many queries are accepted once the burst has been exhausted. | `5.0` |
 | `maxEmptyBulkDelete` | The maximum number of empty nodes that can be deleted by the autoscaler at the same time. | `10` |
 | `maxGracefulTerminationSec` | The maximum number of seconds the autoscaler waits for pod to end when it scales down a node. | `600` |
 | `maxTotalUnreadyPercentage` | The maximum percentage of unready nodes in the cluster. After this value is exceeded, the autoscaler stops operations. | `45` |
@@ -204,6 +206,7 @@ Before disabling the add-on, [edit the autoscaler ConfigMap](/docs/openshift?top
 | `scaleDownCandidatesPoolRatio` | The ratio of nodes that are considered as additional non-empty candidates for scale down when some candidates from previous iteration are no longer valid. | `0.1` |
 | `scaleDownCandidatesPoolMinCount` | The minimum number of nodes that are considered as additional non-empty candidates for scale down when some candidates from previous iterations are no longer valid. | `50` |
 | `scaleDownEnabled` | When set to `false`, the autoscaler does not perform scale down. | `true` |
+| `scaleDownUnreadyEnabled` | When set to `true` unready nodes are scheduled for scale down. | `true` |
 | `scanInterval` | Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down. | `1m` |
 | `skipNodesWithLocalStorage` | When set to `true`, worker nodes that have pods that are saving data to local storage are not scaled down. The default value is `true` |
 | `skipNodesWithSystemPods` | When set to `true`, worker nodes that have `kube-system` pods are not scaled down. Do not set the value to `false` because scaling down `kube-system` pods might have unexpected results. | `true` |
@@ -213,6 +216,8 @@ Before disabling the add-on, [edit the autoscaler ConfigMap](/docs/openshift?top
 | `balancingIgnoreLabel` | The node labels to ignore during zone balancing. Apart from the fixed node labels, the autoscaler can ignore an additional 5 node labels during zone balancing. For example: `balancingIgnoreLabel:key1=value1` and `balancingIgnoreLabel:key2=value2` |
 | `workerPoolsConfig.json` | The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone.  \n - `{"name": "<pool_name>","minSize": 1,"maxSize": 2,"enabled":false}`.  \n - `<pool_name>`: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`  \n - `maxSize: <number_of_workers>`: The maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `minSize: <number_of_workers>` size.  \n - `min=<number_of_workers>`: The minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale to fewer than this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.  \n - `enabled=true|false`: When `true`, the cluster autoscaler can scale your worker pool. When `false`, the cluster autoscaler won't scale the worker pool. Later, if you want to [remove the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-console), you must first disable each worker pool in the ConfigMap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system <cluster_autoscaler_pod>`. | By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1` |
 {: caption="Autoscaler add-on parameter reference" caption-side="bottom"}
+
+
 
 
 
