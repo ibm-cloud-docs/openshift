@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-26"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -45,14 +45,7 @@ For more information about how your cluster resources are set up, see the [Servi
 
 For a detailed overview of capabilities and benefits, see [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits).
 
-## Can I get a free cluster?
-{: #faq_free}
-{: faq}
-{: support}
 
-
-
-You can create only standard {{site.data.keyword.redhat_openshift_notm}} clusters. If you want to test out the capabilities of Kubernetes, [create a free Kubernetes cluster](/docs/containers?topic=containers-getting-started) and [deploy some apps](/docs/containers?topic=containers-app). Then, redeploy the apps that you try out in the Kubernetes cluster to your [{{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app).
 
 ## What container platforms are available for my cluster?
 {: #container_platforms}
@@ -183,7 +176,7 @@ For a list of supported worker node operated systems by cluster version, see [{{
 {: #supported_regions}
 {: faq}
 
-{{site.data.keyword.openshiftlong_notm}} is available worldwide. You can create standard clusters in every supported {{site.data.keyword.openshiftlong_notm}} region. Free clusters are available only in select regions.
+{{site.data.keyword.openshiftlong_notm}} is available worldwide. You can create clusters in every supported {{site.data.keyword.openshiftlong_notm}} region.
 
 For more information about supported regions, see [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones).
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-26"
 
 keywords: openshift, clusters, classic, create
 
@@ -23,8 +23,6 @@ subcollection: openshift
 
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a fully customizable standard cluster with your choice of hardware isolation and access to features like multiple worker nodes for a highly available environment.
 {: shortdesc}
-
-
 
 ## Creating a classic cluster in the console
 {: #clusters_ui}
@@ -269,8 +267,6 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 ## Example commands to create classic clusters
 {: #cluster_create_classic}
 {: cli}
-
-
 
 Classic cluster, shared virtual machine
 

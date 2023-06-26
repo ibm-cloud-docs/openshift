@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-06-26"
 
 keywords: openshift
 
@@ -37,9 +37,6 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the Ingress controller is triggered for creation.
 4. A load balancer service that exposes the Ingress controller is created and assigned an IP address.
 5. The load balancer IP address is used to register the Ingress subdomain in Akamai. Akamai might have latency during the registration process.
-
-If you create a classic cluster that is connected to private VLANs only, or if you create a free cluster, no Ingress subdomain or secret are created.
-{: note}
 
 **VPC clusters**:
 

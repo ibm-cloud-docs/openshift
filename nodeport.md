@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-06-26"
 
 keywords: openshift, app access
 
@@ -53,7 +53,7 @@ The public IP address of the worker node is not permanent. When a worker node is
 ## Enabling access to an app by using a NodePort service
 {: #nodeport_config}
 
-You can expose your app as a Kubernetes NodePort service for free or standard clusters.
+Expose your app as a Kubernetes NodePort service.
 {: shortdesc}
 
 Because worker nodes in VPC clusters don't have a public IP address, you can access an app through a NodePort only if you are connected to your private VPC network, such as through a VPN connection. To access an app from the internet, you must use a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas) or [Ingress](/docs/containers?topic=containers-managed-ingress-about) service instead.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-26"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
+
+    * [26 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2623)
+
+        * CLI version `1.0.528`.
 
     * [22 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2223)
 
@@ -2921,15 +2925,15 @@ subcollection: openshift
 
 * [Understanding the CLI tools](/docs/openshift?topic=openshift-cli-install#cli-understand)
 
-* [Run the installation command](/docs/openshift?topic=openshift-cli-install#run-the-installation-command)
+* [Run the installation command](/docs/openshift?topic=openshift-cli-install#cli-install-include-step1-install-idt)
 
 * [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/openshift?topic=openshift-cli-install#install-kubectl-cli)
 
 [Updating the CLI](/docs/openshift?topic=openshift-cli-update#cli-update)
 
-* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-cli-update#updating-the--cli)
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-cli-update#cli-update-include-update-ibmcloud-cli)
 
-* [Updating installed plug-ins](/docs/openshift?topic=openshift-cli-update#updating-installed-plug-ins)
+* [Updating installed plug-ins](/docs/openshift?topic=openshift-cli-update#cli-update-include-cli-update-plugin)
 
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_install)
 
@@ -6224,6 +6228,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.528](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10528)
+
 * [Version v1.0.523](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10523)
 
 * [Version v1.0.516](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10516)
@@ -8916,7 +8922,7 @@ subcollection: openshift
 
 [IAM platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
 
-* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#kubernetes-service)
+* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
 
 [IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles)
 
@@ -9066,8 +9072,6 @@ subcollection: openshift
 * [How does {{site.data.keyword.openshiftlong_notm}} work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
 
 * [Why should I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#faq_benefits)
-
-* [Can I get a free cluster?](/docs/openshift?topic=openshift-faqs#faq_free)
 
 * [What container platforms are available for my cluster?](/docs/openshift?topic=openshift-faqs#container_platforms)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-26"
 
 keywords: openshift
 
@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2023
 {: #openshift-jun23}
+
+
+### 26 June 2023
+{: #openshift-jun2623}
+{: release-note} 
+
+CLI version `1.0.528`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
 
 
 ### 22 June 2023
@@ -4247,7 +4257,7 @@ Version change logs
 {: release-note}
 
 New! Virtual Private Cloud Generation 2
-:   You can now create standard Kubernetes clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC Gen 2 clusters are available for only standard, Kubernetes clusters and are not supported in free clusters.
+:   You can now create standard Kubernetes clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
 
 :   For more information, check out the following links. 
     - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
