@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-09"
+lastupdated: "2023-06-26"
 
 keywords: openshift
 
@@ -106,7 +106,6 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Access to {{site.data.keyword.cloud_notm}} services such as AI|Yes|Yes|
 |Software-defined storage Portworx solution available for multizone data use cases|Yes|Yes|
 |Create a cluster in an IBM Virtual Private Cloud (VPC)|Yes|Yes|
-|Ability to create free clusters|Yes| |
 |Latest community Kubernetes distribution|Yes| |
 |Scope {{site.data.keyword.cloud_notm}} IAM access policies to access groups for service access roles that sync to cluster RBAC |Yes| |
 |Classic infrastructure cluster on only the private network|Yes| |

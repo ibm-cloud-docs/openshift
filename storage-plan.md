@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-06-26"
 
 keywords: openshift
 
@@ -76,7 +76,7 @@ Understand other storage characteristics that impact your choice.
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-You can use non-persistent storage options if your data is not required to be persistently stored or if you want to unit-test your app components. The following image shows available non-persistent data storage options in {{site.data.keyword.openshiftlong_notm}}. These options are available for free and standard clusters.
+You can use non-persistent storage options if your data is not required to be persistently stored or if you want to unit-test your app components. The following image shows available non-persistent data storage options in {{site.data.keyword.openshiftlong_notm}}.
 
 ![Non-persistent data storage options](images/cs_storage_nonpersistent.svg){: caption="Figure 1. Non-persistent data storage options" caption-side="bottom"}
 

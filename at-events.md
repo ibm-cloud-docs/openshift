@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-03"
+lastupdated: "2023-06-26"
 
 keywords: openshift, audit
 
@@ -93,7 +93,7 @@ The following list of account events that are related to managing your clusters 
 | `containers-kubernetes.account-reservation-contract.list` | Contracts for a reservation are listed. |
 | `containers-kubernetes.account-subnet.list` | Subnets in the {{site.data.keyword.cloud_notm}} classic infrastructure account are listed. |
 | `containers-kubernetes.account-subnet-vlan-spanning.get` | Details on whether the {{site.data.keyword.cloud_notm}} account has VLAN spanning enabled are returned. |
-| `containers-kubernetes.account-user-config.get` | Details on whether a user can create free or standard clusters in a certain region and resource group are returned. |
+| `containers-kubernetes.account-user-config.get` | Details on whether a user can create in a certain region and resource group are returned. |
 | `containers-kubernetes.account-vpc.get` | Details for a virtual private cloud (VPC) instance are returned. |
 | `containers-kubernetes.account-vpc.list` | Virtual private cloud (VPC) instances in the {{site.data.keyword.cloud_notm}} account are listed.  |
 | `containers-kubernetes.account-worker-reservation.create` | A reservation for worker nodes is created. |

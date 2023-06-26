@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-26"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -165,7 +165,6 @@ When you initiate cluster management actions, such as running [`ibmcloud oc` com
 {: #sat-regions-openshift}
 
 To see a list of the supported `Managed from` regions for {{site.data.keyword.satelliteshort}} clusters, [Supported {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-sat-regions).
-
 
 
 

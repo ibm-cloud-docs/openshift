@@ -9067,8 +9067,6 @@ subcollection: openshift
 
 * [Why should I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#faq_benefits)
 
-* [Can I get a free cluster?](/docs/openshift?topic=openshift-faqs#faq_free)
-
 * [What container platforms are available for my cluster?](/docs/openshift?topic=openshift-faqs#container_platforms)
 
 * [Does the service come with a managed {{site.data.keyword.redhat_openshift_notm}} master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)

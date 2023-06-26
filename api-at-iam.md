@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-06-26"
 
 keywords: openshift
 
@@ -52,7 +52,7 @@ Review the following account API methods, their corresponding actions in {{site.
 | `GET​/v1​/regions` | Deprecated: List available Kubernetes Service regions. | N/A | N/A |
 | `GET​/v1​/subnets` | List available {{site.data.keyword.cloud_notm}} infrastructure subnets. | `containers-kubernetes.cluster.read` | N/A |
 | `GET​/v1​/subnets​/vlan-spanning` | View the VLAN spanning status. | `containers-kubernetes.cluster.read` | N/A |
-| `GET​/v1​/user-config` | View a user's ability to create free and standard clusters in a region and resource group. | `containers-kubernetes.cluster.read` | N/A |
+| `GET​/v1​/user-config` | View a user's ability to create clusters in a region and resource group. | `containers-kubernetes.cluster.read` | N/A |
 | `GET​/v1​/versions` | List available {{site.data.keyword.openshiftlong_notm}} versions. | `containers-kubernetes.cluster.read` | N/A |
 | `GET​/v1​/zones` | List available zones (data centers). | N/A | N/A |
 | `GET​/v2​/getMessages` | View the current user messages. | N/A | N/A |

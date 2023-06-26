@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-06-26"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -177,7 +177,7 @@ Before you begin
 - Install an IPSec VPN gateway in your on-premises data center.
 - Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `default` namespace.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-    All strongSwan configurations are permitted in standard clusters. If you use a free cluster, you can choose only an outbound VPN connection in [Step 3](#strongswan_3). Inbound VPN connections require a load balancer in the cluster, and load balancers are not available for free clusters.
+    All strongSwan configurations are permitted in standard clusters.
     {: note}
 
 ### Step 1: Get the strongSwan Helm chart
@@ -231,8 +231,6 @@ Inbound
 
 Outbound
 : The cluster initiates the VPN connection, and the on-premises VPN endpoint from the remote network listens for the connection.
-
-If you use a free cluster, you can choose only an outbound VPN connection. Inbound VPN connections require a load balancer in the cluster, and load balancers are not available for free clusters.
 
 To establish an inbound VPN connection, modify the following settings.
 

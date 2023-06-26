@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-06-26"
 
 keywords: openshift
 
@@ -34,7 +34,7 @@ When you tried to connect to your app by using the public IP address of the NLB,
 Your NLB service might not be working properly for one of the following reasons:
 {: tsCauses}
 
-- The cluster is a free cluster or a standard cluster with only one worker node.
+
 - The cluster is not fully deployed yet.
 - The configuration script for your NLB service includes errors.
 

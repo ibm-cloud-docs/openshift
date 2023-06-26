@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-06-26"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -202,15 +202,13 @@ From the {{site.data.keyword.redhat_openshift_notm}} console, you can deploy one
 ## What's next?
 {: #whats-next}
 
-- Complete the [{{site.data.keyword.openshiftlong_notm}} classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or the [{{site.data.keyword.openshiftlong_notm}} VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial) to:
-    - Set up your {{site.data.keyword.cloud_notm}} and {{site.data.keyword.redhat_openshift_notm}} CLI.
-    - Deploy an app that uses an {{site.data.keyword.cloud_notm}} service.
-- For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.11/welcome/index.html#developer-activities){: external} documentation.
-
-Looking for an overview of all your options in {{site.data.keyword.openshiftlong_notm}}? Check out the curated [learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin) or [learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
-{: tip}
-
-
+| Suggestion  |  What you learn about {{site.data.keyword.redhat_openshift_notm}}|
+|----------|------|
+| [{{site.data.keyword.openshiftlong_notm}} classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or [{{site.data.keyword.openshiftlong_notm}} VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial) | - Set up your {{site.data.keyword.cloud_notm}} and {{site.data.keyword.redhat_openshift_notm}} CLI. \n - Deploy an app that uses an {{site.data.keyword.cloud_notm}} service. |
+|[Learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin)|See an overview of all the options in {{site.data.keyword.openshiftlong_notm}} for administrators.
+|[Learning path for developers](/docs/openshift?topic=openshift-learning-path-dev)|See an overview of all the options in {{site.data.keyword.openshiftlong_notm}} for developers.
+|[{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.11/welcome/index.html#developer-activities){: external} documentation | Learn how to work with your apps|
+{: caption="What's next after completing the {{site.data.keyword.openshiftlong_notm}} getting started?" caption-side="bottom"}
 
 
 
