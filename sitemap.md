@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-06-27"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
+
+    * [27 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2723)
+
+        * Pod security admission updates
 
     * [26 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2623)
 
@@ -3892,6 +3896,10 @@ subcollection: openshift
 * [What if Pod Security Admission isn't the right choice for me?](/docs/openshift?topic=openshift-pod-security-admission#what-if-psa)
 
 * [Configuring Pod Security admission namespace labels](/docs/openshift?topic=openshift-pod-security-admission#psa-namespace-labels)
+
+* [Default Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default)
+
+* [Customizing the Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom)
 
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-configure)
 
@@ -9230,6 +9238,8 @@ subcollection: openshift
 [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create#ts_cos_bucket_cluster_create)
 
 [After logging in to my cluster, why do I see a no resources found message?](/docs/openshift?topic=openshift-rhoks_ts_not_found#rhoks_ts_not_found)
+
+* [Why do I get an error that my PodSecurityConfiguration is not valid?](/docs/openshift?topic=openshift-ts-pod-security-reset#ts-pod-security-reset)
 
 [Why does the cluster master return a VPN server error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_login#rhoks_ts_openvpn_login)
 

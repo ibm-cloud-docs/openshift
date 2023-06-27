@@ -449,6 +449,7 @@ toc:
               - ts-cluster-create-delete.md
               - ts-cluster-cos-bucket.md
               - ts-cluster-no-resources.md
+              - ts-pod-security-reset.md
               - ts-cluster-vpn.md
               - ts-cluster-no-vpc.md
               - ts-cluster-icr-pull-img.md
