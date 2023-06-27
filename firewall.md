@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-14"
+lastupdated: "2023-06-27"
 
 keywords: openshift
 
@@ -552,12 +552,12 @@ Before you begin, the following steps require you to change the IAM allowlist fo
         {: screen}
 
 2. [Get the CIDRs and IPs of the subnets that your worker nodes are attached to](#iam_cidr_ip).
-3. Get the [control plane CIDRs of the region where you cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. 
+3. Get the [control plane CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. 
 3. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
 4. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
 5. Select the user that you found in step 1 from the list.
 6. From the **User details** page, go to the **IP address restrictions** section.
-7. Enter the subnet CIDRs and IPs, and the control plane CIDRs of the region where you cluster is located.
+7. Enter the subnet CIDRs and IPs, and the control plane CIDRs of the region where your cluster is located.
 8. Click **Apply**.
 
 

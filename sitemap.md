@@ -5575,9 +5575,9 @@ subcollection: openshift
 
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
-* [Deploying an app that uses {{site.data.keyword.filestorage_short}} with dynamic provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_dynamic)
+* [Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_dynamic)
 
-* [Deploying an app that uses {{site.data.keyword.filestorage_short}} with static provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_static)
+* [Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with static provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_static)
 
 [Managing {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-managing)
 

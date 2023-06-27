@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-06-27"
 
 keywords: openshift, subnet, detach
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 
 [Classic]{: tag-classic}
 
-You cluster is experiencing network errors.
+your cluster is experiencing network errors.
 {: tsSymptoms}
 
 A portable subnet was deleted.

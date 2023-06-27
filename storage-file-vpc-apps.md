@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-06-27"
 
 keywords: openshift
 
@@ -18,10 +18,10 @@ subcollection: openshift
 # Adding {{site.data.keyword.filestorage_vpc_short}} to apps
 {: #storage-file-vpc-apps}
 
-{{site.data.keyword.containerlong}} provides pre-defined storage classes for {{site.data.keyword.filestorage_short}} that you can use to provision {{site.data.keyword.filestorage_vpc_short}} with a specific configuration.
+{{site.data.keyword.containerlong}} provides pre-defined storage classes for {{site.data.keyword.filestorage_vpc_short}} that you can use to provision {{site.data.keyword.filestorage_vpc_short}} with a specific configuration.
 {: shortdesc}
 
-Every storage class specifies the type of {{site.data.keyword.filestorage_short}} that you provision, including available size, IOPS, file system, and the retention policy.  
+Every storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy.  
 
 After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](/docs/vpc?topic=vpc-file-storage-profiles#fs-tiers){: external} if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
 {: important}
@@ -64,10 +64,10 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 1. Choose the file storage `type`, `IOPS`, `reclaim policy`, and `billing` that you want to use.
 
 
-## Deploying an app that uses {{site.data.keyword.filestorage_short}} with dynamic provisioning
+## Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning
 {: #vpc_add_file_dynamic}
 
-Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
+Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_vpc_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
 1. Create a configuration file to define your persistent volume claim (PVC) and save the configuration as a `.yaml` file. The following example creates a claim that is named `mypvc` by using the `ibmc-vpc-file-5iops-tier` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
 
@@ -97,10 +97,10 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
         - `ReadWriteOnce`: The PVC can be mounted by one pod only. This pod can read from and write to the volume.
     
     `storage`
-    :   Enter the size of the {{site.data.keyword.filestorage_short}}, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your {{site.data.keyword.filestorage_short}}. Make sure to specify a size that matches the amount of data that you want to store.
+    :   Enter the size of the {{site.data.keyword.filestorage_vpc_short}}, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your {{site.data.keyword.filestorage_vpc_short}}. Make sure to specify a size that matches the amount of data that you want to store.
     
     `storageClassName`
-    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) or [create your own storage class](/docs/containers?topic=containers-vpc-block#custom-sc-vpc-block). If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`.
+    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_vpc_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) or [create your own storage class](/docs/containers?topic=containers-vpc-block#custom-sc-vpc-block). If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`.
 
 
 1. Create the PVC.
@@ -140,7 +140,7 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
 
 1. To mount the storage to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
     
-    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-nonroot).
+    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-nonroot).
     {: tip}
 
     ```yaml
@@ -185,7 +185,7 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
     :   The name of the container that you want to deploy to your cluster.
     
     `mountPath`
-    :   In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+    :   In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_vpc_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
     
     `volumeMounts.name`
     :   In the container volume mounts section, enter the name of the volume to mount to your pod.
@@ -230,10 +230,10 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
 
 
 
-## Deploying an app that uses {{site.data.keyword.filestorage_short}} with static provisioning
+## Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with static provisioning
 {: #vpc_add_file_static}
 
-Create a persistent volume claim (PVC) to [statically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster. 
+Create a persistent volume claim (PVC) to [statically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_vpc_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster. 
 
 Before you can create a persistent volume (PV), you have to retrieve details about your file share.
 
@@ -344,7 +344,7 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     :   The name of the container that you want to deploy to your cluster.
     
     `spec.containers.volumeMounts.mountPath`
-    :   Enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+    :   Enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_vpc_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
     
     `volumeMounts.name`
     :   Enter the name of the volume to mount to your pod.

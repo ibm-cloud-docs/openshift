@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-06-27"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -237,7 +237,7 @@ If you create a cluster in the UI, follow these steps to specify a {{site.data.k
 3. From the **Secrets Manager group** drop down menu, select the secret group you want to apply. 
 4. Create the cluster. 
 5. Check that the {{site.data.keyword.secrets-manager_short}} instance is registered to the cluster.
-    1. When you cluster is fully provisioned, click on the cluster to view the cluster details. Under **Integrations**, find the **Secrets Manager** heading and click **Manage**. 
+    1. When your cluster is fully provisioned, click on the cluster to view the cluster details. Under **Integrations**, find the **Secrets Manager** heading and click **Manage**. 
     2. In the side panel, check that correct instance is listed under **Registered Secrets Manager instances**.
     3. To register additional instances to the cluster, click **Register instances**.
     

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-27"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -224,7 +224,7 @@ Worker node flavors vary by cluster type, the zone where you want to create the 
 
 Bare metal machines are optimized for different use cases such as data-, GPU-, or RAM-intensive workloads.
 
-After you create GPU bare metal worker nodes in your {{site.data.keyword.redhat_openshift_notm}} version 4 cluster, [install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
+After you create GPU bare metal worker nodes in your {{site.data.keyword.redhat_openshift_notm}} version 4 cluster, [install the Node Feature Discovery and NVIDIA GPU operators for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
 {: note}
 
 Choose a flavor, or machine type, with the correct storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
