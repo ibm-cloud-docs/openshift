@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-06-27"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
+
+    * [27 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2723)
+
+        * Pod security admission updates
 
     * [26 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2623)
 
@@ -3893,6 +3897,10 @@ subcollection: openshift
 
 * [Configuring Pod Security admission namespace labels](/docs/openshift?topic=openshift-pod-security-admission#psa-namespace-labels)
 
+* [Default Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default)
+
+* [Customizing the Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom)
+
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-configure)
 
 * [Additional resources](/docs/openshift?topic=openshift-pod-security-admission#pod-sec-additional-resources)
@@ -5567,9 +5575,9 @@ subcollection: openshift
 
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
-* [Deploying an app that uses {{site.data.keyword.filestorage_short}} with dynamic provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_dynamic)
+* [Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_dynamic)
 
-* [Deploying an app that uses {{site.data.keyword.filestorage_short}} with static provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_static)
+* [Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with static provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_static)
 
 [Managing {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-managing)
 
@@ -9230,6 +9238,8 @@ subcollection: openshift
 [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create#ts_cos_bucket_cluster_create)
 
 [After logging in to my cluster, why do I see a no resources found message?](/docs/openshift?topic=openshift-rhoks_ts_not_found#rhoks_ts_not_found)
+
+* [Why do I get an error that my PodSecurityConfiguration is not valid?](/docs/openshift?topic=openshift-ts-pod-security-reset#ts-pod-security-reset)
 
 [Why does the cluster master return a VPN server error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_login#rhoks_ts_openvpn_login)
 

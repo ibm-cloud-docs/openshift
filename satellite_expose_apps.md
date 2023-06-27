@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-06-27"
 
 keywords: openshift, route, Ingress controller
 
@@ -264,7 +264,7 @@ To create routes for your apps:
 ## Setting up a third-party load balancer in front of the {{site.data.keyword.redhat_openshift_notm}} Ingress controller
 {: #sat-expose-byolb}
 
-To health check the IP addresses of the hosts that are registered in the Ingress controller's DNS records, you can set up your own third-party load balancer in front of the IP addresses for the hosts that are assigned as worker nodes to you cluster.
+To health check the IP addresses of the hosts that are registered in the Ingress controller's DNS records, you can set up your own third-party load balancer in front of the IP addresses for the hosts that are assigned as worker nodes to your cluster.
 {: shortdesc}
 
 For example, if you remove a host that was assigned to your cluster from your location and replace it with a different host, IBM updates the host IP addresses in your Ingress controller's DNS record for you. But if you power off a host, such as through your cloud provider's infrastructure management, the host's IP address is not removed from your Ingress controller's DNS records and might cause a call to fail if the DNS record is resolved to that host's IP address. By setting up a load balancer in front of your Ingress controller, you can ensure that host IP addresses are regularly health checked, such as to ensure high availability for production-level workloads.

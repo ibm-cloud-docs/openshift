@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-06-27"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -335,7 +335,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 :   The name or ID of the cluster for which you want to create a monitoring configuration for {{site.data.keyword.mon_full_notm}}. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
 
 `--instance MONITORING_INSTANCE`
-:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you want to use to create the monitoring configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than you cluster. To create a service instance, follow the steps in [Provision an instance](/docs/monitoring?topic=monitoring-provision). This value is required.
+:   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance that you want to use to create the monitoring configuration. The service instance must be in the same {{site.data.keyword.cloud_notm}} account as your cluster, but can be in a different resource group or region than your cluster. To create a service instance, follow the steps in [Provision an instance](/docs/monitoring?topic=monitoring-provision). This value is required.
 
 `--sysdig-access-key ACCESS_KEY`
 :   The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you don't specify this option, the latest access key is used for your configuration. 

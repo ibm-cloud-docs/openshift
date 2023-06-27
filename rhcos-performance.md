@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-06-27"
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
 
@@ -506,7 +506,7 @@ If you want to remove customizations from your worker nodes and reset them to th
     ```
     {: codeblock}
     
-1. Apply the `DaemonSet` to you cluster by running the following command.
+1. Apply the `DaemonSet` to your cluster by running the following command.
 
     ```sh
     kubectl replace --force -f remove-custom.yaml

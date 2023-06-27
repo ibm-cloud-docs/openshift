@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-06-27"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -72,7 +72,7 @@ If you need to create your cluster by using custom-range subnets, see the guidan
 #### How do I create subnets for classic infrastructure access?
 {: #create-subnets-how-to}
 
-If you enable classic access when you create your VPC, [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) automatically determine the IP ranges of any subnets that you create. However, the default IP ranges for classic access VPC subnets conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. Instead, you must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for you cluster](#classic_access_subnets).
+If you enable classic access when you create your VPC, [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) automatically determine the IP ranges of any subnets that you create. However, the default IP ranges for classic access VPC subnets conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. Instead, you must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for your cluster](#classic_access_subnets).
 
 #### Can I specify subnets for pods and services in my cluster?
 {: #specify-subnets}
@@ -164,7 +164,7 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 - If you have worker nodes that are attached to an existing subnet in a zone, you can't change the subnet for that zone in the cluster.
 - The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 - Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
-- The [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. You must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for you cluster](#classic_access_subnets).
+- The [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. You must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for your cluster](#classic_access_subnets).
 
 
 

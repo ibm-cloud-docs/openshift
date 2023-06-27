@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-06-27"
 
 keywords: openshift
 
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2023
 {: #openshift-jun23}
+
+### 27 June 2023
+{: #openshift-jun2723}
+{: release-note} 
+
+Pod security admission updates
+:   Review the [default pod security configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default) and the steps to [customize pod security admission in your cluster](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom).
 
 
 ### 26 June 2023
@@ -3614,7 +3621,7 @@ New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
 :   Now, you can create GPU bare metal worker nodes in your {{site.data.keyword.openshiftlong_notm}} version 4 clusters in select zones. GPU machines are suited for high-performance computing, machine learning, or 3D applications that you might have, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}. 
 :   To get started with GPU-accelerated workloads.
     - Create a [cluster](/docs/openshift?topic=openshift-clusters) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. 
-    - [Install the Node Feature Discovery and NVIDIA GPU operators for you cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}. 
+    - [Install the Node Feature Discovery and NVIDIA GPU operators for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}. 
     - Verify that you can run GPU workloads by [deploying a sample job](/docs/openshift?topic=openshift-deploy_app#gpu_app).
     
 
