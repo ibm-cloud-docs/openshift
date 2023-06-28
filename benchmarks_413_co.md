@@ -1,10 +1,10 @@
 ---
 
 copyright: 
-  years: 2022, 2023
+  years: 2023, 2023
 lastupdated: "2023-06-28"
 
-keywords: openshift, benchmarks, 4.11, compliance operator, compliance
+keywords: openshift, benchmarks, 4.13, compliance operator, compliance
 
 subcollection: openshift
 
@@ -16,22 +16,23 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.11 compliance operator benchmark
-{: #benchmarks_411_co}
+# {{site.data.keyword.openshiftlong_notm}} version 4.13 compliance operator benchmark
+{: #benchmarks_413_co}
 
-
+Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.13.
+{: shortdesc}
 
 
 ## 1 Control plane components
-{: #co-benchmark-411-cp}
+{: #co-benchmark-413-cp}
 
 ### 1.1 Master node configuration files
-{: #co-benchmark-411-11}
+{: #co-benchmark-413-11}
 
-Master node configuration is not stored as a set of files, therefore rules in section 1.1 is out of the scope of automated check by the compliance operator.
+The master node configuration is not stored as a set of files; therefore, rules in section 1.1 are out of the scope of the automated check by the compliance operator.
 
 ### 1.2 API server
-{: #co-benchmark-411-12}
+{: #co-benchmark-413-12}
 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
@@ -39,7 +40,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | 1.2.1 | Ensure that anonymous requests are authorized. | Manual | 1| Pass |
 | 1.2.2|Ensure that the `--basic-auth-file` option is not set. |Automated|1|Pass |
 | 1.2.3|Ensure that the `--token-auth-file` parameter is not set. |Automated|1|Pass |
-| 1.2.4|Use `https` for kubelet connections. |Automated|1|[Fail](#co-benchmark-411-remdiations) |
+| 1.2.4|Use `https` for kubelet connections. |Automated|1|[Fail](#co-benchmark-413-remdiations) |
 | 1.2.5|Ensure that the kubelet uses certificates to authenticate.|Automated|1|Pass |
 | 1.2.6|Verify that the kubelet certificate authority is set as appropriate. |Automated|1|Pass |
 | 1.2.7|Ensure that the `--authorization-mode` option is not set to `AlwaysAllow`. |Automated|1|Pass |
@@ -54,11 +55,11 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | 1.2.16|Ensure that the admission control plug-in `SecurityContextConstraint` is set. |Automated|1|Pass |
 | 1.2.17|Ensure that the admission control plug-in `NodeRestriction` is set. |Automated|1|Pass |
 | 1.2.18|Ensure that the `--insecure-bind-address` option is not set. |Automated|1|Pass |
-| 1.2.19|Ensure that the `--insecure-port option` is set to `0`. |Automated|1|[Not checked](#co-benchmark-411-remdiations) |
-| 1.2.20|Ensure that the `--secure-port option` is not set to `0`. |Automated|1|Pass |
-| 1.2.21|Ensure that the `healthz` endpoint is protected by RBAC. |Automated|1|Pass |
-| 1.2.22|Ensure that the `--audit-log-path` option is set. |Automated|1|Pass |
-| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention. |Automated|1|[Not checked](#co-benchmark-411-remdiations) |
+| 1.2.19|Ensure that the `--insecure-port option` is set to `0`. |Automated|1|[Not checked](#co-benchmark-413-remdiations) |
+| 1.2.20|Ensure that the `--secure-port option` is not set to `0`. |Automated|1|Missing |
+| 1.2.21|Ensure that the `healthz` endpoint is protected by RBAC. |Automated|1|Missing |
+| 1.2.22|Ensure that the `--audit-log-path` option is set. |Automated|1|[Not checked](#co-benchmark-413-remdiations) |
+| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention. |Automated|1|[Not checked](#co-benchmark-413-remdiations) |
 | 1.2.24|Ensure that the `maximumRetainedFiles` option is set to `10` or as appropriate. |Automated|1|Pass |
 | 1.2.25|Ensure that the `maximumFileSizeMegabytes` option is set to `100` or as appropriate. |Automated|1|Pass |
 | 1.2.26|Ensure that the `--request-timeout` option is set as appropriate. |Automated|1|Pass |
@@ -68,38 +69,38 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | 1.2.30|Ensure that the `--tls-cert-file` and `--tls-private-key-file` options are set as appropriate. |Automated|1|Pass |
 | 1.2.31|Ensure that the `--client-ca-file` option is set as appropriate. |Automated|1|Pass |
 | 1.2.32|Ensure that the `--etcd-cafile` option is set as appropriate. |Automated|1|Pass |
-| 1.2.33|Ensure that the `--encryption-provider-config` option is set as appropriate. |Manual|1|[Not checked](#co-benchmark-411-remdiations) |
-| 1.2.34|Ensure that encryption providers are appropriately configured. |Manual|1|[Not checked](#co-benchmark-411-remdiations) |
+| 1.2.33|Ensure that the `--encryption-provider-config` option is set as appropriate. |Manual|1|[Not checked](#co-benchmark-413-remdiations) |
+| 1.2.34|Ensure that encryption providers are appropriately configured. |Manual|1|[Not checked](#co-benchmark-413-remdiations) |
 | 1.2.35|Ensure that the API Server makes use of only Strong Cryptographic Ciphers. |Manual|1|Pass |
 {: caption="Section 1.2 API server benchmark results"}
 
 ### 1.3 Controller manager
-{: #co-benchmark-411-13}
+{: #co-benchmark-413-13}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 1.3.1|Ensure that garbage collection is configured as appropriate. |Manual|1|Not checked |
-| 1.3.2|Ensure that controller manager `healthz` endpoints are protected by RBAC. |Automated|1|Pass |
+| 1.3.2|Ensure that controller manager `healthz` endpoints are protected by RBAC. |Automated|1|Missing |
 | 1.3.3|Ensure that the `--use-service-account-credentials` option is set to `true`. |Automated|1|Pass |
 | 1.3.4|Ensure that the `--service-account-private-key-file` option is set as appropriate. |Automated|1|Pass |
-| 1.3.5|Ensure that the `--root-ca-file option` is set as appropriate. |Automated|1|Pass |
+| 1.3.5|Ensure that the `--root-ca-file option` is set as appropriate. |Automated|1|Missing |
 | 1.3.6|Ensure that the `RotateKubeletServerCertificate` option is set to `true`. |Automated|2|Pass |
 | 1.3.7|Ensure that the `--bind-address option` is set to `127.0.0.1`. |Automated|1|Pass |
 {: caption="Section 1.3 Controller manager benchmark results"}
 
 
 ### 1.4 Scheduler
-{: #co-benchmark-411-14}
+{: #co-benchmark-413-14}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 1.4.1|Ensure that the `healthz` endpoints for the scheduler are protected by RBAC. |Automated|1|Pass |
+| 1.4.1|Ensure that the `healthz` endpoints for the scheduler are protected by RBAC. |Automated|1|Missing |
 | 1.4.2|Verify that the scheduler API service is protected by authentication and authorization. |Automated|1|Pass |
 {: caption="Section 1.4 Scheduler benchmark results"}
 
 
 ## 2 etcd
-{: #co-benchmark-411-2}
+{: #co-benchmark-413-2}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -109,14 +110,14 @@ Master node configuration is not stored as a set of files, therefore rules in se
 | 2.4|Ensure that the `--peer-cert-file` and `--peer-key-file` options are set as appropriate. |Automated|1|Pass |
 | 2.5|Ensure that the `--peer-client-cert-auth` option is set to `true`. |Automated|1|Pass |
 | 2.6|Ensure that the `--peer-auto-tls option` is not set to `true`. |Automated|1|Pass |
-| 2.7|Ensure that a unique Certificate Authority is used for etcd. |Manual|2|[Not checked](#co-benchmark-411-remdiations) |
+| 2.7|Ensure that a unique Certificate Authority is used for etcd. |Manual|2|[Not checked](#co-benchmark-413-remdiations) |
 {: caption="Section 2 etcd benchmark results"}
 
 ## 3 Control plane configuration
-{: #co-benchmark-411-3}
+{: #co-benchmark-413-3}
 
 ### 3.1 Authentication and authorization
-{: #co-benchmark-411-31}
+{: #co-benchmark-413-31}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -125,7 +126,7 @@ Master node configuration is not stored as a set of files, therefore rules in se
 
 
 ### 3.2 Logging
-{: #co-benchmark-411-32}
+{: #co-benchmark-413-32}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -134,16 +135,16 @@ Master node configuration is not stored as a set of files, therefore rules in se
 {: caption="Section 3.3 Logging benchmark results"}
 
 ## 4 Worker Nodes
-{: #co-benchmark-411-4}
+{: #co-benchmark-413-4}
 
 Follow the instruction in [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator) to perform automated check for worker node configuration.
 
 
 ## 5 Policies
-{: #co-benchmark-411-5}
+{: #co-benchmark-413-5}
 
 ### 5.1 RBAC and service accounts
-{: #co-benchmark-411-51}
+{: #co-benchmark-413-51}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -157,7 +158,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 
 
 ### 5.2 Pod Security Policies
-{: #co-benchmark-411-52}
+{: #co-benchmark-413-52}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -168,22 +169,22 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.2.5|Minimize the admission of containers with `allowPrivilegeEscalation`. |Automated|1| Not checked |
 | 5.2.6|Minimize the admission of root containers. |Manual|2| Not checked |
 | 5.2.7|Minimize the admission of containers with the `NET_RAW` capability. |Manual|1| Not checked |
-| 5.2.8|Minimize the admission of containers with added capabilities. |Manual|1|[Not checked](#co-benchmark-411-remdiations) |
+| 5.2.8|Minimize the admission of containers with added capabilities. |Manual|1|[Not checked](#co-benchmark-413-remdiations) |
 | 5.2.9|Minimize the admission of containers with capabilities assigned. |Manual|2| Not checked |
 {: caption="Section 5.2 Pod Security Policies benchmark results"}
 
 
 ### 5.3 Network policies and CNI
-{: #co-benchmark-411-53}
+{: #co-benchmark-413-53}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.3.1|Ensure that the CNI in use supports network policies. |Manual|1| Pass |
-| 5.3.2|Ensure that all namespaces have network policies defined. |Automated|2|[Not checked](#co-benchmark-411-remdiations) |
+| 5.3.2|Ensure that all namespaces have network policies defined. |Automated|2|[Not checked](#co-benchmark-413-remdiations) |
 {: caption="Section 5.3 Network policies and CNI benchmark results"}
 
 ### 5.4 Secrets management
-{: #co-benchmark-411-54}
+{: #co-benchmark-413-54}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -193,7 +194,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 
 
 ### 5.5 Extensible admission control
-{: #co-benchmark-411-55}
+{: #co-benchmark-413-55}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -201,7 +202,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 {: caption="Section 5.5 Extensible admission control benchmark results"}
 
 ### 5.7 General policies
-{: #co-benchmark-411-57}
+{: #co-benchmark-413-57}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -211,19 +212,18 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.7.4|Do not use the default namespace. |Automated|2|Not checked |
 {: caption="Section 5.7 General policies benchmark results"}
 
-## {{site.data.keyword.IBM_notm}} Remediations and explanations
-{: #co-benchmark-411-remdiations}
+## Remediations and explanations
+{: #co-benchmark-413-remdiations}
 
 
-| Section | Recommendation/Explanation |
-| --- | --- |
-| 1.2.4 | {{site.data.keyword.openshiftshort}} configures the {{site.data.keyword.cloud_notm}} IAM identity provider by default. |
-| 1.2.19 | Test will properly ignore {{site.data.keyword.redhat_openshift_notm}} version 4.11 and later clusters when https://github.com/ComplianceAsCode/compliance-operator/issues/77 is fixed. |
-| 1.2.23 | {{site.data.keyword.openshiftshort}} can optionally enable Kubernetes API server auditing. |
-| 1.2.33 | {{site.data.keyword.openshiftshort}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
-| 1.2.34 | {{site.data.keyword.openshiftshort}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
-| 2.7 | {{site.data.keyword.openshiftshort}} configures a unique certificate authority for etcd. |
-| 5.2.8 | {{site.data.keyword.openshiftshort}} installs custom SCCs. |
-| 5.3.1 | Review the [issue in GitHub](https://github.com/ComplianceAsCode/content/issues/9047){: external}. |
-| 5.3.2 | {{site.data.keyword.openshiftshort}} defines a set of default Calico network policies defined and additional network policies can optionally be added. |
+| Section | Recommendation/Explanation  |
+| ------- | ------------------------------------------------------------ |
+| 1.2.23 | {{site.data.keyword.openshiftlong_notm}} can optionally enable Kubernetes API server auditing. |
+| 1.2.33 | {{site.data.keyword.openshiftlong_notm}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
+| 1.2.34 | {{site.data.keyword.openshiftlong_notm}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
+| 2.7 | {{site.data.keyword.openshiftlong_notm}} configures a unique Certificate Authority for etcd. |
+| 5.2.8 | {{site.data.keyword.openshiftlong_notm}} installs custom SCCs. |
+| 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of default Calico network policies defined and additional network policies can optionally be added. |
 {: caption="Remediations and explanations"}
+
+

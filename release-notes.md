@@ -48,6 +48,13 @@ Pod security admission updates
 :   Review the [default pod security configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default) and the steps to [customize pod security admission in your cluster](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom).
 
 
+
+Compliance Operator benchmarks
+:   Compliance operator benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} versions [4.12](/docs/openshift?topic=openshift-benchmarks_412_co) and [4.13](/docs/openshift?topic=openshift-benchmarks_413_co).
+
+
+
+
 ### 26 June 2023
 {: #openshift-jun2623}
 {: release-note} 
