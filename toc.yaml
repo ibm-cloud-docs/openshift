@@ -222,7 +222,6 @@ toc:
               - ingress-domains.md
               - secrets.md
               - secrets-mgr.md
-              - certs-mgr-migration.md
           - satellite_expose_apps.md
       - topicgroup:
           label: Setting up storage

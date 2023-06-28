@@ -4909,28 +4909,6 @@ subcollection: openshift
 
 * [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_cluster_create)
 
-[Migrating from {{site.data.keyword.cloudcerts_long_notm}} to {{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr-migration)
-
-* [Setting up your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup)
-
-    * [Step 1: Enable service-to-service communication](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_s2s)
-
-    * [Step 2: Creating a {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_create)
-
-    * [Step 3: Registering your {{site.data.keyword.secrets-manager_short}} instance to your cluster](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_register)
-
-    * [Step 4: Set a default {{site.data.keyword.secrets-manager_short}} instance and regenerate your secrets](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_default)
-
-    * [Step 5: Update the CRNs of secrets that are not managed by IBM](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_crn)
-
-    * [Step 6: Unregister your {{site.data.keyword.cloudcerts_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_unregister)
-
-    * [Step 7: Optional. Delete the {{site.data.keyword.cloudcerts_short}} instance.](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_delete)
-
-* [Migrating your secrets without using {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_alt)
-
-* [Migration FAQ](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_migration_faq)
-
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
 * [Setting up MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb)
