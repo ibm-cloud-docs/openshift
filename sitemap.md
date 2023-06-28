@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-06-28"
 
 keywords: openshift
 subcollection: openshift
@@ -272,9 +272,13 @@ subcollection: openshift
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
 
+    * [28 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2823)
+
+        * New! OpenShift Data Foundation add-on versions `4.12.6`, `4.11.12`, `4.10.27`, and `4.9.29`.
+
     * [27 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2723)
 
-        * Pod security admission updates
+        * Compliance Operator benchmarks
 
     * [26 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2623)
 
@@ -3897,10 +3901,6 @@ subcollection: openshift
 
 * [Configuring Pod Security admission namespace labels](/docs/openshift?topic=openshift-pod-security-admission#psa-namespace-labels)
 
-* [Default Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default)
-
-* [Customizing the Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom)
-
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-configure)
 
 * [Additional resources](/docs/openshift?topic=openshift-pod-security-admission#pod-sec-additional-resources)
@@ -4908,28 +4908,6 @@ subcollection: openshift
 * [Controlling access to your secrets with secret groups](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_groups)
 
 * [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_cluster_create)
-
-[Migrating from {{site.data.keyword.cloudcerts_long_notm}} to {{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr-migration)
-
-* [Setting up your {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup)
-
-    * [Step 1: Enable service-to-service communication](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_s2s)
-
-    * [Step 2: Creating a {{site.data.keyword.secrets-manager_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_create)
-
-    * [Step 3: Registering your {{site.data.keyword.secrets-manager_short}} instance to your cluster](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_register)
-
-    * [Step 4: Set a default {{site.data.keyword.secrets-manager_short}} instance and regenerate your secrets](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_default)
-
-    * [Step 5: Update the CRNs of secrets that are not managed by IBM](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_setup_crn)
-
-    * [Step 6: Unregister your {{site.data.keyword.cloudcerts_short}} instance](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_unregister)
-
-    * [Step 7: Optional. Delete the {{site.data.keyword.cloudcerts_short}} instance.](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_delete)
-
-* [Migrating your secrets without using {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_alt)
-
-* [Migration FAQ](/docs/openshift?topic=openshift-certs-mgr-migration#certs-mgr_migration_faq)
 
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
@@ -6460,6 +6438,44 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift, released 14 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4.13.0_1522_openshiftM_4.13.1_1521_openshiftW)
 
+[{{site.data.keyword.openshiftlong_notm}} version 4.13 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_413_co#benchmarks_413_co)
+
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-cp)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-11)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-12)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-13)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-14)
+
+* [2 etcd](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-2)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-3)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-31)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-32)
+
+* [4 Worker Nodes](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-4)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-5)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-51)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-52)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-53)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-54)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-55)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-57)
+
+* [Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-remdiations)
+
 
 ### Version 4.12
 {: #sitemap_version_412}
@@ -6548,6 +6564,44 @@ subcollection: openshift
     * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-412#cis-benchmark-56-412)
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-412#ibm-remediations-and-explanations-412)
+
+[{{site.data.keyword.openshiftlong_notm}} version 4.12 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_412_co#benchmarks_412_co)
+
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-cp)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-11)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-12)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-13)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-14)
+
+* [2 etcd](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-2)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-3)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-31)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-32)
+
+* [4 Worker Nodes](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-4)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-5)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-51)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-52)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-53)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-54)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-55)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-57)
+
+* [{{site.data.keyword.IBM_notm}} Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-remdiations)
 
 
 ### Version 4.11
@@ -7513,6 +7567,8 @@ subcollection: openshift
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
 
+    * [Version 4.12.6, release 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.6_odf)
+
     * [Version 4.12.5, release 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.5_odf)
 
     * [Version 4.12.4, release 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.4_odf)
@@ -7520,6 +7576,8 @@ subcollection: openshift
     * [Version 4.12.0, released 16 March 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.0_odf)
 
 * [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+
+    * [Version 4.11.12, release 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.12_odf)
 
     * [Version 4.11.11, release 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.11_odf)
 
@@ -7534,6 +7592,8 @@ subcollection: openshift
     * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.0_odf)
 
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
+
+    * [Version 4.10.27, release 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.27_odf)
 
     * [Version 4.10.26 release 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.26_odf)
 
@@ -7566,6 +7626,8 @@ subcollection: openshift
     * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.0_odf)
 
 * [Version 4.9](/docs/openshift?topic=openshift-odf_addon_changelog#4.9_odf)
+
+    * [Version 4.9.29, release 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.29_odf)
 
     * [Version 4.9.28, release 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.28_odf)
 
@@ -9238,8 +9300,6 @@ subcollection: openshift
 [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create#ts_cos_bucket_cluster_create)
 
 [After logging in to my cluster, why do I see a no resources found message?](/docs/openshift?topic=openshift-rhoks_ts_not_found#rhoks_ts_not_found)
-
-* [Why do I get an error that my PodSecurityConfiguration is not valid?](/docs/openshift?topic=openshift-ts-pod-security-reset#ts-pod-security-reset)
 
 [Why does the cluster master return a VPN server error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_login#rhoks_ts_openvpn_login)
 

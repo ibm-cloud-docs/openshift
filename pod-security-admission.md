@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-06-28"
 
 keywords: openshift, deploy, pod security admission, pod security, security profiles
 
@@ -112,95 +112,6 @@ To label a namespace to enforce the `privileged` profile and generate warnings a
 - `pod-security.kubernetes.io/warn: baseline`
 - `pod-security.kubernetes.io/warn-version: latest`
 
-
-## Default Pod Security Admission plug-in configuration
-{: #psa-plugin-config-default}
-
-{{site.data.keyword.openshiftlong_notm}} uses the following `PodSecurityConfiguration` by default.
-
-```yaml
-apiVersion: pod-security.admission.config.k8s.io/v1
-kind: PodSecurityConfiguration
-defaults:
-  enforce: "privileged"
-  enforce-version: "latest"
-  audit: "privileged"
-  audit-version: "latest"
-  warn: "privileged"
-  warn-version: "latest"
-exemptions:
-  usernames: []
-  runtimeClasses: []
-  namespaces: []
-```
-{: codeblock}
-
-
-
-## Customizing the Pod Security Admission plug-in configuration
-{: #psa-plugin-config-custom}
-
-
-The cluster-wide Pod Security Admission plug-in configuration sets `enforce`, `audit`, and `warn` behavior for all namespaces that don't have pod security labels or exemptions.
-
-
-
-1. Create a YAML file containing a `PodSecurityConfiguration` resource. You can use the default configuration to start.
-
-    ```yaml
-    apiVersion: pod-security.admission.config.k8s.io/v1
-    kind: PodSecurityConfiguration
-    defaults:
-      enforce: "privileged"
-      enforce-version: "latest"
-      audit: "privileged"
-      audit-version: "latest"
-      warn: "privileged"
-      warn-version: "latest"
-    exemptions:
-      usernames: []
-      runtimeClasses: []
-      namespaces: []
-    ```
-    {: codeblock}
-
-1. Make the customizations that you want to use. Review the following the information about each section of the configuration.
-    `defaults`
-    :   The `defaults` section of the configuration defines cluster-wide defaults for namespaces that do not have pod security labels. The fields can have the same values as the corresponding namespace labels.
-
-    `exemptions`
-    :   The `exemptions` section of the configuration allows you to create pods that are otherwise prohibited because of the policy associated with a specific namespace. Exemption dimensions include the following cases.
-        - Usernames: Requests from users with an exempt authenticated (or impersonated) username are ignored. Usernames are typically IAM users or serviceaccounts. For example `usernames: [ "IAM#user@example.com" ]`. You can also exempt the username associated with an `admin kubeconfig` client certificate. If you want to specify an `admin kubeconfig` certificate, the username is the `CN` component of the current client-certificate.
-
-            ```sh
-            kubectl config view --minify -o jsonpath='{.users[0].user.client-certificate}'
-            /home/user/.bluemix/plugins/container-service/clusters/mycluster-cheku1620qbs90gq6mdg-admin/admin.pem
-            ```
-            {: pre}
-
-            In the following example, the username is `IBMid-27000xxxxx-admin-2023-05-12`. If you get a new `admin kubeconfig`, the username might be different.
-
-            ```sh
-            openssl x509 -in <client-certificate> -subject -noout`
-            subject=C = US, ST = San Francisco, L = CA, O = ibm-admins, CN = IBMid-27000xxxxx-admin-2023-05-12
-            ```
-            {: pre}
-
-        - RuntimeClassNames: Pods and workload resources specifying an exempt runtime class name are ignored.
-        - Namespaces: Pods and workload resources in an exempt namespace are ignored.
-
-
-1. Save your customizations YAML file.
-
-1. Run the `ibmcloud ks cluster master pod-security set` command.
-    ```sh
-    ibmcloud ks cluster master pod-security set --cluster CLUSTER --config-file CONFIG-FILE
-    ```
-    {: pre}
-
-
-When you run the `ibmcloud ks cluster master pod-security set` command, the  pod security admission is reset to the default configuration if you do not specify a configuration file.
-{: tip}
 
 
 

@@ -222,7 +222,6 @@ toc:
               - ingress-domains.md
               - secrets.md
               - secrets-mgr.md
-              - certs-mgr-migration.md
           - satellite_expose_apps.md
       - topicgroup:
           label: Setting up storage
@@ -330,12 +329,14 @@ toc:
               topics:
               - openshift_versions_413.md
               - openshift_versions_changelog_413.md
+              - benchmarks_413_co.md
           - topicgroup:
               label: Version 4.12
               topics:
               - openshift_versions_412.md
               - openshift_versions_changelog_412.md
               - benchmarks_412.md
+              - benchmarks_412_co.md
           - topicgroup:
               label: Version 4.11
               topics:
@@ -449,7 +450,6 @@ toc:
               - ts-cluster-create-delete.md
               - ts-cluster-cos-bucket.md
               - ts-cluster-no-resources.md
-              - ts-pod-security-reset.md
               - ts-cluster-vpn.md
               - ts-cluster-no-vpc.md
               - ts-cluster-icr-pull-img.md

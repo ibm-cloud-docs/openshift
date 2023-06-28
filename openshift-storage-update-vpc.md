@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-28"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
 
@@ -389,6 +389,22 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 1. Wait for the update to complete.
 
+1. Verify that the `storagecluster` and `cephcluster` resources are both deployed correctly.
+
+    ```sh
+    oc get storagecluster -n openshift-storage
+    NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
+    ocs-storagecluster   43h   Ready              2023-06-21T09:22:00Z   4.11.0
+    ```
+    {: screen}
+
+    ```sh
+    NAME                             DATADIRHOSTPATH   MONCOUNT   AGE   PHASE   MESSAGE                        HEALTH      EXTERNAL
+    ocs-storagecluster-cephcluster   /var/lib/rook     3          43h   Ready   Cluster created successfully   HEALTH_OK  
+    ```
+    {: screen}
+
+ 
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-09"
+lastupdated: "2023-06-28"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -36,6 +36,11 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ## Version 4.12
 {: #4.12_odf}
 
+### Version 4.12.6, release 28 June 2023
+{: #4.12.6_odf}
+
+- Golang updated to `1.20.5`.
+
 
 ### Version 4.12.5, release 09 June 2023
 {: #4.12.5_odf}
@@ -59,6 +64,11 @@ Initial release.
 
 ## Version 4.11
 {: #4.11_odf}
+
+### Version 4.11.12, release 28 June 2023
+{: #4.11.12_odf}
+
+- Golang updated to `1.20.5`.
 
 ### Version 4.11.11, release 09 June 2023
 {: #4.11.11_odf}
@@ -95,6 +105,11 @@ Initial release.
 
 ## Version 4.10
 {: #4.10_odf}
+
+### Version 4.10.27, release 28 June 2023
+{: #4.10.27_odf}
+
+- Golang updated to `1.20.5`.
 
 ### Version 4.10.26 release 09 June 2023
 {: #4.10.26_odf}
@@ -182,6 +197,11 @@ Initial release.
 
 ## Version 4.9
 {: #4.9_odf}
+
+### Version 4.9.29, release 28 June 2023
+{: #4.9.29_odf}
+
+- Golang updated to `1.20.5`.
 
 ### Version 4.9.28, release 09 June 2023
 {: #4.9.28_odf}
