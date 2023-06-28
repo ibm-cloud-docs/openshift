@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-28"
 
 keywords: openshift, version, upgrade, update
 
@@ -325,7 +325,7 @@ If you have Portworx deployed in your cluster, follow the steps to [update VPC w
 
 
 
-If you have OpenShift Data Foundation deployed in your cluster, follow the steps to [update VPC worker nodes with OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-update-worker).
+If you have OpenShift Data Foundation deployed in your cluster, follow the steps to [update VPC worker nodes with OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc).
 {: important}
 
 
