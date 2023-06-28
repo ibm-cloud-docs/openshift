@@ -31,6 +31,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+
 ### 28 June 2023
 {: #openshift-jun2823}
 {: release-note} 
@@ -43,9 +45,6 @@ New! OpenShift Data Foundation add-on versions `4.12.6`, `4.11.12`, `4.10.27`, a
 ### 27 June 2023
 {: #openshift-jun2723}
 {: release-note} 
-
-Pod security admission updates
-:   Review the [default pod security configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default) and the steps to [customize pod security admission in your cluster](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom).
 
 
 
