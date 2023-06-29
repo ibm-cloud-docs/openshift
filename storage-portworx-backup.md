@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-28"
 
 keywords: portworx, openshift
 
@@ -268,7 +268,7 @@ You can restore an entire namespace, your apps, or your data to any cluster that
 ### Upgrading PX-Backup
 {: #px-backup-upgrade}
 
-Follow the Portworx documentation to [upgrade PX-backup](https://1.2.backup.docs.portworx.com/use-px-backup/upgrade/){: external}
+Follow the Portworx documentation to [upgrade PX-backup](https://backup.docs.portworx.com/use-px-backup/){: external}
 {: shortdesc}
 
 
