@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-06-30"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
@@ -39,6 +39,27 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.9 change log.
 {: shortdesc}
+
+
+### Change log for master fix pack 4.9.59_1594_openshift, released 27 June 2023
+{: #4959_1594_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.9.59_1594_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.20 | v1.3.21 | Updated `Go` dependencies and to `Go` version `1.19.10`. |
+| etcd | v3.4.25 | v3.4.26 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.26){: external}. |
+| Gateway-enabled cluster controller | 2106 | 2322 | Updated image to resolve [CVE-2023-2650](https://nvd.nist.gov/vuln/detail/CVE-2023-2650){: external}. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 431 | 433 | Updated `Go` to version `1.20.4`. Updated UBI base image. |
+| Key Management Service provider | v2.6.6 | v2.6.7 | Updated `Go` dependencies and to `Go` version `1.19.10`. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2486 | 2584 | Updated `Go` dependencies and to `Go` version `1.19.9`. Updated base image. |
+| OpenVPN client | 2.5.8-r0-IKS-674-amd64 | 2.6.4-r0-IKS-34-amd64 | Upgrade `openvpn` to version `2.6.4-r0`. |
+| OpenVPN server | 2.5.8-r0-IKS-673-amd64 | 2.6.4-r0-IKS-33-amd64 | Upgrade `openvpn` to version `2.6.4-r0`. |
+| OpenVPN Operator image | v1.4.23 | v1.4.25 | Updated OpenVPN configuration to provide shutdown grace period before terminating connections. |
+{: caption="Changes since version 4.9.59_1591_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.9.59_1593_openshift, released 19 June 2023

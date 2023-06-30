@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-06-30"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,6 +39,30 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.10 change log.
 {: shortdesc}
+
+
+### Change log for master fix pack 4.10.61_1574_openshift, released 27 June 2023
+{: #41061_1574_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.10.61_1574_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.23.5 | v3.25.1 | See the [Calico release notes](https://docs.tigera.io/calico/3.25/release-notes/#v3.25.1){: external}. |
+| Calico Operator | v1.27.17 | v1.29.4 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.4){: external}. |
+| Cluster health image | v1.3.20 | v1.3.21 | Updated `Go` dependencies and to `Go` version `1.19.10`. |
+| etcd | v3.4.25 | v3.4.26 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.26){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.17-16 | v1.23.17-19 | Updated to support the `Kubernetes 1.23.17` release. Updated `Go` dependencies. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 431 | 433 | Updated `Go` to version `1.20.4`. Updated UBI base image. |
+| Key Management Service provider | v2.6.6 | v2.6.7 | Updated `Go` dependencies and to `Go` version `1.19.10`. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2486 | 2584 | Updated `Go` dependencies and to `Go` version `1.19.9`. Updated base image. |
+| {{site.data.keyword.openshiftshort}} | 4.10.59 | 4.10.61 | https://docs.openshift.com/container-platform/ |
+| OpenVPN client | 2.5.8-r0-IKS-674-amd64 | 2.6.4-r0-IKS-34-amd64 | Upgrade `openvpn` to version `2.6.4-r0`. |
+| OpenVPN server | 2.5.8-r0-IKS-673-amd64 | 2.6.4-r0-IKS-33-amd64 | Upgrade `openvpn` to version `2.6.4-r0`. |
+| OpenVPN Operator image | v1.4.23 | v1.4.25 | Updated OpenVPN configuration to provide shutdown grace period before terminating connections. |
+{: caption="Changes since version 4.10.59_1570_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.10.61_1572_openshift, released 19 June 2023

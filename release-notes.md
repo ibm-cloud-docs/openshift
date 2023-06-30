@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-30"
 
 keywords: openshift
 
@@ -47,6 +47,10 @@ New! OpenShift Data Foundation add-on versions `4.12.6`, `4.11.12`, `4.10.27`, a
 {: release-note} 
 
 
+
+  
+Master fix packs `4.9.59_1594_openshift`, `4.10.61_1574_openshift`, `4.11.42_1561_openshift`, `4.12.20_1549_openshift`, and `4.13.0_1524_openshift`.
+:   For more information, see the change logs: [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.12](/docs/openshift?topic=openshift-openshift_changelog_412), and [4.13](/docs/openshift?topic=openshift-openshift_changelog_413).
 
 Compliance Operator benchmarks
 :   Compliance operator benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} versions [4.12](/docs/openshift?topic=openshift-benchmarks_412_co) and [4.13](/docs/openshift?topic=openshift-benchmarks_413_co).
