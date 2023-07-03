@@ -278,6 +278,8 @@ subcollection: openshift
 
         * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1`
 
+        * Worker node fix packs `4.9.59_1595_openshift`, `4.10.62_1575_openshift`, `4.11.43_1562_openshift`, `4.12.22_1550_openshift`, and `4.13.4_1525_openshift`.
+
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
 
     * [28 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2823)

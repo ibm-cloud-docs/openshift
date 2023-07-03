@@ -40,6 +40,11 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon). 
 
 
+
+Worker node fix packs `4.9.59_1595_openshift`, `4.10.62_1575_openshift`, `4.11.43_1562_openshift`, `4.12.22_1550_openshift`, and `4.13.4_1525_openshift`.
+:   For more information, see the change logs: [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.12](/docs/openshift?topic=openshift-openshift_changelog_412), and [4.13](/docs/openshift?topic=openshift-openshift_changelog_413).
+
+
 ## June 2023
 {: #openshift-jun23}
 
