@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-07-03"
 
 keywords: openshift
 
@@ -25,6 +25,20 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## July 2023
+{: #openshift-july23}
+
+### July 3 2023
+{: #openshift-july323}
+{: release-note} 
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.16`
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon). 
+
 
 ## June 2023
 {: #openshift-jun23}

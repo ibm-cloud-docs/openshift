@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-07-03"
 
 keywords: file, add-on, changelog
 
@@ -46,8 +46,37 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 1.1
 {: #011_is_file}
 
-### Change log for version 1.1-beta, released 15 May 2023
+### Change log for version 1.1, released 3 July 2023
 {: #1.1_is_file_relnote}
+
+- Updates the following sidecar images: 
+    - `storage-secret-sidecar` to `v1.2.24`.
+    - `csi-node-driver-registrar` to `v2.7.0`.
+    - `livenessprobe` to `v2.9.0`.
+    - `csi-provisioner` to `v3.4.1`.
+    - `csi-resizer` to `v1.7.0`.
+
+- Updates the UBI image `8.8-860`.
+- Updates Golang to `1.19.10`.
+- Resolves the following CVEs: 
+    - [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external},
+    - [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external}
+    - [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external}
+    - [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external} 
+    - [CVE-2023-29400](https://nvd.nist.gov/vuln/detail/CVE-2023-29400){: external}
+    - [CVE-2023-24540](https://nvd.nist.gov/vuln/detail/CVE-2023-24540){: external}
+    - [CVE-2023-24539](https://nvd.nist.gov/vuln/detail/CVE-2023-24539){: external} 
+    - [CVE-2022-43552](https://nvd.nist.gov/vuln/detail/CVE-2022-43552){: external}
+    - [CVE-2022-3204](https://nvd.nist.gov/vuln/detail/CVE-2022-3204){: external}
+    - [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external}
+    - [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external}
+    - [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external}
+
+
+
+
+### Change log for version 1.1-beta, released 15 May 2023
+{: #1.1_beta_is_file_relnote}
 
 - Kubernetes dependencies upgraded to `1.26.4`.
 - Controller pods are now deployed as `Deployment`, in previous releases pods were deployed as `Satefulsets`.
