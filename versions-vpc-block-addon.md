@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-07-03"
 
 keywords: block, add-on, changelog
 
@@ -198,7 +198,7 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 - Updates Golang to `1.18.9`.
 - Updates the `storage-secret-sidecar` image to `v1.2.14`.
 - Fixed volume tagging issue related to multiple tags.
-- Added Block storage volume health state in driver logs. Volume health gives a detailed description as mentioned in the [Managing block storage](/docs/vpc?topic=vpc-managing-block-storage&interface=ui#block-storage-vpc-health-states) doc.
+- Added Block storage volume health state in driver logs. Volume health gives a detailed description as mentioned in the [Managing block storage](/docs/vpc?topic=vpc-block-storage-vpc-monitoring&interface=ui#block-storage-vpc-health-states) doc.
 - Resolves the following CVEs:
     - [CVE-2022-42898](https://nvd.nist.gov/vuln/detail/CVE-2022-42898){: external}
     - [CVE-2022-41717](https://nvd.nist.gov/vuln/detail/CVE-2022-41717){: external}
