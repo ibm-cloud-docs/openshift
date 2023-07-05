@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-07-03"
 
 keywords: object storage, plug-in, change log
 
@@ -29,11 +29,17 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.16 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.15 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.14 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.13 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.13 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.12 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.16, released 3 July 2023
+{: #02216_object_plugin}
+
+- Adds support for auto creation and deletion of user defined bucket names.
 
 ## Change log for version 2.2.15, released 19 June 2023
 {: #02215_object_plugin}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-07-05"
 
 keywords: openshift
 subcollection: openshift
@@ -269,6 +269,16 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
+
+    * [July 3 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july323)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.16`
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1`
+
+        * Worker node fix packs `4.9.59_1595_openshift`, `4.10.62_1575_openshift`, `4.11.43_1562_openshift`, `4.12.22_1550_openshift`, and `4.13.4_1525_openshift`.
 
 * [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
 
@@ -6436,6 +6446,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
 
+    * [Change log for worker node fix pack 4.13.4_1525_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4134_1525_openshift_W)
+
     * [Change log for master fix pack 4.13.0_1524_openshift, released 27 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4130_1524_openshift_M)
 
     * [Change log for worker node fix pack 4.13.3_1523_openshift, released 19 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4133_1523_openshift_W)
@@ -6496,6 +6508,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.22_1550_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41222_1550_openshift_W)
 
     * [Change log for master fix pack 4.12.20_1549_openshift, released 27 June 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41220_1549_openshift_M)
 
@@ -6631,6 +6645,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.43_1562_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41143_1562_openshift_W)
 
     * [Change log for master fix pack 4.11.42_1561_openshift, released 27 June 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41142_1561_openshift_M)
 
@@ -6796,6 +6812,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.62_1575_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41062_1575_openshift_W)
 
     * [Change log for master fix pack 4.10.61_1574_openshift, released 27 June 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41061_1574_openshift_M)
 
@@ -6993,6 +7011,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.59_1595_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1595_openshift_W)
 
     * [Change log for master fix pack 4.9.59_1594_openshift, released 27 June 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1594_openshift_M)
 
@@ -7475,13 +7495,17 @@ subcollection: openshift
 
 * [Version 1.1](/docs/openshift?topic=openshift-versions-vpc-file-addon#011_is_file)
 
-    * [Change log for version 1.1-beta, released 15 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1_is_file_relnote)
+    * [Change log for version 1.1, released 3 July 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1_is_file_relnote)
+
+    * [Change log for version 1.1-beta, released 15 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1_beta_is_file_relnote)
 
 * [Version 1.0](/docs/openshift?topic=openshift-versions-vpc-file-addon#01_is_file)
 
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.16, released 3 July 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02216_object_plugin)
 
 * [Change log for version 2.2.15, released 19 June 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02215_object_plugin)
 
@@ -9524,7 +9548,7 @@ subcollection: openshift
 
 * [Gathering Calico logs](/docs/openshift?topic=openshift-calico_log_level#calico-log-gather)
 
-[Why can't I use the `ip_whitelist` annotation to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
+[Why can't I use the Red Hat annotations to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
 
 [Why does my pod with long running TCP connections get disconnected?](/docs/openshift?topic=openshift-ts-keepalive-sysctl#ts-keepalive-sysctl)
 

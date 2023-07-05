@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-07-05"
 
 keywords: openshift
 
@@ -25,6 +25,27 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## July 2023
+{: #openshift-july23}
+
+
+
+### July 3 2023
+{: #openshift-july323}
+{: release-note} 
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.16`
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon). 
+
+
+
+Worker node fix packs `4.9.59_1595_openshift`, `4.10.62_1575_openshift`, `4.11.43_1562_openshift`, `4.12.22_1550_openshift`, and `4.13.4_1525_openshift`.
+:   For more information, see the change logs: [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.12](/docs/openshift?topic=openshift-openshift_changelog_412), and [4.13](/docs/openshift?topic=openshift-openshift_changelog_413).
+
 
 ## June 2023
 {: #openshift-jun23}
@@ -1620,7 +1641,7 @@ Create and manage dedicated hosts in VPC Gen 2.
 
 
 New! {{site.data.keyword.secrets-manager_full}}
-:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. For more information, see [Migrating from IBM Cloud Certificate Manager to IBM Cloud {{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-certs-mgr-migration).
+:   With the deprecation of {{site.data.keyword.cloudcerts_long}}, you can now manage certificates and secrets with {{site.data.keyword.secrets-manager_full}}. You can integrate your own {{site.data.keyword.secrets-manager_short}} instances with your {{site.data.keyword.redhat_openshift_notm}} clusters. {{site.data.keyword.secrets-manager_short}} instances can be used across multiple clusters, and a single cluster can have more than one instance. 
 
 
 HPCS Router add-on
