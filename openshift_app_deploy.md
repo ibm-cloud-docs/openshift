@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-07-05"
 
 keywords: kubernetes, openshift
 
@@ -227,56 +227,45 @@ To run a workload on a GPU machine,
     apiVersion: batch/v1
     kind: Job
     metadata:
-      name: nvidia-smi
+      name: nvidia-devicequery
       labels:
-        name: nvidia-smi
+        name: nvidia-devicequery
     spec:
       template:
         metadata:
           labels:
-            name: nvidia-smi
+            name: nvidia-devicequery
         spec:
           containers:
-          - name: nvidia-smi
-            image: nvidia/cuda:9.1-base-ubuntu16.04
-            command: [ "/usr/test/nvidia-smi" ]
+          - name: nvidia-devicequery
+            image: nvcr.io/nvidia/k8s/cuda-sample:devicequery-cuda11.7.1-ubuntu20.04
             imagePullPolicy: IfNotPresent
             resources:
               limits:
                 nvidia.com/gpu: 2
-            volumeMounts:
-            - mountPath: /usr/test
-              name: nvidia0
-          volumes:
-            - name: nvidia0
-              hostPath:
-                path: /usr/bin
           restartPolicy: Never
     ```
     {: codeblock}
     
-    | Component | Description |
-    | ---- | ------- |
-    | Metadata and label names | Enter a name and a label for the job, and use the same name in both the file's metadata and the `spec template` metadata. For example, `nvidia-smi`. |
-    | `containers.image` | Provide the image that the container is a running instance of. In this example, the value is set to use the DockerHub CUDA image:`nvidia/cuda:9.1-base-ubuntu16.04`. |
-    | `containers.command` | Specify a command to run in the container. In this example, the `[ "/usr/test/nvidia-smi" ]` command refers to a binary file that is on the GPU machine, so you must also set up a volume mount. |
-    | `containers.imagePullPolicy` | To pull a new image only if the image is not currently on the worker node, specify `IfNotPresent`. |
+    | Component | Description | 
+    |--- | --- |
+    | Metadata and label names | Enter a name and a label for the job, and use the same name in both the file's metadata and the `spec template` metadata. For example, `nvidia-devicequery`.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+    | `containers.image` | Provide the image that the container is a running instance of. In this example, the value is set to use the DockerHub CUDA device query image:`nvcr.io/nvidia/k8s/cuda-sample:devicequery-cuda11.7.1-ubuntu20.04`.                                                                                                                                                                                                                                                                                                                                                                      |
+    | `containers.imagePullPolicy` | To pull a new image only if the image is not currently on the worker node, specify `IfNotPresent`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
     | `resources.limits` | For GPU machines, you must specify the resource limit. The Kubernetes [Device Plug-in](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/){: external} sets the default resource request to match the limit. \n * You must specify the key as `nvidia.com/gpu`. \n * Enter the whole number of GPUs that you request, such as `2`. Note that container pods don't share GPUs and GPUs can't be overcommitted. For example, if you have only 1 `mg1c.16x128` machine, then you have only 2 GPUs in that machine and can specify a maximum of `2`. |
-    | `volumeMounts` | Name the volume that is mounted onto the container, such as `nvidia0`. Specify the `mountPath` on the container for the volume. In this example, the path `/usr/test` matches the path that is used in the job container command. |
-    | `volumes` | Name the job volume, such as `nvidia0`. In the GPU worker node's `hostPath`, specify the volume's `path` on the host, in this example, `/usr/bin`. The container `mountPath` is mapped to the host volume `path`, which gives this job access to the NVIDIA binaries on the GPU worker node for the container command to run. |
     {: caption="Table 1. Understanding your YAML components" caption-side="bottom"}
 
 2. Apply the YAML file. For example:
 
     ```sh
-    oc apply -f nvidia-smi.yaml
+    oc apply -f nvidia-devicequery.yaml
     ```
     {: pre}
 
-3. Check the job pod by filtering your pods by the `nvidia-sim` label. Verify that the **STATUS** is **Completed**.
+3. Check the job pod by filtering your pods by the `nvidia-devicequery` label. Verify that the **STATUS** is **Completed**.
 
     ```sh
-    oc get pod -a -l 'name in (nvidia-sim)'
+    oc get pod -a -l 'name in (nvidia-devicequery)'
     ```
     {: pre}
 
@@ -284,7 +273,7 @@ To run a workload on a GPU machine,
 
     ```sh
     NAME                  READY     STATUS      RESTARTS   AGE
-    nvidia-smi-ppkd4      0/1       Completed   0          36s
+    nvidia-devicequery-ppkd4      0/1       Completed   0          36s
     ```
     {: screen}
 
@@ -293,61 +282,88 @@ To run a workload on a GPU machine,
     - In the events, verify that the pod is assigned to your GPU worker node.
 
         ```sh
-        oc describe pod nvidia-smi-ppkd4
+        oc describe pod nvidia-devicequery-ppkd4
         ```
         {: pre}
 
         Example output
         ```sh
-        NAME:           nvidia-smi-ppkd4
+        NAME:           nvidia-devicequery-ppkd4
         Namespace:      default
         ...
         Limits:
-            nvidia.com/gpu:  2
+            nvidia.com/gpu:  1
         Requests:
-            nvidia.com/gpu:  2
+            nvidia.com/gpu:  1
         ...
         Events:
         Type    Reason                 Age   From                     Message
         ----    ------                 ----  ----                     -------
-        Normal  Scheduled              1m    default-scheduler        Successfully assigned nvidia-smi-ppkd4 to 10.xxx.xx.xxx
+        Normal  Scheduled              1m    default-scheduler        Successfully assigned nvidia-devicequery-ppkd4 to 10.xxx.xx.xxx
         ...
         ```
         {: screen}
 
-5. To verify that the job used the GPU to compute its workload, you can check the logs. The `[ "/usr/test/nvidia-smi" ]` command from the job queried the GPU device state on the GPU worker node.
+5. To verify that the job used the GPU to compute its workload, you can check the logs.
 
     ```sh
-    oc logs nvidia-sim-ppkd4
+    oc logs nvidia-devicequery-ppkd4
     ```
     {: pre}
 
     Example output
 
     ```sh
-    +-----------------------------------------------------------------------------+
-    | NVIDIA-SMI 390.12                 Driver Version: 390.12                    |
-    |-------------------------------+----------------------+----------------------+
-    | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-    |===============================+======================+======================|
-    |   0  Tesla K80           Off  | 00000000:83:00.0 Off |                  Off |
-    | N/A   37C    P0    57W / 149W |      0MiB / 12206MiB |      0%      Default |
-    +-------------------------------+----------------------+----------------------+
-    |   1  Tesla K80           Off  | 00000000:84:00.0 Off |                  Off |
-    | N/A   32C    P0    63W / 149W |      0MiB / 12206MiB |      1%      Default |
-    +-------------------------------+----------------------+----------------------+
-
-    +-----------------------------------------------------------------------------+
-    | Processes:                                                       GPU Memory |
-    |  GPU       PID   Type   Process name                             Usage      |
-    |=============================================================================|
-    |  No running processes found                                                 |
-    +-----------------------------------------------------------------------------+
+    /cuda-samples/sample Starting...
+    
+    CUDA Device Query (Runtime API) version (CUDART static linking)
+    
+    Detected 1 CUDA Capable device(s)
+    
+    Device 0: "Tesla P100-PCIE-16GB"
+    CUDA Driver Version / Runtime Version          11.4 / 11.7
+    CUDA Capability Major/Minor version number:    6.0
+    Total amount of global memory:                 16281 MBytes (17071734784 bytes)
+    (056) Multiprocessors, (064) CUDA Cores/MP:    3584 CUDA Cores
+    GPU Max Clock rate:                            1329 MHz (1.33 GHz)
+    Memory Clock rate:                             715 Mhz
+    Memory Bus Width:                              4096-bit
+    L2 Cache Size:                                 4194304 bytes
+    Maximum Texture Dimension Size (x,y,z)         1D=(131072), 2D=(131072, 65536), 3D=(16384, 16384, 16384)
+    Maximum Layered 1D Texture Size, (num) layers  1D=(32768), 2048 layers
+    Maximum Layered 2D Texture Size, (num) layers  2D=(32768, 32768), 2048 layers
+    Total amount of constant memory:               65536 bytes
+    Total amount of shared memory per block:       49152 bytes
+    Total shared memory per multiprocessor:        65536 bytes
+    Total number of registers available per block: 65536
+    Warp size:                                     32
+    Maximum number of threads per multiprocessor:  2048
+    Maximum number of threads per block:           1024
+    Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
+    Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)
+    Maximum memory pitch:                          2147483647 bytes
+    Texture alignment:                             512 bytes
+    Concurrent copy and kernel execution:          Yes with 2 copy engine(s)
+    Run time limit on kernels:                     No
+    Integrated GPU sharing Host Memory:            No
+    Support host page-locked memory mapping:       Yes
+    Alignment requirement for Surfaces:            Yes
+    Device has ECC support:                        Enabled
+    Device supports Unified Addressing (UVA):      Yes
+    Device supports Managed Memory:                Yes
+    Device supports Compute Preemption:            Yes
+    Supports Cooperative Kernel Launch:            Yes
+    Supports MultiDevice Co-op Kernel Launch:      Yes
+    Device PCI Domain ID / Bus ID / location ID:   0 / 175 / 0
+    Compute Mode:
+    < Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) >
+    
+    deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 11.4, CUDA Runtime Version = 11.7, NumDevs = 1
+    Result = PASS
     ```
     {: screen}
 
-    In this example, you see that both GPUs were used to execute the job because both the GPUs were scheduled in the worker node. If the limit is set to 1, only 1 GPU is shown.
+    In this example, you see a GPU was used to execute the job because the GPU was scheduled in the worker node. If the limit is set to 2, only 2 GPUs are shown.
 
 Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}.
 
