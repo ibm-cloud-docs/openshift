@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-07-03"
+lastupdated: "2023-07-05"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -49,7 +49,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}}. | 4.10.61 | 4.10.62 | see [chanelog](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-62){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.10.61 | 4.10.62 | see [change log](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-62){: external}. |
 {: caption="Changes since version 4.10.61_1572_openshift" caption-side="bottom"}
 
 

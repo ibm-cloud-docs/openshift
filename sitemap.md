@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-03"
+lastupdated: "2023-07-05"
 
 keywords: openshift
 subcollection: openshift
@@ -9548,7 +9548,7 @@ subcollection: openshift
 
 * [Gathering Calico logs](/docs/openshift?topic=openshift-calico_log_level#calico-log-gather)
 
-[Why can't I use the `ip_whitelist` annotation to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
+[Why can't I use the Red Hat annotations to restrict access to the {{site.data.keyword.redhat_openshift_notm}} Console?](/docs/openshift?topic=openshift-ip_whitelist#ip_whitelist)
 
 [Why does my pod with long running TCP connections get disconnected?](/docs/openshift?topic=openshift-ts-keepalive-sysctl#ts-keepalive-sysctl)
 
