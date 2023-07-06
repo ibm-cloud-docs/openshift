@@ -39,6 +39,12 @@ Cluster autoscaler add-on version `1.0.8_56` and `1.0.7_57`.
 
 
 
+Pod security admission updates
+:   Review the [default pod security configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default) and the steps to [customize pod security admission in your cluster](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom).
+
+
+
+
 
 ### 3 July 2023
 {: #openshift-july323}
@@ -58,8 +64,6 @@ Worker node fix packs `4.9.59_1595_openshift`, `4.10.62_1575_openshift`, `4.11.4
 
 ## June 2023
 {: #openshift-jun23}
-
-
 
 
 
