@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-06"
 
 keywords: openshift
 subcollection: openshift
@@ -272,7 +272,11 @@ subcollection: openshift
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
 
-    * [July 3 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july323)
+    * [6 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july623)
+
+        * Cluster autoscaler add-on version `1.0.8_56` and `1.0.7_57`.
+
+    * [3 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july323)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.16`
 
@@ -7247,6 +7251,8 @@ subcollection: openshift
 
 * [Version 1.0.8](/docs/openshift?topic=openshift-ca_changelog#0108_ca_addon)
 
+    * [Change log for patch update 1.0.8_56, released 6 July 2023](/docs/openshift?topic=openshift-ca_changelog#10856_ca)
+
     * [Change log for patch update 1.0.8_1078, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#1081078_ca)
 
     * [Change log for patch update 1.0.8_1016, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1081016_ca)
@@ -7256,6 +7262,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.8_968, released 9 March 2023](/docs/openshift?topic=openshift-ca_changelog#108968_ca)
 
 * [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
+
+    * [Change log for patch update 1.0.7_57, released 6 July 2023](/docs/openshift?topic=openshift-ca_changelog#10757_ca)
 
     * [Change log for patch update 1.0.7_1076, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#1071076_ca)
 

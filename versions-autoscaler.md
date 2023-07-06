@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-07-06"
 
 keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
 
@@ -138,6 +138,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 ## Version 1.0.8
 {: #0108_ca_addon}
 
+### Change log for patch update 1.0.8_56, released 6 July 2023
+{: #10856_ca}
+
+- Image tags: `1.20.0 108-3`, `1.21.0 108-3`, `1.22.0 108-3`, `1.23.0 108-3`, `1.24.0 108-3`, `1.25.0 108-3`, `1.26.0 108-3`.
+- Updates the `storage-secret-sidecar` image to `v1.2.21`.
+- Updates the `golang` version to `1.19.8`.
+
 ### Change log for patch update 1.0.8_1078, released 15 May 2023
 {: #1081078_ca}
 
@@ -170,6 +177,14 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.7
 {: #0107_ca_addon}
+
+### Change log for patch update 1.0.7_57, released 6 July 2023
+{: #10757_ca}
+
+- Image tags: `1.20.0 107-6`, `1.21.0 107-6`, `1.22.0 107-6`, `1.23.0 107-6`, `1.24.0 107-6`,`1.25.0 107-6`.
+- Updates the `storage-secret-sidecar` image to `v1.2.21`.
+- Updates the `golang` version to `1.19.8`.
+- Fixes an issue where `cluster-autoscaler` stops retrying requests that return `HTTP401` code.
 
 ### Change log for patch update 1.0.7_1076, released 15 May 2023
 {: #1071076_ca}

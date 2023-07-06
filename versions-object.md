@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-03"
+lastupdated: "2023-07-06"
 
 keywords: object storage, plug-in, change log
 
@@ -44,9 +44,9 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Change log for version 2.2.15, released 19 June 2023
 {: #02215_object_plugin}
 
-- Updates UBI image to `8.8-860` to fix CVEs: CVE-2022-43552, CVE-2022-3204, CVE-2023-27535, CVE-2022-36227, and CVE-2022-35252.
-- Updates Golang to `1.19.10` to fix CVEs: CVE-2023-29403, CVE-2023-29404, CVE-2023-29405, CVE-2023-29402, CVE-2023-29400, CVE-2023-24540, and CVE-2023-24539.
-- Resolves the following CVEs: [CVE-2023-29401](https://nvd.nist.gov/vuln/detail/CVE-2023-29401){: external}, [CVE-2023-26125](https://nvd.nist.gov/vuln/detail/CVE-2023-26125){: external}, and CVE-2022-3172.
+- Updates UBI image to `8.8-860`.
+- Updates Golang to `1.19.10`.
+- Resolves the following CVEs: [CVE-2023-29401](https://nvd.nist.gov/vuln/detail/CVE-2023-29401){: external}, [CVE-2023-26125](https://nvd.nist.gov/vuln/detail/CVE-2023-26125){: external}, [CVE-2022-3172](https://nvd.nist.gov/vuln/detail/CVE-2022-3172){: external},[CVE-2023-29403]((https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external}), [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external}, [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external}, [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external}, [CVE-2023-29400](https://nvd.nist.gov/vuln/detail/CVE-2023-29400){: external}, [CVE-2023-24540](https://nvd.nist.gov/vuln/detail/CVE-2023-24540){: external}, [CVE-2023-24539](https://nvd.nist.gov/vuln/detail/CVE-2023-24539){: external}, [CVE-2022-43552](https://nvd.nist.gov/vuln/detail/CVE-2022-43552){: external}, [CVE-2022-3204](https://nvd.nist.gov/vuln/detail/CVE-2022-3204){: external}, [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external}, [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external}, and [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external}.
 
 ## Change log for version 2.2.14, released 02 May 2023
 {: #02214_object_plugin}
