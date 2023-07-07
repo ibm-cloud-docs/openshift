@@ -2957,10 +2957,6 @@ subcollection: openshift
 
 * [Run the installation command](/docs/openshift?topic=openshift-cli-install#cli-install-include-step1-install-idt)
 
-* [Verify the installation](/docs/openshift?topic=openshift-cli-install#cli-install-include-step2-verify-idt)
-
-* [Install CLI plug-ins and tools](/docs/openshift?topic=openshift-cli-install#cli-install-include-step3-install-idt-manually)
-
 * [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/openshift?topic=openshift-cli-install#install-kubectl-cli)
 
 [Updating the CLI](/docs/openshift?topic=openshift-cli-update#cli-update)
@@ -5896,8 +5892,6 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
 
-    * [Example `cluster master private-service-endpoint allowlist rm` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm)
-
     * [`ibmcloud oc cluster master private-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_disable)
 
     * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
@@ -6135,8 +6129,6 @@ subcollection: openshift
     * [Experimental: `ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate)
 
     * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
-
-    * [Example `nlb-dns secret rm` command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-rm-example)
 
 * [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
 
@@ -9055,8 +9047,6 @@ subcollection: openshift
 * [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
 
 [IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles)
-
-* [Kubernetes Service](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles-include-containers-kubernetes-roles)
 
 * [Kubernetes service access roles and corresponding RBAC roles](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_service)
 

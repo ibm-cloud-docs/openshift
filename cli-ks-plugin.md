@@ -1541,7 +1541,7 @@ Minimum required permissions
 :    Optional: Do not show the message of the day or update reminders.
 
 
-### Example `cluster master private-service-endpoint allowlist rm` command
+##### Example `cluster master private-service-endpoint allowlist rm` command
 {: #cluster-master-private-service-endpoint-allowlist-rm}
 
 ```sh
@@ -6491,7 +6491,7 @@ Minimum required permissions
 :    Optional: Do not show the message of the day or update reminders.
 
 
-### Example `nlb-dns secret rm` command
+#### Example `nlb-dns secret rm` command
 {: #nlb-dns-secret-rm-example}
 
 ```sh
