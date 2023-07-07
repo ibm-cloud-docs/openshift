@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-07-07"
 
 keywords: openshift, static route, add-on
 
@@ -18,30 +18,33 @@ subcollection: openshift
 
 
 # Static route add-on change log
-{: #static-route-changelog}
+{: #versions-static-route}
 
 For deployment steps, see the [managed static route add-on](/docs/openshift?topic=openshift-static-routes) docs.
 {: shortdesc}
 
 For steps on updating the static route add-on, see [Updating managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
 
-Review the supported versions of the static route add-on. In the CLI, you can run `ibmcloud oc cluster addon versions --addon static-route`.
+To view a list of add-ons and the supported cluster versions, run the following command or see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
-| Static route add-on version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support |
-| --- | --- | --- |
-| 1.00 | Yes | 4.5, 4.6, 4.7 |
-{: caption="Supported static route add-on versions" caption-side="bottom"}
+```sh
+ibmcloud oc cluster addon versions
+```
+{: pre}
+
 
 ## Version 1.0.0
 {: #v100}
 
+### Change log for 1.0.0_1122, released 10 July 2023
+{: #100_1122}
+
+Adds support for multiple worker node architectures.
+
 ### Change log for 1.0.0_649, released 8 September 2021
 {: #100_649}
 
-**Previous version:** 1.0.0_572 **Current version:** 1.0.0_649
-
-Updates in this version
-:   Uses `apiextensions.k8s.io/v1` instead of `apiextensions.k8s.io/v1beta1`.
+- Uses `apiextensions.k8s.io/v1` instead of `apiextensions.k8s.io/v1beta1`.
 
 
 

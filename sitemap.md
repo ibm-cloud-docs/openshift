@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
 
+    * [10 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1023)
+
+        * Static route add-on version `1.0.0_1122`.
+
     * [6 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july623)
 
         * Cluster autoscaler add-on version `1.0.8_56` and `1.0.7_57`.
@@ -7607,11 +7611,13 @@ subcollection: openshift
 
 * [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
-[Static route add-on change log](/docs/openshift?topic=openshift-static-route-changelog#static-route-changelog)
+[Static route add-on change log](/docs/openshift?topic=openshift-versions-static-route#versions-static-route)
 
-* [Version 1.0.0](/docs/openshift?topic=openshift-static-route-changelog#v100)
+* [Version 1.0.0](/docs/openshift?topic=openshift-versions-static-route#v100)
 
-    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-static-route-changelog#100_649)
+    * [Change log for 1.0.0_1122, released 10 July 2023](/docs/openshift?topic=openshift-versions-static-route#100_1122)
+
+    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-versions-static-route#100_649)
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 

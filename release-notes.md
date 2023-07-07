@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-07"
 
 keywords: openshift
 
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## July 2023
 {: #openshift-july23}
+
+### 10 July 2023
+{: #openshift-july1023}
+{: release-note}
+
+Static route add-on version `1.0.0_1122`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-static-route).
 
 ### 6 July 2023
 {: #openshift-july623}
