@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-10"
 
 keywords: openshift
 subcollection: openshift
@@ -271,10 +271,6 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
-
-    * [10 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1023)
-
-        * Static route add-on version `1.0.0_1122`.
 
     * [6 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july623)
 
@@ -7610,8 +7606,6 @@ subcollection: openshift
 [Static route add-on change log](/docs/openshift?topic=openshift-versions-static-route#versions-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-versions-static-route#v100)
-
-    * [Change log for 1.0.0_1122, released 10 July 2023](/docs/openshift?topic=openshift-versions-static-route#100_1122)
 
     * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-versions-static-route#100_649)
 
