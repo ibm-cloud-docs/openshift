@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-07-11"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -85,7 +85,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 Use the {{site.data.keyword.satelliteshort}} CLI to create your {{site.data.keyword.redhat_openshift_notm}} clusters on your {{site.data.keyword.satelliteshort}} infrastructure.
 {: shortdesc}
 
-Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in](/docs/satellite?topic=satellite-install-ibmcloud-cli).
+Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in](/docs/satellite?topic=satellite-cli-install).
 
 To create the cluster in a {{site.data.keyword.satelliteshort}} location, you must use {{site.data.keyword.redhat_openshift_notm}} version 4.5 or later. 
 {: note}
@@ -432,7 +432,7 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 Review the table for information on charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}. For information about Location pricing, see [{{site.data.keyword.satelliteshort}} pricing](/docs/satellite?topic=satellite-sat-pricing).
 {: shortdesc}
 
-Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/cloud/satellite/overview){: external}
+Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/products/satellite/overview){: external}
 {: tip}
 
 | Type of charge | Clusters created after 15 November 2022 | Clusters created before 15 November 2022 | What the charge covers |

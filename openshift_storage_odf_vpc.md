@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-07-11"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -103,18 +103,20 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 ### Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}
 {: #odf-create-hscrypto-vpc}
 
-If you want to set up encryption by using {{site.data.keyword.hscrypto}}, create an instance of {{site.data.keyword.hscrypto}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} credentials.
+If you want to set up encryption, create an instance of {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} credentials.
 
 Storage class encryption is available only for versions `4.10.0` and later of OpenShift Data Foundation.
 {: note}
 
-1. Create an [{{site.data.keyword.hscrypto}} service instance](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui).
+1. Create an [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui) or [{{site.data.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision) service instance.
 
-1. Create [root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys&interface=ui).
+1. Create root key
+    - [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-create-root-keys&interface=ui).
+    - [{{site.data.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-create-root-keys&interface=ui).
 
-1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} instance name, instance ID, root key ID, and public endpoint.
+1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance name, instance ID, root key ID, and public endpoint.
 
-1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
+1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -206,11 +208,11 @@ To install ODF in your cluster, complete the following steps.
 1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
 1. If you want to encrypt the OSD volumes (cluster wide encryption) used by the ODF system pods, select **Enable cluster encryption**.
 1. If you want to enable encryption for the application volumes (app storage), select **Enable volume encryption**.
-    1. In the **Instance name** field, enter a unique name for your {{site.data.keyword.hscrypto}} instance. 
+    1. In the **Instance name** field, enter a unique name for your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. 
     1. In the **Instance type** field, enter the type of encryption instance. 
-    1. In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
-    1. In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`.
-    1. In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
+    1. In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
+    1. In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`.
+    1. In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
     1. In the **Token URL** field, enter `https://iam.cloud.ibm.com/identity/token`.
 
 
@@ -550,25 +552,46 @@ Review the following limitations for deploying ODF.
 Refer to the following parameters when you use the add-on or operator in VPC clusters.
 {: shortdesc}
 
+### Version 4.13 parameters
+{: #odf-vpc-params-413}
+
+| Parameter | Description | Default value |
+| --- | --- | --- |
+| `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that's based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
+| `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize`  multiplied by the `numOfOsd`. | N/A |
+| `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
+| `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
+| `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
+| `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
+| `clusterEncryption` | Enter `true` or `false` to enable encryption. |
+| `encryptionInTransit` | Enter `true` to enable in-transit encryption. Enabling in-transit encryption does not affect the existing mapped or mounted volumes. After a volume is mapped/mounted it retains the encryptioin settings that were used when it was initally mounted. To change the encryption settings for existing volumes, they must be remounted again one-by-one. | `false` |
+| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
+| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
+| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`. | `false` |
+| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
+| `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/identity/token`. | `false` |
+| `ignore-noobaa` | Enter `true` if you do not want to deploy MultiCloud Object Gateway. | `false` |
+{: caption="ODF parameter reference for add-on 4.13" caption-side="bottom"}
+
 ### Version 4.10, 4.11, and 4.12 parameters
 {: #odf-vpc-params-412}
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
 | `name` | Note that Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A |
-| `osdStorageClassName` | Enter `localblock`. | N/A |
+| `osdStorageClassName` | Enter the name of the storage class that you want to use for your OSD devices. For **multizone clusters**, specify the metro storage class that you want to use. If you want to use a metro `retain` storage class, [create a custom `WaitForFirstConsumer` storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class) that's based off the tiered metro `retain` storage class that you want to use. Metro storage classes have the volume binding mode `WaitForFirstConsumer`, which is required for multizone ODF deployments. For **single zone clusters**, enter the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. For more information about VPC tiered storage classes, see the [{{site.data.keyword.block_storage_is_short}} Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).| N/A |
 | `osdSize` | Enter a size for your storage devices. Example: `100Gi`. The total storage capacity of your ODF cluster is equivalent to the `osdSize`  multiplied by the `numOfOsd`. | N/A |
-| `osdDevicePaths` | Enter a comma separated list of the device paths for the devices that you want to use for the OSD devices. The devices that you specify are used as your application storage in your configuration. Each device must have at least `100GiB` of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example device path value for a partitioned device: `/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-1111111a11a11a11111a1aa111a11a1a1-part2`,`/dev/disk/by-id/scsi-0000000a00a00a00000a0aa000a00a0a0-part2`. |
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the specified number. For example, if you enter `1`, ODF creates 3 OSDs. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your OCS deployment. | `advanced` |
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
 | `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 | `autoDiscoverDevices` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
-| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
-| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
-| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} credentials. For example: `ibm-hpcs-secret`. | `false` |
-| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
+| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
+| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
+| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`. | `false` |
+| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
 | `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/identity/token`. | `false` |
 | `ignore-noobaa` | Enter `true` if you do not want to deploy MultiCloud Object Gateway. | `false` |
 {: caption="VPC parameter reference" caption-side="bottom"}
