@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-11"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
 
@@ -34,8 +34,11 @@ For VPC clusters with a storage solution such as OpenShift Data Foundation you m
 
 The following tutorial covers both major and minor updates. Each step is flagged with [Major]{: tag-red} or [Minor]{: tag-blue}. 
 
-* [Major]{: tag-red} Applies to major updates, for example if you are updating to a new major version, such as from `4.11` to `4.12`.
-* [Minor]{: tag-blue} Applies to minor patch updates, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift`. 
+* [Major]{: tag-red} Applies to major updates, for example if you are updating your worker nodes to a new major version, such as from `4.11` to `4.12` as well as OpenShift Data Foundation from `4.11` to `4.12`
+* [Minor]{: tag-blue} Applies to minor patch updates, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift` while keeping OpenShift Data Foundation at version `4.12`.
+
+Skipping versions during an upgrade, such as from 4.8 to 4.12 is not supported.
+{: important}
 
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
@@ -179,7 +182,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 1.  Replace the worker node.
     ```sh
-    ibmcloud oc worker replace -c CLUSTER --worker kube-***
+    ibmcloud oc worker replace -c CLUSTER --worker kube-*** --update
     ```
     {: pre}
         
@@ -261,6 +264,22 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     oc edit ocscluster 
     ```
     {: pre}
+
+    ```yaml
+    apiVersion: ocs.ibm.io/v1
+    kind: OcsCluster
+    metadata:
+    name: ocscluster-auto
+    spec:
+    . . .
+    osdSize: 250Gi
+    osdStorageClassName: ibmc-vpc-block-metro-10iops-tier
+    workerNodes:
+    - NODE-NAME # Example 10.248.128.42
+    - NODE-NAME
+    - NODE-NAME
+    ```
+    {: screen}
 
 1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify the new persistent volumes are created and that all pods are in a `Running` state.
     ```sh
@@ -399,8 +418,19 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     {: screen}
 
     ```sh
+    oc get cephcluster -n openshift-storage
     NAME                             DATADIRHOSTPATH   MONCOUNT   AGE   PHASE   MESSAGE                        HEALTH      EXTERNAL
-    ocs-storagecluster-cephcluster   /var/lib/rook     3          43h   Ready   Cluster created successfully   HEALTH_OK  
+    ocs-storagecluster-cephcluster   /var/lib/rook     3          43h   Ready   Cluster created successfully   HEALTH_OK   
+    ```
+    {: screen}
+
+    ```sh
+    oc get csv -n openshift-storage
+    NAME                              DISPLAY                       VERSION   REPLACES                          PHASE
+    mcg-operator.v4.11.8              NooBaa Operator               4.11.8    mcg-operator.v4.11.7              Succeeded
+    ocs-operator.v4.11.8              OpenShift Container Storage   4.11.8    ocs-operator.v4.11.7              Succeeded
+    odf-csi-addons-operator.v4.11.8   CSI Addons                    4.11.8    odf-csi-addons-operator.v4.11.7   Succeeded
+    odf-operator.v4.11.8              OpenShift Data Foundation     4.11.8    odf-operator.v4.11.7              Succeeded
     ```
     {: screen}
 

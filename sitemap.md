@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
 
+    * [11 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1123)
+
+        * New! OpenShift Data Foundation add-on version `4.13.0`.
+
     * [6 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july623)
 
         * Cluster autoscaler add-on version `1.0.8_56` and `1.0.7_57`.
@@ -4944,8 +4948,8 @@ subcollection: openshift
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
-## Setting up storage
-{: #sitemap_setting_up_storage}
+## Understanding storage
+{: #sitemap_understanding_storage}
 
 
 [Planning for storage](/docs/openshift?topic=openshift-storage-plan#storage-plan)
@@ -5115,7 +5119,7 @@ subcollection: openshift
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
 
 
-### Setting up IBM Cloud Object Storage
+## Setting up IBM Cloud Object Storage
 {: #sitemap_setting_up_ibm_cloud_object_storage}
 
 
@@ -5180,7 +5184,7 @@ subcollection: openshift
 * [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
 
 
-### Setting up Portworx
+## Setting up Portworx
 {: #sitemap_setting_up_portworx}
 
 
@@ -5285,7 +5289,7 @@ subcollection: openshift
 * [Gathering logs](/docs/openshift?topic=openshift-storage_portworx_support#portworx_logs)
 
 
-### Setting up OpenShift Data Foundation
+## Setting up OpenShift Data Foundation
 {: #sitemap_setting_up_openshift_data_foundation}
 
 
@@ -5298,6 +5302,11 @@ subcollection: openshift
 * [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep#odf-essentials-vs-advanced)
 
 * [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
+
+
+### Setting up OpenShift Data Foundation for VPC clusters
+{: #sitemap_setting_up_openshift_data_foundation_for_vpc_clusters}
+
 
 [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#deploy-odf-vpc)
 
@@ -5325,35 +5334,31 @@ subcollection: openshift
 
 * [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
 
+    * [Version 4.13 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-413)
+
     * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-412)
 
     * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
-[Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
+[Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
 
-* [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-plan)
+* [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-cluster-master-vpc)
 
-    * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-cos-classic)
+* [Determine which storage nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
 
-    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-hscrypto-classic)
+* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
-    * [Preparing your cluster for an OpenShift Data Foundation installation](/docs/openshift?topic=openshift-deploy-odf-classic#odf-cluster-prepare-classic)
+* [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
 
-    * [Getting your device details](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-get-devices)
+* [Upgrade the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
 
-* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-cli-classic)
+* [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-os-storage-vpc)
 
-* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
+* [Add the new storage node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#add-storage-node-vpc)
 
-* [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic#ocs-classic-deploy-crd)
+* [Update the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-add-on-vpc)
 
-* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
-
-    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
-
-    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
-
-* [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic#odf-limitations-classic)
+* [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-resource-yaml-vpc)
 
 [Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private#openshift-storage-odf-private)
 
@@ -5391,7 +5396,38 @@ subcollection: openshift
 
 * [Verify OpenShift Data Foundation is running](/docs/openshift?topic=openshift-openshift-storage-odf-private#odf-private-verify)
 
-[Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
+
+### Setting up OpenShift Data Foundation for Classic clusters
+{: #sitemap_setting_up_openshift_data_foundation_for_classic_clusters}
+
+
+[Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
+
+* [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-plan)
+
+    * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-cos-classic)
+
+    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-classic#odf-create-hscrypto-classic)
+
+    * [Preparing your cluster for an OpenShift Data Foundation installation](/docs/openshift?topic=openshift-deploy-odf-classic#odf-cluster-prepare-classic)
+
+    * [Getting your device details](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-get-devices)
+
+* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-cli-classic)
+
+* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
+
+* [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic#ocs-classic-deploy-crd)
+
+* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
+
+    * [Version 4.13 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-413)
+
+    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
+
+    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
+
+* [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic#odf-limitations-classic)
 
 [Updating Classic worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
 
@@ -5407,31 +5443,13 @@ subcollection: openshift
 
 * [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-classic#cleanup-os-storage-classic)
 
-* [Add the new storage node](/docs/openshift?topic=openshift-openshift-storage-update-classic#add-storage-node-classic)
+* [Add the new storage nodes](/docs/openshift?topic=openshift-openshift-storage-update-classic#add-storage-node-classic)
 
 * [Update the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-add-on-classic)
 
 * [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-yaml-classic)
 
-[Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
-
-* [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-cluster-master-vpc)
-
-* [Determine which storage nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
-
-* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
-
-* [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
-
-* [Upgrade the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
-
-* [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-os-storage-vpc)
-
-* [Add the new storage node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#add-storage-node-vpc)
-
-* [Update the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-add-on-vpc)
-
-* [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-resource-yaml-vpc)
+[Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
 [Managing your OpenShift Data Foundation deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
@@ -5466,7 +5484,7 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
 
-### Setting up Block Storage for VPC
+## Setting up Block Storage for VPC
 {: #sitemap_setting_up_block_storage_for_vpc}
 
 
@@ -5565,7 +5583,7 @@ subcollection: openshift
 * [Cleaning up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-block-vpc-remove#cleaning-up-block-vpc)
 
 
-### Setting up IBM Cloud File Storage for VPC
+## Setting up IBM Cloud File Storage for VPC
 {: #sitemap_setting_up_ibm_cloud_file_storage_for_vpc}
 
 
@@ -5590,6 +5608,11 @@ subcollection: openshift
 * [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref#storage-file-vpc-sc-ref)
+
+
+## IBM Cloud storage utilities
+{: #sitemap_ibm_cloud_storage_utilities}
+
 
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
@@ -5622,6 +5645,11 @@ subcollection: openshift
 * [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
 
     * [Troubleshooting persistent storage when an {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
+
+
+## Backing up and restoring storage data
+{: #sitemap_backing_up_and_restoring_storage_data}
+
 
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br#storage_br)
 
@@ -7610,6 +7638,10 @@ subcollection: openshift
     * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-versions-static-route#100_649)
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
+
+* [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+
+    * [Version 4.13.0, release 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-07-11"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
 
@@ -32,10 +32,13 @@ completion-time: 60m
 For Classic clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
-The following tutorial covers both major and minor updates. Each step is flagged with [Major]{: tag-red} or [Minor]{: tag-blue}. 
+The following tutorial covers both major and minor worker node updates. Each step is flagged with [Major]{: tag-red} or [Minor]{: tag-blue}. 
 
-* [Major]{: tag-red} Applies to major updates, for example if you are updating to a new major version, such as from `4.11` to `4.12`.
-* [Minor]{: tag-blue} Applies to minor patch updates, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift`. 
+* [Major]{: tag-red} Applies to major updates, for example if you are updating your worker nodes to a new major version, such as from `4.11` to `4.12` as well as OpenShift Data Foundation from `4.11` to `4.12`
+* [Minor]{: tag-blue} Applies to minor patch updates, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift` while keeping OpenShift Data Foundation at version `4.12`.
+
+Skipping versions during an upgrade, such as from 4.8 to 4.12 is not supported.
+{: important}
 
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
@@ -251,11 +254,11 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 1. Remove the failed OSD from the cluster. You can specify multiple failed OSDs if required:
     ```sh
-    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> | oc create -f OSD-ID,OSD-ID, OSD-ID
+    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> [-p FORCE_OSD_REMOVAL=true] | oc create -f OSD-ID,OSD-ID, OSD-ID
     ```
     {: pre}
 
-    The `FORCE_OSD_REMOVAL` value must be changed to `true` in clusters that  have only three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
+    The `FORCE_OSD_REMOVAL` value must be changed to `true` in clusters that have only three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
     {: note}
 
 1. Verify that the OSD was removed successfully by checking the status of the ocs-osd-removal-job pod.
@@ -277,20 +280,11 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: screen}
 
-## Add the new storage node
+## Add the new storage nodes
 {: #add-storage-node-classic}
 {: step}
 
 [Major]{: tag-red} [Minor]{: tag-blue}
-
-1. If you limited your ODF deployment to a subset of worker nodes by specifying node names during installation, you must update the `ocscluster` CRD to include the new name. 
-    If you did not limit your configuration to only certain worker nodes, you do not need to update the `ocscluster` CRD.
-    {: important}
-    
-    ```sh
-    oc edit ocscluster 
-    ```
-    {: pre}
 
 1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify that he OSD persistent volumes are created and that all pods are in a `Running` state.
     ```sh
@@ -404,11 +398,10 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     spec:
         billingType: hourly
     monSize: 20Gi
-    monStorageClassName: ibmc-vpc-block-10iops-tier
+    autoDiscoverDevices: true
     numOfOsd: 1
     ocsUpgrade: true
     osdSize: 100Gi
-    osdStorageClassName: ibmc-vpc-block-10iops-tier
     status:
         storageClusterStatus: Decreasing the capacity not allowed
     ```
@@ -428,11 +421,21 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     {: screen}
 
     ```sh
+    oc get cephcluster -n openshift-storage
     NAME                             DATADIRHOSTPATH   MONCOUNT   AGE   PHASE   MESSAGE                        HEALTH      EXTERNAL
-    ocs-storagecluster-cephcluster   /var/lib/rook     3          43h   Ready   Cluster created successfully   HEALTH_OK  
+    ocs-storagecluster-cephcluster   /var/lib/rook     3          43h   Ready   Cluster created successfully   HEALTH_OK   
     ```
     {: screen}
 
+    ```sh
+    oc get csv -n openshift-storage
+    NAME                              DISPLAY                       VERSION   REPLACES                          PHASE
+    mcg-operator.v4.11.8              NooBaa Operator               4.11.8    mcg-operator.v4.11.7              Succeeded
+    ocs-operator.v4.11.8              OpenShift Container Storage   4.11.8    ocs-operator.v4.11.7              Succeeded
+    odf-csi-addons-operator.v4.11.8   CSI Addons                    4.11.8    odf-csi-addons-operator.v4.11.7   Succeeded
+    odf-operator.v4.11.8              OpenShift Data Foundation     4.11.8    odf-operator.v4.11.7              Succeeded
+    ```
+    {: screen}
  
 
 
