@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-07-11"
 
 keywords: openshift
 
@@ -79,7 +79,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster from the foll
 | User access | You can use {{site.data.keyword.cloud_notm}} IAM access policies to authorize users to create {{site.data.keyword.cloud_notm}} infrastructure, manage your cluster, and access cluster resources. For more information, see [Managing access overview](/docs/satellite?topic=satellite-iam). You can also further control access to your host infrastructure in policies provided by your infrastructure provider.|
 | Integrations | For cluster integrations, see [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/openshift?topic=openshift-supported_integrations). For supported {{site.data.keyword.satelliteshort}} service integrations, see [Supported {{site.data.keyword.satelliteshort}} {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 | Locations and versions | Clusters are managed from one of the [supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions). However, you can deploy worker nodes to your own location, an {{site.data.keyword.cloud_notm}} data center, or another cloud provider. For more information see [Understanding locations and hosts](/docs/satellite?topic=satellite-location-host). |
-| Service interface | {{site.data.keyword.satelliteshort}} are supported by the global [API](https://containers.cloud.ibm.com/global/swagger-global-api/) [{{site.data.keyword.containerlong_notm}}, the {{site.data.keyword.openshiftlong_notm}} [CLI](/docs/openshift?topic=openshift-cli-install) and the {{site.data.keyword.satelliteshort}} [CLI](/docs/satellite?topic=satellite-install-ibmcloud-cli). You can also manage your clusters from the [console](https://cloud.ibm.com/satellite/clusters). |
+| Service interface | {{site.data.keyword.satelliteshort}} are supported by the global [API](https://containers.cloud.ibm.com/global/swagger-global-api/) [{{site.data.keyword.containerlong_notm}}, the {{site.data.keyword.openshiftlong_notm}} [CLI](/docs/openshift?topic=openshift-cli-install) and the {{site.data.keyword.satelliteshort}} [CLI](/docs/satellite?topic=satellite-cli-install). You can also manage your clusters from the [console](https://cloud.ibm.com/satellite/clusters). |
 | Service compliance | For clusters, see [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). For {{site.data.keyword.satelliteshort}}, see [Security and compliance](/docs/satellite?topic=satellite-compliance). |
 | Service limitations | See [Limitations, default settings, and usage requirements](/docs/satellite?topic=satellite-requirements). |
 {: caption="Table 2. Satellite infrastructure overview." caption-side="bottom"}
