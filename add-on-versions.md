@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-07-12"
 
 keywords: openshift add-ons, cluster addon
 
@@ -32,10 +32,12 @@ Review the following list of supported cluster add-ons.
 | image-key-synchronizer | 1.0.0 (Default) |  N/A  | >=4.4.0 <4.14.0 |
 | istio | 1.16  | >=1.23.0 <1.27.0 |  N/A  |
 | istio | 1.17 (Default) | >=1.23.0 <1.28.0 |  N/A  |
+| istio | 1.18  | >=1.23.0 <1.28.0 |  N/A  |
 | openshift-data-foundation | 4.9.0  |  N/A  | >=4.9.0 <4.11.0 |
 | openshift-data-foundation | 4.10.0  |  N/A  | >=4.10.0 <4.12.0 |
 | openshift-data-foundation | 4.11.0 (Default) |  N/A  | >=4.11.0 <4.13.0 |
 | openshift-data-foundation | 4.12.0  |  N/A  | >=4.12.0 <4.14.0 |
+| openshift-data-foundation | 4.13.0  |  N/A  | >=4.13.0 <4.14.0 |
 | static-route | 1.0.0 (Default) | >=1.19.0 <1.28.0 | >=4.5.0 <4.14.0 |
 | vpc-block-csi-driver | 5.0 (Default) | >=1.22.0 <1.28.0 | >=4.8.0 <4.14.0 |
 | vpc-block-csi-driver | 5.1  | >=1.22.0 <1.28.0 | >=4.9.0 <4.14.0 |

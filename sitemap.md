@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-11"
+lastupdated: "2023-07-12"
 
 keywords: openshift
 subcollection: openshift
@@ -2909,9 +2909,7 @@ subcollection: openshift
 
 [Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
-* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
-
-* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
+* [Objectives and audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
@@ -2919,9 +2917,9 @@ subcollection: openshift
 
 * [Navigate the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-    * [{{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
+* [Deploy an app to your cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
-* [Deploy an app to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+* [Clean up the tutorial resources](/docs/openshift?topic=openshift-openshift_tutorial#openshift-tutorial-cleanup)
 
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
@@ -7639,7 +7637,7 @@ subcollection: openshift
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 
-* [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+* [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#version-413)
 
     * [Version 4.13.0, release 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
