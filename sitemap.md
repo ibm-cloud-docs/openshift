@@ -7637,7 +7637,7 @@ subcollection: openshift
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 
-* [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+* [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#version-413)
 
     * [Version 4.13.0, release 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
