@@ -2909,9 +2909,7 @@ subcollection: openshift
 
 [Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
-* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
-
-* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
+* [Objectives and audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
@@ -2919,9 +2917,9 @@ subcollection: openshift
 
 * [Navigate the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
 
-    * [{{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-openshift_tutorial#openshift_console4_overview_tutorial)
+* [Deploy an app to your cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
 
-* [Deploy an app to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+* [Clean up the tutorial resources](/docs/openshift?topic=openshift-openshift_tutorial#openshift-tutorial-cleanup)
 
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
