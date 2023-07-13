@@ -2959,6 +2959,10 @@ subcollection: openshift
 
 * [Run the installation command](/docs/openshift?topic=openshift-cli-install#cli-install-include-step1-install-idt)
 
+* [Verify the installation](/docs/openshift?topic=openshift-cli-install#cli-install-include-step2-verify-idt)
+
+* [Install CLI plug-ins and tools](/docs/openshift?topic=openshift-cli-install#cli-install-include-step3-install-idt-manually)
+
 * [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/openshift?topic=openshift-cli-install#install-kubectl-cli)
 
 [Updating the CLI](/docs/openshift?topic=openshift-cli-update#cli-update)
@@ -5628,15 +5632,15 @@ subcollection: openshift
 
 * [Classic: Attaching raw block storage to non-SDS worker nodes](/docs/openshift?topic=openshift-utilities#attach_block)
 
-* [VPC: Adding raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
+* [VPC: Adding raw {{site.data.keyword.block_storage_is_short}} to VPC worker nodes by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_attach)
 
     * [Detaching raw and unformatted {{site.data.keyword.blockstorageshort}} from a worker node in a VPC cluster by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_detach)
 
     * [Reviewing volume attachment details for a VPC worker node by using the API](/docs/openshift?topic=openshift-utilities#vpc_api_get_worker)
 
-* [VPC: Attaching raw {{site.data.keyword.blockstorageshort}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
+* [VPC: Attaching raw {{site.data.keyword.block_storage_is_short}} to VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#vpc_cli_attach)
 
-    * [Removing raw {{site.data.keyword.blockstorageshort}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
+    * [Removing raw {{site.data.keyword.block_storage_is_short}} from VPC worker nodes by using the CLI](/docs/openshift?topic=openshift-utilities#storage-util-rm-vpc-cli)
 
 * [Backing up and restoring PVC data for file and block storage](/docs/openshift?topic=openshift-utilities#ibmcloud-backup-restore)
 
@@ -9077,6 +9081,8 @@ subcollection: openshift
 * [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
 
 [IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles)
+
+* [Kubernetes Service](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles-include-containers-kubernetes-roles)
 
 * [Kubernetes service access roles and corresponding RBAC roles](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_service)
 
