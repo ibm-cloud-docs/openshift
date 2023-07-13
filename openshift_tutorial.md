@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-12"
+lastupdated: "2023-07-13"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -37,7 +37,8 @@ This tutorial is designed for cluster administrators who want to learn how to cr
 - Create a cluster.
 - Open the {{site.data.keyword.redhat_openshift_notm}} web console.
 - Access common components.
-- Deploy an app, and expose the app on a {{site.data.keyword.redhat_openshift_notm}} route so that external users can access the service.
+- Deploy a sample app.
+- Expose the app on a Route so that external users can access the service.
 
 
 ![{{site.data.keyword.redhat_openshift_notm}} tutorial diagram.](images/roks_tutorial.png){: caption="Figure 1. {{site.data.keyword.redhat_openshift_notm}} tutorial diagram" caption-side="bottom"}
@@ -48,11 +49,12 @@ This tutorial is designed for cluster administrators who want to learn how to cr
 {: #openshift_prereqs}
 
 
-**Permissions**: If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. Otherwise, ask the account owner to [set up the API key and assign you the minimum user permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
 
-**Command-line tools**: For quick access to your resources from the command line, try the [{{site.data.keyword.cloud-shell_notm}}](https://cloud.ibm.com/shell){: external}. Otherwise, set up your local command-line environment by completing the following steps.
-1. [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-cli-install).
-1. [Install the {{site.data.keyword.redhat_openshift_notm}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-cli-install).
+1. Check your permissions. If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. If you are not the account owner, ask the account owner to [set up an API key and assign you required permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
+
+
+1. [Install the {{site.data.keyword.cloud_notm}} CLI tools](/docs/openshift?topic=openshift-cli-install).
+
 
 
 
@@ -60,15 +62,15 @@ This tutorial is designed for cluster administrators who want to learn how to cr
 {: #openshift_create_cluster}
 {: step}
 
-1. Log in to the account and resource group where you want to create {{site.data.keyword.redhat_openshift_notm}} clusters. If you have a federated account, include the `--sso` option.
+1. Log in to your account and resource group. If you have a federated account, include the `--sso` option.
     ```sh
-    ibmcloud login [-g <resource_group>] [--sso]
+    ibmcloud login [-g RESOURCE GROUP] [--sso]
     ```
     {: pre}
 
-1. Create a cluster with a unique name. The following command creates a version 4.11 cluster in Washington, DC with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
+1. Run the following command to create a version 4.11 cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
     ```sh
-    ibmcloud oc cluster create classic --name my_openshift --location wdc04 --version 4.11_openshift --flavor b3c.4x16  --workers 2 --public-service-endpoint
+    ibmcloud oc cluster create classic --name my-tutorial-cluster --location wdc04 --version 4.11_openshift --flavor b3c.4x16  --workers 2 --public-service-endpoint
     ```
     {: pre}
 
@@ -90,6 +92,7 @@ This tutorial is designed for cluster administrators who want to learn how to cr
     {: pre}
 
 1. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
+
 1. From the {{site.data.keyword.redhat_openshift_notm}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
     
 1. Verify that the `oc` commands run properly with your cluster by checking the version.
@@ -132,7 +135,7 @@ Developer perspective
 {: step}
 
 
-1. Create a project for your Hello World app. A project is a {{site.data.keyword.redhat_openshift_notm}} version of a Kubernetes namespace with additional annotations.
+1. Create a project for your Hello World app.
     ```sh
     oc new-project hello-world
     ```
@@ -189,13 +192,13 @@ Developer perspective
     Example output
     ```sh
     NAME          HOST/PORT                         PATH                                        SERVICES      PORT       TERMINATION   WILDCARD
-    hello-world   hello-world-hello.world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud    hello-world   8080-tcp   edge/Allow    None
+    hello-world   hello-world-hello.world.CLUSTER-NAME-RANDOM-ID.REGION.containers.appdomain.cloud    hello-world   8080-tcp   edge/Allow    None
     ```
     {: screen}
 
-1. Access your app. Be sure to append `https://` to your route hostname. It might take a minute before the exposed service is visible. If the app cannot be accessed immediately, wait a minute and try the curl command again.
+1. Access your app. Be sure to append `https://` to your route hostname. It might take a minute before the exposed service is visible.
     ```sh
-    curl https://hello-world-hello-world.<cluster_name>-<random_ID>.<region>.containers.appdomain.cloud
+    curl https://hello-world-hello-world.CLUSTER-NAME-RANDOM-ID.REGION.containers.appdomain.cloud
     ```
     {: pre}
 
