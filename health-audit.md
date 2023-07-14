@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-07-13"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -245,6 +245,12 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
                   kubernetes.io/metadata.name: kube-system
               podSelector:
                 matchLabels:
+                  app: konnectivity-agent
+            - namespaceSelector:
+                matchLabels:
+                  kubernetes.io/metadata.name: kube-system
+              podSelector:
+                matchLabels:
                   app: vpn
     ```
     {: codeblock}
@@ -462,6 +468,12 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
           podSelector:
             matchLabels:
               k8s-app: konnectivity-agent
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+          podSelector:
+            matchLabels:
+              app: konnectivity-agent
         - namespaceSelector:
             matchLabels:
               kubernetes.io/metadata.name: kube-system

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-07-13"
 
 keywords: openshift
 
@@ -122,7 +122,7 @@ Not finding what you are looking for? You can also create your own customized st
 
 Get started using storage in your cluster by reviewing the following docs.
 
-- [{{site.data.keyword.blockstorageshort}} for Classic](/docs/openshift?topic=openshift-block_storage)
+- [{{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 - [{{site.data.keyword.filestorage_short}} for Classic clusters](/docs/openshift?topic=openshift-file_storage)
 - [{{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-install)
