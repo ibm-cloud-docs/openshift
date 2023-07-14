@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-11"
+lastupdated: "2023-07-14"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -100,23 +100,23 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
     ```
     {: pre}
 
-### Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}
+### Optional: Setting up encryption by using {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}
 {: #odf-create-hscrypto-vpc}
 
-If you want to set up encryption, create an instance of {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} credentials.
+If you want to set up encryption, create an instance of {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials.
 
 Storage class encryption is available only for versions `4.10.0` and later of OpenShift Data Foundation.
 {: note}
 
-1. Create an [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui) or [{{site.data.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision) service instance.
+1. Create an [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui) or [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision) service instance.
 
 1. Create root key
     - [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-create-root-keys&interface=ui).
-    - [{{site.data.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-create-root-keys&interface=ui).
+    - [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-create-root-keys&interface=ui).
 
-1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance name, instance ID, root key ID, and public endpoint.
+1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance name, instance ID, root key ID, and public endpoint.
 
-1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
+1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -208,11 +208,11 @@ To install ODF in your cluster, complete the following steps.
 1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
 1. If you want to encrypt the OSD volumes (cluster wide encryption) used by the ODF system pods, select **Enable cluster encryption**.
 1. If you want to enable encryption for the application volumes (app storage), select **Enable volume encryption**.
-    1. In the **Instance name** field, enter a unique name for your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. 
+    1. In the **Instance name** field, enter a unique name for your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. 
     1. In the **Instance type** field, enter the type of encryption instance. 
-    1. In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
-    1. In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`.
-    1. In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
+    1. In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
+    1. In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`.
+    1. In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
     1. In the **Token URL** field, enter `https://iam.cloud.ibm.com/identity/token`.
 
 
@@ -566,10 +566,10 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
 | `clusterEncryption` | Enter `true` or `false` to enable encryption. |
 | `encryptionInTransit` | Enter `true` to enable in-transit encryption. Enabling in-transit encryption does not affect the existing mapped or mounted volumes. After a volume is mapped/mounted it retains the encryptioin settings that were used when it was initally mounted. To change the encryption settings for existing volumes, they must be remounted again one-by-one. | `false` |
-| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
-| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
-| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`. | `false` |
-| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
+| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
+| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
+| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`. | `false` |
+| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
 | `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/identity/token`. | `false` |
 | `ignore-noobaa` | Enter `true` if you do not want to deploy MultiCloud Object Gateway. | `false` |
 {: caption="ODF parameter reference for add-on 4.13" caption-side="bottom"}
@@ -588,10 +588,10 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
 | `clusterEncryption` | Available for add-on version 4.7.0 and later. Enter `true` or `false` to enable encryption. |
 | `autoDiscoverDevices` | **Optional**: Automatically discover the available disks on your worker nodes. Enter `true` or `false`. |
-| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
-| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
-| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`. | `false` |
-| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
+| `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
+| `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
+| `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`. | `false` |
+| `hpcsBaseUrl` | Enter the public or private endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | `false` |
 | `hpcsTokenUrl` | Enter `https://iam.cloud.ibm.com/identity/token`. | `false` |
 | `ignore-noobaa` | Enter `true` if you do not want to deploy MultiCloud Object Gateway. | `false` |
 {: caption="VPC parameter reference" caption-side="bottom"}

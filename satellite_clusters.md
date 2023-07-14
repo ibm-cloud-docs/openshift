@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-11"
+lastupdated: "2023-07-14"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -449,7 +449,7 @@ Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=bill
 
 
 
-All user clusters in your Satellite location are installed with OpenShift Container Platform, which incurs a licensing fee from Red Hat. However, you can bring your own OpenShift Container Platform license for clusters created with your on-premises infrastructure or for clusters created by using IBM Cloud Paks.
+All user clusters in your Satellite location are installed with OpenShift Container Platform, which incurs a licensing fee from Red Hat. However, you can bring your own OpenShift Container Platform license for clusters created with your on-premises infrastructure or for clusters created on-premises by using IBM Cloud Paks.
 {: shortdesc}
 
 

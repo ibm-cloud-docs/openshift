@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-07-14"
 
 keywords: openshift
 subcollection: openshift
@@ -5320,7 +5320,7 @@ subcollection: openshift
 
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-cos)
 
-    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-hscrypto-vpc)
+    * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-hscrypto-vpc)
 
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
 
