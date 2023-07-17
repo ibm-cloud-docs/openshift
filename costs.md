@@ -220,7 +220,7 @@ The following steps present a general process to manage costs for your {{site.da
 {: shortdesc}
 
 1. Decide on a cloud platform strategy to manage your resources.
-    * See [Best practices for billing and usage](/docs/billing-usage?topic=billing-usage-best-practices).
+    * See [IBM Cloud Billing and Usage docs](/docs/billing-usage).
     * Organize your billing with [resource groups](/docs/account?topic=account-rgs).
     * [Add tags to your clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags) according to your organizational strategy.
 2. Plan the type of cluster that you need.

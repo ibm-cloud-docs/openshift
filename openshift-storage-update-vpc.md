@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-11"
+lastupdated: "2023-07-17"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
 
@@ -23,7 +23,7 @@ completion-time: 60m
 # Updating VPC worker nodes that use OpenShift Data Foundation
 {: #openshift-storage-update-vpc}
 {: toc-content-type="tutorial"}
-{: toc-services="openshift,vpc"}
+{: toc-services="openshift, vpc"}
 {: toc-completion-time="60m"}
 
 [Virtual Private Cloud]{: tag-vpc}
