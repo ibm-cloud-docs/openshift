@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-07-17"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -464,7 +464,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 4. [Deploy an app that uses ODF](/docs/openshift?topic=openshift-odf-deploy-app).
 
-### Scaling ODF
+## Scaling ODF
 {: #odf-scaling}
 
 You can scale your ODF configuration by increasing the `numOfOsd` setting. When you increase the number of OSDs, ODF provisions that number of disks of the same `osdSize` capacity in GB in each of the worker nodes in your ODF cluster. However, the total storage that is available to your applications is equal to the `osdSize` multiplied by the `numOfOsd`.

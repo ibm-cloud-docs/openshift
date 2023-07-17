@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-07-17"
 
 keywords: openshift
 subcollection: openshift
@@ -5328,7 +5328,7 @@ subcollection: openshift
 
 * [Creating your ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
 
-    * [Scaling ODF](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-scaling)
+* [Scaling ODF](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-scaling)
 
     * [Scaling by increasing the `numOfOsd`](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-scaling-osd)
 
