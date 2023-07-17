@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-07-17"
 
 keywords: openshift, storage, snapshot
 
@@ -38,7 +38,7 @@ Remove the finalizers and continue deleting the resources. Note that stale `volu
 If the `volumesnapshot` and `volumesnapshotcontent` objects are included as a single mapping, follow these steps.
 
 1. Delete the `volumesnapshot` and `volumesnapshotcontent` objects.
-    ```
+    ```sh
     kubectl delete volumesnapshot snapshot-csi-block-3
     ```
     {: pre}

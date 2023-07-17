@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-07-17"
 
 keywords: portworx, openshift
 
@@ -165,7 +165,7 @@ To install Portworx:
 ## Creating a Portworx volume
 {: #add_portworx_storage}
 
-Start creating Portworx volumes by using [Kubernetes dynamic provisioning](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning).
+Start creating Portworx volumes by using Kubernetes dynamic provisioning.
 {: shortdesc}
 
 1. List available storage classes in your cluster and check whether you can use an existing Portworx storage class that was set up during the Portworx installation. The pre-defined storage classes are optimized for database usage and to share data across pods.

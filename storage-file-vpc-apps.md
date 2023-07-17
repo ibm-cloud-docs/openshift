@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-07-17"
 
 keywords: openshift
 
@@ -67,7 +67,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 ## Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning
 {: #vpc_add_file_dynamic}
 
-Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_vpc_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
+Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
 1. Create a configuration file to define your persistent volume claim (PVC) and save the configuration as a `.yaml` file. The following example creates a claim that is named `mypvc` by using the `ibmc-vpc-file-5iops-tier` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
 
@@ -233,7 +233,7 @@ Create a persistent volume claim (PVC) to [dynamically provision](/docs/openshif
 ## Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with static provisioning
 {: #vpc_add_file_static}
 
-Create a persistent volume claim (PVC) to [statically provision](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning) {{site.data.keyword.filestorage_vpc_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster. 
+Create a persistent volume claim (PVC) to statically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster. 
 
 Before you can create a persistent volume (PV), you have to retrieve details about your file share.
 

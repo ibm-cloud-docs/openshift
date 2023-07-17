@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-07-17"
 
 keywords: openshift
 
@@ -17,12 +17,15 @@ subcollection: openshift
 
 
 
-# Planning for storage
+# Understanding your storage options
 {: #storage-plan}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 
 Review the following sections for an overview of the available storage options for your cluster.
 {: shortdesc}
+
 
 Before you can decide what type of storage is the correct solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand the {{site.data.keyword.cloud_notm}} infrastructure provider, your app requirements, the type of data that you want to store, and how often you want to access this data.
 
@@ -71,10 +74,8 @@ Understand other storage characteristics that impact your choice.
 :   **Scalability:** The ability to extend capacity and customize performance based on your needs.
 :   **Encryption:** The masking of data to prevent visibility when data is accessed by an unauthorized user.
 
-## Non-persistent storage
+## Non-persistent storage options
 {: #storage-plan-non-persistent}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 You can use non-persistent storage options if your data is not required to be persistently stored or if you want to unit-test your app components. The following image shows available non-persistent data storage options in {{site.data.keyword.openshiftlong_notm}}.
 
@@ -100,7 +101,7 @@ You can use non-persistent storage options if your data is not required to be pe
 
 
 
-## Persistent storage for single zone clusters
+## Single zone clusters
 {: #storage-plan-single-zone}
 
 If you have a single zone cluster, you can choose between the following options in {{site.data.keyword.openshiftlong_notm}} that provide fast access to your data. For higher availability, use a storage option that is designed for geographically distributed data and, if possible for your requirements, create a multizone cluster.
@@ -109,15 +110,11 @@ The following image shows the options that you have in {{site.data.keyword.opens
 
 ![Persistent storage options for single zone cluster](images/cs_storage_single_zone.svg){: caption="Figure 2. Persistent storage options for single zone cluster" caption-side="bottom"}
 
-### Classic {{site.data.keyword.filestorage_short}}
-{: #storage-plan-classic-file}
 
-[Classic infrastructure]{: tag-classic-inf}
-
-| Characteristics | Classic {{site.data.keyword.filestorage_short}} |
+| Characteristics | Description |
 | --- | --- |
-| Multizone-capable | No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. |
 | Ideal data types | All |
+| Supported provisioning type | Dynamic and static |
 | Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads | 
 | Access | Via file system on mounted volume |
 | Supported Kubernetes access writes | ReadWriteMany (RWX), ReadOnlyMany (ROX), ReadWriteOnce (RWO) |
@@ -131,20 +128,20 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Backup and recovery | Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers. |
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. |
 | Non-ideal use cases| Multizone clusters or geographically distributed data. |
-{: caption="Classic File Storage characteristics"}
+{: class="simple-tab-table"}
+{: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
+{: #single-zone-storage-1}
+{: tab-title="{{site.data.keyword.filestorage_short}}"}
+{: tab-group="single-zone-storage"}
 
 
-### Classic {{site.data.keyword.blockstorageshort}}
-{: #storage-plan-classic-block}
-
-[Classic infrastructure]{: tag-classic-inf}
 
 | Characteristics | Description |
 | --- | --- |
-| Multizone-capable | No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. |
 | Ideal data types | All |
+| Supported provisioning type | Dynamic and static |
 | Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads |
-| Access | Via file system on mounted volume|
+| Access | Via file system on mounted volume. |
 | Supported Kubernetes access writes | ReadWriteOnce (RWO) | 
 | Performance | Predictable due to assigned IOPS and size. IOPS are not shared between pods. |
 | Consistency| Strong |
@@ -156,17 +153,19 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Backup and recovery | Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers. |
 | Common use cases | Stateful sets, backing storage when you run your own database, or high-performance access for single pods. |
 | Non-ideal use cases | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. |
-{: caption="Classic Block Storage characteristics"}
+{: class="simple-tab-table"}
+{: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
+{: #single-zone-storage-2}
+{: tab-title="{{site.data.keyword.blockstorageshort}}"}
+{: tab-group="single-zone-storage"}
 
-### {{site.data.keyword.filestorage_vpc_short}}
-{: #storage-plan-vpc-file}
 
-[Virtual Private Cloud]{: tag-vpc}
+
 
 | Characteristic | Description |
 | --- | --- |
-| Multizone-capable | No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. |No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. | 
 | Ideal data types | All |
+| Supported provisioning type | Dynamic and static |
 | Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads |
 | Access | Via file system on mounted volume|
 | Supported Kubernetes access writes | ReadWriteOnce (RWO) |
@@ -180,12 +179,12 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Backup and recovery | Run `kubectl cp`. |
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. |
 | Non-ideal use cases | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. |
-{: caption="File Storage for VPC characteristics"}
+{: class="simple-tab-table"}
+{: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
+{: #single-zone-storage-3}
+{: tab-title="{{site.data.keyword.blockstorageshort}}"}
+{: tab-group="single-zone-storage"}
 
-### {{site.data.keyword.block_storage_is_short}}
-{: #storage-plan-vpc-block}
-
-[Virtual Private Cloud]{: tag-vpc}
 
 | Characteristics | Description |
 | --- | --- |
@@ -204,33 +203,27 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Backup and recovery | Set up periodic snapshots, replicate snapshots, duplicate storage, back up data to {{site.data.keyword.cos_full_notm}}, or copy data to and from pod and containers. |
 | Common use cases | Stateful sets, backing storage when you run your own database, or high-performance access for single pods. |
 | Non-ideal use cases| Multizone clusters, geographically distributed data, or sharing data across multiple app instances. |
-{: caption="Block Storage for VPC characteristics."}
+{: class="simple-tab-table"}
+{: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
+{: #single-zone-storage-4}
+{: tab-title="{{site.data.keyword.block_storage_is_short}}"}
+{: tab-group="single-zone-storage"}
 
 
 
-## Persistent storage options for multizone clusters
+## Multizone clusters
 {: #storage-plan-multizone}
 
 The following sections show the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a multizone cluster and make your data highly available. You can use these options in a single zone cluster, but you might not get the high availability benefits that your app requires.
-
-Looking to connect your cluster to an on-prem database instead? See [Setting up VPN connectivity to your cluster](/docs/openshift?topic=openshift-vpn#vpn).
-{: tip}
-
-The {{site.data.keyword.cos_full_notm}} plug-in uses s3fs to manage your Object Storage buckets and objects. Object Storage, and the plug-in, works best with read-intensive workloads. If your workload is read/write intensive, you might want to try Block or File storage instead.
-{: tip}
 
 
 ![High availability options for persistent storage in a multizone cluster](images/cs_storage_options_multizone.png){: caption="Figure 1. High availability options for persistent storage in a multizone cluster" caption-side="bottom"}
 
 
 
-### {{site.data.keyword.cos_full_notm}}
-{: #storage-plan-cos}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
-
 | Characteristic | Description |
 | --- | --- |
+| Supported infrastructure providers | Classic, VPC, Satellite |
 | Ideal data types | Semi-structured and unstructured data |
 | Data usage pattern | Read-intensive workloads. Few or no write operations.
 | Access | Via file system on mounted volume (plug-in) or via REST API from your app |
@@ -244,17 +237,17 @@ The {{site.data.keyword.cos_full_notm}} plug-in uses s3fs to manage your Object 
 | Backup and recovery | Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](http://www.ibm.com/support/customer/csol/terms/?id=i126-7857&lc=en){: external}. |
 | Common use cases | Geographically distributed data, static big data, static multimedia content, web apps, backups, archives, stateful sets. |
 | Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. |
-{: caption: "Cloud Object Storage characteristics."}
+{: class="simple-tab-table"}
+{: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
+{: #multi-zone-storage-1}
+{: tab-title="{{site.data.keyword.cos_full_notm}}"}
+{: tab-group="multi-zone-storage"}
 
 
-### Portworx
-{: #storage-plan-portworx}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
-
-| Characteristics | SDS (Portworx) |
+| Characteristics | Description |
 | --- | --- |
-| Ideal data types | Semi-structured and unstructured data | All | Depends on the DBaaS |
+| Supported infrastructure providers | Classic, VPC, Satellite |
+| Ideal data types | Any |
 | Data usage pattern | Read-intensive workloads. Few or no write operations. | Write-intensive workloads. Random read and write operation. Sequential read and write operations | Read-write-intensive workloads |
 | Access | Via file system on mounted volume (plug-in) or via REST API from your app | Via file system on mounted volume or NFS client access to the volume. | Via REST API from your app. |
 | Supported Kubernetes access writes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) | All | N/A as accessed from the app directly. |
@@ -268,38 +261,14 @@ The {{site.data.keyword.cos_full_notm}} plug-in uses s3fs to manage your Object 
 | Backup and recovery| Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](http://www.ibm.com/support/customer/csol/terms/?id=i126-7857&lc=en){: external}. | Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/){: external}. | Depends on the DBaaS |
 | Common use cases | Multizone clusters. Geographically distributed data. Static big data. Static multimedia content | Web apps | Backups | Archives | Stateful sets. Geographically distributed data. Common storage solution when you run apps across multiple cloud providers. Backing storage when you run your own database. High-performance access for single pods. Shared storage access across multiple pods and worker nodes. | Multizone clusters, relational and non-relational databases, or geographically distributed data. |
 | Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. | N/A | App that is designed to write to a file system. |
-{: caption: "Portworx characteristics."}
-
-### Databases
-{: #storage-plan-databases}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
-
-| Characteristics | Description|
-| --- | --- |
-| Ideal data types | Depends on the DBaaS |
-| Data usage pattern | Read-write-intensive workloads |
-| Access | Via REST API from your app. |
-| Supported Kubernetes access writes | N/A as accessed from the app directly. |
-| Performance | High if deployed to the same data center as your app. |
-| Consistency| Depends on the DBaaS |
-| Durability | High |
-| Resiliency | Depends on the DBaaS and your setup. |
-| Availability | High if you set up multiple instances. |
-| Scalability | Scales automatically |
-| Encryption | At rest |
-| Backup and recovery| Depends on the DBaaS |
-| Common use cases | Multizone clusters, relational and non-relational databases, or geographically distributed data. |
-| Non-ideal use cases | App that is designed to write to a file system. |
-{: caption: "Database characteristics."}
+{: class="simple-tab-table"}
+{: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
+{: #multi-zone-storage-2}
+{: tab-title="Portwox"}
+{: tab-group="multi-zone-storage"}
 
 
 
-
-### OpenShift Data Foundation 
-{: #storage-plan-odf}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 | Characteristic | Description |
 | --- | --- |
@@ -316,10 +285,36 @@ The {{site.data.keyword.cos_full_notm}} plug-in uses s3fs to manage your Object 
 | Scalability | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. |
 | Encryption | Bring your own key with {{site.data.keyword.keymanagementservicelong_notm}} or HPCS. In-transit and at rest. |
 | Backup and recovery| Use local or cloud snapshots to save the current state of a volume. |
-{: caption: "OpenShift Data Foundation characteristics."}
+{: class="simple-tab-table"}
+{: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
+{: #multi-zone-storage-3}
+{: tab-title="OpenShift Data Foundation"}
+{: tab-group="multi-zone-storage"}
 
 
 
+| Characteristics | Description|
+| --- | --- |
+| Supported infrastructure providers | Classic, VPC, Satellite |
+| Ideal data types | Depends on the DBaaS |
+| Data usage pattern | Read-write-intensive workloads |
+| Access | Via REST API from your app. |
+| Supported Kubernetes access writes | N/A as accessed from the app directly. |
+| Performance | High if deployed to the same data center as your app. |
+| Consistency| Depends on the DBaaS |
+| Durability | High |
+| Resiliency | Depends on the DBaaS and your setup. |
+| Availability | High if you set up multiple instances. |
+| Scalability | Scales automatically |
+| Encryption | At rest |
+| Backup and recovery| Depends on the DBaaS |
+| Common use cases | Multizone clusters, relational and non-relational databases, or geographically distributed data. |
+| Non-ideal use cases | App that is designed to write to a file system. |
+{: class="simple-tab-table"}
+{: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
+{: #multi-zone-storage-4}
+{: tab-title="Databases"}
+{: tab-group="multi-zone-storage"}
 
 
 

@@ -223,13 +223,9 @@ toc:
               - secrets.md
               - secrets-mgr.md
           - satellite_expose_apps.md
-      - topicgroup:
-          label: Understanding storage
-          topics: 
-          - storage-plan.md
-          - storage-basics.md
-          - storage-file.md
-          - storage-block.md
+      - storage-plan.md
+      - storage-file.md
+      - storage-block.md
       - topicgroup:
           label: Setting up IBM Cloud Object Storage
           topics:

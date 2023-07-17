@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-07-17"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -423,7 +423,7 @@ When you remove {{site.data.keyword.redhat_openshift_notm}} clusters or worker n
 ## Limitations for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}
 {: #satcluster-limitations}
 
-See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits).
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits).
 {: shortdesc}
 
 ## Pricing for clusters in {{site.data.keyword.satelliteshort}}

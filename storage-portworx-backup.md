@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-07-17"
 
 keywords: portworx, openshift
 
@@ -32,7 +32,7 @@ Install PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster in your 
 Before you begin:
 - Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/start-here-installation/){: external}. 
 - [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).
-- Provision and attach 320Gi of block storage to your cluster. See [Setting up classic {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Setting up Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
+- Provision and attach 320Gi of block storage to your cluster. See [Setting {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Setting up Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
 
 
 If you are installing PX-Backup in a newly provisioned cluster, [you must log in to it at least once](/docs/openshift?topic=openshift-access_cluster) before beginning the installation.
