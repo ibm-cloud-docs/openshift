@@ -228,8 +228,8 @@ toc:
           topics: 
           - storage-plan.md
           - storage-basics.md
-          - storage-file.md
-          - storage-block.md
+      - storage-file.md
+      - storage-block.md
       - topicgroup:
           label: Setting up IBM Cloud Object Storage
           topics:

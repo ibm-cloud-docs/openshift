@@ -4994,6 +4994,11 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-kube_concepts#next-steps-storage)
 
+
+## Setting up classic IBM Cloud {{site.data.keyword.filestorage_short}}
+{: #sitemap_setting_up_classic_ibm_cloud_}
+
+
 [Setting up classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
@@ -5057,6 +5062,11 @@ subcollection: openshift
     * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
+
+
+## Setting up classic IBM Cloud {{site.data.keyword.blockstorageshort}}
+{: #sitemap_setting_up_classic_ibm_cloud_1}
+
 
 [Setting up classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
 
