@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-07-17"
 
 keywords: openshift
 
@@ -4238,7 +4238,7 @@ New! Virtual Private Cloud Generation 2
     - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
 
 :   New VPC Gen 2 commands for the CLI
-    - [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
+    - [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
     - [Change log for master fix pack `4.3.23_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive#4323_1525)
     
 :   Ready to get started? Try out the [Creating a cluster in your VPC on generation 2 compute tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial).

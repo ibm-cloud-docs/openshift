@@ -36,7 +36,7 @@ subcollection: openshift
 
 [Getting started with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-getting-started#getting-started)
 
-* [Creating a classic {{site.data.keyword.redhat_openshift_notm}} cluster in the console](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+* [Creating a classic cluster in the console](/docs/openshift?topic=openshift-getting-started#clusters_gs)
 
 * [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
 
@@ -76,14 +76,6 @@ subcollection: openshift
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
 
 [Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers)
-
-* [Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-infrastructure_providers#vpc-gen2-infra-overview)
-
-* [{{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-infrastructure_providers#satellite-infra-overview)
-
-* [Classic](/docs/openshift?topic=openshift-infrastructure_providers#classic-infra-overview)
-
-* [Troubleshooting and support](/docs/openshift?topic=openshift-infrastructure_providers#infra-troubleshoot)
 
 [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks#responsibilities_iks)
 
@@ -4954,54 +4946,26 @@ subcollection: openshift
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
-## Understanding storage
-{: #sitemap_understanding_storage}
+## Understanding your storage options
+{: #sitemap_understanding_your_storage_options}
 
 
-[Planning for storage](/docs/openshift?topic=openshift-storage-plan#storage-plan)
+[Understanding your storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan)
 
-* [Non-persistent storage](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
+* [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
 
-* [Persistent storage for single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
+* [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
 
-    * [Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-classic-file)
-
-    * [Classic {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-classic-block)
-
-    * [{{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-vpc-file)
-
-    * [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-vpc-block)
-
-* [Persistent storage options for multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
-
-    * [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-plan#storage-plan-cos)
-
-    * [Portworx](/docs/openshift?topic=openshift-storage-plan#storage-plan-portworx)
-
-    * [Databases](/docs/openshift?topic=openshift-storage-plan#storage-plan-databases)
-
-    * [OpenShift Data Foundation](/docs/openshift?topic=openshift-storage-plan#storage-plan-odf)
-
-[Understanding Kubernetes storage basics](/docs/openshift?topic=openshift-kube_concepts#kube_concepts)
-
-* [Persistent volumes and persistent volume claims](/docs/openshift?topic=openshift-kube_concepts#pvc_pv)
-
-* [Dynamic provisioning](/docs/openshift?topic=openshift-kube_concepts#dynamic_provisioning)
-
-* [Static provisioning](/docs/openshift?topic=openshift-kube_concepts#static_provisioning)
-
-* [Storage classes](/docs/openshift?topic=openshift-kube_concepts#storageclasses)
-
-* [Next steps](/docs/openshift?topic=openshift-kube_concepts#next-steps-storage)
+* [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
 
 
-## Setting up classic IBM Cloud {{site.data.keyword.filestorage_short}}
-{: #sitemap_setting_up_classic_ibm_cloud_}
+## Setting up {{site.data.keyword.filestorage_short}}
+{: #sitemap_setting_up_}
 
 
-[Setting up classic IBM Cloud {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
+[Setting up {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
 
-* [Quick start for {{site.data.keyword.cloud_notm}} Classic {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
+* [Quick start for {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
 
 * [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
 
@@ -5064,11 +5028,11 @@ subcollection: openshift
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
 
 
-## Setting up classic IBM Cloud {{site.data.keyword.blockstorageshort}}
-{: #sitemap_setting_up_classic_ibm_cloud_1}
+## Setting up {{site.data.keyword.blockstorageshort}}
+{: #sitemap_setting_up_1}
 
 
-[Setting up classic IBM Cloud {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
+[Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
 
@@ -9994,29 +9958,29 @@ subcollection: openshift
 {: #sitemap_service_limitations}
 
 
-[Service limitations](/docs/openshift?topic=openshift-openshift_limitations#openshift_limitations)
+[Service limitations](/docs/openshift?topic=openshift-limitations#limitations)
 
-* [Service and quota limitations](/docs/openshift?topic=openshift-openshift_limitations#tech_limits)
+* [Service and quota limitations](/docs/openshift?topic=openshift-limitations#tech_limits)
 
-    * [Version 4 cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ocp4_limitations)
+    * [Version 4 cluster limitations](/docs/openshift?topic=openshift-limitations#ocp4_limitations)
 
-* [Classic cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#classic_limits)
+* [Classic cluster limitations](/docs/openshift?topic=openshift-limitations#classic_limits)
 
-    * [Compute](/docs/openshift?topic=openshift-openshift_limitations#classic_compute_limit)
+    * [Compute](/docs/openshift?topic=openshift-limitations#classic_compute_limit)
 
-    * [Networking](/docs/openshift?topic=openshift-openshift_limitations#classic_networking_limit)
+    * [Networking](/docs/openshift?topic=openshift-limitations#classic_networking_limit)
 
-    * [Storage](/docs/openshift?topic=openshift-openshift_limitations#classic_storage_limit)
+    * [Storage](/docs/openshift?topic=openshift-limitations#classic_storage_limit)
 
-* [VPC cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#ks_vpc_gen2_limits)
+* [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
 
-    * [Compute](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_compute_limit)
+    * [Compute](/docs/openshift?topic=openshift-limitations#vpc_gen2_compute_limit)
 
-    * [Networking](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_networking_limit)
+    * [Networking](/docs/openshift?topic=openshift-limitations#vpc_gen2_networking_limit)
 
-    * [Storage](/docs/openshift?topic=openshift-openshift_limitations#vpc_gen2_storage_limit)
+    * [Storage](/docs/openshift?topic=openshift-limitations#vpc_gen2_storage_limit)
 
-* [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits)
+* [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits)
 
-* [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_limitations#not-supported-features-table)
+* [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-limitations#not-supported-features-table)
 

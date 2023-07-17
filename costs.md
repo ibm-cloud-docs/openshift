@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-07-17"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -158,7 +158,7 @@ The type of load balancer that is automatically created varies depending on the 
 To store images in the internal registry, {{site.data.keyword.openshiftlong_notm}} creates a storage instance that varies by infrastructure provider.
 {: shortdesc}
 
-* **Classic clusters**: A classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed at an hourly rate. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost.
+* **Classic clusters**: A {{site.data.keyword.filestorage_short}} volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed at an hourly rate. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost.
 * **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short}} documentation](https://www.ibm.com/cloud/object-storage){: external}.
 
 

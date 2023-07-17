@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-07-17"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -82,7 +82,7 @@ Public registry
 
 
 Classic clusters
-:   Your {{site.data.keyword.redhat_openshift_notm}} cluster is set up by default with an internal registry that uses classic {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.redhat_openshift_notm}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.11/registry/index.html){: external}.
+:   Your {{site.data.keyword.redhat_openshift_notm}} cluster is set up by default with an internal registry that uses {{site.data.keyword.filestorage_short}} as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.redhat_openshift_notm}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.11/registry/index.html){: external}.
 
 VPC clusters
 :   The internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
