@@ -4107,17 +4107,6 @@ subcollection: openshift
 * [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-vpc-firewall#iam_allowlist_vpc)
 
 
-## Managing security and compliance with {{site.data.keyword.redhat_openshift_notm}}
-{: #sitemap_managing_security_and_compliance_with_}
-
-
-[Managing security and compliance with {{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-manage-security-compliance#manage-security-compliance)
-
-* [Monitoring security and compliance posture with {{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-manage-security-compliance#monitor-clusters)
-
-    * [Available goals for {{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-manage-security-compliance#clusters-available-goals)
-
-
 ## Using the compliance operator
 {: #sitemap_using_the_compliance_operator}
 

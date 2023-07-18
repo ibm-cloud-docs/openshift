@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-21"
+lastupdated: "2023-07-18"
 
 keywords: openshift, block storage, snapshot
 
@@ -22,9 +22,6 @@ subcollection: openshift
 
 {{site.data.keyword.block_storage_is_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. For more information, see [How snapshots work](/docs/vpc?topic=vpc-snapshots-vpc-about).
 {: shortdesc}
-
-If you want to see an example scenario using snapshots to back up a WordPress app, see [Point in time backup and restore of a stateful application](https://w3.ibm.com/w3publisher/isl-cloud-platform/blogs/5ef8f200-0e27-11ed-a874-c7aca9398345){: example}.
-{: tip}
 
 
     
