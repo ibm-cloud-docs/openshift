@@ -149,7 +149,6 @@ toc:
               - vpc-acls.md
               - vpc-kube-policies.md
               - vpc-firewall.md
-      - manage-scc.md
       - openshift_compliance_operator.md
       - topicgroup:
           label: Managing the cluster network

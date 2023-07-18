@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-07-18"
 
 keywords: openshift
 
@@ -836,7 +836,7 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
     1. In the navigation on the service details page, click **Buckets**.
     2. Click **Create bucket**. A dialog box is displayed.
     3. Enter a unique name for your bucket. The name must be unique within {{site.data.keyword.cos_full_notm}} across all regions and across all {{site.data.keyword.cloud_notm}} accounts.
-    4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+    4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
     5. Change the **Location** to the region where you want to store your data. Keep in mind that your data might not be allowed to be stored in every region due to legal reasons.  
     6. Click **Create**.
 4. Retrieve the {{site.data.keyword.cos_full_notm}} host name for your bucket.

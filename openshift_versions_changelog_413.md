@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-03"
+lastupdated: "2023-07-18"
 
 keywords: openshift, 4.13, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -31,6 +31,20 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for worker node fix pack 4.13.4_1526_openshift, released 17th July 2023
+{: #4134_1526_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.13.4_1526_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}} | N/A |N/A|N/A|
+| RHEL 7 Packages |N/A|N/A|N/A|
+| RHEL 8 Packages |N/A|N/A|N/A|
+{: caption="Changes since version 4.13.4_1525_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.13.4_1525_openshift, released 03 July 2023

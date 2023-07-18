@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-18"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -685,13 +685,13 @@ Choose among the following options:
 ### Adding tags to clusters with the CLI
 {: #add-tags-cli}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_login){: external}.
+1. Log in to the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login){: external}.
     ```sh
     ibmcloud login [--sso]
     ```
     {: pre}
 
-1. [Tag your cluster](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_tag_attach). Replace the `--resource-name` with the name of your cluster. To list available clusters, run `ibmcloud oc cluster ls`. If you want to check your existing tags so as not to duplicate any, run `ibmcloud resource tags`.
+1. [Tag your cluster](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_tag_attach). Replace the `--resource-name` with the name of your cluster. To list available clusters, run `ibmcloud oc cluster ls`. If you want to check your existing tags so as not to duplicate any, run `ibmcloud resource tags`.
 
     ```sh
     ibmcloud resource tag-attach --resource-name <cluster_name> --tag-names <tag1,tag2>
