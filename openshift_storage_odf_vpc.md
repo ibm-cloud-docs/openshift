@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-18"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -565,7 +565,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `ocsUpgrade` | Enter a `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
 | `workerNodes` | **Optional**: Enter the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
 | `clusterEncryption` | Enter `true` or `false` to enable encryption. |
-| `encryptionInTransit` | Enter `true` to enable in-transit encryption. Enabling in-transit encryption does not affect the existing mapped or mounted volumes. After a volume is mapped/mounted it retains the encryptioin settings that were used when it was initally mounted. To change the encryption settings for existing volumes, they must be remounted again one-by-one. | `false` |
+| `encryptionInTransit` | Enter `true` to enable in-transit encryption. Enabling in-transit encryption does not affect the existing mapped or mounted volumes. After a volume is mapped/mounted, it retains the encryption settings that were used when it was initially mounted. To change the encryption settings for existing volumes, they must be remounted again one-by-one. | `false` |
 | `hpcsServiceName` | Enter the name of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
 | `hpcsInstanceId` | Enter your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | `false` |
 | `hpcsSecretName` | Enter the name of the secret that you created by using your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`. | `false` |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-07-18"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -41,7 +41,7 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 {: #4.13.0_odf}
 
 - Initial 4.13 release. 
-- Adds support for encryption in transit by specificying the `encryptionInTransit` parameter when installing the add-on.
+- Adds support for encryption in transit by specifying the `encryptionInTransit` parameter when installing the add-on.
 
 ## Version 4.12
 {: #4.12_odf}

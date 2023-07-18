@@ -264,6 +264,10 @@ subcollection: openshift
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
 
+    * [17 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1723)
+
+        * Worker node fix packs `4.9.59_1596_openshift`, `4.10.63_1576_openshift`, `4.11.44_1563_openshift`, `4.12.24_1551_openshift`, and `4.13.4_1526_openshift`.
+
     * [13 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1323)
 
         * Cloud Image Key Synchronizer add-on version `1.0.0_1701`.
