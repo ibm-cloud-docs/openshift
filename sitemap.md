@@ -5999,6 +5999,12 @@ subcollection: openshift
 
 * [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands)
 
+    * [`ibmcloud oc ingress alb autoscale get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get)
+
+    * [`ibmcloud oc ingress alb autoscale set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_set)
+
+    * [`ibmcloud oc ingress alb autoscale unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_unset)
+
     * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
 
     * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)

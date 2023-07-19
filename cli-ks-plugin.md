@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-19"
 
 keywords: openshift
 
@@ -3898,6 +3898,135 @@ View and configure Ingress application load balancers (ALBs).
 
 In CLI version 1.0.157 and later, the `ibmcloud oc alb` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress alb` subcategory. For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: important}
+
+### `ibmcloud oc ingress alb autoscale get`
+{: #cs_alb_autoscale_get}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Get the details and status of an Ingress ALB autoscaling configuration.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--alb ALB`
+:    Required: The name or ID of the ALB to configure autoscaling on.
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+#### Example `ingress alb autoscale get` command
+{: #ingress-alb-autoscale-get-example}
+
+```sh
+ibmcloud oc ingress alb autoscale get --alb myalb123 --cluster mycluster 
+``` 
+{: pre}
+
+
+### `ibmcloud oc ingress alb autoscale set`
+{: #cs_alb_autoscale_set}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Configure autoscaling to automatically increase or decrease the number of Ingress ALB pods based on the current load. You can choose to scale pods based on CPU utilization, or you can use custom metrics that you specify. If you base autoscaling configuration on CPU utilization, you specify an average CPU utilization rate as well as a maximum and minimum number of pods to be deployed at any given time. If you choose to specify custom metrics for autoscaling, you pass in a path to a custom metric file. 
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress alb autoscale set --alb ALB --cluster CLUSTER --max-replicas REPLICAS --min-replicas REPLICAS [--output OUTPUT] [-q] (--cpu-average-utilization PERCENT | --custom-metrics-file FILE)
+```
+{: pre}
+
+Minimum required permissions
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--alb ALB`
+:    Required: The name or ID of the ALB to configure autoscaling on.
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+
+`--max-replicas REPLICAS`
+:   The maximum number of replicas to deployed at any time. This value is required if you include the `---cpu-average-utilization` option.
+
+`--min-replicas REPLICAS`
+:   The minimum number of replicas to deploy at any time. This value is required if you include the `---cpu-average-utilization` option.
+
+`--cpu-average-utilization PERCENTAGE`
+:   The average utilization threshold used to dynamically calculate the number of replicas. 
+
+`--custom-metrics-file`
+:   The path to the custom metrics file. 
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+#### Example `ingress alb autoscale set` command
+{: #ingress-alb-autoscale-set-example}
+
+```sh
+ibmcloud oc ingress alb autoscale set --alb myalb123 --cluster mycluster --max-replicas 5 --min-replicas 2 --cpu-average-utilization 5
+``` 
+{: pre}
+
+
+### `ibmcloud oc ingress alb autoscale unset`
+{: #cs_alb_autoscale_unset}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Remove autoscaling from your Ingress ALBs by deleting the autoscaling configuration.
+{: shortdesc}
+
+```sh
+ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--alb ALB`
+:    Required: The name or ID of the ALB to configure autoscaling on.
+
+`-c, --cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+#### Example `ingress alb autoscale unset` command
+{: #ingress-alb-autoscale-unset-example}
+
+```sh
+ibmcloud oc ingress alb autoscale unset --alb myalb123 --cluster mycluster 
+``` 
+{: pre}
 
 ### `ibmcloud oc ingress alb autoupdate disable`
 {: #cs_alb_autoupdate_disable}
