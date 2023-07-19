@@ -1,7 +1,5 @@
 [-a-z0-9]*[a-z0-9]
-https://c3
-https://containers.cloud.ibm.com/global
-https://medium.com/@jakekitchener/kubernetes-serviceaccounts-for-use-in-automated-systems-515297974982
-https://www.cloudflare.com/ips/
-https://curl.se/download.html
-https://www.katacoda.com/openshift
+https://config.satellite.cloud.ibm.com/
+https://test.cloud.ibm.com/conapi
+https://cloud.ibm.com/conapi
+https://config.satellite.test.cloud.ibm.com/
