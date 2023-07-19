@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-18"
+lastupdated: "2023-07-19"
 
 keywords: openshift
 subcollection: openshift
@@ -263,6 +263,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
+
+    * [19 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1923)
+
+        * CLI version `1.0.540` is available.
 
     * [17 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1723)
 
@@ -5999,6 +6003,12 @@ subcollection: openshift
 
 * [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands)
 
+    * [`ibmcloud oc ingress alb autoscale get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get)
+
+    * [`ibmcloud oc ingress alb autoscale set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_set)
+
+    * [`ibmcloud oc ingress alb autoscale unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_unset)
+
     * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
 
     * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
@@ -6232,6 +6242,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.540](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10549)
 
 * [Version v1.0.528](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10528)
 

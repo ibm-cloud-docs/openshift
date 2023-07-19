@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-07-19"
 
 keywords: openshift
 
@@ -151,6 +151,10 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
 {: shortdesc}
 
 * **`ingress alb`**: View and configure an Ingress application load balancer (ALB).
+    * **`ingress alb autoscale`**: Configure autoscaling for Ingress ALBs. 
+        * [`ibmcloud oc ingress alb autouscale get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get)
+        * [`ibmcloud oc ingress alb autouscale set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_set)
+        * [`ibmcloud oc ingress alb autouscale unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_unset)
     * **`ingress alb autoupdate`**: Manage automatic updates for the Ingress ALB add-on in a cluster.
         * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
         * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
