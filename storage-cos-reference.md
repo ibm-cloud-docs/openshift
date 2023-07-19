@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-07-19"
 
 keywords: openshift
 
@@ -30,7 +30,7 @@ Name
 
 
 Default resiliency endpoint
-:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
 
 Chunk size
 :   Storage classes without `perf`: 16 MB. Storage classes with `perf`: 52 MB
@@ -56,7 +56,7 @@ Name
 :   `ibmc-s3fs-vault-regional`
 
 Default resiliency endpoint
-:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
 
 Chunk size
 :   16 MB
@@ -81,7 +81,7 @@ Name
 :   `ibmc-s3fs-cold-perf-regional`
 
 Default resiliency endpoint
-:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
 
 Chunk size
 :   16 MB
@@ -106,7 +106,7 @@ Name
 :   `ibmc-s3fs-flex-perf-regional`
 
 Default resiliency endpoint
-:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Regions and endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints).
+:   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
 
 Chunk size
 :   Storage classes without `perf`: 16 MB

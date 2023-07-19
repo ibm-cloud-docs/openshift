@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-19"
 
 keywords: openshift, satellite responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 
@@ -23,13 +23,13 @@ subcollection: openshift
 {: help}
 {: support}
 
-Learn about cluster management responsibilities that you have when you use Red Hat OpenShift on {{site.data.keyword.satelliteshort}} clusters. For overall terms of use, see [Cloud Services terms](/docs/overview/terms-of-use?topic=overview-terms#terms).
+Learn about cluster management responsibilities that you have when you use Red Hat OpenShift on {{site.data.keyword.satelliteshort}} clusters. For overall terms of use, see [Cloud Services terms](/docs/overview?topic=overview-terms).
 {: shortdesc}
 
 ## Overview of shared responsibilities
 {: #overview-by-resource-sat}
 
-{{site.data.keyword.openshiftlong_notm}} is a managed service in the [{{site.data.keyword.cloud_notm}} shared responsibility model](/docs/overview/terms-of-use?topic=overview-shared-responsibilities). Review the following table of who is responsible for particular cloud resources when using {{site.data.keyword.openshiftlong_notm}}. Then, you can view more granular tasks for shared responsibilities in [Tasks for shared responsibilities by area](#task-responsibilities-sat).
+{{site.data.keyword.openshiftlong_notm}} is a managed service in the [{{site.data.keyword.cloud_notm}} shared responsibility model](/docs/overview?topic=overview-shared-responsibilities). Review the following table of who is responsible for particular cloud resources when using {{site.data.keyword.openshiftlong_notm}}. Then, you can view more granular tasks for shared responsibilities in [Tasks for shared responsibilities by area](#task-responsibilities-sat).
 {: shortdesc}
 
 If you use other {{site.data.keyword.cloud_notm}} products such as {{site.data.keyword.cos_short}}, responsibilities that are marked as yours in the following table, such as disaster recovery for Data, might be IBM's or shared. Consult those products' documentation for your responsibilities.
