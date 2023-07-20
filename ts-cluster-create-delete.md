@@ -341,7 +341,7 @@ can't authenticate the infrastructure user: Time-based One Time Password authent
 Your {{site.data.keyword.cloud_notm}} account uses its own automatically linked infrastructure through a Pay-as-you-Go account.
 {: tsCauses}
 
-However, the account administrator enabled the time-based one-time passcode (TOTP) option so that users are prompted for a time-based one-time passcode (TOTP) at login. This type of [multifactor authentication (MFA)](/docs/account?topic=account-types#account-based) is account-based, and affects all access to the account. TOTP MFA also affects the access that {{site.data.keyword.containerlong_notm}} requires to make calls to {{site.data.keyword.cloud_notm}} infrastructure. If TOTP is enabled for the account, you can't create and manage clusters and worker nodes in {{site.data.keyword.containerlong_notm}}.
+However, the account administrator enabled the time-based one-time passcode (TOTP) option so that users are prompted for a time-based one-time passcode (TOTP) at login. This type of [multifactor authentication (MFA)](/docs/account?topic=account-types) is account-based, and affects all access to the account. TOTP MFA also affects the access that {{site.data.keyword.containerlong_notm}} requires to make calls to {{site.data.keyword.cloud_notm}} infrastructure. If TOTP is enabled for the account, you can't create and manage clusters and worker nodes in {{site.data.keyword.containerlong_notm}}.
 
 
 The {{site.data.keyword.cloud_notm}} account owner or an account administrator must take one of the following actions.
