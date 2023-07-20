@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-20"
 
 keywords: openshift
 
@@ -4579,7 +4579,7 @@ File storage classes
 {: release-note}
 
 Tech overview
-:   Added an [Overview of personal and sensitive data storage and removal options](/docs/containers?topic=containers-service-arch#ibm-data).
+:   Added an [Overview of personal and sensitive data storage and removal options](/docs/containers?topic=containers-ibm-data).
 
 ### 25 March 2020
 {: #openshift-mar2520}

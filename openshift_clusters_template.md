@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-07-20"
 
 keywords: openshift, clusters
 
@@ -50,7 +50,7 @@ The following resources are provisioned by default, but you can customize some r
 *   1 {{site.data.keyword.cloudaccesstraillong_notm}} instance to enable audit logs from the cluster, such as when a user creates a call against the {{site.data.keyword.openshiftlong_notm}} API.
 *   1 {{site.data.keyword.monitoringlong_notm}} instance to enable metrics such as node usage from the cluster.
 *   1 {{site.data.keyword.keymanagementservicelong_notm}} instance and customer root key (CRK) to encrypt the cluster master, including Kubernetes secrets in the cluster.
-*   1 {{site.data.keyword.cos_full_notm}} instance and bucket to back up certain [cluster data](/docs/containers?topic=containers-service-arch#ibm-data). You can optionally select your own instance.
+*   1 {{site.data.keyword.cos_full_notm}} instance and bucket to back up certain [cluster data](/docs/containers?topic=containers-ibm-data). You can optionally select your own instance.
 
 
 ## Creating a secure cluster by using a template from the UI
