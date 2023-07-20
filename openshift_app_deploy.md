@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-20"
 
 keywords: kubernetes, openshift
 
@@ -34,6 +34,7 @@ Seeing errors when you deploy your app? {{site.data.keyword.redhat_openshift_not
 
 ### Deploying apps through the console
 {: #deploy_apps_ui}
+{: ui}
 
 You can create apps through various methods in the {{site.data.keyword.redhat_openshift_notm}} console by using the **Developer** perspective. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.11/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
@@ -47,6 +48,7 @@ You can create apps through various methods in the {{site.data.keyword.redhat_op
 
 ### Deploying apps through the CLI
 {: #deploy_apps_cli}
+{: cli}
 
 To create an app in your {{site.data.keyword.openshiftlong_notm}} cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.11/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For example, you might refer to a public GitHub repo, a public GitLab repo with a URL that ends in `.git`, or another local or remote repo. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.11/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
@@ -249,9 +251,9 @@ To run a workload on a GPU machine,
     
     | Component | Description | 
     |--- | --- |
-    | Metadata and label names | Enter a name and a label for the job, and use the same name in both the file's metadata and the `spec template` metadata. For example, `nvidia-devicequery`.                                                                                                                                                                                                                                                                                                                                                                                                                            |
-    | `containers.image` | Provide the image that the container is a running instance of. In this example, the value is set to use the DockerHub CUDA device query image:`nvcr.io/nvidia/k8s/cuda-sample:devicequery-cuda11.7.1-ubuntu20.04`.                                                                                                                                                                                                                                                                                                                                                                      |
-    | `containers.imagePullPolicy` | To pull a new image only if the image is not currently on the worker node, specify `IfNotPresent`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+    | Metadata and label names | Enter a name and a label for the job, and use the same name in both the file's metadata and the `spec template` metadata. For example, `nvidia-devicequery`. |
+    | `containers.image` | Provide the image that the container is a running instance of. In this example, the value is set to use the DockerHub CUDA device query image:`nvcr.io/nvidia/k8s/cuda-sample:devicequery-cuda11.7.1-ubuntu20.04`. |
+    | `containers.imagePullPolicy` | To pull a new image only if the image is not currently on the worker node, specify `IfNotPresent`. |
     | `resources.limits` | For GPU machines, you must specify the resource limit. The Kubernetes [Device Plug-in](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/){: external} sets the default resource request to match the limit. \n * You must specify the key as `nvidia.com/gpu`. \n * Enter the whole number of GPUs that you request, such as `2`. Note that container pods don't share GPUs and GPUs can't be overcommitted. For example, if you have only 1 `mg1c.16x128` machine, then you have only 2 GPUs in that machine and can specify a maximum of `2`. |
     {: caption="Table 1. Understanding your YAML components" caption-side="bottom"}
 
@@ -368,35 +370,6 @@ To run a workload on a GPU machine,
 Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}.
 
     
-
-## Deploying Cloud Paks, licensed software, and other integrations
-{: #openshift_app_cloud_paks}
-
-You can deploy IBM Cloud Paks&trade;, licensed software, and other 3rd party integrations to {{site.data.keyword.openshiftlong_notm}} clusters. You have various tools to deploy integrations, such as {{site.data.keyword.cloud_notm}} service binding, managed add-ons, Helm charts, and more. After you install an integration, follow that product's documentation for configuration settings and other instructions to integrate with your apps. For more information, see [Enhancing cluster capabilities with integrations](/docs/openshift?topic=openshift-supported_integrations).
-{: shortdesc}
-
-## Accessing the {{site.data.keyword.redhat_openshift_notm}} web console
-{: #openshift_console}
-
-You can use the {{site.data.keyword.redhat_openshift_notm}} console to manage your apps, deploy apps from the catalog, and access built-in functionality to help you operate your cluster. The {{site.data.keyword.redhat_openshift_notm}} console is deployed to your cluster by default, instead of the Kubernetes dashboard as in community Kubernetes clusters.
-{: shortdesc}
-
-For more information about the console, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.11/web_console/web-console.html){: external}.
-
-### {{site.data.keyword.redhat_openshift_notm}} console overview
-{: #openshift_console4_overview}
-
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.redhat_openshift_notm}} cluster, then click **OpenShift web console**.
-2. To work with your cluster in the CLI, click your profile **`IAM#user.name@email.com` > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate by using the CLI.
-
-You can explore the following areas of the {{site.data.keyword.redhat_openshift_notm}} web console.
-
-Administrator perspective
-:   The Administrator perspective is available from the side navigation menu perspective switcher. From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.11/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
-
-Developer perspective
-:   The Developer perspective is available from the side navigation menu perspective switcher. From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](https://docs.openshift.com/container-platform/4.11/web_console/web-console-overview.html{: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
-
 
 
 

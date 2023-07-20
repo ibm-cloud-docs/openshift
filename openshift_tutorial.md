@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-07-20"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -119,15 +119,6 @@ This tutorial is designed for cluster administrators who want to learn how to cr
 
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.redhat_openshift_notm}} cluster, then click **OpenShift web console**.
 2. To work with your cluster in the CLI, click your profile **`IAM#user.name@email.com` > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate by using the CLI.
-
-You can explore the following areas of the {{site.data.keyword.redhat_openshift_notm}} web console.
-
-Administrator perspective
-:   The Administrator perspective is available from the side navigation menu perspective switcher. From the Administrator perspective, you can manage and set up the components that your team needs to run your apps, such as projects for your workloads, networking, and operators for integrating IBM, Red Hat, 3rd party, and custom services into the cluster. For more information, see [Viewing cluster information](http://docs.openshift.com/container-platform/4.11/web_console/using-dashboard-to-get-cluster-information.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
-
-Developer perspective
-:   The Developer perspective is available from the side navigation menu perspective switcher. From the Developer perspective, you can add apps to your cluster in a variety of ways, such as from Git repositories,container images, uploaded YAML files, operator catalogs, and more. The **Topology** view presents a unique way to visualize the workloads that run in a project and navigate their components from sidebars that aggregate related resources, including pods, services, routes, and metadata. For more information, see [Developer perspective](https://docs.openshift.com/container-platform/4.11/web_console/web-console-overview.html{: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
-
 
 
 ## Deploy an app to your cluster

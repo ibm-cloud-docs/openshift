@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-20"
 
 keywords: openshift
 subcollection: openshift
@@ -3174,6 +3174,8 @@ subcollection: openshift
 
     * [How do I manage my worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-manage)
 
+    * [What storage disks options are available on worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#what-storage-disks-options-are-available-on-worker-nodes)
+
     * [What limitations do I need to be aware of?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-limitations)
 
     * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-master-role)
@@ -3679,17 +3681,17 @@ subcollection: openshift
 
     * [VPC version 4 master and worker node components](/docs/openshift?topic=openshift-service-architecture#service-arch-vpc-4)
 
-* [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-service-architecture#ibm-data)
+[Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-ibm-data#ibm-data)
 
-    * [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-service-architecture#pi-info)
+* [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-ibm-data#pi-info)
 
-    * [How is my information stored and encrypted?](/docs/openshift?topic=openshift-service-architecture#pi-storage)
+* [How is my information stored and encrypted?](/docs/openshift?topic=openshift-ibm-data#pi-storage)
 
-    * [Where is my information stored?](/docs/openshift?topic=openshift-service-architecture#pi-location)
+* [Where is my information stored?](/docs/openshift?topic=openshift-ibm-data#pi-location)
 
-    * [How can I remove my information?](/docs/openshift?topic=openshift-service-architecture#pi-removal)
+* [How can I remove my information?](/docs/openshift?topic=openshift-ibm-data#pi-removal)
 
-    * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-service-architecture#pi-rh-telemetry)
+    * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-ibm-data#pi-rh-telemetry)
 
 [Protecting {{site.data.keyword.openshiftlong_notm}} resources with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr)
 
@@ -4562,12 +4564,6 @@ subcollection: openshift
 
 * [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
 
-* [Deploying Cloud Paks, licensed software, and other integrations](/docs/openshift?topic=openshift-deploy_app#openshift_app_cloud_paks)
-
-* [Accessing the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app#openshift_console)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} console overview](/docs/openshift?topic=openshift-deploy_app#openshift_console4_overview)
-
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
 * [About NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport_planning)
@@ -5169,6 +5165,8 @@ subcollection: openshift
 
 * [What is software-defined storage (SDS)?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-sds)
 
+* [What are the benefits of Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-benefits)
+
 * [How does Portworx work?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-work)
 
 * [What are the requirements to run Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-requirments)
@@ -5178,6 +5176,8 @@ subcollection: openshift
 * [What volume topology offers the best performance for my pods?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-topology)
 
 * [Can I install Portworx in a private cluster?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-private)
+
+* [How do I get support?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support)
 
 * [What's next?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
 
@@ -5634,16 +5634,6 @@ subcollection: openshift
 ## Enhancing your cluster with Cloud Paks, Operators, and integrations
 {: #sitemap_enhancing_your_cluster_with_cloud_paks_operators_and_integrations}
 
-
-[{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners#service-partners)
-
-* [Portworx](/docs/openshift?topic=openshift-service-partners#portworx-parter)
-
-    * [Benefits](/docs/openshift?topic=openshift-service-partners#portworx-benefits)
-
-    * [Integration with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-service-partners#portworx-integration)
-
-    * [Billing and support](/docs/openshift?topic=openshift-service-partners#portworx-billing-support)
 
 [IBM Cloud services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#ibm-3rd-party-integrations)
 

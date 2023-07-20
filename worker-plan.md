@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-07-20"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -69,6 +69,26 @@ The secondary disk of the worker node is encrypted. For more information, see [O
 Worker nodes in classic clusters are provisioned into your {{site.data.keyword.cloud_notm}} account. You can manage your worker nodes by using {{site.data.keyword.openshiftlong_notm}}, but you can also use the [classic infrastructure dashboard](https://cloud.ibm.com/classic/) in the {{site.data.keyword.cloud_notm}} console to work with your worker node directly.  
 
 Unlike classic clusters, the worker nodes of your VPC cluster are not listed in the [VPC infrastructure dashboard](https://cloud.ibm.com/vpc/overview). Instead, you manage your worker nodes with {{site.data.keyword.openshiftlong_notm}} only. However, your worker nodes might be connected to other VPC infrastructure resources, such as VPC subnets or VPC Block Storage. These resources are in the VPC infrastructure dashboard and can be managed separately from there.
+
+### What storage disks options are available on worker nodes?
+{: hardware-options}
+
+Choose a flavor, or machine type, with the correct storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
+
+SATA
+:   A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
+
+SSD
+:  A solid-state drive storage device for high-performance data.
+
+SAN
+:   For select virtual machines, the storage device is mounted by using software area network (SAN).
+
+Raw
+:   The storage device is unformatted and the full capacity is available for use.
+
+RAID
+:   A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
 ### What limitations do I need to be aware of?
 {: #flavor-limitations}
@@ -227,13 +247,6 @@ Bare metal machines are optimized for different use cases such as data-, GPU-, o
 After you create GPU bare metal worker nodes in your {{site.data.keyword.redhat_openshift_notm}} version 4 cluster, [install the Node Feature Discovery and NVIDIA GPU operators for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
 {: note}
 
-Choose a flavor, or machine type, with the correct storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
-
-* **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
-* **SSD**: A solid-state drive storage device for high-performance data.
-* **SAN**: For select virtual machines, the storage device is mounted via software area network (SAN).
-* **Raw**: The storage device is unformatted and the full capacity is available for use.
-* **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
 | Name and use case | Cores / Memory | Primary / Auxiliary disk | Network speed |
 | --- | --- | --- | --- |
@@ -274,13 +287,7 @@ For more storage solutions, see [Planning highly available persistent storage](/
 
 Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`. You can also review available [bare metal](#bm) or [VM](#vm) flavors.
 
-Choose a flavor, or machine type, with the correct storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
 
-* **SATA**: A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
-* **SSD**: A solid-state drive storage device for high-performance data.
-* **SAN**: For select virtual machines, the storage device is mounted via software area network (SAN).
-* **Raw**: The storage device is unformatted and the full capacity is available for use.
-* **RAID**: A storage device with data distributed for redundancy and performance that varies depending on the RAID level. As such, the disk capacity that is available for use varies.
 
 | Name and use case | Cores / Memory | Primary / Secondary disk | Additional raw disks | Network speed |
 | --- | --- | --- | --- | --- |

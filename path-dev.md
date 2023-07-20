@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-20"
 
 keywords: openshift, red hat, red hat openshift, dev
 
@@ -96,7 +96,7 @@ In a test environment, deliberately create various non-ideal scenarios, such as 
 
 1. **Test access**: Test access to your app by creating a public or private [NodePort](/docs/openshift?topic=openshift-nodeport) on your worker nodes.
 2. **Understand logging and monitoring options**: [Choose solutions for app and cluster logging, audit logging, and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options) based on your needs.
-3. **Monitoring through the console**: Open the [OpenShift web console](/docs/openshift?topic=openshift-deploy_app#openshift_console) to view information about your app resources.
+3. **Monitoring through the console**: Open the [OpenShift web console](/docs/openshift?topic=openshift-deploy_app) to view information about your app resources.
 4. **{{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}}**: To monitor cluster health, forward logs to [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and metrics to [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).
 
 

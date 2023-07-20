@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-18"
+lastupdated: "2023-07-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -173,7 +173,7 @@ Storage class encryption is available only for versions `4.10.0` and later of Op
           namespace: openshift-storage
         type: Opaque
         ```
-        {: pre}
+        {: codeblock}
     
     1. Create the secret in your cluster.
         ```sh
