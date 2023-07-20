@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-20"
 
 keywords: openshift
 
@@ -4458,7 +4458,7 @@ Cluster and worker node quotas
 {: release-note}
 
 ALB pod scaling
-:   Added steps for scaling up your ALB processing capabilities by [increasing the number of ALB pods replicas](/docs/containers?topic=containers-ingress-alb-manage#alb_replicas).
+:   Added steps for scaling up your ALB processing capabilities by increasing the number of ALB pods replicas.
 
 
 
@@ -4579,7 +4579,7 @@ File storage classes
 {: release-note}
 
 Tech overview
-:   Added an [Overview of personal and sensitive data storage and removal options](/docs/containers?topic=containers-service-arch#ibm-data).
+:   Added an [Overview of personal and sensitive data storage and removal options](/docs/containers?topic=containers-ibm-data).
 
 ### 25 March 2020
 {: #openshift-mar2520}
@@ -4979,7 +4979,7 @@ Gateway appliance firewalls
 :   Updated the [required IP addresses and ports](/docs/openshift?topic=openshift-firewall#vyatta_firewall) that you must open in a public gateway device firewall.
 
 Ingress ALB subdomain format
-:   [Changes are made to the Ingress subdomain](/docs/containers?topic=containers-managed-ingress-about#managed-ingress-subdomain). New clusters are assigned an Ingress subdomain in the format `cluster_name.globally_unique_account_HASH-0000.region.containers.appdomain.cloud` and an Ingress secret in the format `cluster_name.globally_unique_account_HASH-0000`. Any existing clusters that use the `cluster_name.region.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `cluster_name.region_or_zone.containers.appdomain.cloud` subdomain.
+:   Changes are made to the Ingress subdomain. New clusters are assigned an Ingress subdomain in the format `cluster_name.globally_unique_account_HASH-0000.region.containers.appdomain.cloud` and an Ingress secret in the format `cluster_name.globally_unique_account_HASH-0000`. Any existing clusters that use the `cluster_name.region.containers.mybluemix.net` subdomain are assigned a CNAME record that maps to a `cluster_name.region_or_zone.containers.appdomain.cloud` subdomain.
 
 
 ### 21 November 2019

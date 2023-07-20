@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-07-20"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -171,7 +171,7 @@ Storage class encryption is available only for versions `4.10.0` and later of Op
           namespace: openshift-storage
         type: Opaque
         ```
-        {: pre}
+        {: codeblock}
     
     1. Create the secret in your cluster.
         ```sh
@@ -191,8 +191,6 @@ Storage class encryption is available only for versions `4.10.0` and later of Op
 Before you install OpenShift Data Foundation, prepare your cluster.
 {: shortdesc}
 
-You can't use the OpenShift Data Foundation 
-{: important}
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

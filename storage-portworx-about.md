@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-07-20"
 
 keywords: portworx, openshift
 
@@ -24,6 +24,25 @@ Review frequently asked questions to learn more about Portworx and how Portworx 
 {: #about-px-sds}
 
 An SDS solution abstracts storage devices of various types, sizes, or from different vendors that are attached to the worker nodes in your cluster. Worker nodes with available storage on hard disks are added as a node to a storage cluster. In this cluster, the physical storage is virtualized and presented as a virtual storage pool to the user. The storage cluster is managed by the SDS software. If data must be stored on the storage cluster, the SDS software decides where to store the data for highest availability. Your virtual storage comes with a common set of capabilities and services that you can leverage without caring about the actual underlying storage architecture.
+
+[Portworx](https://portworx.com/products/portworx-enterprise//){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
+{: shortdesc}
+
+An software defined storage (SDS), such as Portworx, solution abstracts storage devices of various types, sizes, or from different vendors that are attached to the worker nodes in your cluster. Worker nodes with available storage on hard disks are added as a node to a storage cluster. In this cluster, the physical storage is virtualized and presented as a virtual storage pool to the user. The storage cluster is managed by the SDS software. If data must be stored on the storage cluster, the SDS software decides where to store the data for highest availability. Your virtual storage comes with a common set of capabilities and services that you can leverage without caring about the actual underlying storage architecture.
+
+
+## What are the benefits of Portworx?
+{: #portworx-benefits}
+
+|Benefit|Description|
+|-------------|------------------------------|
+|Cloud native storage and data management for stateful apps|Portworx aggregates available local storage that is attached to your worker nodes and that can vary in size or type, and creates a unified persistent storage layer for containerized databases or other stateful apps that you want to run in the cluster. By using Kubernetes persistent volume claims (PVC), you can add local persistent storage to your apps to store your data.|
+|Highly available data with volume replication|Portworx automatically replicates data in your volumes across worker nodes and zones in your cluster so that your data can always be accessed and that your stateful app can be rescheduled to another worker node in case of a worker node failure or reboot. |
+|Support to run `hyper-converged`|Portworx can be configured to run [`hyper-converged`](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/hyperconvergence/){: external} to ensure that your compute resources and the storage are always placed onto the same worker node. When your app must be rescheduled, Portworx moves your app to a worker node where one of your volume replicas resides to ensure local-disk access speed and high performance for your stateful app. |
+|Encrypt data with {{site.data.keyword.keymanagementservicelong_notm}}|You can [set up {{site.data.keyword.keymanagementservicelong_notm}} encryption keys](/docs/openshift?topic=openshift-storage_portworx_encryption) that are secured by FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs) to protect the data in your volumes. You can choose between using one encryption key to encrypt all your volumes in a cluster or using one encryption key for each volume. Portworx uses this key to encrypt data at rest and during transit when data is sent to a different worker node.|
+|Built-in snapshots and cloud backups|You can save the current state of a volume and its data by creating a [Portworx snapshot](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/){: external}. Snapshots can be stored on your local Portworx cluster or in the cloud.|
+|Integrated monitoring |You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/install-with-other/operate-and-maintain/monitoring/){: external}.|
+{: caption="Benefits of using Portworx" caption-side="bottom"}
 
 ## How does Portworx work?
 {: #about-px-work}
@@ -63,6 +82,19 @@ Yes. If you want to install Portworx in a private cluster, your {{site.data.keyw
 
 If you want to install Portworx in a cluster that doesn't have VRF or access to private cloud service endpoints (CSEs), you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group).
 {: important}
+
+## How do I get support?
+{: #portworx-billing-support}
+
+
+Contact Portworx support by using one of the following methods.
+
+- Sending an e-mail to `support@purestorage.com`.
+
+- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us).
+
+- Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/Pure_Storage_Technical_Services/Technical_Services_Information/Contact_Us){: external}. If you don't have an account, see [Request access](https://purestorage.force.com/customers/CustomerAccessRequest){: external}.
+
 
 
 ## What's next?

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-20"
 
 keywords: file, debug, help
 
@@ -230,7 +230,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 ## Checking driver logs and the driver version installed
 {: #debug-storage-logs}
 
-To check the driver logs and see the driver version of your {{site.data.keyword.cos_short}} installation perform the following steps: 
+To check the driver logs and see the driver version of your {{site.data.keyword.cos_short}} installation, perform the following steps.
 
 1. List the pods in the kube-system namespace.
     ```sh
@@ -243,13 +243,11 @@ To check the driver logs and see the driver version of your {{site.data.keyword.
     kubectl -n kube-system exec -it -- cat /host/log/ibmc-s3fs.log
     ```
     {: pre}
-    
-    
 
 ## Updating the Helm chart
 {: #debug-helm-update}
 
-To update the Helm chart from any older version perform the following steps.
+To update the Helm chart from any older version, perform the following steps.
 
 1. Uninstall the current Helm chart.
     ```sh
@@ -283,7 +281,6 @@ To update the Helm chart from any older version perform the following steps.
     helm plugin install ./ibm-object-storage-plugin/helm-ibmc
     helm ibmc --help
     ```
-   {: screen}
-
+   {: pre}
 
 

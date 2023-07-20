@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-07-20"
 
 keywords: openshift
 
@@ -33,12 +33,17 @@ You can't perform infrastructure-related commands on your cluster, such as:
 
 Review the error messages in the following sections to troubleshoot infrastructure-related issues that are caused by [incorrect cluster permissions](#cs_credentials), [orphaned clusters in other infrastructure accounts](#orphaned), or [a time-based one-time passcode (TOTP) on the account](#cs_totp).
 
-## Unable to create or delete worker nodes due to permission errors
+## Unable to create or delete clusters or worker nodes due to permission and credential errors
 {: #cs_credentials}
 
 
 You can't manage worker nodes for your cluster, and you receive an error message similar to one of the following examples.
 {: tsSymptoms}
+
+```sh
+The infrastructure authentication credentials are not authorized for the request.
+```
+{: screen}
 
 ```sh
 We were unable to connect to your Softlayer account.
@@ -86,7 +91,9 @@ The infrastructure credentials that are set for the region and resource group ar
 
 The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-access-creds) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-access-creds#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-access-creds#credentials).
 
+If the credentials were manually changed with the `ibmcloud oc credential set` command, the region and resource group values might have been inadvertantly changed, resulting in a mismatch. Credentials and the resource group API key are specific to both the region and resource group that are targeted at the time the command is executed. However, the `ibmcloud oc credential` and `ibmcloud oc api-key` commands only accept an input for the region value, while the resource group is targeted separately with the `ibmcloud target` command prior to changing the credentials. If no resource group is targeted, the default resource group is applied. If the targeted resource group is not the same as the one that the cluster is deployed in, then the new credentials do not apply to the cluster. In this case, the credentials that apply to the cluster might be different from what you think they are. 
 
+This error can also occur if you created a cluster with a linked [IBM Cloud infrastructure account](/docs/containers?topic=containers-access-creds#understand_infra) and then later added separate credentials. IBM Cloud infrastructure accounts that are linked to an IBM Cloud account do not require credentials to create clusters. However, if separate credentials were later added to or removed from the cluster, with either the `ibmcloud oc credential set` or `ibmcloud oc credential unset` commands, then those credentials might not match the specifications for the linked account. This can result in the credentials being unrecognized.
 
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
 {: tsResolve}
@@ -143,28 +150,41 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         You can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or [manually set](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) infrastructure credentials owner for the region and resource group.
         {: note}
         
-3. Test that the changed permissions permit authorized users to perform infrastructure operations for the cluster.
-    1. For example, you might try to a delete a worker node.
+3. Try again to perform the infrastructure operation, such as deleting the cluster or worker node. If you still run into the permissions or credentials error, review these additional troubleshooting pages.
+    1. If the worker node is not removed, review the [**State** and **Status** fields](/docs/openshift?topic=openshift-debug_worker_nodes) and the [common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues) to continue debugging.
+    1. If you manually set credentials and still can't see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](#orphaned).
+
+1. If the issue persists, gather the following information to submit to IBM Cloud support. Save the outputs from each command. Make sure that you have the correct resource group targeted with the `ibmcloud target -g <resource_group>` command. 
+
+    1. API key info.
+
         ```sh
-        ibmcloud oc worker rm --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+        ibmcloud ks api-key info --cluster <cluster_name_or_id>
+        ```
+        {: pre}
+    
+    1. Account details.
+
+        ```sh
+        ibmcloud target
+        ```
+        {: pre}
+    
+    1. Credential details for the expected region and resource group.
+
+        ```sh
+        ibmcloud oc credential get --region <region>
         ```
         {: pre}
 
-    2. Check to see if the worker node is removed.
+    1. Infrastructure permissions details.
+
         ```sh
-        ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+        ibmcloud oc infra-permissions get --region <region>
         ```
         {: pre}
 
-        Example output shows if the worker node removal is successful. The `worker get` operation fails because the worker node is deleted. The infrastructure permissions are correctly set up.
-        ```sh
-        FAILED
-        The specified worker node could not be found. (E0011)
-        ```
-        {: screen}
-
-    3. If the worker node is not removed, review the [**State** and **Status** fields](/docs/openshift?topic=openshift-debug_worker_nodes) and the [common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues) to continue debugging.
-    4. If you manually set credentials and still can't see the cluster's worker nodes in your infrastructure account, you might check whether the [cluster is orphaned](#orphaned).
+1. [Open an issue with IBM Cloud support](/docs/containers?topic=containers-get-help#help-support). Be sure to include all of the information and command outputs gathered in the previous step. 
 
 ## Unable to create or delete worker nodes due to incorrect account error
 {: #orphaned}
@@ -321,7 +341,7 @@ can't authenticate the infrastructure user: Time-based One Time Password authent
 Your {{site.data.keyword.cloud_notm}} account uses its own automatically linked infrastructure through a Pay-as-you-Go account.
 {: tsCauses}
 
-However, the account administrator enabled the time-based one-time passcode (TOTP) option so that users are prompted for a time-based one-time passcode (TOTP) at login. This type of [multifactor authentication (MFA)](/docs/account?topic=account-types#account-based) is account-based, and affects all access to the account. TOTP MFA also affects the access that {{site.data.keyword.containerlong_notm}} requires to make calls to {{site.data.keyword.cloud_notm}} infrastructure. If TOTP is enabled for the account, you can't create and manage clusters and worker nodes in {{site.data.keyword.containerlong_notm}}.
+However, the account administrator enabled the time-based one-time passcode (TOTP) option so that users are prompted for a time-based one-time passcode (TOTP) at login. This type of [multifactor authentication (MFA)](/docs/account?topic=account-types) is account-based, and affects all access to the account. TOTP MFA also affects the access that {{site.data.keyword.containerlong_notm}} requires to make calls to {{site.data.keyword.cloud_notm}} infrastructure. If TOTP is enabled for the account, you can't create and manage clusters and worker nodes in {{site.data.keyword.containerlong_notm}}.
 
 
 The {{site.data.keyword.cloud_notm}} account owner or an account administrator must take one of the following actions.
