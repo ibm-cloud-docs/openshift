@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: openshift
 
@@ -29,10 +29,7 @@ After you provision a specific type of storage by using a storage class, you can
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Decide on a storage configuration by reviewing the storage class reference.
-
-    For more information about each storage class, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-managing). If you don't find what you are looking for, consider creating your own customized storage class. To get started, check out the [customized storage class samples](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-custom-sc).
-    {: tip}
+1. Decide on a storage class. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-managing). If you don't find what you are looking for or if your app needs to run as non-root, consider creating your own customized storage class. To get started, check out the [customized storage class samples](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-custom-sc).
 
 1. List available storage classes in {{site.data.keyword.openshiftlong_notm}}.
 
@@ -69,7 +66,12 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
-1. Create a configuration file to define your persistent volume claim (PVC) and save the configuration as a `.yaml` file. The following example creates a claim that is named `mypvc` by using the `ibmc-vpc-file-5iops-tier` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
+
+By default, file shares that are created by using dynamic provisioning with pre-installed storage classes are created with root permissions. If your app needs to run as not root, [create a custom storage class](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-custom-sc).
+{: note}
+
+
+1. Create a persistent volume claim (PVC) `.yaml` file. The following example creates a claim that is named `mypvc` by using the `ibmc-vpc-file-5iops-tier` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
 
     ```yaml
     apiVersion: v1
@@ -100,7 +102,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     :   Enter the size of the {{site.data.keyword.filestorage_vpc_short}}, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your {{site.data.keyword.filestorage_vpc_short}}. Make sure to specify a size that matches the amount of data that you want to store.
     
     `storageClassName`
-    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_vpc_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) or [create your own storage class](/docs/containers?topic=containers-vpc-block#custom-sc-vpc-block). If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`.
+    :   The name of the storage class that you want to use to provision {{site.data.keyword.filestorage_vpc_short}}. You can choose to use one of the [IBM-provided storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) or [create your own storage class](/docs/containers?topic=containers-storage-file-vpc-managing#storage-file-vpc-custom-sc). If you don't specify a storage class, the PV is created with the default storage class `ibmc-vpc-file-3iops-tier`.
 
 
 1. Create the PVC.
@@ -138,10 +140,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     ```
     {: screen}
 
-1. To mount the storage to your deployment, create a configuration `.yaml` file and specify the PVC that binds the PV.
-    
-    If you have an app that requires a non-root user to write to the persistent storage, or an app that requires that the mount path is owned by the root user, see [Adding non-root user access to NFS {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-nonroot).
-    {: tip}
+1. Create a deployment `.yaml` file and reference the PVC that you created in the previous step.
 
     ```yaml
     apiVersion: apps/v1
@@ -170,7 +169,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
             persistentVolumeClaim:
               claimName: PVC-NAME
     ```
-      {: codeblock}
+    {: codeblock}
 
     `metadata.labels.app`
     :   In the metadata section, enter a label for the deployment.
@@ -196,6 +195,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     
     `claimName`
     :   In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use.
+
 
 
 1. Create the deployment.
@@ -315,6 +315,8 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
       labels:
         app: testpod
     spec:
+      securityContext:
+        fsgroup: 0
       replicas: 1
       selector:
         matchLabels:
@@ -355,6 +357,9 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     
     `volumes.persistentVolumeClaim.claimName`
     :   Enter the name of the PVC that binds the PV that you want to use.
+
+    `securityContext`
+    :   Enter the `securityContext` that your app needs, for example `runAsUser` or `runAsGroup` that matches `uid` or `gid` of your file share. Note that `fsGroup: 0` is used in the example to provide root permissions. For more information about security context, see [Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}.
 
 
 

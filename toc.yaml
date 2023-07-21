@@ -577,6 +577,7 @@ toc:
               - ts-storage-file-app.md
               - ts-storage-file-group-id-fail.md
               - ts-storage-file-nonroot-nfs-mount.md
+              - ts-storage-vpc-file-non-root.md
               - ts-storage-file-nonroot.md
               - ts-storage-file-readonly.md
               - ts-storage-feedback.md

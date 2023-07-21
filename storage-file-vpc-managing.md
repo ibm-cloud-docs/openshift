@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: openshift
 
@@ -26,10 +26,8 @@ When you set up persistent storage in your cluster, you have three main componen
 ## Creating a custom storage class
 {: #storage-file-vpc-custom-sc}
 
-Create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance.
+Create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. You can use a custom storage class to dynamically provision volumes. If you want to use static provisioning, refer to the [VPC documentation](/docs/containers?topic=containers-storage-file-vpc-apps#vpc_add_file_static).
 {: shortdesc}
-
-To create your own storage class:
 
 1. Review the [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. 
 
@@ -54,12 +52,12 @@ To create your own storage class:
       billingType: "hourly"             # The default billing policy used. User can override this default
       encrypted: "false"                # By default, all PVC using this class will only be provider managed encrypted. The user can override this default
       encryptionKey: ""                 # If encrypted is true, then a user must specify the encryption key used associated KP instance
-      resourceGroup: ""                 # Use resource group if specified here. else use the one mentioned in storage-secrete-store
+      resourceGroup: ""                 # Set the resource group. If not specified in the storage class, then the resource group from the storage-secrets-store is used.
       zone: ""                          # By default, the storage vpc driver will select a zone. The user can override this default
       tags: ""                          # A list of tags "a, b, c" that will be created when the volume is created. This can be overidden by user
       classVersion: "1"
-      uid: ""                           # The initial user identifier for the file share.
-      gid: ""                           # The initial group identifier for the file share.
+        uid: "1234"                           # The initial user identifier for the file share. 
+        gid: "5678"                           # The initial group identifier for the file share.
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
     ```
@@ -97,6 +95,12 @@ To create your own storage class:
 
     `volumeBindingMode`
     :   Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.
+
+    `uid`
+    :   The initial user identifier for the file share.
+
+    `gid`
+    :   The initial group identifier for the file share.
 
 
 3. Create the customized storage class in your cluster.
