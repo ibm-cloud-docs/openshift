@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-21"
 
 keywords: openshift
 
@@ -30,6 +30,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-july23}
 
 
+
+### 21 July 2023
+{: #openshift-july2123}
+{: release-note}
+
+Cluster autoscaler add-on update command.
+:   You can now use the `ibmcloud oc cluster addon update` command to update your add-on. For more information, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon).
 
 ### 19 July 2023
 {: #openshift-july1923}

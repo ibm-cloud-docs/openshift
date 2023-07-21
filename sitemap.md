@@ -264,6 +264,10 @@ subcollection: openshift
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
 
+    * [21 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2123)
+
+        * Cluster autoscaler add-on update command.
+
     * [19 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1923)
 
         * CLI version `1.0.540` is available.
