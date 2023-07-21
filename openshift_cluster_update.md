@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-07-21"
 
 keywords: openshift, version, upgrade, update
 
@@ -113,7 +113,7 @@ You notice that an update is available for your worker nodes in a [classic infra
 Applies to only classic clusters. Have a VPC cluster? See [Updating VPC worker nodes](#vpc_worker_node) instead.
 {: note}
 
-For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/containers?topic=containers-changelog).
+For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
 To update {{site.data.keyword.satelliteshort}} worker nodes, see [Updating hosts that are assigned as worker nodes to Satellite-enabled services](/docs/satellite?topic=satellite-host-update-workers).
@@ -330,7 +330,7 @@ If you have OpenShift Data Foundation deployed in your cluster, follow the steps
 
 
 
-For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/containers?topic=containers-changelog).
+For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
 To update {{site.data.keyword.satelliteshort}} worker nodes, see [Updating hosts that are assigned as worker nodes to Satellite-enabled services](/docs/satellite?topic=satellite-host-update-workers).

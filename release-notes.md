@@ -2680,7 +2680,7 @@ Image key synchronizer
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available. For more information, see [Version change log](/docs/containers?topic=containers-changelog).
+:   Worker node fix pack update change log documentation is available. For more information, see Version change log.
 
 
 
@@ -3490,7 +3490,7 @@ New! Private service endpoint allowlists
 :   You can now control access to your private cloud service endpoint by [creating a subnet allowlist](/docs/containers?topic=containers-access_cluster#private-se-allowlist). Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.
 
 Private Kubernetes Ingress
-:   Added steps for [privately exposing apps with ALBs that run the Kubernetes Ingress image](/docs/containers?topic=containers-managed-ingress-setup).
+:   Added steps for privately exposing apps with ALBs that run the Kubernetes Ingress image.
 
 ### 19 January 2021
 {: #openshift-jan1921}
@@ -4679,7 +4679,7 @@ Feature gates
 {: release-note}
 
 Managing Ingress ALBs
-:   Added a page for [managing the life cycle of your ALBs](/docs/containers?topic=containers-managed-ingress-about), including information about creating, updating, and moving ALBs.
+:   Added a page for managing the life cycle of your ALBs, including information about creating, updating, and moving ALBs.
 
 
 
@@ -4936,7 +4936,7 @@ Version change log
 {: release-note}
 
 Exposing apps with load balancers or Ingress ALBs
-:   Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/containers?topic=containers-managed-ingress-about).
+:   Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and Ingress ALBs.
 
 
 
