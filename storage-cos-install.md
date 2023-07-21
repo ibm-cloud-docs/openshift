@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-21"
 
 keywords: openshift
 
@@ -53,7 +53,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
         If your worker node does not apply the latest patch version, you see an asterisk (`*`) in the **Version** column of your CLI output.
 
-    2. Review the [version change log](/docs/containers?topic=containers-changelog) to find the changes that are in the latest patch version.
+    2. Review the [version change log](/docs/openshift?topic=openshift-openshift_versions) to find the changes that are in the latest patch version.
 
     3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_reload) to safely reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage-plan).
 1. Review the change log and verify support for your [cluster version and architecture](/docs/openshift?topic=openshift-cos_plugin_changelog).

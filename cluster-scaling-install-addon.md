@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-07-21"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -91,28 +91,14 @@ Release updates
     ```
     {: pre}
 
-2. Disable the cluster autoscaler add-on. You might see a warning that resources or data might be deleted. For the cluster autoscaler update, any autoscaling operations that are in process when you disable fail. When you re-enable the add-on, the autoscaling operation is restarted for you. Existing cluster autoscaler resources like the `iks-ca-configmap` are retained even after you disable the add-on. Your worker nodes are not deleted because of disabling the add-on.
+2. Update the cluster autoscaler add-on.
 
     ```sh
-    ibmcloud oc cluster addon disable cluster-autoscaler --cluster <cluster_name>
+    ibmcloud oc cluster addon update cluster-autoscaler --version <version-to-update> --cluster <cluster_name>
     ```
     {: pre}
 
-    Example output
-
-    ```sh
-    Data and resources that you created for the add-on might be deleted when the add-on is disabled. Continue? [y/N]>
-    ```
-    {: screen}
-
-3. Enable the add-on to install the latest version.
-
-    ```sh
-    ibmcloud oc cluster addon enable cluster-autoscaler --cluster <cluster_name>
-    ```
-    {: pre}
-
-4. Verify the add-on is successfully updated and `Ready`.
+3. Verify the add-on is successfully updated and `Ready`.
 
     ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name>

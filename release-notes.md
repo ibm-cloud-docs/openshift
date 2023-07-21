@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-21"
 
 keywords: openshift
 
@@ -30,6 +30,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-july23}
 
 
+
+### 21 July 2023
+{: #openshift-july2123}
+{: release-note}
+
+Cluster autoscaler add-on update command.
+:   You can now use the `ibmcloud oc cluster addon update` command to update your add-on. For more information, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon).
 
 ### 19 July 2023
 {: #openshift-july1923}
@@ -2673,7 +2680,7 @@ Image key synchronizer
 {: release-note}
 
 Worker node versions
-:   Worker node fix pack update change log documentation is available. For more information, see [Version change log](/docs/containers?topic=containers-changelog).
+:   Worker node fix pack update change log documentation is available. For more information, see Version change log.
 
 
 
@@ -3483,7 +3490,7 @@ New! Private service endpoint allowlists
 :   You can now control access to your private cloud service endpoint by [creating a subnet allowlist](/docs/containers?topic=containers-access_cluster#private-se-allowlist). Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.
 
 Private Kubernetes Ingress
-:   Added steps for [privately exposing apps with ALBs that run the Kubernetes Ingress image](/docs/containers?topic=containers-managed-ingress-setup).
+:   Added steps for privately exposing apps with ALBs that run the Kubernetes Ingress image.
 
 ### 19 January 2021
 {: #openshift-jan1921}
@@ -4672,7 +4679,7 @@ Feature gates
 {: release-note}
 
 Managing Ingress ALBs
-:   Added a page for [managing the life cycle of your ALBs](/docs/containers?topic=containers-managed-ingress-about), including information about creating, updating, and moving ALBs.
+:   Added a page for managing the life cycle of your ALBs, including information about creating, updating, and moving ALBs.
 
 
 
@@ -4929,7 +4936,7 @@ Version change log
 {: release-note}
 
 Exposing apps with load balancers or Ingress ALBs
-:   Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and [Ingress ALBs](/docs/containers?topic=containers-managed-ingress-about).
+:   Added quick start pages to help you get up and running with [load balancers](/docs/openshift?topic=openshift-loadbalancer-qs) and Ingress ALBs.
 
 
 

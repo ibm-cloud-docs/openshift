@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-21"
 
 keywords: openshift
 subcollection: openshift
@@ -263,6 +263,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
+
+    * [21 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2123)
+
+        * Cluster autoscaler add-on update command.
 
     * [19 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1923)
 
@@ -5768,7 +5772,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.11/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.12/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -9801,6 +9805,12 @@ subcollection: openshift
 [Why does my app fail with a group ID error for NFS file storage permissions?](/docs/openshift?topic=openshift-root#root)
 
 [Why does my app fail when a non-root user owns the NFS file storage mount path?](/docs/openshift?topic=openshift-nonroot#nonroot)
+
+[Why does my {{site.data.keyword.filestorage_vpc_short}} deployment fail due to a permissions error?](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-storage-vpc-file-non-root)
+
+* [Create custom storage class and specify the `uid` and `gid` your app needs](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-vpc-new-sc)
+
+* [Edit your app to run as root with `fsGroup: 0`](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-vpc-yaml-sc)
 
 [Why can't I add non-root user access to persistent storage?](/docs/openshift?topic=openshift-cs_storage_nonroot#cs_storage_nonroot)
 
