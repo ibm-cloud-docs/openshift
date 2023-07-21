@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-04-12"
+lastupdated: "2023-07-21"
 
 keywords: openshift
 
@@ -42,7 +42,7 @@ However, if an operator or built-in template has a build component that must pul
 Set up the build with access to the image, either by pulling the image from the private registry or by importing the image from the private registry into the internal registry.
 {: tsResolve} 
 
-For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](http://docs.openshift.com/container-platform/4.11/cicd/builds/creating-build-inputs.html){: external}.
+For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](http://docs.openshift.com/container-platform/4.12/cicd/builds/creating-build-inputs.html){: external}.
 
 1. Check the build configuration file to see what registry the build needs pull access to. For example, if your build is part of a {{site.data.keyword.redhat_openshift_notm}} template, the build config `spec.strategy.sourceStrategy.from.name` value refers to the `registry.redhat.io` private registry.
     ```sh
