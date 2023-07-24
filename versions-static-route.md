@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-07-24"
 
 keywords: openshift, static route, add-on
 
@@ -35,6 +35,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.0.0
 {: #v100}
+
+
+
+### Change log for 1.0.0_1122, released 17 July 2023
+{: #100_1122}
+
+Adds support for multiple worker node architectures.
 
 
 

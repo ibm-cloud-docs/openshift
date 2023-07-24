@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-24"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -148,6 +148,7 @@ Before disabling the add-on, [edit the autoscaler ConfigMap](/docs/openshift?top
 | Parameter | Description | Default |
 | --- | --- | --- |
 | `expander` | How the cluster autoscaler determines which worker pool to scale if you have multiple worker pools.  \n - `random`: Selects randomly between `most-pods` and `least-waste`.  \n - `most-pods`: Selects the worker pool that is able to schedule the most pods when scaling up. Use this method if you are using `nodeSelector` to make sure that pods land on specific worker nodes.  \n - `least-waste`: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected. | `random` |
+| `prometheusScrape` | Set to `true` to send Prometheus metrics. To stop sending metrics, set to `false`. | `true` |
 | `ignoreDaemonSetsUtilization` | Ignores autoscaler DaemonSet pods when calculating resource utilization for scale-down. | `false` |
 | `imagePullPolicy` | When to pull the Docker image.  \n - `Always`: Pulls the image every time that the pod is started.  \n - `IfNotPresent`: Pulls the image only if the image isn't already present locally.  \n - `Never`: Assumes that the image exists locally and never pulls the image. | `Always` |
 | `livenessProbeFailureThreshold` | The number of times that the `kubelet` retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked `Unready` for a readiness probe, if applicable. | `3` |

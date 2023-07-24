@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-24"
 
 keywords: openshift
 subcollection: openshift
@@ -263,6 +263,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
+
+    * [24 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2423)
+
+        * Cluster autoscaler add-on version `1.0.9_70`.
+
+        * Static route add-on version `1.0.0_1122`.
 
     * [21 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2123)
 
@@ -3400,7 +3406,7 @@ subcollection: openshift
 {: #sitemap_autoscaling_clusters}
 
 
-[Preparing classic and VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
+[Preparing classic and VPC clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
 
 * [Understanding scale-up and scale-down](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about)
 
@@ -7266,6 +7272,8 @@ subcollection: openshift
 
 * [Version 1.0.9](/docs/openshift?topic=openshift-ca_changelog#0109_ca_addon)
 
+    * [Change log for patch update 1.0.9_70, released 24 July 2023](/docs/openshift?topic=openshift-ca_changelog#10970_ca)
+
     * [Change log for patch update 1.0.9_44, released 22 June 2023](/docs/openshift?topic=openshift-ca_changelog#10944_ca)
 
 * [Version 1.0.8](/docs/openshift?topic=openshift-ca_changelog#0108_ca_addon)
@@ -7623,6 +7631,8 @@ subcollection: openshift
 [Static route add-on change log](/docs/openshift?topic=openshift-versions-static-route#versions-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-versions-static-route#v100)
+
+    * [Change log for 1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-versions-static-route#100_1122)
 
     * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-versions-static-route#100_649)
 

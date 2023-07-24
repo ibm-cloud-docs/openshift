@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-24"
 
 keywords: openshift
 
@@ -87,9 +87,6 @@ Secure exposure of apps to the public
 
 {{site.data.keyword.cloud_notm}} service integration
 :   Add extra capabilities to your app through the integration of {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.watson}} APIs, Blockchain, data services, or Internet of Things.
-
-
-
 
 
 ## Comparison between {{site.data.keyword.redhat_openshift_notm}} and community Kubernetes clusters

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-24"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -44,7 +44,6 @@ For more information about how your cluster resources are set up, see the [Servi
 {{site.data.keyword.openshiftlong_notm}} is a managed {{site.data.keyword.redhat_openshift_notm}} offering that delivers powerful tools, an intuitive user experience, and built-in security for rapid delivery of apps that you can bind to cloud services that are related to {{site.data.keyword.ibmwatson}}, AI, IoT, DevOps, security, and data analytics. As a certified Kubernetes provider, {{site.data.keyword.openshiftlong_notm}} provides intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management. The service also has advanced capabilities around simplified cluster management, container security and isolation policies, the ability to design your own cluster, and integrated operational tools for consistency in deployment.
 
 For a detailed overview of capabilities and benefits, see [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits).
-
 
 
 ## What container platforms are available for my cluster?
