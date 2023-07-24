@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-07-24"
 
 keywords: openshift, moving to openshift, openshift environment, openshift clusters, cluster sizing
 
@@ -39,7 +39,7 @@ Not on slack yet? [Request an invite!](https://cloud.ibm.com/kubernetes/slack){:
 ### What can I move to the {{site.data.keyword.cloud_notm}}?
 {: #move_to_cloud}
 
-With {{site.data.keyword.cloud_notm}}, you have flexibility to create {{site.data.keyword.redhat_openshift_notm}} clusters in [off-premises, on-premises, or hybrid cloud environments](/docs/containers?topic=containers-cs_ov#differentiation). The following table provides some examples of what types of workloads that users typically move to the various types of clouds. You might also choose a hybrid approach where you have clusters that run in both environments.
+The following table provides some examples of what types of workloads that users typically move to the various types of clouds. You might also choose a hybrid approach where you have clusters that run in both environments.
 {: shortdesc}
 
 | Workload | {{site.data.keyword.containershort_notm}} off-prem | on-prem |

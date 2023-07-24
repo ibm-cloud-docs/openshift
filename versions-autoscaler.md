@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-24"
 
-keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler, scale
+keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler
 
 subcollection: openshift
 
@@ -123,6 +123,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 ## Version 1.0.9
 {: #0109_ca_addon}
 
+### Change log for patch update 1.0.9_70, released 24 July 2023
+{: #10970_ca}
+
+- Adds support for the `prometheusScrape` annotation.
+- Image tags: `1.22.0-109-0`, `1.23.0-109-0`, `1.24.0-109-0`, `1.25.0-109-0`, `1.26.1-109-0`, `1.27.2-109-0`.
+
+
 ### Change log for patch update 1.0.9_44, released 22 June 2023
 {: #10944_ca}
 
@@ -137,6 +144,7 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.8
 {: #0108_ca_addon}
+
 
 ### Change log for patch update 1.0.8_56, released 6 July 2023
 {: #10856_ca}
