@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-25"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -22,7 +22,7 @@ subcollection: openshift
 # Getting started with {{site.data.keyword.openshiftlong_notm}}
 {: #getting-started}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can deploy apps on highly available {{site.data.keyword.redhat_openshift_notm}} clusters that run the [{{site.data.keyword.openshiftlong_notm}} Container Platform](https://docs.openshift.com/container-platform/4.12/welcome/index.html){: external} software on Red Hat Enterprise Linux machines.
+With {{site.data.keyword.openshiftlong_notm}}, you can deploy apps on highly available {{site.data.keyword.redhat_openshift_notm}} clusters.
 {: shortdesc}
 
 First, create a cluster or a cluster on Classic or VPC infrastructure. Then, deploy and expose a sample app in your cluster.
@@ -35,8 +35,6 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
 {: #clusters_gs}
 {: ui}
 
-Create a {{site.data.keyword.openshiftlong_notm}} cluster on classic infrastructure in the console. To get started, create a cluster that runs OpenShift Container Platform version 4.12. The operating system is Red Hat Enterprise Linux 7.
-{: shortdesc}
 
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
 {: tip}
@@ -67,8 +65,6 @@ Now that your cluster is ready, [deploying your first app](#deploy-app)!
 {: #vpc-gen2-gs}
 {: ui}
 
-Create a VPC cluster by using the {{site.data.keyword.cloud_notm}} console. VPC clusters run version 4.12, which includes Kubernetes version 1.25. The operating system is Red Hat Enterprise Linux 7.
-{: shortdesc}
 
 Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2).
 {: tip}
@@ -106,14 +102,14 @@ The worker node can take a few minutes to provision, but you can see the progres
 {: #clusters_gs_classic_cli}
 {: cli}
 
-Review the sample commands for creating classic clusters in the CLI. For more detailed steps and information about creating clusters, see [Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic&interface=cli). For information about planning your cluster set up, see [Preparing to create clusters](/docs/openshift?topic=openshift-clusters&interface=cli).
-{: shortdesc}
+Review the following example commands for creating classic clusters in the CLI.
+
 
 
 Create a classic cluster on a shared virtual machine.
 
 ```sh
-ibmcloud oc cluster create classic --name my_cluster --version 4.12_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+ibmcloud oc cluster create classic --name my_cluster --version 4.12_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-07-25"
 
 keywords: kubernetes, openshift
 
@@ -83,10 +83,6 @@ You can install other open source tools in your cluster, but these tools might n
 Supported integrations depend on the container platform, the infrastructure provider, and the cluster type that you choose. For more information, see [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/containers?topic=containers-supported_integrations).
 {: note}
 
-### Integrations operated in partnership
-{: #open-source-partners}
-
-For more information about {{site.data.keyword.openshiftlong_notm}} partners and the benefit of each solution that they provide, see [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners).
 
 ### Managed add-ons
 {: #cluster-add-ons}

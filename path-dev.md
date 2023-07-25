@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-25"
 
 keywords: openshift, red hat, red hat openshift, dev
 
@@ -168,7 +168,6 @@ Enhance app capabilities by integrating various external services and catalog se
 
 1. **Review supported integrations**:
     - [All supported integrations](/docs/containers?topic=containers-supported_integrations#supported_integrations)
-    - [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
     - [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
     - [Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
     - [Operators](/docs/openshift?topic=openshift-operators)

@@ -5657,8 +5657,6 @@ subcollection: openshift
 
 * [Kubernetes community and open source integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-tools)
 
-    * [Integrations operated in partnership](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#open-source-partners)
-
     * [Managed add-ons](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#cluster-add-ons)
 
     * [Other third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-helm)

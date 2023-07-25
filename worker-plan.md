@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-25"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -42,11 +42,10 @@ The worker node flavors and isolation levels that are available to you depend on
 ### What flavors are available to me?
 {: #available-flavors}
 
-Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes. If you create a free classic cluster, your cluster is provisioned with the smallest virtual worker node flavor on shared infrastructure.
+Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
 
-VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) worker nodes only, and must be created in one of the supported [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). Free VPC clusters are not supported.
 
-VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts. Free VPC clusters are not supported.
+VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts.
 
 ### Can I combine different flavors in a cluster?
 {: #combine-flavors}

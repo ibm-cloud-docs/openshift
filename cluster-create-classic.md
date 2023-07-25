@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-25"
 
 keywords: openshift, clusters, classic, create
 
@@ -256,7 +256,7 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 Classic cluster, shared virtual machine
 
 ```sh
-ibmcloud oc cluster create classic --name my_cluster --version 4.12_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+ibmcloud oc cluster create classic --name my_cluster --version 4.12_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3
 ```
 {: pre}
 

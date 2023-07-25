@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-07-25"
 
 keywords: kubernetes, openshift
 
@@ -41,7 +41,7 @@ For an overview of available Helm charts, see the [Helm charts catalog](https://
 
 - **iks-charts**: Helm charts that are approved for {{site.data.keyword.openshiftlong_notm}}. The name of this repo was changed from `ibm` to `iks-charts`.
 - **ibm-charts**: Helm charts that are approved for {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.cloud_notm}} Private clusters.
-- **ibm-community**: Helm charts that originated outside IBM, such as from [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners). These charts are supported and maintained by the community partners.
+- **ibm-community**: Helm charts that originated outside IBM, such as from {{site.data.keyword.openshiftlong_notm}} partners. These charts are supported and maintained by the community partners.
 - **kubernetes**: Helm charts that are provided by the Kubernetes community and considered `stable` by the community governance. These charts are not verified to work in {{site.data.keyword.openshiftlong_notm}} or {{site.data.keyword.cloud_notm}} Private clusters.
 - **kubernetes-incubator**: Helm charts that are provided by the Kubernetes community and considered `incubator` by the community governance. These charts are not verified to work in {{site.data.keyword.openshiftlong_notm}} or {{site.data.keyword.cloud_notm}} Private clusters.
 - **entitled**: Helm charts of licensed software that you must purchase and for which you must set up cluster access with an entitlement key. For more information, see [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software).
