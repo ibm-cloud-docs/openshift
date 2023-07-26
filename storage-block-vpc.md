@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-07-26"
 
 keywords: openshift
 
@@ -24,9 +24,6 @@ subcollection: openshift
 {: shortdesc}
 
 You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
-
-The {{site.data.keyword.block_storage_is_short}} add-on is installed and enabled by default on VPC clusters. Later, you can disable or reenable the add-on by using the [`addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) or [`addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable) command in the CLI. PVC creation and app deployment are not disrupted when the add-on is disabled. Existing volumes and data are not impacted.
-{: note}
 
 ## Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}
 {: #vpc_block_qs}
@@ -473,9 +470,8 @@ You can attach a volume to one worker node only. Make sure that the volume is in
 ## Updating the {{site.data.keyword.block_storage_is_short}} add-on
 {: #vpc-addon-update}
 
-You can update the {{site.data.keyword.block_storage_is_short}} add-on by disabling and re-enabling the add-on in your cluster. When you disable the add-on, PVC creation and app deployment are not disrupted. Existing volumes and data are not impacted.
+You can update the {{site.data.keyword.block_storage_is_short}} add-on by using the `addon update` command.
 {: shortdesc}
-
 
 
 Before updating the add-on review the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
@@ -496,42 +492,12 @@ Before updating the add-on review the [change log](/docs/openshift?topic=openshi
     ```
     {: screen}
 
-1. Disable the {{site.data.keyword.block_storage_is_short}} add-on.
 
+1. Update the add-on.
     ```sh
-    ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster <cluster_name_or_ID> -f
+    ibmcloud oc ks cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
     ```
     {: pre}
-
-    Example output
-    
-    ```sh
-    Disabling add-on vpc-block-csi-driver for cluster <cluster_name_or_ID>...
-    OK
-    ```
-    {: screen}
-
-1. Verify that the add-on is disabled. If the add-on is disabled it does not appear in the list of add-ons in your cluster. The add-on might still display in your list of add-ons for a few minutes after running the `disable` command.
-
-    ```sh
-    ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-
-1. Re-enable the add-on and specify the latest version that you retrieved earlier.
-
-    ```sh
-    ibmcloud oc cluster addon enable vpc-block-csi-driver --version <version> --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-
-    Example output
-    
-    ```sh
-    Enabling add-on vpc-block-csi-driver(2.0.0) for cluster <cluster_name_or_ID>...
-    OK
-    ```
-    {: screen}
 
 1. Verify that the add-on is in the `Addon Ready` state. The add-on might take a few minutes to become ready.
 
@@ -1283,8 +1249,7 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 For more information about pricing, see [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
 {: shortdesc}
 
-Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that don't have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
-{: tip}
+
 
 
 ### 10 IOPs tier

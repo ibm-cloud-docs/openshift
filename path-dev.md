@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-26"
 
 keywords: openshift, red hat, red hat openshift, dev
 
@@ -61,9 +61,9 @@ Configure your app in a YAML file that declares the configuration of the Kuberne
 1. **Develop your app**:
     1. Review the [basics of Kubernetes-native app deployments](/docs/openshift?topic=openshift-plan_deploy#kube-objects).
     2. Build app containers from [images in the internal, public, or private registries](/docs/openshift?topic=openshift-images).
-    3. Specify your [app requirements in a YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml), which declares the configuration of the Kubernetes object.
+    3. Specify your [app requirements in a YAML file](/docs/openshift?topic=openshift-app#app_yaml), which declares the configuration of the Kubernetes object.
 2. **Version your app**:
-    1. Version 4: To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-openshift_apps#kustomize) to manage your configuration YAML file.
+    1. To plan customized configurations for more than one environment, such as development, testing, and production environments, [use the Kustomize tool](/docs/openshift?topic=openshift-kustomize) to manage your configuration YAML file.
     2. If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, [package your application to help automate deployments](/docs/openshift?topic=openshift-plan_deploy#packaging).
 
 Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-debug_apps).
@@ -168,7 +168,9 @@ Enhance app capabilities by integrating various external services and catalog se
 
 1. **Review supported integrations**:
     - [All supported integrations](/docs/containers?topic=containers-supported_integrations#supported_integrations)
-    - [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-service-partners)
+
+    - [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-supported_integrations)
+
     - [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
     - [Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
     - [Operators](/docs/openshift?topic=openshift-operators)

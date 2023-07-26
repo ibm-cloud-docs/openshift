@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-26"
 
 keywords: openshift, vlan
 
@@ -122,7 +122,8 @@ Trying to change the service endpoint for master-worker communication instead? C
 
 
 
-Before you begin [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
 
 To change the VLANs that a worker pool uses to provision worker nodes.
 

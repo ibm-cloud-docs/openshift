@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-18"
+lastupdated: "2023-07-26"
 
 keywords: openshift, clusters, worker nodes, worker pools, delete
 
@@ -795,6 +795,6 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: pre}
 
-After you label your worker pool, you can use the [label in your app deployments](/docs/openshift?topic=openshift-openshift_apps#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
+After you label your worker pool, you can use the [label in your app deployments](/docs/openshift?topic=openshift-app#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
 
 

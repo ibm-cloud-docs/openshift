@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-07-26"
 
 keywords: openshift
 
@@ -26,8 +26,7 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: note}
 
 
-Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that don't have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
-{: tip}
+
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-26"
 
 keywords: openshift
 
@@ -1373,8 +1373,7 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 ## Storage class reference
 {: #file_storageclass_reference}
 
-Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that don't have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
-{: tip}
+
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-26"
 
 keywords: openshift
 
@@ -176,13 +176,13 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Availability | Medium as specific to a data center. | Medium as specific to a data center. |
 | Scalability | Difficult to extend beyond the data center. You can't change an existing storage tier. | Difficult to extend beyond the data center. You can't change an existing storage tier. |
 | Encryption | None |
-| Backup and recovery | Run `kubectl cp`. |
+| Backup and recovery | Run `kubectl cp` or copy data to and from pod and containers. |
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. |
 | Non-ideal use cases | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. |
 {: class="simple-tab-table"}
 {: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
 {: #single-zone-storage-3}
-{: tab-title="{{site.data.keyword.blockstorageshort}}"}
+{: tab-title="{{site.data.keyword.filestorage_vpc_short}}"}
 {: tab-group="single-zone-storage"}
 
 

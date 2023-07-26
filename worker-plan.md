@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-26"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -42,11 +42,10 @@ The worker node flavors and isolation levels that are available to you depend on
 ### What flavors are available to me?
 {: #available-flavors}
 
-Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes. If you create a free classic cluster, your cluster is provisioned with the smallest virtual worker node flavor on shared infrastructure.
+Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
 
-VPC clusters can be provisioned as standard clusters on shared [virtual](#vm) worker nodes only, and must be created in one of the supported [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). Free VPC clusters are not supported.
 
-VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts. Free VPC clusters are not supported.
+VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts.
 
 ### Can I combine different flavors in a cluster?
 {: #combine-flavors}
@@ -70,10 +69,12 @@ Worker nodes in classic clusters are provisioned into your {{site.data.keyword.c
 
 Unlike classic clusters, the worker nodes of your VPC cluster are not listed in the [VPC infrastructure dashboard](https://cloud.ibm.com/vpc/overview). Instead, you manage your worker nodes with {{site.data.keyword.openshiftlong_notm}} only. However, your worker nodes might be connected to other VPC infrastructure resources, such as VPC subnets or VPC Block Storage. These resources are in the VPC infrastructure dashboard and can be managed separately from there.
 
-### What storage disks options are available on worker nodes?
+### What storage options are available on worker nodes?
 {: #hardware-options}
 
 Choose a flavor, or machine type, with the correct storage configuration to support your workload. Some flavors have a mix of the following disks and storage configurations. For example, some flavors might have a SATA primary disk with a raw SSD secondary disk.
+
+[VPC clusters]{: tag-vpc}: For VPC clusters, you can also provision a secondary disk on your worker nodes. This optional disk is provisioned in your account and you can can see them in VPC console. The charges for these disks are separate to the cost of each worker and show as a differnet line item on your bill. These secondary volumes also count toward the quota usage for the your account.
 
 SATA
 :   A magnetic spinning disk storage device that is often used for the primary disk of the worker node that stores the OS file system.
