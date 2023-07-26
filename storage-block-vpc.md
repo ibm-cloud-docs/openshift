@@ -1249,8 +1249,7 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 For more information about pricing, see [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
 {: shortdesc}
 
-Storage classes that have `retain` in the title have a reclaim policy of **Retain**. Example: `ibmc-file-retain-bronze`. Storage classes that don't have `retain` in the title have a reclaim policy of **Delete**. Example: `ibmc-file-bronze`.
-{: tip}
+
 
 
 ### 10 IOPs tier

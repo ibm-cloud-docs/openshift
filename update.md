@@ -2,14 +2,13 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-26"
 
-keywords: openshift, version, upgrade, update
+keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
 
 subcollection: openshift
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -20,23 +19,19 @@ subcollection: openshift
 # Updating clusters, worker nodes, and cluster components
 {: #update}
 
-You can install updates to keep your {{site.data.keyword.openshiftlong}} clusters up-to-date.
+Review the following sections for steps to keep your cluster master and worker nodes up-to-date.
 {: shortdesc}
-
-You must update your cluster by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.redhat_openshift_notm}} web console.
-{: note}
 
 ## Updating the master
 {: #master}
 
-Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor, or patch updates](/docs/openshift?topic=openshift-openshift_versions). Updates can affect the API server version or other components in your master. IBM updates the patch version, but you must update the master major and minor versions.
-
-
-### About updating the master
-{: #master-about}
 
 How do I know when to update the master?
-:   You are notified in the {{site.data.keyword.cloud_notm}} console and CLI when updates are available, and can also check the [supported versions](/docs/openshift?topic=openshift-openshift_versions) page.
+:   You are notified in the console, announcements, and the CLI when updates are available. You can also periodically check the [supported versions page](/docs/openshift?topic=openshift-openshift_versions).
+
+How many versions behind the latest can the master be?
+:   You can update the API server only to the next version ahead of its current version (`n+1`). Additionally, your worker nodes can be up to two versions behind the master version (`n-2`)
+
 
 Can my worker nodes run a later version than the master?
 :   Your worker nodes can't run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can only be one version behind the master version (`n-1`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.

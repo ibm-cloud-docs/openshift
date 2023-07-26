@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-26"
 
 keywords: openshift, route, router
 
@@ -130,7 +130,6 @@ The following diagram shows how a Ingress controller directs network traffic fro
 1. When the app returns a response packet, it uses the IP address of the worker node where the Ingress controller that forwarded the client request exists. The Ingress controller then sends the response packet through the VPC load balancer and through the {{site.data.keyword.vpc_short}} VPN, {{site.data.keyword.tg_short}}, or {{site.data.keyword.dl_short}} to the client.
 
 
-
 ## Route types and TLS termination
 {: #route-types}
 
@@ -146,7 +145,6 @@ The following diagram shows how a Ingress controller directs network traffic fro
 {: caption="Types of routes based on TLS termination"}
 
 If you don't need to use a custom domain, you can use an IBM-provided route hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
-
 
 ## Ingress controller health checks
 {: #health-checks}
@@ -237,7 +235,7 @@ If your cluster is created on VPC infrastructure and you enabled only the privat
 Note that even though you create an IngressController resource in the following steps, the IngressController is only required to create and configure the necessary Ingress controller for you. After the Ingress controller is created, you use the Ingress controller directly to create routes.
 
 1. Prepare the domain that you want to use for your Ingress controller.
-    * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`.
+    * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`. If you use a custom domain, you must also specify the domain certificate in your `IngressController` specification. For more information, see [Setting a custom default certificate](https://docs.openshift.com/container-platform/4.11/networking/ingress-operator.html#nw-ingress-controller-configuration-parameters_configuring-ingress){: external}
     * **IBM-provided domain**:
         1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `i00<n>` value.
             ```sh
@@ -264,6 +262,8 @@ Note that even though you create an IngressController resource in the following 
       name: public
       namespace: openshift-ingress-operator
     spec:
+      # defaultCertificate: If you are using a custom domain, specify the domain certificate
+        # name: custom-certs-default
       replicas: 2
       domain: <domain>
       endpointPublishingStrategy:

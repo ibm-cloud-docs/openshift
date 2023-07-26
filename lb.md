@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-07-26"
 
 keywords: openshift, lb2.0, nlb
 
@@ -37,7 +37,7 @@ Expose a port and use a portable IP address for a Layer 4 network load balancer 
 * When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made quickly.
 
 To set up an NLB 1.0 service in a multizone cluster:
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-app). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 2. Create a load balancer service for the app that you want to expose to the public internet or a private network.
     1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
@@ -176,7 +176,7 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 
 To create an NLB 1.0 service in a single-zone cluster:
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they are in the load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-app). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they are in the load balancing.
 2. Create a load balancer service for the app that you want to expose to the public internet or a private network.
     1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
 

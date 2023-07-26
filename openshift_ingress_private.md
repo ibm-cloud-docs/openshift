@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-07-26"
 
 keywords: ingress, expose apps, privately expose, private ingress, ingress vpc
 
@@ -49,7 +49,7 @@ If your cluster is created on classic infrastructure, or if your cluster is crea
 Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods are in the Ingress load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-app). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods are in the Ingress load balancing.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 
@@ -272,7 +272,7 @@ If your cluster is created on VPC infrastructure and you enabled only the privat
 Start by deploying your apps and creating Kubernetes services to expose them.
 {: shortdesc}
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-openshift_apps). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods are in the Ingress load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-app). Ensure that you add a label to your deployment in the metadata section of your configuration file, such as `app: code`. This label is needed to identify all pods where your app runs so that the pods are in the Ingress load balancing.
 
 2. For each app deployment that you want to expose, create a Kubernetes `ClusterIP` service. Your app must be exposed by a Kubernetes service to be included in the Ingress load balancing.
 

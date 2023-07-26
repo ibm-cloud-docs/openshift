@@ -3184,7 +3184,7 @@ subcollection: openshift
 
     * [How do I manage my worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-manage)
 
-    * [What storage disks options are available on worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#hardware-options)
+    * [What storage options are available on worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#hardware-options)
 
     * [What limitations do I need to be aware of?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-limitations)
 
@@ -3477,8 +3477,6 @@ subcollection: openshift
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update#update)
 
 * [Updating the master](/docs/openshift?topic=openshift-update#master)
-
-    * [About updating the master](/docs/openshift?topic=openshift-update#master-about)
 
     * [Steps to update the cluster master](/docs/openshift?topic=openshift-update#master-steps)
 
@@ -4528,39 +4526,37 @@ subcollection: openshift
 
     * [Default image policies](/docs/openshift?topic=openshift-images#portieris-default-policies)
 
-[Developing apps to run on {{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-openshift_apps#openshift_apps)
+[Developing apps](/docs/openshift?topic=openshift-app#app)
 
-* [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-openshift_apps#app_yaml)
+* [Specifying your app requirements in your YAML file](/docs/openshift?topic=openshift-app#app_yaml)
 
-    * [Basic deployment metadata](/docs/openshift?topic=openshift-openshift_apps#metadata)
+    * [Basic deployment metadata](/docs/openshift?topic=openshift-app#metadata)
 
-    * [Replica set](/docs/openshift?topic=openshift-openshift_apps#replicaset)
+    * [Replica set](/docs/openshift?topic=openshift-app#replicaset)
 
-    * [Labels](/docs/openshift?topic=openshift-openshift_apps#label)
+    * [Labels](/docs/openshift?topic=openshift-app#label)
 
-    * [Affinity](/docs/openshift?topic=openshift-openshift_apps#affinity)
+    * [Affinity](/docs/openshift?topic=openshift-app#affinity)
 
-    * [Container image](/docs/openshift?topic=openshift-openshift_apps#image)
+    * [Container image](/docs/openshift?topic=openshift-app#image)
 
-    * [Port for the app's service](/docs/openshift?topic=openshift-openshift_apps#port)
+    * [Port for the app's service](/docs/openshift?topic=openshift-app#port)
 
-    * [Resource requests and limits](/docs/openshift?topic=openshift-openshift_apps#resourcereq)
+    * [Resource requests and limits](/docs/openshift?topic=openshift-app#resourcereq)
 
-    * [Liveness and readiness probes](/docs/openshift?topic=openshift-openshift_apps#probe)
+    * [Liveness and readiness probes](/docs/openshift?topic=openshift-app#probe)
 
-    * [Pod Disruption Budget](/docs/openshift?topic=openshift-openshift_apps#disruption-budget)
+    * [Pod Disruption Budget](/docs/openshift?topic=openshift-app#disruption-budget)
 
-    * [Exposing the app service](/docs/openshift?topic=openshift-openshift_apps#app-service)
+    * [Exposing the app service](/docs/openshift?topic=openshift-app#app-service)
 
-    * [Configmaps for container environment variables](/docs/openshift?topic=openshift-openshift_apps#configmap)
+    * [Configmaps for container environment variables](/docs/openshift?topic=openshift-app#configmap)
 
-    * [Secrets for container environment variables](/docs/openshift?topic=openshift-openshift_apps#secret)
+    * [Secrets for container environment variables](/docs/openshift?topic=openshift-app#secret)
 
-    * [Persistent volumes for container storage](/docs/openshift?topic=openshift-openshift_apps#pv)
+    * [Persistent volumes for container storage](/docs/openshift?topic=openshift-app#pv)
 
-* [Complete example deployment YAML](/docs/openshift?topic=openshift-openshift_apps#yaml-example)
-
-* [Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-openshift_apps#kustomize)
+* [Complete example deployment YAML](/docs/openshift?topic=openshift-app#yaml-example)
 
 [Deploying apps in {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-deploy_app#deploy_app)
 
@@ -4591,6 +4587,8 @@ subcollection: openshift
 * [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-update_app#app_cicd)
 
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
+
+[Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-kustomize#kustomize)
 
 
 ## Exposing apps
@@ -5656,6 +5654,8 @@ subcollection: openshift
     * [IBM Cloud VPC infrastructure services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#vpc-infrastructure-services)
 
 * [Kubernetes community and open source integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-tools)
+
+    * [Integrations operated in partnership](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#open-source-partners)
 
     * [Managed add-ons](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#cluster-add-ons)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-26"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -791,7 +791,7 @@ To update your cluster image pull secret in the `default` Kubernetes namespace.
     ```
     {: screen}
 
-4. Update your [container deployments](/docs/openshift?topic=openshift-openshift_apps#image) to pull images from the `icr.io` domain name.
+4. Update your [container deployments](/docs/openshift?topic=openshift-app#image) to pull images from the `icr.io` domain name.
 5. Optional: If you have a firewall, make sure you [allow outbound network traffic to the registry subnets](/docs/openshift?topic=openshift-firewall#firewall_outbound) for the domains that you use.
 
 6. Complete your setup by using one of the following options.

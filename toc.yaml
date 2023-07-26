@@ -95,7 +95,7 @@ toc:
               - cluster-scaling-enable.md
               - cluster-scaling-deploy-apps.md
               - cluster-scaling-helm.md
-          - openshift_cluster_update.md
+          - update.md
           - cluster-remove.md
           - host-maintenance.md
       - topicgroup: 
@@ -189,10 +189,11 @@ toc:
           topics:
           - app-plan.md
           - images.md
-          - openshift_app.md
+          - app.md
           - openshift_app_deploy.md
           - nodeport.md
           - app-update.md
+          - kustomize.md
       - topicgroup:
           label: Exposing apps
           topics:
