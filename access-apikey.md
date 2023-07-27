@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-27"
 
 keywords: openshift
 
@@ -168,7 +168,7 @@ To ensure that all infrastructure-related actions can be completed in the cluste
 
 3. To make sure that all infrastructure-related actions in your cluster can be successfully performed, verify that the user has the correct infrastructure access policies.
     1. From the menu bar, select **Manage > Access (IAM)**.
-    2. Select the **Users** tab, click on the user. The required infrastructure permissions vary depending on what type of [cluster infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers) you use, classic or VPC.
+    2. Select the **Users** tab, click on the user. The required infrastructure permissions vary depending on what type of cluster infrastructure provider you use.
         - For classic clusters
             1. In the **API keys** pane, verify that the user has a **Classic infrastructure API key**, or click **Create an IBM Cloud API key**. For more information, see [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys#classic_keys).
             2. Click the **Classic infrastructure** tab and then click the **Permissions** tab.
@@ -187,7 +187,7 @@ Does the classic or VPC infrastructure provider for my cluster affect what acces
 
 VPC infrastructure resources are integrated into IAM and as such, you must have the {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role to the [**VPC Infrastructure** service](/docs/vpc?topic=vpc-iam-getting-started) to create and list VPC resources.
 
-For both [classic and VPC clusters](/docs/openshift?topic=openshift-infrastructure_providers), the credentials to access infrastructure resources are stored in an API key for the region and resource group of the cluster. To create and manage clusters after the infrastructure permissions are set, assign users IAM access roles to {{site.data.keyword.openshiftlong_notm}}.
+For both classic and VPC clusters, the credentials to access infrastructure resources are stored in an API key for the region and resource group of the cluster. To create and manage clusters after the infrastructure permissions are set, assign users IAM access roles to {{site.data.keyword.openshiftlong_notm}}.
 
 Unlike classic, VPC does not support manually setting infrastructure credentials (`ibmcloud oc credential set`) to use another IBM Cloud infrastructure account to provision worker nodes. You must use your {{site.data.keyword.cloud_notm}} account's linked infrastructure account.
 {: important}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-04-21"
+lastupdated: "2023-07-27"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 # Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling
-{: #prepare-autoscale-sat}
+{: #cluster-scaling-sat}
 
 Before you can use the cluster autoscaler add-on in your {{site.data.keyword.satelliteshort}} cluster, complete the following steps.
 {: shortdesc}
@@ -29,7 +29,7 @@ Enabling the autoscaler on an non-allowlisted account results in an `The 'cluste
 {: note}
 
 ## Understanding autoscaling in {{site.data.keyword.satelliteshort}} clusters
-{: #cluster-scaling-sat}
+{: #cluster-scaling-install-addon-sat}
 
 How does scale-up work for {{site.data.keyword.satelliteshort}} clusters?
 :   The cluster autoscaler periodically checks for pods that are stuck in pending state due to lack of memory or CPU resources. 

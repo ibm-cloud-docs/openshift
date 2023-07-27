@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-07-27"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -27,7 +27,7 @@ With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{s
 
 
 
-Looking to use autoscaling in your {{site.data.keyword.satelliteshort}} clusters? See, [Preparing to autoscale {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat).
+Looking to use autoscaling in your {{site.data.keyword.satelliteshort}} clusters? See, [Preparing to autoscale {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat).
 {: tip}
 
 
@@ -43,7 +43,7 @@ The cluster autoscaler periodically scans the cluster to adjust the number of wo
 {: shortdesc}
 
 * **Pending pods to scale up**: A pod is considered pending when insufficient compute resources exist to schedule the pod on a worker node. When the cluster autoscaler detects pending pods, the autoscaler scales up your worker nodes evenly across zones to meet the workload resource requests.
-* **Underutilized worker nodes to scale down**: By default, worker nodes that run with less than 50% of the total compute resources that are requested for 10 minutes or more and that can reschedule their workloads onto other worker nodes are considered underutilized. If the cluster autoscaler detects underutilized worker nodes, it scales down your worker nodes one at a time so that you have only the compute resources that you need. If you want, you can [customize](/docs/openshift?topic=openshift-cluster-scaling-enable) the default scale-down utilization threshold of 50% for 10 minutes.
+* **Underutilized worker nodes to scale down**: By default, worker nodes that run with less than 50% of the total compute resources that are requested for 10 minutes or more and that can reschedule their workloads onto other worker nodes are considered underutilized. If the cluster autoscaler detects underutilized worker nodes, it scales down your worker nodes one at a time so that you have only the compute resources that you need. If you want, you can [customize](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) the default scale-down utilization threshold of 50% for 10 minutes.
 
 Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes.
 
@@ -57,7 +57,6 @@ What does scaling up and down look like?
     *   The minimum and maximum worker node size per zone that you set.
     *   Your pending pod resource requests and certain metadata that you associate with the workload, such as anti-affinity, labels to place pods only on certain flavors, or [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external}.
     *   The worker pools that the cluster autoscaler manages, potentially across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters).
-    *   The [custom Helm chart values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values) that are set, such as skipping worker nodes for deletion if they use local storage.
 
 For more information, see the Kubernetes Cluster Autoscaler FAQs for [How does scale-up work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work){: external} and [How does scale-down work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work){: external}.
 
@@ -67,10 +66,10 @@ Can I change how scale-up and scale-down work?
 :   You can customize settings or use other Kubernetes resources to affect how scaling up and down work.
 
 Scale-up
-:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
+:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) such as `scanInterval`, `expander`, `skipNodes`, or `maxNodeProvisionTime`. Review ways to [overprovision worker nodes](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#ca_scaleup) so that you can scale up worker nodes before a worker pool runs out of resources. You can also [set up Kubernetes pod budget disruptions and pod priority cutoffs](#scalable-practices-apps) to affect how scaling up works.
 
 Scale-down
-:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
+:   [Customize the cluster autoscaler ConfigMap values](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) such as `scaleDownUnneededTime`, `scaleDownDelayAfterAdd`, `scaleDownDelayAfterDelete`, or `scaleDownUtilizationThreshold`.
 
 
 Can I increase the minimum size per zone to trigger a scale up my cluster to that size?
@@ -87,12 +86,12 @@ How is this behavior different from worker pools that are not managed by the clu
 Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}.
 {: shortdesc}
 
-[Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), what [custom values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values) you might want to configure, and any other aspects that you might want, like [overprovisioning](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps). Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
+[Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), you might want to configure, and any other aspects that you might want, like [overprovisioning](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps). Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
 
 ### Can I autoscale multiple worker pools at once?
 {: #scalable-practices-multiple}
 
-Yes, after you install the cluster autoscaler, you can choose which worker pools within the cluster to autoscale [in the ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-enable). You can run only one autoscaler per cluster. Create and enable autoscaling on worker pools other than the default worker pool, because the default worker pool has system components that can prevent automatically scaling down.
+Yes, after you install the cluster autoscaler, you can choose which worker pools within the cluster to autoscale [in the ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable). You can run only one autoscaler per cluster. Create and enable autoscaling on worker pools other than the default worker pool, because the default worker pool has system components that can prevent automatically scaling down.
 {: shortdesc}
 
 ### How can I make sure that the cluster autoscaler responds to what resources my app needs?
@@ -107,7 +106,7 @@ The cluster autoscaler scales your cluster in response to your workload [resourc
 No, you can't set the cluster autoscaler `minSize` to `0`. Additionally, unless you [disable](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your cluster, you must change the `minSize` to `2` worker nodes per zone so that the ALB pods can be spread for high availability. Additionally, you can [taint](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) your worker pool to achieve a scale to down a minimum of `1`.
 {: shortdesc}
 
-If your worker pool has zero (0) worker nodes, the worker pool can't be scaled. [Disable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-enable) for the worker pool, [manually resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to at least one, and [re-enable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-enable).
+If your worker pool has zero (0) worker nodes, the worker pool can't be scaled. [Disable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) for the worker pool, [manually resize the worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) to at least one, and [re-enable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable).
 
 ### Can I optimize my deployments for autoscaling?
 {: #scalable-practices-apps}
@@ -209,7 +208,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 
 1. [Install the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 
-After install the add-on, update the ConfigMap values to [enable autoscaling in your cluster](/docs/openshift?topic=openshift-cluster-scaling-enable).
+After install the add-on, update the ConfigMap values to [enable autoscaling in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-27"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -32,8 +32,8 @@ Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cl
 
 With **{{site.data.keyword.openshiftlong_notm}} clusters on VPC**, you can create your cluster in the next generation of the {{site.data.keyword.cloud_notm}} platform, in your [Virtual Private Cloud](/docs/vpc?topic=vpc-about-vpc).
 
-- {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-cs_ov) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.12/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
-- VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers), with a select group of v2 API, CLI, and console functionality.
+- {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-overview) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.12/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
+- VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered), with a select group of v2 API, CLI, and console functionality.
 
 {{site.data.keyword.redhat_openshift_notm}} worker nodes are available for paid accounts and standard clusters only. You can create {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4 only. The operating system is Red Hat Enterprise Linux 7.
 {: note}
@@ -358,7 +358,6 @@ Now that you have a VPC cluster, learn more about what you can do.
 
 - [Setting up block storage for your apps](/docs/openshift?topic=openshift-vpc-block)
 - [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
-- [Overview of the differences between classic and VPC clusters](/docs/openshift?topic=openshift-infrastructure_providers)
 - [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
 - [About the v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about)
 

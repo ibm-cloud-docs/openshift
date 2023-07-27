@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-27"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -230,7 +230,7 @@ The following steps present a general process to manage costs for your {{site.da
 3. Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
 4. [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.containerlong_notm}}: Pricing](https://www.ibm.com/products/openshift){: external}.
 5. Manage the lifecycle of your cluster to control costs.
-    * Consider [enabling the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) to automatically add or remove worker nodes in response to your cluster workload resource requests.
+    * Consider [enabling the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) to automatically add or remove worker nodes in response to your cluster workload resource requests.
     * Manually [resize your worker pool](/docs/openshift?topic=openshift-add_workers) to remove worker nodes that you don't need. Keep in mind that you can't scale a worker pool down to zero worker nodes.
     * Use Kubernetes features such as [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external}, [pod priority](/docs/openshift?topic=openshift-pod_priority), and [resource requests and limits](/docs/containers?topic=containers-app#resourcereq) to control how resources are used within your cluster.
     * Consider setting up a [monitoring tool](/docs/openshift?topic=openshift-health) such as {{site.data.keyword.mon_full_notm}} and creating alerts for your workloads when they need more resources.

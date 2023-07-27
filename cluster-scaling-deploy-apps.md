@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-07-27"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -19,7 +19,7 @@ subcollection: openshift
 
 
 # Deploying apps to worker pools where autoscaling is enabled
-{: #cluster-scaling-deploy-apps}
+{: #cluster-scaling-install-addon-deploy-apps}
 
 To limit a pod deployment to a specific worker pool that is managed by the cluster autoscaler, use a combination of labels and `nodeSelector` or `nodeAffinity` to deploy apps only to the autoscaled worker pools. With `nodeAffinity`, you have more control over how the scheduling behavior works to match pods to worker nodes. Then, use taints and tolerations so that only these apps can run on your autoscaled worker pools.
 {: shortdesc}
@@ -34,7 +34,7 @@ For more information, see the following Kubernetes docs:
 
 **To limit pods to run on certain autoscaled worker pools**:
 
-1. Make sure that you labeled and tainted your autoscaled worker pool as described in [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc).
+1. Make sure that you labeled and tainted your autoscaled worker pool as described in [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 2. In your pod spec template, match the `nodeSelector` or `nodeAffinity` to the label that you used in your worker pool.
 
     Example of `nodeSelector`:

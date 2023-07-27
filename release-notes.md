@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-07-27"
 
 keywords: openshift
 
@@ -29,6 +29,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## July 2023
 {: #openshift-july23}
 
+### 27 July 2023
+{: #openshift-july2623}
+{: release-note}
+
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.6`
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
+
+
+
 
 
 
@@ -52,7 +62,7 @@ Static route add-on version `1.0.0_1122`.
 {: release-note}
 
 Cluster autoscaler add-on update command.
-:   You can now use the `ibmcloud oc cluster addon update` command to update your add-on. For more information, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon).
+:   You can now use the `ibmcloud oc cluster addon update` command to update your add-on. For more information, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon-update-addon).
 
 ### 19 July 2023
 {: #openshift-july1923}
@@ -192,7 +202,7 @@ Certified Kubernetes
 {: release-note} 
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.16_127` and `5.1.11_126`.
-:   This patch introduces two new variables to the `addon-vpc-block-csi-driver-configmap`. To get the latest snapshot configmap values users must add the new values to the existing configmap and apply the changes. For more information, see [Customizing snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-customize-snapshot) and [the add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   This patch introduces two new variables to the `addon-vpc-block-csi-driver-configmap`. To get the latest snapshot configmap values users must add the new values to the existing configmap and apply the changes. For more information, see [Customizing snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot) and [the add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 
 
@@ -1862,7 +1872,7 @@ HPCS Router add-on
 {: release-note}
 
 Cluster autoscaler
-:   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat).
+:   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat).
 
 {{site.data.keyword.cos_full_notm}} plug-in
 :   **Beta**: Install the {{site.data.keyword.cos_full_notm}} plug-in on {{site.data.keyword.satelliteshort}} clusters.
@@ -1905,7 +1915,7 @@ Master fix pack update.
 
 Cluster autoscaler
 :   Version [1.0.5_415](/docs/openshift?topic=openshift-ca_changelog) is available.
-:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc), [Installing the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon), and [Enabling autoscaling](/docs/openshift?topic=openshift-cluster-scaling-enable).
+:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon), [Installing the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon), and [Enabling autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable).
 :   New troubleshooting pages for [resizing worker pools](/docs/openshift?topic=openshift-ts-ca-resize) and updating [unbalanced worker pools](/docs/openshift?topic=openshift-ts-ca-unbalanced) in autoscaled clusters. 
 
 
@@ -4043,7 +4053,7 @@ CLI change log
 :   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.157](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 
 Cluster autoscaler
-:   The [cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
+:   The [cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) is available as a managed add-on. The cluster autoscaler Helm chart is deprecated. Migrate your autoscaled worker pools to use the add-on.
 
 New! Community Kubernetes Ingress support
 :   The Ingress ALBs in your version 3.11 cluster can now run the Kubernetes Ingress image, which is built on the community Kubernetes project's implementation of the NGINX Ingress controller. To use the Kubernetes Ingress image, you create your Ingress resources and ConfigMaps according to the Kubernetes Ingress format, including community Kubernetes Ingress annotations instead of custom {{site.data.keyword.openshiftlong_notm}} annotations. 
@@ -4214,7 +4224,7 @@ Version change logs
 
 
 Comparison between {{site.data.keyword.cloud_notm}} and OCP clusters
-:   Added a [table of differences between standard OCP installations and {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-cs_ov#compare_ocp).
+:   Added a [table of differences between standard OCP installations and {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-overview#compare_ocp).
 
 Global settings
 :   Added information about the [`config.openshift.io` global settings](/docs/openshift?topic=openshift-service-settings#global-settings) that you can or can't configure.
@@ -4276,7 +4286,7 @@ Ingress ALB change log
 New! Virtual Private Cloud Generation 2
 :   You can now create {{site.data.keyword.redhat_openshift_notm}} clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC Gen 2 clusters are available for version 4 clusters only.
 :   For more information, check out the following links.
-    - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
+    - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered)
     - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
 
 :   New VPC Gen 2 commands for the CLI
@@ -4388,7 +4398,7 @@ New! Virtual Private Cloud Generation 2
 :   You can now create standard Kubernetes clusters in your [Gen 2 Virtual Private Cloud (VPC)](/docs/vpc?topic=vpc-getting-started). VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud.
 
 :   For more information, check out the following links. 
-    - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers)
+    - [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered)
     - [Supported virtual machine flavors for VPC Gen 2 worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
     - [New VPC Gen 2 commands for the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli)
     - [VPC cluster limitations](/docs/containers?topic=containers-limitations#ks_vpc_gen2_limits)
@@ -4474,7 +4484,7 @@ Ingress troubleshooting
 {: release-note}
 
 Cluster and worker node quotas
-:   Now, each region in your {{site.data.keyword.cloud_notm}} account has quotas for {{site.data.keyword.redhat_openshift_notm}} clusters and workers. You can have **100 clusters** and **500 worker nodes** across clusters per region and per [infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers). With quotas in place, your account is better protected from accidental requests or billing surprises. Need more clusters? No problem, just [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new cluster or worker node quota limit for the region and infrastructure provider that you want. For more information, see the [Service limitations](/docs/containers?topic=containers-limitations).
+:   Now, each region in your {{site.data.keyword.cloud_notm}} account has quotas for {{site.data.keyword.redhat_openshift_notm}} clusters and workers. You can have **100 clusters** and **500 worker nodes** across clusters per region and per [infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered). With quotas in place, your account is better protected from accidental requests or billing surprises. Need more clusters? No problem, just [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new cluster or worker node quota limit for the region and infrastructure provider that you want. For more information, see the [Service limitations](/docs/containers?topic=containers-limitations).
 
 ### 29 April 2020
 {: #openshift-april2920}
@@ -4981,7 +4991,7 @@ Diagnostics and Debug Tool add-on for {{site.data.keyword.redhat_openshift_notm}
 :   The [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) add-on is now available for {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 Cluster autoscaling for VPC clusters
-:   You can [set up the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm) on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
+:   You can set up the cluster autoscaler on clusters that run on the first generation of compute for Virtual Private Cloud (VPC).
 
 New! Reservations and limits for PIDs
 :   Worker nodes that run Kubernetes version 1.14 or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.
@@ -5158,7 +5168,7 @@ Cloud Paks
 :   By using the {{site.data.keyword.cloud_notm}} catalog, you can [add Cloud Paks to your {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-openshift_cloud_paks).
 
 Cluster autoscaler
-:   You can [install the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) Helm chart on {{site.data.keyword.redhat_openshift_notm}} clusters with Helm Tiller version 2.12 or later.
+:   You can [install the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) Helm chart on {{site.data.keyword.redhat_openshift_notm}} clusters with Helm Tiller version 2.12 or later.
 
 
 
@@ -5403,7 +5413,7 @@ Version change log
 {: release-note}
 
 Cluster autoscaler
-:   With the latest version of the cluster autoscaler, you can [enable autoscaling for worker pools during the Helm chart installation](/docs/openshift?topic=openshift-cluster-scaling-helm) instead of modifying the config map after installation.
+:   With the latest version of the cluster autoscaler, you can enable autoscaling for worker pools during the Helm chart installation instead of modifying the config map after installation.
 
 Ingress ALB change log
 :   Updated the ALB [`nginx-ingress` image to build 524 and `ingress-auth` image to build 337](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).

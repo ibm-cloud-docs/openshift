@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-07-27"
 
 keywords: openshift, autoscaler
 
@@ -142,7 +142,7 @@ Check the health of the cluster autoscaler pod.
     ```
     {: pre}
 
-3. Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/openshift?topic=openshift-cluster-scaling-enable) matches what you expect, such as the`scale-down-delay-after-add` value.
+3. Review the **Command** section to check that the [custom cluster autoscaler configuration](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) matches what you expect, such as the`scale-down-delay-after-add` value.
     ```sh
     Command:
         ./cluster-autoscaler

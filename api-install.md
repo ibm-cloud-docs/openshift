@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-07-27"
 
 keywords: openshift, api
 
@@ -29,7 +29,7 @@ subcollection: openshift
 The {{site.data.keyword.openshiftlong_notm}} API automates the provisioning and management of {{site.data.keyword.cloud_notm}} infrastructure resources for your clusters so that your apps have the compute, networking, and storage resources that they need to serve your users.
 {: shortdesc}
 
-The API supports the different infrastructure providers that are available for you to create clusters. For more information, see [Overview of Classic and VPC infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers).
+The API supports the different infrastructure providers that are available for you to create clusters. For more information, see [the infrastructure provider overview](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered).
 
 You can use the version two (`v2`) API to manage both classic and VPC clusters. The `v2` API is designed to avoid breaking existing functionality when possible. However, make sure that you review the following differences between the `v1` and `v2` API.    
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-07-27"
 
 keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
 
@@ -102,7 +102,7 @@ When the master update is complete, you can update your worker nodes, depending 
 ## Updating classic worker nodes
 {: #worker_node}
 
-You notice that an update is available for your worker nodes in a [classic infrastructure](/docs/openshift?topic=openshift-infrastructure_providers) cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
+You notice that an update is available for your worker nodes in a [classic infrastructure](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered) cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
 {: shortdesc}
 
 Applies to only classic clusters. Have a VPC cluster? See [Updating VPC worker nodes](#vpc_worker_node) instead.
@@ -309,7 +309,7 @@ If you have Portworx installed in your cluster, you must restart the Portworx po
 ## Updating VPC worker nodes
 {: #vpc_worker_node}
 
-You notice that an update is available for your worker nodes in a [VPC infrastructure cluster](/docs/openshift?topic=openshift-infrastructure_providers). What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
+You notice that an update is available for your worker nodes in a VPC cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
 {: shortdesc}
 
  Applies to only VPC clusters. Have a classic cluster? See [Updating classic worker nodes](#worker_node) instead.

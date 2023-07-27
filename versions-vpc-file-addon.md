@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-03"
+lastupdated: "2023-07-27"
 
 keywords: file, add-on, changelog
 
@@ -45,6 +45,15 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.1
 {: #011_is_file}
+
+### Change log for version 1.1.6_41, release 28 July 2023
+{: #1.1.6_is_file_relnote}
+
+- Tiered storage classes are deprecated and will be unsupported soon. To migrate, create new PVCs and that use a `dp2` storage class and redeploy your apps.
+- Updates for the VPC API compatibility changes. For more information, see the [VPC REST API change log](/docs/vpc?topic=vpc-api-change-log-beta#23-may-2023-beta)
+- Adds support for `dp2` profiles.
+- Updates the UBI to version `8.8-1014` to resolve the following CVEs: [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}, [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, and [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}.
+- Updates Golang to version `1.19.11` to resolve [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external}.
 
 ### Change log for version 1.1, released 3 July 2023
 {: #1.1_is_file_relnote}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-07-27"
 
 keywords: openshift
 subcollection: openshift
@@ -49,8 +49,8 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-getting-started#whats-next)
 
 
-## About
-{: #sitemap_about}
+## Understanding {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_understanding_}
 
 
 [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-overview#overview)
@@ -65,17 +65,18 @@ subcollection: openshift
 
 * [What compute host infrastructure does the service offer?](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered)
 
+* [What are the benefits of using the service?](/docs/openshift?topic=openshift-overview#benefits)
+
+* [Comparison between {{site.data.keyword.redhat_openshift_notm}} and community Kubernetes clusters](/docs/openshift?topic=openshift-overview#openshift_kubernetes)
+
+* [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-overview#compare_ocp)
+
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
 
-[Benefits and service offerings](/docs/openshift?topic=openshift-cs_ov#cs_ov)
 
-* [Benefits of using the service](/docs/openshift?topic=openshift-cs_ov#benefits)
+## Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_your_responsibilities_with_using_}
 
-* [Comparison between {{site.data.keyword.redhat_openshift_notm}} and community Kubernetes clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes)
-
-* [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-cs_ov#compare_ocp)
-
-[Supported infrastructure providers](/docs/openshift?topic=openshift-infrastructure_providers#infrastructure_providers)
 
 [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks#responsibilities_iks)
 
@@ -94,6 +95,11 @@ subcollection: openshift
     * [Disaster recovery](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery)
 
     * [Applications and data](/docs/openshift?topic=openshift-responsibilities_iks#applications-and-data)
+
+
+## Your responsibilities with using {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.satelliteshort}}
+{: #sitemap_your_responsibilities_with_using_on_}
+
 
 [Your responsibilities with using {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-responsibilities#satellite-responsibilities)
 
@@ -263,6 +269,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
+
+    * [27 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2623)
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.6`
 
     * [24 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2423)
 
@@ -3136,6 +3146,14 @@ subcollection: openshift
 
     * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
 
+[Understanding your storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan)
+
+* [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
+
+* [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
+
+* [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
+
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
 * [Single zone clusters](/docs/openshift?topic=openshift-ha_clusters#single_zone)
@@ -3400,79 +3418,6 @@ subcollection: openshift
 * [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate_versions)
 
 * [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
-
-
-### Autoscaling clusters
-{: #sitemap_autoscaling_clusters}
-
-
-[Preparing classic and VPC clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
-
-* [Understanding scale-up and scale-down](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about)
-
-* [Following scalable deployment practices](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices)
-
-    * [Can I autoscale multiple worker pools at once?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-multiple)
-
-    * [How can I make sure that the cluster autoscaler responds to what resources my app needs?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-resrequests)
-
-    * [Can I scale down a worker pool to zero (0) nodes?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-zero)
-
-    * [Can I optimize my deployments for autoscaling?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-apps)
-
-    * [Can I use taints and tolerations with autoscaled worker pools?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-taints)
-
-* [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_update_worker_node_pool)
-
-* [Preparing classic or VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#prepare-autoscale-classic-vpc)
-
-[Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#prepare-autoscale-sat)
-
-* [Understanding autoscaling in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-prepare-autoscale-sat#cluster-scaling-sat)
-
-* [Setting up your location and cluster for autoscaling](/docs/openshift?topic=openshift-prepare-autoscale-sat#setup-location-cluster-scale-sat)
-
-[Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
-
-* [Enabling the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-enable-console)
-
-* [Enabling the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-enable-CLI)
-
-* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon)
-
-* [Removing the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-console)
-
-* [Removing the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-cli)
-
-* [Cluster autoscaler add-on parameter reference](/docs/openshift?topic=openshift-cluster-scaling-install-addon#ca_addon_ref)
-
-[Setting up autoscaling for your worker pools](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-enable)
-
-* [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-cluster-scaling-enable#ca_customize)
-
-    * [Customizing the cluster autoscaler add-on ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-enable#cluster-scaling-customize)
-
-[Deploying apps to worker pools where autoscaling is enabled](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#cluster-scaling-deploy-apps)
-
-* [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#ca_scaleup)
-
-* [Pause pods](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#pause-pods-ca)
-
-* [Horizontal pod autoscaling (HPA)](/docs/openshift?topic=openshift-cluster-scaling-deploy-apps#hpca)
-
-[(Deprecated) Installing the cluster autoscaler Helm chart in your cluster](/docs/openshift?topic=openshift-cluster-scaling-helm#cluster-scaling-helm)
-
-* [Customizing the cluster autoscaler Helm chart values](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_chart_values)
-
-* [Upgrading a cluster autoscaler Helm chart release](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_up)
-
-    * [Prerequisites](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_up_prereqs)
-
-    * [Upgrading the cluster autoscaler release version](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_up_general)
-
-* [Removing the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_rm)
-
-* [Cluster autoscaler Helm chart parameter reference](/docs/openshift?topic=openshift-cluster-scaling-helm#ca_helm_ref)
 
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update#update)
 
@@ -4312,6 +4257,63 @@ subcollection: openshift
 * [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
 
 
+## Autoscaling clusters
+{: #sitemap_autoscaling_clusters}
+
+
+[Preparing classic and VPC clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
+
+* [Understanding scale-up and scale-down](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about)
+
+* [Following scalable deployment practices](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices)
+
+    * [Can I autoscale multiple worker pools at once?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-multiple)
+
+    * [How can I make sure that the cluster autoscaler responds to what resources my app needs?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-resrequests)
+
+    * [Can I scale down a worker pool to zero (0) nodes?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-zero)
+
+    * [Can I optimize my deployments for autoscaling?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-apps)
+
+    * [Can I use taints and tolerations with autoscaled worker pools?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-taints)
+
+* [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_update_worker_node_pool)
+
+* [Preparing classic or VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#prepare-autoscale-classic-vpc)
+
+[Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-sat#cluster-scaling-sat)
+
+* [Understanding autoscaling in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat#cluster-scaling-install-addon-sat)
+
+* [Setting up your location and cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-sat#setup-location-cluster-scale-sat)
+
+[Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
+
+* [Enabling the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-enable-console)
+
+* [Enabling the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-enable-CLI)
+
+* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon-update-addon)
+
+* [Removing the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-console)
+
+* [Removing the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-cli)
+
+[Setting up autoscaling for your worker pools](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable#cluster-scaling-install-addon-enable)
+
+* [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable#ca_customize)
+
+* [Cluster autoscaler configmap reference](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable#ca-configmap)
+
+[Deploying apps to worker pools where autoscaling is enabled](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#cluster-scaling-install-addon-deploy-apps)
+
+* [Scaling up worker nodes before the worker pool has insufficient resources](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#ca_scaleup)
+
+* [Pause pods](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#pause-pods-ca)
+
+* [Horizontal pod autoscaling (HPA)](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#hpca)
+
+
 ## Logging and monitoring
 {: #sitemap_logging_and_monitoring}
 
@@ -4947,19 +4949,6 @@ subcollection: openshift
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
-## Understanding your storage options
-{: #sitemap_understanding_your_storage_options}
-
-
-[Understanding your storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan)
-
-* [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
-
-* [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
-
-* [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
-
-
 ## Setting up {{site.data.keyword.filestorage_short}}
 {: #sitemap_setting_up_}
 
@@ -5525,13 +5514,13 @@ subcollection: openshift
 
 * [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
 
-* [Customizing snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-customize-snapshot)
-
-    * [`addon-vpc-block-csi-driver-configmap` default settings](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-block-configmap-settings)
-
 * [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-turn-off-snapshots)
 
 * [Troubleshooting snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#ts-snapshot-vpc-block-addon-next)
+
+[Customizing the {{site.data.keyword.block_storage_is_short}} configmap](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap)
+
+* [{{site.data.keyword.block_storage_is_short}} configmap reference](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap-reference)
 
 [Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
 
@@ -7527,6 +7516,8 @@ subcollection: openshift
 [{{site.data.keyword.filestorage_vpc_full_notm}} add-on change log](/docs/openshift?topic=openshift-versions-vpc-file-addon#versions-vpc-file-addon)
 
 * [Version 1.1](/docs/openshift?topic=openshift-versions-vpc-file-addon#011_is_file)
+
+    * [Change log for version 1.1.6_41, release 28 July 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1.6_is_file_relnote)
 
     * [Change log for version 1.1, released 3 July 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1_is_file_relnote)
 
