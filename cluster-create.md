@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-07-27"
 
 keywords: openshift, clusters
 
@@ -86,7 +86,7 @@ When the cluster is up and running, you can check out the following cluster admi
 - If you created the cluster in a multizone capable zone, [spread worker nodes by adding a zone to your cluster](/docs/openshift?topic=openshift-add_workers).
 - [Deploy an app in your cluster.](/docs/containers?topic=containers-deploy_app#app_cli)
 - [Set up your own private registry in {{site.data.keyword.cloud_notm}} to store and share Docker images with other users.](/docs/Registry?topic=Registry-getting-started)
-- [Set up the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
+- [Set up the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
 - Control who can create pods in your cluster with [pod security policies](/docs/containers?topic=containers-psp).
 
 Then, you can check out the following network configuration steps for your cluster setup:

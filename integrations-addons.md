@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-27"
 
 keywords: kubernetes, openshift
 
@@ -41,7 +41,7 @@ To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc c
 
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
-- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon)
 - [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
@@ -56,7 +56,7 @@ The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm
     
 Review the following links for specific update steps for each add-on.
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
-- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-update-addon)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon-update-addon)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment)
    
@@ -127,7 +127,7 @@ The following list of add-ons for clusters are supported in {{site.data.keyword.
 The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.
 
 - [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id-auth)
-- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc)
+- [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon)
 - [Istio](/docs/containers?topic=containers-istio)
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 

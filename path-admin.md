@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-07-27"
 
 keywords: openshift, red hat, red hat openshift, admin
 
@@ -36,7 +36,7 @@ Start by designing a cluster for maximum availability and capacity for your work
     2. Plan your [security strategy](/docs/openshift?topic=openshift-security#network_segmentation), such as ensuring network segmentation and workload isolation.
 
 2. **Cluster setup**: After you plan your environment, plan the setup for a specific cluster.
-    1. Choose a [supported infrastructure provider](/docs/openshift?topic=openshift-infrastructure_providers).
+    1. Choose a [supported infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered).
     2. Plan your [cluster network setup](/docs/openshift?topic=openshift-plan_clusters).
     3. Plan your cluster for [high availability](/docs/openshift?topic=openshift-ha_clusters).
     4. Plan your [worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes).
@@ -174,7 +174,7 @@ Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?top
 Manage your cluster and worker nodes through each phase of the cluster lifecycle.
 {: shortdesc}
 
-- **Autoscaling**: [Automatically increase or decrease the number of worker nodes](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc) based on the sizing needs of your scheduled workloads.
+- **Autoscaling**: [Automatically increase or decrease the number of worker nodes](/docs/openshift?topic=openshift-cluster-scaling-install-addon) based on the sizing needs of your scheduled workloads.
 - **Updating**: Keep your environment up-to-date by frequently [updating clusters, worker nodes, and cluster components](/docs/containers?topic=containers-update). While you update, refer to these version reference pages:
     - [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions)
     - [Version change log](/docs/openshift?topic=openshift-openshift_versions)
