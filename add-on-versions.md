@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-28"
 
 keywords: openshift add-ons, cluster addon
 
@@ -29,7 +29,6 @@ Review the following list of supported cluster add-ons.
 | csutil-experimental | 1.0.0 (Default) | >=1.20.0 <1.29.0 | >=4.6.0 <4.14.0 |
 | debug-tool | 2.0.0 (Default) | >=1.21.0 <1.28.0 | >=4.7.0 <4.14.0 |
 | image-key-synchronizer | 1.0.0 (Default) |  N/A  | >=4.4.0 <4.14.0 |
-| istio | 1.16  | >=1.23.0 <1.27.0 |  N/A  |
 | istio | 1.17 (Default) | >=1.23.0 <1.28.0 |  N/A  |
 | istio | 1.18  | >=1.23.0 <1.29.0 |  N/A  |
 | openshift-data-foundation | 4.9.0  |  N/A  | >=4.9.0 <4.11.0 |

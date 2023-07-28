@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-28"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -105,7 +105,7 @@ This tutorial is designed for cluster administrators who want to learn how to cr
 
     ```sh
     Client Version: v4.12.0
-    Kubernetes Version: v1.26.6.2
+    Kubernetes Version: v1.26.7.2
     ```
     {: screen}
 
