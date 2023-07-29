@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-28"
 
 keywords: ingress, configure ingress, annotations, customize ingress, ingress controller, source IP
 
@@ -48,7 +48,7 @@ By default, the Ingress controller receives connections that contain only the so
           type: IBM
           ibm:
             protocol: PROXY
-            scope: External
+        scope: External
       type: LoadBalancerService
     ```
     {: codeblock}
