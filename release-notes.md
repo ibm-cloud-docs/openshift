@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-07-31"
 
 keywords: openshift
 
@@ -29,8 +29,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## July 2023
 {: #openshift-july23}
 
+### 31 July 2023
+{: #openshift-july3123}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.17`
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
 ### 27 July 2023
-{: #openshift-july2623}
+{: #openshift-july2723}
 {: release-note}
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.6`
