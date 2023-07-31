@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-07-31"
 
 keywords: openshift, deploy
 
@@ -32,8 +32,6 @@ Learn what kinds of workloads can be run on {{site.data.keyword.openshiftlong_no
 ### What kind of apps can I run in {{site.data.keyword.openshiftlong_notm}}?
 {: #app_types}
 
-Your containerized app must be able to run on the supported operating system, RHEL 7. You also want to consider the statefulness of your app.
-{: shortdesc}
 
 Stateless apps
 :   Stateless apps are preferred for cloud-native environments like Kubernetes. They are simple to migrate and scale because they declare dependencies, store configurations separately from the code, and treat backing services such as databases as attached resources instead of coupled to the app. The app pods don't require persistent data storage or a stable network IP address, and as such, pods can be terminated, rescheduled, and scaled in response to workload demands. The app uses a Database-as-a-Service for persistent data, and NodePort, load balancer, or Ingress services to expose the workload on a stable IP address.

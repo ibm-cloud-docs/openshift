@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-07-31"
 
 keywords: openshift, version, update, upgrade, 4.13, update openshift
 
@@ -52,9 +52,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.13. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
-
-Portworx
-:   [Portworx](/docs/openshift?topic=openshift-storage_portworx_about) does not yet support {{site.data.keyword.openshiftlong_notm}} version 4.13 clusters. Do not update your cluster to version 4.13 if Portworx is installed.
 
 
 

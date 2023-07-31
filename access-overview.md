@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-31"
 
 keywords: openshift
 
@@ -83,11 +83,9 @@ Access policies determine the level of access that users in your {{site.data.key
 You must define access policies for every user that works with {{site.data.keyword.openshiftlong_notm}}. The scope of an access policy is based on a user's defined role or roles, which determine the actions that the user can perform. Some policies are pre-defined but others can be customized. The same policy is enforced whether the user makes the request from the {{site.data.keyword.cloud_notm}} API, CLI, or UI.
 {: shortdesc}
 
-The following image shows the different types of permissions and roles, the actions a role can perform, and how the roles relate to each other.
 
-![In {{site.data.keyword.cloud_notm}}, you can assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles.](images/user_access.png "Assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles"){: caption="Figure 1. Assign IAM platform, IAM service, Cloud Foundry, and infrastructure roles" caption-side="bottom"}
 
-To see the specific {{site.data.keyword.openshiftlong_notm}} permissions that can be performed with each role, check out the [User access permissions](/docs/openshift?topic=openshift-access_reference) reference topic.
+To see the specific {{site.data.keyword.openshiftlong_notm}} permissions that can be performed with each role, check out the [User access permissions](/docs/openshift?topic=openshift-access_reference).
 {: tip}
 
 #### Overview of {{site.data.keyword.cloud_notm}} IAM platform access roles

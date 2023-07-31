@@ -67,7 +67,7 @@ subcollection: openshift
 
 * [What are the benefits of using the service?](/docs/openshift?topic=openshift-overview#benefits)
 
-* [Comparison between {{site.data.keyword.redhat_openshift_notm}} and community Kubernetes clusters](/docs/openshift?topic=openshift-overview#openshift_kubernetes)
+* [Comparison between {{site.data.keyword.redhat_openshift_notm}} and Kubernetes clusters](/docs/openshift?topic=openshift-overview#openshift_kubernetes)
 
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-overview#compare_ocp)
 
