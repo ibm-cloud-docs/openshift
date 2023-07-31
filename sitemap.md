@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-28"
+lastupdated: "2023-07-31"
 
 keywords: openshift
 subcollection: openshift
@@ -67,7 +67,7 @@ subcollection: openshift
 
 * [What are the benefits of using the service?](/docs/openshift?topic=openshift-overview#benefits)
 
-* [Comparison between {{site.data.keyword.redhat_openshift_notm}} and community Kubernetes clusters](/docs/openshift?topic=openshift-overview#openshift_kubernetes)
+* [Comparison between {{site.data.keyword.redhat_openshift_notm}} and Kubernetes clusters](/docs/openshift?topic=openshift-overview#openshift_kubernetes)
 
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-overview#compare_ocp)
 
@@ -270,7 +270,11 @@ subcollection: openshift
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
 
-    * [27 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2623)
+    * [31 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july3123)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.17`
+
+    * [27 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2723)
 
         * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.6`
 
@@ -7528,6 +7532,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.17, released 3 July 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02217_object_plugin)
 
 * [Change log for version 2.2.16, released 3 July 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02216_object_plugin)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-07-31"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -115,7 +115,7 @@ When you run `oc get nodes` or `oc describe node <worker_node>`, you might see t
 ### How can I check the operating system that my worker nodes run?
 {: #flavor-os-check}
 
-When you create a worker pool, you choose the flavor, which describes the operating system along with the compute resources of the worker nodes. Supported operating systems are RHEL 7. 
+When you create a worker pool, you choose the flavor, which describes the operating system along with the compute resources of the worker nodes. 
 
 You can also log in to your cluster to check the operating system of the worker nodes.
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
@@ -145,7 +145,7 @@ You can also log in to your cluster to check the operating system of the worker 
                         kubernetes.io/os=linux
     ...
     System Info:
-        OS Image:                   Ubuntu 18.04.5 LTS
+        OS Image:                   Ubuntu 20.04.5 LTS
         Operating System:           linux
         Architecture:               amd64
         ...
