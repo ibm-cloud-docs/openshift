@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-01"
 
 keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
 
@@ -567,7 +567,7 @@ You can manage automatic updates of the Fluentd component in the following ways.
 ### Managing automatic updates for Ingress ALBs
 {: #alb}
 
-Control when the Ingress application load balancer (ALB) component is updated. For information about keeping ALBs up-to-date, see [Managing the Ingress ALB lifecycle](/docs/containers?topic=containers-managed-ingress-about).
+Control when the Ingress application load balancer (ALB) component is updated. For information about keeping ALBs up-to-date, see [Managing the Ingress ALB lifecycle](/docs/openshift?topic=openshift-ingress-about-roks4).
 {: shortdesc}
 
 

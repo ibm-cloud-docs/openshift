@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-08-01"
 
 keywords: block, add-on, changelog
 
@@ -45,6 +45,12 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.12_285, released 01 August 2023
+{: #5.1.12_285_is_block_relnote}
+
+- Node affinity added for controller server and node server, so that pods do not crash on Z system (s390x) based clusters.
+- Resolves the following CVEs: [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, and [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}.
 
 ### Change log for version 5.1.11_126, released 21 June 2023
 {: #5.1.11_126_is_block_relnote}
@@ -118,6 +124,12 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.0
 {: #050_is_block}
+
+### Change log for version 5.0.17_266, released 01 August 2023
+{: #5.0.17_266_is_block_relnote}
+
+- Node affinity added for controller server and node server, so that pods do not crash on Z system (s390x) based clusters.
+- Resolves the following CVEs: [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, and [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}.
 
 
 ### Change log for version 5.0.16_127, released 21 June 2023
