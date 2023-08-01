@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-08-01"
 
 keywords: openshift
 
@@ -23,7 +23,7 @@ subcollection: openshift
 Your app that uses {{site.data.keyword.filestorage_vpc_short}} fails with a permissions error.
 {: tsSymptoms}
 
-You created a custom storage class to use with an existing file share, but did not specify the correct `uid` and `gid`.
+You created a custom storage class to use with an existing file share, but did not specify the correct `uid` and `gid`. When a process runs on Unix and Linux, the operating system identifies a user with a user ID (UID) and group with a group ID (GID). These IDs determine which system resources a user or group can access. For example, if the file storage user ID is 12345 and its group ID is 6789, then the mount on the host node and in the container must have those same IDs. The container’s main process must match one or both of those IDs to access the file share.
 {: tsCauses}
 
 You can resolve the issue in one of the following ways.
@@ -63,8 +63,8 @@ If you want to use {{site.data.keyword.filestorage_vpc_short}} with static provi
       zone: ""                          # By default, the storage vpc driver will select a zone. The user can override this default
       tags: ""                          # A list of tags "a, b, c" that will be created when the volume is created. This can be overidden by user
       classVersion: "1"
-        uid: "1234"                           # The initial user identifier for the file share.
-        gid: "5678"                           # The initial group identifier for the file share.
+      uid: "1234"                           # The initial user identifier for the file share.
+      gid: "5678"                           # The initial group identifier for the file share.
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
     ```
