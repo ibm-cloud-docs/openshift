@@ -268,6 +268,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug23)
+
+    * [1 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0123)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.17_266` and `5.1.12_285`.
+
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
 
     * [31 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july3123)
@@ -7385,6 +7391,8 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.12_285, released 01 August 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.12_285_is_block_relnote)
+
     * [Change log for version 5.1.11_126, released 21 June 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.11_126_is_block_relnote)
 
     * [Change log for version 5.1.8_1970, released 15 May 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.8_1970_is_block_relnote)
@@ -7400,6 +7408,8 @@ subcollection: openshift
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.17_266, released 01 August 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.17_266_is_block_relnote)
 
     * [Change log for version 5.0.16_127, released 21 June 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.16_127_is_block_relnote)
 
