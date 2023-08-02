@@ -5,6 +5,8 @@ keyword:
     14 August 2024
   kubernetes_127_unsupported_certainty:
     tentative
+  kubernetes_127_deprecated:
+    False
 
   kubernetes_126_release_date:
     01 February 2023
@@ -12,6 +14,8 @@ keyword:
     24 April 2024
   kubernetes_126_unsupported_certainty:
     tentative
+  kubernetes_126_deprecated:
+    False
 
   kubernetes_125_release_date:
     06 October 2022
@@ -19,6 +23,8 @@ keyword:
     13 December 2023
   kubernetes_125_unsupported_certainty:
     tentative
+  kubernetes_125_deprecated:
+    False
 
   kubernetes_124_release_date:
     09 June 2022
@@ -26,6 +32,8 @@ keyword:
     06 September 2023
   kubernetes_124_unsupported_certainty:
     tentative
+  kubernetes_124_deprecated:
+    False
 
   kubernetes_123_release_date:
     09 February 2022
@@ -33,6 +41,8 @@ keyword:
     08 May 2023
   kubernetes_123_unsupported_certainty:
     tentative
+  kubernetes_123_deprecated:
+    True
 
   kubernetes_122_release_date:
     29 September 2021
@@ -40,6 +50,8 @@ keyword:
     18 January 2023
   kubernetes_122_unsupported_certainty:
     tentative
+  kubernetes_122_deprecated:
+    True
 
   openshift_413_release_date:
     14 June 2023
@@ -49,6 +61,8 @@ keyword:
     tentative
   openshift_413_kube_version:
     "1.26"
+  openshift_413_deprecated:
+    False
 
   openshift_412_release_date:
     23 February 2023
@@ -58,6 +72,8 @@ keyword:
     tentative
   openshift_412_kube_version:
     "1.25"
+  openshift_412_deprecated:
+    False
   
   openshift_411_release_date:
     31 August 2022
@@ -67,6 +83,8 @@ keyword:
     tentative
   openshift_411_kube_version:
     "1.24"
+  openshift_411_deprecated:
+    False
 
   openshift_410_release_date:
     27 April 2022
@@ -78,6 +96,8 @@ keyword:
     "1.23"
   openshift_410_RHEL_7_unsupported_date:
     6 December 2022
+  openshift_410_deprecated:
+    True
 
   openshift_49_release_date:
     09 February 2022
@@ -87,6 +107,8 @@ keyword:
     tentative
   openshift_49_kube_version:
     "1.22"
+  openshift_49_deprecated:
+    True
 
   openshift_48_release_date:
     29 September 2021
@@ -96,6 +118,8 @@ keyword:
     tentative
   openshift_48_kube_version:
     "1.21"
+  openshift_48_deprecated:
+    True
 
   openshift_47_release_date:
     09 June 2021
@@ -103,6 +127,8 @@ keyword:
     18 January 2023
   openshift_47_kube_version:
     "1.20"
+  openshift_47_deprecated:
+    True
 
   openshift_46_release_date:
     17 February 2021
@@ -110,6 +136,8 @@ keyword:
     27 October 2022
   openshift_46_kube_version:
     "1.19"
+  openshift_46_deprecated:
+    True
 
 
   satellite_413_release_date:
@@ -120,6 +148,8 @@ keyword:
     tentative
   satellite_413_kube_version:
     "1.26"
+  satellite_413_deprecated:
+    False
 
 
   satellite_412_release_date:
@@ -130,6 +160,8 @@ keyword:
     tentative
   satellite_412_kube_version:
     "1.25"
+  satellite_412_deprecated:
+    False
   
   satellite_411_release_date:
     31 August 2022
@@ -139,6 +171,8 @@ keyword:
     tentative
   satellite_411_kube_version:
     "1.24"
+  satellite_411_deprecated:
+    False
 
   satellite_410_release_date:
     27 April 2022
@@ -150,6 +184,8 @@ keyword:
     "1.23"
   satellite_410_RHEL_7_unsupported_date:
     6 December 2022
+  satellite_410_deprecated:
+    True
 
   satellite_49_release_date:
     09 February 2022
@@ -159,6 +195,8 @@ keyword:
     tentative
   satellite_49_kube_version:
     "1.22"
+  satellite_49_deprecated:
+    True
 
   satellite_48_release_date:
     29 September 2021
@@ -168,6 +206,8 @@ keyword:
     tentative
   satellite_48_kube_version:
     "1.21"
+  satellite_49_deprecated:
+    True
 
   satellite_47_release_date:
     09 June 2021
@@ -175,6 +215,8 @@ keyword:
     18 January 2023
   satellite_47_kube_version:
     "1.20"
+  satellite_47_deprecated:
+    True
 
   satellite_46_release_date:
     17 February 2021
@@ -182,3 +224,5 @@ keyword:
     27 October 2022
   satellite_46_kube_version:
     "1.19"
+  satellite_46_deprecated:
+    True
