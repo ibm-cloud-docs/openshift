@@ -26,8 +26,6 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
-
-
 ## August 2023
 {: #openshift-aug23}
 
@@ -44,6 +42,11 @@ CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version 4.13.
 {: #openshift-aug0123}
 {: release-note}
 
+
+
+Worker node fix packs `4.9.59_1598_openshift`, `4.10.64_1578_openshift`, `4.11.45_1565_openshift`, `4.12.26_1553_openshift`, and `4.13.6_1529_openshift`.
+:   For more information, see the change logs: [4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.12](/docs/openshift?topic=openshift-openshift_changelog_412), and [4.13](/docs/openshift?topic=openshift-openshift_changelog_413).
+
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.17_266` and `5.1.12_285`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
@@ -55,6 +58,7 @@ CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version 4.13.
 ### 31 July 2023
 {: #openshift-july3123}
 {: release-note}
+
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.17`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).

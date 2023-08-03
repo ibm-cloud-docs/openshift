@@ -276,6 +276,8 @@ subcollection: openshift
 
     * [1 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0123)
 
+        * Worker node fix packs `4.9.59_1598_openshift`, `4.10.64_1578_openshift`, `4.11.45_1565_openshift`, `4.12.26_1553_openshift`, and `4.13.6_1529_openshift`.
+
         * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.17_266` and `5.1.12_285`.
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
