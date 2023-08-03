@@ -36,7 +36,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
 
 
-CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version [4.13]
+CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version 4.13.
 :   CIS benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} version [4.13](/docs/openshift?topic=openshift-benchmarks_413).
 
 
