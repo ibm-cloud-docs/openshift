@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-31"
+lastupdated: "2023-08-03"
 
 keywords: openshift, version, update, upgrade, 4.13, update openshift
 
@@ -61,12 +61,15 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
 {: shortdesc}
 
+Cluster master access for VPC clusters with a private service endpoint changed significantly from version 4.12. Before updating a cluster of this type, review the following information and consider what changes you must make before upgrading your cluster. Also, consider this before creating a new  4.13 cluster with only a private service endpoint.
+{: important}
+
 | Type | Description |
 | --- | --- |
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.13 deprecated and removed features](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-deprecated-removed-features) and [Preparing to update to OpenShift Container Platform 4.13](https://docs.openshift.com/container-platform/4.13/updating/updating-cluster-prepare.html#updating-cluster-prepare) for possible actions required. |
 | Known OpenShift issues | For more information, review the [OpenShift version 4.13 known issues](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-known-issues) for possible actions required. |
 | Updated worker node metrics configuration | In order for your cluster to maintain pod and node metrics during the update, your cluster master must be at fix pack version [4.12.16_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_412&interface=ui#41216_1545_openshift_M) or later and your cluster worker nodes must be at fix pack version [4.12.19_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_412&interface=ui#41219_1546_openshift_W) or later. |
-| OpenShift Console access changes on IBM Cloud VPC | **Previously**, {{site.data.keyword.openshiftlong_notm}} VPC clusters that have disabled their public service endpoint, provided Red Hat OpenShift console access via the private service endpoint URL (for example `https://cX00.private.us-south.containers.cloud.ibm.com:port`) which required the internet browser to reach the IBM Cloud private network with routing to 166.8.0.0/14. **Now**, the Red Hat OpenShift console for such clusters is accessible via the virtual private endpoint (VPE) gateway URL (for example `https://clusterID.vpe.private.us-south.containers.cloud.ibm.com:port`). The VPE gateway is created automatically for the cluster and it exists in the same VPC as the cluster. To access the Red Hat OpenShift console, the internet browser must be able to resolve the VPE gateway URL and reach the VPE gateway in the VPC. To enable the access, setup the VPC VPN or other networking solution to be able to access the VPE gateway. For more information, please see [Accessing VPC clusters through the VPE gateway](/docs/containers?topic=containers-access_cluster#vpc_vpe) documentation. It is important to set the IBM Cloud VPC Private DNS server addresses (`161.26.0.7` and `161.26.0.8`) as DNS resolvers and set routing towards IaaS services (`161.26.0.0/16`). |
+| Access changes for VPC clusters with a private service endpoint only  | - **Previously** In VPC clusters with a private service endpoint only, if you wanted to access the cluster through the Openshift Console, run terraform scripts, create a kubeconfig file via `oc login`, or make similar API calls that required oauth to get a token, then you needed to access the private service endpoint, which was in the format `https://cX00.private.us-south.containers.cloud.ibm.com:port`. This setup only required access to the IBM Cloud private network `166.8.0.0/14`.  \n - **Now** In Openshift 4.13 this behavior has changed. In addition to accessing the IBM Cloud private network, the client system also needs access to the VPC's private DNS resolution to be able to connect to IP addresses in the VPC that the cluster is in. This is due to a change to use the VPE gateway DNS name of the form `clusterID.vpe.private.us-south.containers.cloud.ibm.com:port` for access to the apiserver and the oauth server. Now, to access the Red Hat OpenShift console, run `oc login`, or make similar API calls, the client system must be able to resolve the VPE gateway DNS name and reach the VPE gateway in the VPC. You must setup your VPC VPN or other networking solution to be able to access the VPE gateway. For more information, please see [Accessing VPC clusters through the VPE gateway](/docs/openshift?topic=openshift-access_cluster#vpc_vpe). It is important to set the IBM Cloud VPC Private DNS server addresses (`161.26.0.7` and `161.26.0.8`) as DNS resolvers and set routing towards IaaS services (`161.26.0.0/16`). |
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.13" caption-side="bottom"}
 
 

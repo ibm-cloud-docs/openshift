@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-08-03"
 
 keywords: openshift, benchmarks, 4.12, openshift benchmarks, openshift 4.12
 
@@ -164,7 +164,7 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 
 
 Review the Worker Node Security Configuration results of the version 1.5 CIS Kubernetes benchmark.
-{: shortdesc}
+
 
 ### 4.1 Worker node configuration files
 {: #cis-benchmark-41-412}

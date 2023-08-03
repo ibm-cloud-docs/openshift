@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-03"
 
 keywords: openshift, block storage, snapshot
 
@@ -24,9 +24,10 @@ subcollection: openshift
 {: shortdesc}
 
 
-    
-Deploy the snapshot validation webhook to validate user input. For more information, see [Deploying the snapshot validation webhook](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/tree/master/deploy/kubernetes/snapshot/validation-webhook){: external}.
-{: tip}
+
+
+Snapshots support is available for cluster version 4.9 and later and with the {{site.data.keyword.block_storage_is_short}} add-on version 5.0 and later.
+{: important}
 
 
 ## Creating an app deployment
@@ -334,6 +335,12 @@ By default, snapshot functionality is enabled when using the {{site.data.keyword
     kubectl apply -f snapshotconfigmap.yaml
     ```
     {: pre}
+
+## Next steps
+{: #snapshot-next-steps}
+
+Deploy the snapshot validation webhook to validate user input. For more information, see [Deploying the snapshot validation webhook](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/tree/master/deploy/kubernetes/snapshot/validation-webhook){: external}.
+
 
     
 ## Troubleshooting snapshots

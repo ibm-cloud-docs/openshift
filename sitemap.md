@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-08-03"
 
 keywords: openshift
 subcollection: openshift
@@ -270,7 +270,13 @@ subcollection: openshift
 
 * [August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug23)
 
+    * [3 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0323)
+
+        * CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version 4.13.
+
     * [1 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0123)
+
+        * Worker node fix packs `4.9.59_1598_openshift`, `4.10.64_1578_openshift`, `4.11.45_1565_openshift`, `4.12.26_1553_openshift`, and `4.13.6_1529_openshift`.
 
         * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.17_266` and `5.1.12_285`.
 
@@ -3060,8 +3066,6 @@ subcollection: openshift
 
 * [Making your resources highly available](/docs/openshift?topic=openshift-strategy#kube_ha)
 
-[Planning your cluster network setup](/docs/openshift?topic=openshift-plan_clusters#plan_clusters)
-
 [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
 
 * [Worker-to-worker communication using VPC subnets](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-worker)
@@ -3240,20 +3244,22 @@ subcollection: openshift
 
 * [Worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node)
 
+[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
+
+* [Create a cluster](/docs/openshift?topic=openshift-clusters#next_steps)
+
 
 ## Creating clusters
 {: #sitemap_creating_clusters1}
 
 
-[Preparing to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
+[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
-* [Preparing to create clusters at the account level](/docs/openshift?topic=openshift-clusters#cluster_prepare)
-
-* [Deciding on your cluster setup](/docs/openshift?topic=openshift-clusters#prepare_cluster_level)
-
-* [Next steps](/docs/openshift?topic=openshift-clusters#next_steps)
+* [Create a cluster](/docs/openshift?topic=openshift-clusters#next_steps)
 
 [Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
+
+* [Prerequisites](/docs/openshift?topic=openshift-cluster-create-classic#classic-cluster-prereqs)
 
 * [Creating a classic cluster in the console](/docs/openshift?topic=openshift-cluster-create-classic#clusters_ui)
 
@@ -3262,6 +3268,8 @@ subcollection: openshift
 * [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster_create_classic)
 
 * [Creating a single-zone classic cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-classic#cluster_classic_tf)
+
+* [Next steps for Classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic-next-steps)
 
 [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
@@ -3274,6 +3282,8 @@ subcollection: openshift
 * [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
 
 * [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_tf)
+
+* [Next steps for VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-next-steps)
 
 [Creating clusters on dedicated hosts for VPC](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
 
@@ -5258,7 +5268,7 @@ subcollection: openshift
 
     * [Upgrading PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-upgrade)
 
-[Cleaning up your Portworx volumes and cluster](/docs/openshift?topic=openshift-storage_portworx_removing#storage_portworx_removing)
+[Removing Portworx](/docs/openshift?topic=openshift-storage_portworx_removing#storage_portworx_removing)
 
 * [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-storage_portworx_removing#remove_pvc_apps_volumes)
 
@@ -5324,17 +5334,17 @@ subcollection: openshift
 
     * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
 
-[Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
+[Updating or replacing VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
 
 * [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-cluster-master-vpc)
 
-* [Determine which storage nodes you want to update](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
+* [Determine which storage nodes you want to update or replace](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
 
 * [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
 
-* [Upgrade the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
+* [Replace the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
 
 * [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-os-storage-vpc)
 
@@ -5525,6 +5535,8 @@ subcollection: openshift
 * [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
 
 * [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-turn-off-snapshots)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-volume-snapshot#snapshot-next-steps)
 
 * [Troubleshooting snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#ts-snapshot-vpc-block-addon-next)
 
@@ -6462,6 +6474,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
 
+    * [Change log for worker node fix pack 4.13.6_1529_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4136_1529_openshift_W)
+
     * [Change log for worker node fix pack 4.13.4_1526_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4134_1526_openshift_W)
 
     * [Change log for worker node fix pack 4.13.4_1525_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4134_1525_openshift_W)
@@ -6471,6 +6485,48 @@ subcollection: openshift
     * [Change log for worker node fix pack 4.13.3_1523_openshift, released 19 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4133_1523_openshift_W)
 
     * [Change log for master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift, released 14 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4.13.0_1522_openshiftM_4.13.1_1521_openshiftW)
+
+[{{site.data.keyword.openshiftlong_notm}} version 4.13 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-413)
+
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-1-413)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-11-413)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-12-413)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-13-413)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-14-413)
+
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-2-413)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-3-413)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-31-413)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-32-413)
+
+* [4 Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-4-413)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-41-413)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-42-413)
+
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-5-413)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-51-413)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-52-413)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-53-413)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-54-413)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-55-413)
+
+    * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-56-413)
+
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-413#ibm-remediations-and-explanations-413)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.13 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_413_co#benchmarks_413_co)
 
@@ -6526,6 +6582,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.26_1553_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41226_1553_openshift_W)
 
     * [Change log for worker node fix pack 4.12.24_1551_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41224_1551_openshift_W)
 
@@ -6665,6 +6723,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.45_1565_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41145_1565_openshift_W)
 
     * [Change log for worker node fix pack 4.11.44_1563_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41144_1563_openshift_W)
 
@@ -6834,6 +6894,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.64_1578_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41064_1578_openshift_W)
 
     * [Change log for worker node fix pack 4.10.63_1576_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41063_1576_openshift_W)
 
@@ -7035,6 +7097,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.59_1598_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1598_openshift_W)
 
     * [Change log for worker node fix pack 4.9.59_1596_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1596_openshift_W)
 
