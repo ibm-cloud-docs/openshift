@@ -55,12 +55,12 @@ toc:
           label: Planning your cluster environment
           topics:
           - kube-strategy.md
-          - cluster-plan-network.md
           - cluster-plan-network-vpc.md
           - cluster-plan-network-classic.md
           - storage-plan.md
           - cluster-plan-ha.md
           - worker-plan.md
+          - cluster-create.md
       - topicgroup: 
           label: Creating clusters
           topics:
@@ -326,6 +326,7 @@ toc:
               topics:
               - openshift_versions_413.md
               - openshift_versions_changelog_413.md
+              - benchmarks_413.md
               - benchmarks_413_co.md
           - topicgroup:
               label: Version 4.12

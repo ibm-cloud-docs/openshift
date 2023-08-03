@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-08-03"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -322,36 +322,36 @@ You can configure the internal image registry in your {{site.data.keyword.satell
         {: pre}
         
     1. Find the following section to edit. 
-        ```sh
+        ```yaml
         storage:
             emptyDir: {}
             managementState: Managed
         storageManaged: true
         ```
-        {: screen}
+        {: codeblock}
         
     1. Replace `emptyDir: {}` with your bucket information and location endpoints.
-        ```sh
-            s3:
-            bucket: <bucket_name>
-            region: <bucket_region>
-            regionEndpoint: <location_link_endpoint>
-            virtualHostedStyle: false
+        ```yaml
+        s3:
+          bucket: <bucket_name>
+          region: <bucket_region>
+          regionEndpoint: <location_link_endpoint>
+          virtualHostedStyle: false
         ```
-        {: screen}
+        {: codeblock}
         
         Example section after adding the bucket and location information.
-        ```sh
+        ```yaml
           storage:
             managementState: Managed
             s3:
-            bucket: my_bucket
-            region: us-east
-            regionEndpoint: https://i11aa11a1a1a11a11-1a11a1aaa1a1a1a1a-c000.us-east.satellite.appdomian.cloud:11111
-            virtualHostedStyle: false
+              bucket: my_bucket
+              region: us-east
+              regionEndpoint: https://i11aa11a1a1a11a11-1a11a1aaa1a1a1a1a-c000.us-east.satellite.appdomian.cloud:11111
+              virtualHostedStyle: false
           storageManaged: true
         ```
-        {: screen}
+        {: codeblock}
         
     1. Save and apply the changes.
 7. Verify that the image registry was configured by checking for a pod that begins with `image-registry-` in the `openshift-image-registry` namespace. 

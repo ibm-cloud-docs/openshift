@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-08-03"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
 
@@ -20,7 +20,7 @@ completion-time: 60m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Updating VPC worker nodes that use OpenShift Data Foundation
+# Updating or replacing VPC worker nodes that use OpenShift Data Foundation
 {: #openshift-storage-update-vpc}
 {: toc-content-type="tutorial"}
 {: toc-services="openshift, vpc"}
@@ -32,10 +32,16 @@ completion-time: 60m
 For VPC clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
-The following tutorial covers both major and minor updates. Each step is flagged with [Major]{: tag-red} or [Minor]{: tag-blue}. 
+The following tutorial covers both major and minor updates and worker replacement.
 
-* [Major]{: tag-red} Applies to major updates, for example if you are updating your worker nodes to a new major version, such as from `4.11` to `4.12` as well as OpenShift Data Foundation from `4.11` to `4.12`
-* [Minor]{: tag-blue} Applies to minor patch updates, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift` while keeping OpenShift Data Foundation at version `4.12`.
+[Major update]{: tag-red}
+:   Complete the steps with this label to apply a major update; for example, if you are updating your worker nodes to a new major version, such as from `4.11` to `4.12` as well as OpenShift Data Foundation from `4.11` to `4.12`.
+
+[Minor update]{: tag-blue}
+:   Complete the steps with this label to apply a patch update, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift` while keeping OpenShift Data Foundation at version `4.12`. You must repeat these steps for each node you want to update.
+
+[Worker replace]{: tag-green} 
+:   Complete the steps with this label steps if you are replacing a worker node at the same patch version. You must repeat these steps for each node you want to replace.
 
 Skipping versions during an upgrade, such as from 4.8 to 4.12 is not supported.
 {: important}
@@ -67,11 +73,11 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     
 1. Wait until the master update finishes. 
 
-## Determine which storage nodes you want to update
+## Determine which storage nodes you want to update or replace
 {: #determine-storage-nodes-vpc}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
 1. List your worker nodes by using `oc get nodes` and determine which storage nodes you want to update.
 
@@ -94,7 +100,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #scale-down-odf-vpc}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
 1.  For each worker node that you found in the previous step, find the `rook-ceph-mon` and `rook-ceph-osd` deployments.
     ```sh
@@ -118,7 +124,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #cordon-drain-worker-node-vpc}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
 1.  Cordon the node. Cordoning the node prevents any pods from being scheduled on this node.
     ```sh
@@ -157,11 +163,11 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     
 1. Wait until draining finishes, then complete the following steps to replace the worker node. 
 
-## Upgrade the worker node
+## Replace the worker node
 {: #upgrade-worker-node-vpc}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
 
 1. List your worker nodes by using the `ibmcloud oc worker ls` command and find the worker node that you cordoned and drained in the previous step.
@@ -180,9 +186,17 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     {: pre}
 
 
-1.  Replace the worker node.
+1.  Replace the worker node. 
+
+    [Minor update]{: tag-blue} Example command to replace the worker node and apply the latest patch update.
     ```sh
     ibmcloud oc worker replace -c CLUSTER --worker kube-*** --update
+    ```
+    {: pre}
+
+    [Worker replace]{: tag-green} Example command to replace the worker node without applying the latest patch update.
+    ```sh
+    ibmcloud oc worker replace -c CLUSTER --worker kube-***
     ```
     {: pre}
         
@@ -214,7 +228,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #cleanup-os-storage-vpc}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
 1. Navigate to the `openshift-storage` project.
     ```sh
@@ -254,7 +268,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #add-storage-node-vpc}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
 1. If you limited your ODF deployment to a subset of worker nodes by specifying node names during installation, you must update the `ocscluster` CRD to include the new name. 
     If you did not limit your configuration to only certain worker nodes, you do not need to update the `ocscluster` CRD.

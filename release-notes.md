@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-08-03"
 
 keywords: openshift
 
@@ -26,8 +26,19 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
+
 ## August 2023
 {: #openshift-aug23}
+
+### 3 August 2023
+{: #openshift-aug0323}
+{: release-note}
+
+
+CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version [4.13]
+:   CIS benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} version [4.13](/docs/openshift?topic=openshift-benchmarks_413).
+
 
 ### 1 August 2023
 {: #openshift-aug0123}

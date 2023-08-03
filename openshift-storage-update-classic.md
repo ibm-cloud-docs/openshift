@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-08-03"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
 
@@ -32,10 +32,13 @@ completion-time: 60m
 For Classic clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
-The following tutorial covers both major and minor worker node updates. Each step is flagged with [Major]{: tag-red} or [Minor]{: tag-blue}. 
+The following tutorial covers both major and minor worker node updates.
 
-* [Major]{: tag-red} Applies to major updates, for example if you are updating your worker nodes to a new major version, such as from `4.11` to `4.12` as well as OpenShift Data Foundation from `4.11` to `4.12`
-* [Minor]{: tag-blue} Applies to minor patch updates, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift` while keeping OpenShift Data Foundation at version `4.12`.
+[Major update]{: tag-red}
+:   Complete the steps with this label to apply a major update, for example if you are updating your worker nodes to a new major version, such as from `4.11` to `4.12` as well as OpenShift Data Foundation from `4.11` to `4.12`.
+
+[Minor update]{: tag-blue}
+:   Complete the steps with this label to apply a patch update, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift` while keeping OpenShift Data Foundation at version `4.12`.
 
 Skipping versions during an upgrade, such as from 4.8 to 4.12 is not supported.
 {: important}
@@ -50,7 +53,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #update-cluster-master-classic}
 {: step}
  
-[Major]{: tag-red}
+[Major update]{: tag-red}
 
 
 1. If you are updating your worker nodes to a new major version, such as from `4.11` to `4.12`, update the cluster master first. 
@@ -71,7 +74,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #determine-worker-nodes-classic}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue}
 
 1. List your worker nodes by using the `oc get nodes` command and determining which worker nodes you want to update.
 
@@ -94,7 +97,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #scale-down-odf-classic}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue}
 
 1.  For each worker node that you found in the previous step, find the `rook-ceph-mon` and `rook-ceph-osd` deployments.
     ```sh
@@ -114,7 +117,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #cordon-drain-worker-node-classic}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue}
 
 1.  Cordon the node. Cordoning the node prevents any pods from being scheduled on this node.
     ```sh
@@ -157,7 +160,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #update-worker-node-classic}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue}
 
 
 1. List your worker nodes by using `ibmcloud oc worker ls` and find the worker node that you cordoned and drained in the previous step.
@@ -231,7 +234,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #cleanup-os-storage-classic}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue}
 
 1. Navigate to the `openshift-storage` project.
     ```sh
@@ -284,7 +287,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #add-storage-node-classic}
 {: step}
 
-[Major]{: tag-red} [Minor]{: tag-blue}
+[Major update]{: tag-red} [Minor update]{: tag-blue}
 
 1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify that he OSD persistent volumes are created and that all pods are in a `Running` state.
     ```sh
@@ -346,7 +349,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #update-ocs-add-on-classic}
 {: step}
 
-[Major]{: tag-red}
+[Major update]{: tag-red}
 
 
 1. Check the existing version.
@@ -371,7 +374,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #update-ocs-resource-yaml-classic}
 {: step}
 
-[Major]{: tag-red}
+[Major update]{: tag-red}
 
 1. Get the name of your `ocscluster` resource.
     ```sh
