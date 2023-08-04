@@ -276,15 +276,17 @@ subcollection: openshift
 
     * [1 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0123)
 
-        * Worker node fix packs `4.9.59_1598_openshift`, `4.10.64_1578_openshift`, `4.11.45_1565_openshift`, `4.12.26_1553_openshift`, and `4.13.6_1529_openshift`.
+        * Worker node fix packs are available.
 
         * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.17_266` and `5.1.12_285`.
 
 * [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
 
-    * [31 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july3123)
+    * [28 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2823)
 
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.17`
+        * Master fix packs are available.
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.17`.
 
     * [27 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2723)
 
@@ -5198,6 +5200,8 @@ subcollection: openshift
 
 * [What's next?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
 
+* [Exploring other Portworx features](/docs/openshift?topic=openshift-storage_portworx_about#features)
+
 [Planning your Portworx setup](/docs/openshift?topic=openshift-storage_portworx_plan#storage_portworx_plan)
 
 * [Limitations](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations)
@@ -5241,10 +5245,6 @@ subcollection: openshift
 [Updating Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_update#storage_portworx_update)
 
 * [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up)
-
-* [Migrating Red Hat Enterprise Linux versions](/docs/openshift?topic=openshift-storage_portworx_update#px-rhel-migrate)
-
-* [Exploring other Portworx features](/docs/openshift?topic=openshift-storage_portworx_update#features)
 
 [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery#storage_portworx_recovery)
 
@@ -6488,47 +6488,47 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift, released 14 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4.13.0_1522_openshiftM_4.13.1_1521_openshiftW)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.13 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-413)
+[{{site.data.keyword.openshiftlong_notm}} version 4.13 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-benchmarks_413#benchmarks_413)
 
-* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-1-413)
+* [1 Master node security configuration](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-1-413)
 
-    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-11-413)
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-11-413)
 
-    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-12-413)
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-12-413)
 
-    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-13-413)
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-13-413)
 
-    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-14-413)
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-14-413)
 
-* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-2-413)
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-benchmarks_413#cis-section-2-413)
 
-* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-3-413)
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_413#cis-section-3-413)
 
-    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-31-413)
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-31-413)
 
-    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-32-413)
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-32-413)
 
-* [4 Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-4-413)
+* [4 Worker node security configuration](/docs/openshift?topic=openshift-benchmarks_413#cis-section-4-413)
 
-    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-41-413)
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-41-413)
 
-    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-42-413)
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-42-413)
 
-* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-5-413)
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-benchmarks_413#cis-section-5-413)
 
-    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-51-413)
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-51-413)
 
-    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-52-413)
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-52-413)
 
-    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-53-413)
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-53-413)
 
-    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-54-413)
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-54-413)
 
-    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-55-413)
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-55-413)
 
-    * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-56-413)
+    * [5.6 General policies](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-56-413)
 
-    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-413#ibm-remediations-and-explanations-413)
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-benchmarks_413#ibm-remediations-and-explanations-413)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.13 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_413_co#benchmarks_413_co)
 

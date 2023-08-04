@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-08-04"
 
 keywords: openshift
 
@@ -24,6 +24,8 @@ subcollection: openshift
 {: shortdesc}
 
 You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
+
+
 
 ## Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}
 {: #vpc_block_qs}

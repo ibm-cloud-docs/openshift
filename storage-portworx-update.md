@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-04"
 
 keywords: portworx, openshift
 
@@ -60,35 +60,9 @@ Update only one worker node at a time. When the worker node update is complete, 
 
 7. [Mount the volume to your app](/docs/openshift?topic=openshift-storage_portworx_deploy#mount_pvc).
 
-## Migrating Red Hat Enterprise Linux versions 
-{: #px-rhel-migrate}
-
-When you migrate from RHEL 7 to RHEL 8, follow the steps to update your [worker nodes](/docs/openshift?topic=openshift-rhel_migrate). 
-
-[If you are re-attaching drives, you must attach raw {{site.data.keyword.block_storage_is_short}} to your worker nodes.](/docs/openshift?topic=openshift-utilities#vpc_api_attach).
 
 
-If you are using cloud drives, you do not need to reattach storage to your worker nodes. 
-{: important}
 
-## Exploring other Portworx features
-{: #features}
-
-
-Using existing Portworx volumes
-:   If you have an existing Portworx volume that you created manually or that was not automatically deleted when you deleted the PVC, you can statically provision the corresponding PV and PVC and use this volume with your app. For more information, see [Using existing volumes](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-pvcs/using-preprovisioned-volumes/#using-the-portworx-volume){: external}.
-
-Running stateful sets on Portworx
-:   If you have a stateful app that you want to deploy as a stateful set into your cluster, you can set up your stateful set to use storage from your Portworx cluster. For more information, see [Create a MySQL StatefulSet](https://docs.portworx.com/portworx-install-with-kubernetes/application-install-with-kubernetes/cassandra/#create-a-mysql-statefulset){: external}.
-
-Running your pods hyperconverged
-:   You can configure your Portworx cluster to schedule pods on the same worker node where the pod's volume resides. This setup is also referred to as `hyperconverged` and can improve the data storage performance. For more information, see [Run pods on same host as a volume](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/hyperconvergence/){: external}.
-
-Creating snapshots of your Portworx volumes
-:   You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the Cloud. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-install-with-kubernetes/storage-operations/create-snapshots/){: external}.
-
-Monitoring and managing your Portworx cluster with Lighthouse
-:   You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/install-with-other/operate-and-maintain/monitoring/){: external}.
 
 
 
