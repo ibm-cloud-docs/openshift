@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-04"
 
 keywords: openshift
 subcollection: openshift
@@ -6476,6 +6476,8 @@ subcollection: openshift
 
     * [Change log for worker node fix pack 4.13.6_1529_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4136_1529_openshift_W)
 
+    * [Change log for master fix pack 4.13.5_1528_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4135_1528_openshift_M)
+
     * [Change log for worker node fix pack 4.13.4_1526_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4134_1526_openshift_W)
 
     * [Change log for worker node fix pack 4.13.4_1525_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4134_1525_openshift_W)
@@ -6584,6 +6586,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
 
     * [Change log for worker node fix pack 4.12.26_1553_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41226_1553_openshift_W)
+
+    * [Change log for master fix pack 4.12.24_1552_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41224_1552_openshift_M)
 
     * [Change log for worker node fix pack 4.12.24_1551_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41224_1551_openshift_W)
 
@@ -6725,6 +6729,8 @@ subcollection: openshift
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
 
     * [Change log for worker node fix pack 4.11.45_1565_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41145_1565_openshift_W)
+
+    * [Change log for master fix pack 4.11.44_1564_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41144_1564_openshift_M)
 
     * [Change log for worker node fix pack 4.11.44_1563_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41144_1563_openshift_W)
 
@@ -6896,6 +6902,8 @@ subcollection: openshift
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
 
     * [Change log for worker node fix pack 4.10.64_1578_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41064_1578_openshift_W)
+
+    * [Change log for master fix pack 4.10.63_1577_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41063_1577_openshift_M)
 
     * [Change log for worker node fix pack 4.10.63_1576_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41063_1576_openshift_W)
 
@@ -7099,6 +7107,8 @@ subcollection: openshift
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
 
     * [Change log for worker node fix pack 4.9.59_1598_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1598_openshift_W)
+
+    * [Change log for master fix pack 4.9.59_1597_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1597_openshift_M)
 
     * [Change log for worker node fix pack 4.9.59_1596_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1596_openshift_W)
 
