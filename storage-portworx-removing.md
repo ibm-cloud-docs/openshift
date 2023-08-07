@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-07"
 
 keywords: portworx, openshift
 
@@ -161,7 +161,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 ## Removing Portworx from your cluster
 {: #remove_portworx}
 
-1. Follow the Portwork documentation to [uninstall Portworx](https://docs.portworx.com/operations/operate-kubernetes/uninstall/uninstall-operator/){: external}. 
+1. Follow the Portworx documentation to [uninstall Portworx](https://docs.portworx.com/operations/operate-kubernetes/uninstall/uninstall-operator/){: external}. 
 
 1. Remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
     1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
