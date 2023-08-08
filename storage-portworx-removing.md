@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-07"
+lastupdated: "2023-08-08"
 
 keywords: portworx, openshift
 
@@ -161,15 +161,45 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 ## Removing Portworx from your cluster
 {: #remove_portworx}
 
-1. Follow the Portworx documentation to [uninstall Portworx](https://docs.portworx.com/operations/operate-kubernetes/uninstall/uninstall-operator/){: external}. 
+
+To stop billing for Portworx, you must remove the Portworx installation from your cluster and remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
+{: important}
+
+The following steps remove Portworx from your cluster, including all storage volumes and the data on those volumes.
+{: important}
+
+1. Follow the Portworx documentation to [uninstall Portworx](https://docs.portworx.com/operations/operate-kubernetes/uninstall/uninstall-operator/){: external}.
+
+1. Clean up for your Portworx volume attachments, PVCs, and PVs.
+    1. List your volume attachments.
+        ```sh
+        kubectl get volumeattachments
+        ```
+        {: pre}
+
+    1. Delete the Portworx volume attachments.
+        ```sh
+        kubectl delete volumeattachments ATTACHMENT-NAME
+        ```
+        {: pre}
+
+    1. Delete the PVC that starts with name `px-do-not-delete`.
+        ```sh
+        kubectl delete pvc px-do-not-delete-*** -n PORTWOX-NAMESPACE
+        ```
+        {: pre}
+
+
+    1. Delete the PVs that were created for Portworx and are in the `Released` state.
+        ```sh
+        kubectl delete pv PV-NAME
+        ```
+        {: pre}
 
 1. Remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
     1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
     2. From the actions menu, click **Delete**.
     3. Confirm the deletion of the service instance by clicking **Delete**.
-
-To stop billing for Portworx, you must remove the Portworx installation from your cluster and remove the Portworx service instance from your {{site.data.keyword.cloud_notm}} account.
-{: important}
 
 
 

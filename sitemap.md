@@ -6492,47 +6492,47 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift, released 14 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4.13.0_1522_openshiftM_4.13.1_1521_openshiftW)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.13 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-benchmarks_413#benchmarks_413)
+[{{site.data.keyword.openshiftlong_notm}} version 4.13 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-413)
 
-* [1 Master node security configuration](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-1-413)
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-1-413)
 
-    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-11-413)
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-11-413)
 
-    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-12-413)
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-12-413)
 
-    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-13-413)
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-13-413)
 
-    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-14-413)
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-14-413)
 
-* [2 Etcd node configuration](/docs/openshift?topic=openshift-benchmarks_413#cis-section-2-413)
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-2-413)
 
-* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_413#cis-section-3-413)
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-3-413)
 
-    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-31-413)
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-31-413)
 
-    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-32-413)
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-32-413)
 
-* [4 Worker node security configuration](/docs/openshift?topic=openshift-benchmarks_413#cis-section-4-413)
+* [4 Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-4-413)
 
-    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-41-413)
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-41-413)
 
-    * [4.2 Kubelet](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-42-413)
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-42-413)
 
-* [5 Kubernetes policies](/docs/openshift?topic=openshift-benchmarks_413#cis-section-5-413)
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-section-5-413)
 
-    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-51-413)
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-51-413)
 
-    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-52-413)
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-52-413)
 
-    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-53-413)
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-53-413)
 
-    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-54-413)
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-54-413)
 
-    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-55-413)
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-55-413)
 
-    * [5.6 General policies](/docs/openshift?topic=openshift-benchmarks_413#cis-benchmark-56-413)
+    * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-56-413)
 
-    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-benchmarks_413#ibm-remediations-and-explanations-413)
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-413#ibm-remediations-and-explanations-413)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.13 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_413_co#benchmarks_413_co)
 
@@ -9617,6 +9617,8 @@ subcollection: openshift
     * [Cleaning up after debugging](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-debug-cleanup)
 
 [Pods in the `openshift-markeplace` namespace are in `ImagePullBackOff`](/docs/openshift?topic=openshift-ts-openshift-marketplace#ts-openshift-marketplace)
+
+[Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds#ts-cloud-pak-ds)
 
 
 ### Cluster autoscaler

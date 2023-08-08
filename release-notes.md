@@ -44,7 +44,7 @@ Cluster autoscaler add-on versions `1.0.9_81`,`1.0.8_82`, and `1.0.7_83`.
 
 
 CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version 4.13.
-:   CIS benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} version [4.13](/docs/openshift?topic=openshift-benchmarks_413).
+:   CIS benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} version [4.13](/docs/openshift?topic=openshift-cis-benchmark-413).
 
 
 ### 1 August 2023
