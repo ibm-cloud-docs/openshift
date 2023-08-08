@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-08-08"
 
-keywords: openshift
+keywords: openshift, add-on, file
 
 subcollection: openshift
 
@@ -23,11 +23,7 @@ subcollection: openshift
 {{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/cloud-storage/file/order){: external}.
 {: shortdesc}
 
-{{site.data.keyword.filestorage_vpc_short}} is available for allowlisted accounts in Frankfurt, London, Madrid, Dallas, Toronto, Washington, Sao Paulo, Sydney, Osaka, and Tokyo regions. Contact your IBM Sales representative if you are interested in getting access.
-{: preview}
 
-{{site.data.keyword.filestorage_vpc_short}} is available in Beta. Do not use this add-on for production workloads.
-{: beta} 
 
 
 ## Prerequisites
