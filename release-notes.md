@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-07"
+lastupdated: "2023-08-08"
 
 keywords: openshift
 
@@ -30,6 +30,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-aug23}
 
 
+
 ### 7 August 2023
 {: #openshift-aug0723}
 {: release-note}
@@ -43,7 +44,7 @@ Cluster autoscaler add-on versions `1.0.9_81`,`1.0.8_82`, and `1.0.7_83`.
 
 
 CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version 4.13.
-:   CIS benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} version [4.13](/docs/openshift?topic=openshift-benchmarks_413).
+:   CIS benchmark results are available for {{site.data.keyword.redhat_openshift_notm}} version [4.13](/docs/openshift?topic=openshift-cis-benchmark-413).
 
 
 ### 1 August 2023

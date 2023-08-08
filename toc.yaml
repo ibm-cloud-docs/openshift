@@ -476,6 +476,7 @@ toc:
               - ts-worker-pod-timeout.md
               - ts-worker-ssh-fail.md
               - ts-openshift-marketplace.md
+              - ts-cloud-pak-ds.md
           - topicgroup:
               label: Cluster autoscaler
               topics:

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-08-08"
 
 keywords: openshift, benchmarks, 4.13, openshift benchmarks, openshift 4.13
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 # {{site.data.keyword.openshiftlong_notm}} version 4.13 CIS Kubernetes Benchmark
-{: #benchmarks_413}
+{: #cis-benchmark-413}
 
 The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/){: external} as a framework of specific steps to configure Kubernetes more securely and with standards that are commensurate to various industry regulations. This document contains the results of the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftlong_notm}} version 4.13. For more information or help understanding the benchmark, see [Using the benchmark](/docs/openshift?topic=openshift-cis-benchmark).
 {: shortdesc}
@@ -173,8 +173,8 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 | --- | --- | --- | --- | --- | --- |
 | 4.1.1 | Ensure that the kubelet service file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
 | 4.1.2 | Ensure that the kubelet service file ownership is set to root:root | Scored | 1 | Pass | IBM |
-| 4.1.3 | Ensure that the proxy kubeconfig file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
-| 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to root:root | Scored | 1 | Pass | IBM |
+| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to root:root | Scored | 1 | Pass | IBM |
 | 4.1.5 | Ensure that the kubelet.conf file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
 | 4.1.6 | Ensure that the kubelet.conf file ownership is set to root:root | Scored | 1 | Pass | IBM |
 | 4.1.7 | Ensure that the certificate authorities file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
@@ -271,7 +271,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.6.1 | Create administrative boundaries between resources using namespaces | Not Scored | 1 | Pass | Shared |
-| 5.6.2 | Ensure that the seccomp profile is set to docker/default in your pod definitions | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-413) | Shared |
+| 5.6.2 | Ensure that the `seccomp` profile is set to docker/default in your pod definitions | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-413) | Shared |
 | 5.6.3 | Apply Security Context to Your Pods and Containers | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-413) | Shared |
 | 5.6.4 | The default namespace should not be used | Scored | 2 | Pass | Shared |
 {: caption="Section 5.6 General policies benchmark results" caption-side="bottom"}
@@ -294,7 +294,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 1.2.34 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 3.2.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 3.2.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
-| 4.2.6 | {{site.data.keyword.openshiftlong_notm}} does not protect kernel defaults in order to allow customers to tune kernel parameters. |
+| 4.2.6 | {{site.data.keyword.openshiftlong_notm}} does not protect kernel defaults to allow customers to tune kernel parameters. |
 | 4.2.8 | {{site.data.keyword.openshiftlong_notm}} ensures that the hostname matches the name issued by the infrastructure. |
 | 5.1.2 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could have their Kubernetes secret access further restricted. |
 | 5.1.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could have their Kubernetes resource access further restricted. |
@@ -313,6 +313,6 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
 | 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
-| 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp){: external}. |
-| 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
+| 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp){: external}. |
+| 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 {: caption="Explanations and remediations" caption-side="bottom"}
