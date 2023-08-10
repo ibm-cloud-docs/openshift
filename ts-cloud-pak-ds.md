@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-08"
+lastupdated: "2023-08-10"
 
 keywords: openshift, debug, cloud pak, daemson set, feature gates, failed to set
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: support}
 
 
-When you try to upgrade a worker node in a cluster with a Cloud Pak installation, you see an error message similar to the following example.
+When you try to upgrade a worker node in a cluster with a Cloud Pak installation, the worker node is in `Critical` and you see an error message in the worker node kubelet similar to the following example.
 {: tsSymptoms}
 
 ```sh
