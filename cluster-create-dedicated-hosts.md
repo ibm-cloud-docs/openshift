@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-28"
+lastupdated: "2023-08-10"
 
 keywords: openshift, clusters, dedicated hosts
 
@@ -39,9 +39,9 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
     OK
     For more information about these flavors, see 'https://ibm.biz/flavors' 
     Name                   Cores   Memory   Network Speed  OS             Server Type   Storage   Secondary Storage   Flavor Class   Provider   
-    bx2d.16x64             16      64GB     16Gbps         UBUNTU_18_64   virtual       100GB     600GB               bx2d           vpc-gen2   
-    bx2d.32x128.600gb      32      128GB    16Gbps         UBUNTU_18_64   virtual       100GB     600GB               bx2d           vpc-gen2   
-    bx2d.48x192.900gb      48      192GB    16Gbps         UBUNTU_18_64   virtual       100GB     900GB               bx2d           vpc-gen2
+    bx2d.16x64             16      64GB     16Gbps         UBUNTU_20_64   virtual       100GB     600GB               bx2d           vpc-gen2   
+    bx2d.32x128.600gb      32      128GB    16Gbps         UBUNTU_20_64   virtual       100GB     600GB               bx2d           vpc-gen2   
+    bx2d.48x192.900gb      48      192GB    16Gbps         UBUNTU_20_64   virtual       100GB     900GB               bx2d           vpc-gen2
     ...    
     ```
     {: screen}

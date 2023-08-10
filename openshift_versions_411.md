@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-08-10"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -83,7 +83,8 @@ The following table shows the actions that you must take before you [update the 
 | **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.11 deprecated and removed features](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-deprecated-removed-features){: external}. |
 | Known Red Hat OpenShift issues | For more information about possible required actions, review [Red Hat OpenShift version 4.11 known issues](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-known-issues){: external}. |
 | `LegacyServiceAccountTokenNoAutoGeneration` feature gate is enabled | For more information, review possible required actions in the `LegacyServiceAccountTokenNoAutoGeneration is on by default` section of the[{{site.data.keyword.redhat_openshift_notm}} version 4.11 notable technical changes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-notable-technical-changes). |
-| Red Hat OpenShift web console redirect changed | Cluster server URL no longer redirects to the Red Hat OpenShift web console. You must add `/console` to the URL for the redirect. | 
+| Red Hat OpenShift web console redirect changed | Cluster server URL no longer redirects to the Red Hat OpenShift web console. You must add `/console` to the URL for the redirect. |
+| The kubelet modifications that some Cloud Paks make are causing worker nodes to enter `Critical` when upgrading. | For more information, see [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds). |
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.11" caption-side="bottom"}
 
 

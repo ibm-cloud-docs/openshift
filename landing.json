@@ -5,7 +5,7 @@
     "section_devtools": {
       "api": "/apidocs/kubernetes", 
       "cli": "/docs/openshift?topic=openshift-kubernetes-service-cli", 
-      "terraform": "/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tutorial-tf-clusters"
+      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs"
     },
     "section_recommended": [
       {
