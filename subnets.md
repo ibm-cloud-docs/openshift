@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-08-14"
 
 keywords: openshift
 
@@ -23,8 +23,7 @@ subcollection: openshift
 Change the pool of available portable public or private IP addresses by adding subnets to your {{site.data.keyword.openshiftlong}} cluster.
 {: shortdesc}
 
-The content on this page is specific to classic clusters. For information about VPC clusters, see [Configuring subnets and IP addresses for VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
-{: note}
+
 
 
 ## Overview of classic networking in {{site.data.keyword.openshiftlong_notm}}

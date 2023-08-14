@@ -77,7 +77,7 @@ Can I increase the minimum size per zone to trigger a scale up my cluster to tha
 
 
 How is this behavior different from worker pools that are not managed by the cluster autoscaler?
-:   When you [create a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#add_pool), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool. When you enable the cluster autoscaler for a worker pool, worker nodes are scaled up or down in response to your pod spec settings and resource requests. You don't need to resize or rebalance the worker pool manually.
+:   When you [create a worker pool](/docs/openshift?topic=openshift-add-workers-vpc), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool. When you enable the cluster autoscaler for a worker pool, worker nodes are scaled up or down in response to your pod spec settings and resource requests. You don't need to resize or rebalance the worker pool manually.
 
 
 ## Following scalable deployment practices
@@ -188,7 +188,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
     {: pre}
 
 1. Plan to autoscale a worker pool other than the `default` worker pool, because the `default` worker pool has system components that can prevent automatically scaling down. Include a label for the worker pool so that you can set [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-affinity){: external} for the workloads that you want to deploy to the worker pool that has autoscaling enabled. For example, your label might be `app: nginx`. Choose from the following options:
-    * Create a [VPC](/docs/openshift?topic=openshift-add-workers-vpc#vpc_pools) or [classic](/docs/openshift?topic=openshift-add-workers-classic#classic_pools) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool.
+    * Create a [VPC](/docs/openshift?topic=openshift-add-workers-vpc) or [classic](/docs/openshift?topic=openshift-add-workers-classic) worker pool other than the `default` worker pool with the label that you want to use with the workloads to run on the autoscaled worker pool.
     * [Add the label to an existing worker pool](/docs/openshift?topic=openshift-worker-tag-label) other than the `default` worker pool.
 1. Confirm that your worker pool has the necessary labels for autoscaling. In the output, you see the required `ibm-cloud.kubernetes.io/worker-pool-id` label and the label that you previously created for node affinity. If you don't see these labels, add a worker pool, then [add your label for node affinity](/docs/openshift?topic=openshift-worker-tag-label).
 
