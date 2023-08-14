@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-11"
+lastupdated: "2023-08-14"
 
 keywords: openshift
 subcollection: openshift
@@ -3389,61 +3389,30 @@ subcollection: openshift
 [Accessing private clusters by using the WireGuard VPN](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
 
 
+## Adding worker nodes
+{: #sitemap_adding_worker_nodes}
+
+
+[Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic#add-workers-classic)
+
+* [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool)
+
+* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-classic#resize-pool)
+
+* [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
+
+[Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc#add-workers-vpc)
+
+* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#resize-pool)
+
+* [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool)
+
+* [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone)
+
+
 ## Managing the cluster and worker node lifecycle
 {: #sitemap_managing_the_cluster_and_worker_node_lifecycle}
 
-
-[Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers#add_workers)
-
-* [Adding worker nodes by resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool)
-
-* [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools)
-
-    * [Creating a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool)
-
-    * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone)
-
-* [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools)
-
-    * [Creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool)
-
-    * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add_workers#add_zone)
-
-* [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-add_workers#satcluster-worker-pools)
-
-    * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/openshift?topic=openshift-add_workers#sat-pool-create-labels)
-
-    * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-add_workers#sat-pool-maintenance)
-
-* [Deprecated: Adding stand-alone worker nodes](/docs/openshift?topic=openshift-add_workers#standalone)
-
-* [Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx)
-
-    * [Installing with a script](/docs/openshift?topic=openshift-add_workers#intel-sgx-script)
-
-* [Adding tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags)
-
-    * [Adding tags to clusters with the console](/docs/openshift?topic=openshift-add_workers#add-tags-console)
-
-    * [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-add_workers#add-tags-cli)
-
-* [Adding labels to existing worker pools](/docs/openshift?topic=openshift-add_workers#worker_pool_labels)
-
-[Creating and managing dedicated hosts on VPC Gen 2 infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
-
-* [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli)
-
-* [Removing worker nodes from a dedicated host in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-worker-nodes-cli)
-
-* [Removing dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-hosts-cli)
-
-* [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
-
-[Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
-
-* [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate_versions)
-
-* [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
 
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update#update)
 
@@ -3476,6 +3445,22 @@ subcollection: openshift
     * [Managing automatic updates for Ingress ALBs](/docs/openshift?topic=openshift-update#alb)
 
 * [Updating managed add-ons](/docs/openshift?topic=openshift-update#addons)
+
+[Creating and managing dedicated hosts on VPC Gen 2 infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
+
+* [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli)
+
+* [Removing worker nodes from a dedicated host in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-worker-nodes-cli)
+
+* [Removing dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-hosts-cli)
+
+* [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
+
+[Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
+
+* [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate_versions)
+
+* [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
 
 [Removing clusters](/docs/openshift?topic=openshift-remove#remove)
 
@@ -5449,17 +5434,15 @@ subcollection: openshift
 
 [Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
-[Managing your OpenShift Data Foundation deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
-
-* [Removing the OpenShift Data Foundation add-on from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm)
+[Removing OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
 * [Removing ODF from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
 
 * [Removing your ODF custom resource](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd)
 
-* [Cleaning up your ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources)
+* [Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-cleanup)
 
-    * [Cleaning up ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-cleanup)
+* [Uninstalling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-rm)
 
     * [Uninstalling the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-console)
 
@@ -5759,6 +5742,10 @@ subcollection: openshift
     * [Referencing the secret in environment variables](/docs/openshift?topic=openshift-service-binding#reference_secret)
 
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
+
+[Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-install-sgx#install-sgx)
+
+* [Installing with a script](/docs/openshift?topic=openshift-install-sgx#intel-sgx-script)
 
 
 ## Understanding high availability and disaster recovery

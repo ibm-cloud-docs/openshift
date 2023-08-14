@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-08-10"
+lastupdated: "2023-08-14"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -104,7 +104,7 @@ The following table shows the actions that you must take before you [update the 
 RHEL 8 is the default operating system supported for clusters that run version 4.11. RHEL 7, which is currently the default operating system for cluster versions 4.10 and earlier, is not supported in version 4.11. If you upgrade a cluster master from version 4.10 to 4.11, you must migrate your worker nodes from RHEL 7 to RHEL 8. You cannot upgrade RHEL 7 worker nodes directly to RHEL 8. Instead, after you have upgraded to 4.11, you must provision a new RHEL 8 worker pool in your 4.11 cluster and then remove the RHEL 7 worker pool. 
 {: shortdesc}
 
-For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools) or [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools).
+For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add-workers-classic#classic_pools) or [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc#vpc_pools).
 
 1. [Upgrade your cluster master](/docs/openshift?topic=openshift-update#update) from version 4.10 to 4.11.
 
@@ -132,8 +132,8 @@ For more information about creating worker pools and adding worker nodes, see [A
     {: pre}
 
 4. Add a zone to your worker pool. When you add a zone, the number of worker nodes you specified with the `--size-per-zone` option are added to the zone. These worker nodes run the RHEL 8 operating system. 
-    * [Adding a zone to a worker pool in a classic cluster](/docs/containers?topic=containers-add_workers#add_zone)
-    * [Adding a zone to a worker pool in a VPC cluster](/docs/containers?topic=containers-add_workers#vpc_add_zone)
+    * [Adding a zone to a worker pool in a classic cluster](/docs/containers?topic=containers-add-workers-classic#add_zone)
+    * [Adding a zone to a worker pool in a VPC cluster](/docs/containers?topic=containers-add-workers-vpc#vpc_add_zone)
 
 5. Verify that worker nodes are available in your new worker pool. In the output, check the number in the **Workers** column for the worker pool.
     ```sh

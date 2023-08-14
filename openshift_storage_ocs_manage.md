@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-08-14"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -15,24 +15,17 @@ subcollection: openshift
 
 
 
-# Managing your OpenShift Data Foundation deployment
+# Removing OpenShift Data Foundation
 {: #ocs-manage-deployment}
 
 
 Review the following topics to manage your OpenShift Data Foundation deployment.
 {: shortdesc}
 
-## Removing the OpenShift Data Foundation add-on from your cluster
-{: #ocs-addon-rm}
-
-You can remove ODF add-on from your cluster by using the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} or the CLI.
-{: shortdesc}
-
-When you disable the OpenShift Data Foundation add-on, only the ODF operator is removed from your cluster. Your existing workloads remain, but you can't create more ODF workloads. You also can't delete your `OcsCluster` custom resource after the operator is removed. If you want to remove all your ODF resources and data, see [Removing ODF from your cluster](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-crd). If you removed the add-on and can't delete your `OcsCluster`, reinstall the add-on, then delete the `OcsCluster`.
-{: note}
 
 ## Removing ODF from your apps
 {: #ocs-remove-apps-storage}
+{: step}
 
 To remove ODF from your apps, you can delete your app or deployment and the corresponding PVCs.
 {: shortdesc}
@@ -91,6 +84,7 @@ If you want to fully remove ODF and all your data, you can [remove your storage 
 
 ## Removing your ODF custom resource
 {: #ocs-rm-crd}
+{: step}
 
 Complete the following steps to remove the ODF resources from your cluster.
 {: shortdesc}
@@ -136,14 +130,10 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
 
 1. **Optional** If you don't want to reinstall ODF, you can [Remove the ODF add-on from your cluster](#ocs-rm-cleanup-resources).
 
-## Cleaning up your ODF deployment
-{: #ocs-rm-cleanup-resources}
 
-After you remove ODF from your apps, and remove your ODF storage cluster, you can clean up the remaining Kubernetes resources that were deployed with ODF.
-{: shortdesc}
-
-### Cleaning up ODF
-{: #ocs-cleanup}
+## Cleaning up ODF
+{: #odf-cleanup}
+{: step}
 
 1. Copy one of the following clean up scripts based on your ODF deployment.
     * **VPC or {{site.data.keyword.satelliteshort}} with dynamically provisioned disks** Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
@@ -263,6 +253,10 @@ After you remove ODF from your apps, and remove your ODF storage cluster, you ca
     {: pre}
     
 1. After deleting your PVCs and PVs, you also need to delete the storage volumes from your account. To locate and remove unused storage volumes in your account, see [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/containers?topic=containers-ts_storage_clean_volume).
+
+## Uninstalling the OpenShift Data Foundation add-on
+{: #odf-addon-rm}
+{: step}
 
 ### Uninstalling the OpenShift Data Foundation add-on from the console
 {: #ocs-addon-rm-console}

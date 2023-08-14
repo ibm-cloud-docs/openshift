@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-08-14"
 
 keywords: openshift, multi az, multi-az, szr, mzr
 
@@ -42,7 +42,7 @@ VPC clusters are supported only in [multizone metro locations](/docs/openshift?t
 
 ![High availability for clusters in a single zone.](images/ha-cluster-singlezone.svg){: caption="Figure 1. High availability for clusters in a single zone" caption-side="bottom"}
 
-You can add more worker nodes to your cluster by [resizing an existing worker pool](/docs/openshift?topic=openshift-add_workers#resize_pool) or by [adding a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool). When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. {{site.data.keyword.redhat_openshift_notm}} automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
+To add more worker nodes to your cluster, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. {{site.data.keyword.redhat_openshift_notm}} automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
 
 ### Is my master highly available in a single zone cluster?
 {: #sz-master-ha}
@@ -91,7 +91,7 @@ If you created a VPC multizone cluster, the subnets in each zone are automatical
 ### Can I convert my single zone cluster to a multizone cluster?
 {: #convert-sz-to-mz}
 
-To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [classic](/docs/containers?topic=containers-regions-and-zones#zones-mz) or [VPC](/docs/containers?topic=containers-regions-and-zones#zones-vpc) multizone locations. VPC clusters can be set up only in multizone metro locations, and as such can always be converted from a single zone cluster to a multizone cluster. Classic clusters that are set up in a single zone data center can't be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes by adding a zone to a worker pool](/docs/containers?topic=containers-add_workers#add_zone).
+To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [classic](/docs/containers?topic=containers-regions-and-zones#zones-mz) or [VPC](/docs/containers?topic=containers-regions-and-zones#zones-vpc) multizone locations. VPC clusters can be set up only in multizone metro locations, and as such can always be converted from a single zone cluster to a multizone cluster. Classic clusters that are set up in a single zone data center can't be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 
 ### Do my apps automatically spread across zones?
 {: #multizone-apps-faq}

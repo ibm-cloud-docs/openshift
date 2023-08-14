@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-14"
 
 keywords: openshift, moving to openshift, openshift environment, openshift clusters, cluster sizing
 
@@ -267,7 +267,7 @@ To organize and select your Kubernetes resources such as `pods` or `nodes`, [use
 
 Example use cases for labels include [limiting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge), [deploying an app to a GPU machine](/docs/containers?topic=containers-deploy_app#gpu_app), and [restricting your app workloads](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} to run on worker nodes that meet certain flavor or SDS capabilities, such as bare metal worker nodes. To see what labels are already applied to a resource, use the `oc get` command with the `--show-labels` option.
 
-To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with labels or [update an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
+[Apply labels to worker nodes](/docs/openshift?topic=openshift-worker-tag-label) with labels or update an existing worker pool.
 
 
 ### How can I keep my cluster in a supported state?

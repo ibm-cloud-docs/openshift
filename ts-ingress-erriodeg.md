@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-08-14"
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
 
@@ -53,7 +53,7 @@ oc get clusteroperator ingress
 ## One or more status conditions indicate unavailable: `DeploymentAvailable=False`
 {: #ts-ingress-erriodeg-da-false}
 
-1. Ensure that your cluster has at least two workers. For more information, see [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add_workers).
+1. Ensure that your cluster has at least two workers. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 1. Ensure that your cluster workers are healthy, otherwise Ingress Controller pods cannot be scheduled. For more information, see [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
 
 ## One or more status conditions indicate unavailable: `LoadBalancerReady=False`

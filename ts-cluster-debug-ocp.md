@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-08-14"
 
 keywords: openshift
 
@@ -148,7 +148,7 @@ Check the health of the {{site.data.keyword.redhat_openshift_notm}} component po
     ```
     {: pre}
 
-2. If a pod is not in a **Running** status, describe the pod and check for the events. For example, you might see an error that the pod can't be scheduled because of a lack of CPU or memory resources, which is common if you have a cluster with less than 3 worker nodes. [Resize your worker pool](/docs/openshift?topic=openshift-add_workers) and try again.
+2. If a pod is not in a **Running** status, describe the pod and check for the events. For example, you might see an error that the pod can't be scheduled because of a lack of CPU or memory resources, which is common if you have a cluster with less than 3 worker nodes. [Resize your Classic worker pool](/docs/openshift?topic=openshift-add-workers-classic) or [Resize your VPC worker pool](/docs/openshift?topic=openshift-add-workers-vpc) and try again.
     ```sh
     oc describe pod -n <project> <pod>
     ```

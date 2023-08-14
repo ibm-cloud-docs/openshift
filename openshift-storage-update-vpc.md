@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-14"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
 
@@ -56,7 +56,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #update-cluster-master-vpc}
 {: step}
  
-[Major]{: tag-red}
+[Major update]{: tag-red}
 
 
 1. If you are updating your worker nodes to a new major version, such as from `4.11` to `4.12`, update the cluster master first. 
@@ -356,7 +356,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #update-ocs-add-on-vpc}
 {: step}
 
-[Major]{: tag-red}
+[Major update]{: tag-red}
 
 
 1. Check the existing version.
@@ -367,7 +367,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 1. Update the add-on.
     ```sh
-    ibmcloud oc cluster addon update --addon openshift-data-foundation --cluster CLUSTER --version VERSION
+    ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER --version VERSION
     ```
     {: pre}
 
@@ -381,7 +381,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 {: #update-ocs-resource-yaml-vpc}
 {: step}
 
-[Major]{: tag-red}
+[Major update]{: tag-red}
 
 1. Get the name of your `ocscluster` resource.
     ```sh

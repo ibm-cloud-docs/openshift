@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-08-14"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -367,7 +367,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
             ```
             {: codeblock}
 
-    - **Creating a worker pool**: For more information, see [Creating VPC worker pools](/docs/openshift?topic=openshift-add_workers#vpc_add_pool) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+    - **Creating a worker pool**: For more information, see [Creating VPC worker pools](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
         - **UI**: After selecting your cluster from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Worker pools > Add**. Then,  make sure to include the **KMS instance**, **Root key** and optionally, if the KMS instance resides in a different account, the **KMS account** fields.
         - **CLI**: Make sure to include the `--kms-instance-id`, `--crk` fields and also the optional`--kms-account-id` field if the KMS instance resides in an account different from the clusters account, such as in the following VPC example.
             ```sh
