@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-08-14"
 
 keywords: openshift, kernel
 
@@ -56,7 +56,7 @@ Modifications to the operating system are not supported. If you modify the defau
 {: #worker-default-hw}
 
 To change the compute hardware, such as the CPU and memory per worker node, choose among the following options.
-* [Create a worker pool](/docs/openshift?topic=openshift-add_workers). The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, {{site.data.keyword.satelliteshort}}, or gateway clusters.
+* Create a worker pool. The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, {{site.data.keyword.satelliteshort}}, or gateway clusters. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). 
 * [Update the flavor](/docs/containers?topic=containers-update#machine_type) in your cluster by creating a worker pool and removing the previous worker pool.
 
 ## Modifying worker node settings to optimize performance
@@ -75,7 +75,7 @@ You can use the node tuning operator to tune worker node performance by creating
     
 1. Save the following example `Tuned` resource to a file called `tuned-node.yaml` and include the specifications you want to use for your worker nodes. Note that you can use the `recommend` method to apply the settings to your worker nodes by using node labels. In this example, the profile is called `tuned-node` and applies to worker nodes with the label `label: node-role.kubernetes.io/master` label.
 
-    If you have custom labels on your worker nodes, or if you want to tune only certain workers in your cluster, you can [label your worker nodes](/docs/openshift?topic=openshift-add_workers#worker_pool_labels), then use those labels in your tuning configuration.
+    If you have custom labels on your worker nodes, or if you want to tune only certain workers in your cluster, you can [label your worker nodes](/docs/openshift?topic=openshift-worker-tag-label), then use those labels in your tuning configuration.
     {: tip}
 
     Example custom `Tuned` profile. For more information about customizing your `Tuned` profile, see [Node Tuning Operator](https://docs.openshift.com/container-platform/4.7/scalability_and_performance/using-node-tuning-operator.html){: external} docs.

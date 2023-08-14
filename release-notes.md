@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-09"
+lastupdated: "2023-08-14"
 
 keywords: openshift
 
@@ -3820,7 +3820,7 @@ New! {{site.data.keyword.block_storage_is_short}} change log
 New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
 :   Now, you can create GPU bare metal worker nodes in your {{site.data.keyword.openshiftlong_notm}} version 4 clusters in select zones. GPU machines are suited for high-performance computing, machine learning, or 3D applications that you might have, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}. 
 :   To get started with GPU-accelerated workloads.
-    - Create a [cluster](/docs/openshift?topic=openshift-clusters) or [worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) that uses a GPU bare metal flavor. 
+    - Create a cluster or worker pool that uses a GPU bare metal flavor. 
     - [Install the Node Feature Discovery and NVIDIA GPU operators for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}. 
     - Verify that you can run GPU workloads by [deploying a sample job](/docs/openshift?topic=openshift-deploy_app#gpu_app).
     
@@ -4737,7 +4737,7 @@ Image build errors
 
 
 Installing SGX drivers
-:   Added a topic for [installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-add_workers#install-sgx).
+:   Added a topic for [installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-sgx-install).
 
 Sizing workloads
 :   Enhanced the topic with a [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage) FAQ.
@@ -4891,7 +4891,7 @@ Expanded troubleshooting
 
 
 Tags
-:   Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/openshift?topic=openshift-add_workers#cluster_tags).
+:   Added how to [add {{site.data.keyword.cloud_notm}} tags to existing clusters](/docs/openshift?topic=openshift-worker-tag-label).
 
 VPC security groups
 :   [Modify the security group rules](/docs/openshift?topic=openshift-vpc-security-group)for VPC Gen 2 clusters to allow traffic requests that are routed to node ports on your worker nodes.

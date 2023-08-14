@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-08-14"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -189,7 +189,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create a VPC subnet for your
     - If you enter a specific IP range and running Red Hat OpenShift 4.7 or earlier., don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
 5. To run default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
 6. Click **Create subnet**.
-7. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).>
+7. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2), [create a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add-workers-vpc).>
     Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
     {: important}
 
@@ -287,7 +287,7 @@ To create a VPC subnet, follow these steps.
     {: screen}
 
 
-5. Use the subnet to [create a cluster](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui), [create a new worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add_workers#vpc_add_zone).
+5. Use the subnet to [create a cluster](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui), [create a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone).
     Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
     {: important}
 

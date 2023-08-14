@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-08-14"
 
 keywords: openshift, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
 
@@ -75,7 +75,7 @@ oc get all -l env=production --all-namespaces
 {: pre}
 
 * For more information about labels, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external}.
-* To apply labels to worker nodes, [create your worker pool](/docs/openshift?topic=openshift-add_workers#add_pool) with labels or [update an existing worker pool](/docs/openshift?topic=openshift-add_workers#worker_pool_labels).
+* [Apply labels to worker nodes](/docs/openshift?topic=openshift-worker-tag-label).
 * For a more detailed example, see [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity).
 
 ```yaml

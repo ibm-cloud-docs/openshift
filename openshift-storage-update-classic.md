@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-14"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
 
@@ -360,7 +360,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 1. Update the add-on.
     ```sh
-    ibmcloud oc cluster addon update --addon openshift-data-foundation --cluster CLUSTER --version VERSION
+    ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER --version VERSION
     ```
     {: pre}
 

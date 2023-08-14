@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-14"
 
 keywords: openshift, red hat, red hat openshift, admin
 
@@ -59,7 +59,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
 3. **Cluster deployment**:
     1. [Create the cluster](/docs/openshift?topic=openshift-clusters).
     2. After the cluster is ready, [access your cluster](/docs/containers?topic=containers-access_cluster).
-    3. Spread your cluster across availability zones by [adding worker nodes and zones to your cluster](/docs/openshift?topic=openshift-add_workers).
+    3. Spread your cluster across availability zones [adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). 
 4. **User access**:
     1. Make sure that your authorized cluster users can now also access the cluster by planning your user access strategy.
     2. [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).

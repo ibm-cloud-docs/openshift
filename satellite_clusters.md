@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-08-14"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -411,7 +411,7 @@ When you remove {{site.data.keyword.redhat_openshift_notm}} clusters or worker n
     {: screen}
 
 3. Remove the worker nodes or clusters by referring to the following options. The corresponding hosts in your {{site.data.keyword.satelliteshort}} location become unassigned and require a reload before you can use them for other {{site.data.keyword.satelliteshort}} resources.
-    *  [Resize worker pools](/docs/openshift?topic=openshift-add_workers#resize_pool) to reduce the number of worker nodes in the cluster.
+    *  [Resize worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) to reduce the number of worker nodes in the cluster.
     *  [Remove individual worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) from the cluster.
     *  [Remove the cluster](/docs/openshift?topic=openshift-remove).
 4. For each worker node that you removed, decide what to do with the corresponding host in your {{site.data.keyword.satelliteshort}} location.

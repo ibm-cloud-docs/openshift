@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-07-31"
+lastupdated: "2023-08-14"
 
 keywords: rhel, os, operating system
 
@@ -50,14 +50,14 @@ Version 4.8 clusters
 
 1. You can use the following example commands to create a new worker pool with RHEL 8 worker nodes for your cluster type. Note that you must include the `--operating-system` option and specify `REDHAT_8_64`. Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of RHEL 7 worker nodes that are to be replaced. Plan to create the new worker pool in the same zone as the worker pool that you want to replace. Otherwise, make sure your workloads will not be impacted by moving them to a new zone. Note that File or Block storage are not supported across zones. If you have a Cloud Pak entitlement, make sure to include the `--entitlement cloud_pak` option.
 
-    **Classic**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create classic` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create). For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add_workers#classic_pools).
+    **Classic**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create classic` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create). For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add-workers-classic).
 
     ```sh
     ibmcloud oc worker-pool create classic --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system REDHAT_8_64 [--entitlement cloud_pak]
     ```
     {: pre}
 
-    **VPC**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add_workers#vpc_pools).
+    **VPC**: Example command to create a RHEL 8 worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 
     ```sh
     ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system REDHAT_8_64 [--entitlement cloud_pak]
@@ -89,8 +89,8 @@ Version 4.8 clusters
 1. Add a zone to your worker pool. When you add a zone, the number of worker nodes you specified with the `--size-per-zone` option are added to the zone. These worker nodes run the RHEL 8 operating system. Plan to add the same zone as the worker pool that you want to replace. Otherwise, make sure your workloads will not be impacted by moving them to a new zone. Note that File or Block storage are not supported across zones.
 
     * For classic and VPC clusters:
-        * [Adding a zone to a worker pool in a classic cluster](/docs/openshift?topic=openshift-add_workers#add_zone)
-        * [Adding a zone to a worker pool in a VPC cluster](/docs/openshift?topic=openshift-add_workers#vpc_add_zone)
+        * [Adding a zone to a worker pool in a classic cluster](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
+        * [Adding a zone to a worker pool in a VPC cluster](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone)
     * For Satellite clusters:
         ```sh
         ibmcloud oc zone add satellite --zone <zone_name> --cluster <cluster_name_or_ID> --worker-pool <worker_pool> 

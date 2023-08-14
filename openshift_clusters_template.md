@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-08-14"
 
 keywords: openshift, clusters
 
@@ -120,7 +120,7 @@ With the secure cluster template, you can create a cluster from the CLI with {{s
 ## Next steps
 {: #sch-tf-whats-next}
 
-The {{site.data.keyword.bpshort}} template helps with the initial creation. After creating the cluster, you are in control for continued cluster management actions, such as [updating the cluster](/docs/containers?topic=containers-update), [adding worker nodes](/docs/containers?topic=containers-add_workers), updating any of your VPC network options, and using the security integrations to monitor your cluster.
+The {{site.data.keyword.bpshort}} template helps with the initial creation. After creating the cluster, you are in control for continued cluster management actions, such as [updating the cluster](/docs/containers?topic=containers-update), [adding worker nodes](/docs/containers?topic=containers-add-workers-vpc), updating any of your VPC network options, and using the security integrations to monitor your cluster.
 {: shortdesc} 
 
 To access your cluster, you must [set up a VPN connection](/docs/openshift?topic=openshift-cluster-access-wireguard). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.

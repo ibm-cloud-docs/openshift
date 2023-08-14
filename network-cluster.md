@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-08-14"
 
 keywords: openshift, vlan
 
@@ -27,7 +27,7 @@ The content on this page is specific to **classic clusters only**. For informati
 {: note}
 
 
-The content on this page is specific to **classic clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11 only**. In clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you can't disable it later. You can later enable the private cloud service endpoint. In clusters that run version 4, you choose the public cloud service endpoint only or public and private cloud service endpoints during cluster creation, and you can't later change the cloud service endpoints.
+The content on this page is specific to **Classic clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11 only**. In clusters that run {{site.data.keyword.redhat_openshift_notm}} 3.11, you must enable the public cloud service endpoint during cluster creation, and you can't disable it later. You can later enable the private cloud service endpoint. In clusters that run version 4, you choose the public cloud service endpoint only or public and private cloud service endpoints during cluster creation, and you can't later change the cloud service endpoints.
 {: important}
 
 
@@ -165,7 +165,7 @@ To change the VLANs that a worker pool uses to provision worker nodes.
 
 4. Set up a worker pool with the new VLAN network metadata for each zone. You can create a new worker pool, or modify an existing worker pool.
 
-    - **Create a new worker pool**: See [adding worker nodes by creating a new worker pool](/docs/openshift?topic=openshift-add_workers#add_pool).
+    - **Create a worker pool**: See [adding worker nodes by creating a new worker pool](/docs/openshift?topic=openshift-add-workers-classic).
 
     - **Modify an existing worker pool**: Set the worker pool's network metadata to use the VLAN for each zone. Worker nodes that were already created in the pool continue to use the previous VLANs, but new worker nodes in the pool use new VLAN metadata that you set.
         ```sh
