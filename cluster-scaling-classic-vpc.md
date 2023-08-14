@@ -106,7 +106,7 @@ The cluster autoscaler scales your cluster in response to your workload [resourc
 No, you can't set the cluster autoscaler `minSize` to `0`. Additionally, unless you [disable](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public application load balancers (ALBs) in each zone of your cluster, you must change the `minSize` to `2` worker nodes per zone so that the ALB pods can be spread for high availability. Additionally, you can [taint](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) your worker pool to achieve a scale to down a minimum of `1`.
 {: shortdesc}
 
-If your worker pool has zero (0) worker nodes, the worker pool can't be scaled. [Disable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) for the worker pool, [manually resize the worker pool](/docs/openshift?topic=openshift-add-workers-vpc#resize_pool) to at least one, and [re-enable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable).
+If your worker pool has zero (0) worker nodes, the worker pool can't be scaled. [Disable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) for the worker pool, [manually resize the worker pool](/docs/openshift?topic=openshift-add-workers-vpc) to at least one, and [re-enable cluster autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable).
 
 ### Can I optimize my deployments for autoscaling?
 {: #scalable-practices-apps}
