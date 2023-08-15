@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-08-15"
 
 keywords: openshift
 
@@ -56,7 +56,7 @@ Create a custom storage class that uses the same configuration as the pre-define
     ```
     {: pre}
 
-1. Clean up your [ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-rm-cleanup-resources).
+1. Clean up your [ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment).
 
 1. Create an ODF deployment that uses the custom storage class you created.
 

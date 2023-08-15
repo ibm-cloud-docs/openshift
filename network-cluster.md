@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
 keywords: openshift, vlan
 
@@ -23,7 +23,7 @@ subcollection: openshift
 After you initially set up your network when you [create a cluster](/docs/openshift?topic=openshift-clusters), you can change the service endpoints that your cluster master is accessible through or change the VLAN connections for your worker nodes.
 {: shortdesc}
 
-The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-vpc-subnets).
+The content on this page is specific to **classic clusters only**. For information about VPC clusters, see [VPC cluster networking](/docs/openshift?topic=openshift-vpc-subnets).
 {: note}
 
 

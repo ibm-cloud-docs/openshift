@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
 keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
 
@@ -105,15 +105,6 @@ When the master update is complete, you can update your worker nodes, depending 
 You notice that an update is available for your worker nodes in a [classic infrastructure](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered) cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
 {: shortdesc}
 
-Applies to only classic clusters. Have a VPC cluster? See [Updating VPC worker nodes](#vpc_worker_node) instead.
-{: note}
-
-For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/openshift?topic=openshift-openshift_versions).
-{: tip}
-
-To update {{site.data.keyword.satelliteshort}} worker nodes, see [Updating hosts that are assigned as worker nodes to Satellite-enabled services](/docs/satellite?topic=satellite-host-update-workers).
-{: tip}
-
 * **Patch**: A worker node patch update includes security fixes. You can update the classic worker node to the latest patch by using the `ibmcloud oc worker reload` or `update` commands. Keep in mind that the `update` command also updates the worker node to the same `major.minor` version as the master and latest patch version, if a `major.minor` version update is also available.
 * **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one version behind the master version (`n-1`). You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
 
@@ -143,6 +134,7 @@ Before you update your classic infrastructure worker nodes, review the prerequis
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage-plan).
 {: important}
 
+- For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/openshift?topic=openshift-openshift_versions).
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
@@ -312,9 +304,6 @@ If you have Portworx installed in your cluster, you must restart the Portworx po
 You notice that an update is available for your worker nodes in a VPC cluster. What does that mean? As security updates and patches are put in place for the API server and other master components, you must be sure that the worker nodes remain in sync. You can make two types of updates: updating only the patch version, or updating the `major.minor` version with the patch version.
 {: shortdesc}
 
- Applies to only VPC clusters. Have a classic cluster? See [Updating classic worker nodes](#worker_node) instead.
-{: note}
-
 If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up).
 {: important}
 
@@ -325,16 +314,8 @@ If you have OpenShift Data Foundation deployed in your cluster, follow the steps
 
 
 
-For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/openshift?topic=openshift-openshift_versions).
-{: tip}
-
-To update {{site.data.keyword.satelliteshort}} worker nodes, see [Updating hosts that are assigned as worker nodes to Satellite-enabled services](/docs/satellite?topic=satellite-host-update-workers).
-{: tip}
-
 * **Patch**: A worker node patch update includes security fixes. You can update the VPC worker node to the latest patch by using the `ibmcloud oc worker replace` command.
 * **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one version behind the master version (`n-1`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` option.
-
-For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 
 What happens to my apps during an update?
 :   If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload, such as by resizing your worker pools. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
@@ -357,6 +338,7 @@ Before you update your VPC infrastructure worker nodes, review the prerequisite 
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is removed, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage-plan).
 {: important}
 
+- For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/openshift?topic=openshift-openshift_versions).
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).

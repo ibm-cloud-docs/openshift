@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-08-15"
 
 keywords: openshift network
 
@@ -15,7 +15,7 @@ subcollection: openshift
 
 
 
-# Understanding network basics of VPC clusters
+# Understanding VPC cluster networking
 {: #plan_vpc_basics}
 
 When you create your cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.

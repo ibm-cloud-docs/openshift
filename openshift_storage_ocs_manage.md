@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -128,7 +128,7 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
     ```
     {: pre}
 
-1. **Optional** If you don't want to reinstall ODF, you can [Remove the ODF add-on from your cluster](#ocs-rm-cleanup-resources).
+1. **Optional** If you don't want to reinstall ODF, you can [Remove the ODF add-on from your cluster](#odf-cleanup).
 
 
 ## Cleaning up ODF

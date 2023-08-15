@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
-keywords: openshift, moving to openshift, openshift environment, openshift clusters, cluster sizing
+keywords: openshift, kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing
 
 subcollection: openshift
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Moving your environment to {{site.data.keyword.openshiftlong_notm}}
+# Understanding and sizing your environment
 {: #strategy}
 
 With {{site.data.keyword.openshiftlong}}, you can quickly and securely deploy container workloads for your apps in production. Learn more so that when you plan your cluster strategy, you optimize your setup to make the most of [Kubernetes](https://kubernetes.io/){: external} automated deploying, scaling, and orchestration management capabilities.
@@ -68,7 +68,7 @@ Want to run workloads in both on-premises and off-premises clouds?
 
 If you want to run your app in multiple clusters, public and private environments, or even multiple cloud providers, you might wonder how you can make your deployment strategy work across these environments.
 
-You can use the open source [Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#getting-started) tool to automate the provisioning of {{site.data.keyword.cloud_notm}} infrastructure, including Kubernetes clusters. Follow along with this tutorial to [plan, create, and update deployment environments](/docs/solution-tutorials?topic=solution-tutorials-plan-create-update-deployments#plan-create-update-deployments). After you create a cluster, you can also set up the [{{site.data.keyword.openshiftlong_notm}} cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) so that your worker pool scales up and down worker nodes in response to your workload's resource requests.</dd>
+You can use the open source [Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#getting-started) tool to automate the provisioning of {{site.data.keyword.cloud_notm}} infrastructure, including Kubernetes clusters. Follow along with this tutorial to [plan, create, and update deployment environments](/docs/solution-tutorials?topic=solution-tutorials-plan-create-update-deployments#plan-create-update-deployments). After you create a cluster, you can also set up the [{{site.data.keyword.openshiftlong_notm}} cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) so that your worker pool scales up and down worker nodes in response to your workload's resource requests.
 
 ### What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?
 {: #app_kinds}

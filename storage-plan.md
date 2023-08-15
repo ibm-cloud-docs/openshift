@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-10"
+lastupdated: "2023-08-15"
 
-keywords: openshift
+keywords: planning, storage, cluster
 
 subcollection: openshift
 
