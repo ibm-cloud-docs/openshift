@@ -3100,8 +3100,8 @@ VPC cluster healthchecks
 {: #openshift-may1021}
 {: release-note}
 
-New! PX-Backup is now available
-:   For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup).
+New! Portworx Backup is now available
+:   For more information, see [Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup).
 
 
 

@@ -1698,7 +1698,7 @@ subcollection: openshift
 
     * [10 May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1021)
 
-        * New! PX-Backup is now available
+        * New! Portworx Backup is now available
 
         * Cluster autoscaler add-on
 
@@ -5149,17 +5149,17 @@ subcollection: openshift
 
 [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery#storage_portworx_recovery)
 
-[Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#storage_portworx_backup)
+[Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup#storage_portworx_backup)
 
-* [Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-install)
+* [Installing Portworx Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-install)
 
-* [Verifying your PX-Backup installation](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-verify)
+* [Verifying your Portworx Backup installation](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-verify)
 
-* [Logging in to the PX-Backup console](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-ui)
+* [Logging in to the Portworx Backup console](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-ui)
 
-* [Adding a backup location to your PX-Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
+* [Adding a backup location to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
 
-* [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your PX-Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
+* [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
 
