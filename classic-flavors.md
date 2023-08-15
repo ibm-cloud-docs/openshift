@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-11"
+lastupdated: "2023-08-15"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -28,7 +28,7 @@ Review the classic worker node flavors by metro.
 {: #ams}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -61,7 +61,7 @@ Review the classic worker node flavors by metro.
 {: #che}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -94,7 +94,7 @@ Review the classic worker node flavors by metro.
 {: #dal}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -133,7 +133,7 @@ Review the classic worker node flavors by metro.
 {: #fra}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -169,7 +169,7 @@ Review the classic worker node flavors by metro.
 {: #lon}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -205,7 +205,7 @@ Review the classic worker node flavors by metro.
 {: #mil}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -238,7 +238,7 @@ Review the classic worker node flavors by metro.
 {: #mon}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -271,7 +271,7 @@ Review the classic worker node flavors by metro.
 {: #osa}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -310,7 +310,7 @@ Review the classic worker node flavors by metro.
 {: #par}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -346,7 +346,7 @@ Review the classic worker node flavors by metro.
 {: #sao}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -363,7 +363,7 @@ Review the classic worker node flavors by metro.
 {: #sjc}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -384,7 +384,7 @@ Review the classic worker node flavors by metro.
 {: #sng}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -401,7 +401,7 @@ Review the classic worker node flavors by metro.
 {: #syd}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -437,7 +437,7 @@ Review the classic worker node flavors by metro.
 {: #tok}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -473,7 +473,7 @@ Review the classic worker node flavors by metro.
 {: #tor}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
@@ -509,7 +509,7 @@ Review the classic worker node flavors by metro.
 {: #wdc}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | 
 | b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 300GB SSD |
 | b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |

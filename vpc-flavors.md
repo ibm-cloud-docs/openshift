@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-11"
+lastupdated: "2023-08-15"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -30,7 +30,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #au-syd}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -60,7 +60,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #br-sao}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -89,7 +89,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #ca-tor}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -119,7 +119,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #eu-de}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -149,7 +149,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #eu-gb}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -179,7 +179,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #jp-osa}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -208,7 +208,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #jp-tok}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -238,7 +238,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #us-east}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
@@ -268,7 +268,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 {: #us-south}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options |
-| -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- | -------------- |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |
 | bx2.16x64 | 16, 64GB, 24Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
 | bx2.2x8 | 2, 8GB, 4Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | N/A|
 | bx2.32x128 | 32, 128GB, 25Gbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 100GB BLOCK | N/A | 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |
