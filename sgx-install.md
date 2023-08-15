@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
 keywords: openshift, clusters, worker nodes, worker pools, add, sgx
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 # Installing SGX drivers and platform software on SGX-capable worker nodes
-{: #install-sgx}
+{: #sgx-install}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic}
 

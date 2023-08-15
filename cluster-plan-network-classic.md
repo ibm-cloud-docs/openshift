@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-08-15"
 
 keywords: openshift network, classic
 
@@ -15,7 +15,7 @@ subcollection: openshift
 
 
 
-# Understanding network basics of classic clusters
+# Understanding Classic cluster networking
 {: #plan_basics}
 
 When you create a classic cluster, you must choose a networking setup so that certain cluster components can communicate with each other and with networks or services outside of the cluster.

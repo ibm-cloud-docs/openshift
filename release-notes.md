@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
 keywords: openshift
 
@@ -29,6 +29,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## August 2023
 {: #openshift-aug23}
 
+### 15 August 2023
+{: #openshift-aug1523}
+{: release-note}
+
+
+
+
+Worker node fix packs are available.
+:   [`4.9.59_1599_openshift`](/docs/openshift?topic=openshift-openshift_changelog_49)
+:   [`4.10.65_1579_openshift`](/docs/openshift?topic=openshift-openshift_changelog_410)
+:   [`4.11.46_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   [`4.12.28_1554_openshift`](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [`4.13.8_1530_openshift`](/docs/openshift?topic=openshift-openshift_changelog_413)
+  
+
+  
 
 
 
@@ -73,6 +89,8 @@ Worker node fix packs are available.
 
 ## July 2023
 {: #openshift-july23}
+
+
 
 ### 28 July 2023
 {: #openshift-july2823}
@@ -3082,8 +3100,8 @@ VPC cluster healthchecks
 {: #openshift-may1021}
 {: release-note}
 
-New! PX-Backup is now available
-:   For more information, see [Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup).
+New! Portworx Backup is now available
+:   For more information, see [Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup).
 
 
 

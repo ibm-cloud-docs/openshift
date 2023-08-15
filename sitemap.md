@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
 keywords: openshift
 subcollection: openshift
@@ -55,15 +55,13 @@ subcollection: openshift
 
 [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-overview#overview)
 
-* [What is {{site.data.keyword.openshiftlong_notm}} and how does it work?](/docs/openshift?topic=openshift-overview#what-is-overview)
-
 * [What is Kubernetes?](/docs/openshift?topic=openshift-overview#what-is-kube-overview)
 
 * [What are containers?](/docs/openshift?topic=openshift-overview#what-are-containers-overview)
 
 * [What is {{site.data.keyword.redhat_openshift_notm}}?](/docs/openshift?topic=openshift-overview#what-is-openshift-overview)
 
-* [What compute host infrastructure does the service offer?](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered)
+* [What compute host infrastructure does {{site.data.keyword.openshiftlong_notm}} offer?](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered)
 
 * [What are the benefits of using the service?](/docs/openshift?topic=openshift-overview#benefits)
 
@@ -269,6 +267,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug23)
+
+    * [15 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1523)
+
+        * Worker node fix packs are available.
 
     * [7 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0723)
 
@@ -1696,7 +1698,7 @@ subcollection: openshift
 
     * [10 May 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1021)
 
-        * New! PX-Backup is now available
+        * New! Portworx Backup is now available
 
         * Cluster autoscaler add-on
 
@@ -3030,11 +3032,11 @@ subcollection: openshift
 * [Uninstalling on Linux and macOS](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
 
 
-## Planning your cluster environment
-{: #sitemap_planning_your_cluster_environment}
+## Planning to create clusters
+{: #sitemap_planning_to_create_clusters}
 
 
-[Moving your environment to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-strategy#strategy)
+[Understanding and sizing your environment](/docs/openshift?topic=openshift-strategy#strategy)
 
 * [Moving your workloads to the {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-strategy#cloud_workloads)
 
@@ -3072,107 +3074,9 @@ subcollection: openshift
 
 * [Making your resources highly available](/docs/openshift?topic=openshift-strategy#kube_ha)
 
-[Understanding network basics of VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
+[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
-* [Worker-to-worker communication using VPC subnets](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-worker)
-
-* [Worker-to-master and user-to-master communication using Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master)
-
-* [Worker-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#worker-to-master-comms)
-
-* [User-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#user-to-master-comms)
-
-* [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem)
-
-* [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-cloud-service)
-
-* [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-resources)
-
-    * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-other-vpcs)
-
-    * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-classic)
-
-* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-external-workers)
-
-* [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-private)
-
-* [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-public)
-
-* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-scenarios)
-
-    * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw)
-
-    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-worker)
-
-    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-master)
-
-    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-services)
-
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-external)
-
-* [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn)
-
-    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-worker)
-
-    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-master)
-
-    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-services)
-
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-external)
-
-[Understanding network basics of classic clusters](/docs/openshift?topic=openshift-plan_basics#plan_basics)
-
-* [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_basics#worker-worker)
-
-    * [VLAN connections for worker nodes](/docs/openshift?topic=openshift-plan_basics#worker-worker-nodes)
-
-    * [Worker node communication across subnets and VLANs](/docs/openshift?topic=openshift-plan_basics#worker-worker-subnets)
-
-* [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master)
-
-    * [Public service endpoint only](/docs/openshift?topic=openshift-plan_basics#workeruser-master-endpoint)
-
-    * [Public and private cloud service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv)
-
-* [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem)
-
-    * [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-pub-priv)
-
-    * [{{site.data.keyword.BluDirectLink}} for communication over the private network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-direct-link)
-
-    * [strongSwan IPSec VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-strongswan)
-
-* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
-
-    * [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-private)
-
-    * [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-public)
-
-* [Scenario: Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_basics#internet-facing)
-
-    * [Worker-to-worker communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-worker)
-
-    * [Worker-to-master and user-to-master communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-master)
-
-    * [Worker communication to other services or networks with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-services)
-
-    * [External communication to apps that run on worker nodes with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-external)
-
-* [Scenario: Allow limited public connectivity with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#vyatta-gateway)
-
-    * [Worker-to-worker communication, worker-to-master and user-to-master communication with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-worker)
-
-    * [Worker communication to other services or networks with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
-
-    * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
-
-[Understanding your storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan)
-
-* [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
-
-* [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
-
-* [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
+* [Create a cluster](/docs/openshift?topic=openshift-clusters#next_steps)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
@@ -3250,18 +3154,112 @@ subcollection: openshift
 
 * [Worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node)
 
-[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
+[Understanding VPC cluster networking](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
 
-* [Create a cluster](/docs/openshift?topic=openshift-clusters#next_steps)
+* [Worker-to-worker communication using VPC subnets](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-worker)
+
+* [Worker-to-master and user-to-master communication using Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master)
+
+* [Worker-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#worker-to-master-comms)
+
+* [User-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#user-to-master-comms)
+
+* [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem)
+
+* [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-cloud-service)
+
+* [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-resources)
+
+    * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-other-vpcs)
+
+    * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-classic)
+
+* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-external-workers)
+
+* [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-private)
+
+* [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-public)
+
+* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-scenarios)
+
+    * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw)
+
+    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-worker)
+
+    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-master)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-external)
+
+* [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn)
+
+    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-worker)
+
+    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-master)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-external)
+
+[Understanding Classic cluster networking](/docs/openshift?topic=openshift-plan_basics#plan_basics)
+
+* [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_basics#worker-worker)
+
+    * [VLAN connections for worker nodes](/docs/openshift?topic=openshift-plan_basics#worker-worker-nodes)
+
+    * [Worker node communication across subnets and VLANs](/docs/openshift?topic=openshift-plan_basics#worker-worker-subnets)
+
+* [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master)
+
+    * [Public service endpoint only](/docs/openshift?topic=openshift-plan_basics#workeruser-master-endpoint)
+
+    * [Public and private cloud service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv)
+
+* [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem)
+
+    * [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-pub-priv)
+
+    * [{{site.data.keyword.BluDirectLink}} for communication over the private network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-direct-link)
+
+    * [strongSwan IPSec VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-strongswan)
+
+* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
+
+    * [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-private)
+
+    * [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-public)
+
+* [Scenario: Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_basics#internet-facing)
+
+    * [Worker-to-worker communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-worker)
+
+    * [Worker-to-master and user-to-master communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-master)
+
+    * [Worker communication to other services or networks with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-services)
+
+    * [External communication to apps that run on worker nodes with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-external)
+
+* [Scenario: Allow limited public connectivity with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#vyatta-gateway)
+
+    * [Worker-to-worker communication, worker-to-master and user-to-master communication with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-worker)
+
+    * [Worker communication to other services or networks with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
+
+    * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
+
+[Understanding your storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan)
+
+* [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
+
+* [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
+
+* [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
 
 
 ## Creating clusters
 {: #sitemap_creating_clusters1}
 
-
-[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
-
-* [Create a cluster](/docs/openshift?topic=openshift-clusters#next_steps)
 
 [Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
 
@@ -3473,92 +3471,6 @@ subcollection: openshift
     * [Workers in Classic clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-classic)
 
     * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
-
-
-## Tuning performance
-{: #sitemap_tuning_performance}
-
-
-[Tuning performance](/docs/openshift?topic=openshift-kernel#kernel)
-
-* [Default worker node settings](/docs/openshift?topic=openshift-kernel#worker-default)
-
-    * [Customizing the operating system](/docs/openshift?topic=openshift-kernel#worker-default-os)
-
-    * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
-
-* [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
-
-    * [Modifying worker node settings by using the Node Tuning Operator](/docs/openshift?topic=openshift-kernel#worker-nto)
-
-    * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
-
-* [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks)
-
-* [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
-
-    * [Updating the Calico installation](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
-
-* [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
-
-[Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance)
-
-* [Deploying the Node Feature Discovery Operator](/docs/openshift?topic=openshift-rhcos-performance#rhcos-node-feature-discovery)
-
-* [Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-numa-pinning-huge)
-
-* [Enabling CPU pinning and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-pinning-huge)
-
-* [Removing performance customizations](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance-remove)
-
-
-## Managing cluster costs
-{: #sitemap_managing_cluster_costs}
-
-
-[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs#costs)
-
-* [Understanding costs by component](/docs/openshift?topic=openshift-costs#costs-for-clusters)
-
-    * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
-
-    * [What is the difference between virtual and physical machines?](/docs/openshift?topic=openshift-costs#physical-vs-virtual)
-
-    * [Compute licenses](/docs/openshift?topic=openshift-costs#licenses)
-
-    * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
-
-    * [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
-
-    * [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
-
-    * [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
-
-    * [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
-
-    * [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
-
-    * [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
-
-    * [VPC worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
-
-* [Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
-
-* [Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
-
-[Using reservations to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations#reservations)
-
-* [Understanding reservations](/docs/openshift?topic=openshift-reservations#ri-about)
-
-    * [Reservation usage and lifecycle](/docs/openshift?topic=openshift-reservations#ri-usage-lifecycle)
-
-    * [Billing and discounts](/docs/openshift?topic=openshift-reservations#ri-about-billing)
-
-* [Creating a reservation](/docs/openshift?topic=openshift-reservations#ri-create)
-
-* [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
-
-* [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
 
 
 ## Enhancing security
@@ -5237,17 +5149,17 @@ subcollection: openshift
 
 [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery#storage_portworx_recovery)
 
-[Backing up and restoring apps and data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#storage_portworx_backup)
+[Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup#storage_portworx_backup)
 
-* [Installing PX-Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-install)
+* [Installing Portworx Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-install)
 
-* [Verifying your PX-Backup installation](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-verify)
+* [Verifying your Portworx Backup installation](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-verify)
 
-* [Logging in to the PX-Backup console](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-ui)
+* [Logging in to the Portworx Backup console](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-ui)
 
-* [Adding a backup location to your PX-Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
+* [Adding a backup location to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
 
-* [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your PX-Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
+* [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
 
@@ -5743,9 +5655,9 @@ subcollection: openshift
 
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
 
-[Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-install-sgx#install-sgx)
+[Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-sgx-install#sgx-install)
 
-* [Installing with a script](/docs/openshift?topic=openshift-install-sgx#intel-sgx-script)
+* [Installing with a script](/docs/openshift?topic=openshift-sgx-install#intel-sgx-script)
 
 
 ## Understanding high availability and disaster recovery
@@ -5768,6 +5680,92 @@ subcollection: openshift
 * [Understanding the impacts of opting out](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out#remote-health-impacts)
 
 * [Opting out of remote health reporting](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out#remote-health-opt-out)
+
+
+## Tuning performance
+{: #sitemap_tuning_performance}
+
+
+[Tuning performance](/docs/openshift?topic=openshift-kernel#kernel)
+
+* [Default worker node settings](/docs/openshift?topic=openshift-kernel#worker-default)
+
+    * [Customizing the operating system](/docs/openshift?topic=openshift-kernel#worker-default-os)
+
+    * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
+
+* [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
+
+    * [Modifying worker node settings by using the Node Tuning Operator](/docs/openshift?topic=openshift-kernel#worker-nto)
+
+    * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
+
+* [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks)
+
+* [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
+
+    * [Updating the Calico installation](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
+
+* [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
+
+[Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance)
+
+* [Deploying the Node Feature Discovery Operator](/docs/openshift?topic=openshift-rhcos-performance#rhcos-node-feature-discovery)
+
+* [Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-numa-pinning-huge)
+
+* [Enabling CPU pinning and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-pinning-huge)
+
+* [Removing performance customizations](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance-remove)
+
+
+## Managing cluster costs
+{: #sitemap_managing_cluster_costs}
+
+
+[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs#costs)
+
+* [Understanding costs by component](/docs/openshift?topic=openshift-costs#costs-for-clusters)
+
+    * [Worker nodes](/docs/openshift?topic=openshift-costs#nodes)
+
+    * [What is the difference between virtual and physical machines?](/docs/openshift?topic=openshift-costs#physical-vs-virtual)
+
+    * [Compute licenses](/docs/openshift?topic=openshift-costs#licenses)
+
+    * [Public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth)
+
+    * [Subnet IP addresses](/docs/openshift?topic=openshift-costs#subnet_ips)
+
+    * [Multizone load balancer](/docs/openshift?topic=openshift-costs#mzlb_pricing)
+
+    * [Default storage for images](/docs/openshift?topic=openshift-costs#storage_images)
+
+    * [Storage for apps](/docs/openshift?topic=openshift-costs#persistent_storage)
+
+    * [{{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-costs#services)
+
+    * [Operators and other third-party integrations](/docs/openshift?topic=openshift-costs#operators_pricing)
+
+    * [VPC worker nodes](/docs/openshift?topic=openshift-costs#charges_vpc_gen2)
+
+* [Estimating costs](/docs/openshift?topic=openshift-costs#costs-estimate)
+
+* [Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
+
+[Using reservations to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations#reservations)
+
+* [Understanding reservations](/docs/openshift?topic=openshift-reservations#ri-about)
+
+    * [Reservation usage and lifecycle](/docs/openshift?topic=openshift-reservations#ri-usage-lifecycle)
+
+    * [Billing and discounts](/docs/openshift?topic=openshift-reservations#ri-about-billing)
+
+* [Creating a reservation](/docs/openshift?topic=openshift-reservations#ri-create)
+
+* [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
+
+* [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
 
 
 ## API reference
@@ -6465,6 +6463,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
 
+    * [Change log for worker node fix pack 4.13.8_1530_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4138_1530_openshift_W)
+
     * [Change log for worker node fix pack 4.13.6_1529_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4136_1529_openshift_W)
 
     * [Change log for master fix pack 4.13.5_1528_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4135_1528_openshift_M)
@@ -6575,6 +6575,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.28_1554_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41228_1554_openshift_W)
 
     * [Change log for worker node fix pack 4.12.26_1553_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41226_1553_openshift_W)
 
@@ -6718,6 +6720,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.46_1566_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41146_1566_openshift_W)
 
     * [Change log for worker node fix pack 4.11.45_1565_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41145_1565_openshift_W)
 
@@ -6891,6 +6895,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.65_1579_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41065_1579_openshift_W)
 
     * [Change log for worker node fix pack 4.10.64_1578_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41064_1578_openshift_W)
 
@@ -7096,6 +7102,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_49#openshift_changelog_overview_49)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_49#49_changelog)
+
+    * [Change log for worker node fix pack 4.9.59_1599_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1599_openshift_W)
 
     * [Change log for worker node fix pack 4.9.59_1598_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1598_openshift_W)
 

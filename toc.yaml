@@ -52,19 +52,18 @@ toc:
           - api-install.md
           - include: ../cli/reference/ibmcloud/uninstall_cli.md
       - topicgroup:
-          label: Planning your cluster environment
+          label: Planning to create clusters
           topics:
           - kube-strategy.md
+          - cluster-create.md
+          - cluster-plan-ha.md
+          - worker-plan.md
           - cluster-plan-network-vpc.md
           - cluster-plan-network-classic.md
           - storage-plan.md
-          - cluster-plan-ha.md
-          - worker-plan.md
-          - cluster-create.md
       - topicgroup: 
           label: Creating clusters
           topics:
-          - cluster-create.md
           - cluster-create-classic.md
           - cluster-create-vpc-gen2.md
           - cluster-create-dedicated-hosts.md
@@ -90,16 +89,6 @@ toc:
           - sat-worker-manage.md
           - cluster-remove.md
           - host-maintenance.md
-      - topicgroup: 
-          label: Tuning performance
-          topics:
-          - performance.md
-          - rhcos-performance.md
-      - topicgroup: 
-          label: Managing cluster costs
-          topics:
-          - costs.md
-          - costs-reserved.md
       - topicgroup:
           label: Enhancing security
           topics:
@@ -299,6 +288,16 @@ toc:
           - sgx-install.md
       - ha.md
       - remote-health-monitoring-opt-out.md
+      - topicgroup: 
+          label: Tuning performance
+          topics:
+          - performance.md
+          - rhcos-performance.md
+      - topicgroup: 
+          label: Managing cluster costs
+          topics:
+          - costs.md
+          - costs-reserved.md
   - navgroup: 
       id: reference
       topics:
