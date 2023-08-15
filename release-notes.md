@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
 keywords: openshift
 
@@ -73,6 +73,8 @@ Worker node fix packs are available.
 
 ## July 2023
 {: #openshift-july23}
+
+
 
 ### 28 July 2023
 {: #openshift-july2823}
