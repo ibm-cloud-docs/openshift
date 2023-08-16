@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-08-08"
+lastupdated: "2023-08-16"
 
 keywords: openshift, add-on, file
 
@@ -24,6 +24,8 @@ subcollection: openshift
 {: shortdesc}
 
 
+The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta for allowlisted accounts only.
+{: beta}
 
 
 ## Prerequisites
