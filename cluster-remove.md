@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-08-16"
 
-keywords: openshift, clusters, delete, remove
+keywords: openshift, kubernetes, clusters, worker nodes, worker pools, delete
 
 subcollection: openshift
 

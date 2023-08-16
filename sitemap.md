@@ -3460,8 +3460,6 @@ subcollection: openshift
 
 * [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
 
-[Removing clusters](/docs/openshift?topic=openshift-remove#remove)
-
 [Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
 
 * [Identifying your affected workers](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-list)
@@ -5766,6 +5764,13 @@ subcollection: openshift
 * [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
 
 * [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
+
+
+## Removing clusters
+{: #sitemap_removing_clusters}
+
+
+[Removing clusters](/docs/openshift?topic=openshift-remove#remove)
 
 
 ## API reference
@@ -9172,8 +9177,6 @@ subcollection: openshift
 * [Required classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles#required-classic-rbac)
 
 * [Suggested classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles#classic-rbac-suggested)
-
-[Cloud Foundry roles](/docs/openshift?topic=openshift-cloud-foundry-roles#cloud-foundry-roles)
 
 
 ## Locations
