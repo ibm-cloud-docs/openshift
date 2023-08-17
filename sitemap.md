@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-16"
+lastupdated: "2023-08-17"
 
 keywords: openshift
 subcollection: openshift
@@ -2993,8 +2993,8 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 
-## Installing the CLI and API
-{: #sitemap_installing_the_cli_and_api}
+## Installing the CLI
+{: #sitemap_installing_the_cli}
 
 
 [Installing the CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
@@ -3015,6 +3015,17 @@ subcollection: openshift
 
 * [Updating installed plug-ins](/docs/openshift?topic=openshift-cli-update#cli-update-include-cli-update-plugin)
 
+[Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
+
+* [Uninstalling on Windows](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-windows)
+
+* [Uninstalling on Linux and macOS](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
+
+
+## Setting up the API
+{: #sitemap_setting_up_the_api}
+
+
 [Setting up the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_install)
 
 * [About the API](/docs/openshift?topic=openshift-cs_api_install#api_about)
@@ -3024,12 +3035,6 @@ subcollection: openshift
 * [Refreshing IAM access tokens and obtaining new refresh tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 
 * [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI](/docs/openshift?topic=openshift-cs_api_install#cs_cli_refresh)
-
-[Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
-
-* [Uninstalling on Windows](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-windows)
-
-* [Uninstalling on Linux and macOS](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
 
 
 ## Planning to create clusters
@@ -3459,8 +3464,6 @@ subcollection: openshift
 * [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate_versions)
 
 * [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
-
-[Removing clusters](/docs/openshift?topic=openshift-remove#remove)
 
 [Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
 
@@ -4287,8 +4290,6 @@ subcollection: openshift
 
     * [Viewing `AuditWebhookError` alerts in auditing-enabled clusters](/docs/openshift?topic=openshift-health-audit#audit-webhook-error-410)
 
-[Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
-
 [Enabling Flow Logs for VPC cluster components](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log)
 
 * [Configuring a flow log collector](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_create)
@@ -4296,8 +4297,8 @@ subcollection: openshift
 * [Viewing worker node flow logs](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_view)
 
 
-## Setting up an image build pipeline
-{: #sitemap_setting_up_an_image_build_pipeline}
+## Setting up an image registry
+{: #sitemap_setting_up_an_image_registry}
 
 
 [Setting up an image registry](/docs/openshift?topic=openshift-registry#registry)
@@ -4352,11 +4353,14 @@ subcollection: openshift
 
     * [Example daemonset to update a containerd custom registry configuration](/docs/openshift?topic=openshift-registry#ds-example-registry)
 
+
+## Setting up continuous integration and delivery
+{: #sitemap_setting_up_continuous_integration_and_delivery}
+
+
 [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd#cicd)
 
-* [Supported automation tools](/docs/openshift?topic=openshift-cicd#cicd_strategy)
-
-* [Setting up a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-cicd#continuous-delivery-pipeline)
+* [Other resources](/docs/openshift?topic=openshift-cicd#cicd-other)
 
 
 ## Developing and deploying apps
@@ -5766,6 +5770,13 @@ subcollection: openshift
 * [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
 
 * [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
+
+
+## Removing clusters
+{: #sitemap_removing_clusters}
+
+
+[Removing clusters](/docs/openshift?topic=openshift-remove#remove)
 
 
 ## API reference
@@ -9173,8 +9184,6 @@ subcollection: openshift
 
 * [Suggested classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles#classic-rbac-suggested)
 
-[Cloud Foundry roles](/docs/openshift?topic=openshift-cloud-foundry-roles#cloud-foundry-roles)
-
 
 ## Locations
 {: #sitemap_locations}
@@ -9487,6 +9496,8 @@ subcollection: openshift
 [Why does my cluster master status say it is approaching its resource limit?](/docs/openshift?topic=openshift-master_resource_limit#master_resource_limit)
 
 [Why can't I create a new admin certificate?](/docs/openshift?topic=openshift-ts_admin-cert#ts_admin-cert)
+
+[Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
 
 
 ### Worker nodes

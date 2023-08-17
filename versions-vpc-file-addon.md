@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-16"
 
 keywords: file, add-on, changelog
 
@@ -18,10 +18,7 @@ subcollection: openshift
 # {{site.data.keyword.filestorage_vpc_full_notm}} add-on change log 
 {: #versions-vpc-file-addon}
 
-{{site.data.keyword.filestorage_vpc_short}} is available for allowlisted accounts in the Washington D.C., Dallas, Frankfurt, London, Sydney, Sao Paulo, and Tokyo regions. Contact your IBM Sales representative if you are interested in getting access.
-{: preview}
-
-{{site.data.keyword.filestorage_vpc_short}} is available in Beta. Do not use this add-on for production workloads.
+The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta for allowlisted accounts only. 
 {: beta} 
 
 

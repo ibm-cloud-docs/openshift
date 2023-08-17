@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-15"
+lastupdated: "2023-08-17"
 
 keywords: openshift
 
@@ -5287,7 +5287,7 @@ Ingress ALB change log
 :   Updated the ALB [`nginx-ingress` image to build 579 and `ingress-auth` image build to 341](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog).
 
 DevOps toolchain
-:   You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-cicd#continuous-delivery-pipeline).
+:   You can now use the **DevOps** tab on the cluster details page to configure your DevOps toolchain. For more information, see [Setting up a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-cicd).
 
 
 

@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-17"
 
-keywords: openshift, kernel
+keywords: openshift, kubernetes, kernel, performance
 
 subcollection: openshift
 

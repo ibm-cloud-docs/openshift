@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-16"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -36,9 +36,6 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
 {: ui}
 
 
-Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
-{: tip}
-
 1. Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
 2. From the **Catalog**, click [**{{site.data.keyword.openshiftlong_notm}}**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
 3. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.12.24**.
@@ -64,10 +61,6 @@ Now that your cluster is ready, [deploying your first app](#deploy-app)!
 ## Creating a VPC cluster in the console
 {: #vpc-gen2-gs}
 {: ui}
-
-
-Want to learn more about customizing your cluster setup with the CLI? Check out [Creating a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2).
-{: tip}
 
 1. Create a Virtual Private Cloud (VPC) on generation 2 compute.
     1. Navigate to the [VPC create console](https://cloud.ibm.com/vpc/provision/vpc){: external}.
