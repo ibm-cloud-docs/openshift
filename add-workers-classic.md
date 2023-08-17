@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-17"
 
 keywords: openshift, clusters, worker nodes, worker pools, add, classic
 
@@ -76,6 +76,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     * Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`.
     * If you provision a bare metal or dedicated VM worker pool, specify `--hardware dedicated`.
     * The new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
+
 
     ```sh
     ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone_min_2> [--operating-system (REDHAT_7_64|REDHAT_8_64)] [--label key=value]
@@ -236,3 +237,9 @@ To add a zone with worker nodes to your worker pool:
     Resource Group Name:            Default
     ```
     {: screen}
+
+
+
+
+
+    

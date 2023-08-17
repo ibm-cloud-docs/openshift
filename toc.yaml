@@ -45,12 +45,12 @@ toc:
       id: howto
       topics:
       - topicgroup:
-          label: Installing the CLI and API
+          label: Installing the CLI
           topics:
           - cli-install.md
           - cli-update.md
-          - api-install.md
           - include: ../cli/reference/ibmcloud/uninstall_cli.md
+      - api-install.md
       - topicgroup:
           label: Planning to create clusters
           topics:
@@ -165,13 +165,9 @@ toc:
           - openshift_health_log.md
           - openshift_health_monitor.md
           - health-audit.md
-          - ts-health-loglines.md
           - vpc-flow-logs.md
-      - topicgroup: 
-          label: Setting up an image build pipeline
-          topics:
-          - registry.md
-          - cicd.md
+      - registry.md
+      - cicd.md
       - topicgroup:
           label: Developing and deploying apps
           topics:
@@ -463,6 +459,7 @@ toc:
               - ts-cluster-view-work.md
               - ts-master-limits.md
               - ts-admin-cert.md
+              - ts-health-loglines.md
           - topicgroup:
               label: Worker nodes
               topics:
