@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-18"
 
 keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Protecting sensitive information in your cluster
+# Understanding encryption
 {: #encryption}
 
 Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluster to ensure data integrity and to prevent your data from being exposed to unauthorized users.
@@ -25,8 +25,6 @@ Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluste
 
 For more information about securing your cluster and personal information, see [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security) and [Storing personal information](/docs/openshift?topic=openshift-security#pi).
 
-## Overview of cluster encryption
-{: #encrypt_ov}
 
 The following image and description outline default and optional data encryption for {{site.data.keyword.openshiftlong_notm}} clusters.
 
@@ -77,7 +75,7 @@ You can't disable KMS provider encryption. Do not delete root keys in your KMS i
 ### Controlling encryption
 {: #kms-encrypt-control}
 
-When you enable a KMS provider in your cluster, your own KMS root key is used to encrypt data encryption keys (DEKs) which are used to encrypt Kubernetes secrets. Using your own encryption root key adds a layer of security to Kubernetes secrets and gives you more granular control of who can access sensitive cluster information. For more information, see the [overview](#encrypt_ov) and your KMS provider's documentation, such as [{{site.data.keyword.keymanagementserviceshort}} envelope encryption](/docs/key-protect?topic=key-protect-envelope-encryption).
+When you enable a KMS provider in your cluster, your own KMS root key is used to encrypt data encryption keys (DEKs) which are used to encrypt Kubernetes secrets. Using your own encryption root key adds a layer of security to Kubernetes secrets and gives you more granular control of who can access sensitive cluster information. For more information, see your KMS provider's documentation, such as [{{site.data.keyword.keymanagementserviceshort}} envelope encryption](/docs/key-protect?topic=key-protect-envelope-encryption).
 
 ### Features and limitations of KMS providers
 {: #kms-keyprotect-features}

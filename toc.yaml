@@ -60,6 +60,7 @@ toc:
           - worker-plan.md
           - cluster-plan-network-vpc.md
           - cluster-plan-network-classic.md
+          - encrypt.md
           - storage-plan.md
       - topicgroup: 
           label: Creating clusters
@@ -107,52 +108,38 @@ toc:
       - topicgroup:
           label: Securing cluster workloads
           topics:
-          - encrypt.md
           - openshift_scc.md
           - pod-priority.md
           - kubeapi-priority.md
           - pod-security-admission.md 
       - topicgroup: 
-          label: Securing the cluster network
+          label: Controlling network traffic in Classic clusters
           topics:
-          - topicgroup: 
-              label: Controlling traffic in Classic clusters
-              topics:
-              - cs_tutorials_policies.md
-              - network-policy.md
-              - firewall.md
-              - edge.md
-          - topicgroup:
-              label: Controlling traffic in VPC clusters with ACLs, security groups, and network policies
-              topics:
-              - vpc-network-policy.md
-              - vpc-security-group.md
-              - vpc-acls.md
-              - vpc-kube-policies.md
-              - vpc-firewall.md
-      - openshift_compliance_operator.md
+          - cs_tutorials_policies.md
+          - network-policy.md
+          - firewall.md
+          - edge.md
+          - subnets.md
+          - network-cluster.md
+          - vpn.md
       - topicgroup:
-          label: Managing the cluster network
+          label: Controlling network traffic in VPC clusters
           topics:
-          - topicgroup:
-              label: Classic clusters
-              topics:
-              - subnets.md
-              - network-cluster.md
-              - vpn.md
-          - topicgroup:
-              label: VPC clusters
-              topics:
-              - vpc-subnets.md
-              - vpc-vpn.md
-          - topicgroup:
-              label: Satellite clusters
-              topics:
-              - satellite-network-customization.md
-              - satellite-sriov.md
-          - static-routes.md
+          - vpc-network-policy.md
+          - vpc-security-group.md
+          - vpc-acls.md
+          - vpc-kube-policies.md
+          - vpc-firewall.md
+          - vpc-subnets.md
+          - vpc-vpn.md
+      - topicgroup:
+          label: Controlling network traffic in Satellite clusters
+          topics:
+            - satellite-network-customization.md
+            - satellite-sriov.md
+      - static-routes.md
       - topicgroup: 
-          label: Autoscaling clusters
+          label: Setting up the cluster autoscaler
           topics:
           - cluster-scaling-classic-vpc.md
           - cluster-scaling-sat.md
@@ -276,6 +263,7 @@ toc:
           - integrations-ibm-third-party.md
           - openshift_integrations_cloud_paks.md
           - openshift_integrations_operators.md
+          - openshift_compliance_operator.md
           - openshift_integrations_rh_marketplace.md
           - integrations-addons.md
           - integrations-helm.md
