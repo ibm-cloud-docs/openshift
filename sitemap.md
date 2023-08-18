@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-08-18"
 
 keywords: openshift
 subcollection: openshift
@@ -3085,6 +3085,10 @@ subcollection: openshift
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
+* [About high availability](/docs/openshift?topic=openshift-ha_clusters#ha-about)
+
+* [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters#fault_domains)
+
 * [Single zone clusters](/docs/openshift?topic=openshift-ha_clusters#single_zone)
 
     * [Is my master highly available in a single zone cluster?](/docs/openshift?topic=openshift-ha_clusters#sz-master-ha)
@@ -3252,6 +3256,36 @@ subcollection: openshift
     * [Worker communication to other services or networks with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
 
     * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
+
+[Understanding encryption](/docs/openshift?topic=openshift-encryption#encryption)
+
+* [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms)
+
+    * [Available KMS providers](/docs/openshift?topic=openshift-encryption#kms-providers)
+
+    * [Controlling encryption](/docs/openshift?topic=openshift-encryption#kms-encrypt-control)
+
+    * [Features and limitations of KMS providers](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features)
+
+* [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
+
+    * [Prerequisites](/docs/openshift?topic=openshift-encryption#kms_prereqs)
+
+    * [Enabling KMS encryption for the cluster through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
+
+    * [Enabling KMS encryption for the cluster through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
+
+    * [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption#kms_rotate)
+
+* [Verifying secret encryption](/docs/openshift?topic=openshift-encryption#verify_kms)
+
+* [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption)
+
+    * [Classic worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-classic)
+
+    * [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc)
+
+    * [{{site.data.keyword.satelliteshort}} worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-satellite)
 
 [Understanding your storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan)
 
@@ -3748,38 +3782,6 @@ subcollection: openshift
 {: #sitemap_securing_cluster_workloads}
 
 
-[Protecting sensitive information in your cluster](/docs/openshift?topic=openshift-encryption#encryption)
-
-* [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption#encrypt_ov)
-
-* [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms)
-
-    * [Available KMS providers](/docs/openshift?topic=openshift-encryption#kms-providers)
-
-    * [Controlling encryption](/docs/openshift?topic=openshift-encryption#kms-encrypt-control)
-
-    * [Features and limitations of KMS providers](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features)
-
-* [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
-
-    * [Prerequisites](/docs/openshift?topic=openshift-encryption#kms_prereqs)
-
-    * [Enabling KMS encryption for the cluster through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
-
-    * [Enabling KMS encryption for the cluster through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
-
-    * [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption#kms_rotate)
-
-* [Verifying secret encryption](/docs/openshift?topic=openshift-encryption#verify_kms)
-
-* [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption)
-
-    * [Classic worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-classic)
-
-    * [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc)
-
-    * [{{site.data.keyword.satelliteshort}} worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-satellite)
-
 [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc#openshift_scc)
 
 * [Customizing security context constraints](/docs/openshift?topic=openshift-openshift_scc#customize_sccs)
@@ -3819,13 +3821,8 @@ subcollection: openshift
 * [Additional resources](/docs/openshift?topic=openshift-pod-security-admission#pod-sec-additional-resources)
 
 
-## Securing the cluster network
-{: #sitemap_securing_the_cluster_network}
-
-
-
-### Controlling traffic in Classic clusters
-{: #sitemap_controlling_traffic_in_classic_clusters}
+## Controlling network traffic in Classic clusters
+{: #sitemap_controlling_network_traffic_in_classic_clusters}
 
 
 [Using Calico network policies to control traffic on Classic clusters](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial)
@@ -3903,110 +3900,6 @@ subcollection: openshift
 * [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
 
 * [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
-
-
-### Controlling traffic in VPC clusters with ACLs, security groups, and network policies
-{: #sitemap_controlling_traffic_in_vpc_clusters_with_acls_security_groups_and_network_policies}
-
-
-[Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
-
-* [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
-
-* [Access control lists (ACLs) or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
-
-[Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
-
-* [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-groups-details)
-
-    * [Security groups applied to cluster workers](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster-workers)
-
-    * [Security groups applied to VPE gateways and VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-vpe-alb)
-
-* [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cli)
-
-* [Viewing the default VPC security groups in the UI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-ui)
-
-* [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-inbound-outbound)
-
-    * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers)
-
-    * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
-
-* [Creating security group rules](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules)
-
-    * [Creating rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
-
-    * [Creating rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
-
-* [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster)
-
-    * [If you only want the default VPC and cluster security groups and no additional security groups](/docs/openshift?topic=openshift-vpc-security-group#default-sgs-only)
-
-    * [If you only want the cluster security group and not the default VPC security group](/docs/openshift?topic=openshift-vpc-security-group#cluster-sg-only)
-
-    * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group#cluster-customer-sgs)
-
-    * [If you only want your own security groups](/docs/openshift?topic=openshift-vpc-security-group#customer-sgs-only)
-
-* [Adding security groups to worker pools at worker pool create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-worker-pool)
-
-    * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#no-worker-sgs)
-
-    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#worker-sgs)
-
-* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
-
-* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
-
-[Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
-
-* [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-acls#acls_ui)
-
-    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-acls#acls_cli)
-
-[Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
-
-* [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
-
-* [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
-
-[Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
-
-* [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
-
-    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
-
-    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
-
-    * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
-
-    * [Allowing access to the {{site.data.keyword.redhat_openshift_notm}} image registry in an allowlist](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
-
-* [Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
-
-    * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
-
-    * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
-
-* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-vpc-firewall#iam_allowlist_vpc)
-
-
-## Using the compliance operator
-{: #sitemap_using_the_compliance_operator}
-
-
-[Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator#compliance-operator)
-
-
-## Managing the cluster network
-{: #sitemap_managing_the_cluster_network}
-
-
-
-### Classic clusters
-{: #sitemap_classic_clusters}
-
 
 [Configuring classic subnets and IP addresses](/docs/openshift?topic=openshift-subnets#subnets)
 
@@ -4095,9 +3988,91 @@ subcollection: openshift
 * [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
 
 
-### VPC clusters
-{: #sitemap_vpc_clusters}
+## Controlling network traffic in VPC clusters
+{: #sitemap_controlling_network_traffic_in_vpc_clusters}
 
+
+[Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
+
+* [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
+
+* [Access control lists (ACLs) or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
+
+[Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
+
+* [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-groups-details)
+
+    * [Security groups applied to cluster workers](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster-workers)
+
+    * [Security groups applied to VPE gateways and VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-vpe-alb)
+
+* [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cli)
+
+* [Viewing the default VPC security groups in the UI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-ui)
+
+* [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-inbound-outbound)
+
+    * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers)
+
+    * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
+
+* [Creating security group rules](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules)
+
+    * [Creating rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
+
+    * [Creating rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
+
+* [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster)
+
+    * [If you only want the default VPC and cluster security groups and no additional security groups](/docs/openshift?topic=openshift-vpc-security-group#default-sgs-only)
+
+    * [If you only want the cluster security group and not the default VPC security group](/docs/openshift?topic=openshift-vpc-security-group#cluster-sg-only)
+
+    * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group#cluster-customer-sgs)
+
+    * [If you only want your own security groups](/docs/openshift?topic=openshift-vpc-security-group#customer-sgs-only)
+
+* [Adding security groups to worker pools at worker pool create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-worker-pool)
+
+    * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#no-worker-sgs)
+
+    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#worker-sgs)
+
+* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
+
+* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
+
+[Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
+
+* [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-acls#acls_ui)
+
+    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-acls#acls_cli)
+
+[Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
+
+* [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
+
+* [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
+
+[Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
+
+* [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
+
+    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_bx)
+
+    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_kubectl)
+
+    * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall_calicoctl)
+
+    * [Allowing access to the {{site.data.keyword.redhat_openshift_notm}} image registry in an allowlist](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry)
+
+* [Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers)
+
+    * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
+
+    * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
+
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-vpc-firewall#iam_allowlist_vpc)
 
 [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc-subnets)
 
@@ -4146,8 +4121,8 @@ subcollection: openshift
     * [Use {{site.data.keyword.tg_full_notm}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-use-transit-gw)
 
 
-### Satellite clusters
-{: #sitemap_satellite_clusters}
+## Controlling network traffic in Satellite clusters
+{: #sitemap_controlling_network_traffic_in_satellite_clusters}
 
 
 [Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
@@ -4170,6 +4145,11 @@ subcollection: openshift
 
 * [Installing the SR-IOV network operator](/docs/openshift?topic=openshift-satellite-sriov#sriov-install-operator)
 
+
+## Adding static routes to worker nodes
+{: #sitemap_adding_static_routes_to_worker_nodes}
+
+
 [Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes#static-routes)
 
 * [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
@@ -4183,8 +4163,8 @@ subcollection: openshift
 * [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
 
 
-## Autoscaling clusters
-{: #sitemap_autoscaling_clusters}
+## Setting up the cluster autoscaler
+{: #sitemap_setting_up_the_cluster_autoscaler}
 
 
 [Preparing classic and VPC clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
@@ -5611,6 +5591,8 @@ subcollection: openshift
 
 * [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub)
 
+[Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator#compliance-operator)
+
 [Setting up the {{site.data.keyword.redhat_notm}} Marketplace](/docs/openshift?topic=openshift-rh-marketplace#rh-marketplace)
 
 [Adding services by using managed add-ons](/docs/openshift?topic=openshift-managed-addons#managed-addons)
@@ -5662,17 +5644,6 @@ subcollection: openshift
 [Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-sgx-install#sgx-install)
 
 * [Installing with a script](/docs/openshift?topic=openshift-sgx-install#intel-sgx-script)
-
-
-## Understanding high availability and disaster recovery
-{: #sitemap_understanding_high_availability_and_disaster_recovery}
-
-
-[Understanding high availability and disaster recovery](/docs/openshift?topic=openshift-ha#ha)
-
-* [About high availability](/docs/openshift?topic=openshift-ha#ha-about)
-
-* [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha#fault_domains)
 
 
 ## Understanding remote health monitoring
