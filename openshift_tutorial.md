@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-28"
+lastupdated: "2023-08-21"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -19,30 +19,37 @@ completion-time: 45m
 
 
 
-# Creating {{site.data.keyword.openshiftlong_notm}} clusters
+# Creating a Classic cluster in the CLI
 {: #openshift_tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="openshift"}
 {: toc-completion-time="45m"}
 
-Create a cluster with worker nodes that come installed with {{site.data.keyword.redhat_openshift_notm}} container orchestration platform.
-{: shortdesc}
+[Classic infrastructure]{: tag-classic-inf}
 
+In this tutorial, you deploy a {{site.data.keyword.openshiftlong_notm}} cluster on Classic infrastructure by using the CLI.
+{: shortdesc}
 
 ## Objectives and audience
 {: #openshift_objectives}
 
 This tutorial is designed for cluster administrators who want to learn how to create a {{site.data.keyword.openshiftlong_notm}} cluster for the first time by using the CLI. In this tutorial, you complete the following tasks.
 
-- Create a cluster.
+
+## Overview of cluster resources
+{: #cluster-arch-tut-overview}
+
+Review the following diagram for an overview of common cluster resources.
+
+![Cluster architecture](images/cs-app-components1.svg){: caption="Figure 1. Cluster architecture" caption-side="bottom"}
+
+
+In this tutorial, you will complete the following tasks.
+
+- Create a cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
 - Open the {{site.data.keyword.redhat_openshift_notm}} web console.
-- Access common components.
 - Deploy a sample app.
 - Expose the app on a Route so that external users can access the service.
-
-
-![{{site.data.keyword.redhat_openshift_notm}} tutorial diagram.](images/roks_tutorial.png){: caption="Figure 1. {{site.data.keyword.redhat_openshift_notm}} tutorial diagram" caption-side="bottom"}
-
 
 
 ## Prerequisites
@@ -93,7 +100,7 @@ This tutorial is designed for cluster administrators who want to learn how to cr
 
 1. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
 
-1. From the {{site.data.keyword.redhat_openshift_notm}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
+1. Click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
     
 1. Verify that the `oc` commands run properly with your cluster by checking the version.
     ```sh

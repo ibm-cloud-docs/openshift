@@ -2951,13 +2951,15 @@ subcollection: openshift
 [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
-## Creating {{site.data.keyword.openshiftlong_notm}} clusters
-{: #sitemap_creating_clusters}
+## Creating a Classic cluster in the CLI
+{: #sitemap_creating_a_classic_cluster_in_the_cli}
 
 
-[Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
+[Creating a Classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
 * [Objectives and audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+
+* [Overview of cluster resources](/docs/openshift?topic=openshift-openshift_tutorial#cluster-arch-tut-overview)
 
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
@@ -2972,11 +2974,11 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 
-## Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
+## Creating a cluster in your Virtual Private Cloud (VPC)
 {: #sitemap_creating_a_cluster_in_your_virtual_private_cloud_vpc}
 
 
-[Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+[Creating a cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
 
 * [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
 
@@ -3335,7 +3337,7 @@ subcollection: openshift
 
 
 ## Creating clusters
-{: #sitemap_creating_clusters1}
+{: #sitemap_creating_clusters}
 
 
 [Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
