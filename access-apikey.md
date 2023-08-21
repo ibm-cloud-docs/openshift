@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-21"
 
 keywords: openshift
 
@@ -18,7 +18,7 @@ subcollection: openshift
 
 
 
-# Setting up API key credentials so the service can access the infrastructure and other cloud services
+# Setting up your API key credentials
 {: #access-creds}
 
 To successfully provision and work with clusters, you must ensure that your {{site.data.keyword.cloud_notm}} account is correctly set up to access {{site.data.keyword.cloud_notm}} infrastructure and other {{site.data.keyword.cloud_notm}} services that you use in each resource group and region that your clusters are in.

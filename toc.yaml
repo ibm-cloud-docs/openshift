@@ -56,6 +56,7 @@ toc:
           topics:
           - kube-strategy.md
           - cluster-create.md
+          - access-apikey.md
           - cluster-plan-ha.md
           - worker-plan.md
           - cluster-plan-network-vpc.md
@@ -101,7 +102,6 @@ toc:
           label: Managing access control
           topics:
           - access-overview.md
-          - access-apikey.md
           - access-iam-rbac.md
           - access-pod-identity.md
           - terraform-cluster-access.md
@@ -195,31 +195,33 @@ toc:
               - secrets.md
               - secrets-mgr.md
           - satellite_expose_apps.md
-      - storage-file.md
       - storage-block.md
       - topicgroup:
-          label: Setting up IBM Cloud Object Storage
+          label: Setting up Block Storage for VPC
+          topics: 
+          - storage-block-vpc.md
+          - storage-block-vpc-snapshot.md
+          - storage-block-vpc-configmap.md
+          - storage-block-vpc-trusted-profiles.md
+          - storage-block-vpc-unmanaged.md
+          - storage-block-vpc-remove.md
+      - storage-file.md
+      - topicgroup:
+          label: Setting up File Storage for VPC
+          topics: 
+          - storage-file-vpc-install.md 
+          - storage-file-vpc-apps.md
+          - storage-file-vpc-managing.md
+          - storage-file-vpc-sc-ref.md 
+      - topicgroup:
+          label: Setting up Object Storage
           topics:
           - storage-cos-understand.md
           - storage-cos-install.md
           - storage-cos-apps.md
           - storage-cos-tutorial-quota.md
           - storage-cos-vpc-ip.md
-          - storage-cos-reference.md 
-      - topicgroup:
-          label: Setting up Portworx
-          topics: 
-          - storage-portworx-about.md
-          - storage-portworx-plan.md
-          - storage-portworx-preparing.md
-          - storage-portworx-kv-store.md
-          - storage-portworx-encryption.md
-          - storage-portworx-deploy.md
-          - storage-portworx-update.md
-          - storage-portworx-recovery.md
-          - storage-portworx-backup.md
-          - storage-portworx-removing.md
-          - storage-portworx-support.md
+          - storage-cos-reference.md
       - topicgroup:
           label: Setting up OpenShift Data Foundation
           topics:
@@ -240,21 +242,19 @@ toc:
           - openshift_storage_noobaa.md
           - openshift_storage_ocs_sc_ref.md
       - topicgroup:
-          label: Setting up Block Storage for VPC
+          label: Setting up Portworx
           topics: 
-          - storage-block-vpc.md
-          - storage-block-vpc-snapshot.md
-          - storage-block-vpc-configmap.md
-          - storage-block-vpc-trusted-profiles.md
-          - storage-block-vpc-unmanaged.md
-          - storage-block-vpc-remove.md
-      - topicgroup:
-          label: Setting up IBM Cloud File Storage for VPC
-          topics: 
-          - storage-file-vpc-install.md 
-          - storage-file-vpc-apps.md
-          - storage-file-vpc-managing.md
-          - storage-file-vpc-sc-ref.md 
+          - storage-portworx-about.md
+          - storage-portworx-plan.md
+          - storage-portworx-preparing.md
+          - storage-portworx-kv-store.md
+          - storage-portworx-encryption.md
+          - storage-portworx-deploy.md
+          - storage-portworx-update.md
+          - storage-portworx-recovery.md
+          - storage-portworx-backup.md
+          - storage-portworx-removing.md
+          - storage-portworx-support.md
       - storage-utilities.md
       - storage-br.md
       - topicgroup:
