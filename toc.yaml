@@ -90,6 +90,7 @@ toc:
           - rhel_migrate.md
           - sat-worker-manage.md
           - host-maintenance.md
+          - worker-tag-label.md
       - topicgroup:
           label: Enhancing security
           topics:

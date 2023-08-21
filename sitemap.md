@@ -3549,6 +3549,14 @@ subcollection: openshift
 
     * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
 
+[Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
+
+* [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label#add-tags-console)
+
+* [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-worker-tag-label#add-tags-cli)
+
+* [Adding labels to existing worker pools](/docs/openshift?topic=openshift-worker-tag-label#worker_pool_labels)
+
 
 ## Enhancing security
 {: #sitemap_enhancing_security}
