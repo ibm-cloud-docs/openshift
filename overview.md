@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-18"
+lastupdated: "2023-08-21"
 
 keywords: openshift, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -148,7 +148,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infr
 | --- | --- |
 | Compute and worker node resources | Worker nodes can be virtual machines using either shared infrastructure or dedicated hosts, or even bare metal servers. You manage maintenance and billing activity for the worker nodes through your host infrastructure provider whether that is {{site.data.keyword.cloud_notm}}, your own on-premises hardware, or another cloud provider. You also manage billing through {{site.data.keyword.cloud_notm}}. For more information about pricing, see [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing). |
 | Security | See [Security and compliance](/docs/satellite?topic=satellite-compliance). |
-| High availability | See [About high availability and recover](/docs/satellite?topic=satellite-ha_clusters). |
+| High availability | See [About high availability and recover](/docs/satellite?topic=satellite-ha). |
 | Reservations | Reservations aren't available for {{site.data.keyword.satelliteshort}}. |
 | Cluster administration | See [Updating hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers). | 
 | Cluster networking | If you attach {{site.data.keyword.cloud_notm}} Classic or VPC hosts to your location, refer to those descriptions. |

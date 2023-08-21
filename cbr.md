@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-08-21"
 
 keywords: cbr, context based restrictions, security
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Protecting {{site.data.keyword.openshiftlong_notm}} resources with context-based restrictions
+# Protecting cluster resources with context-based restrictions
 {: #cbr}
 
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.openshiftlong_notm}} resources can be controlled with context-based restrictions and identity and access management policies.
@@ -48,7 +48,7 @@ Applications running on {{site.data.keyword.openshiftlong_notm}} clusters, for e
 {: note}
 
 
-### Protecting {{site.data.keyword.openshiftlong_notm}} resources
+### Protecting cluster resources
 {: #resources-types-cbr}
 
 You can create CBR rules to protect specific regions, and clusters.

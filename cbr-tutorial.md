@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-08-21"
 
 keywords: cbr, context based restrictions, security, cbr scenario, openshiftcbr
 
@@ -49,7 +49,7 @@ Before beginning this tutorial, make sure you have created or installed the foll
 - The CLI tools including the {{site.data.keyword.cloud_notm}} CLI, the Containers service CLI plug-in, and the CBR plug-in. For more information, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 - A {{site.data.keyword.openshiftlong_notm}} cluster. For more information, see [Creating clusters](/docs/openshift?topic=openshift-clusters).
 - Review the [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis) docs to get an understanding of network zones and rules.
-- Review the [Protecting {{site.data.keyword.openshiftlong_notm}} resources with context-based restrictions](/docs/openshift?topic=openshift-cbr) docs to understand how you can leverage CBR for your {{site.data.keyword.openshiftlong_notm}} resources.
+- Review the [Protecting cluster resources with context-based restrictions](/docs/openshift?topic=openshift-cbr) docs to understand how you can leverage CBR for your {{site.data.keyword.openshiftlong_notm}} resources.
 - Review the [limitations for using CBR with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-cbr&interface=cli#cbr-limitations).
 
 

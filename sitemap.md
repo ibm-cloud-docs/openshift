@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-18"
+lastupdated: "2023-08-21"
 
 keywords: openshift
 subcollection: openshift
@@ -2951,13 +2951,15 @@ subcollection: openshift
 [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
-## Creating {{site.data.keyword.openshiftlong_notm}} clusters
-{: #sitemap_creating_clusters}
+## Creating a Classic cluster in the CLI
+{: #sitemap_creating_a_classic_cluster_in_the_cli}
 
 
-[Creating {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
+[Creating a Classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
 * [Objectives and audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+
+* [Overview of cluster resources](/docs/openshift?topic=openshift-openshift_tutorial#cluster-arch-tut-overview)
 
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
@@ -2972,11 +2974,11 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 
-## Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)
+## Creating a cluster in your Virtual Private Cloud (VPC)
 {: #sitemap_creating_a_cluster_in_your_virtual_private_cloud_vpc}
 
 
-[Creating a {{site.data.keyword.redhat_openshift_notm}} cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+[Creating a cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
 
 * [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
 
@@ -3082,6 +3084,44 @@ subcollection: openshift
 [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
 * [Create a cluster](/docs/openshift?topic=openshift-clusters#next_steps)
+
+[Setting up your API key credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
+
+* [Setting up the API key for most use cases](/docs/openshift?topic=openshift-access-creds#api_key_most_cases)
+
+* [Understanding other options than the API key](/docs/openshift?topic=openshift-access-creds#api_key_other)
+
+* [Understanding how the API key works](/docs/openshift?topic=openshift-access-creds#api_key_about)
+
+    * [What is the API key used for?](/docs/openshift?topic=openshift-access-creds#api-key-uses)
+
+    * [How many API keys do I need?](/docs/openshift?topic=openshift-access-creds#how-many-apikeys)
+
+    * [How do I set up the API key?](/docs/openshift?topic=openshift-access-creds#howto-api-key-setup)
+
+    * [What permissions does the user who sets the API key need? How do I give the user these permissions?](/docs/openshift?topic=openshift-access-creds#what-perms-api-key)
+
+    * [How do I limit which commands a user can run?](/docs/openshift?topic=openshift-access-creds#limit-apikey-scopes)
+
+    * [What if I don't want to assign the API key owner or credentials owner the Super User infrastructure role?](/docs/openshift?topic=openshift-access-creds#non-superuser)
+
+    * [What happens if the user who set up the API key for a region and resource group leaves the company?](/docs/openshift?topic=openshift-access-creds#apikey-user-leaves)
+
+    * [How can I lock down my cluster if my API key becomes compromised?](/docs/openshift?topic=openshift-access-creds#apikey-lockdown)
+
+* [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions)
+
+* [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra)
+
+* [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-access-creds#default_account)
+
+* [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-access-creds#credentials)
+
+* [Customizing classic infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access)
+
+    * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-access-creds#infra_console)
+
+    * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-access-creds#infra_cli)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
@@ -3297,7 +3337,7 @@ subcollection: openshift
 
 
 ## Creating clusters
-{: #sitemap_creating_clusters1}
+{: #sitemap_creating_clusters}
 
 
 [Creating classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic)
@@ -3509,6 +3549,14 @@ subcollection: openshift
 
     * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
 
+[Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
+
+* [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label#add-tags-console)
+
+* [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-worker-tag-label#add-tags-cli)
+
+* [Adding labels to existing worker pools](/docs/openshift?topic=openshift-worker-tag-label#worker_pool_labels)
+
 
 ## Enhancing security
 {: #sitemap_enhancing_security}
@@ -3606,11 +3654,11 @@ subcollection: openshift
 
     * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-ibm-data#pi-rh-telemetry)
 
-[Protecting {{site.data.keyword.openshiftlong_notm}} resources with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr)
+[Protecting cluster resources with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr)
 
 * [How {{site.data.keyword.openshiftlong_notm}} integrates with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr-overview)
 
-    * [Protecting {{site.data.keyword.openshiftlong_notm}} resources](/docs/openshift?topic=openshift-cbr#resources-types-cbr)
+    * [Protecting cluster resources](/docs/openshift?topic=openshift-cbr#resources-types-cbr)
 
     * [Protecting specific APIs](/docs/openshift?topic=openshift-cbr#protect-api-types-cbr)
 
@@ -3672,44 +3720,6 @@ subcollection: openshift
     * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups)
 
     * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups)
-
-[Setting up API key credentials so the service can access the infrastructure and other cloud services](/docs/openshift?topic=openshift-access-creds#access-creds)
-
-* [Setting up the API key for most use cases](/docs/openshift?topic=openshift-access-creds#api_key_most_cases)
-
-* [Understanding other options than the API key](/docs/openshift?topic=openshift-access-creds#api_key_other)
-
-* [Understanding how the API key works](/docs/openshift?topic=openshift-access-creds#api_key_about)
-
-    * [What is the API key used for?](/docs/openshift?topic=openshift-access-creds#api-key-uses)
-
-    * [How many API keys do I need?](/docs/openshift?topic=openshift-access-creds#how-many-apikeys)
-
-    * [How do I set up the API key?](/docs/openshift?topic=openshift-access-creds#howto-api-key-setup)
-
-    * [What permissions does the user who sets the API key need? How do I give the user these permissions?](/docs/openshift?topic=openshift-access-creds#what-perms-api-key)
-
-    * [How do I limit which commands a user can run?](/docs/openshift?topic=openshift-access-creds#limit-apikey-scopes)
-
-    * [What if I don't want to assign the API key owner or credentials owner the Super User infrastructure role?](/docs/openshift?topic=openshift-access-creds#non-superuser)
-
-    * [What happens if the user who set up the API key for a region and resource group leaves the company?](/docs/openshift?topic=openshift-access-creds#apikey-user-leaves)
-
-    * [How can I lock down my cluster if my API key becomes compromised?](/docs/openshift?topic=openshift-access-creds#apikey-lockdown)
-
-* [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions)
-
-* [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra)
-
-* [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-access-creds#default_account)
-
-* [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-access-creds#credentials)
-
-* [Customizing classic infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access)
-
-    * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-access-creds#infra_console)
-
-    * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-access-creds#infra_cli)
 
 [Controlling user access with {{site.data.keyword.cloud_notm}} IAM and Kubernetes RBAC](/docs/openshift?topic=openshift-users#users)
 
@@ -4856,77 +4866,8 @@ subcollection: openshift
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
-## Setting up {{site.data.keyword.filestorage_short}}
-{: #sitemap_setting_up_}
-
-
-[Setting up {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
-
-* [Quick start for {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
-
-* [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
-
-    * [File storage types](/docs/openshift?topic=openshift-file_storage#file-types)
-
-    * [IOPS](/docs/openshift?topic=openshift-file_storage#file-iops)
-
-    * [Reclaim policy](/docs/openshift?topic=openshift-file_storage#file-reclaim)
-
-    * [Billing type](/docs/openshift?topic=openshift-file_storage#file-billing)
-
-* [Adding {{site.data.keyword.filestorage_short}} to apps](/docs/openshift?topic=openshift-file_storage#add_file)
-
-* [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
-
-    * [Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
-
-    * [Creating a persistent volume and a persistent volume claim](/docs/openshift?topic=openshift-file_storage#existing-file-2)
-
-* [Using {{site.data.keyword.filestorage_short}} in a stateful set](/docs/openshift?topic=openshift-file_storage#file_statefulset)
-
-    * [Creating the PVC when you create a stateful set by using dynamic provisioning](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
-
-    * [Static provisioning: Using an existing PVC with your stateful set](/docs/openshift?topic=openshift-file_storage#file_static_statefulset)
-
-* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration)
-
-* [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version)
-
-    * [Creating a customized storage class with a specific NFS version](/docs/openshift?topic=openshift-file_storage#custom-sc-nfs-creat)
-
-    * [Changing your existing PV to use a different NFS version](/docs/openshift?topic=openshift-file_storage#changing-pv-nfs)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-file_storage#file_backup_restore)
-
-    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
-
-    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#file-replicate-snapshot-diff-zone)
-
-    * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
-
-    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-file_storage#file-backup-helm)
-
-    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-file_storage#file-cp-data)
-
-* [Storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
-
-* [Sample customized storage classes](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
-
-    * [Creating topology-aware storage](/docs/openshift?topic=openshift-file_storage#file-topology)
-
-    * [Specifying the zone for multizone clusters](/docs/openshift?topic=openshift-file_storage#file_multizone_yaml)
-
-    * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version_class)
-
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-file_storage#cleanup_file)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
-
-
 ## Setting up {{site.data.keyword.blockstorageshort}}
-{: #sitemap_setting_up_1}
+{: #sitemap_setting_up_}
 
 
 [Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
@@ -4996,8 +4937,205 @@ subcollection: openshift
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
 
 
-## Setting up IBM Cloud Object Storage
-{: #sitemap_setting_up_ibm_cloud_object_storage}
+## Setting up Block Storage for VPC
+{: #sitemap_setting_up_block_storage_for_vpc}
+
+
+[Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
+
+* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
+
+* [Adding {{site.data.keyword.block_storage_is_short}} to your apps](/docs/openshift?topic=openshift-vpc-block#vpc-block-add)
+
+* [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
+
+* [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
+
+    * [Recreating custom storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
+
+* [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
+
+* [Customizing the default storage settings](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default)
+
+    * [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit)
+
+    * [Creating a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
+
+    * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
+
+    * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
+
+    * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
+
+    * [Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret)
+
+* [Setting up volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand)
+
+    * [Manually expanding volumes before add-on version 4.2](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
+
+* [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
+
+* [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
+
+    * [10 IOPs tier](/docs/openshift?topic=openshift-vpc-block#10iops-sc-vpc-block)
+
+    * [5 IOPs tier](/docs/openshift?topic=openshift-vpc-block#5iops-sc-vpc-block)
+
+    * [Custom](/docs/openshift?topic=openshift-vpc-block#custom-sc-vpc-block)
+
+    * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
+
+[Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
+
+* [Creating an app deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
+
+* [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
+
+* [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
+
+* [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-turn-off-snapshots)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-volume-snapshot#snapshot-next-steps)
+
+* [Troubleshooting snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#ts-snapshot-vpc-block-addon-next)
+
+[Customizing the {{site.data.keyword.block_storage_is_short}} configmap](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap)
+
+* [{{site.data.keyword.block_storage_is_short}} configmap reference](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap-reference)
+
+[Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
+
+* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-addon-enable-trusted)
+
+* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-block-setup-trusted)
+
+    * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#secret-create-truted-profile)
+
+[Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
+
+* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
+
+    * [Labeling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+
+    * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
+
+* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
+
+* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
+
+* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+
+* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
+
+* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
+
+    * [RHEL or CentOS ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+
+    * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+
+[Removing {{site.data.keyword.block_storage_is_short}} from your cluster](/docs/openshift?topic=openshift-storage-block-vpc-remove#storage-block-vpc-remove)
+
+* [Cleaning up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-block-vpc-remove#cleaning-up-block-vpc)
+
+
+## Setting up {{site.data.keyword.filestorage_short}}
+{: #sitemap_setting_up_1}
+
+
+[Setting up {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
+
+* [Quick start for {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
+
+* [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
+
+    * [File storage types](/docs/openshift?topic=openshift-file_storage#file-types)
+
+    * [IOPS](/docs/openshift?topic=openshift-file_storage#file-iops)
+
+    * [Reclaim policy](/docs/openshift?topic=openshift-file_storage#file-reclaim)
+
+    * [Billing type](/docs/openshift?topic=openshift-file_storage#file-billing)
+
+* [Adding {{site.data.keyword.filestorage_short}} to apps](/docs/openshift?topic=openshift-file_storage#add_file)
+
+* [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
+
+    * [Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
+
+    * [Creating a persistent volume and a persistent volume claim](/docs/openshift?topic=openshift-file_storage#existing-file-2)
+
+* [Using {{site.data.keyword.filestorage_short}} in a stateful set](/docs/openshift?topic=openshift-file_storage#file_statefulset)
+
+    * [Creating the PVC when you create a stateful set by using dynamic provisioning](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
+
+    * [Static provisioning: Using an existing PVC with your stateful set](/docs/openshift?topic=openshift-file_storage#file_static_statefulset)
+
+* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration)
+
+* [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version)
+
+    * [Creating a customized storage class with a specific NFS version](/docs/openshift?topic=openshift-file_storage#custom-sc-nfs-creat)
+
+    * [Changing your existing PV to use a different NFS version](/docs/openshift?topic=openshift-file_storage#changing-pv-nfs)
+
+* [Backing up and restoring data](/docs/openshift?topic=openshift-file_storage#file_backup_restore)
+
+    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
+
+    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#file-replicate-snapshot-diff-zone)
+
+    * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
+
+    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-file_storage#file-backup-helm)
+
+    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-file_storage#file-cp-data)
+
+* [Storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
+
+* [Sample customized storage classes](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
+
+    * [Creating topology-aware storage](/docs/openshift?topic=openshift-file_storage#file-topology)
+
+    * [Specifying the zone for multizone clusters](/docs/openshift?topic=openshift-file_storage#file_multizone_yaml)
+
+    * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version_class)
+
+* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-file_storage#cleanup_file)
+
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
+
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
+
+
+## Setting up File Storage for VPC
+{: #sitemap_setting_up_file_storage_for_vpc}
+
+
+[Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
+
+* [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs-store-file-vpc)
+
+[Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
+
+* [Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_dynamic)
+
+* [Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with static provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_static)
+
+[Managing {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-managing)
+
+* [Creating a custom storage class](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-custom-sc)
+
+* [Updating the {{site.data.keyword.filestorage_vpc_short}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
+
+* [Understanding your storage removal options](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc_storage_delete_options_file)
+
+* [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
+
+[Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref#storage-file-vpc-sc-ref)
+
+
+## Setting up Object Storage
+{: #sitemap_setting_up_object_storage}
 
 
 [Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
@@ -5059,113 +5197,6 @@ subcollection: openshift
 * [Cold](/docs/openshift?topic=openshift-storage_cos_reference#cold)
 
 * [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
-
-
-## Setting up Portworx
-{: #sitemap_setting_up_portworx}
-
-
-[About Portworx](/docs/openshift?topic=openshift-storage_portworx_about#storage_portworx_about)
-
-* [What is software-defined storage (SDS)?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-sds)
-
-* [What are the benefits of Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-benefits)
-
-* [How does Portworx work?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-work)
-
-* [What are the requirements to run Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-requirments)
-
-* [How can I make sure that my data is stored highly available?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-ha)
-
-* [What volume topology offers the best performance for my pods?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-topology)
-
-* [Can I install Portworx in a private cluster?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-private)
-
-* [How do I get support?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support)
-
-* [What's next?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
-
-* [Exploring other Portworx features](/docs/openshift?topic=openshift-storage_portworx_about#features)
-
-[Planning your Portworx setup](/docs/openshift?topic=openshift-storage_portworx_plan#storage_portworx_plan)
-
-* [Limitations](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations)
-
-* [Overview of the Portworx lifecycle](/docs/openshift?topic=openshift-storage_portworx_plan#portowrx_lifecycle)
-
-* [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-storage_portworx_plan#px_create_km_secret)
-
-[Preparing your cluster for Portworx](/docs/openshift?topic=openshift-storage_portworx_preparing#storage_portworx_preparing)
-
-* [Classic clusters](/docs/openshift?topic=openshift-storage_portworx_preparing#px-create-classic-volumes)
-
-* [VPC clusters](/docs/openshift?topic=openshift-storage_portworx_preparing#px-create-vpc-volumes)
-
-* [Satellite clusters](/docs/openshift?topic=openshift-storage_portworx_preparing#px-create-satellite-volumes)
-
-[Setting up the Portworx key-value store](/docs/openshift?topic=openshift-storage_portworx_kv_store#storage_portworx_kv_store)
-
-* [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx_database)
-
-* [Using the Portworx key-value database](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kvdb)
-
-    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kv-db)
-
-[Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage_portworx_encryption#storage_portworx_encryption)
-
-* [Encryption overview](/docs/openshift?topic=openshift-storage_portworx_encryption#px_encryption)
-
-* [Decryption overview](/docs/openshift?topic=openshift-storage_portworx_encryption#decryption-ov)
-
-* [Setting up volume encryption](/docs/openshift?topic=openshift-storage_portworx_encryption#storage-portworx-volume-encryption)
-
-    * [Getting your KMS instance and credentials](/docs/openshift?topic=openshift-storage_portworx_encryption#storage-portworx-credentials)
-
-[Installing Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_deploy#storage_portworx_deploy)
-
-* [Creating a Portworx volume](/docs/openshift?topic=openshift-storage_portworx_deploy#add_portworx_storage)
-
-* [Mounting the volume to your app](/docs/openshift?topic=openshift-storage_portworx_deploy#mount_pvc)
-
-[Updating Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_update#storage_portworx_update)
-
-* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up)
-
-[Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery#storage_portworx_recovery)
-
-[Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup#storage_portworx_backup)
-
-* [Installing Portworx Backup on a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-install)
-
-* [Verifying your Portworx Backup installation](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-verify)
-
-* [Logging in to the Portworx Backup console](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-ui)
-
-* [Adding a backup location to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
-
-* [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
-
-* [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
-
-* [Creating a backup with the `kmpd` command](/docs/openshift?topic=openshift-storage_portworx_backup#px-kdmp)
-
-* [Backing up and restoring cluster data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-and-restore)
-
-    * [Upgrading PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-upgrade)
-
-[Removing Portworx](/docs/openshift?topic=openshift-storage_portworx_removing#storage_portworx_removing)
-
-* [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-storage_portworx_removing#remove_pvc_apps_volumes)
-
-* [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_removing#remove_storage_node_cluster-px)
-
-* [Removing the Portworx DaemonSet](/docs/openshift?topic=openshift-storage_portworx_removing#remove_px_daemonset)
-
-* [Removing Portworx from your cluster](/docs/openshift?topic=openshift-storage_portworx_removing#remove_portworx)
-
-[Getting help and support](/docs/openshift?topic=openshift-storage_portworx_support#storage_portworx_support)
-
-* [Gathering logs](/docs/openshift?topic=openshift-storage_portworx_support#portworx_logs)
 
 
 ## Setting up OpenShift Data Foundation
@@ -5361,132 +5392,111 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
 
-## Setting up Block Storage for VPC
-{: #sitemap_setting_up_block_storage_for_vpc}
+## Setting up Portworx
+{: #sitemap_setting_up_portworx}
 
 
-[Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
+[About Portworx](/docs/openshift?topic=openshift-storage_portworx_about#storage_portworx_about)
 
-* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc_block_qs)
+* [What is software-defined storage (SDS)?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-sds)
 
-* [Adding {{site.data.keyword.block_storage_is_short}} to your apps](/docs/openshift?topic=openshift-vpc-block#vpc-block-add)
+* [What are the benefits of Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-benefits)
 
-* [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
+* [How does Portworx work?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-work)
 
-* [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
+* [What are the requirements to run Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-requirments)
 
-    * [Recreating custom storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
+* [How can I make sure that my data is stored highly available?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-ha)
 
-* [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
+* [What volume topology offers the best performance for my pods?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-topology)
 
-* [Customizing the default storage settings](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default)
+* [Can I install Portworx in a private cluster?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-private)
 
-    * [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit)
+* [How do I get support?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support)
 
-    * [Creating a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
+* [What's next?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
 
-    * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
+* [Exploring other Portworx features](/docs/openshift?topic=openshift-storage_portworx_about#features)
 
-    * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
+[Planning your Portworx setup](/docs/openshift?topic=openshift-storage_portworx_plan#storage_portworx_plan)
 
-    * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
+* [Limitations](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations)
 
-    * [Enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret)
+* [Overview of the Portworx lifecycle](/docs/openshift?topic=openshift-storage_portworx_plan#portowrx_lifecycle)
 
-* [Setting up volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand)
+* [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-storage_portworx_plan#px_create_km_secret)
 
-    * [Manually expanding volumes before add-on version 4.2](/docs/openshift?topic=openshift-vpc-block#expanding-existing-volumes)
+[Preparing your cluster for Portworx](/docs/openshift?topic=openshift-storage_portworx_preparing#storage_portworx_preparing)
 
-* [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
+* [Classic clusters](/docs/openshift?topic=openshift-storage_portworx_preparing#px-create-classic-volumes)
 
-* [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
+* [VPC clusters](/docs/openshift?topic=openshift-storage_portworx_preparing#px-create-vpc-volumes)
 
-    * [10 IOPs tier](/docs/openshift?topic=openshift-vpc-block#10iops-sc-vpc-block)
+* [Satellite clusters](/docs/openshift?topic=openshift-storage_portworx_preparing#px-create-satellite-volumes)
 
-    * [5 IOPs tier](/docs/openshift?topic=openshift-vpc-block#5iops-sc-vpc-block)
+[Setting up the Portworx key-value store](/docs/openshift?topic=openshift-storage_portworx_kv_store#storage_portworx_kv_store)
 
-    * [Custom](/docs/openshift?topic=openshift-vpc-block#custom-sc-vpc-block)
+* [Setting up a key-value store for Portworx metadata](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx_database)
 
-    * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
+* [Using the Portworx key-value database](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kvdb)
 
-[Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
+    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kv-db)
 
-* [Creating an app deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
+[Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage_portworx_encryption#storage_portworx_encryption)
 
-* [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
+* [Encryption overview](/docs/openshift?topic=openshift-storage_portworx_encryption#px_encryption)
 
-* [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
+* [Decryption overview](/docs/openshift?topic=openshift-storage_portworx_encryption#decryption-ov)
 
-* [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-turn-off-snapshots)
+* [Setting up volume encryption](/docs/openshift?topic=openshift-storage_portworx_encryption#storage-portworx-volume-encryption)
 
-* [Next steps](/docs/openshift?topic=openshift-vpc-volume-snapshot#snapshot-next-steps)
+    * [Getting your KMS instance and credentials](/docs/openshift?topic=openshift-storage_portworx_encryption#storage-portworx-credentials)
 
-* [Troubleshooting snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#ts-snapshot-vpc-block-addon-next)
+[Installing Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_deploy#storage_portworx_deploy)
 
-[Customizing the {{site.data.keyword.block_storage_is_short}} configmap](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap)
+* [Creating a Portworx volume](/docs/openshift?topic=openshift-storage_portworx_deploy#add_portworx_storage)
 
-* [{{site.data.keyword.block_storage_is_short}} configmap reference](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap-reference)
+* [Mounting the volume to your app](/docs/openshift?topic=openshift-storage_portworx_deploy#mount_pvc)
 
-[Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
+[Updating Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_update#storage_portworx_update)
 
-* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-addon-enable-trusted)
+* [VPC: Updating worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up)
 
-* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-block-setup-trusted)
+[Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery#storage_portworx_recovery)
 
-    * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#secret-create-truted-profile)
+[Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup#storage_portworx_backup)
 
-[Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
+* [Installing Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-install)
 
-* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
+* [Verifying your Portworx Backup installation](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-verify)
 
-    * [Labeling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
+* [Logging in to the Portworx Backup console](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-ui)
 
-    * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
+* [Adding a backup location to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
 
-* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
+* [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
-* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
+* [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
 
-* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
+* [Creating a backup with the `kmpd` command](/docs/openshift?topic=openshift-storage_portworx_backup#px-kdmp)
 
-* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
+* [Backing up and restoring cluster data with PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-and-restore)
 
-* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
+    * [Upgrading PX-Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-upgrade)
 
-    * [RHEL or CentOS ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
+[Removing Portworx](/docs/openshift?topic=openshift-storage_portworx_removing#storage_portworx_removing)
 
-    * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
+* [Removing Portworx volumes from apps](/docs/openshift?topic=openshift-storage_portworx_removing#remove_pvc_apps_volumes)
 
-[Removing {{site.data.keyword.block_storage_is_short}} from your cluster](/docs/openshift?topic=openshift-storage-block-vpc-remove#storage-block-vpc-remove)
+* [Removing a worker node from your Portworx cluster or the entire Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_removing#remove_storage_node_cluster-px)
 
-* [Cleaning up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-block-vpc-remove#cleaning-up-block-vpc)
+* [Removing the Portworx DaemonSet](/docs/openshift?topic=openshift-storage_portworx_removing#remove_px_daemonset)
 
+* [Removing Portworx from your cluster](/docs/openshift?topic=openshift-storage_portworx_removing#remove_portworx)
 
-## Setting up IBM Cloud File Storage for VPC
-{: #sitemap_setting_up_ibm_cloud_file_storage_for_vpc}
+[Getting help and support](/docs/openshift?topic=openshift-storage_portworx_support#storage_portworx_support)
 
-
-[Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
-
-* [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs-store-file-vpc)
-
-[Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
-
-* [Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_dynamic)
-
-* [Deploying an app that uses {{site.data.keyword.filestorage_vpc_short}} with static provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc_add_file_static)
-
-[Managing {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-managing)
-
-* [Creating a custom storage class](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-custom-sc)
-
-* [Updating the {{site.data.keyword.filestorage_vpc_short}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
-
-* [Understanding your storage removal options](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc_storage_delete_options_file)
-
-* [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
-
-[Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref#storage-file-vpc-sc-ref)
+* [Gathering logs](/docs/openshift?topic=openshift-storage_portworx_support#portworx_logs)
 
 
 ## IBM Cloud storage utilities
