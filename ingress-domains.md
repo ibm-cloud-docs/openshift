@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-08-22"
 
 keywords: openshift
 
@@ -13,21 +13,31 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating your own Ingress domain
+# Setting up a domain for your cluster
 {: #ingress-domains}
 
-When you create a standard cluster, an Ingress subdomain is registered by default for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. Additionally, you can create your own domain registered with IBM Cloud's internal domain provider, or a domain registered with an external provider. Currently, {{site.data.keyword.cloud_notm}} supports external domains registered with {{site.data.keyword.cis_full_notm}}, Akamai, or Cloudflare.
+When you create a cluster, an Ingress subdomain is registered by default for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. Additionally, you can make your apps reachable at a custom domain by creating your own domain registered with IBM Cloud's internal domain provider, or a domain registered with an external provider. You can also add an existing domain to your cluster.
 {: shortdesc}
 
 This functionality is available in beta and is subject to change.
 {: beta}
 
-## Setting up domains with the {{site.data.keyword.cloud_notm}} internal provider
+{{site.data.keyword.cloud_notm}} provides a managed, internal provider that you can use to create your own domains. With the managed domain provider, you do not need to create and maintain an account with an external provider. You can also utilize health check monitoring for your managed domains. When creating a domain with the internal provider, you specify a subdomain name, such as `exampledomain`, and the new domain is named in the format `exampledomain.<zone>.containers.appdomain.cloud`. 
+
+You can also use your own external DNS provider. You must have an account with the external provider that you want to use. The following external providers are supported:
+- [Akamai]{: tag-blue}
+- [Cloudflare]{: tag-red}
+- [CIS]{: tag-gray}
+
+
+
+## Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider
 {: #ingress-domain-int}
+{: cli}
 
 {{site.data.keyword.cloud_notm}} provides a managed, internal provider that you can use to create your own domains. You can use the `ibmcloud oc ingress domain create` command to create a new domain, or you can specify an existing domain that you want to add to your cluster. When you create a domain with the internal provider, you specify a subdomain name, such as `exampledomain`. The new domain is named in the format `exampledomain.<zone>.containers.appdomain.cloud`. 
 
-The {{site.data.keyword.cloud_notm}} internal provider runs on Akamai, but is separate from and should not be confused with an external Akamai domain that you create on your own. When you get the details of a domain, you may see the provider type listed as `akamai` or `akamai-ext`. The `akamai` provider type refers to the internal {{site.data.keyword.cloud_notm}} domain provider, and `akamai-ext` refers to the external Akamai provider that you directly register the domain with.
+The {{site.data.keyword.cloud_notm}} internal managed domain provider is Akamai. You can also use your own Akamai account to create or add domains. When you get the details of a domain, you may see the provider type listed as `akamai` or `akamai-ext`. The `akamai` provider type refers to the internal {{site.data.keyword.cloud_notm}} domain provider, and `akamai-ext` refers to your own external Akamai account that you directly register the domain with.
 {: note}
 
 ```sh
@@ -59,6 +69,7 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--is-default] [--domain DOM
 
 ## Setting up domains with {{site.data.keyword.cis_full_notm}}
 {: #ingress-domain-cis}
+{: cli}
 
 Follow the steps to create a domain with {{site.data.keyword.cis_full_notm}}.
 
@@ -112,19 +123,15 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--is-default] [
 :    Optional. The Domain ID for your {{site.data.keyword.cis_full_notm}} instance. This is a GUID value.
 
 
-## Setting up domains from other external providers
-{: #ingress-domain-external}
-
-To add an Akamai or Cloudflare domain to your cluster, you must first apply credentials for the external provider to your cluster. Then, you can either add a domain that already exists in your external provider account, or you can create a new domain that registers with both your {{site.data.keyword.cloud_notm}} and external provider accounts.
-
-### Set up credentials for your provider
+### Adding DNS credentials for an external provider
 {: #ingress-domains-ext-cred}
+{: cli}
 
-To use a domain that is registered with Akamai or Cloudflare, you must add the external provider credentials to your cluster. {{site.data.keyword.openshiftlong_notm}} uses these credentials to provision or access a domain from the external provider on your behalf. You can only add one set of credentials to your cluster. 
+To use a domain that is registered with an external provider such as Akamai or Cloudflare, you must add the external provider credentials to your cluster. {{site.data.keyword.openshiftlong_notm}} uses these credentials to provision or access a domain from the external provider on your behalf. You can only add one set of credentials to your cluster. 
 
 Different providers might require different credentials, such as access tokens or secrets. {{site.data.keyword.openshiftlong_notm}} does not provide the credentials; you must acquire them from the external provider.
 
-#### Add Akamai credentials
+### Adding Akamai credentials
 {: #ingress-domains-ext-cred-ak}
 
 [Akamai]{: tag-blue} Run the command to add Akamai provider credentials to your cluster.
@@ -161,7 +168,7 @@ This command is only required when creating an external domain with the Akamai p
 `--domain-zone ZONE`
 :    The DNS zone that exists in your Akamai account and is specified in your [provider credentials](#ingress-domains-ext-cred). Specify the full zone name, such as `example.external.adppdomain.cloud`.
 
-#### Add Cloudflare credentials
+### Adding Cloudflare credentials
 {: #ingress-domains-ext-cred-cf}
 
 [Cloudflare]{: tag-red} Run the command to add Cloudflare provider credentials to your cluster. 
@@ -187,8 +194,9 @@ ibmcloud oc ingress domain credential set cloudflare --cluster CLUSTER --token T
 :    The DNS zone that exists in your Cloudflare account and is specified in your [provider credentials](#ingress-domains-ext-cred). This is a GUID value. 
 
 
-#### Verify the provider credentials 
+### Verifying your provider credentials 
 {: #ingress-domains-ext-cred-verify}
+{: cli}
 
 Verify that the provider credentials were added to your cluster.
 
@@ -198,8 +206,9 @@ ibmcloud oc ingress domain credential get --cluster CLUSTER [--output OUTPUT] [-
 {: pre}
 
 
-### Create a domain, or add an existing domain 
+## Creating a domain, or adding an existing domain 
 {: #ingress-domains-ext-create}
+{: cli}
 
 Create or add a domain to your cluster with the `ibmcloud oc ingress domain create`. If you already have a domain provisioned with an internal or external provider and have set up any necessary credentials, you can use this command to add that domain to your cluster. Or, you can provision a new domain in both your cluster and in your provider account. To specify an existing domain, include the full domain name with the external provider zone, such as `exampledomain.externalzone.com`. To create a new domain, you must still include the external provider zone, but you can customize the subdomain portion, such as `new-exampledomain.externalzone.com`.
 
@@ -234,16 +243,12 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--is-default] [--domain DOM
 
 ## Managing domains
 {: #ingress-domains-manage}
+{: cli}
 
 Learn how to manage the domains that exist in your cluster.
 {: shortdesc}
 
-### Viewing domains in a cluster
-{: #ingress-domains-manage-view}
-
-You can view the status of all domains in your cluster, or you can view details of a single domain. After you create a new domain or attach an existing domain in your cluster, the domain might remain in a `pending` state for a few minutes. 
-
-#### List all domains in a cluster.
+### Listing all domains in a cluster
 {: #ingress-domains-manage-view-ls}
 
 For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-ls).
@@ -253,7 +258,7 @@ ibmcloud oc ingress domain ls --cluster CLUSTER
 ```
 {: pre}
 
-#### Get the details of a single domain.
+### Getting the details of a single domain
 {: #ingress-domains-manage-view-get}
 
 For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-get).
@@ -266,7 +271,7 @@ ibmcloud oc ingress domain credential get --cluster CLUSTER
 ### Removing a domain from a cluster
 {: #ingress-domains-manage-rm}
 
-If you delete a domain from a cluster, the domain cannot be recovered. If you later need the domain, you must reprovision it with the `ibmcloud oc ingress domain create` command. Note that you cannot delete a cluster's default domain. If you want to delete the domain that is currently registered as the default, you must first [assign a different default domain](#ingress-domain-manage-default).
+If you delete a domain from a cluster, the domain cannot be recovered. If you later need the domain, you must reprovision it. Note that you cannot delete a cluster's default domain. If you want to delete the domain that is currently registered as the default, you must first [assign a different default domain](#ingress-domain-manage-default).
 
 If you delete a domain that is registered with the IBM internal provider, you cannot reuse the domain name.
 {: note}
@@ -278,11 +283,10 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
-
 ### Updating a domain's IP addresses or hostname
 {: #ingress-domains-manage-update}
 
-You can update a domain's registered IP addresses (for classic clusters) or hostname (for VPC clusters) after the domain is created or added to the cluster. This command updates all the resources in your cluster with the specified IP addresses or hostnames and changes your app URLs. 
+You can update a domain's registered IP addresses (for Classic or VPC clusters) or hostname (for VPC clusters) after the domain is created or added to the cluster. This command updates all the resources in your cluster with the specified IP addresses or hostnames and changes your app URLs. 
 
 For more information and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-update).
 
@@ -312,6 +316,7 @@ ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN
 
 ## Managing external provider credentials
 {: #ingress-domains-manage-creds}
+{: cli}
 
 Learn how to manage the provider credentials that exist in your cluster.
 {: shortdesc}
@@ -328,7 +333,6 @@ ibmcloud oc ingress domain credential get --cluster CLUSTER
 ```
 {: pre}
 
-
 ### Removing external provider credentials
 {: #ingress-domain-manage-creds-rm}
 
@@ -341,9 +345,9 @@ ibmcloud oc ingress domain credential rm --cluster CLUSTER
 ```
 {: pre}
 
-
-## Managing domain secrets
+## Managing domain secrets and certificates
 {: #ingress-domain-manage-secrets}
+{: cli}
 
 Learn how to manage the TLS certificate for your Ingress domain. 
 
@@ -359,7 +363,7 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
-### Delete an Ingress domain secret
+### Deleting an Ingress domain secret
 {: #ingress-domain-manage-secrets-rm}
 
 Delete the secret for an Ingress domain and prevent future renewal of the certificate. 
@@ -370,15 +374,4 @@ For more details and command options, see the [CLI reference](/docs/containers?t
 ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN 
 ```
 {: pre}
-
-
-
-
-
-
-
-
-
-
-
 

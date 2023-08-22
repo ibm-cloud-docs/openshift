@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-08-22"
 
 keywords: openshift
 subcollection: openshift
@@ -4777,9 +4777,9 @@ subcollection: openshift
 
     * [Step 4: Access your app](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller-4)
 
-[Creating your own Ingress domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains)
+[Setting up a domain for your cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains)
 
-* [Setting up domains with the {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-int)
+* [Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-int)
 
 * [Setting up domains with {{site.data.keyword.cis_full_notm}}](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis)
 
@@ -4787,15 +4787,21 @@ subcollection: openshift
 
     * [Create a domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis-create)
 
-* [Setting up domains from other external providers](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-external)
+    * [Adding DNS credentials for an external provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred)
 
-    * [Set up credentials for your provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred)
+    * [Adding Akamai credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred-ak)
 
-    * [Create a domain, or add an existing domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-create)
+    * [Adding Cloudflare credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred-cf)
+
+    * [Verifying your provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred-verify)
+
+* [Creating a domain, or adding an existing domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-create)
 
 * [Managing domains](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage)
 
-    * [Viewing domains in a cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-view)
+    * [Listing all domains in a cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-view-ls)
+
+    * [Getting the details of a single domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-view-get)
 
     * [Removing a domain from a cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-rm)
 
@@ -4809,11 +4815,11 @@ subcollection: openshift
 
     * [Removing external provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-creds-rm)
 
-* [Managing domain secrets](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets)
+* [Managing domain secrets and certificates](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets)
 
     * [Regenerating the certificate for an Ingress domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets-regen)
 
-    * [Delete an Ingress domain secret](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets-rm)
+    * [Deleting an Ingress domain secret](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets-rm)
 
 [Managing TLS and non-TLS certificates and secrets](/docs/openshift?topic=openshift-secrets#secrets)
 
