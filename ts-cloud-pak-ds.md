@@ -40,21 +40,47 @@ This error happens because the Cloud Pak deployer (`cloud-pak-deployer`) makes c
 If you see this error, you must manually update the `cloud-pak-node-fix-config` configmap.
 {: tsResolve}
 
-Known Cloud Pak deployer feature gates that cause upgrade issues.
+Review the following steps based on your target cluster version.
 
-Upgrading from 4.10 to 4.11
-:   CSIMigrationOpenStack
-:   ServiceLBNodePortControl
-:   CSIMigrationAzureDisk
-
-Upgrading from 4.11 to 4.12
-:   CSIMigrationAWS: False
-:   CSIMigrationGCE: False
-:   CRIContainerLogRotation: true
+### Upgrading from 4.11 to 4.12
+{: cdp-feature-gates-412}
 
 
+1. Edit the ConfigMap and remove the following feature gates.
 
-1. Edit the ConfigMap and remove the feature gate line. For example: `CSIMigrationOpenStack`.
+    ```yaml
+    CSIMigrationAWS: False
+    CSIMigrationGCE: False
+    CRIContainerLogRotation: true
+    ```
+    {: screen}
+
+
+    ```sh
+    kubectl get cm cloud-pak-node-fix-config -n kube-system -o yaml
+    ```
+    {: pre}
+
+1. Reboot the worker node. 
+
+1. After rebooting, continue to upgrade your worker nodes.
+
+1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+
+### Upgrading from 4.10 to 4.11
+{: cdp-feature-gates-411}
+
+
+1. Edit the ConfigMap and remove the following feature gates.
+
+    ```yaml
+    CSIMigrationOpenStack
+    ServiceLBNodePortControl
+    CSIMigrationAzureDisk
+    ```
+    {: screen}
+
+
     ```sh
     kubectl get cm cloud-pak-node-fix-config -n kube-system -o yaml
     ```
