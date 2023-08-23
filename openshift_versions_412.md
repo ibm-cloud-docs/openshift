@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-08-23"
 
 keywords: openshift, version, update, upgrade, 4.12, update openshift
 
@@ -67,5 +67,6 @@ The following table shows the actions that you must take before you [update the 
 | Known OpenShift issues | For information on actions that might be required, review the [OpenShift version 4.12 known issues](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-known-issues){: external}. |
 | Pod security admission synchronization | If an Operator is installed in a user-created `openshift-*` namespace, synchronization is turned on by default after a cluster service version (CSV) is created in the namespace. The synchronized label inherits the permissions of the service accounts in the namespace. See [Controlling pod security admission synchronization](https://docs.openshift.com/container-platform/4.12/authentication/understanding-and-managing-pod-security-admission.html#security-context-constraints-psa-opting_understanding-and-managing-pod-security-admission){: external} for actions that might be required. |
 | Application updates required for `natPortRange` changes. | If your app requires a larger number of egress network connections from `pod-network` pods to a destination that is external to the cluster, you might need to make updates. This applies if your app has more than 30,000 egress connections open on a single worker node simultaneously, or over 30,000 egress connections open on a single worker node within a few minutes. For more information, see [Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125). |
+| The kubelet modifications that some Cloud Paks make are causing worker nodes to enter `Critical` when upgrading. | For more information, see [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds). |
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.12" caption-side="bottom"}
 
