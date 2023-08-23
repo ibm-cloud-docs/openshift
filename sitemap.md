@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-22"
+lastupdated: "2023-08-23"
 
 keywords: openshift
 subcollection: openshift
@@ -9244,6 +9244,8 @@ subcollection: openshift
 
 * [`eu-de`](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
 
+* [`eu-es`](/docs/openshift?topic=openshift-vpc-flavors#eu-es)
+
 * [`eu-gb`](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
 
 * [`jp-osa`](/docs/openshift?topic=openshift-vpc-flavors#jp-osa)
@@ -9270,6 +9272,8 @@ subcollection: openshift
 * [`fra`](/docs/openshift?topic=openshift-classic-flavors#fra)
 
 * [`lon`](/docs/openshift?topic=openshift-classic-flavors#lon)
+
+* [`mad`](/docs/openshift?topic=openshift-classic-flavors#mad)
 
 * [`mil`](/docs/openshift?topic=openshift-classic-flavors#mil)
 
