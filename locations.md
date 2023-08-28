@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-24"
+lastupdated: "2023-08-28"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -74,6 +74,7 @@ If you create a classic cluster in a multizone region, the replicas of your high
 | Asia Pacific | Japan | Osaka | jp-osa | osa21, osa22, osa23 |
 | Asia Pacific | Japan | Tokyo | jp-tok | tok02, tok04, tok05 |
 | Europe | Germany | Frankfurt | de-fra | fra02, fra04, fra05 |
+| Europe | Spain | Madrid | es-mad | mad02, mad04, mad05 |
 | Europe | United Kingdom | London | uk-lon | lon02, lon04, lon05, lon06 |
 | North America | United States | Dallas | us-dal | dal10, dal12, dal13 |
 | North America | United States | Washington DC | us-wdc | wdc04, wdc06, wdc07 |
@@ -117,6 +118,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1, jp-osa-2, jp-osa-3 |
 | Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1, jp-tok-2, jp-tok-3 |
 | Europe | Germany | Frankfurt | eu-de | eu-de-1, eu-de-2, eu-de-3 |
+| Europe | Spain | Madrid | eu-es | eu-es-1, eu-es-2, eu-es-3 |
 | Europe | United Kingdom | London | eu-gb | eu-gb-1, eu-gb-2, eu-gb-3 |
 | North America | Canada | `†` Toronto | ca-tor | ca-tor-1, ca-tor-2, ca-tor-3 |
 | North America | United States | Dallas | us-south | us-south-1, us-south-2, us-south-3 |

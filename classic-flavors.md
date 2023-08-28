@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-08-28"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -233,7 +233,7 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | **REDHAT_7_64 (default)**, REDHAT_8_64| 2000GB HDD | 960GB SSD |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | **REDHAT_7_64 (default)**, REDHAT_8_64| 25GB SSD | 100GB SSD |
-{: caption="Table 6. Worker node flavors for mad." caption-side="bottom"}
+{: caption="Table 6. Worker node flavors for Madrid." caption-side="bottom"}
 
 
 
