@@ -8789,9 +8789,9 @@ subcollection: openshift
 
 [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds#ts-cloud-pak-ds)
 
-    * [Upgrading from 4.11 to 4.12](/docs/openshift?topic=openshift-ts-cloud-pak-ds#upgrading-from-411-to-412)
+    * [Upgrading from 4.11 to 4.12](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-412)
 
-    * [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#upgrading-from-410-to-411)
+    * [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
 
 
 ### Cluster autoscaler

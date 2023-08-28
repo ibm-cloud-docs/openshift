@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-08-28"
 
 keywords: openshift, debug, cloud pak, daemson set, feature gates, failed to set
 
@@ -20,18 +20,9 @@ content-type: troubleshoot
 {: support}
 
 
-When you try to upgrade a worker node in a cluster with a Cloud Pak installation, the worker node is in `Critical` and you see an error message in the worker node kubelet similar to the following example.
+When you try to upgrade a worker node in a cluster with a Cloud Pak installation, the worker node goes from `Ready` to `Critical` and stays in `Critical`. Check if a ConfigMap exists for the Cloud Pak deployer by running `kubectl get cm cloud-pak-node-fix-config -n kube-system -o yaml`.
 {: tsSymptoms}
 
-```sh
-Error: failed to set feature gates from initial flags-based config: cannot set feature gate
-```
-{: screen}
-
-```sh
-Error: failed to set feature gates from initial flags-based config: cannot set feature gate CSIMigrationOpenStack to false, feature is locked to true
-```
-{: screen}
 
 
 This error happens because the Cloud Pak deployer (`cloud-pak-deployer`) makes changes to the kubelet config file. However, if the kubelet config file contains changes between versions, for example between 4.10 and 4.11, then the deployer doesn't update the config file.
@@ -43,7 +34,7 @@ If you see this error, you must manually update the `cloud-pak-node-fix-config` 
 Review the following steps based on your target cluster version.
 
 ### Upgrading from 4.11 to 4.12
-{: cdp-feature-gates-412}
+{: #cdp-feature-gates-412}
 
 
 1. Edit the ConfigMap and remove the following feature gates.
@@ -57,7 +48,7 @@ Review the following steps based on your target cluster version.
 
 
     ```sh
-    kubectl get cm cloud-pak-node-fix-config -n kube-system -o yaml
+    kubectl edit cm cloud-pak-node-fix-config -n kube-system -o yaml
     ```
     {: pre}
 
@@ -68,7 +59,7 @@ Review the following steps based on your target cluster version.
 1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
 ### Upgrading from 4.10 to 4.11
-{: cdp-feature-gates-411}
+{: #cdp-feature-gates-411}
 
 
 1. Edit the ConfigMap and remove the following feature gates.
@@ -82,7 +73,7 @@ Review the following steps based on your target cluster version.
 
 
     ```sh
-    kubectl get cm cloud-pak-node-fix-config -n kube-system -o yaml
+    kubectl edit cm cloud-pak-node-fix-config -n kube-system -o yaml
     ```
     {: pre}
 
