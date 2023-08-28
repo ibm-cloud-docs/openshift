@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-24"
+lastupdated: "2023-08-28"
 
 keywords: openshift
 
@@ -28,6 +28,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2023
 {: #openshift-aug23}
+
+
+### 28 August 2023
+{: #openshift-aug2823}
+{: release-note}
+
+New! Madrid multizone region
+:   You can now create clusters in [Madrid](/docs/openshift?topic=openshift-regions-and-zones).
+
 
 ### 15 August 2023
 {: #openshift-aug1523}

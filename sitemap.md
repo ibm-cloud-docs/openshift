@@ -268,6 +268,10 @@ subcollection: openshift
 
 * [August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug23)
 
+    * [28 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2823)
+
+        * New! Madrid multizone region
+
     * [15 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1523)
 
         * Worker node fix packs are available.
