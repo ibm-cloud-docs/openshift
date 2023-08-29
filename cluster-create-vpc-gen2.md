@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-22"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -12,11 +12,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
-
-
 
 # Creating VPC clusters
 {: #cluster-create-vpc-gen2}
@@ -44,76 +39,48 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
 * If you VPC Clusters doesn't require Classic Infrastructure Access, no account changes are required.
 
 
-
 ## Creating a VPC cluster in the console
 {: #clusters_vpcg2_ui}
 {: ui}
 
+Create your VPC {{site.data.keyword.redhat_openshift_notm}} cluster by using the {{site.data.keyword.cloud_notm}} console. Follow the console instructions to make the following cluster configurations. To begin creating your cluster, navigate to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} and click **Create cluster**.
+{: shortdesc}
 
-1. Make sure that you complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters&interface=ui) and decide on your cluster setup.
-1. [Navigate to the console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift).
-1. In the **Infrastructure** section, select **VPC**.
-1. In the **Virtual private cloud** section, choose from the following options.
-    * Select an existing VPC.
-    * Click **Create VPC**.
-1. **Optional**: If you selected **Create VPC**, complete the following steps.
-    1. Select a **Geography** and **Region**. To review the available regions, see [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
-    1. Enter a name for your VPC.
-    1. Select the **Resource group** where you want to create your VPC.
-    1. Enter any tags that you want to associate with your VPC.
-    1. Decide whether to **Allow SSH** and **Allow ping** in the default security group.
-    1. Decide whether to allow access to Classic resources.
-    1. Review the subnet details. By default, subnets are spread evenly across zones. If you want to modify your subnets, uncheck the **Create subnet in every zone** box.
-    1. If you modify your subnet details, specify the number of IP addresses to create. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets). Note that you can't change the number of IPs that a VPC subnet has later. 
-    1. If you enter a specific IP range, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
-1. Select a standard {{site.data.keyword.cos_full_notm}} instance where a bucket is automatically created for your cluster's internal registry.
-1. Select the cluster version.
-1. **Optional**: For the **OCP entitlement** section, select an entitlement for a worker pool, if you have one.
-    * Usually, select **Purchase additional licenses for this worker pool**. 
-    * If you have an {{site.data.keyword.cloud_notm}} Pak with a {{site.data.keyword.redhat_openshift_notm}} entitlement that you want to use, you can select **Apply my Cloud Pak OCP entitlement to this worker pool**. 
-    * Later, when you configure the worker pool, make sure to select only the flavor and number of worker nodes that your entitlement permits.
-1. Configure the **Location** details for your cluster.
-    1. Select the **Resource group** that you want to create your cluster in.
-        * A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group.
-        * To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
-    2. Select the zones to create your cluster in. For more information about cluster availability, see [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters).
-        * The zones are filtered based on the VPC that you selected, and include the VPC subnets that you previously created.
-        * To create a single zone cluster, select one zone only. You can [add zones to your cluster](/docs/openshift?topic=openshift-add-workers-vpc) later.
-        * To create a multizone cluster, select multiple zones.
-1. In the **Worker pool** section, choose your worker node flavor and number. You can add more worker pools to your cluster later. To change worker node operating systems, size, or storage, click **Change flavor**.
-    * **Default**: The default flavor comes with **4 vCPUs** of computing power and **16 GB** of memory. This virtual flavor is billed hourly. Other types of flavors include the following.
-    * **Bare metal**: Bare metal servers are provisioned manually by IBM Cloud infrastructure after you order, and can take more than one business day to complete. Bare metal is best suited for high-performance applications that need more resources and host control. Be sure that you want to provision a bare metal machine. Because it is billed monthly, if you cancel it immediately after an order by mistake, you are still charged the full month.
-    * **Virtual - shared**: Infrastructure resources, such as the hypervisor and physical hardware, are shared across you and other IBM customers, but each worker node is accessible only by you. Although this option is usually less expensive and sufficient, you might want to verify your performance and infrastructure requirements with your company policies. Virtual machines are billed hourly.
-    * **Virtual - dedicated**: Your worker nodes are hosted on infrastructure that is devoted to your account. Your physical resources are completely isolated. Virtual machines are billed hourly.
-1. **Optional**: If the flavor that you want to use has a configurable secondary disk, you can modify the secondary disk by clicking the **Edit** icon ![Edit icon](../icons/edit-tagging.svg "Edit"). Select the storage disks that you want to add to your worker nodes and then click **Apply**. To view a list of VPC worker node flavors and their storage options, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
-1. Set how many worker nodes to create per zone, such as **3**. You must set at least 2 worker nodes. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
-1. Enable [boot volume encryption](/docs/containers?topic=containers-encryption#worker-encryption-vpc). From the drop down menus, select a key management service (KMS) instance and root key to encrypt the local disk for each worker node in the `default` worker pool. If you choose not to enable this option when you create your cluster, you can enable it later.
+Virtual Private Cloud
+:   Select the existing **Virtual Private Cloud** (VPC) instance where you want to create you cluster. If you don't have a VPC, you can create one. 
 
-1. Configure your cluster with a private or a public and a private cloud service endpoint by setting the **Master service endpoint**. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master).
+Location
+:   Review the **Worker Zones** and **Subnets** for your cluster. The zones are filtered based on the VPC that you selected, and include the VPC subnets that you previously created. Depending on the level of availability you want for your cluster, select one or more zones. By default, your cluster resources are spread across three zones for high availability.  You can [add zones to your cluster](/docs/openshift?topic=openshift-add-workers-vpc) later.
 
-1. Configure [Secrets Manager](/docs/containers?topic=containers-secrets-mgr&interface=ui) for your cluster's Ingress instance. From the **Secrets Manager instance** drop down menu, choose an existing instance that you want to register to the cluster. If no instances are available, [create one](/docs/containers?topic=containers-secrets-mgr). If you want to apply a secret group, choose one from the **Secrets Manager group** drop down menu. If you choose not to enable this option when creating your cluster, you can enable it later. 
+Kubernetes Version
+:    Select your cluster version. By default, clusters are created with the default Kubernetes version, but you can specify a different [supported version](/docs/containers?topic=containers-cs_versions&interface=ui#cs_versions_available). 
+
+Worker Pool
+:    The cluster worker pool defines the number and type of worker nodes that run your workload. You can change your worker pool details at anytime.
+:    - **Flavor**: The flavor defines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to the containers. Available bare metal and virtual machines types vary by the zone in which you deploy the cluster. For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). 
+:    - **Worker nodes per zone**: For high availability, at least 3 worker nodes per zone are recommended. 
+:    - **Encrypt local disk**: By default, [worker nodes feature AES 256-bit disk encryption](/docs/openshift?topic=openshift-security#workernodes). You can choose to turn off disk encryption when you create the cluster.
+
+Master service endpoint
+:    Service endpoints provide communication to the master. You can choose to configure your cluster with a public service endpoint or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/containers?topic=containers-plan_vpc_basics#vpc-pgw). You can not change the cloud service endpoints after you create the cluster.
+
+Ingress secrets management
+:   [{{site.data.keyword.secrets-manager_full_notm}}](/docs/containers?topic=containers-secrets-mgr) centrally manages Ingress subdomain certificates and other secrets in your cluster. You can choose to register a {{site.data.keyword.secrets-manager_short}} instance to your cluster during the cluster create process. You can also specify a secret group that you can use to control access to the secrets in your cluster. Both of these options can be configured or changed after you have created the cluster. 
+
+Encryption
+:    Enable data encryption with a key management service (KMS) to encrypt secrets and other sensitive information in your cluster. You can also [enable KMS](/docs/containers?topic=containers-encryption#kms_ui) later. 
+
+Cluster details
+:   You can customize the unique **Cluster name** and any **[tags]**(/docs/account?topic=account-tag) that you want to use to organize and identify your {{site.data.keyword.cloud_notm}} resources, such as the `team` or `billing department`.
+:   Choose the **Resource group** to create your cluster in. A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
+
+Observability integrations
+:    You can enable additional observability integrations that you want to include on your cluster. Some integrations are automatically enabled if you have an existing platform instance of that integration. In this case, you cannot disable the integration. If you want to use an integration and you have only an existing application instance of that integration, the integration is disabled by default and you must manually enable it.
+:    - [Activity tracking]{: tag-green}: Activity Tracker service captures a record of your IBM Cloud activities and monitors the activity of your account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. If you disable this integration and want to enable it later, see [Getting started with Activity Tracker](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step2).
+:    - [Logging]{: tag-dark-teal}: You can use Log Analysis to manage operating system logs, application logs, and platform logs. If you want to enable this integration later, see [Logging for clusters](/docs/openshift?topic=openshift-health&interface=ui).
+:    - [Monitoring]{: tag-magenta}: The monitoring service integration allows operational visibility into the performance and health of your applications, services, and platforms. If you disable this integration and want to enable it later, see [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor&interface=ui).
 
 
-1. If you don't have the required infrastructure permissions to create a cluster, the **Infrastructure permissions checker** lists the missing permissions. Ask your account owner to [set up the API key](/docs/openshift?topic=openshift-access-creds) with the required permissions.
-1. Complete the **Resource details** to customize the unique cluster name and any [tags](/docs/account?topic=account-tag) that you want to use to organize your {{site.data.keyword.cloud_notm}} resources, such as the team or billing department.
-1. Enable any integrations that you want to include on your cluster.
-
-    Some integrations are automatically enabled if you have an existing platform instance of that integration. In this case, you cannot disable the integration. If you want to use an integration and you have only an existing application instance of that integration, the integration is disabled by default and you must manually enable it. 
-    {: note}
-
-    - [Activity tracking]{: tag-green} Enable the [activity tracking](/docs/activity-tracker?topic=activity-tracker-getting-started) option. From the drop down menu under **Instance**, choose an existing instance or **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created. If you disable this integration and want to enable it later, see [Getting started with Activity Tracker](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step2).
-    - [Logging]{: tag-dark-teal} Enable the [logging](/docs/log-analysis?topic=log-analysis-getting-started) option. From the drop down **Platform instance** menu, choose a platform instance. From the drop down **Application instance**, choose an existing application instance or choose **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created. If you disable this integration and want to enable it later, see [Logging for clusters](/docs/openshift?topic=openshift-health&interface=ui).
-    - [Monitoring]{: tag-magenta} Enable the [monitoring](/docs/monitoring?topic=monitoring-getting-started) option. From the drop down **Platform instance** menu, choose a platform instance. From the drop down **Application instance**, choose an existing application instance or choose **Create a new instance**. If you choose **Create a new instance**, the details of the new instance are shown. The new instance is created when the cluster is created. If you disable this integration and want to enable it later, see [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor&interface=ui).
- 
-
-
-1. In the **Summary** pane, review the order summary and then click **Create**. A worker pool is created with the number of workers that you specified. You can see the progress of the worker node deployment in the **Worker nodes** tab.
-    - Your cluster might take some time to provision the {{site.data.keyword.redhat_openshift_notm}} master and all worker nodes and enter a   **Normal** state. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress  secrets or registry image pull secrets, might still be in process. Before you continue, wait until the cluster is ready by checking that the **Ingress subdomain** follows a pattern of `<cluster_name>.<region>.containers.appdomain.cloud`.
-    - Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. Changing the ID or domain name prevents the {{site.data.keyword.redhat_openshift_notm}} master from managing your cluster.
-        Is your cluster not in a **Normal** state? Check out the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
-        {: tip}
-        
-1. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster). For more possibilities, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
 
 ## Creating VPC clusters from the CLI
 {: #cluster_vpcg2_cli}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-29"
 
 keywords: openshift
 
@@ -281,7 +281,7 @@ In addition to the following regional subdomains, you must also allow traffic fr
 | Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `icr.io`  Deprecated: `registry.bluemix.net` | 
 | AP North | `jp.icr.io` |
 | AP South | `au.icr.io` Deprecated: `registry.au-syd.bluemix.net` | 
-| EU Central | `de.icr.io` Deprecated: `registry.eu-de.bluemix.net` | 
+| EU Central | `de.icr.io` Deprecated: `registry.eu-de.bluemix.net` |
 | Osaka | `jp2.icr.io` |
 | Sao Paolo | `br.icr.io` |
 | Toronto | `ca.icr.io` | 

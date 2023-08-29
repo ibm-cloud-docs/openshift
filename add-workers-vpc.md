@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-23"
 
 keywords: openshift, clusters, worker nodes, worker pools, add
 
@@ -238,3 +238,6 @@ If you have multiple worker pools in your cluster, add the zone to all them so t
     {: screen}
 
 1. To expose apps with [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), you must [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-router-mzr-error) to include the subnet for the new zone in your cluster.
+
+
+
