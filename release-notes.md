@@ -30,8 +30,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-aug23}
 
 
-### 28 August 2023
-{: #openshift-aug2823}
+### 29 August 2023
+{: #openshift-aug2923}
 {: release-note}
 
 New! Madrid multizone region
