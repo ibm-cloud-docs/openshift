@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-08-29"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -74,7 +74,6 @@ If you create a classic cluster in a multizone region, the replicas of your high
 | Asia Pacific | Japan | Osaka | jp-osa | osa21, osa22, osa23 |
 | Asia Pacific | Japan | Tokyo | jp-tok | tok02, tok04, tok05 |
 | Europe | Germany | Frankfurt | de-fra | fra02, fra04, fra05 |
-| Europe | Spain | Madrid | es-mad | mad02, mad04, mad05 |
 | Europe | United Kingdom | London | uk-lon | lon02, lon04, lon05, lon06 |
 | North America | United States | Dallas | us-dal | dal10, dal12, dal13 |
 | North America | United States | Washington DC | us-wdc | wdc04, wdc06, wdc07 |

@@ -8449,8 +8449,6 @@ subcollection: openshift
 
 * [`lon`](/docs/openshift?topic=openshift-classic-flavors#lon)
 
-* [`mad`](/docs/openshift?topic=openshift-classic-flavors#mad)
-
 * [`mil`](/docs/openshift?topic=openshift-classic-flavors#mil)
 
 * [`mon`](/docs/openshift?topic=openshift-classic-flavors#mon)
