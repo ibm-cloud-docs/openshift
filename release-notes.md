@@ -37,6 +37,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 New! Madrid multizone region
 :   You can now [create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in [Madrid](/docs/openshift?topic=openshift-regions-and-zones).
 
+Worker node fix packs are available.
+:   [`4.13.9_1533_openshift`](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [`4.12.30_1556_openshift`](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [`4.11.47_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   [`4.10.66_1581_openshift`](/docs/openshift?topic=openshift-openshift_changelog_410)
+:   [`4.9.59_1599_openshift`](/docs/openshift?topic=openshift-openshift_changelog_49)
 
 ### 15 August 2023
 {: #openshift-aug1523}
