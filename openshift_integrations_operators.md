@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-08-30"
 
 keywords: openshift, disconnect, airgap, olm, mirror
 
@@ -31,6 +31,8 @@ Operators are a convenient way to add services to your cluster from community, t
 
 In {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4, operators are available in your cluster by default. Use [Operators](https://docs.openshift.com/container-platform/4.12/operators/understanding/olm-what-operators-are.html){: external} to package, deploy, and update the apps in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
+
+Before you begin, [check the status](https://docs.openshift.com/container-platform/4.12/operators/admin/olm-status.html){: external} of any existing operators in your cluster. Resolve any issues before using operators to manage your apps. 
 
 1. To use operators, follow the {{site.data.keyword.redhat_openshift_notm}} documentation.
     - [Adding Operators to a cluster](https://docs.openshift.com/container-platform/4.12/operators/admin/olm-adding-operators-to-cluster.html){: external}

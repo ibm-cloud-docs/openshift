@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-15"
+lastupdated: "2023-08-30"
 
 keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
 
@@ -405,23 +405,23 @@ To update flavors:
 
 1. List available worker nodes and note their private IP address.
 
-        1. List available worker pools in your cluster.
-            ```sh
-            ibmcloud oc worker-pool ls --cluster CLUSTER
-            ```
-            {: pre}
+    1. List available worker pools in your cluster.
+        ```sh
+        ibmcloud oc worker-pool ls --cluster CLUSTER
+        ```
+        {: pre}
 
-        2. List the worker nodes in the worker pool. Note the **ID** and **Private IP**.
-            ```sh
-            ibmcloud oc worker ls --cluster CLUSTER --worker-pool WORKER-POOL
-            ```
-            {: pre}
+    2. List the worker nodes in the worker pool. Note the **ID** and **Private IP**.
+        ```sh
+        ibmcloud oc worker ls --cluster CLUSTER --worker-pool WORKER-POOL
+        ```
+        {: pre}
 
-        3. Get the details for a worker node. In the output, note the zone and either the private and public VLAN ID for classic clusters or the subnet ID for VPC clusters.
-            ```sh
-            ibmcloud oc worker get --cluster CLUSTER --worker WORKER-ID
-            ```
-            {: pre}
+    3. Get the details for a worker node. In the output, note the zone and either the private and public VLAN ID for classic clusters or the subnet ID for VPC clusters.
+        ```sh
+        ibmcloud oc worker get --cluster CLUSTER --worker WORKER-ID
+        ```
+        {: pre}
 
 2. List available flavors in the zone.
     ```sh

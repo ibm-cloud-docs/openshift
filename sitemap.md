@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-08-30"
 
 keywords: openshift
 subcollection: openshift
@@ -4600,6 +4600,14 @@ subcollection: openshift
 * [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-yaml-classic)
 
 [Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
+
+[Setting up trusted profiles for the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#storage-odf-trusted-profiles)
+
+* [Enabling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#enabling-the-openshift-data-foundation-add-on)
+
+* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
+
+    * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
 
 [Removing OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
