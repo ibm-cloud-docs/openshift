@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-08-31"
 
 keywords: openshift
 
@@ -28,6 +28,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2023
 {: #openshift-aug23}
+
 
 
 ### 29 August 2023
@@ -4116,5 +4117,6 @@ Versions
 
 CA certificate rotation
 :   Added steps to [revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates](/docs/openshift?topic=openshift-security#cert-rotate).
+
 
 
