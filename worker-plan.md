@@ -4,7 +4,7 @@ copyright:
   years: 2014, 2023
 lastupdated: "2023-08-31"
 
-keywords: openshift, multi az, multi-az, szr, mzr
+keywords: openshift, kubernetes, multi az, multi-az, szr, mzr
 
 subcollection: openshift
 
@@ -20,6 +20,8 @@ subcollection: openshift
 # Planning your worker node setup
 {: #planning_worker_nodes}
 
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 {{site.data.keyword.openshiftlong}} provides different worker node flavors and isolation levels so that you can choose the flavor and isolation that best meet the requirements of the workloads that you want to run in the cloud.
 {: shortdesc}
 
@@ -29,9 +31,13 @@ Want to save on your classic worker node costs? [Create a reservation](/docs/con
 {: tip}
 
 Trying to plan how many worker nodes your need in your cluster? Check out [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing) to find information about the default worker node setup and how you can determine the resource requirements of your workloads.
-{: tip}
 
-## Available hardware for worker nodes
+
+## Worker node FAQs
+{: #worker-plan-faqs}
+
+
+### What hardware options are available to me?
 {: #shared_dedicated_node}
 
 The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, the infrastructure provider that you want to use, and the {{site.data.keyword.openshiftlong_notm}} location where you want to create your cluster.
@@ -42,10 +48,16 @@ The worker node flavors and isolation levels that are available to you depend on
 ### What flavors are available to me?
 {: #available-flavors}
 
-Classic standard clusters can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
+Classic clusters
+:   Worker nodes can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
 
 
-VPC clusters can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts.
+VPC clusters
+:   Worker nodes can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts.
+
+{{site.data.keyword.satelliteshort}} clusters
+:   Worker nodes can be provisioned on virtual machines in cloud providers such as AWS, Azure, GCP and more. Or, worker nodes can be provisioned using your own, on-premises, infrastructure.
+
 
 ### Can I combine different flavors in a cluster?
 {: #combine-flavors}
@@ -67,9 +79,14 @@ The secondary disk of the worker node is encrypted. For more information, see [O
 ### How do I manage my worker nodes?
 {: #flavor-manage}
 
-Worker nodes in classic clusters are provisioned into your {{site.data.keyword.cloud_notm}} account. You can manage your worker nodes by using {{site.data.keyword.openshiftlong_notm}}, but you can also use the [classic infrastructure dashboard](https://cloud.ibm.com/classic/) in the {{site.data.keyword.cloud_notm}} console to work with your worker node directly.  
+Classic clusters
+:   Worker nodes are provisioned into your {{site.data.keyword.cloud_notm}} account. You can manage your worker nodes by using {{site.data.keyword.openshiftlong_notm}}, but you can also use the [classic infrastructure dashboard](https://cloud.ibm.com/classic/) in the {{site.data.keyword.cloud_notm}} console to work with your worker node directly.  
 
-Unlike classic clusters, the worker nodes of your VPC cluster are not listed in the [VPC infrastructure dashboard](https://cloud.ibm.com/vpc/overview). Instead, you manage your worker nodes with {{site.data.keyword.openshiftlong_notm}} only. However, your worker nodes might be connected to other VPC infrastructure resources, such as VPC subnets or VPC Block Storage. These resources are in the VPC infrastructure dashboard and can be managed separately from there.
+VPC clusters
+:   Worker nodes are not listed in the [VPC infrastructure dashboard](https://cloud.ibm.com/vpc/overview). Instead, you manage your worker nodes with {{site.data.keyword.openshiftlong_notm}} only. However, your worker nodes might be connected to other VPC infrastructure resources, such as VPC subnets or VPC Block Storage. These resources are in the VPC infrastructure dashboard and can be managed separately from there.
+
+{{site.data.keyword.satelliteshort}} clusters
+:    Worker nodes are provisioned by using infrastructure hosts in another cloud provider or on-premsies. You can manage your worker nodes by using the {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.satelliteshort}} API, CLI, and console. You can manage the underlying infrastructure hosts in your cloud provider account or by using your own on-premises management method.
 
 ### What storage options are available on worker nodes?
 {: #hardware-options}
@@ -114,45 +131,7 @@ When you run `oc get nodes` or `oc describe node <worker_node>`, you might see t
 
 
 
-### How can I check the operating system that my worker nodes run?
-{: #flavor-os-check}
 
-When you create a worker pool, you choose the flavor, which describes the operating system along with the compute resources of the worker nodes. 
-
-You can also log in to your cluster to check the operating system of the worker nodes.
-1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
-2. List your worker nodes.
-    ```sh
-    oc get nodes
-    ```
-    {: pre}
-
-3. Describe your worker node and check for the operating system label that IBM applies, or the **OS Image** and **Operating System** fields in the **System Info** section.
-    ```sh
-    oc describe node <node>
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    NAME:               10.xxx.xx.xxx
-    Roles:              <none>
-    Labels:             arch=amd64
-                        ...
-                        ibm-cloud.kubernetes.io/os=UBUNTU_20_64
-                        ...
-                        kubernetes.io/arch=amd64
-                        kubernetes.io/hostname=10.189.33.198
-                        kubernetes.io/os=linux
-    ...
-    System Info:
-        OS Image:                   Ubuntu 20.04.5 LTS
-        Operating System:           linux
-        Architecture:               amd64
-        ...
-    ```
-    {: screen}
 
 ## Virtual machines
 {: #vm}
@@ -184,12 +163,12 @@ Shared nodes are usually less costly than dedicated nodes because the costs for 
 Some classic worker node flavors are available for only one type of tenancy setup. For example, `m3c` VMs can be provisioned in a shared tenancy setup only.
 {: note}
 
-#### How does bandwidth allocation work for VPC Gen 2 worker nodes?
+#### How does bandwidth allocation work for VPC worker nodes?
 {: #vm_bandwidth_allocation}
 
 Note that {{site.data.keyword.openshiftlong_notm}} doesn't support adjusting the bandwidth profile that is associated with the underlying VPC instance profile.
 
-When you provision a worker node on a VPC Gen 2 cluster, you get the default bandwidth allocation for that instance profile. For more information, see [Bandwidth profiles](/docs/vpc?topic=vpc-bandwidth-allocation-profiles){: external}.
+When you provision a worker node on a VPC cluster, you get the default bandwidth allocation for that instance profile. For more information, see [Bandwidth profiles](/docs/vpc?topic=vpc-bandwidth-allocation-profiles){: external}.
 
 #### How does storage work for VMs?
 {: #vm_storage_vpc}
@@ -314,7 +293,7 @@ If less PIDs, CPU or memory is available than the worker node reserves, Kubernet
 
 The resources that are reserved on your worker node depend on the amount of PIDs, CPU and memory that your worker node comes with. {{site.data.keyword.openshiftlong_notm}} defines PIDs, CPU and memory tiers as shown in the following tables. If your worker node comes with compute resources in multiple tiers, a percentage of your PIDs, CPU and memory resources is reserved for each tier.
 
-**{{site.data.keyword.redhat_openshift_notm}} version 4** : Clusters also have process ID (PID) reservations and limits, to prevent a pod from using too many PIDs or ensure that enough PIDs exist for the `kubelet` and other {{site.data.keyword.openshiftlong_notm}} system components. If the PID reservations or limits are reached, Kubernetes does not create or assign new PIDs until enough processes are removed to free up existing PIDs. The total amount of PIDs on a worker node approximately corresponds to 8,000 PIDs per GB of memory on the worker node. For example, a worker node with 16 GB of memory has approximately 128,000 PIDs (`16 × 8,000 = 128,000`).
+Clusters also have process ID (PID) reservations and limits, to prevent a pod from using too many PIDs or ensure that enough PIDs exist for the `kubelet` and other {{site.data.keyword.openshiftlong_notm}} system components. If the PID reservations or limits are reached, Kubernetes does not create or assign new PIDs until enough processes are removed to free up existing PIDs. The total amount of PIDs on a worker node approximately corresponds to 8,000 PIDs per GB of memory on the worker node. For example, a worker node with 16 GB of memory has approximately 128,000 PIDs (`16 × 8,000 = 128,000`).
 
 To review how much compute resources are currently used on your worker node, run [`oc top node`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#top){: external}.
 {: tip}

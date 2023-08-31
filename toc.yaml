@@ -89,6 +89,7 @@ toc:
           - dedicated-hosts.md
           - rhel_migrate.md
           - sat-worker-manage.md
+          - worker-os-check.md
           - host-maintenance.md
           - worker-tag-label.md
       - topicgroup:
