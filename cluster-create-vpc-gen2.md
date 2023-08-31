@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-08-31"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -34,6 +34,8 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
 * By default, your cluster is provisioned with a VPC security group and a cluster-level security group. If you want to attach additional security groups or change which default security groups are applied when you create the cluster, you must [create your VPC cluster in the CLI](#cluster_vpcg2_cli).
 
 * If you create a VPC cluster with both a public and a private cloud service endpoint, note that the public service endpoints can't be disabled at a later time. Therefore, you can't convert a public cluster to a private cluster. 
+
+
 
 * If your VPC Clusters requires access to Classic Infrastructure resources, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint) in your account.
 * If you VPC Clusters doesn't require Classic Infrastructure Access, no account changes are required.

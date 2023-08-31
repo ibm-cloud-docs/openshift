@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-08-31"
 
 keywords: openshift, clusters, worker nodes, worker pools, add
 
@@ -35,6 +35,8 @@ If you have a multizone cluster, keep its worker node resources balanced. Make s
 
 Looking to add workers to Classic clusters? See [Adding worker nodes to Classic clusters](/containers?topic=containers-add-workers-classic).
 {: tip}
+
+
 
 ## Resizing a worker pool
 {: #resize-pool}

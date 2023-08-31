@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-08-31"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -22,7 +22,7 @@ subcollection: openshift
 
 Review the VPC Gen 2 worker node flavors by metro.
 
-
+ 
 
 
 
