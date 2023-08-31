@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-08-31"
 
 keywords: openshift
 subcollection: openshift
@@ -2397,7 +2397,9 @@ subcollection: openshift
 
 [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 
-* [Available hardware for worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node)
+* [Worker node FAQs](/docs/openshift?topic=openshift-planning_worker_nodes#worker-plan-faqs)
+
+    * [What hardware options are available to me?](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node)
 
     * [What flavors are available to me?](/docs/openshift?topic=openshift-planning_worker_nodes#available-flavors)
 
@@ -2414,8 +2416,6 @@ subcollection: openshift
     * [What limitations do I need to be aware of?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-limitations)
 
     * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-master-role)
-
-    * [How can I check the operating system that my worker nodes run?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-os-check)
 
 * [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
 
@@ -2772,6 +2772,8 @@ subcollection: openshift
 * [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate_versions)
 
 * [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
+
+[Checking your worker node operating system](/docs/openshift?topic=openshift-flavor-os-check#flavor-os-check)
 
 [Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
 

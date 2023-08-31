@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-08-18"
+lastupdated: "2023-08-31"
 
 keywords: openshift, satellite responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
 
@@ -30,7 +30,7 @@ Learn about cluster management responsibilities that you have when you use Red H
 {: #overview-by-resource-sat}
 
 {{site.data.keyword.openshiftlong_notm}} is a managed service in the [{{site.data.keyword.cloud_notm}} shared responsibility model](/docs/overview?topic=overview-shared-responsibilities). Review the following table of who is responsible for particular cloud resources when using {{site.data.keyword.openshiftlong_notm}}. Then, you can view more granular tasks for shared responsibilities in [Tasks for shared responsibilities by area](#task-responsibilities-sat).
-{: shortdesc}
+
 
 If you use other {{site.data.keyword.cloud_notm}} products such as {{site.data.keyword.cos_short}}, responsibilities that are marked as yours in the following table, such as disaster recovery for Data, might be IBM's or shared. Consult those products' documentation for your responsibilities.
 {: note}
@@ -59,18 +59,18 @@ If you use other {{site.data.keyword.cloud_notm}} products such as {{site.data.k
 {: #task-responsibilities-sat}
 
 After reviewing the [overview](#overview-by-resource-sat), see what tasks you and IBM share responsibility for each area and resource when you use {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}
+
 
 ### Incident and operations management
 {: #incident-and-ops-sat}
 
 You and IBM share responsibilities for the set up and maintenance of your {{site.data.keyword.openshiftlong_notm}} cluster environment for your application workloads. You are responsible for incident and operations management of your application data.
-{: shortdesc}
+
 
 | Resource | IBM responsibilities | Your responsibilities |
 | -------- | -------------------- | --------------------- |
-| Worker nodes | - Deploy a fully managed, highly available dedicated master in a secured, IBM-owned infrastructure account for each cluster.  \n - Ensure that worker nodes successfully provision when the user account and permissions are correctly set up, and sufficient quota exists.  \n - Fulfill requests for more infrastructure, such as adding, reloading, updating, and removing worker nodes.  \n - Provide tools, such as the [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-install-addon), to extend your cluster infrastructure.  \n - Integrate ordered infrastructure resources to work automatically with your cluster architecture and become available to your deployed apps and workloads.  \n - Fulfill automation requests to help recover worker nodes. |- Use the provided API, CLI, or console tools to adjust compute and [storage](/docs/containers?topic=containers-storage-plan) capacity to meet the needs of your workload.  \n - Use the provided API, CLI, or console tools to request that worker nodes are rebooted, reloaded, or replaced, and troubleshoot issues such as when the worker nodes are in an [unhealthy state](/docs/containers?topic=containers-debug_worker_nodes). |
-| Cluster networking | - Set up cluster management components, such as public or private cloud service endpoints, VLANs, and load balancers.  \n - Fulfill requests for more infrastructure, such as attaching worker nodes to existing VLANs or subnets upon resizing a worker pool.  \n - Create clusters with subnet IP addresses reserved to use to expose apps externally.  \n - Set up a Konnectivity connection between the master and worker nodes when the cluster is created.  \n - Provide the ability to set up a VPN connection with on-premises resources such as through the strongSwan IPSec VPN service or the {{site.data.keyword.vpc_short}} VPN.  \n - Provide the ability to isolate network traffic with edge nodes. | - Use the provided API, CLI, or console tools to adjust [cluster networking configuration](/docs/containers?topic=containers-cs_network_cluster) to meet the needs of your workload, such as configuring service endpoints, adding VLANs to provide IP addresses for more worker nodes, setting up a VPN connection, or edge node worker pools. |
+| Worker nodes | - Deploy a fully managed, highly available dedicated management plane in a secured, IBM-owned infrastructure account.  \n - Ensure that worker nodes successfully provision when the user account and permissions are correctly set up, and sufficient quota exists.  \n - Fulfill requests for more infrastructure, such as adding, reloading, updating, and removing worker nodes.  \n - Provide tools, such as the [cluster autoscaler](/docs/containers?topic=containers-cluster-scaling-install-addon), to extend your cluster infrastructure.  \n - Fulfill automation requests to help recover worker nodes.  | - Use the provided API, CLI, or console tools to adjust compute and [storage](/docs/containers?topic=containers-storage-plan) capacity to meet the needs of your workload.  \n - Use the provided API, CLI, or console tools to request that worker nodes are rebooted, reloaded, or replaced, and troubleshoot issues such as when the worker nodes are in an [unhealthy state](/docs/containers?topic=containers-debug_worker_nodes). |
+| Cluster networking | - Set up cluster management components, such as public or private cloud service endpoints, VLANs, and load balancers.  \n - Fulfill requests for more infrastructure, such as attaching worker nodes to existing subnets upon resizing a worker pool.  \n - Create clusters with subnet IP addresses reserved to use to expose apps externally.  \n - Set up a Konnectivity connection between the master and worker nodes when the cluster is created.  \n - Provide the ability to set up a VPN connection with on-premises resources such as through the strongSwan IPSec VPN service or the {{site.data.keyword.vpc_short}} VPN.  \n - Provide the ability to isolate network traffic with edge nodes. | - Use the provided API, CLI, or console tools to adjust [cluster networking configuration](/docs/containers?topic=containers-cs_network_cluster) to meet the needs of your workload, such as configuring service endpoints, adding VLANs to provide IP addresses for more worker nodes, setting up a VPN connection, or edge node worker pools. |
 | App networking | - Set up a public application load balancer (ALB) that is multizone, if applicable. Provide the ability to set up private ALBs and public or private network load balancers (NLBs).  \n - Support native Kubernetes public and private load balancers and Ingress routes for exposing services externally.  \n - Install Calico as the container networking interface, and set up default Calico network policies to control basic cluster traffic. | - Set up any additional app networking capabilities that are needed, such as private ALBs, public or private NLBs, or additional Calico network policies.|
 | Observability | - Provide {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} as managed add-ons to enable observability of your cluster and container environments. Maintenance is simplified for you because IBM provides the installation and updates for the managed add-ons.  \n - Provide cluster integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.openshiftlong_notm}} API events for auditability. | - [Set up and monitor the health](/docs/containers?topic=containers-health) of your container logs and cluster metrics.  \n - Set up and, if applicable, [configure](/docs/containers?topic=containers-health-audit) `kube-audit` logs to be sent to [{{site.data.keyword.at_short}}](/docs/containers?topic=containers-at_events).|
 {: caption="Table 2. Responsibilities for incident and operations management" caption-side="bottom"}
@@ -80,7 +80,7 @@ You and IBM share responsibilities for the set up and maintenance of your {{site
 {: #change-management-sat}
 
 You and IBM share responsibilities for keeping your clusters at the latest container platform and operating system versions, along with recovering infrastructure resources that might require changes. You are responsible for change management of your application data.
-{: shortdesc}
+
 
 | Resource | IBM responsibilities | Your responsibilities |
 | -------- | -------------------- | --------------------- |
@@ -106,7 +106,7 @@ You and IBM share responsibilities for controlling access to your {{site.data.ke
 {: #security-compliance-sat}
 
 IBM is responsible for the security and compliance of {{site.data.keyword.openshiftlong_notm}}. Compliance to industry standards varies depending on the infrastructure provider that you use for the cluster, such as classic or VPC. You are responsible for the security and compliance of any workloads that run in the cluster and your application data. For more information, see [What standards does the service comply to?](/docs/containers?topic=containers-faqs#standards).
-{: shortdesc}
+
 
 | Resource | IBM responsibilities | Your responsibilities |
 | -------- | -------------------- | --------------------- |
@@ -130,7 +130,7 @@ IBM is responsible for the recovery of {{site.data.keyword.openshiftlong_notm}} 
 {: #applications-and-data-sat}
 
 You are completely responsible for the applications, workloads, and data that you deploy to {{site.data.keyword.cloud_notm}}. However, IBM provides various tools to help you set up, manage, secure, integrate and optimize your apps as described in the following table.
-{: shortdesc}
+
 
 | Resource | How IBM helps | What you can do |
 | -------- | -------------------- | --------------------- |
