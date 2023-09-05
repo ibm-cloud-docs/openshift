@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-09-01"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -230,6 +230,7 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 * Gatekeeper Operator
 * JBoss EAP
 * JBoss Web Server
+* Logical volume manager storage (LVM)
 * MachineConfigs
 * Metering and Cost Management SaaS Service
 * OpenShift Cloud Manager (OCM) SaaS Service

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-05"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
 
@@ -39,6 +39,28 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.9 change log.
 {: shortdesc}
+
+
+### Change log for master fix pack 4.9.59_1600_openshift, released 30 August 2023
+{: #4959_1600_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.9.59_1600_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.23 | v1.3.24 | Updated `Go` to version `1.19.12` and updated dependencies. Updated base image version to 378. |
+| etcd | v3.4.26 | v3.4.27 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.27){: external}. |
+| Gateway-enabled cluster controller | 2322 | 2366 | Update `Go` dependencies to fix [CVE-2023-3978](https://nvd.nist.gov/vuln/detail/CVE-2023-3978){: external}. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 433 | 434 | Updated `Go` to version `1.20.6` and updated dependencies. Updated to newer UBI base image. |
+| Key Management Service provider | v2.7.2 | v2.7.3 | Updated `Go` dependencies. |
+| OpenVPN client | 2.6.5-r0-IKS-41-amd64 | 2.6.5-r0-IKS-66-amd64 | Updated `openvpn` components to fix CVEs. |
+| OpenVPN server | 2.6.5-r0-IKS-40-amd64 | 2.6.5-r0-IKS-57-amd64 | Updated `openvpn` components to fix CVEs. |
+| OpenVPN Operator image | v1.4.26 | v1.4.27 | Updated `ansible-operator` version to `1.30.0` |
+| Portieris admission controller | v0.13.5 | v0.13.6 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.6){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.9.0-20230710 | v4.9.0-20230811 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.9.0%2B20230811){: external}. |
+{: caption="Changes since version 4.9.59_1597_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.9.59_1601_openshift, released 28th August 2023
