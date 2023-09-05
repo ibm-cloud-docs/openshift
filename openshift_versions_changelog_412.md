@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-05"
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -31,6 +31,28 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for master fix pack 4.12.26_1555_openshift, released 30 August 2023
+{: #41226_1555_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.12.26_1555_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.3.23 | v1.3.24 | Updated `Go` to version `1.19.12` and updated dependencies. Updated base image version to 378. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.12-1 | v1.25.12-4 | Updated `Go` dependencies to resolve a CVE. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 433 | 434 | Updated `Go` to version `1.20.6` and updated dependencies. Updated to newer UBI base image. |
+| Key Management Service provider | v2.7.2 | v2.7.3 | Updated `Go` dependencies. |
+| OpenVPN client | 2.6.5-r0-IKS-41-amd64 | 2.6.5-r0-IKS-66-amd64 | Updated `openvpn` components to fix CVEs. |
+| OpenVPN server | 2.6.5-r0-IKS-40-amd64 | 2.6.5-r0-IKS-57-amd64 | Updated `openvpn` components to fix CVEs. |
+| OpenVPN Operator image | v1.4.26 | v1.4.27 | Updated `ansible-operator` version to `1.30.0` |
+| Portieris admission controller | v0.13.5 | v0.13.6 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.6){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.24 | 4.12.26 | See the [change log](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-26){: external} for more information. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.12.0-20230710 | v4.12.0-20230811 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.12.0%2B20230811){: external}. |
+{: caption="Changes since version 4.12.24_1552_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.12.30_1556_openshift, released 28th August 2023
