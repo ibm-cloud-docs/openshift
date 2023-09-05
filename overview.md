@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-09-05"
 
 keywords: openshift, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -104,23 +104,11 @@ For more information, see the [Docker documentation](https://docs.docker.com/){:
 
 With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infrastructure from the following providers. All the worker nodes in a cluster must be from the same provider.
 
-[{{site.data.keyword.vpc_full}}]{: tag-vpc}
-:   Create clusters on virtual servers in your own Virtual Private Cloud (VPC).
-
-
-
-[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
-:   Create clusters on your own hardware, {{site.data.keyword.cloud_notm}} Classic or VPC, or on virtual servers in another cloud provider like AWS or Azure.
-
-
-
-
-[Classic infrastructure]{: tag-classic-inf} 
-:   Create clusters in a classic compute, networking, and storage environment in IBM Cloud infrastructure.
-
 
 | Component | Description | 
-| --- | --- | 
+| --- | --- |
+| Overview | Create clusters on virtual servers in your own Virtual Private Cloud (VPC). |
+| Supported container platforms | [{{site.data.keyword.redhat_openshift_notm}}]{: tag-red} or [Kubernetes]{: tag-blue} |
 | Compute and worker node resources | Worker nodes are created as virtual machines by using either shared infrastructure or dedicated hosts. Unlike classic clusters, VPC cluster worker nodes on shared hardware don't appear in your infrastructure portal or a separate infrastructure bill. Instead, you manage all maintenance and billing activity for the worker nodes through {{site.data.keyword.openshiftlong_notm}}. Your worker node instances are connected to certain VPC instances that do reside in your infrastructure account, such as the VPC subnet or storage volumes. For dedicated hosts, the dedicated host price covers the vCPU, memory, and any instance storage to be used by any workers placed on the host. For dedicated hosts, the dedicated host price covers the vCPU, memory, and any [instance storage](/docs/vpc?topic=vpc-instance-storage) to be used by any workers placed on the host. Note that all Intel® x86-64 servers have Hyper-Threading enabled by default. For more information, see [Intel Hyper-Threading Technology](/docs/vpc?topic=vpc-profiles#vpc-intel-hyper-threading). |
 | Security | Clusters on shared hardware run in an isolated environment in the public cloud. Clusters on dedicated hosts do not run in a shared environment, instead only your clusters are present on your hosts. Network access control lists protect the subnets that provide the floating IPs for your worker nodes. |
 | High availability | The master includes three replicas for high availability. Further, if you create your cluster in a multizone metro, the master replicas are spread across zones and you can also spread your worker pools across zones. |
@@ -146,6 +134,8 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infr
 
 | Component | Description | 
 | --- | --- |
+| Overview | Create clusters on your own hardware, {{site.data.keyword.cloud_notm}} Classic or VPC, or on virtual servers in another cloud provider like AWS or Azure. |
+| Supported container platforms | [{{site.data.keyword.redhat_openshift_notm}}]{: tag-red} |
 | Compute and worker node resources | Worker nodes can be virtual machines using either shared infrastructure or dedicated hosts, or even bare metal servers. You manage maintenance and billing activity for the worker nodes through your host infrastructure provider whether that is {{site.data.keyword.cloud_notm}}, your own on-premises hardware, or another cloud provider. You also manage billing through {{site.data.keyword.cloud_notm}}. For more information about pricing, see [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing). |
 | Security | See [Security and compliance](/docs/satellite?topic=satellite-compliance). |
 | High availability | See [About high availability and recover](/docs/satellite?topic=satellite-ha). |
@@ -171,7 +161,9 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infr
 
 
 | Component | Description | 
-| --- | --- | 
+| --- | --- |
+| Overview | Create clusters in a classic compute, networking, and storage environment in IBM Cloud infrastructure. |
+| Supported container platforms | [{{site.data.keyword.redhat_openshift_notm}}]{: tag-red} or [Kubernetes]{: tag-blue} |
 | Compute and worker node resources | [Virtual](/docs/openshift?topic=openshift-planning_worker_nodes#vm), [bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm), and [software-defined storage](/docs/openshift?topic=openshift-planning_worker_nodes#sds) machines are available for your worker nodes. Your worker node instances reside in your IBM Cloud infrastructure account, but you can manage them through {{site.data.keyword.openshiftlong_notm}}. You own the worker node instances.|
 | Security | Built-in security features that help you protect your cluster infrastructure, isolate resources, and ensure security compliance. For more information, see the [classic Network Infrastructure documentation](/docs/cloud-infrastructure?topic=cloud-infrastructure-compare-infrastructure). |
 | High availability | For both classic and VPC clusters, the master includes three replicas for high availability. Further, if you create your cluster in a multizone metro, the master replicas are spread across zones and you can also spread your worker pools across zones. For more information, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters). |
@@ -197,8 +189,6 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infr
 
 ## What are the benefits of using the service?
 {: #benefits}
-
-
 
 
 
