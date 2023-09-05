@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-09-05"
 
 keywords: openshift
 
@@ -1456,9 +1456,15 @@ For questions about billing and to find the steps for how to use the {{site.data
     
 1. Log in to the pod that mounts the PVC.
     ```sh
-    oc exec -i -t bash
+    oc exec <pod-name> -it -- bash
     ```
     {: pre}
+
+1. Run the following command to use host binaries.
+  ```sh
+  chroot /host
+  ```
+  {: pre}
 
 1. Resize the file system.
 
