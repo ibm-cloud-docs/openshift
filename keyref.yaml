@@ -80,7 +80,7 @@ keyword:
   openshift_410_release_date:
     27 April 2022
   openshift_410_unsupported_date:
-    29 November 2023
+    30 November 2023
   openshift_410_unsupported_certainty:
     tentative
   openshift_410_kube_version:
