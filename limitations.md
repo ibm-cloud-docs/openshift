@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-09-07"
 
 keywords: openshift, http2, quota, app protocol, application protocol
 
@@ -200,7 +200,7 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | Storage for worker node hosts | See [Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage). |
 | Storage for apps | No storage provider is installed in your {{site.data.keyword.satelliteshort}} clusters by default. Therefore, no pre-configured Kubernetes storage classes are set up by default in your clusters to store your application data in a Kubernetes persistent volume that is backed by storage device. For options to set up a storage provider, see [Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-storage-template-ov). |
 | Worker nodes | Worker nodes run on hosts in your own infrastructure environments. The hosts must meet [host](/docs/satellite?topic=satellite-host-reqs) and provider-specific requirements, such as for [AWS](/docs/satellite?topic=satellite-aws), [Azure](/docs/satellite?topic=satellite-azure), [GCP](/docs/satellite?topic=satellite-gcp), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) (testing and demonstration purposes only). You are responsible for [managing the infrastructure lifecycle of your hosts](/docs/satellite?topic=satellite-host-update-location), including adding and [updating worker nodes](/docs/satellite?topic=satellite-host-update-workers). As such, worker node operations like `ibmcloud oc worker add, update, replace, reload` commands are not supported. |
-| Worker pools | To use operations like `resize`, your worker pool uses [host labels](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) that must match available (unassigned) hosts in the {{site.data.keyword.satelliteshort}} location. |
+| Worker pools | To use operations like `resize`, your worker pool uses [host labels](/docs/satellite?topic=satellite-host-autoassign-ov) that must match available (unassigned) hosts in the {{site.data.keyword.satelliteshort}} location. |
 {: caption="{{site.data.keyword.satelliteshort}} cluster limitations"}
 
 

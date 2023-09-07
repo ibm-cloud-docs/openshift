@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-09-07"
 
 keywords: openshift, debug, cloud pak, daemson set, feature gates, failed to set
 
@@ -33,7 +33,7 @@ If you see this error, you must manually update the `cloud-pak-node-fix-config` 
 
 Review the following steps based on your target cluster version.
 
-### Upgrading from 4.11 to 4.12
+## Upgrading from 4.11 to 4.12
 {: #cdp-feature-gates-412}
 
 
@@ -58,7 +58,7 @@ Review the following steps based on your target cluster version.
 
 1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
-### Upgrading from 4.10 to 4.11
+## Upgrading from 4.10 to 4.11
 {: #cdp-feature-gates-411}
 
 

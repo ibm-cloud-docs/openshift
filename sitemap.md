@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-07"
 
 keywords: openshift
 subcollection: openshift
@@ -265,6 +265,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
+
+    * [7 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep723)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.18`
 
 * [August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug23)
 
@@ -4609,7 +4615,7 @@ subcollection: openshift
 
 [Setting up trusted profiles for the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#storage-odf-trusted-profiles)
 
-* [Enabling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#enabling-the-openshift-data-foundation-add-on)
+* [Enabling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-addon-enable-trusted)
 
 * [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
 
@@ -6928,6 +6934,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.18, released 7 September 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02218_object_plugin)
+
 * [Change log for version 2.2.17, released 3 July 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02217_object_plugin)
 
 * [Change log for version 2.2.16, released 3 July 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02216_object_plugin)
@@ -8827,9 +8835,9 @@ subcollection: openshift
 
 [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds#ts-cloud-pak-ds)
 
-    * [Upgrading from 4.11 to 4.12](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-412)
+* [Upgrading from 4.11 to 4.12](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-412)
 
-    * [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
+* [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
 
 
 ### Cluster autoscaler

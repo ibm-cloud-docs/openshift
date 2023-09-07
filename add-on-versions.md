@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-08-31"
+lastupdated: "2023-09-07"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -27,7 +27,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 ## alb-oauth-proxy 2.0.0 
 {: #alb-oauth-proxy-2.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.19.0 <1.28.0`
+- Supported Kubernetes cluster versions: `>=1.19.0 <1.29.0`
 
 - Supported OpenShift cluster versions:  `N/A` 
 

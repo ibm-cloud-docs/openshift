@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-07"
 
 keywords: openshift
 
@@ -1165,10 +1165,10 @@ You can only expand volumes that are mounted by an app pod.
     {: pre}
 
 1. Run the following command to use host binaries.
-  ```sh
-  chroot /host
-  ```
-  {: pre}
+    ```sh
+    chroot /host
+    ```
+    {: pre}
 
 1. Get the file system details and make a note of the `Filesystem` path that you want to update. You can also `grep` for the mount path as specified in your application pod. `df -h | grep <mount-path>`.
 

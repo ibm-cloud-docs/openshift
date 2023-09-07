@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-09-07"
 
 keywords: openshift, openshift data foundation, openshift container storage, trusted profile
 
@@ -19,21 +19,22 @@ subcollection: openshift
 # Setting up trusted profiles for the OpenShift Data Foundation add-on
 {: #storage-odf-trusted-profiles}
 
+[Virtual Private Cloud]{: tag-vpc}  [Classic clusters]{: tag-classic-inf}
+
 
 You can use trusted profiles to limit the access that running pods in your cluster have to other resources in your account or cluster. For more information about trusted profiles, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile).
 {: shortdesc}
 
-[Virtual Private Cloud]{: tag-vpc} 
-[Classic clusters]{: tag-classic-inf}
+
 
 ## Enabling the OpenShift Data Foundation add-on
-{: odf-addon-enable-trusted}
+{: #odf-addon-enable-trusted}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
 1. Enable the add-on in your cluster. Review the parameter reference for your cluster type.
     * [Classic clusters]{: tag-classic-inf} [Parameter Reference](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-param-ref)
-    * [Virtual Private Cloud]{: tag-vpc} [Parameter Reference](docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-param-ref)
+    * [Virtual Private Cloud]{: tag-vpc} [Parameter Reference](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-param-ref)
 
     Example command:
 

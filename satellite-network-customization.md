@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-09-07"
 
 keywords: openshift, route, network, satellite
 
@@ -37,7 +37,7 @@ Depending on the networking customizations you want to apply, you might need to 
 
 [During location creation]{: tag-teal}
 
-When you create your location in the CLI, you can define the following parameters to customize networking in your location. For more information, see the [**`ibmcloud sat location create`**](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command reference.
+When you create your location in the CLI, you can define the following parameters to customize networking in your location. For more information, see the [**`ibmcloud sat location create`**](/docs/satellite?topic=satellite-satellite-cli-reference) command reference.
 
 You can specify the `--pod-subnet` option to specify a custom subnet CIDR to provide private IP addresses for pods. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. The subnet must be at least `/23` or larger. The default value is `172.16.0.0/16`.
 
@@ -55,7 +55,7 @@ When you create your location in the CLI, you can define the `--pod-network-inte
 - To choose an interface with a Regex string, specify `interface=<regex_string>`; for example, `interface=eth.*`.
 
 
-For more information, see the [**`ibmcloud sat location create`**](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command reference.
+For more information, see the [**`ibmcloud sat location create`**](/docs/satellite?topic=satellite-satellite-cli-reference) command reference.
 
 
 

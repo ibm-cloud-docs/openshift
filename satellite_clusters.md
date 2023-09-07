@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-09-07"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -32,9 +32,9 @@ Before you can create clusters in {{site.data.keyword.satellitelong_notm}}, you 
 
 1. [Review the {{site.data.keyword.satellitelong_notm}} components](/docs/satellite?topic=satellite-faqs) and the [location planning guide](/docs/satellite?topic=satellite-infrastructure-plan).
 1. Prepare to create your {{site.data.keyword.satellitelong_notm}} location. Choose from one of the following options.
-    Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-locations#location-create-console). Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later.
+    Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-loc-manual-create). Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later.
     
-    * You can automatically provision the hosts for your location. With this option, you create a custom role, or service ID, with your cloud provider credentials. This service ID is used to automatically provision virtual machines in your cloud provider. Once the VMs are provisioned and attached to your location, you can assign them to {{site.data.keyword.satellitelong_notm}} control plane or to the cloud services you want to use. To get started, see the [Automating your location set up with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
+    * You can automatically provision the hosts for your location. With this option, you create a custom role, or service ID, with your cloud provider credentials. This service ID is used to automatically provision virtual machines in your cloud provider. Once the VMs are provisioned and attached to your location, you can assign them to {{site.data.keyword.satellitelong_notm}} control plane or to the cloud services you want to use. To get started, see the [Automating your location set up with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations).
     * You can manually provision hosts either in your on-premises data center or in a public cloud. If you choose to manually provision the hosts for your location, make sure that your hosts meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and that you allow the [required outbound network access](/docs/satellite?topic=satellite-reqs-host-network). 
 1. [Create an {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-locations).
 1. Attach your hosts to your location and [set up your location control plane](/docs/satellite?topic=satellite-setup-control-plane).
@@ -66,7 +66,7 @@ Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyw
 1. Click **Create**. When you create the cluster, the cluster master is automatically created in your {{site.data.keyword.satelliteshort}} location control plane, and your worker pool is automatically assigned available hosts that match your worker node request.
 1. Wait for the cluster to reach a **Normal** state.
 
-    If you don't have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). Ensure that hosts are assigned as worker nodes in each zone of your default worker pool.
+    If you don't have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts). Ensure that hosts are assigned as worker nodes in each zone of your default worker pool.
     {: note}
 
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, verify that your cluster reaches a **Normal** state.
@@ -155,8 +155,8 @@ To create the cluster in a {{site.data.keyword.satelliteshort}} location, you mu
     {: screen}
 
 5. Make sure that hosts are assigned as worker nodes to the cluster.
-    * **Autoassignment**: If you included `--host-labels` when you created the cluster and you have available hosts with matching labels in your {{site.data.keyword.satelliteshort}} location, the worker nodes are automatically assigned to the cluster. If you don't have any available and matching hosts, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
-    * **Manual assignment**: [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.redhat_openshift_notm}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
+    * **Autoassignment**: If you included `--host-labels` when you created the cluster and you have available hosts with matching labels in your {{site.data.keyword.satelliteshort}} location, the worker nodes are automatically assigned to the cluster. If you don't have any available and matching hosts, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts).
+    * **Manual assignment**: [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.redhat_openshift_notm}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 
 6. Verify that your cluster reaches a **normal** state.
     ```sh
