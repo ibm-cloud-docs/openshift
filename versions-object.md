@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-31"
+lastupdated: "2023-09-07"
 
 keywords: object storage, plug-in, change log
 
@@ -29,18 +29,27 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.18 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.17 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.16 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.15 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.14 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.13 | Deprecated | Greater than or equal to 4.6 | x86 |
+| 2.2.14 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.18, released 7 September 2023
+{: #02218_object_plugin}
+
+- Adds support for RHCOS `4.13`.
+- Updates Golang to `1.19.12`.
+- Updates UBI imageto `8.8-1017`.
+- Resolves the following CVEs: [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409), [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536), [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602), [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603), [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969), [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321), [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484), and [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469).
+
 
 ## Change log for version 2.2.17, released 3 July 2023
 {: #02217_object_plugin}
 
-- Updates Golang to `1.19.11`
-- Updates UBI image to `8.8-1014`
+- Updates Golang to `1.19.11`.
+- Updates UBI image to `8.8-1014`.
 - Resolves the following CVEs: [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external}, [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, [CVE-2023-1667], [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}, and [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}.
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-07"
 
 keywords: openshift, kubernetes, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## September 2023
+{: #openshift-sep23}
+
+### 7 September 2023
+{: #openshift-sep723}
+{: release-note} 
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.18`
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ## August 2023
 {: #openshift-aug23}
