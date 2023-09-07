@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-09-07"
 
 keywords: openshift, satellite, clusters, worker nodes, worker pools, delete
 
@@ -24,7 +24,7 @@ Review the following differences from classic {{site.data.keyword.openshiftlong_
 ## Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment
 {: #sat-pool-create-labels}
 
-Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with host labels. Then, {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool. For more information, see [Using host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
+Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with host labels. Then, {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool. For more information, see [Using host autoassignment](/docs/satellite?topic=satellite-host-autoassign-ov).
 {: shortdesc}
 
 Before you begin
@@ -74,7 +74,7 @@ To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
 
 Your worker pool is created!
 * If {{site.data.keyword.satelliteshort}} hosts with matching labels are available, the hosts are assigned to the worker pool as worker nodes. Keep in mind that hosts might also have a zone label and are assigned only to that zone.
-* If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
+* If no hosts are available, you can [manually assign hosts](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
 {: note}
@@ -95,7 +95,7 @@ Resize your worker pool to request more compute capacity in your cluster.
 When you rebalance a worker pool, the worker pool is sized up or down depending on the most recently requested number of worker nodes per zone. You can check the requested number in the worker pool details, or set the requested number by resizing the worker pool.
 
 
-In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
+In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
 
 ## Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-update}

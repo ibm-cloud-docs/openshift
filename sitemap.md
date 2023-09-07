@@ -4615,7 +4615,7 @@ subcollection: openshift
 
 [Setting up trusted profiles for the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#storage-odf-trusted-profiles)
 
-* [Enabling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#enabling-the-openshift-data-foundation-add-on)
+* [Enabling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-addon-enable-trusted)
 
 * [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
 
@@ -8835,9 +8835,9 @@ subcollection: openshift
 
 [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds#ts-cloud-pak-ds)
 
-    * [Upgrading from 4.11 to 4.12](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-412)
+* [Upgrading from 4.11 to 4.12](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-412)
 
-    * [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
+* [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
 
 
 ### Cluster autoscaler
