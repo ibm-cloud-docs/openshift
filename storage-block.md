@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-07"
 
 keywords: openshift
 
@@ -1461,10 +1461,10 @@ For questions about billing and to find the steps for how to use the {{site.data
     {: pre}
 
 1. Run the following command to use host binaries.
-  ```sh
-  chroot /host
-  ```
-  {: pre}
+    ```sh
+    chroot /host
+    ```
+    {: pre}
 
 1. Resize the file system.
 
