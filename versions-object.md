@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-09-08"
 
 keywords: object storage, plug-in, change log
 
@@ -41,7 +41,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 - Adds support for RHCOS `4.13`.
 - Updates Golang to `1.19.12`.
-- Updates UBI imageto `8.8-1017`.
+- Updates UBI imageto `8.8-1037`.
 - Resolves the following CVEs: [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409), [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536), [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602), [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603), [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969), [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321), [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484), and [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469).
 
 
