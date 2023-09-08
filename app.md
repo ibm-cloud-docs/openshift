@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-09-08"
 
 keywords: openshift, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
 
@@ -101,7 +101,7 @@ Required anti-affinity
 :   You can deploy only the number of replicas that you have worker nodes for. For example, if you have three worker nodes in your cluster but you define five replicas in your YAML file, then only three replicas deploy. Each replica lives on a different worker node. The leftover two replicas remain pending. If you add another worker node to your cluster, then one of the leftover replicas deploys to the new worker node automatically. If a worker node fails, the pod does not reschedule because the affinity policy is required. For an example YAML with required, see [Liberty app with required pod anti-affinity](https://github.com/IBM-Cloud/kube-samples/blob/master/deploy-apps-clusters/liberty_requiredAntiAffinity.yaml){: external}.
 
 Preferred anti-affinity
-:   You can deploy your pods to nodes with available capacity, which provides more flexibility for your workload. When possible, the pods are scheduled on different worker nodes. For example, if you have three worker nodes with enough capacity in your cluster, it can schedule the five replica pods across the nodes. However, if you add two more worker nodes to your cluster, the affinity rule does not force the two extra pods that are running on the existing nodes to reschedule onto the free node.
+:   You can deploy your pods to nodes with available capacity, which provides more flexibility for your workload. When possible, the pods are scheduled on different worker nodes. For example, if you have three worker nodes with enough capacity in your cluster, it can schedule the five replica pods across the nodes. However, if you add two more worker nodes to your cluster, the affinity rule does not force the two extra pods that are running on the existing nodes to reschedule onto the available node.
 
 Worker node affinity
 :   You can configure your deployment to run on only certain worker nodes, such as bare metal. For more information, see [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity).

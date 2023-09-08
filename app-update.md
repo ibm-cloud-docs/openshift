@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-09-08"
 
 keywords: openshift, red hat, red hat openshift, update, upgrade
 
@@ -261,7 +261,7 @@ Before you begin, you need two clusters and the **Manager** [service access role
     {: pre}
 
 4. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-5. Optional: If your  cluster used multiple projects, create the same projects in the standard cluster and [copy the image pull secret to each project](/docs/openshift?topic=openshift-registry#copy_imagePullSecret).
+5. Optional: If your cluster used multiple projects, create the same projects in the standard cluster and [copy the image pull secret to each project](/docs/openshift?topic=openshift-registry#copy_imagePullSecret).
 6. Deploy the copied configuration files to your cluster. If a configuration file has specific information that can't be applied, you might need to update the configuration file and reapply.
     ```sh
     oc apply -f myconfigs.yaml
