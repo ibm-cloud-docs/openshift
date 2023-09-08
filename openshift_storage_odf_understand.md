@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-08"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -20,6 +20,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
+
 [OpenShift Data Foundation](https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation){: external} is a highly available storage solution that you can use to manage persistent storage for your containerized apps.
 {: shortdesc}
 
@@ -27,12 +28,19 @@ What is OpenShift Data Foundation?
 :   OpenShift Data Foundation is a highly available storage solution that consists of several open source operators and technologies like [Ceph](https://docs.ceph.com/en/latest/start/intro/){: external}, [NooBaa](https://www.noobaa.io/){: external}, and [Rook](https://rook.io/){: external}. These operators allow you to provision and manage File, Block, and Object storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters. Unlike other storage solutions where you might need to configure separate drivers and operators for each type of storage, ODF is a unified solution capable of adapting or scaling to your storage needs. You can also deploy ODF on any OCP cluster.
 
 How does OpenShift Data Foundation work?
-:   ODF uses storage volumes in multiples of 3 and replicates your app data across these volumes. The underlying storage volumes that you use for ODF depends on your cluster type. 
-        - For VPC clusters the storage volumes are dynamically provisioned {{site.data.keyword.block_storage_is_short}} devices.
-        - For bare metal Classic clusters, the storage volumes are local disks on your bare metal worker nodes.
-        - For {{site.data.keyword.satelliteshort}} clusters, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
-
 :   ODF uses these devices to create a virtualized storage layer, where your app data is replicated for high availability. Because ODF abstracts your underlying storage, you can use ODF to create File, Block, or Object storage claims from the same underlying raw block storage.
+:   ODF uses storage volumes in multiples of 3 and replicates your app data across these volumes. The underlying storage volumes that you use for ODF depends on your cluster type. For VPC clusters the storage volumes are dynamically provisioned {{site.data.keyword.block_storage_is_short}} devices. For bare metal Classic clusters, the storage volumes are local disks on your bare metal worker nodes. For {{site.data.keyword.satelliteshort}} clusters, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
+
+Can I install the OpenShift Data Foundation add-on in {{site.data.keyword.satelliteshort}} clusters?
+:   No. The cluster add-on is available only for Classic and VPC clusters. 
+
+
+How do install OpenShift Data Foundation on {{site.data.keyword.satelliteshort}}?
+:   You can install ODF on {{site.data.keyword.satelliteshort}} by using one of the {{site.data.keyword.satelliteshort}} storage templates. For more information, see the [{{site.data.keyword.satelliteshort}} storage docs](/docs/satellite?topic=satellite-storage-template-ov&interface=ui).
+    - [`odf-local`](/docs/satellite?topic=satellite-storage-odf-local): Choose this template when you have local storage available to your worker nodes. If your storage volumes are visible when running `lsblk`, you can use these disks when deploying ODF if they are raw and unformatted.
+    - [`odf-remote`](/docs/satellite?topic=satellite-storage-odf-remote): Choose this template if you have a CSI driver installed in your cluster. For example, the `azuredisk-csi-driver` driver. You can use the CSI driver to dynamically provision storage volumes when deploying ODF.
+
+
 
 For a full overview of the features and benefits, see [OpenShift Data Foundation](https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation){: external}.
 
