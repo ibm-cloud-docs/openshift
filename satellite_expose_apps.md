@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-11"
 
 keywords: openshift, route, Ingress controller
 
@@ -34,156 +34,10 @@ You have several options for exposing apps in {{site.data.keyword.satelliteshort
 ## Setting up MetalLB
 {: #sat-expose-metallb}
 
-MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
+MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols. For more information, see [About MetalLB and the MetalLB Operator](https://docs.openshift.com/container-platform/4.12/networking/metallb/about-metallb.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
 {: shortdesc}
 
-**Prerequisites**: A dedicated subnet (AddressPool) for the external IP of the `LoadBalancer` services.
-
-MetalLB has two components:
-* A **controller** that watches `LoadBalancer` services and assigns external IPs to them from an AddressPool.
-* And the **speaker** pods that hold, reply to ARP requests and handles failover of the external IPs.
-
-1. Verify that the MetalLB Operator is available in the {{site.data.keyword.redhat_openshift_notm}} Marketplace.
-   ```sh
-   oc get packagemanifests -n openshift-marketplace metallb-operator
-   ```
-   {: pre}
-
-2. Create a dedicated namespace.
-   ```sh
-   cat << EOF | oc apply -f -
-   apiVersion: v1
-   kind: Namespace
-   metadata:
-     name: metallb-system
-   EOF
-   ```
-   {: pre}
-   
-   
-3. Add the operator to the cluster.
-   ```sh
-   cat << EOF | oc apply -f -
-   apiVersion: operators.coreos.com/v1
-   kind: OperatorGroup
-   metadata:
-     name: metallb-operator
-     namespace: metallb-system
-   spec:
-     targetNamespaces:
-     - metallb-system
-   EOF
-   ```
-   {: pre}
-   
-   
-4. Verify the installation.
-   ```sh
-   oc get operatorgroup -n metallb-system
-   ```
-   {: pre}
-   
-   
-5. Subscribe to automatic updates of the operator.
-   ```sh
-   OC_VERSION=$(oc version -o yaml | grep openshiftVersion | grep -o '[0-9]*[.][0-9]*' | head -1)
-   cat << EOF| oc apply -f -
-   apiVersion: operators.coreos.com/v1alpha1
-   kind: Subscription
-   metadata:
-     name: metallb-operator-sub
-     namespace: metallb-system
-   spec:
-     channel: "${OC_VERSION}"
-     name: metallb-operator
-     source: redhat-operators
-     sourceNamespace: openshift-marketplace
-   EOF
-   oc get installplan -n metallb-system
-   ```
-   {: pre}
-   
-   
-6. Verify the subscription and operator version.
-   ```sh
-   oc get clusterserviceversion -n metallb-system -o custom-columns=Name:.metadata.name,Phase:.status.phase
-   ```
-   {: pre}
-   
-   
-7. Enable MetalLB. You can optionally limit the scope of nodes on which MetalLB speakers are deployed by using a `nodeSelector` value. For example, you might want to deploy MetalLB only to a worker pool where the dedicated subnet for the external IPs are available.
-   ```sh
-   cat << EOF | oc apply -f -
-   apiVersion: metallb.io/v1beta1
-   kind: MetalLB
-   metadata:
-     name: metallb
-     namespace: metallb-system
-   spec:
-     spec:
-     nodeSelector:
-       ibm-cloud.kubernetes.io/worker-pool-name: edge
-   EOF
-   ```
-   {: pre}
-   
-   
-8. Verify the controller and speakers pods are running.
-   ```sh
-   oc -n metallb-system get pods -o wide
-   ```
-   {: pre}
-   
-   
-9. Configure a dedicated subnet, or AddressPool, for the external IP of the LoadBalancer services managed by MetalLB:
-    ```sh
-    cat << EOF | oc apply -f -
-    apiVersion: metallb.io/v1alpha1
-    kind: AddressPool
-    metadata:
-        name: doc-example-ap
-        namespace: metallb-system
-    spec:
-        protocol: layer2
-        addresses:
-        - 192.0.2.0/26
-        - 192.0.2.100-192.0.2.110
-        - 192.0.2.200/32
-    ```
-    {: pre}
-    
-    
-10. Optional: To disable auto assignment from an AddressPool specify `autoAssign: false` in the `spec` section. If you disable auto assignment, an AddressPool with `metallb.universe.tf/address-pool` must be defined.
-    ```yaml
-    metadata:
-      annotations:
-        metallb.universe.tf/address-pool: doc-example-ap
-    ```
-    {: codeblock} 
-
-
-11. To prevent {{site.data.keyword.cloud_notm}} Controller Manager from interacting with a MetalLB LoadBalancer set the `loadBalancerClass: metallb.io` in your Service definition.
-    ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-        namespace: default
-        name: with-loadBalancerClass
-    spec:
-        loadBalancerClass: metal-lb.io
-        selector:
-            app: hello-node
-        ports:
-            - port: 8080
-              targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
-              protocol: TCP
-        type: LoadBalancer
-    ```
-    {: codeblock}
-
-
-For more information, see the [MetalLB documentation](https://docs.openshift.com/container-platform/4.9/networking/metallb/about-metallb.html){: external}.
-
+To install and configure MetalLB, follow the instructions under [LoadBalancing with MetalLB](https://docs.openshift.com/container-platform/4.12/networking/metallb/metallb-operator-install.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. Before you begin, make sure you have a dedicated subnet (`IPAddressPool`) for the external IP of the `LoadBalancer` services. Check that the IP addresses included in the `IPAddressPool` are not reserved or used for other purposes, otherwise the load balancing function might fail. 
 
 ## Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes
 {: #sat-expose-routes}

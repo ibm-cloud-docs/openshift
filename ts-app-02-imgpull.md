@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-09-11"
 
 keywords: openshift
 
@@ -58,14 +58,19 @@ Failed to pull image "registry.ng.bluemix.net/<namespace>/<image>:<tag>" ... 401
 ```
 {: screen}
 
+```sh
+...
+Failed to pull image "<image>:<tag>" ... Manifest for <image>:<tag> not found
+```
+{: screen}
 
-Your cluster uses an API key that is stored in an [image pull secret](/docs/openshift?topic=openshift-registry#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}.
+Your cluster uses an API key that is stored in an [image pull secret](/docs/openshift?topic=openshift-registry#cluster_registry_auth) to authorize the cluster to pull images from {{site.data.keyword.registrylong_notm}}, or the image with the specific tag does not exist in the repository.
 {: tsCauses}
 
 By default, new clusters have image pull secrets that use API keys so that the cluster can pull images from any regional `icr.io` registry for containers that are deployed to the `default` {{site.data.keyword.redhat_openshift_notm}} project.
 
 
-1. Verify that you use the correct name and tag of the image in your deployment YAML file.
+1. Verify that you use the correct name and tag of the image in your deployment YAML file. 
 {: tsResolve}
 
     ```sh
