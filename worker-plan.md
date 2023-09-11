@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-31"
+lastupdated: "2023-09-11"
 
 keywords: openshift, kubernetes, multi az, multi-az, szr, mzr
 
@@ -64,7 +64,7 @@ VPC clusters
 
 Yes. To add different flavors to your cluster, you must [create another worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create). You can't resize existing worker pools to have different compute resources such as CPU or memory.
 
- 
+
 
 ### How can I change worker node flavors?
 {: #change-flavors}
