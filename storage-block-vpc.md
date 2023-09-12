@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-09-12"
 
 keywords: openshift
 
@@ -497,7 +497,7 @@ Before updating the add-on review the [change log](/docs/openshift?topic=openshi
 
 1. Update the add-on.
     ```sh
-    ibmcloud oc ks cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+    ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
     ```
     {: pre}
 
