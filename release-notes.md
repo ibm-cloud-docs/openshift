@@ -38,7 +38,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 Worker node fix packs are available.
-:   [4.14.0_1512_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
 :   [4.13.11_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [4.12.32_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
 :   [4.11.48_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
