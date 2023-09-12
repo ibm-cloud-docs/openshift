@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-09-12"
 
 keywords: openshift
 
@@ -495,9 +495,24 @@ Before updating the add-on review the [change log](/docs/openshift?topic=openshi
     {: screen}
 
 
-1. Update the add-on.
+1. Update the add-on. Note that the update commands are different depending on the version that you have installed.
+
+    [5.0 and later]{: tag-blue} Run the `addon update` command.
+
     ```sh
-    ibmcloud oc ks cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+    ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+    ```
+    {: pre}
+
+    [All versions before version 5.0]{: tag-red} Disable and enable the add-on.
+
+    ```sh
+    ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f] [-q]
+    ```
+    {: pre}
+
+    ```sh
+    ibmcloud oc cluster addon enable vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
     ```
     {: pre}
 

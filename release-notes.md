@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-09-12"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2023
 {: #openshift-sep23}
+
+### 12 September 2023
+{: #openshift-sep1223}
+{: release-note} 
+
+
+
+
+
+Worker node fix packs are available.
+:   [4.13.11_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12.32_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [4.11.48_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   [4.10.67_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+
+
 
 ### 7 September 2023
 {: #openshift-sep723}
