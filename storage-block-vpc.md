@@ -512,7 +512,7 @@ Before updating the add-on review the [change log](/docs/openshift?topic=openshi
     {: pre}
 
     ```sh
-    ibmcloud oc cluster addon enaable vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
+    ibmcloud oc cluster addon enable vpc-block-csi-driver --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
     ```
     {: pre}
 
