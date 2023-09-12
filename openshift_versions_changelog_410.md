@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-12"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,6 +39,18 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.10 change log.
 {: shortdesc}
+
+### Change log for worker node fix pack 4.10.67_1582_openshift, released 12 September 2023
+{: #41067_1582_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.10.67_1582_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.10.66 | 4.10.67| For more information, see the [change log](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-67){: external}. |
+| RHEL 8 Packages | N/A | N/A | Package updates for [CVE-2022-40982](https://nvd.nist.gov/vuln/detail/CVE-2022-40982){: external}, [CVE-2022-41804](https://nvd.nist.gov/vuln/detail/CVE-2022-41804){: external}, [CVE-2023-23908](https://nvd.nist.gov/vuln/detail/CVE-2023-23908){: external}. |
+{: caption="Changes since version 4.10.66_1581_openshift" caption-side="bottom"}
 
 
 ### Change log for master fix pack 4.10.65_1580_openshift, released 30 August 2023
