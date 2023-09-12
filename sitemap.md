@@ -268,6 +268,10 @@ subcollection: openshift
 
 * [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
 
+    * [12 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1223)
+
+        * Worker node fix packs are available.
+
     * [7 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep723)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.18`
