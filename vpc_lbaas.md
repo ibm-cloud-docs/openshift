@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-09-13"
 
 keywords: openshift, app protocol, application protocol
 
@@ -898,6 +898,9 @@ To enable your app to receive public or private requests,
     {: tip}
 
 Do not delete the subnets that you attached to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
+{: important}
+
+VPC ALBs and NLBs that are not tied to Kubernetes or Openshift clusters can be updated directly by using 'ibmcloud is' commands or the UI's **VPC Infrastructure** section. For example, change a frontend listener's port or health check timeout value. But for VPC load balancers that are tied to Kubernetes or Openshift clusters, any updates to them must be performed via annotations in the Ingress configuration. The Ingress periodically re-syncs with any associated VPC ALBs and NLBs to ensure the running load balancer conforms to the Ingress's expected configuration. So if you make any changes to such a load balancer directly via VPC instead of using Ingress annotations, those changes will be reverted back.
 {: important}
 
 ### Registering a DNS record and TLS certificate
