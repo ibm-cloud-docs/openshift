@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-13"
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
 
@@ -131,17 +131,14 @@ Review the following components in the customer-managed worker nodes of your {{s
 
 These components run on your worker nodes because you are able to use them with the workloads that you deploy to your cluster. For example, your apps might use an operator from the OperatorHub that runs a container from an image in the internal registry. You are responsible for your usage of these components, but IBM provides updates for them in the worker node patch updates that you choose to apply.
 
-In OpenShift Container Platform 4, many components are configured by a corresponding operator for ease of management. The following table discusses these operators and components together, to focus on the main functionality the component provides to the cluster.
+In OpenShift Container Platform, many components are configured by a corresponding operator for ease of management. The following table discusses these operators and components together, to focus on the main functionality the component provides to the cluster.
 
 
 Single tenancy
 :   The worker nodes and all worker node components are dedicated only to you, and are not shared with other IBM customers. However, if you use worker node virtual machines, the underlying hardware might be shared with other IBM customers depending on the [level of hardware isolation](/docs/openshift?topic=openshift-planning_worker_nodes#vm) that you choose.
 
 Operating System
-:   Worker nodes run on the Red Hat Enterprise Linux 7 or Red Hat Enterprise Linux 8 operating system.
-    - For cluster version 4.10 and later, only RHEL 8 is supported.
-    - For cluster version 4.9, you can choose RHEL 7 or RHEL 8, however the default operating system is RHEL 7.
-    - For cluster versions 4.8 and earlier, only RHEL 7 is supported.
+:   For a list of supported operating systems by cluster version, see the [Version information](/docs/openshift?topic=openshift-openshift_versions).
 
 CRI-O container runtime
 :   Your worker nodes are installed with [CRI-O](https://cri-o.io/){: external} as the container runtime interface. For more information, see [Container runtime](/docs/openshift?topic=openshift-security#container-runtime).
@@ -247,7 +244,7 @@ Master
 
 Worker node
 :   With {{site.data.keyword.openshiftlong_notm}}, the virtual machines that your cluster manages are instances that are called worker nodes. These worker nodes virtual machines and all the worker node components are dedicated to you only and are not shared with other IBM customers. However, the underlying hardware is shared with other IBM customers. For more information, see [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm). You manage the worker nodes through the automation tools that are provided by {{site.data.keyword.openshiftlong_notm}}, such as the API, CLI, or console. Unlike classic clusters, you don't see VPC compute worker nodes in your infrastructure portal or separate infrastructure bill, but instead manage all maintenance and billing activity for the worker nodes from {{site.data.keyword.openshiftlong_notm}}.
-:   Worker nodes include the same [components](#service-architecture-4-workers) as described in the Classic cluster architecture for version 4 clusters. {{site.data.keyword.openshiftlong_notm}} worker nodes run on the Red Hat Enterprise Linux 7 operating system.
+:   Worker nodes include the same [components](#service-architecture-4-workers) as described in the Classic cluster architecture for version 4 clusters.
 :   When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
 
 Cluster networking

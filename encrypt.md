@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-18"
+lastupdated: "2023-09-13"
 
-keywords: openshift, red hat, red hat openshift, encrypt, security, kms, root key, crk
+keywords: openshift, kubernetes, red hat, encrypt, security, kms, root key, crk
 
 subcollection: openshift
 
@@ -26,8 +26,6 @@ Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluste
 For more information about securing your cluster and personal information, see [Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security) and [Storing personal information](/docs/openshift?topic=openshift-security#pi).
 
 
-The following image and description outline default and optional data encryption for {{site.data.keyword.openshiftlong_notm}} clusters.
-
 
 ![Overview of cluster encryption, as described in the following sections.](images/cs_encrypt_ov_kms-vpc.png "Overview of cluster encryption"){: caption="Figure 1. Overview of cluster encryption" caption-side="bottom"}
 
@@ -42,10 +40,12 @@ The following image and description outline default and optional data encryption
 
 4. **Cluster secrets**: When you deploy your app, don't store confidential information, such as credentials or keys, in the YAML configuration file, configmaps, or scripts. Instead, use [Kubernetes secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external}, which are base64 encoded by default. To enable encryption of your Kubernetes secrets, [enable a key management service (KMS) provider](#keyprotect)`*` for your cluster.
 
-    In clusters that run {{site.data.keyword.openshiftshort}} 4 or later, you can [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
+    You can also [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images).
     {: tip}
 
 5. **Persistent storage encryption**: You can choose to store data by [setting up file, block, object, or software-defined Portworx persistent storage](/docs/openshift?topic=openshift-storage-plan). If you store your data on file or block storage, your data is automatically encrypted at rest. If you use object storage, your data is also encrypted during transit. With Portworx, you can choose to [set up volume encryption](/docs/openshift?topic=openshift-storage_portworx_encryption) to protect your data during transit and at rest. The IBM Cloud infrastructure storage instances save the data on encrypted disks, so your data at rest is encrypted.
+
+
 
 
 
@@ -54,12 +54,6 @@ The following image and description outline default and optional data encryption
 
 
 You can protect Kubernetes secrets and any credentials stored in a secret by enabling a [key management service (KMS) provider](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} which provides an encryption solution using a root key you control.
-
-
-### Available KMS providers
-{: #kms-providers}
-
-By default, {{site.data.keyword.openshiftlong_notm}} supports the following KMS providers.
 
 
 * {{site.data.keyword.keymanagementservicefull}} for [public cloud](/docs/key-protect?topic=key-protect-getting-started-tutorial) or [on-prem](https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=apis-key-management-service){: external} environments.

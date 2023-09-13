@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-09-13"
 
 keywords: openshift
 subcollection: openshift
@@ -2548,8 +2548,6 @@ subcollection: openshift
 [Understanding encryption](/docs/openshift?topic=openshift-encryption#encryption)
 
 * [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms)
-
-    * [Available KMS providers](/docs/openshift?topic=openshift-encryption#kms-providers)
 
     * [Controlling encryption](/docs/openshift?topic=openshift-encryption#kms-encrypt-control)
 
