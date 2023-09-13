@@ -2549,8 +2549,6 @@ subcollection: openshift
 
 * [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms)
 
-    * [Available KMS providers](/docs/openshift?topic=openshift-encryption#kms-providers)
-
     * [Controlling encryption](/docs/openshift?topic=openshift-encryption#kms-encrypt-control)
 
     * [Features and limitations of KMS providers](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features)
