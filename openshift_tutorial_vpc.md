@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-09-13"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -34,9 +34,6 @@ Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cl
 
 - {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-overview) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.12/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 - VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered), with a select group of v2 API, CLI, and console functionality.
-
-{{site.data.keyword.redhat_openshift_notm}} worker nodes are available for paid accounts and standard clusters only. You can create {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4 only. The operating system is Red Hat Enterprise Linux 7.
-{: note}
 
 ## Objectives
 {: #vpc_rh_objectives}

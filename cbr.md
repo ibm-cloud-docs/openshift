@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-09-13"
 
 keywords: cbr, context based restrictions, security
 
@@ -404,7 +404,7 @@ ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes
 ## Limitations
 {: #cbr-limitations}
 
-- After you create a rule, it might take up to 10 minutes for the rule to take effect.
+- After you create, enforce, or disable enforcement of a rule, it might take up to 10 minutes for the change to take effect.
 - {{site.data.keyword.openshiftlong_notm}} CBR rules that apply to all API types or the `cluster` API types must not reference network zones that contain IPv6 addresses. The APIs included in the `cluster` type don't support IPv6.
 - If you add {{site.data.keyword.openshiftlong_notm}} resources to private-only network zones, the APIs for getting and listing clusters are still accessible over the public network.
 - {{site.data.keyword.openshiftlong_notm}} CBR rules that apply to all API types or the cluster API types must not reference other services like {{site.data.keyword.cos_full_notm}} or {{site.data.keyword.keymanagementserviceshort}}
