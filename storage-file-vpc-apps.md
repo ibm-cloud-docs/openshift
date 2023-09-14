@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-14"
 
 keywords: openshift
 
@@ -47,6 +47,8 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ibmc-vpc-file-retain-10iops-tier              vpc.file.csi.ibm.io
     ibmc-vpc-file-retain-3iops-tier               vpc.file.csi.ibm.io
     ibmc-vpc-file-retain-5iops-tier               vpc.file.csi.ibm.io
+    ibmc-vpc-file-retain-dp2                      vpc.file.csi.ibm.io
+    ibmc-vpc-file-dp2                             vpc.file.csi.ibm.io
     ```
     {: screen}
 
@@ -84,7 +86,7 @@ By default, file shares that are created by using dynamic provisioning with pre-
       resources:
         requests:
           storage: 10Gi
-      storageClassName: ibmc-vpc-file-5iops-tier
+      storageClassName: ibmc-vpc-file-dp2
     ```
       {: codeblock}
     

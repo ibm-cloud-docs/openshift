@@ -268,6 +268,12 @@ subcollection: openshift
 
 * [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
 
+    * [14 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1423)
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.7_49`
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.19_358` and `5.1.13_345`.
+
     * [12 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1223)
 
         * Worker node fix packs are available.
@@ -4379,6 +4385,8 @@ subcollection: openshift
 
 * [Creating a custom storage class](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-custom-sc)
 
+* [Create a custom storage class using DP2](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-dp2)
+
 * [Updating the {{site.data.keyword.filestorage_vpc_short}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
 
 * [Understanding your storage removal options](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc_storage_delete_options_file)
@@ -6792,6 +6800,8 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
+    * [Change log for version 5.1.13_345, released 14 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.13_345_is_block_relnote)
+
     * [Change log for version 5.1.12_285, released 01 August 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.12_285_is_block_relnote)
 
     * [Change log for version 5.1.11_126, released 21 June 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.11_126_is_block_relnote)
@@ -6809,6 +6819,8 @@ subcollection: openshift
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.19_358, released 14 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.19_358_is_block_relnote)
 
     * [Change log for version 5.0.17_266, released 01 August 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.17_266_is_block_relnote)
 
@@ -6931,6 +6943,8 @@ subcollection: openshift
 [{{site.data.keyword.filestorage_vpc_full_notm}} add-on change log](/docs/openshift?topic=openshift-versions-vpc-file-addon#versions-vpc-file-addon)
 
 * [Version 1.1](/docs/openshift?topic=openshift-versions-vpc-file-addon#011_is_file)
+
+    * [Change log for version 1.1.7_49, released 14 September 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1.7_is_file_relnote)
 
     * [Change log for version 1.1.6_41, release 28 July 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1.6_is_file_relnote)
 

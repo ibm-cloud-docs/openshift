@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-14"
 
 keywords: openshift
 
@@ -131,6 +131,73 @@ Create your own customized storage class with the preferred settings for your {{
     ```
     {: screen}
 
+## Create a custom storage class using DP2
+{: #storage-file-vpc-dp2}
+
+1. 1. Review the [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. 
+
+2. Create a customized storage class configuration file.
+
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+        name: ibmc-vpc-file-dp-eni-default
+    provisioner: vpc.file.csi.ibm.io
+    mountOptions:
+        - hard
+        - nfsvers=4.1
+        - sec=sys
+    parameters:
+        profile: "dp2"       # The VPC Storage profile used. /docs/vpc?topic=vpc-block-storage-profiles&interface=ui#tiers-beta
+        iops: "100"          # Default IOPS. User can override from secrets
+        billingType: "hourly"        # The default billing policy used. User can override this default
+        encrypted: "false"         # By default, all PVC using this class will only be provider managed encrypted. The user can override this default
+        encryptionKey: ""          # If encrypted is true, then a user must specify the encryption key used associated KP instance
+        resourceGroup: ""          # Use resource group if specified here. else use the one mentioned in storage-secrete-store
+        region: ""
+        zone: ""              # By default, the storage vpc driver will select a zone. The user can override this default
+        tags: ""              # A list of tags "a, b, c" that will be created when the volume is created. This can be overidden by user
+        isENIEnabled: "true" # VPC File Share will use the ENI/VNI feature
+        securityGroupIDs: "" # Give command separated list of security group ids.Use whatever given else default security group will be used
+        subnetID: "" # Give subnetID in which the ENI/VNI will be created. If not provided lets use the subnet-id available in the VPC zone same as the one part of the cluster.
+        region: ""
+        zone: "" # By default, the storage vpc driver will select a zone. The user can override this default
+        primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone.Subnet-id is not mandatory for this
+        primaryIPAddress: "" # IPAddress for ENI/VNI to be created in the respective subnet of the zone. Subnet-id is mandatory for this.
+        classVersion: "1"
+    reclaimPolicy: "Delete"
+    allowVolumeExpansion: true
+    ```
+    {: codeblock}
+
+3. Create the customized storage class in your cluster.
+
+    ```sh
+    oc apply -f custom-storageclass.yaml
+    ```
+    {: pre}
+
+4. Verify that your storage class is available in the cluster.
+
+    ```sh
+    oc get storageclasses
+    ```
+    {: pre}
+
+    Example output
+    
+    ```sh
+    NAME                                          PROVISIONER
+    ibmc-vpc-file-10iops-tier                     vpc.file.csi.ibm.io
+    ibmc-vpc-file-3iops-tier                      vpc.file.csi.ibm.io
+    ibmc-vpc-file-5iops-tier                      vpc.file.csi.ibm.io
+    ibmc-vpc-file-retain-10iops-tier              vpc.file.csi.ibm.io
+    ibmc-vpc-file-retain-3iops-tier               vpc.file.csi.ibm.io
+    ibmc-vpc-file-retain-5iops-tier               vpc.file.csi.ibm.io
+    ibmc-vpc-file-dp-eni-default                  vpc.file.csi.ibm.io
+    ```
+    {: screen}
 
 ## Updating the {{site.data.keyword.filestorage_vpc_short}} add-on
 {: #storage-file-vpc-update}
