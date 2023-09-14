@@ -76,7 +76,7 @@ Create your own customized storage class with the preferred settings for your {{
     :   If you entered **true** for `parameters.encrypted`, then enter the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use to encrypt your {{site.data.keyword.filestorage_vpc_short}} volume.
 
     `zone`
-    :   In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.block_storage_is_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster CLUSTER` and look at the **Worker Zones** field in your CLI output. If you don't specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.block_storage_is_short}} instance.
+    :   In the parameters, enter the VPC zone where you want to create the {{site.data.keyword.filestorage_vpc_short}} instance. Make sure that you use a zone that your worker nodes are connected to. To list VPC zones that your worker nodes use, run `ibmcloud oc cluster get --cluster CLUSTER` and look at the **Worker Zones** field in your CLI output. If you don't specify a zone, one of the worker node zones is automatically selected for your {{site.data.keyword.filestorage_vpc_short}} instance.
 
     `region`
     :   The region of the worker node where you want to attach storage.
@@ -85,7 +85,7 @@ Create your own customized storage class with the preferred settings for your {{
     :   In the parameters, enter a comma-separated list of tags to apply to your file share. Tags can help you group your file shares based on common characteristics, such as the app or the environment that it is used for. 
 
     `iops`
-    :   If you entered `custom` for the `profile`, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the [{{site.data.keyword.block_storage_is_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.
+    :   If you entered `custom` for the `profile`, enter a value for the IOPs that you want your {{site.data.keyword.filestorage_vpc_short}} to use. Refer to the [{{site.data.keyword.filestorage_vpc_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.
 
     `reclaimPolicy`
     :   Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter `Retain`. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter `Delete`.
@@ -94,7 +94,7 @@ Create your own customized storage class with the preferred settings for your {{
     :   Enter the volume expansion policy for your storage class. If you want to allow volume expansion, enter `true`. If you don't want to allow volume expansion, enter `false`.
 
     `volumeBindingMode`
-    :   Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.
+    :   Choose if you want to delay the creation of the {{site.data.keyword.filestorage_vpc_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.
 
     `uid`
     :   The initial user identifier for the file share.
