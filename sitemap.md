@@ -268,6 +268,10 @@ subcollection: openshift
 
 * [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
 
+    * [18 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1823)
+
+        * CLI version `1.0.566` is available.
+
     * [14 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1423)
 
         * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.7_49`
@@ -5502,6 +5506,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.566](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10566)
 
 * [Version v1.0.540](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10549)
 

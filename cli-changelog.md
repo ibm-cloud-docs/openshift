@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-09-18"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -33,10 +33,17 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version v1.0.566
+{: #cli-10566}
+
+Version 1.0.566 of the CLI was released on 18 September 2023.
+:  Updates the phrasing of various commands and help text strings. 
+:  Updates the help text in various languages. 
+
 ## Version v1.0.540
 {: #cli-10549}
 
-Version 1.0.528 of the CLI was released on 19 July 2023.
+Version 1.0.540 of the CLI was released on 19 July 2023.
 :  Adds new [`ibmcloud oc ingress alb autoscale`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get) commands.
 :  Replaces the deprecated `ibmcloud oc alb ls` command in certain command help texts.
 :  Updates the help text in various languages. 
