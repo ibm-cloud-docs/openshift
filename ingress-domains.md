@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-22"
+lastupdated: "2023-09-18"
 
 keywords: openshift
 
@@ -27,8 +27,66 @@ This functionality is available in beta and is subject to change.
 You can also use your own external DNS provider. You must have an account with the external provider that you want to use. The following external providers are supported:
 - [Akamai]{: tag-blue}
 - [Cloudflare]{: tag-red}
-- [CIS]{: tag-gray}
+- [CIS]{: tag-cool-gray}
 
+
+
+## Accessing domains in the console
+{: #ingress-domains-ui-access}
+
+Navigate to the your cluster's **Domains** page to [create](#ingress-domains-ui) and [manage](#ingress-domains-ui-manage) domains. 
+
+1. In the console, navigate to your [clusters tab](https://cloud.ibm.com/kubernetes/clusters){: external}. 
+2. Click on the cluster where you want to create or change a domain.
+3. Click **Ingress**. 
+4. Click the **Domains** tab. From here, you can manage the domains associated with the cluster. 
+
+## Creating domains in the console
+{: #ingress-domains-ui}
+{: ui}
+
+Use the {{site.data.keyword.cloud_notm}} console to create your own domain in your cluster, or add a domain that already exists in your provider account. Follow the console instructions to make the following domain configurations.
+
+If you are using the **{{site.data.keyword.cis_full_notm}}** provider, you must first [set up service-to-service authorization](/docs/account?topic=account-serviceauth&interface=ui#create-auth) for your {{site.data.keyword.cis_full_notm}} instance. Set the source service as `Kubernetes Service`, and the target as `Internet services`. Assign the `Manager` role. 
+{: note}
+
+### Domain details
+{: #ingress-domains-ui-details}
+{: ui}
+
+- **Domain name**: The name of the domain to create or add to your cluster. This can be a domain that exists in your provider account, or a new domain. 
+- **Provider**: Choose a provider for your domain. To create a managed domain with IBM Cloud's internal provider, choose **Managed**. To use an external provider, choose from the remaining provider types. To use an external provider, such as Cloudflare, you must have an account with that provider and you must enter your provider credentials. IBM Cloud uses these credentials to register domains and update records in your DNS provider.
+- **Set as default**: Choose whether you want to set the domain as the default for the cluster. The default Ingress domain is used to form a unique URL for each of your apps and is the domain that is referenced by the IP addresses of any public ALBs in your cluster. You can change which domain is set as the default at any time. Setting a default domain replaces the current default. 
+
+### Registration details
+{: #ingress-domains-ui-registration}
+{: ui}
+
+- Add one or more **IP addresses** (for Classic or VPC clusters) or **Hostnames** (for VPC clusters) to register to the domain. You can update which IP addresses or hostnames are registered.
+- **Secret namespace**: Specify the namespace that the TLS secret for the domain is created in. If you don't specify a namespace, the secret is created in the `default` namespace.
+
+### Credentials
+{: #ingress-domains-ui-credentials}
+{: ui}
+
+Your DNS credentials are required to create or add a domain with external providers, such as Cloudflare or Akamai. {{site.data.keyword.openshiftlong_notm}} uses these credentials to provision or access a domain from the external provider on your behalf. You must use the same set of credentials for each domain in a cluster.
+
+Different providers might require different credentials, such as access tokens or secrets. {{site.data.keyword.openshiftlong_notm}} does not provide the credentials; you must acquire them from the external provider. The required credentials for each provider are shown in the console when you select that provider.
+
+## Managing your domain in the console
+{: #ingress-domains-ui-manage}
+{: #ui}
+
+You can complete the following actions to manage your domain. 
+
+Delete a domain
+:   If you delete a domain from a cluster, the domain cannot be recovered. If you later need the domain, you must reprovision it. If delete a domain that is registered with the managed provider, you cannot reuse that domain name. Note that you cannot delete a cluster's default domain. If you want to delete the domain that is currently registered as the default, you must first assign a different default domain.
+
+Update a domain's IP addresses or hostname
+:   When you update the IP addresses or hostnames, you must include any IPs or hostnames that are currently registered to the domain. The domain updates with the exact values specified, so any current IP addresses or hostnames are overwritten if they are not included. For example, if `52.137.182.166` is currently registered to your domain and you want to add `52.137.182.270`, you must specify both IP addresses.
+
+Change a cluster's default domain
+:   You can change the default domain to any domain that exists in your cluster. This change might take up to five minutes to apply. During that time, your domain might experience downtime. 
 
 
 ## Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider

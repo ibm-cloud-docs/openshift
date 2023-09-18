@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-09-18"
 
 keywords: openshift
 subcollection: openshift
@@ -267,6 +267,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
+
+    * [18 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1823)
+
+        * CLI version `1.0.566` is available.
 
     * [14 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1423)
 
@@ -4033,6 +4037,18 @@ subcollection: openshift
 
 [Setting up a domain for your cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains)
 
+* [Accessing domains in the console](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-access)
+
+* [Creating domains in the console](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui)
+
+    * [Domain details](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-details)
+
+    * [Registration details](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-registration)
+
+    * [Credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-credentials)
+
+* [Managing your domain in the console](/docs/openshift?topic=openshift-ingress-domains#ui)
+
 * [Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-int)
 
 * [Setting up domains with {{site.data.keyword.cis_full_notm}}](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis)
@@ -5502,6 +5518,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.566](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10566)
 
 * [Version v1.0.540](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10549)
 
