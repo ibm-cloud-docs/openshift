@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-09-18"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -197,7 +197,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 ## vpc-block-csi-driver 5.0 
 {: #vpc-block-csi-driver-5.0}
 
-- Supported Kubernetes cluster versions: `>=1.22.0 <1.28.0`
+- Supported Kubernetes cluster versions: `>=1.22.0 <1.29.0`
 
 - Supported OpenShift cluster versions: `>=4.8.0 <4.14.0`
 
@@ -207,7 +207,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 ## vpc-block-csi-driver 5.1 
 {: #vpc-block-csi-driver-5.1}
 
-- Supported Kubernetes cluster versions: `>=1.22.0 <1.28.0`
+- Supported Kubernetes cluster versions: `>=1.22.0 <1.29.0`
 
 - Supported OpenShift cluster versions: `>=4.9.0 <4.14.0`
 
@@ -217,7 +217,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 ## vpc-file-csi-driver 1.1 
 {: #vpc-file-csi-driver-1.1}
 
-- Supported Kubernetes cluster versions: `>=1.21.0 <1.28.0`
+- Supported Kubernetes cluster versions: `>=1.21.0 <1.29.0`
 
 - Supported OpenShift cluster versions: `>=4.7.0 <4.14.0`
 
