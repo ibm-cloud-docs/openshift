@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-07"
+lastupdated: "2023-09-19"
 
-keywords: autoscaler, add-on, autoscaler changelog, cluster autoscaler
+keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
 
 subcollection: openshift
 
@@ -12,9 +12,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Cluster autoscaler add-on change log
@@ -123,6 +120,14 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 ## Version 1.0.9
 {: #0109_ca_addon}
 
+### Change log for patch update 1.0.9_103, released 15 September 2023
+{: #109103_ca}
+
+- Image tags: `1.22.0-109-3`, `1.23.0-109-3`, `1.24.0-109-3`, `1.25.0-109-3`, `1.26.1-109-3`, `1.27.2-109-3`.
+- Updated the storage-secret-sidecar image to `v1.2.26`.
+- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
+
+
 ### Change log for patch update 1.0.9_81, released 07 August 2023
 {: #10981_ca}
 
@@ -151,6 +156,14 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.8
 {: #0108_ca_addon}
+
+
+### Change log for patch update 1.0.8_104, released 15 September 2023
+{: #108104_ca}
+
+- Image tags: `1.22.0-108-4`, `1.23.0-109-4`, `1.24.0-108-4`, `1.25.0-108-4`, `1.26.1-108-4`, `1.27.2-109-4`.
+- Updated the storage-secret-sidecar image to `v1.2.26`.
+- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
 
 
 ### Change log for patch update 1.0.8_82, released 7 August 2023
@@ -199,6 +212,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.7
 {: #0107_ca_addon}
+
+### Change log for patch update 1.0.7_102, released 15 September 2023
+{: #107102_ca}
+
+- Image tags: `1.22.0-107-7`, `1.23.0-107-7`, `1.24.0-107-7`, `1.25.0-107-7`, `1.26.1-107-7`, `1.27.2-107-7`.
+- Updated the storage-secret-sidecar image to `v1.2.26`.
+- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
 
 ### Change log for patch update 1.0.7_83, released 7 August 2023
 {: #10783_ca}
