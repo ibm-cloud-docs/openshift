@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-09-20"
 
 keywords: openshift
 subcollection: openshift
@@ -3057,6 +3057,8 @@ subcollection: openshift
 [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc#openshift_scc)
 
 * [Customizing security context constraints](/docs/openshift?topic=openshift-openshift_scc#customize_sccs)
+
+* [Guidelines for assigning access to SCCs](/docs/openshift?topic=openshift-openshift_scc#scc-guidelines)
 
 * [Default {{site.data.keyword.redhat_openshift_notm}} security context constraints](/docs/openshift?topic=openshift-openshift_scc#oc_sccs)
 

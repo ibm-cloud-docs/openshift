@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-09-20"
 
 keywords: openshift, kubernetes, release notes
 
@@ -29,6 +29,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## September 2023
 {: #openshift-sep23}
 
+
+
+
 ### 18 September 2023
 {: #openshift-sep1823}
 {: release-note}
@@ -43,7 +46,6 @@ CLI version `1.0.566` is available.
 
 Cluster autoscaler add-on versions `1.0.9_103`,`1.0.8_104`, and `1.0.7_102`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
-
 
 
 ### 14 September 2023

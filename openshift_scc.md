@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-20"
 
 keywords: openshift, scc, security context constraint, psp
 
@@ -62,7 +62,9 @@ The default {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than t
 To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.12/authentication/managing-security-context-constraints.html){: external}. You can also authorize users or groups to the default security context constraints by using role-based access control such as `clusterroles`, `clusterrolebindings`, `roles`, and `rolebindings`. You can also use the `oc adm policy` subcommands, such as `oc adm policy add-scc-to-user`, to manage these settings. The oc version is the same as that of the cluster being managed.
 {: shortdesc}
 
-Guidelines for assigning access to SCCs:
+## Guidelines for assigning access to SCCs
+{: #scc-guidelines}
+
 - Authorize specific service accounts to the SCC that is to be used by pods running under that service account.
 - If a service account needs access to multiple SCCs, consider creating additional service accounts so that all pods running under a service account are expected to use the same SCC.
 - Do not authorize all users or all service accounts to use any SCC other than the `restricted` (4.10 and earlier) or `restricted-v2` (4.11 and later) SCCs.
