@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-09-20"
 
 keywords: openshift, logmet, logs, metrics, audit, events
 
@@ -323,8 +323,8 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     
 
 10. Configure the audit webhook and specify the `certificate-authority`, `client-certificate`, and `client-key`. The `certificate-authority` was retrieved in [step 8](#query-cert) and the`client-certificate` and `client-key` were retrieved in the previous step.
-    ```sh
-    ibmcloud oc cluster master audit-webhook set --cluster <cluster> --remote-server https://127.0.0.1:2040/api/v1/namespaces/ibm-kube-audit/services/ibmcloud-kube-audit-service/proxy/post --ca-cert <certificate-authority> --client-cert <client-certificate> --client-key <client-key>
+    ```text
+    ibmcloud oc cluster master audit-webhook set --cluster CLUSTER --remote-server https://127.0.0.1:2040/api/v1/namespaces/ibm-kube-audit/services/ibmcloud-kube-audit-service/proxy/post --ca-cert CERTIFICATE-AUTHORITY --client-cert CLIENT-CERT --client-key CLIENT-KEY [--policy default|verbose]
     ```
     {: pre}
 
