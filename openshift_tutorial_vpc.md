@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-09-21"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -152,7 +152,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
     ```sh
     Client Version: v4.12.0
-    Kubernetes Version: v1.26.7.2
+    Kubernetes Version: v1.26.8.2
     ```
     {: screen}
 

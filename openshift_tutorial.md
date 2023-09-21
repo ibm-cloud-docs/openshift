@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-09-21"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -112,7 +112,7 @@ In this tutorial, you will complete the following tasks.
 
     ```sh
     Client Version: v4.12.0
-    Kubernetes Version: v1.26.7.2
+    Kubernetes Version: v1.26.8.2
     ```
     {: screen}
 
