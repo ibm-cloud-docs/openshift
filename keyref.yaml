@@ -100,7 +100,7 @@ keyword:
   openshift_49_release_date:
     09 February 2022
   openshift_49_unsupported_date:
-    30 August 2023
+    30 September 2023
   openshift_49_unsupported_certainty:
     tentative
   openshift_49_kube_version:
@@ -183,7 +183,7 @@ keyword:
   satellite_49_release_date:
     09 February 2022
   satellite_49_unsupported_date:
-    30 August 2023
+    30 September 2023
   satellite_49_unsupported_certainty:
     tentative
   satellite_49_kube_version:
