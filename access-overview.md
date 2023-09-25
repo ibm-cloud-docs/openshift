@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-31"
+lastupdated: "2023-09-25"
 
 keywords: openshift
 
@@ -46,7 +46,7 @@ Your clusters use {{site.data.keyword.cloud_notm}} Identity and Access Managemen
 5. If you use Kubernetes namespaces to isolate resources within the cluster, grant access to namespaces by [assigning users {{site.data.keyword.cloud_notm}} IAM service access roles for the namespaces](/docs/openshift?topic=openshift-users#checking-perms).
 6. For any automation tooling such as in your CI/CD pipeline, set up service accounts and [assign the service accounts Kubernetes RBAC permissions](/docs/openshift?topic=openshift-users#rbac)).
 
-For more information about setting up your account and resources, try out this tutorial about the [best practices for organizing users, teams, and applications](/docs/solution-tutorials?topic=solution-tutorials-users-teams-applications).
+For more information about setting up your account and resources, see [best practices for organizing users, teams, and applications](/docs/account?topic=account-account_setup).
 {: tip}
 
 ### Other types of access control
@@ -166,7 +166,7 @@ Individual users
 Multiple users in an access group
 :   You can create a group of users and then assign permissions to that group. For example, you can group all team leaders and assign administrator access to the group. Then, you can group all developers and assign only write access to that group. You can assign more than one {{site.data.keyword.cloud_notm}} IAM role to each access group. When you assign permissions to a group, any user that is added or removed from that group is affected. If you add a user to the group, then they also have the additional access. If they are removed, their access is revoked.
 
-You can't scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.12/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still scope IAM platform access roles to IAM access groups to control actions like ordering worker nodes, because platform access roles are never synced to RBAC roles.
+You can't scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.13/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still scope IAM platform access roles to IAM access groups to control actions like ordering worker nodes, because platform access roles are never synced to RBAC roles.
 {: note}
 
 

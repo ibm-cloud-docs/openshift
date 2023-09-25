@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-22"
+lastupdated: "2023-09-25"
 
 keywords: openshift
 subcollection: openshift
@@ -267,6 +267,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
+
+    * [25 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2523)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `5.2`.
 
     * [18 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1823)
 
@@ -2799,6 +2803,20 @@ subcollection: openshift
 
 * [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
 
+[Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools#satcluster-worker-pools)
+
+* [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-create-labels)
+
+* [Resizing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-resize)
+
+* [Rebalancing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-rebalance)
+
+* [Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-update)
+
+* [Adding zones to a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-addzone)
+
+* [Removing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-remove)
+
 [Checking your worker node operating system](/docs/openshift?topic=openshift-flavor-os-check#flavor-os-check)
 
 [Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
@@ -5060,7 +5078,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.12/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.13/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -6666,6 +6684,8 @@ subcollection: openshift
 
 * [vpc-block-csi-driver 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
 
+* [vpc-block-csi-driver 5.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.2)
+
 * [vpc-file-csi-driver 1.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.1)
 
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
@@ -6827,6 +6847,10 @@ subcollection: openshift
     * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
 [{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
+
+* [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
+
+    * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 

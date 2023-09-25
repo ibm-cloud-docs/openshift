@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-31"
+lastupdated: "2023-09-25"
 
 keywords: openshift, deploy
 
@@ -92,10 +92,10 @@ For more, see the following tutorials.
 
 |Scenario|Steps you can take|
 |--------|------------------|
-| Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status | The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the {{site.data.keyword.redhat_openshift_notm}} documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.12/authentication/managing-security-context-constraints.html){: external}. |
+| Your app runs as root. You might see the pods fail with a `CrashLoopBackOff` status | The pod requires privileged access. See [Example steps for giving a deployment privileged access](#openshift_move_apps_example_scc). For more information, see the {{site.data.keyword.redhat_openshift_notm}} documentation for [Managing Security Context Constraints (SCC)](https://docs.openshift.com/container-platform/4.13/authentication/managing-security-context-constraints.html){: external}. |
 | Your apps are designed to run on Docker. These apps are often logging and monitoring tools that rely on the container runtime engine, call the container runtime API directly, and access container log directories. | In {{site.data.keyword.redhat_openshift_notm}}, your image must be compatible to run with the CRI-O container runtime. For more information, see [Using the CRI-O Container Engine](https://docs.openshift.com/container-platform/3.11/crio/crio_runtime.html){: external}. |
 | Your app uses persistent file storage with a non-root user ID that can't write to the mounted storage device. | [Adjust the security context](/docs/openshift?topic=openshift-debug_storage_file) for the app deployment so that `runAsUser` is set to `0`. |
-| Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions: \n - Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port. \n - Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc). \n - Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.12/nodes/containers/nodes-containers-port-forwarding.html){: external}. |
+| Your service is exposed on port 80 or another port less than 1024. You might see a `Permission denied` error. | Ports less than 1024 are privileged ports that are reserved for start-up processes. You might choose one of the following solutions: \n - Change the port to 8080 or a similar port greater than 1024, and update your containers to listen on this port. \n - Add your container deployment to a privileged service account, such as in the [example for giving a deployment privileged access](#openshift_move_apps_example_scc). \n - Set up your container to listen on any network port, then update the container runtime to map that port to port 80 on the host by using [port forwarding](https://docs.openshift.com/container-platform/4.13/nodes/containers/nodes-containers-port-forwarding.html){: external}. |
 | Other use cases and scenarios | Review the {{site.data.keyword.redhat_openshift_notm}} documentation for migrating databases, web framework apps, CI/CD. |
 {: caption="Common scenarios that require app modifications" caption-side="bottom"}
 
@@ -127,7 +127,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     {: pre}
 
 4. Add a privileged security context constraint to the service account for the project.
-    If you want to check what policies are in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.12/authentication/managing-security-context-constraints.html){: external}.
+    If you want to check what policies are in the `privileged` SCC, run `oc describe scc privileged`. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.13/authentication/managing-security-context-constraints.html){: external}.
     {: note}
     
     ```sh

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-09-25"
 
 keywords: kubernetes, openshift
 
@@ -36,7 +36,7 @@ Seeing errors when you deploy your app? {{site.data.keyword.redhat_openshift_not
 {: #deploy_apps_ui}
 {: ui}
 
-You can create apps through various methods in the {{site.data.keyword.redhat_openshift_notm}} console by using the **Developer** perspective. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.12/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
+You can create apps through various methods in the {{site.data.keyword.redhat_openshift_notm}} console by using the **Developer** perspective. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.13/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
 
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
@@ -50,7 +50,7 @@ You can create apps through various methods in the {{site.data.keyword.redhat_op
 {: #deploy_apps_cli}
 {: cli}
 
-To create an app in your {{site.data.keyword.openshiftlong_notm}} cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.12/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For example, you might refer to a public GitHub repo, a public GitLab repo with a URL that ends in `.git`, or another local or remote repo. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.12/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
+To create an app in your {{site.data.keyword.openshiftlong_notm}} cluster, use the `oc new-app` [command](https://docs.openshift.com/container-platform/4.13/cli_reference/openshift_cli/developer-cli-commands.html#new-app){: external}. For example, you might refer to a public GitHub repo, a public GitLab repo with a URL that ends in `.git`, or another local or remote repo. For more information, [try out the tutorial](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app) and review the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.13/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
 
 ```sh
@@ -59,7 +59,7 @@ oc new-app --name <app_name> https://github.com/<path_to_app_repo> [--context-di
 {: pre}
 
 What does the `new-app` command do?
-:   The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.12/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
+:   The `new-app` command creates a build configuration and app image from the source code, a deployment configuration to deploy the container to pods in your cluster, and a service to expose the app within the cluster. For more information about the build process and other sources besides Git, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.13/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 
 ## Deploying apps to specific worker nodes by using labels
 {: #node_affinity}
@@ -113,7 +113,7 @@ To deploy apps to specific worker nodes,
                         ibm-cloud.kubernetes.io/machine-type=b3c.4x16.encrypted
                         ibm-cloud.kubernetes.io/sgx-enabled=false
                         ibm-cloud.kubernetes.io/worker-pool-id=00a11aa1a11aa11a1111a1111aaa11aa-11a11a
-                        ibm-cloud.kubernetes.io/worker-version=1.26_1534
+                        ibm-cloud.kubernetes.io/worker-version=1.27_1534
                         kubernetes.io/hostname=10.xxx.xx.xxx
                         privateVLAN=1234567
                         publicVLAN=7654321

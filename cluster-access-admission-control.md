@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-09-25"
 
 keywords: webhooks, admission control, ,openshift
 
@@ -23,7 +23,7 @@ Admission controllers intercept authorized API requests from various Kubernetes 
 ## Can I create my own admission controllers?
 {: #access_webhooks_create_controllers}
 
-Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.redhat_openshift_notm}}](https://docs.openshift.com/container-platform/4.12/architecture/admission-plug-ins.html){: external} documentation for more information. 
+Yes, see the [Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/){: external} and [{{site.data.keyword.redhat_openshift_notm}}](https://docs.openshift.com/container-platform/4.13/architecture/admission-plug-ins.html){: external} documentation for more information. 
 
 As noted in the Kubernetes documentation, you can use admission controllers for operations that are otherwise handled by the control plane. As such, take great caution when you configure a custom admission controller. You are responsible for any changes that happen in your cluster because of a custom admission controller.
 {: important}

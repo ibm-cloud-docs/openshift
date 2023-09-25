@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-31"
+lastupdated: "2023-09-25"
 
 keywords: red hat openshift, openshift container platform, red hat, create openshift cluster, openshift vpc cluster, openshift classic cluster, red hat cluster, openshift, containers, clusters
 
@@ -38,7 +38,7 @@ To complete the getting started tutorial, use a [Pay-As-You-Go or Subscription {
 
 1. Log in to your [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
 2. From the **Catalog**, click [**{{site.data.keyword.openshiftlong_notm}}**](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
-3. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.12.26**.
+3. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.13.11**.
 4. If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
 5. For the **Infrastructure**, select **Classic**.
 6. Configure the **Location** details for your cluster.
@@ -70,7 +70,7 @@ Now that your cluster is ready, [deploying your first app](#deploy-app)!
     5. Click **Create virtual private cloud**.
 2. From the [{{site.data.keyword.openshiftlong_notm}} dashboard](https://cloud.ibm.com/kubernetes/landing?platformType=openshift){: external}, click **Create cluster**.
 3. Configure your cluster's VPC environment.
-    1. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.12.26**.
+    1. Review the platform version details, **{{site.data.keyword.redhat_openshift_notm}} 4.13.11**.
     2. If you see the **OCP entitlement** section: Leave the value set to **Purchase additional licenses for this worker pool** because you are not using an {{site.data.keyword.cloud_notm}} Pak for this getting started cluster.
     3. For the **Infrastructure**, select **VPC**.
     4. From the **Virtual private cloud** drop-down menu, select the VPC that you created earlier.
@@ -102,7 +102,7 @@ Review the following example commands for creating classic clusters in the CLI.
 Create a classic cluster on a shared virtual machine.
 
 ```sh
-ibmcloud oc cluster create classic --name my_cluster --version 4.12_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3
+ibmcloud oc cluster create classic --name my_cluster --version 4.13_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3
 ```
 {: pre}
 
@@ -110,14 +110,14 @@ ibmcloud oc cluster create classic --name my_cluster --version 4.12_openshift --
 Create a classic cluster on bare metal architecture.
 
 ```sh
-ibmcloud oc cluster create classic --name my_cluster --version 4.12_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
+ibmcloud oc cluster create classic --name my_cluster --version 4.13_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
 ```
 {: pre}
 
 Create a classic cluster with an IBM Cloud Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 GB memory each.
 
 ```sh
-ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.12_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> [--operating-system (REDHAT_7_64|REDHAT_8_64)]
+ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.13_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> [--operating-system (REDHAT_7_64|REDHAT_8_64)]
 ```
 {: pre}
 
@@ -145,7 +145,7 @@ Review the sample commands for creating classic clusters in the CLI. For more de
 Create a VPC cluster with three worker nodes.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.12_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor bx2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.13_openshift --zone us-east-1 --vpc-id <VPC_ID> --subnet-id <VPC_SUBNET_ID> --cos-instance <COS_CRN>--flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
@@ -196,7 +196,7 @@ From the {{site.data.keyword.redhat_openshift_notm}} console, you can deploy one
 | [{{site.data.keyword.openshiftlong_notm}} classic cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial) or [{{site.data.keyword.openshiftlong_notm}} VPC cluster tutorial](/docs/openshift?topic=openshift-vpc_rh_tutorial) | - Set up your {{site.data.keyword.cloud_notm}} and {{site.data.keyword.redhat_openshift_notm}} CLI. \n - Deploy an app that uses an {{site.data.keyword.cloud_notm}} service. |
 |[Learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin)|See an overview of all the options in {{site.data.keyword.openshiftlong_notm}} for administrators.
 |[Learning path for developers](/docs/openshift?topic=openshift-learning-path-dev)|See an overview of all the options in {{site.data.keyword.openshiftlong_notm}} for developers.
-|[{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.12/welcome/index.html#developer-activities){: external} documentation | Learn how to work with your apps|
+|[{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.13/welcome/index.html#developer-activities){: external} documentation | Learn how to work with your apps|
 {: caption="What's next after completing the {{site.data.keyword.openshiftlong_notm}} getting started?" caption-side="bottom"}
 
 

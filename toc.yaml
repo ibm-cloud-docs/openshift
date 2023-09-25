@@ -88,7 +88,7 @@ toc:
           - update.md
           - dedicated-hosts.md
           - rhel_migrate.md
-          - sat-worker-manage.md
+          - sat-worker-pool-manage.md
           - worker-os-check.md
           - host-maintenance.md
           - worker-tag-label.md
@@ -272,7 +272,6 @@ toc:
           - integrations-helm.md
           - integrations-svcbind.md
           - sgx-install.md
-      - ha.md
       - remote-health-monitoring-opt-out.md
       - topicgroup: 
           label: Tuning performance
@@ -299,7 +298,7 @@ toc:
               href: https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json
           - link:
               label: OpenShift Container Platform REST API
-              href: https://docs.openshift.com/container-platform/4.12/rest_api/index.html
+              href: https://docs.openshift.com/container-platform/4.13/rest_api/index.html
       - topicgroup:
           label: CLI plug-in reference
           topics:

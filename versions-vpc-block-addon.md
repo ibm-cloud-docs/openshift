@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-14"
+lastupdated: "2023-09-25"
 
 keywords: block, add-on, changelog
 
@@ -41,6 +41,23 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 Before you migrate to a `5.x` release from a previous release, you must not have any volume snapshots in `failure` state. For more information, see [Why can't I delete my Block Storage for VPC volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete).
 {: important}
+
+
+## Version 5.2
+{: #052_is_block}
+
+### Change log for version 5.2, released 25 September 2023
+{: #5.2_is_block_relnote}
+
+
+- Adds support for Z system. Multiarchitecture images are supported on both `s390x` and `amd64` based clusters.
+- Adds a new configurable flag `VolumeAttachmentLimit` in `addon-vpc-block-csi-driver-configmap` configMap that allows users to edit the maximum number of volumes that can be attached per node. The default value is set to `12`.
+- Deploys controller pods as `Deployments`. Previous releases were deployed as `Satefulsets`.
+- Resolves an issue where logs showed incorrect completion duration of some csi operations.
+- Pulls sidecars from `registry.k8s.io`.
+- Adds support for 2 volume snapshot classes with delete and retain policies.
+- Updates `k8s` package from `1.26.1` to `1.26.6`.
+
 
 
 ## Version 5.1
