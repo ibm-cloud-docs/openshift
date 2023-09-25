@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-09-25"
 
 keywords: openshift dedicated hosts
 
@@ -63,6 +63,6 @@ What options do I have to permanently remove my data?
 ### Does Red Hat collect information about my cluster?
 {: #pi-rh-telemetry}
 
-Yes. To improve the OpenShift Container Platform service, a telemetry component is installed in your cluster by default that collects anonymized health reports about your cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.12/support/remote_health_monitoring/about-remote-health-monitoring.html){: external}.
+Yes. To improve the OpenShift Container Platform service, a telemetry component is installed in your cluster by default that collects anonymized health reports about your cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.13/support/remote_health_monitoring/about-remote-health-monitoring.html){: external}.
 
 To remove the telemetry component, see [Disabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports).

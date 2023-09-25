@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-22"
+lastupdated: "2023-09-25"
 
 keywords: openshift
 subcollection: openshift
@@ -5060,7 +5060,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.12/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.13/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -6665,6 +6665,8 @@ subcollection: openshift
 * [vpc-block-csi-driver 5.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.0)
 
 * [vpc-block-csi-driver 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
+
+* [vpc-block-csi-driver 5.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.2)
 
 * [vpc-file-csi-driver 1.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.1)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-25"
 
 keywords: openshift, route, Ingress controller
 
@@ -34,10 +34,10 @@ You have several options for exposing apps in {{site.data.keyword.satelliteshort
 ## Setting up MetalLB
 {: #sat-expose-metallb}
 
-MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols. For more information, see [About MetalLB and the MetalLB Operator](https://docs.openshift.com/container-platform/4.12/networking/metallb/about-metallb.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
+MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols. For more information, see [About MetalLB and the MetalLB Operator](https://docs.openshift.com/container-platform/4.13/networking/metallb/about-metallb.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
 {: shortdesc}
 
-To install and configure MetalLB, follow the instructions under [LoadBalancing with MetalLB](https://docs.openshift.com/container-platform/4.12/networking/metallb/metallb-operator-install.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. Before you begin, make sure you have a dedicated subnet (`IPAddressPool`) for the external IP of the `LoadBalancer` services. Check that the IP addresses included in the `IPAddressPool` are not reserved or used for other purposes, otherwise the load balancing function might fail. 
+To install and configure MetalLB, follow the instructions under [LoadBalancing with MetalLB](https://docs.openshift.com/container-platform/4.13/networking/metallb/metallb-operator-install.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. Before you begin, make sure you have a dedicated subnet (`IPAddressPool`) for the external IP of the `LoadBalancer` services. Check that the IP addresses included in the `IPAddressPool` are not reserved or used for other purposes, otherwise the load balancing function might fail. 
 
 ## Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes
 {: #sat-expose-routes}
@@ -93,13 +93,13 @@ To create routes for your apps:
         Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
         {: tip}
         
-    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.openshift.com/container-platform/4.12/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.openshift.com/container-platform/4.13/networking/routes/secured-routes.html#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
-    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.12/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.openshift.com/container-platform/4.13/networking/routes/secured-routes.html#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
@@ -111,7 +111,7 @@ To create routes for your apps:
     ```
     {: pre}
 
-8. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.12/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.12/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
+8. Optional: Customize default routing rules with [optional configurations](https://docs.openshift.com/container-platform/4.13/networking/routes/route-configuration.html){: external}. For example, you can use [route-specific HAProxy annotations](https://docs.openshift.com/container-platform/4.13/networking/routes/route-configuration.html#nw-route-specific-annotations_route-configuration){: external}.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-25"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -210,6 +210,16 @@ Review the following list of supported cluster add-ons. Each addon version can b
 - Supported Kubernetes cluster versions: `>=1.22.0 <1.29.0`
 
 - Supported OpenShift cluster versions: `>=4.9.0 <4.14.0`
+
+
+
+
+## vpc-block-csi-driver 5.2 
+{: #vpc-block-csi-driver-5.2}
+
+- Supported Kubernetes cluster versions: `>=1.25.0 <1.29.0`
+
+- Supported OpenShift cluster versions: `>=4.10.0 <4.14.0`
 
 
 
