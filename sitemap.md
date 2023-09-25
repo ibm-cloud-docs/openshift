@@ -268,6 +268,10 @@ subcollection: openshift
 
 * [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
 
+    * [25 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2523)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on version `5.2`.
+
     * [18 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1823)
 
         * CLI version `1.0.566` is available.
@@ -6829,6 +6833,10 @@ subcollection: openshift
     * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
 [{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
+
+* [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
+
+    * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 

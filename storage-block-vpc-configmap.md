@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-09-25"
 
 keywords: openshift, block storage, snapshot
 
@@ -101,6 +101,7 @@ data:
   CSISidecarLogLevel: "5" #container:csi-snapshotter, glog/klog log level
   IsSnapshotEnabled : "true" #container: iks-vpc-block-driver
   CustomSnapshotCreateDelay: "300" #container: iks-vpc-block-driver
+  VolumeAttachmentLimit: "12" #container: iks-vpc-block-driver
 ```
 {: codeblock}
 
