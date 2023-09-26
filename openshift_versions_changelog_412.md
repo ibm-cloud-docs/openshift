@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-09-26"
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -32,6 +32,19 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
+### Change log for worker node fix pack 4.12.34_1563_openshift, released 25 September 2023
+{: #41234_1563_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.12.34_1563_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}} | 4.12.34 | 4.12.34 | No Change |
+| RHEL 8 Packages |N/A|N/A|N/A|
+{: caption="Changes since version 4.12.34_1557_openshift" caption-side="bottom"}
+
+
 ### Change log for worker node fix pack 4.12.32_1557_openshift, released 12 September 2023
 {: #41232_1557_openshift_W}
 
@@ -43,6 +56,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 | {{site.data.keyword.openshiftshort}}. | 4.12.30 | 4.12.32 | For more information, see the [change log](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-32){: external}. |
 | RHEL 8 Packages | N/A | N/A | Package updates for [CVE-2022-40982](https://nvd.nist.gov/vuln/detail/CVE-2022-40982){: external}, [CVE-2022-41804](https://nvd.nist.gov/vuln/detail/CVE-2022-41804){: external}, [CVE-2023-23908](https://nvd.nist.gov/vuln/detail/CVE-2023-23908){: external}. |
 {: caption="Changes since version 4.12.30_1556_openshift" caption-side="bottom"}
+
 
 ### Change log for master fix pack 4.12.26_1555_openshift, released 30 August 2023
 {: #41226_1555_openshift_M}
