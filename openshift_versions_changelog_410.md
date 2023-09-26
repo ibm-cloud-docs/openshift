@@ -40,18 +40,6 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the version 4.10 change log.
 {: shortdesc}
 
-### Change log for worker node fix pack 4.10.67_1586_openshift, released 25 September 2023
-{: #41067_1586_openshift_W}
-
-The following table shows the changes that are in the worker node fix pack 4.10.67_1586_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
-{: shortdesc}
-
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}} | 4.10.67 | 4.10.67 | No Change |
-| RHEL 8 Packages |N/A|N/A|N/A|
-{: caption="Changes since version 4.10.67_1582_openshift" caption-side="bottom"}
-
 
 ### Change log for worker node fix pack 4.10.67_1582_openshift, released 12 September 2023
 {: #41067_1582_openshift_W}
