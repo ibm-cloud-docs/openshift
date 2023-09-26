@@ -450,6 +450,7 @@ toc:
               - ts-master-limits.md
               - ts-admin-cert.md
               - ts-health-loglines.md
+              - ts-vpc-byok-encrypted-storage.md
           - topicgroup:
               label: Worker nodes
               topics:

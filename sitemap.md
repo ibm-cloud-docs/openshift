@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-26"
 
 keywords: openshift
 subcollection: openshift
@@ -8785,6 +8785,8 @@ subcollection: openshift
 [Why can't I create a new admin certificate?](/docs/openshift?topic=openshift-ts_admin-cert#ts_admin-cert)
 
 [Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
+
+[Why can't I create a VPC cluster with encrypted worker nodes?](/docs/openshift?topic=openshift-ts-vpc-byok-encrypted-storage#ts-vpc-byok-encrypted-storage)
 
 
 ### Worker nodes

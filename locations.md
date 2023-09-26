@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-26"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -117,7 +117,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1, jp-osa-2, jp-osa-3 |
 | Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1, jp-tok-2, jp-tok-3 |
 | Europe | Germany | Frankfurt | eu-de | eu-de-1, eu-de-2, eu-de-3 |
-| Europe | Spain | Madrid | eu-es | eu-es-1, eu-es-2, eu-es-3 |
+| Europe | Spain | `†` Madrid | eu-es | eu-es-1, eu-es-2, eu-es-3 |
 | Europe | United Kingdom | London | eu-gb | eu-gb-1, eu-gb-2, eu-gb-3 |
 | North America | Canada | `†` Toronto | ca-tor | ca-tor-1, ca-tor-2, ca-tor-3 |
 | North America | United States | Dallas | us-south | us-south-1, us-south-2, us-south-3 |
@@ -127,7 +127,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 
 
 
-`†` **Toronto and São Paulo multizone regions**: Toronto and São Paulo are available as multizone regions for clusters on VPC infrastructure only.
+`†` These regions are available as multizone regions for clusters on VPC infrastructure only.
 
 ### Resources in a single zone cluster
 {: #regions_single_zone}

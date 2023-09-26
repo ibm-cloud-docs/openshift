@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-26"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2023
 {: #openshift-sep23}
+
+
 
 ### 25 September 2023
 {: #openshift-sep2523}
