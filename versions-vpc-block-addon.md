@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-26"
 
 keywords: block, add-on, changelog
 
@@ -50,7 +50,7 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 {: #5.2_is_block_relnote}
 
 
-- Adds support for Z system. Multiarchitecture images are supported on both `s390x` and `amd64` based clusters.
+- Adds support for Z system. Multi-architecture images are supported on both `s390x` and `amd64` based clusters.
 - Adds a new configurable flag `VolumeAttachmentLimit` in `addon-vpc-block-csi-driver-configmap` configMap that allows users to edit the maximum number of volumes that can be attached per node. The default value is set to `12`.
 - Deploys controller pods as `Deployments`. Previous releases were deployed as `Satefulsets`.
 - Resolves an issue where logs showed incorrect completion duration of some csi operations.
