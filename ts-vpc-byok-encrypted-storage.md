@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 
 
-## Why can't I create a VPC cluster with encrypted worker nodes? 
+# Why can't I create a VPC cluster with encrypted worker nodes? 
 {: #ts-vpc-byok-encrypted-storage}
 {: support}
 

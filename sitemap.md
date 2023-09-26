@@ -8786,7 +8786,7 @@ subcollection: openshift
 
 [Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
 
-* [Why can't I create a VPC cluster with encrypted worker nodes?](/docs/openshift?topic=openshift-ts-vpc-byok-encrypted-storage#ts-vpc-byok-encrypted-storage)
+[Why can't I create a VPC cluster with encrypted worker nodes?](/docs/openshift?topic=openshift-ts-vpc-byok-encrypted-storage#ts-vpc-byok-encrypted-storage)
 
 
 ### Worker nodes
