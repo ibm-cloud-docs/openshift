@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-26"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
 
@@ -108,7 +108,15 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 1. Scale down the deployments that you found in the previous step. 
     ```sh
     oc scale deployment rook-ceph-mon-c --replicas=0 -n openshift-storage
+    ```
+    {: pre}
+    
+    ```sh
     oc scale deployment rook-ceph-osd-2 --replicas=0 -n openshift-storage
+    ```
+    {: pre}
+
+    ```sh
     oc scale deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME --replicas=0 -n openshift-storage
     ```
     {: pre}
