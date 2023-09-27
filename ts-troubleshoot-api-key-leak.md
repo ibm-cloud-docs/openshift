@@ -33,7 +33,7 @@ To resolve the issue, rotate your cluster credentials.
     ```sh
     ibmcloud iam service-ids | grep CLUSTER-ID
     ```
-    {:pre}
+    {: pre}
 
     Example output
     ```sh
