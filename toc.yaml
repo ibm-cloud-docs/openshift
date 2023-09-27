@@ -441,6 +441,7 @@ toc:
               - ts-pod-security-reset.md
               - ts-cluster-vpn.md
               - ts-cluster-no-vpc.md
+              - ts-api-key-leak.md
               - ts-cluster-icr-pull-img.md
               - ts-cluster-webhook.md
               - ts-delete-webhooks.md
