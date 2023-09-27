@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-09-27"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -40,6 +40,27 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the version 4.11 change log.
 {: shortdesc}
 
+
+
+### Change log for master fix pack 4.11.48_1573_openshift, released 20 September 2023
+{: #41148_1573_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.11.48_1573_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.25.1 | v3.25.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.25/release-notes/#v3.25.2){: external}. |
+| Calico Operator | v1.29.4 | v1.29.6 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.6){: external}. |
+| Cluster health image | v1.3.24 | v1.4.2 | Updated `Go` to version `1.20.8` and updated dependencies. Updated to new base image. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.5 | v2.4.10 | Updated `Go dependencies`. Updated to newer UBI base image. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.16-5 | v1.24.17-3 | Updated to support the `Kubernetes 1.24.17` release. Updated `Go` to version `1.20.7` and updated `Go dependencies`. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 434 | 435 | Updated `Go` to version `1.20.6` and updated dependencies. Updated to newer UBI base image. |
+| Key Management Service provider | v2.7.3 | v2.8.2 | Updated `Go dependencies'. Changed to new base image. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2631 | 2681 | Updated `Go` to version `1.19.12` and updated `Go dependencies'. |
+| {{site.data.keyword.openshiftlong_notm}} | 4.11.47 | 4.11.48 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-47){: external}. |
+{: caption="Changes since version 4.11.47_1567_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.11.48_1569_openshift, released 12 September 2023
