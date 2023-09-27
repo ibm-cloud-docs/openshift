@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-09-27"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -103,6 +103,13 @@ For more information about the components of your cluster and how you can meet s
 {: shortdesc}
 
 The access policies that you assign users vary depending on what you want your users to be able to do. You can find more information about what roles authorize which types of actions on the [User access reference page](/docs/openshift?topic=openshift-access_reference) or in the following table's links. For steps to assign policies, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
+
+## How do I rotate the cluster API key in the event of a leak?
+{: #faq_api_key_leak}
+{: faq}
+{: support}
+
+For instructions on how to rotate your API key, see [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-ts-troubleshoot-api-leak).
 
 
 ## Where can I find a list of security bulletins that affect my cluster?

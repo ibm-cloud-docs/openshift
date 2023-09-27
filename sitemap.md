@@ -8626,6 +8626,8 @@ subcollection: openshift
 
 * [What access policies do I give my cluster users?](/docs/openshift?topic=openshift-faqs#faq_access)
 
+* [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-faqs#faq_api_key_leak)
+
 * [Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
 
 * [Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
