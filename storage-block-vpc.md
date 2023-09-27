@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-09-27"
 
 keywords: openshift
 
@@ -922,6 +922,36 @@ You can create a customized storage class to provision {{site.data.keyword.block
     exit
     ```
     {: pre}
+
+
+### Updating the `VolumeAttachLimit`
+{: #vpc-block-volume-attach-limit}
+
+In versions `5.2` and later of the {{site.data.keyword.block_storage_is_short}} add-on, you can edit the maximum number of volumes that can be attached to each node by editing the configmap. The default value is `12`.
+
+Your account must be approved to use this feature.
+{: important}
+
+1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
+
+1. Edit the configmap. Replace `VALUE` with the volume attachment limit that you want to set.
+    ```sh
+    kubectl patch configmap/addon-vpc-block-csi-driver-configmap \       
+    -n kube-system \
+    --type merge \
+    -p '{"data":{"VolumeAttachmentLimit":"VALUE"}}'
+    ```
+    {: pre}
+
+1. Wait for the `ibm-vpc-block-csi-node` pods in the `kube-system` namespace to restart. Verify that the pods have restarted.
+    ```sh
+    kubectl get pods -n kube-system -w| grep block-csi
+    ```
+    {: pre}
+
+1. You can now attach volumes to your worker nodes by using dynamic provisioning or by manually creating the attachments. For more information, see [Adding {{site.data.keyword.block_storage_is_short}} to your apps](#vpc-block-add) or [Using an existing {{site.data.keyword.block_storage_is_short}} instance](#vpc-block-static).
+
+
 
 ### Storing your custom PVC settings in a Kubernetes secret
 {: #vpc-block-storageclass-secret}

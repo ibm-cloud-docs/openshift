@@ -4267,6 +4267,8 @@ subcollection: openshift
 
     * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
 
+    * [Updating the `VolumeAttachLimit`](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-attach-limit)
+
     * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
 
     * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
