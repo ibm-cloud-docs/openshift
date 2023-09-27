@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-09-27"
 
-keywords: openshift, node scaling, ca, autoscaler
+keywords: openshift, kubernetes, node scaling, ca, autoscaler
 
 subcollection: openshift
 
@@ -19,6 +19,8 @@ subcollection: openshift
 {: #classic-flavors}
 
 Review the classic worker node flavors by metro.
+
+
 
 
 

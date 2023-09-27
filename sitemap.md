@@ -4267,6 +4267,8 @@ subcollection: openshift
 
     * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
 
+    * [Updating the `VolumeAttachLimit`](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-attach-limit)
+
     * [Storing your custom PVC settings in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-block-storageclass-secret)
 
     * [Enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret)
@@ -8626,6 +8628,8 @@ subcollection: openshift
 
 * [What access policies do I give my cluster users?](/docs/openshift?topic=openshift-faqs#faq_access)
 
+* [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-faqs#faq_api_key_leak)
+
 * [Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
 
 * [Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
@@ -8779,6 +8783,8 @@ subcollection: openshift
 [Why does the cluster master return a VPN server error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_login#rhoks_ts_openvpn_login)
 
 [VPC: Why is no VPC available when I create a cluster in the console?](/docs/openshift?topic=openshift-ts_no_vpc#ts_no_vpc)
+
+[How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-ts-troubleshoot-api-key-leak#ts-troubleshoot-api-key-leak)
 
 [Why can't the cluster pull images from {{site.data.keyword.registrylong_notm}} during creation?](/docs/openshift?topic=openshift-ts_image_pull_create#ts_image_pull_create)
 

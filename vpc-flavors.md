@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-31"
+lastupdated: "2023-09-27"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -22,7 +22,10 @@ subcollection: openshift
 
 Review the VPC Gen 2 worker node flavors by metro.
 
- 
+If your account is allowlisted for flavors that are not listed below, you can find a list of available flavors by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls).
+{: tip}
+
+
 
 
 

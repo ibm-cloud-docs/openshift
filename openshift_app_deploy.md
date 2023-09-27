@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-27"
 
 keywords: kubernetes, openshift
 
@@ -204,6 +204,8 @@ If you have a [GPU machine type](/docs/openshift?topic=openshift-planning_worker
 
 {{site.data.keyword.vpc_short}} worker nodes with GPUs are available for allowlisted accounts only. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help). Be sure to include the data centers, the VPC infrastructure profile, and the number of workers that you want use. For example `12 worker nodes in us-east-1 of VPC profile gx2-16x128xv100`.
 {: important}
+
+
 
 In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. 
 
