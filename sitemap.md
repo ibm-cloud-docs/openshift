@@ -272,6 +272,10 @@ subcollection: openshift
 
         * {{site.data.keyword.block_storage_is_short}} add-on version `5.2`.
 
+    * [20 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2023)
+
+        * Master fix packs are available.
+
     * [18 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1823)
 
         * CLI version `1.0.566` is available.
