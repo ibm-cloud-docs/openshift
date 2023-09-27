@@ -109,7 +109,7 @@ The access policies that you assign users vary depending on what you want your u
 {: faq}
 {: support}
 
-For instructions on how to rotate your API key, see [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-ts-troubleshoot-api-leak).
+For instructions on how to rotate your API key, see [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-ts-troubleshoot-api-key-leak).
 
 
 ## Where can I find a list of security bulletins that affect my cluster?

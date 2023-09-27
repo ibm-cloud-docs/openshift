@@ -41,7 +41,7 @@ To resolve the issue, rotate your cluster credentials.
     ```
     {: pre}
 
-1. Find the API keys associated with the service ID that you found in the previous step. In the following example, we rotate the API key used for {{site.date.keyword.registryshort}}.
+1. Find the API keys associated with the service ID that you found in the previous step. In the following example, the API key used for {{site.date.keyword.registryshort}} is rotated.
     ```sh
     ibmcloud iam service-api-keys ServiceId-xxx-xxx
     Getting all API keys of xxx...
@@ -57,7 +57,7 @@ To resolve the issue, rotate your cluster credentials.
     ```
     {: pre}
 
-1. Run the **`ibmcloud ks cluster pull-secret apply`** [command]. This generates a new API key and updates the `all-icr-io` secret in the default namespace.
+1. Run the **`ibmcloud ks cluster pull-secret apply`** [command]. This command generates a new API key and updates the `all-icr-io` secret in the default namespace.
     ```sh
     ibmcloud ks cluster pull-secret apply --cluster CLUSTER
     ```
