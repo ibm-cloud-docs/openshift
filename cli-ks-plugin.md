@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-28"
 
 keywords: openshift
 
@@ -8389,3 +8389,5 @@ ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -p p
 {: pre}
 
 
+
+  
