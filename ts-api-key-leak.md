@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-09-28"
 
 keywords: kubernetes, help, api key, security
 
@@ -41,7 +41,7 @@ To resolve the issue, rotate your cluster credentials.
     ```
     {: pre}
 
-1. Find the API keys associated with the service ID that you found in the previous step. In the following example, the API key used for {{site.date.keyword.registryshort}} is rotated.
+1. Find the API keys associated with the service ID that you found in the previous step. In the following example, the API key used for {{site.data.keyword.registryshort}} is rotated.
     ```sh
     ibmcloud iam service-api-keys ServiceId-xxx-xxx
     Getting all API keys of xxx...
@@ -57,7 +57,7 @@ To resolve the issue, rotate your cluster credentials.
     ```
     {: pre}
 
-1. Run the **`ibmcloud ks cluster pull-secret apply`** [command]. This command generates a new API key and updates the `all-icr-io` secret in the default namespace.
+1. Run the **`ibmcloud ks cluster pull-secret apply`** [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply). This command generates a new API key and updates the `all-icr-io` secret in the default namespace.
     ```sh
     ibmcloud ks cluster pull-secret apply --cluster CLUSTER
     ```
