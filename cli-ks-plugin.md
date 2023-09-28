@@ -8390,4 +8390,5 @@ ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -p p
 
 
 
+
   
