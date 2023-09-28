@@ -268,6 +268,10 @@ subcollection: openshift
 
 * [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
 
+    * [27 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2723)
+
+        * Worker node fix packs are available.
+
     * [25 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2523)
 
         * {{site.data.keyword.block_storage_is_short}} add-on version `5.2`.
