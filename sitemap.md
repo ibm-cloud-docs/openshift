@@ -9175,7 +9175,7 @@ subcollection: openshift
 
 [Why does the Ingress status show an `ERRSEIPM` error?](/docs/openshift?topic=openshift-ts-ingress-errseipm#ts-ingress-errseipm)
 
-[Why does the Ingress status show an `ERRSAM` error?](/docs/openshift?topic=openshift-ts-ingress-errsam#ts-ingress-errsam)
+[Why does the Ingress status show an `ERRSAMO` error?](/docs/openshift?topic=openshift-ts-ingress-errsamo#ts-ingress-errsamo)
 
 [Why does the Ingress status show an `ERRRNA` error?](/docs/openshift?topic=openshift-ts-ingress-errrna#ts-ingress-errrna)
 
