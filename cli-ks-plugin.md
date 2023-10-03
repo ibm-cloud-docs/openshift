@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-10-03"
 
 keywords: openshift
 
@@ -804,9 +804,12 @@ Minimum required permissions
 :    All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
 :    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
 :    The subnet that you choose must be within one of the following ranges:
+
+
      - `172.17.0.0 - 172.17.255.255`
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
+
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
@@ -814,9 +817,12 @@ Minimum required permissions
 `--service-subnet *SUBNET`{: #service-subnet}
 :    All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
 :    The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
+
+
      - `172.17.0.0 - 172.17.255.255`
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
+
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
@@ -931,9 +937,12 @@ Minimum required permissions
 :    In the first cluster that you create in a VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
 :    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
      The subnet that you choose must be within one of the following ranges.
+
+
      - `172.17.0.0 - 172.17.255.255`
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
+
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. If you use custom-range subnets for your worker nodes, you must [ensure that your worker node subnets don't overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range).
@@ -941,9 +950,12 @@ Minimum required permissions
 `--service-subnet SUBNET`
 :    All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
      The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges.
+
+
      - `172.17.0.0 - 172.17.255.255`
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
+
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap.
@@ -8069,9 +8081,12 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
 :    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
 :    The subnet that you choose must be within one of the following ranges.
+
+
      - `172.16.0.0 - 172.17.255.255`
      - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
+
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
@@ -8091,9 +8106,12 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 `--service-subnet SUBNET`
 :    Optional. All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your services.
 :    The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges.
+
+
      - `172.16.0.0 - 172.17.255.255`
-     - `172.20.0.0 - 172.31.255.255`
+     - `172.21.0.0 - 172.31.255.255`
      - `192.168.0.0 - 192.168.254.255`
+
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.

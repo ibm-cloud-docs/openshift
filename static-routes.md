@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-10-03"
 
 keywords: openshift, vpn, on-prem, gateway, static
 
@@ -138,12 +138,14 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
     `subnet`
     :   Specify the CIDR of the external subnet from which requests to the worker nodes are sent, such as a subnet in an on-premises network. The external subnet can't be in the following reserved ranges. The device interconnect range, `198.18.0.0/15`, is permitted.
         - `10.0.0.0/8`
+  
         - `172.16.0.0/16`
         - `172.18.0.0/16`
         - `172.19.0.0/16`
         - `172.20.0.0/16`
         - `192.168.255.0/24`
-        
+  
+
     `gateway`
     :   If your gateway IP address exists on the same subnet as your worker nodes, specify the gateway IP address. If your gateway IP address exists on another subnet in your IBM Cloud private network, don't include this field. In this case, worker nodes send responses to the private network's backend router, and the router sends the response to the gateway on the other subnet. When the static route is created, the backend router's IP address in the `10.0.0.0/8` range is automatically assigned as a default gateway.
     
