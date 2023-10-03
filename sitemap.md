@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-02"
+lastupdated: "2023-10-03"
 
 keywords: openshift
 subcollection: openshift
@@ -265,6 +265,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
+
+    * [3 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct323)
+
+        * Cloud Image Key Synchronizer add-on version `1.0.0_1831`.
 
 * [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
 
@@ -7404,6 +7410,8 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
 
+    * [Version 1.0.0_1831, released on 3 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1831)
+
     * [Version 1.0.0_1701, released on 13 July 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1701)
 
     * [Version 1.0.0_1633, released on 15 June 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1633)
@@ -9167,7 +9175,7 @@ subcollection: openshift
 
 [Why does the Ingress status show an `ERRSEIPM` error?](/docs/openshift?topic=openshift-ts-ingress-errseipm#ts-ingress-errseipm)
 
-[Why does the Ingress status show an `ERRSAM` error?](/docs/openshift?topic=openshift-ts-ingress-errsam#ts-ingress-errsam)
+[Why does the Ingress status show an `ERRSAMO` error?](/docs/openshift?topic=openshift-ts-ingress-errsamo#ts-ingress-errsamo)
 
 [Why does the Ingress status show an `ERRRNA` error?](/docs/openshift?topic=openshift-ts-ingress-errrna#ts-ingress-errrna)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-10-03"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -94,9 +94,12 @@ Size requirements
 
 Range requirements
 :   The pod and service subnets can't overlap each other, and the pod subnet can't overlap the VPC subnets for your worker nodes. The subnet that you choose must be within one of the following ranges.
+
+
     - `172.17.0.0 - 172.17.255.255`
     - `172.21.0.0 - 172.31.255.255`
     - `192.168.0.0 - 192.168.254.255`
+
     - `198.18.0.0 - 198.19.255.255`
 
 #### Services
@@ -110,9 +113,12 @@ Size requirements
 
 Range requirements
 :   The pod and service subnets can't overlap each other. The subnet that you choose must be within one of the following ranges.
+
+
     - `172.17.0.0 - 172.17.255.255`
     - `172.21.0.0 - 172.31.255.255`
     - `192.168.0.0 - 192.168.254.255`
+
     - `198.18.0.0 - 198.19.255.255`
 
 ### Public gateways
@@ -162,7 +168,9 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 - VPC subnets are bound to a single zone and can't span multiple zones or regions.
 - After you create a subnet, you can't move it to a different zone, region, or VPC.
 - If you have worker nodes that are attached to an existing subnet in a zone, you can't change the subnet for that zone in the cluster.
+
 - The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
+
 - Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
 - The [classic access default address prefixes](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure#classic-access-default-address-prefixes) conflict with the subnets for the {{site.data.keyword.openshiftlong_notm}} control plane. You must [create the VPC without the automatic default address prefixes, and then create your own address prefixes and subnets within those ranges for your cluster](#classic_access_subnets).
 
@@ -186,7 +194,9 @@ Use the {{site.data.keyword.cloud_notm}} console to create a VPC subnet for your
 3. Select the location and zone where you want to create the subnet.
 4. Specify the number of IP addresses to create.
     - VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You can't change the number of IPs that a VPC subnet has later.
-    - If you enter a specific IP range and running Red Hat OpenShift 4.7 or earlier., don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+
+    - If you enter a specific IP range and running Red Hat OpenShift 4.13 or earlier, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+
 5. To run default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub, and to allow your cluster to access public endpoints such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only, you must attach a public gateway to your subnet.
 6. Click **Create subnet**.
 7. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2), [create a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add-workers-vpc).>
@@ -224,7 +234,9 @@ To create a VPC subnet, follow these steps.
     {: pre}
 
     - VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You can't change the number of IPs that a VPC subnet has later.
-    - If you are running Red Hat OpenShift 4.7 or earlier, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+
+    - If you are running Red Hat OpenShift 4.13 or earlier, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`.
+
 
 3. Check whether you have a public gateway in the zones where you want to create a cluster. Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone.
     ```sh
