@@ -27,9 +27,9 @@ Complete the following steps to get familiar with the basics, understand the ser
 {: #getting-started-basics}
 {: step}
 
-- Get an overview of the service by reviewing the concepts and terms, and benefits. For more information, see [Understanding {{site.data.keyword.openshiftlong_notm}}](docs/openshift?topic=openshift-overview).
+- Get an overview of the service by reviewing the concepts and terms, and benefits. For more information, see [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-overview).
 
-- [Review the FAQs](docs/openshift?topic=openshift-overview)
+- [Review the FAQs](/docs/openshift?topic=openshift-faqs)
 
 Already familiar with containers and {{site.data.keyword.openshiftlong_notm}}? Continue to the next step to prepare your account for creating clusters.
 
@@ -37,7 +37,7 @@ Already familiar with containers and {{site.data.keyword.openshiftlong_notm}}? C
 {: #getting-started-prepare-account}
 {: step}
 
-To set up your {{site.data.keyword.cloud_notm}} account so that you can create clusters, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters).
+To set up your {{site.data.keyword.cloud_notm}} account so that you can create clusters, see [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters).
 
 If you've already prepared your account and you're ready to create a cluster, continue to the next step.
 
@@ -57,7 +57,7 @@ Follow a tutorial, or set up your own custom cluster environment.
 
 - [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic).
 
-- [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc).
+- [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc-gen2).
 
 
 Already have a cluster? Continue to the next step to deploy an app!

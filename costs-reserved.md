@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-10-04"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -61,7 +61,7 @@ Does a reservation guarantee computing capacity in a zone?
 :   Reserving worker nodes does not guarantee compute capacity whenever you want to create a worker pool. Instead, you reserve a certain number of worker nodes for a term so that you lock in the discounted price that is associated with the reservation.
 
 How do I know how many reserved worker nodes I need?
-:   See [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing).
+:   See [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy).
 
 What kind of workloads are best suited for reservations?
 :   The following workloads are good candidates to run on reserved worker nodes:

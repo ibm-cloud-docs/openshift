@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-10-04"
 
 keywords: openshift, kubernetes, multi az, multi-az, szr, mzr
 
@@ -30,7 +30,7 @@ A worker node flavor describes the compute resources, such as CPU, memory, and d
 Want to save on your classic worker node costs? [Create a reservation](/docs/containers?topic=containers-reservations) to lock in a discount over 1 or 3 year terms! Then, create your worker pool by using the reserved instances. Note that autoscaling can't be enable on worker pools that use reservations.
 {: tip}
 
-Trying to plan how many worker nodes your need in your cluster? Check out [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing) to find information about the default worker node setup and how you can determine the resource requirements of your workloads.
+Trying to plan how many worker nodes your need in your cluster? Check out [Sizing your Kubernetes cluster to support your workload](/docs/openshift?topic=openshift-strategy) to find information about the default worker node setup and how you can determine the resource requirements of your workloads.
 
 
 ## Worker node FAQs
