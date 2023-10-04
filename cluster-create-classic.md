@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-10-04"
 
 keywords: openshift, kubernetes, clusters, worker nodes, worker pools, classic, create
 
@@ -32,7 +32,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 {: #clusters_ui}
 {: ui}
 
-Create your single zone or multizone classic {{site.data.keyword.redhat_openshift_notm}} cluster by using the {{site.data.keyword.cloud_notm}} console. Follow the console instructions to make the following cluster configurations. To begin creating your cluster, navigate to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} and click **Create cluster**.
+To begin creating your cluster, navigate to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} and click **Create cluster**.
 {: shortdesc}
 
 
@@ -73,11 +73,7 @@ Observability integrations
 :    - [Logging]{: tag-dark-teal}: You can use Log Analysis to manage operating system logs, application logs, and platform logs. If you want to enable this integration later, see [Logging for clusters](/docs/openshift?topic=openshift-health&interface=ui).
 :    - [Monitoring]{: tag-magenta}: The monitoring service integration allows operational visibility into the performance and health of your applications, services, and platforms. If you disable this integration and want to enable it later, see [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor&interface=ui).
 
-
-
-
-
-## Creating a standard classic cluster in the CLI
+## Creating a classic cluster in the CLI
 {: #clusters_cli_steps}
 {: cli}
 
@@ -85,9 +81,9 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 {: shortdesc}
 
 * Ensure that you complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters&interface=ui) and decide on your cluster setup. Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
-* Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install).
+* [Install the {{site.data.keyword.cloud_notm}} CLI tools](/docs/containers?topic=containers-cli-install).
 
-1. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you are logging in with a federated ID, use `ibmcloud login --sso`.
+1. Log in to {{site.data.keyword.cloud_notm}} CLI. If you are logging in with a federated ID, use `ibmcloud login --sso`.
 
     ```sh
     ibmcloud login [--sso]

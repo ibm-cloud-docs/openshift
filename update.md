@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-30"
+lastupdated: "2023-10-04"
 
 keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
 
@@ -39,7 +39,7 @@ Can my worker nodes run a later version than the master?
 Worker nodes can run later patch versions than the master, such as patch versions that are specific to worker nodes for security updates.
 
 How are patch updates applied?
-:   By default, patch updates for the master are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can [check the versions change log](/docs/openshift?topic=openshift-openshift_versions) for any potential impact and choose to safely use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply.
+:   By default, patch updates for the master are applied automatically over the course of several days, so a master patch version might show up as available before it is applied to your master. The update automation also skips clusters that are in an unhealthy state or have operations currently in progress. Occasionally, IBM might disable automatic updates for a specific master fix pack, such as a patch that is only needed if a master is updated from one minor version to another. In any of these cases, you can check the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions) for any potential impact and choose to safely use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_update) yourself without waiting for the update automation to apply.
 
 Unlike the master, you must update your workers for each patch version.
 
@@ -63,7 +63,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _minor_ version:
 
-1. Review the [{{site.data.keyword.redhat_openshift_notm}} changes](/docs/openshift?topic=openshift-openshift_versions) and make any updates marked _Update before master_.
+1. Review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions) and make any updates marked _Update before master_.
 2. Review any [Kubernetes helpful warnings](https://kubernetes.io/blog/2020/09/03/warnings/){: external}, such as deprecation notices.
 3. Check the add-ons and plug-ins that are installed in your cluster for any impact that might be caused by updating the cluster version.
 
@@ -134,11 +134,11 @@ Before you update your classic infrastructure worker nodes, review the prerequis
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is reimaged, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage-plan).
 {: important}
 
-- For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/openshift?topic=openshift-openshift_versions).
+- For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
-- If you want to apply a patch update, review the [{{site.data.keyword.redhat_openshift_notm}} version change log](/docs/openshift?topic=openshift-openshift_versions).
+- If you want to apply a patch update, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
 - Consider adding more worker nodes so that your cluster has enough capacity to rescheduling your workloads during the update. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
 
@@ -338,11 +338,11 @@ Before you update your VPC infrastructure worker nodes, review the prerequisite 
 Updates to worker nodes can cause downtime for your apps and services. Your worker node machine is removed, and data is deleted if not [stored outside the pod](/docs/openshift?topic=openshift-storage-plan).
 {: important}
 
-- For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [change log](/docs/openshift?topic=openshift-openshift_versions).
+- For the latest security patches and fixes, make sure to update your worker nodes to the latest patch as soon as possible after it is available. For more information about the latest updates, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
-- If you want to apply a patch update, review the [Kubernetes clusters](/docs/openshift?topic=openshift-openshift_versions) version change log.
+- If you want to apply a patch update, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
 - Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms).
 
 ### Updating VPC worker nodes in the CLI

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-10-04"
 
 keywords: openshift, clusters
 
@@ -17,17 +17,17 @@ subcollection: openshift
 
 
 
-# Creating a private-only cluster in VPC by using a {{site.data.keyword.bpshort}} template
+# Creating a private-only cluster in VPC by using a template
 {: #templates}
 
-Automate the creation of a secure cluster in {{site.data.keyword.openshiftlong}} by using an {{site.data.keyword.bpfull_notm}} template. 
+Automate the creation of a secure cluster in {{site.data.keyword.openshiftlong}} by using a template. 
 {: shortdesc}
 
 The secure cluster template is available as a technical preview only, and isn't intended for production workloads.
 {: preview}
 
 What do I get when I deploy the secure cluster template?
-:   When you create a secure cluster by using the {{site.data.keyword.bpshort}} template, you get a multizone, private-only cluster with logging and monitoring enabled as well as {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.cos_full_notm}} instances. The secure cluster doesn't have public network access, so to access your cluster, you must [set up a VPN connection](/docs/openshift?topic=openshift-cluster-access-wireguard). For more information and specifications, see [Resources that are created from the template](#sch-tf-resources-created). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
+:   When you create a secure cluster by using the template, you get a multizone, private-only cluster with logging and monitoring enabled as well as {{site.data.keyword.cloudaccesstraillong_notm}} and {{site.data.keyword.cos_full_notm}} instances. The secure cluster doesn't have public network access, so to access your cluster, you must [set up a VPN connection](/docs/openshift?topic=openshift-cluster-access-wireguard). For more information and specifications, see [Resources that are created from the template](#sch-tf-resources-created). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
 
 
 ## Resources that are created from the template
@@ -36,7 +36,7 @@ What do I get when I deploy the secure cluster template?
 When you create a cluster with the template, the following resources are created by default in your {{site.data.keyword.cloud_notm}} account, unless you customize the template.
 {: shortdesc}
 
-For more details, review the [workspace in {{site.data.keyword.bpfull_notm}}](https://cloud.ibm.com/schematics/workspaces){: external} if you created the cluster from the UI. Or, if you created the cluster from the CLI, review the [{{site.data.keyword.terraform-provider_full_notm}} template](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/tree/master/examples/secure-roks-cluster){: external}.
+If you created the cluster from the UI. Or, if you created the cluster from the CLI, review the [{{site.data.keyword.terraform-provider_full_notm}} template](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/tree/master/examples/secure-roks-cluster){: external}.
 
 The following resources are provisioned by default, but you can customize some resources, for example worker node flavor.
 
@@ -57,7 +57,7 @@ The following resources are provisioned by default, but you can customize some r
 {: #sch-secure-cluster-ui}
 {: ui}
 
-With the secure cluster template, you can create a cluster from the UI with {{site.data.keyword.bpfull_notm}} that already includes certain security integrations such as encryption, logging, and monitoring enabled by default.
+With the secure cluster template, you can create a cluster from the UI that already includes certain security integrations such as encryption, logging, and monitoring enabled by default.
 {: shortdesc}
 
 1. Log in to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} and click **Create cluster +**.
@@ -120,12 +120,10 @@ With the secure cluster template, you can create a cluster from the CLI with {{s
 ## Next steps
 {: #sch-tf-whats-next}
 
-The {{site.data.keyword.bpshort}} template helps with the initial creation. After creating the cluster, you are in control for continued cluster management actions, such as [updating the cluster](/docs/containers?topic=containers-update), [adding worker nodes](/docs/containers?topic=containers-add-workers-vpc), updating any of your VPC network options, and using the security integrations to monitor your cluster.
+The template helps with the initial creation. After creating the cluster, you are in control for continued cluster management actions, such as [updating the cluster](/docs/containers?topic=containers-update), [adding worker nodes](/docs/containers?topic=containers-add-workers-vpc), updating any of your VPC network options, and using the security integrations to monitor your cluster.
 {: shortdesc} 
 
 To access your cluster, you must [set up a VPN connection](/docs/openshift?topic=openshift-cluster-access-wireguard). To read an IBM blog about setting up a VPN connection, see [Setting up a VPN](https://cms.ibm.com/cloud/blog/setting-up-a-vpn-between-ibm-cloud-vpc-and-your-home-office){: external}.
-
-To fully [remove](/docs/containers?topic=containers-remove) your cluster and the resources created by the secure cluster template, make sure to [destroy your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-sch-delete-wks&interface=ui). Removing the cluster and not removing the workspace in {{site.data.keyword.bpshort}} doesn't remove all the resources this template deploys.
 
 
 Note that by default, a public gateway is not attached to a secure cluster. If your application requires public internet access, you must add a public gateway to the VPC subnets of your secure cluster. For more information, see [public gateways](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw).

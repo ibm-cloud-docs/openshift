@@ -26,7 +26,7 @@ keyword:
   kubernetes_125_release_date:
     06 October 2022
   kubernetes_125_unsupported_date:
-    13 December 2023
+    10 January 2024
   kubernetes_125_unsupported_certainty:
     tentative
   kubernetes_125_deprecated:

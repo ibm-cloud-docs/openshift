@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-10-04"
 
 keywords: openshift, clusters, worker nodes, worker pools
 
@@ -27,16 +27,34 @@ Complete the following steps to prepare your account for creating {{site.data.ke
 After the account administrator makes these preparations, you might not need to change them each time that you create a cluster. However, each time that you create a cluster, you still want to verify that the current account-level state is what you need it to be.
 
 
-1. [Create or upgrade your account to a billable account ({{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription)](https://cloud.ibm.com/registration).{: #cluster_prepare}
 
-2. [Set up an API key for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-access-creds) in the region and resource groups where you want to create clusters. Assign the API key with the [required service and infrastructure permissions to create clusters](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
-    Are you the account owner? You already have the necessary permissions! When you create a cluster, the API key for that region and resource group is set with your credentials.
-    {: tip}
+## Create or upgrade your account
+{: #prepare-create-account}
+{: step}
 
-3. Verify that you as a user (not just the API key) have the required permissions to create clusters.
-    1. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
-    2. Click the **Users** page, and then from the table, select yourself.
-    3. From the **Access policies** tab, confirm that you [have the required permissions to create clusters](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). Make sure that your account administrator does not assign you the **Administrator** platform access role at the same time as scoping the access policy to a namespace.
+
+[Create or upgrade your account to a billable account ({{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription)](https://cloud.ibm.com/registration).{: #cluster_prepare}
+
+## Set up an API key
+{: #prepare-create-api-key}
+{: step}
+
+1. [Set up an API key for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-access-creds) in the region and resource groups where you want to create clusters. 
+2. Assign the API key with the [required service and infrastructure permissions to create clusters](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
+
+
+## Verify your permissions
+{: #prepare-verify-permissions}
+{: step}
+
+Are you the account owner? You already have the necessary permissions! When you create a cluster, the API key for that region and resource group is set with your credentials.
+{: tip}
+
+Verify that you as a user (not just the API key) have the required permissions to create clusters.
+
+1. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
+2. Click the **Users** page, and then from the table, select yourself.
+3. From the **Access policies** tab, confirm that you [have the required permissions to create clusters](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). Make sure that your account administrator does not assign you the **Administrator** platform access role at the same time as scoping the access policy to a namespace.
 
 4. If your account uses multiple resource groups, figure out your account's strategy for [managing resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups).
     * The cluster is created in the resource group that you target when you log in to {{site.data.keyword.cloud_notm}}. If you don't target a resource group, the default resource group is automatically targeted.
@@ -50,19 +68,14 @@ After the account administrator makes these preparations, you might not need to 
 6. **VPC clusters only**: Set up your IBM Cloud infrastructure networking to allow worker-to-master and user-to-master communication. Your VPC clusters are created with a public and a private cloud service endpoint by default. **Optional**: If you want your VPC clusters to communicate with classic clusters over the private network interface, you can choose to set up classic infrastructure access from the VPC that your cluster is in. Note that you can set up classic infrastructure access for only one VPC per region and [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) is required in your {{site.data.keyword.cloud_notm}} account. For more information, see [Setting up access to your Classic Infrastructure from VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure).
 
 
-
-
-Looking for a fast way to create a cluster from the UI? Try out [Automating cluster creation with {{site.data.keyword.bpfull_notm}} templates](/docs/openshift?topic=openshift-templates).
-{: preview}
-
-
-
-
-## Create a cluster
+## Create your first cluster
 {: #next_steps}
+{: step}
+
 
 - [Create a classic cluster](/docs/openshift?topic=openshift-cluster-create-classic).
 - [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2).
+- [Getting started with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-getting-started).
 
 
 
