@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-10-04"
 
 keywords: oks, iro, openshift, red hat, red hat openshift
 
@@ -199,7 +199,7 @@ This information applies to VPC worker nodes only.
 {: note}
 
 Regional uplift charges
-:    When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the [{{site.data.keyword.redhat_openshift_notm}} cluster creation console](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
+:    When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the cluster creation console, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
 
 :    For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
 

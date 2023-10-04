@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-10-04"
 
 keywords: openshift
 
@@ -41,7 +41,7 @@ The machine ID can become inconsistent with the {{site.data.keyword.openshiftlon
 {: tsCauses}
 
 
-For {{site.data.keyword.openshiftlong_notm}} to re-identify the machine, [reload the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). Note that reloading also updates the machine's [patch version](/docs/openshift?topic=openshift-openshift_versions).
+For {{site.data.keyword.openshiftlong_notm}} to re-identify the machine, [reload the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). Note that reloading also updates the machine's patch version. For more information, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
 {: tsResolve}
 
 You can also [delete the bare metal worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_rm). Remember that bare metal instances are billed monthly.

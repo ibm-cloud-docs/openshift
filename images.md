@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-10-04"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -82,10 +82,8 @@ You can deploy containers to your cluster from an IBM-provided public image or a
 
 Before you begin:
 1. [Set up a namespace in {{site.data.keyword.registrylong_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-2. [Create a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
+2. [Create a cluster](/docs/openshift?topic=openshift-clusters).
 3. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-To deploy a container into the **default** project of your cluster:
 
 1. Create a deployment configuration file that is named `<deployment>.yaml`.
 2. Define the deployment and the image to use from your project in {{site.data.keyword.registrylong_notm}}.

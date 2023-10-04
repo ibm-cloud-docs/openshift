@@ -36,17 +36,15 @@ subcollection: openshift
 
 [Getting started with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-getting-started#getting-started)
 
-* [Creating a classic cluster in the console](/docs/openshift?topic=openshift-getting-started#clusters_gs)
+* [Review the basics](/docs/openshift?topic=openshift-getting-started#getting-started-basics)
 
-* [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs)
+* [Prepare your account](/docs/openshift?topic=openshift-getting-started#prepare-your-account)
 
-* [Creating classic clusters in the {{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-getting-started#clusters_gs_classic_cli)
+* [Create a cluster](/docs/openshift?topic=openshift-getting-started#create-a-cluster)
 
-* [Creating VPC clusters in the CLI](/docs/openshift?topic=openshift-getting-started#clusters_gs_vpc_cli)
+* [Deploy a sample app](/docs/openshift?topic=openshift-getting-started#getting-started-deploy-app)
 
-* [Deploying an app with the {{site.data.keyword.redhat_openshift_notm}} service catalog](/docs/openshift?topic=openshift-getting-started#deploy-app)
-
-* [What's next?](/docs/openshift?topic=openshift-getting-started#whats-next)
+* [What's next?](/docs/openshift?topic=openshift-getting-started#getting-started-whats-next)
 
 
 ## Understanding {{site.data.keyword.openshiftlong_notm}}
@@ -68,6 +66,12 @@ subcollection: openshift
 * [Comparison between {{site.data.keyword.redhat_openshift_notm}} and Kubernetes clusters](/docs/openshift?topic=openshift-overview#openshift_kubernetes)
 
 * [Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP](/docs/openshift?topic=openshift-overview#compare_ocp)
+
+* [Moving your workloads to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-overview#cloud_workloads)
+
+* [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-overview#app_kinds)
+
+* [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-overview#knowledge)
 
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
 
@@ -267,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
+
+    * [4 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct423)
+
+        * Cluster autoscaler add-on version `1.0.9_134`.
 
     * [3 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct323)
 
@@ -2323,47 +2331,35 @@ subcollection: openshift
 {: #sitemap_planning_to_create_clusters}
 
 
-[Understanding and sizing your environment](/docs/openshift?topic=openshift-strategy#strategy)
+[Sizing your cluster environment](/docs/openshift?topic=openshift-strategy#strategy)
 
-* [Moving your workloads to the {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-strategy#cloud_workloads)
+* [What else besides my app might use resources in the cluster?](/docs/openshift?topic=openshift-strategy#sizing_other)
 
-    * [What can I move to the {{site.data.keyword.cloud_notm}}?](/docs/openshift?topic=openshift-strategy#move_to_cloud)
+* [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
 
-    * [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-strategy#infra_packaging)
+* [What type of cluster and flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
 
-    * [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-strategy#app_kinds)
+* [Do I use multiple clusters, or just add more workers to an existing cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
 
-    * [What about serverless apps?](/docs/openshift?topic=openshift-strategy#apps_serverless-strategy)
+* [How can I set up my resources within the cluster?](/docs/openshift?topic=openshift-strategy#env_resources)
 
-    * [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-strategy#knowledge)
+    * [Consider your worker node capacity](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
 
-* [Sizing your {{site.data.keyword.redhat_openshift_notm}} cluster to support your workload](/docs/openshift?topic=openshift-strategy#sizing)
+    * [Provision different types of machines for a mix of computing resources](/docs/openshift?topic=openshift-strategy#env_resources_provision_types)
 
-    * [How many resources does my app require?](/docs/openshift?topic=openshift-strategy#sizing_resources)
+    * [Set up multiple namespaces when you have multiple teams and projects that share the cluster](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
 
-    * [What else besides my app might use resources in the cluster?](/docs/openshift?topic=openshift-strategy#sizing_other)
-
-    * [What type of availability do I want my workload to have?](/docs/openshift?topic=openshift-strategy#sizing_availability)
-
-    * [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
-
-    * [How do I monitor resource usage and capacity in my cluster?](/docs/openshift?topic=openshift-strategy#sizing_manage)
-
-* [Structuring your {{site.data.keyword.redhat_openshift_notm}} environment](/docs/openshift?topic=openshift-strategy#kube_env)
-
-    * [What type of cluster and flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
-
-    * [Do I use multiple clusters, or just add more workers to an existing cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
-
-    * [How can I set up my resources within the cluster?](/docs/openshift?topic=openshift-strategy#env_resources)
-
-    * [How can I keep my cluster in a supported state?](/docs/openshift?topic=openshift-strategy#updating_kube)
-
-* [Making your resources highly available](/docs/openshift?topic=openshift-strategy#kube_ha)
+    * [Set resource quotas so that users in your cluster must use resource requests and limits](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
 
 [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
-* [Create a cluster](/docs/openshift?topic=openshift-clusters#next_steps)
+* [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
+
+* [Set up an API key](/docs/openshift?topic=openshift-clusters#prepare-create-api-key)
+
+* [Verify your permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
+
+* [Create your first cluster](/docs/openshift?topic=openshift-clusters#next_steps)
 
 [Setting up your API key credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
 
@@ -2405,19 +2401,11 @@ subcollection: openshift
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
-* [About high availability](/docs/openshift?topic=openshift-ha_clusters#ha-about)
-
 * [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters#fault_domains)
 
 * [Single zone clusters](/docs/openshift?topic=openshift-ha_clusters#single_zone)
 
-    * [Is my master highly available in a single zone cluster?](/docs/openshift?topic=openshift-ha_clusters#sz-master-ha)
-
-    * [How can I protect my workloads against a single zone failure?](/docs/openshift?topic=openshift-ha_clusters#sz-workload-failover)
-
-* [Multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters)
-
-    * [Why do I need worker nodes in three zones?](/docs/openshift?topic=openshift-ha_clusters#mz-cluster-zones)
+* [Multizone clusters](/docs/openshift?topic=openshift-ha_clusters#mz-clusters)
 
     * [How is my {{site.data.keyword.openshiftlong_notm}} master set up?](/docs/openshift?topic=openshift-ha_clusters#mz-master-setup)
 
@@ -2624,7 +2612,7 @@ subcollection: openshift
 
 * [Creating a classic cluster in the console](/docs/openshift?topic=openshift-cluster-create-classic#clusters_ui)
 
-* [Creating a standard classic cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-classic#clusters_cli_steps)
+* [Creating a classic cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-classic#clusters_cli_steps)
 
 * [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster_create_classic)
 
@@ -6746,6 +6734,8 @@ subcollection: openshift
 
 * [Version 1.0.9](/docs/openshift?topic=openshift-ca_changelog#0109_ca_addon)
 
+    * [Change log for patch update 1.0.9_134, released 04 October 2023](/docs/openshift?topic=openshift-ca_changelog#109134_ca)
+
     * [Change log for patch update 1.0.9_103, released 15 September 2023](/docs/openshift?topic=openshift-ca_changelog#109103_ca)
 
     * [Change log for patch update 1.0.9_81, released 07 August 2023](/docs/openshift?topic=openshift-ca_changelog#10981_ca)
@@ -8632,6 +8622,8 @@ subcollection: openshift
 
 [FAQs](/docs/openshift?topic=openshift-faqs#faqs)
 
+* [What is Kubernetes?](/docs/openshift?topic=openshift-faqs#kubernetes)
+
 * [How does {{site.data.keyword.openshiftlong_notm}} work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
 
 * [Why should I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#faq_benefits)
@@ -8641,6 +8633,16 @@ subcollection: openshift
 * [Does the service come with a managed {{site.data.keyword.redhat_openshift_notm}} master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
 
 * [Are the master and worker nodes highly available?](/docs/openshift?topic=openshift-faqs#faq_ha)
+
+* [What kinds of workloads can I move to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#move_to_cloud)
+
+* [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-faqs#infra_packaging)
+
+* [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-faqs#app_kinds)
+
+* [What about serverless apps?](/docs/openshift?topic=openshift-faqs#apps_serverless-strategy)
+
+* [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-faqs#knowledge)
 
 * [What options do I have to secure my cluster?](/docs/openshift?topic=openshift-faqs#secure_cluster)
 
@@ -8654,7 +8656,7 @@ subcollection: openshift
 
 * [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 
-* [Which {{site.data.keyword.redhat_openshift_notm}} versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
+* [Which versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
 
 * [Which worker node operating systems does the service support?](/docs/openshift?topic=openshift-faqs#supported_os_versions)
 
@@ -8664,13 +8666,17 @@ subcollection: openshift
 
 * [What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards)
 
-* [Can I use IBM Cloud and other services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
+* [Can I use other IBM Cloud services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
 
 * [Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
 
 * [What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
 
 * [Can I downgrade my cluster to a previous version?](/docs/openshift?topic=openshift-faqs#downgrade)
+
+* [Can I move my current cluster to a different account?](/docs/openshift?topic=openshift-faqs#migrate-cluster-account)
+
+* [How can I keep my cluster in a supported state?](/docs/openshift?topic=openshift-faqs#updating_kube)
 
 
 ## Troubleshooting

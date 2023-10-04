@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-10-04"
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
 
@@ -119,6 +119,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.9
 {: #0109_ca_addon}
+
+
+### Change log for patch update 1.0.9_134, released 04 October 2023
+{: #109134_ca}
+
+- Adds constraints to allow add-on deployment on `amd64` architecture only.
+- Image tags: `1.22.0-109-1`, `1.23.0-109-1`, `1.24.0-109-1`, `1.25.0-109-1`, `1.26.1-109-1`, `1.27.2-109-1`.
 
 ### Change log for patch update 1.0.9_103, released 15 September 2023
 {: #109103_ca}

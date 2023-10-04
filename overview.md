@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-10-04"
 
 keywords: openshift, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -302,6 +302,74 @@ Because {{site.data.keyword.openshiftlong_notm}} is a managed service, many of t
 | Service mesh | You can set up the [{{site.data.keyword.redhat_openshift_notm}} Service Mesh](https://docs.openshift.com/container-platform/4.13/service_mesh/v1x/installing-ossm.html){: external}. | You can also set up the {{site.data.keyword.redhat_openshift_notm}} Service Mesh, but you must [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external} for the service mesh ingress to work.|
 | API and CLI tools | OpenShift Container Platform clusters are set up with access to Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API resources. You can also install command line tools such as `oc` and `odo`. | {{site.data.keyword.openshiftlong_notm}} clusters come with the same capabilities to use the Kubernetes and {{site.data.keyword.redhat_openshift_notm}} API and CLI tools. Additionally, you can use the {{site.data.keyword.cloud_notm}} [API](/docs/openshift?topic=openshift-cs_api_install) and [CLI](/docs/openshift?topic=openshift-cli-install) tools to manage your cluster infrastructure and integrate other cloud services with your cluster.|
 {: caption="Comparison between clusters that run in {{site.data.keyword.cloud_notm}} and standard OCP" caption-side="bottom"}
+
+
+## Moving your workloads to {{site.data.keyword.cloud_notm}}
+{: #cloud_workloads}
+
+You have lots of reasons to move your workloads to {{site.data.keyword.cloud_notm}}: reducing total cost of ownership, increasing high availability for your apps in a secure and compliant environment, scaling up and down in respond to your user demand, and many more. {{site.data.keyword.openshiftlong_notm}} combines container technology with open source tools, such as Kubernetes so that you can build a cloud-native app that can migrate across different cloud environments, avoiding vendor lock-in.
+{: shortdesc}
+
+But how do you get to the cloud? What are your options along the way? And how do you manage your workloads after you get there?
+
+Use this page to learn some strategies for your Kubernetes deployments on {{site.data.keyword.openshiftlong_notm}}. And engage with our team on [Slack](https://ibm-cloud-success.slack.com){: external}.
+
+Not on slack yet? [Request an invite!](https://cloud.ibm.com/kubernetes/slack){: external}
+{: tip}
+
+The following table provides some examples of what types of workloads that users typically move to the various types of clouds. You might also choose a hybrid approach where you have clusters that run in both environments.
+
+
+| Workload | {{site.data.keyword.openshiftlong_notm}} off-prem | on-prem |
+| --- | --- | --- |
+| DevOps enablement tools | Yes | |
+| Developing and testing apps | Yes | |
+| Apps that majorly shift in demand and need to scale rapidly | Yes | |
+| Business apps such as CRM, HCM, ERP, and E-commerce | Yes | |
+| Collaboration and social tools such as email | Yes | |
+| RHEL workloads | Yes | |
+| Bare metal | Yes | Yes |
+| GPU compute resources | Yes | Yes |
+| PCI and HIPAA-compliant workloads | Yes | Yes |
+| Legacy apps with platform and infrastructure constraints and dependencies | | Yes |
+| Proprietary apps with strict designs, licensing, or heavy regulations | | Yes |
+{: caption="{{site.data.keyword.cloud_notm}} implementations that support your workloads" caption-side="bottom"}
+
+Ready to run workloads off-premises in {{site.data.keyword.openshiftlong_notm}}?
+:   Great! You're already in our public cloud documentation. Keep reading for more strategy ideas, or hit the ground running by [creating a cluster now](/docs/containers?topic=containers-getting-started).
+
+Want to run workloads in both on-premises and off-premises clouds?
+:   Explore [{{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-faqs) to extend the flexibility and scalability of {{site.data.keyword.cloud_notm}} into your on-premises, edge, or other cloud provider environments.
+
+
+## What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?
+{: #app_kinds}
+
+Your containerized app must be able to run on one of the [supported operating systems](/docs/openshift?topic=openshift-openshift_versions) for your cluster version. You also want to consider the statefulness of your app. For more information about the kinds of apps that can run in {{site.data.keyword.openshiftlong_notm}}, see [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy#app_types).
+
+If you already have an app, you can [migrate it to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-plan_deploy#migrate_containerize). If you want to develop a new app, check out the [guidelines for developing stateless, cloud-native apps](/docs/openshift?topic=openshift-plan_deploy#12factor).
+
+
+## What skills should I have before I move my apps to a cluster?
+{: #knowledge}
+
+{{site.data.keyword.redhat_openshift_notm}} is designed to provide capabilities to two main personas, the cluster admin and the app developer. Each persona uses different technical skills to successfully run and deploy apps to a cluster.
+
+
+What are a cluster admin's main tasks and technical knowledge?
+:   As a cluster admin, you are responsible to set up, operate, secure, and manage the {{site.data.keyword.cloud_notm}} infrastructure of your cluster. Typical tasks include:
+    - Size the cluster to provide enough capacity for your workloads.
+    - Design a cluster to meet the high availability, disaster recovery, and compliance standards of your company.
+    - Secure the cluster by setting up user permissions and limiting actions within the cluster to protect your compute resources, your network, and data.
+    - Plan and manage network communication between infrastructure components to ensure network security, segmentation, and compliance.
+    - Plan persistent storage options to meet data residency and data protection requirements.
+
+The cluster admin persona must have a broad knowledge that includes compute, network, storage, security, and compliance. In a typical company, this knowledge is spread across multiple specialists, such as System Engineers, System Administrators, Network Engineers, Network Architects, IT Managers, or Security and Compliance Specialists. Consider assigning the cluster admin role to multiple people in your company so that you have the required knowledge to successfully operate your cluster. For more information, see the [Learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin).
+
+What are an app developer's main tasks and technical skills?
+:   As a developer, you design, create, secure, deploy, test, run, and monitor cloud-native, containerized apps in an {{site.data.keyword.redhat_openshift_notm}} cluster. To create and run these apps, you must be familiar with the concept of microservices, the [12-factor app](/docs/openshift?topic=openshift-plan_deploy#12factor) guidelines, [Docker and containerization principles](https://www.docker.com/){: external}, and available [{{site.data.keyword.redhat_openshift_notm}} deployment options](/docs/openshift?topic=openshift-plan_deploy). For more information, see the [Learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
+
+{{site.data.keyword.redhat_openshift_notm}} and {{site.data.keyword.openshiftlong_notm}} provide multiple options for how to [expose an app and keep an app private](/docs/containers?topic=containers-cs_network_planning), [add persistent storage](/docs/openshift?topic=openshift-storage-plan), [integrate other services](/docs/openshift?topic=openshift-ibm-3rd-party-integrations), and how you can [secure your workloads and protect sensitive data](/docs/openshift?topic=openshift-security#container). Before you move your app to a cluster in {{site.data.keyword.openshiftlong_notm}}, verify that you can run your app as a containerized app on the supported operating system and that {{site.data.keyword.redhat_openshift_notm}} and {{site.data.keyword.openshiftlong_notm}} provide the capabilities that your workload needs.
 
 
 

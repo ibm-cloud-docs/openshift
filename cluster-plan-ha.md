@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-18"
+lastupdated: "2023-10-04"
 
-keywords: openshift, multi az, multi-az, szr, mzr
+keywords: openshift, ha, high availability, failover, kubernetes, multi az, multi-az, szr, mzr
 
 subcollection: openshift
 
@@ -14,19 +14,13 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
-
-
 # Planning your cluster for high availability
 {: #ha_clusters}
 
 Design your standard cluster for maximum availability and capacity for your app with {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
-Use the built-in {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud}} features to make your {{site.data.keyword.redhat_openshift_notm}} cluster more highly available and to protect your app from downtime when a component in your cluster fails.
-
-## About high availability
-{: #ha-about}
+Use the built-in features to make your cluster more highly available and to protect your app from downtime when a component in your cluster fails.
 
 High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
 {: shortdesc}
@@ -39,14 +33,6 @@ What level of availability does {{site.data.keyword.cloud_notm}} offer?
 
 The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
 
-What are the other cluster components that support highly available architecture?
-:   See [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](#fault_domains).
-
-Where is the service located?
-:   See [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones).
-
-What am I responsible to configure disaster recovery options for?
-:   See [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks).
 
 ## Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}
 {: #fault_domains}
@@ -65,17 +51,17 @@ Potential failure point 1: Container or pod availability
 Potential failure point 2: Worker node availability
 :   A worker node is a VM that runs on physical hardware. Worker node failures include hardware outages, such as power, cooling, or networking, and issues on the VM itself. You can account for a worker node failure by setting up multiple worker nodes in your cluster. For more information, see [Creating clusters with multiple worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create).
 
-Worker nodes in one zone are not guaranteed to be on separate physical compute hosts. For example, you might have a cluster with three worker nodes, but all three worker nodes were created on the same physical compute host in the IBM zone. If this physical compute host goes down, all your worker nodes are down. To protect against this failure, you must [set up a multizone cluster to spread worker nodes across three zones, or create multiple single zone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters) in different zones.
+Worker nodes in one zone are not guaranteed to be on separate physical compute hosts. For example, you might have a cluster with three worker nodes, but all three worker nodes were created on the same physical compute host in the IBM zone. If this physical compute host goes down, all your worker nodes are down. To protect against this failure, you must set up a multizone cluster to spread worker nodes across three zones, or create multiple single zone clusters in different zones.
 {: note}
 
 Potential failure point 3: Cluster availability
-:   The {{site.data.keyword.redhat_openshift_notm}} master is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The {{site.data.keyword.redhat_openshift_notm}} API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources. To protect your cluster master from a zone failure, review the following docs. Create a cluster in a multizone location, which spreads the master across zones. Or, consider setting up a second cluster in another zone. For more information, see [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
+:   The {{site.data.keyword.redhat_openshift_notm}} master is the main component that keeps your cluster up and running. The master stores cluster resources and their configurations in the etcd database that serves as the single point of truth for your cluster. The {{site.data.keyword.redhat_openshift_notm}} API server is the main entry point for all cluster management requests from the worker nodes to the master, or when you want to interact with your cluster resources. To protect your cluster master from a zone failure, review the following docs. Create a cluster in a multizone location, which spreads the master across zones. Or, consider setting up a second cluster in another zone.
 
 Potential failure point 4: Zone availability
-:   A zone failure affects all physical compute hosts and NFS storage. Failures include power, cooling, networking, or storage outages, and natural disasters, like flooding, earthquakes, and hurricanes. To protect against a zone failure, you must have clusters in two different zones that are load balanced by an external load balancer. For more information, see [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
+:   A zone failure affects all physical compute hosts and NFS storage. Failures include power, cooling, networking, or storage outages, and natural disasters, like flooding, earthquakes, and hurricanes. To protect against a zone failure, you must have clusters in two different zones that are load balanced by an external load balancer.
 
 Potential failure point 5: Region availability
-:   Every region is set up with a highly available load balancer that is accessible from the region-specific API endpoint. The load balancer routes incoming and outgoing requests to clusters in the regional zones. The likelihood of a full regional failure is low. However, to account for this failure, you can set up multiple clusters in different regions and connect them by using an external load balancer. If an entire region fails, the cluster in the other region can take over the workload. For more information, see [Setting up highly available clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
+:   Every region is set up with a highly available load balancer that is accessible from the region-specific API endpoint. The load balancer routes incoming and outgoing requests to clusters in the regional zones. The likelihood of a full regional failure is low. However, to account for this failure, you can set up multiple clusters in different regions and connect them by using an external load balancer. If an entire region fails, the cluster in the other region can take over the workload.
 
 A multi-region cluster requires several Cloud resources, and depending on your app, can be complex and expensive. Check whether you need a multi-region setup or if you can accommodate a potential service disruption. If you want to set up a multi-region cluster, ensure that your app and the data can be hosted in another region, and that your app can handle global data replication.
 {: note}
@@ -94,27 +80,18 @@ Your users are less likely to experience downtime when you distribute your apps 
 ## Single zone clusters
 {: #single_zone}
 
-Single zone clusters can be created in one of the supported [single zone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-sz). To improve availability for your app and to allow failover for the case that one worker node is not available in your cluster, add additional worker nodes to your single zone cluster.
-{: shortdesc}
+To improve availability for your app and to allow failover for the case that one worker node is not available in your cluster, add additional worker nodes to your single zone cluster.
 
-VPC clusters are supported only in [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). If your cluster must reside in one of the single zone cities, create a classic cluster instead.
-{: note}
 
 ![High availability for clusters in a single zone.](images/ha-cluster-singlezone.svg){: caption="Figure 1. High availability for clusters in a single zone" caption-side="bottom"}
 
-To add more worker nodes to your cluster, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. {{site.data.keyword.redhat_openshift_notm}} automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
-
-### Is my master highly available in a single zone cluster?
-{: #sz-master-ha}
+When you add more worker nodes, app instances can be distributed across multiple worker nodes. If one worker node goes down, app instances on available worker nodes continue to run. {{site.data.keyword.redhat_openshift_notm}} automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
 
 If your cluster is created in a single zone city, the Kubernetes master of your classic cluster is highly available and includes replicas on separate physical hosts for your master API server, etcd, scheduler, and controller manager to protect against an outage such as during a master update. If your cluster resides in one of the multizone metro locations, the master is automatically deployed with three replicas and spread across the zones of the metro.
 
-### How can I protect my workloads against a single zone failure?
-{: #sz-workload-failover}
+If your single zone cluster is created in one of the multizone metro locations, you can change your single zone cluster to a [multizone cluster](#mz-clusters). In a multizone cluster, your workloads are distributed across worker nodes in different zones. If one zone is not available, your workloads continue to run in the remaining zones. If you prefer single zone clusters for simplified management, or if your cluster must reside in a specific single zone city that does not support multizone capabilities, you can create [multiple clusters](#multiple-clusters-glb) and connect them with a global load balancer.
 
-If your single zone cluster is created in one of the [multizone metro locations](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), you can change your single zone cluster to a [multizone cluster](#mz-clusters). In a multizone cluster, your workloads are distributed across worker nodes in different zones. If one zone is not available, your workloads continue to run in the remaining zones. If you prefer single zone clusters for simplified management, or if your cluster must reside in a specific [single zone city](/docs/openshift?topic=openshift-regions-and-zones#zones-sz) that does not support multizone capabilities, you can create [multiple clusters](#multiple-clusters-glb) and connect them with a global load balancer.
-
-## Multizone cluster
+## Multizone clusters
 {: #mz-clusters}
 
 Create a multizone cluster to distribute your workloads across multiple worker nodes and zones, and protect against zone failures with hosts, networks, or apps. If resources in one zone go down, your cluster workloads continue to run in the other zones.
@@ -127,8 +104,6 @@ In a multizone cluster, the worker nodes in your worker pools are replicated acr
 You can create a multizone cluster in one of the supported [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone locations only.
 {: note}
 
-### Why do I need worker nodes in three zones?
-{: #mz-cluster-zones}
 
 Distributing your workload across three zones ensures high availability for your app in case a zone becomes unavailable. You must have your worker nodes spread evenly across all three availability zones to meet the [{{site.data.keyword.cloud_notm}} service level agreement (SLA)](/docs/overview?topic=overview-slas) for HA configuration. This setup also makes your cluster more cost-efficient. Why is that, you ask? Here is an example.
 

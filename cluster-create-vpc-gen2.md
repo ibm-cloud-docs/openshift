@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-10-04"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -150,7 +150,7 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     :   Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.
 
     `--operating-system SYSTEM`
-    :   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+    :   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
     :   If no option is specified, the default [operating system version that corresponds to the cluster version is used.
 
 
