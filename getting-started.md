@@ -18,21 +18,23 @@ subcollection: openshift
 # Getting started with {{site.data.keyword.openshiftlong_notm}}
 {: #getting-started}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can deploy apps on highly available clusters.
+{{site.data.keyword.openshiftlong_notm}} is a managed offering to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
 {: shortdesc}
+
+Complete the following steps to get familiar with the basics, understand the service components, create your first cluster, and deploy a starter app.
 
 ## Review the basics
 {: #getting-started-basics}
 {: step}
 
-- Get an overview of the service by reviewing the concepts and terms, and benefits. For moe information, see [Understanding {{site.data.keyword.openshiftlong_notm}}](docs/openshift?topic=openshift-overview).
+- Get an overview of the service by reviewing the concepts and terms, and benefits. For more information, see [Understanding {{site.data.keyword.openshiftlong_notm}}](docs/openshift?topic=openshift-overview).
 
-[Review the FAQs](docs/openshift?topic=openshift-overview)
+- [Review the FAQs](docs/openshift?topic=openshift-overview)
 
 Already familiar with containers and {{site.data.keyword.openshiftlong_notm}}? Continue to the next step to prepare your account for creating clusters.
 
 ## Prepare your account
-{: getting-started-prepare-account}
+{: #getting-started-prepare-account}
 {: step}
 
 To set up your {{site.data.keyword.cloud_notm}} account so that you can create clusters, see [Preparing your account to create clusters](/docs/containers?topic=containers-clusters).
@@ -41,18 +43,21 @@ If you've already prepared your account and you're ready to create a cluster, co
 
 
 ## Create a cluster
-{: getting-started-create}
+{: #getting-started-create}
 {: step}
 
 Follow a tutorial, or set up your own custom cluster environment.
 
 
+
 - [Tutorial]{: tag-blue} [Create a classic cluster from the CLI](/docs/openshift?topic=openshift-openshift_tutorial).
+
 - [Tutorial]{: tag-blue} [Create a cluster in your own Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial).
+
+
 - [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic).
+
 - [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc).
-
-
 
 
 Already have a cluster? Continue to the next step to deploy an app!

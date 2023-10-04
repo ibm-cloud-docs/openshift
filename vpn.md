@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-10-04"
 
 keywords: openshift, strongswan, ipsec, on-prem
 
@@ -41,9 +41,11 @@ If you plan to connect your cluster to on-premises networks, check out the follo
 - If your VPN solution preserves the source IP addresses of requests, you can [create custom static routes](/docs/openshift?topic=openshift-static-routes) to ensure that your worker nodes can route responses from your cluster back to your on-premises network.</p>
 
 
-The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited because they are reserved for {{site.data.keyword.openshiftlong_notm}} control plane functionality.
 
+The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited because they are reserved for {{site.data.keyword.openshiftlong_notm}} control plane functionality.
 {: note}
+
+
 
 ## Using the strongSwan IPSec VPN service Helm chart
 {: #vpn-setup}

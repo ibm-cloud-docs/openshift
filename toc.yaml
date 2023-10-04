@@ -41,6 +41,7 @@ toc:
           href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
       - openshift_tutorial.md
       - openshift_tutorial_vpc.md
+      - openshift_clusters_template.md
   - navgroup: 
       id: howto
       topics:
@@ -70,7 +71,6 @@ toc:
           - cluster-create-vpc-gen2.md
           - cluster-create-dedicated-hosts.md
           - satellite_clusters.md
-          - openshift_clusters_template.md
       - topicgroup: 
           label: Accessing clusters
           topics:
