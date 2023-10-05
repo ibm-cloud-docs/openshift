@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-09-14"
+lastupdated: "2023-10-05"
 
 keywords: openshift
 
@@ -95,10 +95,7 @@ By default, file shares that are created by using dynamic provisioning with pre-
     :   Enter the name of the PVC.
     
     `accessMode`
-    :   Specify one of the following options.
-        - `ReadWriteMany`: The PVC can be mounted by multiple pods. All pods can read from and write to the volume.
-        - `ReadOnlyMany`: The PVC can be mounted by multiple pods. All pods have read-only access.
-        - `ReadWriteOnce`: The PVC can be mounted by one pod only. This pod can read from and write to the volume.
+    :   `ReadWriteMany`: The PVC can be mounted by multiple pods. All pods can read from and write to the volume.
     
     `storage`
     :   Enter the size of the {{site.data.keyword.filestorage_vpc_short}}, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your {{site.data.keyword.filestorage_vpc_short}}. Make sure to specify a size that matches the amount of data that you want to store.
