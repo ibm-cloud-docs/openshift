@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-10-05"
 
 keywords: openshift, app protocol, application protocol
 
@@ -1024,6 +1024,10 @@ VPC load balancers are automatically configured with health checks, which you co
 
 - If `externalTrafficPolicy` is set to `Cluster`, TCP health checks are applied. If you are configuring a UDP load balancer, [you must make additional port specifications](#vpc_lb_health_udp).
 - If `externalTrafficPolicy` is set to `Local`, HTTP health checks are applied. You must ensure that an app pod exists on each worker node in the same zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster. Incoming traffic is delivered only to the application pod residing on that specific node. If there is no application pod on that specific node, the incoming traffic is dropped.
+
+The `externalTrafficPolicy: Local` setting might cause health checks on your load balancer worker nodes to fail. In most cases this is the expected behavior and does not necessarily indicate a problem, as traffic is intentionally dropped if the load balancer tries to connect to any node that does not have an application pod. For more information, see [Why are VPC load balancer health checks failing on my worker nodes?](/docs/containers?topic=containers-vpc-lb-healthcheck-fail).
+{: note}
+
 
 ### Customizing health checks for VPC load balancers
 {: #vpc_lb_health_custom}

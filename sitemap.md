@@ -9129,6 +9129,8 @@ subcollection: openshift
 
 [Why do I see `SyncLoadBalancerFailed` errors when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-loadbalancer-sync-failed#ts-loadbalancer-sync-failed)
 
+[Why are VPC load balancer health checks failing on my worker nodes?](/docs/openshift?topic=openshift-vpc-lb-healthcheck-fail#vpc-lb-healthcheck-fail)
+
 
 ### Ingress and routers
 {: #sitemap_ingress_and_routers}
