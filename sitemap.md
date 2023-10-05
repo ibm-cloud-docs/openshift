@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-05"
 
 keywords: openshift
 subcollection: openshift
@@ -2464,6 +2464,8 @@ subcollection: openshift
 
     * [What limitations do I need to be aware of?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-limitations)
 
+    * [What operations are blocked if my worker node is running an unsupported operating system?](/docs/openshift?topic=openshift-planning_worker_nodes#unsupported-os)
+
     * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-master-role)
 
 * [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
@@ -3313,6 +3315,8 @@ subcollection: openshift
 
     * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers)
 
+    * [Required rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-security-group#rules-sg-128)
+
     * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
 
 * [Creating security group rules](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules)
@@ -3347,11 +3351,15 @@ subcollection: openshift
 
     * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-acls#acls_cli)
 
+    * [Required rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-acls#acls-128)
+
 [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
 
 * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
 
 * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
+
+    * [Required policy rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-kube-policies#policy-rules-128)
 
 [Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
@@ -8683,6 +8691,8 @@ subcollection: openshift
 
 * [How can I keep my cluster in a supported state?](/docs/openshift?topic=openshift-faqs#updating_kube)
 
+* [What operations are blocked if my cluster is running an unsupported operating system?](/docs/openshift?topic=openshift-faqs#unsupported_os)
+
 
 ## Troubleshooting
 {: #sitemap_troubleshooting}
@@ -9122,6 +9132,8 @@ subcollection: openshift
 [VPC clusters: Why does a Kubernetes `LoadBalancer` service fail with no IPs?](/docs/openshift?topic=openshift-vpc_no_lb#vpc_no_lb)
 
 [Why do I see `SyncLoadBalancerFailed` errors when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-loadbalancer-sync-failed#ts-loadbalancer-sync-failed)
+
+[Why are VPC load balancer health checks failing on my worker nodes?](/docs/openshift?topic=openshift-vpc-lb-healthcheck-fail#vpc-lb-healthcheck-fail)
 
 
 ### Ingress and routers

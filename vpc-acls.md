@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-10-05"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -44,6 +44,9 @@ When you use the following steps to create custom ACLs, only network traffic tha
 {: important}
 
 For more information, see the [VPC documentation](/docs/vpc?topic=vpc-using-acls){: external}.
+
+If you have a VPC cluster that runs at version  or later, you might need to include [additional ACL rules](#acls-128). 
+{: important}
 
 ## Creating ACLs from the console
 {: #acls_ui}
@@ -289,3 +292,19 @@ ACL rules are applied to traffic in a specific order. If you want to add a rule 
 {: note}
 
 
+### Required rules for VPCs with a cluster that runs at version  or later
+{: #acls-128}
+
+In version 1.27 and earlier, VPC clusters pull images from the IBM Cloud Container Registry through a private cloud service endpoint for the Container Registry. For version  and later, this network path is updated so that images are pulled through a VPE gateway instead of a private service endpoint. This change affects all clusters in a VPC; when you create or update a single cluster in a VPC to version , all clusters in that VPC, regardless of their version or type, have their network path updated. For more information, see [Networking changes for VPC clusters](/docs/containers?topic=containers-cs_versions_128&interface=ui#networking_128).
+
+If you update or create a cluster in your VPC that runs at version  or later, you must make sure that the following ACL rules, or equivalent rules, are implemented to allow connections to and from the VPE Gateway for Registry. If the rules are not already implemented, [add them](/docs/containers?topic=containers-vpc-acls&interface=ui). Each of these rules must be created for each zone in the VPC and must specify the entire VPC address prefix range for the zone as the source (for outbound rules) or destination (for inbound rules) CIDR. To find the VPC address prefix range for each zone in the VPC, run `ibmcloud is vpc-address-prefixes <vpc_name_or_id>`. The priority for each rule must be higher than any rule that otherwise denies this traffic, such as a rule that denies all traffic.
+
+Add the following rules to your custom ACLs.
+
+| Rule type | Protocol | Source IP or CIDR | Source Port | Destination IP or CIDR | Destination Port  |
+|---|---|---|---|---|---|
+| Outbound/Allow | TCP | Entire VPC address prefix range | Any | Entire VPC address prefix range | 443 |
+| Outbound/Allow | TCP | Entire VPC address prefix range | Any | Entire VPC address prefix range | 4443 |
+| Inbound/Allow | TCP | Entire VPC address prefix range | 443 | Entire VPC address prefix range | Any |
+| Inbound/Allow | TCP | Entire VPC address prefix range | 4443 | Entire VPC address prefix range | Any |
+{: caption="Outbound and inbound ACL rules to add for version " caption-side="bottom"}
