@@ -2464,6 +2464,8 @@ subcollection: openshift
 
     * [What limitations do I need to be aware of?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-limitations)
 
+    * [What operations are blocked if my worker node is running an unsupported operating system?](/docs/openshift?topic=openshift-planning_worker_nodes#unsupported-os)
+
     * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-master-role)
 
 * [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
@@ -8688,6 +8690,8 @@ subcollection: openshift
 * [Can I move my current cluster to a different account?](/docs/openshift?topic=openshift-faqs#migrate-cluster-account)
 
 * [How can I keep my cluster in a supported state?](/docs/openshift?topic=openshift-faqs#updating_kube)
+
+* [What operations are blocked if my cluster is running an unsupported operating system?](/docs/openshift?topic=openshift-faqs#unsupported_os)
 
 
 ## Troubleshooting

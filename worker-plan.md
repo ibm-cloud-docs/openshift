@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-05"
 
 keywords: openshift, kubernetes, multi az, multi-az, szr, mzr
 
@@ -121,6 +121,23 @@ Kubernetes limits the maximum number of worker nodes that you can have in a clus
 
 Want to be sure that you always have enough worker nodes to cover your workload? Try out [the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 {: tip}
+
+
+### What operations are blocked if my worker node is running an unsupported operating system?
+{: #unsupported-os}
+
+The following operations are blocked when an operating system is unsupported:
+
+- worker reload
+- worker replace without update
+- worker replace with update
+- worker update
+- worker pool create (with an unsupported OS)
+- worker pool rebalance
+- worker pool resize (scale up)
+- worker pool zone add
+- instance group resize (patch)
+- autoscaler remove worker (v2/autoscalerRemoveWorker)
 
 
 
