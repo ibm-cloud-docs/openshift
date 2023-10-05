@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-05"
 
 keywords: openshift
 subcollection: openshift
@@ -3313,6 +3313,8 @@ subcollection: openshift
 
     * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers)
 
+    * [Required rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-security-group#rules-sg-128)
+
     * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
 
 * [Creating security group rules](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules)
@@ -3347,11 +3349,15 @@ subcollection: openshift
 
     * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-acls#acls_cli)
 
+    * [Required rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-acls#acls-128)
+
 [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
 
 * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
 
 * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
+
+    * [Required policy rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-kube-policies#policy-rules-128)
 
 [Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 

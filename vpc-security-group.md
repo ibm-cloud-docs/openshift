@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-10-05"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -145,6 +145,9 @@ Modifying the `kube-<vpc-id>` security group is not recommended as doing so migh
 By default, traffic rules for cluster workers are covered by the randomly named VPC security group and the `kube-<cluster-id>` cluster security group. If you modify or replace either of these security groups, make sure the following traffic rules are still allowed. 
 {: shortdesc}
 
+If you have a VPC cluster that runs at version  or later, you might need to include [additional security group rules](#rules-sg-128). 
+{: important}
+
 #### Inbound rules
 {: #min-inbound-rules-sg-workers}
 
@@ -167,6 +170,19 @@ By default, traffic rules for cluster workers are covered by the randomly named 
 | Allow outbound traffic to be sent to the Virtual private endpoint gateway which is used to talk to the Kubernetes master. | ALL | - | Virtual private endpoint gateway IP addresses. The Virtual private endpoint gateway is assigned an IP address from a VPC subnet in each of the zones where your cluster has a worker node. For example, if the cluster spans 3 zones, there are up to 3 IP addresses assigned to each Virtual private endpoint gateway. To find the Virtual private endpoint gateway IPs:  \n 1. Go to the [Virtual private cloud dashboard](https://cloud.ibm.com/vpc-ext/network/vpcs){: external}.  \n 2. Click **Virtual private endpoint gateways**, then select the **Region** where your cluster is located.  \n 3. Find your cluster, then click the IP addresses in the **IP Address** column to copy them. |
 | Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service. To find the IPs needed to apply this rule, see [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](#worker-node-public-service-endpoint). | TCP | OAuth port | OAuth IP addresses |
 | Allow the worker nodes to connect to the Ingress LoadBalancer. To find the IPs needed to apply this rule, see [Allow worker nodes to connect to the Ingress LoadBalancer](#vpc-security-group-loadbalancer-outbound). | TCP | 443 | Ingress load balancer IPs |
+
+### Required rules for VPCs with a cluster that runs at version  or later
+{: #rules-sg-128}
+
+In version 1.27 and earlier, VPC clusters pull images from the IBM Cloud Container Registry through a private cloud service endpoint for the Container Registry. For version  and later, this network path is updated so that images are pulled through a VPE gateway instead of a private service endpoint. This change affects all clusters in a VPC; when you create or update a single cluster in a VPC to version , all clusters in that VPC, regardless of their version or type, have their network path updated. For more information, see [Networking changes for VPC clusters](/docs/containers?topic=containers-cs_versions_128&interface=ui#networking_128).
+
+If you update or create a cluster in your VPC that runs at version  or later, you must make sure that the following security group rules are implemented to allow traffic to the VPE gateway for registry. Each of these rules must be created for each zone in the VPC and must specify the entire VPC address prefix range for the zone as the destination CIDR. To find the VPC address prefix range for each zone in the VPC, run `ibmcloud is vpc-address-prefixes <vpc_name_or_id>`.
+
+| Rule type | Protocol | Destination IP or CIDR | Destination Port |
+|---|---|---|---|
+| Outbound | TCP | Entire VPC address prefix range | 443 |
+| Outbound | TCP | Entire VPC address prefix range | 4443 |
+{: caption="Outbound security group rules to add for version " caption-side="bottom"}
 {: caption="Required outbound rules for cluster worker security groups" caption-side="bottom"}
 
 
