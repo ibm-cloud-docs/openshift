@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-05"
+lastupdated: "2023-10-09"
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
 
@@ -78,7 +78,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
     {: caption="Table 4. Required inbound rules" caption-side="bottom"}
 
-    `**` Master IPs can be found by looking at the `server:` entry in the cluster's `kubeconfig` file (`kubectl config view`) and then running the *`nslookup`* or *`dig`* command to determine which IPs that it resolves to. The Master IP can be from 1 to 3 different IPs depending on the region and the control plane cluster.
+    
+    `**` Master IP addresses can be found by looking at the `server:` entry in the cluster's `kubeconfig` file (`kubectl config view`) and then running the `host` command to determine which IP addresses that it resolves to; for example, `host c100-e.eu-gb.containers.cloud.ibm.com`. The Master IP address can be from 1 to 3 different IP addresses, depending on the region and the control plane cluster.
+    
     
     `*` Alternatively, to allow the inbound traffic for router health checks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
     
@@ -99,7 +101,9 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
     {: caption="Table 6. Required outbound rules" caption-side="bottom"}
 
-    `**` Master IPs can be found by looking at the `server:` entry in the cluster's `kubeconfig` file (`kubectl config view`) and then running the *`nslookup`* or *`dig`* command to determine which IPs that it resolves to. The Master IP can be from 1 to 3 different IPs depending on the region and the control plane cluster.
+    
+    `**` Master IP addresses can be found by looking at the `server:` entry in the cluster's `kubeconfig` file (`kubectl config view`) and then running the `host` command to determine which IP addresses that it resolves to; for example, `host c100-e.eu-gb.containers.cloud.ibm.com`. The Master IP address can be from 1 to 3 different IP addresses, depending on the region and the control plane cluster.
+    
     
     `*` Alternatively, to allow the inbound traffic for router health checks, you can create a single inbound rule and outbound rule to allow all incoming and outgoing traffic on port 80.
     

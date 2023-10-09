@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-10-09"
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 
@@ -185,7 +185,7 @@ Follow the steps to gather the relevant worker node data.
     ```
     {: pre}
 
-4. For classic clusters, access the KVM console for one of the affected workers. Then, gather the relevant logs and output. 
+4. [Classic clusters]{: tag-classic-inf}: Access the KVM console for one of the affected workers. Then, gather the relevant logs and output. 
     1. Follow the steps to access the [KVM console](/docs/virtual-servers?topic=virtual-servers-access-kvm-console).
     2. Gather and save the following logs. Review the logs for possible causes of the worker node disruption, such as a lack of memory or disk space, the disk entering read-only mode, and other issues.
         - /var/log/boot.log
