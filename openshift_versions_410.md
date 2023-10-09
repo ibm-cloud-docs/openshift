@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-10-09"
 
 keywords: openshift, version, update, upgrade, 4.10
 
@@ -19,8 +19,11 @@ subcollection: openshift
 # 4.10 version information and update actions
 {: #cs_versions_410}
 
-Review information about version 4.10 of {{site.data.keyword.openshiftlong_notm}}, released 27 April 2022. This version is based on Kubernetes version 1.23. 
+Review information about version 4.10 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version 1.23. 
 {: shortdesc}
+
+Version 4.10 is deprecated. Update your cluster to at least [version 4.10](/docs/openshift?topic=openshift-cs_versions_410&interface=ui) as soon as possible.
+{: important}
 
 Looking for general information about updating clusters, or information on a different version? See [the {{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.10 blog](https://cloud.redhat.com/blog/introducing-red-hat-openshift-4.10){: external}
 {: tip}

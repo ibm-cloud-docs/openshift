@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-08"
+lastupdated: "2023-10-09"
 
 keywords: openshift, version, update, upgrade, 4.13, update openshift
 
@@ -19,7 +19,7 @@ subcollection: openshift
 # 4.13 version information and update actions
 {: #cs_versions_413}
 
-Review information about version 4.13 of {{site.data.keyword.openshiftlong_notm}}, released {{site.data.keyword.openshift_413_release_date}}. This version is based on Kubernetes version {{site.data.keyword.openshift_413_kube_version}}. 
+Review information about version 4.13 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_413_kube_version}}. 
 {: shortdesc}
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.13 blog](https://www.redhat.com/en/blog/red-hat-openshift-413-now-available){: external}.
