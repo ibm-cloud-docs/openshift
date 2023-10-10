@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-10-10"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
 
@@ -235,6 +235,8 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
+1. Verify OSD pod has come up on the replaced node in a `running` state, if the pod is running, continue to [step 7](#add-storage-node-vpc). If the pod has failed, perform the following steps.
+
 1. Navigate to the `openshift-storage` project.
     ```sh
     oc project openshift-storage
@@ -243,11 +245,10 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 1. Remove the failed OSD from the cluster. You can specify multiple failed OSDs if required:
     ```sh
-    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> | oc create -f OSD-ID,OSD-ID, OSD-ID
+    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> -p FORCE_OSD_REMOVAL=true | oc create -f -
     ```
     {: pre}
-
-    The `FORCE_OSD_REMOVAL` value must be changed to `true` in clusters that have only three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
+    The `FAILED_osd_id` value is the integer in the pod name immediately after the `rook-ceph-osd` prefix. The `FORCE_OSD_REMOVAL` value must be changed to `true` in clusters that have only three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
     {: note}
 
 1. Verify that the OSD was removed successfully by checking the status of the `ocs-osd-removal-job` pod.
@@ -331,30 +332,6 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: pre}
 
-1. Identify the `crashcollector` pod deployment.
-    ```sh
-    oc get deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME -n openshift-storage
-    ```
-    {: pre}
-
-
-1. If there is an existing `crashcollector` deployment, delete it.
-    ```sh
-    oc delete deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME -n openshift-storage
-    ```
-    {: pre}
-
-1. Delete the ocs-osd-removal-job. 
-    ```sh
-    oc delete -n openshift-storage job ocs-osd-removal-job
-    ```
-    {: pre}
-
-    Example output:
-    ```sh
-    job.batch "ocs-osd-removal-job" deleted
-    ```
-    {: screen}
     
     
 ## Update the OpenShift Data Foundation add-on

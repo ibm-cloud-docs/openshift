@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-06"
+lastupdated: "2023-10-10"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,34 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2023
 {: #openshift-oct23}
+
+
+
+### 10 October 2023
+{: #openshift-oct1023}
+{: release-note}
+
+
+
+[New]{: tag-green} Best practices for OpenShift Data Foundation
+:   For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
+
+
+### 9 October 2023
+{: #openshift-oct923}
+{: release-note} 
+
+
+
+
+
+[Change log]{: tag-purple} Worker node fix packs are available.
+:   [4.13.14_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12.36_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [4.11.50_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   [4.10.67_1587_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+
+
 
 
 
@@ -2921,7 +2949,7 @@ Worker node fix pack update
 {: release-note}
 
 New! Create a cluster with a template
-:   No longer do you have to manually specify the networking and worker node details to create a cluster, or enable security integrations such as logging and monitoring after creation. Instead, you can try out the **technical preview** to create a multizone cluster with nine worker nodes and encryption, logging, and monitoring already enabled. For more information, see [Creating a cluster by using an {{site.data.keyword.bpfull_notm}} template](/docs/openshift?topic=openshift-templates&interface=ui).
+:   No longer do you have to manually specify the networking and worker node details to create a cluster, or enable security integrations such as logging and monitoring after creation. Instead, you can try out the **technical preview** to create a multizone cluster with nine worker nodes and encryption, logging, and monitoring already enabled.
 
 {{site.data.keyword.cos_full_notm}} plug-in
 :   Version `2.1.3` is [released](/docs/openshift?topic=openshift-cos_plugin_changelog).

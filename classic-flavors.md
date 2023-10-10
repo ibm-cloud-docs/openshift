@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-10"
 
 keywords: openshift, kubernetes, node scaling, ca, autoscaler
 
@@ -26,8 +26,8 @@ Review the classic worker node flavors by metro.
 
 
 
-## `ams`
-{: #ams}
+## Amsterdam
+{: #amsterdam}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -37,10 +37,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Amsterdam." caption-side="bottom"}
+{: #ams-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="ams-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Amsterdam." caption-side="bottom"}
+{: #ams-compute-table}
+{: tab-title="Compute"}
+{: tab-group="ams-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | mb4c.20x192 | 20, 192GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mb4c.20x384 | 20, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
@@ -54,13 +73,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Amsterdam." caption-side="bottom"}
+{: #ams-memory-table}
+{: tab-title="Memory"}
+{: tab-group="ams-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 1. Worker node flavors for Amsterdam." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Amsterdam." caption-side="bottom"}
+{: #ams-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="ams-tables"}
 
 
 
-## `che`
-{: #che}
+
+
+## Chennai
+{: #chennai}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -70,10 +105,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Chennai." caption-side="bottom"}
+{: #che-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="che-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Chennai." caption-side="bottom"}
+{: #che-compute-table}
+{: tab-title="Compute"}
+{: tab-group="che-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | mb4c.20x192 | 20, 192GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mb4c.20x384 | 20, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
@@ -87,13 +141,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Chennai." caption-side="bottom"}
+{: #che-memory-table}
+{: tab-title="Memory"}
+{: tab-group="che-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 2. Worker node flavors for Chennai." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Chennai." caption-side="bottom"}
+{: #che-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="che-tables"}
 
 
 
-## `dal`
-{: #dal}
+
+
+## Dallas
+{: #dallas}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -103,10 +173,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Dallas." caption-side="bottom"}
+{: #dal-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="dal-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Dallas." caption-side="bottom"}
+{: #dal-compute-table}
+{: tab-title="Compute"}
+{: tab-group="dal-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.48x384 | 48, 384GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -126,13 +215,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Dallas." caption-side="bottom"}
+{: #dal-memory-table}
+{: tab-title="Memory"}
+{: tab-group="dal-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 3. Worker node flavors for Dallas." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Dallas." caption-side="bottom"}
+{: #dal-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="dal-tables"}
 
 
 
-## `fra`
-{: #fra}
+
+
+## France
+{: #france}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -142,10 +247,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in France." caption-side="bottom"}
+{: #fra-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="fra-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in France." caption-side="bottom"}
+{: #fra-compute-table}
+{: tab-title="Compute"}
+{: tab-group="fra-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -162,13 +286,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in France." caption-side="bottom"}
+{: #fra-memory-table}
+{: tab-title="Memory"}
+{: tab-group="fra-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 4. Worker node flavors for France." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in France." caption-side="bottom"}
+{: #fra-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="fra-tables"}
 
 
 
-## `lon`
-{: #lon}
+
+
+## London
+{: #london}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -178,10 +318,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in London." caption-side="bottom"}
+{: #lon-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="lon-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in London." caption-side="bottom"}
+{: #lon-compute-table}
+{: tab-title="Compute"}
+{: tab-group="lon-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -198,13 +357,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in London." caption-side="bottom"}
+{: #lon-memory-table}
+{: tab-title="Memory"}
+{: tab-group="lon-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 5. Worker node flavors for London." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in London." caption-side="bottom"}
+{: #lon-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="lon-tables"}
 
 
 
-## `mil`
-{: #mil}
+
+
+## Milan
+{: #milan}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -214,10 +389,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Milan." caption-side="bottom"}
+{: #mil-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="mil-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Milan." caption-side="bottom"}
+{: #mil-compute-table}
+{: tab-title="Compute"}
+{: tab-group="mil-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | mb4c.20x192 | 20, 192GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mb4c.20x384 | 20, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
@@ -231,13 +425,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Milan." caption-side="bottom"}
+{: #mil-memory-table}
+{: tab-title="Memory"}
+{: tab-group="mil-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 6. Worker node flavors for Milan." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Milan." caption-side="bottom"}
+{: #mil-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="mil-tables"}
 
 
 
-## `mon`
-{: #mon}
+
+
+## Montreal
+{: #montreal}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -247,10 +457,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Montreal." caption-side="bottom"}
+{: #mon-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="mon-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Montreal." caption-side="bottom"}
+{: #mon-compute-table}
+{: tab-title="Compute"}
+{: tab-group="mon-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | mb4c.20x192 | 20, 192GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mb4c.20x384 | 20, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
@@ -264,13 +493,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Montreal." caption-side="bottom"}
+{: #mon-memory-table}
+{: tab-title="Memory"}
+{: tab-group="mon-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 7. Worker node flavors for Montreal." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Montreal." caption-side="bottom"}
+{: #mon-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="mon-tables"}
 
 
 
-## `osa`
-{: #osa}
+
+
+## Osaka
+{: #osaka}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -280,10 +525,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Osaka." caption-side="bottom"}
+{: #osa-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="osa-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Osaka." caption-side="bottom"}
+{: #osa-compute-table}
+{: tab-title="Compute"}
+{: tab-group="osa-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.48x384 | 48, 384GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -303,13 +567,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Osaka." caption-side="bottom"}
+{: #osa-memory-table}
+{: tab-title="Memory"}
+{: tab-group="osa-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 8. Worker node flavors for Osaka." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Osaka." caption-side="bottom"}
+{: #osa-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="osa-tables"}
 
 
 
-## `par`
-{: #par}
+
+
+## Paris
+{: #paris}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -319,10 +599,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Paris." caption-side="bottom"}
+{: #par-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="par-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Paris." caption-side="bottom"}
+{: #par-compute-table}
+{: tab-title="Compute"}
+{: tab-group="par-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -339,13 +638,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Paris." caption-side="bottom"}
+{: #par-memory-table}
+{: tab-title="Memory"}
+{: tab-group="par-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 9. Worker node flavors for Paris." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Paris." caption-side="bottom"}
+{: #par-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="par-tables"}
 
 
 
-## `sao`
-{: #sao}
+
+
+## South America
+{: #south-america}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -355,14 +670,41 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in South America." caption-side="bottom"}
+{: #sao-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="sao-tables"}
+
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in South America." caption-side="bottom"}
+{: #sao-memory-table}
+{: tab-title="Memory"}
+{: tab-group="sao-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 10. Worker node flavors for South America." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in South America." caption-side="bottom"}
+{: #sao-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="sao-tables"}
 
 
 
-## `sjc`
-{: #sjc}
+
+
+## San Jose
+{: #san-jose}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -372,18 +714,53 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in San Jose." caption-side="bottom"}
+{: #sjc-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="sjc-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in San Jose." caption-side="bottom"}
+{: #sjc-compute-table}
+{: tab-title="Compute"}
+{: tab-group="sjc-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in San Jose." caption-side="bottom"}
+{: #sjc-memory-table}
+{: tab-title="Memory"}
+{: tab-group="sjc-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 11. Worker node flavors for San Jose." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in San Jose." caption-side="bottom"}
+{: #sjc-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="sjc-tables"}
 
 
 
-## `sng`
-{: #sng}
+
+
+## Singapore
+{: #singapore}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -391,16 +768,51 @@ Review the classic worker node flavors by metro.
 | b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 300GB SSD | N/A|
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Singapore." caption-side="bottom"}
+{: #sng-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="sng-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Singapore." caption-side="bottom"}
+{: #sng-compute-table}
+{: tab-title="Compute"}
+{: tab-group="sng-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Singapore." caption-side="bottom"}
+{: #sng-memory-table}
+{: tab-title="Memory"}
+{: tab-group="sng-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 12. Worker node flavors for Singapore." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Singapore." caption-side="bottom"}
+{: #sng-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="sng-tables"}
 
 
 
-## `syd`
-{: #syd}
+
+
+## Sydney
+{: #sydney}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -410,10 +822,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Sydney." caption-side="bottom"}
+{: #syd-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="syd-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Sydney." caption-side="bottom"}
+{: #syd-compute-table}
+{: tab-title="Compute"}
+{: tab-group="syd-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -430,13 +861,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Sydney." caption-side="bottom"}
+{: #syd-memory-table}
+{: tab-title="Memory"}
+{: tab-group="syd-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 13. Worker node flavors for Sydney." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Sydney." caption-side="bottom"}
+{: #syd-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="syd-tables"}
 
 
 
-## `tok`
-{: #tok}
+
+
+## Tokyo
+{: #tokyo}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -446,10 +893,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Tokyo." caption-side="bottom"}
+{: #tok-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="tok-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Tokyo." caption-side="bottom"}
+{: #tok-compute-table}
+{: tab-title="Compute"}
+{: tab-group="tok-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -466,13 +932,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Tokyo." caption-side="bottom"}
+{: #tok-memory-table}
+{: tab-title="Memory"}
+{: tab-group="tok-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 14. Worker node flavors for Tokyo." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Tokyo." caption-side="bottom"}
+{: #tok-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="tok-tables"}
 
 
 
-## `tor`
-{: #tor}
+
+
+## Toronto
+{: #toronto}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -482,10 +964,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Toronto." caption-side="bottom"}
+{: #tor-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="tor-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Toronto." caption-side="bottom"}
+{: #tor-compute-table}
+{: tab-title="Compute"}
+{: tab-group="tor-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -502,13 +1003,29 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Toronto." caption-side="bottom"}
+{: #tor-memory-table}
+{: tab-title="Memory"}
+{: tab-group="tor-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 15. Worker node flavors for Toronto." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Toronto." caption-side="bottom"}
+{: #tor-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="tor-tables"}
 
 
 
-## `wdc`
-{: #wdc}
+
+
+## Washington DC
+{: #washington-dc}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -518,10 +1035,29 @@ Review the classic worker node flavors by metro.
 | b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Balanced flavors in Washington DC." caption-side="bottom"}
+{: #wdc-balanced-table}
+{: tab-title="Balanced"}
+{: tab-group="wdc-tables"}
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+{: class="simple-tab-table"}
+{: caption="Table. Compute flavors in Washington DC." caption-side="bottom"}
+{: #wdc-compute-table}
+{: tab-title="Compute"}
+{: tab-group="wdc-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
@@ -538,8 +1074,24 @@ Review the classic worker node flavors by metro.
 | me4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+{: class="simple-tab-table"}
+{: caption="Table. Memory flavors in Washington DC." caption-side="bottom"}
+{: #wdc-memory-table}
+{: tab-title="Memory"}
+{: tab-group="wdc-tables"}
+
+
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-{: caption="Table 16. Worker node flavors for Washington DC." caption-side="bottom"}
+{: class="simple-tab-table"}
+{: caption="Table. Ultra High Memory flavors in Washington DC." caption-side="bottom"}
+{: #wdc-uhmemory-table}
+{: tab-title="Ultra High Memory"}
+{: tab-group="wdc-tables"}
+
+
 
 
 

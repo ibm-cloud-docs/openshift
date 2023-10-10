@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-10"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
+
+    * [10 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1023)
+
+        * [New]{: tag-green} Best practices for OpenShift Data Foundation
+
+    * [9 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct923)
+
+        * [Change log]{: tag-purple} Worker node fix packs are available.
 
     * [4 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct423)
 
@@ -2281,21 +2289,6 @@ subcollection: openshift
 * [Set up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
-
-
-## Creating a private-only cluster in VPC by using a template
-{: #sitemap_creating_a_private-only_cluster_in_vpc_by_using_a_template}
-
-
-[Creating a private-only cluster in VPC by using a template](/docs/openshift?topic=openshift-templates#templates)
-
-* [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
-
-* [Creating a secure cluster by using a template from the UI](/docs/openshift?topic=openshift-templates#sch-secure-cluster-ui)
-
-* [Creating a secure cluster by using a template with the CLI](/docs/openshift?topic=openshift-templates#tf-secure-cluster-cli)
-
-* [Next steps](/docs/openshift?topic=openshift-templates#sch-tf-whats-next)
 
 
 ## Installing the CLI
@@ -4530,6 +4523,22 @@ subcollection: openshift
 
 * [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep#odf-essentials-vs-advanced)
 
+* [Best practices](/docs/openshift?topic=openshift-ocs-storage-prep#odf-best-practices)
+
+    * [Planning](/docs/openshift?topic=openshift-ocs-storage-prep#planning-odf)
+
+    * [Deployment](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy)
+
+    * [Capacity expansion](/docs/openshift?topic=openshift-ocs-storage-prep#odf-capacity)
+
+    * [Update](/docs/openshift?topic=openshift-ocs-storage-prep#odf-best-practices)
+
+    * [Recovery](/docs/openshift?topic=openshift-ocs-storage-prep#odf-removery)
+
+    * [Uninstalling and removal](/docs/openshift?topic=openshift-ocs-storage-prep#odf-uninstall)
+
+    * [Troubleshooting](/docs/openshift?topic=openshift-ocs-storage-prep#odf-ts-bp)
+
 * [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
 
 
@@ -4548,6 +4557,8 @@ subcollection: openshift
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
 
 * [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-cli-vpc)
+
+* [Installing the add-on from Terraform](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-terraform-vpc)
 
 * [Creating your ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
 
@@ -5784,6 +5795,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
 
+    * [Change log for worker node fix pack 4.13.14_1542_openshift, released 9 October 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41314_1542_openshift_W)
+
     * [Change log for worker node fix pack 4.13.13_1541_openshift, released 27 September 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41313_1541_openshift_W)
 
     * [Change log for master fix pack 4.13.11_1540_openshift, released 20 September 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41311_1540_openshift_M)
@@ -5906,6 +5919,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.36_1564_openshift, released 9 October 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41236_1564_openshift_W)
 
     * [Change log for worker node fix pack 4.12.34_1563_openshift, released 27 September 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41234_1563_openshift_W)
 
@@ -6061,6 +6076,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.50_1575_openshift, released 9 October 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41150_1575_openshift_W)
 
     * [Change log for worker node fix pack 4.11.49_1574_openshift, released 27 September 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41149_1574_openshift_W)
 
@@ -6246,6 +6263,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.67_1587_openshift, released 9 October 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1587_openshift_W)
 
     * [Change log for worker node fix pack 4.10.67_1586_openshift, released 27 September 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1586_openshift_W)
 
@@ -8569,25 +8588,25 @@ subcollection: openshift
 
 [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
-* [`au-syd`](/docs/openshift?topic=openshift-vpc-flavors#au-syd)
+* [Australia](/docs/openshift?topic=openshift-vpc-flavors#australia)
 
-* [`br-sao`](/docs/openshift?topic=openshift-vpc-flavors#br-sao)
+* [Brazil](/docs/openshift?topic=openshift-vpc-flavors#brazil)
 
-* [`ca-tor`](/docs/openshift?topic=openshift-vpc-flavors#ca-tor)
+* [Canada](/docs/openshift?topic=openshift-vpc-flavors#canada)
 
-* [`eu-de`](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
+* [Europe](/docs/openshift?topic=openshift-vpc-flavors#europe)
 
-* [`eu-es`](/docs/openshift?topic=openshift-vpc-flavors#eu-es)
+* [Europe](/docs/openshift?topic=openshift-vpc-flavors#europe)
 
-* [`eu-gb`](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
+* [Europe](/docs/openshift?topic=openshift-vpc-flavors#europe)
 
-* [`jp-osa`](/docs/openshift?topic=openshift-vpc-flavors#jp-osa)
+* [Japan](/docs/openshift?topic=openshift-vpc-flavors#japan)
 
-* [`jp-tok`](/docs/openshift?topic=openshift-vpc-flavors#jp-tok)
+* [Japan](/docs/openshift?topic=openshift-vpc-flavors#japan)
 
-* [`us-east`](/docs/openshift?topic=openshift-vpc-flavors#us-east)
+* [United States](/docs/openshift?topic=openshift-vpc-flavors#united-states)
 
-* [`us-south`](/docs/openshift?topic=openshift-vpc-flavors#us-south)
+* [United States](/docs/openshift?topic=openshift-vpc-flavors#united-states)
 
 
 ## Classic flavors
@@ -8596,37 +8615,37 @@ subcollection: openshift
 
 [Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
 
-* [`ams`](/docs/openshift?topic=openshift-classic-flavors#ams)
+* [Amsterdam](/docs/openshift?topic=openshift-classic-flavors#amsterdam)
 
-* [`che`](/docs/openshift?topic=openshift-classic-flavors#che)
+* [Chennai](/docs/openshift?topic=openshift-classic-flavors#chennai)
 
-* [`dal`](/docs/openshift?topic=openshift-classic-flavors#dal)
+* [Dallas](/docs/openshift?topic=openshift-classic-flavors#dallas)
 
-* [`fra`](/docs/openshift?topic=openshift-classic-flavors#fra)
+* [France](/docs/openshift?topic=openshift-classic-flavors#france)
 
-* [`lon`](/docs/openshift?topic=openshift-classic-flavors#lon)
+* [London](/docs/openshift?topic=openshift-classic-flavors#london)
 
-* [`mil`](/docs/openshift?topic=openshift-classic-flavors#mil)
+* [Milan](/docs/openshift?topic=openshift-classic-flavors#milan)
 
-* [`mon`](/docs/openshift?topic=openshift-classic-flavors#mon)
+* [Montreal](/docs/openshift?topic=openshift-classic-flavors#montreal)
 
-* [`osa`](/docs/openshift?topic=openshift-classic-flavors#osa)
+* [Osaka](/docs/openshift?topic=openshift-classic-flavors#osaka)
 
-* [`par`](/docs/openshift?topic=openshift-classic-flavors#par)
+* [Paris](/docs/openshift?topic=openshift-classic-flavors#paris)
 
-* [`sao`](/docs/openshift?topic=openshift-classic-flavors#sao)
+* [South America](/docs/openshift?topic=openshift-classic-flavors#south-america)
 
-* [`sjc`](/docs/openshift?topic=openshift-classic-flavors#sjc)
+* [San Jose](/docs/openshift?topic=openshift-classic-flavors#san-jose)
 
-* [`sng`](/docs/openshift?topic=openshift-classic-flavors#sng)
+* [Singapore](/docs/openshift?topic=openshift-classic-flavors#singapore)
 
-* [`syd`](/docs/openshift?topic=openshift-classic-flavors#syd)
+* [Sydney](/docs/openshift?topic=openshift-classic-flavors#sydney)
 
-* [`tok`](/docs/openshift?topic=openshift-classic-flavors#tok)
+* [Tokyo](/docs/openshift?topic=openshift-classic-flavors#tokyo)
 
-* [`tor`](/docs/openshift?topic=openshift-classic-flavors#tor)
+* [Toronto](/docs/openshift?topic=openshift-classic-flavors#toronto)
 
-* [`wdc`](/docs/openshift?topic=openshift-classic-flavors#wdc)
+* [Washington DC](/docs/openshift?topic=openshift-classic-flavors#washington-dc)
 
 
 ## FAQs

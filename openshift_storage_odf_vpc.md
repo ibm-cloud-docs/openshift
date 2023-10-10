@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-10-10"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -104,6 +104,15 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 {: #odf-create-hscrypto-vpc}
 
 If you want to set up encryption, create an instance of {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials.
+
+Your API key for {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} must have the following minimum required permissions:
+:   `Reader`
+:   `Reader Plus`
+
+If you are using cluster wide encryption and storage class encryption, your API key must have the following required permissions:
+:   `Reader`
+:   `Reader Plus`
+:   `Writer` 
 
 Storage class encryption is available only for versions `4.10.0` and later of OpenShift Data Foundation.
 {: note}
@@ -336,6 +345,92 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     {: pre}
 
 1. If you enabled the add-on with `odfDeploy` set to `false`, follow the steps to [create an ODF custom resource](#ocs-vpc-deploy-crd).
+
+## Installing the add-on from Terraform
+{: #install-odf-terraform-vpc}
+{: Terraform}
+
+
+**Before you begin:**
+* [Install the Terraform CLI and the {{site.data.keyword.cloud_notm}} Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#tf_installation).
+* Make sure you have an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key). 
+
+1. Create a Terraform provider file. Save the file in your Terraform directory. For more information, see the [Terraform IBM Cloud Provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external}. 
+
+    Example Terraform provider file. 
+
+    ```sh
+    terraform {
+    required_providers {
+        ibm = {
+        source = "IBM-Cloud/ibm"
+        version = "1.53.0"
+        }
+    }
+    }
+
+    provider "ibm" {
+    region = "us-south"
+    ibmcloud_api_key = "<api-key>"
+    }
+    ```
+    {: pre}
+
+1. Create a Terraform configuration file for the ODF addon. Save the file in your Terraform directory.
+
+  Example configuration file.
+    ```sh
+    ibmcloud_api_key = "" # Enter your API Key
+    cluster = "" # Enter the Cluster ID
+    region = "us-south" # Enter the region
+
+    # For add-on deployment
+    odfVersion = "4.12.0"
+
+    # For CRD Creation and Management
+    autoDiscoverDevices = "false"
+    billingType = "advanced"
+    clusterEncryption = "false"
+    hpcsBaseUrl = null
+    hpcsEncryption = "false"
+    hpcsInstanceId = null
+    hpcsSecretName = null
+    hpcsServiceName = null
+    hpcsTokenUrl = null
+    ignoreNoobaa = "false"
+    numOfOsd = "1"
+    ocsUpgrade = "false"
+    osdDevicePaths = null
+    osdSize = "250Gi"
+    osdStorageClassName = "ibmc-vpc-block-metro-10iops-tier"
+    workerNodes = null
+    ```
+    {: pre}
+
+3. In the CLI, navigate to your Terraform directory.
+    ```sh
+    cd <terraform_directory>
+    ```
+    {: pre}
+
+4. Run the commands to initialize and plan your Terraform actions. Review the plan output to make sure the correct actions are performed. 
+
+    ```sh
+    terraform init
+    ```
+    {: pre}
+
+    ```sh
+    terraform plan
+    ```
+    {: pre}
+
+5. Apply the Terraform files to create the cluster. Then, navigate to the IBM Cloud console to check that the cluster is provisioning.
+    ```sh
+    terraform apply
+    ```
+    {: pre}
+
 
 ## Creating your ODF custom resource
 {: #ocs-vpc-deploy-crd}
