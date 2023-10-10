@@ -29,13 +29,8 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## `au-syd`
-{: #au-syd}
-
-### Australia flavors
-{: #au-syd-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## Australia
+{: #Australia}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -48,14 +43,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Australia." caption-side="bottom"}
 {: #au-syd-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="au-syd-tables"}
 
-
-### Australia flavors
-{: #au-syd-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -68,15 +58,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Australia." caption-side="bottom"}
 {: #au-syd-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="au-syd-tables"}
 
 
-
-### Australia flavors
-{: #au-syd-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -92,7 +77,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Australia." caption-side="bottom"}
 {: #au-syd-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="au-syd-tables"}
 
 
@@ -101,13 +86,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `br-sao`
-{: #br-sao}
-
-### Brazil flavors
-{: #br-sao-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## Brazil
+{: #Brazil}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -120,14 +100,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Brazil." caption-side="bottom"}
 {: #br-sao-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="br-sao-tables"}
 
-
-### Brazil flavors
-{: #br-sao-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -140,15 +115,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Brazil." caption-side="bottom"}
 {: #br-sao-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="br-sao-tables"}
 
 
-
-### Brazil flavors
-{: #br-sao-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -163,7 +133,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Brazil." caption-side="bottom"}
 {: #br-sao-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="br-sao-tables"}
 
 
@@ -172,13 +142,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `ca-tor`
-{: #ca-tor}
-
-### Canada flavors
-{: #ca-tor-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## Canada
+{: #Canada}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -191,14 +156,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Canada." caption-side="bottom"}
 {: #ca-tor-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="ca-tor-tables"}
 
-
-### Canada flavors
-{: #ca-tor-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -211,15 +171,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Canada." caption-side="bottom"}
 {: #ca-tor-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="ca-tor-tables"}
 
 
-
-### Canada flavors
-{: #ca-tor-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -235,7 +190,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Canada." caption-side="bottom"}
 {: #ca-tor-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="ca-tor-tables"}
 
 
@@ -244,13 +199,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `eu-de`
-{: #eu-de}
-
-### Europe flavors
-{: #eu-de-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## Europe
+{: #Europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -263,14 +213,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Europe." caption-side="bottom"}
 {: #eu-de-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="eu-de-tables"}
 
-
-### Europe flavors
-{: #eu-de-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -283,15 +228,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Europe." caption-side="bottom"}
 {: #eu-de-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="eu-de-tables"}
 
 
-
-### Europe flavors
-{: #eu-de-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -307,7 +247,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Europe." caption-side="bottom"}
 {: #eu-de-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="eu-de-tables"}
 
 
@@ -316,13 +256,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `eu-es`
-{: #eu-es}
-
-### Europe flavors
-{: #eu-es-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## Europe
+{: #Europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -335,14 +270,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Europe." caption-side="bottom"}
 {: #eu-es-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="eu-es-tables"}
 
-
-### Europe flavors
-{: #eu-es-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -355,15 +285,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Europe." caption-side="bottom"}
 {: #eu-es-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="eu-es-tables"}
 
 
-
-### Europe flavors
-{: #eu-es-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -378,7 +303,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Europe." caption-side="bottom"}
 {: #eu-es-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="eu-es-tables"}
 
 
@@ -387,13 +312,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `eu-gb`
-{: #eu-gb}
-
-### Europe flavors
-{: #eu-gb-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## Europe
+{: #Europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -406,14 +326,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Europe." caption-side="bottom"}
 {: #eu-gb-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="eu-gb-tables"}
 
-
-### Europe flavors
-{: #eu-gb-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -426,15 +341,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Europe." caption-side="bottom"}
 {: #eu-gb-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="eu-gb-tables"}
 
 
-
-### Europe flavors
-{: #eu-gb-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -450,7 +360,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Europe." caption-side="bottom"}
 {: #eu-gb-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="eu-gb-tables"}
 
 
@@ -459,13 +369,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `jp-osa`
-{: #jp-osa}
-
-### Japan flavors
-{: #jp-osa-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## Japan
+{: #Japan}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -478,14 +383,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Japan." caption-side="bottom"}
 {: #jp-osa-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="jp-osa-tables"}
 
-
-### Japan flavors
-{: #jp-osa-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -498,15 +398,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Japan." caption-side="bottom"}
 {: #jp-osa-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="jp-osa-tables"}
 
 
-
-### Japan flavors
-{: #jp-osa-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -521,7 +416,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Japan." caption-side="bottom"}
 {: #jp-osa-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="jp-osa-tables"}
 
 
@@ -530,13 +425,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `jp-tok`
-{: #jp-tok}
-
-### Japan flavors
-{: #jp-tok-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## Japan
+{: #Japan}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -549,14 +439,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Japan." caption-side="bottom"}
 {: #jp-tok-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="jp-tok-tables"}
 
-
-### Japan flavors
-{: #jp-tok-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -569,15 +454,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Japan." caption-side="bottom"}
 {: #jp-tok-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="jp-tok-tables"}
 
 
-
-### Japan flavors
-{: #jp-tok-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -593,7 +473,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Japan." caption-side="bottom"}
 {: #jp-tok-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="jp-tok-tables"}
 
 
@@ -602,13 +482,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `us-east`
-{: #us-east}
-
-### United States flavors
-{: #us-east-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## United States
+{: #United States}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -621,14 +496,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in United States." caption-side="bottom"}
 {: #us-east-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="us-east-tables"}
 
-
-### United States flavors
-{: #us-east-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -641,15 +511,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in United States." caption-side="bottom"}
 {: #us-east-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="us-east-tables"}
 
 
-
-### United States flavors
-{: #us-east-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -665,7 +530,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in United States." caption-side="bottom"}
 {: #us-east-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="us-east-tables"}
 
 
@@ -674,13 +539,8 @@ Review the attributes for the Memory worker node flavors.
 
 
 
-## `us-south`
-{: #us-south}
-
-### United States flavors
-{: #us-south-balanced}
-
-Review the attributes for the Balanced worker node flavors.
+## United States
+{: #United States}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -693,14 +553,9 @@ Review the attributes for the Balanced worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in United States." caption-side="bottom"}
 {: #us-south-balanced-table}
-{: tab-title="Balanced profiles"}
+{: tab-title="Balanced"}
 {: tab-group="us-south-tables"}
 
-
-### United States flavors
-{: #us-south-compute}
-
-Review the attributes for the Compute worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -713,15 +568,10 @@ Review the attributes for the Compute worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in United States." caption-side="bottom"}
 {: #us-south-compute-table}
-{: tab-title="Compute profiles"}
+{: tab-title="Compute"}
 {: tab-group="us-south-tables"}
 
 
-
-### United States flavors
-{: #us-south-memory}
-
-Review the attributes for the Memory worker node flavors.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -737,7 +587,7 @@ Review the attributes for the Memory worker node flavors.
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in United States." caption-side="bottom"}
 {: #us-south-memory-table}
-{: tab-title="Memory profiles"}
+{: tab-title="Memory"}
 {: tab-group="us-south-tables"}
 
 

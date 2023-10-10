@@ -8581,85 +8581,25 @@ subcollection: openshift
 
 [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
-* [`au-syd`](/docs/openshift?topic=openshift-vpc-flavors#au-syd)
+* [Australia](/docs/openshift?topic=openshift-vpc-flavors#Australia)
 
-    * [Australia flavors](/docs/openshift?topic=openshift-vpc-flavors#au-syd-balanced)
+* [Brazil](/docs/openshift?topic=openshift-vpc-flavors#Brazil)
 
-    * [Australia flavors](/docs/openshift?topic=openshift-vpc-flavors#au-syd-compute)
+* [Canada](/docs/openshift?topic=openshift-vpc-flavors#Canada)
 
-    * [Australia flavors](/docs/openshift?topic=openshift-vpc-flavors#au-syd-memory)
+* [Europe](/docs/openshift?topic=openshift-vpc-flavors#Europe)
 
-* [`br-sao`](/docs/openshift?topic=openshift-vpc-flavors#br-sao)
+* [Europe](/docs/openshift?topic=openshift-vpc-flavors#Europe)
 
-    * [Brazil flavors](/docs/openshift?topic=openshift-vpc-flavors#br-sao-balanced)
+* [Europe](/docs/openshift?topic=openshift-vpc-flavors#Europe)
 
-    * [Brazil flavors](/docs/openshift?topic=openshift-vpc-flavors#br-sao-compute)
+* [Japan](/docs/openshift?topic=openshift-vpc-flavors#Japan)
 
-    * [Brazil flavors](/docs/openshift?topic=openshift-vpc-flavors#br-sao-memory)
+* [Japan](/docs/openshift?topic=openshift-vpc-flavors#Japan)
 
-* [`ca-tor`](/docs/openshift?topic=openshift-vpc-flavors#ca-tor)
+* [United States](/docs/openshift?topic=openshift-vpc-flavors#United)
 
-    * [Canada flavors](/docs/openshift?topic=openshift-vpc-flavors#ca-tor-balanced)
-
-    * [Canada flavors](/docs/openshift?topic=openshift-vpc-flavors#ca-tor-compute)
-
-    * [Canada flavors](/docs/openshift?topic=openshift-vpc-flavors#ca-tor-memory)
-
-* [`eu-de`](/docs/openshift?topic=openshift-vpc-flavors#eu-de)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-de-balanced)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-de-compute)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-de-memory)
-
-* [`eu-es`](/docs/openshift?topic=openshift-vpc-flavors#eu-es)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-es-balanced)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-es-compute)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-es-memory)
-
-* [`eu-gb`](/docs/openshift?topic=openshift-vpc-flavors#eu-gb)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-gb-balanced)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-gb-compute)
-
-    * [Europe flavors](/docs/openshift?topic=openshift-vpc-flavors#eu-gb-memory)
-
-* [`jp-osa`](/docs/openshift?topic=openshift-vpc-flavors#jp-osa)
-
-    * [Japan flavors](/docs/openshift?topic=openshift-vpc-flavors#jp-osa-balanced)
-
-    * [Japan flavors](/docs/openshift?topic=openshift-vpc-flavors#jp-osa-compute)
-
-    * [Japan flavors](/docs/openshift?topic=openshift-vpc-flavors#jp-osa-memory)
-
-* [`jp-tok`](/docs/openshift?topic=openshift-vpc-flavors#jp-tok)
-
-    * [Japan flavors](/docs/openshift?topic=openshift-vpc-flavors#jp-tok-balanced)
-
-    * [Japan flavors](/docs/openshift?topic=openshift-vpc-flavors#jp-tok-compute)
-
-    * [Japan flavors](/docs/openshift?topic=openshift-vpc-flavors#jp-tok-memory)
-
-* [`us-east`](/docs/openshift?topic=openshift-vpc-flavors#us-east)
-
-    * [United States flavors](/docs/openshift?topic=openshift-vpc-flavors#us-east-balanced)
-
-    * [United States flavors](/docs/openshift?topic=openshift-vpc-flavors#us-east-compute)
-
-    * [United States flavors](/docs/openshift?topic=openshift-vpc-flavors#us-east-memory)
-
-* [`us-south`](/docs/openshift?topic=openshift-vpc-flavors#us-south)
-
-    * [United States flavors](/docs/openshift?topic=openshift-vpc-flavors#us-south-balanced)
-
-    * [United States flavors](/docs/openshift?topic=openshift-vpc-flavors#us-south-compute)
-
-    * [United States flavors](/docs/openshift?topic=openshift-vpc-flavors#us-south-memory)
+* [United States](/docs/openshift?topic=openshift-vpc-flavors#United)
 
 
 ## Classic flavors
@@ -8668,163 +8608,37 @@ subcollection: openshift
 
 [Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
 
-* [`ams`](/docs/openshift?topic=openshift-classic-flavors#ams)
+* [Amsterdam](/docs/openshift?topic=openshift-classic-flavors#Amsterdam)
 
-    * [Amsterdam flavors](/docs/openshift?topic=openshift-classic-flavors#ams-balanced)
+* [Chennai](/docs/openshift?topic=openshift-classic-flavors#Chennai)
 
-    * [Amsterdam flavors](/docs/openshift?topic=openshift-classic-flavors#ams-compute)
+* [Dallas](/docs/openshift?topic=openshift-classic-flavors#Dallas)
 
-    * [Amsterdam flavors](/docs/openshift?topic=openshift-classic-flavors#ams-memory)
+* [France](/docs/openshift?topic=openshift-classic-flavors#France)
 
-    * [Amsterdam flavors](/docs/openshift?topic=openshift-classic-flavors#ams-uhmemory)
+* [London](/docs/openshift?topic=openshift-classic-flavors#London)
 
-* [`che`](/docs/openshift?topic=openshift-classic-flavors#che)
+* [Milan](/docs/openshift?topic=openshift-classic-flavors#Milan)
 
-    * [Chennai flavors](/docs/openshift?topic=openshift-classic-flavors#che-balanced)
+* [Montreal](/docs/openshift?topic=openshift-classic-flavors#Montreal)
 
-    * [Chennai flavors](/docs/openshift?topic=openshift-classic-flavors#che-compute)
+* [Osaka](/docs/openshift?topic=openshift-classic-flavors#Osaka)
 
-    * [Chennai flavors](/docs/openshift?topic=openshift-classic-flavors#che-memory)
+* [Paris](/docs/openshift?topic=openshift-classic-flavors#Paris)
 
-    * [Chennai flavors](/docs/openshift?topic=openshift-classic-flavors#che-uhmemory)
+* [South America](/docs/openshift?topic=openshift-classic-flavors#South)
 
-* [`dal`](/docs/openshift?topic=openshift-classic-flavors#dal)
+* [San Jose](/docs/openshift?topic=openshift-classic-flavors#San)
 
-    * [Dallas flavors](/docs/openshift?topic=openshift-classic-flavors#dal-balanced)
+* [Singapore](/docs/openshift?topic=openshift-classic-flavors#Singapore)
 
-    * [Dallas flavors](/docs/openshift?topic=openshift-classic-flavors#dal-compute)
+* [Sydney](/docs/openshift?topic=openshift-classic-flavors#Sydney)
 
-    * [Dallas flavors](/docs/openshift?topic=openshift-classic-flavors#dal-memory)
+* [Tokyo](/docs/openshift?topic=openshift-classic-flavors#Tokyo)
 
-    * [Dallas flavors](/docs/openshift?topic=openshift-classic-flavors#dal-uhmemory)
+* [Toronto](/docs/openshift?topic=openshift-classic-flavors#Toronto)
 
-* [`fra`](/docs/openshift?topic=openshift-classic-flavors#fra)
-
-    * [France flavors](/docs/openshift?topic=openshift-classic-flavors#fra-balanced)
-
-    * [France flavors](/docs/openshift?topic=openshift-classic-flavors#fra-compute)
-
-    * [France flavors](/docs/openshift?topic=openshift-classic-flavors#fra-memory)
-
-    * [France flavors](/docs/openshift?topic=openshift-classic-flavors#fra-uhmemory)
-
-* [`lon`](/docs/openshift?topic=openshift-classic-flavors#lon)
-
-    * [London flavors](/docs/openshift?topic=openshift-classic-flavors#lon-balanced)
-
-    * [London flavors](/docs/openshift?topic=openshift-classic-flavors#lon-compute)
-
-    * [London flavors](/docs/openshift?topic=openshift-classic-flavors#lon-memory)
-
-    * [London flavors](/docs/openshift?topic=openshift-classic-flavors#lon-uhmemory)
-
-* [`mil`](/docs/openshift?topic=openshift-classic-flavors#mil)
-
-    * [Milan flavors](/docs/openshift?topic=openshift-classic-flavors#mil-balanced)
-
-    * [Milan flavors](/docs/openshift?topic=openshift-classic-flavors#mil-compute)
-
-    * [Milan flavors](/docs/openshift?topic=openshift-classic-flavors#mil-memory)
-
-    * [Milan flavors](/docs/openshift?topic=openshift-classic-flavors#mil-uhmemory)
-
-* [`mon`](/docs/openshift?topic=openshift-classic-flavors#mon)
-
-    * [Montreal flavors](/docs/openshift?topic=openshift-classic-flavors#mon-balanced)
-
-    * [Montreal flavors](/docs/openshift?topic=openshift-classic-flavors#mon-compute)
-
-    * [Montreal flavors](/docs/openshift?topic=openshift-classic-flavors#mon-memory)
-
-    * [Montreal flavors](/docs/openshift?topic=openshift-classic-flavors#mon-uhmemory)
-
-* [`osa`](/docs/openshift?topic=openshift-classic-flavors#osa)
-
-    * [Osaka flavors](/docs/openshift?topic=openshift-classic-flavors#osa-balanced)
-
-    * [Osaka flavors](/docs/openshift?topic=openshift-classic-flavors#osa-compute)
-
-    * [Osaka flavors](/docs/openshift?topic=openshift-classic-flavors#osa-memory)
-
-    * [Osaka flavors](/docs/openshift?topic=openshift-classic-flavors#osa-uhmemory)
-
-* [`par`](/docs/openshift?topic=openshift-classic-flavors#par)
-
-    * [Paris flavors](/docs/openshift?topic=openshift-classic-flavors#par-balanced)
-
-    * [Paris flavors](/docs/openshift?topic=openshift-classic-flavors#par-compute)
-
-    * [Paris flavors](/docs/openshift?topic=openshift-classic-flavors#par-memory)
-
-    * [Paris flavors](/docs/openshift?topic=openshift-classic-flavors#par-uhmemory)
-
-* [`sao`](/docs/openshift?topic=openshift-classic-flavors#sao)
-
-    * [South America flavors](/docs/openshift?topic=openshift-classic-flavors#sao-balanced)
-
-    * [South America flavors](/docs/openshift?topic=openshift-classic-flavors#sao-memory)
-
-    * [South America flavors](/docs/openshift?topic=openshift-classic-flavors#sao-uhmemory)
-
-* [`sjc`](/docs/openshift?topic=openshift-classic-flavors#sjc)
-
-    * [San Jose flavors](/docs/openshift?topic=openshift-classic-flavors#sjc-balanced)
-
-    * [San Jose flavors](/docs/openshift?topic=openshift-classic-flavors#sjc-compute)
-
-    * [San Jose flavors](/docs/openshift?topic=openshift-classic-flavors#sjc-memory)
-
-    * [San Jose flavors](/docs/openshift?topic=openshift-classic-flavors#sjc-uhmemory)
-
-* [`sng`](/docs/openshift?topic=openshift-classic-flavors#sng)
-
-    * [Singapore flavors](/docs/openshift?topic=openshift-classic-flavors#sng-balanced)
-
-    * [Singapore flavors](/docs/openshift?topic=openshift-classic-flavors#sng-compute)
-
-    * [Singapore flavors](/docs/openshift?topic=openshift-classic-flavors#sng-memory)
-
-    * [Singapore flavors](/docs/openshift?topic=openshift-classic-flavors#sng-uhmemory)
-
-* [`syd`](/docs/openshift?topic=openshift-classic-flavors#syd)
-
-    * [Sydney flavors](/docs/openshift?topic=openshift-classic-flavors#syd-balanced)
-
-    * [Sydney flavors](/docs/openshift?topic=openshift-classic-flavors#syd-compute)
-
-    * [Sydney flavors](/docs/openshift?topic=openshift-classic-flavors#syd-memory)
-
-    * [Sydney flavors](/docs/openshift?topic=openshift-classic-flavors#syd-uhmemory)
-
-* [`tok`](/docs/openshift?topic=openshift-classic-flavors#tok)
-
-    * [Tokyo flavors](/docs/openshift?topic=openshift-classic-flavors#tok-balanced)
-
-    * [Tokyo flavors](/docs/openshift?topic=openshift-classic-flavors#tok-compute)
-
-    * [Tokyo flavors](/docs/openshift?topic=openshift-classic-flavors#tok-memory)
-
-    * [Tokyo flavors](/docs/openshift?topic=openshift-classic-flavors#tok-uhmemory)
-
-* [`tor`](/docs/openshift?topic=openshift-classic-flavors#tor)
-
-    * [Toronto flavors](/docs/openshift?topic=openshift-classic-flavors#tor-balanced)
-
-    * [Toronto flavors](/docs/openshift?topic=openshift-classic-flavors#tor-compute)
-
-    * [Toronto flavors](/docs/openshift?topic=openshift-classic-flavors#tor-memory)
-
-    * [Toronto flavors](/docs/openshift?topic=openshift-classic-flavors#tor-uhmemory)
-
-* [`wdc`](/docs/openshift?topic=openshift-classic-flavors#wdc)
-
-    * [Washington DC flavors](/docs/openshift?topic=openshift-classic-flavors#wdc-balanced)
-
-    * [Washington DC flavors](/docs/openshift?topic=openshift-classic-flavors#wdc-compute)
-
-    * [Washington DC flavors](/docs/openshift?topic=openshift-classic-flavors#wdc-memory)
-
-    * [Washington DC flavors](/docs/openshift?topic=openshift-classic-flavors#wdc-uhmemory)
+* [Washington DC](/docs/openshift?topic=openshift-classic-flavors#Washington)
 
 
 ## FAQs
