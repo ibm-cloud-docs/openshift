@@ -30,7 +30,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## Australia
-{: #Australia}
+{: #australia}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -87,7 +87,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## Brazil
-{: #Brazil}
+{: #brazil}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -143,7 +143,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## Canada
-{: #Canada}
+{: #canada}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -200,7 +200,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## Europe
-{: #Europe}
+{: #europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -257,7 +257,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## Europe
-{: #Europe}
+{: #europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -313,7 +313,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## Europe
-{: #Europe}
+{: #europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -370,7 +370,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## Japan
-{: #Japan}
+{: #japan}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -426,7 +426,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## Japan
-{: #Japan}
+{: #japan}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -483,7 +483,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## United States
-{: #United States}
+{: #united states}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -540,7 +540,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## United States
-{: #United States}
+{: #united states}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
