@@ -483,7 +483,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## United States
-{: #united states}
+{: #united-states}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -540,7 +540,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 ## United States
-{: #united states}
+{: #united-states}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |

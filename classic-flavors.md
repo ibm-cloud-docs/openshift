@@ -660,7 +660,7 @@ Review the classic worker node flavors by metro.
 
 
 ## South America
-{: #south america}
+{: #south-america}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -704,7 +704,7 @@ Review the classic worker node flavors by metro.
 
 
 ## San Jose
-{: #san jose}
+{: #san-jose}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -1025,7 +1025,7 @@ Review the classic worker node flavors by metro.
 
 
 ## Washington DC
-{: #washington dc}
+{: #washington-dc}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |

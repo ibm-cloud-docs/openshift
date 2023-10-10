@@ -8582,9 +8582,9 @@ subcollection: openshift
 
 * [Japan](/docs/openshift?topic=openshift-vpc-flavors#japan)
 
-* [United States](/docs/openshift?topic=openshift-vpc-flavors#united)
+* [United States](/docs/openshift?topic=openshift-vpc-flavors#united-states)
 
-* [United States](/docs/openshift?topic=openshift-vpc-flavors#united)
+* [United States](/docs/openshift?topic=openshift-vpc-flavors#united-states)
 
 
 ## Classic flavors
@@ -8611,9 +8611,9 @@ subcollection: openshift
 
 * [Paris](/docs/openshift?topic=openshift-classic-flavors#paris)
 
-* [South America](/docs/openshift?topic=openshift-classic-flavors#south)
+* [South America](/docs/openshift?topic=openshift-classic-flavors#south-america)
 
-* [San Jose](/docs/openshift?topic=openshift-classic-flavors#san)
+* [San Jose](/docs/openshift?topic=openshift-classic-flavors#san-jose)
 
 * [Singapore](/docs/openshift?topic=openshift-classic-flavors#singapore)
 
@@ -8623,7 +8623,7 @@ subcollection: openshift
 
 * [Toronto](/docs/openshift?topic=openshift-classic-flavors#toronto)
 
-* [Washington DC](/docs/openshift?topic=openshift-classic-flavors#washington)
+* [Washington DC](/docs/openshift?topic=openshift-classic-flavors#washington-dc)
 
 
 ## FAQs
