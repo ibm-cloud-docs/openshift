@@ -4519,6 +4519,22 @@ subcollection: openshift
 
 * [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep#odf-essentials-vs-advanced)
 
+* [Best practices](/docs/openshift?topic=openshift-ocs-storage-prep#odf-best-practices)
+
+    * [Planning](/docs/openshift?topic=openshift-ocs-storage-prep#planning-odf)
+
+    * [Deployment](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy)
+
+    * [Capacity expansion](/docs/openshift?topic=openshift-ocs-storage-prep#odf-capacity)
+
+    * [Update](/docs/openshift?topic=openshift-ocs-storage-prep#odf-best-practices)
+
+    * [Recovery](/docs/openshift?topic=openshift-ocs-storage-prep#odf-removery)
+
+    * [Uninstalling and removal](/docs/openshift?topic=openshift-ocs-storage-prep#odf-uninstall)
+
+    * [Troubleshooting](/docs/openshift?topic=openshift-ocs-storage-prep#odf-ts-bp)
+
 * [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
 
 
@@ -4537,6 +4553,8 @@ subcollection: openshift
 * [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
 
 * [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-cli-vpc)
+
+* [Installing the add-on from Terraform](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-terraform-vpc)
 
 * [Creating your ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
 

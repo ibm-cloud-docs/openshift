@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-10-10"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
 
@@ -218,26 +218,6 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     {: screen}
 
 
-1. Identify the Persistent Volume (PV) associated with the Persistent Volume Claim (PVC).
-
-    ```sh
-    oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    PV_NAME 1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
-    ```
-    {: screen}
-
-1. If there is a PV in Released state, delete it.
-    ```sh
-    oc delete pv PERSISTENT-VOLUME
-    ```
-    {: pre}
-
 ## Clean up the resources from the old node
 {: #cleanup-os-storage-classic}
 {: step}
@@ -250,26 +230,14 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     ```
     {: pre}
 
-1. Identify the Persistent Volume (PV) associated with the Persistent Volume Claim (PVC) from old node:
-    ```sh
-    oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
-    ```
-    {: pre}
-
-    If there is a PV in Released state, delete it:
-
-    ```sh
-    oc delete pv <persistent_volume>
-    ```
-    {: pre}
 
 1. Remove the failed OSD from the cluster. You can specify multiple failed OSDs if required:
     ```sh
-    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> [-p FORCE_OSD_REMOVAL=true] | oc create -f OSD-ID,OSD-ID, OSD-ID
+    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> -p FORCE_OSD_REMOVAL=true | oc create -f -
     ```
     {: pre}
 
-    The `FORCE_OSD_REMOVAL` value must be changed to `true` in clusters that have only three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
+    The `FAILED_osd_id` value is the integer in the pod name immediately after the `rook-ceph-osd` prefix. The `FORCE_OSD_REMOVAL` value must be changed to `true` in clusters that have only three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
     {: note}
 
 1. Verify that the OSD was removed successfully by checking the status of the ocs-osd-removal-job pod.
@@ -290,6 +258,19 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     2023-03-10 06:50:04.501511 I | cephosd: completed removal of OSD 0
     ```
     {: screen}
+
+1. Identify the Persistent Volume (PV) associated with the Persistent Volume Claim (PVC) from old node:
+    ```sh
+    oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
+    ```
+    {: pre}
+
+    If there is a PV in Released state, delete it:
+
+    ```sh
+    oc delete pv <persistent_volume>
+    ```
+    {: pre}
 
 ## Add the new storage nodes
 {: #add-storage-node-classic}

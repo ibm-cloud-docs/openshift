@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-10-10"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -102,6 +102,15 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 {: #odf-create-hscrypto-classic}
 
 If you want to set up encryption, create an instance of {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials.
+
+Your API key for {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} must have the following minimum required permissions:
+:   `Reader`
+:   `Reader Plus`
+
+If you are using cluster wide encryption and storage class encryption, your API key must have the following required permissions:
+:   `Reader`
+:   `Reader Plus`
+:   `Writer` 
 
 Storage class encryption is available only for versions `4.10.0` and later of OpenShift Data Foundation.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-10-10"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -158,6 +158,14 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
         sleep 20
         oc delete pods -n openshift-storage --all --force --grace-period=0
         sleep 20
+        for item in `oc get csiaddonsnodes.csiaddons.openshift.io -n openshift-storage| awk 'NR>1 {print $1}'`;
+        do
+        kubectl -n openshift-storage patch csiaddonsnodes.csiaddons.openshift.io/$item -p '{"metadata":{"finalizers":[]}}' --type=merge
+        done
+        kubectl -n openshift-storage patch configmap/rook-ceph-mon-endpoints -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch secret/rook-ceph-mon -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch storagesystems.odf.openshift.io/ocs-storagecluster-storagesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
+
         ```
         {: codeblock}
 
@@ -188,6 +196,14 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
         kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
         sleep 20
         oc delete pods -n local-storage --all --force --grace-period=0
+        for item in `oc get csiaddonsnodes.csiaddons.openshift.io -n openshift-storage| awk 'NR>1 {print $1}'`;
+        do
+        kubectl -n openshift-storage patch csiaddonsnodes.csiaddons.openshift.io/$item -p '{"metadata":{"finalizers":[]}}' --type=merge
+        done
+        kubectl -n openshift-storage patch configmap/rook-ceph-mon-endpoints -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch secret/rook-ceph-mon -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n openshift-storage patch storagesystems.odf.openshift.io/ocs-storagecluster-storagesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
+
         ```
         {: codeblock}
 
