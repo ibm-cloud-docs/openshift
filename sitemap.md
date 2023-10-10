@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
 
+    * [9 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct923)
+
+        * Worker node fix packs are available.
+
     * [4 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct423)
 
         * Cluster autoscaler add-on version `1.0.9_134`.
