@@ -2287,21 +2287,6 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 
-## Creating a private-only cluster in VPC by using a template
-{: #sitemap_creating_a_private-only_cluster_in_vpc_by_using_a_template}
-
-
-[Creating a private-only cluster in VPC by using a template](/docs/openshift?topic=openshift-templates#templates)
-
-* [Resources that are created from the template](/docs/openshift?topic=openshift-templates#sch-tf-resources-created)
-
-* [Creating a secure cluster by using a template from the UI](/docs/openshift?topic=openshift-templates#sch-secure-cluster-ui)
-
-* [Creating a secure cluster by using a template with the CLI](/docs/openshift?topic=openshift-templates#tf-secure-cluster-cli)
-
-* [Next steps](/docs/openshift?topic=openshift-templates#sch-tf-whats-next)
-
-
 ## Installing the CLI
 {: #sitemap_installing_the_cli}
 
