@@ -272,9 +272,13 @@ subcollection: openshift
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
 
+    * [10 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1023)
+
+        * [New]{: tag-green} Best practices for OpenShift Data Foundation
+
     * [9 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct923)
 
-        * Worker node fix packs are available.
+        * [Change log]{: tag-purple} Worker node fix packs are available.
 
     * [4 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct423)
 
