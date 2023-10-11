@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-11"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -348,7 +348,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
 ## Installing the add-on from Terraform
 {: #install-odf-terraform-vpc}
-{: Terraform}
+{: terraform}
 
 
 **Before you begin:**
@@ -359,7 +359,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
     Example Terraform provider file. 
 
-    ```sh
+    ```terraform
     terraform {
     required_providers {
         ibm = {
@@ -379,7 +379,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 1. Create a Terraform configuration file for the ODF addon. Save the file in your Terraform directory.
 
   Example configuration file.
-    ```sh
+    ```terraform
     ibmcloud_api_key = "" # Enter your API Key
     cluster = "" # Enter the Cluster ID
     region = "us-south" # Enter the region
