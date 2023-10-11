@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-11"
 
 keywords: openshift
 subcollection: openshift
@@ -274,7 +274,9 @@ subcollection: openshift
 
     * [10 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1023)
 
-        * [New]{: tag-green} Best practices for OpenShift Data Foundation
+        * CLI version `1.0.573` is available.
+
+        * Best practices for OpenShift Data Foundation
 
     * [9 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct923)
 
@@ -5570,6 +5572,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version 0.1.573](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01573)
 
 * [Version v1.0.566](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10566)
 

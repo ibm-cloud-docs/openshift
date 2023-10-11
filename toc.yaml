@@ -431,6 +431,7 @@ toc:
               - ts-webhook-debug.md
               - ts-cluster-master.md
               - ts-cluster-debug-ocp.md
+              - ts-cluster-downlevel.md
               - states-cluster.md
               - ts-cluster-cli.md
               - ts-cluster-console-user.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-11"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -119,75 +119,73 @@ The Multicloud Object Gateway consists of the open source tool [NooBaa](https://
 ## Best practices
 {: #odf-best-practices}
 
-OpenShift Data Foundation is a highly available storage solution that consists of several open source operators and technologies like Ceph, NooBaa, and Rook. These operators allow you to provision and manage File, Block, and Object storage for your containerized workloads in Red Hat OpenShift on IBM Cloud clusters. ODF provides two types of storage provisioning, local disk or remote disk. This document outlines key recommendations and guidelines to consider when configuring ODF for your cluster. By following these best practices, you can maximize efficiency and minimize potential issues.
-
+Review the following sections for best practices when installing and managing ODF.
 ### Planning
 {: #planning-odf}
 
-Node distribution
-:   To ensure high availability, it is recommended to spread the ODF cluster across failure domains. This distribution helps minimize the impact of node failures and maintain the overall stability of the cluster.
+Plan your worker node distribution
+:   To ensure high availability, spread the ODF cluster across failure domains. This distribution helps minimize the impact of node failures and maintain the overall stability of the cluster.
 
-Node specifications
-:   The recommended host(node) configuration is 16 vCPUs and 64GB of RAM or higher. In IBM Cloud (classic ) recommended flavor
-is mb4c.32x384.3.8tb.ssd or higher variant.
+Meet the minimum worker node specifications
+:   Worker nodes that use ODF should have 16 vCPUs and 64GB of RAM or higher. For IBM Classic clusters, the recommended flavor is `mb4c.32x384.3.8tb.ssd` or higher.
 
-Standby host for high-availability
+Keep a standby host for high-availability
 :   To ensure high-availability and minimize downtime in the event of a host failure, it is advisable to always keep a standby host.
 
-Storage device count per node
-:   It is recommended to have fewer than nine storage devices per node. This limitation helps prevent potential bottlenecks and enhances the efficiency of data access and retrieval. Depending on the host configuration, it may be necessary to reduce the number of storage devices accordingly.
+Meet the storage device count per node recommendations
+:   Plan to have fewer than nine storage devices per node. This helps prevent potential bottlenecks and enhances the efficiency of data access and retrieval.
 
-Storage device size and count
-:   When deploying local storage, it is recommended to use disk sizes up to 4 TiB or smaller. It is important to ensure that all disks within the cluster, across all storage nodes, are of the same size and type for optimal use of storage.
+Use the recommended storage device sizes and counts
+:   When deploying local storage, use disk sizes of 4 TiB or smaller. It is important to ensure that all disks within the cluster, across all storage nodes, are of the same size and type for optimal use of storage.
 
-Replication factor and storage node configuration
-:   In OpenShift Data Foundation (ODF), the replication factor is set to 3 by default. It is recommended to add storage nodes in multiples of 3.
+Scale up by using default replication factor and storage node configuration
+:   In OpenShift Data Foundation (ODF), the replication factor is set to 3 by default. When you add capacity, plan to add storage nodes in multiples of 3.
 
-Remote storage vs local storage
-:   If you have lower storage needs or are using Virtual Server Instances, remote storage can be a convenient and cost-effective option. On the other hand, if you have large storage requirements, a bare metal cluster, or prioritize high- performance storage with low network latency, utilizing local storage would be more suitable.
+Choose the right set up for you rneeds: Remote storage vs local storage
+:   If you have lower storage needs or are using Virtual Server instances, remote storage can be a convenient and cost-effective option. On the other hand, if you have large storage requirements, a bare metal cluster, or high-performance storage with low network latency, that utilizes local storage would be more suitable.
 
-Auto-discovery feature for Classic clusters
-:   In classic clusters or environments with local storage, it is recommended to leverage the auto-discovery feature. The auto-discovery feature simplifies the provisioning process by automatically identifying and configuring the available disks for ODF. This eliminates the need for manual disk selection. Unless there are specific disk requirements for ODF provisioning, utilizing the auto-discovery feature streamlines the deployment process and reduces the potential for configuration errors.
+[Classic clusters]{: tag-classic-inf} Simplify your deployment by using auto-discovery feature
+:   In Classic clusters or environments with local storage, leverage the auto-discovery feature to automatically identify and configure the available storage disks in your cluster for ODF. This eliminates the need for manual disk selection. Unless there are specific disk requirements for ODF provisioning, utilizing the auto-discovery feature streamlines the deployment process and reduces the potential for configuration errors.
 
-Metro storage classes for ODF installations on remote storage
-:   When performing an ODF installation on remote storage, it is advisable to use storage class is having volumebindingmode as WaitForFirstConsumer which will delay the creation of the Block Storage until the first pod that uses this storage is ready to be scheduled.
+Use metro storage classes for ODF installations on remote storage
+:   When performing an ODF installation that uses remote storage, make sure you use a storage class that has a `VolumeBindingMode` of `WaitForFirstConsumer` which delays the creation of the Block Storage until the first pod that uses this storage is ready to be scheduled.
 
-Sizing
+Size your deployment
 :   For a detailed analysis of storage requirements, the Red Hat Online Cluster Storage Sizing Tool https://sizer.ocs.ninja/index.html can be used, which helps determine the appropriate storage capacity needed.
 
-Periodic backup
+Set up periodic backups
 :   Taking periodic backups for the ODF cluster is essential to ensure data protection and facilitate data recovery in the event of a disaster. Without regular backups, recovering data from a catastrophic event becomes significantly more challenging and may lead to permanent data loss.
 
 ### Deployment
 {: #odf-deploy}
 
-Dedicated storage nodes
-:   In scenarios with heavy workloads, it is highly recommended to employ dedicated storage nodes. By separating the operations of storage nodes, you can achieve better performance and scalability for your storage infrastructure.
+Plan to use dedicated storage nodes
+:   In scenarios with heavy workloads, use dedicated storage nodes for ODF. By separating the operations of storage nodes, you can achieve better performance and scalability for your storage infrastructure.
 
-Regular monitoring of RedHat console
+Set up regular monitoring of the Red Hat console
 :   The RedHat console provides valuable insights into the health and performance of your ODF environment. It is recommended to regularly monitor the console to stay informed about any potential issues. The console triggers alerts whenever there are problems detected with ODF, enabling you to take proactive measures.
 
-Promptly addressing capacity warnings
+Address capacity warnings promptly
 :   When capacity warnings are issued, it is important to address them promptly. Ignoring or delaying action on these warnings can lead to storage capacity constraints and potential disruptions to your workloads. Treat capacity warnings as an opportunity to assess your storage needs and take appropriate measures to mitigate any potential issues.
 
 ### Capacity expansion
 {: #odf-capacity}
  
-Options for capacity expansion
+Understand your options for capacity expansion
 :   There are two options available for capacity expansion in ODF. The first option involves increasing the capacity by adding more OSDs (Object Storage Daemons) on existing nodes within the cluster. This allows for utilizing the available resources to expand the storage capacity. The second option is to expand the capacity by adding new nodes to the cluster. Once the number of OSDs is increased, the OSDs will automatically be provisioned on the newly added nodes.
 
 ### Update
 {: #odf-best-practices}
 
 
-ODF health check before replacing nodes
-: It is important to avoid replacing a storage node if ODF is not in a healthy state. Before proceeding with node replacement, always verify the health status of ODF, if required replace the unhealthy node.
+Perform health checks replacing nodes
+:   Avoid replacing a storage node if ODF is not in a healthy state. Before proceeding with node replacement, always verify the health status of ODF. Try to esolve any issues before replacing the unhealthy node.
 
-Cluster version updates
-: It is highly recommended to keep your cluster version updated to the default or latest version available. Staying up to date with the cluster version ensures that you can leverage the latest capabilities and maintain compatibility with other components in your environment.
+Keep your environment up-to-date
+:   Keep your cluster version updated to the default or latest version available. Staying up to date with the cluster version ensures that you can leverage the latest capabilities and maintain compatibility with other components in your environment.
 
-Updating ODF after cluster upgrades
-:   Always upgrade cluster master and workers node first and then go for ODF upgrade. After completing a cluster upgrade, it is essential to update ODF as well. Although ODF supports both the current cluster version (n) and the next cluster version (n+1), it is recommended to keep the ODF version the same as the cluster version. This alignment ensures optimal compatibility.
+Perform ODF updates after cluster upgrades
+:   Always upgrade cluster master and workers node first and then go for ODF upgrade. After completing a cluster upgrade, it is essential to update ODF as well. Although ODF supports both the current cluster version (n) and the next cluster version (n+1), keep the ODF version the same as the cluster version. This alignment ensures optimal compatibility.
 
 Upgrade storage nodes sequentially
 :   When upgrading your storage nodes, it is best practice to perform the upgrades one by one. This sequential approach allows you to verify the status of ODF after each node upgrade and ensures that your storage infrastructure remains healthy throughout the process. By upgrading nodes individually, you can closely monitor the impact of each upgrade on ODF and quickly identify and resolve any issues that may arise.
@@ -195,10 +193,10 @@ Upgrade storage nodes sequentially
 ### Recovery
 {: #odf-removery}
 
-Recovery process
+Replace unhealthy hosts
 :   In the event of a local disaster, it is recommended that an unhealthy cluster host be replaced with a healthy one.
 
-OSD down
+Follow the documentation to recover OSDs
 :   When an OSD (Object Storage Daemon) goes down in OpenShift Data Foundation (ODF), it is important to follow the recommended steps for recovery. The provided documentation from IBM Cloud Platform provides detailed instructions on how to recover an OSD in such situations.
 
 ### Uninstalling and removal
@@ -207,16 +205,16 @@ OSD down
 Deleting pods and persistent volumes (PVs)
 :   When deleting resources that utilize ODF storage classes, it is important to follow the recommended procedure. Always delete the associated pods and PVs created using OF storage classes before proceeding with the deletion of other resources.
 
-Cleanup order
-:   When decommissioning or removing ODF from your cluster, it is advisable to follow a specific when cleaning up resources. Start by deleting the ocscluster resource, which is responsible for managing the ODF. Once the ocscluster resource is removed, proceed to remove the ODF addon from the IBM console. Following this sequence ensures a smooth and proper removal of ODF from your cluster, preventing any potential issues or conflicts.
+Follow the correct cleanup order
+:   When decommissioning or removing ODF from your cluster, make sure you follow the documentation when cleaning up resources. Start by deleting the `ocscluster` resource, which is responsible for managing the ODF. Once the `ocscluster` resource is removed, proceed to remove the ODF add-on from the IBM console. Following this sequence ensures a smooth and proper removal of ODF from your cluster, preventing any potential issues or conflicts.
 
 ### Troubleshooting
 {: #odf-ts-bp}
 
-Capacity alerts and thresholds
+Review the capacity alerts and thresholds
 :   ODF generates capacity alerts when the cluster storage capacity reaches certain thresholds. These thresholds are set at 75% (near-full) and 85% (full) of the total capacity. These alerts indicate that the storage capacity is approaching its limits and requires attention.
 
-Common issues
+Review the common issues
 :   When encountering issues with OpenShift Data Foundation (ODF), it is helpful to refer to the available runbooks that provide guidance on troubleshooting common problems. The runbooks contain a comprehensive list of known issues and their corresponding solutions for ODF.
 
   
