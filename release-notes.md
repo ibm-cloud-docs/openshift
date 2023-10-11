@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-11"
 
 keywords: openshift, kubernetes, release notes
 
@@ -35,9 +35,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-oct1023}
 {: release-note}
 
+CLI version `1.0.573` is available.
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
-[New]{: tag-green} Best practices for OpenShift Data Foundation
+
+Best practices for OpenShift Data Foundation
 :   For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 

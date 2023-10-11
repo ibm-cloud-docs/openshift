@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-10-11"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -32,6 +32,15 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version 0.1.573
+{: #cli-01573}
+
+
+Version 0.1.573 of the CLI was released on 10 October 2023.
+:  Deprecates the various `logging` commands.
+:  Updates the help text in various languages.
+
 
 ## Version v1.0.566
 {: #cli-10566}
@@ -1016,5 +1025,8 @@ Version 0.1.590 of the CLI was released on 1 October 2018.
 - Adds the [`ibmcloud oc key-protect-enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms) to enable {{site.data.keyword.keymanagementserviceshort}} as a key management service (KMS) provider in your cluster. 
 - Adds the `--skip-master-health` option to the [ibmcloud oc worker reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) and [ibmcloud oc worker reload](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) commands to skip the master health check before initiating the reboot or reload. 
 - Renames `Owner Email` to `Owner` in the output of `ibmcloud oc cluster get`.
+
+
+
   
   
