@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-10-12"
 
 keywords: object storage, plug-in, change log
 
@@ -29,12 +29,19 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.19 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.18 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.17 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.16 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.15 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.14 | Deprecated | Greater than or equal to 4.6 | x86 |
+| 2.2.17 | Deprecated | Greater than or equal to 4.6 | x86 |
+| 2.2.16 | Deprecated | Greater than or equal to 4.6 | x86 |
+| 2.2.15 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.19, released 12 October 2023
+{: #02219_object_plugin}
+
+- Updates UBI image to `8.8-1072`
+- Resolves the following CVEs: [CVE-2023-29491](https://nvd.nist.gov/vuln/detail/CVE-2023-29491){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, and [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}.
+
 
 ## Change log for version 2.2.18, released 7 September 2023
 {: #02218_object_plugin}
