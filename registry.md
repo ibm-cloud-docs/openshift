@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-12"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -738,14 +738,14 @@ Before you begin
 2. Make sure that you have the following permissions: {{site.data.keyword.cloud_notm}} IAM **Operator or Administrator** platform access role for {{site.data.keyword.openshiftlong_notm}}. The account owner can give you the role by running the following command.
 
     ```sh
-    ibmcloud iam user-policy-create <your_user_email> --service-name containers-kubernetes --roles <(Administrator|Operator)>
+    ibmcloud iam user-policy-create EMAIL --service-name containers-kubernetes --roles "Administrator,Operator"
     ```
     {: pre}
 
 3. {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.registrylong_notm}}, across all regions and resource groups. The policy can't be scoped to a particular region or resource group. The account owner can give you the role by running the following command.
 
-    ```shfVerify that the secret was created successfully
-    
+    Verify that the secret was created successfully
+    ```sh
     ibmcloud iam user-policy-create <your_user_email> --service-name container-registry --roles Administrator
     ```
     {: pre}
