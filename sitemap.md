@@ -7510,7 +7510,7 @@ subcollection: openshift
 {: #sitemap_version_48}
 
 
-[4.8 version information and update actions (Deprecated)](/docs/openshift?topic=openshift-cs_versions_48#cs_versions_48)
+[4.8 version information and update actions](/docs/openshift?topic=openshift-cs_versions_48#cs_versions_48)
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_48#release_timeline_48)
 

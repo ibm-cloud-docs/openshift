@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-10-13"
 
 keywords: openshift, benchmarks, 4.9
 
@@ -19,8 +19,8 @@ subcollection: openshift
 # {{site.data.keyword.openshiftlong_notm}} version 4.9 CIS Kubernetes Benchmark
 {: #cis-benchmark-49}
 
-This version is deprecated.
-{: deprecated}
+Version 4.9 is no longer supported Update your cluster to at least [version 4.10](/docs/openshift?topic=openshift-cs_versions_410&interface=ui) as soon as possible.
+{: important}
 
 The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/){: external} as a framework of specific steps to configure Kubernetes more securely and with standards that are commensurate to various industry regulations. This document contains the results of the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftlong_notm}} version 4.9. For more information or help understanding the benchmark, see [Using the benchmark](/docs/openshift?topic=openshift-cis-benchmark).
 {: shortdesc}
