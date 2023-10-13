@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-10-13"
 
 keywords: openshift
 
@@ -71,11 +71,29 @@ If you are using the **{{site.data.keyword.cis_full_notm}}** provider, you must 
 
 Your DNS credentials are required to create or add a domain with external providers, such as Cloudflare or Akamai. {{site.data.keyword.openshiftlong_notm}} uses these credentials to provision or access a domain from the external provider on your behalf. You must use the same set of credentials for each domain in a cluster.
 
-Different providers might require different credentials, such as access tokens or secrets. {{site.data.keyword.openshiftlong_notm}} does not provide the credentials; you must acquire them from the external provider. The required credentials for each provider are shown in the console when you select that provider.
+Different providers might require different credentials, such as access tokens or secrets. {{site.data.keyword.openshiftlong_notm}} does not provide the credentials; you must acquire them from the external provider. 
+
+#### Required credentials for Akamai
+{: #ingress-domains-ui-credentials-akamai}
+
+Follow the steps to find the required Akamai credentials. 
+
+1. Gather the required access token, client token, client secret, and host from Akamai by following the steps to [create authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials){: external} in the Akamai documentation.
+
+2. In your Akamai account dashboard, find the DNS zone to add to your provider credentials. Note the full zone name, such as `example.external.adppdomain.cloud`.
+
+#### Required credentials for Cloudflare
+{: #ingress-domains-ui-credentials-cloudflare}
+
+Follow the steps to find the required Cloudflare credentials. 
+
+1. Find the Cloudflare API access token to add to your provider credentials. For more information, see [Create an API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/){: external} in the Cloudflare documentation. 
+
+2. In your Cloudflare account, find the DNS zone to add to your provider credentials. For steps to find the DNS zone, see [Find zone and account IDs](https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/){: external} in the Cloudflare documentation. 
 
 ## Managing your domain in the console
 {: #ingress-domains-ui-manage}
-{: #ui}
+{: ui}
 
 You can complete the following actions to manage your domain. 
 
@@ -192,10 +210,16 @@ Different providers might require different credentials, such as access tokens o
 ### Adding Akamai credentials
 {: #ingress-domains-ext-cred-ak}
 
-[Akamai]{: tag-blue} Run the command to add Akamai provider credentials to your cluster.
+[Akamai]{: tag-blue} Add Akamai provider credentials to your cluster.
 
 Note that registering credentials for Akamai requires the `READ-WRITE` permission for `/config-dns endpoint` in your external Akamai account.
 {: note}
+
+1. Gather the required access token, client token, client secret, and host from Akamai by following the steps to [create authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials){: external} in the Akamai documentation.
+
+2. In your Akamai account dashboard, find the DNS zone to add to your provider credentials. Note the full zone name, such as `example.external.adppdomain.cloud`.
+
+3. Run the following command to add the provider credentials to your cluster. Specify the token, secret, and DNS zone values you found in the previous steps.
 
 ```sh
 ibmcloud oc ingress domain credential set akamai --cluster CLUSTER --access-token TOKEN --client-secret SECRET --client-token TOKEN --host HOST --zone AKAMAI_ZONE [-q] 
@@ -218,21 +242,27 @@ This command is only required when creating an external domain with the Akamai p
 :    The client token for the Akamai API Client credentials. This token is provided by Akamai. 
 
 `--host HOST`
-:    The host for the Akamai API Client credentials. 
+:    The host for the Akamai API Client credentials. This value is provided by Akamai. 
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
 `--domain-zone ZONE`
-:    The DNS zone that exists in your Akamai account and is specified in your [provider credentials](#ingress-domains-ext-cred). Specify the full zone name, such as `example.external.adppdomain.cloud`.
+:    The DNS zone that exists in your Akamai account. Specify the full zone name, such as `example.external.adppdomain.cloud`.
 
 ### Adding Cloudflare credentials
 {: #ingress-domains-ext-cred-cf}
 
-[Cloudflare]{: tag-red} Run the command to add Cloudflare provider credentials to your cluster. 
+[Cloudflare]{: tag-red} Add Cloudflare provider credentials to your cluster. 
 
 Note that registering credentials for Cloudflare requires the following permissions in your external Cloudflare account: `Zone Settings: Read`, `Zone: Read`, `DNS: Read`, `Zone: Edit`, `DNS: Edit`, `API Tokens: Read`.
 {: note}
+
+1. Find the Cloudflare API access token to add to your provider credentials. For more information, see [Create an API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/){: external} in the Cloudflare documentation. 
+
+2. In your Cloudflare account, find the DNS zone to add to your provider credentials. For steps to find the DNS zone, see [Find zone and account IDs](https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/){: external} in the Cloudflare documentation. 
+
+3. Run the following command to add the provider credentials to your cluster. Specify the access token and DNS zone values you found in the previous steps.
 
 ```sh
 ibmcloud oc ingress domain credential set cloudflare --cluster CLUSTER --token TOKEN --zone CLOUDFLARE_ZONE [-q]

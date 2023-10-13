@@ -4087,7 +4087,7 @@ subcollection: openshift
 
     * [Credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-credentials)
 
-* [Managing your domain in the console](/docs/openshift?topic=openshift-ingress-domains#ui)
+* [Managing your domain in the console](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-manage)
 
 * [Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-int)
 
