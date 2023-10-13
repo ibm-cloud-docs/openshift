@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-12"
+lastupdated: "2023-10-13"
 
 keywords: openshift
 subcollection: openshift
@@ -4087,7 +4087,7 @@ subcollection: openshift
 
     * [Credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-credentials)
 
-* [Managing your domain in the console](/docs/openshift?topic=openshift-ingress-domains#ui)
+* [Managing your domain in the console](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-manage)
 
 * [Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-int)
 
@@ -6500,6 +6500,8 @@ subcollection: openshift
 * [istio 1.17](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.17)
 
 * [istio 1.18](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.18)
+
+* [istio 1.19](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.19)
 
 * [openshift-data-foundation 4.10.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.10.0)
 
