@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-13"
+lastupdated: "2023-10-16"
 
 keywords: openshift
 subcollection: openshift
@@ -3642,13 +3642,17 @@ subcollection: openshift
     * [Example daemonset to update a containerd custom registry configuration](/docs/openshift?topic=openshift-registry#ds-example-registry)
 
 
-## Setting up continuous integration and delivery
-{: #sitemap_setting_up_continuous_integration_and_delivery}
+## Continuous integration and delivery for app development and deployment
+{: #sitemap_continuous_integration_and_delivery_for_app_development_and_deployment}
 
 
-[Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd#cicd)
+[Continuous integration and delivery for app development and deployment](/docs/openshift?topic=openshift-cicd#cicd)
 
-* [Other resources](/docs/openshift?topic=openshift-cicd#cicd-other)
+* [Before you begin](/docs/openshift?topic=openshift-cicd#cicd_before)
+
+* [Creating a toolchain with Delivery Pipeline](/docs/openshift?topic=openshift-cicd#cicd_toolchain)
+
+* [Other resources for automating your pipeline](/docs/openshift?topic=openshift-cicd#cicd-other)
 
 
 ## Developing and deploying apps

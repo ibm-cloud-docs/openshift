@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-16"
 
 keywords: openshift, continuous integration and delivery
 
@@ -14,10 +14,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
-
-
-# Setting up continuous integration and delivery
+# Continuous integration and delivery for app development and deployment
 {: #cicd}
 
 With {{site.data.keyword.cloud_notm}} and other open source tools, you can set up continuous integration and delivery (CI/CD), version control, tool chains, and more to help automate app development and deployment.
@@ -25,15 +22,21 @@ With {{site.data.keyword.cloud_notm}} and other open source tools, you can set u
 
 Continuous integration (CI) can help you detect errors early, ensure early system integration, and improve collaboration in your development process. Continuous delivery (CD) is a practice by which you build and deploy your software so that it can be released into production at any time. By automating your continuous integration and delivery processes through setting up CI/CD pipelines, you can achieve repeatability in code releases and greater predictability in delivery schedules.
 
-Adopt a DevOps approach by using {{site.data.keyword.deliverypipelinelong}}, which includes open toolchains that automate the building and deployment of containerized apps.
+Adopt a DevOps approach by using {{site.data.keyword.deliverypipelinelong}}, which includes open toolchains that automate the building and deployment of containerized apps.  
 
+## Before you begin
+{: #cicd_before}
 
-Before you begin, make sure that you have at least the following permissions in {{site.data.keyword.cloud_notm}} IAM:
+Before you begin, make sure that you have at least the following permissions in {{site.data.keyword.cloud_notm}} IAM.
+
 - **Editor** platform access role and **Writer** service access role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
 - **Viewer** platform access role to the resource group of the cluster where you want to create the toolchain.
 - **Editor** platform access role to the **Toolchain** service (note that this service is separate than **Continuous Delivery**).
 
-To add a continuous delivery pipeline to your cluster,
+## Creating a toolchain with Delivery Pipeline
+{: #cicd_toolchain}
+
+Follow these steps to create a CI/CD pipeline with a toolchain. A toolchain is a set of tool integrations that support development, deployment, and operations tasks. When configuring the toolchain you can include and configure a Delivery Pipeline that is automatically created and triggered after the toolchain is created.
 
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to set up a continuous delivery pipeline.
 2. Select the **DevOps** tab.
@@ -53,13 +56,10 @@ For a deep dive into the benefits and specifics of automating continuous integra
 {: tip}
 
 
-
-
-## Other resources
+## Other resources for automating your pipeline
 {: #cicd-other}
 
-To automate your CI/CD pipeline, check out the following integrations and tools.
-
+Check out the following integrations and tools that you can use to automate your CI/CD pipeline. 
 
 Codeship
 :   You can use [Codeship](https://www.cloudbees.com/products/codeship){: external} for the continuous integration and delivery of containers. For more information, see [Using Codeship Pro To Deploy Workloads to {{site.data.keyword.containerlong_notm}}](https://www.ibm.com/cloud/blog/using-codeship-pro-deploy-workloads-ibm-container-service){: external}.
