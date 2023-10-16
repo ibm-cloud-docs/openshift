@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-10-13"
 
 keywords: openshift, version, update, upgrade
 
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# 4.8 version information and update actions (Deprecated)
+# 4.8 version information and update actions
 {: #cs_versions_48}
 
 Review information about version 4.8 of {{site.data.keyword.openshiftlong_notm}}, released 29 Sept 2021. This version is based on Kubernetes version 1.21. 
