@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-11"
+lastupdated: "2023-10-17"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -141,8 +141,8 @@ Use the recommended storage device sizes and counts
 Scale up by using default replication factor and storage node configuration
 :   In OpenShift Data Foundation (ODF), the replication factor is set to 3 by default. When you add capacity, plan to add storage nodes in multiples of 3.
 
-Choose the right set up for you rneeds: Remote storage vs local storage
-:   If you have lower storage needs or are using Virtual Server instances, remote storage can be a convenient and cost-effective option. On the other hand, if you have large storage requirements, a bare metal cluster, or high-performance storage with low network latency, that utilizes local storage would be more suitable.
+Choose the right set up for your needs: Remote storage vs local storage
+:   If you have lower storage needs or are using Virtual Server instances, remote storage can be a convenient and cost-effective option. On the other hand, if you have large storage requirements, a bare metal cluster, or high-performance storage with low network latency, that uses local storage would be more suitable.
 
 [Classic clusters]{: tag-classic-inf} Simplify your deployment by using auto-discovery feature
 :   In Classic clusters or environments with local storage, leverage the auto-discovery feature to automatically identify and configure the available storage disks in your cluster for ODF. This eliminates the need for manual disk selection. Unless there are specific disk requirements for ODF provisioning, utilizing the auto-discovery feature streamlines the deployment process and reduces the potential for configuration errors.
@@ -179,7 +179,7 @@ Understand your options for capacity expansion
 
 
 Perform health checks replacing nodes
-:   Avoid replacing a storage node if ODF is not in a healthy state. Before proceeding with node replacement, always verify the health status of ODF. Try to esolve any issues before replacing the unhealthy node.
+:   Avoid replacing a storage node if ODF is not in a healthy state. Before proceeding with node replacement, always verify the health status of ODF. Try to resolve any issues before replacing the unhealthy node.
 
 Keep your environment up-to-date
 :   Keep your cluster version updated to the default or latest version available. Staying up to date with the cluster version ensures that you can leverage the latest capabilities and maintain compatibility with other components in your environment.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-12"
+lastupdated: "2023-10-17"
 
 keywords: openshift, kubernetes, release notes
 
@@ -29,14 +29,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## October 2023
 {: #openshift-oct23}
 
-### 11 October 2023
-{: #openshift-oct1223}
+
+### 17 October 2023
+{: #openshift-oct1723}
 {: release-note}
 
-Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
+[Change log]{: tag-purple} Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
 :   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
-{{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
+
+
+### 11 October 2023
+{: #openshift-oct1123}
+{: release-note}
+
+[Change log]{: tag-purple} Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
+:   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
+
+[Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
@@ -46,12 +56,12 @@ Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
 {: #openshift-oct1023}
 {: release-note}
 
-CLI version `1.0.573` is available.
+[Change log]{: tag-purple} CLI version `1.0.573` is available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
-Best practices for OpenShift Data Foundation
+[New]{: tag-green} Best practices for OpenShift Data Foundation
 :   For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 
