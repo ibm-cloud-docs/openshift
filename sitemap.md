@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-16"
+lastupdated: "2023-10-17"
 
 keywords: openshift
 subcollection: openshift
@@ -272,17 +272,21 @@ subcollection: openshift
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
 
-    * [11 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1223)
+    * [17 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1723)
 
-        * Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
+        * [Change log]{: tag-purple} Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
 
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
+    * [11 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1123)
+
+        * [Change log]{: tag-purple} Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
+
+        * [Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
 
     * [10 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1023)
 
-        * CLI version `1.0.573` is available.
+        * [Change log]{: tag-purple} CLI version `1.0.573` is available.
 
-        * Best practices for OpenShift Data Foundation
+        * [New]{: tag-green} Best practices for OpenShift Data Foundation
 
     * [9 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct923)
 
