@@ -272,6 +272,8 @@ subcollection: openshift
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
 
+    * [18 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1823)
+
     * [17 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1723)
 
         * [Change log]{: tag-purple} Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
@@ -9236,6 +9238,8 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-next)
 
 [Why does the Ingress status show an `ERRSEIPM` error?](/docs/openshift?topic=openshift-ts-ingress-errseipm#ts-ingress-errseipm)
+
+[Why does the Ingress status show an `ERRSAM` error?](/docs/openshift?topic=openshift-ts-ingress-errsam#ts-ingress-errsam)
 
 [Why does the Ingress status show an `ERRSAMO` error?](/docs/openshift?topic=openshift-ts-ingress-errsamo#ts-ingress-errsamo)
 
