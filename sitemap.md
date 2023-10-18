@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-18"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
+
+    * [18 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1823)
+
+        * [Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1921`.
 
     * [17 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1723)
 
@@ -4524,7 +4528,7 @@ subcollection: openshift
 
 * [Cold](/docs/openshift?topic=openshift-storage_cos_reference#cold)
 
-* [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
+* [Smart](/docs/openshift?topic=openshift-storage_cos_reference#smart)
 
 
 ## Setting up OpenShift Data Foundation
@@ -7223,6 +7227,8 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
 
+    * [Version 1.0.0_1921, released on 18 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_1921)
+
     * [Version 1.0.0_1831, released on 3 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1831)
 
     * [Version 1.0.0_1701, released on 13 July 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1701)
@@ -9236,6 +9242,8 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-ts-ingress-erriodeg#ts-ingress-erriodeg-next)
 
 [Why does the Ingress status show an `ERRSEIPM` error?](/docs/openshift?topic=openshift-ts-ingress-errseipm#ts-ingress-errseipm)
+
+[Why does the Ingress status show an `ERRSAM` error?](/docs/openshift?topic=openshift-ts-ingress-errsam#ts-ingress-errsam)
 
 [Why does the Ingress status show an `ERRSAMO` error?](/docs/openshift?topic=openshift-ts-ingress-errsamo#ts-ingress-errsamo)
 

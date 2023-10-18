@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-19"
+lastupdated: "2023-10-18"
 
 keywords: openshift
 
@@ -95,15 +95,15 @@ Billing
 Pricing
 :   Review the [pricing documentation](https://cloud.ibm.com/objectstorage/create){: external}.
 
-## Flex
-{: #flex}
+## Smart
+{: #smart}
 
 
 Name
-:   `ibmc-s3fs-flex-cross-region`
-:   `ibmc-s3fs-flex-perf-cross-region`
-:   `ibmc-s3fs-flex-regional`
-:   `ibmc-s3fs-flex-perf-regional`
+:   `ibmc-s3fs-smart-cross-region`
+:   `ibmc-s3fs-smart-perf-cross-region`
+:   `ibmc-s3fs-smart-regional`
+:   `ibmc-s3fs-smart-perf-regional`
 
 Default resiliency endpoint
 :   The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).

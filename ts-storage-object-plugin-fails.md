@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-10-18"
 
 keywords: openshift
 
@@ -30,7 +30,7 @@ When you install the `ibm-object-storage-plugin`, the installation fails with an
 {: tsSymptoms}
 
 ```sh
-Error: rendered manifest contains a resource that already exists. Unable to continue with install. Existing resource conflict: namespace: , name: ibmc-s3fs-flex-cross-region, existing_kind: storageClass, new_kind: storage.k8s.io/v1, Kind=StorageClass
+Error: rendered manifest contains a resource that already exists. Unable to continue with install. Existing resource conflict: namespace: , name: ibmc-s3fs-smart-cross-region, existing_kind: storageClass, new_kind: storage.k8s.io/v1, Kind=StorageClass
 Error: plugin "ibmc" exited with error
 ```
 {: screen}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-18"
 
 keywords: openshift
 
@@ -373,10 +373,10 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     ```sh
     ibmc-s3fs-cold-cross-region            ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-cold-regional                ibm.io/ibmc-s3fs   8m
-    ibmc-s3fs-flex-cross-region            ibm.io/ibmc-s3fs   8m
-    ibmc-s3fs-flex-perf-cross-region       ibm.io/ibmc-s3fs   8m
-    ibmc-s3fs-flex-perf-regional           ibm.io/ibmc-s3fs   8m
-    ibmc-s3fs-flex-regional                ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-smart-cross-region            ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-smart-perf-cross-region       ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-smart-perf-regional           ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-smart-regional                ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-standard-cross-region        ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-standard-perf-cross-region   ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-standard-perf-regional       ibm.io/ibmc-s3fs   8m
@@ -509,10 +509,10 @@ Review the pod details to verify that the plug-in installation succeeded.
     ```sh
     ibmc-s3fs-cold-cross-region            ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-cold-regional                ibm.io/ibmc-s3fs   8m
-    ibmc-s3fs-flex-cross-region            ibm.io/ibmc-s3fs   8m
-    ibmc-s3fs-flex-perf-cross-region       ibm.io/ibmc-s3fs   8m
-    ibmc-s3fs-flex-perf-regional           ibm.io/ibmc-s3fs   8m
-    ibmc-s3fs-flex-regional                ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-smart-cross-region            ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-smart-perf-cross-region       ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-smart-perf-regional           ibm.io/ibmc-s3fs   8m
+    ibmc-s3fs-smart-regional                ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-standard-cross-region        ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-standard-perf-cross-region   ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-standard-perf-regional       ibm.io/ibmc-s3fs   8m

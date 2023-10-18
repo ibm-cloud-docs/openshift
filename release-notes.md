@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-18"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2023
 {: #openshift-oct23}
+
+
+
+### 18 October 2023
+{: #openshift-oct1823}
+{: release-note}
+
+
+
+[Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1921`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+  
+
+
+
 
 
 ### 17 October 2023
