@@ -4528,7 +4528,7 @@ subcollection: openshift
 
 * [Cold](/docs/openshift?topic=openshift-storage_cos_reference#cold)
 
-* [Flex](/docs/openshift?topic=openshift-storage_cos_reference#flex)
+* [Smart](/docs/openshift?topic=openshift-storage_cos_reference#smart)
 
 
 ## Setting up OpenShift Data Foundation
