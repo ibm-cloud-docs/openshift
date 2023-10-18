@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023
-lastupdated: "2023-10-13"
+lastupdated: "2023-10-18"
 
 keywords: flow logs, VPC monitoring, worker nodes, VPC, network traffic, collector, LinuxONE worker nodes, s390x architecture, fluentd, log Analysis
 
@@ -22,9 +22,6 @@ subcollection: openshift
 
 You can configure a logging agent by using Fluentd in your cluster, and then the Fluentd based agent collects logs from the paths in the LinuxONE worker nodes. Fluentd can then forward these logs to your {{site.data.keyword.la_full_notm}} service instance, so that you can view logs of the cluster with LinuxONE worker nodes.
 {: shortdesc}
-
-VPC worker node flavors with LinuxONE (`s390x` architecture) support are available for allowlisted accounts only. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
-{: note}
 
 To configure the Fluentd based agent with your {{site.data.keyword.la_full_notm}} instance, complete the following steps. 
 
