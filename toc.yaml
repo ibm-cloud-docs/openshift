@@ -41,6 +41,7 @@ toc:
           href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
       - openshift_tutorial.md
       - openshift_tutorial_vpc.md
+      - openshift_datascience.md
   - navgroup: 
       id: howto
       topics:

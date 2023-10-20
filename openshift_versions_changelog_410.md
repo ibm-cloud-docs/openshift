@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-20"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -82,7 +82,7 @@ The following table shows the changes that are in the master fix pack 4.10.67_15
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.17-25 | v1.23.17-26 | Updated `Go dependencies`. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 434 | 435 | Updated `Go` to version `1.20.6` and updated dependencies. Updated to newer UBI base image. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2631 | 2681 | Updated `Go` to version `1.19.12` and updated `Go dependencies`. |
-| {{site.data.keyword.openshiftlong_notm}} | 4.10.65 | 4.10.67 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-67){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} | 4.10.65 | 4.10.67 | Resolves [CVE-2023-1260](https://nvd.nist.gov/vuln/detail/CVE-2023-1260){: external}. For more information, see the [IBM security bulletin](https://www.ibm.com/support/pages/node/7052832){: external}. See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-67){: external}. |
 {: caption="Changes since version 4.10.65_1580_openshift" caption-side="bottom"}
 
 

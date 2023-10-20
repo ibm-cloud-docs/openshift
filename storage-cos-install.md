@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-10-20"
 
 keywords: openshift
 
@@ -390,11 +390,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     - **Standard**: This option is used for hot data that is accessed frequently. Common use cases are web or mobile apps.
     - **Vault**: This option is used for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
     - **Cold**: This option is used for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.
-    - **Flex**: This option is used for workloads and data that don't follow a specific usage pattern, or that are too huge to determine or predict a usage pattern.
-
-
-    [Check out this blog](https://www.ibm.com/blogs/cloud-archive/interconnect-2017-changing-rules-storage){: external} to learn how the Flex storage class works compared to traditional storage tiers.
-    {: tip}
+    - **Smart**: This option is used for workloads and data that don't follow a specific usage pattern, or that are too huge to determine or predict a usage pattern.
 
 3. Decide on the level of resiliency for the data that is stored in your bucket.
     - **Cross-region**: With this option, your data is stored across three regions within a geolocation for highest availability. If you have workloads that are distributed across regions, requests are routed to the nearest regional endpoint. The API endpoint for the geolocation is automatically set by the `ibmc` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use the `US GEO` API endpoint for your buckets. For more information, see [Regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).  
@@ -437,7 +433,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     :   The API endpoint for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). 
     
     `ibm.io/kernel-cache`
-    :   Enable or disable the kernel buffer cache for the volume mount point. If enabled, data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to ensure fast read access to your data. If disabled, data is not cached and always read from {{site.data.keyword.cos_full_notm}}. Kernel cache is enabled for `standard` and `flex` storage classes, and disabled for `cold` and `vault` storage classes. 
+    :   Enable or disable the kernel buffer cache for the volume mount point. If enabled, data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to ensure fast read access to your data. If disabled, data is not cached and always read from {{site.data.keyword.cos_full_notm}}. Kernel cache is enabled for `standard` and `smart` storage classes, and disabled for `cold` and `vault` storage classes. 
     
     `ibm.io/multireq-max`
     :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests.

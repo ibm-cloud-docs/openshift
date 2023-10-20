@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-19"
+lastupdated: "2023-10-20"
 
 keywords: openshift
 subcollection: openshift
@@ -2305,6 +2305,27 @@ subcollection: openshift
 * [Set up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
+
+
+## Installing Red Hat OpenShift Data Science
+{: #sitemap_installing_red_hat_openshift_data_science}
+
+
+[Installing Red Hat OpenShift Data Science](/docs/openshift?topic=openshift-datascience#datascience)
+
+* [Before you begin](/docs/openshift?topic=openshift-datascience#datascience_before)
+
+* [1. Optional. Install the Red Hat OpenShift Pipelines Operator](/docs/openshift?topic=openshift-datascience#datascience_pipelines)
+
+* [2. Install the OpenShift Data Science Operator](/docs/openshift?topic=openshift-datascience#datascience_install)
+
+* [3. Install the Node Feature Discovery Operator](/docs/openshift?topic=openshift-datascience#datascience_node_feature_discovery)
+
+* [4. Install the NVIDIA GPU Operator](/docs/openshift?topic=openshift-datascience#datascience_nvidia_gpu)
+
+* [5. Check installed operators](/docs/openshift?topic=openshift-datascience#datascience_check)
+
+* [What's next?](/docs/openshift?topic=openshift-datascience#datascience_next)
 
 
 ## Installing the CLI

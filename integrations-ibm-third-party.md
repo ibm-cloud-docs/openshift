@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-10-20"
 
 keywords: kubernetes, openshift
 
@@ -45,7 +45,7 @@ Services that don't support service keys usually provide an API that you can dir
 Because {{site.data.keyword.openshiftlong_notm}} lets you create a cluster on {{site.data.keyword.cloud_notm}} classic infrastructure, some classic infrastructure services, such as Virtual Servers, Bare Metal Servers, or VLANs are fully integrated into {{site.data.keyword.openshiftlong_notm}}. You create and work with these service instances by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console.
 {: shortdesc}
 
-Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full}} are integrated as Kubernetes flex drivers and can be set up by using [Helm charts](/docs/openshift?topic=openshift-helm). The Helm chart automatically sets up Kubernetes storage classes, the storage provider, and the storage driver in your cluster. You can use the storage classes to provision persistent storage by using persistent volume claims (PVCs). For more information, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage-plan).
+Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full}} are integrated as Kubernetes drivers and can be set up by using [Helm charts](/docs/openshift?topic=openshift-helm). The Helm chart automatically sets up Kubernetes storage classes, the storage provider, and the storage driver in your cluster. You can use the storage classes to provision persistent storage by using persistent volume claims (PVCs). For more information, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage-plan).
 
 To secure your cluster network or connect to an on-prem data center, you can configure one of the following options:
 - [strongSwan IPSec VPN Service](/docs/openshift?topic=openshift-vpn#vpn-setup)
