@@ -2315,15 +2315,15 @@ subcollection: openshift
 
 * [Before you begin](/docs/openshift?topic=openshift-datascience#datascience_before)
 
-* [1. Optional. Install the Red Hat OpenShift Pipelines Operator](/docs/openshift?topic=openshift-datascience#datascience_pipelines)
+* [Optional. Install the Red Hat OpenShift Pipelines Operator](/docs/openshift?topic=openshift-datascience#datascience_pipelines)
 
-* [2. Install the OpenShift Data Science Operator](/docs/openshift?topic=openshift-datascience#datascience_install)
+* [Install the OpenShift Data Science Operator](/docs/openshift?topic=openshift-datascience#datascience_install)
 
-* [3. Install the Node Feature Discovery Operator](/docs/openshift?topic=openshift-datascience#datascience_node_feature_discovery)
+* [Install the Node Feature Discovery Operator](/docs/openshift?topic=openshift-datascience#datascience_node_feature_discovery)
 
-* [4. Install the NVIDIA GPU Operator](/docs/openshift?topic=openshift-datascience#datascience_nvidia_gpu)
+* [Install the NVIDIA GPU Operator](/docs/openshift?topic=openshift-datascience#datascience_nvidia_gpu)
 
-* [5. Check installed operators](/docs/openshift?topic=openshift-datascience#datascience_check)
+* [Check installed operators](/docs/openshift?topic=openshift-datascience#datascience_check)
 
 * [What's next?](/docs/openshift?topic=openshift-datascience#datascience_next)
 
