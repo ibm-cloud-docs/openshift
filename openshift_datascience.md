@@ -37,27 +37,27 @@ The following steps refer to the Red Hat documentation. For more information see
 3. Make sure you can [access the your cluster through the OpenShift web console](/docs/openshift?topic=openshift-access_cluster#access_oc_console). 
 
 
-## 1. Optional. Install the Red Hat OpenShift Pipelines Operator
+## Optional. Install the Red Hat OpenShift Pipelines Operator
 {: #datascience_pipelines}
 {: step}
 
 OpenShift Data Science supports data science pipelines. A pipeline is a collection of task resources that are arranged in a specific order of execution. By using Red Hat OpenShift Data Science with pipelines, you can standardize and automate the build and deployment of your data science models. For installation steps, see [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.12/install_config/installing-pipelines.html){: external} in the Red Hat documentation. 
 
-## 2. Install the OpenShift Data Science Operator
+## Install the OpenShift Data Science Operator
 {: #datascience_install}
 {: step}
 
 You can install the OpenShift Data Science Operator to your cluster using the web console. See [Installing OpenShift Data Science self-managed](https://access.redhat.com/documentation/en-us/red_hat_openshift_data_science_self-managed/1.32/html-single/installing_openshift_data_science_self-managed/index#installing-openshift-data-science-on-openshift-container-platform_install){: external} for detailed installation steps and requirements.
 
 
-## 3. Install the Node Feature Discovery Operator
+## Install the Node Feature Discovery Operator
 {: #datascience_node_feature_discovery}
 {: step}
 
 The Node Feature Discovery (NFD) Operator is a prerequisite for the NVIDIA GPU Operator, which is required to enable and use GPUs with OpenShift Data Science. Follw the steps in [Installing the Node Feature Discovery (NFD) Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/23.6.1/install-nfd.html){: external} in the NVIDIA documentation to install the operator using the Red Hat OperatorHub catalog in the OpenShift Container Platform web console. Make sure you follow all of the instructions, including the step to create a Node Feature Discovery instance and the steps to verify the installation. 
 
 
-## 4. Install the NVIDIA GPU Operator
+## Install the NVIDIA GPU Operator
 {: #datascience_nvidia_gpu}
 {: step}
 
@@ -66,7 +66,7 @@ To ensure that your data scientists can use compute-heavy workloads in their mod
 To check that the GPU operator installation is successful, you can [run a sample GPU application](https://docs.nvidia.com/datacenter/cloud-native/openshift/23.6.1/install-gpu-ocp.html#running-a-sample-gpu-application){: external}.
 {: tip}
 
-## 5. Check installed operators
+## Check installed operators
 {: #datascience_check}
 {: step}
 
