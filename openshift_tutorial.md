@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-10-23"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -19,7 +19,7 @@ completion-time: 45m
 
 
 
-# Creating a Classic cluster in the CLI
+# Setting up your first classic cluster in the CLI
 {: #openshift_tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="openshift"}

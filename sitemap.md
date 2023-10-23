@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-20"
+lastupdated: "2023-10-23"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
+
+    * [23 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2323)
+
+        * [Change log]{: tag-purple} Ingress ALB version `1.8.4_5586_ikss`
 
     * [18 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1823)
 
@@ -2263,11 +2267,11 @@ subcollection: openshift
 [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
-## Creating a Classic cluster in the CLI
-{: #sitemap_creating_a_classic_cluster_in_the_cli}
+## Setting up your first classic cluster in the CLI
+{: #sitemap_setting_up_your_first_classic_cluster_in_the_cli}
 
 
-[Creating a Classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
+[Setting up your first classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
 * [Objectives and audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 
@@ -8637,25 +8641,25 @@ subcollection: openshift
 
 [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
-* [Australia](/docs/openshift?topic=openshift-vpc-flavors#australia)
+* [Australia (`au-syd`)](/docs/openshift?topic=openshift-vpc-flavors#australia)
 
-* [Brazil](/docs/openshift?topic=openshift-vpc-flavors#brazil)
+* [Brazil (`br-sao`)](/docs/openshift?topic=openshift-vpc-flavors#brazil)
 
-* [Canada](/docs/openshift?topic=openshift-vpc-flavors#canada)
+* [Canada (`ca-tor`)](/docs/openshift?topic=openshift-vpc-flavors#canada)
 
-* [Europe](/docs/openshift?topic=openshift-vpc-flavors#europe)
+* [Europe (`eu-de`)](/docs/openshift?topic=openshift-vpc-flavors#europe)
 
-* [Europe](/docs/openshift?topic=openshift-vpc-flavors#europe)
+* [Europe (`eu-es`)](/docs/openshift?topic=openshift-vpc-flavors#europe)
 
-* [Europe](/docs/openshift?topic=openshift-vpc-flavors#europe)
+* [Europe (`eu-gb`)](/docs/openshift?topic=openshift-vpc-flavors#europe)
 
-* [Japan](/docs/openshift?topic=openshift-vpc-flavors#japan)
+* [Japan (`jp-osa`)](/docs/openshift?topic=openshift-vpc-flavors#japan)
 
-* [Japan](/docs/openshift?topic=openshift-vpc-flavors#japan)
+* [Japan (`jp-tok`)](/docs/openshift?topic=openshift-vpc-flavors#japan)
 
-* [United States](/docs/openshift?topic=openshift-vpc-flavors#united-states)
+* [United States (`us-east`)](/docs/openshift?topic=openshift-vpc-flavors#united-states)
 
-* [United States](/docs/openshift?topic=openshift-vpc-flavors#united-states)
+* [United States (`us-south`)](/docs/openshift?topic=openshift-vpc-flavors#united-states)
 
 
 ## Classic flavors
@@ -8664,37 +8668,37 @@ subcollection: openshift
 
 [Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
 
-* [Amsterdam](/docs/openshift?topic=openshift-classic-flavors#amsterdam)
+* [Amsterdam (`ams`)](/docs/openshift?topic=openshift-classic-flavors#amsterdam)
 
-* [Chennai](/docs/openshift?topic=openshift-classic-flavors#chennai)
+* [Chennai (`che`)](/docs/openshift?topic=openshift-classic-flavors#chennai)
 
-* [Dallas](/docs/openshift?topic=openshift-classic-flavors#dallas)
+* [Dallas (`dal`)](/docs/openshift?topic=openshift-classic-flavors#dallas)
 
-* [France](/docs/openshift?topic=openshift-classic-flavors#france)
+* [France (`fra`)](/docs/openshift?topic=openshift-classic-flavors#france)
 
-* [London](/docs/openshift?topic=openshift-classic-flavors#london)
+* [London (`lon`)](/docs/openshift?topic=openshift-classic-flavors#london)
 
-* [Milan](/docs/openshift?topic=openshift-classic-flavors#milan)
+* [Milan (`mil`)](/docs/openshift?topic=openshift-classic-flavors#milan)
 
-* [Montreal](/docs/openshift?topic=openshift-classic-flavors#montreal)
+* [Montreal (`mon`)](/docs/openshift?topic=openshift-classic-flavors#montreal)
 
-* [Osaka](/docs/openshift?topic=openshift-classic-flavors#osaka)
+* [Osaka (`osa`)](/docs/openshift?topic=openshift-classic-flavors#osaka)
 
-* [Paris](/docs/openshift?topic=openshift-classic-flavors#paris)
+* [Paris (`par`)](/docs/openshift?topic=openshift-classic-flavors#paris)
 
-* [South America](/docs/openshift?topic=openshift-classic-flavors#south-america)
+* [South America (`sao`)](/docs/openshift?topic=openshift-classic-flavors#south-america)
 
-* [San Jose](/docs/openshift?topic=openshift-classic-flavors#san-jose)
+* [San Jose (`sjc`)](/docs/openshift?topic=openshift-classic-flavors#san-jose)
 
-* [Singapore](/docs/openshift?topic=openshift-classic-flavors#singapore)
+* [Singapore (`sng`)](/docs/openshift?topic=openshift-classic-flavors#singapore)
 
-* [Sydney](/docs/openshift?topic=openshift-classic-flavors#sydney)
+* [Sydney (`syd`)](/docs/openshift?topic=openshift-classic-flavors#sydney)
 
-* [Tokyo](/docs/openshift?topic=openshift-classic-flavors#tokyo)
+* [Tokyo (`tok`)](/docs/openshift?topic=openshift-classic-flavors#tokyo)
 
-* [Toronto](/docs/openshift?topic=openshift-classic-flavors#toronto)
+* [Toronto (`tor`)](/docs/openshift?topic=openshift-classic-flavors#toronto)
 
-* [Washington DC](/docs/openshift?topic=openshift-classic-flavors#washington-dc)
+* [Washington DC (`wdc`)](/docs/openshift?topic=openshift-classic-flavors#washington-dc)
 
 
 ## FAQs
