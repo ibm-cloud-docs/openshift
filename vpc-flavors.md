@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-10-23"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -27,7 +27,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## Australia
+## Australia (`au-syd`)
 {: #australia}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -84,7 +84,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## Brazil
+## Brazil (`br-sao`)
 {: #brazil}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -140,7 +140,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## Canada
+## Canada (`ca-tor`)
 {: #canada}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -197,7 +197,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## Europe
+## Europe (`eu-de`)
 {: #europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -254,7 +254,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## Europe
+## Europe (`eu-es`)
 {: #europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -310,7 +310,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## Europe
+## Europe (`eu-gb`)
 {: #europe}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -367,7 +367,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## Japan
+## Japan (`jp-osa`)
 {: #japan}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -423,7 +423,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## Japan
+## Japan (`jp-tok`)
 {: #japan}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -480,7 +480,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## United States
+## United States (`us-east`)
 {: #united-states}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -537,7 +537,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 
 
 
-## United States
+## United States (`us-south`)
 {: #united-states}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |

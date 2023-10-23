@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-23"
 
 keywords: openshift, kubernetes, node scaling, ca, autoscaler
 
@@ -26,7 +26,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Amsterdam
+## Amsterdam (`ams`)
 {: #amsterdam}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -94,7 +94,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Chennai
+## Chennai (`che`)
 {: #chennai}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -162,7 +162,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Dallas
+## Dallas (`dal`)
 {: #dallas}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -236,7 +236,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## France
+## France (`fra`)
 {: #france}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -307,7 +307,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## London
+## London (`lon`)
 {: #london}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -378,7 +378,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Milan
+## Milan (`mil`)
 {: #milan}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -446,7 +446,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Montreal
+## Montreal (`mon`)
 {: #montreal}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -514,7 +514,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Osaka
+## Osaka (`osa`)
 {: #osaka}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -588,7 +588,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Paris
+## Paris (`par`)
 {: #paris}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -659,7 +659,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## South America
+## South America (`sao`)
 {: #south-america}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -703,7 +703,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## San Jose
+## San Jose (`sjc`)
 {: #san-jose}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -759,7 +759,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Singapore
+## Singapore (`sng`)
 {: #singapore}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -811,7 +811,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Sydney
+## Sydney (`syd`)
 {: #sydney}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -882,7 +882,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Tokyo
+## Tokyo (`tok`)
 {: #tokyo}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -953,7 +953,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Toronto
+## Toronto (`tor`)
 {: #toronto}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
@@ -1024,7 +1024,7 @@ Review the classic worker node flavors by metro.
 
 
 
-## Washington DC
+## Washington DC (`wdc`)
 {: #washington-dc}
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
