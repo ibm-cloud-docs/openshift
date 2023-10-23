@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
 
+    * [23 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2323)
+
+        * [Change log]{: tag-purple} Ingress ALB version `1.8.4_5586_ikss`
+
     * [18 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1823)
 
         * [Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1921`.

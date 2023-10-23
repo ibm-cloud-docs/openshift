@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-10-23"
 
 keywords: openshift, kubernetes, release notes
 
@@ -30,6 +30,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-oct23}
 
 
+
+### 23 October 2023
+{: #openshift-oct2323}
+{: release-note}
+
+[Change log]{: tag-purple} Ingress ALB version `1.8.4_5586_ikss`
+:   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
 ### 18 October 2023
 {: #openshift-oct1823}
