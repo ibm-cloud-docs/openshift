@@ -2263,11 +2263,11 @@ subcollection: openshift
 [Tutorials library for OpenShift](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
-## Creating a Classic cluster in the CLI
-{: #sitemap_creating_a_classic_cluster_in_the_cli}
+## Setting up your first classic cluster in the CLI
+{: #sitemap_setting_up_your_first_classic_cluster_in_the_cli}
 
 
-[Creating a Classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
+[Setting up your first classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
 * [Objectives and audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 
