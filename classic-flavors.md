@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-23"
+lastupdated: "2023-10-24"
 
 keywords: openshift, kubernetes, node scaling, ca, autoscaler
 
@@ -27,7 +27,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Amsterdam (`ams`)
-{: #amsterdam}
+{: #amsterdam-ams}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -95,7 +97,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Chennai (`che`)
-{: #chennai}
+{: #chennai-che}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -163,7 +167,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Dallas (`dal`)
-{: #dallas}
+{: #dallas-dal}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -236,8 +242,10 @@ Review the classic worker node flavors by metro.
 
 
 
-## France (`fra`)
-{: #france}
+## Frankfurt (`fra`)
+{: #frankfurt-fra}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -248,7 +256,7 @@ Review the classic worker node flavors by metro.
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in France." caption-side="bottom"}
+{: caption="Table. Balanced flavors in Frankfurt." caption-side="bottom"}
 {: #fra-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="fra-tables"}
@@ -261,7 +269,7 @@ Review the classic worker node flavors by metro.
 | c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in France." caption-side="bottom"}
+{: caption="Table. Compute flavors in Frankfurt." caption-side="bottom"}
 {: #fra-compute-table}
 {: tab-title="Compute"}
 {: tab-group="fra-tables"}
@@ -287,7 +295,7 @@ Review the classic worker node flavors by metro.
 | mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
 | mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in France." caption-side="bottom"}
+{: caption="Table. Memory flavors in Frankfurt." caption-side="bottom"}
 {: #fra-memory-table}
 {: tab-title="Memory"}
 {: tab-group="fra-tables"}
@@ -298,7 +306,7 @@ Review the classic worker node flavors by metro.
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Ultra High Memory flavors in France." caption-side="bottom"}
+{: caption="Table. Ultra High Memory flavors in Frankfurt." caption-side="bottom"}
 {: #fra-uhmemory-table}
 {: tab-title="Ultra High Memory"}
 {: tab-group="fra-tables"}
@@ -308,7 +316,9 @@ Review the classic worker node flavors by metro.
 
 
 ## London (`lon`)
-{: #london}
+{: #london-lon}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -379,7 +389,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Milan (`mil`)
-{: #milan}
+{: #milan-mil}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -447,7 +459,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Montreal (`mon`)
-{: #montreal}
+{: #montreal-mon}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -515,7 +529,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Osaka (`osa`)
-{: #osaka}
+{: #osaka-osa}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -589,7 +605,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Paris (`par`)
-{: #paris}
+{: #paris-par}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -659,8 +677,10 @@ Review the classic worker node flavors by metro.
 
 
 
-## South America (`sao`)
-{: #south-america}
+## Sao Paulo (`sao`)
+{: #sao-paulo-sao}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -671,7 +691,7 @@ Review the classic worker node flavors by metro.
 | b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 | b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in South America." caption-side="bottom"}
+{: caption="Table. Balanced flavors in Sao Paulo." caption-side="bottom"}
 {: #sao-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="sao-tables"}
@@ -683,7 +703,7 @@ Review the classic worker node flavors by metro.
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in South America." caption-side="bottom"}
+{: caption="Table. Memory flavors in Sao Paulo." caption-side="bottom"}
 {: #sao-memory-table}
 {: tab-title="Memory"}
 {: tab-group="sao-tables"}
@@ -694,7 +714,7 @@ Review the classic worker node flavors by metro.
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
 | u3c.2x4 | 2, 4GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Ultra High Memory flavors in South America." caption-side="bottom"}
+{: caption="Table. Ultra High Memory flavors in Sao Paulo." caption-side="bottom"}
 {: #sao-uhmemory-table}
 {: tab-title="Ultra High Memory"}
 {: tab-group="sao-tables"}
@@ -704,7 +724,9 @@ Review the classic worker node flavors by metro.
 
 
 ## San Jose (`sjc`)
-{: #san-jose}
+{: #san-jose-sjc}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -760,7 +782,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Singapore (`sng`)
-{: #singapore}
+{: #singapore-sng}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -812,7 +836,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Sydney (`syd`)
-{: #sydney}
+{: #sydney-syd}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -883,7 +909,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Tokyo (`tok`)
-{: #tokyo}
+{: #tokyo-tok}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -954,7 +982,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Toronto (`tor`)
-{: #toronto}
+{: #toronto-tor}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
@@ -1025,7 +1055,9 @@ Review the classic worker node flavors by metro.
 
 
 ## Washington DC (`wdc`)
-{: #washington-dc}
+{: #washington-dc-wdc}
+
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
