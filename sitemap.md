@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
 
+    * [25 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2523)
+
+        * [Change log]{: tag-purple} Master fix packs are available.
+
     * [23 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2323)
 
         * [Change log]{: tag-purple} Ingress ALB version `1.8.4_5586_ikss`
