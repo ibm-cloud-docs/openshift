@@ -276,6 +276,8 @@ subcollection: openshift
 
         * [Change log]{: tag-purple} Master fix packs are available.
 
+        * [Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1936`.
+
     * [23 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2323)
 
         * [Change log]{: tag-purple} Ingress ALB version `1.8.4_5586_ikss`
@@ -7269,6 +7271,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1936, released on 25 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_1936)
 
     * [Version 1.0.0_1921, released on 18 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_1921)
 

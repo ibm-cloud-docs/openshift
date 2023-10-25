@@ -45,6 +45,11 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   [4.11.50_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
 :   [4.10.67_1588_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
 
+  
+[Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1936`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+
+
 
 
 ### 23 October 2023
