@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-10-25"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -21,7 +21,7 @@ completion-time: 45m
 
 
 
-# Creating a cluster in your Virtual Private Cloud (VPC)
+# Setting up your first cluster in your Virtual Private Cloud (VPC)
 {: #vpc_rh_tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="openshift, vpc"}
@@ -35,16 +35,26 @@ Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cl
 - {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-overview) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.openshift.com/container-platform/4.13/welcome/index.html){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 - VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered), with a select group of v2 API, CLI, and console functionality.
 
-## Objectives
-{: #vpc_rh_objectives}
-
-In the tutorial lessons, you create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC). Then, you access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in a {{site.data.keyword.redhat_openshift_notm}} project, and expose the app on with a VPC load balancer so that external users can access the service.
-
 ## Audience
 {: #vpc_rh_audience}
 
 This tutorial is for administrators who are creating a cluster in {{site.data.keyword.openshiftlong_notm}} in VPC compute for the first time.
 {: shortdesc}
+
+## Objectives
+{: #vpc_rh_objectives}
+
+In the tutorial lessons, you create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC). Then, you access built-in {{site.data.keyword.redhat_openshift_notm}} components, deploy an app in a {{site.data.keyword.redhat_openshift_notm}} project, and expose the app with a VPC load balancer so that external users can access the service.
+
+## What you'll get
+{: #vpc_rh_get}
+
+In this tutorial, you will create the following resources. There are optional steps to delete these resources if you do not want to keep them after completing the tutorial. 
+
+- A VPC cluster
+- A simple Hello World app deployed to your cluster
+- A VPC load balancer to expose your app
+
 
 ## Prerequisites
 {: #vpc_rh_prereqs}

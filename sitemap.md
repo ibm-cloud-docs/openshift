@@ -2273,7 +2273,11 @@ subcollection: openshift
 
 [Setting up your first classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
-* [Objectives and audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
+
+* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+
+* [What you'll get](/docs/openshift?topic=openshift-openshift_tutorial#openshift_get)
 
 * [Overview of cluster resources](/docs/openshift?topic=openshift-openshift_tutorial#cluster-arch-tut-overview)
 
@@ -2290,15 +2294,17 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 
-## Creating a cluster in your Virtual Private Cloud (VPC)
-{: #sitemap_creating_a_cluster_in_your_virtual_private_cloud_vpc}
+## Setting up your first cluster in your Virtual Private Cloud (VPC)
+{: #sitemap_setting_up_your_first_cluster_in_your_virtual_private_cloud_vpc}
 
 
-[Creating a cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+[Setting up your first cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+
+* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
 
 * [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
 
-* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
+* [What you'll get](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_get)
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
 

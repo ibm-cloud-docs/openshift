@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-23"
+lastupdated: "2023-10-25"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -30,10 +30,29 @@ completion-time: 45m
 In this tutorial, you deploy a {{site.data.keyword.openshiftlong_notm}} cluster on Classic infrastructure by using the CLI.
 {: shortdesc}
 
-## Objectives and audience
+## Audience
+{: #openshift_audience}
+
+This tutorial is designed for cluster administrators who want to learn how to create a {{site.data.keyword.openshiftlong_notm}} cluster for the first time by using the CLI. 
+
+## Objectives
 {: #openshift_objectives}
 
-This tutorial is designed for cluster administrators who want to learn how to create a {{site.data.keyword.openshiftlong_notm}} cluster for the first time by using the CLI. In this tutorial, you complete the following tasks.
+In this tutorial, you will complete the following tasks.
+
+- Create a cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
+- Open the {{site.data.keyword.redhat_openshift_notm}} web console.
+- Deploy a sample app.
+- Expose the app on a Route so that external users can access the service.
+
+## What you'll get
+{: #openshift_get}
+
+In this tutorial, you will create the following resources. There are optional steps to delete these resources if you do not want to keep them after completing the tutorial. 
+
+- A classic cluster with 2 worker nodes
+- A simple Hello World app deployed to your cluster
+- A route to expose your app
 
 
 ## Overview of cluster resources
@@ -42,14 +61,6 @@ This tutorial is designed for cluster administrators who want to learn how to cr
 Review the following diagram for an overview of common cluster resources.
 
 ![Cluster architecture](images/cs-app-components1.svg){: caption="Figure 1. Cluster architecture" caption-side="bottom"}
-
-
-In this tutorial, you will complete the following tasks.
-
-- Create a cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
-- Open the {{site.data.keyword.redhat_openshift_notm}} web console.
-- Deploy a sample app.
-- Expose the app on a Route so that external users can access the service.
 
 
 ## Prerequisites
