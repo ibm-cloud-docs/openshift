@@ -272,6 +272,12 @@ subcollection: openshift
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
 
+    * [25 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2523)
+
+        * [Change log]{: tag-purple} Master fix packs are available.
+
+        * [Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1936`.
+
     * [23 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2323)
 
         * [Change log]{: tag-purple} Ingress ALB version `1.8.4_5586_ikss`
@@ -2273,7 +2279,11 @@ subcollection: openshift
 
 [Setting up your first classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
-* [Objectives and audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
+
+* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+
+* [What you'll get](/docs/openshift?topic=openshift-openshift_tutorial#openshift_get)
 
 * [Overview of cluster resources](/docs/openshift?topic=openshift-openshift_tutorial#cluster-arch-tut-overview)
 
@@ -2290,15 +2300,17 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 
-## Creating a cluster in your Virtual Private Cloud (VPC)
-{: #sitemap_creating_a_cluster_in_your_virtual_private_cloud_vpc}
+## Setting up your first cluster in your Virtual Private Cloud (VPC)
+{: #sitemap_setting_up_your_first_cluster_in_your_virtual_private_cloud_vpc}
 
 
-[Creating a cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+[Setting up your first cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+
+* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
 
 * [Objectives](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_objectives)
 
-* [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
+* [What you'll get](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_get)
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_prereqs)
 
@@ -4576,7 +4588,7 @@ subcollection: openshift
 
     * [Capacity expansion](/docs/openshift?topic=openshift-ocs-storage-prep#odf-capacity)
 
-    * [Update](/docs/openshift?topic=openshift-ocs-storage-prep#odf-best-practices)
+    * [Update](/docs/openshift?topic=openshift-ocs-storage-prep#odf-update-bp)
 
     * [Recovery](/docs/openshift?topic=openshift-ocs-storage-prep#odf-removery)
 
@@ -5842,6 +5854,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
 
+    * [Change log for master fix pack 4.13.15_1543_openshift, released 25 October 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41315_1543_openshift_M)
+
     * [Change log for worker node fix pack 4.13.14_1542_openshift, released 9 October 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41314_1542_openshift_W)
 
     * [Change log for worker node fix pack 4.13.13_1541_openshift, released 27 September 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41313_1541_openshift_W)
@@ -5966,6 +5980,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for master fix pack 4.12.37_1565_openshift, released 25 October 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41237_1565_openshift_M)
 
     * [Change log for worker node fix pack 4.12.36_1564_openshift, released 9 October 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41236_1564_openshift_W)
 
@@ -6123,6 +6139,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for master fix pack 4.11.50_1576_openshift, released 25 October 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41150_1576_openshift_M)
 
     * [Change log for worker node fix pack 4.11.50_1575_openshift, released 9 October 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41150_1575_openshift_W)
 
@@ -6310,6 +6328,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for master fix pack 4.10.67_1588_openshift, released 25 October 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1588_openshift_M)
 
     * [Change log for worker node fix pack 4.10.67_1587_openshift, released 9 October 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1587_openshift_W)
 
@@ -7251,6 +7271,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_1936, released on 25 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_1936)
 
     * [Version 1.0.0_1921, released on 18 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_1921)
 

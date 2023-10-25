@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-25"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -175,7 +175,7 @@ Understand your options for capacity expansion
 :   There are two options available for capacity expansion in ODF. The first option involves increasing the capacity by adding more OSDs (Object Storage Daemons) on existing nodes within the cluster. This allows for utilizing the available resources to expand the storage capacity. The second option is to expand the capacity by adding new nodes to the cluster. Once the number of OSDs is increased, the OSDs will automatically be provisioned on the newly added nodes.
 
 ### Update
-{: #odf-best-practices}
+{: #odf-update-bp}
 
 
 Perform health checks replacing nodes

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-23"
+lastupdated: "2023-10-25"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,27 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2023
 {: #openshift-oct23}
+
+
+
+### 25 October 2023
+{: #openshift-oct2523}
+{: release-note}
+
+
+
+
+
+[Change log]{: tag-purple} Master fix packs are available.
+:   [4.13.15_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12.37_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [4.11.50_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   [4.10.67_1588_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+
+  
+[Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1936`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+
 
 
 
