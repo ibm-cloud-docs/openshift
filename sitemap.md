@@ -4576,7 +4576,7 @@ subcollection: openshift
 
     * [Capacity expansion](/docs/openshift?topic=openshift-ocs-storage-prep#odf-capacity)
 
-    * [Update](/docs/openshift?topic=openshift-ocs-storage-prep#odf-best-practices)
+    * [Update](/docs/openshift?topic=openshift-ocs-storage-prep#odf-update-bp)
 
     * [Recovery](/docs/openshift?topic=openshift-ocs-storage-prep#odf-removery)
 
