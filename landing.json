@@ -1,6 +1,6 @@
 {
     "title": "Red Hat OpenShift on IBM Cloud",
-    "lastupdated": "2023-10-24",
+    "lastupdated": "2023-10-25",
     "introduction": "Explore the capabilities of Red Hat OpenShift on IBM Cloud and discover how you can deploy apps on highly available clusters. ",
     "section_devtools": {
       "api": "/apidocs/kubernetes", 
