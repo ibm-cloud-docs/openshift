@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-25"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -60,7 +60,7 @@ Kubernetes Version
 Worker Pool
 :    The cluster worker pool defines the number and type of worker nodes that run your workload. You can change your worker pool details at anytime.
 :    - **Operating system** and **Architecture**:  For a list of the available operating systems and architectures by cluster version, see the [available versions](/docs/containers?topic=containers-cs_versions&interface=ui#cs_versions_available).
-:    - **Flavor**: The flavor defines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to the containers. Available bare metal and virtual machines types vary by the zone in which you deploy the cluster. For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). 
+:    - **Flavor**: The flavor defines the architecture, amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to the containers. Available bare metal and virtual machines types vary by the zone in which you deploy the cluster. For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). 
 :    - **Worker nodes per zone**: For high availability, at least 3 worker nodes per zone are recommended. 
 :    - **Encrypt local disk**: By default, [worker nodes feature AES 256-bit disk encryption](/docs/openshift?topic=openshift-security#workernodes). You can choose to turn off disk encryption when you create the cluster.
 :   - **Secondary Storage**: You can provision a secondary disk to your worker nodes. For example a `900gb.5iops-tier` block storage disk. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. Secondary disks are useful in scenarios where more container storage is needed, such as running pods with large images. Secondary disks are provisioned in your account and you can can see them in VPC console. The charges for these disks are separate to the cost of each worker and show as a different line item on your bill. These secondary volumes also count toward the quota usage for the your account.
@@ -150,8 +150,8 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     :   Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.
 
     `--operating-system SYSTEM`
-    :   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
-    :   If no option is specified, the default [operating system version that corresponds to the cluster version is used.
+    :   Optional. The operating system of the worker nodes you want to provision in your cluster.  For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
+    :   If no option is specified, the default operating system version that corresponds to the cluster version is used.
 
 
    `--cluster-security-group <group_ID>`
