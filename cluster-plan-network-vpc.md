@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-10-26"
 
 keywords: openshift network
 
@@ -58,7 +58,7 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 * VPC subnets are bound to a single zone and can't span multiple zones or regions.
 * After you create a subnet, you can't move it to a different zone, region, or VPC.
 * If you have worker nodes that are attached to an existing subnet in a zone, you can't change the subnet for that zone in the cluster.
-* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited
+* The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
 
 
 
@@ -124,9 +124,7 @@ If you plan to connect your cluster to on-premises networks, check out the follo
 
 - You might have subnet conflicts with the IBM-provided default 172.30.0.0/16 range for pods and 172.21.0.0/16 range for services. You can avoid subnet conflicts when you [create a cluster from the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) by specifying a custom subnet CIDR for pods in the `--pod-subnet` option and a custom subnet CIDR for services in the `--service-subnet` option.
 - If your VPN solution preserves the source IP addresses of requests, you can [create custom static routes](/docs/openshift?topic=openshift-static-routes) to ensure that your worker nodes can route responses from your cluster back to your on-premises network.
-
 - Note that the `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited because they are reserved for {{site.data.keyword.openshiftlong_notm}} control plane functionality.
-
 
 ### Communication with resources in other VPCs
 {: #vpc-worker-services-onprem-other-vpcs}

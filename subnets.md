@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-10-26"
 
 keywords: openshift
 
@@ -98,15 +98,15 @@ Size requirements
 
 Range requirements
 :   The pod and service subnets can't overlap each other, and the pod subnet can't overlap the subnets for your worker nodes. The subnet that you choose must be within one of the following ranges.
-
-
       - `172.17.0.0 - 172.17.255.255`
       - `172.21.0.0 - 172.31.255.255`
+
+
       - `192.168.0.0 - 192.168.254.255`
+
       - `198.18.0.0 - 198.19.255.255`
 
 :   The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
-
 
 #### Services
 {: #subnets_services}
@@ -119,15 +119,15 @@ Size requirements
 
 Range requirements
 :   The pod and service subnets can't overlap each other. The subnet that you choose must be within one of the following ranges:
-
-
       - `172.17.0.0 - 172.17.255.255`
       - `172.21.0.0 - 172.31.255.255`
+
+
       - `192.168.0.0 - 192.168.254.255`
+
       - `198.18.0.0 - 198.19.255.255`
 
 :   The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.
-
 
 ### Network segmentation
 {: #basics_segmentation}
@@ -167,9 +167,7 @@ Before you begin
     ```
     {: pre}
 
-
 - The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subnet ranges are prohibited.
-
 
 To create a cluster by using existing subnets:
 
