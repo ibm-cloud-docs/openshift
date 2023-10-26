@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-25"
+lastupdated: "2023-10-26"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -57,6 +57,19 @@ The following table shows the changes that are in the master fix pack 4.10.67_15
 | Portieris admission controller | v0.13.6 | v0.13.8 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.8){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.10.0-20230811 | v4.10.0-20231010 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0%2B20231010){: external}. |
 {: caption="Changes since version 4.10.67_1585_openshift" caption-side="bottom"}
+
+
+### Change log for worker node fix pack 4.10.67_1589_openshift, released 23 October 2023
+{: #41067_1589_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.10.67_1589_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. |N/A|N/A|N/A|
+| RHEL 8 Packages |N/A|N/A| Worker node package update for [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}. |
+{: caption="Changes since version 4.10.67_1587_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.10.67_1587_openshift, released 9 October 2023
