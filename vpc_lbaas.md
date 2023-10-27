@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-05"
+lastupdated: "2023-10-27"
 
 keywords: openshift, app protocol, application protocol
 
@@ -45,7 +45,7 @@ The following table describes the basic characteristics of each load balancing o
 |Improved performance with direct server return|No|Yes|
 |Multizone routing|Yes|No|
 |Port ranges|No| Public only|
-|Security groups|Yes|Public only|
+|Security groups|Yes|Yes|
 {: caption="Load balancing options for VPC clusters"}
 
 
