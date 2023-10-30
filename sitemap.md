@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-27"
+lastupdated: "2023-10-30"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
+
+    * [30 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3023)
+
+        * [Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.20`
+
+        * [New]{: tag-green} [Classic clusters]{: tag-classic-inf} Setting up alerts for {{site.data.keyword.blockstorageshort}} PVs with limited network connectivity.
 
     * [25 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2523)
 
@@ -4303,6 +4309,8 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
 
+* [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring)
+
 
 ## Setting up Block Storage for VPC
 {: #sitemap_setting_up_block_storage_for_vpc}
@@ -6914,6 +6922,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.20, released 30 October 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02220_object_plugin)
+
 * [Change log for version 2.2.19, released 12 October 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02219_object_plugin)
 
 * [Change log for version 2.2.18, released 7 September 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02218_object_plugin)
@@ -8859,6 +8869,8 @@ subcollection: openshift
 
 * [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
 
+[Why does OpenShift show the cluster version is down-level?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
+
 [Cluster states](/docs/openshift?topic=openshift-cluster-states-reference#cluster-states-reference)
 
 * [Aborted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-aborted)
@@ -9423,6 +9435,8 @@ subcollection: openshift
 [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume#ts_storage_clean_volume)
 
 [Why does mounting {{site.data.keyword.blockstorageshort}} fail with a file system check error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
+
+[Why does my Block Storage persistent volume show a `limited` connectivity status?](/docs/openshift?topic=openshift-block-pv-limited-connectivity#block-pv-limited-connectivity)
 
 [Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 

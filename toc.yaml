@@ -432,7 +432,7 @@ toc:
               - ts-webhook-debug.md
               - ts-cluster-master.md
               - ts-cluster-debug-ocp.md
-              - ts-cluster-downlevel.md
+              - ts-cluster-version-downlevel.md
               - states-cluster.md
               - ts-cluster-cli.md
               - ts-cluster-console-user.md
@@ -588,6 +588,7 @@ toc:
               - ts-storage-vpc-block-monitoring.md
               - ts-storage-clean-volume.md
               - ts-storage-fsck.md
+              - ts-storage-block-limited.md
               - ts-storage-volumesnapshot-delete.md
               - ts-storage-snapshot-fails.md
           - topicgroup:

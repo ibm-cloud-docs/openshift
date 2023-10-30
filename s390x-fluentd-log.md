@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-10-30"
 
 keywords: flow logs, VPC monitoring, worker nodes, VPC, network traffic, collector, LinuxONE worker nodes, s390x architecture, fluentd, log Analysis
 
@@ -25,7 +25,7 @@ You can configure a logging agent by using Fluentd in your cluster, and then the
 
 To configure the Fluentd based agent with your {{site.data.keyword.la_full_notm}} instance, complete the following steps. 
 
-1. Create an [{{site.data.keyword.la_full_notm}} service instance](/docs/log-analysis?topic=log-analysis-kube#kube_step1) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
+1. Create an [{{site.data.keyword.la_full_notm}} service instance](/docs/log-analysis?topic=log-analysis-getting-started) and note the name of the instance. The service instance must belong to the same {{site.data.keyword.cloud_notm}} account where you created your cluster, but can be in a different resource group and {{site.data.keyword.cloud_notm}} region than your cluster.
 
 2. Create a logging specific namespace such as `ibm-observe` on your cluster by using the following command.
     
@@ -34,7 +34,7 @@ To configure the Fluentd based agent with your {{site.data.keyword.la_full_notm}
     ```
     {: pre}
 
-3. Get the [ingestion key](/docs/log-analysis?topic=log-analysis-kube#kube_step2) and the region specific URL of your {{site.data.keyword.la_full_notm}} instance. For example, `<ingestion-key>` and `<region-specific-log-instance-url>`.
+3. Get the [ingestion key](/docs/log-analysis?topic=log-analysis-ingestion_key) and the region specific URL of your {{site.data.keyword.la_full_notm}} instance. For example, `<ingestion-key>` and `<region-specific-log-instance-url>`.
 
 4. Copy the following example code into a new file such as `fluentd-cm.yaml`, and replace the `<ingestion-key>` and `<region-specific-log-instance-url>` in the yaml file with the values from the previous step.
     
@@ -208,7 +208,7 @@ To configure the Fluentd based agent with your {{site.data.keyword.la_full_notm}
     ```
     {: pre}
    
-8. View [the logs on the {{site.data.keyword.la_short}} dashboad](/docs/log-analysis?topic=log-analysis-kube#kube_step4).
+8. View [the logs on the {{site.data.keyword.la_short}} dashboard](/docs/log-analysis?topic=log-analysis-kube#kube_step3).
 
 
 
