@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-10-30"
 
 keywords: openshift
 
@@ -2157,4 +2157,29 @@ The deletion process might take up to 72 hours to complete.
 ibmcloud sl block volume-list
 ```
 {: pre}
+
+## Setting up monitoring for `limited` connectivity PVs
+{: #storage-block-vpc-limited-monitoring}
+
+When you create a pod and PVC that use {{site.data.keyword.blockstorageshort}}, 2 target ports are assigned to the underlying persistent volume (PV) where the storage is mounted. Multiple target ports allow for failover in case one port goes down.
+
+In previous versions of the {{site.data.keyword.blockstorageshort}} driver, the inability to find 2 target ports when mounting a PV during rollout caused deployment failure.
+
+However, in some cases, such as during IaaS maintenance windows, you might want your pods to deploy successfully with only 1 target port available on the persistent volume. 
+
+Beginning in version `2.4.12` of the {{site.data.keyword.blockstorageshort}} driver, pods will deploy successfully even if only 1 target port can be assigned by the PV. In addition to this behavior change, PVs now include a new label to indicate the network availability where a label of `healthy` means 2 targets ports were assigned and `limited` means only 1 target port could be assigned during mounting.
+
+To monitor for instances where pod connectivity to {{site.data.keyword.blockstorageshort}} is limited, you can set up a custom alert that looks for the `limited` label. Then, configure the alert threshold to `>0`.
+
+1. From the {{site.data.keyword.monitoringlong_notm}} dashboard, select **New alert** > **Metric**.
+
+1. Select **Prom query** and enter `kube_persistentvolume_labels{label_ibm_io_pv_connectivity_status='limited'}`. 
+
+1. Set the threshold to `>0` and set the severity you want to use for this alert.
+
+1. Select your notification channel and save the alert.
+
+
+
+
 

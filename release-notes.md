@@ -38,6 +38,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 [Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.20`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
+[New]{: tag-green} [Classic clusters]{: tag-classic-inf} Setting up alerts for {{site.data.keyword.blockstorageshort}} PVs with limited network connectivity.
+:   For more information, see [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring).
+
 ### 25 October 2023
 {: #openshift-oct2523}
 {: release-note}

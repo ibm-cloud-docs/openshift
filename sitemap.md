@@ -276,6 +276,8 @@ subcollection: openshift
 
         * [Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.20`
 
+        * [New]{: tag-green} [Classic clusters]{: tag-classic-inf} Setting up alerts for {{site.data.keyword.blockstorageshort}} PVs with limited network connectivity.
+
     * [25 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2523)
 
         * [Change log]{: tag-purple} Master fix packs are available.
@@ -4306,6 +4308,8 @@ subcollection: openshift
     * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options_block)
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
+
+* [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring)
 
 
 ## Setting up Block Storage for VPC
@@ -9429,6 +9433,8 @@ subcollection: openshift
 [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume#ts_storage_clean_volume)
 
 [Why does mounting {{site.data.keyword.blockstorageshort}} fail with a file system check error?](/docs/openshift?topic=openshift-ts-storage-fsck#ts-storage-fsck)
+
+[Why does my Block Storage persistent volume show a `limited` connectivity status?](/docs/openshift?topic=openshift-block-pv-limited-connectivity#block-pv-limited-connectivity)
 
 [Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 
