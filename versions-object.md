@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-12"
+lastupdated: "2023-10-30"
 
 keywords: object storage, plug-in, change log
 
@@ -29,12 +29,20 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.20 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.19 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.18 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.17 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.16 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.15 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.20, released 30 October 2023
+{: #02220_object_plugin}
+
+- Updates UBI to `8.8-1072.1697626218` to fix [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}.
+- Updates to fix [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}.
+
 
 ## Change log for version 2.2.19, released 12 October 2023
 {: #02219_object_plugin}

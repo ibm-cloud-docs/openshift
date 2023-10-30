@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-10-30"
 
 keywords: openshift, kubernetes, release notes
 
@@ -30,6 +30,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-oct23}
 
 
+
+### 30 October 2023
+{: #openshift-oct3023}
+{: release-note}
+
+[Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.20`
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 25 October 2023
 {: #openshift-oct2523}
