@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-10-30"
 
 keywords: openshift
 
@@ -29,7 +29,7 @@ While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}}
 {: shortdesc}
 
 
-Only one version of the Diagnostics and Debug Tool is available at a time. This version is available for all clusters versions. The tool is updated approximately once a month to address vulnerabilites. These updates are applied automatically. When a new version is pushed to a production region, all installed instances in that region are updated.
+Only one version of the Diagnostics and Debug Tool is available at a time. This version is available for all clusters versions. The tool is updated approximately once a month to address vulnerabilities. These updates are applied automatically. When a new version is pushed to a production region, all installed instances in that region are updated.
 {: note}
 
 

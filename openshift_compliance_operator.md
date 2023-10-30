@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-10-30"
 
 keywords: openshift
 
@@ -20,7 +20,7 @@ subcollection: openshift
 # Using the compliance operator
 {: #compliance-operator}
 
-With the compliance operator, you can check whether the worker nodes in your cluster meet the set of criteria in the profile that is tailored to {{site.data.keyword.openshiftlong}}. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.13/security/compliance_operator/compliance-operator-understanding.html){: external}.
+With the compliance operator, you can check whether the worker nodes in your cluster meet the set of criteria in the profile that is tailored to {{site.data.keyword.openshiftlong}}. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.13/security/compliance_operator/co-concepts/compliance-operator-understanding.html){: external}.
 {: shortdesc}
 
 

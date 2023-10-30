@@ -8869,6 +8869,8 @@ subcollection: openshift
 
 * [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
 
+[Why does OpenShift show the cluster version is down-level?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
+
 [Cluster states](/docs/openshift?topic=openshift-cluster-states-reference#cluster-states-reference)
 
 * [Aborted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-aborted)

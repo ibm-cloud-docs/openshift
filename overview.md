@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-30"
 
 keywords: openshift, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -324,7 +324,7 @@ The following table provides some examples of what types of workloads that users
 | --- | --- | --- |
 | DevOps enablement tools | Yes | |
 | Developing and testing apps | Yes | |
-| Apps that majorly shift in demand and need to scale rapidly | Yes | |
+| Apps that shift dramatically in demand and need to scale rapidly | Yes | |
 | Business apps such as CRM, HCM, ERP, and E-commerce | Yes | |
 | Collaboration and social tools such as email | Yes | |
 | RHEL workloads | Yes | |
