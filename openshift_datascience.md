@@ -19,6 +19,9 @@ completion-time: 60m
 
 # Installing Red Hat OpenShift Data Science
 {: #datascience}
+{: toc-content-type="tutorial"}
+{: toc-services="openshift"}
+{: toc-completion-time="60m"}
 
 Red Hat OpenShift Data Science is an open hybrid AI and machine learning platform for gathering insights from data and building AI-enabled applications. It provides tools to rapidly develop, train, serve, and monitor machine learning models on site, in the public cloud, or at the edge. You can install Red Hat OpenShift Data Science and other necessary operators onto an existing Red Hat OpenShift cluster that is enabled with GPU-enhanced worker nodes. 
 {: shortdesc}
@@ -85,7 +88,7 @@ After you install the operators, check that they are visible in the OpenShift we
 ## What's next?
 {: #datascience_next}
 
-Now that you have OpenShift Data Science installed on your cluster, try one of the [Data Science learning paths] to further explore what you can accomplish with AI. Or run a sample AI workload on your cluster by following one of the [Red Hat OpenShift tutorials](), such as this tutorial on using [GPUs and a Jupyter notebook for AI or machine learning modeling](https://developers.redhat.com/learn/openshift-data-science/configure-jupyter-notebook-use-gpus-aiml-modeling){: external}. 
+Now that you have OpenShift Data Science installed on your cluster, try one of the [Data Science learning paths] to further explore what you can accomplish with AI. Or run a sample AI workload on your cluster by following one of the [Red Hat OpenShift tutorials](https://developers.redhat.com/learn/openshift-data-science){: external}, such as this tutorial on using [GPUs and a Jupyter notebook for AI or machine learning modeling](https://developers.redhat.com/learn/openshift-data-science/configure-jupyter-notebook-use-gpus-aiml-modeling){: external}. 
 
 
 
