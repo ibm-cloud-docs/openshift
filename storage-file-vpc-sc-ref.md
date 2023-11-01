@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-11-01"
 
 keywords: openshift
 
@@ -26,56 +26,63 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: note}
 
 
-
-
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | `ibmc-vpc-file-3iops-tier`  \n `ibmc-vpc-file-retain-3iops-tier` |
-| Type | Endurance storage|
-| File system | NFS |
-| IOPS per gigabyte | 3 |
-| Size range in gigabytes | 20-12000 Gi|
-| Hard disk | SSD|
-| Reclaim policy | `ibmc-vpc-file-3iops-tier`: Delete  \n `ibmc-vpc-file-retain-3iops-tier`: Retain |
-| Billing | Hourly|
-| Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
-{: class="simple-tab-table"}
-{: caption="3 IOPS" caption-side="bottom"}
-{: #simpletabtable1-file-vpc-sc-ref}
-{: tab-title="3 IOPS"}
-{: tab-group="Class"}
-
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-file-5iops-tier`  \n `ibmc-vpc-file-retain-5iops-tier` |
-| Type | Endurance storage |
-| File system | NFS |
 | IOPS per gigabyte | 5 |
 | Size range in gigabytes | 20-12000 Gi |
 | Hard disk | SSD|
-| Reclaim policy | `ibmc-vpc-file-5iops-tier`: Delete  \n `ibmc-vpc-file-retain-5iops-tier`: Retain |
+| Reclaim policy | Delete |
+| Volume binding mode | Immediate |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs){: external} |
 {: class="simple-tab-table"}
-{: caption="5 IOPS" caption-side="bottom"}
-{: #simpletabtable2-file-vpc-sc-ref}
-{: tab-title="5 IOPS"}
+{: caption="ibmc-vpc-file-dp2" caption-side="bottom"}
+{: #simpletabtable1-file-vpc-sc-ref}
+{: tab-title="`ibmc-vpc-file-dp2`"}
 {: tab-group="Class"}
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
-| Name | `ibmc-vpc-file-10iops-tier`  \n `ibmc-vpc-file-retain-10iops-tier`  \n |
-| Type | Endurance storage|
-| File system | NFS|
+| IOPS per gigabyte | 5 |
+| Size range in gigabytes | 20-12000 Gi |
+| Hard disk | SSD|
+| Reclaim policy | Retain |
+| Volume binding mode | Immediate |
+| Billing | Hourly|
+| Pricing | [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs){: external} |
+{: class="simple-tab-table"}
+{: caption="ibmc-vpc-file-retain-dp2" caption-side="bottom"}
+{: #simpletabtable2-file-vpc-sc-ref}
+{: tab-title="`ibmc-vpc-file-retain-dp2`"}
+{: tab-group="Class"}
+
+| Characteristics | Setting|
+|:-----------------|:-----------------|
 | IOPS per gigabyte | 10|
 | Size range in gigabytes | 20-4000 Gi|
-| Hard disk | SSD|
-| Reclaim policy | `ibmc-vpc-file-10iops-tier`: Delete  \n `ibmc-vpc-file-retain-10iops-tier`: Retain   \n |
+| Hard disk | SSD |
+| Reclaim policy | Delete |
+| Volume binding mode | WaitForFirstConsumer |
 | Billing | Hourly|
 | Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
 {: class="simple-tab-table"}
-{: caption="10 IOPS Tier" caption-side="bottom"}
+{: caption="ibmc-vpc-file-metro-dp2 " caption-side="bottom"}
 {: #simpletabtable3-file-vpc-sc-ref}
-{: tab-title="10 IOPS"}
+{: tab-title="`ibmc-vpc-file-metro-dp2`"}
+{: tab-group="Class"}
+
+| Characteristics | Setting|
+|:-----------------|:-----------------|
+| IOPS per gigabyte | 10|
+| Size range in gigabytes | 20-4000 Gi|
+| Hard disk | SSD |
+| Reclaim policy | Retain |
+| Volume binding mode | WaitForFirstConsumer |
+| Billing | Hourly|
+| Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
+{: class="simple-tab-table"}
+{: caption="ibmc-vpc-file-metro-retain-dp2 " caption-side="bottom"}
+{: #simpletabtable4-file-vpc-sc-ref}
+{: tab-title="`ibmc-vpc-file-metro-retain-dp2`"}
 {: tab-group="Class"}
 
