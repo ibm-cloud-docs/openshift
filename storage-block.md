@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-01"
 
 keywords: openshift
 
@@ -2165,7 +2165,7 @@ When you create a pod and PVC that use {{site.data.keyword.blockstorageshort}}, 
 
 In previous versions of the {{site.data.keyword.blockstorageshort}} driver, the inability to find 2 target ports when mounting a PV during rollout caused deployment failure.
 
-However, in some cases, such as during IaaS maintenance windows, you might want your pods to deploy successfully with only 1 target port available on the persistent volume. 
+However, sometimes, such as during IaaS maintenance windows, you might want your pods to deploy successfully with only 1 target port available on the persistent volume. 
 
 Beginning in version `2.4.12` of the {{site.data.keyword.blockstorageshort}} driver, pods will deploy successfully even if only 1 target port can be assigned by the PV. In addition to this behavior change, PVs now include a new label to indicate the network availability where a label of `healthy` means 2 targets ports were assigned and `limited` means only 1 target port could be assigned during mounting.
 
