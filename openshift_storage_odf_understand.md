@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-25"
+lastupdated: "2023-10-30"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -120,6 +120,7 @@ The Multicloud Object Gateway consists of the open source tool [NooBaa](https://
 {: #odf-best-practices}
 
 Review the following sections for best practices when installing and managing ODF.
+
 ### Planning
 {: #planning-odf}
 

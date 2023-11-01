@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-11-01"
 
 keywords: file, add-on, changelog
 
@@ -39,9 +39,25 @@ ibmcloud oc cluster addon versions --addon vpc-file-csi-driver
 
 To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
+## Version 1.2
+{: #012_is_file}
+
+### Change log for version version 1.2.0, released 31 October 2023
+{: #0120_is_file}
+
+
+- Tiered and custom profile storage classes are no longer supported. Update your PVCs to use a `dp2` storage classes.
+- Adds support for granular authorization via the Virtual Network Interface VNI (Elastic Network Interface ENI).
+- Adds support for cross zone mounting by default. Pods can now mount storage volumes across zones.
+- Allows you to bring your own security group to control granular authorization at the worker node, zone, or worker pool level.
+- Adds bring your own subnet support to control which subnet the virtual network interface (VNI) IP for storage is assigned and created in.
+- Adds bring your own IP support existing `PrimaryIP` which the VNI will assign.
+- Allows you to set a custom `PrimaryIPAddress` within the subnet range where the VNI IP will be assigned and created.
+
 
 ## Version 1.1
 {: #011_is_file}
+
 
 ### Change log for version 1.1.7_49, released 14 September 2023
 {: #1.1.7_is_file_relnote}

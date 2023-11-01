@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-01"
 
 keywords: openshift, kubernetes, help, network, connectivity, target port, limited, alerts
 
@@ -34,12 +34,12 @@ Labels: ibm.io/pv-connectivity-status: limited
 
 
 The {{site.data.keyword.blockstorageshort}} driver looks for 2 target ports when you mount a PVC to a PV. If 2 target ports can't be found when mounting the volume, the `ibm.io/pv-connectivity-status: limited` label is added to the PV.
-{:tsCauses}
+{: tsCauses}
 
-If your PV shows a `limited` connectivity status, then only 1 target port was available at mount time. In most cases, this situation is due to maintenance impacts. 
+If your PV shows a `limited` connectivity status, then only 1 target port was available at mount time. Usually, this situation is due to maintenance impacts. 
 {: tsResolve}
 
-1. Review that IBM Cloud status console for potential maitenance impacts. Do not reload or restart your deployments if your PVs have `limited` connectivity.
+1. Review that IBM Cloud status console for potential maintenance impacts. Do not reload or restart your deployments if your PVs have `limited` connectivity.
 
 1. If there is no ongoing maintenance, or if the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs..
 

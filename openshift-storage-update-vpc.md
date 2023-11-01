@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-10-30"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
 
@@ -248,6 +248,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> -p FORCE_OSD_REMOVAL=true | oc create -f -
     ```
     {: pre}
+    
     The `FAILED_osd_id` value is the integer in the pod name immediately after the `rook-ceph-osd` prefix. The `FORCE_OSD_REMOVAL` value must be changed to `true` in clusters that have only three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
     {: note}
 

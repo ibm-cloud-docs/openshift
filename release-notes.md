@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-01"
 
 keywords: openshift, kubernetes, release notes
 
@@ -31,6 +31,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 31 October 2023
+{: #openshift-oct3123}
+{: release-note}
+
+
+[New]{: tag-green} [VPC clusters]{: tag-vpc} VNI functionality for limiting access to {{site.data.keyword.filestorage_vpc_short}} by node, zone, worker pool and more.
+:   You now have more granular control over how pods access your {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Limiting file share access by worker node, zone, or worker pool](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-setup).
+
+[Change log]{: tag-purple} {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.2`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
+
 ### 30 October 2023
 {: #openshift-oct3023}
 {: release-note}
@@ -38,7 +50,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 [Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.20`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
-[New]{: tag-green} [Classic clusters]{: tag-classic-inf} Setting up alerts for {{site.data.keyword.blockstorageshort}} PVs with limited network connectivity.
+[New]{: tag-green} Setting up alerts for {{site.data.keyword.blockstorageshort}} PVs with limited network connectivity.
 :   For more information, see [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring).
 
 ### 25 October 2023
@@ -2037,7 +2049,7 @@ CIS Kubernetes Benchmark
 :   Added information about {{site.data.keyword.openshiftlong_notm}} compliance with the [Center for Internet Security (CIS) Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410) for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.10.
 
 Cluster security groups
-:   You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-cluster-workers).
+:   You can now specify up to five security groups to attach to workers when you create a VPC cluster. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group).
 
 ### 27 April 2022
 {: #openshift-apr2722}

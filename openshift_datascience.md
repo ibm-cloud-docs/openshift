@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-01"
 
 keywords: data science, AI, machine learning, AI modeling, modeling, GPUs, NVIDIA, node feature discovery, pipelines
 
@@ -19,6 +19,9 @@ completion-time: 60m
 
 # Installing Red Hat OpenShift Data Science
 {: #datascience}
+{: toc-content-type="tutorial"}
+{: toc-services="openshift"}
+{: toc-completion-time="60m"}
 
 Red Hat OpenShift Data Science is an open hybrid AI and machine learning platform for gathering insights from data and building AI-enabled applications. It provides tools to rapidly develop, train, serve, and monitor machine learning models on site, in the public cloud, or at the edge. You can install Red Hat OpenShift Data Science and other necessary operators onto an existing Red Hat OpenShift cluster that is enabled with GPU-enhanced worker nodes. 
 {: shortdesc}
@@ -32,7 +35,7 @@ The following steps refer to the Red Hat documentation. For more information see
 
 1. [Request access](/docs/openshift?topic=openshift-get-help#allowlist-access-request) to GPU worker nodes on VPC clusters, which are currently behind an allowlist. 
 
-2. [Create a Red Hat OpenShift VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui) that runs on [bare metal GPU worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#bm) and has a public cloud service endpoint. If you choose to use a private cloud serice endpoint, make sure you configure your cluster so that you can access the OpenShift web console. 
+2. [Create a Red Hat OpenShift VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui) that runs on [bare metal GPU worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#bm) and has a public cloud service endpoint. If you choose to use a private cloud service endpoint, make sure you configure your cluster so that you can access the OpenShift web console. 
 
 3. Make sure you can [access the your cluster through the OpenShift web console](/docs/openshift?topic=openshift-access_cluster#access_oc_console). 
 
@@ -54,7 +57,7 @@ You can install the OpenShift Data Science Operator to your cluster using the we
 {: #datascience_node_feature_discovery}
 {: step}
 
-The Node Feature Discovery (NFD) Operator is a prerequisite for the NVIDIA GPU Operator, which is required to enable and use GPUs with OpenShift Data Science. Follow the steps in [Installing the Node Feature Discovery (NFD) Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/23.6.1/install-nfd.html){: external} in the NVIDIA documentation to install the operator using the Red Hat OperatorHub catalog in the OpenShift Container Platform web console. Make sure you follow all of the instructions, including the step to create a Node Feature Discovery instance and the steps to verify the installation. 
+The Node Feature Discovery (NFD) Operator is a prerequisite for the NVIDIA GPU Operator, which is required to enable and use GPUs with OpenShift Data Science. Follow the steps in [Installing the Node Feature Discovery (NFD) Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/23.6.1/install-nfd.html){: external} in the NVIDIA documentation to install the operator using the Red Hat OperatorHub catalog in the OpenShift Container Platform web console. Make sure you follow all the instructions, including the step to create a Node Feature Discovery instance and the steps to verify the installation. 
 
 
 ## Install the NVIDIA GPU Operator
@@ -85,7 +88,7 @@ After you install the operators, check that they are visible in the OpenShift we
 ## What's next?
 {: #datascience_next}
 
-Now that you have OpenShift Data Science installed on your cluster, try one of the [Data Science learning paths] to further explore what you can accomplish with AI. Or run a sample AI workload on your cluster by following one of the [Red Hat OpenShift tutorials](), such as this tutorial on using [GPUs and a Jupyter notebook for AI or machine learning modeling](https://developers.redhat.com/learn/openshift-data-science/configure-jupyter-notebook-use-gpus-aiml-modeling){: external}. 
+Now that you have OpenShift Data Science installed on your cluster, try one of the [Data Science learning paths] to further explore what you can accomplish with AI. Or run a sample AI workload on your cluster by following one of the [Red Hat OpenShift tutorials](https://developers.redhat.com/learn/openshift-data-science){: external}, such as this tutorial on using [GPUs and a Jupyter notebook for AI or machine learning modeling](https://developers.redhat.com/learn/openshift-data-science/configure-jupyter-notebook-use-gpus-aiml-modeling){: external}. 
 
 
 
