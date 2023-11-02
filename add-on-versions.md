@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-10-13"
+lastupdated: "2023-11-02"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -59,7 +59,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 
 - Supported Kubernetes cluster versions: `>=1.23.0 <1.28.0`
 
-- Supported OpenShift cluster versions: `>=4.8.0 <4.14.0`
+- Supported OpenShift cluster versions: `>=4.8.0 <4.15.0`
 
 
 
@@ -99,7 +99,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 
 - Supported Kubernetes cluster versions: `>=1.23.0 <1.29.0`
 
-- Supported OpenShift cluster versions: `>=4.8.0 <4.14.0`
+- Supported OpenShift cluster versions: `>=4.9.0 <4.15.0`
 
 
 
@@ -189,7 +189,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 
 - Supported Kubernetes cluster versions: `>=1.23.0 <1.29.0`
 
-- Supported OpenShift cluster versions: `>=4.8.0 <4.14.0`
+- Supported OpenShift cluster versions: `>=4.9.0 <4.15.0`
 
 
 
@@ -199,7 +199,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 
 - Supported Kubernetes cluster versions: `>=1.22.0 <1.29.0`
 
-- Supported OpenShift cluster versions: `>=4.8.0 <4.14.0`
+- Supported OpenShift cluster versions: `>=4.8.0 <4.15.0`
 
 
 
@@ -209,7 +209,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 
 - Supported Kubernetes cluster versions: `>=1.22.0 <1.29.0`
 
-- Supported OpenShift cluster versions: `>=4.9.0 <4.14.0`
+- Supported OpenShift cluster versions: `>=4.9.0 <4.15.0`
 
 
 
@@ -219,7 +219,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 
 - Supported Kubernetes cluster versions: `>=1.25.0 <1.29.0`
 
-- Supported OpenShift cluster versions: `>=4.10.0 <4.14.0`
+- Supported OpenShift cluster versions: `>=4.10.0 <4.15.0`
 
 
 
@@ -229,7 +229,17 @@ Review the following list of supported cluster add-ons. Each addon version can b
 
 - Supported Kubernetes cluster versions: `>=1.21.0 <1.29.0`
 
-- Supported OpenShift cluster versions: `>=4.7.0 <4.14.0`
+- Supported OpenShift cluster versions: `>=4.7.0 <4.15.0`
+
+
+
+
+## vpc-file-csi-driver 1.2 
+{: #vpc-file-csi-driver-1.2}
+
+- Supported Kubernetes cluster versions: `>=1.24.0 <1.29.0`
+
+- Supported OpenShift cluster versions: `>=4.10.0 <4.15.0`
 
 
 
