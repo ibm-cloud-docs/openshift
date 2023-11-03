@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-02"
+lastupdated: "2023-11-03"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -213,7 +213,7 @@ To install ODF in your cluster, complete the following steps.
 1. For VPC clusters, select **Remote provisioning** to dynamically provision volumes for ODF by using the {{site.data.keyword.block_storage_is_short}}.
 1. In the **OSD storage class name** field, enter the name of the {{site.data.keyword.block_storage_is_short}} ODF storage class that you want to use to provision storage volumes. For multizone clusters, use a storage class with the `VolumeBindingMode` of `WaitForFirstConsumer`. See the [Storage Class Reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference) for more information.
 1. In the **OSD pod size** field, enter the size of the volume that you want to provision.
-1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the **`oc get nodes`** command in your cluster. Leave this field blank to deploy ODF on all worker nodes.
+1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the **`oc get nodes`** command in your cluster. Node names must be comma-separated with no spaces between names.  For example: `10.240.0.24,10.240.0.26,10.240.0.25`.Leave this field blank to deploy ODF on all worker nodes.
 1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
 1. If you want to encrypt the OSD volumes (cluster wide encryption) used by the ODF system pods, select **Enable cluster encryption**.
 1. If you want to enable encryption for the application volumes (app storage), select **Enable volume encryption**.
@@ -702,7 +702,7 @@ Refer to the following parameters when you use the add-on or operator in VPC clu
 | `numOfOsd` | Enter the number object storage daemons (OSDs) that you want to create. ODF creates three times the `numOfOsd` value. For example, if you enter `1`, ODF provisions 3 disks of the size and storage class that you specify in the `osdStorageClassName` field. | `1` |
 | `billingType` | Enter a `billingType` of either `essentials` or `advanced` for your ODF deployment. | `advanced` |
 | `ocsUpgrade` | Enter `true` or `false` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Enter the node names for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. | N/A |
+| `workerNodes` | **Optional**: Enter the node names for the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. Node names must be comma-separated with no spaces between names. For example: `10.240.0.24,10.240.0.26,10.240.0.25`. | N/A |
 | `clusterEncryption` | Enter `true` or `false` to enable cluster wide encryption. |
 {: caption="ODF parameter reference" caption-side="bottom"}
 
