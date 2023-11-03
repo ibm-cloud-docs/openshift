@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-20"
+lastupdated: "2023-11-03"
 
 keywords: openshift
 
@@ -15,8 +15,10 @@ subcollection: openshift
 
 
 
-# Installing the {{site.data.keyword.cos_full_notm}} plug-in on VPC and classic clusters
+# Installing the {{site.data.keyword.cos_full_notm}} plug-in
 {: #storage_cos_install}
+
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
 {: shortdesc}
@@ -104,13 +106,53 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         ```
         {: pre}
 
-        If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run `chmod 755 /Users/<user_name>/Library/helm/plugins/helm-ibmc/ibmc.sh`. Then, rerun `helm ibmc --help`.
-        {: tip}
+        Example output
+        ```sh
+        Helm version: v3.13.1+g3547a4b
+        Install or upgrade Helm charts in IBM K8S Service(IKS)
+        Usage:
+        helm ibmc [command]
+        Available Commands:
+        install           Install a Helm chart
+        upgrade           Upgrade the release to a new version of the Helm chart
+        Available Flags:
+        -h, --help        (Optional) This text.
+        -u, --update      (Optional) Update this plugin to the latest version
+        Example Usage:
+            Install: helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin
+            Upgrade: helm ibmc upgrade [RELEASE] ibm-helm/ibm-object-storage-plugin
+        Note:
+            1. It is always recommended to install latest version of ibm-object-storage-plugin chart.
+            2. It is always recommended to have 'kubectl' client up-to-date.
+        ```
+        {: screen}
+
+    3. **Optional**: If the output shows the error `Error: fork/exec /home/iksadmin/.helm/plugins/helm-ibmc/ibmc.sh: permission denied`, run the following command.
+        
+        ```sh
+        chmod 755 /Users/<user_name>/Library/helm/plugins/helm-ibmc/ibmc.sh
+        ```
+        {: pre}
+
+        Then retry the `ibmc --help` command.
+
+        ```sh
+        helm ibmc --help
+        ```
+        {: pre}
+        
+
 
 
 1. **Optional**: Limit the {{site.data.keyword.cos_full_notm}} plug-in to access only the Kubernetes secrets that hold your {{site.data.keyword.cos_full_notm}} service credentials. By default, the plug-in can access all Kubernetes secrets in your cluster.
     1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
     2. [Store your {{site.data.keyword.cos_full_notm}} service credentials in a Kubernetes secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)).
+    3. Change directories to the `ibm-object-storage-plugin` directory.
+        ```sh
+        cd ibm-object-storage-plugin
+        ```
+        {: pre}
+        
     3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.
         **OS X and Linux**
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-11-03"
 
 keywords: planning, storage, cluster
 
@@ -232,6 +232,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Ideal data types | Semi-structured and unstructured data |
 | Data usage pattern | Read-intensive workloads. Few or no write operations.
 | Access | Via file system on mounted volume (plug-in) or via REST API from your app |
+| Supported Kubernetes access modes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) |
 | Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |
 | Consistency| Eventual |
 | Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. |
@@ -251,12 +252,12 @@ The following sections show the options that you have in {{site.data.keyword.ope
 
 | Characteristics | Description |
 | --- | --- |
-| Deployment guide | [Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-storage_portworx_about). |
+| Deployment guide | [Setting up Portworx](/docs/openshift?topic=openshift-storage_portworx_about). |
 | Supported infrastructure providers | Classic, VPC, Satellite |
 | Ideal data types | Any |
 | Data usage pattern | Read-intensive workloads. Few or no write operations. | Write-intensive workloads. Random read and write operation. Sequential read and write operations | Read-write-intensive workloads |
 | Access | Via file system on mounted volume (plug-in) or via REST API from your app | Via file system on mounted volume or NFS client access to the volume. | Via REST API from your app. |
-| Supported Kubernetes access writes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) | All | N/A as accessed from the app directly. |
+| Supported Kubernetes access writes | N/A as accessed from the app directly. |
 | Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-pvcs/dynamic-provisioning.html){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
 | Consistency| Eventual | Strong | Depends on the DBaaS |
 | Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High |
@@ -270,7 +271,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 {: class="simple-tab-table"}
 {: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
 {: #multi-zone-storage-2}
-{: tab-title="Portwox"}
+{: tab-title="Portworx"}
 {: tab-group="multi-zone-storage"}
 
 

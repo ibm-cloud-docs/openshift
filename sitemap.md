@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-02"
+lastupdated: "2023-11-03"
 
 keywords: openshift
 subcollection: openshift
@@ -4545,7 +4545,7 @@ subcollection: openshift
 
 * [Limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations)
 
-[Installing the {{site.data.keyword.cos_full_notm}} plug-in on VPC and classic clusters](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
+[Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
 
 * [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin)
 
@@ -4586,14 +4586,6 @@ subcollection: openshift
 [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
-
-* [Standard](/docs/openshift?topic=openshift-storage_cos_reference#standard)
-
-* [Vault](/docs/openshift?topic=openshift-storage_cos_reference#Vault)
-
-* [Cold](/docs/openshift?topic=openshift-storage_cos_reference#cold)
-
-* [Smart](/docs/openshift?topic=openshift-storage_cos_reference#smart)
 
 
 ## Setting up OpenShift Data Foundation
