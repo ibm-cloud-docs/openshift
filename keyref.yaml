@@ -88,7 +88,7 @@ keyword:
   openshift_410_release_date:
     27 April 2022
   openshift_410_unsupported_date:
-    30 November 2023
+    31 January 2024
   openshift_410_unsupported_certainty:
     tentative
   openshift_410_kube_version:
@@ -171,7 +171,7 @@ keyword:
   satellite_410_release_date:
     27 April 2022
   satellite_410_unsupported_date:
-    08 November 2023
+    31 January 2024
   satellite_410_unsupported_certainty:
     tentative
   satellite_410_kube_version:

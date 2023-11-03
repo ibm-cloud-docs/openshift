@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-11-03"
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
 
@@ -495,7 +495,7 @@ To install ODF in your cluster, complete the following steps.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
 1. Select either **Essentials** or **Advanced** as your billing plan.
 1. If you want to automatically discover the available storage devices on your worker nodes and use them in ODF, select **Local disk discovery**.
-1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the `oc get nodes` command in your cluster. Leave this field blank to deploy ODF on all worker nodes.
+1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the `oc get nodes` command in your cluster. Node names must be comma-separated with no spaces between names. For example: `10.240.0.24,10.240.0.26,10.240.0.25`.Leave this field blank to deploy ODF on all worker nodes. 
 1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
 1. If you are re-enabling the add-on to upgrade the add-on version, select the **Upgrade ODF** option.
 1. If you want to encrypt the volumes used by the ODF system pods, select **Enable cluster encryption**.

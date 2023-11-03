@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-03"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -342,10 +342,13 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     :   Required. The ID of the VPC that you want to use for your cluster. To list available VPCs, run `ibmcloud is vpcs`.
 
     `flavor`
-    :   Required. The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors&interface=ui).
+    :   Required. The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors&interface=ui).  
 
     `worker_count`
     :   The number of worker nodes that you want to add to the default worker pool. 
+    
+    `operating_system`
+    :   The operating system of the worker nodes in the worker pool. For a list of supported operating systems by cluster version, see [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
     
     `resource_group_id`
     :   The ID of the resource group. To see available resource groups, run `ibmcloud resource groups`. If no value is provided, the default resource group is used.
