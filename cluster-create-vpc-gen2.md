@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-11-06"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -326,6 +326,8 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     vpc_id            = "<vpc_id>"
     flavor            = "bx2.16x64"
     worker_count      = "3"
+    operating_system  = "UBUNTU_20_64"
+    kube_version      = "1.28.2"
     resource_group_id = "<resource_group_id>"
     zones {
         subnet_id = "<subnet_id>"
@@ -348,7 +350,10 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     :   The number of worker nodes that you want to add to the default worker pool. 
     
     `operating_system`
-    :   The operating system of the worker nodes in the worker pool. For a list of supported operating systems by cluster version, see [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
+    :   The operating system of the worker nodes in the worker pool. For a list of supported operating systems by cluster version, see [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).  
+
+    `kube_version`
+    :   The Kubernetes version of your cluster. By default, clusters are created with the default Kubernetes version, but you can specify a different [supported version](/docs/containers?topic=containers-cs_versions&interface=ui#cs_versions_available).  
     
     `resource_group_id`
     :   The ID of the resource group. To see available resource groups, run `ibmcloud resource groups`. If no value is provided, the default resource group is used.
