@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-11-06"
 
 keywords: openshift, api
 
@@ -242,25 +242,25 @@ Federated ID
     You can find the {{site.data.keyword.cloud_notm}} IAM token in the `access_token` and the refresh token in the `refresh_token` field of your API output.
 
 4. List all classic or VPC clusters in your account.
-        Example request to list Classic clusters.
+    Example request to list Classic clusters.
     
-        ```sh
-        GET https://containers.cloud.ibm.com/global/v2/classic/getClusters
-        ```
-        {: codeblock}
+    ```sh
+    GET https://containers.cloud.ibm.com/global/v2/classic/getClusters
+    ```
+    {: codeblock}
 
-        Header
-        :    `Authorization: bearer <iam_token>`
+    Header
+    :    `Authorization: bearer <iam_token>`
 
-        Example command to list VPC clusters.
+    Example command to list VPC clusters.
     
-        ```sh
-        GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=vpc-gen2
-        ```
-        {: codeblock}
+    ```sh
+    GET https://containers.cloud.ibm.com/global/v2/vpc/getClusters?provider=vpc-gen2
+    ```
+    {: codeblock}
 
-        Header
-        :    `Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token (`bearer <iam_token>`).
+    Header
+    :    `Authorization`: Your {{site.data.keyword.cloud_notm}} IAM access token (`bearer <iam_token>`).
 
 5. Review the [{{site.data.keyword.openshiftlong_notm}} API documentation](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external} to find a list of supported APIs.
 
