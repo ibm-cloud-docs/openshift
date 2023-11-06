@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-11-06"
 
 keywords: vpc, monitoring, block storage, metrics
 
@@ -127,7 +127,7 @@ After you complete the following steps, make sure to remove the resources you cr
 
     ```sh
     NAME          STATUS    ROLES    AGE     VERSION              
-    10.111.1.11   Ready     <none>   1d      v1.27+IKS            
+    10.111.1.11   Ready     <none>   1d      v1.28+IKS            
     ```
     {: screen}
 

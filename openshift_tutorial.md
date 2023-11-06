@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-11-06"
 
 keywords: kubernetes, openshift, red hat, red hat openshift
 
@@ -123,7 +123,7 @@ Review the following diagram for an overview of common cluster resources.
 
     ```sh
     Client Version: v4.13.0
-    Kubernetes Version: v1.27.6.2
+    Kubernetes Version: v1.28.2.2
     ```
     {: screen}
 
