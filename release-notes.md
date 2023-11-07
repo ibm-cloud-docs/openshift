@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-06"
+lastupdated: "2023-11-07"
 
 keywords: openshift, kubernetes, release notes
 
@@ -25,6 +25,18 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## November 2023
+{: #openshift-nov23}
+
+### 7 November 2023
+{: #openshift-nov0723}
+{: release-note}
+
+[Change log]{: tag-purple} CLI version `1.0.578` is available.
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
 
 
 
