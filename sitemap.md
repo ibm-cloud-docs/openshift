@@ -270,6 +270,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
+
+    * [7 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0723)
+
+        * [Change log]{: tag-purple} CLI version `1.0.578` is available.
+
 * [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
 
     * [31 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3123)
@@ -5647,6 +5653,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.578](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01578)
 
 * [Version 0.1.573](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01573)
 
