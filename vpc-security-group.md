@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-07"
 
-keywords: openshift, firewall, acl, acls, access control list, rules, security group
+keywords: openshift, kubernetes, firewall, acl, acls, access control list, rules, security group
 
 subcollection: openshift
 
@@ -198,7 +198,7 @@ By default, traffic rules for VPC ALBs are covered by the `kube-<vpc-id>` securi
 
 | Rule purpose | Protocol | Port or Value | Source |
 | --- | --- | --- | --- |
-| If you use your own security group for the LBaaS for Ingress and you expose any applications in your cluster with Ingress, you must allow TCP protocol to ports 443 or 80, or both. You can allow access for all clients, or you can allow only certain source IPs or subnets to access these applications. Note that this requirement also applies if you want to use the Openshift Console, which is exposed by the cluster's default Ingress instance and router. To allow access for the Openshift Console, you must allow TCP protocol to port 443 from all sources, or from specific source IP addresses or subnets. | TCP | `80 or 443` | All sources, or specific source IP addresses or subnets |
+| If you use your own security group for the LBaaS for Ingress and you expose any applications in your cluster with Ingress, you must allow TCP protocol to ports 443 or 80, or both. You can allow access for all clients, or you can allow only certain source IPs or subnets to access these applications. Note that this requirement also applies if you want to use the OpenShift Console, which is exposed by the cluster's default Ingress instance and router. To allow access for the OpenShift Console, you must allow TCP protocol to port 443 from all sources, or from specific source IP addresses or subnets. | TCP | `80 or 443` | All sources, or specific source IP addresses or subnets |
 | If you use your own security group for any LBaaS instances that you use to expose other applications, then within that security group you must allow any intended sources to access the appropriate ports and protocols. | TCP, UDP, or both | LBaaS ports | Any sources, or specific source IPs or subnets |
 {: caption="Required inbound rules for VPC ALB security groups" caption-side="bottom"}
 
@@ -440,6 +440,9 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 {: pre}
 
 The security groups applied to the workers in the worker pool are a combination of those applied to the cluster that the worker pool is attached to and those applied to the worker pool at create time.
+
+
+
 
 
 ## Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-06"
+lastupdated: "2023-11-07"
 
 keywords: openshift, version, update, upgrade
 
@@ -50,6 +50,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 RHEL 7 is deprecated and becomes unsupported soon. For migration actions by cluster version, see [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate).
 {: important}
+
 
 
 
@@ -168,6 +169,7 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_410)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_410)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.10 release notes overview](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html){: external}
+
 
 
 Unsupported versions:
