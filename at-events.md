@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-11-08"
 
 keywords: openshift, audit
 
@@ -344,13 +344,14 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | {{site.data.keyword.openshiftlong_notm}} VPC location | {{site.data.keyword.at_short}} event location |
 |-----|-----|
 | Dallas (us-south-1, us-south-2, us-south-3) | Dallas |
-| São Paulo (br-sao-1, br-sao-2, br-sao-3) | Dallas |
-| Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
-| Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Toronto |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
 | London (eu-gb-1, eu-gb-2, eu-gb-3) | London |
+| Madrid (eu-es-1, eu-es-2, eu-es-3) | Madrid |
+| São Paulo (br-sao-1, br-sao-2, br-sao-3) | Dallas |
 | Sydney (au-syd-1, au-syd-2, au-syd-3) | Sydney |
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
+| Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Toronto |
+| Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="bottom"}
 
 
