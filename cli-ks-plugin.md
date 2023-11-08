@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-11-08"
 
 keywords: openshift
 
@@ -788,7 +788,7 @@ Minimum required permissions
      After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 
 `--public-service-endpoint`
-:    Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your command line. If you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` option, master-worker node communication goes over the private and the public network.
+:    Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your command line. Public-only clusters can only be created in accounts that don't have VRF enabled. If you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` option, master-worker node communication goes over the private and the public network.
      After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 
 
