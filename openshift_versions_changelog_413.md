@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-11-09"
 
 keywords: openshift, 4.13, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -34,6 +34,19 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+### Change log for worker node fix pack 4.13.19_1545_openshift, released 08 November 2023
+{: #41319_1545_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.13.19_1545_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}| 4.13.17 | 4.13.19 | see [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-13-19){: external}. |
+
+{: caption="Changes since version 4.13.17_1544_openshift" caption-side="bottom"}
+
+
 ### Change log for master fix pack 4.13.15_1543_openshift, released 25 October 2023
 {: #41315_1543_openshift_M}
 
@@ -48,7 +61,7 @@ The following table shows the changes that are in the master fix pack 4.13.15_15
 | Cluster health image | v1.4.2 | v1.4.4 | New version contains updates and security fixes. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1390 | 1487 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.10 | v2.4.12 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.26.8-3 | v1.26.9-8 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.26.8-3 | v1.26.9-8 | New version contains updates and security fixes. The logic for the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout` annotation has changed. The default idle timeout is dependent on your account settings. In most cases, this value is `50`. However some allowlisted accounts have larger timeout settings. If you don't set the annotation, your load balancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 4e2f346 | f0d3265 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.2 | v2.8.4 | New version contains updates and security fixes. |
 | OpenVPN Operator image | v1.5.6 | v1.5.7 | New version contains updates and security fixes. |

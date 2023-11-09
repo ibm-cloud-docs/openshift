@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-07"
+lastupdated: "2023-11-09"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -33,11 +33,11 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
-## Version v1.0.578
-{: #cli-01578}
+## Version v1.0.579
+{: #cli-01579}
 
 
-Version 0.1.578 of the CLI was released on 7 November 2023.
+Version 0.1.579 of the CLI was released on 7 November 2023.
 :  Deprecates `logging collect` commands.
 :  Removes beta tag for `sat storage assignment` commands.
 

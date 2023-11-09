@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-11-09"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -42,6 +42,19 @@ Review the version 4.11 change log.
 
 
 
+### Change log for worker node fix pack 4.11.52_1578_openshift, released 08 November 2023
+{: #41152_1578_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.11.52_1578_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}|N/A|N/A|N/A|
+
+{: caption="Changes since version 4.11.52_1577_openshift" caption-side="bottom"}
+
+
 ### Change log for master fix pack 4.11.50_1576_openshift, released 25 October 2023
 {: #41150_1576_openshift_M}
 
@@ -56,7 +69,7 @@ The following table shows the changes that are in the master fix pack 4.11.50_15
 | Cluster health image | v1.4.2 | v1.4.4 | New version contains updates and security fixes. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1390 | 1487 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.10 | v2.4.12 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.17-3 | v1.24.17-11 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.17-3 | v1.24.17-11 | New version contains updates and security fixes. The logic for the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout` annotation has changed. The default idle timeout is dependent on your account settings. In most cases, this value is `50`. However some allowlisted accounts have larger timeout settings. If you don't set the annotation, your load balancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 4e2f346 | f0d3265 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.2 | v2.8.4 | New version contains updates and security fixes. |
 | OpenVPN Operator image | v1.4.27 | v1.4.28 | New version contains updates and security fixes. |
