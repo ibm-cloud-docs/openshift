@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
 
+    * [9 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0923)
+
+        * [Change log]{: tag-purple} Worker node fix packs are available.
+
     * [7 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0723)
 
         * [Change log]{: tag-purple} CLI version `1.0.579` is available.

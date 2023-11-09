@@ -29,6 +29,23 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## November 2023
 {: #openshift-nov23}
 
+### 9 November 2023
+{: #openshift-nov0923}
+{: release-note}
+
+
+
+
+
+[Change log]{: tag-purple} Worker node fix packs are available.
+:   Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+:   [4.13.19_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12.41_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [4.11.52_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   [4.10.67_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+
+
+
 ### 7 November 2023
 {: #openshift-nov0723}
 {: release-note}
