@@ -34,6 +34,19 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+### Change log for worker node fix pack 4.13.19_1545_openshift, released 08 November 2023
+{: #41319_1545_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.13.19_1545_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}| 4.13.17 | 4.13.19 | see [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-13-19){: external}. |
+
+{: caption="Changes since version 4.13.17_1544_openshift" caption-side="bottom"}
+
+
 ### Change log for master fix pack 4.13.15_1543_openshift, released 25 October 2023
 {: #41315_1543_openshift_M}
 
