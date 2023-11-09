@@ -51,7 +51,6 @@ The following table shows the changes that are in the worker node fix pack 4.11.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.openshiftshort}}|N/A|N/A|N/A|
-
 {: caption="Changes since version 4.11.52_1577_openshift" caption-side="bottom"}
 
 

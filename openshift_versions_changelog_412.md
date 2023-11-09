@@ -43,7 +43,6 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.openshiftshort}}| 4.12.39 | 4.12.41 | see [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-41){: external}. |
-
 {: caption="Changes since version 4.12.39_1566_openshift" caption-side="bottom"}
 
 
