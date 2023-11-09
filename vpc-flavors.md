@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-07"
+lastupdated: "2023-11-09"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -609,6 +609,8 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #us-south-memory-table}
 {: tab-title="Memory"}
 {: tab-group="us-south-tables"}
+
+
 
 
 
