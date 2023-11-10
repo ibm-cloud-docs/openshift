@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
 
+    * [10 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1023)
+
+        * Updated sorting and formatting for the Classic and VPC cluster flavor pages.
+
     * [9 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0923)
 
         * [Change log]{: tag-purple} Worker node fix packs are available.
