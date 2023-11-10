@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-10"
 
 keywords: openshift, node scaling, ca, autoscaler
 
@@ -64,7 +64,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="au-syd-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -81,9 +80,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #au-syd-memory-table}
 {: tab-title="Memory"}
 {: tab-group="au-syd-tables"}
-
-
-
 
 
 
@@ -123,7 +119,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="br-sao-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -139,9 +134,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #br-sao-memory-table}
 {: tab-title="Memory"}
 {: tab-group="br-sao-tables"}
-
-
-
 
 
 
@@ -181,7 +173,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="ca-tor-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -198,9 +189,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #ca-tor-memory-table}
 {: tab-title="Memory"}
 {: tab-group="ca-tor-tables"}
-
-
-
 
 
 
@@ -240,7 +228,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="eu-de-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -257,9 +244,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #eu-de-memory-table}
 {: tab-title="Memory"}
 {: tab-group="eu-de-tables"}
-
-
-
 
 
 
@@ -299,7 +283,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="eu-es-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -315,9 +298,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #eu-es-memory-table}
 {: tab-title="Memory"}
 {: tab-group="eu-es-tables"}
-
-
-
 
 
 
@@ -357,7 +337,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="eu-gb-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -374,9 +353,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #eu-gb-memory-table}
 {: tab-title="Memory"}
 {: tab-group="eu-gb-tables"}
-
-
-
 
 
 
@@ -416,7 +392,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="jp-osa-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -432,9 +407,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #jp-osa-memory-table}
 {: tab-title="Memory"}
 {: tab-group="jp-osa-tables"}
-
-
-
 
 
 
@@ -474,7 +446,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="jp-tok-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -491,9 +462,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #jp-tok-memory-table}
 {: tab-title="Memory"}
 {: tab-group="jp-tok-tables"}
-
-
-
 
 
 
@@ -533,7 +501,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="us-east-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -550,9 +517,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #us-east-memory-table}
 {: tab-title="Memory"}
 {: tab-group="us-east-tables"}
-
-
-
 
 
 
@@ -592,7 +556,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="us-south-tables"}
 
 
-
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
 | mx2.128x1024 | 128, 1024GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 600gb.5iops-tier, 900gb.5iops-tier, 1200gb.5iops-tier, 1600gb.5iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
@@ -609,9 +572,6 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: #us-south-memory-table}
 {: tab-title="Memory"}
 {: tab-group="us-south-tables"}
-
-
-
 
 
 

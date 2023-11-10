@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-10"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2023
 {: #openshift-nov23}
+
+### 10 November 2023
+{: #openshift-nov1023}
+{: release-note}
+
+Updated sorting and formatting for the Classic and VPC cluster flavor pages.
+:   For more information, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors) and [Classic flavors](/docs/openshift?topic=openshift-classic-flavors).
 
 ### 9 November 2023
 {: #openshift-nov0923}
