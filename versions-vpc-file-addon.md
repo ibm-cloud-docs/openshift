@@ -59,7 +59,7 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 {: #011_is_file}
 
 ### Change log for version 1.1.9_87, released 13 November 2023
-{: # 1.1.9_87_is_file_relnote}
+{: #1.1.9_87_is_file_relnote}
 
 - Updates the `storage-secret-sidecar` image to `1.2.27`.
 - Updates Golang to `1.20.10`.
