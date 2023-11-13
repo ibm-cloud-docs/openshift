@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-13"
 
 keywords: file, add-on, changelog
 
@@ -57,6 +57,13 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.1
 {: #011_is_file}
+
+### Change log for version 1.1.9_87, released 13 November 2023
+{: # 1.1.9_87_is_file_relnote}
+
+- Updates the `storage-secret-sidecar` image to `1.2.27`.
+- Updates Golang to `1.20.10`.
+- Resolves [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}.
 
 
 ### Change log for version 1.1.7_49, released 14 September 2023

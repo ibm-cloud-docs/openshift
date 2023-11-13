@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-11-13"
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
 
@@ -120,6 +120,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 ## Version 1.0.9
 {: #0109_ca_addon}
 
+### Change log for patch update 1.0.9_195, released 13 November 2023
+{: #109195_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.28`.
+- Updates Golang to 1.20.10.
+- Image tags: `1.22.0-109-2`, `1.23.0-109-2`, `1.24.0-109-2`, `1.25.0-109-2`, `1.26.1-109-2`, `1.27.2-109-2`.
+
 
 ### Change log for patch update 1.0.9_134, released 04 October 2023
 {: #109134_ca}
@@ -163,6 +170,14 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.8
 {: #0108_ca_addon}
+
+### Change log for patch update 1.0.8_233, released 13 November 2023
+{: #108233_ca}
+
+
+- Updates the `storage-secret-sidecar` image to `v1.2.28`.
+- Updates Golang to 1.20.10.
+- Image tags: `1.20.0 108-5`, `1.21.0 108-5`, `1.22.0 108-5`, `1.23.0 108-5`, `1.24.0 108-5`, `1.25.0 108-5`, and `1.26.0 108-5`.
 
 
 ### Change log for patch update 1.0.8_104, released 15 September 2023
@@ -219,6 +234,14 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.7
 {: #0107_ca_addon}
+
+### Change log for patch update 1.0.7_185, released 13 November 2023
+{: #107_185_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.28`.
+- Updates Golang to 1.20.10.
+- Image tags: `1.20.0 107-7`, `1.21.0 107-7`, `1.22.0 107-7`, `1.23.0 107-7`, `1.24.0 107-7`, and `1.25.0 107-7`.
+
 
 ### Change log for patch update 1.0.7_102, released 15 September 2023
 {: #107102_ca}
