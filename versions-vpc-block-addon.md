@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-11-13"
 
 keywords: block, add-on, changelog
 
@@ -46,6 +46,15 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 ## Version 5.2
 {: #052_is_block}
 
+### Change log for version 5.2.10_428, released 13 November 2023
+{: #5.2.12_428_is_block_relnote}
+
+- Updates Golang `1.20.10`. 
+- Updates the `storage-secret-sidecar` image to `1.3.2`.
+- The addon will retry reaching the IAM endpoint/token exchange URL for 5 mins in case of timeout.
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}.
+
+
 ### Change log for version 5.2, released 25 September 2023
 {: #5.2_is_block_relnote}
 
@@ -62,6 +71,14 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.15_419 released 13 November 2023
+{: #5.1.15_419_is_block_relnote}
+
+- Updates Golang `1.20.10`. 
+- Updates the `storage-secret-sidecar` image to `1.2.28`.
+- The addon will retry reaching the IAM endpoint/token exchange URL for 5 mins in case of timeout.
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}.
 
 ### Change log for version 5.1.13_345, released 14 September 2023
 {: #5.1.13_345_is_block_relnote}
@@ -148,6 +165,13 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.0
 {: #050_is_block}
+
+### Change log for version 5.0.21_401, released 13 November 2023
+{: #5.0.21_401_is_block_relnote}
+
+- Updates Golang `1.20.10`. 
+- Updates the `storage-secret-sidecar` image to `1.2.28`.
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}.
 
 ### Change log for version 5.0.19_358, released 14 September 2023
 {: #5.0.19_358_is_block_relnote}

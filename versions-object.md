@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-13"
 
 keywords: object storage, plug-in, change log
 
@@ -29,13 +29,21 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.21 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.20 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.19 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.18 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.18 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.17 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.16 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.15 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.21, released 13 November 2023
+{: #02221_object_plugin}
+
+
+- Updates Golang to `1.21.3`
+- Updates the `ibmc` plug-in to create the deployment namespace with privileged labels to enforce Pod Security Standards.
+
+
 
 ## Change log for version 2.2.20, released 30 October 2023
 {: #02220_object_plugin}
