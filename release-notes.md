@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-11-13"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,26 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2023
 {: #openshift-nov23}
+
+
+### 13 November 2023
+{: #openshift-nov1323}
+{: release-note}
+
+
+[Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.21`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+[Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.21_401` and `5.1.15_419`, and `5.2.10_428`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+[Change log]{: tag-purple} Cluster autoscaler add-on patch updates `1.0.9_195`, `1.0.8_233`, and `1.0.7_185`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+[Change log]{: tag-purple} {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.9_87`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
+
 
 ### 10 November 2023
 {: #openshift-nov1023}

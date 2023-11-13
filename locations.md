@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-11-13"
 
 keywords: openshift, mzr, szr, multizone, multi az
 
@@ -95,6 +95,7 @@ Classic single zone clusters are managed from the regional endpoint located in t
 | --- | --- | --- | --- | --- | --- |
 | Asia Pacific | India | Chennai | in-che | che01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng-mtr | sng01 | AP North (`ap-north`, `jp-tok`) |
+| Europe | France | Paris | fr-par | par01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Italy | Milan | it-mil | mil01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Netherlands | Amsterdam | nl-ams | ams03 | EU Central (`eu-central`, `eu-de`) |
 | North America | Canada | Montreal | ca-mon | mon01 | US East (`us-east`) |
