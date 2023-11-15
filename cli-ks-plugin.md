@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-08"
+lastupdated: "2023-11-15"
 
 keywords: openshift
 
@@ -1565,7 +1565,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster myclu
 [Classic infrastructure]{: tag-classic-inf}
 
 
-Version 3.11 only: Disable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) to remove private accessibility to your cluster master.
+Disable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) to remove private accessibility to your cluster master.
 {: shortdesc}
 
 **Important**: Before you disable the private endpoint, you first must complete the following steps to enable the public cloud service endpoint:

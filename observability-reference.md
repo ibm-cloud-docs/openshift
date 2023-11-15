@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-11-15"
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
@@ -195,7 +195,7 @@ ibmcloud ob logging config enable public-endpoint|private-endpoint --cluster CLU
 
 
 `public-endpoint|private-endpoint`
-:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.la_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send logs from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  
+:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.la_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send logs from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints.  
 
 `--cluster CLUSTER`
 :   The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.la_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
@@ -341,7 +341,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 :   The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you don't specify this option, the latest access key is used for your configuration. 
 
 `--private-endpoint`
-:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option. 
+:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. 
 
 
 
@@ -431,7 +431,7 @@ ibmcloud ob monitoring config list --cluster CLUSTER
 Use the public or private cloud service endpoint to send metrics from your cluster to your {{site.data.keyword.mon_short}} service instance.
 {: shortdesc}
 
-To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.
+To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints.
 {: important}
 
 ```sh
@@ -448,7 +448,7 @@ ibmcloud ob monitoring config enable public-endpoint|private-endpoint --cluster 
 
 
 `public-endpoint|private-endpoint`
-:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.mon_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send metrics from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints. You must use a cluster that runs version 3.11 to use this option.  
+:   Enter `public-endpoint` to use the public cloud service endpoint of your {{site.data.keyword.mon_full_notm}} service instance, or `private-endpoint` to use the private cloud service endpoint to send metrics from your cluster. This value is required. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 don't support private cloud service endpoints.  
 
 `--cluster CLUSTER`
 :   The name or ID of the cluster for which you want to enable the private or public cloud service endpoint to connect to your {{site.data.keyword.mon_short}} service instance. To retrieve your cluster name or ID, run `ibmcloud oc clusters`. This value is required.
