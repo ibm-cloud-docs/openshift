@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-11-15"
 
 keywords: openshift, lb2.0, nlb, app protocol, application protocol
 
@@ -33,7 +33,7 @@ To make an app accessible through both a portable public and a portable private 
 
 When you expose an app with an NLB service, your app is automatically made available over the service's NodePorts too. [NodePorts](/docs/openshift?topic=openshift-nodeport) are accessible on every public and private IP address of every worker node within the cluster. To block traffic to NodePorts while you are using an NLB, see [Controlling inbound traffic to network load balancer (NLB) or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress).
 
-**Kubernetes 1.20 and later**: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} is generally available in the Kubernetes community release, creating load balancers that use this protocol is not supported in {{site.data.keyword.containerlong_notm}} clusters.
+Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} is generally available in the Kubernetes community release, creating load balancers that use this protocol is not supported in {{site.data.keyword.containerlong_notm}} clusters.
 {: note}
 
 
@@ -69,7 +69,7 @@ Mixed protocol load balancer services are not supported in IBM Cloud Kubernetes 
 The following diagram shows how an NLB 1.0 directs communication from the internet to an app in a single-zone cluster.
 {: shortdesc}
 
-![Expose an app in a single-zone cluster by using an NLB 1.0.](images/cs_loadbalancer_planning.png){: caption="Figure 1. Expose an app in a single-zone cluster by using an NLB 1.0" caption-side="bottom"}
+![Expose an app in a single-zone cluster by using an NLB 1.0.](images/traffic-flow-single-zone.svg){: caption="Figure 1. Expose an app in a single-zone cluster by using an NLB 1.0" caption-side="bottom"}
 
 1. A request to your app uses the public IP address of your NLB and the assigned port on the worker node. Note that if you [create a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname) for your NLB, users can access your app through the NLB's subdomain instead. A DNS system service resolves the subdomain to the portable public IP address of the NLB.
 
@@ -83,7 +83,7 @@ The following diagram shows how an NLB 1.0 directs communication from the intern
 The following diagram shows how a network load balancer (NLB) 1.0 directs communication from the internet to an app in a multizone cluster.
 {: shortdesc}
 
-![Use an NLB 1.0 to load balance apps in a multizone cluster](images/cs_loadbalancer_planning_multizone.png){: caption="Figure 2. Use an NLB 1.0 to load balance apps in a multizone cluster" caption-side="bottom"}
+![Use an NLB 1.0 to load balance apps in a multizone cluster](images/traffic-flow-multizone-classic.svg){: caption="Figure 2. Use an NLB 1.0 to load balance apps in a multizone cluster" caption-side="bottom"}
 
 1. A request to your app uses the [DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname) for your NLBs. You can also access the NLB in each zone by using its public IP address and port on the worker node. Note that by default, each NLB 1.0 is set up in one zone only. To achieve high availability, you must deploy an NLB 1.0 in every zone where you have app instances.
 
