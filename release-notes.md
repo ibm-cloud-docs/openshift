@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-15"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2023
 {: #openshift-nov23}
+
+### 15 November 2023
+{: #openshift-nov1523}
+{: release-note}
+
+
+
+
+
+[Change log]{: tag-purple} Master fix packs are available. Review the change logs for your cluster version. Master patch updates are applied automatically.
+:   [4.13.19_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12.40_1568_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [4.11.52_1580_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   [4.10.67_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+
+
 
 
 ### 13 November 2023
