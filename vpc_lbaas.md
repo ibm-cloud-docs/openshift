@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-16"
 
 keywords: openshift, app protocol, application protocol
 
@@ -158,13 +158,13 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     {: codeblock}
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name: "my-load-balancer"`
-    :   Optional. **Versions 4.11 and later**: Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist).
+    :   Optional. **Versions 4.11 and later**: Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist). This annotation can be set only on load balancer creation. It cannot be used in an update operation.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"`
-    :    Required: Annotation to create a VPC NLB.
+    :    Required: Annotation to create a VPC NLB. This annotation can be set only on load balancer creation. It cannot be used in an update operation.
     
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
-    :    Optional: Annotation to specify a service that accepts public requests. If you don't include this annotation, a public VPC NLB is created. 
+    :    Optional: Annotation to specify a service that accepts public requests. If you don't include this annotation, a public VPC NLB is created. This annotation can be set only on load balancer creation. It cannot be used in an update operation. 
     
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
     :    Optional: Annotation to specify a worker node label selector. To identify the worker nodes that receive traffic, you can select one of the supported label selector keys. Note that you can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in the same zone as the VPC NLB are configured to receive traffic from the VPC NLB. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. 
