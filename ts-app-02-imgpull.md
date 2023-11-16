@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-11-16"
 
 keywords: openshift
 
@@ -70,7 +70,7 @@ Your cluster uses an API key that is stored in an [image pull secret](/docs/open
 By default, new clusters have image pull secrets that use API keys so that the cluster can pull images from any regional `icr.io` registry for containers that are deployed to the `default` {{site.data.keyword.redhat_openshift_notm}} project.
 
 
-1. Verify that you use the correct name and tag of the image in your deployment YAML file. 
+1. Verify that you use the correct name and tag of the image in your deployment YAML file.
 {: tsResolve}
 
     ```sh

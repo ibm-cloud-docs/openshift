@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-15"
+lastupdated: "2023-11-16"
 
 keywords: openshift, kubernetes, release notes
 
@@ -104,8 +104,6 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 
 ## October 2023
 {: #openshift-oct23}
-
-
 
 ### 31 October 2023
 {: #openshift-oct3123}

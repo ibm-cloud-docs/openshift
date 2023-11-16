@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-08-31"
+lastupdated: "2023-11-16"
 
-keywords: openshift, kubernetes, allowlist, operating system, rhel, ubuntu, s390x
+keywords: openshift, kubernetes, allowlist, operating system, rhel, ubuntu
 
 subcollection: openshift
 
