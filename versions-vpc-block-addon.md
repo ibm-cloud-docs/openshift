@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-20"
 
 keywords: block, add-on, changelog
 
@@ -51,7 +51,7 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 - Updates Golang `1.20.10`. 
 - Updates the `storage-secret-sidecar` image to `1.3.2`.
-- The addon will retry reaching the IAM endpoint/token exchange URL for 5 mins in case of timeout.
+- The add-on tries to reach the IAM endpoint/token exchange URL for 5 minutes, in case of timeout.
 - Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}.
 
 
@@ -62,7 +62,7 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 - Adds support for Z system. Multi-architecture images are supported on both `s390x` and `amd64` based clusters.
 - Adds a new configurable flag `VolumeAttachmentLimit` in `addon-vpc-block-csi-driver-configmap` configMap that allows users to edit the maximum number of volumes that can be attached per node. The default value is set to `12`.
 - Deploys controller pods as `Deployments`. Previous releases were deployed as `Satefulsets`.
-- Resolves an issue where logs showed incorrect completion duration of some csi operations.
+- Resolves an issue where logs showed incorrect completion duration of some CSI operations.
 - Pulls sidecars from `registry.k8s.io`.
 - Adds support for 2 volume snapshot classes with delete and retain policies.
 - Updates `k8s` package from `1.26.1` to `1.26.6`.
@@ -77,7 +77,7 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 - Updates Golang `1.20.10`. 
 - Updates the `storage-secret-sidecar` image to `1.2.28`.
-- The addon will retry reaching the IAM endpoint/token exchange URL for 5 mins in case of timeout.
+- The add-on tries reaching the IAM endpoint/token exchange URL for 5 minutes, in case of timeout.
 - Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}.
 
 ### Change log for version 5.1.13_345, released 14 September 2023

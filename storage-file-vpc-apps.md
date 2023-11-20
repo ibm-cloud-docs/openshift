@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-20"
 
 keywords: openshift
 
@@ -459,7 +459,7 @@ The default behavior for {{site.data.keyword.filestorage_vpc_short}} cluster add
 
 In versions 1.2 of and later of the {{site.data.keyword.filestorage_vpc_short}} cluster add-on, you can control more granularly how pods access your file shares. For example, you might limit file share access to only pods on a specific node, in a specific zone, on a specific worker pool, or in a specific subnet. Review the following scenarios for how you can configure pod access to your file shares.
 
-If you use VNI to limit pod acccess to your file shares, you will not have high availability as file share access and in case a subnet is down where the VNI is created, you will not have access to your file share which also impacts reading and writing to the file share.
+If you use VNI to limit pod access to your file shares, you will not have high availability as file share access and in case a subnet is down where the VNI is created, you will not have access to your file share which also impacts reading and writing to the file share.
 
 ### Prerequisites
 {: #storage-file-vpc-vni-prereqs}

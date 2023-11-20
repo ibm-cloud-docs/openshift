@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-11-20"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
+
+    * [20 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2023)
+
+        * [New]{: tag-green} You can now specify a custom pod subnet size when creating a VPC cluster.
+
+        * [Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.22`.
 
     * [15 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1523)
 
@@ -6610,49 +6616,51 @@ subcollection: openshift
 
 [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
 
-* [alb-oauth-proxy 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#alb-oauth-proxy-2.0.0)
+* [`alb-oauth-proxy` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#alb-oauth-proxy-2.0.0)
 
-* [cluster-autoscaler 1.0.7](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.7)
+* [`cluster-autoscaler` 1.0.7](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.7)
 
-* [cluster-autoscaler 1.0.8](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.8)
+* [`cluster-autoscaler` 1.0.8](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.8)
 
-* [cluster-autoscaler 1.0.9](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.9)
+* [`cluster-autoscaler` 1.0.9](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.9)
 
-* [cluster-autoscaler 1.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.1.0)
+* [`cluster-autoscaler` 1.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.1.0)
 
-* [csutil 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-1.0.0)
+* [`cluster-autoscaler` 1.2.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.0)
 
-* [csutil-experimental 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-experimental-1.0.0)
+* [`csutil` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-1.0.0)
 
-* [debug-tool 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#debug-tool-2.0.0)
+* [`csutil-experimental` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-experimental-1.0.0)
 
-* [image-key-synchronizer 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
+* [`debug-tool` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#debug-tool-2.0.0)
 
-* [istio 1.17](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.17)
+* [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
 
-* [istio 1.18](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.18)
+* [`istio` 1.17](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.17)
 
-* [istio 1.19](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.19)
+* [`istio` 1.18](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.18)
 
-* [openshift-data-foundation 4.10.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.10.0)
+* [`istio` 1.19](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.19)
 
-* [openshift-data-foundation 4.11.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.11.0)
+* [`openshift-data-foundation` 4.10.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.10.0)
 
-* [openshift-data-foundation 4.12.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.12.0)
+* [`openshift-data-foundation` 4.11.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.11.0)
 
-* [openshift-data-foundation 4.13.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.13.0)
+* [`openshift-data-foundation` 4.12.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.12.0)
 
-* [static-route 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
+* [`openshift-data-foundation` 4.13.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.13.0)
 
-* [vpc-block-csi-driver 5.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.0)
+* [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
-* [vpc-block-csi-driver 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
+* [`vpc-block-csi-driver` 5.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.0)
 
-* [vpc-block-csi-driver 5.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.2)
+* [`vpc-block-csi-driver` 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
 
-* [vpc-file-csi-driver 1.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.1)
+* [`vpc-block-csi-driver` 5.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.2)
 
-* [vpc-file-csi-driver 1.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.2)
+* [`vpc-file-csi-driver` 1.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.1)
+
+* [`vpc-file-csi-driver` 1.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.2)
 
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
@@ -6997,6 +7005,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.22, released 20 November 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02222_object_plugin)
 
 * [Change log for version 2.2.21, released 13 November 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02221_object_plugin)
 

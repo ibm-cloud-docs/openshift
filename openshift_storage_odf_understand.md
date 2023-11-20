@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-30"
+lastupdated: "2023-11-20"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -145,8 +145,8 @@ Scale up by using default replication factor and storage node configuration
 Choose the right set up for your needs: Remote storage vs local storage
 :   If you have lower storage needs or are using Virtual Server instances, remote storage can be a convenient and cost-effective option. On the other hand, if you have large storage requirements, a bare metal cluster, or high-performance storage with low network latency, that uses local storage would be more suitable.
 
-[Classic clusters]{: tag-classic-inf} Simplify your deployment by using auto-discovery feature
-:   In Classic clusters or environments with local storage, leverage the auto-discovery feature to automatically identify and configure the available storage disks in your cluster for ODF. This eliminates the need for manual disk selection. Unless there are specific disk requirements for ODF provisioning, utilizing the auto-discovery feature streamlines the deployment process and reduces the potential for configuration errors.
+[Classic clusters]{: tag-classic-inf} Simplify your deployment by using auto discovery feature
+:   In Classic clusters or environments with local storage, leverage the auto discovery feature to automatically identify and configure the available storage disks in your cluster for ODF. This option eliminates the need for manual disk selection. Unless there are specific disk requirements for ODF provisioning, utilizing the auto discovery feature streamlines the deployment process and reduces the potential for configuration errors.
 
 Use metro storage classes for ODF installations on remote storage
 :   When performing an ODF installation that uses remote storage, make sure you use a storage class that has a `VolumeBindingMode` of `WaitForFirstConsumer` which delays the creation of the Block Storage until the first pod that uses this storage is ready to be scheduled.

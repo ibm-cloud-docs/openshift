@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-20"
 
 keywords: object storage, plug-in, change log
 
@@ -29,12 +29,19 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.22 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.21 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.20 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.19 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.19 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.18 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.17 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.22, released 20 November 2023
+{: #02222_object_plugin}
+
+- Updates Golang to `1.21.4`
+- Updates UBI image to `8.9-1029`
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}, [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/CVE-2023-45283){: external}, and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/CVE-2023-45284){: external}.
 
 ## Change log for version 2.2.21, released 13 November 2023
 {: #02221_object_plugin}
@@ -42,6 +49,7 @@ Refer to the following tables for a summary of changes for each version of the [
 
 - Updates Golang to `1.21.3`
 - Updates the `ibmc` plug-in to create the deployment namespace with privileged labels to enforce Pod Security Standards.
+- Updates s3fs fuse to `v1.93`
 
 
 
