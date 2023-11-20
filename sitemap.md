@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
 
+    * [20 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2023)
+
+        * [New]{: tag-green} You can now specify a custom pod subnet size when creating a VPC cluster.
+
     * [15 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1523)
 
         * [Change log]{: tag-purple} Master fix packs are available. Review the change logs for your cluster version. Master patch updates are applied automatically.

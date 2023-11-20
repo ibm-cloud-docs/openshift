@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-11-20"
 
 keywords: openshift, ips, vlans, networking, public gateway
 
@@ -91,6 +91,11 @@ Default range
 
 Size requirements
 :   When you specify a custom subnet, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
+
+:   For VPC clusters, you can specify the subnet size by including it in the `--pod-subnet` option. For example: `--pod-subnet 0.0.0.0/X` where `X` is the required pod subnet size. Then pod subnet is then automatically selected. When allocating the pod subnet automatically, the allocation will start from `172.17.0.0`, the biggest subnet is limited to `13`, and the smallest subnet size is limited to `23`. 
+
+:   There is a global limit for worker nodes. [You can't exceed 500 worker nodes across all clusters in a region.](/docs/containers?topic=containers-limitations#tech_limits)
+
 
 Range requirements
 :   The pod and service subnets can't overlap each other, and the pod subnet can't overlap the VPC subnets for your worker nodes. The subnet that you choose must be within one of the following ranges.

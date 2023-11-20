@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-11-20"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2023
 {: #openshift-nov23}
+
+### 20 November 2023
+{: #openshift-nov2023}
+{: release-note}
+
+[New]{: tag-green} You can now specify a custom pod subnet size when creating a VPC cluster.
+:   For more information, see the [CLI reference](/docs/?openshifttopic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) or [create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_create_vpc) with a custom pod subnet size.
 
 ### 15 November 2023
 {: #openshift-nov1523}
