@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-11-20"
 
 keywords: openshift, app protocol, application protocol
 
@@ -800,7 +800,7 @@ To enable your app to receive public or private requests,
     :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout`
-    :   Optional. The idle connection timeout of the listener in seconds. The default idle timeout is dependent on your account settings. In most cases, this value is `50` however some allowlisted accounts have larger timeout settings. If you don't set the annotation, your loadbalancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. The minimum is `50`. The maximum is `7200`.
+    :   Optional. The idle connection timeout of the listener in seconds. The default idle timeout is dependent on your account settings. Usually, this value is `50`. However, some allowlisted accounts have larger timeout settings. If you don't set the annotation, your loadbalancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. The minimum is `50`. The maximum is `7200`.
     
     `selector`
     :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.

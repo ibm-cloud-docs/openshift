@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-15"
+lastupdated: "2023-11-20"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -93,7 +93,7 @@ The following table shows the changes that are in the master fix pack 4.11.50_15
 | Cluster health image | v1.4.2 | v1.4.4 | New version contains updates and security fixes. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1390 | 1487 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.10 | v2.4.12 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.17-3 | v1.24.17-11 | New version contains updates and security fixes. The logic for the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout` annotation has changed. The default idle timeout is dependent on your account settings. In most cases, this value is `50`. However some allowlisted accounts have larger timeout settings. If you don't set the annotation, your load balancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.17-3 | v1.24.17-11 | New version contains updates and security fixes. The logic for the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout` annotation has changed. The default idle timeout is dependent on your account settings. Usually, this value is `50`. However, some allowlisted accounts have larger timeout settings. If you don't set the annotation, your load balancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 4e2f346 | f0d3265 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.2 | v2.8.4 | New version contains updates and security fixes. |
 | OpenVPN Operator image | v1.4.27 | v1.4.28 | New version contains updates and security fixes. |
@@ -186,7 +186,7 @@ The following table shows the changes that are in the master fix pack 4.11.47_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.3.23 | v1.3.24 | Updated `Go` to version `1.19.12` and updated dependencies. Updated base image version to 378. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.16-1 | v1.24.16-5 | Updated `Go` dependencies to resolve a CVE. Updates to travis build. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.16-1 | v1.24.16-5 | Updated `Go` dependencies to resolve a CVE. Updates to Travis build. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 433 | 434 | Updated `Go` to version `1.20.6` and updated dependencies. Updated to newer UBI base image. |
 | Key Management Service provider | v2.7.2 | v2.7.3 | Updated `Go` dependencies. |
 | OpenVPN client | 2.6.5-r0-IKS-41-amd64 | 2.6.5-r0-IKS-66-amd64 | Updated `openvpn` components to fix CVEs. |
