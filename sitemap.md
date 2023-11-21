@@ -2830,7 +2830,7 @@ subcollection: openshift
 
 * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
 
-[Accessing private clusters by using the WireGuard VPN](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
+[Accessing private clusters](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
 
 
 ## Adding worker nodes
