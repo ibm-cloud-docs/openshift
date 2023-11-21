@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-20"
+lastupdated: "2023-11-21"
 
 keywords: openshift
 subcollection: openshift
