@@ -27,27 +27,41 @@ keyword:
   kubernetes_128_release_date: 20 September 2023
   kubernetes_128_unsupported_certainty: tentative
   kubernetes_128_unsupported_date: 4 December 2024
+  kubernetes_129_deprecated: 'False'
+  kubernetes_129_release_date: None
+  kubernetes_129_unsupported_certainty: ''
+  kubernetes_129_unsupported_date: None
   openshift_410_RHEL_7_unsupported_date: 6 December 2022
+  openshift_410_RHEL_8_unsupported_date: ''
   openshift_410_deprecated: 'True'
   openshift_410_kube_version: '1.23'
   openshift_410_release_date: 27 April 2022
   openshift_410_unsupported_certainty: tentative
   openshift_410_unsupported_date: 31 January 2024
+  openshift_411_RHEL_8_unsupported_date: ''
   openshift_411_deprecated: 'False'
   openshift_411_kube_version: '1.24'
   openshift_411_release_date: 31 August 2022
   openshift_411_unsupported_certainty: tentative
-  openshift_411_unsupported_date: 06 March 2024
+  openshift_411_unsupported_date: 06 January 2024
+  openshift_412_RHEL_8_unsupported_date: ''
   openshift_412_deprecated: 'False'
   openshift_412_kube_version: '1.25'
   openshift_412_release_date: 23 February 2023
   openshift_412_unsupported_certainty: tentative
   openshift_412_unsupported_date: 26 February 2025
+  openshift_413_RHEL_8_unsupported_date: ''
   openshift_413_deprecated: 'False'
   openshift_413_kube_version: '1.26'
   openshift_413_release_date: 14 June 2023
   openshift_413_unsupported_certainty: tentative
   openshift_413_unsupported_date: 26 February 2025
+  openshift_414_RHEL_8_unsupported_date: ''
+  openshift_414_deprecated: 'False'
+  openshift_414_kube_version: ''
+  openshift_414_release_date: None
+  openshift_414_unsupported_certainty: ''
+  openshift_414_unsupported_date: None
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
   openshift_46_release_date: 17 February 2021
@@ -67,26 +81,36 @@ keyword:
   openshift_49_unsupported_certainty: tentative
   openshift_49_unsupported_date: 30 September 2023
   satellite_410_RHEL_7_unsupported_date: 6 December 2022
+  satellite_410_RHEL_8_unsupported_date: ''
   satellite_410_deprecated: 'True'
   satellite_410_kube_version: '1.23'
   satellite_410_release_date: 27 April 2022
   satellite_410_unsupported_certainty: tentative
   satellite_410_unsupported_date: 31 January 2024
+  satellite_411_RHEL_8_unsupported_date: ''
   satellite_411_deprecated: 'False'
   satellite_411_kube_version: '1.24'
   satellite_411_release_date: 31 August 2022
   satellite_411_unsupported_certainty: tentative
-  satellite_411_unsupported_date: 06 March 2024
+  satellite_411_unsupported_date: 06 January 2024
+  satellite_412_RHEL_8_unsupported_date: ''
   satellite_412_deprecated: 'False'
   satellite_412_kube_version: '1.25'
   satellite_412_release_date: 23 February 2023
   satellite_412_unsupported_certainty: tentative
   satellite_412_unsupported_date: 26 February 2025
+  satellite_413_RHEL_8_unsupported_date: ''
   satellite_413_deprecated: 'False'
   satellite_413_kube_version: '1.26'
   satellite_413_release_date: 14 June 2023
   satellite_413_unsupported_certainty: tentative
   satellite_413_unsupported_date: 26 February 2025
+  satellite_414_RHEL_8_unsupported_date: ''
+  satellite_414_deprecated: 'False'
+  satellite_414_kube_version: ''
+  satellite_414_release_date: None
+  satellite_414_unsupported_certainty: ''
+  satellite_414_unsupported_date: None
   satellite_46_deprecated: 'True'
   satellite_46_kube_version: '1.19'
   satellite_46_release_date: 17 February 2021

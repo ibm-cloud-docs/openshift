@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-20"
+lastupdated: "2023-11-27"
 
 keywords: block, add-on, changelog
 
@@ -46,8 +46,16 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 ## Version 5.2
 {: #052_is_block}
 
+### Change log for version 5.2.11_447, released 27 November 2023
+{: #5.2.11_447_is_block_relnote}
+
+- Updates Golang to `1.20.11`.
+- Updates the UBI image to `8.9.1029`.
+- Updates `armada-storage-secret` to `v1.3.3`.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+
 ### Change log for version 5.2.10_428, released 13 November 2023
-{: #5.2.12_428_is_block_relnote}
+{: #5.2.10_428_is_block_relnote}
 
 - Updates Golang `1.20.10`. 
 - Updates the `storage-secret-sidecar` image to `1.3.2`.
@@ -71,6 +79,14 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+## Change log for version 5.1.16_446, released 27 November 2023
+{: #5.1.16_446_is_block_relnote}
+
+- Updates Golang to `1.20.11`.
+- Updates the UBI image to `8.9.1029`.
+- Updates `armada-storage-secret` to `v1.2.29`.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
 
 ### Change log for version 5.1.15_419 released 13 November 2023
 {: #5.1.15_419_is_block_relnote}
@@ -166,10 +182,18 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 ## Version 5.0
 {: #050_is_block}
 
+### Change log for version 5.0.23_437, released 27 November 2023
+{: #5.0.23_437_is_block_relnote}
+
+- Updates Golang to `1.20.11`.
+- Updates the UBI image to `8.9.1029`.
+- Updates `armada-storage-secret` to `v1.2.29`.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+
 ### Change log for version 5.0.21_401, released 13 November 2023
 {: #5.0.21_401_is_block_relnote}
 
-- Updates Golang `1.20.10`. 
+- Updates Golang to `1.20.10`. 
 - Updates the `storage-secret-sidecar` image to `1.2.28`.
 - Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}, and [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-21"
+lastupdated: "2023-11-27"
 
 keywords: openshift, kubernetes, release notes
 
@@ -29,6 +29,40 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## November 2023
 {: #openshift-nov23}
 
+### 27 November 2023
+{: #openshift-nov2723}
+{: release-note}
+
+[New]{: tag-green} The Beta {{site.data.keyword.filestorage_vpc_short}} cluster add-on is now available to all accounts.
+:   Previously the add-on was available in allowlisted accounts only. For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_short}} add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
+
+[Change log]{: tag-purple} Cluster autoscaler add-on patch updates `1.2.0_290`, `1.0.9_290`, `1.0.8_292`, and `1.0.7_291`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+[Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
+
+
+### 22 November 2023
+{: #openshift-nov2223}
+{: release-note}
+
+
+
+
+
+[Change log]{: tag-purple} Worker node fix packs are available.
+:   Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+:   [4.13.22_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12.42_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [4.11.53_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   [4.10.67_1592_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+
+
+
+### 21 November 2023
+{: #openshift-nov2123}
+{: release-note}
+
 
 
 ### 20 November 2023
@@ -44,6 +78,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ### 15 November 2023
 {: #openshift-nov1523}
 {: release-note}
+
+[New]{: tag-green} The cluster autoscaler add-on now supports version 1.28 clusters.
+:   For more information, see [Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 
 
 

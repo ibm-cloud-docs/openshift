@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-27"
 
 keywords: file, add-on, changelog
 
@@ -18,7 +18,7 @@ subcollection: openshift
 # {{site.data.keyword.filestorage_vpc_full_notm}} add-on change log 
 {: #versions-vpc-file-addon}
 
-The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta for allowlisted accounts only. 
+The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
 {: beta} 
 
 

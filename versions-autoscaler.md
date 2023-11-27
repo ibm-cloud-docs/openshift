@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-27"
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
 
@@ -36,6 +36,22 @@ To view a list of add-ons and the supported cluster versions, run the following 
 ibmcloud oc cluster addon versions
 ```
 {: pre}
+
+## Version 1.2.0
+{: #0120_ca_addon}
+
+### Change log for patch update 1.2.0_290, released 27 November 2023
+{: #120290_ca}
+
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Updated the storage-secret-sidecar image to `v1.3.3`.
+- Image tags: `1.22.0-120-2`, `1.23.0-120-2`, `1.24.0-120-2`, `1.25.0-120-2`, `1.26.4-120-2`, `1.27.3-120-2`, and `1.28.0-120-2`.
+
+### Change log for patch update 1.2.0_228, released 15 November 2023
+{: #120228_ca}
+
+- Adds support for cluster version 1.28
+- Image tags: `1.22.0-120-2`, `1.23.0-120-2`, `1.24.0-120-2`, `1.25.0-120-2`, `1.26.4-120-2`, `1.27.3-120-2`, and `1.28.0-120-2`.
 
 ## Version 1.1.0 (Beta)
 {: #0110_ca_addon}
@@ -120,6 +136,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 ## Version 1.0.9
 {: #0109_ca_addon}
 
+### Change log for patch update 1.0.9_290, released 27 November 2023
+{: #109290_ca}
+
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Updated the storage-secret-sidecar image to `v1.2.29`.
+- Image tags: `1.22.0-109-2`, `1.23.0-109-2`, `1.24.0-109-2`, `1.25.0-109-2`, `1.26.1-109-2`, `1.27.2-109-2`.
+
 ### Change log for patch update 1.0.9_195, released 13 November 2023
 {: #109195_ca}
 
@@ -170,6 +193,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.8
 {: #0108_ca_addon}
+
+### Change log for patch update 1.0.8_292, released 27 November 2023
+{: #108292_ca}
+
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Updated the storage-secret-sidecar image to `v1.2.29`.
+- Image tags: `1.20.0 108-5`, `1.21.0 108-5`, `1.22.0 108-5`, `1.23.0 108-5`, `1.24.0 108-5`, `1.25.0 108-5`, and `1.26.0 108-5`.
 
 ### Change log for patch update 1.0.8_233, released 13 November 2023
 {: #108233_ca}
@@ -234,6 +264,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.7
 {: #0107_ca_addon}
+
+### Change log for patch update 1.0.7_291, released 27 November 2023
+{: #107291_ca}
+
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Updated the storage-secret-sidecar image to `v1.2.29`.
+- Image tags: `1.20.0 107-7`, `1.21.0 107-7`, `1.22.0 107-7`, `1.23.0 107-7`, `1.24.0 107-7`, and `1.25.0 107-7`.
 
 ### Change log for patch update 1.0.7_185, released 13 November 2023
 {: #107_185_ca}
