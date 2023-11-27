@@ -278,6 +278,14 @@ subcollection: openshift
 
         * [Change log]{: tag-purple} Cluster autoscaler add-on patch updates `1.2.0_290`, `1.0.9_290`, `1.0.8_292`, and `1.0.7_291`.
 
+        * [Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
+
+    * [22 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2223)
+
+        * [Change log]{: tag-purple} Worker node fix packs are available.
+
+    * [21 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2123)
+
     * [20 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2023)
 
         * [New]{: tag-green} You can now specify a custom pod subnet size when creating a VPC cluster.
@@ -5918,6 +5926,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
 
+    * [Change log for worker node fix pack 4.13.22_1547_openshift, released 22 November 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41322_1547_openshift_W)
+
     * [Change log for master fix pack 4.13.19_1546_openshift, released 15 November 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41319_1546_openshift_M)
 
     * [Change log for worker node fix pack 4.13.19_1545_openshift, released 08 November 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41319_1545_openshift_W)
@@ -6050,6 +6060,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.42_1569_openshift, released 22 November 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41242_1569_openshift_W)
 
     * [Change log for master fix pack 4.12.40_1568_openshift, released 15 November 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41240_1568_openshift_M)
 
@@ -6215,6 +6227,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.53_1581_openshift, released 22 November 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41153_1581_openshift_W)
 
     * [Change log for master fix pack 4.11.52_1580_openshift, released 15 November 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41152_1580_openshift_M)
 
@@ -6410,6 +6424,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.67_1592_openshift, released 22 November 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1592_openshift_W)
 
     * [Change log for master fix pack 4.10.67_1591_openshift, released 15 November 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1591_openshift_M)
 
@@ -6852,11 +6868,15 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
-    * [Change log for version 5.2.10_428, released 13 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.12_428_is_block_relnote)
+    * [Change log for version 5.2.11_447, released 27 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.11_447_is_block_relnote)
+
+    * [Change log for version 5.2.10_428, released 13 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.10_428_is_block_relnote)
 
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
+
+* [Change log for version 5.1.16_446, released 27 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.16_446_is_block_relnote)
 
     * [Change log for version 5.1.15_419 released 13 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.15_419_is_block_relnote)
 
@@ -6879,6 +6899,8 @@ subcollection: openshift
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1_is_block_relnote)
 
 * [Version 5.0](/docs/openshift?topic=openshift-vpc_bs_changelog#050_is_block)
+
+    * [Change log for version 5.0.23_437, released 27 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.23_437_is_block_relnote)
 
     * [Change log for version 5.0.21_401, released 13 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.0.21_401_is_block_relnote)
 

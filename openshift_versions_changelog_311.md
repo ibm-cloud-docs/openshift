@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-11-27"
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -310,7 +310,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.542 | 3.11.570 | See [change logs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-570){: external} |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.542 | 3.11.570 | For more information, see the [change logs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-570){: external} |
 {: caption="Changes since version 3.11.542_1612_openshift" caption-side="bottom"}
 
 
@@ -512,7 +512,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| OpenShift Container Platform | 3.11.487 |	3.11.501 | See [change logs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-501){: external}. |
+| OpenShift Container Platform | 3.11.487 |	3.11.501 | For more information, see the [change logs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-501){: external}. |
 {: caption="Changes since version 3.11.487_1600_openshift" caption-side="bottom"}
 
 

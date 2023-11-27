@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-20"
+lastupdated: "2023-11-27"
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -39,6 +39,19 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.10 change log.
 {: shortdesc}
+
+
+### Change log for worker node fix pack 4.10.67_1592_openshift, released 22 November 2023
+{: #41067_1592_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.10.67_1592_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}} |N/A|N/A|N/A|
+| RHEL 8 Packages |N/A|N/A|N/A|
+{: caption="Changes since version 4.10.67_1590_openshift" caption-side="bottom"}
 
 
 ### Change log for master fix pack 4.10.67_1591_openshift, released 15 November 2023
@@ -219,7 +232,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}}. | 4.10.63 | 4.10.64 | see [change logs](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-64){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.10.63 | 4.10.64 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-64){: external}. |
 | RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-3564](https://nvd.nist.gov/vuln/detail/CVE-2022-3564){: external}, [CVE-2023-2828](https://nvd.nist.gov/vuln/detail/CVE-2023-2828){: external}, [CVE-2023-32233](https://nvd.nist.gov/vuln/detail/CVE-2023-32233){: external}. |
 | RHEL 8 Packages |N/A|N/A| Worker node package update for [CVE-2023-2828](https://nvd.nist.gov/vuln/detail/CVE-2023-2828){: external}. |
 {: caption="Changes since version 4.10.63_1576_openshift" caption-side="bottom"}
@@ -305,7 +318,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}}. |4.10.60|4.10.61|see [change logs](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-61){: external}. |
+| {{site.data.keyword.openshiftshort}}. |4.10.60|4.10.61|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-61){: external}. |
 | RHEL 8 Packages | N/A | N/A | Worker node package updates for [CVE-2023-32067](https://nvd.nist.gov/vuln/detail/CVE-2023-32067){: external},[CVE-2023-24329](https://nvd.nist.gov/vuln/detail/CVE-2023-24329){: external}. |
 {: caption="Changes since version 4.10.60_1571_openshift" caption-side="bottom"}
 
@@ -318,7 +331,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}}. | 4.10.59 | 4.10.60 | see [change logs](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-60){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.10.59 | 4.10.60 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-60){: external}. |
 | RHEL 7 Packages |N/A|N/A|N/A|
 | RHEL 8 Packages | 4.18.0-477.10.1.el8_8 | 4.18.0-477.13.1.el8_8 | Worker node kernel & package updates for [CVE-2023-22490](https://nvd.nist.gov/vuln/detail/CVE-2023-22490){: external}, [CVE-2023-23946](https://nvd.nist.gov/vuln/detail/CVE-2023-23946){: external}, [CVE-2023-25652](https://nvd.nist.gov/vuln/detail/CVE-2023-25652){: external}, [CVE-2023-25815](https://nvd.nist.gov/vuln/detail/CVE-2023-25815){: external}, [CVE-2023-29007](https://nvd.nist.gov/vuln/detail/CVE-2023-29007){: external}, [CVE-2023-32233](https://nvd.nist.gov/vuln/detail/CVE-2023-32233){: external}. |
 {: caption="Changes since version 4.10.59_1569_openshift" caption-side="bottom"}
