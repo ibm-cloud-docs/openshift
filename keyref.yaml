@@ -37,7 +37,7 @@ keyword:
   openshift_411_kube_version: '1.24'
   openshift_411_release_date: 31 August 2022
   openshift_411_unsupported_certainty: tentative
-  openshift_411_unsupported_date: 06 March 2024
+  openshift_411_unsupported_date: 06 January 2024
   openshift_412_deprecated: 'False'
   openshift_412_kube_version: '1.25'
   openshift_412_release_date: 23 February 2023
@@ -76,7 +76,7 @@ keyword:
   satellite_411_kube_version: '1.24'
   satellite_411_release_date: 31 August 2022
   satellite_411_unsupported_certainty: tentative
-  satellite_411_unsupported_date: 06 March 2024
+  satellite_411_unsupported_date: 06 January 2024
   satellite_412_deprecated: 'False'
   satellite_412_kube_version: '1.25'
   satellite_412_release_date: 23 February 2023
