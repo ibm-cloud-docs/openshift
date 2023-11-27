@@ -42,6 +42,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 [Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
 
 
+
+[New]{: tag-green} You can now apply your Cloud Pak entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
+:   When you create a {{site.data.keyword.satelliteshort}} cluster, include the `--entitlement cloud_pak` option in the CLI or provide your entitlement details in the console. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters) or [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools).
+
+
+
+
 ### 22 November 2023
 {: #openshift-nov2223}
 {: release-note}

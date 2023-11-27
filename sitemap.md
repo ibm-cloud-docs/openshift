@@ -280,6 +280,8 @@ subcollection: openshift
 
         * [Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
 
+        * [New]{: tag-green} You can now apply your Cloud Pak entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
+
     * [22 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2223)
 
         * [Change log]{: tag-purple} Worker node fix packs are available.
