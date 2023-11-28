@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-27"
+lastupdated: "2023-11-28"
 
 keywords: file, add-on, changelog
 
@@ -42,6 +42,14 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 1.2
 {: #012_is_file}
 
+### Change log for version 1.2.3_97, released 27 November 2023
+{: #1.2.3_97_is_file_relnote}
+
+- Updates Golang to `1.20.11`.
+- Updates UBI image to `8.9.1029`.
+- Updates the `armada-storage-secret` to `v1.2.29`.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+
 ### Change log for version version 1.2.0, released 31 October 2023
 {: #0120_is_file}
 
@@ -57,6 +65,15 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.1
 {: #011_is_file}
+
+### Change log for version 1.1.10_93, released 27 November 2023
+{: #1.1.10_93_is_file_relnote}
+
+- Updates Golang to `1.20.11`.
+- Updates UBI image to `8.9.1029`.
+- Updates the `armada-storage-secret` to `v1.2.29`.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+
 
 ### Change log for version 1.1.9_87, released 13 November 2023
 {: #1.1.9_87_is_file_relnote}
