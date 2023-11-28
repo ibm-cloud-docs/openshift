@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-27"
+lastupdated: "2023-11-28"
 
 keywords: openshift, kubernetes, release notes
 
@@ -40,6 +40,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
 [Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
+
+[Change log]{: tag-purple} {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.10_93` and `1.2.3_97`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-27"
+lastupdated: "2023-11-28"
 
 keywords: openshift
 subcollection: openshift
@@ -279,6 +279,8 @@ subcollection: openshift
         * [Change log]{: tag-purple} Cluster autoscaler add-on patch updates `1.2.0_290`, `1.0.9_290`, `1.0.8_292`, and `1.0.7_291`.
 
         * [Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
+
+        * [Change log]{: tag-purple} {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.10_93` and `1.2.3_97`.
 
         * [New]{: tag-green} You can now apply your Cloud Pak entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
 
@@ -7030,9 +7032,13 @@ subcollection: openshift
 
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
 
+    * [Change log for version 1.2.3_97, released 27 November 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.3_97_is_file_relnote)
+
     * [Change log for version version 1.2.0, released 31 October 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#0120_is_file)
 
 * [Version 1.1](/docs/openshift?topic=openshift-versions-vpc-file-addon#011_is_file)
+
+    * [Change log for version 1.1.10_93, released 27 November 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1.10_93_is_file_relnote)
 
     * [Change log for version 1.1.9_87, released 13 November 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.1.9_87_is_file_relnote)
 
