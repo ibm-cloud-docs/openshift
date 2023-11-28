@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-08"
+lastupdated: "2023-11-28"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -679,7 +679,7 @@ What if I don't have image pull secrets in the `default` {{site.data.keyword.red
 Can I restrict pull access to a certain regional registry?
 :   Yes, you can [edit the existing IAM policy of the service ID](/docs/account?topic=account-serviceids#update_serviceid) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#user).
 
-Want to make your registry credentials even more secured Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption#keyprotect) in your cluster to encrypt Kubernetes secrets in your cluster, such as the image pull secret that stores your registry credentials.
+Want to make your registry credentials even more secured Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption) in your cluster to encrypt Kubernetes secrets in your cluster, such as the image pull secret that stores your registry credentials.
 {: tip}
 
 

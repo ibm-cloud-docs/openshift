@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-11-28"
 
 keywords: openshift, clusters, worker nodes, worker pools, add
 
@@ -112,7 +112,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: pre}
 
 1. Optional: To encrypt the local disk of each worker node in the worker pool, get the details of your key management service (KMS) provider. If you want to use a KMS instance from a different account, you need to do these steps under the account where the KMS instance resides.
-    1. Complete the steps in [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc) to create your KMS instance and to authorize your service in IAM. 
+    1. Complete the steps in [VPC worker nodes](/docs/openshift?topic=openshift-encryption-vpc-worker-disks) to create your KMS instance and to authorize your service in IAM. 
 
     1. List available KMS instances and note the **ID**.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-11-28"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
 
@@ -393,7 +393,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     autoDiscoverDevices: true
     numOfOsd: 1
     ocsUpgrade: true
-    osdSize: 100Gi
+    osdSize: 250Gi
     status:
         storageClusterStatus: Decreasing the capacity not allowed
     ```

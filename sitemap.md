@@ -2692,35 +2692,19 @@ subcollection: openshift
 
     * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
 
-[Understanding encryption](/docs/openshift?topic=openshift-encryption#encryption)
+[Encryption overview](/docs/openshift?topic=openshift-encryption#encryption)
 
-* [Understanding Key Management Service (KMS) providers](/docs/openshift?topic=openshift-encryption#kms)
+* [Control plane](/docs/openshift?topic=openshift-encryption#control-plane-encryption)
 
-    * [Controlling encryption](/docs/openshift?topic=openshift-encryption#kms-encrypt-control)
+* [Worker node disks](/docs/openshift?topic=openshift-encryption#worker-node-encryption)
 
-    * [Features and limitations of KMS providers](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features)
+* [Cluster secrets](/docs/openshift?topic=openshift-encryption#cluster-secret-encryption)
 
-* [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect)
+* [Peristent storage](/docs/openshift?topic=openshift-encryption#persistent-encryption)
 
-    * [Prerequisites](/docs/openshift?topic=openshift-encryption#kms_prereqs)
+* [Next steps](/docs/openshift?topic=openshift-encryption#encryption-next-steps)
 
-    * [Enabling KMS encryption for the cluster through the CLI](/docs/openshift?topic=openshift-encryption#kms_cli)
-
-    * [Enabling KMS encryption for the cluster through the console](/docs/openshift?topic=openshift-encryption#kms_ui)
-
-    * [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption#kms_rotate)
-
-* [Verifying secret encryption](/docs/openshift?topic=openshift-encryption#verify_kms)
-
-* [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption#worker-encryption)
-
-    * [Classic worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-classic)
-
-    * [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc)
-
-    * [{{site.data.keyword.satelliteshort}} worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-satellite)
-
-[Understanding your storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan)
+[Storage overview](/docs/openshift?topic=openshift-storage-plan#storage-plan)
 
 * [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
 
@@ -2955,6 +2939,29 @@ subcollection: openshift
 * [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-worker-tag-label#add-tags-cli)
 
 * [Adding labels to existing worker pools](/docs/openshift?topic=openshift-worker-tag-label#worker_pool_labels)
+
+
+## Setting up encryption
+{: #sitemap_setting_up_encryption}
+
+
+[Setting up a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup#encryption-setup)
+
+* [Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-setup#encrypt-worker-node-disks)
+
+* [Rotating your KMS root key](/docs/openshift?topic=openshift-encryption-setup#encryption-rotate)
+
+[Setting up cluster secret encryption](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets)
+
+* [Enabling secret encryption from the CLI](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets-cli)
+
+* [Enabling secret encryption from the console](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets-console)
+
+* [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets-rotate)
+
+* [Verifying secret encryption](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets-verify)
+
+[Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks#encryption-vpc-worker-disks)
 
 
 ## Enhancing security

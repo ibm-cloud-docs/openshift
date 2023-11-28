@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-11-28"
 
 keywords: openshift
 
@@ -38,9 +38,9 @@ IAM Services
      - **Viewer** platform access role for the resource group access.
      - If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), the **Service ID creator** role to **IAM Identity Service** in the console (`iam-identity` in the API or CLI).
      - If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), the **User API key creator** role to **IAM Identity Service** in the console (`iam-identity` in the API or CLI).
-     - If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption#keyprotect):
+     - If you plan to [encrypt your cluster](/docs/openshift?topic=openshift-encryption):
          - Assign the user the appropriate permission to the key management service (KMS) provider, such as the **Administrator** platform access role.  
-         - For clusters that run {{site.data.keyword.redhat_openshift_notm}} `4.4.16_1513_openshift` or later: When you enable KMS encryption, an additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and your KMS provider, such as {{site.data.keyword.keymanagementserviceshort}}, is automatically created for your cluster, if the policy doesn't already exist. Without this policy, your cluster can't use all the [{{site.data.keyword.keymanagementserviceshort}} features](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features).
+         - For clusters that run {{site.data.keyword.redhat_openshift_notm}} `4.4.16_1513_openshift` or later: When you enable KMS encryption, an additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and your KMS provider, such as {{site.data.keyword.keymanagementserviceshort}}, is automatically created for your cluster, if the policy doesn't already exist. Without this policy, your cluster can't use all the [{{site.data.keyword.keymanagementserviceshort}} features](/docs/openshift?topic=openshift-encryption-setup).
      - **Viewer** platform access role for the resource group access.  
 
 Infrastructure

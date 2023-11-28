@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-28"
 
 keywords: openshift, red hat, red hat openshift, oc
 
@@ -1015,7 +1015,7 @@ Version 0.1.621 of the CLI was released on 30 October 2018.
 Version 0.1.593 of the CLI was released on 10 October 2018.
 
 - Adds the resource group ID to the output of `ibmcloud oc cluster get`. 
-- When [{{site.data.keyword.keymanagementserviceshort}} is enabled](/docs/openshift?topic=openshift-encryption#keyprotect) as a key management service (KMS) provider in your cluster, adds the KMS enabled field in the output of `ibmcloud oc cluster get`.
+- When [{{site.data.keyword.keymanagementserviceshort}} is enabled](/docs/openshift?topic=openshift-encryption) as a key management service (KMS) provider in your cluster, adds the KMS enabled field in the output of `ibmcloud oc cluster get`.
 
 #### Version 0.1.591
 {: #cli-01591}
