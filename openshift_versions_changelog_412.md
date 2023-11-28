@@ -54,7 +54,7 @@ The following table shows the changes that are in the master fix pack 4.12.40_15
 | OpenVPN server | 2.6.5-r0-IKS-57 | 2.6.5-r0-IKS-76 | New version contains updates and security fixes. |
 | OpenVPN Operator image | v1.4.28 | v1.4.30 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.8 | v0.13.10 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.10){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.12.37 | 4.12.40 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-40){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.37 | 4.12.40 | Resolves [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external} and [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487). For more information, see the [IBM security bulletin](https://www.ibm.com/support/pages/node/7080059){: external}. See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-40){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.12.0-20231010 | v4.12.0-20231102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.12.0%2B20231010){: external}. |
 {: caption="Changes since version 4.12.37_1565_openshift" caption-side="bottom"}
 
