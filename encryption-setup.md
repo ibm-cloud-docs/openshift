@@ -50,34 +50,6 @@ Before you can enable a key management service (KMS) provider in your cluster, y
 
 1. Create a cluster and enable secret encryption.
 
-## Setting up worker node disk encryption for VPC clusters
-{: #encrypt-worker-node-disks}
-
-[Virtual Private Cloud]{: tag-vpc}
-
-You can encrypt the worker node disks in your VPC clusters by enabling a key management service (KMS) provider such as {{site.data.keyword.keymanagementservicefull}} or {{site.data.keyword.hscrypto}}.
-
-By default, the one primary disk of VPC worker nodes is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). You can manage the encryption of the worker nodes by enabling a KMS provider at the worker pool level.
-
-1. Make sure you created a KMS instance and root key.
-
-1. Make sure that you have [service authorization policies in {{site.data.keyword.cloud_notm}} IAM](https://cloud.ibm.com/iam/authorizations){: external}, created under the account where the KMS instance resides, with the following details:
-    - **Required service access policy for Kubernetes Service and the KMS provider**
-        1. Set the **Source account** for **This account** if the cluster you want to authorize accessing KMS resides in the current account, otherwise if the cluster located under a different account, select **Other account** and provide the account ID.
-        2. Set the **Source service** to **Kubernetes Service**.
-        3. Set the **Target service** to your KMS provider, such as **Key Protect**.
-        4. Include at least **Reader** service access.
-        5. Enable the authorization to be delegated by the source and dependent services.
-    - **Required service access policy for Cloud Block Storage and the KMS provider**
-        1. Set the **Source account** for **This account** if the cluster you want to authorize accessing KMS resides in the current account, otherwise if the cluster located under a different account, select **Other account** and provide the account ID.
-        2. Set the **Source service** to **Cloud Block Storage**.
-        3. Set the **Target service** to your KMS provider, such as **Key Protect**.
-        4. Include at least **Reader** service access.
-
-1. Create a [VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) or a worker pool and provider your KMS details.
-
-
-
 ## Rotating your KMS root key
 {: #encryption-rotate}
 

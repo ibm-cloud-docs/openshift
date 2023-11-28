@@ -38,16 +38,12 @@ The following table outlines the default and optional data encryption for {{site
 ## Control plane
 {: #control-plane-encryption}
 
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
-
 Components in the {{site.data.keyword.redhat_openshift_notm}} master boot up on a LUKS-encrypted drive using an IBM-managed key. The etcd component of the master stores the configuration files of your Kubernetes resources, such as deployments and secrets. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. 
 
 
 
 ## Worker node disks
 {: #worker-node-encryption}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite} 
 
 Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
 
@@ -60,15 +56,13 @@ Classic worker nodes
 
 
 {{site.data.keyword.satelliteshort}} worker nodes
-:   {{site.data.keyword.satelliteshort}}**: The encryption of the OS disk and secondary disk is managed at the IAAS layer of the platform Satellite is deployed on. The encryption of persistent storage volumes utilized within the cluster is managed at the persistent storage plug-in level and backing storage device level. For more information about encryption for storage devices or plug-ins, see the device provider documentation or the storage plug-in documentation.
+:   The encryption of the OS disk and secondary disk is managed at the IAAS layer of the platform Satellite is deployed on. The encryption of persistent storage volumes utilized within the cluster is managed at the persistent storage plug-in level and backing storage device level. For more information about encryption for storage devices or plug-ins, see the device provider documentation or the storage plug-in documentation.
 
 
 
 
 ## Cluster secrets
 {: #cluster-secret-encryption}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite} 
 
 Kubernetes secrets are base64 encoded by default. You can further protect Kubernetes secrets and any credentials stored in secrets by enabling a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicefull}} or {{site.data.keyword.hscrypto}}.
 
@@ -93,8 +87,6 @@ To set up cluster secret encryption, see [[Setting up worker node disk encryptio
 
 ## Peristent storage
 {: #persistent-encryption}
-
-[Classic infrastructure]{: tag-classic-inf} [Virtual Private Cloud]{: tag-vpc} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 Depending on the type of persistent storage you use, you can encrypt the data written to the storage volumes by enabling a KMS provider. For more information about the types of persistent storage and encryption available, see [Understanding your storage options](/docs/openshift?topic=openshift-storage-plan).
 

@@ -2947,8 +2947,6 @@ subcollection: openshift
 
 [Setting up a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup#encryption-setup)
 
-* [Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-setup#encrypt-worker-node-disks)
-
 * [Rotating your KMS root key](/docs/openshift?topic=openshift-encryption-setup#encryption-rotate)
 
 [Setting up cluster secret encryption](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets)
