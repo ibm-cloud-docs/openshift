@@ -274,6 +274,8 @@ subcollection: openshift
 
     * [29 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2923)
 
+        * [Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+
         * [Change log]{: tag-purple} OpenShift Data Foundation add-on versions `4.10.32`, `4.11.12`, and `4.12.13`.
 
     * [27 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2723)
@@ -5935,6 +5937,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
 
+    * [Change log for worker node fix pack 4.13.22_1547_openshift, released 29 November 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41322_1547_openshift_W)
+
     * [Change log for master fix pack 4.13.19_1546_openshift, released 15 November 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41319_1546_openshift_M)
 
     * [Change log for worker node fix pack 4.13.19_1545_openshift, released 08 November 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41319_1545_openshift_W)
@@ -6067,6 +6071,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.42_1569_openshift, released 29 November 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41242_1569_openshift_W)
 
     * [Change log for master fix pack 4.12.40_1568_openshift, released 15 November 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41240_1568_openshift_M)
 
@@ -6232,6 +6238,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.53_1581_openshift, released 29 November 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41153_1581_openshift_W)
 
     * [Change log for master fix pack 4.11.52_1580_openshift, released 15 November 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41152_1580_openshift_M)
 
@@ -6427,6 +6435,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.67_1592_openshift, released 29 November 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1592_openshift_W)
 
     * [Change log for master fix pack 4.10.67_1591_openshift, released 15 November 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1591_openshift_M)
 
