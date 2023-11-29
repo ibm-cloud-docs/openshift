@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-11-29"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,26 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2023
 {: #openshift-nov23}
+
+### 29 November 2023
+{: #openshift-nov2923}
+{: release-note}
+
+
+
+
+
+
+[Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+:    Review the following change logs for your cluster version.
+    - [4.13.22_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+    - [4.12.42_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+    - [4.11.53_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+    - [4.10.67_1592_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+    
+[Change log]{: tag-purple} OpenShift Data Foundation add-on versions `4.10.32`, `4.11.12`, and `4.12.13`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
 
 ### 27 November 2023
 {: #openshift-nov2723}
