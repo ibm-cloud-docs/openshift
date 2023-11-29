@@ -1868,7 +1868,7 @@ Cluster autoscaler add-on
 {: #openshift-july1422}
 
 Cross-account encryption
-:   You can now set up cross-account encryption. Note that this feature is available for allowlisted accounts only. For more information see, [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption#keyprotect).
+:   You can now set up cross-account encryption. Note that this feature is available for allowlisted accounts only. For more information see, [Encrypting the Kubernetes secrets by using a KMS provider](/docs/openshift?topic=openshift-encryption).
 
 {{site.data.keyword.cos_full_notm}} plug-in
 :   Version `2.1.18` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
@@ -3148,7 +3148,7 @@ New! Sao Paulo multizone region
 :   You can now create VPC clusters in the Sao Paulo, Brazil [location](/docs/openshift?topic=openshift-regions-and-zones).
 
  VPC disk encryption on worker nodes
-:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/openshift?topic=openshift-encryption#worker-encryption-vpc).
+:   Now, you can manage the encryption for the disk on your VPC worker nodes. For more information, see [VPC worker nodes](/docs/openshift?topic=openshift-encryption-vpc-worker-disks).
 
 ### 30 August 2021
 {: #openshift-aug3021}
@@ -4159,7 +4159,7 @@ Helm version 2 unsupported
 {: release-note}
 
 {{site.data.keyword.keymanagementserviceshort}} enhancements
-:   For clusters that run `4.4.16_1513_openshift` or later, your cluster now [integrates more features from {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-encryption#kms-keyprotect-features) when you enable {{site.data.keyword.keymanagementserviceshort}} as the KMS provider for the cluster. When you enable this integration, a **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. If you have a cluster that runs an earlier version, [update your cluster](/docs/containers?topic=containers-update) and then [re-enable KMS encryption](/docs/openshift?topic=openshift-encryption#keyprotect) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
+:   For clusters that run `4.4.16_1513_openshift` or later, your cluster now [integrates more features from {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-encryption-setup) when you enable {{site.data.keyword.keymanagementserviceshort}} as the KMS provider for the cluster. When you enable this integration, a **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. If you have a cluster that runs an earlier version, [update your cluster](/docs/containers?topic=containers-update) and then [re-enable KMS encryption](/docs/openshift?topic=openshift-encryption) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.

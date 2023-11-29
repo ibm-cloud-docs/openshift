@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-11-28"
 
 keywords: openshift, byok, debug, help, vpc, storage, encryption
 
@@ -61,7 +61,7 @@ Verify that the KMS instance or root key still exist. If either one has been del
     1. From the resource list, select your instance of your KMS provider. 
 
 
-1. If either instance or the root key has been disabled or deleted, you must recreate them. For more information on creating a new KMS instance, refer to the [Encryption documentation](/docs/openshift?topic=openshift-encryption#kms_prereqs).
+1. If either instance or the root key has been disabled or deleted, you must recreate them. For more information, see [Setting up a KMS provider](/docs/openshift?topic=openshift-encryption-setup).
 
 1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 

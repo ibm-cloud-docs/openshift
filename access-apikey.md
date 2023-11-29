@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-11-28"
 
 keywords: openshift
 
@@ -89,7 +89,7 @@ For different ways to access the IBM Cloud infrastructure portfolio, check out t
 
 The API key is used to authorize underlying actions in the following {{site.data.keyword.cloud_notm}} services.
 - **Infrastructure**, such as classic or VPC compute, networking, and storage resources for your cluster.
-- **{{site.data.keyword.keymanagementserviceshort}}** or **{{site.data.keyword.hscrypto}}**, if you [enable a key management service provider](/docs/openshift?topic=openshift-encryption#kms) in your cluster.
+- **{{site.data.keyword.keymanagementserviceshort}}** or **{{site.data.keyword.hscrypto}}**, if you [enable a key management service provider](/docs/openshift?topic=openshift-encryption-setup) in your cluster.
 - **{{site.data.keyword.secrets-manager_short}}**, for managing the Ingress certificates for your cluster.
 - **{{site.data.keyword.registryshort}}**, for setting up default access to pull images from the registry to your cluster.
 - **{{site.data.keyword.la_short}}**, if you [enable the logging service](/docs/containers?topic=containers-health).

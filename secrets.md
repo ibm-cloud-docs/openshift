@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-11-28"
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
 
@@ -208,18 +208,18 @@ There are three ways to specify the `--field` option. The one you choose depends
 
 | Option | Format | Description | Supported secret types |
 | ------ | ------ | ----------- | ---------------------- |
-| Default | `--field <crn>` | The field name applied is the default field name for the secret type. | All non-TLS secret types |
-| Named | `--field <name>=<crn>` | The field name applied is the value specified for `<name>`. This option allows you to specify a custom name. | - Arbitrary /n  - IAM credentials |
-| Prefixed | `--field <prefix>=<crn>` | The field name applied is the secret name in {{site.data.keyword.secrets-manager_short}}, followed by an underscore and the default field name for the secret type. | - IAM credentials /n  - username/password /n  - key/value |
+| Default | `--field <crn>` | The name of the added field is the [default field name](#default-field-name) for the secret type of the given CRN. | All non-TLS secret types |
+| Named | `--field <name>=<crn>` | Use this option to specify a name for the added field. The name of the added field is the value specified for `<name>`. | - Arbitrary \n - IAM credentials |
+| Prefixed | `--field prefix=<crn>` | The name of the added field is the [default field name](#default-field-name) for the secret type specified by the given CRN, prefixed by the name of the secret specified by the `<crn>` and an underscore. | - IAM credentials \n - username/password \n - key/value |
 {: caption="Options for adding fields to non-TLS secrets"}
 
 
-The default field names are `arbitrary` for arbitrary secrets, `api_key` for IAM credentials, `username` or `password` for username and password secrets, and `key` for key values.
+The default field names are `arbitrary` for arbitrary secrets, `api_key` for IAM credentials, `username` or `password` for user credentials, and `key` for key-value.{: #default-field-name}
 
-Review the example command to add a field and get the field details. This example adds a default, named, and prefixed field to a set of IAM credentials. You can [view the fields](#non-tls-field-view) added to a secret by running `kubectl get secret` and viewing the `data` block of the output. 
+The following example adds three secret fields - using the same IAM credentials secret, named `iam` - to demonstrate how the different `--field` options affect the resulting field name. You can [view the fields](#non-tls-field-view) added to a secret by running `kubectl get secret` and viewing the `data` block of the output. 
 
 ```sh
-ibmcloud oc ingress secret field add --cluster example-cluster --name example-iam-secret --namespace default  --field crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1 --field custom_iam_name=crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1 --field prefix=crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1a11111aaa1a1111aa1aa111:111a1111-11a1
+ibmcloud oc ingress secret field add --cluster example-cluster --name example-iam-secret --namespace default  --field crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa-1a11-111a-aa1a-1111aa1aa111:secret:111a1111-11a1-11aa-a1a1-111aa12345aa --field custom_iam_name=crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa-1a11-111a-aa1a-1111aa1aa111:secret:111a1111-11a1-11aa-a1a1-111aa12345aa --field prefix=crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa-1a11-111a-aa1a-1111aa1aa111:secret:111a1111-11a1-11aa-a1a1-111aa12345aa
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-20"
+lastupdated: "2023-11-28"
 
 keywords: openshift, openshift data foundation, openshift container storage
 subcollection: openshift
@@ -137,7 +137,7 @@ Meet the storage device count per node recommendations
 :   Plan to have fewer than nine storage devices per node. This helps prevent potential bottlenecks and enhances the efficiency of data access and retrieval.
 
 Use the recommended storage device sizes and counts
-:   When deploying local storage, use disk sizes of 4 TiB or smaller. It is important to ensure that all disks within the cluster, across all storage nodes, are of the same size and type for optimal use of storage.
+:   When deploying local storage, use disk sizes of 4 TiB or smaller. It is important to ensure that all disks within the cluster, across all storage nodes, are of the same size and type for optimal use of storage. Use OSDs of at least 250Gi.
 
 Scale up by using default replication factor and storage node configuration
 :   In OpenShift Data Foundation (ODF), the replication factor is set to 3 by default. When you add capacity, plan to add storage nodes in multiples of 3.
@@ -152,7 +152,7 @@ Use metro storage classes for ODF installations on remote storage
 :   When performing an ODF installation that uses remote storage, make sure you use a storage class that has a `VolumeBindingMode` of `WaitForFirstConsumer` which delays the creation of the Block Storage until the first pod that uses this storage is ready to be scheduled.
 
 Size your deployment
-:   For a detailed analysis of storage requirements, the Red Hat Online Cluster Storage Sizing Tool https://sizer.ocs.ninja/index.html can be used, which helps determine the appropriate storage capacity needed.
+:   For a detailed analysis of storage requirements, the [Sizing Tool](https://sizer.ocs.ninja/index.html) to determine your storage capacity needed. You can also use the official [Red Hat sizing tool](https://access.redhat.com/labsinfo/ocsst){: external}
 
 Set up periodic backups
 :   Taking periodic backups for the ODF cluster is essential to ensure data protection and facilitate data recovery in the event of a disaster. Without regular backups, recovering data from a catastrophic event becomes significantly more challenging and may lead to permanent data loss.

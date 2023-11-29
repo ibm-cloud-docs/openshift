@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-28"
 
 keywords: planning, storage, cluster
 
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Understanding your storage options
+# Storage overview
 {: #storage-plan}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}

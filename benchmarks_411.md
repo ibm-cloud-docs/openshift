@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-11-28"
 
 keywords: openshift, benchmarks, 4.11, openshift benchmarks, openshift 4.11
 
@@ -288,8 +288,8 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 1.2.23 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.24 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.25 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
-| 1.2.33 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
-| 1.2.34 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
+| 1.2.33 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup). |
+| 1.2.34 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup). |
 | 3.2.1 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 3.2.2 | {{site.data.keyword.openshiftshort}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 4.2.6 | {{site.data.keyword.openshiftshort}} does not protect kernel defaults to allow customers to tune kernel parameters. |
@@ -309,7 +309,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.2.9 | {{site.data.keyword.openshiftshort}} can optionally configure [{{site.data.keyword.redhat_openshift_notm}} security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 5.3.2 | {{site.data.keyword.openshiftshort}} has a set of [default Calico network policies defined](/docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](/docs/openshift?topic=openshift-network_policies#adding_network_policies). |
 | 5.4.1 | {{site.data.keyword.openshiftshort}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
-| 5.4.2 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#kms). |
+| 5.4.2 | {{site.data.keyword.openshiftshort}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup). |
 | 5.5.1 | {{site.data.keyword.openshiftshort}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
 | 5.6.2 | {{site.data.keyword.openshiftshort}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
 | 5.6.3 | {{site.data.keyword.openshiftshort}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |

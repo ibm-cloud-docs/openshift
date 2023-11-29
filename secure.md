@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-11-28"
 
 keywords: openshift
 
@@ -96,7 +96,7 @@ Review the following security features for {{site.data.keyword.redhat_openshift_
 
 Fully managed and dedicated {{site.data.keyword.redhat_openshift_notm}} master
 :   Every cluster in {{site.data.keyword.openshiftlong_notm}} is controlled by a dedicated {{site.data.keyword.redhat_openshift_notm}} master that is managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} account. The {{site.data.keyword.redhat_openshift_notm}} master is set up with the following dedicated components that are not shared with other IBM customers.
-    - **etcd data store:** Stores all Kubernetes resources of a cluster, such as `Services`, `Deployments`, and `Pods`. Kubernetes `ConfigMaps` and `Secrets` are app data that is stored as key value pairs so that they can be used by an app that runs in a pod. Data in etcd is stored on the local disk of the {{site.data.keyword.redhat_openshift_notm}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.redhat_openshift_notm}} master by [enabling {{site.data.keyword.keymanagementservicelong_notm}} encryption](/docs/openshift?topic=openshift-encryption#keyprotect) for your cluster. When etcd data is sent to a pod, data is encrypted via TLS to ensure data protection and integrity.
+    - **etcd data store:** Stores all Kubernetes resources of a cluster, such as `Services`, `Deployments`, and `Pods`. Kubernetes `ConfigMaps` and `Secrets` are app data that is stored as key value pairs so that they can be used by an app that runs in a pod. Data in etcd is stored on the local disk of the {{site.data.keyword.redhat_openshift_notm}} master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. You can choose to enable encryption for your etcd data on the local disk of your {{site.data.keyword.redhat_openshift_notm}} master by [enabling {{site.data.keyword.keymanagementservicelong_notm}} encryption](/docs/openshift?topic=openshift-encryption) for your cluster. When etcd data is sent to a pod, data is encrypted via TLS to ensure data protection and integrity.
     - **openshift-api:** Serves as the main entry point for all cluster management requests from the worker node to the {{site.data.keyword.redhat_openshift_notm}} master. The API server validates and processes requests that change the state of cluster resources, such as pods or services, and stores this state in the etcd data store. 
     - **openshift-controller:** Watches for newly created pods and decides where to deploy them based on capacity, performance needs, policy constraints, anti-affinity specifications, and workload requirements. If no worker node can be found that matches the requirements, the pod is not deployed in the cluster. The controller also watches the state of cluster resources, such as replica sets. When the state of a resource changes, for example if a pod in a replica set goes down, the controller manager initiates correcting actions to achieve the required state. 
     - **cloud-controller-manager:** The cloud controller manager manages cloud provider-specific components such as the {{site.data.keyword.cloud_notm}} load balancer.
