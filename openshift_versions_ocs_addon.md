@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-07-18"
+lastupdated: "2023-11-29"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -37,7 +37,7 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 {: #4.13_odf}
 
 
-### Version 4.13.0, release 10 July 2023
+### Version 4.13.0, released 10 July 2023
 {: #4.13.0_odf}
 
 - Initial 4.13 release. 
@@ -46,20 +46,27 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ## Version 4.12
 {: #4.12_odf}
 
-### Version 4.12.6, release 28 June 2023
+### Version 4.12.13, released 29 November 2023 
+{: #4.12.13_odf}
+
+- Golang updated to `1.20.11`.
+- Updates the UBI image to `8.9-1029`.
+- Resolves the following CVEs: [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/CVE-2023-45283){: external} and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/CVE-2023-45284){: external}.
+
+### Version 4.12.6, released 28 June 2023
 {: #4.12.6_odf}
 
 - Golang updated to `1.20.5`.
 
 
-### Version 4.12.5, release 09 June 2023
+### Version 4.12.5, released 09 June 2023
 {: #4.12.5_odf}
 
 - Golang updated to `1.19.9`.
 - Updates the UBI image to `8.8-860`.
 
 
-### Version 4.12.4, release 05 May 2023
+### Version 4.12.4, released 05 May 2023
 {: #4.12.4_odf}
 
 - LSO channel updated.
@@ -75,18 +82,21 @@ Initial release.
 ## Version 4.11
 {: #4.11_odf}
 
-### Version 4.11.12, release 28 June 2023
+### Version 4.11.12, released 29 November 2023 
 {: #4.11.12_odf}
 
-- Golang updated to `1.20.5`.
+- Golang updated to `1.20.11`.
+- Updates the UBI image to `8.9-1029`.
+- Resolves the following CVEs: [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/CVE-2023-45283){: external} and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/CVE-2023-45284){: external}.
 
-### Version 4.11.11, release 09 June 2023
+
+### Version 4.11.11, released 09 June 2023
 {: #4.11.11_odf}
 
 - Golang updated to `1.19.9`.
 - Updates the UBI image to `8.8-860`.
 
-### Version 4.11.10, release 05 May 2023
+### Version 4.11.10, released 05 May 2023
 {: #4.11.10_odf}
 
 - LSO channel updated.
@@ -116,18 +126,25 @@ Initial release.
 ## Version 4.10
 {: #4.10_odf}
 
-### Version 4.10.27, release 28 June 2023
+### Version 4.10.32, released 29 November 2023 
+{: #4.10.32_odf}
+
+- Golang updated to `1.20.11`.
+- Updates the UBI image to `8.9-1029`.
+- Resolves the following CVEs: [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/CVE-2023-45283){: external} and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/CVE-2023-45284){: external}.
+
+### Version 4.10.27, released 28 June 2023
 {: #4.10.27_odf}
 
 - Golang updated to `1.20.5`.
 
-### Version 4.10.26 release 09 June 2023
+### Version 4.10.26 released 09 June 2023
 {: #4.10.26_odf}
 
 - Golang updated to `1.19.9`.
 - Updates the UBI image to `8.8-860`.
 
-### Version 4.10.24, release 05 May 2023
+### Version 4.10.24, released 05 May 2023
 {: #4.10.24_odf}
 
 - Golang updated to `1.19.8`.
@@ -208,24 +225,24 @@ Initial release.
 ## Version 4.9
 {: #4.9_odf}
 
-### Version 4.9.29, release 28 June 2023
+### Version 4.9.29, released 28 June 2023
 {: #4.9.29_odf}
 
 - Golang updated to `1.20.5`.
 
-### Version 4.9.28, release 09 June 2023
+### Version 4.9.28, released 09 June 2023
 {: #4.9.28_odf}
 
 - Golang updated to `1.19.9`
 - Updates the UBI image to `8.8-860`
 
-### Version 4.9.26, release 05 May 2023
+### Version 4.9.26, released 05 May 2023
 {: #4.9.26_odf}
 
 - Golang updated to `1.19.8`.
 - Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
-### Version 4.9.5, release 20 May 2022
+### Version 4.9.5, released 20 May 2022
 {: #4.9.5_odf}
 
 - Support update and scaling on {{site.data.keyword.satelliteshort}}.
@@ -262,13 +279,13 @@ Initial release.
 ## Version 4.8
 {: #4.8_odf}
 
-### Version 4.8.31, release 05 May 2023
+### Version 4.8.31, released 05 May 2023
 {: #4.8.31_odf}
 
 - Golang updated to `1.19.8`.
 - Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external}, [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
 
-### Version 4.8.4, release 17 January 2022
+### Version 4.8.4, released 17 January 2022
 {: #4.8.4_odf}
 
 Updates Golang version to 1.16.13.
