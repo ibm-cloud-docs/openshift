@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: openshift
 subcollection: openshift
@@ -7175,11 +7175,27 @@ subcollection: openshift
 
 * [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
 
+    * [Version 4.13.7, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.7_odf)
+
+    * [Version 4.13.6, released 20 October 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.6_odf)
+
+    * [Version 4.13.4, released 12 September 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.4_odf)
+
+    * [Version 4.13.3, released 31 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.3_odf)
+
     * [Version 4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
 
     * [Version 4.12.13, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.13_odf)
+
+    * [Version 4.12.12, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.12_odf)
+
+    * [Version 4.12.11, released 20 October 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.11_odf)
+
+    * [Version 4.12.9, released 12 September 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.9_odf)
+
+    * [Version 4.12.8, released 31 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.8_odf)
 
     * [Version 4.12.6, released 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.6_odf)
 
@@ -7191,7 +7207,15 @@ subcollection: openshift
 
 * [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
 
-    * [Version 4.11.12, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.12_odf)
+    * [Version 4.11.18, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.18_odf)
+
+    * [Version 4.11.17, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.17_odf)
+
+    * [Version 4.11.16, released 20 October 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.16_odf)
+
+    * [Version 4.11.14, released 12 September 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.14_odf)
+
+    * [Version 4.11.13, released 31 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.13_odf)
 
     * [Version 4.11.11, released 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.11_odf)
 
@@ -7208,6 +7232,14 @@ subcollection: openshift
 * [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
 
     * [Version 4.10.32, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.32_odf)
+
+    * [Version 4.10.31, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.31_odf)
+
+    * [Version 4.10.30 released 20 October 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.30_odf)
+
+    * [Version 4.10.29, released 12 September 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.29_odf)
+
+    * [Version 4.10.28, released 31 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.28_odf)
 
     * [Version 4.10.27, released 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.27_odf)
 

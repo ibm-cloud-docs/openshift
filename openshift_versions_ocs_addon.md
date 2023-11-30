@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: odf, openshift data foundation add-on, change log
 
@@ -36,6 +36,28 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ## Version 4.13
 {: #4.13_odf}
 
+### Version 4.13.7, released 02 November 2023
+{: #4.13.7_odf}
+
+- Updates the UBI image to `8.8-10721697`.
+
+### Version 4.13.6, released 20 October 2023
+{: #4.13.6_odf}
+
+- Updates the UBI image to `8.8-10721696`.
+
+### Version 4.13.4, released 12 September 2023
+{: #4.13.4_odf}
+
+- Golang updated to `1.20.07`.
+- Updates the UBI image to `8.8-1037`.
+
+### Version 4.13.3, released 31 July 2023
+{: #4.13.3_odf}
+
+- Golang updated to `1.20.06`.
+- Updates the UBI image to `8.8-1014`.
+
 
 ### Version 4.13.0, released 10 July 2023
 {: #4.13.0_odf}
@@ -52,6 +74,28 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 - Golang updated to `1.20.11`.
 - Updates the UBI image to `8.9-1029`.
 - Resolves the following CVEs: [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/CVE-2023-45283){: external} and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/CVE-2023-45284){: external}.
+
+### Version 4.12.12, released 02 November 2023
+{: #4.12.12_odf}
+
+- Updates the UBI to`8.8-1072.1697`.
+
+### Version 4.12.11, released 20 October 2023
+{: #4.12.11_odf}
+
+- Updates the UBI to`8.8-1072.1696`.
+
+### Version 4.12.9, released 12 September 2023
+{: #4.12.9_odf}
+
+- Golang updated to `1.20.7`.
+- Updates the UBI to`8.8-1037`.
+
+### Version 4.12.8, released 31 July 2023
+{: #4.12.8_odf}
+
+- Golang updated to `1.20.6`.
+- Updates the UBI to`8.8-1014`.
 
 ### Version 4.12.6, released 28 June 2023
 {: #4.12.6_odf}
@@ -82,12 +126,34 @@ Initial release.
 ## Version 4.11
 {: #4.11_odf}
 
-### Version 4.11.12, released 29 November 2023 
-{: #4.11.12_odf}
+### Version 4.11.18, released 29 November 2023 
+{: #4.11.18_odf}
 
 - Golang updated to `1.20.11`.
 - Updates the UBI image to `8.9-1029`.
 - Resolves the following CVEs: [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/CVE-2023-45283){: external} and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/CVE-2023-45284){: external}.
+
+### Version 4.11.17, released 02 November 2023
+{: #4.11.17_odf}
+
+- Updates the UBI image to `8.9-10721697`.
+
+### Version 4.11.16, released 20 October 2023
+{: #4.11.16_odf}
+
+- Updates the UBI image to `8.9-10721696`.
+
+### Version 4.11.14, released 12 September 2023
+{: #4.11.14_odf}
+
+- Golang updated to `1.20.7`.
+- Updates the UBI image to `8.9-1037`.
+
+### Version 4.11.13, released 31 July 2023
+{: #4.11.13_odf}
+
+- Golang updated to `1.20.6`.
+- Updates the UBI image to `8.9-1014`.
 
 
 ### Version 4.11.11, released 09 June 2023
@@ -132,6 +198,29 @@ Initial release.
 - Golang updated to `1.20.11`.
 - Updates the UBI image to `8.9-1029`.
 - Resolves the following CVEs: [CVE-2023-45283](https://nvd.nist.gov/vuln/detail/CVE-2023-45283){: external} and [CVE-2023-45284](https://nvd.nist.gov/vuln/detail/CVE-2023-45284){: external}.
+
+
+### Version 4.10.31, released 02 November 2023
+{: #4.10.31_odf}
+
+- Updates the UBI image to `8.8-10721697`.
+
+### Version 4.10.30 released 20 October 2023
+{: #4.10.30_odf}
+
+- Updates the UBI image to `8.8-10721696`.
+
+### Version 4.10.29, released 12 September 2023
+{: #4.10.29_odf}
+
+- Updates the UBI image to `8.8-1037`.
+- Golang updated to `1.20.7`.
+
+### Version 4.10.28, released 31 July 2023
+{: #4.10.28_odf}
+
+- Updates the UBI image to `8.8-1014`.
+- Golang updated to `1.20.6`.
 
 ### Version 4.10.27, released 28 June 2023
 {: #4.10.27_odf}
