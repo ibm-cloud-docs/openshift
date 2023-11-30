@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-11-30"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -57,7 +57,6 @@ You can quickly access your {{site.data.keyword.openshiftlong_notm}} cluster fro
 1. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the cluster that you want to access.
 2. Click **{{site.data.keyword.redhat_openshift_notm}} web console**.
 3. To continue working in the command line, click your profile name, such as `IAM#name@email.com`, and then click **Copy Login Command**. Depending on your cluster version, log in to your cluster from the command line as follows.
-    *  **Version 3.11**: Paste the copied `oc login` command into your command line.
     *  **Version 4**: Click **Display Token**, copy the `oc login` command, and paste the command into your command line.
 
 For security reasons, first log out of the {{site.data.keyword.cloud_notm}} console and then log out of the {{site.data.keyword.redhat_openshift_notm}} web console before you close your browser. You must complete both steps in the specified order to successfully log out of the {{site.data.keyword.redhat_openshift_notm}} web console.
