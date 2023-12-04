@@ -270,6 +270,8 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
+
 * [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
 
     * [29 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2923)

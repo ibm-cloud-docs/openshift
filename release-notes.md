@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-12-04"
 
 keywords: openshift, kubernetes, release notes
 
@@ -26,6 +26,11 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+## December 2023
+{: #openshift-dec23}
+
+
+
 ## November 2023
 {: #openshift-nov23}
 
@@ -47,6 +52,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
     
 [Change log]{: tag-purple} OpenShift Data Foundation add-on versions `4.10.32`, `4.11.12`, and `4.12.13`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
 
 
 ### 27 November 2023
