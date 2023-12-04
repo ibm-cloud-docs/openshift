@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-04"
 
 keywords: openshift
 subcollection: openshift
@@ -269,6 +269,8 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
 * [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
 
