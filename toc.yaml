@@ -459,6 +459,7 @@ toc:
               - ts-admin-cert.md
               - ts-health-loglines.md
               - ts-vpc-byok-encrypted-storage.md
+              - ts-etcd-alerts.md
           - topicgroup:
               label: Worker nodes
               topics:
