@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-08-16"
+lastupdated: "2023-12-05"
 
 keywords: openshift, kubernetes, clusters, worker nodes, worker pools, delete
 
@@ -79,13 +79,50 @@ No backups are created of your cluster or your data in your persistent storage. 
 
       To manually remove the storage and find frequently asked questions about storage removal, review the documentation for each storage type in the links in the **Before you begin** section.
 
-Next steps:
-- After it is no longer listed in the available clusters list when you run the `ibmcloud oc cluster ls` command, you can reuse the name of a removed cluster.
+
+## Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters
+{: #satcluster-rm}
+
+When you remove {{site.data.keyword.redhat_openshift_notm}} clusters or worker nodes in a cluster, the hosts that provide the compute capacity for your worker nodes are not automatically deleted. Instead, the hosts remain attached to your {{site.data.keyword.satelliteshort}} location, but require you to reload the host to be able to reassign the hosts to other {{site.data.keyword.satelliteshort}} resources.
+
+1. Back up any data that runs in the worker node or cluster that you want to save. For example, you might save a copy of all the data in your cluster and upload these files to a persistent storage solution, such as {{site.data.keyword.cos_full_notm}}.
+    ```sh
+    oc get all --all-namespaces -o yaml
+    ```
+    {: pre}
+
+2. Get the **Worker ID** of each host in your cluster.
+    ```sh
+    ibmcloud sat host ls --location <satellite_location_name_or_ID>
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    Retrieving hosts...
+    OK
+    Name              ID                     State      Status   Cluster          Worker ID                                                 Worker IP       
+    machine-name-1    aaaaa1a11aaaaaa111aa   assigned   Ready    infrastructure   sat-virtualser-4d7fa07cd3446b1f9d8131420f7011e60d372ca2   169.xx.xxx.xxx       
+    machine-name-2    bbbbbbb22bb2bbb222b2   assigned   Ready    infrastructure   sat-virtualser-9826f0927254b12b4018a95327bd0b45d0513f59   169.xx.xxx.xxx       
+    machine-name-3    ccccc3c33ccccc3333cc   assigned   Ready    mycluster12345   sat-virtualser-948b454ea091bd9aeb8f0542c2e8c19b82c5bf7a   169.xx.xxx.xxx       
+    ```
+    {: screen}
+
+3. Remove the worker nodes or clusters by referring to the following options. The corresponding hosts in your {{site.data.keyword.satelliteshort}} location become unassigned and require a reload before you can use them for other {{site.data.keyword.satelliteshort}} resources.
+    *  [Resize worker pools](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) to reduce the number of worker nodes in the cluster.
+    *  [Remove individual worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) from the cluster.
+    *  [Remove the cluster](/docs/openshift?topic=openshift-remove).
+4. For each worker node that you removed, decide what to do with the corresponding host in your {{site.data.keyword.satelliteshort}} location.
+    *  Reload the host operating system so that you can attach and assign the host to other {{site.data.keyword.satelliteshort}} resources such as the location control plane or other clusters. For more information, see the update process in [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-update-location).
+    *  Delete the hosts from your underlying infrastructure provider. For more information, refer to the infrastructure provider documentation.
+
+## Next steps
+{: #cluster-remove-next-steps}
+
+
+- After the cluster is no longer listed when you run the `ibmcloud oc cluster ls` command, you can reuse the name of a removed cluster.
 - **Classic clusters only**: If you kept the subnets, you can [reuse them in a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
 - **VPC clusters only**: If you have infrastructure resources that you no longer want to use, such as the VPC or subnets, remove these resources in the VPC portal.
-- If you kept the persistent storage, you can delete your storage later through the {{site.data.keyword.cloud_notm}} console for the corresponding storage service.
+- **Persistent storage**: If you kept the persistent storage, you can delete your storage later through the {{site.data.keyword.cloud_notm}} console for the corresponding storage service.
 - ****{{site.data.keyword.satelliteshort}} clusters**:  If you have hosts attached to your location that you no longer want to use, remove them. For more information see [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove).
-
-
-
-

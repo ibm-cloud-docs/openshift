@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-05"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -382,8 +382,8 @@ Your authorized users can now continue with [Accessing {{site.data.keyword.redha
 After you [create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location](/docs/openshift?topic=openshift-satellite-clusters), you can begin working with your cluster by accessing the cluster.
 {: shortdesc}
 
-Want to set up a VPN to connect to your cluster from your local machine? Check out [Accessing private clusters by using the WireGuard VPN](/docs/openshift?topic=openshift-cluster-access-wireguard).
-{: tip}
+When you access your cluster and run `oc get nodes` or `oc describe node <worker_node>` commands, you might see that the worker nodes are assigned `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. The {{site.data.keyword.satelliteshort}} hosts that you assigned to your cluster function as worker nodes only, and no master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes.
+{: note}
 
 ### Accessing clusters through the cluster service URL
 {: #access_cluster_sat_se}

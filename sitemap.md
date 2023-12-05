@@ -2763,35 +2763,11 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
 
-* [Creating {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
+* [Creating {{site.data.keyword.satelliteshort}} clusters from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
 
-* [Creating {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
+* [Creating {{site.data.keyword.satelliteshort}} clusters from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
 
-* [Creating single-node clusters for resource-constrained edge locations](/docs/openshift?topic=openshift-satellite-clusters#single-node)
-
-    * [Limitations](/docs/openshift?topic=openshift-satellite-clusters#single-node-limitations)
-
-    * [Requirements](/docs/openshift?topic=openshift-satellite-clusters#single-node-requirements)
-
-    * [Creating a single-node cluster](/docs/openshift?topic=openshift-satellite-clusters#single-node-create)
-
-* [Accessing and working with your {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-access)
-
-* [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry)
-
-    * [Setting up the internal container image registry with {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry-cos)
-
-* [Exposing apps](/docs/openshift?topic=openshift-satellite-clusters#satcluster-expose-apps)
-
-* [Storing application data in persistent storage](/docs/openshift?topic=openshift-satellite-clusters#satcluster-storage)
-
-* [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm)
-
-* [Limitations for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-limitations)
-
-* [Pricing for clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters#satcluster-pricing)
-
-* [Bringing your own OCP license](/docs/openshift?topic=openshift-satellite-clusters#byo-ocp-satellite)
+* [Next steps](/docs/openshift?topic=openshift-satellite-clusters#sat-cluster-next-steps)
 
 
 ## Accessing clusters
@@ -3247,6 +3223,80 @@ subcollection: openshift
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-configure)
 
 * [Additional resources](/docs/openshift?topic=openshift-pod-security-admission#pod-sec-additional-resources)
+
+
+## Setting up an image registry
+{: #sitemap_setting_up_an_image_registry}
+
+
+[Setting up an image registry](/docs/openshift?topic=openshift-registry#registry)
+
+* [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
+
+* [Storing images in the internal registries](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
+
+    * [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
+
+    * [Storing images in the internal registry in Classic clusters](/docs/openshift?topic=openshift-registry#storage_internal_registry)
+
+    * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
+
+* [Removing the internal image registry](/docs/openshift?topic=openshift-registry#remove-image-registry)
+
+* [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
+
+* [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
+
+* [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
+
+* [Using {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr)
+
+* [Understanding how to authorize your cluster to pull images from a private registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth)
+
+    * [Default image pull secret setup](/docs/openshift?topic=openshift-registry#cluster_registry_auth_default)
+
+    * [Private network connection to `icr.io` registries](/docs/openshift?topic=openshift-registry#cluster_registry_auth_private)
+
+* [Updating existing clusters to use the API key image pull secret](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key)
+
+    * [Updating your image pull secret](/docs/openshift?topic=openshift-registry#update-pull-secret)
+
+* [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default {{site.data.keyword.redhat_openshift_notm}} projects](/docs/openshift?topic=openshift-registry#other)
+
+    * [Copying an existing image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret)
+
+    * [Creating an image pull secret with different IAM API key credentials](/docs/openshift?topic=openshift-registry#other_registry_accounts)
+
+    * [Accessing images that are stored in other private registries](/docs/openshift?topic=openshift-registry#private_images)
+
+* [Using the image pull secret to deploy containers](/docs/openshift?topic=openshift-registry#use_imagePullSecret)
+
+    * [Storing the image pull secret in the Kubernetes service account for the selected project](/docs/openshift?topic=openshift-registry#store_imagePullSecret)
+
+* [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software)
+
+* [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
+
+* [Updating an {{site.data.keyword.containerlong_notm}} containerd custom registry configuration](/docs/openshift?topic=openshift-registry#update_containerd_registry_config)
+
+    * [Example daemonset to update a containerd custom registry configuration](/docs/openshift?topic=openshift-registry#ds-example-registry)
+
+
+## Setting up the internal image registry for {{site.data.keyword.satelliteshort}} clusters
+{: #sitemap_setting_up_the_internal_image_registry_for_clusters}
+
+
+[Setting up the internal image registry for {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters-registry#satellite-clusters-registry)
+
+* [Create an {{site.data.keyword.cos_full_notm}} instance that meets the requirements](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-cos-instance)
+
+* [Create a bucket to use for your image registry](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-bucket)
+
+* [Create a secret that contains your COS service credentials](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-secret)
+
+* [Update the {{site.data.keyword.redhat_openshift_notm}} Registry operator CRDs](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-crds)
+
+* [Verify your changes](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-verify)
 
 
 ## Controlling network traffic in Classic clusters
@@ -3709,63 +3759,6 @@ subcollection: openshift
 * [Configuring a flow log collector](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_create)
 
 * [Viewing worker node flow logs](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_view)
-
-
-## Setting up an image registry
-{: #sitemap_setting_up_an_image_registry}
-
-
-[Setting up an image registry](/docs/openshift?topic=openshift-registry#registry)
-
-* [Choosing an image registry solution](/docs/openshift?topic=openshift-registry#openshift_registry_options)
-
-* [Storing images in the internal registries](/docs/openshift?topic=openshift-registry#openshift_internal_registry)
-
-    * [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
-
-    * [Storing images in the internal registry in Classic clusters](/docs/openshift?topic=openshift-registry#storage_internal_registry)
-
-    * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
-
-* [Removing the internal image registry](/docs/openshift?topic=openshift-registry#remove-image-registry)
-
-* [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry)
-
-* [Importing images from {{site.data.keyword.registrylong_notm}} into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry)
-
-* [Setting up builds in the internal registry to push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry)
-
-* [Using {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr)
-
-* [Understanding how to authorize your cluster to pull images from a private registry](/docs/openshift?topic=openshift-registry#cluster_registry_auth)
-
-    * [Default image pull secret setup](/docs/openshift?topic=openshift-registry#cluster_registry_auth_default)
-
-    * [Private network connection to `icr.io` registries](/docs/openshift?topic=openshift-registry#cluster_registry_auth_private)
-
-* [Updating existing clusters to use the API key image pull secret](/docs/openshift?topic=openshift-registry#imagePullSecret_migrate_api_key)
-
-    * [Updating your image pull secret](/docs/openshift?topic=openshift-registry#update-pull-secret)
-
-* [Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default {{site.data.keyword.redhat_openshift_notm}} projects](/docs/openshift?topic=openshift-registry#other)
-
-    * [Copying an existing image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret)
-
-    * [Creating an image pull secret with different IAM API key credentials](/docs/openshift?topic=openshift-registry#other_registry_accounts)
-
-    * [Accessing images that are stored in other private registries](/docs/openshift?topic=openshift-registry#private_images)
-
-* [Using the image pull secret to deploy containers](/docs/openshift?topic=openshift-registry#use_imagePullSecret)
-
-    * [Storing the image pull secret in the Kubernetes service account for the selected project](/docs/openshift?topic=openshift-registry#store_imagePullSecret)
-
-* [Setting up a cluster to pull entitled software](/docs/openshift?topic=openshift-registry#secret_entitled_software)
-
-* [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
-
-* [Updating an {{site.data.keyword.containerlong_notm}} containerd custom registry configuration](/docs/openshift?topic=openshift-registry#update_containerd_registry_config)
-
-    * [Example daemonset to update a containerd custom registry configuration](/docs/openshift?topic=openshift-registry#ds-example-registry)
 
 
 ## Continuous integration and delivery for app development and deployment
@@ -5220,6 +5213,8 @@ subcollection: openshift
 
 * [Managing costs](/docs/openshift?topic=openshift-costs#costs-manage)
 
+* [Pricing for clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-costs#satcluster-pricing)
+
 [Using reservations to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations#reservations)
 
 * [Understanding reservations](/docs/openshift?topic=openshift-reservations#ri-about)
@@ -5240,6 +5235,10 @@ subcollection: openshift
 
 
 [Removing clusters](/docs/openshift?topic=openshift-remove#remove)
+
+* [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-remove#satcluster-rm)
+
+* [Next steps](/docs/openshift?topic=openshift-remove#cluster-remove-next-steps)
 
 
 ## API reference

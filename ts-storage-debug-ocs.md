@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-06"
+lastupdated: "2023-12-05"
 
 keywords: openshift, file, debug, help
 
@@ -192,7 +192,7 @@ Describe your ODF resources and review the command outputs for any error message
     ```
     {: pre}
 
-1. List the ODF pods in the `kube-system` namespace and verify that they are `Running.`
+1. List the ODF pods in the `kube-system` namespace and verify that they are `Running`.
     ```sh
     oc get pods -n kube-system
     ```

@@ -120,6 +120,8 @@ toc:
           - pod-priority.md
           - kubeapi-priority.md
           - pod-security-admission.md 
+      - registry.md
+      - satellite-clusters-registry.md
       - topicgroup: 
           label: Controlling network traffic in Classic clusters
           topics:
@@ -161,7 +163,6 @@ toc:
           - openshift_health_monitor.md
           - health-audit.md
           - vpc-flow-logs.md
-      - registry.md
       - cicd.md
       - topicgroup:
           label: Developing and deploying apps
