@@ -274,13 +274,13 @@ subcollection: openshift
 
     * [4 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0423)
 
-        * [Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+        * [Change log]{: tag-purple} Worker node fix packs are available. 
 
 * [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
 
     * [29 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2923)
 
-        * [Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+        * [Change log]{: tag-purple} Worker node fix packs are available. 
 
         * [Change log]{: tag-purple} OpenShift Data Foundation add-on versions `4.10.32`, `4.11.12`, and `4.12.13`.
 
@@ -354,7 +354,7 @@ subcollection: openshift
 
     * [23 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2323)
 
-        * [Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+        * [Change log]{: tag-purple} Worker node fix packs are available. 
 
         * [Change log]{: tag-purple} Ingress ALB version `1.8.4_5586_ikss`
 
