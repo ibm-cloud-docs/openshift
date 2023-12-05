@@ -41,7 +41,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+[Change log]{: tag-purple} Worker node fix packs are available. 
+:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.13.24_1551_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
     - [4.12.44_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
@@ -62,7 +63,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+[Change log]{: tag-purple} Worker node fix packs are available. 
+:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.13.22_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
     - [4.12.42_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
@@ -243,7 +245,8 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+[Change log]{: tag-purple} Worker node fix packs are available. 
+:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.13.17_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
     - [4.12.39_1566_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
