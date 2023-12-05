@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-12-05"
 
 keywords: portworx, openshift
 
@@ -18,6 +18,8 @@ subcollection: openshift
 # Setting up the Portworx key-value store
 {: #storage_portworx_kv_store}
 
+You can set up Portworx to use a key-value database (KVDB). A KVDB stores your cluster's state, configuration data, and metadata associated with storage volumes and snapshots.
+{: shortdesc}
 
 ## Setting up a key-value store for Portworx metadata
 {: #portworx_database}
@@ -31,8 +33,8 @@ Before you begin, review the [Planning your Portworx setup section](/docs/opensh
 The Portworx key-value store serves as the single source of truth for your Portworx cluster. If the key-value store is not available, then you can't work with your Portworx cluster to access or store your data. Existing data is not changed or removed when the Portworx database is unavailable.
 
 To set up your key-value store, choose between the following options.
-- [Automatically set up a key-value database (KVDB) during the Portworx installation](/docs/openshift?topic=openshift-storage_portworx_kv_store).
-- [Set up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store).
+- [Automatically set up a key-value database (KVDB) during the Portworx installation](#portworx-kvdb).
+- [Set up a Databases for etcd service instance](#portworx-kv-db).
 
 ## Using the Portworx key-value database
 {: #portworx-kvdb}
@@ -40,7 +42,7 @@ To set up your key-value store, choose between the following options.
 Automatically set up a key-value database (KVDB) during the Portworx installation that uses the space on the additional local disks that are attached to your worker nodes.
 {: shortdesc}
 
-You can keep the Portworx metadata inside your cluster and store it along with the operational data that you plan to store with Portworx by using the internal key-value database (KVDB) that is included in Portworx. For general information about the internal Portworx KVDB, see the [Portworx documentation](https://docs.portworx.com/concepts/internal-kvdb/){: external}.
+You can keep the Portworx metadata inside your cluster and store it along with the operational data that you plan to store with Portworx by using the internal key-value database (KVDB) that is included in Portworx. For general information about the internal Portworx KVDB, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/kvdb-for-portworx/internal-kvdb){: external}.
 
 To set up the internal Portworx KDVB, follow the steps in [Installing Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_deploy).
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-05"
 
 keywords: portworx, openshift
 
@@ -21,7 +21,7 @@ subcollection: openshift
 Before you create your cluster and install Portworx, review the following planning steps.
 {: shortdesc}
 
-- [ ] Decide where you want to store the Portworx metadata. You can use KVDB or an external Database instance. For more information, see [Understanding the key-value store](/docs/openshift?topic=openshift-storage_portworx_kv_store). To learn more about what the key value does, see the [Portworx documentation](https://docs.portworx.com/concepts/internal-kvdb/).
+- [ ] Decide where you want to store the Portworx metadata. You can use KVDB or an external Database instance. For more information, see [Understanding the key-value store](/docs/openshift?topic=openshift-storage_portworx_kv_store). To learn more about what the key value does, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/kvdb-for-portworx/internal-kvdb){: external}.
 - [ ] Decide whether you want encryption. You can use {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementservicelong_notm}}. For more information, see [Understanding encryption for Portworx]/docs/openshift?topic=openshift-storage_portworx_encryption.
 - [ ] Decide whether you want to use journal devices. Journal devices allow Portworx to write logs directly to a local disk on your worker node.
 - [ ] **VPC or Satellite clusters only** - Decide whether you want to use cloud drives. Cloud drives allow you to dynamically provision the Portworx volumes. If you don’t want to use cloud drives, you must manually attach volumes to worker nodes.

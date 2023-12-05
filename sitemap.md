@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
+    * [4 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0423)
+
+        * [Change log]{: tag-purple} Worker node fix packs are available. Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+
 * [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
 
     * [29 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2923)
