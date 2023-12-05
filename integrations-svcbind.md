@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-05"
 
 keywords: kubernetes, openshift
 
@@ -32,7 +32,7 @@ Review the following frequently asked questions about service binding.
 ### What types of services can I bind to my cluster?
 {: #svc-bind-types}
 
-When you add {{site.data.keyword.cloud_notm}} services to your cluster, you can choose between services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and services that are based on Cloud Foundry. IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. Cloud Foundry services must be added to a Cloud Foundry organization and space, and can't be added to a resource group. To control access to your Cloud Foundry service instance, you use Cloud Foundry roles. For more information about IAM-enabled services and Cloud Foundry services, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+You can bind services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. For more information, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
 
@@ -86,9 +86,8 @@ Use {{site.data.keyword.cloud_notm}} service binding to automatically create ser
 
 Before you begin:
 - Ensure you have the following roles:
-    - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster where you want to bind a service
-    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the {{site.data.keyword.redhat_openshift_notm}} project where you want to bind the service
-    - For Cloud Foundry services: [**Developer** Cloud Foundry role](/docs/account?topic=account-mngcf#mngcf) for the space where you want to provision the service
+    - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster where you want to bind a service.
+    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the {{site.data.keyword.redhat_openshift_notm}} project where you want to bind the service.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To add an {{site.data.keyword.cloud_notm}} service to your cluster:
@@ -100,33 +99,17 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     * Make sure that the service name is in the format `myservice` or `example.com`. Spaces and underscores are not allowed.
 
 2. Check the type of service that you created and make note of the service instance **Name**.
-    - **Cloud Foundry services:**
-        ```sh
-        ibmcloud service list
-        ```
-        {: pre}
+    ```sh
+    ibmcloud resource service-instances
+    ```
+    {: pre}
 
-        Example output
-        ```sh
-        NAME                         service           plan    bound apps   last operation
-        <cf_service_instance_name>   <service_name>    spark                create succeeded
-        ```
-        {: screen}
-
-    - **{{site.data.keyword.cloud_notm}} IAM-enabled services:**
-        ```sh
-        ibmcloud resource service-instances
-        ```
-        {: pre}
-
-        Example output
-        ```sh
-        NAME                          Location   State    Type               Tags
-        <iam_service_instance_name>   <region>   active   service_instance
-        ```
-        {: screen}
-
-    You can also see the different service types in your {{site.data.keyword.cloud_notm}} dashboard as **Cloud Foundry Services** and **Services**.
+    Example output
+    ```sh
+    NAME                          Location   State    Type               Tags
+    <iam_service_instance_name>   <region>   active   service_instance
+    ```
+    {: screen}
 
 3. Identify the cluster project that you want to use to add your service.
     ```sh
@@ -590,17 +573,10 @@ If you don't want to use an {{site.data.keyword.cloud_notm}} service that you bo
     {: pre}
 
 7. Optional. Remove the {{site.data.keyword.cloud_notm}} service instance.
-    - **{{site.data.keyword.cloud_notm}} IAM-enabled services:**
-        ```sh
-        ibmcloud resource service-instance-delete <service_name>
-        ```
-        {: pre}
-
-    - **Cloud Foundry services:**
-        ```sh
-        ibmcloud service delete <service_name>
-        ```
-        {: pre}
+    ```sh
+    ibmcloud resource service-instance-delete <service_name>
+    ```
+    {: pre}
 
 
 

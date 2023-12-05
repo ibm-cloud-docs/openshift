@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-05"
 
 keywords: openshift
 
@@ -1855,7 +1855,7 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESP
 {: pre}
 
 Minimum required permissions
-:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}} and **Developer** Cloud Foundry role
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
 
@@ -1873,7 +1873,7 @@ Minimum required permissions
      To list available roles for the service, run `ibmcloud iam roles --service <service_name>`. The service name is the name of the service in the catalog, which you can get by running `ibmcloud catalog search`.
 
 `--service SERVICE_INSTANCE`
-:    Required: The name of the {{site.data.keyword.cloud_notm}} service instance that you want to bind. To find the name, run `ibmcloud service list` for Cloud Foundry services, and `ibmcloud resource service-instances` for IAM-enabled services.
+:    Required: The name of the {{site.data.keyword.cloud_notm}} service instance that you want to bind. To find the name, run `ibmcloud resource service-instances`.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -1948,7 +1948,7 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAME
 {: pre}
 
 Minimum required permissions
-:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}} and **Developer** Cloud Foundry role
+:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
 

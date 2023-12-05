@@ -515,7 +515,6 @@ toc:
               - ts-app-pod-pending.md
               - ts-app-09-crashloop.md
               - ts-app-pod-fail.md
-              - ts-app-svc-not-found.md
               - ts-app-svc-key.md
               - ts-app-helm-install.md
               - ts-app-16-oc-debug-pod.md

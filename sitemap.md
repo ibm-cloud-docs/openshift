@@ -9396,12 +9396,6 @@ subcollection: openshift
 
 * [Fixing pod replacement by higher priority pods](/docs/openshift?topic=openshift-ts-app-pod-fail#pod-fail-higher-priority)
 
-[Why does binding a service to a cluster results in service not found error?](/docs/openshift?topic=openshift-ts-app-svc-bind-not-found#ts-app-svc-bind-not-found)
-
-* [Cluster user](/docs/openshift?topic=openshift-ts-app-svc-bind-not-found#service-bind-cluster-user)
-
-* [As the account admin](/docs/openshift?topic=openshift-ts-app-svc-bind-not-found#service-bind-account-admin)
-
 [Why does binding a service to a cluster results in service does not support service keys error?](/docs/openshift?topic=openshift-ts-app-svc-key#ts-app-svc-key)
 
 [Why can't I install a Helm chart with updated configuration values?](/docs/openshift?topic=openshift-ts-app-helm-install#ts-app-helm-install)

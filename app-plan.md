@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-05"
 
 keywords: openshift, deploy
 
@@ -78,9 +78,6 @@ You can take some general steps to containerize your app as follows.
 1. Review the [common app modification scenarios](#openshift_move_apps_scenarios).
 1. Instead of relying on local storage, plan to use persistent storage or cloud database-as-a-service solutions to back up your app's data.
 1. Over time, refactor your app processes into microservices.
-
-For more, see the following tutorials.
-* [Moving a VM-based app to Kubernetes](/docs/solution-tutorials?topic=solution-tutorials-vm-to-containers-and-kubernetes).
 
 
 
