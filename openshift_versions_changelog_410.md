@@ -41,6 +41,19 @@ Review the version 4.10 change log.
 {: shortdesc}
 
 
+### Change log for worker node fix pack 4.10.67_1593_openshift, released 04 December 2023
+{: #41067_1593_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.10.67_1593_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}} | 4.10.67 | 4.10.67 | N/A |
+| RHEL 8 Packages | N/A | N/A | N/A |
+{: caption="Changes since version 4.10.67_1592_openshift" caption-side="bottom"}
+
+
 ### Change log for worker node fix pack 4.10.67_1592_openshift, released 29 November 2023
 {: #41067_1592_openshift_W}
 
