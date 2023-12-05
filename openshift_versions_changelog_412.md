@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-12-05"
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -43,7 +43,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.openshiftshort}}. | 4.12.41 | 4.12.42 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-42){: external}. |
-| CRI-O | 1.25.4 | 1.25.4 | Unqualified image registry aliases updated for address-parsing-service, admin-site, apache-tika, auto-update-service, config-service, data-integration-service, dataprovider-manager-service, data-service, documents-service, gate-service, gateway-service, icij-db, identity-service, internet-access-service, mongo, notes-service, public-api-service, router, search-service. |
+| CRI-O | 1.25.4 | 1.25.4 | Unqualified image registry aliases updated for `address-parsing-service`, `admin-site`, `apache-tika`, `auto-update-service`, `config-service`, `data-integration-service`, `dataprovider-manager-service`, `data-service`, `documents-service`, `gate-service`, `gateway-service`, `icij-db`, `identity-service`, `internet-access-service`, `mongo`, `notes-service`, `public-api-service`, `router`, `search-service`. |
 | RHEL 8 Packages |N/A|N/A|N/A|
 {: caption="Changes since version 4.12.41_1567_openshift" caption-side="bottom"}
 

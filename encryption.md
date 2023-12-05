@@ -2,12 +2,11 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-05"
 
 keywords: openshift, kubernetes, red hat, encrypt, security, kms, root key, crk
 
 subcollection: openshift
-
 
 ---
 
@@ -68,7 +67,7 @@ Kubernetes secrets are base64 encoded by default. You can further protect Kubern
 
 When you enable a key management service (KMS) provider for your cluster, you bring your own root key. The root key is used to encrypt the data encryption keys (DEKs) which are then used to encrypt the secrets in your cluster. The root key is stored in the KMS provider instance that you control. The encrypted DEKs are stored in etcd and can only be unencrypted using the root key from the KMS provider. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect?topic=key-protect-envelope-encryption).
 
-Review the following notes about cluster secret enryption.
+Review the following notes about cluster secret encryption.
 - Cluster secrets are encrypted by using your KMS.
 - Cluster secrets are automatically updated after rotating root keys.
 - Clusters that use the root key are viewable from the KMS provider interface.
@@ -85,7 +84,7 @@ Review the following notes about cluster secret enryption.
 To set up cluster secret encryption, see [[Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-secrets).]
 
 
-## Peristent storage
+## Persistent storage
 {: #persistent-encryption}
 
 Depending on the type of persistent storage you use, you can encrypt the data written to the storage volumes by enabling a KMS provider. For more information about the types of persistent storage and encryption available, see [Understanding your storage options](/docs/openshift?topic=openshift-storage-plan).

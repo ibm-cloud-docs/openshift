@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-04"
+lastupdated: "2023-12-05"
 
 keywords: openshift
 subcollection: openshift
@@ -2708,7 +2708,7 @@ subcollection: openshift
 
 * [Cluster secrets](/docs/openshift?topic=openshift-encryption#cluster-secret-encryption)
 
-* [Peristent storage](/docs/openshift?topic=openshift-encryption#persistent-encryption)
+* [Persistent storage](/docs/openshift?topic=openshift-encryption#persistent-encryption)
 
 * [Next steps](/docs/openshift?topic=openshift-encryption#encryption-next-steps)
 
