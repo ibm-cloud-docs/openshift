@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-12-05"
 
-keywords: oks, iro, openshift, red hat, red hat openshift
+keywords: openshift, iro, openshift, red hat, red hat openshift
 
 subcollection: openshift
 
@@ -239,4 +239,20 @@ The following steps present a general process to manage costs for your {{site.da
 
 
 
+
+## Pricing for clusters in {{site.data.keyword.satelliteshort}}
+{: #satcluster-pricing}
+
+Review the table for information about charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}. For information about Location pricing, see [{{site.data.keyword.satelliteshort}} pricing](/docs/satellite?topic=satellite-sat-pricing).
+{: shortdesc}
+
+Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/products/satellite/overview){: external}
+{: tip}
+
+| Type of charge | Clusters created after 15 November 2022 | Clusters created before 15 November 2022 | What the charge covers |
+| --- | --- | --- | --- |
+| Cluster management fee | A flat monthly fee for the cluster. | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.openshiftlong_notm}}, such as installation and security patch updates of OpenShift Container Platform for your worker nodes; managing your cluster with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
+| Worker node management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
+| OCP licensing fee | Per vCPU hour. You can either purchase a license during cluster creation or [bring your own](#byo-ocp-satellite). | Per vCPU hour. You can either purchase a license during cluster creation or [bring your own](#byo-ocp-satellite). |
+{: caption="Red Hat OpenShift cluster on Satellite charges." caption-side="bottom"}
 

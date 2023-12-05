@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-12-05"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -42,6 +42,19 @@ Review the version 4.11 change log.
 
 
 
+### Change log for worker node fix pack 4.11.54_1585_openshift, released 04 December 2023
+{: #41154_1585_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.11.54_1585_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.11.53 | 4.11.54 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-54){: external}. |
+| RHEL 8 Packages | N/A | N/A | N/A |
+{: caption="Changes since version 4.11.53_1581_openshift" caption-side="bottom"}
+
+
 ### Change log for worker node fix pack 4.11.53_1581_openshift, released 29 November 2023
 {: #41153_1581_openshift_W}
 
@@ -51,7 +64,7 @@ The following table shows the changes that are in the worker node fix pack 4.11.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.openshiftshort}}. | 4.11.52 | 4.11.53 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-53){: external}. |
-| CRI-O | 1.24.6 | 1.24.6 | Unqualified image registry aliases updated for address-parsing-service, admin-site, apache-tika, auto-update-service, config-service, data-integration-service, dataprovider-manager-service, data-service, documents-service, gate-service, gateway-service, icij-db, identity-service, internet-access-service, mongo, notes-service, public-api-service, router, search-service. |
+| CRI-O | 1.24.6 | 1.24.6 | Unqualified image registry aliases updated for `address-parsing-service`, `admin-site`, `apache-tika`, `auto-update-service`, `config-service`, `data-integration-service`, `dataprovider-manager-service`, `data-service`, `documents-service`, `gate-service`, `gateway-service`, `icij-db`, `identity-service`, `internet-access-service`, `mongo`, `notes-service`, `public-api-service`, `router`, `search-service`. |
 | RHEL 8 Packages |N/A|N/A|N/A|
 {: caption="Changes since version 4.11.52_1578_openshift" caption-side="bottom"}
 

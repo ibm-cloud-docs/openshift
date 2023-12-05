@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-05"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -61,7 +61,7 @@ Worker Pool
 :    - **Flavor**: The flavor defines the architecture, amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to the containers. Available bare metal and virtual machines types vary by the zone in which you deploy the cluster. For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). 
 :    - **Worker nodes per zone**: For high availability, at least 3 worker nodes per zone are recommended. 
 :    - **Encrypt local disk**: By default, [worker nodes feature AES 256-bit disk encryption](/docs/openshift?topic=openshift-security#workernodes). You can choose to turn off disk encryption when you create the cluster. If you enable encryption, each worker node in the worker pool then is encrypted by using the KMS provider credentials that you manage. Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
-:   - **Secondary Storage**: You can provision a secondary disk to your worker nodes. For example a `900gb.5iops-tier` block storage disk. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. Secondary disks are useful in scenarios where more container storage is needed, such as running pods with large images. Note that when using secondary storage pods may not be able to utilise the full IOPS/bandwidth capabilities of the volumes due to the overhead of overlay file systems. Secondary disks are provisioned in your account and you can see them in VPC console. The charges for these disks are separate to the cost of each worker and show as a different line item on your bill. These secondary volumes also count toward the quota usage for the your account. 
+:   - **Secondary Storage**: You can provision a secondary disk to your worker nodes. For example a `900gb.5iops-tier` block storage disk. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. Secondary disks are useful in scenarios where more container storage is needed, such as running pods with large images. Note that when using secondary storage pods may not be able to utilize the full IOPS/bandwidth capabilities of the volumes due to the overhead of overlay file systems. Secondary disks are provisioned in your account and you can see them in VPC console. The charges for these disks are separate to the cost of each worker and show as a different line item on your bill. These secondary volumes also count toward the quota usage for the your account. 
 
 If you plan to use secondary storage on nodes where Persistent Volumes could be attached it is highly recommended to use the 10-iops tiers or higher. This is because the storage bandwidth allocation for the nodes is shared between secondary storage volumes and any attached PVCs. When using 5-iops, tiers this can lead to degraded performance for pulling images or for pods writing to the storage. For more information on bandwidth allocation see [Bandwidth Allocation in Virtual Server Instances](https://www.ibm.com/blog/bandwidth-allocation-in-virtual-server-instances/).{: external}
 {: note}
@@ -73,7 +73,8 @@ Ingress secrets management
 :   [{{site.data.keyword.secrets-manager_full_notm}}](/docs/containers?topic=containers-secrets-mgr) centrally manages Ingress subdomain certificates and other secrets in your cluster. You can choose to register a {{site.data.keyword.secrets-manager_short}} instance to your cluster during the cluster create process. You can also specify a secret group that you can use to control access to the secrets in your cluster. Both of these options can be configured or changed after you have created the cluster. 
 
 Encryption
-:    Enable data encryption with a key management service (KMS) to encrypt secrets and other sensitive information in your cluster. You can also [enable KMS](/docs/containers?topic=containers-encryption-setup_ui) later.
+:    Enable data encryption with a key management service (KMS) to encrypt secrets and other sensitive information in your cluster. You can also [enable KMS](/docs/openshift?topic=openshift-encryption-setup) later.
+
 
 Cluster details
 :   You can customize the unique **Cluster name** and any [tags](/docs/account?topic=account-tag) that you want to use to organize and identify your {{site.data.keyword.cloud_notm}} resources, such as the `team` or `billing department`.

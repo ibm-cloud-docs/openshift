@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-12-05"
 
 keywords: openshift, satellite, clusters, worker nodes, worker pools, delete
 
@@ -120,7 +120,7 @@ You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort
 ## Removing a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-remove}
 
-When you remove a worker pool, all the worker nodes in the cluster are removed. The hosts that the worker nodes ran on are unassigned from the cluster, and become unusable by but still attached to the {{site.data.keyword.satelliteshort}} location. For more information, see [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm).
+When you remove a worker pool, all the worker nodes in the cluster are removed. The hosts that the worker nodes ran on are unassigned from the cluster, and become unusable by but still attached to the {{site.data.keyword.satelliteshort}} location. For more information, see [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-remove).
 
 
 

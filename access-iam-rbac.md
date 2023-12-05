@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-12-05"
 
 keywords: openshift
 
@@ -836,7 +836,7 @@ If a user in your account is leaving your organization, you must remove permissi
 
 1. [Check that the user's infrastructure credentials are not used](#removing_check_infra) for any {{site.data.keyword.openshiftlong_notm}} resources.
 2. If you have other service instances in your {{site.data.keyword.cloud_notm}} account that the user might have provisioned, check the documentation for those services for any steps that you must complete before you remove the user from the account.
-3. [Remove the user from the {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-remove). When you remove a user, the user's assigned {{site.data.keyword.cloud_notm}} IAM platform access roles, Cloud Foundry roles, and IBM Cloud infrastructure roles are automatically removed.
+3. [Remove the user from the {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-remove). When you remove a user, the user's assigned {{site.data.keyword.cloud_notm}} IAM platform access roles and IBM Cloud infrastructure roles are automatically removed.
 4. When {{site.data.keyword.cloud_notm}} IAM platform permissions are removed, the user's permissions are also automatically removed from the associated predefined RBAC roles. However, if you created custom RBAC roles or cluster roles, [remove the user from those RBAC role bindings or cluster role bindings](#remove_custom_rbac).
 
     The {{site.data.keyword.cloud_notm}} IAM permission removal process is asynchronous and can take some time to complete.
@@ -854,7 +854,6 @@ Before you begin, [check that the user's infrastructure credentials are not used
 * [a user from an access group](/docs/account?topic=account-assign-access-resources)
 * [a user's {{site.data.keyword.cloud_notm}} IAM platform and associated RBAC permissions](#remove_iam_rbac)
 * [a user's custom RBAC permissions](#remove_custom_rbac)
-* [a user's Cloud Foundry permissions](#remove_cloud_foundry)
 * [a user's infrastructure permissions](#remove_infra)
 
 #### Remove {{site.data.keyword.cloud_notm}} IAM platform permissions and the associated pre-defined RBAC permissions
@@ -879,27 +878,6 @@ If you don't need custom RBAC permissions anymore, you can remove them.
     oc apply -f my_role_binding.yaml
     ```
     {: pre}
-
-#### Remove Cloud Foundry permissions
-{: #remove_cloud_foundry}
-
-To remove all Cloud Foundry permissions for a user, you can remove the user's organization roles. If you want to remove only a user's ability, for example, to bind services in a cluster, then remove only the user's space roles.
-{: shortdesc}
-
-1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/). From the menu bar, select **Manage > Access (IAM)**.
-2. Click the **Users** page, and then click the name of the user that you want to remove permissions from.
-3. Click the **Cloud Foundry access** tab.
-    * To remove the user's space role
-        1. Expand the table entry for the organization that the space is in.
-        2. In the table entry for the space role, click the actions menu and select **Edit space role**.
-        3. Delete a role by clicking the close button.
-        4. To remove all space roles, select **No space role** in the drop-down list.
-        5. Click **Save role**.
-    * To remove the user's organization role
-        1. In the table entry for the organization role, click the actions menu and select **Edit organization role**.
-        2. Delete a role by clicking the close button.
-        3. To remove all organization roles, select **No organization role** in the drop-down list.
-        4. Click **Save role**.
 
 #### Remove classic infrastructure permissions
 {: #remove_infra}
