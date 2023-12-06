@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-06"
 
 keywords: planning, storage, cluster
 
@@ -171,7 +171,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Supported provisioning type | Dynamic and static |
 | Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads |
 | Access | Via file system on mounted volume|
-| Supported Kubernetes access modes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) |
+| Supported Kubernetes access modes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) Version `1.2` and later. |
 | Performance | Predictable due to assigned IOPS and size. IOPS are not shared between pods. |
 | Consistency| Strong|
 | Durability | High |

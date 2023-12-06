@@ -4891,6 +4891,8 @@ subcollection: openshift
 
 * [Can I install Portworx in a private cluster?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-private)
 
+* [Can I install Autopilot while using Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-ap)
+
 * [How do I get support?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support)
 
 * [What's next?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
@@ -4936,6 +4938,12 @@ subcollection: openshift
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-storage_portworx_deploy#add_portworx_storage)
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-storage_portworx_deploy#mount_pvc)
+
+[Installing Autopilot for Portworx](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-portworx-autopilot)
+
+* [Installing autopilot](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-portworx-install-ap)
+
+* [Creating Rules](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-px-create-rules)
 
 [Updating Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_update#storage_portworx_update)
 
