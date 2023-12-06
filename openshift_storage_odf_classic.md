@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-06"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
 
@@ -340,9 +340,9 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Enable the `openshift-data-foundation` add-on. If you want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` option. If you want to override any of the default parameters, specify the `--param "key=value"` option for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-    Example command for enabling add-on version 4.10.0, automatically discovering local volumes, and enabling encryption with {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}.
+    Example command for enabling the add-on and automatically discovering local volumes, and enabling encryption with {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.10.0 --param "odfDeploy=true"  --param "osdSize=250" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version VERSION --param "odfDeploy=true"  --param "osdSize=250" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
     ```
     {: pre}
 

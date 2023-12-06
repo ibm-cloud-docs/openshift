@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-06"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -265,30 +265,31 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 1. Review the add-on options.
 
     ```sh
-    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.10.0
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.12.0
     ```
     {: pre}
-    
-    Add-on options for version 4.10.0.
-    
+
+    Example add-on options for version 4.12.0
     ```sh
-    Option                Default Value   
-    osdSize               250Gi   
-    numOfOsd              1   
-    clusterEncryption     false   
-    hpcsTokenUrl          <Please provide HPCS token URL>   
-    workerNodes           all   
-    hpcsEncryption        false   
-    hpcsBaseUrl           <Please provide HPCS Base URL>   
-    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier   
-    hpcsInstanceId        <Please provide HPCS Service ID>   
-    autoDiscoverDevices   false   
-    hpcsServiceName       <Please provide HPCS service name>   
-    hpcsSecretName        <Please provide the HPCS secret name>   
-    odfDeploy             true   
-    osdDevicePaths        <Please provide IDs of the disks to be used for OSD pods if using local disks or standard classic cluster>   
-    ocsUpgrade            false   
-    billingType           advanced 
+    Add-on Options
+    Option                Default Value
+    clusterEncryption     false
+    hpcsTokenUrl          <Please provide the KMS token URL>
+    osdDevicePaths        <Please provide IDs of the disks to be used for OSD pods if using local disks or standard classic cluster>
+    ocsUpgrade            false
+    autoDiscoverDevices   false
+    hpcsServiceName       <Please provide the KMS Service instance name>
+    hpcsSecretName        <Please provide the KMS secret name>
+    osdSize               250Gi
+    osdStorageClassName   ibmc-vpc-block-metro-10iops-tier
+    billingType           advanced
+    hpcsInstanceId        <Please provide the KMS Service instance ID>
+    hpcsBaseUrl           <Please provide the KMS Base (public) URL>
+    odfDeploy             true
+    numOfOsd              1
+    workerNodes           all
+    hpcsEncryption        false
+    ignoreNoobaa          false
     ```
     {: screen}
 
@@ -296,7 +297,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
     Example command to deploy add-on version 4.10 with the default storage cluster settings and encryption with {{site.data.keyword.hscrypto}} enabled.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.10.0 --param "odfDeploy=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.12.0 --param "odfDeploy=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
     ```
     {: pre}
 
@@ -452,7 +453,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     metadata:
       name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
     spec:
-      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdStorageClassName: <osdStorageClassName> # Specify an ODF storage class with a waitForFirstConsumer volume binding mode
       osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster. Use at least 250Gi OSDs for production workloads.
       numOfOsd: 1
       billingType: advanced
@@ -468,7 +469,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     metadata:
       name: ocscluster-vpc # Kubernetes resource names can't contain capital letters or special characters. Enter a name for your resource that uses only lowercase letters, numbers, `-` or `.`
     spec:
-      osdStorageClassName: <osdStorageClassName> # For multizone clusters, specify a storage class with a waitForFirstConsumer volume binding mode
+      osdStorageClassName: <osdStorageClassName> # Specify an ODF storage class with a waitForFirstConsumer volume binding mode
       osdSize: <osdSize> # The OSD size is the total storage capacity of your OCS storage cluster. Use at least 250Gi OSDs for production workloads.
       numOfOsd: 1
       billingType: advanced
