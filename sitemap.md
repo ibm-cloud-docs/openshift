@@ -9067,7 +9067,7 @@ subcollection: openshift
 
 * [Step 7: Check the system pods](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pods-system)
 
-* [Step 8: Check the OpenVPN](/docs/openshift?topic=openshift-ocp-debug#oc-debug-openvpn)
+* [Step 8: Check the VPN](/docs/openshift?topic=openshift-ocp-debug#oc-debug-vpn)
 
 * [Step 9: Refresh the cluster master](/docs/openshift?topic=openshift-ocp-debug#oc-debug-refresh-master)
 

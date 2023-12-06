@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-12-06"
 
 keywords: openshift
 
@@ -197,18 +197,18 @@ For example, the OperatorHub has a set of images that are stored in external reg
     ```
     {: pre}
 
-## Step 8: Check the OpenVPN
-{: #oc-debug-openvpn}
+## Step 8: Check the VPN
+{: #oc-debug-vpn}
 
 
-Check that the OpenVPN in the cluster is set up properly.
-1. Check that the OpenVPN pod is **Running**.
+Check that the VPN in the cluster is set up properly.
+1. Check that the VPN pod is **Running**.
     ```sh
     oc get pods -n kube-system -l app=vpn
     ```
     {: pre}
 
-2. Check the OpenVPN logs, and check for an `ERROR` message such as `WORKERIP:<port>`, such as`WORKERIP:10250`, that indicates that the VPN tunnel does not work.
+2. Check the VPN logs, and check for an `ERROR` message such as `WORKERIP:<port>`, such as`WORKERIP:10250`, that indicates that the VPN tunnel does not work.
     ```sh
     oc logs -n kube-system <vpn_pod> --tail 10
     ```
@@ -221,25 +221,25 @@ Check that the OpenVPN in the cluster is set up properly.
     {: pre}
 
 4. If the worker-to-worker communication is broken, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation).
-5. If you see a different error from either the OpenVPN or `calico-node` pod, restart the OpenVPN pod.
+5. If you see a different error from either the VPN or `calico-node` pod, restart the VPN pod.
     ```sh
     oc delete pod -n kube-system <vpn_pod>
     ```
     {: pre}
 
-6. If the OpenVPN still fails, check the worker node that the pod runs on.
+6. If the VPN still fails, check the worker node that the pod runs on.
     ```sh
     oc describe pod -n kube-system <vpn_pod> | grep "Node:"
     ```
     {: pre}
 
-7. Cordon the worker node so that the OpenVPN pod is rescheduled to a different worker node.
+7. Cordon the worker node so that the VPN pod is rescheduled to a different worker node.
     ```sh
     oc cordon <worker_node>
     ```
     {: pre}
 
-8. Check the OpenVPN pod logs again. If the pod no longer has an error, the worker node might have a network connectivity issue. Reload the worker node.
+8. Check the VPN pod logs again. If the pod no longer has an error, the worker node might have a network connectivity issue. Reload the worker node.
     ```sh
     ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
     ```
