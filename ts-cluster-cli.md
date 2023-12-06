@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-12-06"
 
 keywords: openshift
 
@@ -102,7 +102,7 @@ Error from server: Get https://<10.xxx.xx.xxx>:<port>/<address>: dial tcp <10.xx
 {: screen}
 
 
-The OpenVPN server is experiencing configuration issues that prevent accessing the pod from its internal address.
+The VPN server is experiencing configuration issues that prevent accessing the pod from its internal address.
 {: tsCauses}
 
 
@@ -110,7 +110,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 {: tsResolve}
 
 1. Check if a cluster and worker node updates are available by viewing your cluster and worker node details in the console or a `cluster ls` or `worker ls` command. If so, [update your cluster and worker nodes to the latest version](/docs/openshift?topic=openshift-update).
-2. Restart the OpenVPN pod by deleting it. Another VPN pod is scheduled. When its **STATUS** is **Running**, try to connect the pod that you previously could not connect to.
+2. Restart the VPN pod by deleting it. Another VPN pod is scheduled. When its **STATUS** is **Running**, try to connect the pod that you previously could not connect to.
     ```sh
     oc delete pod -n kube-system -l app=vpn
     ```

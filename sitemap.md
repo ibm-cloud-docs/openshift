@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-05"
+lastupdated: "2023-12-06"
 
 keywords: openshift
 subcollection: openshift
@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
+    * [6 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0623)
+
+        * [Change log]{: tag-purple} Master fix packs are available. 
+
     * [4 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0423)
 
         * [Change log]{: tag-purple} Worker node fix packs are available. 
@@ -308,7 +312,7 @@ subcollection: openshift
 
         * [New]{: tag-green} The cluster autoscaler add-on now supports version 1.28 clusters.
 
-        * [Change log]{: tag-purple} Master fix packs are available. Review the change logs for your cluster version. Master patch updates are applied automatically.
+        * [Change log]{: tag-purple} Master fix packs are available. 
 
     * [13 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1323)
 
@@ -4887,6 +4891,8 @@ subcollection: openshift
 
 * [Can I install Portworx in a private cluster?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-private)
 
+* [Can I install Autopilot while using Portworx?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-ap)
+
 * [How do I get support?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support)
 
 * [What's next?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
@@ -4932,6 +4938,12 @@ subcollection: openshift
 * [Creating a Portworx volume](/docs/openshift?topic=openshift-storage_portworx_deploy#add_portworx_storage)
 
 * [Mounting the volume to your app](/docs/openshift?topic=openshift-storage_portworx_deploy#mount_pvc)
+
+[Installing Autopilot for Portworx](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-portworx-autopilot)
+
+* [Installing autopilot](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-portworx-install-ap)
+
+* [Creating Rules](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-px-create-rules)
 
 [Updating Portworx in your cluster](/docs/openshift?topic=openshift-storage_portworx_update#storage_portworx_update)
 
@@ -5942,6 +5954,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
 
+    * [Change log for master fix pack 4.13.23_1550_openshift, released 06 December 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41323_1550_openshift_M)
+
     * [Change log for worker node fix pack 4.13.24_1551_openshift, released 04 December 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41324_1551_openshift_W)
 
     * [Change log for worker node fix pack 4.13.22_1547_openshift, released 29 November 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41322_1547_openshift_W)
@@ -6078,6 +6092,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for master fix pack 4.12.44_1571_openshift, released 06 December 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41244_1571_openshift_M)
 
     * [Change log for worker node fix pack 4.12.44_1572_openshift, released 04 December 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41244_1572_openshift_W)
 
@@ -6247,6 +6263,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for master fix pack 4.11.53_1584_openshift, released 06 December 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41153_1584_openshift_M)
 
     * [Change log for worker node fix pack 4.11.54_1585_openshift, released 04 December 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41154_1585_openshift_W)
 
@@ -9057,7 +9075,7 @@ subcollection: openshift
 
 * [Step 7: Check the system pods](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pods-system)
 
-* [Step 8: Check the OpenVPN](/docs/openshift?topic=openshift-ocp-debug#oc-debug-openvpn)
+* [Step 8: Check the VPN](/docs/openshift?topic=openshift-ocp-debug#oc-debug-vpn)
 
 * [Step 9: Refresh the cluster master](/docs/openshift?topic=openshift-ocp-debug#oc-debug-refresh-master)
 

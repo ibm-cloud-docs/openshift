@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-12-06"
 
 keywords: portworx, openshift
 
@@ -83,6 +83,11 @@ Yes. If you want to install Portworx in a private cluster, your {{site.data.keyw
 If you want to install Portworx in a cluster that doesn't have VRF or access to private cloud service endpoints (CSEs), you must create a rule in the default security group to allow inbound and outbound traffic for the following IP addresses: `166.9.24.81`, `166.9.22.100`, `166.9.20.178`. For more information, see [Updating the default security group](/docs/vpc?topic=vpc-updating-the-default-security-group#updating-the-default-security-group).
 {: important}
 
+## Can I install Autopilot while using Portworx?
+{: #about-px-ap}
+
+Yes. Autopilot can be installed by following the [Installing Autopilot documentation](/docs/openshift?topic=openshift-storage-portworx-autopilot).
+
 ## How do I get support?
 {: #portworx-billing-support}
 
@@ -122,5 +127,6 @@ Creating snapshots of your Portworx volumes
 Monitoring and managing your Portworx cluster with Lighthouse
 :   You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/portworx-enterprise/operations/operate-other/monitoring){: external}.
 
-
+Configuring Autopilot 
+:   You can monitor your cluster resources and specify conditions along with actions it should take when those conditions occur. For more information, refer to the [Autopilot docs](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/autopilot){: external}.
 
