@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
+    * [6 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0623)
+
+        * [Change log]{: tag-purple} Master fix packs are available. 
+
     * [4 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0423)
 
         * [Change log]{: tag-purple} Worker node fix packs are available. 
@@ -308,7 +312,7 @@ subcollection: openshift
 
         * [New]{: tag-green} The cluster autoscaler add-on now supports version 1.28 clusters.
 
-        * [Change log]{: tag-purple} Master fix packs are available. Review the change logs for your cluster version. Master patch updates are applied automatically.
+        * [Change log]{: tag-purple} Master fix packs are available. 
 
     * [13 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1323)
 
