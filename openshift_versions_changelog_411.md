@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-12-05"
+lastupdated: "2023-12-06"
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
 
@@ -40,6 +40,26 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the version 4.11 change log.
 {: shortdesc}
 
+
+
+### Change log for master fix pack 4.11.53_1584_openshift, released 06 December 2023
+{: #41153_1584_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.11.53_1584_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.12 | v2.4.14 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.17-16 | v1.24.17-23 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 438 | 439 | New version contains updates and security fixes. |
+| Load balancer and Load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2731 | 2767 | New version contains updates and security fixes. |
+| OpenVPN client | 2.6.5-r0-IKS-77 | 2.6.7-r0-IKS-93 | New version contains updates and security fixes. |
+| OpenVPN server | 2.6.5-r0-IKS-76 | 2.6.7-r0-IKS-92 | New version contains updates and security fixes. |
+| OpenVPN Operator image | v1.4.30 | v1.4.31 | New version contains updates and security fixes. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.11.52 | 4.11.53 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-53){: external}. |
+{: caption="Changes since version 4.11.52_1580_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.11.54_1585_openshift, released 04 December 2023
