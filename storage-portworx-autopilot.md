@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-12-06"
+lastupdated: "2023-12-07"
 
 keywords: portworx, openshift
 
@@ -20,15 +20,15 @@ subcollection: openshift
 Autopilot allows you to specify monitoring conditions in your cluster to react and apply changes when certain conditions occur without direct intervention.
 {: shortdesc}
 
-Before you can confiure autopilot: 
+Before you can configure autopilot: 
 
 - [Install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy)
 
 - Enable a Prometheus instance in your cluster
 
- - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
- - Edit the `storageCluster` resource to enable prometheus.
+- Edit the `storageCluster` resource to enable Prometheus.
 
     ```sh
     monitoring:
@@ -42,7 +42,7 @@ Before you can confiure autopilot:
     ```
     {: pre}
 
- - Verify that the Prometheus instance has been created.
+- Verify that the Prometheus instance has been created.
 
     ```sh
     kubectl get service -n kube-system prometheus
@@ -55,7 +55,7 @@ Before you can confiure autopilot:
     ```
     {: screen}
 
-    Note that `http://prometheus:9090` becomes the default Prometheus endppint that Portworx will use when you configure autopilot.
+    Note that `http://prometheus:9090` becomes the default Prometheus endpoint that Portworx will use when you configure autopilot.
     {: note}
 
 ## Installing autopilot
@@ -69,7 +69,7 @@ Before you can confiure autopilot:
     ```
     {: pre}
 
-**Optional**: If you are installing Autopilot with the `PX-Security` using the Operator, you must modify the `StorageCluster` yaml. Add the following `PX_SHARED_SECRET` env var to the autopilot section:
+**Optional**: If you are installing Autopilot with the `PX-Security` using the Operator, you must modify the `StorageCluster` yaml. Add the following `PX_SHARED_SECRET` environment variable to the autopilot section:
 
     ```yaml
     env:
