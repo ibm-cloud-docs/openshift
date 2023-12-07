@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-05"
+lastupdated: "2023-12-07"
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
 
@@ -131,7 +131,7 @@ If you want to run your app in multiple clusters, public and private environment
 You can use the open source [Terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started#getting-started) tool to automate the provisioning of {{site.data.keyword.cloud_notm}} infrastructure, including Kubernetes clusters. Follow along with this tutorial to [create single and multizone Kubernetes and OpenShift clusters](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tutorial-tf-clusters). After you create a cluster, you can also set up the [{{site.data.keyword.openshiftlong_notm}} cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) so that your worker pool scales up and down worker nodes in response to your workload's resource requests.
 
 ## What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?
-{: #app_kinds}
+{: #app_kinds_dev}
 
 Your containerized app must be able to run on one of the [supported operating systems](/docs/openshift?topic=openshift-openshift_versions) for your cluster version. You also want to consider the statefulness of your app. For more information about the kinds of apps that can run in {{site.data.keyword.openshiftlong_notm}}, see [Planning app deployments](/docs/openshift?topic=openshift-plan_deploy#app_types).
 
@@ -144,7 +144,7 @@ You can run serverless apps and jobs through the [{{site.data.keyword.codeengine
 {: shortdesc}
 
 ## What skills should I have before I move my apps to a cluster?
-{: #knowledge}
+{: #knowledge_skills}
 
 {{site.data.keyword.redhat_openshift_notm}} is designed to provide capabilities to two main personas, the cluster admin and the app developer. Each persona uses different technical skills to successfully run and deploy apps to a cluster.
 {: shortdesc}

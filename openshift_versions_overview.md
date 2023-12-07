@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-12-07"
 
 keywords: openshift, version, update, upgrade
 
@@ -32,13 +32,6 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the {{site.data.keyword.redhat_openshift_notm}} release notes.
-
-* [{{site.data.keyword.redhat_openshift_notm}} 4.13 release notes overview](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html){: external}
-* [{{site.data.keyword.redhat_openshift_notm}} 4.12 release notes overview](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html){: external}
-* [{{site.data.keyword.redhat_openshift_notm}} 4.11 release notes overview](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html){: external}
-* [{{site.data.keyword.redhat_openshift_notm}} 4.10 release notes overview](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html){: external}
-* [{{site.data.keyword.redhat_openshift_notm}} 4.9 release notes overview](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html){: external}
-* [Kubernetes change log](https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG){: external}
 
 ## Available {{site.data.keyword.redhat_openshift_notm}} versions
 {: #openshift_versions_available}
