@@ -2839,7 +2839,7 @@ subcollection: openshift
 
 [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc#add-workers-vpc)
 
-* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#resize-pool)
+* [Resizing a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#resize-pool-vpc)
 
 * [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool)
 
@@ -8977,11 +8977,11 @@ subcollection: openshift
 
 * [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-faqs#infra_packaging)
 
-* [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-faqs#app_kinds)
+* [What kind of apps can I run? Can I move existing apps, or do I need to develop new apps?](/docs/openshift?topic=openshift-faqs#app_kinds_dev)
 
 * [What about serverless apps?](/docs/openshift?topic=openshift-faqs#apps_serverless-strategy)
 
-* [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-faqs#knowledge)
+* [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-faqs#knowledge_skills)
 
 * [What options do I have to secure my cluster?](/docs/openshift?topic=openshift-faqs#secure_cluster)
 

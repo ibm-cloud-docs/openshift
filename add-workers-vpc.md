@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-07"
 
 keywords: openshift, clusters, worker nodes, worker pools, add
 
@@ -37,7 +37,7 @@ Looking to add workers to Classic clusters? See [Adding worker nodes to Classic 
 {: tip}
 
 ## Resizing a worker pool
-{: #resize-pool}
+{: #resize-pool-vpc}
 
 You can add or reduce the number of worker nodes in your cluster by resizing an existing worker pool, regardless of whether the worker pool is in one zone or spread across multiple zones.
 {: shortdesc}
