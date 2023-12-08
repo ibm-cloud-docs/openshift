@@ -9175,6 +9175,8 @@ subcollection: openshift
 
 [Why can't I create a VPC cluster with encrypted worker nodes?](/docs/openshift?topic=openshift-ts-vpc-byok-encrypted-storage#ts-vpc-byok-encrypted-storage)
 
+[Why am I receiving multiple etcd alerts?](/docs/openshift?topic=openshift-ts-addon-etcd-alerts#ts-addon-etcd-alerts)
+
 
 ### Worker nodes
 {: #sitemap_worker_nodes}
