@@ -6,7 +6,7 @@ lastupdated: "2023-12-08"
 
 keywords: etcd, help, alert
 
-subcollection: containers, openshift
+subcollection: openshift
 content-type: troubleshoot
 
 ---
