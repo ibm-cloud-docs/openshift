@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-12-07"
+lastupdated: "2023-12-08"
 
-keywords: portworx, openshift
+keywords: portworx, openshift, autopilot
 
 subcollection: openshift
 
@@ -17,18 +17,25 @@ subcollection: openshift
 # Installing Autopilot for Portworx
 {: #storage-portworx-autopilot}
 
-Autopilot allows you to specify monitoring conditions in your cluster to react and apply changes when certain conditions occur without direct intervention.
+Autopilot allows you to specify monitoring conditions in your cluster to react and apply changes when certain conditions occur without direct intervention. For more information about Autopilot, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/autopilot){: external}
 {: shortdesc}
 
-Before you can configure autopilot: 
+## Prerequisites
+{: #autopilot-prereqs}
 
-- [Install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy)
 
-- Enable a Prometheus instance in your cluster
+1. [Install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy).
 
-- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-- Edit the `storageCluster` resource to enable Prometheus.
+1. Autopilot requires a running Prometheus instance in your cluster. To set up Prometheus, see [Monitor your Portworx cluster](https://docs.portworx.com/portworx-enterprise/install-portworx/monitoring){: external}.
+
+1. Make sure Prometheus is enabled, or edit your `storageCluster` resource and enable it by setting `enabled: true`.
+
+    ```sh
+    kubectl get service -n kube-system prometheus
+    ```
+    {: pre}
 
     ```sh
     monitoring:
@@ -40,9 +47,9 @@ Before you can configure autopilot:
         resources: {}
     telemetry: {}
     ```
-    {: pre}
+    {: screen}
 
-- Verify that the Prometheus instance has been created.
+1. Verify that the Prometheus instance has been created.
 
     ```sh
     kubectl get service -n kube-system prometheus
@@ -55,21 +62,15 @@ Before you can configure autopilot:
     ```
     {: screen}
 
-    Note that `http://prometheus:9090` becomes the default Prometheus endpoint that Portworx will use when you configure autopilot.
+    Note that `http://prometheus:9090` is the default Prometheus endpoint when Autopilot is enabled.
     {: note}
 
-## Installing autopilot
+## Installing Autopilot
 {: #storage-portworx-install-ap}
 
-1. Download and save the [Autopilot resources](https://install.portworx.com/?comp=autopilot){: external} as a `yaml` file and apply them to your cluster. 
+1. Download and save the [Autopilot resources](https://install.portworx.com/?comp=autopilot){: external} to a file called `autopilot.yaml`.
 
-
-    ```sh
-    kuectl apply -f autopilot
-    ```
-    {: pre}
-
-**Optional**: If you are installing Autopilot with the `PX-Security` using the Operator, you must modify the `StorageCluster` yaml. Add the following `PX_SHARED_SECRET` environment variable to the autopilot section:
+1. **Optional**: If you are installing Autopilot with `PX-Security`, you must modify the `storageCluster` to add the `PX_SHARED_SECRET` environment variable to the autopilot section.
 
     ```yaml
     env:
@@ -81,10 +82,17 @@ Before you can configure autopilot:
     ```
     {: pre}
 
+1. Deploy Autopilot to your cluster. 
+
+    ```sh
+    kubectl apply -f autopilot.yaml
+    ```
+    {: pre}
+
 ## Creating Rules
 {: #storage-px-create-rules}
 
-Now that you have installed autopilot in your cluster, refer to the [Portworx](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/autopilot/how-to-use/working-with-rules){: external} documentation on how to create custom rules and actions for your autopilot configuration.
+Now that you have installed autopilot in your cluster, refer to the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/autopilot/how-to-use/working-with-rules){: external} on how to create custom rules and actions for your autopilot configuration.
 
 
 

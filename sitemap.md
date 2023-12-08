@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-07"
+lastupdated: "2023-12-08"
 
 keywords: openshift
 subcollection: openshift
@@ -4941,7 +4941,9 @@ subcollection: openshift
 
 [Installing Autopilot for Portworx](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-portworx-autopilot)
 
-* [Installing autopilot](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-portworx-install-ap)
+* [Prerequisites](/docs/openshift?topic=openshift-storage-portworx-autopilot#autopilot-prereqs)
+
+* [Installing Autopilot](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-portworx-install-ap)
 
 * [Creating Rules](/docs/openshift?topic=openshift-storage-portworx-autopilot#storage-px-create-rules)
 
@@ -9172,6 +9174,8 @@ subcollection: openshift
 [Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
 
 [Why can't I create a VPC cluster with encrypted worker nodes?](/docs/openshift?topic=openshift-ts-vpc-byok-encrypted-storage#ts-vpc-byok-encrypted-storage)
+
+[Why am I receiving multiple etcd alerts?](/docs/openshift?topic=openshift-ts-addon-etcd-alerts#ts-addon-etcd-alerts)
 
 
 ### Worker nodes
