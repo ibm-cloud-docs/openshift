@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-12-11"
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
 
@@ -24,6 +24,9 @@ Review information about version 4.11 of {{site.data.keyword.openshiftlong_notm}
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.11 blog](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-4.11){: external}
 {: tip}
+
+Version 4.11 is deprecated. Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
+{: important}
 
 
 ![This badge indicates Kubernetes version 1.24 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.24 certification badge" caption-side="bottom"}

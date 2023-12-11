@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-12-11"
 
-keywords: webhooks, admission control, ,openshift
+keywords: openshift, webhooks, admission control, 
 
 subcollection: openshift
 
@@ -51,6 +51,46 @@ Keep in mind the following best practices and considerations when you configure 
 
 Many cluster add-ons, plug-ins, and other third-party extensions use admission controllers. Some common ones include:
 - [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec)
+
+
+
+### Setting up admission controller webhooks
+{: #configure-webhooks-122}
+
+In cluster versions 4.14 and later, Konnectivity replaced the OpenVPN solution. If you have cluster version 4.14 and later, and your webhook uses the ClusterIP, you must update your webhook to use a Kubernetes service instead.
+{: shortdesc}
+
+You can configure a webhook by referencing the webhook app as a Kubernetes service, or by referencing the webhook app as an IP address or publicly registered DNS name.
+
+    Example configuration for referencing the webhook app as a Kubernetes service
+
+
+    ```yaml
+    clientConfig:
+       caBundle: #CA_BUNDLE_BASE64#
+       service:
+          name: admission-webhook
+          namespace: default
+          path: /validate
+          port: 443
+    ```
+    {: codeblock}
+
+    Example configuration for referencing the webhook app as an IP address or publicly registered DNS name
+
+
+    ```yaml
+    clientConfig:
+       caBundle: #CA_BUNDLE_BASE64#
+       url: https://#WEBHOOK_URL#:443/validate
+    ```
+    {: codeblock}
+
+Note the following limitations for referencing the webhook app as an IP address or DNS name:
+
+- If the URL is a DNS, then this DNS must be a publicly registered DNS name. Private DNS configurations are not supported.
+- If the URL is an external IP address, which means the webhook service is outside of the cluster, the control plane network is used to connect to the service. The control plane must be able to reach the IP address. If, for example, the IP address is from an on-premises network and the control plane can't reach the IP address, the webhook service does not work.
+- If the URL is a cluster IP address, which means the webhook service is inside of the cluster, the Kubernetes API needs to connect to cluster network. If you have cluster version 1.21 and later, and your webhook uses the cluster IP address, you must update your webhook to use a Kubernetes service instead.
 
 
 

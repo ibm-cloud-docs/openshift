@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-07"
+lastupdated: "2023-12-11"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,6 +28,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## December 2023
 {: #openshift-dec23}
+
+
+
+
+
+
+
+### 11 December 2023
+{: #openshift-dec1123}
+{: release-note}
+
+[Deprecated]{: tag-deprecated} {{product_name_notm}} version 4.11 is deprecated.
+:   Update your cluster to at least [version 4.12](https://cloud.ibm.com/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
+
+
+
 
 
 

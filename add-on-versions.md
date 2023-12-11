@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2023
-lastupdated: "2023-11-21"
+lastupdated: "2023-12-11"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -24,18 +24,9 @@ Review the following list of supported cluster add-ons. Each addon version can b
 ## `alb-oauth-proxy` 2.0.0 
 {: #alb-oauth-proxy-2.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.19.0 <1.29.0`
+- Supported Kubernetes cluster versions: `>=1.19.0 <1.30.0`
 
 - Supported OpenShift cluster versions:  `N/A` 
-
-
-
-## `cluster-autoscaler` 1.0.7 
-{: #cluster-autoscaler-1.0.7}
-
-- Supported Kubernetes cluster versions: `>=1.20.0 <1.26.0`
-
-- Supported OpenShift cluster versions: `>=4.7.0 <4.13.0`
 
 
 
@@ -107,16 +98,7 @@ Review the following list of supported cluster add-ons. Each addon version can b
 
 - Supported Kubernetes cluster versions:  `N/A` 
 
-- Supported OpenShift cluster versions: `>=4.4.0 <4.14.0`
-
-
-
-## `istio` 1.17 
-{: #istio-1.17}
-
-- Supported Kubernetes cluster versions: `>=1.23.0 <1.28.0`
-
-- Supported OpenShift cluster versions:  `N/A` 
+- Supported OpenShift cluster versions: `>=4.4.0 <4.15.0`
 
 
 
@@ -133,6 +115,15 @@ Review the following list of supported cluster add-ons. Each addon version can b
 {: #istio-1.19}
 
 - Supported Kubernetes cluster versions: `>=1.23.0 <1.29.0`
+
+- Supported OpenShift cluster versions:  `N/A` 
+
+
+
+## `istio` 1.20 
+{: #istio-1.20}
+
+- Supported Kubernetes cluster versions: `>=1.25.0 <1.30.0`
 
 - Supported OpenShift cluster versions:  `N/A` 
 
@@ -180,15 +171,6 @@ Review the following list of supported cluster add-ons. Each addon version can b
 - Supported Kubernetes cluster versions: `>=1.23.0 <1.29.0`
 
 - Supported OpenShift cluster versions: `>=4.9.0 <4.15.0`
-
-
-
-## `vpc-block-csi-driver` 5.0 
-{: #vpc-block-csi-driver-5.0}
-
-- Supported Kubernetes cluster versions: `>=1.22.0 <1.29.0`
-
-- Supported OpenShift cluster versions: `>=4.8.0 <4.15.0`
 
 
 
