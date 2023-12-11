@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
+    * [11 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1123)
+
+        * [Deprecated]{: tag-deprecated} {{product_name_notm}} version 4.11 is deprecated.
+
     * [6 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0623)
 
         * [Change log]{: tag-purple} Master fix packs are available. 
@@ -2819,6 +2823,8 @@ subcollection: openshift
 * [What are the best practices for using webhooks?](/docs/openshift?topic=openshift-access_webhooks#webhook-best-practice)
 
 * [What other types of apps use admission controllers?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-app-use-controllers)
+
+    * [Setting up admission controller webhooks](/docs/openshift?topic=openshift-access_webhooks#configure-webhooks-122)
 
 * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
 
