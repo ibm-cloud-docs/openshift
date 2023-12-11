@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-08"
+lastupdated: "2023-12-11"
 
 keywords: openshift
 subcollection: openshift
@@ -6686,8 +6686,6 @@ subcollection: openshift
 
 * [`alb-oauth-proxy` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#alb-oauth-proxy-2.0.0)
 
-* [`cluster-autoscaler` 1.0.7](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.7)
-
 * [`cluster-autoscaler` 1.0.8](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.8)
 
 * [`cluster-autoscaler` 1.0.9](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.9)
@@ -6704,11 +6702,11 @@ subcollection: openshift
 
 * [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
 
-* [`istio` 1.17](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.17)
-
 * [`istio` 1.18](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.18)
 
 * [`istio` 1.19](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.19)
+
+* [`istio` 1.20](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.20)
 
 * [`openshift-data-foundation` 4.10.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.10.0)
 
@@ -6719,8 +6717,6 @@ subcollection: openshift
 * [`openshift-data-foundation` 4.13.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.13.0)
 
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
-
-* [`vpc-block-csi-driver` 5.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.0)
 
 * [`vpc-block-csi-driver` 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
 
