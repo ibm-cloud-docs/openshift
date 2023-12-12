@@ -33,6 +33,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 12 December 2023
+{: #openshift-dec1223}
+{: release-note}
+
+[New]{: tag-green} Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters
+:   You can update the global pull secret in {{site.data.keyword.satelliteshort}} clusters to pull images from a private registry, such as the Cloud Pak Entitled Registry. For more information, see [Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-registry-pull-secret).
+
+
+
 
 
 ### 11 December 2023

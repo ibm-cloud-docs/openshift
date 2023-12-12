@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
+    * [12 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1223)
+
+        * [New]{: tag-green} Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters
+
     * [11 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1123)
 
         * [Deprecated]{: tag-deprecated} {{site.data.keyword.openshiftlong_notm}} version 4.11 is deprecated.
@@ -3307,6 +3311,17 @@ subcollection: openshift
 * [Update the {{site.data.keyword.redhat_openshift_notm}} Registry operator CRDs](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-crds)
 
 * [Verify your changes](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-verify)
+
+
+## Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters
+{: #sitemap_updating_the_global_pull_secret_in_clusters}
+
+
+[Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-registry-pull-secret)
+
+* [Updating the global pull secret](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-cli)
+
+* [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
 
 
 ## Controlling network traffic in Classic clusters
