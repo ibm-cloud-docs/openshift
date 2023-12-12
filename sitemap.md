@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-11"
+lastupdated: "2023-12-12"
 
 keywords: openshift
 subcollection: openshift
@@ -274,7 +274,7 @@ subcollection: openshift
 
     * [11 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1123)
 
-        * [Deprecated]{: tag-deprecated} {{product_name_notm}} version 4.11 is deprecated.
+        * [Deprecated]{: tag-deprecated} {{site.data.keyword.openshiftlong_notm}} version 4.11 is deprecated.
 
     * [6 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0623)
 
