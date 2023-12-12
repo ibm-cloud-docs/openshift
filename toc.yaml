@@ -123,6 +123,7 @@ toc:
           - pod-security-admission.md 
       - registry.md
       - satellite-clusters-registry.md
+      - satellite-registry-pull-secret.md
       - topicgroup: 
           label: Controlling network traffic in Classic clusters
           topics:

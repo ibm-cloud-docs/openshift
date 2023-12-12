@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-13"
+lastupdated: "2023-12-12"
 
 keywords: openshift
 
@@ -111,9 +111,9 @@ Change a cluster's default domain
 {: #ingress-domain-int}
 {: cli}
 
-{{site.data.keyword.cloud_notm}} provides a managed, internal provider that you can use to create your own domains. You can use the `ibmcloud oc ingress domain create` command to create a new domain, or you can specify an existing domain that you want to add to your cluster. When you create a domain with the internal provider, you specify a subdomain name, such as `exampledomain`. The new domain is named in the format `exampledomain.<zone>.containers.appdomain.cloud`. 
+{{site.data.keyword.cloud_notm}} provides a managed, internal provider that you can use to create your own domains. You can use the `ibmcloud oc ingress domain create` command to create a new domain, or you can specify an existing domain that you want to add to your cluster. When you create a domain with the internal provider, you may specify a subdomain name, such as `exampledomain`, or provide the fully qualified domain name. The new domain is named in the format `exampledomain.<zone>.containers.appdomain.cloud`. 
 
-The {{site.data.keyword.cloud_notm}} internal managed domain provider is Akamai. You can also use your own Akamai account to create or add domains. When you get the details of a domain, you may see the provider type listed as `akamai` or `akamai-ext`. The `akamai` provider type refers to the internal {{site.data.keyword.cloud_notm}} domain provider, and `akamai-ext` refers to your own external Akamai account that you directly register the domain with.
+The {{site.data.keyword.cloud_notm}} internal managed domain provider is Akamai. You can also use your own Akamai account to create or add domains. When you get the details of a domain, you may see the provider type listed as `akamai` or `akamai-ext`. The `akamai` provider type refers to the internal {{site.data.keyword.cloud_notm}} domain provider, and `akamai-ext` refers to your own external Akamai account that you directly register the domain with. If you provide the fully qualified domain name, the zone of your domain must match the zone your cluster was created in.
 {: note}
 
 ```sh
