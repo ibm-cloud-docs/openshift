@@ -116,7 +116,6 @@ Add the following rules to your custom security group.
 | Rule type | Protocol | Destination IP or CIDR | Destination Port |
 |---|---|---|---|
 | Outbound | TCP | Entire VPC address prefix range | 443 |
-| Outbound | TCP | Entire VPC address prefix range | 4443 |
 {: caption="Outbound security group rules to add for version 4.14" caption-side="bottom"}
 
 To make these rules more restrictive, you can set the destination to the security group used by the VPE Gateway or you can specify the exact VPE Gateway reserved IP address. Note that these IP addresses can change if all cluster workers in a VPC are removed. 
@@ -131,9 +130,7 @@ Add the following rules to your custom ACLs.
 | Rule type | Protocol | Source IP or CIDR | Source Port | Destination IP or CIDR | Destination Port  |
 |---|---|---|---|---|---|
 | Outbound/Allow | TCP | Entire VPC address prefix range | Any | Entire VPC address prefix range | 443 |
-| Outbound/Allow | TCP | Entire VPC address prefix range | Any | Entire VPC address prefix range | 4443 |
 | Inbound/Allow | TCP | Entire VPC address prefix range | 443 | Entire VPC address prefix range | Any |
-| Inbound/Allow | TCP | Entire VPC address prefix range | 4443 | Entire VPC address prefix range | Any |
 {: caption="Outbound and inbound ACL rules to add for version 4.14" caption-side="bottom"}
 
 
@@ -155,7 +152,6 @@ spec:
       - <entire-vpc-address-prefix-range> # example: 10.245.0.0/16
       ports:
       - 443
-      - 4443
     protocol: TCP
     source: {}
   order: 500
