@@ -118,7 +118,7 @@ Complete the following steps to update the global pull secret in your {{site.dat
                 secretName: docker-auth-secret
             - name: docker
               hostPath:
-                path: /.docker
+                path: /root/.docker
             - name: bin
               hostPath:
                 path: /usr/bin
@@ -271,7 +271,7 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
                 secretName: docker-auth-secret
             - name: docker
               hostPath:
-                path: /.docker
+                path: /root/.docker
             - name: bin
               hostPath:
                 path: /usr/bin
@@ -279,7 +279,6 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
               hostPath:
                 path: /lib64
                 hostPathType: Directory
-    EOF
     ```
     {: codeblock}
 
