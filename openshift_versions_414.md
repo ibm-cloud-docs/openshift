@@ -22,6 +22,10 @@ Review information about version 4.14 of {{site.data.keyword.openshiftlong_notm}
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.14 blog](https://www.redhat.com/en/blog/red-hat-openshift-414-now-available){: external}.
 {: tip}
 
+![This badge indicates Kubernetes version 1.27 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.27 certification badge" caption-side="bottom"}
+
+{{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.27 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+
 
 
 

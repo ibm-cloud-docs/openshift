@@ -51,6 +51,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 [Change log]{: tag-purple} Master fix pack and worker node fix pack update.
 :   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_414) are available.
 
+Certified Kubernetes
+:   Version [4.13](/docs/openshift?topic=openshift-openshift_changelog_413) release is now certified.
+
 
 
 
