@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-13"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid, images, private registry, pull secret
 
@@ -44,7 +44,7 @@ Complete the following steps to update the global pull secret in your {{site.dat
     {: pre}
 
     Example `create secret` command for using the Cloud Pak Entitled Registry.
-    ```
+    ```sh
     oc create secret docker-registry docker-auth-secret \
     --docker-server=cp.icr.io \
     --docker-username=cp \
@@ -154,7 +154,7 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
     {: pre}
 
     Example `create secret` command for using the Cloud Pak Entitled Registry.
-    ```
+    ```sh
     oc create secret docker-registry docker-auth-secret \
     --docker-server=cp.icr.io \
     --docker-username=cp \
