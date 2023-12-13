@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-13"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,16 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
+
+    * [13 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1323)
+
+        * [New]{: tag-green} {{site.data.keyword.openshiftlong_notm}} 4.14.
+
+        * [New]{: tag-green} Networking changes for VPC clusters 4.14 and later.
+
+        * [New]{: tag-green} Red Hat OpenShift OAuth and console access changes for cluster version 4.14.
+
+        * [Change log]{: tag-purple} Master fix pack and worker node fix pack update.
 
     * [12 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1223)
 
@@ -5959,6 +5969,39 @@ subcollection: openshift
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
+
+
+### Version 4.14
+{: #sitemap_version_414}
+
+
+[4.14 version information and update actions](/docs/openshift?topic=openshift-cs_versions_414#cs_versions_414)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_414#release_timeline_414)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_414#prep-up-414)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_414#414_before)
+
+* [Networking changes for VPC clusters](/docs/openshift?topic=openshift-cs_versions_414#networking_414)
+
+    * [What do I need to do?](/docs/openshift?topic=openshift-cs_versions_414#networking_steps_oc)
+
+    * [I have custom security groups. What do I change?](/docs/openshift?topic=openshift-cs_versions_414#networking_steps_sg_oc)
+
+    * [I have custom ACLs. What do I change?](/docs/openshift?topic=openshift-cs_versions_414#networking_steps_acl_oc)
+
+    * [I have custom network policies. What do I change?](/docs/openshift?topic=openshift-cs_versions_414#networking_steps_policy_oc)
+
+[Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for master fix pack 4.14.5_1539_openshift and worker node fix pack 4.14.4_1538_openshift, released 13 December 2023](/docs/openshift?topic=openshift-openshift_changelog_414#4.14.5_1539_openshiftM_4.14.4_1538_openshiftW)
+
+[{{site.data.keyword.openshiftlong_notm}} version 4.14 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-414)
+
+[{{site.data.keyword.openshiftlong_notm}} version 4.14 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_414_co#benchmarks_414_co)
 
 
 ### Version 4.13
