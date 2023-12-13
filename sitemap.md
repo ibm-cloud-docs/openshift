@@ -282,6 +282,8 @@ subcollection: openshift
 
         * [Change log]{: tag-purple} Master fix pack and worker node fix pack update.
 
+        * Certified Kubernetes
+
     * [12 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1223)
 
         * [New]{: tag-green} Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters
