@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-11"
+lastupdated: "2023-12-13"
 
 keywords: openshift
 
@@ -33,6 +33,11 @@ Review the feature gates that are applied to all master and worker node componen
 
 
 
+
+
+
+4.14
+:   `RetroactiveDefaultStorageClass=false`
 
 
 

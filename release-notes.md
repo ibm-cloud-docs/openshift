@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-13"
 
 keywords: openshift, kubernetes, release notes
 
@@ -26,8 +26,30 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
+
 ## December 2023
 {: #openshift-dec23}
+
+
+
+### 13 December 2023
+{: #openshift-dec1323}
+{: release-note}
+
+[New]{: tag-green} {{site.data.keyword.openshiftlong_notm}} 4.14.
+:   You can create or [update clusters to version 4.14](/docs/openshift?topic=openshift-openshift_changelog_414). With {{site.data.keyword.openshiftlong_notm}} version 4.14, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
+
+[New]{: tag-green} Networking changes for VPC clusters 4.14 and later.
+:   In version 4.13 and earlier, VPC clusters pulled container images through a private cloud service endpoint for {{site.data.keyword.registrylong_notm}}. For version 4.14 and later, this network path is updated so that images are pulled through a VPE gateway instead of a private service endpoint. For more information, see the [4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414).
+
+[New]{: tag-green} Red Hat OpenShift OAuth and console access changes for cluster version 4.14.
+:   For clusters that run version 4.14, the default method for accessing the Red Hat OpenShift console is through the private service endpoint. This change is a reversion of changes introduced in 4.13. For more information, see the following docs.
+:   - **Previous**: [4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413).
+:   - **Current**: [4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414).
+
+[Change log]{: tag-purple} Master fix pack and worker node fix pack update.
+:   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_414) are available.
 
 
 
