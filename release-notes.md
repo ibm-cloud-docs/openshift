@@ -37,8 +37,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-dec1423}
 {: release-note}
 
-[New]{: tag-green} Information on worker node removal priority
-:   Details are available for [automated worker node removal](/docs/containers?topic=containers-update#worker-scaledown-logic) when scaling down a worker pool. 
+[New]{: tag-green} Information on worker node removal priority.
+:   Details are available for [automated worker node removal](/docs/containers?topic=containers-update#worker-scaledown-logic) when scaling down a worker pool.
+
+
+Kubernetes version 1.24 is unsupported.
+:   Update your cluster to at least [version 1.25](/docs/containers?topic=containers-cs_versions_125) as soon as possible.
+
 
 
 

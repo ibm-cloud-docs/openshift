@@ -274,7 +274,9 @@ subcollection: openshift
 
     * [14 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1423)
 
-        * [New]{: tag-green} Information on worker node removal priority
+        * [New]{: tag-green} Information on worker node removal priority.
+
+        * Kubernetes version 1.24 is unsupported.
 
     * [13 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1323)
 
