@@ -492,7 +492,7 @@ To update flavors:
 ## How are worker pools scaled down?
 {: #worker-scaledown-logic}
 
-When the number of worker nodes in a worker pool is decreased, such as during a worker node update or with the (`ibmcloud oc worker-pool resize`)(/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) command, the worker nodes are prioritized for deletion based on several properties including state, health, and version. 
+When the number of worker nodes in a worker pool is decreased, such as during a worker node update or with the [`ibmcloud oc worker-pool resize`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) command, the worker nodes are prioritized for deletion based on several properties including state, health, and version. 
 
 This priority logic is not relevant to the autoscaler add-on.
 {: note}
@@ -510,7 +510,6 @@ You can run the `ibmcloud oc worker ls` command to view all of the worker node p
 | 4 | Desired placement setting | **For workers running on a dedicated host only.** Worker nodes running on a dedicated host that has the `DesiredPlacementDisabled` option set to `true` are at a higher priority for deletion. | 
 | 5 | Alphabetical order | After worker nodes are prioritized based on the factors listed above, they are deleted in alphabetical order. Note that, based on worker node ID conventions, IDs for workers on classic and VPC clusters correlate with age, so older worker nodes are removed first. |
 {: caption="Priority for worker nodes deleted during worker pool scale down." caption-side="bottom"}
-
 
 
 
