@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-12-14"
 
 keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
 
@@ -488,6 +488,31 @@ To update flavors:
     {: pre}
 
 7. Repeat these steps to update other worker pools or stand-alone worker nodes to different flavors.
+
+## How are worker pools scaled down?
+{: #worker-scaledown-logic}
+
+When the number of worker nodes in a worker pool is decreased, such as during a worker node update or with the `ibmcloud oc worker-pool resize]`(/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_resize) command, the worker nodes are prioritized for deletion based on several properties including state, health, and version. 
+
+This priority logic is not relevant to the autoscaler add-on.
+{: note}
+
+The following table shows the order in which worker nodes are prioritized for deletion.
+
+You can run the `{[icks worker ls]}` command to view all of the worker node properties listed in the table. 
+{: tip}
+
+| Priority | Property | Description |
+|---|---|---|
+| 1 | Worker node state | Worker nodes in non-functioning or low-functioning states are prioritized for removal. This list shows the states ordered from highest to lowest priority: `provision_failed`, `deploy_failed`, `deleting`, `provision_pending`, `provisioning`, `deploying`, `provisioned`, `reloading_failed`, `reloading`, `deployed`. |
+| 2 | Worker node health | Unhealthy worker nodes are prioritized over healthy worker nodes. This list shows the health states ordered from highest to lowest priority: `critical`, `warning`, `pending`, `unsupported`, `normal`.|
+| 3 | Worker node version | Worker nodes that run on older versions are at a higher priority for deletion. |
+| 4 | Desired placement setting | **For workers running on a dedicated host only.** Worker nodes running on a dedicated host that has the `DesiredPlacementDisabled` option set to `true` are at a higher priority for deletion. | 
+| 5 | Alphabetical order | After worker nodes are prioritized based on the factors listed above, they are deleted in alphabetical order. Note that, based on worker node ID conventions, IDs for workers on classic and VPC clusters correlate with age, so older worker nodes are removed first. 
+{: caption="Priority for worker nodes deleted during worker pool scale down." caption-side="bottom"}| 
+
+
+
 
 ## Updating cluster components
 {: #components}

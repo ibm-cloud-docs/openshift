@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-13"
+lastupdated: "2023-12-14"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,8 +28,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+
 ## December 2023
 {: #openshift-dec23}
+
+### 14 December 2023
+{: #openshift-dec1423}
+{: release-note}
+
+[New]{: tag-green} Information on worker node removal priority
+:   Details are available for [automated worker node removal](/docs/containers?topic=containers-update#worker-scaledown-logic) when scaling down a worker pool. 
+
 
 
 
@@ -52,7 +62,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_414) are available.
 
 Certified Kubernetes
-:   Version [4.13](/docs/openshift?topic=openshift-openshift_changelog_413) release is now certified.
+:   Version [4.14](/docs/openshift?topic=openshift-openshift_changelog_414) release is now certified.
+
 
 
 

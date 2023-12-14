@@ -272,6 +272,10 @@ subcollection: openshift
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
+    * [14 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1423)
+
+        * [New]{: tag-green} Information on worker node removal priority
+
     * [13 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1323)
 
         * [New]{: tag-green} {{site.data.keyword.openshiftlong_notm}} 4.14.
@@ -2895,6 +2899,8 @@ subcollection: openshift
     * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update#vpc_worker_ui)
 
 * [Updating flavors (machine types)](/docs/openshift?topic=openshift-update#machine_type)
+
+* [How are worker pools scaled down?](/docs/openshift?topic=openshift-update#worker-scaledown-logic)
 
 * [Updating cluster components](/docs/openshift?topic=openshift-update#components)
 
