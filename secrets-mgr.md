@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-12-15"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
@@ -156,7 +156,7 @@ Follow the steps to register your {{site.data.keyword.secrets-manager_short}} in
     {: pre}
 
 
-You can specify a {{site.data.keyword.secrets-manager_short}} instance and a secret group when you [create a cluster](/docs/containers?topic=containers-clusters&interface=cli) with the [`ibmcloud oc cluster create classic`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`ibmcloud oc cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2) commands. Use the `--sm-instance` option to register an instance to the cluster and the `--sm-group` option to specify a secret group that can access the secrets on the cluster. See [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](#secrets-mgr_cluster_create).
+You can specify a {{site.data.keyword.secrets-manager_short}} instance and a secret group when you [create a cluster](/docs/containers?topic=containers-clusters) with the [`ibmcloud oc cluster create classic`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`ibmcloud oc cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2) commands. Use the `--sm-instance` option to register an instance to the cluster and the `--sm-group` option to specify a secret group that can access the secrets on the cluster. See [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](#secrets-mgr_cluster_create).
 {: tip} 
 
 ### Set a default {{site.data.keyword.secrets-manager_short}} instance and regenerate your secrets
@@ -221,13 +221,13 @@ With {{site.data.keyword.secrets-manager_short}}, you can use secret groups to c
 ## Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster
 {: #secrets-mgr_cluster_create}
 
-If you are [creating a new Classic or VPC cluster](/docs/containers?topic=containers-clusters&interface=cli), you can register an existing {{site.data.keyword.secrets-manager_short}} instance and secret group to the cluster during creation. Secrets in the cluster are stored in the {{site.data.keyword.secrets-manager_short}} instance and applied to the secret group. 
+If you are [creating a new Classic or VPC cluster](/docs/containers?topic=containers-clusters), you can register an existing {{site.data.keyword.secrets-manager_short}} instance and secret group to the cluster during creation. Secrets in the cluster are stored in the {{site.data.keyword.secrets-manager_short}} instance and applied to the secret group. 
 {: shortdesc}
 
 The {{site.data.keyword.secrets-manager_short}} instance registered during cluster create does not automatically become the default {{site.data.keyword.secrets-manager_short}} instance. You must still [set the default instance](#secrets-mgr_setup_default) manually.
 {: note}
 
-If you [create a cluster](/docs/containers?topic=containers-clusters&interface=cli) in the CLI with the [`ibmcloud oc cluster create classic`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`ibmcloud oc cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2), you can specify a {{site.data.keyword.secrets-manager_short}} instance or secret group with the following command options:
+If you [create a cluster](/docs/containers?topic=containers-clusters) in the CLI with the [`ibmcloud oc cluster create classic`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`ibmcloud oc cluster create vpc-gen2`](/docs/containers?topic=containers-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2), you can specify a {{site.data.keyword.secrets-manager_short}} instance or secret group with the following command options:
 - `--sm-instance`: Use this option to register a {{site.data.keyword.secrets-manager_short}} instance to the cluster by specifying the instance CRN. To find the CRN of a {{site.data.keyword.secrets-manager_short}} instance, run `ibmcloud resource service-instance <name_of_instance>` or navigate to your resource list in the UI and click on the instance.
 - `--sm-group`: Use this option to specify the ID of the secret group. To find the secret group ID, run `ibmcloud secrets-manager secret-groups`.
 

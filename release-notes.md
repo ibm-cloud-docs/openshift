@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-14"
+lastupdated: "2023-12-15"
 
 keywords: openshift, kubernetes, release notes
 
@@ -28,10 +28,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-
-
 ## December 2023
 {: #openshift-dec23}
+
+
+
+### 15 December 2023
+{: #openshift-dec1523}
+{: release-note}
+
+[New]{: tag-green} New APIs for setting and getting the OAuth access type for private-only VPC clusters.
+:   You can now use the `POST /network/v2/oauth-access-type/{idOrName}/set` and the `GET /network/v2/oauth-access-type/{idOrName}` to set the OAuth and console access type for your cluster. For more information, see [Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type).
+
+
+
 
 ### 14 December 2023
 {: #openshift-dec1423}
@@ -181,11 +191,6 @@ Certified Kubernetes
 :   When you create a {{site.data.keyword.satelliteshort}} cluster, include the `--entitlement cloud_pak` option in the CLI or provide your entitlement details in the console. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters) or [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools).
 
 
-
-
-### 21 November 2023
-{: #openshift-nov2123}
-{: release-note}
 
 
 
