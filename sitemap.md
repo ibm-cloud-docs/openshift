@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-14"
+lastupdated: "2023-12-15"
 
 keywords: openshift
 subcollection: openshift
@@ -271,6 +271,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
+
+    * [15 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1523)
+
+        * [New]{: tag-green} New APIs for setting and getting the OAuth access type for private-only VPC clusters.
 
     * [14 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1423)
 
@@ -2849,6 +2853,12 @@ subcollection: openshift
     * [Setting up admission controller webhooks](/docs/openshift?topic=openshift-access_webhooks#configure-webhooks-122)
 
 * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
+
+[Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
+
+* [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type#oauth-access-set-api)
+
+* [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type#oauth-access-get-api)
 
 [Accessing private clusters](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
 
@@ -5992,6 +6002,8 @@ subcollection: openshift
 * [Preparing to update](/docs/openshift?topic=openshift-cs_versions_414#prep-up-414)
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_414#414_before)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_414#status-check-414)
 
 * [Networking changes for VPC clusters](/docs/openshift?topic=openshift-cs_versions_414#networking_414)
 
