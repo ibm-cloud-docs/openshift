@@ -193,11 +193,6 @@ Certified Kubernetes
 
 
 
-### 21 November 2023
-{: #openshift-nov2123}
-{: release-note}
-
-
 
 ### 20 November 2023
 {: #openshift-nov2023}

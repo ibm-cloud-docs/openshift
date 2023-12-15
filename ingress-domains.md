@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-15"
 
 keywords: openshift
 
@@ -33,8 +33,9 @@ You can also use your own external DNS provider. You must have an account with t
 
 ## Accessing domains in the console
 {: #ingress-domains-ui-access}
+{: ui}
 
-Navigate to the your cluster's **Domains** page to [create](#ingress-domains-ui) and [manage](#ingress-domains-ui-manage) domains. 
+Navigate to the your cluster's **Domains** page to create and manage domains. 
 
 1. In the console, navigate to your [clusters tab](https://cloud.ibm.com/kubernetes/clusters){: external}. 
 2. Click on the cluster where you want to create or change a domain.
@@ -279,7 +280,7 @@ ibmcloud oc ingress domain credential set cloudflare --cluster CLUSTER --token T
 :    The access token for Cloudflare credentials. This token is provided by Cloudflare. 
 
 `--domain-zone ZONE`
-:    The DNS zone that exists in your Cloudflare account and is specified in your [provider credentials](#ingress-domains-ext-cred). This is a GUID value. 
+:    The DNS zone that exists in your Cloudflare account and is specified in your [provider credentials](/docs/containers?topic=containers-ingress-domains&interface=cli#ingress-domains-ext-cred). This is a GUID value. 
 
 
 ### Verifying your provider credentials 
@@ -444,7 +445,7 @@ Learn how to manage the TLS certificate for your Ingress domain.
 
 Regenerate the domain certificate to generate a new token in your DNS provider and apply it to your cluster.
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-secret-regenerate)
+For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#ingress-domain-secret-regenerate)
 
 ```sh
 ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
@@ -456,7 +457,7 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
 
 Delete the secret for an Ingress domain and prevent future renewal of the certificate. 
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-secret-rm)
+For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#ingress-domain-secret-rm)
 
 ```sh
 ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN 

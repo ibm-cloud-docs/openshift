@@ -89,7 +89,22 @@ oc get clusterversion version -o json | jq '.status.conditions[] | select(.type 
 ```
 {: pre}
 
+Example output where the `Upgradeable` status is `False`.
+
+```sh
+{
+  "lastTransitionTime": "2023-10-04T15:55:54Z",
+  "message": "Kubernetes 1.27 and therefore OpenShift 4.14 remove several APIs which require admin consideration. Please see the knowledge article https://access.redhat.com/articles/6958395 for details and instructions.",
+  "reason": "AdminAckRequired",
+  "status": "False",
+  "type": "Upgradeable"
+}
+```
+{: screen}
+
 If the `Upgradeable` status is `False`, the condition information provides instructions that must be followed before upgrading. For more information, see [Providing the administrator acknowledgment](https://docs.openshift.com/container-platform/4.14/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external}.
+
+
 
 
 ## Networking changes for VPC clusters

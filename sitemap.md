@@ -330,8 +330,6 @@ subcollection: openshift
 
         * [New]{: tag-green} You can now apply your Cloud Pak entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
 
-    * [21 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2123)
-
     * [20 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2023)
 
         * [New]{: tag-green} You can now specify a custom pod subnet size when creating a VPC cluster.
@@ -2767,29 +2765,29 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-cluster-create-classic#classic-cluster-prereqs)
 
-* [Creating a classic cluster in the console](/docs/openshift?topic=openshift-cluster-create-classic#clusters_ui)
+* [Creating a classic cluster in the console](/docs/openshift?topic=openshift-cluster-create-classic&interface=ui#clusters_ui)
 
-* [Creating a classic cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-classic#clusters_cli_steps)
+* [Creating a classic cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-classic&interface=cli#clusters_cli_steps)
 
-* [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster_create_classic)
+* [Example commands to create classic clusters](/docs/openshift?topic=openshift-cluster-create-classic&interface=cli#cluster_create_classic)
 
-* [Creating a single-zone classic cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-classic#cluster_classic_tf)
+* [Creating a single-zone classic cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster_classic_tf)
 
-* [Next steps for Classic clusters](/docs/openshift?topic=openshift-cluster-create-classic#cluster-create-classic-next-steps)
+* [Next steps for Classic clusters](/docs/openshift?topic=openshift-cluster-create-classic&interface=terraform#cluster-create-classic-next-steps)
 
 [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-gen2)
 
 * [Prerequisites and notes](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-prereq)
 
-* [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#clusters_vpcg2_ui)
+* [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui#clusters_vpcg2_ui)
 
-* [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_cli)
+* [Creating VPC clusters from the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_vpcg2_cli)
 
-* [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_create_vpc)
+* [Example commands to create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_create_vpc)
 
-* [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster_vpcg2_tf)
+* [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster_vpcg2_tf)
 
-* [Next steps for VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2#cluster-create-vpc-next-steps)
+* [Next steps for VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster-create-vpc-next-steps)
 
 [Creating clusters on dedicated hosts for VPC](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
 
@@ -2797,11 +2795,11 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-satellite-clusters#satcluster-prereqs)
 
-* [Creating {{site.data.keyword.satelliteshort}} clusters from the console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console)
+* [Creating {{site.data.keyword.satelliteshort}} clusters from the console](/docs/openshift?topic=openshift-satellite-clusters&interface=ui#satcluster-create-console)
 
-* [Creating {{site.data.keyword.satelliteshort}} clusters from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli)
+* [Creating {{site.data.keyword.satelliteshort}} clusters from the CLI](/docs/openshift?topic=openshift-satellite-clusters&interface=cli#satcluster-create-cli)
 
-* [Next steps](/docs/openshift?topic=openshift-satellite-clusters#sat-cluster-next-steps)
+* [Next steps](/docs/openshift?topic=openshift-satellite-clusters&interface=cli#sat-cluster-next-steps)
 
 
 ## Accessing clusters
@@ -2856,9 +2854,9 @@ subcollection: openshift
 
 [Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
 
-* [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type#oauth-access-set-api)
+* [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-set-api)
 
-* [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type#oauth-access-get-api)
+* [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get-api)
 
 [Accessing private clusters](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
 
@@ -2966,11 +2964,11 @@ subcollection: openshift
 
 [Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
 
-* [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label#add-tags-console)
+* [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label&interface=ui#add-tags-console)
 
-* [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-worker-tag-label#add-tags-cli)
+* [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-worker-tag-label&interface=cli#add-tags-cli)
 
-* [Adding labels to existing worker pools](/docs/openshift?topic=openshift-worker-tag-label#worker_pool_labels)
+* [Adding labels to existing worker pools](/docs/openshift?topic=openshift-worker-tag-label&interface=cli#worker_pool_labels)
 
 
 ## Setting up encryption
@@ -2983,13 +2981,13 @@ subcollection: openshift
 
 [Setting up cluster secret encryption](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets)
 
-* [Enabling secret encryption from the CLI](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets-cli)
+* [Enabling secret encryption from the CLI](/docs/openshift?topic=openshift-encryption-secrets&interface=cli#encryption-secrets-cli)
 
-* [Enabling secret encryption from the console](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets-console)
+* [Enabling secret encryption from the console](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-console)
 
-* [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets-rotate)
+* [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-rotate)
 
-* [Verifying secret encryption](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets-verify)
+* [Verifying secret encryption](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-verify)
 
 [Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks#encryption-vpc-worker-disks)
 
@@ -3102,21 +3100,21 @@ subcollection: openshift
 
 * [Creating network zones](/docs/openshift?topic=openshift-cbr#create-cbr-network-zone-openshift)
 
-    * [Creating network zones from the API](/docs/openshift?topic=openshift-cbr#create-network-zone-api)
+    * [Creating network zones from the API](/docs/openshift?topic=openshift-cbr&interface=api#create-network-zone-api)
 
-    * [Creating network zones from the CLI](/docs/openshift?topic=openshift-cbr#create-network-zone-cli)
+    * [Creating network zones from the CLI](/docs/openshift?topic=openshift-cbr&interface=cli#create-network-zone-cli)
 
-    * [Creating network zones from the console](/docs/openshift?topic=openshift-cbr#create-network-zone-console)
+    * [Creating network zones from the console](/docs/openshift?topic=openshift-cbr&interface=ui#create-network-zone-console)
 
-* [Creating rules](/docs/openshift?topic=openshift-cbr#create-cbr-rule-openshift)
+* [Creating rules](/docs/openshift?topic=openshift-cbr&interface=ui#create-cbr-rule-openshift)
 
-    * [Creating rules by using the API](/docs/openshift?topic=openshift-cbr#create-cbr-rule-api)
+    * [Creating rules by using the API](/docs/openshift?topic=openshift-cbr&interface=api#create-cbr-rule-api)
 
-    * [Creating rules from the CLI](/docs/openshift?topic=openshift-cbr#create-cbr-rule-cli)
+    * [Creating rules from the CLI](/docs/openshift?topic=openshift-cbr&interface=cli#create-cbr-rule-cli)
 
-    * [Creating rules from the console](/docs/openshift?topic=openshift-cbr#create-cbr-rule-console)
+    * [Creating rules from the console](/docs/openshift?topic=openshift-cbr&interface=ui#create-cbr-rule-console)
 
-* [Limitations](/docs/openshift?topic=openshift-cbr#cbr-limitations)
+* [Limitations](/docs/openshift?topic=openshift-cbr&interface=ui#cbr-limitations)
 
 [Example context-based restrictions scenarios](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial)
 
@@ -3211,11 +3209,11 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-prereqs)
 
-* [Creating an IAM trusted profile for your cluster in the API](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-create-api)
+* [Creating an IAM trusted profile for your cluster in the API](/docs/openshift?topic=openshift-pod-iam-identity&interface=api#iam-identity-create-api)
 
-* [Creating an IAM trusted profile for your cluster in the UI](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-create-ui)
+* [Creating an IAM trusted profile for your cluster in the UI](/docs/openshift?topic=openshift-pod-iam-identity&interface=ui#iam-identity-create-ui)
 
-* [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-pod)
+* [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity&interface=ui#iam-identity-pod)
 
 [Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
 
@@ -3539,43 +3537,43 @@ subcollection: openshift
 
     * [Security groups applied to VPE gateways and VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-vpe-alb)
 
-* [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cli)
+* [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#vpc-sg-cli)
 
-* [Viewing the default VPC security groups in the UI](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-ui)
+* [Viewing the default VPC security groups in the UI](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-ui)
 
-* [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-inbound-outbound)
+* [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound)
 
-    * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers)
+    * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#required-group-rules-workers)
 
-    * [Required rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-security-group#rules-sg-128)
+    * [Required rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#rules-sg-128)
 
-    * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
+    * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#required-group-rules-alb)
 
-* [Creating security group rules](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules)
+* [Creating security group rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-create-rules)
 
-    * [Creating rules in the console](/docs/openshift?topic=openshift-vpc-security-group#security-group-inbound-rules)
+    * [Creating rules in the console](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#security-group-inbound-rules)
 
-    * [Creating rules in the command line](/docs/openshift?topic=openshift-vpc-security-group#security_groups_cli)
+    * [Creating rules in the command line](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#security_groups_cli)
 
-* [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster)
+* [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#vpc-sg-cluster)
 
-    * [If you only want the default VPC and cluster security groups and no additional security groups](/docs/openshift?topic=openshift-vpc-security-group#default-sgs-only)
+    * [If you only want the default VPC and cluster security groups and no additional security groups](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#default-sgs-only)
 
-    * [If you only want the cluster security group and not the default VPC security group](/docs/openshift?topic=openshift-vpc-security-group#cluster-sg-only)
+    * [If you only want the cluster security group and not the default VPC security group](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#cluster-sg-only)
 
-    * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group#cluster-customer-sgs)
+    * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#cluster-customer-sgs)
 
-    * [If you only want your own security groups](/docs/openshift?topic=openshift-vpc-security-group#customer-sgs-only)
+    * [If you only want your own security groups](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#customer-sgs-only)
 
-* [Adding security groups to worker pools at worker pool create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-worker-pool)
+* [Adding security groups to worker pools at worker pool create time](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#vpc-sg-worker-pool)
 
-    * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#no-worker-sgs)
+    * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#no-worker-sgs)
 
-    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group#worker-sgs)
+    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#worker-sgs)
 
-* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
+* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#worker-node-public-service-endpoint)
 
-* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
+* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#vpc-security-group-loadbalancer-outbound)
 
 [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 
@@ -3734,15 +3732,15 @@ subcollection: openshift
 
 [Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon)
 
-* [Enabling the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-enable-console)
+* [Enabling the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon&interface=ui#autoscaler-enable-console)
 
-* [Enabling the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-enable-CLI)
+* [Enabling the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon&interface=cli#autoscaler-enable-CLI)
 
-* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon-update-addon)
+* [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon&interface=cli#cluster-scaling-install-addon-update-addon)
 
-* [Removing the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-console)
+* [Removing the cluster autoscaler add-on from the console](/docs/openshift?topic=openshift-cluster-scaling-install-addon&interface=ui#autoscaler-remove-console)
 
-* [Removing the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon#autoscaler-remove-cli)
+* [Removing the cluster autoscaler add-on from the CLI](/docs/openshift?topic=openshift-cluster-scaling-install-addon&interface=cli#autoscaler-remove-cli)
 
 [Setting up autoscaling for your worker pools](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable#cluster-scaling-install-addon-enable)
 
@@ -3957,13 +3955,13 @@ subcollection: openshift
 
 * [Moving your apps to {{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps)
 
-    * [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui)
+    * [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app&interface=ui#deploy_apps_ui)
 
-    * [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli)
+    * [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app&interface=cli#deploy_apps_cli)
 
-* [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity)
+* [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app&interface=cli#node_affinity)
 
-* [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
+* [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu_app)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
@@ -4255,59 +4253,59 @@ subcollection: openshift
 
 [Setting up a domain for your cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains)
 
-* [Accessing domains in the console](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-access)
+* [Accessing domains in the console](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-access)
 
-* [Creating domains in the console](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui)
+* [Creating domains in the console](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui)
 
-    * [Domain details](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-details)
+    * [Domain details](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-details)
 
-    * [Registration details](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-registration)
+    * [Registration details](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-registration)
 
-    * [Credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-credentials)
+    * [Credentials](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-credentials)
 
-* [Managing your domain in the console](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ui-manage)
+* [Managing your domain in the console](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-manage)
 
-* [Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-int)
+* [Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-int)
 
-* [Setting up domains with {{site.data.keyword.cis_full_notm}}](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis)
+* [Setting up domains with {{site.data.keyword.cis_full_notm}}](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-cis)
 
-    * [Set up service-to-service authorization](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis-s2s)
+    * [Set up service-to-service authorization](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-cis-s2s)
 
-    * [Create a domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-cis-create)
+    * [Create a domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-cis-create)
 
-    * [Adding DNS credentials for an external provider](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred)
+    * [Adding DNS credentials for an external provider](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred)
 
-    * [Adding Akamai credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred-ak)
+    * [Adding Akamai credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred-ak)
 
-    * [Adding Cloudflare credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred-cf)
+    * [Adding Cloudflare credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred-cf)
 
-    * [Verifying your provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-cred-verify)
+    * [Verifying your provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred-verify)
 
-* [Creating a domain, or adding an existing domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-ext-create)
+* [Creating a domain, or adding an existing domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-create)
 
-* [Managing domains](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage)
+* [Managing domains](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage)
 
-    * [Listing all domains in a cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-view-ls)
+    * [Listing all domains in a cluster](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage-view-ls)
 
-    * [Getting the details of a single domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-view-get)
+    * [Getting the details of a single domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage-view-get)
 
-    * [Removing a domain from a cluster](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-rm)
+    * [Removing a domain from a cluster](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage-rm)
 
-    * [Updating a domain's IP addresses or hostname](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-update)
+    * [Updating a domain's IP addresses or hostname](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage-update)
 
-    * [Changing a cluster's default domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-default)
+    * [Changing a cluster's default domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-default)
 
-* [Managing external provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domains-manage-creds)
+* [Managing external provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage-creds)
 
-    * [Viewing external provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-creds-view)
+    * [Viewing external provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-creds-view)
 
-    * [Removing external provider credentials](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-creds-rm)
+    * [Removing external provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-creds-rm)
 
-* [Managing domain secrets and certificates](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets)
+* [Managing domain secrets and certificates](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-secrets)
 
-    * [Regenerating the certificate for an Ingress domain](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets-regen)
+    * [Regenerating the certificate for an Ingress domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-secrets-regen)
 
-    * [Deleting an Ingress domain secret](/docs/openshift?topic=openshift-ingress-domains#ingress-domain-manage-secrets-rm)
+    * [Deleting an Ingress domain secret](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-secrets-rm)
 
 [Managing TLS and non-TLS certificates and secrets](/docs/openshift?topic=openshift-secrets#secrets)
 
@@ -4746,31 +4744,31 @@ subcollection: openshift
 
     * [Optional: Setting up encryption by using {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-hscrypto-vpc)
 
-* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc)
+* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui#install-odf-console-vpc)
 
-* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-cli-vpc)
+* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#install-odf-cli-vpc)
 
-* [Installing the add-on from Terraform](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-terraform-vpc)
+* [Installing the add-on from Terraform](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=terraform#install-odf-terraform-vpc)
 
-* [Creating your ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-vpc-deploy-crd)
+* [Creating your ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#ocs-vpc-deploy-crd)
 
-* [Scaling ODF](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-scaling)
+* [Scaling ODF](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-scaling)
 
-    * [Scaling by increasing the `numOfOsd`](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-scaling-osd)
+    * [Scaling by increasing the `numOfOsd`](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-scaling-osd)
 
-    * [Expanding ODF by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-add-worker-nodes)
+    * [Expanding ODF by adding worker nodes to your VPC cluster](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-add-worker-nodes)
 
-* [Limitations](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-limitations)
+* [Limitations](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#ocs-limitations)
 
-* [Storage class reference](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-reference-section)
+* [Storage class reference](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#ocs-reference-section)
 
-* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-param-ref)
+* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-param-ref)
 
-    * [Version 4.13 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-413)
+    * [Version 4.13 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-params-413)
 
-    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-412)
+    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-params-412)
 
-    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-vpc-params-48)
+    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-params-48)
 
 [Updating or replacing VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
 
@@ -4845,21 +4843,21 @@ subcollection: openshift
 
     * [Getting your device details](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-get-devices)
 
-* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-cli-classic)
+* [Installing the add-on from the CLI](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#install-odf-cli-classic)
 
-* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic#install-odf-console-classic)
+* [Installing the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-deploy-odf-classic&interface=ui#install-odf-console-classic)
 
-* [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic#ocs-classic-deploy-crd)
+* [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#ocs-classic-deploy-crd)
 
-* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-param-ref)
+* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-param-ref)
 
-    * [Version 4.13 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-413)
+    * [Version 4.13 parameters](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-params-413)
 
-    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-410)
+    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-params-410)
 
-    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-params-48)
+    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-params-48)
 
-* [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic#odf-limitations-classic)
+* [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-limitations-classic)
 
 [Updating Classic worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
 
@@ -4901,11 +4899,11 @@ subcollection: openshift
 
 * [Uninstalling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-addon-rm)
 
-    * [Uninstalling the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-console)
+    * [Uninstalling the OpenShift Data Foundation add-on from the console](/docs/openshift?topic=openshift-ocs-manage-deployment&interface=ui#ocs-addon-rm-console)
 
-    * [Uninstalling the OpenShift Data Foundation add-on from the CLI](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-addon-rm-cli)
+    * [Uninstalling the OpenShift Data Foundation add-on from the CLI](/docs/openshift?topic=openshift-ocs-manage-deployment&interface=cli#ocs-addon-rm-cli)
 
-* [Troubleshooting ODF](/docs/openshift?topic=openshift-ocs-manage-deployment#odf-troubleshooting-gather)
+* [Troubleshooting ODF](/docs/openshift?topic=openshift-ocs-manage-deployment&interface=cli#odf-troubleshooting-gather)
 
 [Managing the Multi-Cloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-manage-noobaa)
 

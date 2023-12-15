@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-06"
+lastupdated: "2023-12-15"
 
 keywords: openshift, kubernetes, clusters, worker nodes, worker pools, classic, create
 
@@ -45,7 +45,7 @@ Location details
         - For single zone clusters, choose a single **Worker zone** to host your cluster in. For the best performance, select a zone in the city that is physically closest to you. Each worker zone has a public and private **VLAN**. If you do not have a VLANs in that zone, they are created for you.
 
 Kubernetes version
-:    By default, clusters are created with the default Kubernetes version. You can specify a different [supported version](/docs/containers?topic=containers-cs_versions&interface=ui#cs_versions_available). 
+:    By default, clusters are created with the default Kubernetes version. You can specify a different [supported version](/docs/containers?topic=containers-cs_versions#cs_versions_available). 
 
 Worker pool
 :    The cluster worker pool defines the number and type of worker nodes that run your workload. You can change your worker pool details at anytime.
@@ -81,7 +81,7 @@ Observability integrations
 Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
-* Ensure that you complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters&interface=ui) and decide on your cluster setup. Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
+* Ensure that you complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters) and decide on your cluster setup. Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
 * [Install the {{site.data.keyword.cloud_notm}} CLI tools](/docs/containers?topic=containers-cli-install).
 
 1. Log in to {{site.data.keyword.cloud_notm}} CLI. If you are logging in with a federated ID, use `ibmcloud login --sso`.
@@ -357,7 +357,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     :   The zone to create the cluster in. To see available zones, run `ibmcloud oc zones --provider classic`.
 
     `machine_type`
-    :   The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors&interface=ui).
+    :   The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors).
 
     `hardware`
     :   The level of hardware isolation for your worker nodes. Use `dedicated` to have available physical resources dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. This option is available for virtual machine worker nodes flavors only. 

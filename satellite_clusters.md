@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-05"
+lastupdated: "2023-12-15"
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
 
@@ -70,7 +70,7 @@ Default worker pool
 :   - **vCPU**, **Memory (GB)**, and number of **Worker nodes per zone**: Request the resources that you want to create the worker pool with. {{site.data.keyword.satelliteshort}} can automatically assign available hosts to the worker pool to fulfill your request. Generally, select at least 1 worker node per zone for a total of 3 worker nodes in your cluster.
 
 OpenShift version
-:    Select your cluster version. Choose the default version, or you can specify a different [supported version](/docs/containers?topic=containers-cs_versions&interface=ui#cs_versions_available).
+:    Select your cluster version. Choose the default version, or you can specify a different [supported version](/docs/containers?topic=containers-cs_versions#cs_versions_available).
 
 OpenShift Container Platform (OCP) license
 :   All user clusters in your Satellite location are installed with OpenShift Container Platform, which incurs a licensing fee from Red Hat. However, you can bring your own OpenShift Container Platform license for clusters created with your on-premises infrastructure or for clusters created on-premises by using IBM Cloud Paks. Service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.cos_full_notm}} and do not require a license.

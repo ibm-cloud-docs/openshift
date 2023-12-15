@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-10-05"
+lastupdated: "2023-12-15"
 
 keywords: openshift
 
@@ -54,7 +54,7 @@ Minimum required permissions
 As an account administrator, create a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management. For more information, see the [IAM documentation](/docs/account?topic=account-create-trusted-profile&interface=ui).
 {: shortdesc}
 
-**Before you begin**: Verify that you meet the [prerequisites](#iam-identity-prereqs).
+**Before you begin**: Verify that you meet the [prerequisites](/docs/containers?topic=containers-pod-iam-identity&interface=api#iam-identity-create-api).
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

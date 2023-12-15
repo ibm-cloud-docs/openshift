@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-06"
+lastupdated: "2023-12-15"
 
 keywords: openshift, clusters, vpc-gen2
 
@@ -31,7 +31,7 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
 
 * If you plan to enable both the public and private cloud service endpoints, you must attach a public gateway to each subnet to access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub. Additionally, a public network gateway is required when you want your cluster to access public endpoints, such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only. Make sure to review the [VPC networking basics](/docs/openshift?topic=openshift-plan_vpc_basics) to understand when a public network gateway is required and how you can set up your cluster to limit public access to one or more subnets only.
 * Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. For more information, see [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption).
-* By default, your cluster is provisioned with a VPC security group and a cluster-level security group. If you want to attach additional security groups or change which default security groups are applied when you create the cluster, you must [create your VPC cluster in the CLI](#cluster_vpcg2_cli).
+* By default, your cluster is provisioned with a VPC security group and a cluster-level security group. If you want to attach additional security groups or change which default security groups are applied when you create the cluster, you must [create your VPC cluster in the CLI](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=cli#cluster_vpcg2_cli).
 
 * If you create a VPC cluster with both a public and a private cloud service endpoint, note that the public service endpoints can't be disabled at a later time. Therefore, you can't convert a public cluster to a private cluster. 
 
@@ -53,11 +53,11 @@ Location
 :   Review the **Worker Zones** and **Subnets** for your cluster. The zones are filtered based on the VPC that you selected, and include the VPC subnets that you previously created. Depending on the level of availability you want for your cluster, select one or more zones. By default, your cluster resources are spread across three zones for high availability.  You can [add zones to your cluster](/docs/openshift?topic=openshift-add-workers-vpc) later.
 
 Kubernetes Version
-:    Select your cluster version. By default, clusters are created with the default Kubernetes version, but you can specify a different [supported version](/docs/containers?topic=containers-cs_versions&interface=ui#cs_versions_available). 
+:    Select your cluster version. By default, clusters are created with the default Kubernetes version, but you can specify a different [supported version](/docs/containers?topic=containers-cs_versions#cs_versions_available). 
 
 Worker Pool
 :    The cluster worker pool defines the number and type of worker nodes that run your workload. You can change your worker pool details at anytime.
-:    - **Operating system** and **Architecture**:  For a list of the available operating systems and architectures by cluster version, see the [available versions](/docs/containers?topic=containers-cs_versions&interface=ui#cs_versions_available).
+:    - **Operating system** and **Architecture**:  For a list of the available operating systems and architectures by cluster version, see the [available versions](/docs/containers?topic=containers-cs_versions#cs_versions_available).
 :    - **Flavor**: The flavor defines the architecture, amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to the containers. Available bare metal and virtual machines types vary by the zone in which you deploy the cluster. For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). 
 :    - **Worker nodes per zone**: For high availability, at least 3 worker nodes per zone are recommended. 
 :    - **Encrypt local disk**: By default, [worker nodes feature AES 256-bit disk encryption](/docs/openshift?topic=openshift-security#workernodes). You can choose to turn off disk encryption when you create the cluster. If you enable encryption, each worker node in the worker pool then is encrypted by using the KMS provider credentials that you manage. Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
@@ -93,7 +93,7 @@ Observability integrations
 Create your single zone or multizone VPC cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 
 
-* Make sure that you complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters&interface=ui) and decide on your cluster setup.
+* Make sure that you complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters) and decide on your cluster setup.
 * Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/containers?topic=containers-cli-install).
 * Install the [VPC CLI plug-in](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli).
 
@@ -360,7 +360,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     :   Required. The ID of the VPC that you want to use for your cluster. To list available VPCs, run `ibmcloud is vpcs`.
 
     `flavor`
-    :   Required. The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors&interface=ui). 
+    :   Required. The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors). 
 
     `worker_count`
     :   The number of worker nodes that you want to add to the default worker pool. 
@@ -369,7 +369,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     :   The operating system of the worker nodes in the worker pool. For a list of supported operating systems by cluster version, see [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). 
 
     `kube_version`
-    :   The Kubernetes version of your cluster. By default, clusters are created with the default Kubernetes version, but you can specify a different [supported version](/docs/containers?topic=containers-cs_versions&interface=ui#cs_versions_available). 
+    :   The Kubernetes version of your cluster. By default, clusters are created with the default Kubernetes version, but you can specify a different [supported version](/docs/containers?topic=containers-cs_versions#cs_versions_available). 
     
     `resource_group_id`
     :   The ID of the resource group. To see available resource groups, run `ibmcloud resource groups`. If no value is provided, the default resource group is used.
