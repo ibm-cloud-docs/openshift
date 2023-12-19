@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-19"
 
 keywords: openshift, red hat, red hat openshift, dev
 
@@ -77,9 +77,10 @@ Deploy your app to the cluster by running your app configuration file.
 {: shortdesc}
 
 
-- [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
-- [Deploying apps through the CLI](/docs/openshift?topic=openshift-deploy_app#deploy_apps_cli).
+- [Deploying apps with the Kubernetes dashboard](/docs/openshift?topic=openshift-deploy_app&interface=ui#deploy_apps_ui).
+- [Deploying apps with the CLI](/docs/openshift?topic=openshift-deploy_app&interface=cli#deploy_apps_cli).
 - [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app#node_affinity).
+- [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 
 
 Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-debug_apps).

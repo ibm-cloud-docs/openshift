@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-05"
+lastupdated: "2023-12-19"
 
 keywords: openshift, deploy
 
@@ -472,10 +472,9 @@ Sometimes, you don't want the service to use a label. For example, you might hav
 You can create three types of services for external networking: NodePort, LoadBalancer, and Ingress.
 {: shortdesc}
 
-You have different options that depend on your cluster type. For more information, see [Planning networking services](/docs/containers?topic=containers-cs_network_planning#external).
-- **Standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#external).
-- **Cluster that is made private by using Calico**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#private_both_vlans). You also must use a Calico preDNAT network policy to block the public node ports.
-- **Private VLAN-only standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/containers?topic=containers-cs_network_planning#plan_private_vlan). You also must open the port for the service's private IP address in your firewall.
+You have different options that depend on your cluster type. For more information, see [Planning networking services](/docs/openshift?topic=openshift-cs_network_planning#external).
+- **Standard cluster**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/openshift?topic=openshift-cs_network_planning#external).
+- **Cluster that is made private by using Calico**: You can expose your app by using a [NodePort, load balancer, or Ingress service](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans). You also must use a Calico preDNAT network policy to block the public node ports.
 
 As you plan how many `Service` objects you need in your cluster, keep in mind that Kubernetes uses `iptables` to handle networking and port forwarding rules. If you run many services in your cluster, such as 5000, performance might be impacted.
 
@@ -516,13 +515,10 @@ To control access at the pod level, you can configure [security context constrai
 
 Within the app deployment YAML, you can set the security context for a pod or container. For more information, review the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}.
 
-Want to control access at the application level? To create a sign-on flow that you can update at any time without changing your app code, try integrating your app with [{{site.data.keyword.appid_long_notm}}](/docs/appid?topic=appid-getting-started).
-{: tip}
-
 ### After I deploy my app, how can I monitor its health?
 {: #app_plan_logmet_monitor}
 
-You can set up {{site.data.keyword.cloud_notm}} [logging and monitoring](/docs/containers?topic=containers-health) for your cluster.
+You can set up {{site.data.keyword.cloud_notm}} [logging and monitoring](/docs/openshift?topic=openshift-health) for your cluster.
 {: shortdesc}
 
 
