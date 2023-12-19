@@ -2,11 +2,11 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-19"
 
 keywords: odf, openshift data foundation add-on, change log
 
-subcollection: openshift, container storage
+subcollection: openshift
 
 ---
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-12-06"
+lastupdated: "2023-12-19"
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
 
@@ -45,7 +45,7 @@ Review the following prerequisites.
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #odf-create-cos}
 
-Complete the following steps to create an {{site.data.keyword.cos_full_notm}} instance which you can use as the default backing store in your ODF deployment. If you don't want to set up {{site.data.keyword.cos_full_notm}}, you can skip this step and [install the add-on](#install-odf-cli-vpc).
+Complete the following steps to create an {{site.data.keyword.cos_full_notm}} instance which you can use as the default backing store in your ODF deployment. If you don't want to set up {{site.data.keyword.cos_full_notm}}, you can skip this step and [install the add-on](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#install-odf-cli-vpc).
 {: shortdesc}
 
 If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing store in your storage cluster, create an instance of {{site.data.keyword.cos_full_notm}}. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials. If you don't specify {{site.data.keyword.cos_full_notm}} credentials during installation, then the default backing store in your storage cluster is created by using the PVs in your cluster. You can set up additional backing stores after deploying ODF, but you can't change the default backing store.
@@ -345,7 +345,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     ```
     {: pre}
 
-1. If you enabled the add-on with `odfDeploy` set to `false`, follow the steps to [create an ODF custom resource](#ocs-vpc-deploy-crd).
+1. If you enabled the add-on with `odfDeploy` set to `false`, follow the steps to [create an ODF custom resource](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#ocs-vpc-deploy-crd).
 
 ## Installing the add-on from Terraform
 {: #install-odf-terraform-vpc}

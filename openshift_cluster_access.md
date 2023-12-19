@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2023
-lastupdated: "2023-12-06"
+lastupdated: "2023-12-19"
 
 keywords: openshift, clusters, access, endpoint
 
@@ -63,7 +63,7 @@ For security reasons, first log out of the {{site.data.keyword.cloud_notm}} cons
 {: note}   
 
 What's next?
-:   Try [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui).
+:   Try [Deploying apps through the console](/docs/openshift?topic=openshift-deploy_app&interface=ui#deploy_apps_ui).
 
 ### Connecting to the cluster from the CLI
 {: #access_oc_cli}

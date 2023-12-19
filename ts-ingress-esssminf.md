@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-10"
+lastupdated: "2023-12-19"
 
-keywords: containers, ingress, troubleshoot ingress, secrets manager missing, esssminf
+keywords: openshift, ingress, troubleshoot ingress, secrets manager missing, esssminf
 
-subcollection: containers
+subcollection: openshift
 content-type: troubleshoot
 
 ---

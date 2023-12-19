@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-11-17"
+lastupdated: "2023-12-19"
 
 keywords: openshift, registry, pull secret, secrets
 
@@ -64,7 +64,7 @@ You can deploy an app from an existing [image stream](https://docs.openshift.com
 ### Using an image stream from the {{site.data.keyword.redhat_openshift_notm}} web console
 {: #oc_imagestream_deploy-ui}
 
-1. From the [{{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app#deploy_apps_ui), switch to the **Developer** perspective and click **+Add**.
+1. From the [{{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-deploy_app&interface=ui#deploy_apps_ui), switch to the **Developer** perspective and click **+Add**.
 2. In the **Add** pane menu bar, select a **Project** that is not `default` to create your app in, and click **Container Image**.
 3. In the **Image** section, select **Image name from internal registry**.
 4. Select `default` **Project**, `<image>` **ImageStreams**, and `<tag>` **Tag** of the image stream that you previously created.

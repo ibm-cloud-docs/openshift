@@ -2,11 +2,11 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-08"
+lastupdated: "2023-12-19"
 
 keywords: data science, AI, machine learning, AI modeling, modeling, GPUs, NVIDIA, node feature discovery, pipelines
 
-subcollection: containers
+subcollection: openshift
 
 content-type: tutorial
 services: openshift

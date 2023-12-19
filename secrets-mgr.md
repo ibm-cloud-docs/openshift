@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-19"
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
 
-subcollection: containers, openshift
+subcollection: openshift
 
 ---
 

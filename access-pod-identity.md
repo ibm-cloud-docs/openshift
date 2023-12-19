@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2023
-lastupdated: "2023-12-15"
+lastupdated: "2023-12-19"
 
 keywords: openshift
 
@@ -160,7 +160,7 @@ As a developer, you can configure your application pods to authenticate with {{s
 
 Before you begin:
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* Make sure that your account administrator [created an IAM trusted profile for your cluster](#iam-identity-create-api).
+* Make sure that your account administrator [created an IAM trusted profile for your cluster](/docs/containers?topic=containers-pod-iam-identity&interface=api#iam-identity-create-api).
 
 To configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services:
 
