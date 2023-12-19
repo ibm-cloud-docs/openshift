@@ -441,6 +441,7 @@ toc:
           label: Troubleshooting
           topics:
           - get-help.md
+          - include: ../get-support/ViewStatus.md
           - ts-debug-tool.md
           - topicgroup:
               label: Clusters and masters
