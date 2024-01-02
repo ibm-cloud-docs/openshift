@@ -270,6 +270,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
+
+    * [2 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0224)
+
+        * [Change log]{: tag-purple} Worker node fix packs are available. 
+
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
     * [18 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1823)
