@@ -449,6 +449,7 @@ toc:
               - ts-cluster-debug.md
               - ts-webhook-debug.md
               - ts-cluster-master.md
+              - ts-cluster-master-upgrade.md
               - ts-cluster-debug-ocp.md
               - ts-cluster-version-downlevel.md
               - states-cluster.md

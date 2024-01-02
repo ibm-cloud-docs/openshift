@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-12-19"
+  years: 2017, 2024
+lastupdated: "2024-01-02"
 
 keywords: openshift
 subcollection: openshift
@@ -9160,6 +9160,8 @@ subcollection: openshift
 * [Reviewing master health, status, and states](/docs/openshift?topic=openshift-debug_master#review-master-health)
 
 * [Understanding the impact of a master outage](/docs/openshift?topic=openshift-debug_master#review-master-outage)
+
+[Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade#ts-cluster-master-upgrade)
 
 [Debugging {{site.data.keyword.redhat_openshift_notm}} web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-ocp-debug#ocp-debug)
 
