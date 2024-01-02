@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-12-19"
+  years: 2017, 2024
+lastupdated: "2024-01-02"
 
 keywords: openshift
 subcollection: openshift
@@ -269,6 +269,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
+
+    * [2 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0224)
+
+        * [Change log]{: tag-purple} Worker node fix packs are available. 
 
 * [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
 
@@ -6021,6 +6027,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
 
+    * [Change log for worker node fix pack 4.14.6_1542_openshift, released 02 January 2024](/docs/openshift?topic=openshift-openshift_changelog_414#4146_1542_openshift_W)
+
     * [Change log for master fix pack 4.14.5_1539_openshift and worker node fix pack 4.14.4_1538_openshift, released 13 December 2023](/docs/openshift?topic=openshift-openshift_changelog_414#4.14.5_1539_openshiftM_4.14.4_1538_openshiftW)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.14 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-414)
@@ -6043,6 +6051,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for worker node fix pack 4.13.26_1553_openshift, released 02 January 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41326_1553_openshift_W)
 
     * [Change log for worker node fix pack 4.13.26_1552_openshift, released 18 December 2023](/docs/openshift?topic=openshift-openshift_changelog_413#41326_1552_openshift_W)
 
@@ -6184,6 +6194,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.45_1574_openshift, released 02 January 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41245_1574_openshift_W)
 
     * [Change log for worker node fix pack 4.12.45_1573_openshift, released 18 December 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41245_1573_openshift_W)
 
@@ -6357,6 +6369,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.55_1587_openshift, released 02 January 2024](/docs/openshift?topic=openshift-openshift_changelog_411#41155_1587_openshift_W)
 
     * [Change log for worker node fix pack 4.11.55_1586_openshift, released 18 December 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41155_1586_openshift_W)
 
@@ -6560,6 +6574,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_410#openshift_changelog_overview_410)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_410#410_changelog)
+
+    * [Change log for worker node fix pack 4.10.67_1595_openshift, released 02 January 2024](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1595_openshift_W)
 
     * [Change log for worker node fix pack 4.10.67_1594_openshift, released 18 December 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41067_1594_openshift_W)
 
@@ -9160,6 +9176,8 @@ subcollection: openshift
 * [Reviewing master health, status, and states](/docs/openshift?topic=openshift-debug_master#review-master-health)
 
 * [Understanding the impact of a master outage](/docs/openshift?topic=openshift-debug_master#review-master-outage)
+
+[Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade#ts-cluster-master-upgrade)
 
 [Debugging {{site.data.keyword.redhat_openshift_notm}} web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-ocp-debug#ocp-debug)
 
