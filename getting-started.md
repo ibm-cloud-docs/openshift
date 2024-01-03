@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-10-04"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
 

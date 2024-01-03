@@ -2,7 +2,8 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-02"
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, kubernetes, help, cluster, upgrades,
 

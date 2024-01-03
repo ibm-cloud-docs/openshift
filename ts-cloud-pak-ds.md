@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-09-07"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, debug, cloud pak, daemson set, feature gates, failed to set
 

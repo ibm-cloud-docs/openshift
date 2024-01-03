@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-07-26"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: ingress, expose apps, publicly expose, public ingress, ingress vpc
 

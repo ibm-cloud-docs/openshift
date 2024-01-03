@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-11"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, version, update, upgrade, 4.13, update openshift
 

@@ -1,8 +1,9 @@
 ---
 
 copyright: 
-  years: 2022, 2023
-lastupdated: "2023-07-17"
+  years: 2022, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, storage, snapshot
 

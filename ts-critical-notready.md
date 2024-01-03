@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-10-09"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
 

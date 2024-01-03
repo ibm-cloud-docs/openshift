@@ -2,7 +2,8 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-02"
+lastupdated: "2024-01-03"
+
 
 keywords: openshift
 subcollection: openshift
@@ -5833,6 +5834,10 @@ subcollection: openshift
 
 * [Version 1.0.426](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10426)
 
+* [Version 1.0.422](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10422)
+
+* [Version 1.0.420](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10420)
+
 * [Version 1.0.419](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10419)
 
 * [Version 1.0.415](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10415)
@@ -5860,6 +5865,8 @@ subcollection: openshift
 * [Version 1.0.334](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10334)
 
 * [Version 1.0.331](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10331)
+
+* [Version 1.0.327](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10327)
 
 * [Version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10312)
 

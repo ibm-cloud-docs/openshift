@@ -2,7 +2,8 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-02"
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
 
