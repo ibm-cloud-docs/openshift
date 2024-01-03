@@ -1,8 +1,9 @@
 ---
 
 copyright: 
-  years: 2022, 2023
-lastupdated: "2023-06-09"
+  years: 2022, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, fsck, file system check
 

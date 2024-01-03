@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2023, 2023
-lastupdated: "2023-12-19"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: data science, AI, machine learning, AI modeling, modeling, GPUs, NVIDIA, node feature discovery, pipelines
 

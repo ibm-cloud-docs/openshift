@@ -1,8 +1,9 @@
 ---
 
 copyright: 
-  years: 2023, 2023
-lastupdated: "2023-07-06"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, pod security, reset, valid configuration, psa
 

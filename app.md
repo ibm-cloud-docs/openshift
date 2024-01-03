@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2014, 2023
-lastupdated: "2023-09-08"
+  years: 2014, 2024
+lastupdated: "2024-01-03"
+
 
 keywords: openshift, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
 
