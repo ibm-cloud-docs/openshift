@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift, kubernetes, help, cluster, upgrades,
@@ -57,7 +57,7 @@ oc get clusterversion version -o json | jq '.status.conditions[] | select(.type 
     Cluster administrators are responsible for ensuring that removed APIs are no longer being used and migration to supported APIs is completed before providing this administrator acknowledgment. IBM Cloud can assist with the evaluation, but cannot identify all possible instances where removed APIs are being used, especially in external tools and idle workloads.
     {: important}
 
-1. Follow the steps to [Provide the administrator acknowledgment](https://docs.openshift.com/container-platform/4.14/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare)](https://docs.openshift.com/container-platform/4.14/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external} that you have migrated off the removed APIs.
+1. Follow the steps to [Provide the administrator acknowledgment](https://docs.openshift.com/container-platform/4.14/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external} that you have migrated off the removed APIs.
 
 1. After you have completed the previous migration steps, run the following command again. Note, it may take several minutes for the `Upgradeable` status to update. If no data is returned, the `Upgradeable` status has been removed and you can retry the cluster upgrade.
     ```sh

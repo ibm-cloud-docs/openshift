@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift, oc, ks
@@ -212,7 +212,7 @@ Version 1.0.430 of the CLI was released on 13 Jul 2022.
 {: #cli-10426}
 
 Version 1.0.426 of the CLI was released on 6 Jul 2022.
-- Adds the `ibmcloud sat key` commands, allowing you to view and manage your {[SatConfig]} keys.
+- Adds the `ibmcloud sat key` commands, allowing you to view and manage your {{site.data.keyword.satelliteshort}} Config keys.
 - Adds the `ibmcloud sat subscription identity set` command, which updates a Satellite subscription to use your identity to manage resources.
 - Adds the `--secret-group` option to various {{site.data.keyword.secrets-manager_short}} commands. With this option, you can create secret groups to organize your secrets and control who on your team has access to them.
 
@@ -425,7 +425,7 @@ Version 1.0.233 of the CLI was released on 1 March 2021.
 - Adds the `ibmcloud sat storage config rm` command to remove a {{site.data.keyword.satelliteshort}} storage configuration.
 - Removes `beta` tags from `ibmcloud sat` commands for the generally available release of {{site.data.keyword.satellitelong_notm}}.
 - Adds `satellite` as a supported provider to the output of the `ibmcloud oc cluster ls` command. 
-- [Removes `beta` tags from `ibmcloud sat` commands for the generally available release of {{site.data.keyword.satellitelong_notm}}.](/docs/satellite?topic=satellite-satellite-cli-changelog).
+- Removes `beta` tags from `ibmcloud sat` commands for the generally available release of {{site.data.keyword.satellitelong_notm}}.
 - General refactoring and improvements.
 
 ## Version 1.0.231
@@ -442,8 +442,8 @@ Version 1.0.231 of the CLI was released on 25 February 2021.
 Version 1.0.223 of the CLI was released on 8 February 2021.
 
 - Adds the [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set) and [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm) commands to set and remove custom Kubernetes labels for all worker nodes in a worker pool.
-- [Adds several commands and command changes for managing {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](docs/openshift?topic=openshift-cs_cli_changelog).
-- Adds the `ibmcloud sat storage` command group to view and manage the storage resources that run in {{site.data.keyword.redhat_openshift_notm}} clusters that are registered with {[SatConfig]}.
+- [Adds several commands and command changes for managing {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-cs_cli_changelog).
+- Adds the `ibmcloud sat storage` command group to view and manage the storage resources that run in {{site.data.keyword.redhat_openshift_notm}} clusters that are registered with {{site.data.keyword.satelliteshort}} Config.
 - Adds the optional `--ha-zone` option to the `ibmcloud sat location create` command to specify three arbitrary zone names in your {{site.data.keyword.satelliteshort}} location.
 - Adds the optional `--reset-key` option to the `ibmcloud sat host attach` command to reset the key that the control plane uses to communicate with all the hosts in the location.
 - Moves `ibmcloud sat config configuration` commands to the `ibmcloud sat config` command group.
@@ -961,7 +961,7 @@ Version 0.2.95 of the CLI was released on 3 April 2019.
 
 Version 0.2.80 of the CLI was released on 19 March 2019.
 
-- Adds support for enabling [master-to-worker communication with service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master) in standard clusters in [VRF-enabled accounts](/docs/account?topic=account-vrf-service-endpoint#vrf). 
+- Adds support for enabling [master-to-worker communication with service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master) in standard clusters in [VRF-enabled accounts](/docs/account?topic=account-vrf-service-endpoint&interface=ui). 
 - Adds the `--private-service-endpoint` and `--public-service-endpoint` options to the [`ibmcloud oc cluster-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) command. 
 - Adds the **Public Service Endpoint URL** and **Private Service Endpoint URL** fields to the output of `ibmcloud oc cluster get`. 
 - Adds the [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable) command. 

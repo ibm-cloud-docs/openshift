@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -376,7 +376,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.1.26 | v1.1.27 | Updated `Go` module dependencies and to use `Go` version `1.16.9`.  Updated image for [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}, [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}, [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}, [CVE-2021-33929](https://nvd.nist.gov/vuln/detail/CVE-2021-33929){: external} and [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.12-404 | v1.15.12-407 | Updated image for [DLA-2797-1](https://www.debian.org/lts/security/2021/dla-2797){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.12-404 | v1.15.12-407 | Updated image for [DLA-2797-1](https://lists.debian.org/debian-lts-announce/2021/10/msg00025.html){: external}. |
 | Key Management Service provider | v1.0.18 | v1.0.19 | Updated `Go` module dependencies and to use `Go` version `1.16.9`.  Updated image for [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1550 | 1589 | Updated to use `Go` version `1.16.9`. |
 | {{site.data.keyword.redhat_openshift_notm}} | 3.11.524 | 3.11.542 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-542){: external} |
@@ -1020,10 +1020,10 @@ The following table shows the changes that are in the master fix pack patch upda
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| Cluster health image | v1.1.12 | v1.1.13 | Updated image for [DLA-2424-1](https://www.debian.org/lts/security/2020/dla-2424){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.12-343 | v1.15.12-404 | Updated image for [DLA-2424-1](https://www.debian.org/lts/security/2020/dla-2424){: external}. |
+| Cluster health image | v1.1.12 | v1.1.13 | Updated image for [DLA-2424-1](https://lists.debian.org/debian-lts-announce/2020/10/msg00037.html){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.12-343 | v1.15.12-404 | Updated image for [DLA-2424-1](https://lists.debian.org/debian-lts-announce/2020/10/msg00037.html){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 378 | 379 | Updated to use the universal base image (UBI) and to use `Go` version 1.15.2. |
-| Key Management Service provider | v1.0.3 | v1.0.4 | Updated image for [DLA-2424-1](https://www.debian.org/lts/security/2020/dla-2424){: external}. |
+| Key Management Service provider | v1.0.3 | v1.0.4 | Updated image for [DLA-2424-1](https://lists.debian.org/debian-lts-announce/2020/10/msg00037.html){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} | 3.11.286 | 3.11.306 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-306){: external}. |
 {: caption="Changes since version 3.11.286_1570_openshift" caption-side="bottom"}
 

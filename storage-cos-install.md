@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift
@@ -62,7 +62,7 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 1. Review the change log and verify support for your [cluster version and architecture](/docs/openshift?topic=openshift-cos_plugin_changelog).
 1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
 
-    If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you can't enable VRF or service endpoints in your account, use the public Helm repository.
+    If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you can't enable VRF or service endpoints in your account, use the public Helm repository.
     {: note}
 
 1. Add the {{site.data.keyword.cloud_notm}} Helm repo to your cluster.
