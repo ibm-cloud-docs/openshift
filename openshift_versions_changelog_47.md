@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -780,7 +780,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Cluster health image | v1.2.16 | v1.2.18 | Updated `Go` module dependencies and to use `Go` version `1.16.9`.  Updated image for [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}, [CVE-2021-22947](https://nvd.nist.gov/vuln/detail/CVE-2021-22947){: external}, [CVE-2021-33928](https://nvd.nist.gov/vuln/detail/CVE-2021-33928){: external}, [CVE-2021-33929](https://nvd.nist.gov/vuln/detail/CVE-2021-33929){: external} and [CVE-2021-33930](https://nvd.nist.gov/vuln/detail/CVE-2021-33930){: external}.  |
 | etcd | v3.4.17 | v3.4.18 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.18){: external}. |
 | Gateway-enabled cluster controller | 1510 | 1567 | Updated to use `Go` version `1.16.9`. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.20.11-2 | v1.20.12-3 | Updated to support the Kubernetes `1.20.12` release. Updated image for [DLA-2797-1](https://www.debian.org/lts/security/2021/dla-2797){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.20.11-2 | v1.20.12-3 | Updated to support the Kubernetes `1.20.12` release. Updated image for [DLA-2797-1](https://lists.debian.org/debian-lts-announce/2021/10/msg00025.html){: external}. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | e3cb629 | 4ca5637 | Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. |
 | Key Management Service provider | v2.3.8 | v2.3.10 | Updated `Go` module dependencies and to use `Go` version `1.16.9`.  Updated image for [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}. |
 | Load balancer and load balancer monitor for {{site.data.keyword.IBM_notm}} Cloud Provider | 1547 | 1590 | Updated to use `Go` version `1.16.9`. |

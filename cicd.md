@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift, continuous integration and delivery
@@ -52,18 +52,13 @@ Follow these steps to create a CI/CD pipeline with a toolchain. A toolchain is a
     3. Select the toolchain that you want to modify.
 
 
-
-For a deep dive into the benefits and specifics of automating continuous integration and delivery, check out [Automate continuous integration](https://www.ibm.com/garage/method/practices/code/practice_continuous_integration){: external} and [Build and deploy by using continuous delivery](https://www.ibm.com/garage/method/practices/deliver/practice_continuous_delivery){: external} in the IBM Garage Methodology documentation.
-{: tip}
-
-
 ## Other resources for automating your pipeline
 {: #cicd-other}
 
 Check out the following integrations and tools that you can use to automate your CI/CD pipeline. 
 
 Codeship
-:   You can use [Codeship](https://www.cloudbees.com/products/codeship){: external} for the continuous integration and delivery of containers. For more information, see [Using Codeship Pro To Deploy Workloads to {{site.data.keyword.containerlong_notm}}](https://www.ibm.com/cloud/blog/using-codeship-pro-deploy-workloads-ibm-container-service){: external}.
+:   You can use [Codeship](https://www.cloudbees.com/products/codeship){: external} for the continuous integration and delivery of containers.
 
 Grafeas
 :   [Grafeas](https://grafeas.io){: external} is an open source CI/CD service that provides a common way for how to retrieve, store, and exchange metadata during the software supply chain process. For example, if you integrate Grafeas into your app build process, Grafeas can store information about the initiator of the build request, vulnerability scan results, and quality assurance sign-off so that you can make an informed decision if an app can be deployed to production. You can use this metadata in audits or to prove compliance for your software supply chain.

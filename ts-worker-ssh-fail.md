@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift
@@ -253,7 +253,7 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
 Create a new or choose an existing server instance that has access to the same private network as the worker node. For VPC clusters, the [virtual server instance](https://cloud.ibm.com/vpc-ext/compute/vs){: external} must exist in the same VPC as the worker node.
 {: shortdesc}
 
-For classic clusters, the [device](https://cloud.ibm.com/gen1/infrastructure/devices){: external} can access the worker node from any private VLAN if a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) or [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) is enabled. Otherwise, the device must exist on the same private VLAN as the worker node.
+For classic clusters, the [device](https://cloud.ibm.com/gen1/infrastructure/devices){: external} can access the worker node from any private VLAN if a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) or [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) is enabled. Otherwise, the device must exist on the same private VLAN as the worker node.
 
 1. Copy your SSH private key from step 1 from your local machine to this server instance.
 

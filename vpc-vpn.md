@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift, strongswan, ipsec, on-prem, vpnaas, direct link
@@ -96,7 +96,7 @@ If you plan to connect only one VPC to classic infrastructure, you can set up a 
 Before you connect a VPC to a classic infrastructure account, note the following limitations and requirements:
 * You must enable the VPC for classic access when you create the VPC. You can't convert an existing VPC to use classic access.
 * You can set up classic infrastructure access for only one VPC per region. You can't set up more than one VPC with classic infrastructure access in a region.
-* [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf) is required in your {{site.data.keyword.cloud_notm}} account.
+* [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) is required in your {{site.data.keyword.cloud_notm}} account.
 
 To get started, see [Setting up access to classic infrastructure](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure).
 

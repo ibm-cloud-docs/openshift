@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-05"
 
 
 keywords: openshift, kubernetes, release notes
@@ -240,7 +240,7 @@ Certified Kubernetes
 {: release-note}
 
 [New]{: tag-green} You can now specify a custom pod subnet size when creating a VPC cluster.
-:   For more information, see the [CLI reference](/docs/?openshifttopic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) or [create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_create_vpc) with a custom pod subnet size.
+:   For more information, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) or [create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_create_vpc) with a custom pod subnet size.
 
 [Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.22`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
