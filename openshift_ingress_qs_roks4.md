@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-09"
 
 
 keywords: openshift, nginx, ingress controller
@@ -13,9 +13,6 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Quick start for Ingress
@@ -48,25 +45,25 @@ This quick start is for clusters that run {{site.data.keyword.redhat_openshift_n
 
 3. Using the Ingress subdomain, create an Ingress resource file. Replace `<app_path>` with the path that your app listens on. If your app does not listen on a specific path, define the root path as a slash (`/`) only.
 
-        ```yaml
-        apiVersion: networking.k8s.io/v1
-        kind: Ingress
-        metadata:
-          name: myingressresource
-        spec:
-          rules:
-          - host: <ingress_subdomain>
-            http:
-              paths:
-              - path: /<app_path>
-                pathType: ImplementationSpecific
-                backend:
-                  service:
-                    name: my-app-svc
-                    port:
-                      number: 80
-        ```
-        {: codeblock}
+    ```yaml
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: myingressresource
+    spec:
+      rules:
+      - host: <ingress_subdomain>
+        http:
+          paths:
+          - path: /<app_path>
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: my-app-svc
+                port:
+                  number: 80
+    ```
+    {: codeblock}
 
 4. Create the Ingress resource in the same project as your app service.
     ```sh

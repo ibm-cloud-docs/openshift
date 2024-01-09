@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-09"
 
 
 keywords: openshift
@@ -61,7 +61,7 @@ The resiliency endpoint is automatically set based on the location that your clu
 | Billing type | Monthly |
 {: caption="Vault classes." caption-side="bottom"}
 {: #cos_sc2}
-{: tab-title="Valut"}
+{: tab-title="Vault"}
 {: tab-group="sc_ref"}
 {: class="simple-tab-table"}
 {: summary="The first column contains a feature of the storage class. The second column contains a brief description of the feature."}

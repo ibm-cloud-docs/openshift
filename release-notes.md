@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-09"
 
 
 keywords: openshift, kubernetes, release notes
@@ -31,6 +31,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2024
 {: #openshift-jan24}
 
+### 10 January 2024
+{: #openshift-jan1024}
+{: release-note}
+
+Subscribe to the {{site.data.keyword.cloud_notm}} documentation release notes via RSS.
+:   You can get notified via RSS about documentation updates for {{site.data.keyword.openshiftlong_notm}} such as worker node fix packs, new cluster versions, new cluster add-on versions, and more.  For more information, see [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed).
+
+
+
+{{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch update `1.2.5_107`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
+{{site.data.keyword.block_storage_is_short}} cluster add-on patch updates `5.2.14_485` and `5.1.19_486`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
 ### 2 January 2024
 {: #openshift-jan0224}
 {: release-note}
@@ -39,7 +55,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available. 
+Worker node fix packs are available. 
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.14.6_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
@@ -62,7 +78,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available. 
+Worker node fix packs are available. 
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.13.26_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
@@ -78,7 +94,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-dec1523}
 {: release-note}
 
-[New]{: tag-green} New APIs for setting and getting the OAuth access type for private-only VPC clusters.
+New APIs for setting and getting the OAuth access type for private-only VPC clusters.
 :   You can now use the `POST /network/v2/oauth-access-type/{idOrName}/set` and the `GET /network/v2/oauth-access-type/{idOrName}` to set the OAuth and console access type for your cluster. For more information, see [Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type).
 
 
@@ -88,7 +104,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-dec1423}
 {: release-note}
 
-[New]{: tag-green} Information on worker node removal priority.
+Information on worker node removal priority.
 :   Details are available for [automated worker node removal](/docs/containers?topic=containers-update#worker-scaledown-logic) when scaling down a worker pool.
 
 
@@ -103,18 +119,18 @@ Kubernetes version 1.24 is unsupported.
 {: #openshift-dec1323}
 {: release-note}
 
-[New]{: tag-green} {{site.data.keyword.openshiftlong_notm}} 4.14.
+{{site.data.keyword.openshiftlong_notm}} 4.14.
 :   You can create or [update clusters to version 4.14](/docs/openshift?topic=openshift-openshift_changelog_414). With {{site.data.keyword.openshiftlong_notm}} version 4.14, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
 
-[New]{: tag-green} Networking changes for VPC clusters 4.14 and later.
+Networking changes for VPC clusters 4.14 and later.
 :   In version 4.13 and earlier, VPC clusters pulled container images through a private cloud service endpoint for {{site.data.keyword.registrylong_notm}}. For version 4.14 and later, this network path is updated so that images are pulled through a VPE gateway instead of a private service endpoint. For more information, see the [4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414).
 
-[New]{: tag-green} Red Hat OpenShift OAuth and console access changes for cluster version 4.14.
+Red Hat OpenShift OAuth and console access changes for cluster version 4.14.
 :   For clusters that run version 4.14, the default method for accessing the Red Hat OpenShift console is through the private service endpoint. This change is a reversion of changes introduced in 4.13. For more information, see the following docs.
 :   - **Previous**: [4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413).
 :   - **Current**: [4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414).
 
-[Change log]{: tag-purple} Master fix pack and worker node fix pack update.
+Master fix pack and worker node fix pack update.
 :   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_414) are available.
 
 Certified Kubernetes
@@ -129,7 +145,7 @@ Certified Kubernetes
 {: #openshift-dec1223}
 {: release-note}
 
-[New]{: tag-green} Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters
+Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters
 :   You can update the global pull secret in {{site.data.keyword.satelliteshort}} clusters to pull images from a private registry, such as the Cloud Pak Entitled Registry. For more information, see [Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-registry-pull-secret).
 
 
@@ -140,7 +156,7 @@ Certified Kubernetes
 {: #openshift-dec1123}
 {: release-note}
 
-[Deprecated]{: tag-deprecated} {{site.data.keyword.openshiftlong_notm}} version 4.11 is deprecated.
+{{site.data.keyword.openshiftlong_notm}} version 4.11 is deprecated.
 :   Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
 
 
@@ -156,7 +172,7 @@ Certified Kubernetes
 
 
 
-[Change log]{: tag-purple} Master fix packs are available. 
+Master fix packs are available. 
 :   Review the change logs for your cluster version. Master patch updates are applied automatically.
 :   [4.13.23_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [4.12.44_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
@@ -176,7 +192,7 @@ Certified Kubernetes
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available. 
+Worker node fix packs are available. 
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.13.24_1551_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
@@ -198,7 +214,7 @@ Certified Kubernetes
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available. 
+Worker node fix packs are available. 
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.13.22_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
@@ -206,7 +222,7 @@ Certified Kubernetes
     - [4.11.53_1581_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
     - [4.10.67_1592_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
     
-[Change log]{: tag-purple} OpenShift Data Foundation add-on versions `4.10.32`, `4.11.12`, and `4.12.13`.
+OpenShift Data Foundation add-on versions `4.10.32`, `4.11.12`, and `4.12.13`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
 
 
@@ -215,20 +231,21 @@ Certified Kubernetes
 {: #openshift-nov2723}
 {: release-note}
 
-[New]{: tag-green} The Beta {{site.data.keyword.filestorage_vpc_short}} cluster add-on is now available to all accounts.
+The Beta {{site.data.keyword.filestorage_vpc_short}} cluster add-on is now available to all accounts.
 :   Previously the add-on was available in allowlisted accounts only. For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_short}} add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 
-[Change log]{: tag-purple} Cluster autoscaler add-on patch updates `1.2.0_290`, `1.0.9_290`, `1.0.8_292`, and `1.0.7_291`.
+Cluster autoscaler add-on patch updates `1.2.0_290`, `1.0.9_290`, `1.0.8_292`, and `1.0.7_291`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
-[Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
+{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
-[Change log]{: tag-purple} {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.10_93` and `1.2.3_97`.
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.10_93` and `1.2.3_97`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
 
 
 
-[New]{: tag-green} You can now apply your Cloud Pak entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
+You can now apply your Cloud Pak entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
 :   When you create a {{site.data.keyword.satelliteshort}} cluster, include the `--entitlement cloud_pak` option in the CLI or provide your entitlement details in the console. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters) or [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools).
 
 
@@ -239,24 +256,24 @@ Certified Kubernetes
 {: #openshift-nov2023}
 {: release-note}
 
-[New]{: tag-green} You can now specify a custom pod subnet size when creating a VPC cluster.
+You can now specify a custom pod subnet size when creating a VPC cluster.
 :   For more information, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) or [create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_create_vpc) with a custom pod subnet size.
 
-[Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.22`.
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.22`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 15 November 2023
 {: #openshift-nov1523}
 {: release-note}
 
-[New]{: tag-green} The cluster autoscaler add-on now supports version 1.28 clusters.
+The cluster autoscaler add-on now supports version 1.28 clusters.
 :   For more information, see [Enabling the cluster autoscaler add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 
 
 
 
 
-[Change log]{: tag-purple} Master fix packs are available. 
+Master fix packs are available. 
 :   Review the change logs for your cluster version. Master patch updates are applied automatically.
 :   [4.13.19_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [4.12.40_1568_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
@@ -271,16 +288,16 @@ Certified Kubernetes
 {: release-note}
 
 
-[Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.21`.
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.21`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
-[Change log]{: tag-purple}{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.21_401` and `5.1.15_419`, and `5.2.10_428`.
+{{site.data.keyword.block_storage_is_short}} add-on versions `5.0.21_401` and `5.1.15_419`, and `5.2.10_428`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
-[Change log]{: tag-purple} Cluster autoscaler add-on patch updates `1.0.9_195`, `1.0.8_233`, and `1.0.7_185`.
+Cluster autoscaler add-on patch updates `1.0.9_195`, `1.0.8_233`, and `1.0.7_185`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
-[Change log]{: tag-purple} {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.9_87`.
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.9_87`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
 
 
@@ -300,7 +317,7 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available.
+Worker node fix packs are available.
 :   Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :   [4.13.19_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [4.12.41_1567_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
@@ -313,7 +330,7 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 {: #openshift-nov0723}
 {: release-note}
 
-[Change log]{: tag-purple} CLI version `1.0.579` is available.
+CLI version `1.0.579` is available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
@@ -330,10 +347,10 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 {: release-note}
 
 
-[New]{: tag-green} [VPC clusters]{: tag-vpc} VNI functionality for limiting access to {{site.data.keyword.filestorage_vpc_short}} by node, zone, worker pool and more.
+VNI functionality for limiting access to {{site.data.keyword.filestorage_vpc_short}} by node, zone, worker pool and more.
 :   You now have more granular control over how pods access your {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Limiting file share access by worker node, zone, or worker pool](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-setup).
 
-[Change log]{: tag-purple} {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.2`.
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.2`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
 
 
@@ -341,10 +358,10 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 {: #openshift-oct3023}
 {: release-note}
 
-[Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.20`
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.20`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
-[New]{: tag-green} Setting up alerts for {{site.data.keyword.blockstorageshort}} PVs with limited network connectivity.
+Setting up alerts for {{site.data.keyword.blockstorageshort}} PVs with limited network connectivity.
 :   For more information, see [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring).
 
 ### 25 October 2023
@@ -355,14 +372,14 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 
 
 
-[Change log]{: tag-purple} Master fix packs are available.
+Master fix packs are available.
 :   [4.13.15_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [4.12.37_1565_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
 :   [4.11.50_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
 :   [4.10.67_1588_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
 
   
-[Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1936`.
+Cloud Image Key Synchronizer add-on version `1.0.0_1936`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
 
 
@@ -376,7 +393,7 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available. 
+Worker node fix packs are available. 
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.13.17_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
@@ -386,7 +403,7 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 
 
 
-[Change log]{: tag-purple} Ingress ALB version `1.8.4_5586_ikss`
+Ingress ALB version `1.8.4_5586_ikss`
 :   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
 
@@ -397,7 +414,7 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 
 
 
-[Change log]{: tag-purple} Cloud Image Key Synchronizer add-on version `1.0.0_1921`.
+Cloud Image Key Synchronizer add-on version `1.0.0_1921`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
   
 
@@ -409,7 +426,7 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 {: #openshift-oct1723}
 {: release-note}
 
-[Change log]{: tag-purple} Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
+Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
 :   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
 
@@ -418,10 +435,10 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 {: #openshift-oct1123}
 {: release-note}
 
-[Change log]{: tag-purple} Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
+Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
 :   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
-[Change log]{: tag-purple} {{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
@@ -431,12 +448,12 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 {: #openshift-oct1023}
 {: release-note}
 
-[Change log]{: tag-purple} CLI version `1.0.573` is available.
+CLI version `1.0.573` is available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
-[New]{: tag-green} Best practices for OpenShift Data Foundation
+Best practices for OpenShift Data Foundation
 :   For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 
@@ -448,7 +465,7 @@ Updated sorting and formatting for the Classic and VPC cluster flavor pages.
 
 
 
-[Change log]{: tag-purple} Worker node fix packs are available.
+Worker node fix packs are available.
 :   [4.13.14_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [4.12.36_1564_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
 :   [4.11.50_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-09"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -245,7 +245,7 @@ Interested in using a {{site.data.keyword.redhat_openshift_notm}} route to expos
 
 1. Create a Kubernetes `LoadBalancer` service in your cluster to publicly expose the hello world app.
     ```sh
-    oc expose dc/hello-world --type=LoadBalancer --name=hw-lb-svc  --port=8080 --target-port=8080 -n hello-world
+    oc expose deployment/hello-world --type=LoadBalancer --name=hw-lb-svc  --port=8080 --target-port=8080 -n hello-world
     ```
     {: pre}
 

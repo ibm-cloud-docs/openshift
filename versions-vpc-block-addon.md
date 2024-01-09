@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-09"
 
 
-keywords: block, add-on, changelog
+keywords: openshift, block, storage, add-on, changelog
 
 subcollection: openshift
 
@@ -47,6 +47,12 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 ## Version 5.2
 {: #052_is_block}
 
+### Change log for version 5.2.14_485, released 10 January 2023
+{: #5.2.14_485_is_block_relnote}
+
+- Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.
+- Applies a security fix to use the correct socket path following SElinux policy module changes and CSI recommendations to use `/var/lib/kubelet/plugins/`.
+
 ### Change log for version 5.2.11_447, released 27 November 2023
 {: #5.2.11_447_is_block_relnote}
 
@@ -80,6 +86,12 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.19_486, released 10 January 2023
+{: #5.1.19_486_is_block_relnote}
+
+- Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.
+- Applies a security fix to use the correct socket path following SElinux policy module changes and CSI recommendations to use `/var/lib/kubelet/plugins/`.
 
 ## Change log for version 5.1.16_446, released 27 November 2023
 {: #5.1.16_446_is_block_relnote}
