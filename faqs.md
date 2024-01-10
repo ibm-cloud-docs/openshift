@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-10"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -221,7 +221,24 @@ For more information about available bare metal flavors and how bare metal is di
 {: #smallest_cluster}
 {: faq}
 
-Your cluster must have at least 2 worker nodes to run default Kubernetes and OpenShift Container Platform components. You can't have a cluster with 0 worker nodes, and you can't power off or suspend billing for your worker nodes. Additionally, the type of cluster and the number of worker pools that you have can impact the size of your cluster.
+Classic infrastructure
+:   [Kubernetes]{: tag-blue} Clusters must have at least 1 worker node to run the default Kubernetes components.
+:   [OpenShift]{: tag-red} Clusters must have at least 2 worker nodes to run the default OpenShift Container Platform components.
+
+VPC infrastructure
+:   [Kubernetes]{: tag-blue} Clusters must have at least 1 worker node to run the default Kubernetes components.
+:   [OpenShift]{: tag-red} Clusters must have at least 2 worker nodes to run the default OpenShift Container Platform components.
+
+{{site.data.keyword.satelliteshort}} (BYO infrastructure)
+:   [OpenShift]{: tag-red} Clusters can be created using the single-replica topology which means only 1 worker node. If you create a {{site.data.keyword.satelliteshort}} cluster using a single-replica, you can't add worker nodes later.
+
+
+You can't have a cluster with 0 worker nodes, and you can't power off or suspend billing for your worker nodes. Additionally, the type of cluster and the number of worker pools that you have can impact the size of your cluster.
+{: important}
+
+
+
+
 
 * **Single zone clusters`*`**: [Create a cluster](/docs/openshift?topic=openshift-clusters) with 2 worker nodes in the default worker pool.
 * **Multizone clusters`*`**: You must [create a cluster](/docs/openshift?topic=openshift-clusters) with 1 worker node per zone in the worker pool. Later, you can [remove zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) from the worker pool or [remove individual worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) so that your cluster size reduces to the minimum size of 2.
