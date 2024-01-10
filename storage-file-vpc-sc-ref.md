@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-10"
 
 
 keywords: openshift
@@ -29,6 +29,7 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
+| Name | `ibmc-vpc-file-dp2` |
 | IOPS per gigabyte | 5 |
 | Size range in gigabytes | 20-12000 Gi |
 | Hard disk | SSD|
@@ -39,11 +40,12 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: class="simple-tab-table"}
 {: caption="ibmc-vpc-file-dp2" caption-side="bottom"}
 {: #simpletabtable1-file-vpc-sc-ref}
-{: tab-title="ibmc-vpc-file-dp2"}
+{: tab-title="dp2"}
 {: tab-group="Class"}
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
+| Name | `ibmc-vpc-file-retain-dp2` |
 | IOPS per gigabyte | 5 |
 | Size range in gigabytes | 20-12000 Gi |
 | Hard disk | SSD|
@@ -54,11 +56,12 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: class="simple-tab-table"}
 {: caption="ibmc-vpc-file-retain-dp2" caption-side="bottom"}
 {: #simpletabtable2-file-vpc-sc-ref}
-{: tab-title="ibmc-vpc-file-retain-dp2"}
+{: tab-title="dp2 retain"}
 {: tab-group="Class"}
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
+| Name | `ibmc-vpc-file-metro-dp2` |
 | IOPS per gigabyte | 10|
 | Size range in gigabytes | 20-4000 Gi|
 | Hard disk | SSD |
@@ -69,11 +72,12 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: class="simple-tab-table"}
 {: caption="ibmc-vpc-file-metro-dp2 " caption-side="bottom"}
 {: #simpletabtable3-file-vpc-sc-ref}
-{: tab-title="ibmc-vpc-file-metro-dp2"}
+{: tab-title="dp2 metro"}
 {: tab-group="Class"}
 
 | Characteristics | Setting|
 |:-----------------|:-----------------|
+| Name | `ibmc-vpc-file-metro-retain-dp2` |
 | IOPS per gigabyte | 10|
 | Size range in gigabytes | 20-4000 Gi|
 | Hard disk | SSD |
@@ -82,8 +86,8 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 | Billing | Hourly|
 | Pricing | [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}|
 {: class="simple-tab-table"}
-{: caption="ibmc-vpc-file-metro-retain-dp2 " caption-side="bottom"}
+{: caption="ibmc-vpc-file-metro-retain-dp2" caption-side="bottom"}
 {: #simpletabtable4-file-vpc-sc-ref}
-{: tab-title="ibmc-vpc-file-metro-retain-dp2"}
+{: tab-title="dp2 metro retain"}
 {: tab-group="Class"}
 
