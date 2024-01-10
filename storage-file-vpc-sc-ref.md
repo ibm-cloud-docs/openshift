@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-09"
 
 
 keywords: openshift
@@ -39,7 +39,7 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: class="simple-tab-table"}
 {: caption="ibmc-vpc-file-dp2" caption-side="bottom"}
 {: #simpletabtable1-file-vpc-sc-ref}
-{: tab-title="`ibmc-vpc-file-dp2`"}
+{: tab-title="ibmc-vpc-file-dp2"}
 {: tab-group="Class"}
 
 | Characteristics | Setting|
@@ -54,7 +54,7 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: class="simple-tab-table"}
 {: caption="ibmc-vpc-file-retain-dp2" caption-side="bottom"}
 {: #simpletabtable2-file-vpc-sc-ref}
-{: tab-title="`ibmc-vpc-file-retain-dp2`"}
+{: tab-title="ibmc-vpc-file-retain-dp2"}
 {: tab-group="Class"}
 
 | Characteristics | Setting|
@@ -69,7 +69,7 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: class="simple-tab-table"}
 {: caption="ibmc-vpc-file-metro-dp2 " caption-side="bottom"}
 {: #simpletabtable3-file-vpc-sc-ref}
-{: tab-title="`ibmc-vpc-file-metro-dp2`"}
+{: tab-title="ibmc-vpc-file-metro-dp2"}
 {: tab-group="Class"}
 
 | Characteristics | Setting|
@@ -84,6 +84,6 @@ If you choose a monthly billing type, when you remove the persistent storage, yo
 {: class="simple-tab-table"}
 {: caption="ibmc-vpc-file-metro-retain-dp2 " caption-side="bottom"}
 {: #simpletabtable4-file-vpc-sc-ref}
-{: tab-title="`ibmc-vpc-file-metro-retain-dp2`"}
+{: tab-title="ibmc-vpc-file-metro-retain-dp2"}
 {: tab-group="Class"}
 
