@@ -9,17 +9,6 @@
     "how do I add users to my openshift cluster",
     "Granting users access to openshift cluster through IAM",
     "permissions needed to create openshift clusters"
-  ],
-  "cs_cluster_access": [
-    "unable to view or work with the Openshift cluster",
-    "not seeing the openshift cluster listed",
-    "can't see all my OpenShift clusters",
-    "why can I not see all my OpenShift clusters",
-    "can not view all the OpenShift clusters",
-    "openshift cluster is not listed",
-    "can't find a red hat openshift cluster",
-    "unable to see openshift clusters",
-    "can't view the openshift cluster"
   ]
 }
 

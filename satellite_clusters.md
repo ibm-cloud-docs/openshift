@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-12"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -93,7 +93,7 @@ Ingress secrets management
 Clusters details
 :   Give your cluster a name and enter any [{{site.data.keyword.cloud_notm}} tags](/docs/account?topic=account-tag) that you want to associate with your cloud resource. The cluster name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer.
 
-If you don't have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts). Ensure that hosts are assigned as worker nodes in each zone of your default worker pool.
+If you don't have any available and matching hosts in your {{site.data.keyword.satelliteshort}} location, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts). Ensure that hosts are assigned as worker nodes in each zone of your default worker pool.
 {: note}
 
 If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
@@ -179,8 +179,8 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
     {: screen}
 
 5. Make sure that hosts are assigned as worker nodes to the cluster.
-    * **Autoassignment**: If you included `--host-labels` when you created the cluster and you have available hosts with matching labels in your {{site.data.keyword.satelliteshort}} location, the worker nodes are automatically assigned to the cluster. If you don't have any available and matching hosts, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts).
-    * **Manual assignment**: [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.redhat_openshift_notm}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
+    * **Autoassignment**: If you included `--host-labels` when you created the cluster and you have available hosts with matching labels in your {{site.data.keyword.satelliteshort}} location, the worker nodes are automatically assigned to the cluster. If you don't have any available and matching hosts, the cluster is still created but enters a **Warning** state. [Attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location so that hosts can be assigned as worker nodes to the worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts).
+    * **Manual assignment**: [Assign {{site.data.keyword.satelliteshort}} hosts to your cluster](/docs/satellite?topic=satellite-assigning-hosts). After the hosts successfully bootstrap, the hosts function as the worker nodes for your cluster to run {{site.data.keyword.redhat_openshift_notm}} workloads. Generally, assign at least 3 hosts as worker nodes in your cluster.
 
 6. Verify that your cluster reaches a **normal** state.
     ```sh

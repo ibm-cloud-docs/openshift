@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-12"
 
 
 keywords: openshift, satellite, clusters, worker nodes, worker pools, delete
@@ -80,7 +80,7 @@ ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <
 
 Your worker pool is created!
 * If {{site.data.keyword.satelliteshort}} hosts with matching labels are available, the hosts are assigned to the worker pool as worker nodes. Keep in mind that hosts might also have a zone label and are assigned only to that zone.
-* If no hosts are available, you can [manually assign hosts](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
+* If no hosts are available, you can [manually assign hosts](/docs/satellite?topic=satellite-assigning-hosts) to the worker pool. Keep in mind that if you manually assign hosts, host autoassignment is disabled for future actions until you rebalance the worker pool.
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU.
 {: note}

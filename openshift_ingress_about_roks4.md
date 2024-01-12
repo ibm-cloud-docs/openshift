@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-10"
+lastupdated: "2024-01-12"
 
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
@@ -188,7 +188,7 @@ These supported annotations are in the format `haproxy.router.openshift.io/<anno
 
 {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are **not** supported for the Ingress controller, or the Route resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
 
-To get started, see [Customizing Ingress](https://cloud.ibm.com/docs/openshift?topic=openshift-ingress-configure).
+To get started, see [Customizing Ingress](/docs/openshift?topic=openshift-ingress-configure).
 
 
 

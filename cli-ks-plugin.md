@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-12"
 
 
 keywords: openshift
@@ -8126,7 +8126,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    The CRN of the {{site.data.keyword.secrets-manager_short}} instance. To get the CRN of an instance, run [`ibmcloud oc ingress instance ls --cluster CLUSTER`](#cs_ingress_instance_ls).
 
 `--workers COUNT`
-:    Required when `--host-label` is specified or if you want to [automatically assign hosts](/docs/satellite?topic=satellite-host-autoassign-ov). Specify the number of worker nodes per zone in the default worker pool. The default value is `0`. If you do not specify a value, workers do not automatically assign and you must instead [manually assign](https://cloud.ibm.com/docs/satellite?topic=satellite-assigning-hosts) workers to your {{site.data.keyword.satelliteshort}} resources. 
+:    Required when `--host-label` is specified or if you want to [automatically assign hosts](/docs/satellite?topic=satellite-host-autoassign-ov). Specify the number of worker nodes per zone in the default worker pool. The default value is `0`. If you do not specify a value, workers do not automatically assign and you must instead [manually assign](/docs/satellite?topic=satellite-assigning-hosts) workers to your {{site.data.keyword.satelliteshort}} resources. 
 
 `--zone ZONE`
 :    Optional. The name of the zone to create the default worker pool in. You can start with one zone, and then add the two other zones to your cluster later for high availability. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field. If you don't specify a zone name, the zone name that is alphabetically first is chosen.

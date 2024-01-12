@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-12"
 
 
 keywords: openshift
@@ -37,7 +37,7 @@ A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail s
 {{site.data.keyword.openshiftlong_notm}} and key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [{{site.data.keyword.cos_full}} to persist and sync data across apps](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started&interface=ui){: external}
 
 ### Context
 {: #uc_data-share_context}
@@ -137,7 +137,7 @@ Key technologies:
 * [Horizontal scaling to accelerate development](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Insights to market trends with {{site.data.keyword.watson}} Discovery](https://www.ibm.com/products/watson-discovery){: external}
-* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](https://www.ibm.com/cloud/architecture/toolchains/){: external}
+* [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started&interface=ui){: external}
 * [Inventory management with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-about#about)
 
 ### Context
