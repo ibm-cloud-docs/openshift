@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-10"
+lastupdated: "2024-01-12"
 
 
 keywords: openshift, kubernetes, release notes
@@ -1678,7 +1678,7 @@ Worker node fix pack 4.11.12_1530_openshift, 4.10.39_1543_openshift, 4.9.51_1563
 {: release-note}
 
 Changes to the Portworx update process beginning with version `2.12`.
-:   Beginning with version `2.12` Portworx uses an operator-based deployment model instead of the Helm based model use in version `2.11` and earlier. If you want to update from Portworx `2.11` to version `2.12`, follow the migration steps in the [Portworx documentation](https://docs.portworx.com/operations/operate-kubernetes/migrate-daemonset/){: external}.
+:   Beginning with version `2.12` Portworx uses an operator-based deployment model instead of the Helm based model use in version `2.11` and earlier. If you want to update from Portworx `2.11` to version `2.12`, follow the migration steps in the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/migrate-daemonset){: external}.
 
 Cluster autoscaler add-on version `1.0.7_883`.
 :   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).

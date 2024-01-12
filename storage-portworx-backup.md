@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-12"
 
 
 keywords: portworx, openshift
@@ -47,7 +47,7 @@ If you are installing Portworx Backup in a newly provisioned cluster, [you must 
 3. Enter the name for your Portworx Backup service in the **Service name** field.
 4. Select the resource group where you want to create the Portworx Backup service.
 5. In the **Tag** field, enter the name of the cluster where you want to install PX-Backup. After you complete the installation, you can't see the name of the cluster where you installed PX-Backup. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
-6. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you don't have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey#create_user_key) to create one.
+6. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you don't have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key) to create one.
 7. In the **Kubernetes or OpenShift cluster name** field, select the cluster where you want to install PX-Backup.
 8. Enter the name of the {{site.data.keyword.redhat_openshift_notm}} project where you want to install your Portworx Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.redhat_openshift_notm}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
 9. Select an existing storage class in your cluster to provision persistent volumes for the Portworx Backup service. The service uses this storage to store service metadata and is not used to back up your apps and data. [Your apps and data are backed up to an {{site.data.keyword.cos_full_notm}} service instance](#px-backup-storage).
@@ -253,20 +253,20 @@ If a cluster that you want to back up with Portworx Backup does not have Portwor
     ```
     {: pre}
 
-1. Follow the [Portworx Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/){: external} to create a backup.
+1. Follow the [Portworx Backup documentation](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup/backup-restore){: external} to create a backup.
 
 ## Backing up and restoring cluster data with PX-Backup
 {: #px-backup-and-restore}
 
 
-To back up data from your cluster or to restore data to your cluster, refer to the [Portworx Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/){: external}.
+To back up data from your cluster or to restore data to your cluster, refer to the [Portworx Backup documentation](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup/backup-restore){: external}.
 {: shortdesc}
 
 **Back up apps and data from your cluster to {{site.data.keyword.cos_full_notm}}**: 
-You can back up an entire cluster namespace, single apps, and the data that is stored in your persistent volumes to the {{site.data.keyword.cos_full_notm}} service instance that you set up as your backup location. Note that to back up data in persistent volumes, you must have a CSI snapshot storage class in your cluster. Portworx Backup uses this storage class to first take a snapshot of your data and then sends this data to your {{site.data.keyword.cos_full_notm}} backup location. For more information, see the [Portworx Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/create-backup/perform-backup/){: external}.
+You can back up an entire cluster namespace, single apps, and the data that is stored in your persistent volumes to the {{site.data.keyword.cos_full_notm}} service instance that you set up as your backup location. Note that to back up data in persistent volumes, you must have a CSI snapshot storage class in your cluster. Portworx Backup uses this storage class to first take a snapshot of your data and then sends this data to your {{site.data.keyword.cos_full_notm}} backup location. For more information, see the [Portworx Backup documentation](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup/backup-restorecreate-backup/perform-backup/){: external}.
 
 **Restore any backup that you created to another cluster**: 
-You can restore an entire namespace, your apps, or your data to any cluster that you added to the Portworx Backup service. Use this Portworx Backup capability if you want to migrate apps and data from one cluster to another. For more information, see the [Portworx Backup documentation](https://backup.docs.portworx.com/use-px-backup/backup-restore/restore-backup/){: external}.
+You can restore an entire namespace, your apps, or your data to any cluster that you added to the Portworx Backup service. Use this Portworx Backup capability if you want to migrate apps and data from one cluster to another. For more information, see the [Portworx Backup documentation](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup/backup-restorerestore-backup/){: external}.
 
 ### Upgrading PX-Backup
 {: #px-backup-upgrade}
