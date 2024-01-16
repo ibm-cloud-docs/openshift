@@ -36,6 +36,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-jan1624}
 {: release-note}
 
+Cluster autoscaler add-on patch updates `1.2.0_322` and `1.0.9_328`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
 
 
 

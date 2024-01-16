@@ -275,6 +275,8 @@ subcollection: openshift
 
     * [16 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1624)
 
+        * Cluster autoscaler add-on patch updates `1.2.0_322` and `1.0.9_328`.
+
         * Image Key Synchronizer add-on version `1.0.0_2015`.
 
     * [10 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1024)
@@ -6861,6 +6863,8 @@ subcollection: openshift
 
 * [Version 1.2.0](/docs/openshift?topic=openshift-ca_changelog#0120_ca_addon)
 
+    * [Change log for patch update 1.2.0_322, released 16 January 2024](/docs/openshift?topic=openshift-ca_changelog#120322_ca)
+
     * [Change log for patch update 1.2.0_290, released 27 November 2023](/docs/openshift?topic=openshift-ca_changelog#120290_ca)
 
     * [Change log for patch update 1.2.0_228, released 15 November 2023](/docs/openshift?topic=openshift-ca_changelog#120228_ca)
@@ -6890,6 +6894,8 @@ subcollection: openshift
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
 * [Version 1.0.9](/docs/openshift?topic=openshift-ca_changelog#0109_ca_addon)
+
+    * [Change log for patch update 1.0.9_328, released 16 January 2024](/docs/openshift?topic=openshift-ca_changelog#109328_ca)
 
     * [Change log for patch update 1.0.9_290, released 27 November 2023](/docs/openshift?topic=openshift-ca_changelog#109290_ca)
 
@@ -7039,7 +7045,7 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
-    * [Change log for version 5.2.14_485, released 10 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.14_485_is_block_relnote)
+    * [Change log for version 5.2.14_485, released 10 January 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.14_485_is_block_relnote)
 
     * [Change log for version 5.2.11_447, released 27 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.11_447_is_block_relnote)
 
@@ -7049,7 +7055,7 @@ subcollection: openshift
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
 
-    * [Change log for version 5.1.19_486, released 10 January 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.19_486_is_block_relnote)
+    * [Change log for version 5.1.19_486, released 10 January 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.19_486_is_block_relnote)
 
 * [Change log for version 5.1.16_446, released 27 November 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.16_446_is_block_relnote)
 
