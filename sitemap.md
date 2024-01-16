@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-16"
 
 
 keywords: openshift
@@ -272,6 +272,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
+
+    * [16 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1624)
+
+        * Image Key Synchronizer add-on version `1.0.0_2015`.
 
     * [10 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1024)
 
@@ -7634,6 +7638,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_2015, released on 16 January 2024](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_2015)
 
     * [Version 1.0.0_1936, released on 25 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_1936)
 

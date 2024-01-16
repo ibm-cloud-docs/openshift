@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-16"
 
 
 keywords: openshift, kubernetes, release notes
@@ -30,6 +30,23 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2024
 {: #openshift-jan24}
+
+
+### 16 January 2024
+{: #openshift-jan1624}
+{: release-note}
+
+
+
+
+
+
+Image Key Synchronizer add-on version `1.0.0_2015`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+
+
+
+
 
 ### 10 January 2024
 {: #openshift-jan1024}
