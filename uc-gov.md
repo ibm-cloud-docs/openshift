@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-16"
 
 
 keywords: openshift
@@ -13,9 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Government use cases for {{site.data.keyword.cloud_notm}}

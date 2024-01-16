@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-16"
 
 
 keywords: openshift
@@ -41,6 +41,14 @@ ibmcloud oc cluster addon versions --addon image-key-synchronizer
 
 Review the changes in version 1.0.0 of the {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on plug-in.
 {: shortdesc}
+
+### Version 1.0.0_2015, released on 16 January 2024
+{: #1.0.0_2015}
+
+- [CVE-2023-3446](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3446){: external}.
+- [CVE-2023-3817](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-3817){: external}.
+- [CVE-2023-5678](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5678){: external}.
+
 
 ### Version 1.0.0_1936, released on 25 October 2023
 {: #1.0.0_1936}
