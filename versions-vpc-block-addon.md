@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-16"
 
 
 keywords: openshift, block, storage, add-on, changelog
@@ -47,7 +47,7 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 ## Version 5.2
 {: #052_is_block}
 
-### Change log for version 5.2.14_485, released 10 January 2023
+### Change log for version 5.2.14_485, released 10 January 2024
 {: #5.2.14_485_is_block_relnote}
 
 - Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.
@@ -87,7 +87,7 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 ## Version 5.1
 {: #051_is_block}
 
-### Change log for version 5.1.19_486, released 10 January 2023
+### Change log for version 5.1.19_486, released 10 January 2024
 {: #5.1.19_486_is_block_relnote}
 
 - Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.
