@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, deploy, pod security admission, pod security, security profiles
@@ -235,7 +235,7 @@ In this example, the pod is still created and can run as long the service accoun
 {: #pod-sec-additional-resources}
 
 - [Understanding and managing pod security admission](https://docs.openshift.com/container-platform/4.11/authentication/understanding-and-managing-pod-security-admission.html){: external}.
-- [Pod Security Admission in {{site.data.keyword.redhat_openshift_notm}} 4.11](https://cloud.redhat.com/blog/pod-security-admission-in-openshift-4.11){: external}.
+- [Pod Security Admission in {{site.data.keyword.redhat_openshift_notm}} 4.11](https://www.redhat.com/blog/pod-security-admission-in-openshift-4.11){: external}.
 - [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server) describes how to configure API server audit logs in the {{site.data.keyword.openshiftlong_notm}} service.
 
 

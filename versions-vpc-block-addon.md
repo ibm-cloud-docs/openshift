@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-16"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, block, storage, add-on, changelog
@@ -747,7 +747,7 @@ Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_stora
 
 - Image tags: `v4.0.0`
 - Resolves [CVE-2021-27218](https://nvd.nist.gov/vuln/detail/CVE-2021-27218){: external}.
-- Updates CSI sidecar images to fix [DLA-2542-1](https://www.debian.org/lts/security/2021/dla-2542){: external}, [DLA-2509-1](https://lists.debian.org/debian-lts-announce/2020/12/msg00039.html){: external}, and [DLA-2424-1](https://lists.debian.org/debian-lts-announce/2020/10/msg00037.html){: external}.
+- Updates CSI sidecar images to fix [DLA-2542-1](https://lists.debian.org/debian-lts-announce/2021/02/msg00003.html){: external}, [DLA-2509-1](https://lists.debian.org/debian-lts-announce/2020/12/msg00039.html){: external}, and [DLA-2424-1](https://lists.debian.org/debian-lts-announce/2020/10/msg00037.html){: external}.
 - Updates the sidecar images to the following versions.      
     - `csi-provisioner`: `icr.io/ext/sig-storage/csi-provisioner:v2.2.2`
     - `csi-resizer`: `icr.io/ext/sig-storage/csi-resizer:v1.2.0`

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift
@@ -118,7 +118,7 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
             ```
             {: codeblock}
 
-3. [Assign the trusted profile to an access group](/docs/account?topic=account-groups&interface=ui#access_ag_api) with access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to have access to.
+3. [Assign the trusted profile to an access group](/docs/account?topic=account-groups&interface=api#access_ag_api) with access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to have access to.
 
 Your clusters can now establish trust with {{site.data.keyword.cloud_notm}} IAM. Next, your developers can [configure their application pods to exchange the identity token for an IAM token to authenticate requests to {{site.data.keyword.cloud_notm}} services](#iam-identity-pod).
 

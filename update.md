@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -500,7 +500,7 @@ This priority logic is not relevant to the autoscaler add-on.
 
 The following table shows the order in which worker nodes are prioritized for deletion.
 
-You can run the `ibmcloud oc worker ls` command to view all of the worker node properties listed in the table. 
+You can run the `ibmcloud oc worker ls` command to view all the worker node properties listed in the table. 
 {: tip}
 
 | Priority | Property | Description |

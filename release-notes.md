@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-16"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, kubernetes, release notes
@@ -3207,7 +3207,7 @@ Review the release notes for September 2021.
 
 
 New! OpenShift 4.8
-:   You can create or [update clusters to OpenShift version 4.8](/docs/openshift?topic=openshift-openshift_versions). With OpenShift 4.8, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, [see the blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-48-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+:   You can create or [update clusters to OpenShift version 4.8](/docs/openshift?topic=openshift-openshift_versions). With OpenShift 4.8, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, [see the blog announcement](https://www.ibm.com/blog/announcement/openshift-version-48-now-available-in-red-hat-openshift-on-ibm-cloud/){: external}.
 
 Deprecated and unsupported OpenShift versions
 :   With the release of OpenShift 4.8, clusters that run version 4.5 remain deprecated, with a tentative unsupported date of 10 Oct 2021. Clusters that run versions 4.3 or 4.4 are unsupported. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
@@ -3399,7 +3399,7 @@ Master fix pack update change log documentation
 {: release-note}
 
 Registry token update
-:   Registry tokens are no longer accepted for authentication in {{site.data.keyword.registrylong_notm}}. Update your clusters to use {{site.data.keyword.cloud_notm}} IAM authentication. For more information, see [Accessing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access). For more information about Registry token deprecation, see [IBM Cloud Container Registry Deprecates Registry Tokens for Authentication](https://www.ibm.com/cloud/blog/announcements/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication){: external}.
+:   Registry tokens are no longer accepted for authentication in {{site.data.keyword.registrylong_notm}}. Update your clusters to use {{site.data.keyword.cloud_notm}} IAM authentication. For more information, see [Accessing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access). For more information about Registry token deprecation, see [IBM Cloud Container Registry Deprecates Registry Tokens for Authentication](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication/){: external}.
 
 Ingress change logs
 :   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1541_iks`, `0.47.0_1540_iks`, and `0.43.0_1539_iks`. Version `0.45.0_1482_iks` is removed.
@@ -3625,7 +3625,7 @@ New! Private VPC NLB
 
 
 New! {{site.data.keyword.redhat_openshift_notm}} 4.7
-:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.redhat_openshift_notm}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/openshift?topic=openshift-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.7, which includes Kubernetes 1.20. With {{site.data.keyword.redhat_openshift_notm}} 4.7, you get the latest stable enhancements from the community, as well as beta access to select features such as [API server priority](/docs/openshift?topic=openshift-kubeapi-priority). You also get enhancements to the {{site.data.keyword.cloud_notm}} product, such as a refreshed user interface experience. For more information, see the [blog announcement](https://www.ibm.com/blog/announcement/openshift-version-47-now-available-in-red-hat-openshift-on-ibm-cloud/){: external}.
 
 Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.5
 :   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.7, clusters that run version 4.5 are deprecated, with a tentative unsupported date of 10 October 2021. Update your cluster to at least [version 4.6](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
@@ -4142,7 +4142,7 @@ Certified Kubernetes
 
  
 New! {{site.data.keyword.redhat_openshift_notm}} 4.6
-:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.6, which includes Kubernetes 1.19. With {{site.data.keyword.redhat_openshift_notm}} 4.6, you get the latest stable enhancements from the community. For more information, see the [blog announcement](https://www.ibm.com/cloud/blog/announcements/openshift-version-46-now-available-in-red-hat-openshift-on-ibm-cloud){: external}.
+:   You can create or [update](/docs/openshift?topic=openshift-openshift_versions) your cluster to {{site.data.keyword.redhat_openshift_notm}} version 4.6, which includes Kubernetes 1.19. With {{site.data.keyword.redhat_openshift_notm}} 4.6, you get the latest stable enhancements from the community. For more information, see the [blog announcement](https://www.ibm.com/blog/announcement/openshift-version-46-now-available-in-red-hat-openshift-on-ibm-cloud/){: external}.
 
 Deprecated {{site.data.keyword.redhat_openshift_notm}} 4.4
 :   With the release of {{site.data.keyword.redhat_openshift_notm}} 4.6, clusters that run version 4.4 are deprecated, with an unsupported date of 31 May 2021. Update your cluster to at least [version 4.5](/docs/openshift?topic=openshift-changelog_archive) as soon as possible.
@@ -4487,7 +4487,7 @@ Master versions
 
 
 New! Reduced and hourly billing is available for OCP licenses
-:   Now when you create worker nodes with the latest flavors, OCP license costs are billed at reduced rates as part of the worker node cost. You can check the new rates in the pricing estimate when you create a cluster or worker pool. This billing change means that virtual worker nodes are only billed hourly for OCP license instead of monthly. Existing worker nodes in clusters continue to be billed at the previous rates for monthly OCP licenses. For more information and to migrate existing worker nodes, see [On-demand OCP licenses from {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-costs#licenses-on-demand) or review the [{{site.data.keyword.cloud_notm}} blog announcement](https://www.ibm.com/cloud/blog/announcements/run-workloads-by-the-hour-with-red-hat-openshift-on-ibm-cloud){: external}.
+:   Now when you create worker nodes with the latest flavors, OCP license costs are billed at reduced rates as part of the worker node cost. You can check the new rates in the pricing estimate when you create a cluster or worker pool. This billing change means that virtual worker nodes are only billed hourly for OCP license instead of monthly. Existing worker nodes in clusters continue to be billed at the previous rates for monthly OCP licenses. For more information and to migrate existing worker nodes, see [On-demand OCP licenses from {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-costs#licenses-on-demand) or review the [{{site.data.keyword.cloud_notm}} blog announcement](https://www.ibm.com/blog/announcement/run-workloads-by-the-hour-with-red-hat-openshift-on-ibm-cloud/){: external}.
 
 
 

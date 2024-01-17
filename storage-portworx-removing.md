@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: portworx, openshift
@@ -169,7 +169,7 @@ To stop billing for Portworx, you must remove the Portworx installation from you
 The following steps remove Portworx from your cluster, including all storage volumes and the data on those volumes.
 {: important}
 
-1. Follow the Portworx documentation to [uninstall Portworx](https://docs.portworx.com/operations/operate-kubernetes/uninstall/uninstall-operator/){: external}.
+1. Follow the Portworx documentation to [uninstall Portworx](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/uninstall/uninstall-operator){: external}.
 
 1. Clean up for your Portworx volume attachments, PVCs, and PVs.
     1. List your volume attachments.

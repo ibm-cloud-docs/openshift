@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift
@@ -33,7 +33,7 @@ Looking for the CIS Kubernetes benchmark? See [Running the worker node CIS Kuber
 To use the compliance operator, review the OpenShift Container Platform documentation, such as the following resources.
 - [Understanding the compliance operator](https://docs.openshift.com/container-platform/4.13/security/compliance_operator/co-concepts/compliance-operator-understanding.html){: external} documentation set.
 - [Self-paced compliance operator workshop in GitHub](https://github.com/openshift/compliance-operator/tree/master/doc/tutorials){: external}.
-- How does the compliance operator work? [Part 1](https://cloud.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-1){: external} and [Part 2](https://cloud.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-2){: external} blogs.
+- How does the compliance operator work? [Part 1](https://www.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-1){: external} and [Part 2](https://www.redhat.com/blog/how-does-compliance-operator-work-for-openshift-part-2){: external} blogs.
 
 
 

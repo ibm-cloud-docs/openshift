@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, kubernetes, kernel, performance
@@ -221,7 +221,7 @@ To revert your worker nodes `sysctl` parameters to the default values, follow th
 If a pod has long running TCP connections that are occasionally disconnected when they are idle for a period of time, it might help to change the `sysctl` keepalive settings for the pod. 
 {: shortdesc}
 
-These scenarios and suggested settings are also described in the [Troubleshooting Outgoing Connection Issues with IBM VPC Public and Service Gateways](https://www.ibm.com/cloud/blog/troubleshooting-outgoing-connection-issues-with-ibm-vpc-public-and-service-gateways){: external} blog.
+These scenarios and suggested settings are also described in the [Troubleshooting Outgoing Connection Issues with IBM VPC Public and Service Gateways](https://www.ibm.com/blog/troubleshooting-outgoing-connection-issues-with-ibm-vpc-public-and-service-gateways/){: external} blog.
 {: tip}
 
 The following `sysctl` network values can be set on all worker nodes in a cluster by using the daemonset described in the [Modifying worker node kernel settings](#worker-kernel-ds) section. However, there currently isn't a way to set these `sysctl` keepalive settings on all pods by default in a cluster. The best way to modify the settings on all pods is to use a privileged `initContainer`. Review the following example of how to set up an `initContainer` for a deployment in a `test-ns` namespace.

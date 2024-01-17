@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, registry, pull secret, secrets
@@ -164,7 +164,7 @@ Before you begin
     3. [Create a {{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys).
     4. Get the following values for your {{site.data.keyword.keymanagementserviceshort}} instance:
         - [The service instance ID](/docs/key-protect?topic=key-protect-retrieve-instance-ID).
-        - [The API key for the service instance ID](/docs/account?topic=account-serviceidapikeys#create_service_key).
+        - [The API key for the service instance ID](/docs/account?topic=account-serviceidapikeys&interface=ui#create_service_key).
         - [The service endpoint URL](/docs/key-protect?topic=key-protect-regions#service-endpoints).
     5. Create a Kubernetes secret named `keyprotect-config` that contains the values that you retrieved. The Image Key Synchronizer add-on uses the environment variables in this secret to authenticate with your {{site.data.keyword.keymanagementserviceshort}} instance.
     

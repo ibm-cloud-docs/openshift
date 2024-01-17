@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, oc, ks
@@ -378,8 +378,8 @@ Version 1.0.295 of the CLI was released on 24 June 2021.
 - Adds the `ibmcloud oc cluster addon options` command to view optional installation settings for an add-on. 
 - Adds the `--param` option to specify an optional installation setting for the `ibmcloud oc cluster addon enable openshift-container-storage` command.
 - The `ibmcloud sat storage config` and `ibmcloud sat storage template` commands are now generally available.
-- Adds the `--cluster` and `--service-cluster-id` option to the `ibmcloud sat storage assignment ls` command to filter output by the ID of a cluster that you created or the ID of a {[SatServ]} cluster.
-- Adds the `--service-cluster-id` option to the `ibmcloud sat storage assignment create` command to deploy storage drivers to a specific {[SatServ]} cluster.
+- Adds the `--cluster` and `--service-cluster-id` option to the `ibmcloud sat storage assignment ls` command to filter output by the ID of a cluster that you created or the ID of a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster.
+- Adds the `--service-cluster-id` option to the `ibmcloud sat storage assignment create` command to deploy storage drivers to a specific {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster.
 - Updates the help text in various languages.
 
 ## Version 1.0.275
@@ -432,7 +432,7 @@ Version 1.0.233 of the CLI was released on 1 March 2021.
 {: #cli-10231}
 
 Version 1.0.231 of the CLI was released on 25 February 2021.
-- Adds the `ibmcloud sat service ls` command to view {[SatServ]} clusters in your {[SatLoc]}.  \n 1. Updates the Go version to 1.15.8.  \n 1. Updates the help text in various languages.
+- Adds the `ibmcloud sat service ls` command to view {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters in your {{site.data.keyword.satelliteshort}} location.  \n 1. Updates the Go version to 1.15.8.  \n 1. Updates the help text in various languages.
 - Updates the Go version to 1.15.8. 
 - Updates the help text in various languages.
 

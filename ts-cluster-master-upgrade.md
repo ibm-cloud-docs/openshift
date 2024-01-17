@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, kubernetes, help, cluster, upgrades,
@@ -47,7 +47,7 @@ oc get clusterversion version -o json | jq '.status.conditions[] | select(.type 
 
 1. Review the [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions) for the version you want to update to. Evaluate your cluster for APIs that have been removed in the new version. For example in {{site.data.keyword.redhat_openshift_notm}} 4.14 and Kubernetes 1.27 the `storage.k8s.io/v1beta1` API is removed. 
 
-1. Review the `reason` and `message` fields from the JSON object for the `False` upgradeable status. If you are attempting an upgrade from {{site.data.keyword.redhat_openshift_notm}} 4.13 to {{site.data.keyword.redhat_openshift_notm}} 4.14 and there has not been an administrator acknowledgement, the message includes `* Kubernetes 1.27 and therefore OpenShift 4.14 remove several APIs which require admin consideration. Please see https://access.redhat.com/articles/6958395 for details and instructions.`. If you don't have access to a Red Hat account to view the solution, you can perform the following steps to resolve the issue as a cluster administrator.
+1. Review the `reason` and `message` fields from the JSON object for the `False` upgradeable status. If you are attempting an upgrade from {{site.data.keyword.redhat_openshift_notm}} 4.13 to {{site.data.keyword.redhat_openshift_notm}} 4.14 and there has not been an administrator acknowledgment, the message includes `* Kubernetes 1.27 and therefore OpenShift 4.14 remove several APIs which require admin consideration. Please see https://access.redhat.com/articles/6958395 for details and instructions.`. If you don't have access to a Red Hat account to view the solution, you can perform the following steps to resolve the issue as a cluster administrator.
 
 1. Migrate any affected components to use the appropriate new API version including tools, workloads, or any other components that run or interact with the cluster. For example, {{site.data.keyword.redhat_openshift_notm}} 4.14 clusters use Kubernetes 1.27 and face the same [deprecations](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-27){: external}.
 
