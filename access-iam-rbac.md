@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift
@@ -393,7 +393,7 @@ To create custom RBAC permissions,
         | `metadata.namespace` | For kind `Role` only: Specify the Kubernetes namespace to which access is granted. |
         | `metadata.name` | Name the role or cluster role. |
         | `rules.apiGroups` | Specify the Kubernetes [API groups](https://kubernetes.io/docs/reference/using-api/#api-groups){: external} that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`. |
-        | `rules.resources` | Specify the Kubernetes [resource types](https://kubernetes.io/docs/reference/kubectl/cheatsheet/){: external} to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. If you specify `"nodes"`, then the kind must be `ClusterRole`. |
+        | `rules.resources` | Specify the Kubernetes [resource types](https://kubernetes.io/docs/reference/kubectl/quick-reference/){: external} to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. If you specify `"nodes"`, then the kind must be `ClusterRole`. |
         | `rules.verbs` | Specify the types of [actions](https://kubectl.docs.kubernetes.io/){: external} that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`. |
         {: caption="Table 3. Understanding the YAML parameters" caption-side="bottom"}
 
@@ -540,7 +540,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     | `metadata.name` | Enter a name for the cluster role. **don't** use the predefined cluster role names: `view`, `edit`, `admin`, and `cluster-admin`. |
     | `metadata.labels` | Add a label that matches the cluster role that you want to aggregate to in the format `rbac.authorization.k8s.io/aggregate-to-<cluster_role>: "true"`. The labels for the predefined cluster roles are as follows. \n * IAM **Manager** service access role, scoped to a namespace: `rbac.authorization.k8s.io/aggregate-to-admin: "true"` \n * IAM **Writer** service access role: `rbac.authorization.k8s.io/aggregate-to-edit: "true"` \n * IAM **Reader** service access role: `rbac.authorization.k8s.io/aggregate-to-view: "true"` |
     | `rules.apiGroups` | Specify the Kubernetes [API groups](https://kubernetes.io/docs/reference/using-api/#api-groups){: external} that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`. |
-    | `rules.resources` | Specify the Kubernetes [resource types](https://kubernetes.io/docs/reference/kubectl/cheatsheet/){: external} to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. |
+    | `rules.resources` | Specify the Kubernetes [resource types](https://kubernetes.io/docs/reference/kubectl/quick-reference/){: external} to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. |
     | `rules.verbs` | Specify the types of [actions](https://kubectl.docs.kubernetes.io/){: external} that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`. |
     {: caption="Table 4. Understanding the YAML parameters" caption-side="bottom"}
 

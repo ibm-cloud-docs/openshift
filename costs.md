@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, iro, openshift, red hat, red hat openshift
@@ -83,7 +83,7 @@ When you create worker nodes by adding a worker pool or cluster, {{site.data.key
 ##### New OCP licenses with reduced pricing, available 9 November 2020
 {: #licenses-on-demand-new}
 
-New OCP licenses include reduced pricing from Red Hat. a {{site.data.keyword.redhat_openshift_notm}} license is billed for every two virtual cores (or one physical cores) of the worker node flavor. Charges vary by the type of worker node that you have, for as long as you have the worker node. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/run-workloads-by-the-hour-with-red-hat-openshift-on-ibm-cloud){: external}.
+New OCP licenses include reduced pricing from Red Hat. a {{site.data.keyword.redhat_openshift_notm}} license is billed for every two virtual cores (or one physical cores) of the worker node flavor. Charges vary by the type of worker node that you have, for as long as you have the worker node. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/blog/announcement/run-workloads-by-the-hour-with-red-hat-openshift-on-ibm-cloud/){: external}.
 
 * **Virtual machines (VMs)**: The OCP licenses are billed hourly. For example, you create a worker pool with VMs, test an app for 3 days, and then delete the worker pool. You are billed for only the hours that your worker nodes were deployed.
 * **Physical machines (bare metal)**: The OCP licenses are prorated for the first month that you create the worker nodes in, and then billed monthly for the remaining lifecycle of the worker node. For example, you create a cluster with bare metal worker nodes on 15 August and delete the cluster on 14 September. You are charged a prorated monthly cost for the first month of August, but the full monthly cost for September.
@@ -127,7 +127,7 @@ Bandwidth refers to the public data transfer of inbound and outbound network tra
 Review the following factors that impact public bandwidth charges:
 * **Location**: As with worker nodes, charges vary depending on the zone that your resources are deployed in.
 * **Pay-As-You-Go for VM**: Because VMs are billed at an hourly rate, your VM worker node machines have a Pay-As-You-Go allocation of outbound networking based on GB usage.
-* **Included bandwidth and tiered packages for BM**: Bare metal worker nodes might come with a certain allocation of outbound networking per month that varies by geography: 20 TB for North America and Europe, or 5 TB for Asia Pacific and South America. After you exceed your included bandwidth, you are charged according to a tiered usage scheme for your geography. If you exceed a tier allotment, you might also be charged a standard data transfer fee. For more information, see [Bandwidth packages](https://www.ibm.com/cloud/bandwidth){: external}.
+* **Included bandwidth and tiered packages for BM**: Bare metal worker nodes might come with a certain allocation of outbound networking per month that varies by geography: 20 TB for North America and Europe, or 5 TB for Asia Pacific and South America. After you exceed your included bandwidth, you are charged according to a tiered usage scheme for your geography. If you exceed a tier allotment, you might also be charged a standard data transfer fee. For more information, see [Bandwidth packages](https://github.com/etcd-io/etcd/releases/v3.5.10){: external}.
 
 **VPC clusters**: For more information about how internet data transfer works in your Virtual Private Cloud, see [Pricing for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
 
@@ -160,7 +160,7 @@ To store images in the internal registry, {{site.data.keyword.openshiftlong_notm
 {: shortdesc}
 
 * **Classic clusters**: A {{site.data.keyword.filestorage_short}} volume is automatically created for you. Your file storage volume is provisioned with an `ibmc-file-gold` storage class of 100 GB capacity at 10 IOPS/GB, and billed at an hourly rate. If you need more image storage capacity, you can [update the volume size](/docs/openshift?topic=openshift-registry#openshift_internal_registry), which modifies the cost.
-* **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short}} documentation](https://www.ibm.com/cloud/object-storage){: external}.
+* **VPC clusters**: A bucket in an existing {{site.data.keyword.cos_full_notm}} instance is created for you. For more information, see [Billing and pricing in the {{site.data.keyword.cos_short}} documentation](https://www.ibm.com/products/cloud-object-storage){: external}.
 
 
 
@@ -175,7 +175,7 @@ To choose the correct storage solution, see [Planning highly available persisten
 * [{{site.data.keyword.blockstorageshort}}](https://www.ibm.com/products/block-storage){: external}
 * [{{site.data.keyword.filestorage_vpc_short}}](https://www.ibm.com/products/file-storage){: external}
 * [{{site.data.keyword.block_storage_is_short}}](https://www.ibm.com/products/block-storage){: external}
-* [{{site.data.keyword.cos_full_notm}}](https://www.ibm.com/cloud/object-storage){: external}
+* [{{site.data.keyword.cos_full_notm}}](https://www.ibm.com/products/cloud-object-storage){: external}
 * [Portworx Enterprise pricing](https://cloud.ibm.com/catalog/services/portworx-enterprise){: external}
 
 ### {{site.data.keyword.cloud_notm}} services
@@ -247,7 +247,7 @@ The following steps present a general process to manage costs for your {{site.da
 Review the table for information about charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}. For information about Location pricing, see [{{site.data.keyword.satelliteshort}} pricing](/docs/satellite?topic=satellite-sat-pricing).
 {: shortdesc}
 
-Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/products/satellite/overview){: external}
+Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/products/satellite){: external}
 {: tip}
 
 | Type of charge | Clusters created after 15 November 2022 | Clusters created before 15 November 2022 | What the charge covers |
@@ -256,4 +256,5 @@ Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=bill
 | Worker node management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
 | OCP licensing fee | Per vCPU hour. You can either purchase a license during cluster creation or bring your own. | Per vCPU hour. You can either purchase a license during cluster creation or bring your own. |
 {: caption="Red Hat OpenShift cluster on Satellite charges." caption-side="bottom"}
+
 

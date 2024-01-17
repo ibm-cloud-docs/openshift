@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: portworx, openshift
@@ -69,7 +69,7 @@ To install Portworx:
         1. [Retrieve the etcd endpoint, and the name of the Kubernetes secret](/docs/openshift?topic=openshift-storage_portworx_kv_store) that you created for your Databases for etcd service instance.
         2. In the **Etcd API endpoints** field, enter the API endpoint of your Databases for etcd service instance that you retrieved earlier. Make sure to enter the endpoint in the format `etcd:<etcd_endpoint1>;etcd:<etcd_endpoint2>`. If you have more than one endpoint, include all endpoints and separate them with a semicolon (`;`).
         3. In the **Etcd secret name** field, enter the name of the Kubernetes secret that you created in your cluster to store the Databases for etcd service credentials.
-    1. From the **Kubernetes or OpenShift cluster name** drop down list, select the cluster where you want to install Portworx. If your cluster is not listed, make sure that you select the correct {{site.data.keyword.cloud_notm}} region. If the region is correct, verify that you have the correct [permissions](/docs/containers?topic=containers-clusters) to view and work with your cluster. Make sure that you select a cluster that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/start-here-installation/){: external}.
+    1. From the **Kubernetes or OpenShift cluster name** drop down list, select the cluster where you want to install Portworx. If your cluster is not listed, make sure that you select the correct {{site.data.keyword.cloud_notm}} region. If the region is correct, verify that you have the correct [permissions](/docs/containers?topic=containers-clusters) to view and work with your cluster. Make sure that you select a cluster that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/portworx-enterprise/install-portworx/prerequisites){: external}.
     1. **Optional**: From the **Portworx secret store type** drop down list, choose the secret store type that you want to use to store the volume encryption key.
         - **Kubernetes Secret**: Choose this option if you want to store your own custom key to encrypt your volumes in a Kubernetes Secret in your cluster. The secret must not be present before you install Portworx. You can create the secret after you install Portworx. For more information, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/key-management/kubernetes-secrets){: external}.
         - **{{site.data.keyword.keymanagementservicelong_notm}}**: Choose this option if you want to use root keys in {{site.data.keyword.keymanagementservicelong_notm}} to encrypt your volumes. Make sure that you follow the [instructions](/docs/openshift?topic=openshift-storage_portworx_encryption) to create your {{site.data.keyword.keymanagementservicelong_notm}} service instance, and to store the credentials for how to access your service instance in a Kubernetes secret in the `portworx` project before you install Portworx.
@@ -279,7 +279,7 @@ To access the storage from your app, you must mount the PVC to your app.
 
 1. Create a configuration file for a deployment that mounts the PVC.
 
-    For tips on how to deploy a stateful set with Portworx, see [StatefulSets](https://portworx.com/blog/cassandra-openshift-run-ha-cassandra-red-hat-openshift/){: external}{: external}. The Portworx documentation also includes examples for how to deploy Cassandra, [Kafka](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/application-install-with-kubernetes/kafka-with-zookeeper){: external}, [ElasticSearch with Kibana](https://docs.portworx.com/operations/operate-kubernetes/application-install-with-kubernetes/elastic-search-and-kibana/){: external}, and [WordPress with MySQL](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/application-install-with-kubernetes/wordpress){: external}.
+    For tips on how to deploy a stateful set with Portworx, see [StatefulSets](https://portworx.com/blog/cassandra-openshift-run-ha-cassandra-red-hat-openshift/){: external}{: external}. The Portworx documentation also includes examples for how to deploy Cassandra, [Kafka](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/application-install-with-kubernetes/kafka-with-zookeeper){: external}, [ElasticSearch with Kibana](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/application-install-with-kubernetes/elastic-search-and-kibana){: external}, and [WordPress with MySQL](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/application-install-with-kubernetes/wordpress){: external}.
     {: tip}
 
     ```yaml

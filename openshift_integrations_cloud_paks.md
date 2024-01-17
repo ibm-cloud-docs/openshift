@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift
@@ -67,7 +67,7 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 | ---- | ------------ |
 | Use cases | - Synchronize teamwork and playbooks to enhance security incident response.  \n - Increase threat hunting speed with a smart query builder, intelligent threat prioritization, and federated search.  \n - Real-time data security controls and audit visibility across hybrid cloud environments.  |
 | [Catalog entry](https://cloud.ibm.com/catalog?search=label%3Acloud_pak#software){: external} | For included components, required cluster size, and installation. |
-| [Documentation](https://www.ibm.com/docs/en/cloud-paks/cp-security){: external} | For more information such as postinstallation tasks and pricing. |
+| [Documentation](https://www.ibm.com/docs/cp-security){: external} | For more information such as postinstallation tasks and pricing. |
 {: caption="Cloud Pak for Security" caption-side="bottom"}
 
 

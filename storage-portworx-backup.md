@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-17"
 
 
 keywords: portworx, openshift
@@ -20,7 +20,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Portworx Backup is a Portworx proprietary backup solution that is compatible with any {{site.data.keyword.openshiftlong_notm}} cluster. You can use Portworx Backup to back up and restore {{site.data.keyword.openshiftlong_notm}} resources, apps and data across multiple clusters. For more information on Portworx Backup, see [Understanding Portworx Backup](https://portworx.com/products/px-backup/){: external}.
+Portworx Backup is a Portworx proprietary backup solution that is compatible with any {{site.data.keyword.openshiftlong_notm}} cluster. You can use Portworx Backup to back up and restore {{site.data.keyword.openshiftlong_notm}} resources, apps and data across multiple clusters. For more information on Portworx Backup, see [Understanding Portworx Backup](https://portworx.com/services/backup-and-data-protection/){: external}.
 {: shortdesc}
 
 To back up the data in your persistent volumes, you must have a storage class that supports snapshots in your cluster. Clusters with Portworx Enterprise have storage classes available that support snapshots by default. However, for clusters that don't have Portworx Enterprise, you must have a storage classes with snapshot support to back up your persistent volume data. The {{site.data.keyword.blockstorageshort}} driver, and the {{site.data.keyword.filestorage_short}} driver don't have storage classes that support snapshots. If you have workloads that use these drivers, you can use Portworx Backup to back up your apps, but not the data in the persistent volumes. For more information see [Backing up and restoring cluster data with Portworx Backup](#px-backup-and-restore).
@@ -33,7 +33,7 @@ Portworx Backup is not supported for {{site.data.keyword.satelliteshort}} cluste
 {: #px-backup-install}
 
 Before you begin:
-- Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/start-here-installation/){: external}. 
+- Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/portworx-enterprise/install-portworx/prerequisites){: external}. 
 - [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).
 - Provision and attach 320Gi of block storage to your cluster. See [Setting {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Setting up Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
 
@@ -263,15 +263,15 @@ To back up data from your cluster or to restore data to your cluster, refer to t
 {: shortdesc}
 
 **Back up apps and data from your cluster to {{site.data.keyword.cos_full_notm}}**: 
-You can back up an entire cluster namespace, single apps, and the data that is stored in your persistent volumes to the {{site.data.keyword.cos_full_notm}} service instance that you set up as your backup location. Note that to back up data in persistent volumes, you must have a CSI snapshot storage class in your cluster. Portworx Backup uses this storage class to first take a snapshot of your data and then sends this data to your {{site.data.keyword.cos_full_notm}} backup location. For more information, see the [Portworx Backup documentation](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup/backup-restorecreate-backup/perform-backup/){: external}.
+You can back up an entire cluster namespace, single apps, and the data that is stored in your persistent volumes to the {{site.data.keyword.cos_full_notm}} service instance that you set up as your backup location. Note that to back up data in persistent volumes, you must have a CSI snapshot storage class in your cluster. Portworx Backup uses this storage class to first take a snapshot of your data and then sends this data to your {{site.data.keyword.cos_full_notm}} backup location. For more information, see the [Portworx Backup documentation](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup/backup-restore){: external}.
 
 **Restore any backup that you created to another cluster**: 
-You can restore an entire namespace, your apps, or your data to any cluster that you added to the Portworx Backup service. Use this Portworx Backup capability if you want to migrate apps and data from one cluster to another. For more information, see the [Portworx Backup documentation](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup/backup-restorerestore-backup/){: external}.
+You can restore an entire namespace, your apps, or your data to any cluster that you added to the Portworx Backup service. Use this Portworx Backup capability if you want to migrate apps and data from one cluster to another. For more information, see the [Portworx Backup documentation](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup/backup-restore){: external}.
 
 ### Upgrading PX-Backup
 {: #px-backup-upgrade}
 
-Follow the Portworx documentation to [upgrade PX-backup](https://backup.docs.portworx.com/use-px-backup/){: external}
+Follow the Portworx documentation to [upgrade PX-backup](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup){: external}
 {: shortdesc}
 
 

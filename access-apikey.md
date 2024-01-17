@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift
@@ -152,7 +152,7 @@ Consider using a functional ID user for the API key owner instead of a personal 
 ### How can I lock down my cluster if my API key becomes compromised?
 {: #apikey-lockdown}
 
-If an API key that is set for a region and resource group in your cluster is compromised, [delete it](/docs/account?topic=account-userapikey#delete_user_key) so that no further calls can be made by using the API key as authentication. For more information about securing access to the Kubernetes API server, see the [Kubernetes API server and etcd](/docs/openshift?topic=openshift-security#apiserver) security topic.
+If an API key that is set for a region and resource group in your cluster is compromised, [delete it](/docs/account?topic=account-userapikey&interface=ui#delete_user_key) so that no further calls can be made by using the API key as authentication. For more information about securing access to the Kubernetes API server, see the [Kubernetes API server and etcd](/docs/openshift?topic=openshift-security#apiserver) security topic.
 
 ## Ensuring that the API key or infrastructure credentials owner has the correct permissions
 {: #owner_permissions}

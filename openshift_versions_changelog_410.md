@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
@@ -43,6 +43,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.10 change log.
 {: shortdesc}
+
+
+### Change log for worker node fix pack 4.10.67_1596_openshift, released 16 January 2024
+{: #41067_1596_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.10.67_1596_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}} | 4.10.67 | 4.10.67 | N/A |
+| RHEL 8 Packages | N/A | N/A | N/A |
+| Haproxy | 3060b0 | e105dc | [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external}, [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external}, [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/CVE-2022-48560){: external}, [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/CVE-2022-48564){: external}. |
+{: caption="Changes since version 4.10.67_1595_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.10.67_1595_openshift, released 02 January 2024
@@ -229,7 +243,7 @@ The following table shows the changes that are in the master fix pack 4.10.65_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.3.23 | v1.3.24 | Updated `Go` to version `1.19.12` and updated dependencies. Updated base image version to 378. |
-| etcd | v3.4.26 | v3.4.27 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.27){: external}. |
+| etcd | v3.4.26 | v3.4.27 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.27){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.17-22 | v1.23.17-25 | Updated `Go` dependencies to resolve a CVE. Updates to Travis build. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 433 | 434 | Updated `Go` to version `1.20.6` and updated dependencies. Updated to newer UBI base image. |
 | Key Management Service provider | v2.7.2 | v2.7.3 | Updated `Go` dependencies. |

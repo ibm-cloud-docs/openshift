@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
@@ -52,7 +52,7 @@ The following table shows the changes that are in the master fix pack 4.9.59_160
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.3.23 | v1.3.24 | Updated `Go` to version `1.19.12` and updated dependencies. Updated base image version to 378. |
-| etcd | v3.4.26 | v3.4.27 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.4.27){: external}. |
+| etcd | v3.4.26 | v3.4.27 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.27){: external}. |
 | Gateway-enabled cluster controller | 2322 | 2366 | Update `Go` dependencies to fix [CVE-2023-3978](https://nvd.nist.gov/vuln/detail/CVE-2023-3978){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 433 | 434 | Updated `Go` to version `1.20.6` and updated dependencies. Updated to newer UBI base image. |
 | Key Management Service provider | v2.7.2 | v2.7.3 | Updated `Go` dependencies. |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift, kubernetes, oauth, console, access, vpe, pse, network
@@ -79,6 +79,7 @@ You can use the `GET /network/v2/oauth-access-type/{idOrName}` API to get the ac
 
 
 1. Review the output and verify the OAuth access type.
-   - [4.13 clusters]{: tag-red}: If the value is emtpy, the `vpegw` behavior is being used.
-   - [4.14 clusters]{: tag-red}: If the value is emtpy, the `legacy` behavior is being used.
+   - [4.13 clusters]{: tag-red}: If the value is empty, the `vpegw` behavior is being used.
+   - [4.14 clusters]{: tag-red}: If the value is empty, the `legacy` behavior is being used.
+
 

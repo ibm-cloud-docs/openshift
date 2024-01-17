@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-17"
 
 
 keywords: openshift
@@ -316,7 +316,7 @@ Review the following table to see your options for how to achieve network segmen
 |Security feature|Description|
 |-------|----------------------------------|
 |Set up custom network policies with Calico|You can use the built-in Calico interface to [set up custom Calico network policies](/docs/openshift?topic=openshift-network_policies#network_policies) for your worker nodes. For example, you can allow or block network traffic on specific network interfaces, for specific pods, or services. To set up custom network policies, you must [install the `calicoctl` CLI](/docs/openshift?topic=openshift-network_policies#cli_install).|
-|Support for {{site.data.keyword.cloud_notm}} network firewalls|{{site.data.keyword.openshiftlong_notm}} is compatible with all [{{site.data.keyword.cloud_notm}} firewall offerings](https://www.ibm.com/cloud/network-security){: external}. For example, you can set up a firewall with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion. For example, you might choose to set up a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) to act as your firewall and block unwanted traffic. When you set up a firewall, [you must also open up the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall) for each region so that the master and the worker nodes can communicate.|
+|Support for {{site.data.keyword.cloud_notm}} network firewalls|{{site.data.keyword.openshiftlong_notm}} is compatible with all [{{site.data.keyword.cloud_notm}} firewall offerings](https://www.ibm.com/products/network-security){: external}. For example, you can set up a firewall with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion. For example, you might choose to set up a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra) to act as your firewall and block unwanted traffic. When you set up a firewall, [you must also open up the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall) for each region so that the master and the worker nodes can communicate.|
 {: caption="Network segmentation options" caption-side="bottom"}
 
 ### What else can I do to reduce the surface for external attacks for Classic clusters?
