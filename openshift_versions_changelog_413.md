@@ -34,6 +34,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 
+### Change log for worker node fix pack 4.13.28_1554_openshift, released 16 January 2024
+{: #41328_1554_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.13.28_1554_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}} | 4.13.26 | 4.13.28 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-28){: external}. |
+| RHEL 8 Packages | N/A | N/A | N/A |
+| Haproxy | 3060b0 | e105dc | [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external}, [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external}, [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/CVE-2022-48560){: external}, [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/CVE-2022-48564){: external}. |
+{: caption="Changes since version 4.13.26_1553_openshift" caption-side="bottom"}
+
+
 ### Change log for worker node fix pack 4.13.26_1553_openshift, released 02 January 2024
 {: #41326_1553_openshift_W}
 
