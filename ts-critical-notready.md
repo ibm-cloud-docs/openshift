@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -29,10 +29,10 @@ Check the {{site.data.keyword.cloud_notm}} health and status dashboard for any n
 There are several reasons why communication stops between worker nodes and the cluster master. Check whether the following common issues are causing the disruption.
 
 The worker was deleted, reloaded, updated, replaced, or rebooted
-:   Worker nodes might temporarily show a `Critical` or `NotReady` state when they are deleted, reloaded, updated, or replaced. If any of these actions have been initiated on your worker node, whether manually or as part of an automation setup such as cluster autoscaler, wait until the actions are complete. Then, check the status of your worker nodes again. If any workers remain in the `Critical` or `NotReady` state, [reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers. 
-:   If a worker node was reloaded or replaced and initially works correctly, but then after some time goes back into a `Critical` or `NotReady` state, then it is likely that some workload or component on the worker is causing the issue. See [Debugging worker nodes](/docs/containers?topic=containers-debug-kube-nodes) to isolate the problem workload.
+:   Worker nodes might temporarily show a `Critical` or `NotReady` state when they are deleted, reloaded, updated, or replaced. If any of these actions have been initiated on your worker node, whether manually or as part of an automation setup such as cluster autoscaler, wait until the actions are complete. Then, check the status of your worker nodes again. If any workers remain in the `Critical` or `NotReady` state, [reload](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers. 
+:   If a worker node was reloaded or replaced and initially works correctly, but then after some time goes back into a `Critical` or `NotReady` state, then it is likely that some workload or component on the worker is causing the issue. See [Debugging worker nodes](/docs/openshift?topic=openshift-debug-kube-nodes) to isolate the problem workload.
 
-A worker node might end up in a `Critical` or `NotReady` state if it was rebooted without first being cordoned and drained. If this is the case, waiting for the reboot to complete does not resolve the issue. [Reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected worker. If the issue persists, continue with the troubleshooting steps. 
+A worker node might end up in a `Critical` or `NotReady` state if it was rebooted without first being cordoned and drained. If this is the case, waiting for the reboot to complete does not resolve the issue. [Reload](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected worker. If the issue persists, continue with the troubleshooting steps. 
 {: note}
 
 The worker node was unintentionally powered down
@@ -44,7 +44,7 @@ The worker node was unintentionally powered down
 
 If your worker nodes remain in the `Critical` or `NotReady` state after addressing the [common causes](#ts-critical-notready-common), continue with the following troubleshooting steps.
 
-If a worker node that you previously reloaded or replaced is in the `deploy_failed` or `provision_failed` state when you run `ibmcloud ks workers`, follow the steps in the [All worker nodes in a cluster are affected](#ts-critical-notready-steps-all) section, even if not all nodes are affected. If a different state is indicated, see [Worker node states](/docs/containers?topic=containers-worker-node-state-reference) for steps to troubleshoot the new worker. Do not replace or reload any additional worker nodes. 
+If a worker node that you previously reloaded or replaced is in the `deploy_failed` or `provision_failed` state when you run `ibmcloud ks workers`, follow the steps in the [All worker nodes in a cluster are affected](#ts-critical-notready-steps-all) section, even if not all nodes are affected. If a different state is indicated, see [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference) for steps to troubleshoot the new worker. Do not replace or reload any additional worker nodes. 
 {: tip}
 
 ### If one or some worker nodes are affected
@@ -65,9 +65,9 @@ If only some, but not all, of the worker nodes in your cluster are in a `Critica
     - Slow memory leaks that build up over time, which can cause problems for workers that have not been updated in over a month.
     - Bugs and crashes that affect the Linux kernel.
 
-3. If you are able to determine the cause of the issue from the information in the **Conditions** section, follow the steps in [Debugging worker nodes](/docs/containers?topic=containers-debug-kube-nodes) to isolate the problem workload.
+3. If you are able to determine the cause of the issue from the information in the **Conditions** section, follow the steps in [Debugging worker nodes](/docs/openshift?topic=openshift-debug-kube-nodes) to isolate the problem workload.
 
-4. If the previous steps do not solve the issue, [reload](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers one at a time. 
+4. If the previous steps do not solve the issue, [reload](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers one at a time. 
 
 ### If all worker nodes in a single zone, subnet, or VLAN are affected
 {: #ts-critical-notready-steps-zone}
@@ -87,12 +87,12 @@ Some steps are specific to a specialized area, such as networking or automation.
 
 1. Check if there were any recent changes to your cluster, environment, or account that might impact your worker nodes. If so, revert the changes and then check the worker node status to determine if the changes caused the issue.
     - For classic clusters, check any firewall or gateway, such as Virtual Router Appliance, Vyatta, or Juniper that manages traffic for cluster workers. Look for changes or issues that might drop or redirect traffic from cluster workers. 
-    - For VPC clusters, check if any changes were made to the default security group and ACLs on the VPC or the worker nodes. If any modifications were made, ensure that you are allowing all necessary traffic from the cluster worker nodes to the cluster master, container registry, and other critical services. For more information, see [Controlling Traffic with VPC Security Groups](/docs/containers?topic=containers-vpc-security-group&interface=ui) and [Controlling traffic with ACLs](/docs/containers?topic=containers-vpc-acls&interface=ui).
+    - For VPC clusters, check if any changes were made to the default security group and ACLs on the VPC or the worker nodes. If any modifications were made, ensure that you are allowing all necessary traffic from the cluster worker nodes to the cluster master, container registry, and other critical services. For more information, see [Controlling Traffic with VPC Security Groups](/docs/openshift?topic=openshift-vpc-security-group&interface=ui) and [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls&interface=ui).
     - For VPC clusters, check any custom routing rules for changes that might be blocking traffic from the cluster `apiserver`.
     - Check any Calico or Kubernetes network policies that are applied to the cluster and make sure that they do not block traffic from the worker node to the cluster `apiservice`, container registry, or other critical services. 
 1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which may cause disruptions for your worker nodes.
 1. If you recently added any components to your cluster, remove them. If you made changes to any existing components in your cluster, revert the changes. Then, check the status of your worker nodes to see if the new components or changes were causing the issue. 
-1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/containers?topic=containers-ts-delete-webhooks) that were added to the cluster after it was created.
+1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks) that were added to the cluster after it was created.
 1. Remove and regenerate any custom Docker pull secrets, which, if misconfigured, can prevent worker nodes from pulling images from Docker registries. 
     1. Run the `ibmcloud oc delete secret -n openshift pull-secret` and `ibmcloud oc delete secret -n openshift-config pull-secret` commands to delete the custom Docker pull secrets.
         ```sh
@@ -119,7 +119,7 @@ If your worker nodes switch between a `Normal` and `Critical` or `NotReady` stat
 1. For classic clusters, check your firewalls or gateways. If there is a bandwidth limit or any type of malfunction, resolve the issue. Then, check your worker nodes again.
 1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which may cause disruptions for your worker nodes.
 1. If you recently added any components to your cluster, remove them. If you made changes to any existing components in your cluster, revert the changes. Then, check the status of your worker nodes to see whether the new components or changes were causing the issue. 
-1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/containers?topic=containers-ts-delete-webhooks)  that were added to the cluster after it was created.
+1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks)  that were added to the cluster after it was created.
 1. If the issue is still not resolved, follow the steps to [gather your worker node data](#ts-critical-notready-gather) and open a support ticket. 
 
 
@@ -129,7 +129,7 @@ If your worker nodes switch between a `Normal` and `Critical` or `NotReady` stat
 If you are unable to resolve the issue with the troubleshooting steps, gather information about your worker nodes. Then, [open a support ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} and include the worker node information you gathered.
 {: shortdesc}
 
-Before you open a support ticket, review the information and follow any troubleshooting steps in [Debugging worker nodes](/docs/containers?topic=containers-debug_worker_nodes), [Worker node states](/docs/containers?topic=containers-worker-node-state-reference), and [Troubleshooting worker nodes in `Critical` or `NotReady` state](#ts-critical-notready).
+Before you open a support ticket, review the information and follow any troubleshooting steps in [Debugging worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes), [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference), and [Troubleshooting worker nodes in `Critical` or `NotReady` state](#ts-critical-notready).
 {: important}
 
 If all worker nodes in a cluster, or in a single zone, subnet, or VLAN are affected, you can open an initial support ticket without gathering data. However, you might later be asked to gather the relevant data. If only one or some of your worker nodes are affected, you must gather the relevant data to include in your support ticket. 
@@ -158,7 +158,7 @@ Check the conditions of your worker nodes and cluster before you gather data.
     ```
     {: screen}
 
-2. Make sure that you have [removed any added webhooks](/docs/containers?topic=containers-ts-delete-webhooks) from the cluster. 
+2. Make sure that you have [removed any added webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks) from the cluster. 
 
 ### Gathering data
 {: #ts-critical-notready-gather-steps}
@@ -172,7 +172,7 @@ Follow the steps to gather the relevant worker node data.
     ```
     {: pre}
 
-2. Run the [Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool)  and the [Openshift Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool). Export the kube and network test results to a compressed file and save the file to include in your support ticket. If all workers in your cluster are affected, you can skip this step as the debug tools cannot work properly if all worker nodes are disrupted.
+2. Run the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)  and the [Openshift Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool). Export the kube and network test results to a compressed file and save the file to include in your support ticket. If all workers in your cluster are affected, you can skip this step as the debug tools cannot work properly if all worker nodes are disrupted.
 
 3. Show that there are no added mutating or validating webhooks remaining in your cluster by getting the webhook details. Save the command output to include in your support ticket. Note that the following mutating webhooks might remain and do not need to be deleted: `alertmanagerconfigs.openshift`, `managed-storage-validation-webhooks`, `multus.openshift.io`, `performance-addon-operator`, `prometheusrules.openshift.io`,`snapshot.storage.k8s.io`.
 

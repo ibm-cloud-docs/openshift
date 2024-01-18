@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -67,7 +67,7 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 {{site.data.keyword.openshiftlong}} clusters include built-in tools to help cluster administrators get information about the availability and capacity of storage volumes.
 {: shortdesc}
 
-If you are unable to view storage metrics in the {{site.data.keyword.redhat_openshift_notm}} monitoring dashboard, see [Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/containers?topic=containers-debug_monitoring).
+If you are unable to view storage metrics in the {{site.data.keyword.redhat_openshift_notm}} monitoring dashboard, see [Debugging {{site.data.keyword.block_storage_is_short}} metrics](/docs/openshift?topic=openshift-debug_monitoring).
 {: tip}
 
 The following metrics can be monitored for {{site.data.keyword.openshiftlong}} clusters.

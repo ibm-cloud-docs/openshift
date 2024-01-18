@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift dedicated hosts
@@ -78,7 +78,7 @@ Minimum required permissions
     `--zone ZONE`
     :    The zone to create the dedicated host in. For a list of available
 
-1. [Create a cluster with your dedicated host](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui). Or, [add a worker pool in an existing cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+1. [Create a cluster with your dedicated host](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui). Or, [add a worker pool in an existing cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
 
 
 ## Removing worker nodes from a dedicated host in the CLI

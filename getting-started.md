@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -95,7 +95,7 @@ After you create your cluster, deploy a sample app from the {{site.data.keyword.
 
 
 Check out the curated learning paths
-- [Learning path for administrators](/docs/containers?topic=containers-learning-path-admin).
-- [Learning path for developers](/docs/containers?topic=containers-learning-path-dev).
+- [Learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin).
+- [Learning path for developers](/docs/openshift?topic=openshift-learning-path-dev).
 
 

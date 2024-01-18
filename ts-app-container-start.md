@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift
@@ -71,7 +71,7 @@ To fix registry quota issues, [free up storage in {{site.data.keyword.registrylo
 To fix IP address issues, release individual and blocks of IP addresses that were not cleanly removed from the Calico IPAM records so that they can be reused by pods in your cluster.
 {: shortdesc}
 
-Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_versions). If your cluster runs a deprecated or unsupported version, first [update your cluster](/docs/containers?topic=containers-update).
+Your cluster must run a [supported version](/docs/openshift?topic=openshift-openshift_versions). If your cluster runs a deprecated or unsupported version, first [update your cluster](/docs/openshift?topic=openshift-update).
 
 
 ### Step 1: Releasing individual IP addresses

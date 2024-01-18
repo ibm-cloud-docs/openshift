@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: object storage, plug-in, change log
@@ -110,7 +110,7 @@ Refer to the following tables for a summary of changes for each version of the [
 - Updates the UBI image to `8.7-1085.1679482090`.
 - Resolves the following CVEs: [CVE-2022-4304](https://nvd.nist.gov/vuln/detail/CVE-2022-4304){: external}, [CVE-2022-4450](https://nvd.nist.gov/vuln/detail/CVE-2022-4450){: external}, [CVE-2023-0215](https://nvd.nist.gov/vuln/detail/CVE-2023-0215){: external}, [CVE-2023-0286](https://nvd.nist.gov/vuln/detail/CVE-2023-0286){: external}.
 
-Because this update affects regional storage classes, you must uninstall and reinstall the `2.2.13` chart so the new storage classes are created in your cluster. This change primarily impacts single site clusters because the regional storage classes, such as `ibmc-s3fs-standard-regional`, now point to the single site COS endpoint instead of the regional endpoints. This change is not applied automatically to existing PVCs and pods. You must create new PVCs with the new storage classes for the changes to take effect. For more information on how to update your PVCs, refer to the [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps) documentation.
+Because this update affects regional storage classes, you must uninstall and reinstall the `2.2.13` chart so the new storage classes are created in your cluster. This change primarily impacts single site clusters because the regional storage classes, such as `ibmc-s3fs-standard-regional`, now point to the single site COS endpoint instead of the regional endpoints. This change is not applied automatically to existing PVCs and pods. You must create new PVCs with the new storage classes for the changes to take effect. For more information on how to update your PVCs, refer to the [Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps) documentation.
 {: important}
 
 
@@ -140,7 +140,7 @@ Because this update affects regional storage classes, you must uninstall and rei
 ## Change log for version 2.2.9, released 13 February 2023
 {: #0229_object_plugin}
 
-- Adds support for the `--set allowCrossNsSecret=true/false` option when you install the {{site.data.keyword.cos_full_notm}} plug-in. For more information, see [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/containers?topic=containers-storage_cos_install).
+- Adds support for the `--set allowCrossNsSecret=true/false` option when you install the {{site.data.keyword.cos_full_notm}} plug-in. For more information, see [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install).
 - Adds support for `Wasabi` and `AWS` s3 providers on {{site.data.keyword.satelliteshort}} clusters.
 - On {{site.data.keyword.satelliteshort}} clusters, the `object store endpoint` is now auto populated based on the `cos.storageClass` and `s3provider` options.
 

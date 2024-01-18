@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -82,8 +82,8 @@ Observability integrations
 Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
-* Ensure that you complete the prerequisites to [prepare your account](/docs/containers?topic=containers-clusters) and decide on your cluster setup. Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
-* [Install the {{site.data.keyword.cloud_notm}} CLI tools](/docs/containers?topic=containers-cli-install).
+* Ensure that you complete the prerequisites to [prepare your account](/docs/openshift?topic=openshift-clusters) and decide on your cluster setup. Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
+* [Install the {{site.data.keyword.cloud_notm}} CLI tools](/docs/openshift?topic=openshift-cli-install).
 
 1. Log in to {{site.data.keyword.cloud_notm}} CLI. If you are logging in with a federated ID, use `ibmcloud login --sso`.
 
@@ -358,7 +358,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     :   The zone to create the cluster in. To see available zones, run `ibmcloud oc zones --provider classic`.
 
     `machine_type`
-    :   The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/containers?topic=containers-classic-flavors).
+    :   The worker node flavor. The flavor determines the amount of memory, CPU, and disk space that is available to your worker nodes. For a list of available worker node flavors, run `ibmcloud oc flavors --zone <zone> --provider classic`, or see [Classic flavors](/docs/openshift?topic=openshift-classic-flavors).
 
     `hardware`
     :   The level of hardware isolation for your worker nodes. Use `dedicated` to have available physical resources dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. This option is available for virtual machine worker nodes flavors only. 

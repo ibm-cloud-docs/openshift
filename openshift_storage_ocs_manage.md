@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -269,7 +269,7 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
     ```
     {: pre}
     
-1. After deleting your PVCs and PVs, you also need to delete the storage volumes from your account. To locate and remove unused storage volumes in your account, see [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/containers?topic=containers-ts_storage_clean_volume).
+1. After deleting your PVCs and PVs, you also need to delete the storage volumes from your account. To locate and remove unused storage volumes in your account, see [Why am I still seeing charges for block storage devices after deleting my cluster?](/docs/openshift?topic=openshift-ts_storage_clean_volume).
 
 ## Uninstalling the OpenShift Data Foundation add-on
 {: #odf-addon-rm}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: kubernetes, openshift
@@ -121,7 +121,7 @@ The following list of add-ons for clusters are supported in {{site.data.keyword.
 - [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
-- **Deprecated**: [Kubernetes web terminal](/docs/containers?topic=containers-cli-install)
+- **Deprecated**: [Kubernetes web terminal](/docs/openshift?topic=openshift-cli-install)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-storage-odf-local) to consistently deploy ODF across clusters in your location.)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)
 

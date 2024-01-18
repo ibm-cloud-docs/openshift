@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid, images,
@@ -51,7 +51,7 @@ This tutorial covers setting up the image registry by using {{site.data.keyword.
 {: #sat-registry-bucket}
 {: step}
 
-Create a bucket to use when you set up your image registry. Your bucket must be configured with regional resiliency. For more information about creating a bucket, see [Setting up {{site.data.keyword.cos_full_notm}}](/docs/containers?topic=containers-storage-cos-understand).
+Create a bucket to use when you set up your image registry. Your bucket must be configured with regional resiliency. For more information about creating a bucket, see [Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand).
 
 1. Click on your {{site.data.keyword.cos_short}} instance.
 2. Click **Create a bucket**.

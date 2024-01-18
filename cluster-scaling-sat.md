@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -116,7 +116,7 @@ How do I set up autoscaling in my {{site.data.keyword.satelliteshort}} cluster
 1. Create a second worker pool using the hosts that you attached. For more information see, [Creating {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters).
 
 1. Attach more hosts to your location, but do not assign them to a worker pool. These `Ready/Unassigned` hosts are available for autoscaling. When you attach the hosts that you want to leave available for autoscaling, be sure specify host labels such as the host `cpu=16` and `memory=64`. Host labels are used by the cluster autoscaler add-on to find hosts that are available for scaling.
-1. Install the cluster [add-on in your cluster](/docs/containers?topic=containers-cluster-scaling-install-addon) in your cluster. Note that if you see an error message `The 'cluster-autoscaler' add-on is not supported on satellite clusters`, your account is not allowlisted to use the add-on. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
+1. Install the cluster [add-on in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon) in your cluster. Note that if you see an error message `The 'cluster-autoscaler' add-on is not supported on satellite clusters`, your account is not allowlisted to use the add-on. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
 1. Edit the cluster autoscaler ConfigMap and specify the autoscaling parameters that you want to use, such as `MinSize`, `MaxSize`, and the worker pools that you want to use for scaling.
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
@@ -114,14 +114,14 @@ For more information about creating worker pools and adding worker nodes, see [A
 
 2. In your 4.11 cluster, create a new worker pool to contain your RHEL 8 worker nodes. Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of RHEL 7 worker nodes that are to be replaced. By default, any worker nodes added to your new worker pool run RHEL 8.
 
-    **For classic clusters**. See the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_create) for command details.
+    **For classic clusters**. See the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) for command details.
 
     ```sh
     ibmcloud oc worker-pool create classic --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> 
     ```
     {: pre}
 
-    **For VPC clusters**. See the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details.
+    **For VPC clusters**. See the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details.
 
     ```sh
     ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> 
@@ -136,8 +136,8 @@ For more information about creating worker pools and adding worker nodes, see [A
     {: pre}
 
 4. Add a zone to your worker pool. When you add a zone, the number of worker nodes you specified with the `--size-per-zone` option are added to the zone. These worker nodes run the RHEL 8 operating system. 
-    * [Adding a zone to a worker pool in a classic cluster](/docs/containers?topic=containers-add-workers-classic#add_zone)
-    * [Adding a zone to a worker pool in a VPC cluster](/docs/containers?topic=containers-add-workers-vpc#vpc_add_zone)
+    * [Adding a zone to a worker pool in a classic cluster](/docs/openshift?topic=openshift-add-workers-classic#add_zone)
+    * [Adding a zone to a worker pool in a VPC cluster](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone)
 
 5. Verify that worker nodes are available in your new worker pool. In the output, check the number in the **Workers** column for the worker pool.
     ```sh
@@ -145,7 +145,7 @@ For more information about creating worker pools and adding worker nodes, see [A
     ```
     {: pre}
 
-6. [Remove the worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
+6. [Remove the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
 
     Consider scaling down your RHEL 7 worker pool and keeping it for several days before you remove it. This way, you can easily scale the worker pool back up if your workload experiences disruptions during the migration process. After you remove the worker pool, you cannot provision another RHEL 7 worker pool in the event of disruptions. When you have determined that your workload is stable and functions normally, you can safely remove the RHEL 7 worker pool.
     {: important}

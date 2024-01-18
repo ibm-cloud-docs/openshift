@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, clusters, worker nodes, worker pools, add, classic
@@ -23,7 +23,7 @@ subcollection: openshift
 Reviewing the following sections for information on how to add worker nodes to your Classic cluster.
 {: shortdesc}
 
-Looking to add workers to VPC clusters? See [Adding worker nodes to VPC clusters](/containers?topic=containers-add-workers-classic?).
+Looking to add workers to VPC clusters? See [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-classic).
 {: tip}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift
@@ -55,7 +55,7 @@ Minimum required permissions
 As an account administrator, create a trusted profile in {{site.data.keyword.cloud_notm}} Identity and Access Management. For more information, see the [IAM documentation](/docs/account?topic=account-create-trusted-profile&interface=ui).
 {: shortdesc}
 
-**Before you begin**: Verify that you meet the [prerequisites](/docs/containers?topic=containers-pod-iam-identity&interface=api#iam-identity-create-api).
+**Before you begin**: Verify that you meet the [prerequisites](/docs/openshift?topic=openshift-pod-iam-identity&interface=api#iam-identity-create-api).
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -161,7 +161,7 @@ As a developer, you can configure your application pods to authenticate with {{s
 
 Before you begin:
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* Make sure that your account administrator [created an IAM trusted profile for your cluster](/docs/containers?topic=containers-pod-iam-identity&interface=api#iam-identity-create-api).
+* Make sure that your account administrator [created an IAM trusted profile for your cluster](/docs/openshift?topic=openshift-pod-iam-identity&interface=api#iam-identity-create-api).
 
 To configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services:
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: kubernetes, worker nodes, state
@@ -31,7 +31,7 @@ You can view the current worker node state by running the `ibmcloud oc worker ls
 You can view the current worker node state by running the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and locating the **State** and **Status** fields.
 {: shortdesc}
 
-A worker node can go into a `Critical` state for many reasons. See [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/containers?topic=containers-ts-critical-notready) for more information and troubleshooting steps. 
+A worker node can go into a `Critical` state for many reasons. See [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/openshift?topic=openshift-ts-critical-notready) for more information and troubleshooting steps. 
 
 ## `Deleting` state
 {: #worker-node-deleting}
