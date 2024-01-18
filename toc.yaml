@@ -252,6 +252,7 @@ toc:
           - openshift_storage_odf_trusted_profile.md
           - openshift_storage_ocs_manage.md
           - openshift_storage_noobaa.md
+          - openshift_storage_parameters.md
           - openshift_storage_ocs_sc_ref.md
       - topicgroup:
           label: Setting up Portworx

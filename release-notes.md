@@ -31,6 +31,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2024
 {: #openshift-jan24}
 
+### 19 January 2024
+{: #openshift-jan1924}
+{: release-note}
+
+OpenShift Data Foundation add-on version `4.14.0`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
 ### 17 January 2024
 {: #openshift-jan1724}
 {: release-note}
@@ -84,6 +91,18 @@ Subscribe to the {{site.data.keyword.cloud_notm}} documentation release notes vi
 
 {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates `5.2.14_485` and `5.1.19_486`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
+
+
+### 8 January 2024
+{: #openshift-jan0824}
+{: release-note}
+
+OpenShift Data Foundation add-on version `4.13.9`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
+
 
 
 
@@ -169,7 +188,7 @@ Red Hat OpenShift OAuth and console access changes for cluster version 4.14.
 :   For clusters that run version 4.14, the default method for accessing the Red Hat OpenShift console is through the private service endpoint. This change is a reversion of changes introduced in 4.13. For more information, see the following docs.
 :   - **Previous**: [4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413).
 :   - **Current**: [4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414).
-
+ 
 Master fix pack and worker node fix pack update.
 :   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_414) are available.
 

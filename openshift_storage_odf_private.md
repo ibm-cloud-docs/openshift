@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
@@ -490,7 +490,7 @@ To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
 1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.10.0` of the add-on to an OCP `4.9` or `4.11` cluster. If you have a cluster version other than the default, you must install the add-on from the CLI and specify the `--version` option.
-1. [Review the parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui#odf-vpc-param-ref)
+1. [Review the parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters)
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, find the OpenShift Data Foundation card and click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
