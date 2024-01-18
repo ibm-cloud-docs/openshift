@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-18"
 
 
 keywords: ingress, expose apps, publicly expose, public ingress, ingress vpc
@@ -68,9 +68,9 @@ oc expose deploy <app_deployment_name> --name my-app-svc --port <app_port> -n <n
 Your TLS certificate must be stored as a Kubernetes secret in each namespace where your apps exist.
 {: shortdesc}
 
-* To use the IBM-managed Ingress domain, see [Setting up TLS secrets for the IBM-provided Ingress subdomain](/docs/containers?topic=containers-secrets#tls-default).
+* To use the IBM-managed Ingress domain, see [Setting up TLS secrets for the IBM-provided Ingress subdomain](/docs/openshift?topic=openshift-secrets#tls-default).
 
-* To use a domain that you created yourself, such as a domain that is registered with an external provider, see [Setting up TLS secrets for custom subdomains](/docs/containers?topic=containers-secrets#tls-custom).
+* To use a domain that you created yourself, such as a domain that is registered with an external provider, see [Setting up TLS secrets for custom subdomains](/docs/openshift?topic=openshift-secrets#tls-custom).
 
 
 ### Step 3: Create the Ingress resource
@@ -211,7 +211,7 @@ Your TLS certificate must be stored as a Kubernetes secret in each namespace whe
 #### TLS secrets for custom Ingress domains
 {: #ingress-private-tls-custom-public}
 
-To use a domain that you created yourself, such as a domain that is registered with an external provider, see [Setting up TLS secrets for custom subdomains](/docs/containers?topic=containers-secrets#tls-custom).
+To use a domain that you created yourself, such as a domain that is registered with an external provider, see [Setting up TLS secrets for custom subdomains](/docs/openshift?topic=openshift-secrets#tls-custom).
 {: shortdesc}
 
 #### TLS secrets for IBM-managed Ingress domains

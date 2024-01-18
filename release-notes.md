@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, kubernetes, release notes
@@ -145,7 +145,7 @@ New APIs for setting and getting the OAuth access type for private-only VPC clus
 {: release-note}
 
 Information on worker node removal priority.
-:   Details are available for [automated worker node removal](/docs/containers?topic=containers-update#worker-scaledown-logic) when scaling down a worker pool.
+:   Details are available for [automated worker node removal](/docs/openshift?topic=openshift-update#worker-scaledown-logic) when scaling down a worker pool.
 
 
 Kubernetes version 1.24 is unsupported.
@@ -1214,7 +1214,7 @@ Worker node fix packs `4.8.57_1597_openshift`, `4.9.57_1584_openshift`, `4.10.54
 {: release-note}
 
 New troubleshooting steps for workers in `Critical` or `NotReady` state. 
-:   For more information, see [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/containers?topic=containers-ts-critical-notready).
+:   For more information, see [Troubleshooting worker nodes in `Critical` or `NotReady` state](/docs/openshift?topic=openshift-ts-critical-notready).
 
 ### 20 March 2023
 {: #openshift-mar2023}
@@ -1408,10 +1408,10 @@ Istio add-on `1.14`
 
 
 Persistent VPC load balancers
-:   You can now create a [persistent VPC load balancer](/docs/containers?topic=containers-vpc-lbaas#vpc_lb_persist) that remains available even after your cluster is deleted. 
+:   You can now create a [persistent VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_persist) that remains available even after your cluster is deleted. 
 
 Customized VPC load balancer health checks
-:   For more control over your VPC load balancer health checks, you can use [optional annotations](/docs/containers?topic=containers-vpc-lbaas#vpc_lb_health_custom) to customize your health checks with advanced configurations for test intervals, timeouts, and retries.
+:   For more control over your VPC load balancer health checks, you can use [optional annotations](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_custom) to customize your health checks with advanced configurations for test intervals, timeouts, and retries.
 
 ## January 2023
 {: #openshift-jan23}
@@ -4395,7 +4395,7 @@ Helm version 2 unsupported
 {: release-note}
 
 {{site.data.keyword.keymanagementserviceshort}} enhancements
-:   For clusters that run `4.4.16_1513_openshift` or later, your cluster now [integrates more features from {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-encryption-setup) when you enable {{site.data.keyword.keymanagementserviceshort}} as the KMS provider for the cluster. When you enable this integration, a **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. If you have a cluster that runs an earlier version, [update your cluster](/docs/containers?topic=containers-update) and then [re-enable KMS encryption](/docs/openshift?topic=openshift-encryption) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
+:   For clusters that run `4.4.16_1513_openshift` or later, your cluster now [integrates more features from {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-encryption-setup) when you enable {{site.data.keyword.keymanagementserviceshort}} as the KMS provider for the cluster. When you enable this integration, a **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. If you have a cluster that runs an earlier version, [update your cluster](/docs/openshift?topic=openshift-update) and then [re-enable KMS encryption](/docs/openshift?topic=openshift-encryption) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available.

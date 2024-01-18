@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
@@ -270,11 +270,11 @@ kubectl get secret -n default example-secret -o yaml
 Review the answers to commonly asked questions about managing secrets in your cluster.
 {: shortdesc}
 
-Are my secrets automatically updated if I do not create and register a [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance?
+Are my secrets automatically updated if I do not create and register a [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance?
 :    If you do not register a {{site.data.keyword.secrets-manager_short}} instance to your cluster, your default Ingress secrets continue to update automatically every 90 days and are applied to your cluster. However, any secrets you created that *reference* the default Ingress secret are not automatically updated. 
 :   **Example scenario**: You have a default Ingress certificate in the `default` namespace. You run the **`ibmcloud oc ingress secret create`** command and reference the CRN of the default Ingress certificate to mirror the certificate in the `istio-system` namespace. Without a {{site.data.keyword.secrets-manager_short}} instance, the default Ingress certificate in the `default` namespace automatically updates. However, you are responsible for regularly updating the certificate in the `istio-system` namespace with the `**kubectl**` commands or another rotation method. 
 
-I created secrets that reference the default Ingress certificate, but I did not create and register a [{{site.data.keyword.secrets-manager_short}}](/docs/containers?topic=containers-secrets-mgr) instance. How do I manage my secrets?
+I created secrets that reference the default Ingress certificate, but I did not create and register a [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance. How do I manage my secrets?
 :   If you don't register a {{site.data.keyword.secrets-manager_short}} instance, {{site.data.keyword.openshiftlong_notm}} automatically updates only the default Ingress secret. You are responsible for managing any other secrets by using **`kubectl`** commands or another rotation method. If your secrets reference the default Ingress certificate, remove them by using **`ibmcloud ks ingress secret rm`**.
 
 

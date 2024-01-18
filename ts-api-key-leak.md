@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: kubernetes, help, api key, security
@@ -58,7 +58,7 @@ To resolve the issue, rotate your cluster credentials.
     ```
     {: pre}
 
-1. Run the **`ibmcloud ks cluster pull-secret apply`** [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_pull_secret_apply). This command generates a new API key and updates the `all-icr-io` secret in the default namespace.
+1. Run the **`ibmcloud ks cluster pull-secret apply`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply). This command generates a new API key and updates the `all-icr-io` secret in the default namespace.
     ```sh
     ibmcloud ks cluster pull-secret apply --cluster CLUSTER
     ```

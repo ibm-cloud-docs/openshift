@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, ips, vlans, networking, public gateway
@@ -95,7 +95,7 @@ Size requirements
 
 :   For VPC clusters, you can specify the subnet size by including it in the `--pod-subnet` option. For example: `--pod-subnet 0.0.0.0/X` where `X` is the required pod subnet size. Then pod subnet is then automatically selected. When allocating the pod subnet automatically, the allocation will start from `172.17.0.0`, the biggest subnet is limited to `13`, and the smallest subnet size is limited to `23`. 
 
-:   There is a global limit for worker nodes. [You can't exceed 500 worker nodes across all clusters in a region.](/docs/containers?topic=containers-limitations#tech_limits)
+:   There is a global limit for worker nodes. [You can't exceed 500 worker nodes across all clusters in a region.](/docs/openshift?topic=openshift-limitations#tech_limits)
 
 
 Range requirements
@@ -299,7 +299,7 @@ To create a VPC subnet, follow these steps.
     {: screen}
 
 
-5. Use the subnet to [create a cluster](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui), [create a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone).
+5. Use the subnet to [create a cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui), [create a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool), or [add the subnet to an existing worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone).
     Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
     {: important}
 
@@ -404,7 +404,7 @@ If you enable classic access when you create your VPC, [classic access default a
         ```
         {: screen}
 
-6. Use the subnets to [create a cluster](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui).
+6. Use the subnets to [create a cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).
     Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
     {: important}
     

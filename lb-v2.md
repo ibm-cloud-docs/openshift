@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, lb2.0, nlb
@@ -41,7 +41,7 @@ Before you create an NLB 2.0, you must complete the following prerequisite steps
     3. In the case fields, enter the following:
         Topic: Network - Provisioning
         Subtopic: Classic - VLAN
-    4. Add the following information to the description: `Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account. This is related to /docs/containers?topic=containers-loadbalancer-v2#ipvs_provision, and is needed so I can configure NLB v2.0 LoadBalancers in my Classic Kubernetes Cluster.`. Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
+    4. Add the following information to the description: `Please set up the network to allow capacity aggregation on the public and private VLANs associated with my account. This is related to /docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision, and is needed so I can configure NLB v2.0 LoadBalancers in my Classic Kubernetes Cluster.`. Note that if you want to allow capacity aggregation on specific VLANs, such as the public VLANs for one cluster only, you can specify those VLAN IDs in the description.
     5. Click **Submit**.
 
 2. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 2.0 can route packets to various subnets in the account.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift
@@ -94,7 +94,7 @@ The user's infrastructure permissions are most commonly stored as an [API key](/
 
 If the credentials were manually changed with the `ibmcloud oc credential set` command, the region and resource group values might have been changed, resulting in a mismatch. Credentials and the resource group API key are specific to both the region and resource group that are targeted at the time the command is executed. However, the `ibmcloud oc credential` and `ibmcloud oc api-key` commands only accept an input for the region value, while the resource group is targeted separately with the `ibmcloud target` command before changing the credentials. If no resource group is targeted, the default resource group is applied. If the targeted resource group is not the same as the one that the cluster is deployed in, then the new credentials do not apply to the cluster. In this case, the credentials that apply to the cluster might be different from what you think they are. 
 
-This error can also occur if you created a cluster with a linked [IBM Cloud infrastructure account](/docs/containers?topic=containers-access-creds#understand_infra) and then later added separate credentials. IBM Cloud infrastructure accounts that are linked to an IBM Cloud account do not require credentials to create clusters. However, if separate credentials were later added to or removed from the cluster, with either the `ibmcloud oc credential set` or `ibmcloud oc credential unset` commands, then those credentials might not match the specifications for the linked account. This can result in the credentials being unrecognized.
+This error can also occur if you created a cluster with a linked [IBM Cloud infrastructure account](/docs/openshift?topic=openshift-access-creds#understand_infra) and then later added separate credentials. IBM Cloud infrastructure accounts that are linked to an IBM Cloud account do not require credentials to create clusters. However, if separate credentials were later added to or removed from the cluster, with either the `ibmcloud oc credential set` or `ibmcloud oc credential unset` commands, then those credentials might not match the specifications for the linked account. This can result in the credentials being unrecognized.
 
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
 {: tsResolve}
@@ -185,7 +185,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         ```
         {: pre}
 
-1. [Open an issue with IBM Cloud support](/docs/containers?topic=containers-get-help#help-support). Be sure to include all the information and command outputs gathered in the previous step. 
+1. [Open an issue with IBM Cloud support](/docs/openshift?topic=openshift-get-help#help-support). Be sure to include all the information and command outputs gathered in the previous step. 
 
 ## Unable to create or delete worker nodes due to incorrect account error
 {: #orphaned}

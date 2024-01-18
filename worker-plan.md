@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, kubernetes, multi az, multi-az, szr, mzr
@@ -68,7 +68,7 @@ Yes. To add different flavors to your cluster, you must [create another worker p
 ### How can I change worker node flavors?
 {: #change-flavors}
 
-See [updating flavors](/docs/containers?topic=containers-update#machine_type).
+See [updating flavors](/docs/openshift?topic=openshift-update#machine_type).
 
 ### Are the worker nodes encrypted?
 {: #encrypted-flavors}

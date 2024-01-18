@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift
@@ -48,7 +48,7 @@ Back up your data and reload your worker node.
     ```
     {: pre}
 
-For a long-term fix, [update the flavor of your worker pool](/docs/containers?topic=containers-update#machine_type).
+For a long-term fix, [update the flavor of your worker pool](/docs/openshift?topic=openshift-update#machine_type).
 
 
 

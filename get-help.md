@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: red hat openshift, openshift container platform, red hat, red hat cluster, openshift, containers, clusters
@@ -29,8 +29,8 @@ Still having issues with your cluster? Review different ways to get help and sup
 {: support}
 
 1. Keep your cluster environment up to date.
-    * Check monthly for available security and operating system patches to [update your worker nodes](/docs/containers?topic=containers-update#worker_node).
-    * [Update your cluster](/docs/containers?topic=containers-update#master) to the latest default version for [{{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-openshift_versions).
+    * Check monthly for available security and operating system patches to [update your worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+    * [Update your cluster](/docs/openshift?topic=openshift-update#master) to the latest default version for [{{site.data.keyword.redhat_openshift_notm}}](/docs/openshift?topic=openshift-openshift_versions).
 2. Make sure that your command line tools are up to date.
     * In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
     * Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-cli-install) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
@@ -42,7 +42,7 @@ Still having issues with your cluster? Review different ways to get help and sup
 
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Kubernetes Service** component.
-3. Review the [limitations and known issues documentation](/docs/containers?topic=containers-limitations).
+3. Review the [limitations and known issues documentation](/docs/openshift?topic=openshift-limitations).
 4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}. For example, you might check the {{site.data.keyword.redhat_openshift_notm}} [Bugzilla](https://bugzilla.redhat.com/){: external}.
 
 

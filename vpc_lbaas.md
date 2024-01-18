@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, app protocol, application protocol
@@ -201,8 +201,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
     :  Optional. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
-    - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) to allow inbound traffic on the port. 
-    - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) to allow outbound traffic to the specified TCP port. 
+    - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to allow inbound traffic on the port. 
+    - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to allow outbound traffic to the specified TCP port. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
     :   Optional. The health check URL path for HTTP and HTTPS health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
@@ -512,8 +512,8 @@ To enable your app to receive private network requests,
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
     :  Optional. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
-    - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) to allow inbound traffic on the port. 
-    - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) to allow outbound traffic to the specified TCP port. 
+    - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to allow inbound traffic on the port. 
+    - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to allow outbound traffic to the specified TCP port. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
     :   Optional. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
@@ -783,8 +783,8 @@ To enable your app to receive public or private requests,
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
     :  Optional. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
-    - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) to allow inbound traffic on the port. 
-    - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) to allow outbound traffic to the specified TCP port. 
+    - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to allow inbound traffic on the port. 
+    - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to allow outbound traffic to the specified TCP port. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
     :   Optional. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
@@ -999,7 +999,7 @@ You are responsible for deleting persistent VPC load balancers when they are no 
 ### Detaching a VPC load balancer from a cluster
 {: #vpc_lb_move_detach}
 
-VPC load balancers are linked to the Kubernetes `LoadBalancer` service definition that they were created with. To detach a persistent VPC load balancer from a cluster, you must break the link with the `LoadBalancer` service by [renaming the VPC load balancer](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference#load-balancer-update), or by removing the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation from the original `LoadBalancer` service definition. You can also detach a persistent VPC load balancer from a cluster by [deleting the cluster](/docs/containers?topic=containers-remove).
+VPC load balancers are linked to the Kubernetes `LoadBalancer` service definition that they were created with. To detach a persistent VPC load balancer from a cluster, you must break the link with the `LoadBalancer` service by [renaming the VPC load balancer](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference#load-balancer-update), or by removing the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation from the original `LoadBalancer` service definition. You can also detach a persistent VPC load balancer from a cluster by [deleting the cluster](/docs/openshift?topic=openshift-remove).
 {: shortdesc}
 
 If you remove the annotation, the original `LoadBalancer` service reverts and creates a non-persistent VPC load balancer in the original cluster. This non-persistent VPC load balancer follows the `kube-<cluster_ID>-<kubernetes_lb_service_UID>` naming convention.
@@ -1026,7 +1026,7 @@ VPC load balancers are automatically configured with health checks, which you co
 - If `externalTrafficPolicy` is set to `Cluster`, TCP health checks are applied. If you are configuring a UDP load balancer, [you must make additional port specifications](#vpc_lb_health_udp).
 - If `externalTrafficPolicy` is set to `Local`, HTTP health checks are applied. You must ensure that an app pod exists on each worker node in the same zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster. Incoming traffic is delivered only to the application pod residing on that specific node. If there is no application pod on that specific node, the incoming traffic is dropped.
 
-The `externalTrafficPolicy: Local` setting might cause health checks on your load balancer worker nodes to fail. Usually, this outcome is the expected behavior and does not necessarily indicate a problem, as traffic is intentionally dropped if the load balancer tries to connect to any node that does not have an application pod. For more information, see [Why are VPC load balancer health checks failing on my worker nodes?](/docs/containers?topic=containers-vpc-lb-healthcheck-fail).
+The `externalTrafficPolicy: Local` setting might cause health checks on your load balancer worker nodes to fail. Usually, this outcome is the expected behavior and does not necessarily indicate a problem, as traffic is intentionally dropped if the load balancer tries to connect to any node that does not have an application pod. For more information, see [Why are VPC load balancer health checks failing on my worker nodes?](/docs/openshift?topic=openshift-vpc-lb-healthcheck-fail).
 {: note}
 
 
@@ -1042,8 +1042,8 @@ For more control over your VPC load balancer health checks, you can use optional
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
 :  Optional. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
-   - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) to allow inbound traffic on the port. 
-   - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/containers?topic=containers-vpc-security-group#vpc-sg-create-rules) to allow outbound traffic to the specified TCP port. 
+   - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to allow inbound traffic on the port. 
+   - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) to allow outbound traffic to the specified TCP port. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
 :   Optional. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.

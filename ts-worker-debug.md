@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift
@@ -49,7 +49,7 @@ Check the {{site.data.keyword.cloud_notm}} health and status dashboard for any n
 If your worker node is not functioning as expected, you can follow these steps to update your cluster and command line tools or run diagnostic tests. If the issue persists, see [Debugging your worker node](#worker-debug-steps) for additional steps. 
 {: shortdesc}
 
-1. [Update your cluster and worker nodes to the latest version](/docs/containers?topic=containers-update#update).
+1. [Update your cluster and worker nodes to the latest version](/docs/openshift?topic=openshift-update#update).
 2. [Update your command line tools](/docs/openshift?topic=openshift-cli-update).
 3. [Run tests in the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool). 
 

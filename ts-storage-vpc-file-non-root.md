@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift
@@ -99,7 +99,7 @@ If you want to use {{site.data.keyword.filestorage_vpc_short}} with static provi
     ```
     {: screen}
 
-1. [Add filestorage to your app](/docs/containers?topic=containers-storage-file-vpc-apps)
+1. [Add filestorage to your app](/docs/openshift?topic=openshift-storage-file-vpc-apps)
 
 ## Edit your app to run as root with `fsGroup: 0`
 {: #ts-vpc-yaml-sc}

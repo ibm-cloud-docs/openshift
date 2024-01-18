@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift
@@ -281,7 +281,7 @@ ibmcloud oc ingress domain credential set cloudflare --cluster CLUSTER --token T
 :    The access token for Cloudflare credentials. This token is provided by Cloudflare. 
 
 `--domain-zone ZONE`
-:    The DNS zone that exists in your Cloudflare account and is specified in your [provider credentials](/docs/containers?topic=containers-ingress-domains&interface=cli#ingress-domains-ext-cred). This is a GUID value. 
+:    The DNS zone that exists in your Cloudflare account and is specified in your [provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred). This is a GUID value. 
 
 
 ### Verifying your provider credentials 
@@ -341,7 +341,7 @@ Learn how to manage the domains that exist in your cluster.
 ### Listing all domains in a cluster
 {: #ingress-domains-manage-view-ls}
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-ls).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-ls).
 
 ```sh
 ibmcloud oc ingress domain ls --cluster CLUSTER
@@ -351,7 +351,7 @@ ibmcloud oc ingress domain ls --cluster CLUSTER
 ### Getting the details of a single domain
 {: #ingress-domains-manage-view-get}
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-get).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-get).
 
 ```sh
 ibmcloud oc ingress domain credential get --cluster CLUSTER 
@@ -366,7 +366,7 @@ If you delete a domain from a cluster, the domain cannot be recovered. If you la
 If you delete a domain that is registered with the IBM internal provider, you cannot reuse the domain name.
 {: note}
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-rm).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-rm).
 
 ```sh
 ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN
@@ -378,7 +378,7 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN
 
 You can update a domain's registered IP addresses (for Classic or VPC clusters) or hostname (for VPC clusters) after the domain is created or added to the cluster. This command updates all the resources in your cluster with the specified IP addresses or hostnames and changes your app URLs. 
 
-For more information and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-update).
+For more information and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-update).
 
 Note that when you add IP addresses or hostnames, you must include any IPs or hostnames that are currently registered to the domain. The domain updates with the exact values specified, so any current IP addresses or hostnames are overwritten if they are not included. For example, if `52.137.182.166` is currently registered to your domain and you want to add `52.137.182.270`, you must specify `--ip 52.137.182.166 --ip 52.137.182.270` in the command.
 {: important}
@@ -393,7 +393,7 @@ ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname 
 
 The default Ingress domain is used to form a unique URL for each of your apps and is the domain that is referenced by the IP addresses of any public ALBs in your cluster. When you provision a cluster, the default Ingress domain is automatically created for you, but you can change the default domain to any domain that exists in your cluster. To check your cluster's default domain, run `ibmcloud oc cluster get` and find the **Ingress subdomain** in the output. 
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-default-replace).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-default-replace).
 
 It can take up to five minutes for the default domain to update. During that time, your domain might experience downtime.
 {: important}
@@ -416,7 +416,7 @@ Learn how to manage the provider credentials that exist in your cluster.
 
 Get the details of the provider credentials that are added to your cluster. Note that only one set of credentials can be added to a cluster at a time. 
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-credential-get).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-credential-get).
 
 ```sh
 ibmcloud oc ingress domain credential get --cluster CLUSTER 
@@ -428,7 +428,7 @@ ibmcloud oc ingress domain credential get --cluster CLUSTER
 
 You can remove external provider credentials from your cluster. Note that removing credentials causes any domains registered with those credentials to enter an `Error` state. The domain status resolves when the credentials are reapplied. 
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli&interface=ui#ingress-domain-credential-rm).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-credential-rm).
 
 ```sh
 ibmcloud oc ingress domain credential rm --cluster CLUSTER 
@@ -446,7 +446,7 @@ Learn how to manage the TLS certificate for your Ingress domain.
 
 Regenerate the domain certificate to generate a new token in your DNS provider and apply it to your cluster.
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#ingress-domain-secret-regenerate)
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate)
 
 ```sh
 ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
@@ -458,7 +458,7 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
 
 Delete the secret for an Ingress domain and prevent future renewal of the certificate. 
 
-For more details and command options, see the [CLI reference](/docs/containers?topic=containers-kubernetes-service-cli#ingress-domain-secret-rm)
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm)
 
 ```sh
 ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN 

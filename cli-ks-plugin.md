@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift
@@ -26,7 +26,7 @@ subcollection: openshift
 Refer to these commands to create and manage **both community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters** in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
-* **Community Kubernetes**: [Install the Kubernetes CLI plug-in](/docs/containers?topic=containers-cli-install).
+* **Community Kubernetes**: [Install the Kubernetes CLI plug-in](/docs/openshift?topic=openshift-cli-install).
 * **OpenShift**: [Install the {{site.data.keyword.redhat_openshift_notm}} CLI plug-in](/docs/openshift?topic=openshift-cli-install).
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
@@ -144,7 +144,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster my_cluster
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Disable the [Kubernetes web terminal](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_addon_disable) add-on. To use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
+Disable the [Kubernetes web terminal](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable) add-on. To use the Kubernetes web terminal in the {{site.data.keyword.containerlong_notm}} cluster console, you must re-enable the add-on first.
 {: shortdesc}
 
 ```sh
@@ -914,8 +914,8 @@ Minimum required permissions
 :    Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.
 
 `--cluster-security-group GROUP_ID`
-:    Optional. Specify additional security group IDs to apply to all workers on the cluster. You must include a separate `--cluster-security-group` option for each individual security group you want to add. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, only the `kube-clusterID` and the default VPC security group are applied. A maximum of five security groups can be applied to workers, including the default security groups. Note that the VPC security group is only applied if no other security groups are specified. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group#vpc-sg-cluster).
-    The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. See [Adding VPC security groups to clusters and worker pools during create time](/docs/containers?topic=containers-vpc-security-group#vpc-sg-cluster) for more details before adding security groups to your cluster.
+:    Optional. Specify additional security group IDs to apply to all workers on the cluster. You must include a separate `--cluster-security-group` option for each individual security group you want to add. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, only the `kube-clusterID` and the default VPC security group are applied. A maximum of five security groups can be applied to workers, including the default security groups. Note that the VPC security group is only applied if no other security groups are specified. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster).
+    The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-create-rules) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. See [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster) for more details before adding security groups to your cluster.
     {: important}
 
 `--operating-system SYSTEM`
@@ -938,7 +938,7 @@ Minimum required permissions
 :    In the first cluster that you create in a VPC, the default pod subnet is `172.17.0.0/18`. In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
 :    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
 :   :    All pods that are deployed to a worker node are assigned a private IP address in the `172.17.0.0/18` range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
-:   For VPC clusters, you can specify the subnet size by including it in the `--pod-subnet` option. For example: `--pod-subnet 0.0.0.0/X` where `X` is the required pod subnet size. Then pod subnet is then automatically selected. When allocating the pod subnet automatically, the allocation will start from `172.17.0.0`, the biggest subnet is limited to `13`, and the smallest subnet size is limited to `23`. For more information, see [Configuring VPC subnets](/docs/containers?topic=containers-vpc-subnets).
+:   For VPC clusters, you can specify the subnet size by including it in the `--pod-subnet` option. For example: `--pod-subnet 0.0.0.0/X` where `X` is the required pod subnet size. Then pod subnet is then automatically selected. When allocating the pod subnet automatically, the allocation will start from `172.17.0.0`, the biggest subnet is limited to `13`, and the smallest subnet size is limited to `23`. For more information, see [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets).
      The subnet that you choose must be within one of the following ranges.
      - `172.17.0.0 - 172.17.255.255`
      - `172.21.0.0 - 172.31.255.255`
@@ -1297,7 +1297,7 @@ ibmcloud oc cluster master pod-security policy get --cluster mycluster
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Set and enable the [pod security admission](/docs/containers?topic=containers-pod-security-admission&interface=ui) for a cluster's Kubernetes API server.
+Set and enable the [pod security admission](/docs/openshift?topic=openshift-pod-security-admission&interface=ui) for a cluster's Kubernetes API server.
 {: shortdesc}
 
 ```sh
@@ -1332,7 +1332,7 @@ ibmcloud oc cluster master pod-security set --cluster mycluster
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Remove the [pod security admission](/docs/containers?topic=containers-pod-security-admission&interface=ui) configuration for a cluster's Kubernetes API server.
+Remove the [pod security admission](/docs/openshift?topic=openshift-pod-security-admission&interface=ui) configuration for a cluster's Kubernetes API server.
 {: shortdesc}
 
 ```sh
@@ -3012,7 +3012,7 @@ Update worker nodes to apply the latest security updates and patches to the oper
 To update a worker node in a VPC cluster, use the [**`ibmcloud oc worker replace`** command](#cli_worker_replace) instead.
 {: note}
 
-Running `ibmcloud oc worker update` can cause downtime for your apps and services. During the update, all pods are rescheduled onto other worker nodes, the worker node is reimaged, and data is deleted if not stored outside the pod. To avoid downtime, [ensure that you have enough worker nodes to handle your workload while the selected worker nodes are updating](/docs/containers?topic=containers-update#worker_node).
+Running `ibmcloud oc worker update` can cause downtime for your apps and services. During the update, all pods are rescheduled onto other worker nodes, the worker node is reimaged, and data is deleted if not stored outside the pod. To avoid downtime, [ensure that you have enough worker nodes to handle your workload while the selected worker nodes are updating](/docs/openshift?topic=openshift-update#worker_node).
 {: important}
 
 To update {{site.data.keyword.satelliteshort}} worker nodes, see [Updating hosts that are assigned as worker nodes to Satellite-enabled services](/docs/satellite?topic=satellite-host-update-workers).
@@ -4560,7 +4560,7 @@ Minimum required permissions
 :    Optional. Include this option to set the relevant domain as the default domain for the cluster. 
 
 `--domain DOMAIN`
-:    The Ingress domain. You can specify an existing domain, or create a new one. For provider specific information on specifying domains, see [Creating your own Ingress domain](/docs/containers?topic=containers-ingress-domains).
+:    The Ingress domain. You can specify an existing domain, or create a new one. For provider specific information on specifying domains, see [Creating your own Ingress domain](/docs/openshift?topic=openshift-ingress-domains).
 
 `--hostname HOSTNAME`
 :    Optional. For VPC clusters. The hostname to register for the domain. 
@@ -4584,7 +4584,7 @@ Minimum required permissions
 #### Example `ingress domain create` command
 {: #ingress-domain-create-example}
 
-This example command creates a domain registered with the {{site.data.keyword.cloud_notm}} internal provider. For examples to create domains with different providers, see [Creating your own Ingress domain](/docs/containers?topic=containers-ingress-domains).
+This example command creates a domain registered with the {{site.data.keyword.cloud_notm}} internal provider. For examples to create domains with different providers, see [Creating your own Ingress domain](/docs/openshift?topic=openshift-ingress-domains).
 
 ```sh
 ibmcloud oc ingress domain create --cluster my-cluster --domain exampledomain
@@ -5387,7 +5387,7 @@ Minimum required permissions
 :    Required: Specify a name for the secret. Make sure that you don't create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
 
 `--field CRN`
-:   Required for non-TLS secrets. Add a field to the secret. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-secrets#non-tls-field). This option is not supported for TLS secrets. 
+:   Required for non-TLS secrets. Add a field to the secret. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field). This option is not supported for TLS secrets. 
      - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types. 
      - To specify the field name, use the named field option: `--field name=<crn>`. This option is available for arbitrary and IAM credential secret types.
      - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types. 
@@ -5418,7 +5418,7 @@ ibmcloud oc ingress secret create --cert-crn crn:v1:staging:public:cloudcerts:us
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Add a non-TLS CRN field to an Opaque secret. There are three ways to specify the field type. The one you choose depends on the secret type and how you want to name the field in the non-TLS secret. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-secrets#non-tls-field).
+Add a non-TLS CRN field to an Opaque secret. There are three ways to specify the field type. The one you choose depends on the secret type and how you want to name the field in the non-TLS secret. For more information, see [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field).
 {: shortdesc}
 
 ```sh
@@ -5438,7 +5438,7 @@ Minimum required permissions
 :    Required. The name of the secret to add the field to.
 
 `--field CRN`
-:    Required. The secret CRN to add to the field. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/containers?topic=containers-secrets#non-tls-field).
+:    Required. The secret CRN to add to the field. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field).
      - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types. 
      - To specify the field name, use the named field option: `--field name=<crn>`. This option is available for arbitrary and IAM credential secret types.
      - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types. 
@@ -7730,7 +7730,7 @@ To use this command to prepare your automation scripts for the release of versio
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Reset or sync a security group to the [default traffic rules](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
+Reset or sync a security group to the [default traffic rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
 {: shortdesc}
 
 ### `ibmcloud oc security-group reset`
@@ -7738,7 +7738,7 @@ Reset or sync a security group to the [default traffic rules](/docs/containers?t
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-[Deletes all existing security group rules and reapplies the default rules](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
+[Deletes all existing security group rules and reapplies the default rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
 {: shortdesc}
 
 ```sh
@@ -7769,7 +7769,7 @@ ibmcloud oc security-group reset --cluster mycluster --security-group mygroup
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Reapplies the [default security group rules](/docs/containers?topic=containers-vpc-security-group&interface=ui#vpc-sg-inbound-outbound) to add any missing rules. Does not delete preexisting rules.
+Reapplies the [default security group rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound) to add any missing rules. Does not delete preexisting rules.
 {: shortdesc}
 
 ```sh

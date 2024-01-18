@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, pod security, reset, valid configuration, psa
@@ -31,7 +31,7 @@ When you use the `ibmcloud ks cluster master pod-security set` command with the 
 {: screen}
 
 
-There is a problem with the pod security configuration file. The content of this file is described in [Pod Security Admission plug-in configuration](/docs/containers?topic=containers-pod-security-admission).
+There is a problem with the pod security configuration file. The content of this file is described in [Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission).
 {: tsCauses}
 
 Types of errors can include:

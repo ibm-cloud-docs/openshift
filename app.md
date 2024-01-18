@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
@@ -192,7 +192,7 @@ Cluster administrators make sure that teams that share a cluster don't take up m
 
 Even if no resource quota is set, you can include resource requests and limits in your deployment to improve the management of worker node resources.
 
-If a container exceeds its limit, the container might be restarted or fail. If a container exceeds a request, its pod might be evicted if the worker node runs out of that resource that is exceeded. For more information about troubleshooting, see [Pods repeatedly fail to restart or are unexpectedly removed](/docs/containers?topic=containers-ts-app-pod-fail).
+If a container exceeds its limit, the container might be restarted or fail. If a container exceeds a request, its pod might be evicted if the worker node runs out of that resource that is exceeded. For more information about troubleshooting, see [Pods repeatedly fail to restart or are unexpectedly removed](/docs/openshift?topic=openshift-ts-app-pod-fail).
 {: note}
 
 Request
