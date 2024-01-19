@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, trusted profile
@@ -33,9 +33,7 @@ You can use trusted profiles to limit the access that running pods in your clust
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
-1. Enable the add-on in your cluster. Review the parameter reference for your cluster type.
-    * [Classic clusters]{: tag-classic-inf} [Parameter Reference](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-param-ref)
-    * [Virtual Private Cloud]{: tag-vpc} [Parameter Reference](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-param-ref)
+1. Enable the add-on in your cluster. Review the [Parameter Reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 
     Example command:
 

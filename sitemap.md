@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-19"
 
 
 keywords: openshift
@@ -273,6 +273,12 @@ subcollection: openshift
 
 * [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
 
+    * [19 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1924)
+
+        * CLI version `1.0.589` is available.
+
+        * OpenShift Data Foundation add-on version `4.14.0`.
+
     * [17 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1724)
 
         * Worker node fix packs are available. 
@@ -290,6 +296,10 @@ subcollection: openshift
         * {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch update `1.2.5_107`.
 
         * {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates `5.2.14_485` and `5.1.19_486`.
+
+    * [8 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0824)
+
+        * OpenShift Data Foundation add-on version `4.13.9`.
 
     * [2 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0224)
 
@@ -4791,14 +4801,6 @@ subcollection: openshift
 
 * [Storage class reference](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#ocs-reference-section)
 
-* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-param-ref)
-
-    * [Version 4.13 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-params-413)
-
-    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-params-412)
-
-    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#odf-vpc-params-48)
-
 [Updating or replacing VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
 
 * [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-cluster-master-vpc)
@@ -4878,14 +4880,6 @@ subcollection: openshift
 
 * [Creating your storage cluster](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#ocs-classic-deploy-crd)
 
-* [Parameter reference](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-param-ref)
-
-    * [Version 4.13 parameters](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-params-413)
-
-    * [Version 4.10, 4.11, and 4.12 parameters](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-params-410)
-
-    * [Version 4.9 parameters](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-classic-params-48)
-
 * [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-limitations-classic)
 
 [Updating Classic worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
@@ -4945,6 +4939,8 @@ subcollection: openshift
 * [Creating an Object Bucket Claim](/docs/openshift?topic=openshift-odf-manage-noobaa#odf-obc)
 
 * [Deploying an s3 app in the Multicloud Object Gateway](/docs/openshift?topic=openshift-odf-manage-noobaa#mcg-deploy-app)
+
+[OpenShift Data Foundation add-on parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters#openshift_storage_parameters)
 
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
@@ -7359,7 +7355,13 @@ subcollection: openshift
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 
+* [Version 4.14](/docs/openshift?topic=openshift-odf_addon_changelog#4.14_odf)
+
+    * [Version 4.14.0, released 19 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.0_odf)
+
 * [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
+
+    * [Version 4.13.9, released 08 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.9_odf)
 
     * [Version 4.13.7, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.7_odf)
 

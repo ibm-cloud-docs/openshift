@@ -133,16 +133,23 @@ Yes, but make sure to [apply taints at the worker pool level](/docs/openshift?to
 Before you can rebalance or resize your worker pool, you must remove the worker pool from the autoscaler configmap to disable autoscaling.
 {: shortdesc}
 
-1. Edit `iks-ca-configmap` and disable the worker pool that you want to resize or rebalance by removing it from the `workerPoolsConfigStatus` section.
+1. Edit `iks-ca-configmap` and disable the worker pool that you want to resize or rebalance by removing it from the `workerPoolsConfig.json` section.
 
     ```sh
     oc edit cm -n kube-system iks-ca-configmap
     ```
     {: pre}
 
-    Example `workerPoolsConfigStatus` section with no worker pools enabled.
+    Example output
+
     ```yaml
-    workerPoolsConfigStatus: '{}'
+    apiVersion: v1
+    data:
+      workerPoolsConfig.json: |
+        [
+         {"name": "","minSize": 1,"maxSize": 2,"enabled":false}
+        ]
+    kind: ConfigMap
     ```
     {: screen}
 
@@ -160,9 +167,16 @@ Before you can rebalance or resize your worker pool, you must remove the worker 
 
     Example
     ```yaml
-    workerPoolsConfigStatus: '{"name": "<worker_pool>","minSize": 1,"maxSize": 3,"enabled":true}'
+    apiVersion: v1
+    data:
+      workerPoolsConfig.json: |
+        [
+         {"name": "<worker_pool>","minSize": 1,"maxSize": 2,"enabled":false}
+        ]
+    kind: ConfigMap
     ```
     {: screen}
+
 
 
 ## Preparing classic or VPC Gen 2 clusters for autoscaling

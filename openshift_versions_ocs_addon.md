@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-18"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -34,8 +34,23 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ```
 {: pre}
 
+## Version 4.14
+{: #4.14_odf}
+
+### Version 4.14.0, released 19 January 2024
+{: #4.14.0_odf}
+
+- Adds the `disableNoobaaLB`, `taintNodes`, `addSingleReplicaPool`, and `prepareForDisasterRecovery` parameters. For more information, see the [OpenShift Data Foundation add-on parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
+
+
 ## Version 4.13
 {: #4.13_odf}
+
+### Version 4.13.9, released 08 January 2024
+{: #4.13.9_odf}
+
+- Adds a new parameter to disable the Noobaa public load balancer.
+- Fixes a bug with uninstalling.
 
 ### Version 4.13.7, released 02 November 2023
 {: #4.13.7_odf}
