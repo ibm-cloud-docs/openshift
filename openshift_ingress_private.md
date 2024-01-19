@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-19"
 
 
 keywords: ingress, expose apps, privately expose, private ingress, ingress vpc
@@ -232,7 +232,7 @@ Your Ingress resource is created in the same project as your app services, and y
 ### Step 5: Access your app from your private network
 {: #ingress-private-se-5}
 
-1. Classic clusters: Before you can access your app, make sure that you can access a DNS service. To use the default external DNS provider, you must [configure edge nodes with public access](/docs/openshift?topic=openshift-edge#edge) and [configure a Virtual Router Appliance](https://www.ibm.com/blogs/cloud-archive/kubernetes-and-bluemix-container-based-workloads-part4){: external}.
+1. Classic clusters: Before you can access your app, make sure that you can access a DNS service. To use the default external DNS provider, you must [configure edge nodes with public access](/docs/openshift?topic=openshift-edge#edge) and [configure a Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra){: external}.
 
 2. From within your private network, enter the URL of the app service in a web browser.
 

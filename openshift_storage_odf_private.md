@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-19"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
@@ -48,7 +48,7 @@ Since this approach involves manually mirroring images from registry.redhat.io t
 
 Before you install OpenShift Data Foundation in your cluster, meet the following prerequisite conditions.
 
-1. Create a Red Hat account if you do not already have one. For more information on creating a Red Hat account, see [Create a Red Hat login](https://www.redhat.com/wapps/ugc/register.html?_flowId=register-flow&_flowExecutionKey=e1s1){: external}.
+1. Create a Red Hat account if you do not already have one. For more information on creating a Red Hat account, see [Create a Red Hat login](https://www.redhat.com/wapps/ugc/register.html){: external}.
 1. Create or have access to a private cluster for OpenShift Data Foundation. If you already have a private cluster make sure it meets the following requirements.
     - Your cluster version must be at least version 4.11.
     - Your worker node operating system must be RHEL 8.
