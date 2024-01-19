@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-19"
 
 
 keywords: openshift, lb2.0, nlb
@@ -397,7 +397,6 @@ spec:
 ```
 {: codeblock}
 
-You can find the complete example in [this IBM Cloud deployment pattern blog](https://www.ibm.com/cloud/blog/ibm-cloud-kubernetes-service-deployment-patterns-4-multi-zone-cluster-app-exposed-via-loadbalancer-aggregating-whole-region-capacity){: external}.
 
 ### Unsupported scheduling algorithms
 {: #scheduling_unsupported}
