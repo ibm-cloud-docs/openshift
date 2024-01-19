@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-19"
 
 
 keywords: openshift, kubernetes, release notes
@@ -31,12 +31,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2024
 {: #openshift-jan24}
 
+
+
+
 ### 19 January 2024
 {: #openshift-jan1924}
 {: release-note}
 
+CLI version `1.0.589` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
 OpenShift Data Foundation add-on version `4.14.0`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
+
 
 ### 17 January 2024
 {: #openshift-jan1724}

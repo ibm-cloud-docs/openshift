@@ -275,6 +275,8 @@ subcollection: openshift
 
     * [19 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1924)
 
+        * CLI version `1.0.589` is available.
+
         * OpenShift Data Foundation add-on version `4.14.0`.
 
     * [17 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1724)

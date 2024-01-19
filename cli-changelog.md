@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-19"
 
 
 keywords: openshift, oc, ks
@@ -31,6 +31,14 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+Version 0.1.589 of the CLI was released on 19 January 2024.
+:   Adds the `satellite experimental connector agent` commands.
+:   Deprecates the `private service endpoint disable` commands.
+:   Updates to experimental commands.
+:   Resovles [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
+:   Upgrades the golang version.
+:   Updates the phrasing of various commands and help text strings. 
 
 ## Version v1.0.579
 {: #cli-01579}
