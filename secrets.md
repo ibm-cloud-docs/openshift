@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-22"
 
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
@@ -36,7 +36,7 @@ ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <crn
 ```
 {: pre}
 
-To import the certificate with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+To import the certificate with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with the OpenShift `oc` plug-in [commands](https://docs.openshift.com/container-platform/4.14/cli_reference/openshift_cli/developer-cli-commands.html){: external}. 
 {: important}
 
 To view all Ingress secrets for TLS certificates in your cluster, run the following command.
@@ -72,7 +72,8 @@ Follow the steps to use the default TLS certificate for the IBM-provided Ingress
     ```
     {: screen}
 
-2. View the secret details and note the CRN value. This is the CRN of the TLS certificate.
+2. View the secret details and note the CRN value. This is the CRN of the TLS certificate. If you do not have a default [{{site.data.keyword.secrets-manager_short}}] instance registered to your cluster, your secret does not have a CRN. See the note in the following step for more details. 
+
 
     ```sh
     ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace default
@@ -86,8 +87,9 @@ Follow the steps to use the default TLS certificate for the IBM-provided Ingress
     ```
     {: pre}
 
-    To copy the secret with the **`ibmcloud oc ingress secret create`** command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
+    To copy the secret with the **`ibmcloud oc ingress secret create`** command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with the OpenShift `oc` plug-in [commands](https://docs.openshift.com/container-platform/4.14/cli_reference/openshift_cli/developer-cli-commands.html){: external}. 
     {: important}
+
 
 
 ### Setting up TLS secrets for custom subdomains
@@ -101,8 +103,9 @@ By storing custom TLS certificates in [{{site.data.keyword.secrets-manager_short
 
 1. Create or import a secret for the TLS certificate in the namespace where your Ingress resource exists. For example, you can import a secret from {{site.data.keyword.secrets-manager_short}} into your cluster by running the following command. Specify the TLS certificate's CRN with the `--cert-crn` command option.
 
-    To import the secret with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with `oc` commands. 
-    {: important}
+  To import the certificate with the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manually copy them with the OpenShift `oc` plug-in [commands](https://docs.openshift.com/container-platform/4.14/cli_reference/openshift_cli/developer-cli-commands.html){: external}. 
+  {: important}
+
 
     ```sh
     ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace <namespace>
