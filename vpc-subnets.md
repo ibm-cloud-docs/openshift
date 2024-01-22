@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-22"
 
 
 keywords: openshift, ips, vlans, networking, public gateway
@@ -39,7 +39,7 @@ Understand the basic concepts of VPC networking in {{site.data.keyword.openshift
 ### Subnets
 {: #vpc_basics_subnets}
 
-Before you create a VPC cluster for the first time, you must [create a VPC subnet](https://cloud.ibm.com/vpc/provision/network){: external} in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
+Before you create a VPC cluster for the first time, you must [create a VPC subnet](https://cloud.ibm.com/vpc-ext/provision/network){: external} in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
 {: shortdesc}
 
 When you create a cluster, you can specify only one existing VPC subnet for each zone. Each worker node that you add in a cluster is deployed with a private IP address from the VPC subnet in that zone. After the worker node is provisioned, the worker node IP address persists after a `reboot` operation, but the worker node IP address changes after `replace` and `update` operations.
@@ -50,7 +50,7 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
 #### How many IP addresses do I need for my VPC subnet?
 {: #vpc-subnets-how-many}
 
-When you [create your VPC subnet](https://cloud.ibm.com/vpc/provision/network){: external}, make sure to create a subnet with enough IP addresses for your cluster, such as 256. You can't change the number of IP addresses that a VPC subnet has later.
+When you [create your VPC subnet](https://cloud.ibm.com/vpc-ext/provision/network){: external}, make sure to create a subnet with enough IP addresses for your cluster, such as 256. You can't change the number of IP addresses that a VPC subnet has later.
 
 Keep in mind the following IP address reservations.
 - 5 IP addresses are [reserved by VPC](/docs/vpc?topic=vpc-about-networking-for-vpc#addresses-reserved-by-the-system) from each subnet by default.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-01-22"
 
 
 keywords: openshift, kubernetes, release notes
@@ -30,6 +30,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2024
 {: #openshift-jan24}
+
+
+### 22 January 2024
+{: #openshift-jan2224}
+{: release-note}
+
+Ingress ALB updates
+:   Ingress ALB versions `1.9.4_6251_iks`, `1.8.4_6245_iks`, `1.6.4_6250_iks` are available. For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
+
 
 
 

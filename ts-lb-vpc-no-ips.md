@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-22"
 
 
 keywords: openshift
@@ -46,7 +46,7 @@ After you create a VPC subnet, you can't resize it or change its IP range.
 
 Instead, you must create a larger VPC subnet in one or more zones where you have worker nodes. Then you create a new worker pool using the larger subnets.
 
-1. [Create a new VPC subnet](https://cloud.ibm.com/vpc/provision/network){: external} in the same VPC and in one or more zones where your cluster has worker nodes. Make sure that you create a subnet that can support both the number of worker nodes and services that you plan to create in your cluster. The default CIDR size of each VPC subnet is `/24`, which can support up to 253 worker nodes and services. To check your cluster's VPC and zones, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
+1. [Create a new VPC subnet](https://cloud.ibm.com/vpc-ext/provision/network){: external} in the same VPC and in one or more zones where your cluster has worker nodes. Make sure that you create a subnet that can support both the number of worker nodes and services that you plan to create in your cluster. The default CIDR size of each VPC subnet is `/24`, which can support up to 253 worker nodes and services. To check your cluster's VPC and zones, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 
 2. Create a new worker pool in your cluster.
     ```sh

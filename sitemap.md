@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-01-22"
 
 
 keywords: openshift
@@ -272,6 +272,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
+
+    * [22 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2224)
+
+        * Ingress ALB updates
 
     * [19 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1924)
 
@@ -9319,6 +9323,8 @@ subcollection: openshift
 [Why does the cluster master return a VPN server error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_login#rhoks_ts_openvpn_login)
 
 [VPC: Why is no VPC available when I create a cluster in the console?](/docs/openshift?topic=openshift-ts_no_vpc#ts_no_vpc)
+
+[Why do I get an `infrastructure operation failed` error when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-pod-security-reset#ts-pod-security-reset)
 
 [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-ts-troubleshoot-api-key-leak#ts-troubleshoot-api-key-leak)
 
