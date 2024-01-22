@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-22"
 
 
 keywords: openshift
@@ -54,21 +54,24 @@ The IAM API key or the IBM Cloud infrastructure API key that is stored in the `s
 
     ```sh
     [Bluemix]
-    iam_url = "https://iam.bluemix.net"
+    iam_url = "https://iam.cloud.ibm.com"
     iam_client_id = "bx"
     iam_client_secret = "bx"
-    iam_api_key = "<iam_api_key>"
+    iam_api_key "IAM-API-KEY"
     refresh_token = ""
     pay_tier = "paid"
-    containers_api_route = "https://us-south.containers.bluemix.net"
+    containers_api_route = "https://us-south.containers.cloud.ibm.com"
+    encryption = true
+    containers_api_route_private = "https://private.us-south.containers.cloud.ibm.com"
 
     [Softlayer]
     encryption = true
     softlayer_username = ""
     softlayer_api_key = ""
-    softlayer_endpoint_url = "https://api.softlayer.com/rest/v3"
-    softlayer_iam_endpoint_url = "https://api.softlayer.com/mobile/v3"
+    softlayer_endpoint_url = "https://api.service.softlayer.com/rest/v3"
+    softlayer_iam_endpoint_url = "https://api.service.softlayer.com/mobile/v3"
     softlayer_datacenter = "dal10"
+    softlayer_token_exchange_endpoint_url = "https://iam.cloud.ibm.com"
     ```
     {: screen}
 
