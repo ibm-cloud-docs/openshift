@@ -273,6 +273,10 @@ subcollection: openshift
 
 * [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
 
+    * [22 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2224)
+
+        * Ingress ALB updates
+
     * [19 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1924)
 
         * CLI version `1.0.589` is available.
