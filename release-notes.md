@@ -40,6 +40,9 @@ Ingress ALB updates
 :   Ingress ALB versions `1.9.4_6251_iks`, `1.8.4_6245_iks`, `1.6.4_6250_iks` are available. For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
 
 
+
+
+
 ### 19 January 2024
 {: #openshift-jan1924}
 {: release-note}

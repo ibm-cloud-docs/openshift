@@ -9324,6 +9324,8 @@ subcollection: openshift
 
 [VPC: Why is no VPC available when I create a cluster in the console?](/docs/openshift?topic=openshift-ts_no_vpc#ts_no_vpc)
 
+[Why do I get an `infrastructure operation failed` error when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-pod-security-reset#ts-pod-security-reset)
+
 [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-ts-troubleshoot-api-key-leak#ts-troubleshoot-api-key-leak)
 
 [Why can't the cluster pull images from {{site.data.keyword.registrylong_notm}} during creation?](/docs/openshift?topic=openshift-ts_image_pull_create#ts_image_pull_create)
