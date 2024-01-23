@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-22"
+lastupdated: "2024-01-23"
 
 
 keywords: openshift
@@ -272,10 +272,6 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
-
-    * [22 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2224)
-
-        * Ingress ALB updates
 
     * [19 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1924)
 

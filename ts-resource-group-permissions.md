@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-01-22"
+lastupdated: "2024-01-23"
 
 
 keywords: openshift, subnet, detach, specified subnet, infrastructure operation failed
@@ -28,7 +28,7 @@ Unable to create cluster. The 'vpc-gen2' infrastructure operation failed with th
 ```
 {: screen}
 
-The API key of the user or service ID that is trying to create the cluster does not have the required IAM permissions to view VPC subnets in your acccount.
+The API key of the user or service ID that is trying to create the cluster does not have the required IAM permissions to view VPC subnets in your account.
 {: tsCauses}
 
 A common scenario for this error is having your VPC subnets in different resource groups from the cluster. Make sure that the API key that was used to create the cluster has at least **Viewer** access to those subnets.
