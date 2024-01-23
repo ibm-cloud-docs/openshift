@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-23"
 
 
 keywords: openshift, version, update, upgrade, 4.14, update openshift
@@ -20,7 +20,7 @@ subcollection: openshift
 Review information about version 4.14 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_414_kube_version}}. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.14 blog](https://cloud.redhat.com/blog/red-hat-openshift-4.14-is-now-available){: external}.
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.14 blog](https://www.redhat.com/blog/red-hat-openshift-4.14-is-now-available){: external}.
 {: tip}
 
 ![This badge indicates Kubernetes version 1.27 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.27 certification badge" caption-side="bottom"}
@@ -188,4 +188,5 @@ spec:
   - Egress
 ```
 {: codeblock}
+
 

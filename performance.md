@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-23"
 
 
 keywords: openshift, kubernetes, kernel, performance
@@ -57,7 +57,7 @@ Modifications to the operating system are not supported. If you modify the defau
 {: #worker-default-hw}
 
 To change the compute hardware, such as the CPU and memory per worker node, choose among the following options.
-* Create a worker pool. The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, {{site.data.keyword.satelliteshort}}, or gateway clusters. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). 
+* Create a worker pool. The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, or {{site.data.keyword.satelliteshort}}. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). 
 * [Update the flavor](/docs/openshift?topic=openshift-update#machine_type) in your cluster by creating a worker pool and removing the previous worker pool.
 
 ## Modifying worker node settings to optimize performance
