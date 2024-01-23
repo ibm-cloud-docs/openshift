@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 # Why do I get an `infrastructure operation failed` error when creating a VPC cluster?
-{: #ts-pod-security-reset}
+{: #ts-resource-group-permissions}
 {: support}
 
 When you try to create a VPC cluster, you see an error message similar to the following.
