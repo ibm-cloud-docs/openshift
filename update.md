@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-23"
 
 
 keywords: openshift, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -32,6 +32,8 @@ How do I know when to update the master?
 
 How many versions behind the latest can the master be?
 :   You can update the API server only to the next version ahead of its current version (`n+1`).
+
+
 
 
 Can my worker nodes run a later version than the master?
