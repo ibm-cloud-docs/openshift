@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-26"
 
 
-keywords: openshift, clusters, vpc-gen2
+keywords: openshift, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
 
 subcollection: openshift
 
@@ -36,8 +36,8 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
 
 * If you create a VPC cluster with both a public and a private cloud service endpoint, note that the public service endpoints can't be disabled at a later time. Therefore, you can't convert a public cluster to a private cluster. 
 
-* If your VPC Clusters requires access to Classic Infrastructure resources, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint) in your account.
-* If you VPC Clusters doesn't require Classic Infrastructure Access, no account changes are required.
+* If your VPC Clusters require access to Classic Infrastructure resources, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint) in your account.
+* If your VPC Clusters don't require Classic Infrastructure Access, no account changes are required.
 
 
 ## Creating a VPC cluster in the console
@@ -53,8 +53,15 @@ Virtual Private Cloud
 Location
 :   Review the **Worker Zones** and **Subnets** for your cluster. The zones are filtered based on the VPC that you selected, and include the VPC subnets that you previously created. Depending on the level of availability you want for your cluster, select one or more zones. By default, your cluster resources are spread across three zones for high availability.  You can [add zones to your cluster](/docs/openshift?topic=openshift-add-workers-vpc) later.
 
-Kubernetes Version
+Version
 :    Select your cluster version. By default, clusters are created with the default Kubernetes version, but you can specify a different [supported version](/docs/containers?topic=containers-cs_versions#cs_versions_available). 
+
+
+
+License
+:   Apply a Cloud Pak entitlement or purchase a license for your cluster. For more information, see [Assigning software licenses to your account](/docs/account?topic=account-software-license&interface=ui), [Assigning a Cloud Pak entitlement to your IBM Cloud account](/docs/openshift?topic=openshift-openshift_cloud_paks), or the [Cloud Pak FAQ](https://www.ibm.com/support/pages/ibm-cloud-paks-support-red-hat-entitlement-frequently-asked-questions-faq){: external}.
+
+
 
 Worker Pool
 :    The cluster worker pool defines the number and type of worker nodes that run your workload. You can change your worker pool details at anytime.
@@ -67,14 +74,27 @@ Worker Pool
 If you plan to use secondary storage on nodes where Persistent Volumes could be attached it is highly recommended to use the 10-iops tiers or higher. This is because the storage bandwidth allocation for the nodes is shared between secondary storage volumes and any attached PVCs. When using 5-iops, tiers this can lead to degraded performance for pulling images or for pods writing to the storage. For more information on bandwidth allocation see [Bandwidth Allocation in Virtual Server Instances](https://www.ibm.com/blog/bandwidth-allocation-in-virtual-server-instances/).{: external}
 {: note}
 
+Worker pool encryption
+:    Manage encryption of your worker nodes by enabling a key management service (KMS) provider at the worker pool level. Select your KMS instance and CRN.
+
 Master service endpoint
 :    Service endpoints provide communication to the master. You can choose to configure your cluster with a public service endpoint or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/containers?topic=containers-plan_vpc_basics#vpc-pgw). You can not change the cloud service endpoints after you create the cluster.
 
-Ingress secrets management
-:   [{{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-secrets-mgr) centrally manages Ingress subdomain certificates and other secrets in your cluster. You can choose to register a {{site.data.keyword.secrets-manager_short}} instance to your cluster during the cluster create process. You can also specify a secret group that you can use to control access to the secrets in your cluster. Both of these options can be configured or changed after you have created the cluster. 
 
-Encryption
+
+Internal registry
+:   Select your COS instance. The container images stored in the internal registry of your {{site.data.keyword.openshiftlong_notm}} cluster are automatically backed up to a {{site.data.keyword.cos_short}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
+
+
+
+Cluster encryption
 :    Enable data encryption with a key management service (KMS) to encrypt secrets and other sensitive information in your cluster. You can also [enable KMS](/docs/openshift?topic=openshift-encryption-setup) later.
+
+Ingress secrets management
+:   [{{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-secrets-mgr) centrally manages Ingress subdomain certificates and other secrets in your cluster. You can choose to register a {{site.data.keyword.secrets-manager_short}} instance to your cluster during the cluster create process. You can also specify a secret group that you can use to control access to the secrets in your cluster. Both of these options can be configured or changed after you have created the cluster.
+
+VPC security groups
+:   Provide up to four custom security groups to apply to all worker nodes on the VPC cluster instead of the default VPC security group. The default VPC security group will not be applied. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).
 
 
 Cluster details
@@ -86,6 +106,8 @@ Observability integrations
 :    - [Activity tracking]{: tag-green}: Activity Tracker service captures a record of your IBM Cloud activities and monitors the activity of your account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. If you disable this integration and want to enable it later, see [Getting started with Activity Tracker](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step2).
 :    - [Logging]{: tag-dark-teal}: You can use Log Analysis to manage operating system logs, application logs, and platform logs. If you want to enable this integration later, see [Logging for clusters](/docs/openshift?topic=openshift-health&interface=ui).
 :    - [Monitoring]{: tag-magenta}: The monitoring service integration allows operational visibility into the performance and health of your applications, services, and platforms. If you disable this integration and want to enable it later, see [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor&interface=ui).
+
+
 
 ## Creating VPC clusters from the CLI
 {: #cluster_vpcg2_cli}

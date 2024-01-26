@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-26"
 
 
-keywords: openshift, storage, snapshot
+keywords: openshift, snapshot, storage
 
 subcollection: openshift
 

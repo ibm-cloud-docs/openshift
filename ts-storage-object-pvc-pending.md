@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-26"
 
 
-keywords: openshift
+keywords: kubernetes, help, network, connectivity, openshift
 
 subcollection: openshift
 
@@ -24,7 +24,7 @@ content-type: troubleshoot
 {: #cos_pvc_pending}
 {: support}
 
-[
+
 
 This troubleshooting topic applies only to {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-26"
 
 
 keywords: openshift
@@ -23,19 +23,19 @@ subcollection: openshift
 Every storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy.  
 
 After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](/docs/vpc?topic=vpc-file-storage-profiles#fs-tiers){: external} if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
-{: important}
 
-Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Decide on a storage class. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-managing).
 
-1. Decide on a storage class. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-managing). If you don't find what you are looking for or if your app needs to run as non-root, consider creating your own customized storage class. To get started, check out the [customized storage class samples](#storage-file-vpc-custom-sc).
+
+If your app needs to run as non-root, or if you have your cluster resource group is different than the VPC/Subnet resource group, then you must create your own customized storage class. To get started, check out the [customized storage class samples](#storage-file-vpc-custom-sc).
+{: note}
 
 ## Quick start for {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning
 {: #vpc-add-file-dynamic}
 
 Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
-By default, file shares that are created by using dynamic provisioning with preinstalled storage classes are created with root permissions. If your app needs to run as not root, [create a custom storage class](#storage-file-vpc-custom-sc).
-{: note}
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Save the following code to a file called `my-pvc.yaml`. This code creates a claim that is named `my-pvc` by using the `ibmc-vpc-file-dp2` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
 
@@ -414,7 +414,7 @@ Create your own customized storage class with the preferred settings for your {{
         gid: "0" # The default is 0 which runs as root. You can optionally specify a non-root group ID.
         uid: "0" # The default is 0 which runs as root. You can optionally specify a non-root user ID.
         encryptionKey: "" # If encrypted is true, then you must specify the CRN of the encryption key that you want to use from your associated KP/HPCS instance.
-        resourceGroup: "" # Use resource group if specified or else use the one mentioned in storage-secrete-store field.
+        resourceGroup: "" # By default, the cluster resource group is used. If your VPC or subnets are in a different resource group than the cluster, enter the VPC or subnet resource group here.
         region: "" # By default, the region will be populated from the worker node topology.
         zone: "" # By default, the storage vpc driver automatically selects a zone.
         tags: "" # A list of tags "a, b, c" that will be created when the volume is created.
