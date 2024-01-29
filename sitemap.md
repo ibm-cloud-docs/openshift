@@ -6855,21 +6855,19 @@ subcollection: openshift
 
 * [`istio` 1.20](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.20)
 
-* [`openshift-data-foundation` 4.10.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.10.0)
-
 * [`openshift-data-foundation` 4.11.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.11.0)
 
 * [`openshift-data-foundation` 4.12.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.12.0)
 
 * [`openshift-data-foundation` 4.13.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.13.0)
 
+* [`openshift-data-foundation` 4.14.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.14.0)
+
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
 * [`vpc-block-csi-driver` 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
 
 * [`vpc-block-csi-driver` 5.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.2)
-
-* [`vpc-file-csi-driver` 1.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.1)
 
 * [`vpc-file-csi-driver` 1.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.2)
 
