@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-29"
 
 
-keywords: object storage, plug-in, change log
+keywords: openshift, object storage, plug-in, change log
 
 subcollection: openshift
 
@@ -36,6 +36,13 @@ Refer to the following tables for a summary of changes for each version of the [
 | 2.2.19 | Deprecated | Greater than or equal to 4.6 | x86 |
 | 2.2.18 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.23, released 29 January 2024
+{: #02223_object_plugin}
+
+- Replaces UBI image with scratch image.
+- Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.
+
 
 ## Change log for version 2.2.22, released 20 November 2023
 {: #02222_object_plugin}
