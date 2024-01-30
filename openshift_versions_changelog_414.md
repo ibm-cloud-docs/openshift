@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-30"
 
 
 keywords: openshift, 4.14, update, upgrade, BOM, bill of materials, versions, patch
@@ -32,6 +32,20 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+### Change log for worker node fix pack 4.14.10_1546_openshift, released 29 January 2024
+{: #41410_1546_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.14.10_1546_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.14.8 | 4.14.10 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-10){: external}. |
+| Rhel8 Packages | 4.18.0-477.27.1.el8_8 | 4.18.0-477.27.1.el8_8 | N/A |
+| HAProxy | e105dc | a13673 | Security fixes for [CVE-2023-7104](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2023-7104){: external}, [CVE-2023-27043](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2023-27043){: external}. |
+{: caption="Changes since version 4.14.8_1544_openshift" caption-side="bottom"}
+
 
 ### Change log for worker node fix pack 4.14.8_1544_openshift, released 16 January 2024
 {: #4148_1544_openshift_W}

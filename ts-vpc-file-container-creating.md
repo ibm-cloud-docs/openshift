@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2024-01-30"
 
 
 keywords: openshift, storage, container creating, file
@@ -54,7 +54,7 @@ Warning FailedMount 65s kubelet Unable to attach or mount volumes: unmounted vol
 ```
 {: screen}
 
-Example command to get the pipelineruns logs.
+Example command to get the `pipelineruns` logs.
 ```sh
 kubectl logs cat -n pipelineruns
 ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-30"
 
 
 keywords: openshift, clusters, worker nodes, worker pools, add, classic
@@ -34,7 +34,7 @@ When you create a cluster, the worker nodes are provisioned in a worker pool. Af
 If you have a multizone cluster, keep its worker node resources balanced. Make sure that all the worker pools are spread across the same zones, and add or remove workers by resizing the pools instead of adding individual nodes. After you set up your worker pool, you can [set up the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
 
 
-Want to save on your classic worker node costs? [Create a reservation](/docs/containers?topic=containers-reservations) to lock in a discount over 1 or 3 year terms! Then, create your worker pool by using the reserved instances. Note that autoscaling can't be enable on worker pools that use reservations.
+Want to save on your classic worker node costs? [Create a reservation](/docs/containers?topic=containers-reservations) to lock in a discount over 1 or 3 year terms! Then, create your worker pool by using the reserved instances. Note that autoscaling can't be enabled on worker pools that use reservations.
 {: tip}
 
 ## Creating a new worker pool

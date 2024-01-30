@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 
 keywords: openshift, kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing
@@ -84,10 +84,10 @@ The number of clusters that you create depends on your workload, company policie
 {: #env_resources_worker_capacity}
 
 To get the most out of your worker node's performance, consider the following:
-    - **Keep up your core strength**: Each machine has a certain number of cores. Depending on your app's workload, set a limit for the number of pods per core, such as 10.
-    - **Avoid node overload**: Similarly, just because a node can contain more than 100 pods doesn't mean that you want it to. Depending on your app's workload, set a limit for the number of pods per node, such as 40.
-    - Don't tap out your cluster bandwidth**: Keep in mind that network bandwidth on scaling virtual machines is around 1000 Mbps. If you need hundreds of worker nodes in a cluster, split it up into multiple clusters with fewer nodes, or order bare metal nodes.
-    - **Sorting out your services**: Plan out how many services that you need for your workload before you deploy. Networking and port forwarding rules are put into Iptables. If you anticipate a larger number of services, such as more than 5,000 services, split up the cluster into multiple clusters.
+- **Keep up your core strength**: Each machine has a certain number of cores. Depending on your app's workload, set a limit for the number of pods per core, such as 10.
+- **Avoid node overload**: Similarly, just because a node can contain more than 100 pods doesn't mean that you want it to. Depending on your app's workload, set a limit for the number of pods per node, such as 40.
+- **Don't tap out your cluster bandwidth**: Keep in mind that network bandwidth on scaling virtual machines is around 1000 Mbps. If you need hundreds of worker nodes in a cluster, split it up into multiple clusters with fewer nodes, or order bare metal nodes.
+- **Sorting out your services**: Plan out how many services that you need for your workload before you deploy. Networking and port forwarding rules are put into Iptables. If you anticipate a larger number of services, such as more than 5,000 services, split up the cluster into multiple clusters.
 
 ### Provision different types of machines for a mix of computing resources
 {: #env_resources_provision_types}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-30"
 
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
@@ -43,6 +43,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 Review the version 4.10 change log.
 {: shortdesc}
+
+
+### Change log for worker node fix pack 4.10.67_1597_openshift, released 29 January 2024
+{: #41067_1597_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.10.67_1597_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.10.67 | 4.10.67 | N/A |
+| Rhel8 Packages | 4.18.0-477.27.1.el8_8 | 4.18.0-477.27.1.el8_8 | N/A |
+| HAProxy | e105dc | a13673 | Security fixes for [CVE-2023-7104](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2023-7104){: external}, [CVE-2023-27043](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2023-27043){: external}. |
+{: caption="Changes since version 4.10.67_1596_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.10.67_1596_openshift, released 16 January 2024
