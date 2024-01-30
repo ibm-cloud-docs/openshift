@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-29"
+lastupdated: "2024-01-30"
 
 
 keywords: openshift
@@ -6059,6 +6059,46 @@ subcollection: openshift
     * [Change log for master fix pack 4.14.5_1539_openshift and worker node fix pack 4.14.4_1538_openshift, released 13 December 2023](/docs/openshift?topic=openshift-openshift_changelog_414#4.14.5_1539_openshiftM_4.14.4_1538_openshiftW)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.14 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-414)
+
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-1-414)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-11-414)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-12-414)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-13-414)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-14-414)
+
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-414#cis-section-2-414)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-414#cis-section-3-414)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-31-414)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-32-414)
+
+* [4 Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark-414#cis-section-4-414)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-41-414)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-42-414)
+
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-414#cis-section-5-414)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-51-414)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-52-414)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-53-414)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-54-414)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-55-414)
+
+    * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-56-414)
+
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-414#ibm-remediations-and-explanations-414)
 
 [{{site.data.keyword.openshiftlong_notm}} version 4.14 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_414_co#benchmarks_414_co)
 

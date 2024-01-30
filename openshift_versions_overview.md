@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-29"
+lastupdated: "2024-01-30"
 
 
 keywords: openshift, version, update, upgrade
@@ -102,7 +102,16 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 ### Clusters in Satellite locations with CoreOS enabled
 {: #os-satellite-with-coreos}
 
-[Latest]{: tag-green} [Default]{: tag-purple} 4.13 (Kubernetes 1.26)
+
+[Latest]{: tag-green} 4.14 (Kubernetes 1.27)
+- Release date: 13 December 2023
+- End of support: 08 January 2026†
+- Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_414)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+- [{{site.data.keyword.redhat_openshift_notm}} 4.14 release notes overview](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html){: external}
+
+[Default]{: tag-purple} 4.13 (Kubernetes 1.26)
 - Release date: 14 June 2023
 - End of support: 26 February 2025†
 - Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
