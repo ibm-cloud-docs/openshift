@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-01"
 
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
@@ -44,6 +44,33 @@ Master patch updates are applied automatically. Worker node patch updates can be
 Review the version 4.11 change log.
 {: shortdesc}
 
+
+
+### Change log for master fix pack 4.11.56_1589_openshift, released 31 January 2024
+{: #41156_1589_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.11.56_1589_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.26.3 | v3.26.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.26/release-notes/#v3.26.4){: external}. |
+| Cluster health image | v1.4.5 | v1.4.6 | New version contains security fixes. |
+| Calico Operator | v1.30.7 | v1.30.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.9-amd64){: external}. |
+| etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.11){: external}. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1487 | 1525 | New version contains security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.17-23 | v1.24.17-26 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | e544e35 | 7185ea1 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.8.5 | v2.8.6 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2767 | 2789 | New version contains updates and security fixes. |
+| OpenVPN client | 2.6.7-r0-IKS-93 | 2.6.8-r0-IKS-108 | New version contains updates and security fixes. |
+| OpenVPN server | 2.6.7-r0-IKS-92 | 2.6.8-r0-IKS-107 | New version contains updates and security fixes. |
+| OpenVPN Operator image | v1.4.31 | v1.4.32 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.10 | v0.13.11 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.11){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.11.53 | 4.11.56 | See the {{site.data.keyword.openshiftlong_notm}} [release notes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-56){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit| v4.11.0-20231102 | v4.11.0-20240104 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0%2B20240104){: external}. |
+{: caption="Changes since version 4.11.53_1584_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.11.57_1590_openshift, released 29 January 2024
