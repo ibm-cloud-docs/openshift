@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-02-01"
 
 
 keywords: openshift, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -45,7 +45,6 @@ Before you can enable a key management service (KMS) provider in your cluster, y
     * Ensure that the API key owner of the [API key](/docs/openshift?topic=openshift-access-creds#api_key_about) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider. For more information on granting access in IAM to the KMS provider, see the [{{site.data.keyword.keymanagementserviceshort}} user access documentation](/docs/key-protect?topic=key-protect-manage-access) or [{{site.data.keyword.hscrypto}} user access documentation](/docs/hs-crypto?topic=hs-crypto-manage-access#platform-mgmt-roles).
         * For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service access roles for your KMS provider.
         * If you plan to use an existing KMS instance and root key, you need at least the **Viewer** platform and **Reader** service access roles for your KMS provider.
-    * An additional **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. Without this policy, your cluster can't use all the {{site.data.keyword.keymanagementserviceshort}} features.
 
 1. **Optional** Complete the following additional steps if you plan to [set up worker node disk encryption for a VPC cluster](/docs/openshift?topic=openshift-encryption-vpc-worker-disks).
 

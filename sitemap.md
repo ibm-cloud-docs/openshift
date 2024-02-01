@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-01"
 
 
 keywords: openshift
@@ -270,6 +270,14 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
+
+    * [01 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0124)
+
+        * Master fix packs are available for {{site.data.keyword.openshiftlong_notm}}
+
+        * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.0.8_346`.
 
 * [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
 
@@ -6056,6 +6064,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
 
+    * [Change log for master fix pack 4.14.8_1545_openshift, released 31 January 2024](/docs/openshift?topic=openshift-openshift_changelog_414#4148_1545_openshift_M)
+
     * [Change log for worker node fix pack 4.14.10_1546_openshift, released 29 January 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41410_1546_openshift_W)
 
     * [Change log for worker node fix pack 4.14.8_1544_openshift, released 16 January 2024](/docs/openshift?topic=openshift-openshift_changelog_414#4148_1544_openshift_W)
@@ -6124,6 +6134,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for master fix pack 4.13.28_1555_openshift, released 31 January 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41328_1555_openshift_M)
 
     * [Change log for worker node fix pack 4.13.30_1556_openshift, released 29 January 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41330_1556_openshift_W)
 
@@ -6271,6 +6283,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for master fix pack 4.12.46_1576_openshift, released 31 January 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41246_1576_openshift_M)
 
     * [Change log for worker node fix pack 4.12.47_1577_openshift, released 29 January 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41247_1577_openshift_W)
 
@@ -6450,6 +6464,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for master fix pack 4.11.56_1589_openshift, released 31 January 2024](/docs/openshift?topic=openshift-openshift_changelog_411#41156_1589_openshift_M)
 
     * [Change log for worker node fix pack 4.11.57_1590_openshift, released 29 January 2024](/docs/openshift?topic=openshift-openshift_changelog_411#41157_1590_openshift_W)
 
@@ -6978,6 +6994,8 @@ subcollection: openshift
     * [Change log for patch update 1.0.9_44, released 22 June 2023](/docs/openshift?topic=openshift-ca_changelog#10944_ca)
 
 * [Version 1.0.8](/docs/openshift?topic=openshift-ca_changelog#0108_ca_addon)
+
+    * [Change log for patch update 1.0.8_346, released 01 February  2024](/docs/openshift?topic=openshift-ca_changelog#108346_ca)
 
     * [Change log for patch update 1.0.8_292, released 27 November 2023](/docs/openshift?topic=openshift-ca_changelog#108292_ca)
 
@@ -9813,6 +9831,8 @@ subcollection: openshift
 [What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions#missing_permissions)
 
 [File storage and block storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending#file_pvc_pending)
+
+[Why is my app pod stuck in `Container creating` when trying to mount {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-vpc-file-container-creating#ts-vpc-file-container-creating)
 
 [Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-file_app_failures#file_app_failures)
 
