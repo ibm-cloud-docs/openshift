@@ -271,6 +271,14 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
+
+    * [01 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0124)
+
+        * Master fix packs are available for {{site.data.keyword.openshiftlong_notm}}
+
+        * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.0.8_346`.
+
 * [January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan24)
 
     * [30 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3024)
@@ -6987,6 +6995,8 @@ subcollection: openshift
 
 * [Version 1.0.8](/docs/openshift?topic=openshift-ca_changelog#0108_ca_addon)
 
+    * [Change log for patch update 1.0.8_346, released 01 February  2024](/docs/openshift?topic=openshift-ca_changelog#108346_ca)
+
     * [Change log for patch update 1.0.8_292, released 27 November 2023](/docs/openshift?topic=openshift-ca_changelog#108292_ca)
 
     * [Change log for patch update 1.0.8_233, released 13 November 2023](/docs/openshift?topic=openshift-ca_changelog#108233_ca)
@@ -9821,6 +9831,8 @@ subcollection: openshift
 [What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions#missing_permissions)
 
 [File storage and block storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending#file_pvc_pending)
+
+[Why is my app pod stuck in `Container creating` when trying to mount {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-vpc-file-container-creating#ts-vpc-file-container-creating)
 
 [Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-file_app_failures#file_app_failures)
 

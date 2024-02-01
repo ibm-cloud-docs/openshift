@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-01"
 
 
 keywords: openshift, kubernetes, release notes
@@ -26,6 +26,30 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## February 2024
+{: #openshift-feb24}
+
+### 01 February 2024
+{: #openshift-feb0124}
+{: release-note}
+
+
+
+
+
+Master fix packs are available for {{site.data.keyword.openshiftlong_notm}}
+:   Review the change logs for your cluster version. Master patch updates are applied automatically.
+:   [4.14.8_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [4.13.28_1555_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12.46_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [4.11.56_1589_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.0.8_346`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
 
 ## January 2024

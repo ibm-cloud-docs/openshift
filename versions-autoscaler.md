@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-16"
+lastupdated: "2024-02-01"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -212,6 +212,12 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.8
 {: #0108_ca_addon}
+
+### Change log for patch update 1.0.8_346, released 01 February  2024
+{: #108346_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.30`.
+- Image tags: `1.20.0 108-5`, `1.21.0 108-5`, `1.22.0 108-5`, `1.23.0 108-5`, `1.24.0 108-5`, `1.25.0 108-5`, and `1.26.0 108-5`.
 
 ### Change log for patch update 1.0.8_292, released 27 November 2023
 {: #108292_ca}
