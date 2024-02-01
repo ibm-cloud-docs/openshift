@@ -15,7 +15,7 @@ subcollection: openshift
 # Supported cluster add-on versions
 {: #supported-cluster-addon-versions}
 
-Review the following list of supported cluster add-ons. Each addon version can be used on any cluster version included in the range of supported cluster versions. 
+Review the following list of supported cluster add-ons. Each add-on version can be used on any cluster version included in the range of supported cluster versions. 
 {: shortdesc}
 
 
