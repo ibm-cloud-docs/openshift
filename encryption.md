@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-02"
 
 
 keywords: openshift, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -27,10 +27,10 @@ The following table outlines the default and optional data encryption for {{site
 
 | Component | Encrypted by default? | Bring your own key support? | Enablement time | Supported KMS providers | Cross account support? |
 | --- | --- | --- | --- | --- | --- |
-| Control plane | Yes | No | During cluster creation. | {{site.data.keyword.hscrypto}}  \n {{site.data.keyword.keymanagementserviceshort}} | Cross account supported for Classic and VPC clusters only. | N/A | No |
-| Worker node disks | Yes | Yes | During cluster creation or worker pool creation. | {{site.data.keyword.hscrypto}}  \n {{site.data.keyword.keymanagementserviceshort}} | Yes |
-| Cluster secrets | No | Yes | After cluster creation by using `kms enable`. | {{site.data.keyword.hscrypto}}  \n {{site.data.keyword.keymanagementserviceshort}} | Cross account supported for Classic and VPC clusters only. |
-| Persistent storage | Depends on the storage provider. | Depends on provider | After cluster creation, when setting up storage. | {{site.data.keyword.hscrypto}}  \n {{site.data.keyword.keymanagementserviceshort}} | Depends on the storage provider. |
+| [Control plane](#control-plane-encryption) | Yes | No | During cluster creation. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Cross account supported for Classic and VPC clusters only. | N/A | No |
+| [Worker node disks](#worker-node-encryption) | Yes | Yes | During cluster creation or worker pool creation. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Yes |
+| [Cluster secrets](#cluster-secret-encryption) | No | Yes | After cluster creation by using `kms enable`. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Cross account supported for Classic and VPC clusters only. |
+| [Persistent storage](#persistent-encryption) | Depends on the storage provider. | Depends on provider | After cluster creation, when setting up storage. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Depends on the storage provider. |
 {: caption="Table 1. Default and optional data encryption" caption-side="bottom"}
 
 
@@ -89,6 +89,8 @@ To set up cluster secret encryption, see [[Setting up worker node disk encryptio
 {: #persistent-encryption}
 
 Depending on the type of persistent storage you use, you can encrypt the data written to the storage volumes by enabling a KMS provider. For more information about the types of persistent storage and encryption available, see [Understanding your storage options](/docs/openshift?topic=openshift-storage-plan).
+
+
 
 
 ## Next steps
