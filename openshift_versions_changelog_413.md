@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-02-05"
 
 
 keywords: openshift, 4.13, update, upgrade, BOM, bill of materials, versions, patch
@@ -46,7 +46,7 @@ The following table shows the changes that are in the master fix pack 4.13.28_15
 | Calico | v3.26.3 | v3.26.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.26/release-notes/#v3.26.4){: external}. |
 | Calico Operator | v1.30.7 | v1.30.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.9){: external}. |
 | Cluster health image | v1.4.5 | v1.4.6 | New version contains security fixes. |
-| etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.11){: external}. |
+| etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.11){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1487 | 1525 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.26.11-6 | v1.26.13-3 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | e544e35 | 7185ea1 | New version contains updates and security fixes. |
@@ -182,7 +182,7 @@ The following table shows the changes that are in the master fix pack 4.13.19_15
 | OpenVPN server | 2.6.5-r0-IKS-57 | 2.6.5-r0-IKS-76 | New version contains updates and security fixes. |
 | OpenVPN Operator image | v1.5.7 | v1.5.9 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.8 | v0.13.10 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.10){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.13.15 | 4.13.19 | Resolves [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external} and [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487). For more information, see the [IBM security bulletin](https://www.ibm.com/support/pages/node/7080059){: external}. See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-19){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.13.15 | 4.13.19 | Review the changes in the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-19){: external}. Resolves [CVE-2023-39325](https://nvd.nist.gov/vuln/detail/CVE-2023-39325){: external}, [CVE-2023-5408](https://nvd.nist.gov/vuln/detail/CVE-2023-5408){: external}, and [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487). For more information, see IBM Security bulletin [7080059](https://www.ibm.com/support/pages/node/7080059){: external} and [7114006](https://www.ibm.com/support/pages/node/7114006). |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.13.0-20231010 | v4.13.0-20231102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.13.0+20231102){: external}. |
 {: caption="Changes since version 4.13.15_1543_openshift" caption-side="bottom"}
 

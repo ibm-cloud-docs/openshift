@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-02-05"
 
 
 keywords: openshift, 4.14, update, upgrade, BOM, bill of materials, versions, patch
@@ -46,7 +46,7 @@ The following table shows the changes that are in the master fix pack 4.14.8_154
 | Calico Operator | v1.30.7 | v1.30.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.9){: external}. |
 | Calico policy controller | v3.26.3 | v3.26.4 | See the [Calico release notes](https://github.com/projectcalico/calico/blob/release-v3.26/release-notes/v3.26.4-release-notes.md){: external}. |
 | Cluster health image | v1.5.0 | v1.5.1 | New version contains security fixes. |
-| etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.11){: external}. |
+| etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.11){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1512 | 1525 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.8-6 | v1.27.10-3 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | e544e35 | 7185ea1 | New version contains updates and security fixes. |

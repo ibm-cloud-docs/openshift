@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-02-05"
 
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
@@ -47,7 +47,7 @@ The following table shows the changes that are in the master fix pack 4.12.46_15
 | Calico | v3.26.3 | v3.26.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.26/release-notes/#v3.26.4){: external}. |
 | Calico Operator | v1.30.7 | v1.30.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.9){: external}. |
 | Cluster health image | v1.4.5 | v1.4.6 | New version contains security fixes. |
-| etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.11){: external}. |
+| etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.11){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1487 | 1525 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.16-4 | v1.25.16-17 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | e544e35 | 7185ea1 | New version contains updates and security fixes. |
@@ -132,7 +132,7 @@ The following table shows the changes that are in the master fix pack 4.12.44_15
 | OpenVPN server | 2.6.5-r0-IKS-76 | 2.6.7-r0-IKS-92 | New version contains updates and security fixes. |
 | OpenVPN Operator image | v1.4.30 | v1.4.31 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 438 | 439 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.12.40 | 4.12.44 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-44){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.40 | 4.12.44 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-44){: external}. Resolves [CVE-2023-5408](https://nvd.nist.gov/vuln/detail/CVE-2023-5408){: external}. For more information, see the [IBM security bulletin](https://www.ibm.com/support/pages/node/7114006). |
 {: caption="Changes since version 4.12.40_1568_openshift" caption-side="bottom"}
 
 

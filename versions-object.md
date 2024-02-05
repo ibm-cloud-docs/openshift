@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-29"
+lastupdated: "2024-02-05"
 
 
 keywords: openshift, object storage, plug-in, change log
@@ -30,11 +30,11 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
+| 2.2.23 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.22 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.21 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.20 | Yes | Greater than or equal to 4.6 | x86 |
 | 2.2.19 | Deprecated | Greater than or equal to 4.6 | x86 |
-| 2.2.18 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 ## Change log for version 2.2.23, released 29 January 2024
