@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-02-07"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -191,12 +191,17 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
         kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
         sleep 20
         oc delete pods -n openshift-storage --all --force --grace-period=0
-        oc delete ns local-storage --wait=false
+        if oc get po -n openshift-local-storage|grep -operator; then
+        LOCAL_NS=openshift-local-storage
+        else
+        LOCAL_NS=local-storage
+        fi
+        oc delete ns $LOCAL_NS --wait=false
         sleep 20
-        kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
-        kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n $LOCAL_NS patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
+        kubectl -n $LOCAL_NS patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
         sleep 20
-        oc delete pods -n local-storage --all --force --grace-period=0
+        oc delete pods -n $LOCAL_NS --all --force --grace-period=0
         for item in `oc get csiaddonsnodes.csiaddons.openshift.io -n openshift-storage| awk 'NR>1 {print $1}'`;
         do
         kubectl -n openshift-storage patch csiaddonsnodes.csiaddons.openshift.io/$item -p '{"metadata":{"finalizers":[]}}' --type=merge
@@ -204,7 +209,6 @@ When you delete the `OcsCluster` custom resource from your cluster, the followin
         kubectl -n openshift-storage patch configmap/rook-ceph-mon-endpoints -p '{"metadata":{"finalizers":[]}}' --type=merge
         kubectl -n openshift-storage patch secret/rook-ceph-mon -p '{"metadata":{"finalizers":[]}}' --type=merge
         kubectl -n openshift-storage patch storagesystems.odf.openshift.io/ocs-storagecluster-storagesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
-
         ```
         {: codeblock}
 
