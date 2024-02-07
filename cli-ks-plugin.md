@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-02-07"
 
 
 keywords: openshift
@@ -359,7 +359,7 @@ View the details of an installed add-on.
 {: shortdesc}
 
 ```sh
-ibmcloud oc get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
