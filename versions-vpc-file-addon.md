@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-02-08"
 
 
 keywords: file, add-on, changelog
@@ -43,7 +43,26 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 1.2
 {: #012_is_file}
 
-### Change log for version 1.2.5_107, released 10 January 2023
+### Change log for version 1.2.6_130, released 08 February 2024
+{: #1.2.6_130_is_file_relnote}
+
+
+- Fixes hanging issue related to mounting and umounting after node server restart.
+- Introduces granular locking mounting and umounting at the `targetPath` level.
+- Disables the CSI NodeExpansion method as it is not required for the file share. The PVC can still be expanded.
+- Changes how the IAM endpoint is determined for VPC Gen2 clusters.
+- Upgrades Kubernetes client library to 1.28.
+- Upgrades CSI spec to 1.8.0.
+- Resolves the following CVEs: [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/CVE-2022-48560){: external}, [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/CVE-2022-48564){: external}, [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external}, [CVE-2023-43804](https://nvd.nist.gov/vuln/detail/CVE-2023-43804){: external}, [CVE-2023-45803](https://nvd.nist.gov/vuln/detail/CVE-2023-45803){: external}, and [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external}.
+- Updates the following sidecar images: 
+    - `armada-storage-secret` to `v1.2.31`.
+    - `csi-node-driver-registrar` to `v2.9.3`.
+    - `csi-provisioner` to `v3.6.3`.
+    - `csi-resizer` to `v1.9.3`.
+    - `livenessprobe` to `v2.11.0`.
+
+
+### Change log for version 1.2.5_107, released 10 January 2024
 {: #1.2.5_107_is_file_relnote}
 
 - Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.

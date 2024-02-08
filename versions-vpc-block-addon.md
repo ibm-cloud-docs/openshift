@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-02-08"
 
 
 keywords: openshift, block, storage, add-on, changelog
@@ -47,6 +47,23 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 ## Version 5.2
 {: #052_is_block}
 
+### Change log for version 5.2.15_501, released 08 February 2024
+{: #5.2.15_501_is_block_relnote}
+
+- Changes how the IAM endpoint is determined for VPC Gen2 clusters.
+- Upgrades Kubernetes client library to 1.28.
+- Upgrades CSI spec to 1.8.0.
+- Resolves the following CVEs: [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/CVE-2022-48560){: external}, [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/CVE-2022-48564){: external}, [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external}, [CVE-2023-43804](https://nvd.nist.gov/vuln/detail/CVE-2023-43804){: external}, [CVE-2023-45803](https://nvd.nist.gov/vuln/detail/CVE-2023-45803){: external}, and [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external}.
+- Updates the following sidecar images: 
+    - `armada-storage-secret` to `v1.3.5`.
+    - `csi-attacher` to `v4.4.3`.
+    - `csi-node-driver-registrar` to `v2.9.3`.
+    - `csi-provisioner` to `v3.6.3`.
+    - `csi-resizer` to `v1.9.3`.
+    - `csi-snapshotter` to `v6.3.3`.
+    - `livenessprobe` to `v2.11.0`.
+
+
 ### Change log for version 5.2.14_485, released 10 January 2024
 {: #5.2.14_485_is_block_relnote}
 
@@ -86,6 +103,23 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.21_506, released 08 February 2024
+{: #5.1.21_506_is_block_relnote}
+
+- Changes how the IAM endpoint is determined for VPC Gen2 clusters.
+- Upgrades Kubernetes client library to 1.28.
+- Upgrades CSI spec to 1.8.0.
+- Resolves the following CVEs: [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/CVE-2022-48560){: external}, [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/CVE-2022-48564){: external}, [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external}, [CVE-2023-43804](https://nvd.nist.gov/vuln/detail/CVE-2023-43804){: external}, [CVE-2023-45803](https://nvd.nist.gov/vuln/detail/CVE-2023-45803){: external}, and [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external}.
+- Updates the following sidecar images: 
+    - `armada-storage-secret` to `v1.2.31`.
+    - `csi-attacher` to `v4.4.3`.
+    - `csi-node-driver-registrar` to `v2.9.3`.
+    - `csi-provisioner` to `v3.6.3`.
+    - `csi-resizer` to `v1.9.3`.
+    - `csi-snapshotter` to `v6.3.3`.
+    - `livenessprobe` to `v2.11.0`.
+
 
 ### Change log for version 5.1.19_486, released 10 January 2024
 {: #5.1.19_486_is_block_relnote}
