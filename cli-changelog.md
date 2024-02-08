@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-02-08"
 
 
 keywords: openshift, oc, ks
@@ -31,6 +31,16 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.595
+{: #cli-01959}
+
+Version 0.1.595 of the CLI was released on 08 February 2024.
+:  Adds the `ibmcloud sat storage assignment autopatch` command for enabling and disabling automatic patch updates to your Satellite storage assignments.
+:  Adds the `patch` alias to the `ibmcloud sat storage assignment upgrade` command.
+
+## Version v1.0.589
+{: #cli-01589}
 
 Version 0.1.589 of the CLI was released on 19 January 2024.
 :   Adds the `sat experimental connector agent` commands.
