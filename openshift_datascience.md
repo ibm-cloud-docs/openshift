@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-08"
 
 
 keywords: data science, AI, machine learning, AI modeling, modeling, GPUs, NVIDIA, node feature discovery, pipelines
@@ -27,7 +27,7 @@ completion-time: 60m
 Red Hat OpenShift Data Science is an open hybrid AI and machine learning platform for gathering insights from data and building AI-enabled applications. It provides tools to rapidly develop, train, serve, and monitor machine learning models on site, in the public cloud, or at the edge. You can install Red Hat OpenShift Data Science and other necessary operators onto an existing Red Hat OpenShift cluster that is enabled with GPU-enhanced worker nodes. 
 {: shortdesc}
 
-The following steps refer to the Red Hat documentation. For more information see, [Installing OpenShift Data Science self-managed](https://access.redhat.com/documentation/en-us/red_hat_openshift_data_science_self-managed/1.32/html-single/installing_openshift_data_science_self-managed/index){: external}.
+The following steps refer to the Red Hat documentation. For more information see, [Installing OpenShift Data Science self-managed](https://access.redhat.com/documentation/en-us/red_hat_openshift_ai_self-managed/2-latest#installing-openshift-data-science-on-openshift-container-platform_install){: external}.
 {: note}
 
 ## Before you begin
@@ -51,7 +51,7 @@ OpenShift Data Science supports data science pipelines. A pipeline is a collecti
 {: #datascience_install}
 {: step}
 
-You can install the OpenShift Data Science Operator to your cluster using the web console. See [Installing OpenShift Data Science self-managed](https://access.redhat.com/documentation/en-us/red_hat_openshift_data_science_self-managed/1.32/html-single/installing_openshift_data_science_self-managed/index#installing-openshift-data-science-on-openshift-container-platform_install){: external} for detailed installation steps and requirements.
+You can install the OpenShift Data Science Operator to your cluster using the web console. See [Installing OpenShift Data Science self-managed](https://access.redhat.com/documentation/en-us/red_hat_openshift_ai_self-managed/2-latest#installing-openshift-data-science-on-openshift-container-platform_install){: external} for detailed installation steps and requirements.
 
 
 ## Install the Node Feature Discovery Operator

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-08"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -189,7 +189,7 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
     {: codeblock}
     
 7. Modify the configuration YAML to include the node selector and toleration for the worker pool label and taint that you previously created. For more information and examples, see the following {{site.data.keyword.redhat_openshift_notm}} documents. The examples use a label and toleration of `logging: clo-efk`.
-    * [Node selector](https://docs.openshift.com/container-platform/4.13/logging/config/cluster-logging-moving-nodes.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
+    * [Node selector](https://docs.openshift.com/container-platform/4.13/logging/scheduling_resources/logging-node-selectors.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
         ```yaml
         spec:
         logStore:
@@ -210,7 +210,7 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
         ```
         {: codeblock}
 
-    * [Toleration](https://docs.openshift.com/container-platform/4.13/logging/config/cluster-logging-tolerations.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
+    * [Toleration](https://docs.openshift.com/container-platform/4.13/logging/scheduling_resources/logging-taints-tolerations.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
         ```yaml
         spec:
         logStore:
