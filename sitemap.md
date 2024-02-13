@@ -273,6 +273,10 @@ subcollection: openshift
 
 * [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
 
+    * [13 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1324)
+
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+
     * [08 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0824)
 
         * CLI version `1.0.595` is available.
