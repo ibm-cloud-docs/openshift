@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift
@@ -39,7 +39,7 @@ Increase the logging level of Calico components to gather more information about
 Complete the following steps to increase the log level for the `calico-typha` component.
 
 1. Run the following command to edit the `calico-typha` deployment. 
-
+    
     ```sh
     oc edit deploy calico-typha -n calico-system
     ```
@@ -151,18 +151,18 @@ Complete the following steps to increase the log level for the `calico-kube-cont
 
 1. List the pods and nodes in your cluster and make a node of the pod name, pod IP address, and worker node that has the issue.
 2. Get the logs for the `calico-node` pod on the worker node where the problem occurred.
-
+    
     ```sh
     oc logs calico-typha-aaa11111a-aaaaa -n calico-system
     ```
     {: pre}
 
 3. Get logs for the `calico-kube-controllers` pod.
-
+    
     ```sh
     oc logs calico-kube-controllers-11aaa11aa1-a1a1a -n calico-system
     ```
-    {:  pre}
+    {: pre}
   
 4. Follow the instructions for [Debugging by using oc exec](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec) to get `/var/log/syslog`, `containerd.log`, `kubelet.log`, and `kern.log` from the worker node.
 

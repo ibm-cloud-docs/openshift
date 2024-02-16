@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift
@@ -29,10 +29,12 @@ content-type: troubleshoot
 You deleted all worker nodes in your cluster so that zero worker nodes exist. Then, you added one or more worker nodes. When you run the following command, several pods for Kubernetes components are stuck in the `ContainerCreating` status, and the `calico-node` pods are stuck in the `CrashLoopBackOff` status.
 {: tsSymptoms}
 
+
 ```sh
-oc -n kube-system get pods
+oc -n calico-system get pods
 ```
 {: pre}
+
 
 
 When you delete all worker nodes in your cluster, no worker node exists for the `calico-kube-controllers` pod to run on. The Calico controller pod's data can't be updated to remove the data of the deleted worker nodes. When the Calico controller pod begins to run again on the new worker nodes, its data is not updated for the new worker nodes, and it does not start the `calico-node` pods.
@@ -51,8 +53,10 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
     {: pre}
 
 2. For the `calico-node` pods that are stuck in the `CrashLoopBackOff` status, note the `NODE` IP addresses.
+
+    
     ```sh
-    oc -n kube-system get pods -o wide
+    oc -n calico-system get pods -o wide
     ```
     {: pre}
 
@@ -79,8 +83,10 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
     {: pre}
 
 5. Verify that the Kubernetes component pods, including the `calico-node` pods, are now running. It might take a few minutes for the `calico-node` pods to be scheduled and for new component pods to be created.
+
+    
     ```sh
-    oc -n kube-system get pods
+    oc -n calico-system get pods
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift
@@ -34,10 +34,10 @@ For example, you might have a user or namespace that runs your critical apps in 
 | Flow schema | Resources that requests come from | Priority level |
 | ----------- | --------- | -------------- |
 | `apiserver-health` | Kubernetes API server health resources | [Custom priority level](#kube-api-prioritylevelconfig) for these resources. |
-| `calico-system-service-accounts` | Resources in the `calico-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
+| `calico-system-service-accounts` | Resources in the `calico-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts. |
 | `ibm-admin` | Resources from IBM cluster administrators | Exempts requests by cluster administrators from priority restrictions. This schema is available for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. |
 | `ibm-system-service-accounts` | Resources in the `ibm-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
-| `tigera-operator-service-accounts` | Resources in the `tigera-operator` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
+| `tigera-operator-service-accounts` | Resources in the `tigera-operator` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts. |
 {: caption="Default flow schema and priority levels" caption-side="bottom"}
 
 You can create your own flow schema and priorities, but don't modify the default settings. Unexpected results might occur in your cluster when you modify API request priorities.
