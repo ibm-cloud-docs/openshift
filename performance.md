@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift, kubernetes, kernel, performance
@@ -363,7 +363,7 @@ spec:
 
 
 
-### Updating the Calico installation
+### Updating the Calico installation 
 {: #calico-mtu-43}
 
 After [applying the DaemonSet to increase the Calico plug-in MTU](#calico-mtu), complete the following steps to update the Calico installation.
@@ -420,7 +420,6 @@ If you must use `hostPorts`, don't disable the port map plug-in.
 {: note}
 
 
-
 1. Edit the `default` Calico installation resource.
     ```sh
     oc edit installation default -n calico-system
@@ -450,7 +449,5 @@ If you must use `hostPorts`, don't disable the port map plug-in.
     {: screen}
 
 1. Save and close the file. Your changes are automatically applied.
-
-
 
 

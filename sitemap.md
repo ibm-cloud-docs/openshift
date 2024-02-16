@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-13"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift
@@ -272,6 +272,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
+
+    * [16 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1624)
+
+        * A new tutorial is available for creating a small {{site.data.keyword.redhat_openshift_notm}} cluster on VPC.
+
+        * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.1.0_362`.
 
     * [13 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1324)
 
@@ -2496,6 +2502,25 @@ subcollection: openshift
 * [Set up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
+
+
+## Creating a 2 node OpenShift cluster on VPC infrastructure by using Schematics
+{: #sitemap_creating_a_2_node_openshift_cluster_on_vpc_infrastructure_by_using_schematics}
+
+
+[Creating a 2 node OpenShift cluster on VPC infrastructure by using Schematics](/docs/openshift?topic=openshift-tutorial-two-node#tutorial-two-node)
+
+* [Audience](/docs/openshift?topic=openshift-tutorial-two-node#basic-audience)
+
+* [What you'll get](/docs/openshift?topic=openshift-tutorial-two-node#basic-what-you-get)
+
+* [Create a Schematics workspaces](/docs/openshift?topic=openshift-tutorial-two-node#basic-create-workspace)
+
+* [Generate, review, and apply the Schematics plan](/docs/openshift?topic=openshift-tutorial-two-node#basic-generate-plan)
+
+* [Access your OpenShift cluster](/docs/openshift?topic=openshift-tutorial-two-node#basic-access-cluster)
+
+* [Optional: Clean up the resources](/docs/openshift?topic=openshift-tutorial-two-node#basic-cleanup)
 
 
 ## Installing Red Hat OpenShift Data Science
@@ -6976,6 +7001,8 @@ subcollection: openshift
     * [Change log for patch update 1.2.0_228, released 15 November 2023](/docs/openshift?topic=openshift-ca_changelog#120228_ca)
 
 * [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+
+    * [Change log for patch update 1.1.0_362, released 16 February 2024](/docs/openshift?topic=openshift-ca_changelog#110362_ca)
 
     * [Change log for patch update 1.1.0_1066, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#111066_ca)
 

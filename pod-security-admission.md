@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift, deploy, pod security admission, pod security, security profiles
@@ -82,8 +82,8 @@ By default, {{site.data.keyword.openshiftlong_notm}} adds the `privileged` Pod S
 - `kube-system` 
 - `ibm-system`
 - `ibm-operators`
-- `calico-system`
-- `tigera-operator`
+- `calico-system` 
+- `tigera-operator` 
 
 
 Do not remove or change the labels for these namespaces or any of the `openshift-*` namespaces.

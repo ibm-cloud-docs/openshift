@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-13"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift, kubernetes, release notes
@@ -31,6 +31,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-feb24}
 
 
+### 16 February 2024
+{: #openshift-feb1624}
+{: release-note}
+
+
+
+A new tutorial is available for creating a small {{site.data.keyword.redhat_openshift_notm}} cluster on VPC.
+:   For more information, see [Creating a 2 node {{site.data.keyword.redhat_openshift_notm}} cluster on VPC infrastructure by using Schematics](/docs/openshift?topic=openshift-tutorial-two-node).
+
+
+
+{{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.1.0_362`.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+
+
 ### 13 February 2024
 {: #openshift-feb1324}
 {: release-note}
@@ -46,6 +62,7 @@ Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
     - [4.13.32_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
     - [4.12.49_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
     - [4.11.58_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+
 
 
 

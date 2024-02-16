@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -51,10 +51,11 @@ Follow a tutorial, or set up your own custom cluster environment.
 
 
 
-- [Tutorial]{: tag-blue} [Create a classic cluster from the CLI](/docs/openshift?topic=openshift-openshift_tutorial).
+- [Tutorial]{: tag-green} [Create a classic cluster from the CLI](/docs/openshift?topic=openshift-openshift_tutorial).
 
-- [Tutorial]{: tag-blue} [Create a cluster in your own Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial).
+- [Tutorial]{: tag-green} [Create a cluster in your own Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial).
 
+- [Tutorial]{: tag-green} [Create a 2 node VPC cluster by using Schematics](/docs/openshift?topic=openshift-tutorial-two-node).
 
 - [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic).
 

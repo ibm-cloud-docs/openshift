@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift
@@ -40,8 +40,15 @@ You notice one or more of the following issues:
     ```
     {: screen}   
 
-* One or more of the `calico-node` pods fail to start on a worker node and are in the `CrashLoopBackOff` state. When you run `kubectl logs -n kube-system <calico-node_pod>`, the last lines of the logs contain the following message.
+* When you run the following command, one or more of the `calico-node` pods fail to start on a worker node and are in the `CrashLoopBackOff` state.
 
+    
+    ```sh
+    oc logs -n calico-system <calico-node_pod>
+    ```
+    {: pre}
+
+    The last lines of the logs contain the following message:
     ```sh
     Unable to autoassign an address - pools are likely exhausted. type="ipipTunnelAddress"
     ```
