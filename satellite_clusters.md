@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-02-16"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -30,6 +30,7 @@ Before you can create clusters in {{site.data.keyword.satellitelong_notm}}, you 
 
 1. [Review the {{site.data.keyword.satellitelong_notm}} components](/docs/satellite?topic=satellite-faqs) and the [location planning guide](/docs/satellite?topic=satellite-infrastructure-plan).
 1. Review the [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits).
+1. Make sure you have either the **Administrator** or the **Satellite cluster creator** access role in IAM. For more information, see [IAM platform and service access roles](/docs/satellite?topic=satellite-iam-platform-access).
 1. Prepare to create your {{site.data.keyword.satellitelong_notm}} location. Choose from one of the following options.
     Note that support for automatically creating a Red Hat CoreOS enabled location with Schematics is currently not available. If you want to create a Red Hat CoreOS enabled location, see [Manually creating a location](/docs/satellite?topic=satellite-loc-manual-create). Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later.
     
