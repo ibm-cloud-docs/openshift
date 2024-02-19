@@ -55,8 +55,8 @@ Follow a tutorial, or set up your own custom cluster environment. Review the fol
 | [Tutorial]{: tag-green} | Beginner | 30 minutes | Automated via IBM Cloud Schematics | [Creating a 2 node VPC cluster by using Schematics](/docs/openshift?topic=openshift-tutorial-two-node). | 
 | [Tutorial]{: tag-green} | Beginner | 45 minutes | CLI | [Creating a classic cluster from the CLI](/docs/openshift?topic=openshift-openshift_tutorial). |
 | [Tutorial]{: tag-green} | Beginner | 60 minutes | CLI | [Create a cluster in your own Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial). | 
-| [Custom deployment]{: tag-warm-gray} | Intermediate | UI, CLI, or Terraform | 1-3 hours | [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic). |
-| [Custom deployment]{: tag-warm-gray} | Intermediate | UI, CLI, or Terraform | 1-3 hours | [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc-gen2). |
+| Custom deployment | Intermediate | UI, CLI, or Terraform | 1-3 hours | [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic). |
+| Custom deployment | Intermediate | UI, CLI, or Terraform | 1-3 hours | [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc-gen2). |
 {: caption="Options for creating a cluster" caption-side="bottom"}
 
 Already have a cluster? Continue to the next step to deploy a sample app!
