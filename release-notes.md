@@ -30,13 +30,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2024
 {: #openshift-feb24}
 
-### 19 February 2024
-{: #openshift-feb1924}
-{: release-note}
-
-Ingress ALB versions `1.9.4_6359_iks` and `1.8.4_6363_iks` are available for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
-
 
 
 
