@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-02-19"
 
 
 keywords: portworx, openshift
@@ -25,7 +25,7 @@ Portworx Backup is a Portworx proprietary backup solution that is compatible wit
 
 To back up the data in your persistent volumes, you must have a storage class that supports snapshots in your cluster. Clusters with Portworx Enterprise have storage classes available that support snapshots by default. However, for clusters that don't have Portworx Enterprise, you must have a storage classes with snapshot support to back up your persistent volume data. The {{site.data.keyword.blockstorageshort}} driver, and the {{site.data.keyword.filestorage_short}} driver don't have storage classes that support snapshots. If you have workloads that use these drivers, you can use Portworx Backup to back up your apps, but not the data in the persistent volumes. For more information see [Backing up and restoring cluster data with Portworx Backup](#px-backup-and-restore).
 
-Consider using Portworx Enterprise which provides options to have 3 replicas of you data in the cluster spread across multiple zones. In case of zonal storage failures, Portworx recommends using PX enterprise to get benefit of this feature. This helps ensure availability at data level in addition to application level availability.
+Consider using Portworx Enterprise which provides options to have 3 replicas of your data in the cluster spread across multiple zones. In case of zonal storage failures, Portworx recommends using PX enterprise to get benefit of this feature. This helps ensure availability at data level in addition to application level availability.
 {: tip}
 
 

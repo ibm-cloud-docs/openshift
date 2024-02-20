@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-02-19"
 
 
 keywords: kubernetes
@@ -30,9 +30,16 @@ Create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private C
 ## Audience
 {: #basic-audience}
 
-This tutorial is designed for account administrators who want to learn about Schematics and Terraform.
+This tutorial is designed for account administrators who want to learn about {{site.data.keyword.openshiftlong_notm}} and Schematics.
 
-Alternatively, this tutorial can be used to set up a small testing environment for administrators who are already familiar with OpenShift, VPC, and Schematics or Terraform.
+Alternatively, you can use this tutorial to set up a small testing environment for administrators who are already familiar with OpenShift, VPC, and Schematics.
+
+To complete this tutorial, you must have the at least the following permissions in IAM. For more information, see [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions).
+
+- **Administrator** or **Compliance Management** for IBM Cloud Kubernetes Service.
+- **Administrator** or **Editor** for VPC.
+- **Manager** for Schematics.
+- **Manager** for Cloud Object Storage.
 
 ## What you'll get
 {: #basic-what-you-get}

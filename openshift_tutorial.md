@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-02-19"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -39,7 +39,7 @@ This tutorial is designed for cluster administrators who want to learn how to cr
 ## Objectives
 {: #openshift_objectives}
 
-In this tutorial, you will complete the following tasks.
+In this tutorial, you complete the following tasks.
 
 - Create a cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
 - Open the {{site.data.keyword.redhat_openshift_notm}} web console.
@@ -49,7 +49,7 @@ In this tutorial, you will complete the following tasks.
 ## What you'll get
 {: #openshift_get}
 
-In this tutorial, you will create the following resources. There are optional steps to delete these resources if you do not want to keep them after completing the tutorial. 
+In this tutorial, you create the following resources by using the CLI. There are optional steps to delete these resources if you don't want to keep them after completing the tutorial. 
 
 - A classic cluster with 2 worker nodes
 - A simple Hello World app deployed to your cluster
