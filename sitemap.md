@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-02-20"
 
 
 keywords: openshift
@@ -272,6 +272,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
+
+    * [19 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1924)
+
+        * Ingress ALB versions `1.9.4_6359_iks` and `1.8.4_6363_iks` are available for {{site.data.keyword.openshiftlong_notm}}.
 
     * [16 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1624)
 
