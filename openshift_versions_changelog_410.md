@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-21"
 
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
@@ -225,7 +225,7 @@ The following table shows the changes that are in the master fix pack 4.10.67_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.25.1 | v3.25.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.25/release-notes/#v3.25.2){: external}. |
-| Calico Operator | v1.29.4 | v1.29.6 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.6){: external}. |
+| Tigera Operator | v1.29.4 | v1.29.6 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.6){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.5 | v2.4.10 | Updated `Go dependencies`. Updated to newer UBI base image. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.17-25 | v1.23.17-26 | Updated `Go dependencies`. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 434 | 435 | Updated `Go` to version `1.20.6` and updated dependencies. Updated to newer UBI base image. |
@@ -368,7 +368,7 @@ The following table shows the changes that are in the master fix pack 4.10.61_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.23.5 | v3.25.1 | See the [Calico release notes](https://docs.tigera.io/calico/3.25/release-notes/#v3.25.1){: external}. |
-| Calico Operator | v1.27.17 | v1.29.4 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.4){: external}. |
+| Tigera Operator | v1.27.17 | v1.29.4 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.4){: external}. |
 | Cluster health image | v1.3.20 | v1.3.21 | Updated `Go` dependencies and to `Go` version `1.19.10`. |
 | etcd | v3.4.25 | v3.4.26 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.26){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.23.17-16 | v1.23.17-19 | Updated to support the `Kubernetes 1.23.17` release. Updated `Go` dependencies. |
@@ -627,7 +627,7 @@ The following table shows the changes that are in the master fix pack 4.10.47_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico Operator | v1.27.16 | v1.27.17 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.17){: external}. |
+| Tigera Operator | v1.27.16 | v1.27.17 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.17){: external}. |
 | Cluster health image | v1.3.14 | v1.3.15 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1257 | 1280 | Publish s390x image. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.4 | v2.3.6 | Updated `UBI images` to `8.7-1031` |
@@ -761,7 +761,7 @@ The following table shows the changes that are in the master fix pack 4.10.39_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.22.4 | v3.23.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.23/release-notes/#v3235){: external}. |
-| Calico Operator | v1.25.11 | v1.27.16 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.16){: external}. |
+| Tigera Operator | v1.25.11 | v1.27.16 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.16){: external}. |
 | Cluster health image | v1.3.12 | v1.3.13 | Updated Go dependencies, `golangci-lint`, `gosec`, and to `Go` version 1.19.3. Updated base image version to 116. |
 | etcd | v3.4.18 | v3.4.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.4.21){: external}. |
 | Gateway-enabled cluster controller | 1823 | 1902 | `Go` module updates. |
@@ -922,7 +922,7 @@ The following table shows the changes that are in the master fix pack 4.10.26_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.22.2 | v3.22.4 | See the [Calico release notes](https://docs.tigera.io/archive/v3.22/release-notes/#v3224){: external}. Updated the Calico custom resource definitions to include `preserveUnknownFields: false`. |
-| Calico Operator | v1.25.7 | v1.25.11 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.11){: external}. |
+| Tigera Operator | v1.25.7 | v1.25.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.11){: external}. |
 | Cluster health image | v1.3.9 | v1.3.10 | Updated `Go` dependencies and to `Go` version `1.18.5`. |
 | Gateway-enabled cluster controller | 1792 | 1823 | Updated to `Go` version `1.17.13`. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 997 | 1006 | Updated to `Go` version `1.17.13`. |
@@ -1151,7 +1151,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.21.5 | v3.22.2 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| Calico Operator | v1.23.7 | v1.25.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.7){: external}. |
+| Tigera Operator | v1.23.7 | v1.25.7 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.7){: external}. |
 | IBM Cloud Controller Manager | v1.22.8-7 | v1.23.5-9 | Updated to support the Kubernetes `1.23.5` release and to use Go version `1.17.8`. Classic load balancers are updated to improve availability during updates. In addition, creating a mixed protocol load balancer is not supported. |
 | OpenShift (master) | 4.9.28 | 4.10.9 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-9){: external}. |
 | OpenShift (worker) | 4.9.29 | 4.10.10 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/4.10/release_notes/ocp-4-10-release-notes.html#ocp-4-10-10){: external}. Worker nodes are configured to pull images in parallel. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-13"
+lastupdated: "2024-02-21"
 
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
@@ -71,7 +71,7 @@ The following table shows the changes that are in the master fix pack 4.11.56_15
 | --- | --- | --- | --- |
 | Calico | v3.26.3 | v3.26.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.26/release-notes/#v3.26.4){: external}. |
 | Cluster health image | v1.4.5 | v1.4.6 | New version contains security fixes. |
-| Calico Operator | v1.30.7 | v1.30.9 | See the Calico Operator release notes. |
+| Tigera Operator | v1.30.7 | v1.30.9 | See the Tigera Operator release notes. |
 | etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.11){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1487 | 1525 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.17-23 | v1.24.17-26 | New version contains updates and security fixes. |
@@ -235,7 +235,7 @@ The following table shows the changes that are in the master fix pack 4.11.50_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.25.2 | v3.26.3 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/#v3.26.3){: external}. |
-| Calico Operator | v1.29.6 | v1.30.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.7){: external}. |
+| Tigera Operator | v1.29.6 | v1.30.7 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.7){: external}. |
 | Cluster health image | v1.4.2 | v1.4.4 | New version contains updates and security fixes. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1390 | 1487 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.10 | v2.4.12 | New version contains updates and security fixes. |
@@ -298,7 +298,7 @@ The following table shows the changes that are in the master fix pack 4.11.48_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.25.1 | v3.25.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.25/release-notes/#v3.25.2){: external}. |
-| Calico Operator | v1.29.4 | v1.29.6 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.6){: external}. |
+| Tigera Operator | v1.29.4 | v1.29.6 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.6){: external}. |
 | Cluster health image | v1.3.24 | v1.4.2 | Updated `Go` to version `1.20.8` and updated dependencies. Updated to new base image. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.5 | v2.4.10 | Updated `Go dependencies`. Updated to newer UBI base image. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.16-5 | v1.24.17-3 | Updated to support the `Kubernetes 1.24.17` release. Updated `Go` to version `1.20.7` and updated `Go dependencies`. |
@@ -441,7 +441,7 @@ The following table shows the changes that are in the master fix pack 4.11.42_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico Operator | v1.29.3 | v1.29.4 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.4){: external}. |
+| Tigera Operator | v1.29.3 | v1.29.4 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.4){: external}. |
 | Cluster health image | v1.3.20 | v1.3.21 | Updated `Go` dependencies and to `Go` version `1.19.10`. |
 | etcd | v3.5.8 | v3.5.9 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.9){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.24.13-6 | v1.24.15-1 | Updated to support the Kubernetes 1.24.15 release. Updated `Go` dependencies and to `Go` version `1.19.10`. Updated `calicoctl` and `vpcctl`. |
@@ -527,7 +527,7 @@ The following table shows the changes that are in the master fix pack 4.11.35_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.25.0 | v3.25.1 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/#v3.25.1){: external}. |
-| Calico Operator | v1.29.0 | v1.29.3 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.3){: external}. |
+| Tigera Operator | v1.29.0 | v1.29.3 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.3){: external}. |
 | Cluster health image | v1.3.17 | v1.3.19 | Updated `Go` to version `1.19.8` and updated dependencies. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1366-amd64 | 1390-amd64 | Eliminate IP syscall. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.0 | v2.4.5 | Updated universal base image (UBI) to resolve CVEs. Updated `Go` to version `1.19.8` and updated dependencies. |
@@ -596,7 +596,7 @@ The following table shows the changes that are in the master fix pack 4.11.31_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.23.5 | v3.25.0 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/#v3.25.0){: external}. |
-| Calico Operator | v1.27.17 | v1.29.0 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.0){: external}. |
+| Tigera Operator | v1.27.17 | v1.29.0 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.0){: external}. |
 | Cluster health image | v1.3.16 | v1.3.17 | Updated `Go` to version `1.19.7` and updated dependencies. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1308-amd64 | 1366-amd64 | Updated to resolve [CVE-2023-23916](https://nvd.nist.gov/vuln/detail/CVE-2023-23916){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.7 | v2.4.0 | Removed ExpandInUsePersistentVolumes feature gate. |
@@ -704,7 +704,7 @@ The following table shows the changes that are in the master fix pack 4.11.22_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico Operator | v1.27.16 | v1.27.17 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.17){: external}. |
+| Tigera Operator | v1.27.16 | v1.27.17 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.17){: external}. |
 | Cluster health image | v1.3.14 | v1.3.15 | Updated `Go` dependencies and to `Go` version `1.19.4`. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1257 | 1280 | Publish s390x image. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.3.4 | v2.3.6 | Updated `UBI images` to `8.7-1031` |
@@ -832,7 +832,7 @@ The following table shows the changes that are in the master fix pack 4.11.12_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.23.3 | v3.23.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.23/release-notes/#v3235){: external}. |
-| Calico Operator | v1.27.12 | v1.27.16 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.16){: external}. |
+| Tigera Operator | v1.27.12 | v1.27.16 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.16){: external}. |
 | Cluster health image | v1.3.12 | v1.3.13 | Updated Go dependencies, `golangci-lint`, `gosec`, and to `Go` version 1.19.3. Updated base image version to 116. |
 | etcd | v3.5.4 | v3.5.5 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.5){: external}. |
 | Gateway-enabled cluster controller | 1823 | 1902 | `Go` module updates. |
@@ -961,7 +961,7 @@ The following table shows the changes that are in the master fix pack 4.11.0_151
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.22.2 | v3.23.3 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| Calico Operator | v1.25.7 | v1.27.12 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.12){: external}. |
+| Tigera Operator | v1.25.7 | v1.27.12 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.27.12){: external}. |
 | Cluster health image | v1.3.9 | v1.3.10 | Updated `Go` dependencies and to `Go` version `1.18.5`. |
 | etcd | v3.4.18 | v3.5.4 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.4){: external}. |
 | IBM Calico extension | 997 | 1006 | Updated to `Go` version `1.17.13`. |

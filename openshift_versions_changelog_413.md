@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-13"
+lastupdated: "2024-02-21"
 
 
 keywords: openshift, 4.13, update, upgrade, BOM, bill of materials, versions, patch
@@ -58,7 +58,7 @@ The following table shows the changes that are in the master fix pack 4.13.28_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.26.3 | v3.26.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.26/release-notes/#v3.26.4){: external}. |
-| Calico Operator | v1.30.7 | v1.30.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.9){: external}. |
+| Tigera Operator | v1.30.7 | v1.30.9 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.9){: external}. |
 | Cluster health image | v1.4.5 | v1.4.6 | New version contains security fixes. |
 | etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.11){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1487 | 1525 | New version contains security fixes. |
@@ -223,7 +223,7 @@ The following table shows the changes that are in the master fix pack 4.13.15_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.26.1 | v3.26.3 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/#v3.26.3){: external}. |
-| Calico Operator | v1.30.5 | v1.30.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.7){: external}. |
+| Tigera Operator | v1.30.5 | v1.30.7 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.7){: external}. |
 | Cluster health image | v1.4.2 | v1.4.4 | New version contains updates and security fixes. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1390 | 1487 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.10 | v2.4.12 | New version contains updates and security fixes. |
@@ -286,7 +286,7 @@ The following table shows the changes that are in the master fix pack 4.13.11_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.26.0 | v3.26.1 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/#v3.26.1){: external}. |
-| Calico Operator | v1.30.2 | v1.30.5 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.5){: external}. |
+| Tigera Operator | v1.30.2 | v1.30.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.5){: external}. |
 | Cluster health image | v1.4.1 | v1.4.2 | Updated `Go` to version `1.20.8` and updated dependencies. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.5 | v2.4.10 | Updated `Go dependencies`. Updated to newer UBI base image. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.26.7-4 | v1.26.8-3 | Updated to support the `Kubernetes 1.26.8` release. Updated `Go` to version `1.20.7` and updated `Go dependencies`. |
@@ -457,7 +457,7 @@ The following table shows the changes that are in the worker node fix pack 4.13.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.25.1 | v3.26.0 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| Calico Operator | v1.29.3 | v1.30.2 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.2){: external}. |
+| Tigera Operator | v1.29.3 | v1.30.2 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.30.2){: external}. |
 | etcd | v3.5.8 | v3.5.9 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.9){: external}. |
 | IBM Cloud Controller Manager | v1.25.9-7 | v1.26.5-5 | Updated to support the Kubernetes `1.26.5` release. Updated `Go` dependencies and to `Go` version `1.19.9`. Updated `calicoctl` to version `v3.25.1` and `vpcctl` to version `v0.15.0`. |
 | Key Management Service provider | v2.6.6 | v2.7.0 | Secret encryption support added for clusters in Satellite locations with CoreOS enabled. Updated `Go` dependencies. |
