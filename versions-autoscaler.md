@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-02-21"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -40,6 +40,12 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.2.0
 {: #0120_ca_addon}
+
+### Change log for patch update 1.2.0_365, released 21 February 2024
+{: #120365_ca}
+
+- Updated the storage-secret-sidecar image to `v1.3.5`.
+- Image tags: `1.22.0-120-4`, `1.23.0-120-4`, `1.24.0-120-4`, `1.25.0-120-4`, `1.26.4-120-4`, `1.27.3-120-4`, and `1.28.0-120-4`.
 
 ### Change log for patch update 1.2.0_322, released 16 January 2024
 {: #120322_ca}
@@ -154,13 +160,19 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 ## Version 1.0.9
 {: #0109_ca_addon}
 
+### Change log for patch update 1.0.9_377, released 21 February 2024
+{: #109377_ca}
+
+- Updated the storage-secret-sidecar image to `v1.2.31`.
+- Fixed naming issues with the `nodeDeleteDelayAfterTaint` and `maxNodesTotal` parameters.
+- Image tags: `1.22.0-109-3`, `1.23.0-109-3`, `1.24.0-109-3`, `1.25.0-109-3`, `1.26.1-109-3`, `1.27.2-109-3`.
+
 ### Change log for patch update 1.0.9_328, released 16 January 2024
 {: #109328_ca}
 
 - Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}
 - Updates the storage-secret-sidecar image to `v1.2.30`.
 - Fixes an issue while updating custom variables via add-on.
-- Image tags: `1.22.0-120-3`, `1.23.0-120-3`, `1.24.0-120-3`, `1.25.0-120-3`, `1.26.4-120-3`, `1.27.3-120-3`, and `1.28.0-120-3`.
 
 ### Change log for patch update 1.0.9_290, released 27 November 2023
 {: #109290_ca}
