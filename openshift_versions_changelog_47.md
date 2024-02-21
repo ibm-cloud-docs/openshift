@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-02-21"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -267,7 +267,7 @@ The following table shows the changes that are in the master fix pack 4.7.56_158
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.21.5 | v3.21.6 | See the [Calico release notes](https://docs.tigera.io/archive/v3.21/release-notes/.#v3216){: external}. Updated the Calico custom resource definitions to include `preserveUnknownFields: false`. |
-| Calico Operator | v1.23.7 | v1.23.8 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.8){: external}. |
+| Tigera Operator | v1.23.7 | v1.23.8 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.8){: external}. |
 | Cluster health image | v1.3.9 | v1.3.10 | Updated `Go` dependencies and to `Go` version `1.18.5`. |
 | Gateway-enabled cluster controller | 1792 | 1823 | Updated to `Go` version `1.17.13`. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 997 | 1006 | Updated to `Go` version `1.17.13`. |
@@ -404,7 +404,7 @@ The following table shows the changes that are in the master fix pack 4.7.52_156
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.20.5 | v3.21.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.21/release-notes/.#v3215){: external}. |
-| Calico Operator | v1.20.8 | v1.23.7 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.7){: external}. |
+| Tigera Operator | v1.20.8 | v1.23.7 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.23.7){: external}. |
 | Cluster health image | v1.3.7 | v1.3.8 | Updated `Go` to version `1.17.11` and also updated the dependencies. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.4 | v2.2.6 | Bug fixes for the driver installation. Block plug-in base images were updated to universal base image (UBI): `8.6-751.1655117800` for CVE-2022-1271 |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.20.15-11 | v1.20.15-14 | Update prometheus/client_golang@v1.7.1 to `v1.11.1`. |
@@ -507,7 +507,7 @@ The following table shows the changes that are in the master fix pack 4.7.48_156
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.20.4 | v3.20.5 | See the [Calico release notes](https://docs.tigera.io/archive/v3.20/release-notes/.#v3205){: external}. |
-| Calico Operator | v1.20.6 | v1.20.8 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.20.8){: external}. |
+| Tigera Operator | v1.20.6 | v1.20.8 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.20.8){: external}. |
 | Cluster health image | v1.3.5 | v1.3.6 | Updated `Go` to version `1.17.9` and also updated the dependencies. Update `registry base image` version to `103`. |
 | Gateway-enabled cluster controller | 1669 | 1680 | Updated metadata for a rotated key. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 950 | 954 | Updated to latest minimal universal base image (UBI) to resolve [CVE-2021-3999](https://nvd.nist.gov/vuln/detail/CVE-2021-3999){: external}, [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external}, [CVE-2022-23308](https://nvd.nist.gov/vuln/detail/CVE-2022-23308){: external}, [CVE-2021-23177](https://nvd.nist.gov/vuln/detail/CVE-2021-23177){: external}, and [CVE-2021-31566](https://nvd.nist.gov/vuln/detail/CVE-2021-31566){: external}. |
@@ -557,7 +557,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.4
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.19.4 | v3.20.4 | See the [Calico release notes](https://docs.tigera.io/archive/v3.20/release-notes/.){: external}. |
-| Calico Operator | v1.17.9 | v1.20.6 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.20.6){: external}. |
+| Tigera Operator | v1.17.9 | v1.20.6 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.20.6){: external}. |
 | Cluster health image | v1.3.3 | v1.3.5 | Update golang dependencies.  Update image to version 102 to fix CVEs [CVE-2021-3999](https://access.redhat.com/security/cve/cve-2021-3999){: external}, [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external} |
 | Gateway-enabled cluster controller | 1653 | 1669 | Updated to use `Go` version `1.17.8`. |
 | IBM Calico extension | 929 | 950 | Updated to use `Go` version `1.17.8`. Updated universal base image (UBI) to resolve CVEs. |
@@ -604,7 +604,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.4
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.19.3 | v3.19.4 | See the [Calico release notes](https://docs.tigera.io/archive/v3.19/release-notes/#v3194){: external}. |
-| Calico Operator | v1.17.8 | v1.17.9 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.9){: external}. |
+| Tigera Operator | v1.17.8 | v1.17.9 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.9){: external}. |
 | Cluster health image | v1.2.21 | v1.3.3 | Updated `golang.org/x/crypto` to `v0.0.0-20220214200702-86341886e292`. Adds fix for [CVE-2021-43565](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-43565){: external}. Golang dependency updates. |
 | Gateway-enabled cluster controller | 1586 | 1653 | Updated to use `Go` version `1.17.7` and updated `Go` modules to fix CVEs. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 923 | 929 | Updated universal base image (UBI) to the `8.5-230` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
@@ -866,7 +866,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.19.1 | v3.19.3 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| Calico Operator | v1.17.3 | v1.17.8 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.8){: external}. |
+| Tigera Operator | v1.17.3 | v1.17.8 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.8){: external}. |
 | Gateway-enabled cluster controller | 1444 | 1510 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711){: external} and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712){: external}. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in and driver | v2.0.9 | v2.1.1 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
 | {{site.data.keyword.IBM_notm}} Cloud Controller Manager | v1.20.10-1 | v1.20.11-1 | Updated to support the Kubernetes `1.20.11` release. Fixed a bug that may cause node initialization to fail when a new node reuses the name of a deleted node. |
@@ -1089,7 +1089,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.17.2 | v3.19.1 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| Calico Operator | v1.13.4 | v1.17.3 | See the [Calico Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.3){: external}. |
+| Tigera Operator | v1.13.4 | v1.17.3 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.3){: external}. |
 | Gateway-enabled cluster controller | 1352 | 1348 | Updated to run as a non-root user by default, with privileged escalation as needed. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 689 | 695 | Updated the universal base image (UBI) to version 8.4 to resolve CVEs. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} driver and plug-in | v2.0.4 | v2.0.6 | Updated minimal universal base image (UBI) to version 8.4 to resolve CVEs. |
