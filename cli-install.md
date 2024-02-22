@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-22"
 
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
@@ -63,11 +63,13 @@ You can use the `oc` CLI to deploy and manage resources in your {{site.data.keyw
 
 
 
-To install the CLI, see the [Getting started with the OpenShift CLI](https://docs.openshift.com/container-platform/4.11/cli_reference/openshift_cli/getting-started-cli.html){: external}.
+- If you already have a Red Hat account, install the OpenShift CLI. For more information, see the [Getting started with the OpenShift CLI](https://docs.openshift.com/container-platform/4.11/cli_reference/openshift_cli/getting-started-cli.html){: external}.
 
-- For a list of commands that are available to cluster administrators, see the [OpenShift CLI administrator command reference](https://docs.openshift.com/container-platform/4.11/cli_reference/openshift_cli/administrator-cli-commands.html){: external}.
+- If you don't have a Red Hat account, you can download the OpenShift CLI from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} after you create an OpenShift cluster.
 
-- For a list of commands that are available to cluster developers, see the [OpenShift CLI developer command reference](https://docs.openshift.com/container-platform/4.11/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
+- For more information about the OpenShift CLI, see the following links.
+    - [OpenShift CLI administrator command reference](https://docs.openshift.com/container-platform/4.11/cli_reference/openshift_cli/administrator-cli-commands.html){: external}.
+    - [OpenShift CLI developer command reference](https://docs.openshift.com/container-platform/4.11/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
 
 
 
