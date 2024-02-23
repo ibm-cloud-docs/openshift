@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2024
+lastupdated: "2024-02-23"
 
 
-keywords: openshift, esssmg
+keywords: kubernetes, help, network, connectivity, openshift, esssmg
 
 subcollection: openshift
 

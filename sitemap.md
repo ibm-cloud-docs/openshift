@@ -2531,17 +2531,17 @@ subcollection: openshift
 * [Optional: Clean up the resources](/docs/openshift?topic=openshift-tutorial-two-node#basic-cleanup)
 
 
-## Installing Red Hat OpenShift Data Science
-{: #sitemap_installing_red_hat_openshift_data_science}
+## Installing Red Hat OpenShift AI
+{: #sitemap_installing_red_hat_openshift_ai}
 
 
-[Installing Red Hat OpenShift Data Science](/docs/openshift?topic=openshift-datascience#datascience)
+[Installing Red Hat OpenShift AI](/docs/openshift?topic=openshift-datascience#datascience)
 
 * [Before you begin](/docs/openshift?topic=openshift-datascience#datascience_before)
 
 * [Optional. Install the Red Hat OpenShift Pipelines Operator](/docs/openshift?topic=openshift-datascience#datascience_pipelines)
 
-* [Install the OpenShift Data Science Operator](/docs/openshift?topic=openshift-datascience#datascience_install)
+* [Install the OpenShift AI Operator](/docs/openshift?topic=openshift-datascience#datascience_install)
 
 * [Install the Node Feature Discovery Operator](/docs/openshift?topic=openshift-datascience#datascience_node_feature_discovery)
 
@@ -2855,6 +2855,20 @@ subcollection: openshift
 * [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
 
 * [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
+
+[Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment#document-environment)
+
+* [Step 1: Understanding your app and architecture](/docs/openshift?topic=openshift-document-environment#understand-arch)
+
+    * [Example 1: A basic app running in a single OpenShift cluster](/docs/openshift?topic=openshift-document-environment#example-arch-1)
+
+    * [Example 2: A multi-cluster architecture with a global load balancer and Cloudant service](/docs/openshift?topic=openshift-document-environment#example-arch-2)
+
+    * [Example 3: A VSI client contacting a VPC network load balancer with an external service backend](/docs/openshift?topic=openshift-document-environment#example-arch-3)
+
+* [Step 2: Choose a tool](/docs/openshift?topic=openshift-document-environment#choose-arch-tool)
+
+* [Step 3: Create the diagram](/docs/openshift?topic=openshift-document-environment#create-arch-diagram)
 
 
 ## Creating clusters
@@ -9257,6 +9271,19 @@ subcollection: openshift
 * [Washington DC (`wdc`)](/docs/openshift?topic=openshift-classic-flavors#washington-dc-wdc)
 
 
+## Viewing cloud status
+{: #sitemap_viewing_cloud_status}
+
+
+[Viewing cloud status](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-cloud-status)
+
+* [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-viewing-cloud-status#view-private-mzr)
+
+* [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed)
+
+* [Checking incident reports](/docs/openshift?topic=openshift-viewing-cloud-status#status-incident-report)
+
+
 ## FAQs
 {: #sitemap_faqs}
 
@@ -9322,33 +9349,18 @@ subcollection: openshift
 * [What operations are blocked if my cluster is running an unsupported operating system?](/docs/openshift?topic=openshift-faqs#unsupported_os)
 
 
-## Troubleshooting
-{: #sitemap_troubleshooting}
+## Running tests with the Diagnostics and Debug Tool
+{: #sitemap_running_tests_with_the_diagnostics_and_debug_tool}
 
-
-[Getting help and support for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-get-help#get-help)
-
-* [General ways to resolve cluster issues](/docs/openshift?topic=openshift-get-help#help-general)
-
-* [Reviewing issues and status](/docs/openshift?topic=openshift-get-help#help-cloud-status)
-
-* [Feedback and questions](/docs/openshift?topic=openshift-get-help#feedback-qs)
-
-* [Contacting support](/docs/openshift?topic=openshift-get-help#help-support)
-
-* [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help#allowlist-access-request)
-
-[Viewing cloud status](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-cloud-status)
-
-* [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-viewing-cloud-status#view-private-mzr)
-
-* [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed)
-
-* [Checking incident reports](/docs/openshift?topic=openshift-viewing-cloud-status#status-incident-report)
 
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
 
 * [Enabling the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
+
+
+## Troubleshooting
+{: #sitemap_troubleshooting}
+
 
 
 ### Clusters and masters
@@ -10072,6 +10084,27 @@ subcollection: openshift
 [What if my OpenShift Data Foundation issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved#ocs-error-unresolved)
 
 
+## Getting help and support
+{: #sitemap_getting_help_and_support}
+
+
+[Getting help and support](/docs/openshift?topic=openshift-get-help#get-help)
+
+* [Best practices](/docs/openshift?topic=openshift-get-help#help-general)
+
+* [Step 1: Review the status of {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-get-help#help-cloud-status)
+
+* [Step 2: Gather details and document the problem](/docs/openshift?topic=openshift-get-help#ts-app-debug-gather)
+
+* [Step 3: Running tests to rule in or rule out each component](/docs/openshift?topic=openshift-get-help#ts-app-debug-narrow-1)
+
+* [Step 4: Gathering more data](/docs/openshift?topic=openshift-get-help#ts-app-debug-gather-again)
+
+* [Step 4: Reach out in Slack or review user forums for similar issues](/docs/openshift?topic=openshift-get-help#feedback-qs)
+
+* [Contacting support](/docs/openshift?topic=openshift-get-help#help-support)
+
+
 ## Service limitations
 {: #sitemap_service_limitations}
 
@@ -10101,4 +10134,11 @@ subcollection: openshift
 * [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits)
 
 * [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-limitations#not-supported-features-table)
+
+
+## Requesting access to allowlisted features
+{: #sitemap_requesting_access_to_allowlisted_features}
+
+
+[Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request#allowlist-request)
 

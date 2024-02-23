@@ -65,6 +65,7 @@ toc:
           - cluster-plan-network-classic.md
           - encryption.md
           - storage-plan.md
+          - document-environment.md
       - topicgroup: 
           label: Creating clusters
           topics:
@@ -438,13 +439,12 @@ toc:
   - navgroup:
       id: help
       topics:
+      - include: ../get-support/ViewStatus.md
       - faqs.md
+      - ts-debug-tool.md
       - topicgroup:
           label: Troubleshooting
           topics:
-          - get-help.md
-          - include: ../get-support/ViewStatus.md
-          - ts-debug-tool.md
           - topicgroup:
               label: Clusters and masters
               topics:
@@ -520,6 +520,7 @@ toc:
           - topicgroup:
               label: Apps and services
               topics:
+              - ts-app-debug.md
               - ts-app-01-debug.md
               - ts-app-02-build.md
               - ts-app-03-docker-pull.md
@@ -650,5 +651,7 @@ toc:
               - ts-storage-ocs-progressing.md
               - ts-storage-ocs-missing-pods.md
               - ts-storage-ocs-unresolved.md
+      - get-help.md
       - limitations.md
+      - allowlist-request.md
       - sitemap.md
