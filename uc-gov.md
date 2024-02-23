@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-16"
+lastupdated: "2024-02-23"
 
 
 keywords: openshift
@@ -115,7 +115,6 @@ Key technologies:
 * [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 * [Container security and isolation](/docs/openshift?topic=openshift-security#security)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started&interface=ui){: external}
-* [SDK for Node.js](/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node)
 
 ### Context
 {: #uc_port_context}
