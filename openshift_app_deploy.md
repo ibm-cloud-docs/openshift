@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-26"
 
 
 keywords: kubernetes, openshift
@@ -200,8 +200,9 @@ To deploy apps to specific worker nodes,
 ## Deploying an app on a GPU machine
 {: #gpu_app}
 
-If you have a [GPU machine type](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes), you can accelerate the processing time required for compute intensive workloads such as AI, machine learning, inferencing and more.
+If you have a GPU machine type, you can speed up the processing time required for compute intensive workloads such as AI, machine learning, inferencing, and more.
 {: shortdesc}
+
 
 
 
@@ -210,7 +211,10 @@ In the following steps, you learn how to deploy workloads that require the GPU. 
 In the following steps, you learn how to deploy workloads that require the GPU. You can also deploy apps that don't need to process their workloads across both the GPU and CPU. After, you might find it useful to play around with mathematically intensive workloads such as the [TensorFlow](https://www.tensorflow.org/){: external} machine learning framework with [this Kubernetes demo](https://github.com/pachyderm/pachyderm/tree/master/examples/ml/tensorflow){: external}.
 
 Before you begin
-- Create a [cluster](/docs/openshift?topic=openshift-clusters) or worker pool that uses a GPU bare metal flavor. Keep in mind that setting up a bare metal machine can take more than one business day to complete.
+- Create a [cluster](/docs/openshift?topic=openshift-clusters) or worker pool that uses a GPU flavor. Keep in mind that setting up a bare metal machine can take more than one business day to complete. For a list of available flavors, see the following links.
+    - [Classic flavors](/docs/openshift?topic=openshift-classic-flavors)
+    - [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors)
+
 - Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
 - [Install the NVIDIA GPU operator for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#operator-install-guide){: external}.
 - [Install the Node Feature Discovery and NVIDIA GPU operators for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
@@ -222,7 +226,7 @@ To run a workload on a GPU machine,
 
 1. Create a YAML file. In this example, a `Job` YAML manages batch-like workloads by making a short-lived pod that runs until the command that it is scheduled to complete successfully terminates.
 
-    For GPU workloads, you must always provide the `resources: limits: nvidia.com/gpu` field in the YAML specification.
+    For GPU workloads, you must specify the `resources: limits: nvidia.com/gpu` field in the job YAML.
     {: note}
 
     ```yaml
