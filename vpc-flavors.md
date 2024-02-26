@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-26"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -59,6 +59,17 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-title="Compute"}
 {: tab-group="au-syd-tables"}
 
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
+| gx3.16x80.l4 | 16, 80GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |1 L4 |
+| gx3.32x160.2l4 | 32, 160GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L4 |
+| gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
+{: class="simple-tab-table"}
+{: caption="Table. GPU flavors in Sydney." caption-side="bottom"}
+{: #au-syd-gpu-table}
+{: tab-title="GPU"}
+{: tab-group="au-syd-tables"}
 
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -163,6 +174,17 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="ca-tor-tables"}
 
 
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
+| gx3.16x80.l4 | 16, 80GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |1 L4 |
+| gx3.32x160.2l4 | 32, 160GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L4 |
+| gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
+{: class="simple-tab-table"}
+{: caption="Table. GPU flavors in Toronto." caption-side="bottom"}
+{: #ca-tor-gpu-table}
+{: tab-title="GPU"}
+{: tab-group="ca-tor-tables"}
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -214,6 +236,17 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-title="Compute"}
 {: tab-group="eu-de-tables"}
 
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
+| gx3.16x80.l4 | 16, 80GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |1 L4 |
+| gx3.32x160.2l4 | 32, 160GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L4 |
+| gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
+{: class="simple-tab-table"}
+{: caption="Table. GPU flavors in Frankfurt." caption-side="bottom"}
+{: #eu-de-gpu-table}
+{: tab-title="GPU"}
+{: tab-group="eu-de-tables"}
 
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
@@ -318,6 +351,17 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-group="eu-gb-tables"}
 
 
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
+| gx3.16x80.l4 | 16, 80GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |1 L4 |
+| gx3.32x160.2l4 | 32, 160GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L4 |
+| gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
+{: class="simple-tab-table"}
+{: caption="Table. GPU flavors in London." caption-side="bottom"}
+{: #eu-gb-gpu-table}
+{: tab-title="GPU"}
+{: tab-group="eu-gb-tables"}
+
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
@@ -420,6 +464,17 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 {: tab-title="Compute"}
 {: tab-group="jp-tok-tables"}
 
+
+| Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |
+| ---- | -------------------------------- | ---- | -- | --------------- | ----------------- |  -------------- |-- |
+| gx3.16x80.l4 | 16, 80GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |1 L4 |
+| gx3.32x160.2l4 | 32, 160GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L4 |
+| gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
+{: class="simple-tab-table"}
+{: caption="Table. GPU flavors in Tokyo." caption-side="bottom"}
+{: #jp-tok-gpu-table}
+{: tab-title="GPU"}
+{: tab-group="jp-tok-tables"}
 
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | Secondary storage options | GPUs |

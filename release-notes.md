@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-02-26"
 
 
 keywords: openshift, kubernetes, release notes
@@ -29,6 +29,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2024
 {: #openshift-feb24}
+
+### 26 February 2024
+{: #openshift-feb2624}
+{: release-note}
+
+New! NVIDIA L4 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L4 GPUs.
+:   In {{site.data.keyword.openshiftlong_notm}} clusters, you can get started by provisioning a new cluster or worker pool with `gx3` worker nodes. Then, install the GPU drivers through the NVIDIA operator in OperatorHub. For more information, see [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
+
+New worker node flavors are available with L4 GPUs.
+:   The following worker node flavors with L4 GPUs are now available. For more information, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
+    - `gx3.16x80x1L4`: 1 GPU, 16 cores, 80 GB memory, 100GB storage, 32 Gbps network speed.
+    - `gx3.32x160x2L4`: 2 GPU, 32 cores, 160 GB, memory, 100GB storage, 32 Gbps network speed
+    - `gx3.64x320x4L4`: 4 GPU, 64 cores, 320 GB memory, 100GB storage, 32 Gbps network speed
+
+
 
 ### 22 February 2024
 {: #openshift-feb2224}

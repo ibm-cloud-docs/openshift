@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-02-26"
 
 
 keywords: openshift
@@ -272,6 +272,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
+
+    * [26 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2624)
+
+        * New! NVIDIA L4 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L4 GPUs.
+
+        * New worker node flavors are available with L4 GPUs.
 
     * [22 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2224)
 
