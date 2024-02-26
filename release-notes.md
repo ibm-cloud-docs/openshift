@@ -35,7 +35,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
 
 New! NVIDIA L4 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L4 GPUs.
-:   In {{site.data.keyword.openshiftlong_notm}} clusters, provision a new cluster or worker pool with gx3 worker nodes. Then, install the GPU drivers through the NVIDIA operator in OperatorHub. For more information, see [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
+:   In {{site.data.keyword.openshiftlong_notm}} clusters, you can get started by provisioning a new cluster or worker pool with `gx3` worker nodes. Then, install the GPU drivers through the NVIDIA operator in OperatorHub. For more information, see [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
 
 New worker node flavors are available with L4 GPUs.
 :   The following worker node flavors with L4 GPUs are now available. For more information, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).

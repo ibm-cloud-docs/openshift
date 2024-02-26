@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-02-26"
 
 
 keywords: kubernetes, help, connectivity, debugging, openshift, apps, support, network
@@ -92,8 +92,8 @@ You can use any of the following tools to create your architecture diagram.
 
 
 - [IBM Design tools](https://www.ibm.com/design/language/infographics/technical-diagrams/design/){: external}
-- [Draw.io](draw.io){: external}
-- [Mural](mural.co){: external}
+- [Draw.io](https://app.diagrams.net/){: external}
+- [Mural](https://mural.co){: external}
 - [Mermaid](https://mermaid.js.org/){: external}
 - Adobe Illustrator
 - PowerPoint
