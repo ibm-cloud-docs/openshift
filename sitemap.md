@@ -5241,9 +5241,15 @@ subcollection: openshift
 
 [Adding services by using Operators](/docs/openshift?topic=openshift-operators#operators)
 
-* [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4)
+* [Using Operators in clusters](/docs/openshift?topic=openshift-operators#operators_4)
+
+* [Adding the IBM Operator Catalog source to OperatorHub](/docs/openshift?topic=openshift-operators#operators_catalog)
 
 * [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub)
+
+* [Getting support for Operators](/docs/openshift?topic=openshift-operators#operator_support)
+
+* [Operator FAQ](/docs/openshift?topic=openshift-operators#operator_faq)
 
 [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator#compliance-operator)
 
