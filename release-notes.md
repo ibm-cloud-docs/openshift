@@ -34,8 +34,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-feb2724}
 {: release-note}
 
+
+
+
+
+
+Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
+:    Review the following change logs for your cluster version.
+    - [4.14.13_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
+    - [4.13.34_1563_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
+    - [4.12.50_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
+    - [4.11.58_1597_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+
+
+
 CLI version `1.0.597` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 
 ### 26 February 2024
 {: #openshift-feb2624}
