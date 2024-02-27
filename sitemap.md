@@ -273,6 +273,10 @@ subcollection: openshift
 
 * [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
 
+    * [27 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2724)
+
+        * CLI version `1.0.597` is available.
+
     * [26 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2624)
 
         * New! NVIDIA L4 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L4 GPUs.
@@ -5888,6 +5892,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.597](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01597)
 
 * [Version v1.0.595](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01959)
 

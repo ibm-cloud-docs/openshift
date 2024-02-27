@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-02-27"
 
 
 keywords: openshift, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.597
+{: #cli-01597}
+
+Version 0.1.597 of the CLI was released on 27 February 2024.
+:   Adds the `[-f]` option for the `ibmcloud sat connector remove` command. 
 
 ## Version v1.0.595
 {: #cli-01959}
