@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-02-27"
 
 
 keywords: openshift
@@ -272,6 +272,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
+
+    * [27 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2724)
+
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+
+        * CLI version `1.0.597` is available.
 
     * [26 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2624)
 
@@ -5241,9 +5247,15 @@ subcollection: openshift
 
 [Adding services by using Operators](/docs/openshift?topic=openshift-operators#operators)
 
-* [Using Operators in version 4 clusters](/docs/openshift?topic=openshift-operators#operators_4)
+* [Using Operators in clusters](/docs/openshift?topic=openshift-operators#operators_4)
+
+* [Adding the IBM Operator Catalog source to OperatorHub](/docs/openshift?topic=openshift-operators#operators_catalog)
 
 * [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub)
+
+* [Getting support for Operators](/docs/openshift?topic=openshift-operators#operator_support)
+
+* [Operator FAQ](/docs/openshift?topic=openshift-operators#operator_faq)
 
 [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator#compliance-operator)
 
@@ -5883,6 +5895,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.597](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01597)
+
 * [Version v1.0.595](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01959)
 
 * [Version v1.0.589](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01589)
@@ -6133,6 +6147,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
 
+    * [Change log for worker node fix pack 4.14.13_1553_openshift, released 26 February 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41413_1553_openshift_W)
+
     * [Change log for worker node fix pack 4.14.11_1547_openshift, released 12 February 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41411_1547_openshift_W)
 
     * [Change log for master fix pack 4.14.8_1545_openshift, released 31 January 2024](/docs/openshift?topic=openshift-openshift_changelog_414#4148_1545_openshift_M)
@@ -6205,6 +6221,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for worker node fix pack 4.13.34_1563_openshift, released 26 February 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41334_1563_openshift_W)
 
     * [Change log for worker node fix pack 4.13.32_1557_openshift, released 12 February 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41332_1557_openshift_W)
 
@@ -6356,6 +6374,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.50_1582_openshift, released 26 February 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41250_1582_openshift_W)
 
     * [Change log for worker node fix pack 4.12.49_1578_openshift, released 12 February 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41249_1578_openshift_W)
 
@@ -6539,6 +6559,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_411#openshift_changelog_overview_411)
 
 * [Change logs](/docs/openshift?topic=openshift-openshift_changelog_411#411_changelog)
+
+    * [Change log for worker node fix pack 4.11.58_1597_openshift, released 26 February 2024](/docs/openshift?topic=openshift-openshift_changelog_411#41158_1597_openshift_W)
 
     * [Change log for worker node fix pack 4.11.58_1591_openshift, released 12 February 2024](/docs/openshift?topic=openshift-openshift_changelog_411#41158_1591_openshift_W)
 
