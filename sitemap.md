@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-02-28"
 
 
 keywords: openshift
@@ -3212,8 +3212,6 @@ subcollection: openshift
 
 * [How can I remove my information?](/docs/openshift?topic=openshift-ibm-data#pi-removal)
 
-    * [Does Red Hat collect information about my cluster?](/docs/openshift?topic=openshift-ibm-data#pi-rh-telemetry)
-
 [Protecting cluster resources with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr)
 
 * [How {{site.data.keyword.openshiftlong_notm}} integrates with context-based restrictions](/docs/openshift?topic=openshift-cbr#cbr-overview)
@@ -3911,7 +3909,7 @@ subcollection: openshift
 
     * [Master states](/docs/openshift?topic=openshift-health-monitor#states_master)
 
-* [Disabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports)
+* [Enabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_enable_telemetry_reports)
 
 [Reviewing service, API server, and worker node logs](/docs/openshift?topic=openshift-health-audit#health-audit)
 
@@ -3938,6 +3936,10 @@ subcollection: openshift
 * [Configuring a flow log collector](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_create)
 
 * [Viewing worker node flow logs](/docs/openshift?topic=openshift-vpc-flow-log#vpc-flow-log_view)
+
+[Telemetry for remote health monitoring](/docs/openshift?topic=openshift-telemetry#telemetry)
+
+* [Enabling Telemetry](/docs/openshift?topic=openshift-telemetry#telemetry_enable)
 
 
 ## Continuous integration and delivery for app development and deployment

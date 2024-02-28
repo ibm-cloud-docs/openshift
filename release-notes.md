@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-02-28"
 
 
 keywords: openshift, kubernetes, release notes
@@ -4723,7 +4723,7 @@ Classic-enabled VPCs
 
   
 Disabling remote health reporting
-:   Added [steps to disable the remote, anonymized health reporting](/docs/openshift?topic=openshift-health-monitor#oc_disable_telemetry_reports) of your cluster by OpenShift Container Platform to comply with privacy laws, organizational standards, or data governance practices.
+:   Added steps to disable the remote, anonymized health reporting of your cluster by OpenShift Container Platform to comply with privacy laws, organizational standards, or data governance practices.
 
 
 
