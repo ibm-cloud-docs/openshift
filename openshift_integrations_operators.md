@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-02-28"
 
 
 keywords: openshift, disconnect, airgap, olm, mirror
@@ -115,7 +115,7 @@ Is OpenShift Data Foundation available for Red Hat OpenShift on IBM Cloud?
 :   Yes. However, ODF for IBM Cloud is available as a cluster add-on. There is no support for deploying the ODF operator via OperatorHub. For more information on the ODF add-on for storage, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 Are the IBM Cloud service level agreement terms impacted by the availability of OperatorHub items? 
-:   No. All OpenShift OperatorHub installable items are outside of the control of IBM Cloud and therefore do not impact the IBM Cloud service level agreement terms. See the service level agreement [terms](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document){: external} for more information.
+:   No. All OpenShift OperatorHub installable items are outside of the control of IBM Cloud and therefore do not impact the IBM Cloud service level agreement terms. If you install an Operator from OperatorHub and it impacts the viability of your cluster, IBM is not responsible and you cannot make a claim against the service level agreement. See the service level agreement [terms](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document){: external} for more information.
 
 Who is responsible for the security of the operators that are available as a part of the OperatorHub? 
 :   Responsibility for the security of an operator depends on the operator type. For information on operator types, see [About OperatorHub](https://docs.openshift.com/container-platform/4.14/operators/understanding/olm-understanding-operatorhub.html#olm-operatorhub-overview_olm-understanding-operatorhub){: external}. Security for `Red Hat`, `Certified`, and `Red Hat Marketplace` operators is maintained by {{site.data.keyword.redhat_openshift_notm}}. {{site.data.keyword.redhat_openshift_notm}} is not responsible for security for `Community` or `Custom` operators, which are maintained and supported outside of Red Hat. Note that you can filter out different operator types in OperatorHub, or you can set the spec section of your OperatorHub configuration file to exclude certain operators, such as in the example below. 
