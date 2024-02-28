@@ -90,7 +90,7 @@ To understand why you might disable and mirror the catalog, consider the followi
 Before you begin
 
 - Make sure that you have the **Manager** service role to the cluster in all namespaces in {{site.data.keyword.cloud_notm}} IAM.
-- [Install the `opm` command-line interface](https://docs.openshift.com/container-platform/4.13/cli_reference/opm-cli.html#opm-cli){: external}, including its prerequisite tools such as `podman`.
+- [Install the `opm` command-line interface](https://docs.openshift.com/container-platform/4.13/cli_reference/opm/cli-opm-ref.html){: external}, including its prerequisite tools such as `podman`.
 - Have a Red Hat account with credentials to pull images from the `registry.redhat.io` and `quay.io` registries, or use the [default global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).
 
 To disable and mirror the OperatorHub source images:
