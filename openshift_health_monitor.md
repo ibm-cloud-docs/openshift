@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-02-28"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -242,45 +242,8 @@ The **Master Status** provides details of what operation from the master state i
 {: caption="Master states"}
 
 
-## Disabling remote health reporting
-{: #oc_disable_telemetry_reports}
+## Enabling remote health reporting
+{: #oc_enable_telemetry_reports}
 
-OpenShift Container Platform collects anonymized health reports about your cluster through a [telemetry component that is enabled by default](https://docs.openshift.com/container-platform/4.13/support/remote_health_monitoring/about-remote-health-monitoring.html){: external} in your {{site.data.keyword.openshiftlong_notm}} cluster.
-{: shortdesc}
+Telemetry is a remote health monitoring feature that collects aggregated data about your cluster, such as the health of your components and the number and types of resources in use. If you have a public cluster, you can elect to have your own Telemetry data visible in your account for your use. For more information, see [Telemetry for remote health monitoring](/docs/openshift?topic=openshift-telemetry).
 
-You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all the worker nodes.
-
-1. Check that the telemetry reporting pod runs in your cluster.
-    ```sh
-    oc get pods -n openshift-monitoring
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    NAME                              READY   STATUS      RESTARTS   AGE
-    telemeter-client-7cfd7cb85-lm9dt  3/3     Running     0          4d13h
-    ...
-    ```
-    {: screen}
-
-2. Follow the {{site.data.keyword.redhat_openshift_notm}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.13/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
-3. To pick up the global configuration changes, reload all the worker nodes in your cluster.
-    1. Note the **ID** of the worker nodes in your cluster.
-        ```sh
-        ibmcloud oc worker ls -c <cluster_name_or_ID>
-        ```
-        {: pre}
-
-    2. Reload each worker node. You can reload multiple worker nodes by including multiple `-w` options, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
-        ```sh
-        ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
-        ```
-        {: pre}
-
-4. After the worker nodes are back in a healthy state, verify that the telemetry reporting pod no longer runs in your cluster.
-    ```sh
-    oc get pods -n openshift-monitoring
-    ```
-    {: pre}

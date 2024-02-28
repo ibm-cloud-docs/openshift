@@ -167,6 +167,7 @@ toc:
           - openshift_health_monitor.md
           - health-audit.md
           - vpc-flow-logs.md
+          - telemetry.md
       - cicd.md
       - topicgroup:
           label: Developing and deploying apps
