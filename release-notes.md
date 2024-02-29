@@ -35,6 +35,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
 
 
+Operators FAQ
+:   A new [FAQ section](/docs/openshift?topic=openshift-operators) has been added to the operators page. 
+
+Enable remote health monitoring with Telemetry
+:   See the steps to [enable remote health monitoring with Telemetry](/docs/openshift?topic=openshift-telemetry) for certain {{site.data.keyword.openshiftlong_notm}} clusters. 
+
+
+
 
 
 
