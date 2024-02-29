@@ -275,6 +275,10 @@ subcollection: openshift
 
     * [28 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2824)
 
+        * Operators FAQ
+
+        * Enable remote health monitoring with Telemetry
+
         * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
 
     * [27 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2724)
