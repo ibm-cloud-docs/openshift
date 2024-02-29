@@ -659,7 +659,7 @@ Worker node fix packs are available.
 
 
 Ingress ALB version `1.8.4_5586_ikss`
-:   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
+:   For more information, see the [change log](/docs/containers?topic=containers-cs_versions_ingress).
 
 
 
@@ -682,7 +682,7 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1921`.
 {: release-note}
 
 Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
-:   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
+:   For more information, see the [change log](/docs/containers?topic=containers-cs_versions_ingress).
 
 
 
@@ -691,7 +691,7 @@ Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
 {: release-note}
 
 Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
-:   For more information, see the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog).
+:   For more information, see the [change log](/docs/containers?topic=containers-cs_versions_ingress).
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
@@ -1821,7 +1821,7 @@ Istio add-on version `1.16.0`
 
 
 Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for version `1.3.1_3108_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress) for version `1.3.1_3108_iks`.
 
 
 
@@ -2769,7 +2769,7 @@ Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported la
 :   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
 
 
 
@@ -3349,7 +3349,7 @@ Worker node fix pack update
 {: release-note}
 
 Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
 
 ### 18 October 2021
 {: #openshift-oct1821}
@@ -3482,7 +3482,7 @@ Review the release notes for 22 September 2021.
 {: shortdesc}
 
 Ingress ALB version change log
-:   [Version `1.0.0_1699_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#1_0_0) is now available. Updates for versions [`0.48.1_1698_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_48_0) and [`0.43.0_1697_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_47_0) are available in the change log. 
+:   [Version `1.0.0_1699_iks`](/docs/containers?topic=containers-cs_versions_ingress#1_0_0) is now available. Updates for versions [`0.48.1_1698_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_48_0) and [`0.43.0_1697_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_47_0) are available in the change log. 
 
 
 
@@ -3531,7 +3531,7 @@ Review the release notes for 14 September 2021.
 {: shortdesc}
 
 Ingress ALB version change log
-:   [Version `1.0.0_1645_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#1_0_0) is now available. Updates for versions [`0.48.1_1613_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_48_0) and [`0.47.0_1614_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_47_0) are available in the change log. 
+:   [Version `1.0.0_1645_iks`](/docs/containers?topic=containers-cs_versions_ingress#1_0_0) is now available. Updates for versions [`0.48.1_1613_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_48_0) and [`0.47.0_1614_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_47_0) are available in the change log. 
 
 Istio add-on change log
 :   [Version `1.10.4`](/docs/containers?topic=containers-istio-changelog#1104) and [version `1.9.8`](/docs/containers?topic=containers-istio-changelog#198) of the Istio managed add-on is released.
@@ -3549,7 +3549,7 @@ Worker node fix pack update
 {: release-note}
 
 Ingress ALB change log
-:   Updated the [change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1613_iks`, `0.47.0_1614_iks`, and `0.43.0_1612_iks`.
+:   Updated the [change log](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for versions `0.48.1_1613_iks`, `0.47.0_1614_iks`, and `0.43.0_1612_iks`.
 
 
 
@@ -3636,7 +3636,7 @@ Registry token update
 :   Registry tokens are no longer accepted for authentication in {{site.data.keyword.registrylong_notm}}. Update your clusters to use {{site.data.keyword.cloud_notm}} IAM authentication. For more information, see [Accessing {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-registry_access). For more information about Registry token deprecation, see [IBM Cloud Container Registry Deprecates Registry Tokens for Authentication](https://www.ibm.com/blog/announcement/ibm-cloud-container-registry-deprecates-registry-tokens-for-authentication/){: external}.
 
 Ingress change logs
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1541_iks`, `0.47.0_1540_iks`, and `0.43.0_1539_iks`. Version `0.45.0_1482_iks` is removed.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for versions `0.48.1_1541_iks`, `0.47.0_1540_iks`, and `0.43.0_1539_iks`. Version `0.45.0_1482_iks` is removed.
 
  
 
@@ -3662,7 +3662,7 @@ Worker node versions
 {: release-note}
 
 Ingress change logs
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.48.1_1465_iks`, `0.47.0_1480_iks`, and `0.45.0_1482_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for versions `0.48.1_1465_iks`, `0.47.0_1480_iks`, and `0.45.0_1482_iks`.
 
 
 
@@ -3686,7 +3686,7 @@ CLI change log
 {: release-note}
 
 Ingress change logs
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1434_iks` and `0.45.0_1435_iks`. Version `0.35.0` is now unsupported. 
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for versions `0.47.0_1434_iks` and `0.45.0_1435_iks`. Version `0.35.0` is now unsupported. 
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.7.21_1527_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4721_1527), [`4.6.40_1551_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4640_1551), [`4.5.41_1547_openshift`](/docs/openshift?topic=openshift-changelog_archive#4541_1547), and [`3.11.465_1599_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311465_1599).
@@ -3758,7 +3758,7 @@ OpenShift Data Foundation
 {: release-note}
 
 Ingress change logs
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for versions `0.47.0_1376_iks`, `0.45.0_1375_iks`, and `0.35.0_1374_iks`.
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.7.18_1524_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4718_1524), [`4.6.36_1548_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4636_1548), [`4.5.40_1544_openshift`](/docs/openshift?topic=openshift-changelog_archive#4540_1544), and [`3.11.462_1595_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311462_1595).
@@ -3820,7 +3820,7 @@ Worker node versions
 {: release-note}
 
 Ingress change logs
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for the release of version 0.47.0 of the Kubernetes Ingress image.
 
 New! The `addon options` command is now available
 :   For more information, see [`addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options).
@@ -4205,7 +4205,7 @@ CRI-O container runtime
 
 
 Ingress updates
-:   Updated the [`nginx-ingress` build to 2466 and the `ingress-auth` build to 982](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+:   Updated the [`nginx-ingress` build to 2466 and the `ingress-auth` build to 982](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 
 
@@ -4264,7 +4264,7 @@ Deprecated fields across events
 {: release-note}
 
 Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 2458](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+:   Updated the [`nginx-ingress` build to 2458](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 ### 12 March 2021
 {: #openshift-march1221}
@@ -4405,7 +4405,7 @@ Gateway firewalls and Calico policies
 {: release-note}
 
 Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 2452](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+:   Updated the [`nginx-ingress` build to 2452](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 Gateway firewalls and Calico policies
 :   For classic clusters in Dallas, Washington D.C., and Frankfurt, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
@@ -4470,7 +4470,7 @@ Private Kubernetes Ingress
 {: release-note}
 
 Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 2424](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+:   Updated the [`nginx-ingress` build to 2424](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 Master versions
 :   Master fix pack update change log documentation is available for version [`4.5.24_1527_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.4.31_1531_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.3.40_1552_openshift`](/docs/openshift?topic=openshift-changelog_archive), and [`3.11.346_1578_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311346_1578_master).
@@ -4675,7 +4675,7 @@ New! Portieris for image security enforcement
 {: release-note}
 
 Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 653 and the `ingress-auth` build to 425](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+:   Updated the [`nginx-ingress` build to 653 and the `ingress-auth` build to 425](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 ### 18 November 2020
 {: #openshift-nov1820}
@@ -4849,7 +4849,7 @@ Versions
 {: release-note}
 
 Ingress ALB change log
-:   Updated the [Kubernetes Ingress image build to `0.35.0_474_iks`](/docs/containers?topic=containers-cluster-add-ons-changelog#0_35_0).
+:   Updated the [Kubernetes Ingress image build to `0.35.0_474_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_35_0).
 
 ### 6 October 2020
 {: #openshift-oct0620}
@@ -4876,7 +4876,7 @@ Default version
 :   The default version for clusters is now 4.4.
 
 Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 652 and the `ingress-auth` build to 424](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+:   Updated the [`nginx-ingress` build to 652 and the `ingress-auth` build to 424](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 ## September 2020
 {: #openshift-sep20}
@@ -4920,7 +4920,7 @@ CLI change log
 {: release-note}
 
 Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 651 and the `ingress-auth` build to 423](/docs/containers?topic=containers-cluster-add-ons-changelog#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
+:   Updated the [`nginx-ingress` build to 651 and the `ingress-auth` build to 423](/docs/containers?topic=containers-cs_versions_ingress#kube_ingress_changelog) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
 
 
 
