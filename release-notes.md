@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-02-29"
 
 
 keywords: openshift, kubernetes, release notes
@@ -29,6 +29,25 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2024
 {: #openshift-feb24}
+
+### 28 February 2024
+{: #openshift-feb2824}
+{: release-note}
+
+
+
+
+
+Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
+:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   [4.11](/docs/openshift?topic=openshift-openshift_changelog_411)
+
+
+
+
+
 
 ### 27 February 2024
 {: #openshift-feb2724}
