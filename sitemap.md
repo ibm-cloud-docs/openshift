@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-29"
+lastupdated: "2024-03-01"
 
 
 keywords: openshift
@@ -3948,6 +3948,8 @@ subcollection: openshift
 [Telemetry for remote health monitoring](/docs/openshift?topic=openshift-telemetry#telemetry)
 
 * [Enabling Telemetry](/docs/openshift?topic=openshift-telemetry#telemetry_enable)
+
+* [Disabling Telemetry](/docs/openshift?topic=openshift-telemetry#oc_disable_telemetry_reports)
 
 
 ## Continuous integration and delivery for app development and deployment
