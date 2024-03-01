@@ -2,20 +2,16 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-03-01"
 
 
-keywords: openshift, registry, pull secret, secrets
-
+keywords: openshift, kubernetes, registry, pull secret, secrets
 subcollection: openshift
 
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Setting up an image registry
@@ -234,6 +230,8 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
 ## Removing the internal image registry
 {: #remove-image-registry}
 
+[Virtual Private Cloud]{: tag-vpc}
+
 If you don't want to use the internal image registry, you can complete the following steps to remove it.
 
 1. Save a copy of your internal registry configurations.
@@ -248,9 +246,9 @@ If you don't want to use the internal image registry, you can complete the follo
     ```
     {: pre}
 
-1. After changing the management state, the image registry service and pods are removed from the `openshift-image-registry` namespace in your cluster. You can run the following commands to verify they were removed. 
+1. After changing the management state, the image registry service and deployment is removed from the `openshift-image-registry` namespace in your cluster. You can run the following commands to verify they were removed. Note that only the image registry deployment and service are removed. The image registry operator deployment and service remain.
     ```sh
-    oc get pods -n openshift-image-registry
+    oc get deployment -n openshift-image-registry
     ```
     {: pre}
 
