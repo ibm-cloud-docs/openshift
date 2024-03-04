@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-04"
 
 
 keywords: openshift, keepalive, TCP
@@ -31,6 +31,6 @@ When a pod has long running TCP connections and the pod is idle for a period of 
 The idle time might have exceeded the limit that is defined by the `sysctl` keepalive settings for the pod.
 {: tsCauses}
 
-Try updating the the `sysctl` keepalive settings for the pod. For more information, see [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks).
+Try updating the `sysctl` keepalive settings for the pod. For more information, see [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks).
 {: tsResolve}
 

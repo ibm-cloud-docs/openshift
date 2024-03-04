@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-04"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -25,7 +25,7 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-You can use the the `ibmcloud oc ingress status-report ignored-errors add` command to add an error to the ignored-errors list. Ignored errors still appear in the output of the `ibmcloud oc ingress status-report get` command, but are ignored when calculating the overall Ingress Status.
+You can use the `ibmcloud oc ingress status-report ignored-errors add` command to add an error to the ignored-errors list. Ignored errors still appear in the output of the `ibmcloud oc ingress status-report get` command, but are ignored when calculating the overall Ingress Status.
 {: tip}
 
 When you check the status of your cluster's Ingress components by running the `ibmcloud oc ingress status-report get` command, you see an error similar to the following.
@@ -74,7 +74,7 @@ oc get clusteroperator ingress
     1. Compare the registered and actual addresses and update the subdomain if it differs.
         **VPC**: Run the `ibmcloud oc nlb-dns replace` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-replace) to replace the current address.
         **Classic**: Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
-        **Satellite**: The actual addresses depends on your configuration: if you expose your worker nodes with an external load balancer, register the load balancer addresses, otherwise register the IP addresses assigned to the the `router-external-default` service in the `openshift-ingress` namespace (use the `oc get services -n openshift-ingress router-external-default -o yaml` command to retrieve the addresses). Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
+        **Satellite**: The actual addresses depends on your configuration: if you expose your worker nodes with an external load balancer, register the load balancer addresses, otherwise register the IP addresses assigned to the `router-external-default` service in the `openshift-ingress` namespace (use the `oc get services -n openshift-ingress router-external-default -o yaml` command to retrieve the addresses). Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
 
 1. **VPC only**: Ensure that your VPC subnets have public gateways attached. For more information, see [Creating a Red Hat OpenShift cluster in your Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial) and [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw)
     1. Run the `ibmcloud is public-gateways` to see your public gateways.
