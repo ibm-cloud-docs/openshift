@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-03-04"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -38,8 +38,15 @@ ibmcloud oc cluster addon versions
 ```
 {: pre}
 
-## Version 1.2.0
-{: #0120_ca_addon}
+## Version 1.2.1
+{: #0121_ca_addon}
+
+
+### Change log for patch update 1.2.1_395, released 28 February 2024
+{: #121395_ca}
+
+- Adds support for cluster version 1.29.
+- Image tags: `1.22.0-121-0`, `1.23.0-121-0`, `1.24.0-121-0`, `1.25.0-121-0`, `1.26.4-121-0`, `1.27.3-121-0`, `1.28.0-121-0`.
 
 ### Change log for patch update 1.2.0_365, released 21 February 2024
 {: #120365_ca}

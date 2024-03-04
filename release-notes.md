@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-29"
+lastupdated: "2024-03-04"
 
 
 keywords: openshift, kubernetes, release notes
@@ -27,12 +27,16 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
 ## February 2024
 {: #openshift-feb24}
 
 ### 28 February 2024
 {: #openshift-feb2824}
 {: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} cluster autoscaler version 1.2.1 is available.
+:   Version 1.2.1 of the autoscaler adds support for cluster version 1.29. For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
 
 Operators FAQ
