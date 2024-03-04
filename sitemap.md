@@ -275,6 +275,8 @@ subcollection: openshift
 
     * [28 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2824)
 
+        * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler version 1.2.1 is available.
+
         * Operators FAQ
 
         * Enable remote health monitoring with Telemetry
@@ -7060,7 +7062,9 @@ subcollection: openshift
 
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
-* [Version 1.2.0](/docs/openshift?topic=openshift-ca_changelog#0120_ca_addon)
+* [Version 1.2.1](/docs/openshift?topic=openshift-ca_changelog#0121_ca_addon)
+
+    * [Change log for patch update 1.2.1_395, released 28 February 2024](/docs/openshift?topic=openshift-ca_changelog#121395_ca)
 
     * [Change log for patch update 1.2.0_365, released 21 February 2024](/docs/openshift?topic=openshift-ca_changelog#120365_ca)
 
