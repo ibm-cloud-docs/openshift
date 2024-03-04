@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-04"
 
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
@@ -49,7 +49,7 @@ What types of secrets are supported with {{site.data.keyword.secrets-manager_sho
 :   {{site.data.keyword.secrets-manager_short}} supports IAM credentials, key-value secrets, user credentials, arbitrary secrets, and Kubernetes secrets. For Kubernetes secrets, {{site.data.keyword.secrets-manager_short}} supports both TLS and non-TLS (Opaque) secret types. With TLS secrets, you can specify one certificate CRN. With non-TLS secrets, you can specify multiple fields to pull non-certificate secrets. If you do not specify a secret type when you create a secret, TLS is applied by default. For more information on supported secrets, see [Working with secrets of different types](/docs/secrets-manager?topic=secrets-manager-what-is-secret#secret-types).
 
 Are secrets that are stored in a registered {{site.data.keyword.secrets-manager_short}} instance automatically updated?
-:   Yes. If you have a {{site.data.keyword.secrets-manager_short}} instance registered to your cluster, the secrets on the cluster are automatically updated with the values from {{site.data.keyword.secrets-manager_short}} once a day. These updates are made using the value of the the secret from the corresponding CRN.
+:   Yes. If you have a {{site.data.keyword.secrets-manager_short}} instance registered to your cluster, the secrets on the cluster are automatically updated with the values from {{site.data.keyword.secrets-manager_short}} once a day. These updates are made using the value of the secret from the corresponding CRN.
 
 Are my secrets automatically updated if I do not create and register a {{site.data.keyword.secrets-manager_short}} instance?
 :   If you do not have a {{site.data.keyword.secrets-manager_short}} instance registered to your cluster, your default Ingress secrets continue to update automatically every 90 days and are applied to your cluster. However, any secrets you created that *reference* the default Ingress secret are not automatically updated. 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2024-03-04"
 
 
 keywords: openshift, snapshot, storage
@@ -56,7 +56,7 @@ If the `volumesnapshot` and `volumesnapshotcontent` objects are included as a si
     ```
     {: pre}
 
-If the the `volumesnapshot` object is deleted, but `volumesnapshotcontent` object still exists, follow these steps to remove the `volumesnapshotcontent` object. 
+If the `volumesnapshot` object is deleted, but `volumesnapshotcontent` object still exists, follow these steps to remove the `volumesnapshotcontent` object. 
 
 1.  Find `volumesnapshotcontent` object that do not have a `ReadyToUse` status as empty or `false`.
     ```sh
