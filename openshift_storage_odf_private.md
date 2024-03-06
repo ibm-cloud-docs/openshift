@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-03-06"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
@@ -238,7 +238,7 @@ While logged into your bastion host, complete the following steps.
 
 1. Create the secret in the `openshift-marketplace` namespace.
     ```sh
-    oc create secret generic odf-secret -n openshift-marketplace --from-file=.dockerconfigjson=auth.json  --type=kubernetes.io/dockerconfig
+    oc create secret generic odf-secret -n openshift-marketplace --from-file=.dockerconfigjson=auth.json --type=kubernetes.io/dockerconfig
     ```
     {: pre}
 
