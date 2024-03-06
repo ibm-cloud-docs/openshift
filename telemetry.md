@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-03-01"
+lastupdated: "2024-03-06"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -27,25 +27,24 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
 
 
 
-1. From the {{site.data.keyword.redhat_openshift_notm}} console, download a JSON file of the pull secret that allows remote health reporting.
-    1. Log into the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external}.
-    2. Navigate to **Tokens > Pull Secret** and download the pull secret as a JSON file.
+1. Log into the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external}.
+1. Navigate to **Downloads** > **Tokens > Pull Secret** and download the pull secret as a JSON file.
 
-2. Get your current pull secret and store it in a JSON file. Consider naming the JSON file something like `pull-secret-original.json`.
+1. Get your current pull secret and store it in a JSON file. Consider naming the JSON file something like `pull-secret-original.json`.
     ```sh
-    ibmcloud oc get secrets pull-secret -n openshift-config -o template='{{index .data ".dockerconfigjson"}}' | base64 -d > pull-secret-original.json
+    oc get secrets pull-secret -n openshift-config -o template='{{index .data ".dockerconfigjson"}}' | base64 -d > pull-secret-original.json
     ```
     {: pre}
 
-3. [Access your cluster in the CLI](/docs/openshift?topic=openshift-access_cluster). 
+1. [Access your cluster in the CLI](/docs/openshift?topic=openshift-access_cluster). 
 
-4. Append the downloaded JSON file to your existing pull secret and apply the changes to the cluster.
+1. Append the downloaded JSON file to your existing pull secret and apply the changes to the cluster.
     ```sh
-    ibmcloud oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=./<downloaded-pull-secret-name>.json
+    oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=./<downloaded-pull-secret-name>.json
     ```
     {: pre}
 
-5. Verify that the existing pull secret is updated. Look for the `auths` section that contains the access token.
+1. Verify that the existing pull secret is updated. Look for the `auths` section that contains the access token.
     ```sh
     oc get secret pull-secret -n openshift-config --output="jsonpath={.data.\.dockerconfigjson}" | base64 --decode
     ```
@@ -65,9 +64,10 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
     ```
     {: codeblock}
 
-6. For classic infrastructure, [reload all worker nodes in your cluster](/https://cloud.ibm.com/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastucture, [replace all worker nodes in your cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace).
+1. For classic infrastructure, [reload all worker nodes in your cluster](/https://cloud.ibm.com/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastucture, [replace all worker nodes in your cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace).
 
-7. To verify that Telemetry is enabled in the cluster, open the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external} and navigate to the **Clusters** page. If your cluster is listed, Telemetry is enabled. 
+1. To verify that Telemetry is enabled in the cluster, open the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external} and navigate to the **Clusters** page. If your cluster is listed, Telemetry is enabled.
+
 
 ## Disabling Telemetry
 {: #oc_disable_telemetry_reports}
