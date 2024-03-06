@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-06"
 
 
 keywords: openshift, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.601
+{: #cli-010601}
+
+Version 1.0.601 of the CLI was released on 27 February 2024.
+:   Adds the `--disable-outbound-traffic-protection` option for the `ibmcloud oc cluster create vpc-gen2` command. 
 
 ## Version v1.0.597
 {: #cli-01597}

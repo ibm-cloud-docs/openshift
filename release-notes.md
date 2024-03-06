@@ -28,9 +28,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
-
 ## March 2024
-{: #openshift-feb24}
+{: #openshift-mar24}
 
 ### 06 March 2024
 {: #openshift-mar0624}
@@ -41,6 +40,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   Update your cluster to at least [version 4.11](/docs/openshift?topic=openshift-cs_versions_411) as soon as possible.
 
 
+CLI version `1.0.601` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## February 2024
 {: #openshift-feb24}
