@@ -36,9 +36,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-mar0624}
 {: release-note}
 
+
 {{site.data.keyword.openshiftlong_notm}} version 4.10 is no longer supported.
 :   Update your cluster to at least [version 4.11](/docs/openshift?topic=openshift-cs_versions_411) as soon as possible.
-
 
 
 
