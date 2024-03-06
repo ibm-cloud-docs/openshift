@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-06"
 
 
 keywords: openshift
@@ -37,7 +37,7 @@ A long log message might be truncated due to its length before it is collected b
 To limit line length, you can configure your own logger to have a maximum length for the `stack_trace` in each log.
 {: tsResolve}
 
-For example, if you are using Log4j for your logger, you can use an [`EnhancedPatternLayout`](http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/EnhancedPatternLayout.html){: external} to limit the `stack_trace` to 15KB.
+For example, if you are using Log4j for your logger, you can use an [`EnhancedPatternLayout`](https://logging.apache.org/log4j/1.x/apidocs/org/apache/log4j/EnhancedPatternLayout.html){: external} to limit the `stack_trace` to 15KB.
 
 
 
