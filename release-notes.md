@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-03-06"
 
 
 keywords: openshift, kubernetes, release notes
@@ -27,6 +27,21 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
+## March 2024
+{: #openshift-mar24}
+
+### 06 March 2024
+{: #openshift-mar0624}
+{: release-note}
+
+
+{{site.data.keyword.openshiftlong_notm}} version 4.10 is no longer supported.
+:   Update your cluster to at least [version 4.11](/docs/openshift?topic=openshift-cs_versions_411) as soon as possible.
+
+
+CLI version `1.0.601` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## February 2024
 {: #openshift-feb24}
