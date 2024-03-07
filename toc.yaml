@@ -347,13 +347,6 @@ toc:
               - openshift_versions_changelog_412.md
               - benchmarks_412.md
               - benchmarks_412_co.md
-          - topicgroup:
-              label: Version 4.11
-              topics:
-              - openshift_versions_411.md
-              - openshift_versions_changelog_411.md
-              - benchmarks_411.md
-              - benchmarks_411_co.md
       - topicgroup:
           label: Add-on version history
           topics:
@@ -370,6 +363,13 @@ toc:
       - topicgroup:
           label: Archived version history
           topics:
+          - topicgroup:
+              label: Version 4.11
+              topics:
+              - openshift_versions_411.md
+              - openshift_versions_changelog_411.md
+              - benchmarks_411.md
+              - benchmarks_411_co.md
           - topicgroup:
               label: Version 4.10
               topics:
