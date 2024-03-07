@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-03-07"
 
 
 keywords: openshift, kubernetes, release notes
@@ -30,6 +30,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2024
 {: #openshift-mar24}
+
+
+
+### 07 March 2024
+{: #openshift-mar0724}
+{: release-note}
+
+Version 4.11 is no longer supported.
+:   Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
+
+
 
 ### 06 March 2024
 {: #openshift-mar0624}

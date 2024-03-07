@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-03-07"
 
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
@@ -22,7 +22,7 @@ subcollection: openshift
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run version 4.11. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {: shortdesc}
 
-Version 4.11 is deprecated. Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
+Version 4.11 is no longer supported. Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
 {: important}
 
 ## Overview

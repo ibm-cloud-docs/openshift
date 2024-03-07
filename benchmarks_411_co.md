@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-07"
 
 
 keywords: openshift, benchmarks, 4.11, compliance operator, compliance
@@ -20,7 +20,7 @@ subcollection: openshift
 # {{site.data.keyword.openshiftlong_notm}} version 4.11 compliance operator benchmark
 {: #benchmarks_411_co}
 
-Version 4.11 is deprecated. Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
+Version 4.11 is no longer supported. Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
 {: important}
 
 
