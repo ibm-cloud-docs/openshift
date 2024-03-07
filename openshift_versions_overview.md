@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-03-07"
 
 
 keywords: openshift, version, update, upgrade
@@ -82,14 +82,6 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.12 release notes overview](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html){: external}
 
-[Deprecated]{: tag-deprecated} 4.11 (Kubernetes 1.24)
-- Release date: 31 August 2022
-- End of support: 06 March 2024
-- Operating systems: RHEL 8 (`REDHAT_8_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_411)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_411)
-- [{{site.data.keyword.redhat_openshift_notm}} 4.11 release notes overview](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html){: external}
-
 
 ### Clusters in Satellite locations with CoreOS enabled
 {: #os-satellite-with-coreos}
@@ -119,14 +111,6 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.12 release notes overview](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html){: external}
 
-[Deprecated]{: tag-deprecated} 4.11 (Kubernetes 1.24)
-- Release date: 31 August 2022
-- End of support: 06 March 2024
-- Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_411)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_411)
-- [{{site.data.keyword.redhat_openshift_notm}} 4.11 release notes overview](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html){: external}
-
 
 ### Clusters in Satellite locations without CoreOS enabled
 {: #os-satellite-without-coreos}
@@ -155,14 +139,6 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_412)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.12 release notes overview](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html){: external}
-
-[Deprecated]{: tag-deprecated} 4.11 (Kubernetes 1.24)
-- Release date: 31 August 2022
-- End of support: 06 March 2024
-- Operating systems: RHEL 8 (`REDHAT_8_64`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_411)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_411)
-- [{{site.data.keyword.redhat_openshift_notm}} 4.11 release notes overview](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html){: external}
 
 
 
