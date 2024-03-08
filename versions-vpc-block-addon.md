@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-03-08"
 
 
 keywords: openshift, block, storage, add-on, changelog
@@ -46,6 +46,12 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.2
 {: #052_is_block}
+
+### Change log for 5.2.17_535, released 08 March 2024
+{: #5.2.17_535_is_block_relnote}
+
+- Base image migrated from UBI to golang.
+
 
 ### Change log for version 5.2.15_501, released 08 February 2024
 {: #5.2.15_501_is_block_relnote}
@@ -103,6 +109,11 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for 5.1.22_522, released 08 March 2024
+{: #5.1.22_522_is_block_relnote}
+
+- Base image migrated from UBI to golang.
 
 ### Change log for version 5.1.21_506, released 08 February 2024
 {: #5.1.21_506_is_block_relnote}

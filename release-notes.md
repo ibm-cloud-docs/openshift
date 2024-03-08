@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-07"
+lastupdated: "2024-03-08"
 
 
 keywords: openshift, kubernetes, release notes
@@ -30,6 +30,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2024
 {: #openshift-mar24}
+
+### 08 March 2024
+{: #openshift-mar0824}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on patch update.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
 
 
 
