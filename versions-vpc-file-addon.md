@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-03-08"
 
 
 keywords: file, add-on, changelog
@@ -42,6 +42,11 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.2
 {: #012_is_file}
+
+### Change log for 1.2.7_154, released 08 March 2024
+{: #1.2.7_154_is_block_relnote}
+
+- Base image migrated from UBI to golang.
 
 ### Change log for version 1.2.6_130, released 08 February 2024
 {: #1.2.6_130_is_file_relnote}
