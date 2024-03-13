@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2024-03-13"
 
 
 keywords: openshift
@@ -26,9 +26,23 @@ After you provision a specific type of storage by using a storage class, you can
 
 Decide on a storage class. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-managing).
 
+New security group rules have been introduced in versions 4.11 and later. These rule changes mean you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}.
+{: important}
 
-If your app needs to run as non-root, or if you have your cluster resource group is different than the VPC/Subnet resource group, then you must create your own customized storage class. To get started, check out the [customized storage class samples](#storage-file-vpc-custom-sc).
-{: note}
+Run the following commands to sync your security group settings.
+
+
+1. Get the ID of the `kube-<cluster-id>` security group.
+    ```sh
+    ibmcloud is sg kube-<cluster-id>  | grep ID
+    ```
+    {: pre}
+
+1. Sync your security group settings.
+    ```sh
+    ibmcloud ks security-group sync -c <cluster ID> --security-group <ID>
+    ```
+    {: pre}
 
 ## Quick start for {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning
 {: #vpc-add-file-dynamic}
@@ -302,6 +316,9 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
 
 ## Deploying an app that runs as non-root
 {: #vpc-file-non-root-app}
+
+If your app needs to run as non-root, or if your cluster resource group is different than the VPC/Subnet resource group, you must create your own customized storage class. To get started, check out the [customized storage class samples](#storage-file-vpc-custom-sc).
+
 
 You can run your app as non-root by first creating a custom storage class that contains the group ID (`gid`) or user ID (`uid`) that you want to use.
 
