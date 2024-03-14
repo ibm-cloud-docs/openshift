@@ -17,7 +17,7 @@ subcollection: openshift
 # Ingress ALB version change log
 {: #ingress-alb-change-log}
 
-Review the version history for Ingress-ALB.
+Review the version history for Ingress ALB.
 {: shortdesc}
 
 ## Version 1.9.4

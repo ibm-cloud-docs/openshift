@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-03-14"
 
 
 keywords: openshift
@@ -880,7 +880,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 {: important}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID] [--operating-system (REDHAT_7_64|REDHAT_8_64)] [--version 4.13_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-outbound-traffic-protection] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [-q] [--secondary-storage STORAGE]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID] [--operating-system (REDHAT_7_64|REDHAT_8_64)] [--version 4.14_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE  [--disable-outbound-traffic-protection] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [-q] [--secondary-storage STORAGE]
 ```
 {: pre}
 
@@ -907,7 +907,7 @@ Minimum required permissions
 `--subnet-id VPC_SUBNET_ID`
 :    Required: The VPC subnet to assign the cluster. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2`.
 
-`--version 4.13_openshift`
+`--version 4.14_openshift`
 :    VPC clusters are supported for {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 
 `--flavor FLAVOR`
@@ -1004,7 +1004,7 @@ Minimum required permissions
 {: #cluster-create-vpc-gen2-example}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.13_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.14_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
@@ -8146,7 +8146,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 The following example creates a {{site.data.keyword.satelliteshort}} cluster with the `REDHAT_8_64` operating system.
 
 ```sh
-ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system REDHAT_8_64 --version 4.13_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
+ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system REDHAT_8_64 --version 4.14_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
 ```
 {: pre}
 

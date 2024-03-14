@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-03-14"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -145,7 +145,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
     Example `cluster create` command.
 
     ```sh
-    ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secret SECRET --version 4.13_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system (REDHAT_8_64|RHCOS)] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers WORKERS-PER-ZONE] [--zone ZONE] [--entitlement ENTITLEMENT]
+    ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secret SECRET --version 4.14_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system (REDHAT_8_64|RHCOS)] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers WORKERS-PER-ZONE] [--zone ZONE] [--entitlement ENTITLEMENT]
     ```
     {: pre}
     
