@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-13"
+lastupdated: "2024-03-14"
 
 
 keywords: openshift, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
@@ -143,7 +143,7 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
 
 4. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add-workers-vpc) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.13_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.14_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE]
 
     ```
     {: pre}
@@ -163,7 +163,7 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     `--flavor <worker_flavor>`
     :   Enter the worker node flavor that you want to use. The flavor determines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to your apps. VPC worker nodes can be created as virtual machines on shared infrastructure only. Bare metal or software-defined storage machines are not supported.  For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). To view available flavors, first list available VPC zones with `ibmcloud oc zone ls --provider vpc-gen2`, and then use the zone to list supported flavors by running `ibmcloud oc flavors --zone <VPC_zone> --provider vpc-gen2`. After you create your cluster, you can add different flavors by adding a worker node or worker pool to the cluster.
 
-    `--version 4.13_openshift`
+    `--version 4.14_openshift`
     :   VPC clusters are supported for {{site.data.keyword.redhat_openshift_notm}} version 4 only.
     
     
@@ -250,7 +250,7 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     When the provisioning of your {{site.data.keyword.redhat_openshift_notm}} master is completed, the state of your cluster changes to **normal**. After the {{site.data.keyword.redhat_openshift_notm}} master is ready, your worker nodes are set up.
     ```sh
     NAME         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.13.33_1544_openshift      Default               vpc-gen2
+    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.14.12_1544_openshift      Default               vpc-gen2
     ```
     {: screen}
 
@@ -266,7 +266,7 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     When the worker nodes are ready, the worker node **State** changes to `normal` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
     ```sh
     ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.13.33_1544_openshift
+    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.14.12_1544_openshift
     ```
     {: screen}
 
@@ -288,7 +288,7 @@ Flavors with instance storage are available for allowlisted accounts. To get add
 Example command to create a VPC cluster with 3 worker nodes in `us-east-1`.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.13_openshift --zone us-east-1 --vpc-id VPC-ID --subnet-id VPC-SUBNET-ID --cos-instance COS-CRN--flavor bx2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.14_openshift --zone us-east-1 --vpc-id VPC-ID --subnet-id VPC-SUBNET-ID --cos-instance COS-CRN--flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
@@ -296,7 +296,7 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.13_openshift -
 Example command to create a VPC cluster with 3 worker nodes in `us-east-1` with a custom pod subnet range and size.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.13_openshift --zone us-east-1 --vpc-id VPC-ID --subnet-id VPC-SUBNET-ID --cos-instance COS-CRN --flavor bx2.4x16 --workers 3 --pod-subnet 0.0.0.0/15
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.14_openshift --zone us-east-1 --vpc-id VPC-ID --subnet-id VPC-SUBNET-ID --cos-instance COS-CRN --flavor bx2.4x16 --workers 3 --pod-subnet 0.0.0.0/15
 ```
 {: pre}
 

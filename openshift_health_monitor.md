@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-03-14"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -45,7 +45,7 @@ Review the following details about {{site.data.keyword.mon_full_notm}}.
 - Free trial to try out the capabilities.
 - To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_monitoring).
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.13/monitoring/monitoring-overview.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.14/monitoring/monitoring-overview.html){: external}.
 
 ### Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools
 {: #built-in-mon-tools}
@@ -59,7 +59,7 @@ Review the following details about built-in monitoring tools for your cluster.
 - The `openshift-monitoring` project stack is set up in a single zone only. No persistent storage is available to back up or view metric history.
 - In cluster versions 4.10 and later an `AuditWebhookError` alert was added that fires when the audit webhook crashes or is deleted. For more information, see [Viewing the `AuditWebhookError` alert](/docs/openshift?topic=openshift-health-audit#audit-webhook-error-410).
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.13/monitoring/monitoring-overview.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.14/monitoring/monitoring-overview.html){: external}.
 
 ### Monitoring {{site.data.keyword.openshiftlong}} storage metrics
 {: #monitor-metrics}
@@ -99,7 +99,7 @@ Before monitoring metrics for {{site.data.keyword.block_storage_is_short}}, you 
     ```
     {: screen}
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.13/monitoring/monitoring-overview.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.14/monitoring/monitoring-overview.html){: external}.
 
 If your volume is reaching capacity, try setting up [volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand).
 {: tip}
