@@ -2646,35 +2646,17 @@ subcollection: openshift
 {: #sitemap_planning_to_create_clusters}
 
 
-[Sizing your cluster environment](/docs/openshift?topic=openshift-strategy#strategy)
-
-* [What else besides my app might use resources in the cluster?](/docs/openshift?topic=openshift-strategy#sizing_other)
-
-* [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
-
-* [What type of cluster and flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
-
-* [Do I use multiple clusters, or just add more workers to an existing cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
-
-* [How can I set up my resources within the cluster?](/docs/openshift?topic=openshift-strategy#env_resources)
-
-    * [Consider your worker node capacity](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
-
-    * [Provision different types of machines for a mix of computing resources](/docs/openshift?topic=openshift-strategy#env_resources_provision_types)
-
-    * [Set up multiple namespaces when you have multiple teams and projects that share the cluster](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
-
-    * [Set resource quotas so that users in your cluster must use resource requests and limits](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
-
 [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
 * [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
 
-* [Set up an API key](/docs/openshift?topic=openshift-clusters#prepare-create-api-key)
+* [Setting user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
 
-* [Verify your permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
+* [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
 
-* [Create your first cluster](/docs/openshift?topic=openshift-clusters#next_steps)
+* [Cluster-specific account setup](/docs/openshift?topic=openshift-clusters#prepare-cluster-account)
+
+* [Next steps](/docs/openshift?topic=openshift-clusters#next-steps)
 
 [Setting up your API key credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
 
@@ -2713,6 +2695,24 @@ subcollection: openshift
     * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-access-creds#infra_console)
 
     * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-access-creds#infra_cli)
+
+[Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy#strategy)
+
+* [What type of cluster should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
+
+* [Do I actually need multiple clusters or can I just add more workers to one cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
+
+* [How do I name my clusters?](/docs/openshift?topic=openshift-strategy#naming)
+
+* [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
+
+* [What type of worker node flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors_node)
+
+* [How do I determine worker node capacity for my resources?](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
+
+* [How do I manage teams and projects?](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
+
+* [ How do I manage resource requests and limits?](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
@@ -9631,6 +9631,8 @@ subcollection: openshift
 * [`Deploy_failed` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploy-failed)
 
 * [`Normal` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
+
+* [`NotReady` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-notready)
 
 * [`Provisioned` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
 

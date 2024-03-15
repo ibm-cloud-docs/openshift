@@ -251,7 +251,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 1. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster).
 
-Your cluster is ready for your workloads! You might also want to [add a tag to your cluster](/docs/openshift?topic=openshift-worker-tag-label), such as the team or billing department that uses the cluster, to help manage {{site.data.keyword.cloud_notm}} resources. For more ideas of what to do with your cluster, review the [Next steps](/docs/openshift?topic=openshift-clusters#next_steps).
+Your cluster is ready for your workloads! You might also want to [add a tag to your cluster](/docs/openshift?topic=openshift-worker-tag-label), such as the team or billing department that uses the cluster, to help manage {{site.data.keyword.cloud_notm}} resources.
 
 
 
