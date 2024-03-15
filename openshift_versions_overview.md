@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, version, update, upgrade
@@ -160,7 +160,7 @@ Example output
 ```sh
 Client Version: 4.14.3
 Server Version: 4.14.12
-Kubernetes Version: v1.27.2
+Kubernetes Version: v1.28.2
 ```
 {: screen}
 

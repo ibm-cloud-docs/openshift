@@ -127,7 +127,7 @@ By using {{site.data.keyword.cloud_notm}} IAM
 :   You can use IAM to automatically create and manage RBAC in your cluster, by assigning [service access roles](#service-roles-ov) to users. Every user who is assigned a service access role is automatically assigned a corresponding RBAC cluster role. This RBAC cluster role is applied either in a specific namespace or in all namespaces, depending on whether you scope the policy to a namespace. Change that you make to the user in IAM, such as updating or removing the service access policy, are automatically synchronized to the RBAC in your cluster. The synchronization of service roles to RBAC might take a couple minutes, depending on the number of users and namespaces in your cluster.
 
 Managing your own RBAC
-:   See [Assigning RBAC permissions](/docs/openshift?topic=openshift-access-overview#role-binding).
+:   See [Assigning RBAC permissions](/docs/openshift?topic=openshift-users#rbac).
 
 #### Overview of classic infrastructure
 {: #api_key}
