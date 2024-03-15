@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -41,8 +41,8 @@ Before you can enable a key management service (KMS) provider in your cluster, y
     {: tip}
 
 1. Make sure that you have the correct permissions in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to enable KMS in your cluster.
-    * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
-    * Ensure that the API key owner of the [API key](/docs/openshift?topic=openshift-access-creds#api_key_about) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider. For more information on granting access in IAM to the KMS provider, see the [{{site.data.keyword.keymanagementserviceshort}} user access documentation](/docs/key-protect?topic=key-protect-manage-access) or [{{site.data.keyword.hscrypto}} user access documentation](/docs/hs-crypto?topic=hs-crypto-manage-access#platform-mgmt-roles).
+    * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster.
+    * Ensure that the API key owner of the [API key](/docs/openshift?topic=openshift-iam-platform-access-roles) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider.
         * For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service access roles for your KMS provider.
         * If you plan to use an existing KMS instance and root key, you need at least the **Viewer** platform and **Reader** service access roles for your KMS provider.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, benchmarks, 4.8
@@ -17,7 +17,7 @@ subcollection: openshift
 
 p
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.8 CIS Kubernetes Benchmark
+# 4.8 CIS Kubernetes Benchmark
 {: #cis-benchmark-48}
 
 This version is deprecated.

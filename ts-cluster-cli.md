@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift
@@ -45,7 +45,7 @@ You might have corporate network policies that prevent access from your local sy
 [Allow TCP access for the CLI commands to work](/docs/openshift?topic=openshift-firewall#firewall_bx).
 {: tsResolve}
 
-This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster.
+This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster.
 
 
 

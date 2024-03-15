@@ -70,7 +70,6 @@ When you deploy an app, the app pods indiscriminately deploy to various worker n
 
 Before you begin
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the {{site.data.keyword.redhat_openshift_notm}} project.
 - **Optional**: [Set a label for the worker pool](/docs/openshift?topic=openshift-worker-tag-label) that you want to run the app on.
 
 To deploy apps to specific worker nodes,
@@ -216,7 +215,7 @@ Before you begin
     - [Classic flavors](/docs/openshift?topic=openshift-classic-flavors)
     - [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors)
 
-- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-users#checking-perms) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
+- Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the cluster.
 - [Install the NVIDIA GPU operator for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html#operator-install-guide){: external}.
 - [Install the Node Feature Discovery and NVIDIA GPU operators for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}.
 

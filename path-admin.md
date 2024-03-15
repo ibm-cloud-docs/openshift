@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-29"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, red hat, red hat openshift, admin
@@ -66,7 +66,7 @@ Create a cluster with infrastructure, network, and availability setups that are 
     2. [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).
     3. [Understand access roles for individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups).
     4. [Choose the scope of user access to cluster instances, {{site.data.keyword.redhat_openshift_notm}} project, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups).
-    5. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-users#checking-perms). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-access_reference).
+    5. Allow users to create apps or audit your cluster activity by [assigning cluster access](/docs/openshift?topic=openshift-iam-platform-access-roles). To see specific permissions and actions that you can grant users, see the [user access permissions reference](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 
 

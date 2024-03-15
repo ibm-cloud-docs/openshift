@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, continuous integration and delivery
@@ -30,7 +30,7 @@ Adopt a DevOps approach by using {{site.data.keyword.deliverypipelinelong}}, whi
 
 Before you begin, make sure that you have at least the following permissions in {{site.data.keyword.cloud_notm}} IAM.
 
-- **Editor** platform access role and **Writer** service access role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/openshift?topic=openshift-access_reference).
+- **Editor** platform access role and **Writer** service access role to the **Kubernetes Service** cluster. For more information, see [User access permissions](/docs/openshift?topic=openshift-iam-platform-access-roles).
 - **Viewer** platform access role to the resource group of the cluster where you want to create the toolchain.
 - **Editor** platform access role to the **Toolchain** service (note that this service is separate than **Continuous Delivery**).
 

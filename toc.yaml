@@ -16,6 +16,8 @@ toc:
       topics:
       - getting-started.md
       - overview.md
+      - iam-platform-access-roles.md
+      - classic-credentials.md
       - responsibilities.md
       - satellite-resp.md
       - topicgroup:
@@ -116,6 +118,7 @@ toc:
           - access-iam-rbac.md
           - access-pod-identity.md
           - terraform-cluster-access.md
+          - removing-users.md
       - topicgroup:
           label: Securing cluster workloads
           topics:
@@ -413,13 +416,7 @@ toc:
           topics:
           - at-events.md
           - api-at-iam.md
-      - topicgroup:
-          label: IAM and user access permissions
-          topics:
-          - users-access-ref.md
-          - iam-platform-access-roles.md
-          - iam-service-access-roles.md
-          - classic-roles.md
+      - classic-roles.md
       - locations.md
       - openshift_integrations_overview.md
       - service-settings.md

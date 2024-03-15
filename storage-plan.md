@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-05"
+lastupdated: "2024-03-15"
 
 
-keywords: planning, storage, cluster
+keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
 
 subcollection: openshift
 
@@ -18,7 +18,7 @@ subcollection: openshift
 
 
 
-# Storage overview
+# {{site.data.keyword.openshiftlong_notm}} storage overview
 {: #storage-plan}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}

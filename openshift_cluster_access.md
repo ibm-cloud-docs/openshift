@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -74,7 +74,7 @@ Usually, you can use the {{site.data.keyword.redhat_openshift_notm}} web console
 
 Choose from the following options.
 *   **Log in as admin**:
-    1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+    1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
     2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
         ```sh
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
@@ -127,7 +127,7 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
 
 2. To log in to your cluster, choose from the following options.
     * **Log in as admin**:
-        1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+        1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
             ```sh
             ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
@@ -280,7 +280,7 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
 
 7. Log in to your cluster by choosing from one of the following options.
     * **Log in as admin**:
-        1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+        1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
             ```sh
             ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
@@ -329,7 +329,7 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
 Control access to your private cloud service endpoint by creating a subnet allowlist.
 {: shortdesc}
 
-After you [grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms), you can add a secondary layer of security by creating an allowlist for the private cloud service endpoint. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.
+After you [grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles), you can add a secondary layer of security by creating an allowlist for the private cloud service endpoint. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.
 
 If you want to allow requests from a different VPC than the one your cluster is in, you must include the cloud service endpoint for that VPC in the allowlist.
 {: note}
@@ -348,7 +348,7 @@ If the public cloud service endpoint is enabled for your cluster, authorized req
 
 Before you begin:
 * [Access your cluster through the private cloud service endpoint](#access_private_se).
-* [Grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
+* [Grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 To create a private cloud service endpoint allowlist:
 
@@ -372,7 +372,7 @@ To create a private cloud service endpoint allowlist:
     ```
     {: pre}
 
-Your authorized users can now continue with [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters through the private cloud service endpoint](#access_private_se).
+Your authorized users can now continue with [Accessing clusters through the private cloud service endpoint](#access_private_se).
 
 
 
@@ -407,7 +407,7 @@ For security reasons, first log out of the {{site.data.keyword.cloud_notm}} cons
 
 If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
-    1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+    1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
     2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
         ```sh
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
@@ -425,7 +425,7 @@ If you are connected to the {{site.data.keyword.cloud_notm}} private network, yo
 To connect to your {{site.data.keyword.satelliteshort}} cluster by using the Link endpoint, for example `--endpoint link` in the CLI, you must follow the steps to set up a **Source** in your Location. This source allows access to your cluster APIs through the Link endpoint. For more information, see [Accessing your Red Hat OpenShift API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure).
 {: note}
 
-1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
 2. Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
     ```sh
     ibmcloud oc cluster config -c <cluster_name_or_ID> --endpoint link --admin
@@ -516,7 +516,7 @@ For clusters that run version [4.13]{: tag-red}: If you enabled only the private
 
 2. To log in to your cluster, choose from the following options.
     * **Log in as admin**:
-        1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-users#add_users).
+        1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
             ```sh
             ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint vpe
@@ -702,7 +702,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     | -------------- | -------------- |
     | `<cluster_service_ID>` | Required. Enter the service ID that you previously created for your {{site.data.keyword.redhat_openshift_notm}} cluster. |
     | `--service-name containers-kubernetes` | Required. Enter `containers-kubernetes` so that the IAM policy is for {{site.data.keyword.openshiftlong_notm}} clusters. |
-    | `--roles <service_access_role>` | Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.redhat_openshift_notm}} cluster. [Platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) permit cluster management activities such as creating worker nodes. [Service access roles](/docs/openshift?topic=openshift-iam-service-access-roles) correspond to RBAC roles that permit {{site.data.keyword.redhat_openshift_notm}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform access roles); and `Reader`, `Writer`, and `Manager` (service access roles). |
+    | `--roles <service_access_role>` | Required. Enter the access role that you want the service ID to have to your {{site.data.keyword.redhat_openshift_notm}} cluster. [Platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) permit cluster management activities such as creating worker nodes. [Service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) correspond to RBAC roles that permit {{site.data.keyword.redhat_openshift_notm}} management activities within the cluster, such as for Kubernetes resources like pods and namespaces. For multiple roles, include a comma-separated list. Possible values are `Administrator`, `Operator`, `Editor`, and `Viewer` (platform access roles); and `Reader`, `Writer`, and `Manager` (service access roles). |
     | `--service-instance <cluster_ID>` | To restrict the policy to a particular cluster, enter the cluster's ID. To get your cluster ID, run `ibmcloud oc clusters`. If you don't include the service instance, the access policy grants the service ID access to all your clusters, Kubernetes and {{site.data.keyword.redhat_openshift_notm}}. You can also scope the access policy to a region (`--region`) or resource group (`--resource-group-name`). |
     {: caption="Table 1. Understanding this command's components" caption-side="bottom"}
     

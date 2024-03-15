@@ -36,14 +36,8 @@ After the account administrator makes these preparations, you might not need to 
 {: #prepare-verify-permissions}
 {: step}
 
-Are you the account owner? You already have the necessary permissions! When you create a cluster, the API key for that region and resource group is set with your credentials.
-{: tip}
+Confirm that you [have the required permissions to create clusters](/docs/openshift?topic=openshift-iam-platform-access-roles). Make sure that your account administrator does not assign you the **Administrator** platform access role at the same time as scoping the access policy to a namespace.
 
-Verify that you as a user (not just the API key) have the required permissions to create clusters.
-
-1. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click **Manage > Access (IAM)**.
-2. Click the **Users** page, and then from the table, select yourself.
-3. From the **Access policies** tab, confirm that you [have the required permissions to create clusters](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). Make sure that your account administrator does not assign you the **Administrator** platform access role at the same time as scoping the access policy to a namespace.
 
 
 ## Plan your resource groups

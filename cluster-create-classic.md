@@ -39,7 +39,7 @@ To begin creating your cluster, navigate to the [{{site.data.keyword.redhat_open
 
 Location details
 :    When you create a cluster, its resources remain in the location that you deploy the cluster to.
-:    - **Resource group**: A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
+:    - **Resource group**: A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the resource group.
 :    - **Geography**: Select an area to create the cluster in, such as **North America**. The geography helps filter the **Availability** and **Metro** values that you can select in the console.
 :    - **Availability**: A cluster can be created with a **Single zone** or **Multizone** configuration. A multizone cluster provides high availability, with the {{site.data.keyword.redhat_openshift_notm}} master deployed in a multizone-capable zone and three replicas of the master spread across different zones.
         - For multizone clusters, choose a **Metro** location. For the best performance, select the metro location that is physically closest to you. Your **Worker zones** are based on the metro location you choose. You can select which worker zones to apply, and your worker nodes are spread across your zones for high availability. Each worker zone has a public and private **VLAN**. If you do not have VLANs in that zone, they are created for you. 
@@ -94,7 +94,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 1. If you have multiple {{site.data.keyword.cloud_notm}} accounts, select the account where you want to create your cluster.
 
-1. To create clusters in a resource group other than default, target that resource group. A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group to target it.
+1. To create clusters in a resource group other than default, target that resource group. A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the resource group to target it.
 
     ```sh
     ibmcloud target -g <resource_group_name>

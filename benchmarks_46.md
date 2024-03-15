@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, benchmarks, 4.6
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.6 CIS Kubernetes Benchmark
+# 4.6 CIS Kubernetes Benchmark
 {: #cis-benchmark-46}
 
 Version 4.6 is unsupported.

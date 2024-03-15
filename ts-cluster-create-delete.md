@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift
@@ -90,11 +90,11 @@ The cluster could not be configured with the registry. Make sure that you have t
 The infrastructure credentials that are set for the region and resource group are missing the appropriate [infrastructure permissions](/docs/openshift?topic=openshift-classic-roles).
 {: tsCauses}
 
-The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-access-creds) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-access-creds#understand_infra), you might have [set infrastructure credentials manually](/docs/openshift?topic=openshift-access-creds#credentials).
+The user's infrastructure permissions are most commonly stored as an [API key](/docs/openshift?topic=openshift-access-creds) for the region and resource group. More rarely, if you use a [different {{site.data.keyword.cloud_notm}} account type](/docs/openshift?topic=openshift-classic-credentials), you might have set infrastructure credentials manually.
 
 If the credentials were manually changed with the `ibmcloud oc credential set` command, the region and resource group values might have been changed, resulting in a mismatch. Credentials and the resource group API key are specific to both the region and resource group that are targeted at the time the command is executed. However, the `ibmcloud oc credential` and `ibmcloud oc api-key` commands only accept an input for the region value, while the resource group is targeted separately with the `ibmcloud target` command before changing the credentials. If no resource group is targeted, the default resource group is applied. If the targeted resource group is not the same as the one that the cluster is deployed in, then the new credentials do not apply to the cluster. In this case, the credentials that apply to the cluster might be different from what you think they are. 
 
-This error can also occur if you created a cluster with a linked [IBM Cloud infrastructure account](/docs/openshift?topic=openshift-access-creds#understand_infra) and then later added separate credentials. IBM Cloud infrastructure accounts that are linked to an IBM Cloud account do not require credentials to create clusters. However, if separate credentials were later added to or removed from the cluster, with either the `ibmcloud oc credential set` or `ibmcloud oc credential unset` commands, then those credentials might not match the specifications for the linked account. This can result in the credentials being unrecognized.
+This error can also occur if you created a cluster with a linked [IBM Cloud infrastructure account](/docs/openshift?topic=openshift-classic-credentials) and then later added separate credentials. IBM Cloud infrastructure accounts that are linked to an IBM Cloud account do not require credentials to create clusters. However, if separate credentials were later added to or removed from the cluster, with either the `ibmcloud oc credential set` or `ibmcloud oc credential unset` commands, then those credentials might not match the specifications for the linked account. This can result in the credentials being unrecognized.
 
 The account owner must set up the infrastructure account credentials properly. The credentials depend on what type of infrastructure account you are using.
 {: tsResolve}
@@ -147,7 +147,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         For console and CLI commands to assign these permissions, see [Classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles).
         {: tip}
 
-    2. Make sure that the [infrastructure credentials owner for the API key or the manually set account has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
+    2. Make sure that the [infrastructure credentials owner for the API key or the manually set account has the correct permissions](/docs/openshift?topic=openshift-iam-platform-access-roles).
         You can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or [manually set](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) infrastructure credentials owner for the region and resource group.
         {: note}
         
@@ -362,7 +362,7 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
 ### Using TOTP MFA to create an infrastructure API key for {{site.data.keyword.containerlong_notm}}
 {: #create-api-key-totp-mfa}
 
-1. From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** and click the name of the account owner. **Note**: If you don't use the account owner's credentials, [ensure that the user whose credentials you use has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions).
+1. From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** and click the name of the account owner. **Note**: If you don't use the account owner's credentials, [ensure that the user whose credentials you use has the correct permissions](/docs/openshift?topic=openshift-iam-platform-access-roles).
 2. In the **API Keys** section, find or create a classic infrastructure API key.
 3. Use the infrastructure API key to set the infrastructure API credentials for {{site.data.keyword.containerlong_notm}}. Repeat this command for each region where you create clusters.
     ```sh

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, benchmarks, 4.10, compliance operator, compliance
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.10 compliance operator benchmark
+# 4.10 compliance operator benchmark
 {: #benchmarks_410_co}
 
 Version 4.10 is no longer supported. Update your cluster to at least [version 4.11](/docs/openshift?topic=openshift-cs_versions_411) as soon as possible.

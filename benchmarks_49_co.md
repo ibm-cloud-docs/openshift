@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, benchmarks, 4.9, compliance operator, compliance
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.9 compliance operator benchmark
+# 4.9 compliance operator benchmark
 {: #benchmarks_49_co}
 
 

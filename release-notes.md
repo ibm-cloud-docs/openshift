@@ -412,7 +412,6 @@ Worker node fix packs are available.
 
 
 
-
 ### 15 December 2023
 {: #openshift-dec1523}
 {: release-note}
@@ -4860,7 +4859,7 @@ Worker node versions
 {: release-note}
 
 API key
-:   Added more information about [how the {{site.data.keyword.openshiftlong_notm}} API key is used](/docs/openshift?topic=openshift-access-creds#api_key_about).
+:   Added more information about how the {{site.data.keyword.openshiftlong_notm}} API key is used.
 
 
   

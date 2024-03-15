@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-03-15"
 
 
-keywords: openshift, api
+keywords: openshift, kubernetes, ic, ks, kubectl, api
 
 subcollection: openshift
 

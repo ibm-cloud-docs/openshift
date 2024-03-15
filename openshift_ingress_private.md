@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-03-15"
 
 
 keywords: ingress, expose apps, privately expose, private ingress, ingress vpc
@@ -26,7 +26,7 @@ Privately expose multiple apps in your {{site.data.keyword.openshiftlong}} clust
 Before you get started with Ingress, review the following prerequisites.
 {: shortdesc}
 
-- Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users):
+- Setting up Ingress requires the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles):
     - **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
     - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.redhat_openshift_notm}} projects).
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller in that zone.

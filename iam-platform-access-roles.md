@@ -2,43 +2,63 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-15"
 
-
-keywords: openshift
+keywords: openshift, kubernetes, infrastructure, policy, users, permissions, access, roles
 
 subcollection: openshift
-
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 
-
-
-# IAM platform access roles
+# IAM roles and actions
 {: #iam-platform-access-roles}
 
-{{site.data.keyword.openshiftlong_notm}} is configured to use {{site.data.keyword.cloud_notm}} IAM Identity Service roles. {{site.data.keyword.cloud_notm}} IAM platform access roles determine the actions that users can perform on {{site.data.keyword.cloud_notm}} resources such as clusters, worker nodes, and Ingress application load balancers (ALBs). {{site.data.keyword.cloud_notm}} IAM platform access roles also automatically set basic infrastructure permissions for users. To assign platform access roles, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
+{{site.data.keyword.openshiftlong_notm}} is configured to use {{site.data.keyword.iamlong}} roles to determine the actions that users can perform on {{site.data.keyword.openshiftlong_notm}} clusters, worker nodes, and Ingress application load balancers (ALBs).
 {: shortdesc}
 
-See the IAM Policy Management [API reference](https://cloud.ibm.com/apidocs/iam-policy-management#list-roles){: external} for more information on managing IAM roles with the API.
-{: tip}
-
-Do not assign {{site.data.keyword.cloud_notm}} IAM platform access roles at the same time as a service access role. You must assign platform and service access roles separately.
-{: tip}
-
-- **Actions requiring no permissions**: Any user in your account who runs the CLI command or makes the API call for the action sees the result, even if the user has no assigned permissions.
-- **Viewer actions**: The Viewer platform access role includes the actions that require no permissions, plus the permissions that are shown in the Viewer tab of following table. With the Viewer role, users such as auditors or billing can see cluster details but not modify the infrastructure.
-- **Editor actions**: The Editor platform access role includes the permissions that are granted by Viewer, plus the following. With the Editor role, users such as developers can bind services, work with Ingress resources, and set up log forwarding for their apps but can't modify the infrastructure.
-- **Operator actions**: The Operator platform access role includes the permissions that are granted by Viewer, plus the permissions that are shown in the Operator tab of the following table. With the Operator role, users such as site reliability engineers, DevOps engineers, or cluster administrators can add worker nodes and troubleshoot infrastructure such as by reloading a worker node, but can't create or delete the cluster, change the credentials, or set up cluster-wide features like service endpoints or managed add-ons.
-- **Administrator actions**: The Administrator platform access role includes all permissions that are granted by the Viewer, Editor, and Operator roles, plus the permissions that are show in the Administrator tab of the following table. With the Administrator role, users such as cluster or account administrators can create and delete clusters or set up cluster-wide features like service endpoints or managed add-ons. To create order such infrastructure resources such as worker node machines, VLANs, and subnets, Administrator users need the Super user [infrastructure role](/docs/openshift?topic=openshift-classic-roles) or the API key for the region must be set with the appropriate permissions.
-
+Review the following table for a list of Platform and Service roles and their associated actions.
 
 {{../account/iam-service-roles.md#containers-kubernetes-roles}}
 
+For a list of all IBM services and roles, see [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions){: tip}
+
+## Required permissions to create a cluster
+{: #cluster-create-permissions}
 
 
+| Service or resource group | Role | Scope | Required? |
+| --- | --- | --- | --- |
+| {{site.data.keyword.containershort}} | - **Administrator** platform access role  \n - **Writer** or **Manager** service access role | Yes | 
+| {{site.data.keyword.registryshort_notm}} | **Administrator** platform access role. | An individual instance or all instances. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level. | Yes |
+| {{site.data.keyword.cos_full_notm}} | **Administrator** platform access role | An individual instance or all instances. |
+| {{site.data.keyword.secrets-manager_short}} | **Administrator** or **Editor** platform access role  \n - **Manager** service access role | All resource groups | Required if you plan to use {{site.data.keyword.secrets-manager_short}} for encryption. |
+| Resource group permissions | - **Viewer** platform access role  | The resource group where you want to create a cluster. | Yes |
+| IAM Identity Service | - **Service ID creator**  \n - **User API key creator** role  \n - **Viewer** platform access role  | Yes |
+| {{site.data.keyword.keymanagementserviceshort}}| **Administrator** platform access role. | All instances or the specific instance you want to use. | Required if you plan to use {{site.data.keyword.keymanagementserviceshort}} for encryption. |
+| {{site.data.keyword.hscrypto}} | **Administrator** platform access role. | All instances or the specific instance you want to use. | Required if you plan to use {{site.data.keyword.hscrypto}} for encryption. | 
+| Classic infrastructure | **Super User** role | N/A | Yes | 
+| VPC infrastructure | **Administrator** platform access role for [VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started). | All instances or the specific instance you want to use. | Yes |
+{: caption="IAM roles needed to create a cluster." caption-side="bottom"}
+
+
+## Example custom IAM roles
+{: #example-iam}
+
+The following table provides some example use cases and the corresponding IAM roles for those cases. You can use these examples or create your own custom roles. For more information, see [Creating custom roles](/docs/account?topic=account-custom-roles&interface=ui).
+
+
+| Example custom role | Permissions |
+| --- | --- |
+| App auditor | - [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles)  \n - [Reader service access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles). |
+| App developers | - [Editor platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles)  \n - [Writer service access role scoped to a namespace](/docs/openshift?topic=openshift-iam-platform-access-roles). |
+| Billing | [Viewer platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles). |
+| Create a cluster | See [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).|
+| Cluster administrator | - [Administrator platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles)  \n - [Manager service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-iam-platform-access-roles).|
+| DevOps operator | - [Operator platform access role for a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles)  \n - [Writer service access role not scoped to a namespace (for the whole cluster)](/docs/openshift?topic=openshift-iam-platform-access-roles).  |
+| Operator or site reliability engineer | - [Administrator platform access role for a cluster, region, or resource group](/docs/openshift?topic=openshift-iam-platform-access-roles)  \n - [Reader service access role for a cluster or region](/docs/openshift?topic=openshift-iam-platform-access-roles)  \n - [Manager service access role for all cluster namespaces](/docs/openshift?topic=openshift-iam-platform-access-roles) to be able to use `kubectl top nodes,pods` commands. |
+{: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
 
 
