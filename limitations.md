@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -40,7 +40,7 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | -------- | ----------- |
 | API rate limits | 200 requests per 10 seconds to the {{site.data.keyword.openshiftlong_notm}} API from each unique source IP address. |
 | App deployment | The apps that you deploy to and services that you integrate with your cluster must be able to run on the operating system of the worker nodes. |
-| Container-native virtualization | The {{site.data.keyword.redhat_openshift_notm}} [container-native virtualization add-on](https://docs.openshift.com/container-platform/4.14/virt/about-virt.html){: external} to run VM workloads alongside container workloads is not supported by IBM. If you choose to install the add-on yourself, you must use bare metal machines, not virtual machines. You are responsible for resolving any issues and impact to your workloads from using container-native virtualization.|
+| Container-native virtualization | The {{site.data.keyword.redhat_openshift_notm}} [container-native virtualization add-on](https://docs.openshift.com/container-platform/4.14/about_virt/about-virt.html){: external} to run VM workloads alongside container workloads is not supported by IBM. If you choose to install the add-on yourself, you must use bare metal machines, not virtual machines. You are responsible for resolving any issues and impact to your workloads from using container-native virtualization.|
 | Calico network plug-in | Changing the Calico plug-in, components, or default Calico settings is not supported. For example, don't deploy a new Calico plug-in version, or modify the daemon sets or deployments for the Calico components, default `IPPool` resources, or Calico nodes. Instead, you can follow the documentation to [create a Calico `NetworkPolicy` or `GlobalNetworkPolicy`](/docs/openshift?topic=openshift-network_policies), to [change the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu), or to [disable the port map plug-in for the Calico CNI](/docs/openshift?topic=openshift-kernel#calico-portmap). |
 | Cluster quota | You can't exceed 100 clusters per region and per [infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered). However, as of 01 January 2024, quotas are increased incrementally before reaching 100. If you need more of the resource, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want.. To list quotas, run `ibmcloud quota ls`. |
 | IAM access groups | You can't scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.14/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still manage individual users and service accounts with IAM service access roles. You can also still scope IAM platform access roles to IAM access groups to control actions like ordering worker nodes, because platform access roles are never synced to RBAC roles. |
