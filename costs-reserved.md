@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-03-15"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -111,7 +111,7 @@ If I don't need reserved worker nodes anymore, can I modify my contract?
 Create a reservation that you can use to provision worker nodes at a reduced cost by committing to a 1 or 3 year term.
 {: shortdesc}
 
-Before you begin, make sure that you have the [**Administrator** platform access role for the service in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
+Before you begin, make sure that you have the [**Administrator** platform access role for the service in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 1. Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
 2. Click **Create reservation**.

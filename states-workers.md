@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-15"
 
 
 keywords: kubernetes, worker nodes, state
@@ -90,6 +90,13 @@ A `Normal` state means that your worker node is fully provisioned and ready to b
 
 Although the worker nodes might be normal, other infrastructure resources, such as [networking](/docs/containers?topic=containers-coredns_lameduck) and [storage](/docs/openshift?topic=openshift-debug_storage_file), might still need attention.
 {: note}
+
+
+## `NotReady` state
+{: #worker-node-notready}
+
+The worker nodes might be overloaded when they frequently report back a status of `NotReady` or evict pods due to the lack of memory or other resources. Consider re-evaluating the [capacity requirements for the worker node](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity).
+
 
 ## `Provisioned` state
 {: #worker-node-provisioned}

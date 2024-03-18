@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, benchmarks, 4.9
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.9 CIS Kubernetes Benchmark
+# 4.9 CIS Kubernetes Benchmark
 {: #cis-benchmark-49}
 
 Version 4.9 is no longer supported Update your cluster to at least [version 4.10](/docs/openshift?topic=openshift-cs_versions_410&interface=ui) as soon as possible.

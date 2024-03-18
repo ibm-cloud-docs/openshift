@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift
@@ -67,7 +67,7 @@ However, the bucket might not create for several reasons such as:
 Manually set up your cluster to back up the internal registry to an {{site.data.keyword.cos_full_notm}} bucket.
 {: tsResolve}
 
-1. Make sure that the API key for the region and resource group is set and that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
+1. Make sure that the API key for the region and resource group is set and that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
 2. If corporate network policies prevent access from your local system to public endpoints via proxies or firewalls, [allow access to the {{site.data.keyword.cos_full_notm}} subdomain](/docs/openshift?topic=openshift-vpc-firewall#openshift-registry).
 3. Identify the {{site.data.keyword.cos_full_notm}} instance to use. You can create an instance or use an existing one.
     * [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).

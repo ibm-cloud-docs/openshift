@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, scc, security context constraint, psp
@@ -27,7 +27,7 @@ Why do I set security context constraints?
 :   As a cluster admin, you want to control what happens in your cluster, especially actions that affect the cluster's security or readiness. Security context constraints can help you control what actions and access the pods in your container have, such as the usage of privileged containers, root namespaces, host networking and ports, volume types, host file systems, Linux permissions such as read-only or group IDs, and more.
 
 Can I also add users or system groups to SCCs?
-:   For user access to your cluster resources, don't use SCCs. Instead, see [Assigning cluster access](/docs/openshift?topic=openshift-users) to set {{site.data.keyword.cloud_notm}} IAM and infrastructure permissions.
+:   For user access to your cluster resources, don't use SCCs. Instead, see [Assigning cluster access](/docs/openshift?topic=openshift-iam-platform-access-roles) to set {{site.data.keyword.cloud_notm}} IAM and infrastructure permissions.
 :   For system groups such as `system:authenticated`, these groups already are assigned to SCCs. You can see which groups are assigned to an SCC by describing the SCC. If you change the SCC that a system group is assigned to, default components that belong to the system group might experience errors due to the change in permissions.
 
 Are any SCCs set by default?

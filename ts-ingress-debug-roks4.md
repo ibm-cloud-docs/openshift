@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift
@@ -32,7 +32,7 @@ You exposed your app by creating an Ingress resource for your app in your cluste
 The steps in the following sections can help you debug your Ingress setup.
 {: tsResolve}
 
-Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}} IAM access policies](/docs/openshift?topic=openshift-users) for {{site.data.keyword.containerlong_notm}}:
+Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}} IAM access policies](/docs/openshift?topic=openshift-iam-platform-access-roles) for {{site.data.keyword.containerlong_notm}}:
     - **Editor** or **Administrator** platform access role for the cluster
     - **Writer** or **Manager** service access role
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -184,10 +184,34 @@ For more information about the components of your cluster and how you can meet s
 {: faq}
 {: support}
 
-{{site.data.keyword.openshiftlong_notm}} uses {{site.data.keyword.iamshort}} (IAM) to grant access to cluster resources through IAM platform access roles and Kubernetes role-based access control (RBAC) policies through IAM service access roles. For more information about types of access policies, see [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).
-{: shortdesc}
+{{site.data.keyword.openshiftlong_notm}} uses {{site.data.keyword.iamshort}} (IAM) to grant access to cluster resources through IAM platform access roles and Kubernetes role-based access control (RBAC) policies through IAM service access roles. For more information about types of access policies, see [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
-The access policies that you assign users vary depending on what you want your users to be able to do. You can find more information about what roles authorize which types of actions on the [User access reference page](/docs/openshift?topic=openshift-access_reference) or in the following table's links. For steps to assign policies, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-users#checking-perms).
+
+### What permissions does the user who sets the API key need? How do I give the user these permissions?
+{: #what-perms-api-key}
+
+At a minimum, the **Administrators** or **Compliance Management** roles have permissions to create a cluster. However, you might need additional permissions for other services and integrations that you use in your cluster. For more information, see [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
+
+To check a user's permissions, review the access policies and access groups of the user in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/iam/users){: external}, or use the `ibmcloud iam user-policies <user>` command.
+
+If the API key is based on one user, how are other cluster users in the region and resource group affected?
+{: #apikey-users}
+
+Other users within the region and resource group of the account share the API key for accessing the infrastructure and other services with {{site.data.keyword.openshiftlong_notm}} clusters. When users log in to the {{site.data.keyword.cloud_notm}} account, an {{site.data.keyword.cloud_notm}} IAM token that is based on the API key is generated for the CLI session and enables infrastructure-related commands to be run in a cluster.
+
+
+
+### What happens if the user who set up the API key for a region and resource group leaves the company?
+{: #apikey-user-leaves}
+
+If the user is leaving your organization, the {{site.data.keyword.cloud_notm}} account owner can remove that user's permissions. However, before you remove a user's specific access permissions or remove a user from your account completely, you must reset the API key with another user's infrastructure credentials. Otherwise, the other users in the account might lose access to the IBM Cloud infrastructure portal and infrastructure-related commands might fail. For more information, see [Removing user permissions](/docs/openshift?topic=openshift-removing-user-permissions).
+
+
+
+### How can I lock down my cluster if my API key becomes compromised?
+{: #apikey-lockdown}
+
+If an API key that is set for a region and resource group in your cluster is compromised, [delete it](/docs/account?topic=account-userapikey&interface=ui#delete_user_key) so that no further calls can be made by using the API key as authentication. For more information about securing access to the Kubernetes API server, see the [Kubernetes API server and etcd](/docs/openshift?topic=openshift-security#apiserver) security topic.
 
 ## How do I rotate the cluster API key in the event of a leak?
 {: #faq_api_key_leak}

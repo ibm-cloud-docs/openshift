@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-15"
 
 
 keywords: kubernetes, openshift
@@ -87,8 +87,8 @@ Use {{site.data.keyword.cloud_notm}} service binding to automatically create ser
 
 Before you begin:
 - Ensure you have the following roles:
-    - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-users#checking-perms) for the cluster where you want to bind a service.
-    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the {{site.data.keyword.redhat_openshift_notm}} project where you want to bind the service.
+    - [**Editor** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster where you want to bind a service.
+    - [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the {{site.data.keyword.redhat_openshift_notm}} project where you want to bind the service.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 To add an {{site.data.keyword.cloud_notm}} service to your cluster:
@@ -195,7 +195,7 @@ The credentials of a service instance are base64 encoded and stored inside your 
 - [Reference the secret in environment variables](#reference_secret)
 
 Before you begin:
--  Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-users#checking-perms) for the `kube-system` project.
+-  Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the `kube-system` project.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Add an {{site.data.keyword.cloud_notm}} service to your cluster](#bind-services).
 

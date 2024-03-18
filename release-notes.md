@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift, kubernetes, release notes
@@ -30,6 +30,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2024
 {: #openshift-mar24}
+
+
+
 
 ### 15 March 2024
 {: #openshift-mar1524}
@@ -408,7 +411,6 @@ Worker node fix packs are available.
     - [4.12.45_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
     - [4.11.55_1586_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
     - [4.10.67_1594_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
-
 
 
 
@@ -1131,7 +1133,7 @@ Cluster autoscaler add-on version `1.0.8_56` and `1.0.7_57`.
 
 
 Pod security admission updates
-:   Review the [default pod security configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default) and the steps to [customize pod security admission in your cluster](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom).
+:   Review the [default pod security configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default) and the steps to [customize pod security admission in your cluster](/docs/containers?topic=containers-pod-security-admission#psa-plugin-config-custom).
 
 
 
@@ -4860,7 +4862,7 @@ Worker node versions
 {: release-note}
 
 API key
-:   Added more information about [how the {{site.data.keyword.openshiftlong_notm}} API key is used](/docs/openshift?topic=openshift-access-creds#api_key_about).
+:   Added more information about how the {{site.data.keyword.openshiftlong_notm}} API key is used.
 
 
   

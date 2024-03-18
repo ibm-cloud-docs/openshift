@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift
@@ -93,8 +93,6 @@ You can deploy the entire set of Cloud Paks to manage your full-stack cloud apps
 [IBM Cloud Paks](https://www.ibm.com/cloud-paks/){: external} are containerized, licensed IBM middleware and open source software components as part of your hybrid cloud solution. IBM Cloud Paks run exclusively on {{site.data.keyword.redhat_openshift_notm}} clusters, not community Kubernetes clusters.
 {: shortdesc}
 
-
-
 Before you begin:
 * Verify that your account administrator [set up your {{site.data.keyword.cloud_notm}} account with the Cloud Pak entitlement](#oc_cloud_paks_assign).
 * Make sure that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-clusters). These permissions include the following:
@@ -115,6 +113,18 @@ To add a Cloud Pak from the {{site.data.keyword.cloud_notm}} catalog:
 2. In the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog?search=label%3Acloud_pak#software){: external}, in the **Software** tab, under **Offering Type**, check **Cloud Paks**.
 3. Select the Cloud Pak that you want to deploy, and follow the installation instructions. Each Cloud Pak requires an entitlement from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external}, and has its own configuration settings. For more information, view the **About** tab and Cloud Pak documentation.
 
+
+
+### Adding Cloud Paks as images from an entitled registry
+{: #oc_cloud_paks_registry}
+
+You can deploy Cloud Pak images that you are already licensed to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} to your {{site.data.keyword.openshiftlong_notm}} cluster by using the {{site.data.keyword.registrylong_notm}} entitled registry.
+{: shortdesc}
+
+1. Set up your cluster to [pull images from the entitled registry](/docs/openshift?topic=openshift-registry#secret_entitled_software).
+2. [Set up Helm in your cluster](/docs/openshift?topic=openshift-helm) and add the **entitled** Helm repository.
+3. Find and review the Helm chart from the [Helm catalog](https://cloud.ibm.com/kubernetes/helm){: external} or from the CLI by running `helm search repo entitled` and `helm show entitled/<chart_name>`.
+4. Follow the instructions that are particular to each Cloud Pak installation, such as configuring the Helm chart values to work within {{site.data.keyword.redhat_openshift_notm}} security context constraints.
 
 
 Now you can run your Cloud Pak on your {{site.data.keyword.redhat_openshift_notm}} cluster!
@@ -163,6 +173,15 @@ Do not exceed your entitlement. Keep in mind that your OpenShift Container Platf
 
 
 
+
+### Can I install multiple Cloud Paks in the same {{site.data.keyword.openshiftlong_notm}} cluster?
+{: #cloud_pak_multiple}
+
+Yes, but you might need to add more worker nodes so that each Cloud Pak has enough compute resources to run. Additionally, you might install only one instance of the same Cloud Pak per cluster, such as Cloud Pak for Data; or multiple instances to different projects in the same cluster, such as Cloud Pak for Automation. For sizing information, consult the [Cloud Pak documentation](#oc_cloud_pak_ov).
+{: shortdesc}
+
+
+
 ### What is included in a Cloud Pak?
 {: #cloud_pak_included}
 
@@ -171,7 +190,7 @@ Cloud Paks are bundled, licensed, containerized software that is optimized to wo
 
 Depending on the Cloud Pak, you get licensed IBM and open source software bundled together in a unified management experience with logging, monitoring, security, and access capabilities.
 * **IBM products**: Cloud Paks extend licensed IBM software and middleware from [IBM Marketplace](https://www.ibm.com/products){: external}, and integrate these products with your cluster to modernize, optimize, and run hybrid cloud workloads.
-* **Open-source software**: Cloud Paks might also include open source components for cloud-native and portable hybrid cloud solutions. Typically, open source software is unmanaged and you are responsible to keep your components up-to-date and secure. However, Cloud Paks help you consistently manage the entire lifecycle of the Cloud Pak components and the workloads that you run with them. Because the open source software is bundled together with the Cloud Pak, you get the benefits of IBM support and integration with select {{site.data.keyword.cloud_notm}} features such as billing.
+* **Open-source software**: Cloud Paks might also include open source components for cloud-native and portable hybrid cloud solutions. Typically, open source software is unmanaged and you are responsible to keep your components up-to-date and secure. However, Cloud Paks help you consistently manage the entire lifecycle of the Cloud Pak components and the workloads that you run with them. Because the open source software is bundled together with the Cloud Pak, you get the benefits of IBM support and integration with select {{site.data.keyword.cloud_notm}} features such as access control and billing.
 
 To see the components of each Cloud Pak, consult the [Cloud Pak documentation](#oc_cloud_pak_ov).
 

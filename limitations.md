@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -40,10 +40,9 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | -------- | ----------- |
 | API rate limits | 200 requests per 10 seconds to the {{site.data.keyword.openshiftlong_notm}} API from each unique source IP address. |
 | App deployment | The apps that you deploy to and services that you integrate with your cluster must be able to run on the operating system of the worker nodes. |
-| Container-native virtualization | The {{site.data.keyword.redhat_openshift_notm}} [container-native virtualization add-on](https://docs.openshift.com/container-platform/4.14/virt/about-virt.html){: external} to run VM workloads alongside container workloads is not supported by IBM. If you choose to install the add-on yourself, you must use bare metal machines, not virtual machines. You are responsible for resolving any issues and impact to your workloads from using container-native virtualization.|
+| Container-native virtualization | The {{site.data.keyword.redhat_openshift_notm}} [container-native virtualization add-on](https://docs.openshift.com/container-platform/4.14/about_virt/about-virt.html){: external} to run VM workloads alongside container workloads is not supported by IBM. If you choose to install the add-on yourself, you must use bare metal machines, not virtual machines. You are responsible for resolving any issues and impact to your workloads from using container-native virtualization.|
 | Calico network plug-in | Changing the Calico plug-in, components, or default Calico settings is not supported. For example, don't deploy a new Calico plug-in version, or modify the daemon sets or deployments for the Calico components, default `IPPool` resources, or Calico nodes. Instead, you can follow the documentation to [create a Calico `NetworkPolicy` or `GlobalNetworkPolicy`](/docs/openshift?topic=openshift-network_policies), to [change the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu), or to [disable the port map plug-in for the Calico CNI](/docs/openshift?topic=openshift-kernel#calico-portmap). |
 | Cluster quota | You can't exceed 100 clusters per region and per [infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered). However, as of 01 January 2024, quotas are increased incrementally before reaching 100. If you need more of the resource, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want.. To list quotas, run `ibmcloud quota ls`. |
-| IAM access groups | You can't scope {{site.data.keyword.cloud_notm}} IAM service access roles to an IAM access group because the roles are not synced to the RBAC roles within the cluster. If you want to scope RBAC roles to a group of users, you must [manually set up groups of users](https://docs.openshift.com/container-platform/4.14/authentication/understanding-authentication.html){: external} in your cluster instead of using IAM access groups. You can still manage individual users and service accounts with IAM service access roles. You can also still scope IAM platform access roles to IAM access groups to control actions like ordering worker nodes, because platform access roles are never synced to RBAC roles. |
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
 | KMS provider | Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementservicefull}} instance is not supported.|
 | {{site.data.keyword.redhat_openshift_notm}} | Make sure to review the [OpenShift Container Platform limitations](https://docs.openshift.com/container-platform/4.14/scalability_and_performance/planning-your-environment-according-to-object-maximums.html){: external} for your version.|
@@ -56,16 +55,17 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | Worker node quota | A maximum 500 worker nodes for any accounts created before 01 January 2024. For accounts created on or after that date, the maximum quota is 200 after a period of lower quotas. Quotas apply per cluster [infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered). If you need more of the resource, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want.. To list quotas run, `ibmcloud ks quota ls`. |
 | Worker pool size | You must always have a minimum of 2 worker nodes in your cluster . Additionally, you can't scale down a worker pool to fewer than 2 worker nodes per zone. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). You can't scale worker pools down to zero. Because of the worker node quota, you are limited in the number of worker pools per cluster and number of worker nodes per worker pool. For example, with the default worker node quota of 500 per region, you might have up to 500 worker pools of 1 worker node each in a region with only 1 cluster. Or, you might have 1 worker pool with up to 500 worker nodes in a region with only 1 cluster. |
 | Cluster naming | To ensure that the Ingress subdomain and certificate are correctly registered, the first 24 characters of the clusters' names must be different. If you create and delete clusters with the same name or names that have the same first 24 characters 5 times or more within 7 days, such as for automation or testing purposes, you might reach the [Let's Encrypt Duplicate Certificate rate limit](/docs/openshift?topic=openshift-cs_rate_limit). |
+| Resource groups | A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` command to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that don't use resource groups like {{site.data.keyword.registrylong_notm}} or that don't need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group. |
 {: caption="{{site.data.keyword.openshiftlong_notm}} limitations"}
 
 
 
 
 
-### Version 4 cluster limitations
+### {{site.data.keyword.openshiftlong_notm}} cluster limitations
 {: #ocp4_limitations}
 
-Review limitations that are specific to {{site.data.keyword.redhat_openshift_notm}} version 4 clusters. Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_limits) or [VPC cluster](#ks_vpc_gen2_limits) limitations also apply.
+Review limitations that are specific to {{site.data.keyword.redhat_openshift_notm}} clusters. Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_limits) or [VPC cluster](#ks_vpc_gen2_limits) limitations also apply.
 {: shortdesc}
 
 | Category | Description |

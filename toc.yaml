@@ -16,6 +16,7 @@ toc:
       topics:
       - getting-started.md
       - overview.md
+      - iam-platform-access-roles.md
       - responsibilities.md
       - satellite-resp.md
       - topicgroup:
@@ -56,9 +57,8 @@ toc:
       - topicgroup:
           label: Planning to create clusters
           topics:
-          - kube-strategy.md
           - cluster-create.md
-          - access-apikey.md
+          - kube-strategy.md
           - cluster-plan-ha.md
           - worker-plan.md
           - cluster-plan-network-vpc.md
@@ -94,6 +94,7 @@ toc:
           - sat-worker-pool-manage.md
           - worker-os-check.md
           - host-maintenance.md
+          - access-apikey.md
           - worker-tag-label.md
       - topicgroup:
           label: Setting up encryption
@@ -113,9 +114,11 @@ toc:
           label: Managing access control
           topics:
           - access-overview.md
+          - classic-credentials.md
           - access-iam-rbac.md
           - access-pod-identity.md
           - terraform-cluster-access.md
+          - removing-users.md
       - topicgroup:
           label: Securing cluster workloads
           topics:
@@ -126,13 +129,13 @@ toc:
       - registry.md
       - satellite-clusters-registry.md
       - satellite-registry-pull-secret.md
+      - edge.md
       - topicgroup: 
           label: Controlling network traffic in Classic clusters
           topics:
           - cs_tutorials_policies.md
           - network-policy.md
           - firewall.md
-          - edge.md
           - subnets.md
           - network-cluster.md
           - vpn.md
@@ -413,13 +416,7 @@ toc:
           topics:
           - at-events.md
           - api-at-iam.md
-      - topicgroup:
-          label: IAM and user access permissions
-          topics:
-          - users-access-ref.md
-          - iam-platform-access-roles.md
-          - iam-service-access-roles.md
-          - classic-roles.md
+      - classic-roles.md
       - locations.md
       - openshift_integrations_overview.md
       - service-settings.md
@@ -518,6 +515,7 @@ toc:
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md
               - ts-slow-dns-lookup.md
+              - ts-sbd-cluster-create-quota.md
           - topicgroup:
               label: Apps and services
               topics:
@@ -536,6 +534,8 @@ toc:
               - ts-app-svc-key.md
               - ts-app-helm-install.md
               - ts-app-16-oc-debug-pod.md
+              - ts-sbd-app-not-working.md
+              - ts-sbd-nodeport-not-working.md
           - topicgroup:
               label: Managed add-ons
               topics:

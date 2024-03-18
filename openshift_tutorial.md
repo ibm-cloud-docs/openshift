@@ -69,7 +69,7 @@ Review the following diagram for an overview of common cluster resources.
 
 
 
-1. Check your permissions. If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. If you are not the account owner, ask the account owner to [set up an API key and assign you required permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions).
+1. Check your permissions. If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. If you are not the account owner, ask the account owner to [set up an API key and assign you required permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 
 1. [Install the {{site.data.keyword.cloud_notm}} CLI tools](/docs/openshift?topic=openshift-cli-install).

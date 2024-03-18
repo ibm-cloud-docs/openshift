@@ -59,8 +59,8 @@ This tutorial is intended for software developers and network administrators who
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - [Install and configure the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
 - Ensure that you have the following {{site.data.keyword.cloud_notm}} IAM access policies for {{site.data.keyword.containerlong_notm}}:
-    - [Any platform access role](/docs/openshift?topic=openshift-users#checking-perms)
-    - [The **Writer** or **Manager** service access role](/docs/openshift?topic=openshift-users#checking-perms)
+    - [Any platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles)
+    - [The **Writer** or **Manager** service access role](/docs/openshift?topic=openshift-iam-platform-access-roles)
 
 
 ## Deploy an app and expose it by using an NLB

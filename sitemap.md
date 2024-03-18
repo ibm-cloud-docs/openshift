@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift
@@ -75,6 +75,19 @@ subcollection: openshift
 * [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-overview#knowledge)
 
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
+
+
+## IAM roles and actions
+{: #sitemap_iam_roles_and_actions}
+
+
+[IAM roles and actions](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
+
+* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
+
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#cluster-create-permissions)
+
+* [Example custom IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam)
 
 
 ## Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}
@@ -2646,73 +2659,35 @@ subcollection: openshift
 {: #sitemap_planning_to_create_clusters}
 
 
-[Sizing your cluster environment](/docs/openshift?topic=openshift-strategy#strategy)
-
-* [What else besides my app might use resources in the cluster?](/docs/openshift?topic=openshift-strategy#sizing_other)
-
-* [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
-
-* [What type of cluster and flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
-
-* [Do I use multiple clusters, or just add more workers to an existing cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
-
-* [How can I set up my resources within the cluster?](/docs/openshift?topic=openshift-strategy#env_resources)
-
-    * [Consider your worker node capacity](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
-
-    * [Provision different types of machines for a mix of computing resources](/docs/openshift?topic=openshift-strategy#env_resources_provision_types)
-
-    * [Set up multiple namespaces when you have multiple teams and projects that share the cluster](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
-
-    * [Set resource quotas so that users in your cluster must use resource requests and limits](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
-
 [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
 
 * [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
 
-* [Set up an API key](/docs/openshift?topic=openshift-clusters#prepare-create-api-key)
+* [Setting user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
 
-* [Verify your permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
+* [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
 
-* [Create your first cluster](/docs/openshift?topic=openshift-clusters#next_steps)
+* [Cluster-specific account setup](/docs/openshift?topic=openshift-clusters#prepare-cluster-account)
 
-[Setting up your API key credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
+* [Next steps](/docs/openshift?topic=openshift-clusters#next-steps)
 
-* [Setting up the API key for most use cases](/docs/openshift?topic=openshift-access-creds#api_key_most_cases)
+[Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy#strategy)
 
-* [Understanding other options than the API key](/docs/openshift?topic=openshift-access-creds#api_key_other)
+* [What type of cluster should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
 
-* [Understanding how the API key works](/docs/openshift?topic=openshift-access-creds#api_key_about)
+* [Do I actually need multiple clusters or can I just add more workers to one cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
 
-    * [What is the API key used for?](/docs/openshift?topic=openshift-access-creds#api-key-uses)
+* [How do I name my clusters?](/docs/openshift?topic=openshift-strategy#naming)
 
-    * [How many API keys do I need?](/docs/openshift?topic=openshift-access-creds#how-many-apikeys)
+* [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
 
-    * [How do I set up the API key?](/docs/openshift?topic=openshift-access-creds#howto-api-key-setup)
+* [What type of worker node flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors_node)
 
-    * [What permissions does the user who sets the API key need? How do I give the user these permissions?](/docs/openshift?topic=openshift-access-creds#what-perms-api-key)
+* [How do I determine worker node capacity for my resources?](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
 
-    * [How do I limit which commands a user can run?](/docs/openshift?topic=openshift-access-creds#limit-apikey-scopes)
+* [How do I manage teams and projects?](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
 
-    * [What if I don't want to assign the API key owner or credentials owner the Super User infrastructure role?](/docs/openshift?topic=openshift-access-creds#non-superuser)
-
-    * [What happens if the user who set up the API key for a region and resource group leaves the company?](/docs/openshift?topic=openshift-access-creds#apikey-user-leaves)
-
-    * [How can I lock down my cluster if my API key becomes compromised?](/docs/openshift?topic=openshift-access-creds#apikey-lockdown)
-
-* [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions)
-
-* [Understanding access to the infrastructure portfolio](/docs/openshift?topic=openshift-access-creds#understand_infra)
-
-* [Accessing the infrastructure portfolio with your {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account](/docs/openshift?topic=openshift-access-creds#default_account)
-
-* [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-access-creds#credentials)
-
-* [Customizing classic infrastructure permissions](/docs/openshift?topic=openshift-access-creds#infra_access)
-
-    * [Assigning infrastructure access through the console](/docs/openshift?topic=openshift-access-creds#infra_console)
-
-    * [Assigning infrastructure access through the CLI](/docs/openshift?topic=openshift-access-creds#infra_cli)
+* [ How do I manage resource requests and limits?](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
@@ -2894,7 +2869,7 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-encryption#encryption-next-steps)
 
-[Storage overview](/docs/openshift?topic=openshift-storage-plan#storage-plan)
+[{{site.data.keyword.openshiftlong_notm}} storage overview](/docs/openshift?topic=openshift-storage-plan#storage-plan)
 
 * [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
 
@@ -3122,6 +3097,10 @@ subcollection: openshift
 
     * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
 
+[Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
+
+* [Resetting the cluster API key](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
+
 [Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
 
 * [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label&interface=ui#add-tags-console)
@@ -3303,27 +3282,15 @@ subcollection: openshift
 
     * [{{site.data.keyword.cloud_notm}} access control](/docs/openshift?topic=openshift-access-overview#access-checklist-iam)
 
-    * [Other types of access control](/docs/openshift?topic=openshift-access-overview#access-checklist-other)
-
-* [Understanding IAM access policies and roles](/docs/openshift?topic=openshift-access-overview#access_policies)
-
-    * [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles)
-
     * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups)
 
     * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups)
 
-[Controlling user access with {{site.data.keyword.cloud_notm}} IAM and Kubernetes RBAC](/docs/openshift?topic=openshift-users#users)
+[Understanding Classic infrastructure credentials](/docs/openshift?topic=openshift-classic-credentials#classic-credentials)
 
-* [Example cluster use cases and IAM roles](/docs/openshift?topic=openshift-users#example-iam)
+* [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-classic-credentials#credentials)
 
-* [Assigning {{site.data.keyword.cloud_notm}} IAM roles with the console](/docs/openshift?topic=openshift-users#add_users)
-
-* [Assign {{site.data.keyword.cloud_notm}} IAM roles with the CLI](/docs/openshift?topic=openshift-users#add_users_cli)
-
-    * [Assigning {{site.data.keyword.cloud_notm}} IAM _platform_ roles from the CLI](/docs/openshift?topic=openshift-users#add_users_cli_platform)
-
-    * [Assigning {{site.data.keyword.cloud_notm}} IAM _service_ roles from the CLI:**](/docs/openshift?topic=openshift-users#add_users_cli_service)
+[Controlling user access Kubernetes role-based access control](/docs/openshift?topic=openshift-users#users)
 
 * [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
 
@@ -3335,8 +3302,6 @@ subcollection: openshift
 
     * [Can I create custom roles or cluster roles?](/docs/openshift?topic=openshift-users#create-custom-rbac-roles)
 
-    * [Can I assign custom RBAC roles to groups of users?](/docs/openshift?topic=openshift-users#custom-rbac-groups)
-
     * [When do I need to use custom cluster role bindings and role bindings?](/docs/openshift?topic=openshift-users#when-do-i-use-custom-rbac)
 
 * [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
@@ -3345,23 +3310,17 @@ subcollection: openshift
 
     * [What are some common operations that I might want to extend permissions for a default cluster role?](/docs/openshift?topic=openshift-users#common-rbac-operations)
 
-* [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms)
+* [Checking RBAC roles](/docs/openshift?topic=openshift-users#checking-rbac)
 
-    * [Checking IAM platform and service access roles](/docs/openshift?topic=openshift-users#checking-iam)
+    * [Checking RBAC roles from the UI](/docs/openshift?topic=openshift-users#checking-rbac-ui)
 
-    * [Checking RBAC roles](/docs/openshift?topic=openshift-users#checking-rbac)
+    * [Checking RBAC roles with the CLI](/docs/openshift?topic=openshift-users#checking-rbac-cli)
 
-    * [Checking infrastructure roles](/docs/openshift?topic=openshift-users#checking-infra)
+* [Kubernetes service access roles and corresponding RBAC roles](/docs/openshift?topic=openshift-users#rbac_service)
 
-    * [Checking other cloud infrastructure provider roles](/docs/openshift?topic=openshift-users#checking-infra-providers)
+    * [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-users#rbac_ref)
 
-* [Removing user permissions](/docs/openshift?topic=openshift-users#removing)
-
-    * [Checking if the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-users#removing_check_infra)
-
-    * [Removing a user from your account](/docs/openshift?topic=openshift-users#remove_user)
-
-    * [Removing specific permissions](/docs/openshift?topic=openshift-users#remove_permissions)
+    * [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-users#iam-issuer-users)
 
 [Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity#pod-iam-identity)
 
@@ -3378,6 +3337,14 @@ subcollection: openshift
 * [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster by using Terraform](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-create)
 
 * [Assigning IAM user access to {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-IAM)
+
+[Removing users](/docs/openshift?topic=openshift-removing-user-permissions#removing-user-permissions)
+
+* [Checking whether the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-removing-user-permissions#removing_check_infra)
+
+* [Removing {{site.data.keyword.cloud_notm}} IAM platform permissions and the associated pre-defined RBAC permissions](/docs/openshift?topic=openshift-removing-user-permissions#remove_iam_rbac)
+
+    * [Removing custom RBAC permissions](/docs/openshift?topic=openshift-removing-user-permissions#remove_custom_rbac)
 
 
 ## Securing cluster workloads
@@ -3417,8 +3384,6 @@ subcollection: openshift
 * [Configuring Pod Security admission namespace labels](/docs/openshift?topic=openshift-pod-security-admission#psa-namespace-labels)
 
 * [Default Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default)
-
-* [Customizing the Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom)
 
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-configure)
 
@@ -3510,6 +3475,21 @@ subcollection: openshift
 * [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
 
 
+## Restricting network traffic to edge worker nodes
+{: #sitemap_restricting_network_traffic_to_edge_worker_nodes}
+
+
+[Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge#edge)
+
+* [Isolating NLB workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes_nlb)
+
+* [Isolating ALB workloads to edge worker nodes](/docs/openshift?topic=openshift-edge#edge_nodes_alb)
+
+* [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
+
+* [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
+
+
 ## Controlling network traffic in Classic clusters
 {: #sitemap_controlling_network_traffic_in_classic_clusters}
 
@@ -3581,14 +3561,6 @@ subcollection: openshift
 * [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_firewall)
 
     * [Getting your {{site.data.keyword.containershort}} subnet IP addresses](/docs/openshift?topic=openshift-firewall#iam_cidr_ip)
-
-[Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge#edge)
-
-* [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
-
-* [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
-
-* [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
 
 [Configuring classic subnets and IP addresses](/docs/openshift?topic=openshift-subnets#subnets)
 
@@ -5271,6 +5243,8 @@ subcollection: openshift
 
 * [Adding IBM Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_add)
 
+    * [Adding Cloud Paks as images from an entitled registry](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_registry)
+
 * [Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_assign)
 
 * [FAQs for Cloud Pak on {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_cloud_paks#faq_cloud_paks)
@@ -5278,6 +5252,8 @@ subcollection: openshift
     * [How do I install a Cloud Pak in my {{site.data.keyword.openshiftlong_notm}} cluster? How do I access it later?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_manage)
 
     * [Can I use the {{site.data.keyword.redhat_openshift_notm}} entitlement that comes with my Cloud Pak for my cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_byo_entitlement)
+
+    * [Can I install multiple Cloud Paks in the same {{site.data.keyword.openshiftlong_notm}} cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_multiple)
 
     * [What is included in a Cloud Pak?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_included)
 
@@ -6205,7 +6181,7 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.14.5_1539_openshift and worker node fix pack 4.14.4_1538_openshift, released 13 December 2023](/docs/openshift?topic=openshift-openshift_changelog_414#4.14.5_1539_openshiftM_4.14.4_1538_openshiftW)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.14 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-414)
+[4.14 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-414)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-1-414)
 
@@ -6247,7 +6223,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-414#ibm-remediations-and-explanations-414)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.14 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_414_co#benchmarks_414_co)
+[4.14 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_414_co#benchmarks_414_co)
 
 
 ### Version 4.13
@@ -6326,7 +6302,7 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift, released 14 June 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4.13.0_1522_openshiftM_4.13.1_1521_openshiftW)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.13 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-413)
+[4.13 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-413)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-413#cis-benchmark-1-413)
 
@@ -6368,7 +6344,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-413#ibm-remediations-and-explanations-413)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.13 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_413_co#benchmarks_413_co)
+[4.13 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_413_co#benchmarks_413_co)
 
 * [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_413_co#co-benchmark-413-cp)
 
@@ -6509,7 +6485,7 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023](/docs/openshift?topic=openshift-openshift_changelog_412#4122_1527_openshift_4.12.2_1526_openshift)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.12 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-412#cis-benchmark-412)
+[4.12 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-412#cis-benchmark-412)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-412#cis-benchmark-1-412)
 
@@ -6551,7 +6527,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-412#ibm-remediations-and-explanations-412)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.12 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_412_co#benchmarks_412_co)
+[4.12 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_412_co#benchmarks_412_co)
 
 * [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-cp)
 
@@ -7658,7 +7634,7 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.11.0_1519_openshift and worker node fix pack 4.11.1_1520_openshift, released 31 August 2022](/docs/openshift?topic=openshift-openshift_changelog_411#4.11.0_1519_openshift-and-4.11.1_1520_openshift)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.11 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-411#cis-benchmark-411)
+[4.11 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-411#cis-benchmark-411)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-411#cis-benchmark-1-411)
 
@@ -7700,7 +7676,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-411#ibm-remediations-and-explanations-411)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.11 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_411_co#benchmarks_411_co)
+[4.11 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_411_co#benchmarks_411_co)
 
 * [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_411_co#co-benchmark-411-cp)
 
@@ -7897,7 +7873,7 @@ subcollection: openshift
 
     * [Change log for fix pack 4.10.9_1515_openshift (master) and 4.10.10_1516_openshift (worker node), released 27 April 2022](/docs/openshift?topic=openshift-openshift_changelog_410#4109_1515_openshift_and_41010_1516_openshift)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.10 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-410)
+[4.10 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-410)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-1-410)
 
@@ -7939,7 +7915,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-410#ibm-remediations-and-explanations-410)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.10 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_410_co#benchmarks_410_co)
+[4.10 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_410_co#benchmarks_410_co)
 
 * [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_410_co#co-benchmark-410-cp)
 
@@ -8126,7 +8102,7 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 February 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4917_1525)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.9 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-49)
+[4.9 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-49)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-49#cis-section-1-49)
 
@@ -8168,7 +8144,7 @@ subcollection: openshift
 
 * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-49#ibm-remediations-and-explanations-49)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.9 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_49_co#benchmarks_49_co)
+[4.9 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_49_co#benchmarks_49_co)
 
 * [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_49_co#co-benchmark-49-cp)
 
@@ -8347,7 +8323,7 @@ subcollection: openshift
 
     * [Change log for worker node fix pack 4.8.13_1528_openshift, released 11 October 2021](/docs/openshift?topic=openshift-openshift_changelog_48#48131528_openshift)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.8 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-48#cis-benchmark-48)
+[4.8 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-48#cis-benchmark-48)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-48#cis-section-1-48)
 
@@ -8534,7 +8510,7 @@ subcollection: openshift
 
     * [Change log for master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4712_1520)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.7 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-47#cis-benchmark-47)
+[4.7 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-47#cis-benchmark-47)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-47#cis-section-1-47)
 
@@ -8733,7 +8709,7 @@ subcollection: openshift
 
     * [Change log for 4.6.16_1530_openshift (master) and 4.6.16_1529_openshift (worker node), released 17 February 2020](/docs/openshift?topic=openshift-openshift_changelog_46#4616_1530)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.6 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-46#cis-benchmark-46)
+[4.6 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-46#cis-benchmark-46)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-46#cis-section-1-46)
 
@@ -9210,27 +9186,9 @@ subcollection: openshift
 * [Worker nodes and worker pools](/docs/openshift?topic=openshift-api-at-iam#ks-workers)
 
 
-## IAM and user access permissions
-{: #sitemap_iam_and_user_access_permissions}
+## Classic infrastructure roles
+{: #sitemap_classic_infrastructure_roles}
 
-
-[Understanding user access permissions](/docs/openshift?topic=openshift-access_reference#access_reference)
-
-* [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions)
-
-[IAM platform access roles](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
-
-* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
-
-[IAM service access roles](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles)
-
-* [Kubernetes Service](/docs/openshift?topic=openshift-iam-service-access-roles#iam-service-access-roles-include-containers-kubernetes-roles)
-
-* [Kubernetes service access roles and corresponding RBAC roles](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_service)
-
-* [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-iam-service-access-roles#rbac_ref)
-
-* [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-iam-service-access-roles#iam-issuer-users)
 
 [Classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles#classic-roles)
 
@@ -9407,6 +9365,12 @@ subcollection: openshift
 * [What options do I have to secure my cluster?](/docs/openshift?topic=openshift-faqs#secure_cluster)
 
 * [What access policies do I give my cluster users?](/docs/openshift?topic=openshift-faqs#faq_access)
+
+    * [What permissions does the user who sets the API key need? How do I give the user these permissions?](/docs/openshift?topic=openshift-faqs#what-perms-api-key)
+
+    * [What happens if the user who set up the API key for a region and resource group leaves the company?](/docs/openshift?topic=openshift-faqs#apikey-user-leaves)
+
+    * [How can I lock down my cluster if my API key becomes compromised?](/docs/openshift?topic=openshift-faqs#apikey-lockdown)
 
 * [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-faqs#faq_api_key_leak)
 
@@ -9631,6 +9595,8 @@ subcollection: openshift
 * [`Deploy_failed` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-deploy-failed)
 
 * [`Normal` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-normal)
+
+* [`NotReady` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-notready)
 
 * [`Provisioned` state](/docs/openshift?topic=openshift-worker-node-state-reference#worker-node-provisioned)
 
@@ -10205,7 +10171,7 @@ subcollection: openshift
 
 * [Service and quota limitations](/docs/openshift?topic=openshift-limitations#tech_limits)
 
-    * [Version 4 cluster limitations](/docs/openshift?topic=openshift-limitations#ocp4_limitations)
+    * [{{site.data.keyword.openshiftlong_notm}} cluster limitations](/docs/openshift?topic=openshift-limitations#ocp4_limitations)
 
 * [Classic cluster limitations](/docs/openshift?topic=openshift-limitations#classic_limits)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-15"
 
 
 keywords: openshift, satellite responsibilities, incident, operations, change, security, regulation, disaster recovery, management, RACI
@@ -13,10 +13,6 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
-
 
 
 # Your responsibilities with using {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.satelliteshort}}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
@@ -89,6 +89,8 @@ Internal registry
 
 
 
+
+
 Cluster encryption
 :    Enable data encryption with a key management service (KMS) to encrypt secrets and other sensitive information in your cluster. You can also [enable KMS](/docs/openshift?topic=openshift-encryption-setup) later.
 
@@ -101,7 +103,7 @@ VPC security groups
 
 Cluster details
 :   You can customize the unique **Cluster name** and any [tags](/docs/account?topic=account-tag) that you want to use to organize and identify your {{site.data.keyword.cloud_notm}} resources, such as the `team` or `billing department`.
-:   Choose the **Resource group** to create your cluster in. A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-users#checking-perms) for the resource group.
+:   Choose the **Resource group** to create your cluster in. A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the resource group.
 
 Observability integrations
 :    You can enable additional observability integrations that you want to include on your cluster. Some integrations are automatically enabled if you have an existing platform instance of that integration. In this case, you cannot disable the integration. If you want to use an integration and you have only an existing application instance of that integration, the integration is disabled by default and you must manually enable it.
