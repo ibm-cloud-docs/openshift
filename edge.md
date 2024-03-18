@@ -152,7 +152,7 @@ The steps to isolate ALB workloads to edge nodes is the same for both classic an
 
 Before you begin
 
-* Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#checking-perms):
+* Ensure that you have the following IAM roles:
     * Any platform access role for the cluster
     * **Writer** or **Manager** service access role for all namespaces
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).

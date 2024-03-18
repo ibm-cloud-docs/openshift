@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -55,16 +55,17 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | Worker node quota | A maximum 500 worker nodes for any accounts created before 01 January 2024. For accounts created on or after that date, the maximum quota is 200 after a period of lower quotas. Quotas apply per cluster [infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered). If you need more of the resource, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want.. To list quotas run, `ibmcloud ks quota ls`. |
 | Worker pool size | You must always have a minimum of 2 worker nodes in your cluster . Additionally, you can't scale down a worker pool to fewer than 2 worker nodes per zone. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). You can't scale worker pools down to zero. Because of the worker node quota, you are limited in the number of worker pools per cluster and number of worker nodes per worker pool. For example, with the default worker node quota of 500 per region, you might have up to 500 worker pools of 1 worker node each in a region with only 1 cluster. Or, you might have 1 worker pool with up to 500 worker nodes in a region with only 1 cluster. |
 | Cluster naming | To ensure that the Ingress subdomain and certificate are correctly registered, the first 24 characters of the clusters' names must be different. If you create and delete clusters with the same name or names that have the same first 24 characters 5 times or more within 7 days, such as for automation or testing purposes, you might reach the [Let's Encrypt Duplicate Certificate rate limit](/docs/openshift?topic=openshift-cs_rate_limit). |
+| Resource groups | A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` command to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that don't use resource groups like {{site.data.keyword.registrylong_notm}} or that don't need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group. |
 {: caption="{{site.data.keyword.openshiftlong_notm}} limitations"}
 
 
 
 
 
-### Version 4 cluster limitations
+### {{site.data.keyword.openshiftlong_notm}} cluster limitations
 {: #ocp4_limitations}
 
-Review limitations that are specific to {{site.data.keyword.redhat_openshift_notm}} version 4 clusters. Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_limits) or [VPC cluster](#ks_vpc_gen2_limits) limitations also apply.
+Review limitations that are specific to {{site.data.keyword.redhat_openshift_notm}} clusters. Keep in mind that the [service](#tech_limits) and [classic cluster](#classic_limits) or [VPC cluster](#ks_vpc_gen2_limits) limitations also apply.
 {: shortdesc}
 
 | Category | Description |

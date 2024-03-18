@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift, kubernetes, infrastructure, rbac, policy, role-based access control
@@ -19,9 +19,6 @@ subcollection: openshift
 {: #users}
 
 Set {{site.data.keyword.cloud_notm}} IAM platform access and service access policies in the {{site.data.keyword.cloud_notm}} console or CLI so that users can work with clusters in {{site.data.keyword.openshiftlong_notm}}. IAM service access roles correspond with Kubernetes role-based access control (RBAC) within the cluster.
-{: shortdesc}
-
-Before you begin, check out [Understanding access policies and roles](/docs/openshift?topic=openshift-access-overview#access_policies) to review what policies are, whom you can assign policies to, and what resources can be granted policies.
 {: shortdesc}
 
 - {{site.data.keyword.cloud_notm}} IAM roles can't be assigned to a service account. Instead, you can directly [assign RBAC roles to service accounts](#rbac).

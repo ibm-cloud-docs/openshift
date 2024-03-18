@@ -17,7 +17,6 @@ toc:
       - getting-started.md
       - overview.md
       - iam-platform-access-roles.md
-      - classic-credentials.md
       - responsibilities.md
       - satellite-resp.md
       - topicgroup:
@@ -59,7 +58,6 @@ toc:
           label: Planning to create clusters
           topics:
           - cluster-create.md
-          - access-apikey.md
           - kube-strategy.md
           - cluster-plan-ha.md
           - worker-plan.md
@@ -96,6 +94,7 @@ toc:
           - sat-worker-pool-manage.md
           - worker-os-check.md
           - host-maintenance.md
+          - access-apikey.md
           - worker-tag-label.md
       - topicgroup:
           label: Setting up encryption
@@ -115,6 +114,7 @@ toc:
           label: Managing access control
           topics:
           - access-overview.md
+          - classic-credentials.md
           - access-iam-rbac.md
           - access-pod-identity.md
           - terraform-cluster-access.md
@@ -515,6 +515,7 @@ toc:
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md
               - ts-slow-dns-lookup.md
+              - ts-sbd-cluster-create-quota.md
           - topicgroup:
               label: Apps and services
               topics:
@@ -533,6 +534,8 @@ toc:
               - ts-app-svc-key.md
               - ts-app-helm-install.md
               - ts-app-16-oc-debug-pod.md
+              - ts-sbd-app-not-working.md
+              - ts-sbd-nodeport-not-working.md
           - topicgroup:
               label: Managed add-ons
               topics:

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -184,10 +184,8 @@ For more information about the components of your cluster and how you can meet s
 {: faq}
 {: support}
 
-{{site.data.keyword.openshiftlong_notm}} uses {{site.data.keyword.iamshort}} (IAM) to grant access to cluster resources through IAM platform access roles and Kubernetes role-based access control (RBAC) policies through IAM service access roles. For more information about types of access policies, see [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles).
-{: shortdesc}
+{{site.data.keyword.openshiftlong_notm}} uses {{site.data.keyword.iamshort}} (IAM) to grant access to cluster resources through IAM platform access roles and Kubernetes role-based access control (RBAC) policies through IAM service access roles. For more information about types of access policies, see [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
-The access policies that you assign users vary depending on what you want your users to be able to do. You can find more information about what roles authorize which types of actions on the [User access reference page](/docs/openshift?topic=openshift-iam-platform-access-roles) or in the following table's links. For steps to assign policies, see [Granting users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 ### What permissions does the user who sets the API key need? How do I give the user these permissions?
 {: #what-perms-api-key}

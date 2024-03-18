@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift
@@ -284,6 +284,7 @@ In addition to the following regional subdomains, you must also allow traffic fr
 | AP North | `jp.icr.io` |
 | AP South | `au.icr.io` Deprecated: `registry.au-syd.bluemix.net` | 
 | EU Central | `de.icr.io` Deprecated: `registry.eu-de.bluemix.net` |
+| Madrid | `es.icr.io` |
 | Osaka | `jp2.icr.io` |
 | Sao Paolo | `br.icr.io` |
 | Toronto | `ca.icr.io` | 
@@ -396,6 +397,7 @@ On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining r
 | AP North | `private.jp.icr.io` | 166.9.40.20, 166.9.42.21, 166.9.44.12 | 166.9.249.104, 166.9.249.157, 166.9.249.168 |
 | AP South | `private.au.icr.io` | 166.9.52.20, 166.9.54.19, 166.9.56.13 | 166.9.244.106, 166.9.244.136, 166.9.244.170 |
 | EU Central | `private.de.icr.io` | 166.9.28.35, 166.9.30.2, 166.9.32.2 | 166.9.248.76, 166.9.248.105, 166.9.248.136 |
+| Madrid | `private.es.icr.io` | N/A | 166.9.248.76, 166.9.248.105, 166.9.248.136 |
 | Osaka | `private.jp2.icr.io` | 166.9.70.4, 166.9.71.5, 166.9.72.6 | 166.9.247.39, 166.9.247.73, 166.9.247.105 |
 | Sao Paolo | `private.br.icr.io` | 166.9.82.13, 166.9.83.13, 166.9.84.13 | 166.9.246.72, 166.9.246.104, 166.9.246.130 |
 | Toronto | `private.ca.icr.io` | 166.9.76.12, 166.9.77.11, 166.9.78.11 | 166.9.247.143, 166.9.247.170, 166.9.247.207 |

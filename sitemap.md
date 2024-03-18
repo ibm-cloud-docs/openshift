@@ -85,18 +85,9 @@ subcollection: openshift
 
 * [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
 
-* [Required permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#cluster-create-permissions)
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#cluster-create-permissions)
 
 * [Example custom IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam)
-
-
-## Understanding Classic infrastructure credentials
-{: #sitemap_understanding_classic_infrastructure_credentials}
-
-
-[Understanding Classic infrastructure credentials](/docs/openshift?topic=openshift-classic-credentials#classic-credentials)
-
-* [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-classic-credentials#credentials)
 
 
 ## Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}
@@ -2680,10 +2671,6 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-clusters#next-steps)
 
-[Setting which credentials to use for creating clusters](/docs/openshift?topic=openshift-access-creds#access-creds)
-
-* [Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
-
 [Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy#strategy)
 
 * [What type of cluster should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
@@ -3110,6 +3097,10 @@ subcollection: openshift
 
     * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
 
+[Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
+
+* [Resetting the cluster API key](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
+
 [Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
 
 * [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label&interface=ui#add-tags-console)
@@ -3291,15 +3282,13 @@ subcollection: openshift
 
     * [{{site.data.keyword.cloud_notm}} access control](/docs/openshift?topic=openshift-access-overview#access-checklist-iam)
 
-    * [Other types of access control](/docs/openshift?topic=openshift-access-overview#access-checklist-other)
-
-* [Understanding IAM access policies and roles](/docs/openshift?topic=openshift-access-overview#access_policies)
-
-    * [Pick the correct access policy and role for your users](/docs/openshift?topic=openshift-access-overview#access_roles)
-
     * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups)
 
     * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups)
+
+[Understanding Classic infrastructure credentials](/docs/openshift?topic=openshift-classic-credentials#classic-credentials)
+
+* [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-classic-credentials#credentials)
 
 [Controlling user access Kubernetes role-based access control](/docs/openshift?topic=openshift-users#users)
 
@@ -10182,7 +10171,7 @@ subcollection: openshift
 
 * [Service and quota limitations](/docs/openshift?topic=openshift-limitations#tech_limits)
 
-    * [Version 4 cluster limitations](/docs/openshift?topic=openshift-limitations#ocp4_limitations)
+    * [{{site.data.keyword.openshiftlong_notm}} cluster limitations](/docs/openshift?topic=openshift-limitations#ocp4_limitations)
 
 * [Classic cluster limitations](/docs/openshift?topic=openshift-limitations#classic_limits)
 

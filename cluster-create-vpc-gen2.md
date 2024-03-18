@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
@@ -86,6 +86,8 @@ Master service endpoint
 
 Internal registry
 :   Select your COS instance. The container images stored in the internal registry of your {{site.data.keyword.openshiftlong_notm}} cluster are automatically backed up to a {{site.data.keyword.cos_short}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
+
+
 
 
 
