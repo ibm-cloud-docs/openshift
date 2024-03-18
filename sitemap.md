@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift
@@ -3488,6 +3488,21 @@ subcollection: openshift
 * [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
 
 
+## Restricting network traffic to edge worker nodes
+{: #sitemap_restricting_network_traffic_to_edge_worker_nodes}
+
+
+[Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge#edge)
+
+* [Isolating NLB workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes_nlb)
+
+* [Isolating ALB workloads to edge worker nodes](/docs/openshift?topic=openshift-edge#edge_nodes_alb)
+
+* [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
+
+* [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
+
+
 ## Controlling network traffic in Classic clusters
 {: #sitemap_controlling_network_traffic_in_classic_clusters}
 
@@ -3559,14 +3574,6 @@ subcollection: openshift
 * [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-firewall#iam_firewall)
 
     * [Getting your {{site.data.keyword.containershort}} subnet IP addresses](/docs/openshift?topic=openshift-firewall#iam_cidr_ip)
-
-[Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge#edge)
-
-* [Isolating networking workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes)
-
-* [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
-
-* [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
 
 [Configuring classic subnets and IP addresses](/docs/openshift?topic=openshift-subnets#subnets)
 

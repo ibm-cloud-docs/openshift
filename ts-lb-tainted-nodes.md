@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift
@@ -38,7 +38,7 @@ When you enable source IP preservation for load balancer services, the source IP
 
 The service forwards traffic to app pods on the same worker node only to ensure that the request packet's IP address isn't changed. Typically, load balancer service pods are deployed to the same worker nodes that the app pods are deployed to. However, some situations exist where the service pods and app pods might not be scheduled onto the same worker node. If you use [Kubernetes taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} on worker nodes, any pods that don't have a taint toleration are prevented from running on the tainted worker nodes. Source IP preservation might not be working based on the type of taint you used:
 
-* **Edge node taints**: You [added the `dedicated=edge` label](/docs/openshift?topic=openshift-edge#edge_nodes) to two or more worker nodes on each public VLAN in your cluster to ensure that load balancer pods deploy to those worker nodes only. Then, you also [tainted those edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads) to prevent any other workloads from running on edge nodes. However, you didn't add an edge node affinity rule and toleration to your app deployment. Your app pods can't be scheduled on the same tainted nodes as the service pods, and no traffic reaches the back-end service for your app.
+* **Edge node taints**: You [added the `dedicated=edge` label](/docs/openshift?topic=openshift-edge#edge) to two or more worker nodes on each public VLAN in your cluster to ensure that load balancer pods deploy to those worker nodes only. Then, you also [tainted those edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads) to prevent any other workloads from running on edge nodes. However, you didn't add an edge node affinity rule and toleration to your app deployment. Your app pods can't be scheduled on the same tainted nodes as the service pods, and no traffic reaches the back-end service for your app.
 
 * **Custom taints**: You used custom taints on several nodes so that only app pods with that taint toleration can deploy to those nodes. You added affinity rules and tolerations to the deployments of your app and load balancer service so that their pods deploy to only those nodes. However, `ibm-cloud-provider-ip` `keepalived` pods that are automatically created in the `ibm-system` namespace ensure that the load balancer and the app pods are always scheduled onto the same worker node. These `keepalived` pods don't have the tolerations for the custom taints that you used. They can't be scheduled on the same tainted nodes that your app pods are running on, and no traffic reaches the back-end service for your app.
 

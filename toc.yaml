@@ -129,13 +129,13 @@ toc:
       - registry.md
       - satellite-clusters-registry.md
       - satellite-registry-pull-secret.md
+      - edge.md
       - topicgroup: 
           label: Controlling network traffic in Classic clusters
           topics:
           - cs_tutorials_policies.md
           - network-policy.md
           - firewall.md
-          - edge.md
           - subnets.md
           - network-cluster.md
           - vpn.md

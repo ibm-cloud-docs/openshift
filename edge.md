@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-18"
 
 
 keywords: openshift
@@ -23,21 +23,16 @@ subcollection: openshift
 
 [Classic clusters]{: tag-classic-inf}
 
-Edge worker nodes can improve the security of your {{site.data.keyword.openshiftlong}} cluster by allowing fewer worker nodes by isolating the networking workload.
+Edge worker nodes can improve the security of your {{site.data.keyword.openshiftlong}} cluster by allowing fewer worker nodes by isolating the networking workload. When you mark these worker nodes for networking only, other workloads can't consume the CPU or memory of the worker node and interfere with networking.
 {: shortdesc}
-
-When you mark these worker nodes for networking only, other workloads can't consume the CPU or memory of the worker node and interfere with networking.
 
 If you want to restrict network traffic to edge worker nodes in a multizone cluster, you must have at least two edge worker nodes per zone for high availability of load balancer or Ingress pods. Create an edge node worker pool that spans all the zones in your cluster, with at least two worker nodes per zone.
 {: tip}
 
-## Isolating networking workloads to edge nodes
-{: #edge_nodes}
+## Isolating NLB workloads to edge nodes
+{: #edge_nodes_nlb}
 
-Add the `dedicated=edge` label to worker nodes on each public or private VLAN in your cluster.
-
-The labels ensure that network load balancer (NLB) pods are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. Note that router pods for Ingress controllers and routes are not deployed to edge nodes and remain on non-edge worker nodes.
-
+Add the `dedicated=edge` label to worker nodes on each public or private VLAN in your cluster. The labels ensure that network load balancers (NLBs) are deployed to those worker nodes only. For NLBs, ensure that two or more worker nodes per zone are edge nodes. Note that router pods for Ingress controllers and routes are not deployed to edge nodes and remain on non-edge worker nodes.
 
 Before you begin
 
@@ -46,17 +41,15 @@ Before you begin
     * **Writer** or **Manager** service access role for all namespaces
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To create an edge node worker pool,
+To isolate your workload to edge worker nodes:
 
-1. [Create a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool) that spans all zones in your cluster and has at least two workers per zone if you use NLBs or 3 or more workers per zone if you use ALBs. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` option to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
+1. [Create a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool) that spans all zones in your cluster and has at least two workers per zone. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` option to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes.
 
     If you want to use an existing worker pool, the pool must span all zones in your cluster and have at least two worker nodes per zone. You can label the worker pool with `dedicated=edge` by using the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
     {: tip}
 
-    To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least three edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that don't permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two edge nodes per zone, both ALB pod replicas already exist on those edge nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three edge nodes are present in a zone, the new ALB pod can be scheduled to the third edge node. Then, the old ALB pod is removed.
-    {: important}
 
-2. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
+2. Verify that the worker pool and worker nodes have the `dedicated=edge` label. If the label is not present, add it by running the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
     * To check the worker pool
         ```sh
         ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
@@ -69,37 +62,40 @@ To create an edge node worker pool,
         ```
         {: pre}
 
-3. Retrieve all existing NLBs in the cluster.
+3. Retrieve all existing NLBs in the cluster. In the output, note the **namespace** and **name** of each load balancer.
     ```sh
     oc get services --all-namespaces | grep LoadBalancer
     ```
     {: pre}
 
-    In the output, note the **Namespace** and **Name** of each load balancer service. For example, the following output shows one public NLB in the `default` namespace.
+    Example
+
     ```sh
-    NAMESPACE     NAME                                             TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                                     AGE
-    default       webserver-lb                                     LoadBalancer   172.21.190.18    169.46.17.2     80:30597/TCP                                11m
+    NAMESPACE             NAME                                  TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)                      AGE
+    kube-system           private-crc81nk5l10gfhdql4i3qg-nlb1   LoadBalancer   172.21.233.160   10.216.23.123    80:31345/TCP,443:32630/TCP   8d
+    kube-system           public-crc81nk5l10gfhdql4i3qg-nlb1    LoadBalancer   172.21.190.18    169.46.17.2      80:31345/TCP,443:32630/TCP   8d
     ```
     {: screen}
 
 4. Using the output from the previous step, run the following command for each NLB. This command redeploys the NLB to an edge worker node. 
 
     ```sh
-    oc get service -n <namespace> <service_name> -o yaml | oc apply -f -
+    oc get service -n <namespace> <name> -o yaml | oc apply -f
     ```
     {: pre}
 
-    Example output
+    Example output.
 
     ```sh
-    service "webserver-lb" configured
+    service "private-crc81nk5l10gfhdql4i3qg-nlb1" configured
+    service "public-crc81nk5l10gfhdql4i3qg-nlb1" configured
     ```
     {: screen}
 
-5. To verify that networking workloads are restricted to edge nodes, confirm that NLB are scheduled onto the edge nodes and are not scheduled onto non-edge nodes.
+5. To verify that networking workloads are restricted to edge nodes, confirm that the load balancers are scheduled onto the edge nodes and are not scheduled onto non-edge nodes.
 
     * NLB pods
-        1. Confirm that the NLB pods are deployed to edge nodes. Search for the external IP address of the load balancer service that is listed in the output of step 3. Replace the periods (`.`) with hyphens (`-`). Example for the `webserver-lb` NLB that has an external IP address of `169.46.17.2`:
+        1. Confirm that the NLB pods are deployed to edge nodes. Search for the external IP address of the load balancer service that is listed in the output of step 3. Replace the periods (`.`) with hyphens (`-`). In the following example for the `crc81nk5l10gfhdql4i3qg`, the NLB has an external IP address of `169.46.17.2`. 
             ```sh
             oc describe nodes -l dedicated=edge | grep "169-46-17-2"
             ```
@@ -112,7 +108,7 @@ To create an edge node worker pool,
             ```
             {: screen}
 
-        2. Confirm that no NLB pods are deployed to non-edge nodes. Example for the `webserver-lb` NLB that has an external IP address of `169.46.17.2`:
+        2. Confirm that no NLB pods are deployed to non-edge nodes. Example for the `public-crc81nk5l10gfhdql4i3qg-nlb1` NLB that has an external IP address of `169.46.17.2`:
             ```sh
             oc describe nodes -l dedicated!=edge | grep "169-46-17-2"
             ```
@@ -123,13 +119,13 @@ To create an edge node worker pool,
 
 
 6. If NLB pods are still deployed to non-edge nodes, you can delete the pods so that they redeploy to edge nodes. **Important**: Delete only one pod at a time, and verify that the pod is rescheduled onto an edge node before you delete other pods.
-    1. Delete a pod. Example for if one of the `webserver-lb` NLB pods did not schedule to an edge node:
+    1. Delete a pod. Example for if one of the `public-crc81nk5l10gfhdql4i3qg-alb1` NLB pods did not schedule to an edge node:
         ```sh
         oc delete pod ibm-cloud-provider-ip-169-46-17-2-76fcb4965d-wz6dg
         ```
         {: pre}
 
-    2. Verify that the pod is rescheduled onto an edge worker node. Rescheduling is automatic, but might take a few minutes. Example for the `webserver-lb` NLB that has an external IP address of `169.46.17.2`:
+    2. Verify that the pod is rescheduled onto an edge worker node. Rescheduling is automatic, but might take a few minutes. Example for the `public-crc81nk5l10gfhdql4i3qg-alb1` NLB that has an external IP address of `169.46.17.2`:
         ```sh
         oc describe nodes -l dedicated=edge | grep "169-46-17-2"
         ```
@@ -143,7 +139,46 @@ To create an edge node worker pool,
         ```
         {: screen}
 
-7. Retrieve all existing ALBs in the cluster. Review the command output. For each ALB that has a **Status** of **enabled**, note the **ALB ID** and **Build**.
+You labeled worker nodes in a worker pool with `dedicated=edge` and redeployed all the existing NLBs to the edge nodes. All subsequent NLBs that are added to the cluster are also deployed to an edge node in your edge worker pool. Next, prevent other [workloads from running on edge worker nodes](#edge_workloads) and [block inbound traffic to NodePorts on worker nodes](/docs/openshift?topic=openshift-network_policies#block_ingress).
+
+
+## Isolating ALB workloads to edge worker nodes
+{: #edge_nodes_alb}
+
+Add the `dedicated=edge` label to worker nodes on each public or private VLAN in your cluster. The labels ensure that Ingress application load balancers (ALBs) are deployed to those worker nodes only. For ALBs, ensure that three or more worker nodes per zone are edge nodes. Note that router pods for Ingress controllers and routes are not deployed to edge nodes and remain on non-edge worker nodes.
+
+The steps to isolate ALB workloads to edge nodes is the same for both classic and VPC infrastructure. However, the naming convention for the ALB External IP is different for each type. For ALBs on classic infrastructure, the External IP is a standard IP address such as `169.46.17.2`. For ALBs on VPC infrastructure, the External IP is a hostname such as `f3bee8b5-us-south.lb.appdomain.cloud`.
+{: note}
+
+Before you begin
+
+* Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-users#checking-perms):
+    * Any platform access role for the cluster
+    * **Writer** or **Manager** service access role for all namespaces
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+To isolate your workload to edge worker nodes:
+
+1. [Create a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool) that spans all zones in your cluster and has at least 3 or more workers per zone. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` option to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes. If you want to use an existing worker pool, you can add the `dedicated=edge` label by running the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
+
+    To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least three edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. However, ALB pods have anti-affinity rules that don't permit a pod to deploy to a worker node where another ALB pod already exists. If you have only two edge nodes per zone, both ALB pod replicas already exist on those edge nodes, so the new ALB pod must be scheduled on a non-edge worker node. When three edge nodes are present in a zone, the new ALB pod can be scheduled to the third edge node. Then, the old ALB pod is removed.
+    {: important}
+
+2. Verify that the worker pool and worker nodes have the `dedicated=edge` label. If the label is not present, add it by running the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
+
+    * To check the worker pool
+        ```sh
+        ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+        ```
+        {: pre}
+
+    * To check individual worker nodes, review the **Labels** field of the output of the following command.
+        ```sh
+        oc describe node <worker_node_private_IP>
+        ```
+        {: pre}
+
+3. Retrieve all existing ALBs in the cluster. Review the command output. For each ALB that has a **Status** of **enabled**, note the **ALB ID** and **Build**.
 
     ```sh
     ibmcloud oc ingress alb ls --cluster <cluster_name_or_ID>
@@ -154,12 +189,12 @@ To create an edge node worker pool,
 
     ```sh
     ALB ID                                Enabled   State     Type      Load Balancer Hostname                      Zone         Build                                  Status
-    private-crc81nk5l10gfhdql4i3qg-alb1   true      enabled   private   e9dd35e6-us-south.lb.test.appdomain.cloud   us-south-3   ingress:1.1.1_1949_iks/ingress-auth:   enabled
-    public-crc81nk5l10gfhdql4i3qg-alb1    true      enabled   public    38daf55c-us-south.lb.test.appdomain.cloud   us-south-3   ingress:1.1.1_1949_iks/ingress-auth:   healthy
+    private-crc81nk5l10gfhdql4i3qg-alb1   true      enabled   private   e9dd35e6-us-south.lb.appdomain.cloud   us-south-3   ingress:1.1.1_1949_iks/ingress-auth:   enabled
+    public-crc81nk5l10gfhdql4i3qg-alb1    true      enabled   public    38daf55c-us-south.lb.appdomain.cloud   us-south-3   ingress:1.1.1_1949_iks/ingress-auth:   healthy
     ```
     {: screen}
 
-8. Using the output from the previous step, run the `ibmcloud oc ingress alb update` command for each enabled ALB. This command redeploys the ALB to an edge worker node. 
+4. Using the output from the previous step, run the `ibmcloud oc ingress alb update` command for each enabled ALB. This command redeploys the ALB to an edge worker node. 
 
     When you run this command to redeploy the ALB to an edge worker node, the ALB also updates to the latest version. If you do not want to update the ALB to the latest version, include the `--version` option and specify the version listed under **Build** in the output from the previous step. 
     {: tip}
@@ -169,15 +204,15 @@ To create an edge node worker pool,
     ```
     {: pre}
 
-    Example output
+    Example output.
 
     ```sh
-    Updating ALB pods for private-crc81nk5l10gfhdql4i3qg-alb1 to version '1.1.1_1949_iks' in cluster c81nk5l10gfhdql4i3qg...
+    Updating ALB pods for private-crc81nk5l10gfhdql4i3qg-alb1 to version '1.1.1_1949_iks' in cluster crc81nk5l10gfhdql4i3qg...
     OK
     ```
     {: screen}
 
-9. Verify that ALB pods are scheduled onto edge nodes and are not scheduled onto compute nodes.
+5. Verify that ALB pods are scheduled onto edge nodes and are not scheduled onto compute nodes.
     1. Confirm that all ALB pods are deployed to edge nodes. Each public and private ALB that is enabled in your cluster has two pods.
 
         ```sh
@@ -188,10 +223,10 @@ To create an edge node worker pool,
         Example output
 
         ```sh
-        kube-system                private-crdf253b6025d64944ab99ed63bb4567b6-alb1-d5dd478db-27pv4    0 (0%)        0 (0%)      0 (0%)           0 (0%)
-        kube-system                private-crdf253b6025d64944ab99ed63bb4567b6-alb1-d5dd478db-7p9q6    0 (0%)        0 (0%)      0 (0%)           0 (0%)
-        kube-system                public-crdf253b6025d64944ab99ed63bb4567b6-alb1-5ff8cdff89-s77z6    0 (0%)        0 (0%)      0 (0%)           0 (0%)
-        kube-system                public-crdf253b6025d64944ab99ed63bb4567b6-alb1-5ff8cdff89-kvs9f    0 (0%)        0 (0%)      0 (0%)           0 (0%)
+        kube-system                private-crc81nk5l10gfhdql4i3qg-alb1-d5dd478db-27pv4    0 (0%)        0 (0%)      0 (0%)           0 (0%)
+        kube-system                private-crc81nk5l10gfhdql4i3qg-alb1-d5dd478db-7p9q6    0 (0%)        0 (0%)      0 (0%)           0 (0%)
+        kube-system                public-crc81nk5l10gfhdql4i3qg-alb1-5ff8cdff89-s77z6    0 (0%)        0 (0%)      0 (0%)           0 (0%)
+        kube-system                public-crc81nk5l10gfhdql4i3qg-alb1-5ff8cdff89-kvs9f    0 (0%)        0 (0%)      0 (0%)           0 (0%)
         ```
         {: screen}
 
@@ -205,8 +240,7 @@ To create an edge node worker pool,
         If the ALB pods are correctly deployed to edge nodes, no ALB pods are returned. Your ALBs are successfully rescheduled onto only edge worker nodes.
 
 
-
-You labeled worker nodes in a worker pool with `dedicated=edge` and redeployed all the existing ALBs and NLBs to the edge nodes. All subsequent ALBs and NLBs that are added to the cluster are also deployed to an edge node in your edge worker pool. Next, prevent other [workloads from running on edge worker nodes](#edge_workloads) and [block inbound traffic to NodePorts on worker nodes](/docs/openshift?topic=openshift-network_policies#block_ingress).
+You labeled worker nodes in a worker pool with `dedicated=edge` and redeployed all the existing ALBs to the edge nodes. All subsequent ALBs that are added to the cluster are also deployed to an edge node in your edge worker pool. Next, prevent other [workloads from running on edge worker nodes](#edge_workloads) and [block inbound traffic to NodePorts on worker nodes](/docs/openshift?topic=openshift-network_policies#block_ingress).
 
 
 ## Preventing app workloads from running on edge worker nodes
