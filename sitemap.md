@@ -3396,8 +3396,6 @@ subcollection: openshift
 
 * [Default Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-default)
 
-* [Customizing the Pod Security Admission plug-in configuration](/docs/openshift?topic=openshift-pod-security-admission#psa-plugin-config-custom)
-
 * [Configuring pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-configure)
 
 * [Additional resources](/docs/openshift?topic=openshift-pod-security-admission#pod-sec-additional-resources)
