@@ -53,11 +53,7 @@ Review the version history for Ingress ALB.
 ### 1.9.4_6359_iks, released 22 February 24
 {: #ingress-alb-1.9.4_6359_iks}
 
-- Resolves the following CVEs: [CVE-2023-6129](https://nvd.nist.gov/vuln/detail/CVE-2023-6129){: external}, 
-[CVE-2023-6237](https://nvd.nist.gov/vuln/detail/CVE-2023-6237){: external}, 
-[CVE-2024-0727](https://nvd.nist.gov/vuln/detail/CVE-2024-0727){: external}, 
-[CVE-2024-21626](https://nvd.nist.gov/vuln/detail/CVE-2024-21626){: external}, 
- and [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
+- Resolves the following CVEs: [CVE-2023-6129](https://nvd.nist.gov/vuln/detail/CVE-2023-6129){: external},  [CVE-2023-6237](https://nvd.nist.gov/vuln/detail/CVE-2023-6237){: external}, [CVE-2024-0727](https://nvd.nist.gov/vuln/detail/CVE-2024-0727){: external}, [CVE-2024-21626](https://nvd.nist.gov/vuln/detail/CVE-2024-21626){: external}, and [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
 - Updates Go to version `1.21.5`.
 
 
@@ -85,12 +81,7 @@ Review the version history for Ingress ALB.
 ### 1.8.4_6363_iks, released 22 February 24
 {: #ingress-alb-1.8.4_6363_iks}
 
-- Resolves the following CVEs: [CVE-2024-25062](https://nvd.nist.gov/vuln/detail/CVE-2024-25062){: external}, 
-[CVE-2023-6129](https://nvd.nist.gov/vuln/detail/CVE-2023-6129){: external}, 
-[CVE-2023-6237](https://nvd.nist.gov/vuln/detail/CVE-2023-6237){: external}, 
-[CVE-2024-0727](https://nvd.nist.gov/vuln/detail/CVE-2024-0727){: external}, 
-[CVE-2024-21626](https://nvd.nist.gov/vuln/detail/CVE-2024-21626){: external}, 
- and [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
+- Resolves the following CVEs: [CVE-2024-25062](https://nvd.nist.gov/vuln/detail/CVE-2024-25062){: external}, [CVE-2023-6129](https://nvd.nist.gov/vuln/detail/CVE-2023-6129){: external}, [CVE-2023-6237](https://nvd.nist.gov/vuln/detail/CVE-2023-6237){: external}, [CVE-2024-0727](https://nvd.nist.gov/vuln/detail/CVE-2024-0727){: external}, [CVE-2024-21626](https://nvd.nist.gov/vuln/detail/CVE-2024-21626){: external}, and [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
 
 
 ## Version 1.6.4
