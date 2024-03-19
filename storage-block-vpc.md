@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-19"
 
 
 keywords: openshift
@@ -139,7 +139,7 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
       name: <pvc_name> # Enter a name for your PVC.
     spec:
       accessModes:
-      - ReadWriteOnce # ReadWriteOnce is the only supported access mode. You can mount the PVC to one pod on one worker node in the cluster at a time.
+      - <access-mode> # ReadWriteOnce or ReadWriteOncePod
       resources:
         requests:
           storage: 10Gi # Enter the size. Make sure that the size is supported in the profile that you chose.

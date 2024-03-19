@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-03-18"
+lastupdated: "2024-03-19"
 
 
 keywords: change log, version history, Ingress ALB
@@ -20,6 +20,7 @@ subcollection: openshift
 Review the version history for Ingress ALB.
 {: shortdesc}
 
+
 ## Version 1.9.6
 {: #ingress-alb-1.9.6}
 
@@ -30,6 +31,7 @@ Review the version history for Ingress ALB.
 - Resolves the following CVEs: [CVE-2024-24786](https://nvd.nist.gov/vuln/detail/CVE-2024-24786){: external}.
 - CVE-2024-24786 
 - Initial release of 1.9.6. For more information, see the [community release documentation](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.9.6)
+
 
 ## Version 1.9.4
 {: #ingress-alb-1.9.4}
@@ -44,6 +46,8 @@ Review the version history for Ingress ALB.
 ### 1.9.4_6376_iks, released 26 February 24
 {: #ingress-alb-1.9.4_6376_iks}
 
+[Default version]{: tag-green}
+
 - Updates Go to version `1.22.0`.
 
 ### 1.9.4_6359_iks, released 22 February 24
@@ -56,6 +60,7 @@ Review the version history for Ingress ALB.
  and [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
 - Updates Go to version `1.21.5`.
 
+
 ## Version 1.8.5
 {: #ingress-alb-1.8.5}
 
@@ -66,6 +71,7 @@ Review the version history for Ingress ALB.
 - Resolves the following CVEs: [CVE-2024-24786](https://nvd.nist.gov/vuln/detail/CVE-2024-24786){: external}.
 - CVE-2024-24786 
 - Initial release of 1.8.5. For more information, see the [community release documentation](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.8.5)
+
 
 ## Version 1.8.4
 {: #ingress-alb-1.8.4}
@@ -85,6 +91,7 @@ Review the version history for Ingress ALB.
 [CVE-2024-0727](https://nvd.nist.gov/vuln/detail/CVE-2024-0727){: external}, 
 [CVE-2024-21626](https://nvd.nist.gov/vuln/detail/CVE-2024-21626){: external}, 
  and [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
+
 
 ## Version 1.6.4
 {: #ingress-alb-1.6.4}
