@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-19"
 
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
@@ -165,7 +165,7 @@ When you create a multizone VPC cluster with the private cloud service endpoint 
 
 ![Privately expose an app in a multizone VPC cluster by using Ingress](images/roks_router_ingress_vpc_private.png "Privately expose an app in a multizone VPC cluster by using Ingress"){: caption="Figure 1. Privately expose an app in a multizone VPC cluster by using Ingress" caption-side="bottom"}
 
-1. A client that is connected to your private VPC network sends a request to your app by using your app's URL. This URL is the Ingress subdomain for your cluster for your exposed app appended with the Ingress resource path, such as `mycluster-<hash>-i000.us-south.containers.appdomain.cloud/myapp`. For example, you might use the Virtual Private Cloud VPN, {{site.data.keyword.tg_full_notm}}, or {{site.data.keyword.dl_full_notm}} to allow requests from an on-premises network, another VPC, or {{site.data.keyword.cloud_notm}} classic infrastructure to apps that run in your cluster.
+1. A client that is connected to your private VPC network sends a request to your app by using your app's URL. This URL is the Ingress subdomain for your cluster for your exposed app appended with the Ingress resource path, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`. For example, you might use the Virtual Private Cloud VPN, {{site.data.keyword.tg_full_notm}}, or {{site.data.keyword.dl_full_notm}} to allow requests from an on-premises network, another VPC, or {{site.data.keyword.cloud_notm}} classic infrastructure to apps that run in your cluster.
 
 2. A DNS service resolves the route subdomain to the VPC load balancer hostname that is assigned to the services for the Ingress controller. In VPC clusters, your Ingress controller services' private IP addresses are floating, and are kept behind a VPC-assigned hostname. Note that though the DNS record for the route subdomain is registered in the public DNS system, the DNS resolution servers are reachable from the VPC.
 
