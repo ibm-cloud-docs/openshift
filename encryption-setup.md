@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-19"
 
 
 keywords: openshift, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -40,6 +40,14 @@ Before you can enable a key management service (KMS) provider in your cluster, y
     **{{site.data.keyword.keymanagementserviceshort}}:** Need to set an expiration date to comply with internal security policies? [Create the root key by using the API](/docs/key-protect?topic=key-protect-create-root-keys&interface=api#create-root-key-api) and include the `expirationDate` parameter. **Important**: Before your root key expires, repeat these steps to update your cluster to use a new root key. When a root key expires, the cluster secrets can't be decrypted and your cluster becomes unusable. Depending on the cluster version, the time lapse between the root key expiring and the cluster no longer being able to decrypt secrets might be about an hour, or when the master is refreshed.
     {: tip}
 
+1. Check that you have the required service authorization policies in {{site.data.keyword.cloud_notm}} IAM. Navigate to the [service authorizations](https://cloud.ibm.com/iam/authorizations){: external} page in the console and look for an authorization with the **Source service** specified as **Kubernetes service**, the **Target service** specified as your KMS provider (such as Key Protect), and the **Target account** specified as the account the cluster resides in. If you do not see the service authorization, create it by following these steps:
+    - **Required service access policy for Kubernetes Service and the KMS provider**
+        1. Set the **Source account** for **This account** if the cluster you want to authorize accessing KMS resides in the current account, otherwise if the cluster located under a different account, select **Other account** and provide the account ID.
+        2. Set the **Source service** to **Kubernetes Service**.
+        3. Set the **Target service** to your KMS provider, such as **Key Protect**.
+        4. Include at least **Reader** service access.
+        5. Enable the authorization to be delegated by the source and dependent services.
+
 1. Make sure that you have the correct permissions in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to enable KMS in your cluster.
     * Ensure that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster.
     * Ensure that the API key owner of the [API key](/docs/openshift?topic=openshift-iam-platform-access-roles) that is set for the region and resource group that your cluster is in has the correct permissions for the KMS provider.
@@ -62,3 +70,10 @@ You can rotate the root key from your KMS instance. This action automatically re
 
 
 
+
+    Go to https://cloud.ibm.com/iam/authorizations
+    Select the appropriate account for the KMS instance. (Either This account if the KMS instance is in the same account or Another account if not. If it is another account, specify the account ID.
+    Set the Source service to Kubernetes Service.
+    Set the Target service to your KMS provider (Key Protect or HPCS)
+    Select Reader service access.
+    Select the Authorize button.
