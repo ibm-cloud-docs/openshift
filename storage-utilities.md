@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-03-19"
 
 
 keywords: openshift
@@ -815,6 +815,8 @@ You can remove storage from your worker node by using the `ibmcloud oc storage a
 
 
 
+
+
 The back up and restore Helm chart is not supported on Satellite version 4.13 clusters that use CoreOS workers.
 {: important}
 
@@ -844,7 +846,7 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
     1. In the navigation on the service details page, click **Buckets**.
     2. Click **Create bucket**. A dialog box is displayed.
     3. Enter a unique name for your bucket. The name must be unique within {{site.data.keyword.cos_full_notm}} across all regions and across all {{site.data.keyword.cloud_notm}} accounts.
-    4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
+    4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints). For VPC clusters, make a note of the direct endpoint. For example: `s3.direct.us.cloud-object-storage.appdomain.cloud`.
     5. Change the **Location** to the region where you want to store your data. Keep in mind that your data might not be allowed to be stored in every region due to legal reasons.  
     6. Click **Create**.
 4. Retrieve the {{site.data.keyword.cos_full_notm}} host name for your bucket.
