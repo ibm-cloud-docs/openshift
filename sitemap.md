@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-22"
+lastupdated: "2024-03-26"
 
 
 keywords: openshift
@@ -285,6 +285,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar24)
+
+    * [25 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2524)
+
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+
+        * New! NVIDIA L40 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L40 GPUs.
 
     * [15 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1524)
 
@@ -6163,6 +6169,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
 
+    * [Change log for worker node fix pack 4.14.17_1556_openshift, released 25 March 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41417_1556_openshift_W)
+
     * [Change log for worker node fix pack 4.14.15_1554_openshift, released 13 March 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41415_1554_openshift_W)
 
     * [Change log for master fix pack 4.14.12_1552_openshift, released 28 February 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41412_1552_openshift_M)
@@ -6241,6 +6249,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for worker node fix pack 4.13.37_1566_openshift, released 25 March 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41337_1566_openshift_W)
 
     * [Change log for worker node fix pack 4.13.36_1564_openshift, released 13 March 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41336_1564_openshift_W)
 
@@ -6398,6 +6408,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.53_1586_openshift, released 25 March 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41253_1586_openshift_W)
 
     * [Change log for worker node fix pack 4.12.51_1583_openshift, released 13 March 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41251_1583_openshift_W)
 
