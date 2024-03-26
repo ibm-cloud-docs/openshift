@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-13"
+lastupdated: "2024-03-26"
 
 
 keywords: openshift
@@ -189,15 +189,15 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     ```
     {: pre}
 
-1. Get the `share-target`. 
+1. Get the details of your share. Make a note of the mount targets.
     ```sh
-    ibmcloud is share-targets SHARE-ID
+    ibmcloud is share SHARE-ID
     ```
     {: pre}
 
 1. Get the `nfsServerPath`, also called the `Mount Path`. 
     ```sh
-    ibmcloud is share-target SHARE-ID SHARE-TARGET-ID
+    ibmcloud is share-mount-target SHARE-ID SHARE-TARGET-ID
     ```
     {: pre}
 

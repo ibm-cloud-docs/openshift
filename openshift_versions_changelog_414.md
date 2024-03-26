@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-03-26"
 
 
 keywords: openshift, 4.14, update, upgrade, BOM, bill of materials, versions, patch
@@ -32,6 +32,21 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+### Change log for worker node fix pack 4.14.17_1556_openshift, released 25 March 2024
+{: #41417_1556_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.14.17_1556_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.14.15 | 4.14.17 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-17){: external}. |
+| RHEL 8 Packages | 4.18.0-513.18.1.el8_9 | 4.18.0-513.18.1.el8_9 | N/A |
+| CRI-O | 1.27.4-2 | 1.27.4-3 | N/A |
+| HAProxy | 512b32 | 512b32 | N/A |
+{: caption="Changes since version 4.14.15_1554_openshift" caption-side="bottom"}
+
 
 ### Change log for worker node fix pack 4.14.15_1554_openshift, released 13 March 2024
 {: #41415_1554_openshift_W}

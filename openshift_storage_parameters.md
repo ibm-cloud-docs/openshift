@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-07"
+lastupdated: "2024-03-26"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -52,7 +52,7 @@ ibmcloud oc cluster addon options --addon openshift-data-foundation --version VE
 | `hpcsBaseUrl` | Specify the public or private endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`. | N/A |
 | `hpcsTokenUrl` | Specify `https://iam.cloud.ibm.com/identity/token`. | N/A |
 | `encryptionInTransit` | [4.13 and later]{: tag-cool-gray} Specify `true` to enable in-transit encryption. Enabling in-transit encryption does not affect the existing mapped or mounted volumes. After a volume is mapped/mounted, it retains the encryption settings that were used when it was initially mounted. To change the encryption settings for existing volumes, they must be remounted again one-by-one. | `false` |
-| `ignore-noobaa` | [4.13 and later]{: tag-cool-gray} Specify `true` if you do not want to deploy MultiCloud Object Gateway. | `true` |
+| `ignoreNoobaa` | [4.13 and later]{: tag-cool-gray} Specify `true` if you do not want to deploy MultiCloud Object Gateway. | `true` |
 | `disableNoobaaLB` | [4.14 and later]{: tag-warm-gray} Specify `true` to disable to NooBaa public load balancer. | `false` |
 | `taintNodes` | [4.14 and later]{: tag-warm-gray} Specify `true` to taint the selected worker nodes so that only OpenShift Data Foundation pods can run on those nodes. Use this option only if you limit ODF to a subset of nodes in your cluster. | `false` |
 | `addSingleReplicaPool` | [4.14 and later]{: tag-warm-gray} Specify `true` to create a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. | `false` |

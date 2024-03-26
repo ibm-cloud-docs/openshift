@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-18"
+lastupdated: "2024-03-26"
 
 
 keywords: openshift, kubernetes, release notes
@@ -31,6 +31,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2024
 {: #openshift-mar24}
 
+### 25 March 2024
+{: #openshift-mar2524}
+{: release-note}
+
+
+
+
+
+Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
+
+New! NVIDIA L40 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L40 GPUs.
+:   In {{site.data.keyword.openshiftlong_notm}} clusters, you can get started by provisioning a new cluster or worker pool with `gx3` worker nodes. Then, install the GPU drivers through the NVIDIA operator in OperatorHub. For more information, see [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
 
 
 
