@@ -1,10 +1,10 @@
 ---
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, byok, debug, help, vpc, storage, encryption
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, byok, debug, help, vpc, storage, encryption
 
 subcollection: openshift
 content-type: troubleshoot

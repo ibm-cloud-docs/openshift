@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, continuous integration and delivery
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, continuous integration and delivery
 
 subcollection: openshift
 

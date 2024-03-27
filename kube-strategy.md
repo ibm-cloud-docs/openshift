@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing
 
 subcollection: openshift
 
@@ -68,12 +68,15 @@ Consider giving clusters unique names across resource groups and regions in your
 
 It depends. As you decide, consider the following.
 
+-  **Location**: Keep in mind that the available worker node flavors vary by zone.
+
 - **Machine type**: Everyone likes choices, right? With {{site.data.keyword.openshiftlong_notm}}, you have [a mix of machine types](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes) that you can deploy: from bare metal for intensive workloads to virtual machines for rapid scaling. You can set limits to ensure that certain types of apps are deployed on certain machine types. For a list of available flavors, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-flavors) or [Classic flavors](/docs/openshift?topic=openshift-classic-flavors).
 
 - **Size**: Larger nodes can be more cost efficient than smaller nodes, particularly for workloads that are designed to gain efficiency when they process on a high-performance machine. However, if a large worker node goes down, you need to be sure that your cluster has enough capacity to safely reschedule all the workload pods onto other worker nodes in the cluster. Smaller worker can help you scale safely. [Learn more about capacity](#env_resources_worker_capacity).
 
- - **Cost**: In general, your intensive workloads are more suited to run on bare metal physical machines, whereas for cost-effective testing and development work, you might choose virtual machines on shared or dedicated hardware. [Check out the machine isolation and flavors that are available](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
--  **Location**: Keep in mind that worker node flavors vary by zone.
+- **Cost**: In general, your intensive workloads are more suited to run on bare metal physical machines, whereas for cost-effective testing and development work, you might choose virtual machines on shared or dedicated hardware. [Check out the machine isolation and flavors that are available](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
+
+
 
 
 
@@ -101,7 +104,7 @@ To get the most out of your worker node's performance, consider the following as
 ## How do I manage teams and projects?
 {: #env_resources_multiple_namespaces}
 
-Set up multiple namespaces when you have multiple teams and projects that share the cluster. Namespaces are kind of like a cluster within the cluster. They are a way to divide up cluster resources by using [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} and [default limits](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/){: external}. When you make new namespaces, be sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-users#rbac) to control access. For more information, see [Share a cluster with namespaces](https://kubernetes.io/docs/tasks/administer-cluster/namespaces/){: external} in the Kubernetes documentation.
+Set up multiple namespaces when you have multiple teams and projects that share the cluster. Namespaces are kind of like a cluster within the cluster. They are a way to divide up cluster resources by using [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} and [default limits](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/){: external}. When you make new namespaces, be sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-understand-rbac to control access. For more information, see [Share a cluster with namespaces](https://kubernetes.io/docs/tasks/administer-cluster/namespaces/){: external} in the Kubernetes documentation.
 
 If you have a small cluster, a couple dozen users, and resources that are similar (such as different versions of the same software), you probably don't need multiple namespaces. You can use labels instead.
 

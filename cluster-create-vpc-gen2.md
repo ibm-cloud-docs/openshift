@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-18"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
 
 subcollection: openshift
 
@@ -22,22 +22,30 @@ subcollection: openshift
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
 
-Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
-{: important}
-
 ## Prerequisites and notes
 {: #cluster-create-vpc-prereq}
 
 * If worker nodes must access public endpoints, or if you plan to enable both the public and private cloud service endpoints, you must attach a public gateway to each subnet in your VPC to access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub.
 
 * If you plan to enable both the public and private cloud service endpoints, you must attach a public gateway to each subnet to access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub. Additionally, a public network gateway is required when you want your cluster to access public endpoints, such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only. Make sure to review the [VPC networking basics](/docs/openshift?topic=openshift-plan_vpc_basics) to understand when a public network gateway is required and how you can set up your cluster to limit public access to one or more subnets only.
+
 * Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. For more information, see [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption).
+
 * By default, your cluster is provisioned with a VPC security group and a cluster-level security group. If you want to attach additional security groups or change which default security groups are applied when you create the cluster, you must [create your VPC cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_vpcg2_cli).
+
+* Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 
 * If you create a VPC cluster with both a public and a private cloud service endpoint, note that the public service endpoints can't be disabled at a later time. Therefore, you can't convert a public cluster to a private cluster. 
 
 * If your VPC Clusters require access to Classic Infrastructure resources, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint) in your account.
-* If your VPC Clusters don't require Classic Infrastructure Access, no account changes are required.
+
+
+
+Creating a 4.15 cluster? [Review the version information](/docs/openshift?topic=openshift-cs_versions_415) for important networking changes introduced in {{site.data.keyword.openshiftlong_notm}} version 4.15 and later.
+{: important}
+
+
+
 
 
 ## Creating a VPC cluster in the console
@@ -117,8 +125,6 @@ Observability integrations
 {: #cluster_vpcg2_cli}
 {: cli}
 
-Create your single zone or multizone VPC cluster by using the {{site.data.keyword.cloud_notm}} CLI.
-
 
 * Make sure that you complete the prerequisites to [prepare your account](/docs/openshift?topic=openshift-clusters) and decide on your cluster setup.
 * Install the {{site.data.keyword.cloud_notm}} CLI and the [{{site.data.keyword.openshiftlong_notm}} plug-in](/docs/openshift?topic=openshift-cli-install).
@@ -145,7 +151,7 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
 
 4. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add-workers-vpc) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.14_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.14_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE] [--disable-outbound-traffic-protection]
 
     ```
     {: pre}
@@ -168,10 +174,8 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     `--version 4.14_openshift`
     :   VPC clusters are supported for {{site.data.keyword.redhat_openshift_notm}} version 4 only.
     
-    
     `--cos-instance <cos_CRN>`
     :   Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run `ibmcloud resource service-instances --long` and find the **ID** of your object storage instance. To create a standard object storage instance, run `ibmcloud resource service-instance-create <name> cloud-object-storage standard global` and note its **ID**.
-    
     
     `--workers <number>`
     :   Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.
@@ -197,25 +201,11 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     :   In the first cluster that you create in a VPC, the default pod subnet is `172.17.0.0/18`. 
     :   In the second cluster that you create in that VPC, the default pod subnet is `172.17.64.0/18`. In each subsequent cluster, the pod subnet range is the next available, non-overlapping `/18` subnet. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.BluDirectLink}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
     :   You can specify the subnet size by including it in the `--pod-subnet` option. For example: `--pod-subnet 0.0.0.0/X` where `X` is the required pod subnet size. Then pod subnet is then automatically selected. When allocating the pod subnet automatically, the allocation will start from `172.17.0.0`, the biggest subnet is limited to `13`, and the smallest subnet size is limited to `23`. 
-    :   When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IP addresses for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on. Note that the pod and service subnets can't overlap. If you use custom-range subnets for your worker nodes, [you must ensure that your worker node subnets don't overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range). The subnet that you choose must be within one of the following ranges:
-        - `172.17.0.0 - 172.17.255.255`
-        - `172.21.0.0 - 172.31.255.255`
-
-
-        - `192.168.0.0 - 192.168.254.255`
-
-        - `198.18.0.0 - 198.19.255.255`
+    :   When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IP addresses for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on. Note that the pod and service subnets can't overlap. If you use custom-range subnets for your worker nodes, [you must ensure that your worker node subnets don't overlap with your cluster's pod subnet](/docs/openshift?topic=openshift-vpc-subnets#vpc-ip-range). The subnet that you choose must be within one of the following ranges: `172.17.0.0 - 172.17.255.255`, `172.21.0.0 - 172.31.255.255`, `192.168.0.0 - 192.168.254.255`, `198.18.0.0 - 198.19.255.255`.
 
     `--service-subnet`
     :   All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
-    The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
-        - `172.17.0.0 - 172.17.255.255`
-        - `172.21.0.0 - 172.31.255.255`
-
-
-        - `192.168.0.0 - 192.168.254.255`
-
-        - `198.18.0.0 - 198.19.255.255` Note that the pod and service subnets can't overlap.
+    The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges: `172.17.0.0 - 172.17.255.255`, `172.21.0.0 - 172.31.255.255`, `192.168.0.0 - 192.168.254.255`, `198.18.0.0 - 198.19.255.255`. Note that the pod and service subnets can't overlap.
 
     `--disable-public-service-endpoint`
     :   Include this option in your command to create your VPC cluster with a private cloud service endpoint only. If you don't include this option, your cluster is set up with a public and a private cloud service endpoint. The service endpoint determines how your {{site.data.keyword.redhat_openshift_notm}} master and the worker nodes communicate, how your cluster access other {{site.data.keyword.cloud_notm}} services and apps outside the cluster, and how your users connect to your cluster. For more information, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics).
@@ -224,24 +214,17 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
         
 
     `--kms-account-id <KMS_acount_ID>`
-    :   Optional: Must be included if the `--kms-instance-id` and `--crk` options are provided and the KMS instance resides in an account different from the cluster's account, otherwise it can be omitted.
-        Setting up encryption by using a KMS from a different account is available for allowlisted accounts only. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
-        {: note}
+    :   Optional: Must be included if the `--kms-instance-id` and `--crk` options are provided and the KMS instance resides in an account different from the cluster's account, otherwise it can be omitted. Setting up encryption by using a KMS from a different account is available for allowlisted accounts only. To get added to the allowlist, [open a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with support.
 
 
     `--kms-instance <KMS_instance_ID>`
-    :   Optional: Include the ID of a key management service (KMS) instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available KMS instances, run `ibmcloud oc kms instance ls`. If you include this option, you must also include the `--crk` option.
-        Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption](/docs/openshift?topic=openshift-encryption) for the worker nodes in your cluster.
-        {: note}
-  
+    :   Optional: Include the ID of a key management service (KMS) instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available KMS instances, run `ibmcloud oc kms instance ls`. If you include this option, you must also include the `--crk` option. Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption](/docs/openshift?topic=openshift-encryption) for the worker nodes in your cluster.
 
     `--crk <root_key>`
-    :   Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available root keys, run `ibmcloud oc kms crk ls --instance-id`. If you include this option, you must also include the `--kms-instance` option.
-        Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption](/docs/openshift?topic=openshift-encryption) for the worker nodes in your cluster.
-        {: note}
+    :   Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available root keys, run `ibmcloud oc kms crk ls --instance-id`. If you include this option, you must also include the `--kms-instance` option. Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption](/docs/openshift?topic=openshift-encryption) for the worker nodes in your cluster.
 
     `--secondary-storage STORAGE`
-    :    Optional. The storage option for the flavor. For example, `900gb.5iops-tier`. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. To view the storage options for a flavor, run the `**ibmcloud oc flavor get --flavor FLAVOR --zone ZONE --provider vpc-gen2` command. To view a list of VPC worker node flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors&interface=ui)
+    :    Optional. The storage option for the flavor. For example, `900gb.5iops-tier`. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. To view the storage options for a flavor, run the `**ibmcloud oc flavor get --flavor FLAVOR --zone ZONE --provider vpc-gen2` command. To view a list of VPC worker node flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors&interface=ui).
     
 5. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.
     ```sh
@@ -255,9 +238,6 @@ Create your single zone or multizone VPC cluster by using the {{site.data.keywor
     mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.14.12_1544_openshift      Default               vpc-gen2
     ```
     {: screen}
-
-    Is your cluster not in a **normal** state? Check out the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
-    {: tip}
 
 6. Check the status of the worker nodes.
     ```sh

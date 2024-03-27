@@ -2,10 +2,10 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
 
 subcollection: openshift
 

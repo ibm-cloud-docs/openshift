@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-27"
 
 
 keywords: portworx, openshift
@@ -333,7 +333,7 @@ To access the storage from your app, you must mount the PVC to your app.
     :   The name of the container that you want to deploy to your cluster.
     
     `spec.containers.securityContext.fsGroup`
-    :   Optional: To access your storage with a non-root user, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod and define the set of users that you want to grant access in the `fsGroup` section on your deployment YAML. For more information, see [Accessing Portworx volumes with a non-root user](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-pvcs/access-via-non-root-users){: external}.
+    :   Optional: To access your storage with a non-root user, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod and define the set of users that you want to grant access in the `fsGroup` section on your deployment YAML. For more information, see [Accessing Portworx volumes with a non-root user](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-pvcs/access-via-non-root-iam-platform-access-roles){: external}.
     
     `spec.containers.volumeMounts.mountPath`
     :   The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.

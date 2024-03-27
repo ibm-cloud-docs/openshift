@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, iro, openshift, red hat, red hat openshift
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
 
 subcollection: openshift
 

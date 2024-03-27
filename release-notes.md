@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-26"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, kubernetes, release notes
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
 
 subcollection: openshift
 
@@ -5049,7 +5049,7 @@ Versions
 {: release-note}
 
 CA certificate rotation
-:   Added steps to [revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates](/docs/openshift?topic=openshift-security#cert-rotate).
+:   Added steps to [revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates](/docs/openshift?topic=openshift-cert-rotate).
 
 
 

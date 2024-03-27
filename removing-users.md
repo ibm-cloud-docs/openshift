@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, kubernetes, infrastructure, rbac, policy
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
 
 subcollection: openshift
 
