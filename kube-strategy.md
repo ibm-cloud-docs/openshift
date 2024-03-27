@@ -21,16 +21,7 @@ subcollection: openshift
 Figuring out what your cluster setup must be to support your workload is not an exact science. You might need to test different configurations and adapt. To get started planning and sizing your cluster, ask yourself the following questions.
 {: shortdesc}
 
-
-## What type of cluster should I get?
-{: #env_flavors}
-
-- **Classic or VPC**? Openshift? If you choose a classic cluster, consider [creating a reservation](/docs/openshift?topic=openshift-reservations) to lock in a discount over 1 or 3 year terms for your worker nodes. After you create the cluster, add worker pools that use the reserved instances. Typical savings range between 30-50% compared to regular worker node costs.
-- **Number of clusters**: How many clusters you use could impact the type of cluster you need. If you only need one cluster, then a single zone or even multizone cluster might work. Learn more about the differences between a [single zone, multizone, or multiple cluster setup](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
-- **Figure out where you want it**: Decide which locations you want to have a cluster in. Where you want it might also inform how many clusters or the type of clusters you need. If you need multiple locations, check out a [multizone](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or multiple cluster setup.
-- **Consider work node flavors**: [Worker node flavors](#env_flavors_node) can vary by zone, so when you are choosing a cluster type, think about which worker node flavors might work best for your setup.
-
-## Do I actually need multiple clusters or can I just add more workers to one cluster?
+## Decide how many clusters to create
 {: #env_multicluster}
 
 The number of clusters that you create depends on your workload, company policies and regulations, and what you want to do with the computing resources. You can also review security information about this decision in [Container isolation and security](/docs/openshift?topic=openshift-security#container).
@@ -42,19 +33,31 @@ The number of clusters that you create depends on your workload, company policie
     *  Configure user access on the cluster-instance level instead of customizing and managing multiple RBAC policies to control access within a cluster at the namespace level.
     * Keep in mind that network bandwidth on scaling virtual machines is around 1000 Mbps. If you need hundreds of worker nodes in a cluster, split it up into multiple clusters with fewer nodes, or order bare metal nodes.
 
-- **More worker nodes**: Fewer clusters can help you to reduce operational effort and per-cluster costs for fixed resources. Instead of making more clusters, you can add worker pools for different flavors of computing resources available for your app and service components. When you develop the app, the resources it uses are in the same zone, or otherwise closely connected in a multizone, so that you can make assumptions about latency, bandwidth, or correlated failures. However, it becomes even more important for you to organize your cluster by using namespaces, resource quotas, and labels.
+- **One cluster with more worker nodes**: Fewer clusters can help you to reduce operational effort and per-cluster costs for fixed resources. Instead of making more clusters, you can add worker pools for different flavors of computing resources available for your app and service components. When you develop the app, the resources it uses are in the same zone, or otherwise closely connected in a multizone, so that you can make assumptions about latency, bandwidth, or correlated failures. However, it becomes even more important for you to organize your cluster by using namespaces, resource quotas, and labels.
 {: #env_resources}
 
-## How do I name my clusters?
+
+## Select a cluster type
+{: #env_flavors}
+
+You can choose between Classic, VPC, or OpenShift clusters. As you decide, consider the following.
+
+- **Number of clusters**: How many clusters you use could impact the type of cluster you need. If you only need one cluster, then a single zone or even multizone cluster might work. Learn more about the differences between a [single zone, multizone, or multiple cluster setup](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
+- **Figure out where you want it**: Decide which locations you want to have a cluster in. Where you want it might also inform how many clusters or the type of clusters you need. If you need multiple locations, check out a [multizone](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or multiple cluster setup.
+- **Consider work node flavors**: [Worker node flavors](#env_flavors_node) can vary by zone, so when you are choosing a cluster type, think about which worker node flavors might work best for your setup.
+
+
+
+## Define a cluster naming strategy
 {: #naming}
 
 Consider giving clusters unique names across resource groups and regions in your account to avoid naming conflicts. You can't rename a cluster after it is created.
 
 
-## How many worker nodes do I need to handle my workload?
+## Decide how many worker nodes for each cluster
 {: #sizing_workers}
 
-*  **Single zone clusters**: Plan to have at least three worker nodes in your cluster. Further, you want one extra node's worth of CPU and memory capacity available within the cluster. 
+* **Single zone clusters**: Plan to have at least three worker nodes in your cluster. Further, you want one extra node's worth of CPU and memory capacity available within the cluster. 
 
 * **Multizone clusters**: Plan to have at least two worker nodes per zone, so six nodes across three zones in total. Additionally, plan for the total capacity of your cluster to be at least 150% of your total workload's required capacity, so that if one zone goes down, you have resources available to maintain the workload.
 
@@ -63,10 +66,10 @@ Consider giving clusters unique names across resource groups and regions in your
 
 
 
-## What type of worker node flavors should I get?
+## Select worker node flavors
 {: #env_flavors_node}
 
-It depends. As you decide, consider the following.
+As you decide, consider the following.
 
 -  **Location**: Keep in mind that the available worker node flavors vary by zone.
 
@@ -78,11 +81,7 @@ It depends. As you decide, consider the following.
 
 
 
-
-
-
-
-## How do I determine worker node capacity for my resources?
+## Determine worker node capacity for the resources
 {: #env_resources_worker_capacity}
 
 To get the most out of your worker node's performance, consider the following as you set up your resources:
@@ -101,14 +100,14 @@ To get the most out of your worker node's performance, consider the following as
 
 
 
-## How do I manage teams and projects?
+## Choose how many namespaces to create
 {: #env_resources_multiple_namespaces}
 
-Set up multiple namespaces when you have multiple teams and projects that share the cluster. Namespaces are kind of like a cluster within the cluster. They are a way to divide up cluster resources by using [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} and [default limits](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/){: external}. When you make new namespaces, be sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-understand-rbac to control access. For more information, see [Share a cluster with namespaces](https://kubernetes.io/docs/tasks/administer-cluster/namespaces/){: external} in the Kubernetes documentation.
+Set up multiple namespaces when you have multiple teams and projects that share the cluster. Namespaces are kind of like a cluster within the cluster. They are a way to divide up cluster resources by using [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} and [default limits](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/){: external}. When you make new namespaces, be sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-understand-rbac) to control access. For more information, see [Share a cluster with namespaces](https://kubernetes.io/docs/tasks/administer-cluster/namespaces/){: external} in the Kubernetes documentation.
 
 If you have a small cluster, a couple dozen users, and resources that are similar (such as different versions of the same software), you probably don't need multiple namespaces. You can use labels instead.
 
-##  How do I manage resource requests and limits?
+## Establish resource requests and limits
 {: #env_resources_resource_quotas}
 
 To ensure that every team has the necessary resources to deploy services and run apps in the cluster, you must set up [resource quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/){: external} for every namespace. Resource quotas determine the deployment constraints, such as the number of Kubernetes resources that you can deploy, and the amount of CPU and memory that can be consumed by those resources. After you set a quota, users must include resource requests and limits in their deployments.
