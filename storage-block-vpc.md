@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-03-28"
 
 
 keywords: openshift
@@ -584,6 +584,9 @@ With version 4.2, the default parameters for storage classes has changed. The `s
 
 Use a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicelong}}, to create a private root key that you use in your {{site.data.keyword.block_storage_is_short}} instance to encrypt data as it is written to the storage. After you create the private root key, create a custom storage class or a Kubernetes secret with your root key and then use this storage class or secret to provision your {{site.data.keyword.block_storage_is_short}} instance.
 {: shortdesc}
+
+Enabling encryption for {{site.data.keyword.block_storage_is_short}} impacts performance by approximately 20%. However, the exact impact depends on your worker node and storage volume configuration. Consider allowing for performance impacts when enabling encryption.
+{: note}
 
 1. [Create a {{site.data.keyword.keymanagementserviceshort}} service instance](/docs/key-protect?topic=key-protect-provision#provision).
 

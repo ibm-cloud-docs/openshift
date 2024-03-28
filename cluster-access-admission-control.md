@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, webhooks, admission control, 
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, webhooks, admission control, 
 
 subcollection: openshift
 

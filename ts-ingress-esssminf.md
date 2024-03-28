@@ -2,10 +2,10 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, ingress, troubleshoot ingress, secrets manager missing, esssminf
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ingress, troubleshoot ingress, secrets manager missing, esssminf
 
 subcollection: openshift
 content-type: troubleshoot

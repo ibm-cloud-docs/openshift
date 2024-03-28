@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-03-07"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, kubernetes, oauth, console, access, vpe, pse, network
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, oauth, console, access, vpe, pse, network
 
 subcollection: openshift
 

@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, subnet, detach, specified subnet, infrastructure operation failed
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, subnet, detach, specified subnet, infrastructure operation failed
 
 subcollection: openshift
 

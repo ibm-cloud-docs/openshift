@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, kubernetes, red hat, encrypt, security, kms, root key, crk
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
 
 subcollection: openshift
 

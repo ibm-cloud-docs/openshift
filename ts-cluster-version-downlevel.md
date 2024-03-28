@@ -2,10 +2,10 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, cluster version, 
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, cluster version, 
 
 subcollection: openshift
 content-type: troubleshoot

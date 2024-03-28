@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, subnet, detach
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, subnet, detach
 
 subcollection: openshift
 

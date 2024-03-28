@@ -2,10 +2,10 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
 
 subcollection: openshift
 

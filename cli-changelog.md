@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, oc, ks
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
 
 subcollection: openshift
 
@@ -1031,7 +1031,7 @@ Version 0.2.53 of the CLI was released on 19 February 2019.
 
 Version 0.2.44 of the CLI was released on 8 February 2019.
 
-- Adds `--skip-rbac` option to the `ibmcloud oc cluster config` command to skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-users#rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) to manage all your RBAC users, don't include this option. - Updates the Go version to 1.11.5.
+- Adds `--skip-rbac` option to the `ibmcloud oc cluster config` command to skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-understand-rbac. If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) to manage all your RBAC users, don't include this option. - Updates the Go version to 1.11.5.
 
 #### Version 0.2.40
 {: #cli-0240}

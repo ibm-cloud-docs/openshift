@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-27"
 
 
 keywords: openshift
@@ -119,7 +119,7 @@ Connectivity to worker nodes
 :   Although Kubernetes secures the communication between the master and worker nodes by using the `https` protocol, no authentication is provided on the worker node by default. To secure this communication, {{site.data.keyword.openshiftlong_notm}} automatically sets up an Konnectivity connection between the {{site.data.keyword.redhat_openshift_notm}} master and the worker node when the cluster is created.
 
 Fine-grained access control
-:   As the account administrator you can [grant access to other users for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-users) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.openshiftlong_notm}}, and all the resources in your account. Setting up proper user roles and permissions is key to limiting who can access your resources and to limiting the damage that a user can do when legitimate permissions are misused. You can select from the following pre-defined user roles that determine the set of actions that the user can perform: 
+:   As the account administrator you can [grant access to other users for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-iam-platform-access-roles) by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.openshiftlong_notm}}, and all the resources in your account. Setting up proper user roles and permissions is key to limiting who can access your resources and to limiting the damage that a user can do when legitimate permissions are misused. You can select from the following pre-defined user roles that determine the set of actions that the user can perform: 
     - **Platform access roles:** Determine the cluster and worker node management-related actions that a user can perform in {{site.data.keyword.openshiftlong_notm}}. Platform access roles also assign users the `basic-users` and `self-provisioners` RBAC role. With these RBAC roles, you can create a {{site.data.keyword.redhat_openshift_notm}} project in the cluster, in which you can deploy apps and other Kubernetes resources. As the creator of the project, you are automatically assigned the `admin` RBAC role for the project so that you can fully control what you want to deploy and run in your project. However, these RBAC roles don't grant access to other {{site.data.keyword.redhat_openshift_notm}} projects. To view and access other {{site.data.keyword.redhat_openshift_notm}} projects, you must be assigned the appropriate service access role in IAM.  
     - **Service access roles:** Determine the [Kubernetes RBAC role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/){: external} that is assigned to the user and the actions that a user can run against the {{site.data.keyword.redhat_openshift_notm}} API server. While the `basic-users` and `self-provisioners` RBAC role that is assigned with a platform access role lets you create and manage your own {{site.data.keyword.redhat_openshift_notm}} projects, you can't view, access, or work with other {{site.data.keyword.redhat_openshift_notm}} projects until you are assigned a service access role. For more information about the corresponding RBAC roles that are assigned to a user and associated permissions, see [IAM service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles). 
     - **Classic infrastructure:** Enables access to your classic infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.
@@ -143,79 +143,6 @@ If you manually installed admission controllers and you don't want to use them a
 You can restrict connections to the master nodes by enabling the private cloud service endpoint, and creating a subnet allowlist. This combination provides the greatest degree of isolation.. Note that your options for service endpoints vary based on your cluster's {{site.data.keyword.redhat_openshift_notm}} version and infrastructure provider. For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_basics#workeruser-master) and [VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master).
 
 If you enable the private cloud service endpoint, you can create a subnet allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint. For more information, see [Creating an allowlist for the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#private-se-allowlist).
-
-### Rotating CA certificates in your cluster
-{: #cert-rotate}
-
-Revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates.
-{: shortdesc}
-
-By default, certificate authority (CA) certificates are administered to secure access to various components of your cluster, such as the master API server. As you use your cluster, you might want to revoke the certificates issued by the existing CA. For example, the administrators of your team might use a certificate signing request (CSR) to manually generate certificates that are signed by the cluster's CA for worker nodes in the cluster. If an administrator leaves your organization, you can ensure that they no longer have admin access to your cluster by creating a new CA and certificates for your cluster, and removing the old CA and certificates.
-
-1. Create a CA for your cluster. Certificates that are signed by this new CA are issued for the cluster master components, and the API server is refreshed.
-
-    ```sh
-    ibmcloud oc cluster ca create -c CLUSTER
-    ```
-    {: pre}
-
-2. Ensure that your cluster's master health is normal, the API server refresh is complete, and any master updates are complete. It might take several minutes for the master API server to refresh.
-
-    ```sh
-    ibmcloud oc cluster get --cluster CLUSTER
-    ```
-    {: pre}
-
-3. Check the status of the CA creation. In the output, note the timestamp in the **Action Completed** field.
-    ```sh
-    ibmcloud oc cluster ca status -c CLUSTER
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    Status:             CA certificate creation complete. Ensure that your worker nodes are reloaded before you start a CA certificate rotation.
-    Action Started:     2020-08-30T16:17:56+0000
-    Action Completed:   2020-08-30T16:21:13+0000
-    ```
-    {: screen}
-
-4. Download the updated Kubernetes configuration data and certificates in your cluster's `kubeconfig` file.
-
-    ```sh
-    ibmcloud oc cluster config -c CLUSTER --admin --network
-    ```
-    {: pre}
-
-5. Update any tooling that relies on the previous certificates.
-    * If you use {{site.data.keyword.blockchainfull}}, you must [re-establish connectivity between the {{site.data.keyword.blockchain}} management console and your cluster](/docs/blockchain?topic=blockchain-ibp-console-manage-console#ibp-console-refresh).
-    * If you use the certificate from your cluster's `kubeconfig` file in your own service such as Travis or Jenkins, or if you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
-
-6. Verify that the timestamps on your new certificates are later than the timestamp that you found in step 3. To check the date on your certificates, you can use a tool such as [KeyCDN](https://tools.keycdn.com/ssl){: external}.
-
-7. [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) to pick up the certificates that are signed by the new CA.
-
-8. Rotate the old certificates with the new certificates. The old CA certificates in your cluster are removed.
-    ```sh
-    ibmcloud oc cluster ca rotate -c CLUSTER
-    ```
-    {: pre}
-
-9. Check the status of the CA certificate rotation.
-    ```sh
-    ibmcloud oc cluster ca status -c CLUSTER
-    ```
-    {: pre}
-
-    Example output
-    
-    ```sh
-    Status:             CA certificate rotation complete.
-    Action Started:     2020-08-30T16:37:56+0000
-    Action Completed:   2020-08-30T16:41:13+0000
-    ```
-    {: screen}
 
 
 
@@ -557,7 +484,7 @@ What is a {{site.data.keyword.redhat_openshift_notm}} project and why should I u
 :   Every cluster is set up with a set of default {{site.data.keyword.redhat_openshift_notm}} projects that include the deployments and services that are required for {{site.data.keyword.openshiftlong_notm}} to run properly and manage the cluster. For more information, see the [service architecture](/docs/openshift?topic=openshift-service-architecture). 
 :   Cluster administrators automatically have access to these projects and can set up additional projects in the cluster. In addition, cluster users who are granted access to the cluster can create their own project and, as the creator of the project, can manage the project with administrator permissions. However, cluster users don't have access to other projects by default, unless they are granted access by a cluster administrator. 
 
-For every project that you have in the cluster, make sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-users#rbac) to limit access to this project, control what gets deployed, and to set proper [resource quotas and limit ranges](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html){: external}.
+For every project that you have in the cluster, make sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-understand-rbac to limit access to this project, control what gets deployed, and to set proper [resource quotas and limit ranges](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html){: external}.
 {: important}
 
 ### Should I set up a single-tenant or a multi-tenant cluster?

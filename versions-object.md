@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, object storage, plug-in, change log
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
 
 subcollection: openshift
 

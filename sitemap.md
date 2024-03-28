@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-26"
+lastupdated: "2024-03-28"
 
 
 keywords: openshift
@@ -1231,8 +1231,6 @@ subcollection: openshift
     * [19 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1922)
 
         * Cluster autoscaler add-on
-
-        * Node Tuning Operator
 
     * [18 July 2022](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1822)
 
@@ -2679,37 +2677,33 @@ subcollection: openshift
 
 [Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy#strategy)
 
-* [What type of cluster should I get?](/docs/openshift?topic=openshift-strategy#env_flavors)
+* [Decide how many clusters to create](/docs/openshift?topic=openshift-strategy#env_multicluster)
 
-* [Do I actually need multiple clusters or can I just add more workers to one cluster?](/docs/openshift?topic=openshift-strategy#env_multicluster)
+* [Select a cluster type](/docs/openshift?topic=openshift-strategy#env_flavors)
 
-* [How do I name my clusters?](/docs/openshift?topic=openshift-strategy#naming)
+* [Define a cluster naming strategy](/docs/openshift?topic=openshift-strategy#naming)
 
-* [How many worker nodes do I need to handle my workload?](/docs/openshift?topic=openshift-strategy#sizing_workers)
+* [Decide how many worker nodes for each cluster](/docs/openshift?topic=openshift-strategy#sizing_workers)
 
-* [What type of worker node flavors should I get?](/docs/openshift?topic=openshift-strategy#env_flavors_node)
+* [Select worker node flavors](/docs/openshift?topic=openshift-strategy#env_flavors_node)
 
-* [How do I determine worker node capacity for my resources?](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
+* [Determine worker node capacity for the resources](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
 
-* [How do I manage teams and projects?](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
+* [Choose how many namespaces to create](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
 
-* [ How do I manage resource requests and limits?](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
+* [Establish resource requests and limits](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
-* [Overview of potential points of failure in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters#fault_domains)
+* [High availability at different levels](/docs/openshift?topic=openshift-ha_clusters#ha_levels)
+
+* [Resource distribution for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_distribution)
 
 * [Single zone clusters](/docs/openshift?topic=openshift-ha_clusters#single_zone)
 
 * [Multizone clusters](/docs/openshift?topic=openshift-ha_clusters#mz-clusters)
 
-    * [How is my {{site.data.keyword.openshiftlong_notm}} master set up?](/docs/openshift?topic=openshift-ha_clusters#mz-master-setup)
-
-    * [Do I have to do anything so that the master can communicate with the workers across zones?](/docs/openshift?topic=openshift-ha_clusters#mz-master-communication)
-
-    * [Can I convert my single zone cluster to a multizone cluster?](/docs/openshift?topic=openshift-ha_clusters#convert-sz-to-mz)
-
-    * [Do my apps automatically spread across zones?](/docs/openshift?topic=openshift-ha_clusters#multizone-apps-faq)
+    * [Multizone cluster FAQ](/docs/openshift?topic=openshift-ha_clusters#mz-cluster-faq)
 
 * [Multiple public clusters connected with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb)
 
@@ -2718,10 +2712,6 @@ subcollection: openshift
     * [What if I want to set up multiple clusters across regions?](/docs/openshift?topic=openshift-ha_clusters#multiple-regions-setup)
 
     * [What options do I have to load balance workloads across multiple clusters?](/docs/openshift?topic=openshift-ha_clusters#multiple-cluster-lb-options)
-
-    * [Setting up a CIS global load balancer](/docs/openshift?topic=openshift-ha_clusters#cis-global-lb-setup)
-
-    * [Setting up your own global load balancer](/docs/openshift?topic=openshift-ha_clusters#byo-global-lb-setup)
 
     * [What if I want to load balance workloads on the private network?](/docs/openshift?topic=openshift-ha_clusters#glb-private)
 
@@ -3107,6 +3097,8 @@ subcollection: openshift
 
 * [Resetting the cluster API key](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
 
+[Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate#cert-rotate)
+
 [Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
 
 * [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label&interface=ui#add-tags-console)
@@ -3152,8 +3144,6 @@ subcollection: openshift
     * [What does {{site.data.keyword.openshiftlong_notm}} do to secure my API server and etcd data store?](/docs/openshift?topic=openshift-security#secure-api-server)
 
     * [What else can I do to secure my API server?](/docs/openshift?topic=openshift-security#api-server-what-else)
-
-    * [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-security#cert-rotate)
 
 * [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 
@@ -3296,37 +3286,35 @@ subcollection: openshift
 
 * [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-classic-credentials#credentials)
 
-[Controlling user access Kubernetes role-based access control](/docs/openshift?topic=openshift-users#users)
+[Understanding RBAC permissions](/docs/openshift?topic=openshift-understand-rbac#understand-rbac)
 
-* [Understanding RBAC permissions](/docs/openshift?topic=openshift-users#understand-rbac)
+* [What are the types of RBAC roles?](/docs/openshift?topic=openshift-understand-rbac#rbac-types)
 
-    * [What are the types of RBAC roles?](/docs/openshift?topic=openshift-users#rbac-types)
+* [What are RBAC role bindings and cluster role bindings?](/docs/openshift?topic=openshift-understand-rbac#what-is-rbac)
 
-    * [What are RBAC role bindings and cluster role bindings?](/docs/openshift?topic=openshift-users#what-is-rbac)
+* [What do these roles look like in my cluster?](/docs/openshift?topic=openshift-understand-rbac#what-do-roles-look-like)
 
-    * [What do these roles look like in my cluster?](/docs/openshift?topic=openshift-users#what-do-roles-look-like)
+* [Can I create custom roles or cluster roles?](/docs/openshift?topic=openshift-understand-rbac#create-custom-rbac-roles)
 
-    * [Can I create custom roles or cluster roles?](/docs/openshift?topic=openshift-users#create-custom-rbac-roles)
+* [When do I need to use custom cluster role bindings and role bindings?](/docs/openshift?topic=openshift-understand-rbac#when-do-i-use-custom-rbac)
 
-    * [When do I need to use custom cluster role bindings and role bindings?](/docs/openshift?topic=openshift-users#when-do-i-use-custom-rbac)
+* [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-understand-rbac#rbac)
 
-* [Creating custom RBAC permissions for users, groups, or service accounts](/docs/openshift?topic=openshift-users#rbac)
+* [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-understand-rbac#rbac_aggregate)
 
-* [Extending existing permissions by aggregating cluster roles](/docs/openshift?topic=openshift-users#rbac_aggregate)
+    * [What are some common operations that I might want to extend permissions for a default cluster role?](/docs/openshift?topic=openshift-understand-rbac#common-rbac-operations)
 
-    * [What are some common operations that I might want to extend permissions for a default cluster role?](/docs/openshift?topic=openshift-users#common-rbac-operations)
+* [Checking RBAC roles](/docs/openshift?topic=openshift-understand-rbac#checking-rbac)
 
-* [Checking RBAC roles](/docs/openshift?topic=openshift-users#checking-rbac)
+    * [Checking RBAC roles from the UI](/docs/openshift?topic=openshift-understand-rbac#checking-rbac-ui)
 
-    * [Checking RBAC roles from the UI](/docs/openshift?topic=openshift-users#checking-rbac-ui)
+    * [Checking RBAC roles with the CLI](/docs/openshift?topic=openshift-understand-rbac#checking-rbac-cli)
 
-    * [Checking RBAC roles with the CLI](/docs/openshift?topic=openshift-users#checking-rbac-cli)
+* [Kubernetes service access roles and corresponding RBAC roles](/docs/openshift?topic=openshift-understand-rbac#rbac_service)
 
-* [Kubernetes service access roles and corresponding RBAC roles](/docs/openshift?topic=openshift-users#rbac_service)
+    * [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-understand-rbac#rbac_ref)
 
-    * [Kubernetes resource permissions per RBAC role](/docs/openshift?topic=openshift-users#rbac_ref)
-
-    * [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-users#iam-issuer-users)
+    * [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-understand-rbac#iam-issuer-users)
 
 [Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity#pod-iam-identity)
 
@@ -5356,8 +5344,6 @@ subcollection: openshift
     * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
 
 * [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
-
-    * [Modifying worker node settings by using the Node Tuning Operator](/docs/openshift?topic=openshift-kernel#worker-nto)
 
     * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
 

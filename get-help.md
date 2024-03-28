@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, support, get help
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, support, get help
 
 subcollection: openshift
 

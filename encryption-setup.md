@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, kubernetes, red hat, encrypt, security, kms, root key, crk
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
 
 subcollection: openshift
 
@@ -69,11 +69,3 @@ You can rotate the root key from your KMS instance. This action automatically re
 * {{site.data.keyword.hscrypto}}: See [Rotating root keys manually](/docs/hs-crypto?topic=hs-crypto-rotate-keys).
 
 
-
-
-    Go to https://cloud.ibm.com/iam/authorizations
-    Select the appropriate account for the KMS instance. (Either This account if the KMS instance is in the same account or Another account if not. If it is another account, specify the account ID.
-    Set the Source service to Kubernetes Service.
-    Set the Target service to your KMS provider (Key Protect or HPCS)
-    Select Reader service access.
-    Select the Authorize button.

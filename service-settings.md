@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
 
 subcollection: openshift
 

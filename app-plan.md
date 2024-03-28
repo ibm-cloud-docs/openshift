@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-03-27"
 
 
 keywords: openshift, deploy
@@ -510,7 +510,7 @@ After you deploy your app, you can control who can access the app, and monitor t
 The account and cluster administrators can control access on many different levels: the cluster, {{site.data.keyword.redhat_openshift_notm}} project, pod, and container.
 {: shortdesc}
 
-With {{site.data.keyword.cloud_notm}} IAM, you can assign permissions to individual users, groups, or service accounts at the cluster-instance level. You can scope cluster access down further by restricting users to particular namespaces within the cluster. For more information, see [Assigning cluster access](/docs/openshift?topic=openshift-users).
+With {{site.data.keyword.cloud_notm}} IAM, you can assign permissions to individual users, groups, or service accounts at the cluster-instance level. You can scope cluster access down further by restricting users to particular namespaces within the cluster. For more information, see [Assigning cluster access](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 To control access at the pod level, you can configure [security context constraints (SCCs)](/docs/openshift?topic=openshift-openshift_scc#oc_sccs).
 

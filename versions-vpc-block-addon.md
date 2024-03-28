@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-08"
+lastupdated: "2024-03-27"
 
 
-keywords: openshift, block, storage, add-on, changelog
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
 
 subcollection: openshift
 
