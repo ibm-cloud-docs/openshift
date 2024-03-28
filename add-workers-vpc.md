@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-03-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -43,7 +43,7 @@ Looking to add workers to Classic clusters? See [Adding worker nodes to Classic 
 You can add or reduce the number of worker nodes in your cluster by resizing an existing worker pool, regardless of whether the worker pool is in one zone or spread across multiple zones.
 {: shortdesc}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
+Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
 
 To resize the worker pool, change the number of worker nodes that the worker pool deploys in each zone:
 
@@ -82,7 +82,7 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 Want to create a new worker pool on dedicated hosts? See [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli).
 {: tip}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
+Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
 
 1. Retrieve the **VPC ID** and **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. You can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls --provider vpc-gen2`.
     ```sh
@@ -176,7 +176,7 @@ When you add a zone to a worker pool, the worker nodes that are defined in your 
 
 If you have multiple worker pools in your cluster, add the zone to all them so that worker nodes are spread evenly across your cluster. Note that when you add worker nodes to your cluster, the new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
 
-**Before you begin**: Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
+**Before you begin**: Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
 
 1. Get the **Location** of your cluster, and note the existing **Worker Zones** and **VPC ID**.
     ```sh

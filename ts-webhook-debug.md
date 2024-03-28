@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-28"
 
 
 keywords: kubernetes, help, network, connectivity, webhooks
@@ -62,9 +62,17 @@ In {{site.data.keyword.openshiftlong_notm}}, webhooks that call services running
 Complete the following steps to identify the webhook that is causing the issue. Then debug the related service and remove or recreate your webhook if needed.
 {: tsResolve}
 
-1. Run the following command to get the VPN pod logs. If you can't get the VPN logs, follow the steps to [Debug common CLI issues](/docs/openshift?topic=openshift-ts_clis) and return to this page when you are able to retrieve the logs. If the command succeeds and you can get the logs, the VPN tunnel is working and you can continue to the next step.
+1. Run the following commands to get the VPN pod logs. If you can't get the VPN logs, follow the steps to [Debug common CLI issues](/docs/openshift?topic=openshift-ts_clis) and return to this page when you are able to retrieve the logs. If the commands succeed and you can get the logs, the VPN tunnel is working and you can continue to the next step.
 
+    ```sh
+    oc get pods -n kube-system -l app=vpn
+    ```
+    {: pre}
 
+    ```sh
+    oc logs -n kube-system -l app=vpn
+    ```
+    {: pre}
 
 1. Describe your admission control webhooks and save the output to a file called `webhooks.txt`.
     ```sh

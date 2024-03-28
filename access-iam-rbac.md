@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-03-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, role-based access control
@@ -53,7 +53,7 @@ Cluster role bindings apply RBAC cluster roles to all namespaces in the cluster.
 
 If you want users to be able to interact with Kubernetes resources from within a cluster, you must assign user access to one or more namespaces through [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles). Every user who is assigned a service access role is automatically assigned a corresponding RBAC cluster role. These RBAC cluster roles are predefined and permit users to interact with Kubernetes resources in your cluster. Additionally, a role binding is created to apply the cluster role to a specific namespace, or a cluster role binding is created to apply the cluster role to all namespaces.
 
-To learn more about the actions permitted by each RBAC role, check out the [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](#rbac_ref).
+To learn more about the actions permitted by each RBAC role, check out the {{site.data.keyword.cloud_notm}} IAM service access roles reference topic. To see the permissions that are granted by each RBAC role to individual Kubernetes resources, check out [Kubernetes resource permissions per RBAC role](#rbac_ref).
 
 ## Can I create custom roles or cluster roles?
 {: #create-custom-rbac-roles}
@@ -90,8 +90,8 @@ To prevent breaking changes, don't change the predefined `view`, `edit`, `admin`
 - **Cluster-wide access**: To allow a user or an access group to access cluster-wide resources or resources in all namespaces, create a cluster role, and apply it with a cluster role binding. This option is useful for controlling access to resources that are not scoped to namespaces, like worker nodes, or resources in all namespaces in your cluster, like pods in each namespace.
 
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
-- Ensure you that have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for all namespaces.
-- To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one [{{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) at the {{site.data.keyword.openshiftlong_notm}} service level.
+- Ensure you that have the [**Manager** IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for all namespaces.
+- To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one IAM platform access role at the {{site.data.keyword.openshiftlong_notm}} service level.
 
 To create custom RBAC permissions,
 

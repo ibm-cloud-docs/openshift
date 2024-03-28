@@ -41,12 +41,6 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 
 
 
-Creating a 4.15 cluster? [Review the version information](/docs/openshift?topic=openshift-cs_versions_415) for important networking changes introduced in {{site.data.keyword.openshiftlong_notm}} version 4.15 and later.
-{: important}
-
-
-
-
 
 ## Creating a VPC cluster in the console
 {: #clusters_vpcg2_ui}

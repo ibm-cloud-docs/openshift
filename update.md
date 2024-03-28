@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-03-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -62,7 +62,7 @@ What process can I follow to update the master?
 ### Steps to update the cluster master
 {: #master-steps}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
+Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _minor_ version:
 
@@ -143,7 +143,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 - Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
 - If you want to apply a patch update, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
 - Consider adding more worker nodes so that your cluster has enough capacity to rescheduling your workloads during the update. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
-- Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
+- Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 ### Updating classic worker nodes in the CLI with a configmap
 {: #worker-up-configmap}
@@ -346,7 +346,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 - [Update the master](#master). The worker node version can't be higher than the API server version that runs in your Kubernetes master.
 - Make any changes that are marked with _Update after master_ in the [{{site.data.keyword.redhat_openshift_notm}} version preparation guide](/docs/openshift?topic=openshift-openshift_versions).
 - If you want to apply a patch update, review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
-- Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
+- Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 ### Updating VPC worker nodes in the CLI
 {: #vpc_worker_cli}
@@ -402,7 +402,7 @@ You can update your VPC worker nodes in the console. Before you begin, consider 
 Before you begin:
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - Data on the worker node is deleted. Consider storing your data on persistent storage outside of the worker node.
-- Make sure that you have the [**Operator** or **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
+- Make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 To update flavors:
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-03-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -2379,11 +2379,6 @@ Cluster autoscaler add-on
 
 Cluster autoscaler add-on
 :   Version `1.0.5_728` is available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
-
-
-  
-Node Tuning Operator
-:   You can apply custom profiles to your worker nodes to improve performance. For more information, see [Modifying worker node settings by using the Node Tuning Operator](/docs/openshift?topic=openshift-kernel#worker-nto).
 
 ### 18 July 2022
 {: #openshift-july1822}

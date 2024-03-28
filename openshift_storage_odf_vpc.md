@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-28"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -570,10 +570,10 @@ You can scale your ODF configuration by increasing the `numOfOsd` setting. When 
 
 | Number of worker nodes | Initial `osdSize` | `numOfOsd` | Storage capacity available to applications | Total storage of provisioned disks |
 | --- | --- | --- | --- | --- |
-| 3 | 150Gi | 1 | 150Gi | 450Gi |
-| 3 | 150Gi | 2 | 300Gi | 900Gi |
-| 3 | 150Gi | 3 | 450Gi | 1350Gi |
-| 3 | 150Gi | 4 | 600Gi | 1800Gi |
+| 3 | 250Gi | 1 | 250Gi | 750Gi |
+| 3 | 250Gi | 2 | 500Gi | 1500Gi |
+| 3 | 250Gi | 3 | 750Gi | 2250Gi |
+| 3 | 250Gi | 4 | 1000Gi | 3000Gi |
 {: caption="Table 1. OpenShift Data Foundation scaling." caption-side="bottom"}
 
 

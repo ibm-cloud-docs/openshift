@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-26"
+lastupdated: "2024-03-28"
 
 
 keywords: openshift
@@ -473,7 +473,7 @@ Create your own customized storage class with the preferred settings for your {{
 ## Limiting file share access by worker node, zone, or worker pool
 {: #storage-file-vpc-vni-setup}
 
-The default behavior for {{site.data.keyword.filestorage_vpc_short}} cluster add-on is that pods on a given node can access file shares, even across zones. This behavior allows for high availability and failover in case a pod or node goes down.
+The default behavior for {{site.data.keyword.filestorage_vpc_short}} cluster add-on is that pods on a given node can access file shares.
 
 In versions 1.2 of and later of the {{site.data.keyword.filestorage_vpc_short}} cluster add-on, you can control more granularly how pods access your file shares. For example, you might limit file share access to only pods on a specific node, in a specific zone, on a specific worker pool, or in a specific subnet. Review the following scenarios for how you can configure pod access to your file shares.
 
