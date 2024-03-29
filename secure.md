@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-03-29"
 
 
 keywords: openshift
@@ -111,9 +111,6 @@ CIS Kubernetes master benchmark
 
 Secure communication via TLS
 :   To use {{site.data.keyword.openshiftlong_notm}}, you must authenticate with the service by using your credentials. When you are authenticated, {{site.data.keyword.openshiftlong_notm}} generates TLS certificates that encrypt the communication to and from the {{site.data.keyword.redhat_openshift_notm}} API server and etcd data store to ensure a secure end-to-end communication between the worker nodes and the {{site.data.keyword.redhat_openshift_notm}} master. These certificates are never shared across clusters or across {{site.data.keyword.redhat_openshift_notm}} master components.
-
-    Need to revoke existing certificates and create new certificates for your cluster? Check out [Rotating CA certificates in your cluster](#cert-rotate).
-    {: tip}
     
 Connectivity to worker nodes
 :   Although Kubernetes secures the communication between the master and worker nodes by using the `https` protocol, no authentication is provided on the worker node by default. To secure this communication, {{site.data.keyword.openshiftlong_notm}} automatically sets up an Konnectivity connection between the {{site.data.keyword.redhat_openshift_notm}} master and the worker node when the cluster is created.
@@ -484,7 +481,7 @@ What is a {{site.data.keyword.redhat_openshift_notm}} project and why should I u
 :   Every cluster is set up with a set of default {{site.data.keyword.redhat_openshift_notm}} projects that include the deployments and services that are required for {{site.data.keyword.openshiftlong_notm}} to run properly and manage the cluster. For more information, see the [service architecture](/docs/openshift?topic=openshift-service-architecture). 
 :   Cluster administrators automatically have access to these projects and can set up additional projects in the cluster. In addition, cluster users who are granted access to the cluster can create their own project and, as the creator of the project, can manage the project with administrator permissions. However, cluster users don't have access to other projects by default, unless they are granted access by a cluster administrator. 
 
-For every project that you have in the cluster, make sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-understand-rbac to limit access to this project, control what gets deployed, and to set proper [resource quotas and limit ranges](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html){: external}.
+For every project that you have in the cluster, make sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-understand-rbac) to limit access to this project, control what gets deployed, and to set proper [resource quotas and limit ranges](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html){: external}.
 {: important}
 
 ### Should I set up a single-tenant or a multi-tenant cluster?

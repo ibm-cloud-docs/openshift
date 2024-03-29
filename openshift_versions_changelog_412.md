@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-26"
+lastupdated: "2024-03-29"
 
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
@@ -33,6 +33,28 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
+
+
+### Change log for master fix pack 4.12.51_1585_openshift, released 27 March 2024
+{: #41251_1585_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.12.51_1585_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.18 | v2.4.19 | https://github.ibm.com/alchemy-containers/armada-storage-block-plugin |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1534 | 1537 | New version contains security fixes. |
+| Cluster health image | v1.4.7 | v1.4.8 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.16-24 | v1.25.16-33 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.8.7 | v2.8.8 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2807 | 2831 | https://github.ibm.com/alchemy-containers/armada-keepalived |
+| {{site.data.keyword.openshiftshort}}. | 4.12.49 | 4.12.51 | https://docs.openshift.com/container-platform/ |
+| OpenVPN Operator image | v1.4.33 | v1.5.13 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.11 | v0.13.12 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.12){: external}. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 441 | 442 | New version contains updates and security fixes. |
+{: caption="Changes since version 4.12.49_1581_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.12.53_1586_openshift, released 25 March 2024

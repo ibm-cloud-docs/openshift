@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-03-29"
 
 
 keywords: openshift
@@ -699,7 +699,7 @@ Minimum required permissions
      {: note}
 
 `--skip-rbac`
-:    Skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-understand-rbac. If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) to manage all your RBAC users, don't include this option.
+:    Skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-understand-rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) to manage all your RBAC users, don't include this option.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.

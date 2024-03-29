@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-03-29"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar24)
+
+    * [27 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2724)
+
+        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
 
     * [25 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2524)
 
@@ -6155,6 +6159,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
 
+    * [Change log for master fix pack 4.14.16_1555_openshift, released 27 March 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41416_1555_openshift_M)
+
     * [Change log for worker node fix pack 4.14.17_1556_openshift, released 25 March 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41417_1556_openshift_W)
 
     * [Change log for worker node fix pack 4.14.15_1554_openshift, released 13 March 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41415_1554_openshift_W)
@@ -6235,6 +6241,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for master fix pack 4.13.36_1565_openshift, released 27 March 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41336_1565_openshift_M)
 
     * [Change log for worker node fix pack 4.13.37_1566_openshift, released 25 March 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41337_1566_openshift_W)
 
@@ -6394,6 +6402,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for master fix pack 4.12.51_1585_openshift, released 27 March 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41251_1585_openshift_M)
 
     * [Change log for worker node fix pack 4.12.53_1586_openshift, released 25 March 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41253_1586_openshift_W)
 
@@ -7121,6 +7131,14 @@ subcollection: openshift
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 
 * [Version 4.14](/docs/openshift?topic=openshift-odf_addon_changelog#4.14_odf)
+
+    * [Version 4.14.9, released 26 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.9_odf)
+
+    * [Version 4.14.8, released 08 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.8_odf)
+
+    * [Version 4.14.7, released 29 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.7_odf)
+
+    * [Version 4.14.5, 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.5_odf)
 
     * [Version 4.14.0, released 19 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.0_odf)
 
