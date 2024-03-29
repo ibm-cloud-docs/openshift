@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-03-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -12,6 +12,8 @@ subcollection: openshift
 
 ---
 
+
+{{site.data.keyword.attribute-definition-list}}
 
 # Rotating CA certificates in your cluster
 {: #cert-rotate}
@@ -85,3 +87,6 @@ By default, certificate authority (CA) certificates are administered to secure a
     Action Completed:   2020-08-30T16:41:13+0000
     ```
     {: screen}
+
+
+

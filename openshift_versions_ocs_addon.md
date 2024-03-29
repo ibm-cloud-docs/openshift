@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-03-29"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -37,6 +37,32 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ## Version 4.14
 {: #4.14_odf}
 
+### Version 4.14.9, released 26 March 2024
+{: #4.14.9_odf}
+
+- Adds support to specify worker pools.
+- Adds an OSD size check.
+
+### Version 4.14.8, released 08 March 2024
+{: #4.14.8_odf}
+
+- Vulnerability fixes.
+
+### Version 4.14.7, released 29 February 2024
+{: #4.14.7_odf}
+
+- Adds a taint node toleration for the Local Storage Operator.
+- Fixes a bug in the DR annotation.
+
+
+### Version 4.14.5, 14 February 2024
+{: #4.14.5_odf}
+
+changelog:
+- Changes the default base image.
+- Fixes vulnerabilities.
+
+
 ### Version 4.14.0, released 19 January 2024
 {: #4.14.0_odf}
 
@@ -45,6 +71,7 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 
 ## Version 4.13
 {: #4.13_odf}
+
 
 ### Version 4.13.9, released 08 January 2024
 {: #4.13.9_odf}
