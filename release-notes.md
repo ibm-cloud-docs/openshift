@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-29"
+lastupdated: "2024-04-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -26,6 +26,28 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## April 2024
+{: #openshift-apr24}
+
+### 03 April 2024
+{: #openshift-apr0324}
+{: release-note}
+
+
+
+{{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates. Additionally, version 1.0.9 version of cluster autoscaler add-on is deprecated and becomes unsupported on 30 April 2024.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+
+
+
+Image Key Synchronizer add-on patch update.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+
+
+
+
 
 
 ## March 2024

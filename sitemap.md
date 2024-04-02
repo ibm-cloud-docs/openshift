@@ -284,6 +284,14 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr24)
+
+    * [03 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0324)
+
+        * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates. Additionally, version 1.0.9 version of cluster autoscaler add-on is deprecated and becomes unsupported on 30 April 2024.
+
+        * Image Key Synchronizer add-on patch update.
+
 * [March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar24)
 
     * [27 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2724)
@@ -6622,7 +6630,13 @@ subcollection: openshift
 
 * [Version 1.2.1](/docs/openshift?topic=openshift-ca_changelog#0121_ca_addon)
 
+    * [Change log for patch update 1.2.1_418, released 02 April 2024](/docs/openshift?topic=openshift-ca_changelog#121418_ca)
+
     * [Change log for patch update 1.2.1_395, released 28 February 2024](/docs/openshift?topic=openshift-ca_changelog#121395_ca)
+
+* [Version 1.2.0](/docs/openshift?topic=openshift-ca_changelog#0120_ca_addon)
+
+    * [Change log for patch update 1.2.0_410, released 02 April 2024](/docs/openshift?topic=openshift-ca_changelog#120410_ca)
 
     * [Change log for patch update 1.2.0_365, released 21 February 2024](/docs/openshift?topic=openshift-ca_changelog#120365_ca)
 
@@ -6659,6 +6673,8 @@ subcollection: openshift
     * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
 
 * [Version 1.0.9](/docs/openshift?topic=openshift-ca_changelog#0109_ca_addon)
+
+    * [Change log for patch update 1.0.9_411, released 02 April 2024](/docs/openshift?topic=openshift-ca_changelog#109411_ca)
 
     * [Change log for patch update 1.0.9_377, released 21 February 2024](/docs/openshift?topic=openshift-ca_changelog#109377_ca)
 
@@ -7443,6 +7459,8 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+
+    * [Version 1.0.0_2111, released on 03 April 2024](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_2111)
 
     * [Version 1.0.0_2015, released on 16 January 2024](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_2015)
 
