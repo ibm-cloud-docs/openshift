@@ -9690,11 +9690,11 @@ subcollection: openshift
 
 * [Debugging by using `kubectl exec`](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec)
 
-* [Debugging by creating a pod with root SSH access](/docs/openshift?topic=openshift-cs_ssh_worker#pod-ssh)
+* [Debugging by enabling root SSH access on a worker node](/docs/openshift?topic=openshift-cs_ssh_worker#pod-ssh)
 
-    * [Private network](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-private-network)
+    * [SSH into the worker on the private network](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-private-network)
 
-    * [Public network classic clusters that are connected to a public VLAN only](/docs/openshift?topic=openshift-cs_ssh_worker#public-network-only-classic-debug)
+    * [SSH into the worker node on the public network](/docs/openshift?topic=openshift-cs_ssh_worker#public-network-only-classic-debug)
 
     * [Cleaning up after debugging](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-debug-cleanup)
 
