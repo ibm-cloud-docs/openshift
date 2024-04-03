@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-04-02"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -41,12 +41,28 @@ ibmcloud oc cluster addon versions
 ## Version 1.2.1
 {: #0121_ca_addon}
 
+### Change log for patch update 1.2.1_418, released 02 April 2024
+{: #121418_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.3.6`
+- Adds support for `drainPriorityConfig`, `dynamicNodeDeleteDelayAfterTaintEnabled`, `loggingFormat`, `emitPerNodegroupMetrics`, `kubeApiContentType`, `featureGates` parameters.
+- Image tags: `1.22.0-121-0`, `1.23.0-121-0`, `1.24.0-121-0`, `1.25.0-121-0`, `1.26.4-121-0`, `1.27.3-121-0`, `1.28.0-121-0`.
+
 
 ### Change log for patch update 1.2.1_395, released 28 February 2024
 {: #121395_ca}
 
 - Adds support for cluster version 1.29.
 - Image tags: `1.22.0-121-0`, `1.23.0-121-0`, `1.24.0-121-0`, `1.25.0-121-0`, `1.26.4-121-0`, `1.27.3-121-0`, `1.28.0-121-0`.
+
+## Version 1.2.0
+{: #0120_ca_addon}
+
+### Change log for patch update 1.2.0_410, released 02 April 2024
+{: #120410_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.3.6`
+- Images tags: `1.22.0-120-4`, `1.23.0-120-4`, `1.24.0-120-4`, `1.25.0-120-4`, `1.26.4-120-4`, `1.27.3-120-4`, `1.28.0-120-4`.
 
 ### Change log for patch update 1.2.0_365, released 21 February 2024
 {: #120365_ca}
@@ -166,6 +182,15 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 
 ## Version 1.0.9
 {: #0109_ca_addon}
+
+Version 1.0.9 version is deprecated and becomes unsupported on 30 April 2024.
+{: note}
+
+### Change log for patch update 1.0.9_411, released 02 April 2024
+{: #109411_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.2.33`
+- Images tags: `1.22.0-109-3`, `1.23.0-109-3`, `1.24.0-109-3`, `1.25.0-109-3`, `1.26.1-109-3`, `1.27.2-109-3`.
 
 ### Change log for patch update 1.0.9_377, released 21 February 2024
 {: #109377_ca}

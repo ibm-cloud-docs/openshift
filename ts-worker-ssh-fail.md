@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-04-02"
 
 
 keywords: openshift
@@ -47,19 +47,21 @@ Use the `oc debug node` command to deploy a pod with a privileged `securityConte
 
 The debug pod is deployed with an interactive shell so that you can access the worker node immediately after the pod is created. For more information about how the `oc debug node` command works, see [this {{site.data.keyword.redhat_notm}} blog post](https://www.redhat.com/sysadmin/how-oc-debug-works){: external}{: external}.
 
-1. Get the name of the worker node that you want to access. The worker node name is its private IP address.
+1. Get the name of the worker node that you want to access. For CoreOS worker nodes, the name is the hostname of the worker. For all other worker nodes, the worker node name is the private IP address.
     ```sh
     oc get nodes -o wide
     ```
     {: pre}
 
-2. Create a debug pod that has host access. When the pod is created, the pod's interactive shell is automatically opened. If the `oc debug node` command fails, continue to option 2. The Docker alpine image here is used as an example. If the worker node doesn't have public network access, you can maintain a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
+2. Create a debug pod that has host access. When the pod is created, the pod's interactive shell is automatically opened. If the `oc debug node` command fails, continue to option 2.
     ```sh
     oc debug node/<NODE_NAME>
     ```
     {: pre}
+    If the `oc debug node/<NODE_NAME>` command fails, there might be security group, ACL, or firewall rules that prevent the default container image from being pulled. Try the command again with the `--image=us.icr.io/armada-master/network-alpine:latest` option, which uses an image from IBM Cloud Container Registry that is accessible over the private network . 
+    {: tip}
 
-3. Run debug commands to help you gather information and troubleshoot issues. Commands that you might use to debug, such as `tcpdump`, `curl`, `ip`, `ifconfig`, `nc`, `ping`, and `ps`, are already available in the shell. You can also install other tools, such as `mtr`, by running `yum install <tool>`.
+3. Run debug commands to help you gather information and troubleshoot issues. Commands that you might use to debug, such as `tcpdump`, `curl`, `ip`, `ifconfig`, `nc`, `ping`, and `ps`, are already available in the shell. You can also install other tools, such as `mtr` and `conntrack`, by running `yum install <tool>`.
 
 
 
@@ -69,7 +71,7 @@ The debug pod is deployed with an interactive shell so that you can access the w
 If you are unable to use the `oc debug node` command, you can create an Alpine pod with a privileged `securityContext` and use the `kubectl exec` command to run debug commands from the pod's interactive shell.
 {: shortdesc}
 
-1. Get the name of the worker node that you want to access. The worker node name is its private IP address.
+1. Get the name of the worker node that you want to access. For CoreOS worker nodes, the name is the hostname of the worker. For all other worker nodes, the worker node name is the private IP address.
 
     ```sh
     oc get nodes -o wide
@@ -94,16 +96,17 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
       name: debug-${NODE}
       namespace: default
     spec:
+      tolerations:
+      - operator: "Exists"
+      hostNetwork: true
       containers:
-      - args: ["-c", "apk add tcpdump mtr curl; sleep 1d"]
+      - args: ["-c", "sleep 20d"]
         command: ["/bin/sh"]
-        image: icr.io/armada-master/alpine:latest
-        imagePullPolicy: IfNotPresent
+        image: us.icr.io/armada-master/network-alpine:latest
+        imagePullPolicy: Always
         name: debug
-        resources: {}
         securityContext:
           privileged: true
-          runAsUser: 0
         volumeMounts:
         - mountPath: /host
           name: host-volume
@@ -111,11 +114,9 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
       - name: host-volume
         hostPath:
           path: /
-      dnsPolicy: ClusterFirst
       nodeSelector:
         kubernetes.io/hostname: ${NODE}
       restartPolicy: Never
-      securityContext: {}
     EOF
     ```
     {: pre}
@@ -149,10 +150,7 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
     
     
 
-5. Run debug commands to help you gather information and troubleshoot issues. Commands that you might use to debug, such as `tcpdump`, `mtr`, `curl`, `ip`, `ifconfig`, `nc`, `ping`, and `ps`, are already available in the shell. You can also install other tools, such as `dig`, by running `apk add <tool>`. For example, to add `dig`, run `apk add bind-tools`.
-
-    Before you can use the `tcpdump` command, you must first move the binary to a new location that does not conflict with the install path for the binary on the host. You can use the following command to relocate the binary: `mv /usr/sbin/tcpdump /usr/local/bin/`.
-    {: note}
+5. Run debug commands to help you gather information and troubleshoot issues. Commands that you might use to debug, such as `dig`, `tcpdump`, `mtr`, `curl`, `ip`, `ifconfig`, `nc`, `ping`, and `ps`, are already available in the shell. You can also install other tools, such as `conntrack`, by running `apk add <tool>`. For example, to add `conntrack`, run `apk add conntrack-tools`.
 
 6. Delete the host access pod that you created for debugging.
 
@@ -163,7 +161,7 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
 
 
 
-## Debugging by creating a pod with root SSH access
+## Debugging by enabling root SSH access on a worker node
 {: #pod-ssh}
 
 If you are unable to use the `oc debug node` or `kubectl exec` commands, such as if the VPN connection between the cluster master and worker nodes is down, you can create a pod that enables root SSH access and copies a public SSH key to the worker node for SSH access.
@@ -174,22 +172,22 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
 
 1. Choose an existing or create a new public SSH key.
     ```sh
-    ssh-keygen -t rsa -b 4096
-    ls ~/.ssh
+    ssh-keygen -f /tmp/id_rsa_cluster_worker -t rsa -b 4096 -C temp-worker-ssh-key -P ''
+    ls /tmp
     ```
     {: pre}
     
     ```sh
-    id_rsa id_rsa.pub
+    id_rsa_cluster_worker id_rsa_cluster_worker.pub
     ```
     {: screen}
     
     ```sh
-    cat ~/.ssh/id_rsa.pub
+    cat /tmp/id_rsa_cluster_worker.pub
     ```
     {: pre}
     
-2. Get the name of the worker node that you want to access. The worker node name is its private IP address.
+2. Get the name of the worker node that you want to access. For CoreOS worker nodes, the name is the hostname of the worker. For all other worker nodes, the worker node name is the private IP address.
 
     ```sh
     oc get nodes -o wide
@@ -203,7 +201,8 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
     kind: Pod
     metadata:
       name: enable-ssh-<NODE_NAME>
-      namespace: default
+      labels:
+        name: enable-ssh
     spec:
       tolerations:
       - operator: "Exists"
@@ -211,11 +210,11 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
       hostPID: true
       hostIPC: true
       containers:
-      - image: docker.io/library/alpine:latest
+      - image: us.icr.io/armada-master/network-alpine:latest
         env:
         - name: SSH_PUBLIC_KEY
-          value: "<ssh-rsa AAA...ZZZ user@ibm.com>"
-        args: ["-c", "echo $(SSH_PUBLIC_KEY) | tee -a /root/.ssh/authorized_keys && sed -i 's/PermitRootLogin.*/PermitRootLogin yes/g' /host/etc/ssh/sshd_config && killall -1 sshd && while true; do sleep 86400; done"]
+          value: "<ssh-rsa AAA...ZZZ temp-worker-ssh-key>"
+        args: ["-c", "echo $(SSH_PUBLIC_KEY) | tee -a /root/.ssh/authorized_keys && sed -i 's/^#*PermitRootLogin.*/PermitRootLogin yes/g' /host/etc/ssh/sshd_config && sed -i 's/^#*PermitRootLogin.*/PermitRootLogin yes/g' /host/etc/ssh/sshd_config.d/40-rhcos-defaults.conf || true && killall -1 sshd || yes n | ssh-keygen -f /host/etc/ssh/ssh_host_rsa_key -t rsa -b 4096 -C temp-server-ssh-key -P '' && while true; do sleep 86400; done"]
         command: ["/bin/sh"]
         name: enable-ssh
         securityContext:
@@ -247,7 +246,7 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
 
 5. Use the private or public network to access the worker node by using your SSH key.
 
-### Private network
+### SSH into the worker on the private network
 {: #ssh-private-network}
 
 Create a new or choose an existing server instance that has access to the same private network as the worker node. For VPC clusters, the [virtual server instance](https://cloud.ibm.com/vpc-ext/compute/vs){: external} must exist in the same VPC as the worker node.
@@ -278,7 +277,7 @@ For classic clusters, the [device](https://cloud.ibm.com/gen1/infrastructure/dev
     ```
     {: pre}
 
-### Public network classic clusters that are connected to a public VLAN only
+### SSH into the worker node on the public network
 {: #public-network-only-classic-debug}
 
 Debug classic clusters that are connected to a public VLAN by logging in to your worker nodes.
@@ -289,7 +288,7 @@ Debug classic clusters that are connected to a public VLAN by logging in to your
 2. Create a Calico global network policy that is named `ssh-open` to allow inbound SSH traffic on port 22.
 
     ```sh
-    calicoctl apply [-c <path_to_calicoctl_cfg>/calicoctl.cfg] -f - <<EOF
+    calicoctl apply -f - <<EOF
     apiVersion: projectcalico.org/v3
     kind: GlobalNetworkPolicy
     metadata:
@@ -299,11 +298,6 @@ Debug classic clusters that are connected to a public VLAN by logging in to your
       ingress:
       - action: Allow
         protocol: TCP
-        destination:
-          ports:
-          - 22
-      - action: Allow
-        protocol: UDP
         destination:
           ports:
           - 22
@@ -321,11 +315,11 @@ Debug classic clusters that are connected to a public VLAN by logging in to your
 
 4. SSH into the worker node via its public IP address.
     ```sh
-    ssh root@<WORKER_PUBLIC_IP>
+    ssh -i <SSH_private_key_location> root@<WORKER_PUBLIC_IP>
     ```
     {: pre}
 
-5. Run debug commands to help you gather information and troubleshoot issues, such as `ip`, `ifconfig`, `nc`, `tcpdump`, `ping`, `ps`, and `curl`. You can also install other tools, such as `mtr`, by running `yum install <tool>`.
+5. Run debug commands to help you gather information and troubleshoot issues, such as `ip`, `ifconfig`, `ping`, `ps`, and `curl`. You can also install other tools that might not be installed by default, such as `tcpdump` or `nc`, by running `yum install <tool>`.
 
 ### Cleaning up after debugging
 {: #ssh-debug-cleanup}
