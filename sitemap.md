@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-02"
+lastupdated: "2024-04-03"
 
 
 keywords: openshift
@@ -288,7 +288,9 @@ subcollection: openshift
 
     * [03 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0324)
 
-        * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates. Additionally, version 1.0.9 version of cluster autoscaler add-on is deprecated and becomes unsupported on 30 April 2024.
+        * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates.
+
+        * Version 1.0.9 of the cluster autoscaler add-on is deprecated with an end of support date of 30 April 2024.
 
         * Image Key Synchronizer add-on patch update.
 
