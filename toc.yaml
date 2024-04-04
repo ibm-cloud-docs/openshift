@@ -143,8 +143,8 @@ toc:
       - topicgroup:
           label: Controlling network traffic in VPC clusters
           topics:
-          - vpc-network-policy.md
           - vpc-security-group.md
+          - vpc-security-group-manage.md
           - vpc-acls.md
           - vpc-kube-policies.md
           - vpc-firewall.md
@@ -440,14 +440,15 @@ toc:
       topics:
       - include: ../get-support/ViewStatus.md
       - faqs.md
+      - best-practices.md
       - ts-debug-tool.md
+      - ts-cluster-debug.md
       - topicgroup:
           label: Troubleshooting
           topics:
           - topicgroup:
               label: Clusters and masters
               topics:
-              - ts-cluster-debug.md
               - ts-webhook-debug.md
               - ts-cluster-master.md
               - ts-cluster-master-upgrade.md
@@ -475,6 +476,8 @@ toc:
               - ts-health-loglines.md
               - ts-vpc-byok-encrypted-storage.md
               - ts-etcd-alerts.md
+              - ts-sbd-cluster-create-quota.md
+              - ts-sbd-non-sbd-clusters.md
           - topicgroup:
               label: Worker nodes
               topics:
@@ -516,7 +519,7 @@ toc:
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md
               - ts-slow-dns-lookup.md
-              - ts-sbd-cluster-create-quota.md
+              - ts-sbd-custom-dns.md
           - topicgroup:
               label: Apps and services
               topics:

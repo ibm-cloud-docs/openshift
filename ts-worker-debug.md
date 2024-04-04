@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-04-04"
 
 
-keywords: openshift
+keywords: {{site.data.keyword.openshiftlong_notm}}, openshift, kubernetes, help, network, connectivity
 
 subcollection: openshift
 
@@ -14,9 +14,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Debugging worker nodes

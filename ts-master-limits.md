@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-04"
 
 
 keywords: openshift, roks, rhoks, rhos, limits
@@ -51,6 +51,6 @@ You have a few options when it comes to dealing with this.
         ```
         {: pre}
 
-- Request a higher resource limit for your master.  To request a higher limit, [open a support ticket](/docs/openshift?topic=openshift-get-help#help-support) with justification.  Requests are reviewed and granted on a cluster by cluster basis. 
+- Request a higher resource limit for your master.  To request a higher limit, [open a support ticket](/docs/openshift?topic=openshift-get-help with justification.  Requests are reviewed and granted on a cluster by cluster basis. 
 
 - Do nothing and risk future performance and functional issues in your master control plane.

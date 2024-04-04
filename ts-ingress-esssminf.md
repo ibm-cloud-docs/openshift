@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-04-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ingress, troubleshoot ingress, secrets manager missing, esssminf
@@ -58,7 +58,7 @@ Check that the {{site.data.keyword.secrets-manager_short}} instances registered 
     ```
     {: pre}
 
-4. If the problem persists, [open a support ticket](/docs/openshift?topic=openshift-get-help#help-support).
+4. If the problem persists, [open a support ticket](/docs/openshift?topic=openshift-get-help.
 
 
 
