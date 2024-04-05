@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -24,7 +24,7 @@ subcollection: openshift
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc}
-[Version 4.14 and earlier]{: tag-red}
+[4.14 and earlier]{: tag-red}
 
 VPC clusters use various security groups to protect cluster components. These security groups are automatically created and attached to cluster workers, load balancers, and cluster-related VPE gateways. You can modify or replace these security groups to meet your specific requirements, however, any modifications must be made according to these guidelines to avoid network connectivity disruptions.
 {: shortdesc}
@@ -42,19 +42,19 @@ If you modify the default VPC security groups, you must, at minimum, include the
 ## Virtual private endpoint (VPE) gateways
 {: #managed-vpe-gateways}
 
-The following VPE gateways are created automatically when you create a VPC cluster.
+When the first VPC cluster at {{site.data.keyword.openshiftlong_notm}} 4.14+ is created in a given VPC, or a cluster in that VPC has its master updated to 4.14+, then several shared VPE Gateways are created for various IBM Cloud services. Only one of each of these types of shared VPE Gateways is created per VPC. All the clusters in the VPC share the same VPE Gateway for these services. These shared VPE Gateways are assigned a single Reserved IP from each zone that the cluster workers are in.
+
+The following VPE gateways are created automatically when you create a VPC cluster. 
 
 | Gateway | Description |
 | --- | --- |
-| {{site.data.keyword.registrylong_notm}} [Shared]{: tag-cool-gray} | Pull container images from {{site.data.keyword.registrylong_notm}} to apps running in your cluster. 
-| {{site.data.keyword.cos_full_notm}} s3 gateway [Shared]{: tag-cool-gray} | Access the COS APIs. |
-| {{site.data.keyword.cos_full_notm}} config gateway [Shared]{: tag-cool-gray} | Backup container images to {{site.data.keyword.cos_full_notm}} |
-| {{site.data.keyword.openshiftlong_notm}}† | Access the {{site.data.keyword.openshiftlong_notm}} APIs to interact with and manage your cluster. |
+| {{site.data.keyword.registrylong_notm}} | [Shared]{: tag-cool-gray} Pull container images from {{site.data.keyword.registrylong_notm}} to apps running in your cluster. 
+| {{site.data.keyword.cos_full_notm}} s3 gateway | [Shared]{: tag-cool-gray} Access the COS APIs. |
+| {{site.data.keyword.cos_full_notm}} config gateway | [Shared]{: tag-cool-gray} Backup container images to {{site.data.keyword.cos_full_notm}} |
+| {{site.data.keyword.openshiftlong_notm}} | Access the {{site.data.keyword.openshiftlong_notm}} APIs to interact with and manage your cluster. † |
 {: caption="Table 1. VPE gateways" caption-side="bottom"}
 {: summary="The table shows the VPE gateways created for VPC clusters. The first column includes name of the gateway. The second column includes a brief description."}
 
-Shared VPE Gateways
-:   When the first VPC cluster at {{site.data.keyword.openshiftlong_notm}} 4.14+ is created in a given VPC, or a cluster in that VPC has its master updated to 4.14+, then several shared VPE Gateways are created for various IBM Cloud services. Only one of each of these types of shared VPE Gateways is created per VPC. All the clusters in the VPC share the same VPE Gateway for these services. These shared VPE Gateways are assigned a single Reserved IP from each zone that the cluster workers are in.
 
 † All supported VPC clusters have a VPE Gateway for the cluster master that is created at cluster create time in the customer's account. This VPE Gateway is used by the cluster workers, and can be used by other things in the VPC, to connect to the cluster's master API server. This VPE Gateway is assigned a single Reserved IP from each zone that the cluster workers are in, and this IP is created in one of the VPC subnets in that zone that has cluster workers. For example, if the cluster has workers in only a single zone (`us-east-1`) and single VPC subnet, then a single IP will be created in that subnet and assigned to the VPE Gateway. If a cluster has workers in all three zones like `us-east-1`, `us-east-2`, and `us-east-3` and these workers are spread out among 4 VPC subnets in each zone, then 12 VPC subnets altogether, three IPs will be created, one in each zone, in one of the four VPC subnets in that zone. Note that the subnet is chosen at random.
 

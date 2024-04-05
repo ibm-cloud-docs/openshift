@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-05"
 
 
 keywords: openshift
@@ -75,19 +75,6 @@ subcollection: openshift
 * [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-overview#knowledge)
 
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
-
-
-## IAM roles and actions
-{: #sitemap_iam_roles_and_actions}
-
-
-[IAM roles and actions](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
-
-* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
-
-* [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#cluster-create-permissions)
-
-* [Example custom IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam)
 
 
 ## Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}
@@ -2677,18 +2664,6 @@ subcollection: openshift
 {: #sitemap_planning_to_create_clusters}
 
 
-[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
-
-* [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
-
-* [Setting user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
-
-* [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
-
-* [Cluster-specific account setup](/docs/openshift?topic=openshift-clusters#prepare-cluster-account)
-
-* [Next steps](/docs/openshift?topic=openshift-clusters#next-steps)
-
 [Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy#strategy)
 
 * [Decide how many clusters to create](/docs/openshift?topic=openshift-strategy#env_multicluster)
@@ -2900,6 +2875,31 @@ subcollection: openshift
 * [Step 2: Choose a tool](/docs/openshift?topic=openshift-document-environment#choose-arch-tool)
 
 * [Step 3: Create the diagram](/docs/openshift?topic=openshift-document-environment#create-arch-diagram)
+
+
+## Preparing your account
+{: #sitemap_preparing_your_account}
+
+
+[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
+
+* [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
+
+* [Setting user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
+
+* [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
+
+* [Cluster-specific account setup](/docs/openshift?topic=openshift-clusters#prepare-cluster-account)
+
+* [Next steps](/docs/openshift?topic=openshift-clusters#next-steps)
+
+[IAM roles and actions](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
+
+* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
+
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#cluster-create-permissions)
+
+* [Example custom IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam)
 
 
 ## Creating clusters
@@ -9600,6 +9600,8 @@ subcollection: openshift
 [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create#ts_cos_bucket_cluster_create)
 
 [After logging in to my cluster, why do I see a no resources found message?](/docs/openshift?topic=openshift-rhoks_ts_not_found#rhoks_ts_not_found)
+
+[Why do I see an `etcd database size is approaching the maximum` error?](/docs/openshift?topic=openshift-ts-etcd-capacity#ts-etcd-capacity)
 
 [Why do I get an error that my PodSecurityConfiguration is not valid?](/docs/openshift?topic=openshift-ts-pod-security-reset#ts-pod-security-reset)
 

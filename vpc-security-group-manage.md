@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, acl, acls, access control list, rules, security group
@@ -370,6 +370,8 @@ Required for VPC clusters with a public service endpoint.
     Remote                 169.63.111.82
     ```
     {: screen}
+
+    
 
 
 ## Allow worker nodes to connect to the Ingress LoadBalancer

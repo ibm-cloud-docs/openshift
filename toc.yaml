@@ -16,7 +16,6 @@ toc:
       topics:
       - getting-started.md
       - overview.md
-      - iam-platform-access-roles.md
       - responsibilities.md
       - satellite-resp.md
       - topicgroup:
@@ -57,7 +56,6 @@ toc:
       - topicgroup:
           label: Planning to create clusters
           topics:
-          - cluster-create.md
           - kube-strategy.md
           - cluster-plan-ha.md
           - worker-plan.md
@@ -66,6 +64,11 @@ toc:
           - encryption.md
           - storage-plan.md
           - document-environment.md
+      - topicgroup:
+          label: Preparing your account
+          topics:
+          - cluster-create.md
+          - iam-platform-access-roles.md
       - topicgroup: 
           label: Creating clusters
           topics:
@@ -460,6 +463,7 @@ toc:
               - ts-cluster-create-delete.md
               - ts-cluster-cos-bucket.md
               - ts-cluster-no-resources.md
+              - ts-etcd-capacity.md
               - ts-pod-security-reset.md
               - ts-cluster-vpn.md
               - ts-cluster-no-vpc.md
