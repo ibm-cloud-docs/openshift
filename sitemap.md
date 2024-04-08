@@ -5335,8 +5335,6 @@ subcollection: openshift
 
 * [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
 
-    * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
-
 * [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks)
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
