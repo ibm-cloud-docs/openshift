@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-04-08"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -23,9 +23,11 @@ Telemetry is a remote health monitoring feature that collects anonymized aggrega
 ## Enabling Telemetry
 {: #telemetry_enable}
 
-To enable Telemetry, update your pull secret by adding your OpenShift access token to allow remote health reporting.  Note that Telemetry can only be enabled for public clusters that run version 4.14 or later and were provisioned on or after 28 Feb 2024. 
+To enable Telemetry, update your pull secret by adding your OpenShift access token to allow remote health reporting. The exact steps to follow depend on when your cluster version and when the cluster was created. If you are not sure if your cluster has Telemetry enabled already, see [Checking if Telemetry is enabled for a cluster](#telemetry_check).
 
+**For version 4.13 or earlier, or version 4.14 clusters that were created before 29 Feb 2024**: If your cluster was created before 29 Feb 2024, [open a support ticket](docs/openshift?topic=openshift-get-help#allowlist-access-request) and indicate that you want to enable Telemetry in your cluster. When the ticket is resolved, continue with the following steps. 
 
+**For version 4.14 clusters created on or after 29 Feb 2024**: Continue to the next step.
 
 1. Log into the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external}.
 1. Navigate to **Downloads** > **Tokens > Pull Secret** and download the pull secret as a JSON file.
@@ -66,13 +68,10 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
 
 1. For classic infrastructure, [reload all worker nodes in your cluster](/https://cloud.ibm.com/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastucture, [replace all worker nodes in your cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace).
 
-1. To verify that Telemetry is enabled in the cluster, open the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external} and navigate to the **Clusters** page. If your cluster is listed, Telemetry is enabled.
-
+1. To use the console to verify that Telemetry is enabled in the cluster, open the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external} and navigate to the **Clusters** page. If your cluster is listed, Telemetry is enabled. To verify Telemetry enablement in the CLI, see [Checking if Telemetry is enabled for a cluster](#telemetry_check).
 
 ## Disabling Telemetry
 {: #oc_disable_telemetry_reports}
-
-You can disable of Telemetry only in cluster versions 4.13 and earlier or cluster versions 4.14 that were created before 28 February 2024.
 
 You might want to disable this remote health reporting to comply with privacy laws, organizational standards, or data governance practices. To disable, you must modify the global configuration for the cluster and reload all the worker nodes.
 
@@ -111,4 +110,41 @@ You might want to disable this remote health reporting to comply with privacy la
     ```
     {: pre}
 
+
+## Checking if Telemetry is enabled for a cluster
+{: #telemetry_check}
+
+If you are not sure whether Telemetry is already enabled for a cluster, follow these steps to see if the Telemetry configuration is present in your cluster pull secret. If the configuration is present in the pull secret, Telemetry is enabled for the cluster.
+
+
+1. In the CLI, set the context for your cluster and include the `--admin` option.
+
+    ```sh
+    ibmcloud oc cluster config -c CLUSTER-ID --admin
+    ```
+    {: pre}
+
+2. Get the pull secret located in the `openshift-config` namespace. Note that this command extracts the data from the secret, base64 decodes it, and then outputs the info into a file. 
+    ```sh
+    oc get secrets pull-secret -n openshift-config -o template='{{index .data ".dockerconfigjson"}}' | base64 -d > pull-secret.json
+    ```
+    {: pre}
+
+3. View the contents of the file. In the pull secret, look for the `cloud.openshift.com` authorization. If it exists, Telemetry is enabled on the cluster.
+
+    ```sh
+    cat pull-secret.json 
+    ```
+    {: pre}
+
+    Example authorization in pull secret file. 
+
+    ```yaml
+    "auths": {
+        "cloud.openshift.com": {
+            "auth": "xyz123...",
+            "email": "user@us.ibm.com"
+        }
+    ```
+    {: screen}
 

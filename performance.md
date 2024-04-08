@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-04-08"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -68,100 +68,6 @@ To change the compute hardware, such as the CPU and memory per worker node, choo
 
 
 
-### Modifying worker node kernel settings
-{: #worker-kernel-ds}
-
-If you have specific performance optimization requirements, you can change the default settings for the Linux kernel `sysctl` parameters on worker nodes.
-{: shortdesc}
-
-Worker nodes are automatically provisioned with optimized kernel performance, but you can change the default settings by applying a custom [Kubernetes `DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external} with an [`init` Container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/){: external} to your cluster. The daemon set modifies the settings for all existing worker nodes and applies the settings to any new worker nodes that are provisioned in the cluster. The `init` container makes sure that these modifications occur before other pods are scheduled on the worker node. No pods are affected.
-
-You must have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for all namespaces to run the sample privileged `initContainer`. After the containers for the deployments are initialized, the privileges are dropped.
-{: note}
-
-Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-
-1. Save the following daemon set in a file named `worker-node-kernel-settings.yaml`. In the `spec.template.spec.initContainers` section, add the fields and values for the `sysctl` parameters that you want to tune. This example daemon set changes the default maximum number of connections that are allowed in the environment via the `net.core.somaxconn` setting and the ephemeral port range via the `net.ipv4.ip_local_port_range` setting.
-
-    Depending on the `systctl` settings that you try to change, you might want to configure the security context. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.14/nodes/containers/nodes-containers-sysctls.html){: external}.
-    {: note}
-
-    
-    ```yaml
-    apiVersion: apps/v1
-    kind: DaemonSet
-    metadata:
-      name: kernel-optimization
-      namespace: kube-system
-      labels:
-        tier: management
-        app: kernel-optimization
-    spec:
-      selector:
-        matchLabels:
-          name: kernel-optimization
-      template:
-        metadata:
-          labels:
-            name: kernel-optimization
-        spec:
-          hostNetwork: true
-          hostPID: true
-          hostIPC: true
-          initContainers:
-            - command:
-                - sh
-                - -c
-                - sysctl -w net.ipv4.ip_local_port_range="1025 65535"; sysctl -w net.core.somaxconn=32768;
-              image: alpine:3.6
-              imagePullPolicy: IfNotPresent
-              name: sysctl
-              resources: {}
-              securityContext:
-                privileged: true
-                capabilities:
-                  add:
-                    - NET_ADMIN
-              volumeMounts:
-                - name: modifysys
-                  mountPath: /sys
-          containers:
-            - resources:
-                requests:
-                  cpu: 0.01
-              image: alpine:3.6
-              name: sleepforever
-              command: ["/bin/sh", "-c"]
-              args:
-                - >
-                  while true; do
-                    sleep 100000;
-                  done
-          volumes:
-            - name: modifysys
-              hostPath:
-                path: /sys
-    ```
-    {: codeblock}
-
-1. Apply the daemon set to your worker nodes. The changes are applied immediately.
-    ```sh
-    oc apply -f worker-node-kernel-settings.yaml
-    ```
-    {: pre}
-
-To revert your worker nodes `sysctl` parameters to the default values, follow these steps.
-
-1. Delete the daemon set. The `initContainers` that applied the custom settings are removed.
-    ```sh
-    oc delete ds kernel-optimization
-    ```
-    {: pre}
-
-1. [Reboot all worker nodes in the cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot). The worker nodes come back online with the default values applied.
-
-
-
 
 
 ## Optimizing network keepalive `sysctl` settings
@@ -173,7 +79,9 @@ If a pod has long running TCP connections that are occasionally disconnected whe
 These scenarios and suggested settings are also described in the [Troubleshooting Outgoing Connection Issues with IBM VPC Public and Service Gateways](https://www.ibm.com/blog/troubleshooting-outgoing-connection-issues-with-ibm-vpc-public-and-service-gateways/){: external} blog.
 {: tip}
 
-The following `sysctl` network values can be set on all worker nodes in a cluster by using the daemonset described in the [Modifying worker node kernel settings](#worker-kernel-ds) section. However, there currently isn't a way to set these `sysctl` keepalive settings on all pods by default in a cluster. The best way to modify the settings on all pods is to use a privileged `initContainer`. Review the following example of how to set up an `initContainer` for a deployment in a `test-ns` namespace.
+
+
+There currently isn't a way to set these `sysctl` keepalive settings on all pods by default in a cluster. The best way to modify the settings on all pods is to use a privileged `initContainer`. Review the following example of how to set up an `initContainer` for a deployment in a `test-ns` namespace.
 
 
 

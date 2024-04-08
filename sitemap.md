@@ -3957,6 +3957,8 @@ subcollection: openshift
 
 * [Disabling Telemetry](/docs/openshift?topic=openshift-telemetry#oc_disable_telemetry_reports)
 
+* [Checking if Telemetry is enabled for a cluster](/docs/openshift?topic=openshift-telemetry#telemetry_check)
+
 
 ## Continuous integration and delivery for app development and deployment
 {: #sitemap_continuous_integration_and_delivery_for_app_development_and_deployment}
@@ -5310,17 +5312,6 @@ subcollection: openshift
 * [Installing with a script](/docs/openshift?topic=openshift-sgx-install#intel-sgx-script)
 
 
-## Understanding remote health monitoring
-{: #sitemap_understanding_remote_health_monitoring}
-
-
-[Understanding remote health monitoring](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out#remote-health-monitoring-opt-out)
-
-* [Understanding the impacts of opting out](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out#remote-health-impacts)
-
-* [Opting out of remote health reporting](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out#remote-health-opt-out)
-
-
 ## Tuning performance
 {: #sitemap_tuning_performance}
 
@@ -5334,8 +5325,6 @@ subcollection: openshift
     * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
 
 * [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
-
-    * [Modifying worker node kernel settings](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
 
 * [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks)
 
